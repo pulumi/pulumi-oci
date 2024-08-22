@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Analytics.Inputs
     public sealed class AnalyticsInstanceCapacityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The capacity model to use.
+        /// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
         /// </summary>
         [Input("capacityType", required: true)]
         public Input<string> CapacityType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        /// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
         [Input("capacityValue", required: true)]
         public Input<int> CapacityValue { get; set; } = null!;

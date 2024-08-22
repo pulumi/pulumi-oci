@@ -179,6 +179,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return this.customEndpoint;
     }
     /**
+     * Data retention period set for given integration instance
+     * 
+     */
+    @Export(name="dataRetentionPeriod", refs={String.class}, tree="[0]")
+    private Output<String> dataRetentionPeriod;
+
+    /**
+     * @return Data retention period set for given integration instance
+     * 
+     */
+    public Output<String> dataRetentionPeriod() {
+        return this.dataRetentionPeriod;
+    }
+    /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -220,11 +234,33 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
     public Output<Optional<String>> domainId() {
         return Codegen.optional(this.domainId);
     }
+    /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
     @Export(name="enableProcessAutomationTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> enableProcessAutomationTrigger;
 
+    /**
+     * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
     public Output<Optional<Integer>> enableProcessAutomationTrigger() {
         return Codegen.optional(this.enableProcessAutomationTrigger);
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     * 
+     */
+    @Export(name="extendDataRetentionTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> extendDataRetentionTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> extendDataRetentionTrigger() {
+        return Codegen.optional(this.extendDataRetentionTrigger);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`

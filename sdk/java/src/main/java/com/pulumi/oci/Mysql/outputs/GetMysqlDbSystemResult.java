@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemCurrentPlacement;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemDataStorage;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemHeatWaveCluster;
@@ -62,10 +63,15 @@ public final class GetMysqlDbSystemResult {
      */
     private List<GetMysqlDbSystemCurrentPlacement> currentPlacements;
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     private Integer dataStorageSizeInGb;
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    private List<GetMysqlDbSystemDataStorage> dataStorages;
     /**
      * @return Whether to enable monitoring via the Database Management service.
      * 
@@ -265,11 +271,18 @@ public final class GetMysqlDbSystemResult {
         return this.currentPlacements;
     }
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     public Integer dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
+    }
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    public List<GetMysqlDbSystemDataStorage> dataStorages() {
+        return this.dataStorages;
     }
     /**
      * @return Whether to enable monitoring via the Database Management service.
@@ -490,6 +503,7 @@ public final class GetMysqlDbSystemResult {
         private String crashRecovery;
         private List<GetMysqlDbSystemCurrentPlacement> currentPlacements;
         private Integer dataStorageSizeInGb;
+        private List<GetMysqlDbSystemDataStorage> dataStorages;
         private String databaseManagement;
         private String dbSystemId;
         private Map<String,String> definedTags;
@@ -532,6 +546,7 @@ public final class GetMysqlDbSystemResult {
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.currentPlacements = defaults.currentPlacements;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
+    	      this.dataStorages = defaults.dataStorages;
     	      this.databaseManagement = defaults.databaseManagement;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.definedTags = defaults.definedTags;
@@ -651,6 +666,17 @@ public final class GetMysqlDbSystemResult {
             }
             this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dataStorages(List<GetMysqlDbSystemDataStorage> dataStorages) {
+            if (dataStorages == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "dataStorages");
+            }
+            this.dataStorages = dataStorages;
+            return this;
+        }
+        public Builder dataStorages(GetMysqlDbSystemDataStorage... dataStorages) {
+            return dataStorages(List.of(dataStorages));
         }
         @CustomType.Setter
         public Builder databaseManagement(String databaseManagement) {
@@ -917,6 +943,7 @@ public final class GetMysqlDbSystemResult {
             _resultValue.crashRecovery = crashRecovery;
             _resultValue.currentPlacements = currentPlacements;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
+            _resultValue.dataStorages = dataStorages;
             _resultValue.databaseManagement = databaseManagement;
             _resultValue.dbSystemId = dbSystemId;
             _resultValue.definedTags = definedTags;

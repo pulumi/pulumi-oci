@@ -61,9 +61,12 @@ import javax.annotation.Nullable;
  *             .idcsAccessToken(analyticsInstanceIdcsAccessToken)
  *             .licenseType(analyticsInstanceLicenseType)
  *             .name(analyticsInstanceName)
+ *             .adminUser(analyticsInstanceAdminUser)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(analyticsInstanceDescription)
+ *             .domainId(testDomain.id())
  *             .emailNotification(analyticsInstanceEmailNotification)
+ *             .featureBundle(analyticsInstanceFeatureBundle)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .kmsKeyId(testKey.id())
  *             .networkEndpointDetails(AnalyticsInstanceNetworkEndpointDetailsArgs.builder()
@@ -97,6 +100,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Analytics/analyticsInstance:AnalyticsInstance")
 public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
+    /**
+     * user name of the authorized user.
+     * 
+     */
+    @Export(name="adminUser", refs={String.class}, tree="[0]")
+    private Output<String> adminUser;
+
+    /**
+     * @return user name of the authorized user.
+     * 
+     */
+    public Output<String> adminUser() {
+        return this.adminUser;
+    }
     /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      * 
@@ -154,6 +171,20 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
+     * domain id for which the user is authorized.
+     * 
+     */
+    @Export(name="domainId", refs={String.class}, tree="[0]")
+    private Output<String> domainId;
+
+    /**
+     * @return domain id for which the user is authorized.
+     * 
+     */
+    public Output<String> domainId() {
+        return this.domainId;
+    }
+    /**
      * (Updatable) Email address receiving notifications.
      * 
      */
@@ -166,6 +197,20 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> emailNotification() {
         return this.emailNotification;
+    }
+    /**
+     * The feature set of an Analytics instance.
+     * 
+     */
+    @Export(name="featureBundle", refs={String.class}, tree="[0]")
+    private Output<String> featureBundle;
+
+    /**
+     * @return The feature set of an Analytics instance.
+     * 
+     */
+    public Output<String> featureBundle() {
+        return this.featureBundle;
     }
     /**
      * Analytics feature set.
@@ -200,24 +245,24 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsAccessToken", refs={String.class}, tree="[0]")
-    private Output<String> idcsAccessToken;
+    private Output</* @Nullable */ String> idcsAccessToken;
 
     /**
      * @return IDCS access token identifying a stripe and service administrator user.
      * 
      */
-    public Output<String> idcsAccessToken() {
-        return this.idcsAccessToken;
+    public Output<Optional<String>> idcsAccessToken() {
+        return Codegen.optional(this.idcsAccessToken);
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> kmsKeyId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
     public Output<Optional<String>> kmsKeyId() {
@@ -298,6 +343,20 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * System tags for this resource. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`

@@ -37,12 +37,15 @@ namespace Pulumi.Oci.Analytics
     ///         IdcsAccessToken = analyticsInstanceIdcsAccessToken,
     ///         LicenseType = analyticsInstanceLicenseType,
     ///         Name = analyticsInstanceName,
+    ///         AdminUser = analyticsInstanceAdminUser,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         Description = analyticsInstanceDescription,
+    ///         DomainId = testDomain.Id,
     ///         EmailNotification = analyticsInstanceEmailNotification,
+    ///         FeatureBundle = analyticsInstanceFeatureBundle,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -82,6 +85,12 @@ namespace Pulumi.Oci.Analytics
     public partial class AnalyticsInstance : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// user name of the authorized user.
+        /// </summary>
+        [Output("adminUser")]
+        public Output<string> AdminUser { get; private set; } = null!;
+
+        /// <summary>
         /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         /// </summary>
         [Output("capacity")]
@@ -106,10 +115,22 @@ namespace Pulumi.Oci.Analytics
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
+        /// domain id for which the user is authorized.
+        /// </summary>
+        [Output("domainId")]
+        public Output<string> DomainId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Email address receiving notifications.
         /// </summary>
         [Output("emailNotification")]
         public Output<string> EmailNotification { get; private set; } = null!;
+
+        /// <summary>
+        /// The feature set of an Analytics instance.
+        /// </summary>
+        [Output("featureBundle")]
+        public Output<string> FeatureBundle { get; private set; } = null!;
 
         /// <summary>
         /// Analytics feature set.
@@ -127,10 +148,10 @@ namespace Pulumi.Oci.Analytics
         /// IDCS access token identifying a stripe and service administrator user.
         /// </summary>
         [Output("idcsAccessToken")]
-        public Output<string> IdcsAccessToken { get; private set; } = null!;
+        public Output<string?> IdcsAccessToken { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         /// </summary>
         [Output("kmsKeyId")]
         public Output<string?> KmsKeyId { get; private set; } = null!;
@@ -168,6 +189,12 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -232,6 +259,12 @@ namespace Pulumi.Oci.Analytics
     public sealed class AnalyticsInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// user name of the authorized user.
+        /// </summary>
+        [Input("adminUser")]
+        public Input<string>? AdminUser { get; set; }
+
+        /// <summary>
         /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         /// </summary>
         [Input("capacity", required: true)]
@@ -262,10 +295,22 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// domain id for which the user is authorized.
+        /// </summary>
+        [Input("domainId")]
+        public Input<string>? DomainId { get; set; }
+
+        /// <summary>
         /// (Updatable) Email address receiving notifications.
         /// </summary>
         [Input("emailNotification")]
         public Input<string>? EmailNotification { get; set; }
+
+        /// <summary>
+        /// The feature set of an Analytics instance.
+        /// </summary>
+        [Input("featureBundle")]
+        public Input<string>? FeatureBundle { get; set; }
 
         /// <summary>
         /// Analytics feature set.
@@ -285,7 +330,7 @@ namespace Pulumi.Oci.Analytics
             set => _freeformTags = value;
         }
 
-        [Input("idcsAccessToken", required: true)]
+        [Input("idcsAccessToken")]
         private Input<string>? _idcsAccessToken;
 
         /// <summary>
@@ -302,7 +347,7 @@ namespace Pulumi.Oci.Analytics
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
@@ -344,6 +389,12 @@ namespace Pulumi.Oci.Analytics
     public sealed class AnalyticsInstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// user name of the authorized user.
+        /// </summary>
+        [Input("adminUser")]
+        public Input<string>? AdminUser { get; set; }
+
+        /// <summary>
         /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         /// </summary>
         [Input("capacity")]
@@ -374,10 +425,22 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// domain id for which the user is authorized.
+        /// </summary>
+        [Input("domainId")]
+        public Input<string>? DomainId { get; set; }
+
+        /// <summary>
         /// (Updatable) Email address receiving notifications.
         /// </summary>
         [Input("emailNotification")]
         public Input<string>? EmailNotification { get; set; }
+
+        /// <summary>
+        /// The feature set of an Analytics instance.
+        /// </summary>
+        [Input("featureBundle")]
+        public Input<string>? FeatureBundle { get; set; }
 
         /// <summary>
         /// Analytics feature set.
@@ -414,7 +477,7 @@ namespace Pulumi.Oci.Analytics
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
@@ -452,6 +515,18 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`

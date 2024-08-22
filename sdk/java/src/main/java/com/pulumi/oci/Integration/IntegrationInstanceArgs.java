@@ -128,11 +128,34 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.domainId);
     }
 
+    /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
     @Import(name="enableProcessAutomationTrigger")
     private @Nullable Output<Integer> enableProcessAutomationTrigger;
 
+    /**
+     * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
     public Optional<Output<Integer>> enableProcessAutomationTrigger() {
         return Optional.ofNullable(this.enableProcessAutomationTrigger);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     * 
+     */
+    @Import(name="extendDataRetentionTrigger")
+    private @Nullable Output<Integer> extendDataRetentionTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> extendDataRetentionTrigger() {
+        return Optional.ofNullable(this.extendDataRetentionTrigger);
     }
 
     /**
@@ -302,6 +325,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         this.displayName = $.displayName;
         this.domainId = $.domainId;
         this.enableProcessAutomationTrigger = $.enableProcessAutomationTrigger;
+        this.extendDataRetentionTrigger = $.extendDataRetentionTrigger;
         this.freeformTags = $.freeformTags;
         this.idcsAt = $.idcsAt;
         this.integrationInstanceType = $.integrationInstanceType;
@@ -489,13 +513,46 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
             return domainId(Output.of(domainId));
         }
 
+        /**
+         * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableProcessAutomationTrigger(@Nullable Output<Integer> enableProcessAutomationTrigger) {
             $.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
             return this;
         }
 
+        /**
+         * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableProcessAutomationTrigger(Integer enableProcessAutomationTrigger) {
             return enableProcessAutomationTrigger(Output.of(enableProcessAutomationTrigger));
+        }
+
+        /**
+         * @param extendDataRetentionTrigger (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extendDataRetentionTrigger(@Nullable Output<Integer> extendDataRetentionTrigger) {
+            $.extendDataRetentionTrigger = extendDataRetentionTrigger;
+            return this;
+        }
+
+        /**
+         * @param extendDataRetentionTrigger (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extendDataRetentionTrigger(Integer extendDataRetentionTrigger) {
+            return extendDataRetentionTrigger(Output.of(extendDataRetentionTrigger));
         }
 
         /**

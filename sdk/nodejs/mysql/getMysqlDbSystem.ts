@@ -75,9 +75,13 @@ export interface GetMysqlDbSystemResult {
      */
     readonly currentPlacements: outputs.Mysql.GetMysqlDbSystemCurrentPlacement[];
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      */
     readonly dataStorageSizeInGb: number;
+    /**
+     * Data Storage information.
+     */
+    readonly dataStorages: outputs.Mysql.GetMysqlDbSystemDataStorage[];
     /**
      * Whether to enable monitoring via the Database Management service.
      */

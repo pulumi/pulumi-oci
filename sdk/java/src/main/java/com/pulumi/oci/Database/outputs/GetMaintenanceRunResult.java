@@ -35,6 +35,11 @@ public final class GetMaintenanceRunResult {
      */
     private Integer customActionTimeoutInMins;
     /**
+     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    private String databaseSoftwareImageId;
+    /**
      * @return Description of the maintenance run.
      * 
      */
@@ -190,6 +195,13 @@ public final class GetMaintenanceRunResult {
      */
     public Integer customActionTimeoutInMins() {
         return this.customActionTimeoutInMins;
+    }
+    /**
+     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    public String databaseSoftwareImageId() {
+        return this.databaseSoftwareImageId;
     }
     /**
      * @return Description of the maintenance run.
@@ -386,6 +398,7 @@ public final class GetMaintenanceRunResult {
         private Integer currentCustomActionTimeoutInMins;
         private String currentPatchingComponent;
         private Integer customActionTimeoutInMins;
+        private String databaseSoftwareImageId;
         private String description;
         private String displayName;
         private String estimatedComponentPatchingStartTime;
@@ -420,6 +433,7 @@ public final class GetMaintenanceRunResult {
     	      this.currentCustomActionTimeoutInMins = defaults.currentCustomActionTimeoutInMins;
     	      this.currentPatchingComponent = defaults.currentPatchingComponent;
     	      this.customActionTimeoutInMins = defaults.customActionTimeoutInMins;
+    	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.estimatedComponentPatchingStartTime = defaults.estimatedComponentPatchingStartTime;
@@ -479,6 +493,14 @@ public final class GetMaintenanceRunResult {
               throw new MissingRequiredPropertyException("GetMaintenanceRunResult", "customActionTimeoutInMins");
             }
             this.customActionTimeoutInMins = customActionTimeoutInMins;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            if (databaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunResult", "databaseSoftwareImageId");
+            }
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
@@ -706,6 +728,7 @@ public final class GetMaintenanceRunResult {
             _resultValue.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
             _resultValue.currentPatchingComponent = currentPatchingComponent;
             _resultValue.customActionTimeoutInMins = customActionTimeoutInMins;
+            _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;

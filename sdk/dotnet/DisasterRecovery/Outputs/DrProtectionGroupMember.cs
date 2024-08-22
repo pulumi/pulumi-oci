@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrProtectionGroupMember
     {
         /// <summary>
+        /// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        /// </summary>
+        public readonly string? AutonomousDatabaseStandbyTypeForDrDrills;
+        /// <summary>
         /// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrProtectionGroupMemberBackendSetMapping> BackendSetMappings;
@@ -21,6 +25,14 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// (Updatable) A list of operations performed on block volumes used by the compute instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrProtectionGroupMemberBlockVolumeOperation> BlockVolumeOperations;
+        /// <summary>
+        /// (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+        /// </summary>
+        public readonly string? Bucket;
+        /// <summary>
+        /// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        /// </summary>
+        public readonly string? ConnectionStringType;
         /// <summary>
         /// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
         /// </summary>
@@ -74,7 +86,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string MemberType;
         /// <summary>
-        /// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        /// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        /// </summary>
+        public readonly string? Namespace;
+        /// <summary>
+        /// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         /// </summary>
         public readonly string? PasswordVaultSecretId;
         /// <summary>
@@ -88,9 +104,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
         [OutputConstructor]
         private DrProtectionGroupMember(
+            string? autonomousDatabaseStandbyTypeForDrDrills,
+
             ImmutableArray<Outputs.DrProtectionGroupMemberBackendSetMapping> backendSetMappings,
 
             ImmutableArray<Outputs.DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations,
+
+            string? bucket,
+
+            string? connectionStringType,
 
             string? destinationAvailabilityDomain,
 
@@ -118,14 +140,19 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string memberType,
 
+            string? @namespace,
+
             string? passwordVaultSecretId,
 
             ImmutableArray<Outputs.DrProtectionGroupMemberVnicMapping> vnicMapping,
 
             ImmutableArray<Outputs.DrProtectionGroupMemberVnicMapping> vnicMappings)
         {
+            AutonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
             BackendSetMappings = backendSetMappings;
             BlockVolumeOperations = blockVolumeOperations;
+            Bucket = bucket;
+            ConnectionStringType = connectionStringType;
             DestinationAvailabilityDomain = destinationAvailabilityDomain;
             DestinationCapacityReservationId = destinationCapacityReservationId;
             DestinationCompartmentId = destinationCompartmentId;
@@ -139,6 +166,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             IsStartStopEnabled = isStartStopEnabled;
             MemberId = memberId;
             MemberType = memberType;
+            Namespace = @namespace;
             PasswordVaultSecretId = passwordVaultSecretId;
             VnicMapping = vnicMapping;
             VnicMappings = vnicMappings;

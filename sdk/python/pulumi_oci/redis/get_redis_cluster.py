@@ -22,7 +22,10 @@ class GetRedisClusterResult:
     """
     A collection of values returned by getRedisCluster.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, cluster_mode=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+        if cluster_mode and not isinstance(cluster_mode, str):
+            raise TypeError("Expected argument 'cluster_mode' to be a str")
+        pulumi.set(__self__, "cluster_mode", cluster_mode)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -68,6 +71,9 @@ class GetRedisClusterResult:
         if replicas_fqdn and not isinstance(replicas_fqdn, str):
             raise TypeError("Expected argument 'replicas_fqdn' to be a str")
         pulumi.set(__self__, "replicas_fqdn", replicas_fqdn)
+        if shard_count and not isinstance(shard_count, int):
+            raise TypeError("Expected argument 'shard_count' to be a int")
+        pulumi.set(__self__, "shard_count", shard_count)
         if software_version and not isinstance(software_version, str):
             raise TypeError("Expected argument 'software_version' to be a str")
         pulumi.set(__self__, "software_version", software_version)
@@ -88,10 +94,18 @@ class GetRedisClusterResult:
         pulumi.set(__self__, "time_updated", time_updated)
 
     @property
+    @pulumi.getter(name="clusterMode")
+    def cluster_mode(self) -> str:
+        """
+        Specifies whether the cluster is sharded or non-sharded.
+        """
+        return pulumi.get(self, "cluster_mode")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -107,7 +121,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A user-friendly name of a Redis cluster node.
+        A user-friendly name of a cluster node.
         """
         return pulumi.get(self, "display_name")
 
@@ -123,7 +137,7 @@ class GetRedisClusterResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         """
         return pulumi.get(self, "id")
 
@@ -139,7 +153,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="nodeCollections")
     def node_collections(self) -> Sequence['outputs.GetRedisClusterNodeCollectionResult']:
         """
-        The collection of Redis cluster nodes.
+        The collection of  cluster nodes.
         """
         return pulumi.get(self, "node_collections")
 
@@ -147,7 +161,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> int:
         """
-        The number of nodes in the Redis cluster.
+        The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         """
         return pulumi.get(self, "node_count")
 
@@ -155,7 +169,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="nodeMemoryInGbs")
     def node_memory_in_gbs(self) -> float:
         """
-        The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        The amount of memory allocated to the cluster's nodes, in gigabytes.
         """
         return pulumi.get(self, "node_memory_in_gbs")
 
@@ -163,7 +177,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+        A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -171,7 +185,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="primaryEndpointIpAddress")
     def primary_endpoint_ip_address(self) -> str:
         """
-        The private IP address of the API endpoint for the Redis cluster's primary node.
+        The private IP address of the API endpoint for the cluster's primary node.
         """
         return pulumi.get(self, "primary_endpoint_ip_address")
 
@@ -179,7 +193,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="primaryFqdn")
     def primary_fqdn(self) -> str:
         """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         """
         return pulumi.get(self, "primary_fqdn")
 
@@ -192,7 +206,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="replicasEndpointIpAddress")
     def replicas_endpoint_ip_address(self) -> str:
         """
-        The private IP address of the API endpoint for the Redis cluster's replica nodes.
+        The private IP address of the API endpoint for the cluster's replica nodes.
         """
         return pulumi.get(self, "replicas_endpoint_ip_address")
 
@@ -200,15 +214,23 @@ class GetRedisClusterResult:
     @pulumi.getter(name="replicasFqdn")
     def replicas_fqdn(self) -> str:
         """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
         """
         return pulumi.get(self, "replicas_fqdn")
+
+    @property
+    @pulumi.getter(name="shardCount")
+    def shard_count(self) -> int:
+        """
+        The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+        """
+        return pulumi.get(self, "shard_count")
 
     @property
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> str:
         """
-        The Redis version that the cluster is running.
+        The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         """
         return pulumi.get(self, "software_version")
 
@@ -216,7 +238,7 @@ class GetRedisClusterResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Redis cluster.
+        The current state of the cluster.
         """
         return pulumi.get(self, "state")
 
@@ -224,7 +246,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -240,7 +262,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -248,7 +270,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -259,6 +281,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
         if False:
             yield self
         return GetRedisClusterResult(
+            cluster_mode=self.cluster_mode,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -274,6 +297,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
             redis_cluster_id=self.redis_cluster_id,
             replicas_endpoint_ip_address=self.replicas_endpoint_ip_address,
             replicas_fqdn=self.replicas_fqdn,
+            shard_count=self.shard_count,
             software_version=self.software_version,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -287,7 +311,7 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
     """
     This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
 
-    Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+    Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
     ## Example Usage
 
@@ -299,7 +323,7 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
     ```
 
 
-    :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+    :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
     """
     __args__ = dict()
     __args__['redisClusterId'] = redis_cluster_id
@@ -307,6 +331,7 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Redis/getRedisCluster:getRedisCluster', __args__, opts=opts, typ=GetRedisClusterResult).value
 
     return AwaitableGetRedisClusterResult(
+        cluster_mode=pulumi.get(__ret__, 'cluster_mode'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -322,6 +347,7 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
         redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),
         replicas_endpoint_ip_address=pulumi.get(__ret__, 'replicas_endpoint_ip_address'),
         replicas_fqdn=pulumi.get(__ret__, 'replicas_fqdn'),
+        shard_count=pulumi.get(__ret__, 'shard_count'),
         software_version=pulumi.get(__ret__, 'software_version'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -336,7 +362,7 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[str]] = Non
     """
     This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
 
-    Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+    Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
     ## Example Usage
 
@@ -348,6 +374,6 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[str]] = Non
     ```
 
 
-    :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+    :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
     """
     ...

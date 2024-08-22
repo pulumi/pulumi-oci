@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Database
     ///         TargetResourceId = testResource.Id,
     ///         TimeScheduled = maintenanceRunTimeScheduled,
     ///         CompartmentId = compartmentId,
+    ///         DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
     ///         IsDstFileUpdateEnabled = maintenanceRunIsDstFileUpdateEnabled,
     ///         PatchingMode = maintenanceRunPatchingMode,
     ///     });
@@ -74,6 +75,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("customActionTimeoutInMins")]
         public Output<int> CustomActionTimeoutInMins { get; private set; } = null!;
+
+        /// <summary>
+        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// </summary>
+        [Output("databaseSoftwareImageId")]
+        public Output<string> DatabaseSoftwareImageId { get; private set; } = null!;
 
         /// <summary>
         /// Description of the maintenance run.
@@ -142,7 +149,7 @@ namespace Pulumi.Oci.Database
         public Output<string> PatchId { get; private set; } = null!;
 
         /// <summary>
-        /// Patch type, either "QUARTERLY" or "TIMEZONE".
+        /// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         /// </summary>
         [Output("patchType")]
         public Output<string> PatchType { get; private set; } = null!;
@@ -284,13 +291,19 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
+        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// </summary>
+        [Input("databaseSoftwareImageId")]
+        public Input<string>? DatabaseSoftwareImageId { get; set; }
+
+        /// <summary>
         /// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         /// </summary>
         [Input("isDstFileUpdateEnabled")]
         public Input<bool>? IsDstFileUpdateEnabled { get; set; }
 
         /// <summary>
-        /// Patch type, either "QUARTERLY" or "TIMEZONE".
+        /// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         /// </summary>
         [Input("patchType", required: true)]
         public Input<string> PatchType { get; set; } = null!;
@@ -350,6 +363,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("customActionTimeoutInMins")]
         public Input<int>? CustomActionTimeoutInMins { get; set; }
+
+        /// <summary>
+        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// </summary>
+        [Input("databaseSoftwareImageId")]
+        public Input<string>? DatabaseSoftwareImageId { get; set; }
 
         /// <summary>
         /// Description of the maintenance run.
@@ -424,7 +443,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? PatchId { get; set; }
 
         /// <summary>
-        /// Patch type, either "QUARTERLY" or "TIMEZONE".
+        /// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         /// </summary>
         [Input("patchType")]
         public Input<string>? PatchType { get; set; }

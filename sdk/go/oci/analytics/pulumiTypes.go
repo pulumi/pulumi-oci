@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AnalyticsInstanceCapacity struct {
-	// The capacity model to use.
+	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType string `pulumi:"capacityType"`
-	// (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+	// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 	CapacityValue int `pulumi:"capacityValue"`
 }
 
@@ -32,9 +32,9 @@ type AnalyticsInstanceCapacityInput interface {
 }
 
 type AnalyticsInstanceCapacityArgs struct {
-	// The capacity model to use.
+	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType pulumi.StringInput `pulumi:"capacityType"`
-	// (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+	// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 	CapacityValue pulumi.IntInput `pulumi:"capacityValue"`
 }
 
@@ -115,12 +115,12 @@ func (o AnalyticsInstanceCapacityOutput) ToAnalyticsInstanceCapacityPtrOutputWit
 	}).(AnalyticsInstanceCapacityPtrOutput)
 }
 
-// The capacity model to use.
+// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 func (o AnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v AnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 func (o AnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntOutput {
 	return o.ApplyT(func(v AnalyticsInstanceCapacity) int { return v.CapacityValue }).(pulumi.IntOutput)
 }
@@ -149,7 +149,7 @@ func (o AnalyticsInstanceCapacityPtrOutput) Elem() AnalyticsInstanceCapacityOutp
 	}).(AnalyticsInstanceCapacityOutput)
 }
 
-// The capacity model to use.
+// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 func (o AnalyticsInstanceCapacityPtrOutput) CapacityType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceCapacity) *string {
 		if v == nil {
@@ -159,7 +159,7 @@ func (o AnalyticsInstanceCapacityPtrOutput) CapacityType() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 func (o AnalyticsInstanceCapacityPtrOutput) CapacityValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceCapacity) *int {
 		if v == nil {
@@ -750,9 +750,9 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) I
 }
 
 type GetAnalyticsInstanceCapacity struct {
-	// The capacity model to use.
+	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType string `pulumi:"capacityType"`
-	// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 	CapacityValue int `pulumi:"capacityValue"`
 }
 
@@ -768,9 +768,9 @@ type GetAnalyticsInstanceCapacityInput interface {
 }
 
 type GetAnalyticsInstanceCapacityArgs struct {
-	// The capacity model to use.
+	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType pulumi.StringInput `pulumi:"capacityType"`
-	// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 	CapacityValue pulumi.IntInput `pulumi:"capacityValue"`
 }
 
@@ -825,12 +825,12 @@ func (o GetAnalyticsInstanceCapacityOutput) ToGetAnalyticsInstanceCapacityOutput
 	return o
 }
 
-// The capacity model to use.
+// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 func (o GetAnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
-// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 func (o GetAnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceCapacity) int { return v.CapacityValue }).(pulumi.IntOutput)
 }
@@ -1336,6 +1336,7 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput
 }
 
 type GetAnalyticsInstancesAnalyticsInstance struct {
+	AdminUser string `pulumi:"adminUser"`
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacities []GetAnalyticsInstancesAnalyticsInstanceCapacity `pulumi:"capacities"`
 	// The OCID of the compartment.
@@ -1344,8 +1345,12 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the vanity url.
 	Description string `pulumi:"description"`
+	// Identity domain OCID.
+	DomainId string `pulumi:"domainId"`
 	// Email address receiving notifications.
 	EmailNotification string `pulumi:"emailNotification"`
+	// The feature set of an Analytics instance.
+	FeatureBundle string `pulumi:"featureBundle"`
 	// A filter to only return resources matching the feature set. Values are case-insensitive.
 	FeatureSet string `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1353,7 +1358,7 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	// The Virtual Cloud Network OCID.
 	Id              string `pulumi:"id"`
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The license used for the service.
 	LicenseType string `pulumi:"licenseType"`
@@ -1365,6 +1370,8 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	ServiceUrl string `pulumi:"serviceUrl"`
 	// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
+	// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
@@ -1383,6 +1390,7 @@ type GetAnalyticsInstancesAnalyticsInstanceInput interface {
 }
 
 type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
+	AdminUser pulumi.StringInput `pulumi:"adminUser"`
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacities GetAnalyticsInstancesAnalyticsInstanceCapacityArrayInput `pulumi:"capacities"`
 	// The OCID of the compartment.
@@ -1391,8 +1399,12 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the vanity url.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Identity domain OCID.
+	DomainId pulumi.StringInput `pulumi:"domainId"`
 	// Email address receiving notifications.
 	EmailNotification pulumi.StringInput `pulumi:"emailNotification"`
+	// The feature set of an Analytics instance.
+	FeatureBundle pulumi.StringInput `pulumi:"featureBundle"`
 	// A filter to only return resources matching the feature set. Values are case-insensitive.
 	FeatureSet pulumi.StringInput `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1400,7 +1412,7 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	// The Virtual Cloud Network OCID.
 	Id              pulumi.StringInput `pulumi:"id"`
 	IdcsAccessToken pulumi.StringInput `pulumi:"idcsAccessToken"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The license used for the service.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
@@ -1412,6 +1424,8 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	ServiceUrl pulumi.StringInput `pulumi:"serviceUrl"`
 	// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
@@ -1469,6 +1483,10 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) ToGetAnalyticsInstancesAna
 	return o
 }
 
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) AdminUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.AdminUser }).(pulumi.StringOutput)
+}
+
 // Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Capacities() GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) []GetAnalyticsInstancesAnalyticsInstanceCapacity {
@@ -1491,9 +1509,19 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Description() pulumi.Strin
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// Identity domain OCID.
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) DomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.DomainId }).(pulumi.StringOutput)
+}
+
 // Email address receiving notifications.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) EmailNotification() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.EmailNotification }).(pulumi.StringOutput)
+}
+
+// The feature set of an Analytics instance.
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) FeatureBundle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.FeatureBundle }).(pulumi.StringOutput)
 }
 
 // A filter to only return resources matching the feature set. Values are case-insensitive.
@@ -1515,7 +1543,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) IdcsAccessToken() pulumi.S
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
@@ -1545,6 +1573,11 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) ServiceUrl() pulumi.String
 // A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -1580,7 +1613,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceArrayOutput) Index(i pulumi.IntInp
 type GetAnalyticsInstancesAnalyticsInstanceCapacity struct {
 	// A filter to only return resources matching the capacity type enum. Values are case-insensitive.
 	CapacityType string `pulumi:"capacityType"`
-	// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 	CapacityValue int `pulumi:"capacityValue"`
 }
 
@@ -1598,7 +1631,7 @@ type GetAnalyticsInstancesAnalyticsInstanceCapacityInput interface {
 type GetAnalyticsInstancesAnalyticsInstanceCapacityArgs struct {
 	// A filter to only return resources matching the capacity type enum. Values are case-insensitive.
 	CapacityType pulumi.StringInput `pulumi:"capacityType"`
-	// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 	CapacityValue pulumi.IntInput `pulumi:"capacityValue"`
 }
 
@@ -1658,7 +1691,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) CapacityType() pul
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
-// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceCapacity) int { return v.CapacityValue }).(pulumi.IntOutput)
 }

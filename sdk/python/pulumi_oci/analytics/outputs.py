@@ -53,8 +53,8 @@ class AnalyticsInstanceCapacity(dict):
                  capacity_type: str,
                  capacity_value: int):
         """
-        :param str capacity_type: The capacity model to use.
-        :param int capacity_value: (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        :param str capacity_type: The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
+        :param int capacity_value: (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
@@ -63,7 +63,7 @@ class AnalyticsInstanceCapacity(dict):
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> str:
         """
-        The capacity model to use.
+        The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
         """
         return pulumi.get(self, "capacity_type")
 
@@ -71,7 +71,7 @@ class AnalyticsInstanceCapacity(dict):
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> int:
         """
-        (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         """
         return pulumi.get(self, "capacity_value")
 
@@ -356,8 +356,8 @@ class GetAnalyticsInstanceCapacityResult(dict):
                  capacity_type: str,
                  capacity_value: int):
         """
-        :param str capacity_type: The capacity model to use.
-        :param int capacity_value: The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        :param str capacity_type: The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
+        :param int capacity_value: The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
@@ -366,7 +366,7 @@ class GetAnalyticsInstanceCapacityResult(dict):
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> str:
         """
-        The capacity model to use.
+        The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
         """
         return pulumi.get(self, "capacity_type")
 
@@ -374,7 +374,7 @@ class GetAnalyticsInstanceCapacityResult(dict):
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> int:
         """
-        The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         """
         return pulumi.get(self, "capacity_value")
 
@@ -564,11 +564,14 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(dict):
 @pulumi.output_type
 class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     def __init__(__self__, *,
+                 admin_user: str,
                  capacities: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceCapacityResult'],
                  compartment_id: str,
                  defined_tags: Mapping[str, str],
                  description: str,
+                 domain_id: str,
                  email_notification: str,
+                 feature_bundle: str,
                  feature_set: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
@@ -579,6 +582,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
                  network_endpoint_details: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult'],
                  service_url: str,
                  state: str,
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
@@ -586,24 +590,30 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description of the vanity url.
+        :param str domain_id: Identity domain OCID.
         :param str email_notification: Email address receiving notifications.
+        :param str feature_bundle: The feature set of an Analytics instance.
         :param str feature_set: A filter to only return resources matching the feature set. Values are case-insensitive.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The Virtual Cloud Network OCID.
-        :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        :param str kms_key_id: OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         :param str license_type: The license used for the service.
         :param str name: A filter to return only resources that match the given name exactly.
         :param Sequence['GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param str service_url: URL of the Analytics service.
         :param str state: A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, str] system_tags: System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
         :param str time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
+        pulumi.set(__self__, "admin_user", admin_user)
         pulumi.set(__self__, "capacities", capacities)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "domain_id", domain_id)
         pulumi.set(__self__, "email_notification", email_notification)
+        pulumi.set(__self__, "feature_bundle", feature_bundle)
         pulumi.set(__self__, "feature_set", feature_set)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -614,8 +624,14 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         pulumi.set(__self__, "service_url", service_url)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="adminUser")
+    def admin_user(self) -> str:
+        return pulumi.get(self, "admin_user")
 
     @property
     @pulumi.getter
@@ -650,12 +666,28 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> str:
+        """
+        Identity domain OCID.
+        """
+        return pulumi.get(self, "domain_id")
+
+    @property
     @pulumi.getter(name="emailNotification")
     def email_notification(self) -> str:
         """
         Email address receiving notifications.
         """
         return pulumi.get(self, "email_notification")
+
+    @property
+    @pulumi.getter(name="featureBundle")
+    def feature_bundle(self) -> str:
+        """
+        The feature set of an Analytics instance.
+        """
+        return pulumi.get(self, "feature_bundle")
 
     @property
     @pulumi.getter(name="featureSet")
@@ -690,7 +722,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -735,6 +767,14 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -758,7 +798,7 @@ class GetAnalyticsInstancesAnalyticsInstanceCapacityResult(dict):
                  capacity_value: int):
         """
         :param str capacity_type: A filter to only return resources matching the capacity type enum. Values are case-insensitive.
-        :param int capacity_value: The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        :param int capacity_value: The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
@@ -775,7 +815,7 @@ class GetAnalyticsInstancesAnalyticsInstanceCapacityResult(dict):
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> int:
         """
-        The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         """
         return pulumi.get(self, "capacity_value")
 

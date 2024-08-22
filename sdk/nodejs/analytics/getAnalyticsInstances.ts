@@ -75,7 +75,7 @@ export interface GetAnalyticsInstancesResult {
      */
     readonly analyticsInstances: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstance[];
     /**
-     * The capacity model to use.
+     * The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
      */
     readonly capacityType?: string;
     /**

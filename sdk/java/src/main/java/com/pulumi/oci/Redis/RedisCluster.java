@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
  * 
- * Creates a new Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+ * Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  * 
  * ## Example Usage
  * 
@@ -55,9 +55,11 @@ import javax.annotation.Nullable;
  *             .nodeMemoryInGbs(redisClusterNodeMemoryInGbs)
  *             .softwareVersion(redisClusterSoftwareVersion)
  *             .subnetId(testSubnet.id())
+ *             .clusterMode(redisClusterClusterMode)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .nsgIds(redisClusterNsgIds)
+ *             .shardCount(redisClusterShardCount)
  *             .build());
  * 
  *     }
@@ -78,14 +80,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Redis/redisCluster:RedisCluster")
 public class RedisCluster extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * Specifies whether the cluster is sharded or non-sharded.
+     * 
+     */
+    @Export(name="clusterMode", refs={String.class}, tree="[0]")
+    private Output<String> clusterMode;
+
+    /**
+     * @return Specifies whether the cluster is sharded or non-sharded.
+     * 
+     */
+    public Output<String> clusterMode() {
+        return this.clusterMode;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
      */
     public Output<String> compartmentId() {
@@ -148,147 +164,161 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The collection of Redis cluster nodes.
+     * The collection of  cluster nodes.
      * 
      */
     @Export(name="nodeCollections", refs={List.class,RedisClusterNodeCollection.class}, tree="[0,1]")
     private Output<List<RedisClusterNodeCollection>> nodeCollections;
 
     /**
-     * @return The collection of Redis cluster nodes.
+     * @return The collection of  cluster nodes.
      * 
      */
     public Output<List<RedisClusterNodeCollection>> nodeCollections() {
         return this.nodeCollections;
     }
     /**
-     * (Updatable) The number of nodes in the Redis cluster.
+     * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * 
      */
     @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeCount;
 
     /**
-     * @return (Updatable) The number of nodes in the Redis cluster.
+     * @return (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * 
      */
     public Output<Integer> nodeCount() {
         return this.nodeCount;
     }
     /**
-     * (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+     * (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
      * 
      */
     @Export(name="nodeMemoryInGbs", refs={Double.class}, tree="[0]")
     private Output<Double> nodeMemoryInGbs;
 
     /**
-     * @return (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+     * @return (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
      * 
      */
     public Output<Double> nodeMemoryInGbs() {
         return this.nodeMemoryInGbs;
     }
     /**
-     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * @return (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      * 
      */
     public Output<List<String>> nsgIds() {
         return this.nsgIds;
     }
     /**
-     * The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
+     * The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     @Export(name="primaryEndpointIpAddress", refs={String.class}, tree="[0]")
     private Output<String> primaryEndpointIpAddress;
 
     /**
-     * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
+     * @return The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     public Output<String> primaryEndpointIpAddress() {
         return this.primaryEndpointIpAddress;
     }
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     @Export(name="primaryFqdn", refs={String.class}, tree="[0]")
     private Output<String> primaryFqdn;
 
     /**
-     * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
+     * @return The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     public Output<String> primaryFqdn() {
         return this.primaryFqdn;
     }
     /**
-     * The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * The private IP address of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     @Export(name="replicasEndpointIpAddress", refs={String.class}, tree="[0]")
     private Output<String> replicasEndpointIpAddress;
 
     /**
-     * @return The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * @return The private IP address of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     public Output<String> replicasEndpointIpAddress() {
         return this.replicasEndpointIpAddress;
     }
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     @Export(name="replicasFqdn", refs={String.class}, tree="[0]")
     private Output<String> replicasFqdn;
 
     /**
-     * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * @return The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     public Output<String> replicasFqdn() {
         return this.replicasFqdn;
     }
     /**
-     * The Redis version that the cluster is running.
+     * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     * 
+     */
+    @Export(name="shardCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> shardCount;
+
+    /**
+     * @return (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     * 
+     */
+    public Output<Integer> shardCount() {
+        return this.shardCount;
+    }
+    /**
+     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     @Export(name="softwareVersion", refs={String.class}, tree="[0]")
     private Output<String> softwareVersion;
 
     /**
-     * @return The Redis version that the cluster is running.
+     * @return The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     public Output<String> softwareVersion() {
         return this.softwareVersion;
     }
     /**
-     * The current state of the Redis cluster.
+     * The current state of the cluster.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Redis cluster.
+     * @return The current state of the cluster.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -298,7 +328,7 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
     private Output<String> subnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -322,28 +352,28 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * @return The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * @return The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Output<String> timeUpdated() {

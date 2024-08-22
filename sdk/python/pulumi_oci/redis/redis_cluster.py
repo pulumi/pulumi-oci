@@ -22,24 +22,28 @@ class RedisClusterArgs:
                  node_memory_in_gbs: pulumi.Input[float],
                  software_version: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
+                 cluster_mode: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 shard_count: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a RedisCluster resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[int] node_count: (Updatable) The number of nodes in the Redis cluster.
-        :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param pulumi.Input[str] software_version: The Redis version that the cluster is running.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+        :param pulumi.Input[int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
+        :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
+        :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param pulumi.Input[int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -47,18 +51,22 @@ class RedisClusterArgs:
         pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
         pulumi.set(__self__, "software_version", software_version)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if cluster_mode is not None:
+            pulumi.set(__self__, "cluster_mode", cluster_mode)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if shard_count is not None:
+            pulumi.set(__self__, "shard_count", shard_count)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -82,7 +90,7 @@ class RedisClusterArgs:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Input[int]:
         """
-        (Updatable) The number of nodes in the Redis cluster.
+        (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         """
         return pulumi.get(self, "node_count")
 
@@ -94,7 +102,7 @@ class RedisClusterArgs:
     @pulumi.getter(name="nodeMemoryInGbs")
     def node_memory_in_gbs(self) -> pulumi.Input[float]:
         """
-        (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         """
         return pulumi.get(self, "node_memory_in_gbs")
 
@@ -106,7 +114,7 @@ class RedisClusterArgs:
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> pulumi.Input[str]:
         """
-        The Redis version that the cluster is running.
+        The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         """
         return pulumi.get(self, "software_version")
 
@@ -118,7 +126,7 @@ class RedisClusterArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 
 
         ** IMPORTANT **
@@ -129,6 +137,18 @@ class RedisClusterArgs:
     @subnet_id.setter
     def subnet_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="clusterMode")
+    def cluster_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies whether the cluster is sharded or non-sharded.
+        """
+        return pulumi.get(self, "cluster_mode")
+
+    @cluster_mode.setter
+    def cluster_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_mode", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -158,7 +178,7 @@ class RedisClusterArgs:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -166,10 +186,23 @@ class RedisClusterArgs:
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
+    @property
+    @pulumi.getter(name="shardCount")
+    def shard_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+        """
+        return pulumi.get(self, "shard_count")
+
+    @shard_count.setter
+    def shard_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "shard_count", value)
+
 
 @pulumi.input_type
 class _RedisClusterState:
     def __init__(__self__, *,
+                 cluster_mode: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -183,6 +216,7 @@ class _RedisClusterState:
                  primary_fqdn: Optional[pulumi.Input[str]] = None,
                  replicas_endpoint_ip_address: Optional[pulumi.Input[str]] = None,
                  replicas_fqdn: Optional[pulumi.Input[str]] = None,
+                 shard_count: Optional[pulumi.Input[int]] = None,
                  software_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -191,30 +225,34 @@ class _RedisClusterState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering RedisCluster resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        :param pulumi.Input[str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-        :param pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionArgs']]] node_collections: The collection of Redis cluster nodes.
-        :param pulumi.Input[int] node_count: (Updatable) The number of nodes in the Redis cluster.
-        :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
-        :param pulumi.Input[str] primary_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's primary node.
-        :param pulumi.Input[str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-        :param pulumi.Input[str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's replica nodes.
-        :param pulumi.Input[str] replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-        :param pulumi.Input[str] software_version: The Redis version that the cluster is running.
-        :param pulumi.Input[str] state: The current state of the Redis cluster.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+        :param pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionArgs']]] node_collections: The collection of  cluster nodes.
+        :param pulumi.Input[int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
+        :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param pulumi.Input[str] primary_endpoint_ip_address: The private IP address of the API endpoint for the cluster's primary node.
+        :param pulumi.Input[str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
+        :param pulumi.Input[str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
+        :param pulumi.Input[str] replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
+        :param pulumi.Input[int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+        :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param pulumi.Input[str] state: The current state of the cluster.
+        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param pulumi.Input[str] time_created: The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param pulumi.Input[str] time_updated: The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
+        if cluster_mode is not None:
+            pulumi.set(__self__, "cluster_mode", cluster_mode)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -241,6 +279,8 @@ class _RedisClusterState:
             pulumi.set(__self__, "replicas_endpoint_ip_address", replicas_endpoint_ip_address)
         if replicas_fqdn is not None:
             pulumi.set(__self__, "replicas_fqdn", replicas_fqdn)
+        if shard_count is not None:
+            pulumi.set(__self__, "shard_count", shard_count)
         if software_version is not None:
             pulumi.set(__self__, "software_version", software_version)
         if state is not None:
@@ -255,10 +295,22 @@ class _RedisClusterState:
             pulumi.set(__self__, "time_updated", time_updated)
 
     @property
+    @pulumi.getter(name="clusterMode")
+    def cluster_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies whether the cluster is sharded or non-sharded.
+        """
+        return pulumi.get(self, "cluster_mode")
+
+    @cluster_mode.setter
+    def cluster_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_mode", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -318,7 +370,7 @@ class _RedisClusterState:
     @pulumi.getter(name="nodeCollections")
     def node_collections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionArgs']]]]:
         """
-        The collection of Redis cluster nodes.
+        The collection of  cluster nodes.
         """
         return pulumi.get(self, "node_collections")
 
@@ -330,7 +382,7 @@ class _RedisClusterState:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The number of nodes in the Redis cluster.
+        (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         """
         return pulumi.get(self, "node_count")
 
@@ -342,7 +394,7 @@ class _RedisClusterState:
     @pulumi.getter(name="nodeMemoryInGbs")
     def node_memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         """
         return pulumi.get(self, "node_memory_in_gbs")
 
@@ -354,7 +406,7 @@ class _RedisClusterState:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -366,7 +418,7 @@ class _RedisClusterState:
     @pulumi.getter(name="primaryEndpointIpAddress")
     def primary_endpoint_ip_address(self) -> Optional[pulumi.Input[str]]:
         """
-        The private IP address of the API endpoint for the Redis cluster's primary node.
+        The private IP address of the API endpoint for the cluster's primary node.
         """
         return pulumi.get(self, "primary_endpoint_ip_address")
 
@@ -378,7 +430,7 @@ class _RedisClusterState:
     @pulumi.getter(name="primaryFqdn")
     def primary_fqdn(self) -> Optional[pulumi.Input[str]]:
         """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         """
         return pulumi.get(self, "primary_fqdn")
 
@@ -390,7 +442,7 @@ class _RedisClusterState:
     @pulumi.getter(name="replicasEndpointIpAddress")
     def replicas_endpoint_ip_address(self) -> Optional[pulumi.Input[str]]:
         """
-        The private IP address of the API endpoint for the Redis cluster's replica nodes.
+        The private IP address of the API endpoint for the cluster's replica nodes.
         """
         return pulumi.get(self, "replicas_endpoint_ip_address")
 
@@ -402,7 +454,7 @@ class _RedisClusterState:
     @pulumi.getter(name="replicasFqdn")
     def replicas_fqdn(self) -> Optional[pulumi.Input[str]]:
         """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
         """
         return pulumi.get(self, "replicas_fqdn")
 
@@ -411,10 +463,22 @@ class _RedisClusterState:
         pulumi.set(self, "replicas_fqdn", value)
 
     @property
+    @pulumi.getter(name="shardCount")
+    def shard_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+        """
+        return pulumi.get(self, "shard_count")
+
+    @shard_count.setter
+    def shard_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "shard_count", value)
+
+    @property
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> Optional[pulumi.Input[str]]:
         """
-        The Redis version that the cluster is running.
+        The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         """
         return pulumi.get(self, "software_version")
 
@@ -426,7 +490,7 @@ class _RedisClusterState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the Redis cluster.
+        The current state of the cluster.
         """
         return pulumi.get(self, "state")
 
@@ -438,7 +502,7 @@ class _RedisClusterState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 
 
         ** IMPORTANT **
@@ -466,7 +530,7 @@ class _RedisClusterState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -478,7 +542,7 @@ class _RedisClusterState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -492,6 +556,7 @@ class RedisCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cluster_mode: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -499,13 +564,14 @@ class RedisCluster(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[int]] = None,
                  node_memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 shard_count: Optional[pulumi.Input[int]] = None,
                  software_version: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
 
-        Creates a new Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
         ## Example Usage
 
@@ -520,13 +586,15 @@ class RedisCluster(pulumi.CustomResource):
             node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
             software_version=redis_cluster_software_version,
             subnet_id=test_subnet["id"],
+            cluster_mode=redis_cluster_cluster_mode,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=redis_cluster_nsg_ids)
+            nsg_ids=redis_cluster_nsg_ids,
+            shard_count=redis_cluster_shard_count)
         ```
 
         ## Import
@@ -539,15 +607,17 @@ class RedisCluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        :param pulumi.Input[str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] node_count: (Updatable) The number of nodes in the Redis cluster.
-        :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
-        :param pulumi.Input[str] software_version: The Redis version that the cluster is running.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+        :param pulumi.Input[int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
+        :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param pulumi.Input[int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+        :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
                
                ** IMPORTANT **
@@ -562,7 +632,7 @@ class RedisCluster(pulumi.CustomResource):
         """
         This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
 
-        Creates a new Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
         ## Example Usage
 
@@ -577,13 +647,15 @@ class RedisCluster(pulumi.CustomResource):
             node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
             software_version=redis_cluster_software_version,
             subnet_id=test_subnet["id"],
+            cluster_mode=redis_cluster_cluster_mode,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=redis_cluster_nsg_ids)
+            nsg_ids=redis_cluster_nsg_ids,
+            shard_count=redis_cluster_shard_count)
         ```
 
         ## Import
@@ -609,6 +681,7 @@ class RedisCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cluster_mode: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -616,6 +689,7 @@ class RedisCluster(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[int]] = None,
                  node_memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 shard_count: Optional[pulumi.Input[int]] = None,
                  software_version: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -627,6 +701,7 @@ class RedisCluster(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = RedisClusterArgs.__new__(RedisClusterArgs)
 
+            __props__.__dict__["cluster_mode"] = cluster_mode
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -642,6 +717,7 @@ class RedisCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'node_memory_in_gbs'")
             __props__.__dict__["node_memory_in_gbs"] = node_memory_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids
+            __props__.__dict__["shard_count"] = shard_count
             if software_version is None and not opts.urn:
                 raise TypeError("Missing required property 'software_version'")
             __props__.__dict__["software_version"] = software_version
@@ -668,6 +744,7 @@ class RedisCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_mode: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -681,6 +758,7 @@ class RedisCluster(pulumi.CustomResource):
             primary_fqdn: Optional[pulumi.Input[str]] = None,
             replicas_endpoint_ip_address: Optional[pulumi.Input[str]] = None,
             replicas_fqdn: Optional[pulumi.Input[str]] = None,
+            shard_count: Optional[pulumi.Input[int]] = None,
             software_version: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
@@ -694,34 +772,37 @@ class RedisCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        :param pulumi.Input[str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RedisClusterNodeCollectionArgs', 'RedisClusterNodeCollectionArgsDict']]]] node_collections: The collection of Redis cluster nodes.
-        :param pulumi.Input[int] node_count: (Updatable) The number of nodes in the Redis cluster.
-        :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
-        :param pulumi.Input[str] primary_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's primary node.
-        :param pulumi.Input[str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-        :param pulumi.Input[str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's replica nodes.
-        :param pulumi.Input[str] replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-        :param pulumi.Input[str] software_version: The Redis version that the cluster is running.
-        :param pulumi.Input[str] state: The current state of the Redis cluster.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RedisClusterNodeCollectionArgs', 'RedisClusterNodeCollectionArgsDict']]]] node_collections: The collection of  cluster nodes.
+        :param pulumi.Input[int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
+        :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param pulumi.Input[str] primary_endpoint_ip_address: The private IP address of the API endpoint for the cluster's primary node.
+        :param pulumi.Input[str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
+        :param pulumi.Input[str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
+        :param pulumi.Input[str] replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
+        :param pulumi.Input[int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+        :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param pulumi.Input[str] state: The current state of the cluster.
+        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param pulumi.Input[str] time_created: The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param pulumi.Input[str] time_updated: The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _RedisClusterState.__new__(_RedisClusterState)
 
+        __props__.__dict__["cluster_mode"] = cluster_mode
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -735,6 +816,7 @@ class RedisCluster(pulumi.CustomResource):
         __props__.__dict__["primary_fqdn"] = primary_fqdn
         __props__.__dict__["replicas_endpoint_ip_address"] = replicas_endpoint_ip_address
         __props__.__dict__["replicas_fqdn"] = replicas_fqdn
+        __props__.__dict__["shard_count"] = shard_count
         __props__.__dict__["software_version"] = software_version
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
@@ -744,10 +826,18 @@ class RedisCluster(pulumi.CustomResource):
         return RedisCluster(resource_name, opts=opts, __props__=__props__)
 
     @property
+    @pulumi.getter(name="clusterMode")
+    def cluster_mode(self) -> pulumi.Output[str]:
+        """
+        Specifies whether the cluster is sharded or non-sharded.
+        """
+        return pulumi.get(self, "cluster_mode")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -787,7 +877,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="nodeCollections")
     def node_collections(self) -> pulumi.Output[Sequence['outputs.RedisClusterNodeCollection']]:
         """
-        The collection of Redis cluster nodes.
+        The collection of  cluster nodes.
         """
         return pulumi.get(self, "node_collections")
 
@@ -795,7 +885,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Output[int]:
         """
-        (Updatable) The number of nodes in the Redis cluster.
+        (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         """
         return pulumi.get(self, "node_count")
 
@@ -803,7 +893,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="nodeMemoryInGbs")
     def node_memory_in_gbs(self) -> pulumi.Output[float]:
         """
-        (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         """
         return pulumi.get(self, "node_memory_in_gbs")
 
@@ -811,7 +901,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -819,7 +909,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="primaryEndpointIpAddress")
     def primary_endpoint_ip_address(self) -> pulumi.Output[str]:
         """
-        The private IP address of the API endpoint for the Redis cluster's primary node.
+        The private IP address of the API endpoint for the cluster's primary node.
         """
         return pulumi.get(self, "primary_endpoint_ip_address")
 
@@ -827,7 +917,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="primaryFqdn")
     def primary_fqdn(self) -> pulumi.Output[str]:
         """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         """
         return pulumi.get(self, "primary_fqdn")
 
@@ -835,7 +925,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="replicasEndpointIpAddress")
     def replicas_endpoint_ip_address(self) -> pulumi.Output[str]:
         """
-        The private IP address of the API endpoint for the Redis cluster's replica nodes.
+        The private IP address of the API endpoint for the cluster's replica nodes.
         """
         return pulumi.get(self, "replicas_endpoint_ip_address")
 
@@ -843,15 +933,23 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="replicasFqdn")
     def replicas_fqdn(self) -> pulumi.Output[str]:
         """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
         """
         return pulumi.get(self, "replicas_fqdn")
+
+    @property
+    @pulumi.getter(name="shardCount")
+    def shard_count(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+        """
+        return pulumi.get(self, "shard_count")
 
     @property
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> pulumi.Output[str]:
         """
-        The Redis version that the cluster is running.
+        The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         """
         return pulumi.get(self, "software_version")
 
@@ -859,7 +957,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the Redis cluster.
+        The current state of the cluster.
         """
         return pulumi.get(self, "state")
 
@@ -867,7 +965,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 
 
         ** IMPORTANT **
@@ -887,7 +985,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -895,7 +993,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 

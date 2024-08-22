@@ -19,12 +19,15 @@ class AnalyticsInstanceArgs:
                  capacity: pulumi.Input['AnalyticsInstanceCapacityArgs'],
                  compartment_id: pulumi.Input[str],
                  feature_set: pulumi.Input[str],
-                 idcs_access_token: pulumi.Input[str],
                  license_type: pulumi.Input[str],
+                 admin_user: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 domain_id: Optional[pulumi.Input[str]] = None,
                  email_notification: Optional[pulumi.Input[str]] = None,
+                 feature_bundle: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 idcs_access_token: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
@@ -34,13 +37,16 @@ class AnalyticsInstanceArgs:
         :param pulumi.Input['AnalyticsInstanceCapacityArgs'] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[str] feature_set: Analytics feature set.
-        :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
+        :param pulumi.Input[str] admin_user: user name of the authorized user.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Optional description.
+        :param pulumi.Input[str] domain_id: domain id for which the user is authorized.
         :param pulumi.Input[str] email_notification: (Updatable) Email address receiving notifications.
+        :param pulumi.Input[str] feature_bundle: The feature set of an Analytics instance.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
+        :param pulumi.Input[str] kms_key_id: OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
@@ -52,16 +58,23 @@ class AnalyticsInstanceArgs:
         pulumi.set(__self__, "capacity", capacity)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "feature_set", feature_set)
-        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
         pulumi.set(__self__, "license_type", license_type)
+        if admin_user is not None:
+            pulumi.set(__self__, "admin_user", admin_user)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if domain_id is not None:
+            pulumi.set(__self__, "domain_id", domain_id)
         if email_notification is not None:
             pulumi.set(__self__, "email_notification", email_notification)
+        if feature_bundle is not None:
+            pulumi.set(__self__, "feature_bundle", feature_bundle)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if idcs_access_token is not None:
+            pulumi.set(__self__, "idcs_access_token", idcs_access_token)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if name is not None:
@@ -108,18 +121,6 @@ class AnalyticsInstanceArgs:
         pulumi.set(self, "feature_set", value)
 
     @property
-    @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> pulumi.Input[str]:
-        """
-        IDCS access token identifying a stripe and service administrator user.
-        """
-        return pulumi.get(self, "idcs_access_token")
-
-    @idcs_access_token.setter
-    def idcs_access_token(self, value: pulumi.Input[str]):
-        pulumi.set(self, "idcs_access_token", value)
-
-    @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> pulumi.Input[str]:
         """
@@ -130,6 +131,18 @@ class AnalyticsInstanceArgs:
     @license_type.setter
     def license_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "license_type", value)
+
+    @property
+    @pulumi.getter(name="adminUser")
+    def admin_user(self) -> Optional[pulumi.Input[str]]:
+        """
+        user name of the authorized user.
+        """
+        return pulumi.get(self, "admin_user")
+
+    @admin_user.setter
+    def admin_user(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "admin_user", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -156,6 +169,18 @@ class AnalyticsInstanceArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        domain id for which the user is authorized.
+        """
+        return pulumi.get(self, "domain_id")
+
+    @domain_id.setter
+    def domain_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_id", value)
+
+    @property
     @pulumi.getter(name="emailNotification")
     def email_notification(self) -> Optional[pulumi.Input[str]]:
         """
@@ -166,6 +191,18 @@ class AnalyticsInstanceArgs:
     @email_notification.setter
     def email_notification(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "email_notification", value)
+
+    @property
+    @pulumi.getter(name="featureBundle")
+    def feature_bundle(self) -> Optional[pulumi.Input[str]]:
+        """
+        The feature set of an Analytics instance.
+        """
+        return pulumi.get(self, "feature_bundle")
+
+    @feature_bundle.setter
+    def feature_bundle(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "feature_bundle", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -180,10 +217,22 @@ class AnalyticsInstanceArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="idcsAccessToken")
+    def idcs_access_token(self) -> Optional[pulumi.Input[str]]:
+        """
+        IDCS access token identifying a stripe and service administrator user.
+        """
+        return pulumi.get(self, "idcs_access_token")
+
+    @idcs_access_token.setter
+    def idcs_access_token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "idcs_access_token", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -235,11 +284,14 @@ class AnalyticsInstanceArgs:
 @pulumi.input_type
 class _AnalyticsInstanceState:
     def __init__(__self__, *,
+                 admin_user: Optional[pulumi.Input[str]] = None,
                  capacity: Optional[pulumi.Input['AnalyticsInstanceCapacityArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 domain_id: Optional[pulumi.Input[str]] = None,
                  email_notification: Optional[pulumi.Input[str]] = None,
+                 feature_bundle: Optional[pulumi.Input[str]] = None,
                  feature_set: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
@@ -249,19 +301,23 @@ class _AnalyticsInstanceState:
                  network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
                  service_url: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstance resources.
+        :param pulumi.Input[str] admin_user: user name of the authorized user.
         :param pulumi.Input['AnalyticsInstanceCapacityArgs'] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Optional description.
+        :param pulumi.Input[str] domain_id: domain id for which the user is authorized.
         :param pulumi.Input[str] email_notification: (Updatable) Email address receiving notifications.
+        :param pulumi.Input[str] feature_bundle: The feature set of an Analytics instance.
         :param pulumi.Input[str] feature_set: Analytics feature set.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        :param pulumi.Input[str] kms_key_id: OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
@@ -271,9 +327,12 @@ class _AnalyticsInstanceState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
+        if admin_user is not None:
+            pulumi.set(__self__, "admin_user", admin_user)
         if capacity is not None:
             pulumi.set(__self__, "capacity", capacity)
         if compartment_id is not None:
@@ -282,8 +341,12 @@ class _AnalyticsInstanceState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if domain_id is not None:
+            pulumi.set(__self__, "domain_id", domain_id)
         if email_notification is not None:
             pulumi.set(__self__, "email_notification", email_notification)
+        if feature_bundle is not None:
+            pulumi.set(__self__, "feature_bundle", feature_bundle)
         if feature_set is not None:
             pulumi.set(__self__, "feature_set", feature_set)
         if freeform_tags is not None:
@@ -302,10 +365,24 @@ class _AnalyticsInstanceState:
             pulumi.set(__self__, "service_url", service_url)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="adminUser")
+    def admin_user(self) -> Optional[pulumi.Input[str]]:
+        """
+        user name of the authorized user.
+        """
+        return pulumi.get(self, "admin_user")
+
+    @admin_user.setter
+    def admin_user(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "admin_user", value)
 
     @property
     @pulumi.getter
@@ -356,6 +433,18 @@ class _AnalyticsInstanceState:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        domain id for which the user is authorized.
+        """
+        return pulumi.get(self, "domain_id")
+
+    @domain_id.setter
+    def domain_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_id", value)
+
+    @property
     @pulumi.getter(name="emailNotification")
     def email_notification(self) -> Optional[pulumi.Input[str]]:
         """
@@ -366,6 +455,18 @@ class _AnalyticsInstanceState:
     @email_notification.setter
     def email_notification(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "email_notification", value)
+
+    @property
+    @pulumi.getter(name="featureBundle")
+    def feature_bundle(self) -> Optional[pulumi.Input[str]]:
+        """
+        The feature set of an Analytics instance.
+        """
+        return pulumi.get(self, "feature_bundle")
+
+    @feature_bundle.setter
+    def feature_bundle(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "feature_bundle", value)
 
     @property
     @pulumi.getter(name="featureSet")
@@ -407,7 +508,7 @@ class _AnalyticsInstanceState:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -480,6 +581,18 @@ class _AnalyticsInstanceState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -509,11 +622,14 @@ class AnalyticsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 admin_user: Optional[pulumi.Input[str]] = None,
                  capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 domain_id: Optional[pulumi.Input[str]] = None,
                  email_notification: Optional[pulumi.Input[str]] = None,
+                 feature_bundle: Optional[pulumi.Input[str]] = None,
                  feature_set: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
@@ -545,11 +661,14 @@ class AnalyticsInstance(pulumi.CustomResource):
             idcs_access_token=analytics_instance_idcs_access_token,
             license_type=analytics_instance_license_type,
             name=analytics_instance_name,
+            admin_user=analytics_instance_admin_user,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             description=analytics_instance_description,
+            domain_id=test_domain["id"],
             email_notification=analytics_instance_email_notification,
+            feature_bundle=analytics_instance_feature_bundle,
             freeform_tags={
                 "Department": "Finance",
             },
@@ -578,15 +697,18 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] admin_user: user name of the authorized user.
         :param pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Optional description.
+        :param pulumi.Input[str] domain_id: domain id for which the user is authorized.
         :param pulumi.Input[str] email_notification: (Updatable) Email address receiving notifications.
+        :param pulumi.Input[str] feature_bundle: The feature set of an Analytics instance.
         :param pulumi.Input[str] feature_set: Analytics feature set.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        :param pulumi.Input[str] kms_key_id: OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
@@ -624,11 +746,14 @@ class AnalyticsInstance(pulumi.CustomResource):
             idcs_access_token=analytics_instance_idcs_access_token,
             license_type=analytics_instance_license_type,
             name=analytics_instance_name,
+            admin_user=analytics_instance_admin_user,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             description=analytics_instance_description,
+            domain_id=test_domain["id"],
             email_notification=analytics_instance_email_notification,
+            feature_bundle=analytics_instance_feature_bundle,
             freeform_tags={
                 "Department": "Finance",
             },
@@ -670,11 +795,14 @@ class AnalyticsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 admin_user: Optional[pulumi.Input[str]] = None,
                  capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 domain_id: Optional[pulumi.Input[str]] = None,
                  email_notification: Optional[pulumi.Input[str]] = None,
+                 feature_bundle: Optional[pulumi.Input[str]] = None,
                  feature_set: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
@@ -692,6 +820,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AnalyticsInstanceArgs.__new__(AnalyticsInstanceArgs)
 
+            __props__.__dict__["admin_user"] = admin_user
             if capacity is None and not opts.urn:
                 raise TypeError("Missing required property 'capacity'")
             __props__.__dict__["capacity"] = capacity
@@ -700,13 +829,13 @@ class AnalyticsInstance(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
+            __props__.__dict__["domain_id"] = domain_id
             __props__.__dict__["email_notification"] = email_notification
+            __props__.__dict__["feature_bundle"] = feature_bundle
             if feature_set is None and not opts.urn:
                 raise TypeError("Missing required property 'feature_set'")
             __props__.__dict__["feature_set"] = feature_set
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if idcs_access_token is None and not opts.urn:
-                raise TypeError("Missing required property 'idcs_access_token'")
             __props__.__dict__["idcs_access_token"] = None if idcs_access_token is None else pulumi.Output.secret(idcs_access_token)
             __props__.__dict__["kms_key_id"] = kms_key_id
             if license_type is None and not opts.urn:
@@ -716,6 +845,7 @@ class AnalyticsInstance(pulumi.CustomResource):
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["state"] = state
             __props__.__dict__["service_url"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["idcsAccessToken"])
@@ -730,11 +860,14 @@ class AnalyticsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            admin_user: Optional[pulumi.Input[str]] = None,
             capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            domain_id: Optional[pulumi.Input[str]] = None,
             email_notification: Optional[pulumi.Input[str]] = None,
+            feature_bundle: Optional[pulumi.Input[str]] = None,
             feature_set: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             idcs_access_token: Optional[pulumi.Input[str]] = None,
@@ -744,6 +877,7 @@ class AnalyticsInstance(pulumi.CustomResource):
             network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
             service_url: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'AnalyticsInstance':
         """
@@ -753,15 +887,18 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] admin_user: user name of the authorized user.
         :param pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Optional description.
+        :param pulumi.Input[str] domain_id: domain id for which the user is authorized.
         :param pulumi.Input[str] email_notification: (Updatable) Email address receiving notifications.
+        :param pulumi.Input[str] feature_bundle: The feature set of an Analytics instance.
         :param pulumi.Input[str] feature_set: Analytics feature set.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        :param pulumi.Input[str] kms_key_id: OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
@@ -771,6 +908,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
@@ -778,11 +916,14 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         __props__ = _AnalyticsInstanceState.__new__(_AnalyticsInstanceState)
 
+        __props__.__dict__["admin_user"] = admin_user
         __props__.__dict__["capacity"] = capacity
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
+        __props__.__dict__["domain_id"] = domain_id
         __props__.__dict__["email_notification"] = email_notification
+        __props__.__dict__["feature_bundle"] = feature_bundle
         __props__.__dict__["feature_set"] = feature_set
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["idcs_access_token"] = idcs_access_token
@@ -792,9 +933,18 @@ class AnalyticsInstance(pulumi.CustomResource):
         __props__.__dict__["network_endpoint_details"] = network_endpoint_details
         __props__.__dict__["service_url"] = service_url
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return AnalyticsInstance(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="adminUser")
+    def admin_user(self) -> pulumi.Output[str]:
+        """
+        user name of the authorized user.
+        """
+        return pulumi.get(self, "admin_user")
 
     @property
     @pulumi.getter
@@ -829,12 +979,28 @@ class AnalyticsInstance(pulumi.CustomResource):
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> pulumi.Output[str]:
+        """
+        domain id for which the user is authorized.
+        """
+        return pulumi.get(self, "domain_id")
+
+    @property
     @pulumi.getter(name="emailNotification")
     def email_notification(self) -> pulumi.Output[str]:
         """
         (Updatable) Email address receiving notifications.
         """
         return pulumi.get(self, "email_notification")
+
+    @property
+    @pulumi.getter(name="featureBundle")
+    def feature_bundle(self) -> pulumi.Output[str]:
+        """
+        The feature set of an Analytics instance.
+        """
+        return pulumi.get(self, "feature_bundle")
 
     @property
     @pulumi.getter(name="featureSet")
@@ -854,7 +1020,7 @@ class AnalyticsInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> pulumi.Output[str]:
+    def idcs_access_token(self) -> pulumi.Output[Optional[str]]:
         """
         IDCS access token identifying a stripe and service administrator user.
         """
@@ -864,7 +1030,7 @@ class AnalyticsInstance(pulumi.CustomResource):
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -911,6 +1077,14 @@ class AnalyticsInstance(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

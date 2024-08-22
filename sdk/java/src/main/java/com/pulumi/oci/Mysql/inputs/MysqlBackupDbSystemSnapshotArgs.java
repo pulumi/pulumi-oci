@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotBackupPolicyArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDataStorageArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotMaintenanceArgs;
@@ -115,18 +116,33 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     @Import(name="dataStorageSizeInGb")
     private @Nullable Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     public Optional<Output<Integer>> dataStorageSizeInGb() {
         return Optional.ofNullable(this.dataStorageSizeInGb);
+    }
+
+    /**
+     * Data Storage information.
+     * 
+     */
+    @Import(name="dataStorages")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotDataStorageArgs>> dataStorages;
+
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotDataStorageArgs>>> dataStorages() {
+        return Optional.ofNullable(this.dataStorages);
     }
 
     /**
@@ -439,6 +455,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.configurationId = $.configurationId;
         this.crashRecovery = $.crashRecovery;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
+        this.dataStorages = $.dataStorages;
         this.databaseManagement = $.databaseManagement;
         this.definedTags = $.definedTags;
         this.deletionPolicies = $.deletionPolicies;
@@ -616,7 +633,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param dataStorageSizeInGb Initial size of the data volume in GiBs that will be created and attached.
+         * @param dataStorageSizeInGb DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
          * 
          * @return builder
          * 
@@ -627,13 +644,44 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param dataStorageSizeInGb Initial size of the data volume in GiBs that will be created and attached.
+         * @param dataStorageSizeInGb DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
          * 
          * @return builder
          * 
          */
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             return dataStorageSizeInGb(Output.of(dataStorageSizeInGb));
+        }
+
+        /**
+         * @param dataStorages Data Storage information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorages(@Nullable Output<List<MysqlBackupDbSystemSnapshotDataStorageArgs>> dataStorages) {
+            $.dataStorages = dataStorages;
+            return this;
+        }
+
+        /**
+         * @param dataStorages Data Storage information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorages(List<MysqlBackupDbSystemSnapshotDataStorageArgs> dataStorages) {
+            return dataStorages(Output.of(dataStorages));
+        }
+
+        /**
+         * @param dataStorages Data Storage information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorages(MysqlBackupDbSystemSnapshotDataStorageArgs... dataStorages) {
+            return dataStorages(List.of(dataStorages));
         }
 
         /**

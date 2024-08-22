@@ -57,8 +57,9 @@ import (
 //				DisassociateTrigger: pulumi.Float64(disassociateTrigger),
 //				Members: disasterrecovery.DrProtectionGroupMemberArray{
 //					&disasterrecovery.DrProtectionGroupMemberArgs{
-//						MemberId:   pulumi.Any(drProtectionGroupMembersMemberId),
-//						MemberType: pulumi.Any(drProtectionGroupMembersMemberType),
+//						MemberId:                                 pulumi.Any(drProtectionGroupMembersMemberId),
+//						MemberType:                               pulumi.Any(drProtectionGroupMembersMemberType),
+//						AutonomousDatabaseStandbyTypeForDrDrills: pulumi.Any(drProtectionGroupMembersAutonomousDatabaseStandbyTypeForDrDrills),
 //						BackendSetMappings: disasterrecovery.DrProtectionGroupMemberBackendSetMappingArray{
 //							&disasterrecovery.DrProtectionGroupMemberBackendSetMappingArgs{
 //								DestinationBackendSetName: pulumi.Any(testBackendSet.Name),
@@ -77,6 +78,8 @@ import (
 //								},
 //							},
 //						},
+//						ConnectionStringType:             pulumi.Any(drProtectionGroupMembersConnectionStringType),
+//						Bucket:                           pulumi.Any(drProtectionGroupMembersBucket),
 //						DestinationAvailabilityDomain:    pulumi.Any(drProtectionGroupMembersDestinationAvailabilityDomain),
 //						DestinationCapacityReservationId: pulumi.Any(destinationCapacityReservationId),
 //						DestinationCompartmentId:         pulumi.Any(testCompartment.Id),
@@ -105,6 +108,7 @@ import (
 //						IsMovable:             pulumi.Any(drProtectionGroupMembersIsMovable),
 //						IsRetainFaultDomain:   pulumi.Any(drProtectionGroupMembersIsRetainFaultDomain),
 //						IsStartStopEnabled:    pulumi.Any(drProtectionGroupMembersIsStartStopEnabled),
+//						Namespace:             pulumi.Any(drProtectionGroupMembersNamespace),
 //						PasswordVaultSecretId: pulumi.Any(passwordVaultSecretId),
 //						VnicMappings: disasterrecovery.DrProtectionGroupMemberVnicMappingArray{
 //							&disasterrecovery.DrProtectionGroupMemberVnicMappingArgs{

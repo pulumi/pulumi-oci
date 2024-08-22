@@ -69,7 +69,7 @@ type MysqlBackup struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
 	CreationType pulumi.StringOutput `pulumi:"creationType"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
 	// The OCID of the DB System the Backup is associated with.
 	DbSystemId                pulumi.StringOutput                           `pulumi:"dbSystemId"`
@@ -146,7 +146,7 @@ type mysqlBackupState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
 	CreationType *string `pulumi:"creationType"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// The OCID of the DB System the Backup is associated with.
 	DbSystemId                *string                              `pulumi:"dbSystemId"`
@@ -194,7 +194,7 @@ type MysqlBackupState struct {
 	CompartmentId pulumi.StringPtrInput
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
 	CreationType pulumi.StringPtrInput
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb pulumi.IntPtrInput
 	// The OCID of the DB System the Backup is associated with.
 	DbSystemId                pulumi.StringPtrInput
@@ -389,7 +389,7 @@ func (o MysqlBackupOutput) CreationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.CreationType }).(pulumi.StringOutput)
 }
 
-// Initial size of the data volume in GiBs that will be created and attached.
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 func (o MysqlBackupOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.IntOutput { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }

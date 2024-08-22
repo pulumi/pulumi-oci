@@ -19,6 +19,7 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotArgs',
     'MysqlBackupDbSystemSnapshotBackupPolicyArgs',
     'MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs',
+    'MysqlBackupDbSystemSnapshotDataStorageArgs',
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgs',
     'MysqlBackupDbSystemSnapshotEndpointArgs',
     'MysqlBackupDbSystemSnapshotMaintenanceArgs',
@@ -36,6 +37,7 @@ __all__ = [
     'MysqlDbSystemChannelTargetArgs',
     'MysqlDbSystemChannelTargetFilterArgs',
     'MysqlDbSystemCurrentPlacementArgs',
+    'MysqlDbSystemDataStorageArgs',
     'MysqlDbSystemDeletionPolicyArgs',
     'MysqlDbSystemEndpointArgs',
     'MysqlDbSystemHeatWaveClusterArgs',
@@ -544,6 +546,7 @@ class MysqlBackupDbSystemSnapshotArgs:
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+                 data_storages: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgs']]]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]]] = None,
@@ -571,7 +574,8 @@ class MysqlBackupDbSystemSnapshotArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used for Instances in this DB System.
         :param pulumi.Input[str] crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
+        :param pulumi.Input[int] data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgs']]] data_storages: Data Storage information.
         :param pulumi.Input[str] database_management: Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]] deletion_policies: The Deletion policy for the DB System.
@@ -607,6 +611,8 @@ class MysqlBackupDbSystemSnapshotArgs:
             pulumi.set(__self__, "crash_recovery", crash_recovery)
         if data_storage_size_in_gb is not None:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if data_storages is not None:
+            pulumi.set(__self__, "data_storages", data_storages)
         if database_management is not None:
             pulumi.set(__self__, "database_management", database_management)
         if defined_tags is not None:
@@ -724,13 +730,25 @@ class MysqlBackupDbSystemSnapshotArgs:
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
         """
-        Initial size of the data volume in GiBs that will be created and attached.
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
     def data_storage_size_in_gb(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @property
+    @pulumi.getter(name="dataStorages")
+    def data_storages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgs']]]]:
+        """
+        Data Storage information.
+        """
+        return pulumi.get(self, "data_storages")
+
+    @data_storages.setter
+    def data_storages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgs']]]]):
+        pulumi.set(self, "data_storages", value)
 
     @property
     @pulumi.getter(name="databaseManagement")
@@ -1097,6 +1115,93 @@ class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs:
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
+
+
+@pulumi.input_type
+class MysqlBackupDbSystemSnapshotDataStorageArgs:
+    def __init__(__self__, *,
+                 allocated_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+                 data_storage_size_limit_in_gbs: Optional[pulumi.Input[int]] = None,
+                 is_auto_expand_storage_enabled: Optional[pulumi.Input[bool]] = None,
+                 max_storage_size_in_gbs: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] allocated_storage_size_in_gbs: The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+        :param pulumi.Input[int] data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        :param pulumi.Input[int] data_storage_size_limit_in_gbs: The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+        :param pulumi.Input[bool] is_auto_expand_storage_enabled: Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+        :param pulumi.Input[int] max_storage_size_in_gbs: Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+        """
+        if allocated_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "allocated_storage_size_in_gbs", allocated_storage_size_in_gbs)
+        if data_storage_size_in_gb is not None:
+            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if data_storage_size_limit_in_gbs is not None:
+            pulumi.set(__self__, "data_storage_size_limit_in_gbs", data_storage_size_limit_in_gbs)
+        if is_auto_expand_storage_enabled is not None:
+            pulumi.set(__self__, "is_auto_expand_storage_enabled", is_auto_expand_storage_enabled)
+        if max_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "max_storage_size_in_gbs", max_storage_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="allocatedStorageSizeInGbs")
+    def allocated_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+        """
+        return pulumi.get(self, "allocated_storage_size_in_gbs")
+
+    @allocated_storage_size_in_gbs.setter
+    def allocated_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "allocated_storage_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
+        """
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @data_storage_size_in_gb.setter
+    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @property
+    @pulumi.getter(name="dataStorageSizeLimitInGbs")
+    def data_storage_size_limit_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+        """
+        return pulumi.get(self, "data_storage_size_limit_in_gbs")
+
+    @data_storage_size_limit_in_gbs.setter
+    def data_storage_size_limit_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "data_storage_size_limit_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="isAutoExpandStorageEnabled")
+    def is_auto_expand_storage_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+        """
+        return pulumi.get(self, "is_auto_expand_storage_enabled")
+
+    @is_auto_expand_storage_enabled.setter
+    def is_auto_expand_storage_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_auto_expand_storage_enabled", value)
+
+    @property
+    @pulumi.getter(name="maxStorageSizeInGbs")
+    def max_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+        """
+        return pulumi.get(self, "max_storage_size_in_gbs")
+
+    @max_storage_size_in_gbs.setter
+    def max_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_storage_size_in_gbs", value)
 
 
 @pulumi.input_type
@@ -3781,6 +3886,101 @@ class MysqlDbSystemCurrentPlacementArgs:
     @fault_domain.setter
     def fault_domain(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "fault_domain", value)
+
+
+@pulumi.input_type
+class MysqlDbSystemDataStorageArgs:
+    def __init__(__self__, *,
+                 allocated_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+                 data_storage_size_limit_in_gbs: Optional[pulumi.Input[int]] = None,
+                 is_auto_expand_storage_enabled: Optional[pulumi.Input[bool]] = None,
+                 max_storage_size_in_gbs: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] allocated_storage_size_in_gbs: The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+        :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input[int] data_storage_size_limit_in_gbs: The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+        :param pulumi.Input[bool] is_auto_expand_storage_enabled: (Updatable) Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+        :param pulumi.Input[int] max_storage_size_in_gbs: (Updatable) Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+               
+               DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+               
+               It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+        """
+        if allocated_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "allocated_storage_size_in_gbs", allocated_storage_size_in_gbs)
+        if data_storage_size_in_gb is not None:
+            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if data_storage_size_limit_in_gbs is not None:
+            pulumi.set(__self__, "data_storage_size_limit_in_gbs", data_storage_size_limit_in_gbs)
+        if is_auto_expand_storage_enabled is not None:
+            pulumi.set(__self__, "is_auto_expand_storage_enabled", is_auto_expand_storage_enabled)
+        if max_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "max_storage_size_in_gbs", max_storage_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="allocatedStorageSizeInGbs")
+    def allocated_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+        """
+        return pulumi.get(self, "allocated_storage_size_in_gbs")
+
+    @allocated_storage_size_in_gbs.setter
+    def allocated_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "allocated_storage_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @data_storage_size_in_gb.setter
+    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @property
+    @pulumi.getter(name="dataStorageSizeLimitInGbs")
+    def data_storage_size_limit_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+        """
+        return pulumi.get(self, "data_storage_size_limit_in_gbs")
+
+    @data_storage_size_limit_in_gbs.setter
+    def data_storage_size_limit_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "data_storage_size_limit_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="isAutoExpandStorageEnabled")
+    def is_auto_expand_storage_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+        """
+        return pulumi.get(self, "is_auto_expand_storage_enabled")
+
+    @is_auto_expand_storage_enabled.setter
+    def is_auto_expand_storage_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_auto_expand_storage_enabled", value)
+
+    @property
+    @pulumi.getter(name="maxStorageSizeInGbs")
+    def max_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+
+        DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+
+        It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+        """
+        return pulumi.get(self, "max_storage_size_in_gbs")
+
+    @max_storage_size_in_gbs.setter
+    def max_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_storage_size_in_gbs", value)
 
 
 @pulumi.input_type

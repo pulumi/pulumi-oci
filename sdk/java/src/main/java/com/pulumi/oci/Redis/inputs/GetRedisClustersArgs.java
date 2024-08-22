@@ -55,14 +55,14 @@ public final class GetRedisClustersArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      * 
      */
     public Optional<Output<String>> id() {
@@ -168,7 +168,7 @@ public final class GetRedisClustersArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GetRedisClustersArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
          * 
          * @return builder
          * 

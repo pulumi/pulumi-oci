@@ -73,7 +73,7 @@ type GetAnalyticsInstancesArgs struct {
 type GetAnalyticsInstancesResult struct {
 	// The list of analytics_instances.
 	AnalyticsInstances []GetAnalyticsInstancesAnalyticsInstance `pulumi:"analyticsInstances"`
-	// The capacity model to use.
+	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType *string `pulumi:"capacityType"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -142,7 +142,7 @@ func (o GetAnalyticsInstancesResultOutput) AnalyticsInstances() GetAnalyticsInst
 	}).(GetAnalyticsInstancesAnalyticsInstanceArrayOutput)
 }
 
-// The capacity model to use.
+// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 func (o GetAnalyticsInstancesResultOutput) CapacityType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesResult) *string { return v.CapacityType }).(pulumi.StringPtrOutput)
 }

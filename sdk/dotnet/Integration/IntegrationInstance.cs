@@ -120,6 +120,12 @@ namespace Pulumi.Oci.Integration
         public Output<Outputs.IntegrationInstanceCustomEndpoint> CustomEndpoint { get; private set; } = null!;
 
         /// <summary>
+        /// Data retention period set for given integration instance
+        /// </summary>
+        [Output("dataRetentionPeriod")]
+        public Output<string> DataRetentionPeriod { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
@@ -137,8 +143,17 @@ namespace Pulumi.Oci.Integration
         [Output("domainId")]
         public Output<string?> DomainId { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// </summary>
         [Output("enableProcessAutomationTrigger")]
         public Output<int?> EnableProcessAutomationTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        /// </summary>
+        [Output("extendDataRetentionTrigger")]
+        public Output<int?> ExtendDataRetentionTrigger { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -350,8 +365,17 @@ namespace Pulumi.Oci.Integration
         [Input("domainId")]
         public Input<string>? DomainId { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// </summary>
         [Input("enableProcessAutomationTrigger")]
         public Input<int>? EnableProcessAutomationTrigger { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        /// </summary>
+        [Input("extendDataRetentionTrigger")]
+        public Input<int>? ExtendDataRetentionTrigger { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
@@ -483,6 +507,12 @@ namespace Pulumi.Oci.Integration
         [Input("customEndpoint")]
         public Input<Inputs.IntegrationInstanceCustomEndpointGetArgs>? CustomEndpoint { get; set; }
 
+        /// <summary>
+        /// Data retention period set for given integration instance
+        /// </summary>
+        [Input("dataRetentionPeriod")]
+        public Input<string>? DataRetentionPeriod { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -507,8 +537,17 @@ namespace Pulumi.Oci.Integration
         [Input("domainId")]
         public Input<string>? DomainId { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// </summary>
         [Input("enableProcessAutomationTrigger")]
         public Input<int>? EnableProcessAutomationTrigger { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        /// </summary>
+        [Input("extendDataRetentionTrigger")]
+        public Input<int>? ExtendDataRetentionTrigger { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
  *
- * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+ * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  *
  * ## Example Usage
  *
@@ -52,7 +52,7 @@ export interface GetRedisClustersArgs {
     displayName?: string;
     filters?: inputs.Redis.GetRedisClustersFilter[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
     id?: string;
     /**
@@ -66,16 +66,16 @@ export interface GetRedisClustersArgs {
  */
 export interface GetRedisClustersResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
     readonly compartmentId?: string;
     /**
-     * A user-friendly name of a Redis cluster node.
+     * A user-friendly name of a cluster node.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Redis.GetRedisClustersFilter[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
     readonly id?: string;
     /**
@@ -83,14 +83,14 @@ export interface GetRedisClustersResult {
      */
     readonly redisClusterCollections: outputs.Redis.GetRedisClustersRedisClusterCollection[];
     /**
-     * The current state of the Redis cluster.
+     * The current state of the cluster.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
  *
- * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+ * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  *
  * ## Example Usage
  *
@@ -124,7 +124,7 @@ export interface GetRedisClustersOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetRedisClustersFilterArgs>[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
     id?: pulumi.Input<string>;
     /**

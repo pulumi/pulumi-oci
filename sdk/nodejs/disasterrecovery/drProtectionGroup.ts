@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *     members: [{
  *         memberId: drProtectionGroupMembersMemberId,
  *         memberType: drProtectionGroupMembersMemberType,
+ *         autonomousDatabaseStandbyTypeForDrDrills: drProtectionGroupMembersAutonomousDatabaseStandbyTypeForDrDrills,
  *         backendSetMappings: [{
  *             destinationBackendSetName: testBackendSet.name,
  *             isBackendSetForNonMovable: drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable,
@@ -55,6 +56,8 @@ import * as utilities from "../utilities";
  *                 mountPoint: drProtectionGroupMembersBlockVolumeOperationsMountDetailsMountPoint,
  *             },
  *         }],
+ *         connectionStringType: drProtectionGroupMembersConnectionStringType,
+ *         bucket: drProtectionGroupMembersBucket,
  *         destinationAvailabilityDomain: drProtectionGroupMembersDestinationAvailabilityDomain,
  *         destinationCapacityReservationId: destinationCapacityReservationId,
  *         destinationCompartmentId: testCompartment.id,
@@ -79,6 +82,7 @@ import * as utilities from "../utilities";
  *         isMovable: drProtectionGroupMembersIsMovable,
  *         isRetainFaultDomain: drProtectionGroupMembersIsRetainFaultDomain,
  *         isStartStopEnabled: drProtectionGroupMembersIsStartStopEnabled,
+ *         namespace: drProtectionGroupMembersNamespace,
  *         passwordVaultSecretId: passwordVaultSecretId,
  *         vnicMappings: [
  *             {

@@ -25,6 +25,7 @@ class MysqlDbSystemArgs:
                  backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
+                 data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -60,6 +61,7 @@ class MysqlDbSystemArgs:
         :param pulumi.Input['MysqlDbSystemBackupPolicyArgs'] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
+        :param pulumi.Input['MysqlDbSystemDataStorageArgs'] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -107,6 +109,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "configuration_id", configuration_id)
         if crash_recovery is not None:
             pulumi.set(__self__, "crash_recovery", crash_recovery)
+        if data_storage is not None:
+            pulumi.set(__self__, "data_storage", data_storage)
         if data_storage_size_in_gb is not None:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         if database_management is not None:
@@ -258,6 +262,18 @@ class MysqlDbSystemArgs:
     @crash_recovery.setter
     def crash_recovery(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "crash_recovery", value)
+
+    @property
+    @pulumi.getter(name="dataStorage")
+    def data_storage(self) -> Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']]:
+        """
+        (Updatable) Data Storage configuration properties.
+        """
+        return pulumi.get(self, "data_storage")
+
+    @data_storage.setter
+    def data_storage(self, value: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']]):
+        pulumi.set(self, "data_storage", value)
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -513,6 +529,7 @@ class _MysqlDbSystemState:
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
                  current_placements: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]] = None,
+                 data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -556,6 +573,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]] current_placements: The availability domain and fault domain a DB System is placed in.
+        :param pulumi.Input['MysqlDbSystemDataStorageArgs'] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -617,6 +635,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "crash_recovery", crash_recovery)
         if current_placements is not None:
             pulumi.set(__self__, "current_placements", current_placements)
+        if data_storage is not None:
+            pulumi.set(__self__, "data_storage", data_storage)
         if data_storage_size_in_gb is not None:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         if database_management is not None:
@@ -785,6 +805,18 @@ class _MysqlDbSystemState:
     @current_placements.setter
     def current_placements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]]):
         pulumi.set(self, "current_placements", value)
+
+    @property
+    @pulumi.getter(name="dataStorage")
+    def data_storage(self) -> Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']]:
+        """
+        (Updatable) Data Storage configuration properties.
+        """
+        return pulumi.get(self, "data_storage")
+
+    @data_storage.setter
+    def data_storage(self, value: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']]):
+        pulumi.set(self, "data_storage", value)
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -1149,6 +1181,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
+                 data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1205,6 +1238,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             configuration_id=test_configuration["id"],
             crash_recovery=mysql_db_system_crash_recovery,
+            data_storage={
+                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled,
+                "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
+            },
             data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
             database_management=mysql_db_system_database_management,
             defined_tags={
@@ -1260,6 +1297,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
+        :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1336,6 +1374,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             configuration_id=test_configuration["id"],
             crash_recovery=mysql_db_system_crash_recovery,
+            data_storage={
+                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled,
+                "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
+            },
             data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
             database_management=mysql_db_system_database_management,
             defined_tags={
@@ -1400,6 +1442,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
+                 data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1441,6 +1484,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["configuration_id"] = configuration_id
             __props__.__dict__["crash_recovery"] = crash_recovery
+            __props__.__dict__["data_storage"] = data_storage
             __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
             __props__.__dict__["database_management"] = database_management
             __props__.__dict__["defined_tags"] = defined_tags
@@ -1496,6 +1540,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             configuration_id: Optional[pulumi.Input[str]] = None,
             crash_recovery: Optional[pulumi.Input[str]] = None,
             current_placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict']]]]] = None,
+            data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
             database_management: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1544,6 +1589,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict']]]] current_placements: The availability domain and fault domain a DB System is placed in.
+        :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1600,6 +1646,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["configuration_id"] = configuration_id
         __props__.__dict__["crash_recovery"] = crash_recovery
         __props__.__dict__["current_placements"] = current_placements
+        __props__.__dict__["data_storage"] = data_storage
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
         __props__.__dict__["database_management"] = database_management
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1705,6 +1752,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         The availability domain and fault domain a DB System is placed in.
         """
         return pulumi.get(self, "current_placements")
+
+    @property
+    @pulumi.getter(name="dataStorage")
+    def data_storage(self) -> pulumi.Output['outputs.MysqlDbSystemDataStorage']:
+        """
+        (Updatable) Data Storage configuration properties.
+        """
+        return pulumi.get(self, "data_storage")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")

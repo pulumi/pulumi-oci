@@ -123,6 +123,18 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
 
     Get a summary list of all DR plan executions for a DR protection group.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=test_dr_protection_group["id"],
+        display_name=dr_plan_execution_display_name,
+        dr_plan_execution_id=test_dr_plan_execution["id"],
+        state=dr_plan_execution_state)
+    ```
+
 
     :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
     :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
@@ -159,6 +171,18 @@ def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[s
     This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
 
     Get a summary list of all DR plan executions for a DR protection group.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=test_dr_protection_group["id"],
+        display_name=dr_plan_execution_display_name,
+        dr_plan_execution_id=test_dr_plan_execution["id"],
+        state=dr_plan_execution_state)
+    ```
 
 
     :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`

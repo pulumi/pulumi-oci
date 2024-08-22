@@ -24,6 +24,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     public static final DrProtectionGroupMemberArgs Empty = new DrProtectionGroupMemberArgs();
 
     /**
+     * (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     * 
+     */
+    @Import(name="autonomousDatabaseStandbyTypeForDrDrills")
+    private @Nullable Output<String> autonomousDatabaseStandbyTypeForDrDrills;
+
+    /**
+     * @return (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     * 
+     */
+    public Optional<Output<String>> autonomousDatabaseStandbyTypeForDrDrills() {
+        return Optional.ofNullable(this.autonomousDatabaseStandbyTypeForDrDrills);
+    }
+
+    /**
      * (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
      * 
      */
@@ -51,6 +66,36 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<List<DrProtectionGroupMemberBlockVolumeOperationArgs>>> blockVolumeOperations() {
         return Optional.ofNullable(this.blockVolumeOperations);
+    }
+
+    /**
+     * (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * 
+     */
+    @Import(name="bucket")
+    private @Nullable Output<String> bucket;
+
+    /**
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * 
+     */
+    public Optional<Output<String>> bucket() {
+        return Optional.ofNullable(this.bucket);
+    }
+
+    /**
+     * (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+     * 
+     */
+    @Import(name="connectionStringType")
+    private @Nullable Output<String> connectionStringType;
+
+    /**
+     * @return (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+     * 
+     */
+    public Optional<Output<String>> connectionStringType() {
+        return Optional.ofNullable(this.connectionStringType);
     }
 
     /**
@@ -249,14 +294,29 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+     * (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * 
+     */
+    @Import(name="namespace")
+    private @Nullable Output<String> namespace;
+
+    /**
+     * @return (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * 
+     */
+    public Optional<Output<String>> namespace() {
+        return Optional.ofNullable(this.namespace);
+    }
+
+    /**
+     * (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     @Import(name="passwordVaultSecretId")
     private @Nullable Output<String> passwordVaultSecretId;
 
     /**
-     * @return (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+     * @return (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> passwordVaultSecretId() {
@@ -296,8 +356,11 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     private DrProtectionGroupMemberArgs() {}
 
     private DrProtectionGroupMemberArgs(DrProtectionGroupMemberArgs $) {
+        this.autonomousDatabaseStandbyTypeForDrDrills = $.autonomousDatabaseStandbyTypeForDrDrills;
         this.backendSetMappings = $.backendSetMappings;
         this.blockVolumeOperations = $.blockVolumeOperations;
+        this.bucket = $.bucket;
+        this.connectionStringType = $.connectionStringType;
         this.destinationAvailabilityDomain = $.destinationAvailabilityDomain;
         this.destinationCapacityReservationId = $.destinationCapacityReservationId;
         this.destinationCompartmentId = $.destinationCompartmentId;
@@ -311,6 +374,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.isStartStopEnabled = $.isStartStopEnabled;
         this.memberId = $.memberId;
         this.memberType = $.memberType;
+        this.namespace = $.namespace;
         this.passwordVaultSecretId = $.passwordVaultSecretId;
         this.vnicMapping = $.vnicMapping;
         this.vnicMappings = $.vnicMappings;
@@ -332,6 +396,27 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
 
         public Builder(DrProtectionGroupMemberArgs defaults) {
             $ = new DrProtectionGroupMemberArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param autonomousDatabaseStandbyTypeForDrDrills (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDatabaseStandbyTypeForDrDrills(@Nullable Output<String> autonomousDatabaseStandbyTypeForDrDrills) {
+            $.autonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
+            return this;
+        }
+
+        /**
+         * @param autonomousDatabaseStandbyTypeForDrDrills (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDatabaseStandbyTypeForDrDrills(String autonomousDatabaseStandbyTypeForDrDrills) {
+            return autonomousDatabaseStandbyTypeForDrDrills(Output.of(autonomousDatabaseStandbyTypeForDrDrills));
         }
 
         /**
@@ -394,6 +479,48 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder blockVolumeOperations(DrProtectionGroupMemberBlockVolumeOperationArgs... blockVolumeOperations) {
             return blockVolumeOperations(List.of(blockVolumeOperations));
+        }
+
+        /**
+         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bucket(@Nullable Output<String> bucket) {
+            $.bucket = bucket;
+            return this;
+        }
+
+        /**
+         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bucket(String bucket) {
+            return bucket(Output.of(bucket));
+        }
+
+        /**
+         * @param connectionStringType (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionStringType(@Nullable Output<String> connectionStringType) {
+            $.connectionStringType = connectionStringType;
+            return this;
+        }
+
+        /**
+         * @param connectionStringType (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionStringType(String connectionStringType) {
+            return connectionStringType(Output.of(connectionStringType));
         }
 
         /**
@@ -690,7 +817,28 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+         * @param namespace (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namespace(@Nullable Output<String> namespace) {
+            $.namespace = namespace;
+            return this;
+        }
+
+        /**
+         * @param namespace (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namespace(String namespace) {
+            return namespace(Output.of(namespace));
+        }
+
+        /**
+         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -701,7 +849,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
          * 
          * @return builder
          * 

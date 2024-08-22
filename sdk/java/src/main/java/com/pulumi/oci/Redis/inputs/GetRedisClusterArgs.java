@@ -15,14 +15,14 @@ public final class GetRedisClusterArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetRedisClusterArgs Empty = new GetRedisClusterArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      * 
      */
     @Import(name="redisClusterId", required=true)
     private Output<String> redisClusterId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      * 
      */
     public Output<String> redisClusterId() {
@@ -54,7 +54,7 @@ public final class GetRedisClusterArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param redisClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+         * @param redisClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetRedisClusterArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param redisClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+         * @param redisClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
          * 
          * @return builder
          * 

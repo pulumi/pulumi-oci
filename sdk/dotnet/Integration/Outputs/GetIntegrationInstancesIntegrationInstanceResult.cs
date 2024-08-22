@@ -34,6 +34,10 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult> CustomEndpoints;
         /// <summary>
+        /// Data retention period set for given integration instance
+        /// </summary>
+        public readonly string DataRetentionPeriod;
+        /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -43,6 +47,7 @@ namespace Pulumi.Oci.Integration.Outputs
         public readonly string DisplayName;
         public readonly string DomainId;
         public readonly int EnableProcessAutomationTrigger;
+        public readonly int ExtendDataRetentionTrigger;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -61,7 +66,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly string InstanceUrl;
         /// <summary>
-        /// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        /// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
         public readonly string IntegrationInstanceType;
         /// <summary>
@@ -125,6 +130,8 @@ namespace Pulumi.Oci.Integration.Outputs
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult> customEndpoints,
 
+            string dataRetentionPeriod,
+
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
@@ -132,6 +139,8 @@ namespace Pulumi.Oci.Integration.Outputs
             string domainId,
 
             int enableProcessAutomationTrigger,
+
+            int extendDataRetentionTrigger,
 
             ImmutableDictionary<string, string> freeformTags,
 
@@ -174,10 +183,12 @@ namespace Pulumi.Oci.Integration.Outputs
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
             CustomEndpoints = customEndpoints;
+            DataRetentionPeriod = dataRetentionPeriod;
             DefinedTags = definedTags;
             DisplayName = displayName;
             DomainId = domainId;
             EnableProcessAutomationTrigger = enableProcessAutomationTrigger;
+            ExtendDataRetentionTrigger = extendDataRetentionTrigger;
             FreeformTags = freeformTags;
             Id = id;
             IdcsAt = idcsAt;

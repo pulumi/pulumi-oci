@@ -27,6 +27,7 @@ class IntegrationInstanceArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
+                 extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
@@ -46,6 +47,8 @@ class IntegrationInstanceArgs:
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        :param pulumi.Input[int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
@@ -75,6 +78,8 @@ class IntegrationInstanceArgs:
             pulumi.set(__self__, "domain_id", domain_id)
         if enable_process_automation_trigger is not None:
             pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
+        if extend_data_retention_trigger is not None:
+            pulumi.set(__self__, "extend_data_retention_trigger", extend_data_retention_trigger)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if idcs_at is not None:
@@ -213,11 +218,26 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        """
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @enable_process_automation_trigger.setter
     def enable_process_automation_trigger(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "enable_process_automation_trigger", value)
+
+    @property
+    @pulumi.getter(name="extendDataRetentionTrigger")
+    def extend_data_retention_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        """
+        return pulumi.get(self, "extend_data_retention_trigger")
+
+    @extend_data_retention_trigger.setter
+    def extend_data_retention_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "extend_data_retention_trigger", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -316,10 +336,12 @@ class _IntegrationInstanceState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  consumption_model: Optional[pulumi.Input[str]] = None,
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
+                 data_retention_period: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
+                 extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]] = None,
@@ -344,9 +366,12 @@ class _IntegrationInstanceState:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
+        :param pulumi.Input[str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        :param pulumi.Input[int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
@@ -379,6 +404,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "consumption_model", consumption_model)
         if custom_endpoint is not None:
             pulumi.set(__self__, "custom_endpoint", custom_endpoint)
+        if data_retention_period is not None:
+            pulumi.set(__self__, "data_retention_period", data_retention_period)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -387,6 +414,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "domain_id", domain_id)
         if enable_process_automation_trigger is not None:
             pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
+        if extend_data_retention_trigger is not None:
+            pulumi.set(__self__, "extend_data_retention_trigger", extend_data_retention_trigger)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if idcs_at is not None:
@@ -483,6 +512,18 @@ class _IntegrationInstanceState:
         pulumi.set(self, "custom_endpoint", value)
 
     @property
+    @pulumi.getter(name="dataRetentionPeriod")
+    def data_retention_period(self) -> Optional[pulumi.Input[str]]:
+        """
+        Data retention period set for given integration instance
+        """
+        return pulumi.get(self, "data_retention_period")
+
+    @data_retention_period.setter
+    def data_retention_period(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_retention_period", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -521,11 +562,26 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        """
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @enable_process_automation_trigger.setter
     def enable_process_automation_trigger(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "enable_process_automation_trigger", value)
+
+    @property
+    @pulumi.getter(name="extendDataRetentionTrigger")
+    def extend_data_retention_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        """
+        return pulumi.get(self, "extend_data_retention_trigger")
+
+    @extend_data_retention_trigger.setter
+    def extend_data_retention_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "extend_data_retention_trigger", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -749,6 +805,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
+                 extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  integration_instance_type: Optional[pulumi.Input[str]] = None,
@@ -826,6 +883,8 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        :param pulumi.Input[int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
@@ -927,6 +986,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
+                 extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  integration_instance_type: Optional[pulumi.Input[str]] = None,
@@ -958,6 +1018,7 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["domain_id"] = domain_id
             __props__.__dict__["enable_process_automation_trigger"] = enable_process_automation_trigger
+            __props__.__dict__["extend_data_retention_trigger"] = extend_data_retention_trigger
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["idcs_at"] = None if idcs_at is None else pulumi.Output.secret(idcs_at)
             if integration_instance_type is None and not opts.urn:
@@ -975,6 +1036,7 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["shape"] = shape
             __props__.__dict__["state"] = state
             __props__.__dict__["attachments"] = None
+            __props__.__dict__["data_retention_period"] = None
             __props__.__dict__["idcs_infos"] = None
             __props__.__dict__["instance_url"] = None
             __props__.__dict__["private_endpoint_outbound_connections"] = None
@@ -999,10 +1061,12 @@ class IntegrationInstance(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             consumption_model: Optional[pulumi.Input[str]] = None,
             custom_endpoint: Optional[pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
+            data_retention_period: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             domain_id: Optional[pulumi.Input[str]] = None,
             enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
+            extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             idcs_at: Optional[pulumi.Input[str]] = None,
             idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]]] = None,
@@ -1032,9 +1096,12 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
+        :param pulumi.Input[str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        :param pulumi.Input[int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]] idcs_infos: Information for IDCS access
@@ -1066,10 +1133,12 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["consumption_model"] = consumption_model
         __props__.__dict__["custom_endpoint"] = custom_endpoint
+        __props__.__dict__["data_retention_period"] = data_retention_period
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["domain_id"] = domain_id
         __props__.__dict__["enable_process_automation_trigger"] = enable_process_automation_trigger
+        __props__.__dict__["extend_data_retention_trigger"] = extend_data_retention_trigger
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["idcs_at"] = idcs_at
         __props__.__dict__["idcs_infos"] = idcs_infos
@@ -1130,6 +1199,14 @@ class IntegrationInstance(pulumi.CustomResource):
         return pulumi.get(self, "custom_endpoint")
 
     @property
+    @pulumi.getter(name="dataRetentionPeriod")
+    def data_retention_period(self) -> pulumi.Output[str]:
+        """
+        Data retention period set for given integration instance
+        """
+        return pulumi.get(self, "data_retention_period")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
@@ -1156,7 +1233,18 @@ class IntegrationInstance(pulumi.CustomResource):
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        """
         return pulumi.get(self, "enable_process_automation_trigger")
+
+    @property
+    @pulumi.getter(name="extendDataRetentionTrigger")
+    def extend_data_retention_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        """
+        return pulumi.get(self, "extend_data_retention_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")

@@ -176,7 +176,7 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnalyticsInstancesAnalyticsInstanceResult> AnalyticsInstances;
         /// <summary>
-        /// The capacity model to use.
+        /// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
         /// </summary>
         public readonly string? CapacityType;
         /// <summary>

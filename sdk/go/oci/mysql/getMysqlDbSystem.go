@@ -74,8 +74,10 @@ type LookupMysqlDbSystemResult struct {
 	CrashRecovery string `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements []GetMysqlDbSystemCurrentPlacement `pulumi:"currentPlacements"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages []GetMysqlDbSystemDataStorage `pulumi:"dataStorages"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
@@ -216,9 +218,14 @@ func (o LookupMysqlDbSystemResultOutput) CurrentPlacements() GetMysqlDbSystemCur
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemCurrentPlacement { return v.CurrentPlacements }).(GetMysqlDbSystemCurrentPlacementArrayOutput)
 }
 
-// Initial size of the data volume in GiBs that will be created and attached.
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 func (o LookupMysqlDbSystemResultOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Data Storage information.
+func (o LookupMysqlDbSystemResultOutput) DataStorages() GetMysqlDbSystemDataStorageArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemDataStorage { return v.DataStorages }).(GetMysqlDbSystemDataStorageArrayOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.

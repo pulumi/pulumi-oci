@@ -66,6 +66,8 @@ type LookupMaintenanceRunResult struct {
 	CurrentPatchingComponent string `pulumi:"currentPatchingComponent"`
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
 	// Description of the maintenance run.
 	Description string `pulumi:"description"`
 	// The user-friendly name for the maintenance run.
@@ -176,6 +178,11 @@ func (o LookupMaintenanceRunResultOutput) CurrentPatchingComponent() pulumi.Stri
 // Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 func (o LookupMaintenanceRunResultOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMaintenanceRunResult) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o LookupMaintenanceRunResultOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMaintenanceRunResult) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
 }
 
 // Description of the maintenance run.

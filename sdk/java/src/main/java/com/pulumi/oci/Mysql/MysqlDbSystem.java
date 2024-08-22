@@ -12,6 +12,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlDbSystemState;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemCurrentPlacement;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDataStorage;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemHeatWaveCluster;
@@ -47,6 +48,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.MysqlDbSystemArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDataStorageArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
@@ -83,6 +85,10 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .configurationId(testConfiguration.id())
  *             .crashRecovery(mysqlDbSystemCrashRecovery)
+ *             .dataStorage(MysqlDbSystemDataStorageArgs.builder()
+ *                 .isAutoExpandStorageEnabled(mysqlDbSystemDataStorageIsAutoExpandStorageEnabled)
+ *                 .maxStorageSizeInGbs(mysqlDbSystemDataStorageMaxStorageSizeInGbs)
+ *                 .build())
  *             .dataStorageSizeInGb(mysqlDbSystemDataStorageSizeInGb)
  *             .databaseManagement(mysqlDbSystemDatabaseManagement)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
@@ -263,6 +269,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<List<MysqlDbSystemCurrentPlacement>> currentPlacements() {
         return this.currentPlacements;
+    }
+    /**
+     * (Updatable) Data Storage configuration properties.
+     * 
+     */
+    @Export(name="dataStorage", refs={MysqlDbSystemDataStorage.class}, tree="[0]")
+    private Output<MysqlDbSystemDataStorage> dataStorage;
+
+    /**
+     * @return (Updatable) Data Storage configuration properties.
+     * 
+     */
+    public Output<MysqlDbSystemDataStorage> dataStorage() {
+        return this.dataStorage;
     }
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.

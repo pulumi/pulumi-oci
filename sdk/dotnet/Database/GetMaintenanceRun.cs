@@ -114,6 +114,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int CustomActionTimeoutInMins;
         /// <summary>
+        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// </summary>
+        public readonly string DatabaseSoftwareImageId;
+        /// <summary>
         /// Description of the maintenance run.
         /// </summary>
         public readonly string Description;
@@ -226,6 +230,8 @@ namespace Pulumi.Oci.Database
 
             int customActionTimeoutInMins,
 
+            string databaseSoftwareImageId,
+
             string description,
 
             string displayName,
@@ -284,6 +290,7 @@ namespace Pulumi.Oci.Database
             CurrentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
             CurrentPatchingComponent = currentPatchingComponent;
             CustomActionTimeoutInMins = customActionTimeoutInMins;
+            DatabaseSoftwareImageId = databaseSoftwareImageId;
             Description = description;
             DisplayName = displayName;
             EstimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;

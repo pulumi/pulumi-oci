@@ -61,7 +61,7 @@ class GetAnalyticsInstancesResult:
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> Optional[str]:
         """
-        The capacity model to use.
+        The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
         """
         return pulumi.get(self, "capacity_type")
 

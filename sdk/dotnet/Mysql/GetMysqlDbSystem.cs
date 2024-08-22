@@ -128,9 +128,13 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemCurrentPlacementResult> CurrentPlacements;
         /// <summary>
-        /// Initial size of the data volume in GiBs that will be created and attached.
+        /// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         /// </summary>
         public readonly int DataStorageSizeInGb;
+        /// <summary>
+        /// Data Storage information.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemDataStorageResult> DataStorages;
         /// <summary>
         /// Whether to enable monitoring via the Database Management service.
         /// </summary>
@@ -267,6 +271,8 @@ namespace Pulumi.Oci.Mysql
 
             int dataStorageSizeInGb,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemDataStorageResult> dataStorages,
+
             string databaseManagement,
 
             string dbSystemId,
@@ -335,6 +341,7 @@ namespace Pulumi.Oci.Mysql
             CrashRecovery = crashRecovery;
             CurrentPlacements = currentPlacements;
             DataStorageSizeInGb = dataStorageSizeInGb;
+            DataStorages = dataStorages;
             DatabaseManagement = databaseManagement;
             DbSystemId = dbSystemId;
             DefinedTags = definedTags;

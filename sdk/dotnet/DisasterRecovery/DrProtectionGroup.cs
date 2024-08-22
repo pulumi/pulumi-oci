@@ -56,6 +56,7 @@ namespace Pulumi.Oci.DisasterRecovery
     ///             {
     ///                 MemberId = drProtectionGroupMembersMemberId,
     ///                 MemberType = drProtectionGroupMembersMemberType,
+    ///                 AutonomousDatabaseStandbyTypeForDrDrills = drProtectionGroupMembersAutonomousDatabaseStandbyTypeForDrDrills,
     ///                 BackendSetMappings = new[]
     ///                 {
     ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBackendSetMappingArgs
@@ -80,6 +81,8 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                         },
     ///                     },
     ///                 },
+    ///                 ConnectionStringType = drProtectionGroupMembersConnectionStringType,
+    ///                 Bucket = drProtectionGroupMembersBucket,
     ///                 DestinationAvailabilityDomain = drProtectionGroupMembersDestinationAvailabilityDomain,
     ///                 DestinationCapacityReservationId = destinationCapacityReservationId,
     ///                 DestinationCompartmentId = testCompartment.Id,
@@ -114,6 +117,7 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                 IsMovable = drProtectionGroupMembersIsMovable,
     ///                 IsRetainFaultDomain = drProtectionGroupMembersIsRetainFaultDomain,
     ///                 IsStartStopEnabled = drProtectionGroupMembersIsStartStopEnabled,
+    ///                 Namespace = drProtectionGroupMembersNamespace,
     ///                 PasswordVaultSecretId = passwordVaultSecretId,
     ///                 VnicMappings = new[]
     ///                 {

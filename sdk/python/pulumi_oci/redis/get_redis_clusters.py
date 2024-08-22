@@ -47,7 +47,7 @@ class GetRedisClustersResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -55,7 +55,7 @@ class GetRedisClustersResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name of a Redis cluster node.
+        A user-friendly name of a cluster node.
         """
         return pulumi.get(self, "display_name")
 
@@ -68,7 +68,7 @@ class GetRedisClustersResult:
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         """
         return pulumi.get(self, "id")
 
@@ -84,7 +84,7 @@ class GetRedisClustersResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the Redis cluster.
+        The current state of the cluster.
         """
         return pulumi.get(self, "state")
 
@@ -112,7 +112,7 @@ def get_redis_clusters(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
 
-    Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+    Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
     ## Example Usage
 
@@ -129,7 +129,7 @@ def get_redis_clusters(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
@@ -160,7 +160,7 @@ def get_redis_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str
     """
     This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
 
-    Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+    Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
     ## Example Usage
 
@@ -177,7 +177,7 @@ def get_redis_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     """
     ...

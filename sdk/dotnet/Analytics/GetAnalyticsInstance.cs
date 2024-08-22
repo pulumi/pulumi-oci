@@ -99,6 +99,7 @@ namespace Pulumi.Oci.Analytics
     [OutputType]
     public sealed class GetAnalyticsInstanceResult
     {
+        public readonly string AdminUser;
         public readonly string AnalyticsInstanceId;
         /// <summary>
         /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
@@ -117,9 +118,17 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// Identity domain OCID.
+        /// </summary>
+        public readonly string DomainId;
+        /// <summary>
         /// Email address receiving notifications.
         /// </summary>
         public readonly string EmailNotification;
+        /// <summary>
+        /// The feature set of an Analytics instance.
+        /// </summary>
+        public readonly string FeatureBundle;
         /// <summary>
         /// Analytics feature set.
         /// </summary>
@@ -134,7 +143,7 @@ namespace Pulumi.Oci.Analytics
         public readonly string Id;
         public readonly string IdcsAccessToken;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>
@@ -158,6 +167,10 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
@@ -168,6 +181,8 @@ namespace Pulumi.Oci.Analytics
 
         [OutputConstructor]
         private GetAnalyticsInstanceResult(
+            string adminUser,
+
             string analyticsInstanceId,
 
             ImmutableArray<Outputs.GetAnalyticsInstanceCapacityResult> capacities,
@@ -178,7 +193,11 @@ namespace Pulumi.Oci.Analytics
 
             string description,
 
+            string domainId,
+
             string emailNotification,
+
+            string featureBundle,
 
             string featureSet,
 
@@ -200,16 +219,21 @@ namespace Pulumi.Oci.Analytics
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeUpdated)
         {
+            AdminUser = adminUser;
             AnalyticsInstanceId = analyticsInstanceId;
             Capacities = capacities;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
+            DomainId = domainId;
             EmailNotification = emailNotification;
+            FeatureBundle = featureBundle;
             FeatureSet = featureSet;
             FreeformTags = freeformTags;
             Id = id;
@@ -220,6 +244,7 @@ namespace Pulumi.Oci.Analytics
             NetworkEndpointDetails = networkEndpointDetails;
             ServiceUrl = serviceUrl;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

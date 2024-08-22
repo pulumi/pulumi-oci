@@ -415,7 +415,6 @@ public final class DisasterRecoveryFunctions {
      *             .drProtectionGroupId(testDrProtectionGroup.id())
      *             .displayName(drPlanExecutionDisplayName)
      *             .drPlanExecutionId(testDrPlanExecution.id())
-     *             .drPlanExecutionType(drPlanExecutionDrPlanExecutionType)
      *             .state(drPlanExecutionState)
      *             .build());
      * 
@@ -463,7 +462,6 @@ public final class DisasterRecoveryFunctions {
      *             .drProtectionGroupId(testDrProtectionGroup.id())
      *             .displayName(drPlanExecutionDisplayName)
      *             .drPlanExecutionId(testDrPlanExecution.id())
-     *             .drPlanExecutionType(drPlanExecutionDrPlanExecutionType)
      *             .state(drPlanExecutionState)
      *             .build());
      * 
@@ -511,7 +509,6 @@ public final class DisasterRecoveryFunctions {
      *             .drProtectionGroupId(testDrProtectionGroup.id())
      *             .displayName(drPlanExecutionDisplayName)
      *             .drPlanExecutionId(testDrPlanExecution.id())
-     *             .drPlanExecutionType(drPlanExecutionDrPlanExecutionType)
      *             .state(drPlanExecutionState)
      *             .build());
      * 
@@ -559,7 +556,6 @@ public final class DisasterRecoveryFunctions {
      *             .drProtectionGroupId(testDrProtectionGroup.id())
      *             .displayName(drPlanExecutionDisplayName)
      *             .drPlanExecutionId(testDrPlanExecution.id())
-     *             .drPlanExecutionType(drPlanExecutionDrPlanExecutionType)
      *             .state(drPlanExecutionState)
      *             .build());
      * 

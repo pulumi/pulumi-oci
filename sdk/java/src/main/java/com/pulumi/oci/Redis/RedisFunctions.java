@@ -8,9 +8,12 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.oci.Redis.inputs.GetRedisClusterArgs;
+import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
+import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClusterPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClustersPlainArgs;
+import com.pulumi.oci.Redis.outputs.GetRedisClusterNodesResult;
 import com.pulumi.oci.Redis.outputs.GetRedisClusterResult;
 import com.pulumi.oci.Redis.outputs.GetRedisClustersResult;
 import com.pulumi.oci.Utilities;
@@ -20,7 +23,7 @@ public final class RedisFunctions {
     /**
      * This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
      * 
-     * Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -64,7 +67,7 @@ public final class RedisFunctions {
     /**
      * This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
      * 
-     * Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -108,7 +111,7 @@ public final class RedisFunctions {
     /**
      * This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
      * 
-     * Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -152,7 +155,7 @@ public final class RedisFunctions {
     /**
      * This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
      * 
-     * Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -194,9 +197,189 @@ public final class RedisFunctions {
         return Deployment.getInstance().invokeAsync("oci:Redis/getRedisCluster:getRedisCluster", TypeShape.of(GetRedisClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets the list of all nodes in a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
+     *             .redisClusterId(testRedisCluster.id())
+     *             .displayName(redisClusterNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRedisClusterNodesResult> getRedisClusterNodes(GetRedisClusterNodesArgs args) {
+        return getRedisClusterNodes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets the list of all nodes in a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
+     *             .redisClusterId(testRedisCluster.id())
+     *             .displayName(redisClusterNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetRedisClusterNodesResult> getRedisClusterNodesPlain(GetRedisClusterNodesPlainArgs args) {
+        return getRedisClusterNodesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets the list of all nodes in a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
+     *             .redisClusterId(testRedisCluster.id())
+     *             .displayName(redisClusterNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRedisClusterNodesResult> getRedisClusterNodes(GetRedisClusterNodesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", TypeShape.of(GetRedisClusterNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets the list of all nodes in a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
+     *             .redisClusterId(testRedisCluster.id())
+     *             .displayName(redisClusterNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetRedisClusterNodesResult> getRedisClusterNodesPlain(GetRedisClusterNodesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", TypeShape.of(GetRedisClusterNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
      * 
-     * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -243,7 +426,7 @@ public final class RedisFunctions {
     /**
      * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
      * 
-     * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -290,7 +473,7 @@ public final class RedisFunctions {
     /**
      * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
      * 
-     * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -337,7 +520,7 @@ public final class RedisFunctions {
     /**
      * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
      * 
-     * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -384,7 +567,7 @@ public final class RedisFunctions {
     /**
      * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
      * 
-     * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 
@@ -431,7 +614,7 @@ public final class RedisFunctions {
     /**
      * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
      * 
-     * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      * 
      * ## Example Usage
      * 

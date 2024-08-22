@@ -1726,10 +1726,16 @@ func (o DrProtectionGroupLogLocationPtrOutput) Object() pulumi.StringPtrOutput {
 }
 
 type DrProtectionGroupMember struct {
+	// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	AutonomousDatabaseStandbyTypeForDrDrills *string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []DrProtectionGroupMemberBackendSetMapping `pulumi:"backendSetMappings"`
 	// (Updatable) A list of operations performed on block volumes used by the compute instance.
 	BlockVolumeOperations []DrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
+	// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	ConnectionStringType *string `pulumi:"connectionStringType"`
 	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain *string `pulumi:"destinationAvailabilityDomain"`
 	// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -1756,7 +1762,9 @@ type DrProtectionGroupMember struct {
 	MemberId string `pulumi:"memberId"`
 	// (Updatable) The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
 	// (Updatable) A list of compute instance VNIC mappings.
 	VnicMapping []DrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
@@ -1776,10 +1784,16 @@ type DrProtectionGroupMemberInput interface {
 }
 
 type DrProtectionGroupMemberArgs struct {
+	// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringPtrInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings DrProtectionGroupMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
 	// (Updatable) A list of operations performed on block volumes used by the compute instance.
 	BlockVolumeOperations DrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
+	// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	ConnectionStringType pulumi.StringPtrInput `pulumi:"connectionStringType"`
 	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringPtrInput `pulumi:"destinationAvailabilityDomain"`
 	// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -1806,7 +1820,9 @@ type DrProtectionGroupMemberArgs struct {
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// (Updatable) The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
 	// (Updatable) A list of compute instance VNIC mappings.
 	VnicMapping DrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
@@ -1865,6 +1881,11 @@ func (o DrProtectionGroupMemberOutput) ToDrProtectionGroupMemberOutputWithContex
 	return o
 }
 
+// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+func (o DrProtectionGroupMemberOutput) AutonomousDatabaseStandbyTypeForDrDrills() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.AutonomousDatabaseStandbyTypeForDrDrills }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
 func (o DrProtectionGroupMemberOutput) BackendSetMappings() DrProtectionGroupMemberBackendSetMappingArrayOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberBackendSetMapping {
@@ -1877,6 +1898,16 @@ func (o DrProtectionGroupMemberOutput) BlockVolumeOperations() DrProtectionGroup
 	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberBlockVolumeOperation {
 		return v.BlockVolumeOperations
 	}).(DrProtectionGroupMemberBlockVolumeOperationArrayOutput)
+}
+
+// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
+func (o DrProtectionGroupMemberOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+func (o DrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.ConnectionStringType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
@@ -1946,7 +1977,12 @@ func (o DrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+func (o DrProtectionGroupMemberOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PasswordVaultSecretId }).(pulumi.StringPtrOutput)
 }
@@ -6777,7 +6813,7 @@ func (o GetDrProtectionGroupAssociationArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDrProtectionGroupLogLocation struct {
-	// The bucket name inside the object storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
@@ -6797,7 +6833,7 @@ type GetDrProtectionGroupLogLocationInput interface {
 }
 
 type GetDrProtectionGroupLogLocationArgs struct {
-	// The bucket name inside the object storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
@@ -6856,7 +6892,7 @@ func (o GetDrProtectionGroupLogLocationOutput) ToGetDrProtectionGroupLogLocation
 	return o
 }
 
-// The bucket name inside the object storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `bucketName`
 func (o GetDrProtectionGroupLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -6892,10 +6928,16 @@ func (o GetDrProtectionGroupLogLocationArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDrProtectionGroupMember struct {
+	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	AutonomousDatabaseStandbyTypeForDrDrills string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []GetDrProtectionGroupMemberBackendSetMapping `pulumi:"backendSetMappings"`
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket string `pulumi:"bucket"`
+	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	ConnectionStringType string `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -6922,7 +6964,9 @@ type GetDrProtectionGroupMember struct {
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace string `pulumi:"namespace"`
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping []GetDrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
@@ -6942,10 +6986,16 @@ type GetDrProtectionGroupMemberInput interface {
 }
 
 type GetDrProtectionGroupMemberArgs struct {
+	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings GetDrProtectionGroupMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	ConnectionStringType pulumi.StringInput `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -6972,7 +7022,9 @@ type GetDrProtectionGroupMemberArgs struct {
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping GetDrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
@@ -7031,6 +7083,11 @@ func (o GetDrProtectionGroupMemberOutput) ToGetDrProtectionGroupMemberOutputWith
 	return o
 }
 
+// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+func (o GetDrProtectionGroupMemberOutput) AutonomousDatabaseStandbyTypeForDrDrills() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.AutonomousDatabaseStandbyTypeForDrDrills }).(pulumi.StringOutput)
+}
+
 // A list of backend set mappings that are used to transfer or update backends during DR.
 func (o GetDrProtectionGroupMemberOutput) BackendSetMappings() GetDrProtectionGroupMemberBackendSetMappingArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBackendSetMapping {
@@ -7043,6 +7100,16 @@ func (o GetDrProtectionGroupMemberOutput) BlockVolumeOperations() GetDrProtectio
 	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBlockVolumeOperation {
 		return v.BlockVolumeOperations
 	}).(GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput)
+}
+
+// The bucket name inside the object storage namespace.  Example: `bucketName`
+func (o GetDrProtectionGroupMemberOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+func (o GetDrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.ConnectionStringType }).(pulumi.StringOutput)
 }
 
 // The availability domain of the destination mount target. Example: `BBTh:region-AD`
@@ -7112,7 +7179,12 @@ func (o GetDrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+func (o GetDrProtectionGroupMemberOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PasswordVaultSecretId }).(pulumi.StringOutput)
 }
@@ -8611,7 +8683,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutp
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation struct {
-	// The bucket name inside the object storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
@@ -8631,7 +8703,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationInput interf
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs struct {
-	// The bucket name inside the object storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
@@ -8690,7 +8762,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) T
 	return o
 }
 
-// The bucket name inside the object storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `bucketName`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -8726,10 +8798,16 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutp
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
+	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	AutonomousDatabaseStandbyTypeForDrDrills string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping `pulumi:"backendSetMappings"`
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket string `pulumi:"bucket"`
+	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	ConnectionStringType string `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -8756,7 +8834,9 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace string `pulumi:"namespace"`
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping `pulumi:"vnicMapping"`
@@ -8776,10 +8856,16 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberInput interface {
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
+	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	ConnectionStringType pulumi.StringInput `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -8806,7 +8892,9 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
@@ -8865,6 +8953,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToGetD
 	return o
 }
 
+// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) AutonomousDatabaseStandbyTypeForDrDrills() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+		return v.AutonomousDatabaseStandbyTypeForDrDrills
+	}).(pulumi.StringOutput)
+}
+
 // A list of backend set mappings that are used to transfer or update backends during DR.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BackendSetMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping {
@@ -8877,6 +8972,18 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BlockV
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation {
 		return v.BlockVolumeOperations
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput)
+}
+
+// The bucket name inside the object storage namespace.  Example: `bucketName`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ConnectionStringType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+		return v.ConnectionStringType
+	}).(pulumi.StringOutput)
 }
 
 // The availability domain of the destination mount target. Example: `BBTh:region-AD`
@@ -8960,7 +9067,12 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Member
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.PasswordVaultSecretId

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
  *
- * Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+ * Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getRedisCluster(args: GetRedisClusterArgs, opts?: pulumi.InvokeO
  */
 export interface GetRedisClusterArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
     redisClusterId: string;
 }
@@ -45,7 +45,11 @@ export interface GetRedisClusterArgs {
  */
 export interface GetRedisClusterResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * Specifies whether the cluster is sharded or non-sharded.
+     */
+    readonly clusterMode: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
     readonly compartmentId: string;
     /**
@@ -53,7 +57,7 @@ export interface GetRedisClusterResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * A user-friendly name of a Redis cluster node.
+     * A user-friendly name of a cluster node.
      */
     readonly displayName: string;
     /**
@@ -61,7 +65,7 @@ export interface GetRedisClusterResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
     readonly id: string;
     /**
@@ -69,48 +73,52 @@ export interface GetRedisClusterResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * The collection of Redis cluster nodes.
+     * The collection of  cluster nodes.
      */
     readonly nodeCollections: outputs.Redis.GetRedisClusterNodeCollection[];
     /**
-     * The number of nodes in the Redis cluster.
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      */
     readonly nodeCount: number;
     /**
-     * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * The amount of memory allocated to the cluster's nodes, in gigabytes.
      */
     readonly nodeMemoryInGbs: number;
     /**
-     * A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     readonly nsgIds: string[];
     /**
-     * The private IP address of the API endpoint for the Redis cluster's primary node.
+     * The private IP address of the API endpoint for the cluster's primary node.
      */
     readonly primaryEndpointIpAddress: string;
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
      */
     readonly primaryFqdn: string;
     readonly redisClusterId: string;
     /**
-     * The private IP address of the API endpoint for the Redis cluster's replica nodes.
+     * The private IP address of the API endpoint for the cluster's replica nodes.
      */
     readonly replicasEndpointIpAddress: string;
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
      */
     readonly replicasFqdn: string;
     /**
-     * The Redis version that the cluster is running.
+     * The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+     */
+    readonly shardCount: number;
+    /**
+     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
     readonly softwareVersion: string;
     /**
-     * The current state of the Redis cluster.
+     * The current state of the cluster.
      */
     readonly state: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      */
     readonly subnetId: string;
     /**
@@ -118,18 +126,18 @@ export interface GetRedisClusterResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     readonly timeCreated: string;
     /**
-     * The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
  *
- * Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+ * Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  *
  * ## Example Usage
  *
@@ -151,7 +159,7 @@ export function getRedisClusterOutput(args: GetRedisClusterOutputArgs, opts?: pu
  */
 export interface GetRedisClusterOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
     redisClusterId: pulumi.Input<string>;
 }

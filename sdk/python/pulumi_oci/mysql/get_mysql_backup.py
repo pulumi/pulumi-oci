@@ -140,7 +140,7 @@ class GetMysqlBackupResult:
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> int:
         """
-        Initial size of the data volume in GiBs that will be created and attached.
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 

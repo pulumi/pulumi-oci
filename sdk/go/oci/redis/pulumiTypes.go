@@ -323,7 +323,7 @@ func (o GetRedisClusterNodeCollectionArrayOutput) Index(i pulumi.IntInput) GetRe
 }
 
 type GetRedisClusterNodeCollectionItem struct {
-	// A user-friendly name of a Redis cluster node.
+	// A user-friendly name of a cluster node.
 	DisplayName string `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
 	PrivateEndpointFqdn string `pulumi:"privateEndpointFqdn"`
@@ -343,7 +343,7 @@ type GetRedisClusterNodeCollectionItemInput interface {
 }
 
 type GetRedisClusterNodeCollectionItemArgs struct {
-	// A user-friendly name of a Redis cluster node.
+	// A user-friendly name of a cluster node.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
 	PrivateEndpointFqdn pulumi.StringInput `pulumi:"privateEndpointFqdn"`
@@ -402,7 +402,7 @@ func (o GetRedisClusterNodeCollectionItemOutput) ToGetRedisClusterNodeCollection
 	return o
 }
 
-// A user-friendly name of a Redis cluster node.
+// A user-friendly name of a cluster node.
 func (o GetRedisClusterNodeCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClusterNodeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -435,6 +435,344 @@ func (o GetRedisClusterNodeCollectionItemArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterNodeCollectionItem {
 		return vs[0].([]GetRedisClusterNodeCollectionItem)[vs[1].(int)]
 	}).(GetRedisClusterNodeCollectionItemOutput)
+}
+
+type GetRedisClusterNodesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRedisClusterNodesFilterInput is an input type that accepts GetRedisClusterNodesFilterArgs and GetRedisClusterNodesFilterOutput values.
+// You can construct a concrete instance of `GetRedisClusterNodesFilterInput` via:
+//
+//	GetRedisClusterNodesFilterArgs{...}
+type GetRedisClusterNodesFilterInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterNodesFilterOutput() GetRedisClusterNodesFilterOutput
+	ToGetRedisClusterNodesFilterOutputWithContext(context.Context) GetRedisClusterNodesFilterOutput
+}
+
+type GetRedisClusterNodesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRedisClusterNodesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterNodesFilter)(nil)).Elem()
+}
+
+func (i GetRedisClusterNodesFilterArgs) ToGetRedisClusterNodesFilterOutput() GetRedisClusterNodesFilterOutput {
+	return i.ToGetRedisClusterNodesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterNodesFilterArgs) ToGetRedisClusterNodesFilterOutputWithContext(ctx context.Context) GetRedisClusterNodesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodesFilterOutput)
+}
+
+// GetRedisClusterNodesFilterArrayInput is an input type that accepts GetRedisClusterNodesFilterArray and GetRedisClusterNodesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRedisClusterNodesFilterArrayInput` via:
+//
+//	GetRedisClusterNodesFilterArray{ GetRedisClusterNodesFilterArgs{...} }
+type GetRedisClusterNodesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterNodesFilterArrayOutput() GetRedisClusterNodesFilterArrayOutput
+	ToGetRedisClusterNodesFilterArrayOutputWithContext(context.Context) GetRedisClusterNodesFilterArrayOutput
+}
+
+type GetRedisClusterNodesFilterArray []GetRedisClusterNodesFilterInput
+
+func (GetRedisClusterNodesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterNodesFilter)(nil)).Elem()
+}
+
+func (i GetRedisClusterNodesFilterArray) ToGetRedisClusterNodesFilterArrayOutput() GetRedisClusterNodesFilterArrayOutput {
+	return i.ToGetRedisClusterNodesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterNodesFilterArray) ToGetRedisClusterNodesFilterArrayOutputWithContext(ctx context.Context) GetRedisClusterNodesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodesFilterArrayOutput)
+}
+
+type GetRedisClusterNodesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterNodesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterNodesFilter)(nil)).Elem()
+}
+
+func (o GetRedisClusterNodesFilterOutput) ToGetRedisClusterNodesFilterOutput() GetRedisClusterNodesFilterOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesFilterOutput) ToGetRedisClusterNodesFilterOutputWithContext(ctx context.Context) GetRedisClusterNodesFilterOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRedisClusterNodesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRedisClusterNodesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRedisClusterNodesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterNodesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterNodesFilter)(nil)).Elem()
+}
+
+func (o GetRedisClusterNodesFilterArrayOutput) ToGetRedisClusterNodesFilterArrayOutput() GetRedisClusterNodesFilterArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesFilterArrayOutput) ToGetRedisClusterNodesFilterArrayOutputWithContext(ctx context.Context) GetRedisClusterNodesFilterArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesFilterArrayOutput) Index(i pulumi.IntInput) GetRedisClusterNodesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterNodesFilter {
+		return vs[0].([]GetRedisClusterNodesFilter)[vs[1].(int)]
+	}).(GetRedisClusterNodesFilterOutput)
+}
+
+type GetRedisClusterNodesRedisNodeCollection struct {
+	// The list of nodes in a cluster.
+	Items []GetRedisClusterNodesRedisNodeCollectionItem `pulumi:"items"`
+}
+
+// GetRedisClusterNodesRedisNodeCollectionInput is an input type that accepts GetRedisClusterNodesRedisNodeCollectionArgs and GetRedisClusterNodesRedisNodeCollectionOutput values.
+// You can construct a concrete instance of `GetRedisClusterNodesRedisNodeCollectionInput` via:
+//
+//	GetRedisClusterNodesRedisNodeCollectionArgs{...}
+type GetRedisClusterNodesRedisNodeCollectionInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterNodesRedisNodeCollectionOutput() GetRedisClusterNodesRedisNodeCollectionOutput
+	ToGetRedisClusterNodesRedisNodeCollectionOutputWithContext(context.Context) GetRedisClusterNodesRedisNodeCollectionOutput
+}
+
+type GetRedisClusterNodesRedisNodeCollectionArgs struct {
+	// The list of nodes in a cluster.
+	Items GetRedisClusterNodesRedisNodeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRedisClusterNodesRedisNodeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterNodesRedisNodeCollection)(nil)).Elem()
+}
+
+func (i GetRedisClusterNodesRedisNodeCollectionArgs) ToGetRedisClusterNodesRedisNodeCollectionOutput() GetRedisClusterNodesRedisNodeCollectionOutput {
+	return i.ToGetRedisClusterNodesRedisNodeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterNodesRedisNodeCollectionArgs) ToGetRedisClusterNodesRedisNodeCollectionOutputWithContext(ctx context.Context) GetRedisClusterNodesRedisNodeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodesRedisNodeCollectionOutput)
+}
+
+// GetRedisClusterNodesRedisNodeCollectionArrayInput is an input type that accepts GetRedisClusterNodesRedisNodeCollectionArray and GetRedisClusterNodesRedisNodeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRedisClusterNodesRedisNodeCollectionArrayInput` via:
+//
+//	GetRedisClusterNodesRedisNodeCollectionArray{ GetRedisClusterNodesRedisNodeCollectionArgs{...} }
+type GetRedisClusterNodesRedisNodeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterNodesRedisNodeCollectionArrayOutput() GetRedisClusterNodesRedisNodeCollectionArrayOutput
+	ToGetRedisClusterNodesRedisNodeCollectionArrayOutputWithContext(context.Context) GetRedisClusterNodesRedisNodeCollectionArrayOutput
+}
+
+type GetRedisClusterNodesRedisNodeCollectionArray []GetRedisClusterNodesRedisNodeCollectionInput
+
+func (GetRedisClusterNodesRedisNodeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterNodesRedisNodeCollection)(nil)).Elem()
+}
+
+func (i GetRedisClusterNodesRedisNodeCollectionArray) ToGetRedisClusterNodesRedisNodeCollectionArrayOutput() GetRedisClusterNodesRedisNodeCollectionArrayOutput {
+	return i.ToGetRedisClusterNodesRedisNodeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterNodesRedisNodeCollectionArray) ToGetRedisClusterNodesRedisNodeCollectionArrayOutputWithContext(ctx context.Context) GetRedisClusterNodesRedisNodeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodesRedisNodeCollectionArrayOutput)
+}
+
+type GetRedisClusterNodesRedisNodeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterNodesRedisNodeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterNodesRedisNodeCollection)(nil)).Elem()
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionOutput) ToGetRedisClusterNodesRedisNodeCollectionOutput() GetRedisClusterNodesRedisNodeCollectionOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionOutput) ToGetRedisClusterNodesRedisNodeCollectionOutputWithContext(ctx context.Context) GetRedisClusterNodesRedisNodeCollectionOutput {
+	return o
+}
+
+// The list of nodes in a cluster.
+func (o GetRedisClusterNodesRedisNodeCollectionOutput) Items() GetRedisClusterNodesRedisNodeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesRedisNodeCollection) []GetRedisClusterNodesRedisNodeCollectionItem {
+		return v.Items
+	}).(GetRedisClusterNodesRedisNodeCollectionItemArrayOutput)
+}
+
+type GetRedisClusterNodesRedisNodeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterNodesRedisNodeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterNodesRedisNodeCollection)(nil)).Elem()
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionArrayOutput) ToGetRedisClusterNodesRedisNodeCollectionArrayOutput() GetRedisClusterNodesRedisNodeCollectionArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionArrayOutput) ToGetRedisClusterNodesRedisNodeCollectionArrayOutputWithContext(ctx context.Context) GetRedisClusterNodesRedisNodeCollectionArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionArrayOutput) Index(i pulumi.IntInput) GetRedisClusterNodesRedisNodeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterNodesRedisNodeCollection {
+		return vs[0].([]GetRedisClusterNodesRedisNodeCollection)[vs[1].(int)]
+	}).(GetRedisClusterNodesRedisNodeCollectionOutput)
+}
+
+type GetRedisClusterNodesRedisNodeCollectionItem struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
+	PrivateEndpointFqdn string `pulumi:"privateEndpointFqdn"`
+	// The private IP address of the API endpoint to access a specific node.
+	PrivateEndpointIpAddress string `pulumi:"privateEndpointIpAddress"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+	RedisClusterId string `pulumi:"redisClusterId"`
+	// The shard number to which the node belongs to.
+	ShardNumber int `pulumi:"shardNumber"`
+}
+
+// GetRedisClusterNodesRedisNodeCollectionItemInput is an input type that accepts GetRedisClusterNodesRedisNodeCollectionItemArgs and GetRedisClusterNodesRedisNodeCollectionItemOutput values.
+// You can construct a concrete instance of `GetRedisClusterNodesRedisNodeCollectionItemInput` via:
+//
+//	GetRedisClusterNodesRedisNodeCollectionItemArgs{...}
+type GetRedisClusterNodesRedisNodeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterNodesRedisNodeCollectionItemOutput() GetRedisClusterNodesRedisNodeCollectionItemOutput
+	ToGetRedisClusterNodesRedisNodeCollectionItemOutputWithContext(context.Context) GetRedisClusterNodesRedisNodeCollectionItemOutput
+}
+
+type GetRedisClusterNodesRedisNodeCollectionItemArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
+	PrivateEndpointFqdn pulumi.StringInput `pulumi:"privateEndpointFqdn"`
+	// The private IP address of the API endpoint to access a specific node.
+	PrivateEndpointIpAddress pulumi.StringInput `pulumi:"privateEndpointIpAddress"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+	RedisClusterId pulumi.StringInput `pulumi:"redisClusterId"`
+	// The shard number to which the node belongs to.
+	ShardNumber pulumi.IntInput `pulumi:"shardNumber"`
+}
+
+func (GetRedisClusterNodesRedisNodeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterNodesRedisNodeCollectionItem)(nil)).Elem()
+}
+
+func (i GetRedisClusterNodesRedisNodeCollectionItemArgs) ToGetRedisClusterNodesRedisNodeCollectionItemOutput() GetRedisClusterNodesRedisNodeCollectionItemOutput {
+	return i.ToGetRedisClusterNodesRedisNodeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterNodesRedisNodeCollectionItemArgs) ToGetRedisClusterNodesRedisNodeCollectionItemOutputWithContext(ctx context.Context) GetRedisClusterNodesRedisNodeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodesRedisNodeCollectionItemOutput)
+}
+
+// GetRedisClusterNodesRedisNodeCollectionItemArrayInput is an input type that accepts GetRedisClusterNodesRedisNodeCollectionItemArray and GetRedisClusterNodesRedisNodeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRedisClusterNodesRedisNodeCollectionItemArrayInput` via:
+//
+//	GetRedisClusterNodesRedisNodeCollectionItemArray{ GetRedisClusterNodesRedisNodeCollectionItemArgs{...} }
+type GetRedisClusterNodesRedisNodeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterNodesRedisNodeCollectionItemArrayOutput() GetRedisClusterNodesRedisNodeCollectionItemArrayOutput
+	ToGetRedisClusterNodesRedisNodeCollectionItemArrayOutputWithContext(context.Context) GetRedisClusterNodesRedisNodeCollectionItemArrayOutput
+}
+
+type GetRedisClusterNodesRedisNodeCollectionItemArray []GetRedisClusterNodesRedisNodeCollectionItemInput
+
+func (GetRedisClusterNodesRedisNodeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterNodesRedisNodeCollectionItem)(nil)).Elem()
+}
+
+func (i GetRedisClusterNodesRedisNodeCollectionItemArray) ToGetRedisClusterNodesRedisNodeCollectionItemArrayOutput() GetRedisClusterNodesRedisNodeCollectionItemArrayOutput {
+	return i.ToGetRedisClusterNodesRedisNodeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterNodesRedisNodeCollectionItemArray) ToGetRedisClusterNodesRedisNodeCollectionItemArrayOutputWithContext(ctx context.Context) GetRedisClusterNodesRedisNodeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodesRedisNodeCollectionItemArrayOutput)
+}
+
+type GetRedisClusterNodesRedisNodeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterNodesRedisNodeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterNodesRedisNodeCollectionItem)(nil)).Elem()
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionItemOutput) ToGetRedisClusterNodesRedisNodeCollectionItemOutput() GetRedisClusterNodesRedisNodeCollectionItemOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionItemOutput) ToGetRedisClusterNodesRedisNodeCollectionItemOutputWithContext(ctx context.Context) GetRedisClusterNodesRedisNodeCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetRedisClusterNodesRedisNodeCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesRedisNodeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
+func (o GetRedisClusterNodesRedisNodeCollectionItemOutput) PrivateEndpointFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesRedisNodeCollectionItem) string { return v.PrivateEndpointFqdn }).(pulumi.StringOutput)
+}
+
+// The private IP address of the API endpoint to access a specific node.
+func (o GetRedisClusterNodesRedisNodeCollectionItemOutput) PrivateEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesRedisNodeCollectionItem) string { return v.PrivateEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+func (o GetRedisClusterNodesRedisNodeCollectionItemOutput) RedisClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesRedisNodeCollectionItem) string { return v.RedisClusterId }).(pulumi.StringOutput)
+}
+
+// The shard number to which the node belongs to.
+func (o GetRedisClusterNodesRedisNodeCollectionItemOutput) ShardNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRedisClusterNodesRedisNodeCollectionItem) int { return v.ShardNumber }).(pulumi.IntOutput)
+}
+
+type GetRedisClusterNodesRedisNodeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterNodesRedisNodeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterNodesRedisNodeCollectionItem)(nil)).Elem()
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionItemArrayOutput) ToGetRedisClusterNodesRedisNodeCollectionItemArrayOutput() GetRedisClusterNodesRedisNodeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionItemArrayOutput) ToGetRedisClusterNodesRedisNodeCollectionItemArrayOutputWithContext(ctx context.Context) GetRedisClusterNodesRedisNodeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterNodesRedisNodeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRedisClusterNodesRedisNodeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterNodesRedisNodeCollectionItem {
+		return vs[0].([]GetRedisClusterNodesRedisNodeCollectionItem)[vs[1].(int)]
+	}).(GetRedisClusterNodesRedisNodeCollectionItemOutput)
 }
 
 type GetRedisClustersFilter struct {
@@ -643,6 +981,8 @@ func (o GetRedisClustersRedisClusterCollectionArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetRedisClustersRedisClusterCollectionItem struct {
+	// Specifies whether the cluster is sharded or non-sharded.
+	ClusterMode string `pulumi:"clusterMode"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -651,37 +991,39 @@ type GetRedisClustersRedisClusterCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The collection of Redis cluster nodes.
+	// The collection of  cluster nodes.
 	NodeCollections []GetRedisClustersRedisClusterCollectionItemNodeCollection `pulumi:"nodeCollections"`
-	// The number of nodes in the Redis cluster.
+	// The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 	NodeCount int `pulumi:"nodeCount"`
-	// The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+	// The amount of memory allocated to the cluster's nodes, in gigabytes.
 	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
-	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds []string `pulumi:"nsgIds"`
-	// The private IP address of the API endpoint for the Redis cluster's primary node.
+	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress string `pulumi:"primaryEndpointIpAddress"`
-	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
 	PrimaryFqdn string `pulumi:"primaryFqdn"`
-	// The private IP address of the API endpoint for the Redis cluster's replica nodes.
+	// The private IP address of the API endpoint for the cluster's replica nodes.
 	ReplicasEndpointIpAddress string `pulumi:"replicasEndpointIpAddress"`
-	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 	ReplicasFqdn string `pulumi:"replicasFqdn"`
-	// The Redis version that the cluster is running.
+	// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+	ShardCount int `pulumi:"shardCount"`
+	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 	SoftwareVersion string `pulumi:"softwareVersion"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	// The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	// The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -697,6 +1039,8 @@ type GetRedisClustersRedisClusterCollectionItemInput interface {
 }
 
 type GetRedisClustersRedisClusterCollectionItemArgs struct {
+	// Specifies whether the cluster is sharded or non-sharded.
+	ClusterMode pulumi.StringInput `pulumi:"clusterMode"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -705,37 +1049,39 @@ type GetRedisClustersRedisClusterCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The collection of Redis cluster nodes.
+	// The collection of  cluster nodes.
 	NodeCollections GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayInput `pulumi:"nodeCollections"`
-	// The number of nodes in the Redis cluster.
+	// The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
-	// The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+	// The amount of memory allocated to the cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64Input `pulumi:"nodeMemoryInGbs"`
-	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// The private IP address of the API endpoint for the Redis cluster's primary node.
+	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringInput `pulumi:"primaryEndpointIpAddress"`
-	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
 	PrimaryFqdn pulumi.StringInput `pulumi:"primaryFqdn"`
-	// The private IP address of the API endpoint for the Redis cluster's replica nodes.
+	// The private IP address of the API endpoint for the cluster's replica nodes.
 	ReplicasEndpointIpAddress pulumi.StringInput `pulumi:"replicasEndpointIpAddress"`
-	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 	ReplicasFqdn pulumi.StringInput `pulumi:"replicasFqdn"`
-	// The Redis version that the cluster is running.
+	// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+	ShardCount pulumi.IntInput `pulumi:"shardCount"`
+	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 	SoftwareVersion pulumi.StringInput `pulumi:"softwareVersion"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	// The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	// The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -790,6 +1136,11 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) ToGetRedisClustersRedi
 	return o
 }
 
+// Specifies whether the cluster is sharded or non-sharded.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) ClusterMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.ClusterMode }).(pulumi.StringOutput)
+}
+
 // The ID of the compartment in which to list resources.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -810,7 +1161,7 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) FreeformTags() pulumi.
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -820,49 +1171,54 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) LifecycleDetails() pul
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The collection of Redis cluster nodes.
+// The collection of  cluster nodes.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) NodeCollections() GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) []GetRedisClustersRedisClusterCollectionItemNodeCollection {
 		return v.NodeCollections
 	}).(GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput)
 }
 
-// The number of nodes in the Redis cluster.
+// The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
-// The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+// The amount of memory allocated to the cluster's nodes, in gigabytes.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) NodeMemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) float64 { return v.NodeMemoryInGbs }).(pulumi.Float64Output)
 }
 
-// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 func (o GetRedisClustersRedisClusterCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// The private IP address of the API endpoint for the Redis cluster's primary node.
+// The private IP address of the API endpoint for the cluster's primary node.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) PrimaryEndpointIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.PrimaryEndpointIpAddress }).(pulumi.StringOutput)
 }
 
-// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) PrimaryFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.PrimaryFqdn }).(pulumi.StringOutput)
 }
 
-// The private IP address of the API endpoint for the Redis cluster's replica nodes.
+// The private IP address of the API endpoint for the cluster's replica nodes.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) ReplicasEndpointIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.ReplicasEndpointIpAddress }).(pulumi.StringOutput)
 }
 
-// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+// The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) ReplicasFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.ReplicasFqdn }).(pulumi.StringOutput)
 }
 
-// The Redis version that the cluster is running.
+// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) ShardCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) int { return v.ShardCount }).(pulumi.IntOutput)
+}
+
+// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) SoftwareVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.SoftwareVersion }).(pulumi.StringOutput)
 }
@@ -872,7 +1228,7 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) State() pulumi.StringO
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -882,12 +1238,12 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) SystemTags() pulumi.St
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+// The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+// The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -1139,6 +1495,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionArrayInput)(nil)).Elem(), GetRedisClusterNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionItemInput)(nil)).Elem(), GetRedisClusterNodeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionItemArrayInput)(nil)).Elem(), GetRedisClusterNodeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodesFilterInput)(nil)).Elem(), GetRedisClusterNodesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodesFilterArrayInput)(nil)).Elem(), GetRedisClusterNodesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodesRedisNodeCollectionInput)(nil)).Elem(), GetRedisClusterNodesRedisNodeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodesRedisNodeCollectionArrayInput)(nil)).Elem(), GetRedisClusterNodesRedisNodeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodesRedisNodeCollectionItemInput)(nil)).Elem(), GetRedisClusterNodesRedisNodeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodesRedisNodeCollectionItemArrayInput)(nil)).Elem(), GetRedisClusterNodesRedisNodeCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersFilterInput)(nil)).Elem(), GetRedisClustersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersFilterArrayInput)(nil)).Elem(), GetRedisClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionArgs{})
@@ -1157,6 +1519,12 @@ func init() {
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterNodesFilterOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterNodesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterNodesRedisNodeCollectionOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterNodesRedisNodeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterNodesRedisNodeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterNodesRedisNodeCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersFilterOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionOutput{})

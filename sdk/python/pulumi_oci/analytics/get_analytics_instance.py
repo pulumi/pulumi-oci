@@ -22,7 +22,10 @@ class GetAnalyticsInstanceResult:
     """
     A collection of values returned by getAnalyticsInstance.
     """
-    def __init__(__self__, analytics_instance_id=None, capacities=None, compartment_id=None, defined_tags=None, description=None, email_notification=None, feature_set=None, freeform_tags=None, id=None, idcs_access_token=None, kms_key_id=None, license_type=None, name=None, network_endpoint_details=None, service_url=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_user=None, analytics_instance_id=None, capacities=None, compartment_id=None, defined_tags=None, description=None, domain_id=None, email_notification=None, feature_bundle=None, feature_set=None, freeform_tags=None, id=None, idcs_access_token=None, kms_key_id=None, license_type=None, name=None, network_endpoint_details=None, service_url=None, state=None, system_tags=None, time_created=None, time_updated=None):
+        if admin_user and not isinstance(admin_user, str):
+            raise TypeError("Expected argument 'admin_user' to be a str")
+        pulumi.set(__self__, "admin_user", admin_user)
         if analytics_instance_id and not isinstance(analytics_instance_id, str):
             raise TypeError("Expected argument 'analytics_instance_id' to be a str")
         pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
@@ -38,9 +41,15 @@ class GetAnalyticsInstanceResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if domain_id and not isinstance(domain_id, str):
+            raise TypeError("Expected argument 'domain_id' to be a str")
+        pulumi.set(__self__, "domain_id", domain_id)
         if email_notification and not isinstance(email_notification, str):
             raise TypeError("Expected argument 'email_notification' to be a str")
         pulumi.set(__self__, "email_notification", email_notification)
+        if feature_bundle and not isinstance(feature_bundle, str):
+            raise TypeError("Expected argument 'feature_bundle' to be a str")
+        pulumi.set(__self__, "feature_bundle", feature_bundle)
         if feature_set and not isinstance(feature_set, str):
             raise TypeError("Expected argument 'feature_set' to be a str")
         pulumi.set(__self__, "feature_set", feature_set)
@@ -71,12 +80,20 @@ class GetAnalyticsInstanceResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="adminUser")
+    def admin_user(self) -> str:
+        return pulumi.get(self, "admin_user")
 
     @property
     @pulumi.getter(name="analyticsInstanceId")
@@ -116,12 +133,28 @@ class GetAnalyticsInstanceResult:
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> str:
+        """
+        Identity domain OCID.
+        """
+        return pulumi.get(self, "domain_id")
+
+    @property
     @pulumi.getter(name="emailNotification")
     def email_notification(self) -> str:
         """
         Email address receiving notifications.
         """
         return pulumi.get(self, "email_notification")
+
+    @property
+    @pulumi.getter(name="featureBundle")
+    def feature_bundle(self) -> str:
+        """
+        The feature set of an Analytics instance.
+        """
+        return pulumi.get(self, "feature_bundle")
 
     @property
     @pulumi.getter(name="featureSet")
@@ -156,7 +189,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -201,6 +234,14 @@ class GetAnalyticsInstanceResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -223,12 +264,15 @@ class AwaitableGetAnalyticsInstanceResult(GetAnalyticsInstanceResult):
         if False:
             yield self
         return GetAnalyticsInstanceResult(
+            admin_user=self.admin_user,
             analytics_instance_id=self.analytics_instance_id,
             capacities=self.capacities,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
+            domain_id=self.domain_id,
             email_notification=self.email_notification,
+            feature_bundle=self.feature_bundle,
             feature_set=self.feature_set,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -239,6 +283,7 @@ class AwaitableGetAnalyticsInstanceResult(GetAnalyticsInstanceResult):
             network_endpoint_details=self.network_endpoint_details,
             service_url=self.service_url,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -268,12 +313,15 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Analytics/getAnalyticsInstance:getAnalyticsInstance', __args__, opts=opts, typ=GetAnalyticsInstanceResult).value
 
     return AwaitableGetAnalyticsInstanceResult(
+        admin_user=pulumi.get(__ret__, 'admin_user'),
         analytics_instance_id=pulumi.get(__ret__, 'analytics_instance_id'),
         capacities=pulumi.get(__ret__, 'capacities'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
+        domain_id=pulumi.get(__ret__, 'domain_id'),
         email_notification=pulumi.get(__ret__, 'email_notification'),
+        feature_bundle=pulumi.get(__ret__, 'feature_bundle'),
         feature_set=pulumi.get(__ret__, 'feature_set'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -284,6 +332,7 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
         network_endpoint_details=pulumi.get(__ret__, 'network_endpoint_details'),
         service_url=pulumi.get(__ret__, 'service_url'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 

@@ -19,6 +19,21 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     public static final AnalyticsInstanceState Empty = new AnalyticsInstanceState();
 
     /**
+     * user name of the authorized user.
+     * 
+     */
+    @Import(name="adminUser")
+    private @Nullable Output<String> adminUser;
+
+    /**
+     * @return user name of the authorized user.
+     * 
+     */
+    public Optional<Output<String>> adminUser() {
+        return Optional.ofNullable(this.adminUser);
+    }
+
+    /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      * 
      */
@@ -79,6 +94,21 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * domain id for which the user is authorized.
+     * 
+     */
+    @Import(name="domainId")
+    private @Nullable Output<String> domainId;
+
+    /**
+     * @return domain id for which the user is authorized.
+     * 
+     */
+    public Optional<Output<String>> domainId() {
+        return Optional.ofNullable(this.domainId);
+    }
+
+    /**
      * (Updatable) Email address receiving notifications.
      * 
      */
@@ -91,6 +121,21 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<String>> emailNotification() {
         return Optional.ofNullable(this.emailNotification);
+    }
+
+    /**
+     * The feature set of an Analytics instance.
+     * 
+     */
+    @Import(name="featureBundle")
+    private @Nullable Output<String> featureBundle;
+
+    /**
+     * @return The feature set of an Analytics instance.
+     * 
+     */
+    public Optional<Output<String>> featureBundle() {
+        return Optional.ofNullable(this.featureBundle);
     }
 
     /**
@@ -139,14 +184,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -235,6 +280,21 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * System tags for this resource. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -267,11 +327,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     private AnalyticsInstanceState() {}
 
     private AnalyticsInstanceState(AnalyticsInstanceState $) {
+        this.adminUser = $.adminUser;
         this.capacity = $.capacity;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
+        this.domainId = $.domainId;
         this.emailNotification = $.emailNotification;
+        this.featureBundle = $.featureBundle;
         this.featureSet = $.featureSet;
         this.freeformTags = $.freeformTags;
         this.idcsAccessToken = $.idcsAccessToken;
@@ -281,6 +344,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         this.networkEndpointDetails = $.networkEndpointDetails;
         this.serviceUrl = $.serviceUrl;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -301,6 +365,27 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
 
         public Builder(AnalyticsInstanceState defaults) {
             $ = new AnalyticsInstanceState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param adminUser user name of the authorized user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder adminUser(@Nullable Output<String> adminUser) {
+            $.adminUser = adminUser;
+            return this;
+        }
+
+        /**
+         * @param adminUser user name of the authorized user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder adminUser(String adminUser) {
+            return adminUser(Output.of(adminUser));
         }
 
         /**
@@ -388,6 +473,27 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param domainId domain id for which the user is authorized.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainId(@Nullable Output<String> domainId) {
+            $.domainId = domainId;
+            return this;
+        }
+
+        /**
+         * @param domainId domain id for which the user is authorized.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainId(String domainId) {
+            return domainId(Output.of(domainId));
+        }
+
+        /**
          * @param emailNotification (Updatable) Email address receiving notifications.
          * 
          * @return builder
@@ -406,6 +512,27 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
          */
         public Builder emailNotification(String emailNotification) {
             return emailNotification(Output.of(emailNotification));
+        }
+
+        /**
+         * @param featureBundle The feature set of an Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder featureBundle(@Nullable Output<String> featureBundle) {
+            $.featureBundle = featureBundle;
+            return this;
+        }
+
+        /**
+         * @param featureBundle The feature set of an Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder featureBundle(String featureBundle) {
+            return featureBundle(Output.of(featureBundle));
         }
 
         /**
@@ -472,7 +599,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param kmsKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
          * 
          * @return builder
          * 
@@ -483,7 +610,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param kmsKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
          * 
          * @return builder
          * 
@@ -601,6 +728,27 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

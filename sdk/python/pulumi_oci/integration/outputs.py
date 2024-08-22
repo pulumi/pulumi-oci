@@ -624,7 +624,7 @@ class GetIntegrationInstanceAttachmentResult(dict):
                * If role == `CHILD`, this instance was created from attached instance on behalf of a user
         :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
         :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment. 
+        :param str target_role: The role of the target attachment.
                * `PARENT` - The target instance is the parent of this attachment.
                * `CHILD` - The target instance is the child of this attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
@@ -664,7 +664,7 @@ class GetIntegrationInstanceAttachmentResult(dict):
     @pulumi.getter(name="targetRole")
     def target_role(self) -> str:
         """
-        The role of the target attachment. 
+        The role of the target attachment.
         * `PARENT` - The target instance is the parent of this attachment.
         * `CHILD` - The target instance is the child of this attachment.
         """
@@ -947,10 +947,12 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  compartment_id: str,
                  consumption_model: str,
                  custom_endpoints: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult'],
+                 data_retention_period: str,
                  defined_tags: Mapping[str, str],
                  display_name: str,
                  domain_id: str,
                  enable_process_automation_trigger: int,
+                 extend_data_retention_trigger: int,
                  freeform_tags: Mapping[str, str],
                  id: str,
                  idcs_at: str,
@@ -975,13 +977,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str consumption_model: The entitlement used for billing purposes.
         :param Sequence['GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs'] custom_endpoints: Details for a custom endpoint for the integration instance.
+        :param str data_retention_period: Data retention period set for given integration instance
         :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence['GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs'] idcs_infos: Information for IDCS access
         :param str instance_url: The Integration Instance URL.
-        :param str integration_instance_type: Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        :param str integration_instance_type: Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param bool is_byol: Bring your own license.
         :param bool is_file_server_enabled: The file server is enabled or not.
         :param bool is_visual_builder_enabled: Visual Builder is enabled or not.
@@ -1000,10 +1003,12 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "consumption_model", consumption_model)
         pulumi.set(__self__, "custom_endpoints", custom_endpoints)
+        pulumi.set(__self__, "data_retention_period", data_retention_period)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "domain_id", domain_id)
         pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
+        pulumi.set(__self__, "extend_data_retention_trigger", extend_data_retention_trigger)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "idcs_at", idcs_at)
@@ -1064,6 +1069,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         return pulumi.get(self, "custom_endpoints")
 
     @property
+    @pulumi.getter(name="dataRetentionPeriod")
+    def data_retention_period(self) -> str:
+        """
+        Data retention period set for given integration instance
+        """
+        return pulumi.get(self, "data_retention_period")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
@@ -1088,6 +1101,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> int:
         return pulumi.get(self, "enable_process_automation_trigger")
+
+    @property
+    @pulumi.getter(name="extendDataRetentionTrigger")
+    def extend_data_retention_trigger(self) -> int:
+        return pulumi.get(self, "extend_data_retention_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -1130,7 +1148,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> str:
         """
-        Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -1295,7 +1313,7 @@ class GetIntegrationInstancesIntegrationInstanceAttachmentResult(dict):
                * If role == `CHILD`, this instance was created from attached instance on behalf of a user
         :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
         :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment. 
+        :param str target_role: The role of the target attachment.
                * `PARENT` - The target instance is the parent of this attachment.
                * `CHILD` - The target instance is the child of this attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
@@ -1335,7 +1353,7 @@ class GetIntegrationInstancesIntegrationInstanceAttachmentResult(dict):
     @pulumi.getter(name="targetRole")
     def target_role(self) -> str:
         """
-        The role of the target attachment. 
+        The role of the target attachment.
         * `PARENT` - The target instance is the parent of this attachment.
         * `CHILD` - The target instance is the child of this attachment.
         """

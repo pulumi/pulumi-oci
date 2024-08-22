@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult
     {
         /// <summary>
-        /// The bucket name inside the object storage namespace.  Example: `operation_logs`
+        /// The bucket name inside the object storage namespace.  Example: `bucket_name`
         /// </summary>
         public readonly string Bucket;
         /// <summary>

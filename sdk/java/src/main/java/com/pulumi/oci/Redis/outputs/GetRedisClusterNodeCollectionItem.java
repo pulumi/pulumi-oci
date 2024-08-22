@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRedisClusterNodeCollectionItem {
     /**
-     * @return A user-friendly name of a Redis cluster node.
+     * @return A user-friendly name of a cluster node.
      * 
      */
     private String displayName;
@@ -28,7 +28,7 @@ public final class GetRedisClusterNodeCollectionItem {
 
     private GetRedisClusterNodeCollectionItem() {}
     /**
-     * @return A user-friendly name of a Redis cluster node.
+     * @return A user-friendly name of a cluster node.
      * 
      */
     public String displayName() {

@@ -5005,6 +5005,8 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	CurrentPatchingComponent string `pulumi:"currentPatchingComponent"`
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
 	// Description of the maintenance run.
 	Description string `pulumi:"description"`
 	// The user-friendly name for the maintenance run.
@@ -5078,6 +5080,8 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	CurrentPatchingComponent pulumi.StringInput `pulumi:"currentPatchingComponent"`
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringInput `pulumi:"databaseSoftwareImageId"`
 	// Description of the maintenance run.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The user-friendly name for the maintenance run.
@@ -5200,6 +5204,11 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) CurrentPatchingComponent() pulum
 // Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 func (o GetMaintenanceRunsMaintenanceRunOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetMaintenanceRunsMaintenanceRunOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
 }
 
 // Description of the maintenance run.

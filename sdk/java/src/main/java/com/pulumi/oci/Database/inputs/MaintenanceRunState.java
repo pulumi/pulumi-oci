@@ -80,6 +80,21 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    @Import(name="databaseSoftwareImageId")
+    private @Nullable Output<String> databaseSoftwareImageId;
+
+    /**
+     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    public Optional<Output<String>> databaseSoftwareImageId() {
+        return Optional.ofNullable(this.databaseSoftwareImageId);
+    }
+
+    /**
      * Description of the maintenance run.
      * 
      */
@@ -245,14 +260,14 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
      * 
      */
     @Import(name="patchType")
     private @Nullable Output<String> patchType;
 
     /**
-     * @return Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * @return Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
      * 
      */
     public Optional<Output<String>> patchType() {
@@ -471,6 +486,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         this.currentCustomActionTimeoutInMins = $.currentCustomActionTimeoutInMins;
         this.currentPatchingComponent = $.currentPatchingComponent;
         this.customActionTimeoutInMins = $.customActionTimeoutInMins;
+        this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.description = $.description;
         this.displayName = $.displayName;
         this.estimatedComponentPatchingStartTime = $.estimatedComponentPatchingStartTime;
@@ -598,6 +614,27 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
          */
         public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
             return customActionTimeoutInMins(Output.of(customActionTimeoutInMins));
+        }
+
+        /**
+         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseSoftwareImageId(@Nullable Output<String> databaseSoftwareImageId) {
+            $.databaseSoftwareImageId = databaseSoftwareImageId;
+            return this;
+        }
+
+        /**
+         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            return databaseSoftwareImageId(Output.of(databaseSoftwareImageId));
         }
 
         /**
@@ -842,7 +879,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param patchType Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+         * @param patchType Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
          * 
          * @return builder
          * 
@@ -853,7 +890,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param patchType Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+         * @param patchType Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
          * 
          * @return builder
          * 

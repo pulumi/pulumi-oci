@@ -67,7 +67,7 @@ type LookupMysqlBackupResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
 	CreationType string `pulumi:"creationType"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// The OCID of the DB System the backup is associated with.
 	DbSystemId                string                                  `pulumi:"dbSystemId"`
@@ -169,7 +169,7 @@ func (o LookupMysqlBackupResultOutput) CreationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.CreationType }).(pulumi.StringOutput)
 }
 
-// Initial size of the data volume in GiBs that will be created and attached.
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 func (o LookupMysqlBackupResultOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }

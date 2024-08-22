@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Analytics.Outputs
     public sealed class AnalyticsInstanceCapacity
     {
         /// <summary>
-        /// The capacity model to use.
+        /// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
         /// </summary>
         public readonly string CapacityType;
         /// <summary>
-        /// (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        /// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
         public readonly int CapacityValue;
 

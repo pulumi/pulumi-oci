@@ -46,6 +46,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     private List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
     /**
+     * @return Data retention period set for given integration instance
+     * 
+     */
+    private String dataRetentionPeriod;
+    /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -57,6 +62,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     private String displayName;
     private String domainId;
     private Integer enableProcessAutomationTrigger;
+    private Integer extendDataRetentionTrigger;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -79,7 +85,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     private String instanceUrl;
     /**
-     * @return Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * @return Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     private String integrationInstanceType;
@@ -181,6 +187,13 @@ public final class GetIntegrationInstancesIntegrationInstance {
         return this.customEndpoints;
     }
     /**
+     * @return Data retention period set for given integration instance
+     * 
+     */
+    public String dataRetentionPeriod() {
+        return this.dataRetentionPeriod;
+    }
+    /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -199,6 +212,9 @@ public final class GetIntegrationInstancesIntegrationInstance {
     }
     public Integer enableProcessAutomationTrigger() {
         return this.enableProcessAutomationTrigger;
+    }
+    public Integer extendDataRetentionTrigger() {
+        return this.extendDataRetentionTrigger;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -232,7 +248,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         return this.instanceUrl;
     }
     /**
-     * @return Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * @return Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     public String integrationInstanceType() {
@@ -337,10 +353,12 @@ public final class GetIntegrationInstancesIntegrationInstance {
         private String compartmentId;
         private String consumptionModel;
         private List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
+        private String dataRetentionPeriod;
         private Map<String,String> definedTags;
         private String displayName;
         private String domainId;
         private Integer enableProcessAutomationTrigger;
+        private Integer extendDataRetentionTrigger;
         private Map<String,String> freeformTags;
         private String id;
         private String idcsAt;
@@ -367,10 +385,12 @@ public final class GetIntegrationInstancesIntegrationInstance {
     	      this.compartmentId = defaults.compartmentId;
     	      this.consumptionModel = defaults.consumptionModel;
     	      this.customEndpoints = defaults.customEndpoints;
+    	      this.dataRetentionPeriod = defaults.dataRetentionPeriod;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.domainId = defaults.domainId;
     	      this.enableProcessAutomationTrigger = defaults.enableProcessAutomationTrigger;
+    	      this.extendDataRetentionTrigger = defaults.extendDataRetentionTrigger;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.idcsAt = defaults.idcsAt;
@@ -441,6 +461,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return customEndpoints(List.of(customEndpoints));
         }
         @CustomType.Setter
+        public Builder dataRetentionPeriod(String dataRetentionPeriod) {
+            if (dataRetentionPeriod == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "dataRetentionPeriod");
+            }
+            this.dataRetentionPeriod = dataRetentionPeriod;
+            return this;
+        }
+        @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "definedTags");
@@ -470,6 +498,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "enableProcessAutomationTrigger");
             }
             this.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder extendDataRetentionTrigger(Integer extendDataRetentionTrigger) {
+            if (extendDataRetentionTrigger == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "extendDataRetentionTrigger");
+            }
+            this.extendDataRetentionTrigger = extendDataRetentionTrigger;
             return this;
         }
         @CustomType.Setter
@@ -632,10 +668,12 @@ public final class GetIntegrationInstancesIntegrationInstance {
             _resultValue.compartmentId = compartmentId;
             _resultValue.consumptionModel = consumptionModel;
             _resultValue.customEndpoints = customEndpoints;
+            _resultValue.dataRetentionPeriod = dataRetentionPeriod;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.domainId = domainId;
             _resultValue.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
+            _resultValue.extendDataRetentionTrigger = extendDataRetentionTrigger;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.idcsAt = idcsAt;

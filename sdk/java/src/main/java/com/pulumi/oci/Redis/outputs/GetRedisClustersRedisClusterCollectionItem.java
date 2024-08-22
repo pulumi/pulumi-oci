@@ -16,6 +16,11 @@ import java.util.Objects;
 @CustomType
 public final class GetRedisClustersRedisClusterCollectionItem {
     /**
+     * @return Specifies whether the cluster is sharded or non-sharded.
+     * 
+     */
+    private String clusterMode;
+    /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
@@ -36,7 +41,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      * 
      */
     private String id;
@@ -46,47 +51,52 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return The collection of Redis cluster nodes.
+     * @return The collection of  cluster nodes.
      * 
      */
     private List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections;
     /**
-     * @return The number of nodes in the Redis cluster.
+     * @return The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * 
      */
     private Integer nodeCount;
     /**
-     * @return The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+     * @return The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
      * 
      */
     private Double nodeMemoryInGbs;
     /**
-     * @return A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * @return A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      * 
      */
     private List<String> nsgIds;
     /**
-     * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
+     * @return The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     private String primaryEndpointIpAddress;
     /**
-     * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
+     * @return The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     private String primaryFqdn;
     /**
-     * @return The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * @return The private IP address of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     private String replicasEndpointIpAddress;
     /**
-     * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * @return The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     private String replicasFqdn;
     /**
-     * @return The Redis version that the cluster is running.
+     * @return The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+     * 
+     */
+    private Integer shardCount;
+    /**
+     * @return The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     private String softwareVersion;
@@ -96,7 +106,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     private String state;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
      * 
      */
     private String subnetId;
@@ -106,17 +116,24 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * @return The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * @return The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     private String timeUpdated;
 
     private GetRedisClustersRedisClusterCollectionItem() {}
+    /**
+     * @return Specifies whether the cluster is sharded or non-sharded.
+     * 
+     */
+    public String clusterMode() {
+        return this.clusterMode;
+    }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -146,7 +163,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      * 
      */
     public String id() {
@@ -160,63 +177,70 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return The collection of Redis cluster nodes.
+     * @return The collection of  cluster nodes.
      * 
      */
     public List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections() {
         return this.nodeCollections;
     }
     /**
-     * @return The number of nodes in the Redis cluster.
+     * @return The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * 
      */
     public Integer nodeCount() {
         return this.nodeCount;
     }
     /**
-     * @return The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+     * @return The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
      * 
      */
     public Double nodeMemoryInGbs() {
         return this.nodeMemoryInGbs;
     }
     /**
-     * @return A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * @return A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      * 
      */
     public List<String> nsgIds() {
         return this.nsgIds;
     }
     /**
-     * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
+     * @return The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     public String primaryEndpointIpAddress() {
         return this.primaryEndpointIpAddress;
     }
     /**
-     * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
+     * @return The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     public String primaryFqdn() {
         return this.primaryFqdn;
     }
     /**
-     * @return The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * @return The private IP address of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     public String replicasEndpointIpAddress() {
         return this.replicasEndpointIpAddress;
     }
     /**
-     * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * @return The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     public String replicasFqdn() {
         return this.replicasFqdn;
     }
     /**
-     * @return The Redis version that the cluster is running.
+     * @return The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+     * 
+     */
+    public Integer shardCount() {
+        return this.shardCount;
+    }
+    /**
+     * @return The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     public String softwareVersion() {
@@ -230,7 +254,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         return this.state;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
      * 
      */
     public String subnetId() {
@@ -244,14 +268,14 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * @return The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * @return The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public String timeUpdated() {
@@ -267,6 +291,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String clusterMode;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String displayName;
@@ -281,6 +306,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         private String primaryFqdn;
         private String replicasEndpointIpAddress;
         private String replicasFqdn;
+        private Integer shardCount;
         private String softwareVersion;
         private String state;
         private String subnetId;
@@ -290,6 +316,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         public Builder() {}
         public Builder(GetRedisClustersRedisClusterCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterMode = defaults.clusterMode;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -304,6 +331,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     	      this.primaryFqdn = defaults.primaryFqdn;
     	      this.replicasEndpointIpAddress = defaults.replicasEndpointIpAddress;
     	      this.replicasFqdn = defaults.replicasFqdn;
+    	      this.shardCount = defaults.shardCount;
     	      this.softwareVersion = defaults.softwareVersion;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -312,6 +340,14 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder clusterMode(String clusterMode) {
+            if (clusterMode == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "clusterMode");
+            }
+            this.clusterMode = clusterMode;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -431,6 +467,14 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder shardCount(Integer shardCount) {
+            if (shardCount == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "shardCount");
+            }
+            this.shardCount = shardCount;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareVersion(String softwareVersion) {
             if (softwareVersion == null) {
               throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "softwareVersion");
@@ -480,6 +524,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         }
         public GetRedisClustersRedisClusterCollectionItem build() {
             final var _resultValue = new GetRedisClustersRedisClusterCollectionItem();
+            _resultValue.clusterMode = clusterMode;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
@@ -494,6 +539,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             _resultValue.primaryFqdn = primaryFqdn;
             _resultValue.replicasEndpointIpAddress = replicasEndpointIpAddress;
             _resultValue.replicasFqdn = replicasFqdn;
+            _resultValue.shardCount = shardCount;
             _resultValue.softwareVersion = softwareVersion;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;

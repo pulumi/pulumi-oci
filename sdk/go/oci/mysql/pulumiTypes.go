@@ -1156,8 +1156,10 @@ type MysqlBackupDbSystemSnapshot struct {
 	ConfigurationId *string `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery *string `pulumi:"crashRecovery"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages []MysqlBackupDbSystemSnapshotDataStorage `pulumi:"dataStorages"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1224,8 +1226,10 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery pulumi.StringPtrInput `pulumi:"crashRecovery"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages MysqlBackupDbSystemSnapshotDataStorageArrayInput `pulumi:"dataStorages"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput `pulumi:"databaseManagement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1349,9 +1353,14 @@ func (o MysqlBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.CrashRecovery }).(pulumi.StringPtrOutput)
 }
 
-// Initial size of the data volume in GiBs that will be created and attached.
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 func (o MysqlBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
+}
+
+// Data Storage information.
+func (o MysqlBackupDbSystemSnapshotOutput) DataStorages() MysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotDataStorage { return v.DataStorages }).(MysqlBackupDbSystemSnapshotDataStorageArrayOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.
@@ -1717,6 +1726,139 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
 		return vs[0].([]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
+}
+
+type MysqlBackupDbSystemSnapshotDataStorage struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs *int `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs *int `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled *bool `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs *int `pulumi:"maxStorageSizeInGbs"`
+}
+
+// MysqlBackupDbSystemSnapshotDataStorageInput is an input type that accepts MysqlBackupDbSystemSnapshotDataStorageArgs and MysqlBackupDbSystemSnapshotDataStorageOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotDataStorageInput` via:
+//
+//	MysqlBackupDbSystemSnapshotDataStorageArgs{...}
+type MysqlBackupDbSystemSnapshotDataStorageInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotDataStorageOutput() MysqlBackupDbSystemSnapshotDataStorageOutput
+	ToMysqlBackupDbSystemSnapshotDataStorageOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotDataStorageOutput
+}
+
+type MysqlBackupDbSystemSnapshotDataStorageArgs struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs pulumi.IntPtrInput `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs pulumi.IntPtrInput `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled pulumi.BoolPtrInput `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs pulumi.IntPtrInput `pulumi:"maxStorageSizeInGbs"`
+}
+
+func (MysqlBackupDbSystemSnapshotDataStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotDataStorageArgs) ToMysqlBackupDbSystemSnapshotDataStorageOutput() MysqlBackupDbSystemSnapshotDataStorageOutput {
+	return i.ToMysqlBackupDbSystemSnapshotDataStorageOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotDataStorageArgs) ToMysqlBackupDbSystemSnapshotDataStorageOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDataStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotDataStorageOutput)
+}
+
+// MysqlBackupDbSystemSnapshotDataStorageArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotDataStorageArray and MysqlBackupDbSystemSnapshotDataStorageArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotDataStorageArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotDataStorageArray{ MysqlBackupDbSystemSnapshotDataStorageArgs{...} }
+type MysqlBackupDbSystemSnapshotDataStorageArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotDataStorageArrayOutput() MysqlBackupDbSystemSnapshotDataStorageArrayOutput
+	ToMysqlBackupDbSystemSnapshotDataStorageArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotDataStorageArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotDataStorageArray []MysqlBackupDbSystemSnapshotDataStorageInput
+
+func (MysqlBackupDbSystemSnapshotDataStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotDataStorageArray) ToMysqlBackupDbSystemSnapshotDataStorageArrayOutput() MysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotDataStorageArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotDataStorageArray) ToMysqlBackupDbSystemSnapshotDataStorageArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotDataStorageArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotDataStorageOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotDataStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotDataStorageOutput) ToMysqlBackupDbSystemSnapshotDataStorageOutput() MysqlBackupDbSystemSnapshotDataStorageOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotDataStorageOutput) ToMysqlBackupDbSystemSnapshotDataStorageOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDataStorageOutput {
+	return o
+}
+
+// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+func (o MysqlBackupDbSystemSnapshotDataStorageOutput) AllocatedStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotDataStorage) *int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntPtrOutput)
+}
+
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+func (o MysqlBackupDbSystemSnapshotDataStorageOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotDataStorage) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
+}
+
+// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+func (o MysqlBackupDbSystemSnapshotDataStorageOutput) DataStorageSizeLimitInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotDataStorage) *int { return v.DataStorageSizeLimitInGbs }).(pulumi.IntPtrOutput)
+}
+
+// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+func (o MysqlBackupDbSystemSnapshotDataStorageOutput) IsAutoExpandStorageEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotDataStorage) *bool { return v.IsAutoExpandStorageEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+func (o MysqlBackupDbSystemSnapshotDataStorageOutput) MaxStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotDataStorage) *int { return v.MaxStorageSizeInGbs }).(pulumi.IntPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotDataStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotDataStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotDataStorageArrayOutput) ToMysqlBackupDbSystemSnapshotDataStorageArrayOutput() MysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotDataStorageArrayOutput) ToMysqlBackupDbSystemSnapshotDataStorageArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotDataStorageArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotDataStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotDataStorage {
+		return vs[0].([]MysqlBackupDbSystemSnapshotDataStorage)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotDataStorageOutput)
 }
 
 type MysqlBackupDbSystemSnapshotDeletionPolicy struct {
@@ -6085,6 +6227,235 @@ func (o MysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) Mysql
 	}).(MysqlDbSystemCurrentPlacementOutput)
 }
 
+type MysqlDbSystemDataStorage struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs *int `pulumi:"allocatedStorageSizeInGbs"`
+	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs *int `pulumi:"dataStorageSizeLimitInGbs"`
+	// (Updatable) Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled *bool `pulumi:"isAutoExpandStorageEnabled"`
+	// (Updatable) Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	//
+	// DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+	//
+	// It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+	MaxStorageSizeInGbs *int `pulumi:"maxStorageSizeInGbs"`
+}
+
+// MysqlDbSystemDataStorageInput is an input type that accepts MysqlDbSystemDataStorageArgs and MysqlDbSystemDataStorageOutput values.
+// You can construct a concrete instance of `MysqlDbSystemDataStorageInput` via:
+//
+//	MysqlDbSystemDataStorageArgs{...}
+type MysqlDbSystemDataStorageInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemDataStorageOutput() MysqlDbSystemDataStorageOutput
+	ToMysqlDbSystemDataStorageOutputWithContext(context.Context) MysqlDbSystemDataStorageOutput
+}
+
+type MysqlDbSystemDataStorageArgs struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs pulumi.IntPtrInput `pulumi:"allocatedStorageSizeInGbs"`
+	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs pulumi.IntPtrInput `pulumi:"dataStorageSizeLimitInGbs"`
+	// (Updatable) Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled pulumi.BoolPtrInput `pulumi:"isAutoExpandStorageEnabled"`
+	// (Updatable) Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	//
+	// DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+	//
+	// It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+	MaxStorageSizeInGbs pulumi.IntPtrInput `pulumi:"maxStorageSizeInGbs"`
+}
+
+func (MysqlDbSystemDataStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemDataStorage)(nil)).Elem()
+}
+
+func (i MysqlDbSystemDataStorageArgs) ToMysqlDbSystemDataStorageOutput() MysqlDbSystemDataStorageOutput {
+	return i.ToMysqlDbSystemDataStorageOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemDataStorageArgs) ToMysqlDbSystemDataStorageOutputWithContext(ctx context.Context) MysqlDbSystemDataStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDataStorageOutput)
+}
+
+func (i MysqlDbSystemDataStorageArgs) ToMysqlDbSystemDataStoragePtrOutput() MysqlDbSystemDataStoragePtrOutput {
+	return i.ToMysqlDbSystemDataStoragePtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemDataStorageArgs) ToMysqlDbSystemDataStoragePtrOutputWithContext(ctx context.Context) MysqlDbSystemDataStoragePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDataStorageOutput).ToMysqlDbSystemDataStoragePtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemDataStoragePtrInput is an input type that accepts MysqlDbSystemDataStorageArgs, MysqlDbSystemDataStoragePtr and MysqlDbSystemDataStoragePtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemDataStoragePtrInput` via:
+//
+//	        MysqlDbSystemDataStorageArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemDataStoragePtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemDataStoragePtrOutput() MysqlDbSystemDataStoragePtrOutput
+	ToMysqlDbSystemDataStoragePtrOutputWithContext(context.Context) MysqlDbSystemDataStoragePtrOutput
+}
+
+type mysqlDbSystemDataStoragePtrType MysqlDbSystemDataStorageArgs
+
+func MysqlDbSystemDataStoragePtr(v *MysqlDbSystemDataStorageArgs) MysqlDbSystemDataStoragePtrInput {
+	return (*mysqlDbSystemDataStoragePtrType)(v)
+}
+
+func (*mysqlDbSystemDataStoragePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemDataStorage)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemDataStoragePtrType) ToMysqlDbSystemDataStoragePtrOutput() MysqlDbSystemDataStoragePtrOutput {
+	return i.ToMysqlDbSystemDataStoragePtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemDataStoragePtrType) ToMysqlDbSystemDataStoragePtrOutputWithContext(ctx context.Context) MysqlDbSystemDataStoragePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDataStoragePtrOutput)
+}
+
+type MysqlDbSystemDataStorageOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemDataStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemDataStorage)(nil)).Elem()
+}
+
+func (o MysqlDbSystemDataStorageOutput) ToMysqlDbSystemDataStorageOutput() MysqlDbSystemDataStorageOutput {
+	return o
+}
+
+func (o MysqlDbSystemDataStorageOutput) ToMysqlDbSystemDataStorageOutputWithContext(ctx context.Context) MysqlDbSystemDataStorageOutput {
+	return o
+}
+
+func (o MysqlDbSystemDataStorageOutput) ToMysqlDbSystemDataStoragePtrOutput() MysqlDbSystemDataStoragePtrOutput {
+	return o.ToMysqlDbSystemDataStoragePtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemDataStorageOutput) ToMysqlDbSystemDataStoragePtrOutputWithContext(ctx context.Context) MysqlDbSystemDataStoragePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemDataStorage) *MysqlDbSystemDataStorage {
+		return &v
+	}).(MysqlDbSystemDataStoragePtrOutput)
+}
+
+// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+func (o MysqlDbSystemDataStorageOutput) AllocatedStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemDataStorage) *int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+func (o MysqlDbSystemDataStorageOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemDataStorage) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
+}
+
+// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+func (o MysqlDbSystemDataStorageOutput) DataStorageSizeLimitInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemDataStorage) *int { return v.DataStorageSizeLimitInGbs }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+func (o MysqlDbSystemDataStorageOutput) IsAutoExpandStorageEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemDataStorage) *bool { return v.IsAutoExpandStorageEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+//
+// DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+//
+// It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+func (o MysqlDbSystemDataStorageOutput) MaxStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemDataStorage) *int { return v.MaxStorageSizeInGbs }).(pulumi.IntPtrOutput)
+}
+
+type MysqlDbSystemDataStoragePtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemDataStoragePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemDataStorage)(nil)).Elem()
+}
+
+func (o MysqlDbSystemDataStoragePtrOutput) ToMysqlDbSystemDataStoragePtrOutput() MysqlDbSystemDataStoragePtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemDataStoragePtrOutput) ToMysqlDbSystemDataStoragePtrOutputWithContext(ctx context.Context) MysqlDbSystemDataStoragePtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemDataStoragePtrOutput) Elem() MysqlDbSystemDataStorageOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDataStorage) MysqlDbSystemDataStorage {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemDataStorage
+		return ret
+	}).(MysqlDbSystemDataStorageOutput)
+}
+
+// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+func (o MysqlDbSystemDataStoragePtrOutput) AllocatedStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDataStorage) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AllocatedStorageSizeInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+func (o MysqlDbSystemDataStoragePtrOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDataStorage) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DataStorageSizeInGb
+	}).(pulumi.IntPtrOutput)
+}
+
+// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+func (o MysqlDbSystemDataStoragePtrOutput) DataStorageSizeLimitInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDataStorage) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DataStorageSizeLimitInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+func (o MysqlDbSystemDataStoragePtrOutput) IsAutoExpandStorageEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDataStorage) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsAutoExpandStorageEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+//
+// DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+//
+// It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+func (o MysqlDbSystemDataStoragePtrOutput) MaxStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDataStorage) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxStorageSizeInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
 type MysqlDbSystemDeletionPolicy struct {
 	// (Updatable) Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
 	AutomaticBackupRetention *string `pulumi:"automaticBackupRetention"`
@@ -9195,8 +9566,10 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	ConfigurationId string `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery string `pulumi:"crashRecovery"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages []GetMysqlBackupDbSystemSnapshotDataStorage `pulumi:"dataStorages"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9263,8 +9636,10 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages GetMysqlBackupDbSystemSnapshotDataStorageArrayInput `pulumi:"dataStorages"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9390,9 +9765,16 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.CrashRecovery }).(pulumi.StringOutput)
 }
 
-// Initial size of the data volume in GiBs that will be created and attached.
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 func (o GetMysqlBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Data Storage information.
+func (o GetMysqlBackupDbSystemSnapshotOutput) DataStorages() GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotDataStorage {
+		return v.DataStorages
+	}).(GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.
@@ -9760,6 +10142,139 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotDataStorage struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs int `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs int `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled bool `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs int `pulumi:"maxStorageSizeInGbs"`
+}
+
+// GetMysqlBackupDbSystemSnapshotDataStorageInput is an input type that accepts GetMysqlBackupDbSystemSnapshotDataStorageArgs and GetMysqlBackupDbSystemSnapshotDataStorageOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotDataStorageInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotDataStorageArgs{...}
+type GetMysqlBackupDbSystemSnapshotDataStorageInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupDbSystemSnapshotDataStorageOutput
+	ToGetMysqlBackupDbSystemSnapshotDataStorageOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotDataStorageOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotDataStorageArgs struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs pulumi.IntInput `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs pulumi.IntInput `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled pulumi.BoolInput `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs pulumi.IntInput `pulumi:"maxStorageSizeInGbs"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotDataStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotDataStorageArgs) ToGetMysqlBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupDbSystemSnapshotDataStorageOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotDataStorageOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotDataStorageArgs) ToGetMysqlBackupDbSystemSnapshotDataStorageOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDataStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotDataStorageOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotDataStorageArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotDataStorageArray and GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotDataStorageArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotDataStorageArray{ GetMysqlBackupDbSystemSnapshotDataStorageArgs{...} }
+type GetMysqlBackupDbSystemSnapshotDataStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotDataStorageArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotDataStorageArray []GetMysqlBackupDbSystemSnapshotDataStorageInput
+
+func (GetMysqlBackupDbSystemSnapshotDataStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotDataStorageArray) ToGetMysqlBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotDataStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotDataStorageArray) ToGetMysqlBackupDbSystemSnapshotDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotDataStorageOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotDataStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDataStorageOutput) ToGetMysqlBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupDbSystemSnapshotDataStorageOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDataStorageOutput) ToGetMysqlBackupDbSystemSnapshotDataStorageOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDataStorageOutput {
+	return o
+}
+
+// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+func (o GetMysqlBackupDbSystemSnapshotDataStorageOutput) AllocatedStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDataStorage) int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+func (o GetMysqlBackupDbSystemSnapshotDataStorageOutput) DataStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDataStorage) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+func (o GetMysqlBackupDbSystemSnapshotDataStorageOutput) DataStorageSizeLimitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDataStorage) int { return v.DataStorageSizeLimitInGbs }).(pulumi.IntOutput)
+}
+
+// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+func (o GetMysqlBackupDbSystemSnapshotDataStorageOutput) IsAutoExpandStorageEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDataStorage) bool { return v.IsAutoExpandStorageEnabled }).(pulumi.BoolOutput)
+}
+
+// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+func (o GetMysqlBackupDbSystemSnapshotDataStorageOutput) MaxStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDataStorage) int { return v.MaxStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput) ToGetMysqlBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput) ToGetMysqlBackupDbSystemSnapshotDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotDataStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotDataStorage {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotDataStorage)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotDataStorageOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotDeletionPolicy struct {
@@ -10488,7 +11003,7 @@ type GetMysqlBackupsBackup struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Backup creationType
 	CreationType string `pulumi:"creationType"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId                string                                         `pulumi:"dbSystemId"`
@@ -10548,7 +11063,7 @@ type GetMysqlBackupsBackupArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Backup creationType
 	CreationType pulumi.StringInput `pulumi:"creationType"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId                pulumi.StringInput                                     `pulumi:"dbSystemId"`
@@ -10659,7 +11174,7 @@ func (o GetMysqlBackupsBackupOutput) CreationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.CreationType }).(pulumi.StringOutput)
 }
 
-// Initial size of the data volume in GiBs that will be created and attached.
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 func (o GetMysqlBackupsBackupOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }
@@ -10792,8 +11307,10 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	ConfigurationId string `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery string `pulumi:"crashRecovery"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages []GetMysqlBackupsBackupDbSystemSnapshotDataStorage `pulumi:"dataStorages"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -10860,8 +11377,10 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput `pulumi:"dataStorages"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -10987,9 +11506,16 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.Stri
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.CrashRecovery }).(pulumi.StringOutput)
 }
 
-// Initial size of the data volume in GiBs that will be created and attached.
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Data Storage information.
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DataStorages() GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotDataStorage {
+		return v.DataStorages
+	}).(GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.
@@ -11359,6 +11885,139 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotDataStorage struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs int `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs int `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled bool `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs int `pulumi:"maxStorageSizeInGbs"`
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs and GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs{...}
+type GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs pulumi.IntInput `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs pulumi.IntInput `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled pulumi.BoolInput `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs pulumi.IntInput `pulumi:"maxStorageSizeInGbs"`
+}
+
+func (GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput)
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray and GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray{ GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs{...} }
+type GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray []GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput
+
+func (GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
+	return o
+}
+
+// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) AllocatedStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) DataStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) DataStorageSizeLimitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) int { return v.DataStorageSizeLimitInGbs }).(pulumi.IntOutput)
+}
+
+// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) IsAutoExpandStorageEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) bool { return v.IsAutoExpandStorageEnabled }).(pulumi.BoolOutput)
+}
+
+// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) MaxStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) int { return v.MaxStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotDataStorage)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotDataStorage {
+		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotDataStorage)[vs[1].(int)]
+	}).(GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy struct {
@@ -15599,6 +16258,139 @@ func (o GetMysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) Ge
 	}).(GetMysqlDbSystemCurrentPlacementOutput)
 }
 
+type GetMysqlDbSystemDataStorage struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs int `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs int `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled bool `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs int `pulumi:"maxStorageSizeInGbs"`
+}
+
+// GetMysqlDbSystemDataStorageInput is an input type that accepts GetMysqlDbSystemDataStorageArgs and GetMysqlDbSystemDataStorageOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemDataStorageInput` via:
+//
+//	GetMysqlDbSystemDataStorageArgs{...}
+type GetMysqlDbSystemDataStorageInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemDataStorageOutput() GetMysqlDbSystemDataStorageOutput
+	ToGetMysqlDbSystemDataStorageOutputWithContext(context.Context) GetMysqlDbSystemDataStorageOutput
+}
+
+type GetMysqlDbSystemDataStorageArgs struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs pulumi.IntInput `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs pulumi.IntInput `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled pulumi.BoolInput `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs pulumi.IntInput `pulumi:"maxStorageSizeInGbs"`
+}
+
+func (GetMysqlDbSystemDataStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemDataStorage)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemDataStorageArgs) ToGetMysqlDbSystemDataStorageOutput() GetMysqlDbSystemDataStorageOutput {
+	return i.ToGetMysqlDbSystemDataStorageOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemDataStorageArgs) ToGetMysqlDbSystemDataStorageOutputWithContext(ctx context.Context) GetMysqlDbSystemDataStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemDataStorageOutput)
+}
+
+// GetMysqlDbSystemDataStorageArrayInput is an input type that accepts GetMysqlDbSystemDataStorageArray and GetMysqlDbSystemDataStorageArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemDataStorageArrayInput` via:
+//
+//	GetMysqlDbSystemDataStorageArray{ GetMysqlDbSystemDataStorageArgs{...} }
+type GetMysqlDbSystemDataStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemDataStorageArrayOutput() GetMysqlDbSystemDataStorageArrayOutput
+	ToGetMysqlDbSystemDataStorageArrayOutputWithContext(context.Context) GetMysqlDbSystemDataStorageArrayOutput
+}
+
+type GetMysqlDbSystemDataStorageArray []GetMysqlDbSystemDataStorageInput
+
+func (GetMysqlDbSystemDataStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemDataStorage)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemDataStorageArray) ToGetMysqlDbSystemDataStorageArrayOutput() GetMysqlDbSystemDataStorageArrayOutput {
+	return i.ToGetMysqlDbSystemDataStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemDataStorageArray) ToGetMysqlDbSystemDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemDataStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemDataStorageArrayOutput)
+}
+
+type GetMysqlDbSystemDataStorageOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemDataStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemDataStorage)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemDataStorageOutput) ToGetMysqlDbSystemDataStorageOutput() GetMysqlDbSystemDataStorageOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemDataStorageOutput) ToGetMysqlDbSystemDataStorageOutputWithContext(ctx context.Context) GetMysqlDbSystemDataStorageOutput {
+	return o
+}
+
+// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+func (o GetMysqlDbSystemDataStorageOutput) AllocatedStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDataStorage) int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+func (o GetMysqlDbSystemDataStorageOutput) DataStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDataStorage) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+func (o GetMysqlDbSystemDataStorageOutput) DataStorageSizeLimitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDataStorage) int { return v.DataStorageSizeLimitInGbs }).(pulumi.IntOutput)
+}
+
+// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+func (o GetMysqlDbSystemDataStorageOutput) IsAutoExpandStorageEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDataStorage) bool { return v.IsAutoExpandStorageEnabled }).(pulumi.BoolOutput)
+}
+
+// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+func (o GetMysqlDbSystemDataStorageOutput) MaxStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDataStorage) int { return v.MaxStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetMysqlDbSystemDataStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemDataStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemDataStorage)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemDataStorageArrayOutput) ToGetMysqlDbSystemDataStorageArrayOutput() GetMysqlDbSystemDataStorageArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemDataStorageArrayOutput) ToGetMysqlDbSystemDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemDataStorageArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemDataStorageArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemDataStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemDataStorage {
+		return vs[0].([]GetMysqlDbSystemDataStorage)[vs[1].(int)]
+	}).(GetMysqlDbSystemDataStorageOutput)
+}
+
 type GetMysqlDbSystemDeletionPolicy struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
 	AutomaticBackupRetention string `pulumi:"automaticBackupRetention"`
@@ -16481,8 +17273,10 @@ type GetMysqlDbSystemsDbSystem struct {
 	CrashRecovery string `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements []GetMysqlDbSystemsDbSystemCurrentPlacement `pulumi:"currentPlacements"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages []GetMysqlDbSystemsDbSystemDataStorage `pulumi:"dataStorages"`
 	// Filter DB Systems by their Database Management configuration.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -16568,8 +17362,10 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput `pulumi:"currentPlacements"`
-	// Initial size of the data volume in GiBs that will be created and attached.
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// Data Storage information.
+	DataStorages GetMysqlDbSystemsDbSystemDataStorageArrayInput `pulumi:"dataStorages"`
 	// Filter DB Systems by their Database Management configuration.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -16723,9 +17519,14 @@ func (o GetMysqlDbSystemsDbSystemOutput) CurrentPlacements() GetMysqlDbSystemsDb
 	}).(GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput)
 }
 
-// Initial size of the data volume in GiBs that will be created and attached.
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
 func (o GetMysqlDbSystemsDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Data Storage information.
+func (o GetMysqlDbSystemsDbSystemOutput) DataStorages() GetMysqlDbSystemsDbSystemDataStorageArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemDataStorage { return v.DataStorages }).(GetMysqlDbSystemsDbSystemDataStorageArrayOutput)
 }
 
 // Filter DB Systems by their Database Management configuration.
@@ -18082,6 +18883,139 @@ func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemCurrentPlacement {
 		return vs[0].([]GetMysqlDbSystemsDbSystemCurrentPlacement)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemCurrentPlacementOutput)
+}
+
+type GetMysqlDbSystemsDbSystemDataStorage struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs int `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs int `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled bool `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs int `pulumi:"maxStorageSizeInGbs"`
+}
+
+// GetMysqlDbSystemsDbSystemDataStorageInput is an input type that accepts GetMysqlDbSystemsDbSystemDataStorageArgs and GetMysqlDbSystemsDbSystemDataStorageOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemDataStorageInput` via:
+//
+//	GetMysqlDbSystemsDbSystemDataStorageArgs{...}
+type GetMysqlDbSystemsDbSystemDataStorageInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemDataStorageOutput() GetMysqlDbSystemsDbSystemDataStorageOutput
+	ToGetMysqlDbSystemsDbSystemDataStorageOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemDataStorageOutput
+}
+
+type GetMysqlDbSystemsDbSystemDataStorageArgs struct {
+	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+	AllocatedStorageSizeInGbs pulumi.IntInput `pulumi:"allocatedStorageSizeInGbs"`
+	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+	DataStorageSizeLimitInGbs pulumi.IntInput `pulumi:"dataStorageSizeLimitInGbs"`
+	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+	IsAutoExpandStorageEnabled pulumi.BoolInput `pulumi:"isAutoExpandStorageEnabled"`
+	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+	MaxStorageSizeInGbs pulumi.IntInput `pulumi:"maxStorageSizeInGbs"`
+}
+
+func (GetMysqlDbSystemsDbSystemDataStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorage)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemDataStorageArgs) ToGetMysqlDbSystemsDbSystemDataStorageOutput() GetMysqlDbSystemsDbSystemDataStorageOutput {
+	return i.ToGetMysqlDbSystemsDbSystemDataStorageOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemDataStorageArgs) ToGetMysqlDbSystemsDbSystemDataStorageOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDataStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemDataStorageOutput)
+}
+
+// GetMysqlDbSystemsDbSystemDataStorageArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemDataStorageArray and GetMysqlDbSystemsDbSystemDataStorageArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemDataStorageArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemDataStorageArray{ GetMysqlDbSystemsDbSystemDataStorageArgs{...} }
+type GetMysqlDbSystemsDbSystemDataStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemDataStorageArrayOutput() GetMysqlDbSystemsDbSystemDataStorageArrayOutput
+	ToGetMysqlDbSystemsDbSystemDataStorageArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemDataStorageArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemDataStorageArray []GetMysqlDbSystemsDbSystemDataStorageInput
+
+func (GetMysqlDbSystemsDbSystemDataStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemDataStorage)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemDataStorageArray) ToGetMysqlDbSystemsDbSystemDataStorageArrayOutput() GetMysqlDbSystemsDbSystemDataStorageArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemDataStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemDataStorageArray) ToGetMysqlDbSystemsDbSystemDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDataStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemDataStorageArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemDataStorageOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemDataStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorage)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemDataStorageOutput) ToGetMysqlDbSystemsDbSystemDataStorageOutput() GetMysqlDbSystemsDbSystemDataStorageOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemDataStorageOutput) ToGetMysqlDbSystemsDbSystemDataStorageOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDataStorageOutput {
+	return o
+}
+
+// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+func (o GetMysqlDbSystemsDbSystemDataStorageOutput) AllocatedStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDataStorage) int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+func (o GetMysqlDbSystemsDbSystemDataStorageOutput) DataStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDataStorage) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+func (o GetMysqlDbSystemsDbSystemDataStorageOutput) DataStorageSizeLimitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDataStorage) int { return v.DataStorageSizeLimitInGbs }).(pulumi.IntOutput)
+}
+
+// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+func (o GetMysqlDbSystemsDbSystemDataStorageOutput) IsAutoExpandStorageEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDataStorage) bool { return v.IsAutoExpandStorageEnabled }).(pulumi.BoolOutput)
+}
+
+// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+func (o GetMysqlDbSystemsDbSystemDataStorageOutput) MaxStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDataStorage) int { return v.MaxStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetMysqlDbSystemsDbSystemDataStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemDataStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemDataStorage)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemDataStorageArrayOutput) ToGetMysqlDbSystemsDbSystemDataStorageArrayOutput() GetMysqlDbSystemsDbSystemDataStorageArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemDataStorageArrayOutput) ToGetMysqlDbSystemsDbSystemDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDataStorageArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemDataStorageArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemDataStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemDataStorage {
+		return vs[0].([]GetMysqlDbSystemsDbSystemDataStorage)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemDataStorageOutput)
 }
 
 type GetMysqlDbSystemsDbSystemDeletionPolicy struct {
@@ -20459,6 +21393,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDataStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEndpointArgs{})
@@ -20493,6 +21429,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), MysqlDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCurrentPlacementInput)(nil)).Elem(), MysqlDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCurrentPlacementArrayInput)(nil)).Elem(), MysqlDbSystemCurrentPlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDataStorageInput)(nil)).Elem(), MysqlDbSystemDataStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDataStoragePtrInput)(nil)).Elem(), MysqlDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDeletionPolicyInput)(nil)).Elem(), MysqlDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDeletionPolicyArrayInput)(nil)).Elem(), MysqlDbSystemDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemEndpointInput)(nil)).Elem(), MysqlDbSystemEndpointArgs{})
@@ -20543,6 +21481,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDataStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEndpointArgs{})
@@ -20563,6 +21503,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs{})
@@ -20607,6 +21549,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCurrentPlacementInput)(nil)).Elem(), GetMysqlDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCurrentPlacementArrayInput)(nil)).Elem(), GetMysqlDbSystemCurrentPlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDataStorageInput)(nil)).Elem(), GetMysqlDbSystemDataStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDataStorageArrayInput)(nil)).Elem(), GetMysqlDbSystemDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemEndpointInput)(nil)).Elem(), GetMysqlDbSystemEndpointArgs{})
@@ -20641,6 +21585,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCurrentPlacementInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCurrentPlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorageInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDataStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorageArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemEndpointInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemEndpointArgs{})
@@ -20697,6 +21643,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDataStorageOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEndpointOutput{})
@@ -20731,6 +21679,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemCurrentPlacementArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemDataStorageOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemDataStoragePtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemEndpointOutput{})
@@ -20781,6 +21731,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDataStorageOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEndpointOutput{})
@@ -20801,6 +21753,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput{})
@@ -20845,6 +21799,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemCurrentPlacementArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemDataStorageOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemEndpointOutput{})
@@ -20879,6 +21835,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDataStorageOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemEndpointOutput{})

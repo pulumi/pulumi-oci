@@ -10,6 +10,20 @@ import * as utilities from "../utilities";
  * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
  *
  * Get a summary list of all DR plan executions for a DR protection group.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDrPlanExecutions = oci.DisasterRecovery.getDrPlanExecutions({
+ *     drProtectionGroupId: testDrProtectionGroup.id,
+ *     displayName: drPlanExecutionDisplayName,
+ *     drPlanExecutionId: testDrPlanExecution.id,
+ *     state: drPlanExecutionState,
+ * });
+ * ```
  */
 export function getDrPlanExecutions(args: GetDrPlanExecutionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrPlanExecutionsResult> {
 
@@ -77,6 +91,20 @@ export interface GetDrPlanExecutionsResult {
  * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
  *
  * Get a summary list of all DR plan executions for a DR protection group.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDrPlanExecutions = oci.DisasterRecovery.getDrPlanExecutions({
+ *     drProtectionGroupId: testDrProtectionGroup.id,
+ *     displayName: drPlanExecutionDisplayName,
+ *     drPlanExecutionId: testDrPlanExecution.id,
+ *     state: drPlanExecutionState,
+ * });
+ * ```
  */
 export function getDrPlanExecutionsOutput(args: GetDrPlanExecutionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrPlanExecutionsResult> {
     return pulumi.output(args).apply((a: any) => getDrPlanExecutions(a, opts))

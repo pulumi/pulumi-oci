@@ -24,8 +24,8 @@ class AnalyticsInstanceCapacityArgs:
                  capacity_type: pulumi.Input[str],
                  capacity_value: pulumi.Input[int]):
         """
-        :param pulumi.Input[str] capacity_type: The capacity model to use.
-        :param pulumi.Input[int] capacity_value: (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        :param pulumi.Input[str] capacity_type: The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
+        :param pulumi.Input[int] capacity_value: (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
@@ -34,7 +34,7 @@ class AnalyticsInstanceCapacityArgs:
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> pulumi.Input[str]:
         """
-        The capacity model to use.
+        The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
         """
         return pulumi.get(self, "capacity_type")
 
@@ -46,7 +46,7 @@ class AnalyticsInstanceCapacityArgs:
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> pulumi.Input[int]:
         """
-        (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         """
         return pulumi.get(self, "capacity_value")
 

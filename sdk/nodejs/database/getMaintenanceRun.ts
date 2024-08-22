@@ -61,6 +61,10 @@ export interface GetMaintenanceRunResult {
      */
     readonly customActionTimeoutInMins: number;
     /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     */
+    readonly databaseSoftwareImageId: string;
+    /**
      * Description of the maintenance run.
      */
     readonly description: string;

@@ -22,7 +22,7 @@ class GetMaintenanceRunResult:
     """
     A collection of values returned by getMaintenanceRun.
     """
-    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, state=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None):
+    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, database_software_image_id=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, state=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -35,6 +35,9 @@ class GetMaintenanceRunResult:
         if custom_action_timeout_in_mins and not isinstance(custom_action_timeout_in_mins, int):
             raise TypeError("Expected argument 'custom_action_timeout_in_mins' to be a int")
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if database_software_image_id and not isinstance(database_software_image_id, str):
+            raise TypeError("Expected argument 'database_software_image_id' to be a str")
+        pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -148,6 +151,14 @@ class GetMaintenanceRunResult:
         Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> str:
+        """
+        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter
@@ -370,6 +381,7 @@ class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
             current_custom_action_timeout_in_mins=self.current_custom_action_timeout_in_mins,
             current_patching_component=self.current_patching_component,
             custom_action_timeout_in_mins=self.custom_action_timeout_in_mins,
+            database_software_image_id=self.database_software_image_id,
             description=self.description,
             display_name=self.display_name,
             estimated_component_patching_start_time=self.estimated_component_patching_start_time,
@@ -428,6 +440,7 @@ def get_maintenance_run(maintenance_run_id: Optional[str] = None,
         current_custom_action_timeout_in_mins=pulumi.get(__ret__, 'current_custom_action_timeout_in_mins'),
         current_patching_component=pulumi.get(__ret__, 'current_patching_component'),
         custom_action_timeout_in_mins=pulumi.get(__ret__, 'custom_action_timeout_in_mins'),
+        database_software_image_id=pulumi.get(__ret__, 'database_software_image_id'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         estimated_component_patching_start_time=pulumi.get(__ret__, 'estimated_component_patching_start_time'),

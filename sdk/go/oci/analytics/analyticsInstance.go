@@ -41,11 +41,14 @@ import (
 //				IdcsAccessToken: pulumi.Any(analyticsInstanceIdcsAccessToken),
 //				LicenseType:     pulumi.Any(analyticsInstanceLicenseType),
 //				Name:            pulumi.Any(analyticsInstanceName),
+//				AdminUser:       pulumi.Any(analyticsInstanceAdminUser),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description:       pulumi.Any(analyticsInstanceDescription),
+//				DomainId:          pulumi.Any(testDomain.Id),
 //				EmailNotification: pulumi.Any(analyticsInstanceEmailNotification),
+//				FeatureBundle:     pulumi.Any(analyticsInstanceFeatureBundle),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
@@ -84,6 +87,8 @@ import (
 type AnalyticsInstance struct {
 	pulumi.CustomResourceState
 
+	// user name of the authorized user.
+	AdminUser pulumi.StringOutput `pulumi:"adminUser"`
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacity AnalyticsInstanceCapacityOutput `pulumi:"capacity"`
 	// (Updatable) The OCID of the compartment.
@@ -92,15 +97,19 @@ type AnalyticsInstance struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional description.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// domain id for which the user is authorized.
+	DomainId pulumi.StringOutput `pulumi:"domainId"`
 	// (Updatable) Email address receiving notifications.
 	EmailNotification pulumi.StringOutput `pulumi:"emailNotification"`
+	// The feature set of an Analytics instance.
+	FeatureBundle pulumi.StringOutput `pulumi:"featureBundle"`
 	// Analytics feature set.
 	FeatureSet pulumi.StringOutput `pulumi:"featureSet"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// IDCS access token identifying a stripe and service administrator user.
-	IdcsAccessToken pulumi.StringOutput `pulumi:"idcsAccessToken"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	IdcsAccessToken pulumi.StringPtrOutput `pulumi:"idcsAccessToken"`
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// (Updatable) The license used for the service.
 	LicenseType pulumi.StringOutput `pulumi:"licenseType"`
@@ -115,6 +124,8 @@ type AnalyticsInstance struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
@@ -137,14 +148,11 @@ func NewAnalyticsInstance(ctx *pulumi.Context,
 	if args.FeatureSet == nil {
 		return nil, errors.New("invalid value for required argument 'FeatureSet'")
 	}
-	if args.IdcsAccessToken == nil {
-		return nil, errors.New("invalid value for required argument 'IdcsAccessToken'")
-	}
 	if args.LicenseType == nil {
 		return nil, errors.New("invalid value for required argument 'LicenseType'")
 	}
 	if args.IdcsAccessToken != nil {
-		args.IdcsAccessToken = pulumi.ToSecret(args.IdcsAccessToken).(pulumi.StringInput)
+		args.IdcsAccessToken = pulumi.ToSecret(args.IdcsAccessToken).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"idcsAccessToken",
@@ -173,6 +181,8 @@ func GetAnalyticsInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AnalyticsInstance resources.
 type analyticsInstanceState struct {
+	// user name of the authorized user.
+	AdminUser *string `pulumi:"adminUser"`
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacity *AnalyticsInstanceCapacity `pulumi:"capacity"`
 	// (Updatable) The OCID of the compartment.
@@ -181,15 +191,19 @@ type analyticsInstanceState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Optional description.
 	Description *string `pulumi:"description"`
+	// domain id for which the user is authorized.
+	DomainId *string `pulumi:"domainId"`
 	// (Updatable) Email address receiving notifications.
 	EmailNotification *string `pulumi:"emailNotification"`
+	// The feature set of an Analytics instance.
+	FeatureBundle *string `pulumi:"featureBundle"`
 	// Analytics feature set.
 	FeatureSet *string `pulumi:"featureSet"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// IDCS access token identifying a stripe and service administrator user.
 	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The license used for the service.
 	LicenseType *string `pulumi:"licenseType"`
@@ -204,6 +218,8 @@ type analyticsInstanceState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
+	// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
@@ -211,6 +227,8 @@ type analyticsInstanceState struct {
 }
 
 type AnalyticsInstanceState struct {
+	// user name of the authorized user.
+	AdminUser pulumi.StringPtrInput
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacity AnalyticsInstanceCapacityPtrInput
 	// (Updatable) The OCID of the compartment.
@@ -219,15 +237,19 @@ type AnalyticsInstanceState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Optional description.
 	Description pulumi.StringPtrInput
+	// domain id for which the user is authorized.
+	DomainId pulumi.StringPtrInput
 	// (Updatable) Email address receiving notifications.
 	EmailNotification pulumi.StringPtrInput
+	// The feature set of an Analytics instance.
+	FeatureBundle pulumi.StringPtrInput
 	// Analytics feature set.
 	FeatureSet pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// IDCS access token identifying a stripe and service administrator user.
 	IdcsAccessToken pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The license used for the service.
 	LicenseType pulumi.StringPtrInput
@@ -242,6 +264,8 @@ type AnalyticsInstanceState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
+	// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+	SystemTags pulumi.StringMapInput
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
@@ -253,6 +277,8 @@ func (AnalyticsInstanceState) ElementType() reflect.Type {
 }
 
 type analyticsInstanceArgs struct {
+	// user name of the authorized user.
+	AdminUser *string `pulumi:"adminUser"`
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacity AnalyticsInstanceCapacity `pulumi:"capacity"`
 	// (Updatable) The OCID of the compartment.
@@ -261,15 +287,19 @@ type analyticsInstanceArgs struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Optional description.
 	Description *string `pulumi:"description"`
+	// domain id for which the user is authorized.
+	DomainId *string `pulumi:"domainId"`
 	// (Updatable) Email address receiving notifications.
 	EmailNotification *string `pulumi:"emailNotification"`
+	// The feature set of an Analytics instance.
+	FeatureBundle *string `pulumi:"featureBundle"`
 	// Analytics feature set.
 	FeatureSet string `pulumi:"featureSet"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// IDCS access token identifying a stripe and service administrator user.
-	IdcsAccessToken string `pulumi:"idcsAccessToken"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The license used for the service.
 	LicenseType string `pulumi:"licenseType"`
@@ -286,6 +316,8 @@ type analyticsInstanceArgs struct {
 
 // The set of arguments for constructing a AnalyticsInstance resource.
 type AnalyticsInstanceArgs struct {
+	// user name of the authorized user.
+	AdminUser pulumi.StringPtrInput
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacity AnalyticsInstanceCapacityInput
 	// (Updatable) The OCID of the compartment.
@@ -294,15 +326,19 @@ type AnalyticsInstanceArgs struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Optional description.
 	Description pulumi.StringPtrInput
+	// domain id for which the user is authorized.
+	DomainId pulumi.StringPtrInput
 	// (Updatable) Email address receiving notifications.
 	EmailNotification pulumi.StringPtrInput
+	// The feature set of an Analytics instance.
+	FeatureBundle pulumi.StringPtrInput
 	// Analytics feature set.
 	FeatureSet pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// IDCS access token identifying a stripe and service administrator user.
-	IdcsAccessToken pulumi.StringInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	IdcsAccessToken pulumi.StringPtrInput
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The license used for the service.
 	LicenseType pulumi.StringInput
@@ -404,6 +440,11 @@ func (o AnalyticsInstanceOutput) ToAnalyticsInstanceOutputWithContext(ctx contex
 	return o
 }
 
+// user name of the authorized user.
+func (o AnalyticsInstanceOutput) AdminUser() pulumi.StringOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.AdminUser }).(pulumi.StringOutput)
+}
+
 // Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 func (o AnalyticsInstanceOutput) Capacity() AnalyticsInstanceCapacityOutput {
 	return o.ApplyT(func(v *AnalyticsInstance) AnalyticsInstanceCapacityOutput { return v.Capacity }).(AnalyticsInstanceCapacityOutput)
@@ -424,9 +465,19 @@ func (o AnalyticsInstanceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// domain id for which the user is authorized.
+func (o AnalyticsInstanceOutput) DomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.DomainId }).(pulumi.StringOutput)
+}
+
 // (Updatable) Email address receiving notifications.
 func (o AnalyticsInstanceOutput) EmailNotification() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.EmailNotification }).(pulumi.StringOutput)
+}
+
+// The feature set of an Analytics instance.
+func (o AnalyticsInstanceOutput) FeatureBundle() pulumi.StringOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.FeatureBundle }).(pulumi.StringOutput)
 }
 
 // Analytics feature set.
@@ -440,11 +491,11 @@ func (o AnalyticsInstanceOutput) FreeformTags() pulumi.StringMapOutput {
 }
 
 // IDCS access token identifying a stripe and service administrator user.
-func (o AnalyticsInstanceOutput) IdcsAccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.IdcsAccessToken }).(pulumi.StringOutput)
+func (o AnalyticsInstanceOutput) IdcsAccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringPtrOutput { return v.IdcsAccessToken }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 func (o AnalyticsInstanceOutput) KmsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
@@ -477,6 +528,11 @@ func (o AnalyticsInstanceOutput) ServiceUrl() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AnalyticsInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+func (o AnalyticsInstanceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`

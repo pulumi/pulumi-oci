@@ -55,6 +55,7 @@ import javax.annotation.Nullable;
  *             .targetResourceId(testResource.id())
  *             .timeScheduled(maintenanceRunTimeScheduled)
  *             .compartmentId(compartmentId)
+ *             .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
  *             .isDstFileUpdateEnabled(maintenanceRunIsDstFileUpdateEnabled)
  *             .patchingMode(maintenanceRunPatchingMode)
  *             .build());
@@ -131,6 +132,20 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> customActionTimeoutInMins() {
         return this.customActionTimeoutInMins;
+    }
+    /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
+    private Output<String> databaseSoftwareImageId;
+
+    /**
+     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    public Output<String> databaseSoftwareImageId() {
+        return this.databaseSoftwareImageId;
     }
     /**
      * Description of the maintenance run.
@@ -287,14 +302,14 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.patchId;
     }
     /**
-     * Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
      * 
      */
     @Export(name="patchType", refs={String.class}, tree="[0]")
     private Output<String> patchType;
 
     /**
-     * @return Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * @return Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
      * 
      */
     public Output<String> patchType() {

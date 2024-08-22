@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Redis
         /// <summary>
         /// This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
         /// 
-        /// Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+        /// Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Redis
         /// <summary>
         /// This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
         /// 
-        /// Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+        /// Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.Redis
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Redis
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -158,16 +158,16 @@ namespace Pulumi.Oci.Redis
     public sealed class GetRedisClustersResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// A user-friendly name of a Redis cluster node.
+        /// A user-friendly name of a cluster node.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetRedisClustersFilterResult> Filters;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRedisClustersRedisClusterCollectionResult> RedisClusterCollections;
         /// <summary>
-        /// The current state of the Redis cluster.
+        /// The current state of the cluster.
         /// </summary>
         public readonly string? State;
 

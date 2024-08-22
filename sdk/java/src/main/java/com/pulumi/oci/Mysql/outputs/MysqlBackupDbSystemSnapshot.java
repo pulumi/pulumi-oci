@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotBackupPolicy;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotDataStorage;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotMaintenance;
@@ -51,10 +52,15 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     private @Nullable String crashRecovery;
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     private @Nullable Integer dataStorageSizeInGb;
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    private @Nullable List<MysqlBackupDbSystemSnapshotDataStorage> dataStorages;
     /**
      * @return Whether to enable monitoring via the Database Management service.
      * 
@@ -200,11 +206,18 @@ public final class MysqlBackupDbSystemSnapshot {
         return Optional.ofNullable(this.crashRecovery);
     }
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     public Optional<Integer> dataStorageSizeInGb() {
         return Optional.ofNullable(this.dataStorageSizeInGb);
+    }
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    public List<MysqlBackupDbSystemSnapshotDataStorage> dataStorages() {
+        return this.dataStorages == null ? List.of() : this.dataStorages;
     }
     /**
      * @return Whether to enable monitoring via the Database Management service.
@@ -363,6 +376,7 @@ public final class MysqlBackupDbSystemSnapshot {
         private @Nullable String configurationId;
         private @Nullable String crashRecovery;
         private @Nullable Integer dataStorageSizeInGb;
+        private @Nullable List<MysqlBackupDbSystemSnapshotDataStorage> dataStorages;
         private @Nullable String databaseManagement;
         private @Nullable Map<String,String> definedTags;
         private @Nullable List<MysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
@@ -393,6 +407,7 @@ public final class MysqlBackupDbSystemSnapshot {
     	      this.configurationId = defaults.configurationId;
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
+    	      this.dataStorages = defaults.dataStorages;
     	      this.databaseManagement = defaults.databaseManagement;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
@@ -459,6 +474,15 @@ public final class MysqlBackupDbSystemSnapshot {
 
             this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dataStorages(@Nullable List<MysqlBackupDbSystemSnapshotDataStorage> dataStorages) {
+
+            this.dataStorages = dataStorages;
+            return this;
+        }
+        public Builder dataStorages(MysqlBackupDbSystemSnapshotDataStorage... dataStorages) {
+            return dataStorages(List.of(dataStorages));
         }
         @CustomType.Setter
         public Builder databaseManagement(@Nullable String databaseManagement) {
@@ -601,6 +625,7 @@ public final class MysqlBackupDbSystemSnapshot {
             _resultValue.configurationId = configurationId;
             _resultValue.crashRecovery = crashRecovery;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
+            _resultValue.dataStorages = dataStorages;
             _resultValue.databaseManagement = databaseManagement;
             _resultValue.definedTags = definedTags;
             _resultValue.deletionPolicies = deletionPolicies;

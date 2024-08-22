@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemCurrentPlacement;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDataStorage;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemHeatWaveCluster;
@@ -62,10 +63,15 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     private List<GetMysqlDbSystemsDbSystemCurrentPlacement> currentPlacements;
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     private Integer dataStorageSizeInGb;
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemDataStorage> dataStorages;
     /**
      * @return Filter DB Systems by their Database Management configuration.
      * 
@@ -260,11 +266,18 @@ public final class GetMysqlDbSystemsDbSystem {
         return this.currentPlacements;
     }
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     public Integer dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
+    }
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemDataStorage> dataStorages() {
+        return this.dataStorages;
     }
     /**
      * @return Filter DB Systems by their Database Management configuration.
@@ -478,6 +491,7 @@ public final class GetMysqlDbSystemsDbSystem {
         private String crashRecovery;
         private List<GetMysqlDbSystemsDbSystemCurrentPlacement> currentPlacements;
         private Integer dataStorageSizeInGb;
+        private List<GetMysqlDbSystemsDbSystemDataStorage> dataStorages;
         private String databaseManagement;
         private Map<String,String> definedTags;
         private List<GetMysqlDbSystemsDbSystemDeletionPolicy> deletionPolicies;
@@ -519,6 +533,7 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.currentPlacements = defaults.currentPlacements;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
+    	      this.dataStorages = defaults.dataStorages;
     	      this.databaseManagement = defaults.databaseManagement;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
@@ -637,6 +652,17 @@ public final class GetMysqlDbSystemsDbSystem {
             }
             this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dataStorages(List<GetMysqlDbSystemsDbSystemDataStorage> dataStorages) {
+            if (dataStorages == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "dataStorages");
+            }
+            this.dataStorages = dataStorages;
+            return this;
+        }
+        public Builder dataStorages(GetMysqlDbSystemsDbSystemDataStorage... dataStorages) {
+            return dataStorages(List.of(dataStorages));
         }
         @CustomType.Setter
         public Builder databaseManagement(String databaseManagement) {
@@ -895,6 +921,7 @@ public final class GetMysqlDbSystemsDbSystem {
             _resultValue.crashRecovery = crashRecovery;
             _resultValue.currentPlacements = currentPlacements;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
+            _resultValue.dataStorages = dataStorages;
             _resultValue.databaseManagement = databaseManagement;
             _resultValue.definedTags = definedTags;
             _resultValue.deletionPolicies = deletionPolicies;

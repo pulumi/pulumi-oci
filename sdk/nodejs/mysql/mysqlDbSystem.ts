@@ -40,6 +40,10 @@ import * as utilities from "../utilities";
  *     },
  *     configurationId: testConfiguration.id,
  *     crashRecovery: mysqlDbSystemCrashRecovery,
+ *     dataStorage: {
+ *         isAutoExpandStorageEnabled: mysqlDbSystemDataStorageIsAutoExpandStorageEnabled,
+ *         maxStorageSizeInGbs: mysqlDbSystemDataStorageMaxStorageSizeInGbs,
+ *     },
  *     dataStorageSizeInGb: mysqlDbSystemDataStorageSizeInGb,
  *     databaseManagement: mysqlDbSystemDatabaseManagement,
  *     definedTags: {
@@ -151,6 +155,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      * The availability domain and fault domain a DB System is placed in.
      */
     public /*out*/ readonly currentPlacements!: pulumi.Output<outputs.Mysql.MysqlDbSystemCurrentPlacement[]>;
+    /**
+     * (Updatable) Data Storage configuration properties.
+     */
+    public readonly dataStorage!: pulumi.Output<outputs.Mysql.MysqlDbSystemDataStorage>;
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
@@ -300,6 +308,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["configurationId"] = state ? state.configurationId : undefined;
             resourceInputs["crashRecovery"] = state ? state.crashRecovery : undefined;
             resourceInputs["currentPlacements"] = state ? state.currentPlacements : undefined;
+            resourceInputs["dataStorage"] = state ? state.dataStorage : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["databaseManagement"] = state ? state.databaseManagement : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -349,6 +358,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["configurationId"] = args ? args.configurationId : undefined;
             resourceInputs["crashRecovery"] = args ? args.crashRecovery : undefined;
+            resourceInputs["dataStorage"] = args ? args.dataStorage : undefined;
             resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
             resourceInputs["databaseManagement"] = args ? args.databaseManagement : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -431,6 +441,10 @@ export interface MysqlDbSystemState {
      * The availability domain and fault domain a DB System is placed in.
      */
     currentPlacements?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCurrentPlacement>[]>;
+    /**
+     * (Updatable) Data Storage configuration properties.
+     */
+    dataStorage?: pulumi.Input<inputs.Mysql.MysqlDbSystemDataStorage>;
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
@@ -595,6 +609,10 @@ export interface MysqlDbSystemArgs {
      * (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      */
     crashRecovery?: pulumi.Input<string>;
+    /**
+     * (Updatable) Data Storage configuration properties.
+     */
+    dataStorage?: pulumi.Input<inputs.Mysql.MysqlDbSystemDataStorage>;
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */

@@ -20,11 +20,12 @@ class MaintenanceRunArgs:
                  target_resource_id: pulumi.Input[str],
                  time_scheduled: pulumi.Input[str],
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 database_software_image_id: Optional[pulumi.Input[str]] = None,
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MaintenanceRun resource.
-        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY" or "TIMEZONE".
+        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         :param pulumi.Input[str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
         :param pulumi.Input[str] time_scheduled: (Updatable) The date and time that update should be scheduled.
                
@@ -32,6 +33,7 @@ class MaintenanceRunArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+        :param pulumi.Input[str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
                
@@ -42,6 +44,8 @@ class MaintenanceRunArgs:
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_software_image_id is not None:
+            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if is_dst_file_update_enabled is not None:
             pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         if patching_mode is not None:
@@ -51,7 +55,7 @@ class MaintenanceRunArgs:
     @pulumi.getter(name="patchType")
     def patch_type(self) -> pulumi.Input[str]:
         """
-        Patch type, either "QUARTERLY" or "TIMEZONE".
+        Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         """
         return pulumi.get(self, "patch_type")
 
@@ -100,6 +104,18 @@ class MaintenanceRunArgs:
         pulumi.set(self, "compartment_id", value)
 
     @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "database_software_image_id")
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_software_image_id", value)
+
+    @property
     @pulumi.getter(name="isDstFileUpdateEnabled")
     def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -133,6 +149,7 @@ class _MaintenanceRunState:
                  current_custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
                  current_patching_component: Optional[pulumi.Input[str]] = None,
                  custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+                 database_software_image_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  estimated_component_patching_start_time: Optional[pulumi.Input[str]] = None,
@@ -164,6 +181,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[int] current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param pulumi.Input[str] current_patching_component: The name of the current infrastruture component that is getting patched.
         :param pulumi.Input[int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        :param pulumi.Input[str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] description: Description of the maintenance run.
         :param pulumi.Input[str] display_name: The user-friendly name for the maintenance run.
         :param pulumi.Input[str] estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -175,7 +193,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[str] maintenance_type: Maintenance type.
         :param pulumi.Input[int] patch_failure_count: Contain the patch failure count.
         :param pulumi.Input[str] patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
-        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY" or "TIMEZONE".
+        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         :param pulumi.Input[str] patching_end_time: The time when the patching operation ended.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
                
@@ -204,6 +222,8 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "current_patching_component", current_patching_component)
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if database_software_image_id is not None:
+            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
@@ -302,6 +322,18 @@ class _MaintenanceRunState:
     @custom_action_timeout_in_mins.setter
     def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "custom_action_timeout_in_mins", value)
+
+    @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "database_software_image_id")
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_software_image_id", value)
 
     @property
     @pulumi.getter
@@ -439,7 +471,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="patchType")
     def patch_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Patch type, either "QUARTERLY" or "TIMEZONE".
+        Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         """
         return pulumi.get(self, "patch_type")
 
@@ -616,6 +648,7 @@ class MaintenanceRun(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 database_software_image_id: Optional[pulumi.Input[str]] = None,
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  patch_type: Optional[pulumi.Input[str]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -641,6 +674,7 @@ class MaintenanceRun(pulumi.CustomResource):
             target_resource_id=test_resource["id"],
             time_scheduled=maintenance_run_time_scheduled,
             compartment_id=compartment_id,
+            database_software_image_id=test_database_software_image["id"],
             is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
             patching_mode=maintenance_run_patching_mode)
         ```
@@ -656,8 +690,9 @@ class MaintenanceRun(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+        :param pulumi.Input[str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY" or "TIMEZONE".
+        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
@@ -693,6 +728,7 @@ class MaintenanceRun(pulumi.CustomResource):
             target_resource_id=test_resource["id"],
             time_scheduled=maintenance_run_time_scheduled,
             compartment_id=compartment_id,
+            database_software_image_id=test_database_software_image["id"],
             is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
             patching_mode=maintenance_run_patching_mode)
         ```
@@ -721,6 +757,7 @@ class MaintenanceRun(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 database_software_image_id: Optional[pulumi.Input[str]] = None,
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  patch_type: Optional[pulumi.Input[str]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -736,6 +773,7 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__ = MaintenanceRunArgs.__new__(MaintenanceRunArgs)
 
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["database_software_image_id"] = database_software_image_id
             __props__.__dict__["is_dst_file_update_enabled"] = is_dst_file_update_enabled
             if patch_type is None and not opts.urn:
                 raise TypeError("Missing required property 'patch_type'")
@@ -784,6 +822,7 @@ class MaintenanceRun(pulumi.CustomResource):
             current_custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
             current_patching_component: Optional[pulumi.Input[str]] = None,
             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+            database_software_image_id: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             estimated_component_patching_start_time: Optional[pulumi.Input[str]] = None,
@@ -820,6 +859,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[int] current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param pulumi.Input[str] current_patching_component: The name of the current infrastruture component that is getting patched.
         :param pulumi.Input[int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        :param pulumi.Input[str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] description: Description of the maintenance run.
         :param pulumi.Input[str] display_name: The user-friendly name for the maintenance run.
         :param pulumi.Input[str] estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -831,7 +871,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] maintenance_type: Maintenance type.
         :param pulumi.Input[int] patch_failure_count: Contain the patch failure count.
         :param pulumi.Input[str] patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
-        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY" or "TIMEZONE".
+        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         :param pulumi.Input[str] patching_end_time: The time when the patching operation ended.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
                
@@ -860,6 +900,7 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["current_custom_action_timeout_in_mins"] = current_custom_action_timeout_in_mins
         __props__.__dict__["current_patching_component"] = current_patching_component
         __props__.__dict__["custom_action_timeout_in_mins"] = custom_action_timeout_in_mins
+        __props__.__dict__["database_software_image_id"] = database_software_image_id
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["estimated_component_patching_start_time"] = estimated_component_patching_start_time
@@ -918,6 +959,14 @@ class MaintenanceRun(pulumi.CustomResource):
         Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> pulumi.Output[str]:
+        """
+        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter
@@ -1011,7 +1060,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="patchType")
     def patch_type(self) -> pulumi.Output[str]:
         """
-        Patch type, either "QUARTERLY" or "TIMEZONE".
+        Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         """
         return pulumi.get(self, "patch_type")
 

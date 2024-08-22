@@ -65,6 +65,10 @@ export interface GetIntegrationInstanceResult {
      */
     readonly customEndpoints: outputs.Integration.GetIntegrationInstanceCustomEndpoint[];
     /**
+     * Data retention period set for given integration instance
+     */
+    readonly dataRetentionPeriod: string;
+    /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: string};
@@ -74,6 +78,7 @@ export interface GetIntegrationInstanceResult {
     readonly displayName: string;
     readonly domainId: string;
     readonly enableProcessAutomationTrigger: number;
+    readonly extendDataRetentionTrigger: number;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -93,7 +98,7 @@ export interface GetIntegrationInstanceResult {
     readonly instanceUrl: string;
     readonly integrationInstanceId: string;
     /**
-     * Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
     readonly integrationInstanceType: string;
     /**

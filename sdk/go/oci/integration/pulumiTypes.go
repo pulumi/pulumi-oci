@@ -2014,12 +2014,15 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	ConsumptionModel string `pulumi:"consumptionModel"`
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints []GetIntegrationInstancesIntegrationInstanceCustomEndpoint `pulumi:"customEndpoints"`
+	// Data retention period set for given integration instance
+	DataRetentionPeriod string `pulumi:"dataRetentionPeriod"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName                    string `pulumi:"displayName"`
 	DomainId                       string `pulumi:"domainId"`
 	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
+	ExtendDataRetentionTrigger     int    `pulumi:"extendDataRetentionTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
@@ -2029,7 +2032,7 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	IdcsInfos []GetIntegrationInstancesIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl string `pulumi:"instanceUrl"`
-	// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol bool `pulumi:"isByol"`
@@ -2079,12 +2082,15 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	ConsumptionModel pulumi.StringInput `pulumi:"consumptionModel"`
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayInput `pulumi:"customEndpoints"`
+	// Data retention period set for given integration instance
+	DataRetentionPeriod pulumi.StringInput `pulumi:"dataRetentionPeriod"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName                    pulumi.StringInput `pulumi:"displayName"`
 	DomainId                       pulumi.StringInput `pulumi:"domainId"`
 	EnableProcessAutomationTrigger pulumi.IntInput    `pulumi:"enableProcessAutomationTrigger"`
+	ExtendDataRetentionTrigger     pulumi.IntInput    `pulumi:"extendDataRetentionTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
@@ -2094,7 +2100,7 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	IdcsInfos GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
-	// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringInput `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol pulumi.BoolInput `pulumi:"isByol"`
@@ -2204,6 +2210,11 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) CustomEndpoints() GetI
 	}).(GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput)
 }
 
+// Data retention period set for given integration instance
+func (o GetIntegrationInstancesIntegrationInstanceOutput) DataRetentionPeriod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.DataRetentionPeriod }).(pulumi.StringOutput)
+}
+
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetIntegrationInstancesIntegrationInstanceOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -2220,6 +2231,10 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) DomainId() pulumi.Stri
 
 func (o GetIntegrationInstancesIntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.EnableProcessAutomationTrigger }).(pulumi.IntOutput)
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceOutput) ExtendDataRetentionTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.ExtendDataRetentionTrigger }).(pulumi.IntOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2248,7 +2263,7 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) InstanceUrl() pulumi.S
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.InstanceUrl }).(pulumi.StringOutput)
 }
 
-// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 func (o GetIntegrationInstancesIntegrationInstanceOutput) IntegrationInstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.IntegrationInstanceType }).(pulumi.StringOutput)
 }

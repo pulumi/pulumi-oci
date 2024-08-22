@@ -2384,6 +2384,7 @@
         "recoverymod/protectionPolicy.ts",
         "recoverymod/recoveryServiceSubnet.ts",
         "redis/getRedisCluster.ts",
+        "redis/getRedisClusterNodes.ts",
         "redis/getRedisClusters.ts",
         "redis/index.ts",
         "redis/redisCluster.ts",

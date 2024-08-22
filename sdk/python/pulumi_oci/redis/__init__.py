@@ -6,6 +6,7 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .get_redis_cluster import *
+from .get_redis_cluster_nodes import *
 from .get_redis_clusters import *
 from .redis_cluster import *
 from ._inputs import *

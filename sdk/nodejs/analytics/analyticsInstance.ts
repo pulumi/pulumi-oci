@@ -28,11 +28,14 @@ import * as utilities from "../utilities";
  *     idcsAccessToken: analyticsInstanceIdcsAccessToken,
  *     licenseType: analyticsInstanceLicenseType,
  *     name: analyticsInstanceName,
+ *     adminUser: analyticsInstanceAdminUser,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     description: analyticsInstanceDescription,
+ *     domainId: testDomain.id,
  *     emailNotification: analyticsInstanceEmailNotification,
+ *     featureBundle: analyticsInstanceFeatureBundle,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -89,6 +92,10 @@ export class AnalyticsInstance extends pulumi.CustomResource {
     }
 
     /**
+     * user name of the authorized user.
+     */
+    public readonly adminUser!: pulumi.Output<string>;
+    /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      */
     public readonly capacity!: pulumi.Output<outputs.Analytics.AnalyticsInstanceCapacity>;
@@ -105,9 +112,17 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * domain id for which the user is authorized.
+     */
+    public readonly domainId!: pulumi.Output<string>;
+    /**
      * (Updatable) Email address receiving notifications.
      */
     public readonly emailNotification!: pulumi.Output<string>;
+    /**
+     * The feature set of an Analytics instance.
+     */
+    public readonly featureBundle!: pulumi.Output<string>;
     /**
      * Analytics feature set.
      */
@@ -119,9 +134,9 @@ export class AnalyticsInstance extends pulumi.CustomResource {
     /**
      * IDCS access token identifying a stripe and service administrator user.
      */
-    public readonly idcsAccessToken!: pulumi.Output<string>;
+    public readonly idcsAccessToken!: pulumi.Output<string | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      */
     public readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
@@ -149,6 +164,10 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     public readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -170,11 +189,14 @@ export class AnalyticsInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AnalyticsInstanceState | undefined;
+            resourceInputs["adminUser"] = state ? state.adminUser : undefined;
             resourceInputs["capacity"] = state ? state.capacity : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["domainId"] = state ? state.domainId : undefined;
             resourceInputs["emailNotification"] = state ? state.emailNotification : undefined;
+            resourceInputs["featureBundle"] = state ? state.featureBundle : undefined;
             resourceInputs["featureSet"] = state ? state.featureSet : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["idcsAccessToken"] = state ? state.idcsAccessToken : undefined;
@@ -184,6 +206,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
             resourceInputs["serviceUrl"] = state ? state.serviceUrl : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -197,17 +220,17 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             if ((!args || args.featureSet === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'featureSet'");
             }
-            if ((!args || args.idcsAccessToken === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'idcsAccessToken'");
-            }
             if ((!args || args.licenseType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'licenseType'");
             }
+            resourceInputs["adminUser"] = args ? args.adminUser : undefined;
             resourceInputs["capacity"] = args ? args.capacity : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["domainId"] = args ? args.domainId : undefined;
             resourceInputs["emailNotification"] = args ? args.emailNotification : undefined;
+            resourceInputs["featureBundle"] = args ? args.featureBundle : undefined;
             resourceInputs["featureSet"] = args ? args.featureSet : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["idcsAccessToken"] = args?.idcsAccessToken ? pulumi.secret(args.idcsAccessToken) : undefined;
@@ -217,6 +240,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["serviceUrl"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -231,6 +255,10 @@ export class AnalyticsInstance extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AnalyticsInstance resources.
  */
 export interface AnalyticsInstanceState {
+    /**
+     * user name of the authorized user.
+     */
+    adminUser?: pulumi.Input<string>;
     /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      */
@@ -248,9 +276,17 @@ export interface AnalyticsInstanceState {
      */
     description?: pulumi.Input<string>;
     /**
+     * domain id for which the user is authorized.
+     */
+    domainId?: pulumi.Input<string>;
+    /**
      * (Updatable) Email address receiving notifications.
      */
     emailNotification?: pulumi.Input<string>;
+    /**
+     * The feature set of an Analytics instance.
+     */
+    featureBundle?: pulumi.Input<string>;
     /**
      * Analytics feature set.
      */
@@ -264,7 +300,7 @@ export interface AnalyticsInstanceState {
      */
     idcsAccessToken?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
@@ -292,6 +328,10 @@ export interface AnalyticsInstanceState {
      */
     state?: pulumi.Input<string>;
     /**
+     * System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
@@ -305,6 +345,10 @@ export interface AnalyticsInstanceState {
  * The set of arguments for constructing a AnalyticsInstance resource.
  */
 export interface AnalyticsInstanceArgs {
+    /**
+     * user name of the authorized user.
+     */
+    adminUser?: pulumi.Input<string>;
     /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      */
@@ -322,9 +366,17 @@ export interface AnalyticsInstanceArgs {
      */
     description?: pulumi.Input<string>;
     /**
+     * domain id for which the user is authorized.
+     */
+    domainId?: pulumi.Input<string>;
+    /**
      * (Updatable) Email address receiving notifications.
      */
     emailNotification?: pulumi.Input<string>;
+    /**
+     * The feature set of an Analytics instance.
+     */
+    featureBundle?: pulumi.Input<string>;
     /**
      * Analytics feature set.
      */
@@ -336,9 +388,9 @@ export interface AnalyticsInstanceArgs {
     /**
      * IDCS access token identifying a stripe and service administrator user.
      */
-    idcsAccessToken: pulumi.Input<string>;
+    idcsAccessToken?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      */
     kmsKeyId?: pulumi.Input<string>;
     /**

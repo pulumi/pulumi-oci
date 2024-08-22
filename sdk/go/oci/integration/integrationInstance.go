@@ -100,13 +100,18 @@ type IntegrationInstance struct {
 	ConsumptionModel pulumi.StringOutput `pulumi:"consumptionModel"`
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint IntegrationInstanceCustomEndpointOutput `pulumi:"customEndpoint"`
+	// Data retention period set for given integration instance
+	DataRetentionPeriod pulumi.StringOutput `pulumi:"dataRetentionPeriod"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId                       pulumi.StringPtrOutput `pulumi:"domainId"`
-	EnableProcessAutomationTrigger pulumi.IntPtrOutput    `pulumi:"enableProcessAutomationTrigger"`
+	DomainId pulumi.StringPtrOutput `pulumi:"domainId"`
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+	EnableProcessAutomationTrigger pulumi.IntPtrOutput `pulumi:"enableProcessAutomationTrigger"`
+	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+	ExtendDataRetentionTrigger pulumi.IntPtrOutput `pulumi:"extendDataRetentionTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -208,13 +213,18 @@ type integrationInstanceState struct {
 	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint *IntegrationInstanceCustomEndpoint `pulumi:"customEndpoint"`
+	// Data retention period set for given integration instance
+	DataRetentionPeriod *string `pulumi:"dataRetentionPeriod"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId                       *string `pulumi:"domainId"`
-	EnableProcessAutomationTrigger *int    `pulumi:"enableProcessAutomationTrigger"`
+	DomainId *string `pulumi:"domainId"`
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
+	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+	ExtendDataRetentionTrigger *int `pulumi:"extendDataRetentionTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -265,13 +275,18 @@ type IntegrationInstanceState struct {
 	ConsumptionModel pulumi.StringPtrInput
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint IntegrationInstanceCustomEndpointPtrInput
+	// Data retention period set for given integration instance
+	DataRetentionPeriod pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringPtrInput
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId                       pulumi.StringPtrInput
+	DomainId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
+	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+	ExtendDataRetentionTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -329,8 +344,11 @@ type integrationInstanceArgs struct {
 	// (Updatable) Integration Instance Identifier.
 	DisplayName string `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId                       *string `pulumi:"domainId"`
-	EnableProcessAutomationTrigger *int    `pulumi:"enableProcessAutomationTrigger"`
+	DomainId *string `pulumi:"domainId"`
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
+	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+	ExtendDataRetentionTrigger *int `pulumi:"extendDataRetentionTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -371,8 +389,11 @@ type IntegrationInstanceArgs struct {
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringInput
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId                       pulumi.StringPtrInput
+	DomainId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
+	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+	ExtendDataRetentionTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -512,6 +533,11 @@ func (o IntegrationInstanceOutput) CustomEndpoint() IntegrationInstanceCustomEnd
 	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceCustomEndpointOutput { return v.CustomEndpoint }).(IntegrationInstanceCustomEndpointOutput)
 }
 
+// Data retention period set for given integration instance
+func (o IntegrationInstanceOutput) DataRetentionPeriod() pulumi.StringOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.DataRetentionPeriod }).(pulumi.StringOutput)
+}
+
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 func (o IntegrationInstanceOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -527,8 +553,14 @@ func (o IntegrationInstanceOutput) DomainId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 func (o IntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.EnableProcessAutomationTrigger }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+func (o IntegrationInstanceOutput) ExtendDataRetentionTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.ExtendDataRetentionTrigger }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

@@ -493,6 +493,7 @@ class DrProtectionGroup(pulumi.CustomResource):
             members=[{
                 "member_id": dr_protection_group_members_member_id,
                 "member_type": dr_protection_group_members_member_type,
+                "autonomous_database_standby_type_for_dr_drills": dr_protection_group_members_autonomous_database_standby_type_for_dr_drills,
                 "backend_set_mappings": [{
                     "destination_backend_set_name": test_backend_set["name"],
                     "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
@@ -507,6 +508,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                         "mount_point": dr_protection_group_members_block_volume_operations_mount_details_mount_point,
                     },
                 }],
+                "connection_string_type": dr_protection_group_members_connection_string_type,
+                "bucket": dr_protection_group_members_bucket,
                 "destination_availability_domain": dr_protection_group_members_destination_availability_domain,
                 "destination_capacity_reservation_id": destination_capacity_reservation_id,
                 "destination_compartment_id": test_compartment["id"],
@@ -531,6 +534,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                 "is_movable": dr_protection_group_members_is_movable,
                 "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
                 "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
+                "namespace": dr_protection_group_members_namespace,
                 "password_vault_secret_id": password_vault_secret_id,
                 "vnic_mappings": [
                     {
@@ -625,6 +629,7 @@ class DrProtectionGroup(pulumi.CustomResource):
             members=[{
                 "member_id": dr_protection_group_members_member_id,
                 "member_type": dr_protection_group_members_member_type,
+                "autonomous_database_standby_type_for_dr_drills": dr_protection_group_members_autonomous_database_standby_type_for_dr_drills,
                 "backend_set_mappings": [{
                     "destination_backend_set_name": test_backend_set["name"],
                     "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
@@ -639,6 +644,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                         "mount_point": dr_protection_group_members_block_volume_operations_mount_details_mount_point,
                     },
                 }],
+                "connection_string_type": dr_protection_group_members_connection_string_type,
+                "bucket": dr_protection_group_members_bucket,
                 "destination_availability_domain": dr_protection_group_members_destination_availability_domain,
                 "destination_capacity_reservation_id": destination_capacity_reservation_id,
                 "destination_compartment_id": test_compartment["id"],
@@ -663,6 +670,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                 "is_movable": dr_protection_group_members_is_movable,
                 "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
                 "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
+                "namespace": dr_protection_group_members_namespace,
                 "password_vault_secret_id": password_vault_secret_id,
                 "vnic_mappings": [
                     {

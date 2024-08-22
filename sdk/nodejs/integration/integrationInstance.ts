@@ -113,6 +113,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public readonly customEndpoint!: pulumi.Output<outputs.Integration.IntegrationInstanceCustomEndpoint>;
     /**
+     * Data retention period set for given integration instance
+     */
+    public /*out*/ readonly dataRetentionPeriod!: pulumi.Output<string>;
+    /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
@@ -124,7 +128,14 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
     public readonly domainId!: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     */
     public readonly enableProcessAutomationTrigger!: pulumi.Output<number | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     */
+    public readonly extendDataRetentionTrigger!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -216,10 +227,12 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["consumptionModel"] = state ? state.consumptionModel : undefined;
             resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
+            resourceInputs["dataRetentionPeriod"] = state ? state.dataRetentionPeriod : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["domainId"] = state ? state.domainId : undefined;
             resourceInputs["enableProcessAutomationTrigger"] = state ? state.enableProcessAutomationTrigger : undefined;
+            resourceInputs["extendDataRetentionTrigger"] = state ? state.extendDataRetentionTrigger : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["idcsAt"] = state ? state.idcsAt : undefined;
             resourceInputs["idcsInfos"] = state ? state.idcsInfos : undefined;
@@ -262,6 +275,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["domainId"] = args ? args.domainId : undefined;
             resourceInputs["enableProcessAutomationTrigger"] = args ? args.enableProcessAutomationTrigger : undefined;
+            resourceInputs["extendDataRetentionTrigger"] = args ? args.extendDataRetentionTrigger : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["idcsAt"] = args?.idcsAt ? pulumi.secret(args.idcsAt) : undefined;
             resourceInputs["integrationInstanceType"] = args ? args.integrationInstanceType : undefined;
@@ -273,6 +287,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["attachments"] = undefined /*out*/;
+            resourceInputs["dataRetentionPeriod"] = undefined /*out*/;
             resourceInputs["idcsInfos"] = undefined /*out*/;
             resourceInputs["instanceUrl"] = undefined /*out*/;
             resourceInputs["privateEndpointOutboundConnections"] = undefined /*out*/;
@@ -313,6 +328,10 @@ export interface IntegrationInstanceState {
      */
     customEndpoint?: pulumi.Input<inputs.Integration.IntegrationInstanceCustomEndpoint>;
     /**
+     * Data retention period set for given integration instance
+     */
+    dataRetentionPeriod?: pulumi.Input<string>;
+    /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -324,7 +343,14 @@ export interface IntegrationInstanceState {
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
     domainId?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     */
     enableProcessAutomationTrigger?: pulumi.Input<number>;
+    /**
+     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     */
+    extendDataRetentionTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -431,7 +457,14 @@ export interface IntegrationInstanceArgs {
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
     domainId?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     */
     enableProcessAutomationTrigger?: pulumi.Input<number>;
+    /**
+     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     */
+    extendDataRetentionTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */

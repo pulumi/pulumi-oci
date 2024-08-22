@@ -80,7 +80,7 @@ namespace Pulumi.Oci.Mysql
         public Output<string> CreationType { get; private set; } = null!;
 
         /// <summary>
-        /// Initial size of the data volume in GiBs that will be created and attached.
+        /// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         /// </summary>
         [Output("dataStorageSizeInGb")]
         public Output<int> DataStorageSizeInGb { get; private set; } = null!;
@@ -343,7 +343,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? CreationType { get; set; }
 
         /// <summary>
-        /// Initial size of the data volume in GiBs that will be created and attached.
+        /// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }

@@ -16,14 +16,14 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
     public static final AnalyticsInstanceCapacityArgs Empty = new AnalyticsInstanceCapacityArgs();
 
     /**
-     * The capacity model to use.
+     * The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
      * 
      */
     @Import(name="capacityType", required=true)
     private Output<String> capacityType;
 
     /**
-     * @return The capacity model to use.
+     * @return The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
      * 
      */
     public Output<String> capacityType() {
@@ -31,14 +31,14 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+     * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     @Import(name="capacityValue", required=true)
     private Output<Integer> capacityValue;
 
     /**
-     * @return (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+     * @return (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     public Output<Integer> capacityValue() {
@@ -71,7 +71,7 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param capacityType The capacity model to use.
+         * @param capacityType The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param capacityType The capacity model to use.
+         * @param capacityType The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param capacityValue (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+         * @param capacityValue (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param capacityValue (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+         * @param capacityValue (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
          * 
          * @return builder
          * 

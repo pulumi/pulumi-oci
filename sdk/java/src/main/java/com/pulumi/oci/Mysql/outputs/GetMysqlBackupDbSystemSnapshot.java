@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotBackupPolicy;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotDataStorage;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotMaintenance;
@@ -50,10 +51,15 @@ public final class GetMysqlBackupDbSystemSnapshot {
      */
     private String crashRecovery;
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     private Integer dataStorageSizeInGb;
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    private List<GetMysqlBackupDbSystemSnapshotDataStorage> dataStorages;
     /**
      * @return Whether to enable monitoring via the Database Management service.
      * 
@@ -199,11 +205,18 @@ public final class GetMysqlBackupDbSystemSnapshot {
         return this.crashRecovery;
     }
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     public Integer dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
+    }
+    /**
+     * @return Data Storage information.
+     * 
+     */
+    public List<GetMysqlBackupDbSystemSnapshotDataStorage> dataStorages() {
+        return this.dataStorages;
     }
     /**
      * @return Whether to enable monitoring via the Database Management service.
@@ -362,6 +375,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         private String configurationId;
         private String crashRecovery;
         private Integer dataStorageSizeInGb;
+        private List<GetMysqlBackupDbSystemSnapshotDataStorage> dataStorages;
         private String databaseManagement;
         private Map<String,String> definedTags;
         private List<GetMysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
@@ -392,6 +406,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
     	      this.configurationId = defaults.configurationId;
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
+    	      this.dataStorages = defaults.dataStorages;
     	      this.databaseManagement = defaults.databaseManagement;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
@@ -472,6 +487,17 @@ public final class GetMysqlBackupDbSystemSnapshot {
             }
             this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dataStorages(List<GetMysqlBackupDbSystemSnapshotDataStorage> dataStorages) {
+            if (dataStorages == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "dataStorages");
+            }
+            this.dataStorages = dataStorages;
+            return this;
+        }
+        public Builder dataStorages(GetMysqlBackupDbSystemSnapshotDataStorage... dataStorages) {
+            return dataStorages(List.of(dataStorages));
         }
         @CustomType.Setter
         public Builder databaseManagement(String databaseManagement) {
@@ -654,6 +680,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
             _resultValue.configurationId = configurationId;
             _resultValue.crashRecovery = crashRecovery;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
+            _resultValue.dataStorages = dataStorages;
             _resultValue.databaseManagement = databaseManagement;
             _resultValue.definedTags = definedTags;
             _resultValue.deletionPolicies = deletionPolicies;

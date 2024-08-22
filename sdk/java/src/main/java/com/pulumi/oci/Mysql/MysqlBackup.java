@@ -134,14 +134,14 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
         return this.creationType;
     }
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     public Output<Integer> dataStorageSizeInGb() {

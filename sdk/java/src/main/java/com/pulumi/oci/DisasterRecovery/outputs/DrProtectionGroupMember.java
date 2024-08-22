@@ -20,6 +20,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrProtectionGroupMember {
     /**
+     * @return (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     * 
+     */
+    private @Nullable String autonomousDatabaseStandbyTypeForDrDrills;
+    /**
      * @return (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
      * 
      */
@@ -29,6 +34,16 @@ public final class DrProtectionGroupMember {
      * 
      */
     private @Nullable List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
+    /**
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * 
+     */
+    private @Nullable String bucket;
+    /**
+     * @return (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+     * 
+     */
+    private @Nullable String connectionStringType;
     /**
      * @return (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
      * 
@@ -95,7 +110,12 @@ public final class DrProtectionGroupMember {
      */
     private String memberType;
     /**
-     * @return (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+     * @return (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * 
+     */
+    private @Nullable String namespace;
+    /**
+     * @return (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     private @Nullable String passwordVaultSecretId;
@@ -112,6 +132,13 @@ public final class DrProtectionGroupMember {
 
     private DrProtectionGroupMember() {}
     /**
+     * @return (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     * 
+     */
+    public Optional<String> autonomousDatabaseStandbyTypeForDrDrills() {
+        return Optional.ofNullable(this.autonomousDatabaseStandbyTypeForDrDrills);
+    }
+    /**
      * @return (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
      * 
      */
@@ -124,6 +151,20 @@ public final class DrProtectionGroupMember {
      */
     public List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations() {
         return this.blockVolumeOperations == null ? List.of() : this.blockVolumeOperations;
+    }
+    /**
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * 
+     */
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
+    }
+    /**
+     * @return (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+     * 
+     */
+    public Optional<String> connectionStringType() {
+        return Optional.ofNullable(this.connectionStringType);
     }
     /**
      * @return (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
@@ -217,7 +258,14 @@ public final class DrProtectionGroupMember {
         return this.memberType;
     }
     /**
-     * @return (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+     * @return (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * 
+     */
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
+    }
+    /**
+     * @return (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     public Optional<String> passwordVaultSecretId() {
@@ -247,8 +295,11 @@ public final class DrProtectionGroupMember {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String autonomousDatabaseStandbyTypeForDrDrills;
         private @Nullable List<DrProtectionGroupMemberBackendSetMapping> backendSetMappings;
         private @Nullable List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
+        private @Nullable String bucket;
+        private @Nullable String connectionStringType;
         private @Nullable String destinationAvailabilityDomain;
         private @Nullable String destinationCapacityReservationId;
         private @Nullable String destinationCompartmentId;
@@ -262,14 +313,18 @@ public final class DrProtectionGroupMember {
         private @Nullable Boolean isStartStopEnabled;
         private String memberId;
         private String memberType;
+        private @Nullable String namespace;
         private @Nullable String passwordVaultSecretId;
         private @Nullable List<DrProtectionGroupMemberVnicMapping> vnicMapping;
         private @Nullable List<DrProtectionGroupMemberVnicMapping> vnicMappings;
         public Builder() {}
         public Builder(DrProtectionGroupMember defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autonomousDatabaseStandbyTypeForDrDrills = defaults.autonomousDatabaseStandbyTypeForDrDrills;
     	      this.backendSetMappings = defaults.backendSetMappings;
     	      this.blockVolumeOperations = defaults.blockVolumeOperations;
+    	      this.bucket = defaults.bucket;
+    	      this.connectionStringType = defaults.connectionStringType;
     	      this.destinationAvailabilityDomain = defaults.destinationAvailabilityDomain;
     	      this.destinationCapacityReservationId = defaults.destinationCapacityReservationId;
     	      this.destinationCompartmentId = defaults.destinationCompartmentId;
@@ -283,11 +338,18 @@ public final class DrProtectionGroupMember {
     	      this.isStartStopEnabled = defaults.isStartStopEnabled;
     	      this.memberId = defaults.memberId;
     	      this.memberType = defaults.memberType;
+    	      this.namespace = defaults.namespace;
     	      this.passwordVaultSecretId = defaults.passwordVaultSecretId;
     	      this.vnicMapping = defaults.vnicMapping;
     	      this.vnicMappings = defaults.vnicMappings;
         }
 
+        @CustomType.Setter
+        public Builder autonomousDatabaseStandbyTypeForDrDrills(@Nullable String autonomousDatabaseStandbyTypeForDrDrills) {
+
+            this.autonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
+            return this;
+        }
         @CustomType.Setter
         public Builder backendSetMappings(@Nullable List<DrProtectionGroupMemberBackendSetMapping> backendSetMappings) {
 
@@ -305,6 +367,18 @@ public final class DrProtectionGroupMember {
         }
         public Builder blockVolumeOperations(DrProtectionGroupMemberBlockVolumeOperation... blockVolumeOperations) {
             return blockVolumeOperations(List.of(blockVolumeOperations));
+        }
+        @CustomType.Setter
+        public Builder bucket(@Nullable String bucket) {
+
+            this.bucket = bucket;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder connectionStringType(@Nullable String connectionStringType) {
+
+            this.connectionStringType = connectionStringType;
+            return this;
         }
         @CustomType.Setter
         public Builder destinationAvailabilityDomain(@Nullable String destinationAvailabilityDomain) {
@@ -395,6 +469,12 @@ public final class DrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder namespace(@Nullable String namespace) {
+
+            this.namespace = namespace;
+            return this;
+        }
+        @CustomType.Setter
         public Builder passwordVaultSecretId(@Nullable String passwordVaultSecretId) {
 
             this.passwordVaultSecretId = passwordVaultSecretId;
@@ -420,8 +500,11 @@ public final class DrProtectionGroupMember {
         }
         public DrProtectionGroupMember build() {
             final var _resultValue = new DrProtectionGroupMember();
+            _resultValue.autonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
             _resultValue.backendSetMappings = backendSetMappings;
             _resultValue.blockVolumeOperations = blockVolumeOperations;
+            _resultValue.bucket = bucket;
+            _resultValue.connectionStringType = connectionStringType;
             _resultValue.destinationAvailabilityDomain = destinationAvailabilityDomain;
             _resultValue.destinationCapacityReservationId = destinationCapacityReservationId;
             _resultValue.destinationCompartmentId = destinationCompartmentId;
@@ -435,6 +518,7 @@ public final class DrProtectionGroupMember {
             _resultValue.isStartStopEnabled = isStartStopEnabled;
             _resultValue.memberId = memberId;
             _resultValue.memberType = memberType;
+            _resultValue.namespace = namespace;
             _resultValue.passwordVaultSecretId = passwordVaultSecretId;
             _resultValue.vnicMapping = vnicMapping;
             _resultValue.vnicMappings = vnicMappings;

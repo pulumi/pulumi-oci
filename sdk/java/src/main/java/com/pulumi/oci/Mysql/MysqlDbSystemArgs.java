@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDataStorageArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
@@ -136,6 +137,21 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> crashRecovery() {
         return Optional.ofNullable(this.crashRecovery);
+    }
+
+    /**
+     * (Updatable) Data Storage configuration properties.
+     * 
+     */
+    @Import(name="dataStorage")
+    private @Nullable Output<MysqlDbSystemDataStorageArgs> dataStorage;
+
+    /**
+     * @return (Updatable) Data Storage configuration properties.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemDataStorageArgs>> dataStorage() {
+        return Optional.ofNullable(this.dataStorage);
     }
 
     /**
@@ -491,6 +507,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.configurationId = $.configurationId;
         this.crashRecovery = $.crashRecovery;
+        this.dataStorage = $.dataStorage;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.databaseManagement = $.databaseManagement;
         this.definedTags = $.definedTags;
@@ -685,6 +702,27 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder crashRecovery(String crashRecovery) {
             return crashRecovery(Output.of(crashRecovery));
+        }
+
+        /**
+         * @param dataStorage (Updatable) Data Storage configuration properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorage(@Nullable Output<MysqlDbSystemDataStorageArgs> dataStorage) {
+            $.dataStorage = dataStorage;
+            return this;
+        }
+
+        /**
+         * @param dataStorage (Updatable) Data Storage configuration properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorage(MysqlDbSystemDataStorageArgs dataStorage) {
+            return dataStorage(Output.of(dataStorage));
         }
 
         /**

@@ -37,7 +37,7 @@ public final class GetMysqlBackupsBackup {
      */
     private String creationType;
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     private Integer dataStorageSizeInGb;
@@ -159,7 +159,7 @@ public final class GetMysqlBackupsBackup {
         return this.creationType;
     }
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     public Integer dataStorageSizeInGb() {

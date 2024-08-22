@@ -1082,10 +1082,14 @@ class DrProtectionGroupMember(dict):
             suggest = "member_id"
         elif key == "memberType":
             suggest = "member_type"
+        elif key == "autonomousDatabaseStandbyTypeForDrDrills":
+            suggest = "autonomous_database_standby_type_for_dr_drills"
         elif key == "backendSetMappings":
             suggest = "backend_set_mappings"
         elif key == "blockVolumeOperations":
             suggest = "block_volume_operations"
+        elif key == "connectionStringType":
+            suggest = "connection_string_type"
         elif key == "destinationAvailabilityDomain":
             suggest = "destination_availability_domain"
         elif key == "destinationCapacityReservationId":
@@ -1129,8 +1133,11 @@ class DrProtectionGroupMember(dict):
     def __init__(__self__, *,
                  member_id: str,
                  member_type: str,
+                 autonomous_database_standby_type_for_dr_drills: Optional[str] = None,
                  backend_set_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberBackendSetMapping']] = None,
                  block_volume_operations: Optional[Sequence['outputs.DrProtectionGroupMemberBlockVolumeOperation']] = None,
+                 bucket: Optional[str] = None,
+                 connection_string_type: Optional[str] = None,
                  destination_availability_domain: Optional[str] = None,
                  destination_capacity_reservation_id: Optional[str] = None,
                  destination_compartment_id: Optional[str] = None,
@@ -1142,14 +1149,18 @@ class DrProtectionGroupMember(dict):
                  is_movable: Optional[bool] = None,
                  is_retain_fault_domain: Optional[bool] = None,
                  is_start_stop_enabled: Optional[bool] = None,
+                 namespace: Optional[str] = None,
                  password_vault_secret_id: Optional[str] = None,
                  vnic_mapping: Optional[Sequence['outputs.DrProtectionGroupMemberVnicMapping']] = None,
                  vnic_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberVnicMapping']] = None):
         """
         :param str member_id: (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         :param str member_type: (Updatable) The type of the member.
+        :param str autonomous_database_standby_type_for_dr_drills: (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
         :param Sequence['DrProtectionGroupMemberBackendSetMappingArgs'] backend_set_mappings: (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
         :param Sequence['DrProtectionGroupMemberBlockVolumeOperationArgs'] block_volume_operations: (Updatable) A list of operations performed on block volumes used by the compute instance.
+        :param str bucket: (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+        :param str connection_string_type: (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         :param str destination_availability_domain: (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
         :param str destination_capacity_reservation_id: (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param str destination_compartment_id: (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -1161,16 +1172,23 @@ class DrProtectionGroupMember(dict):
         :param bool is_movable: (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         :param bool is_retain_fault_domain: (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         :param bool is_start_stop_enabled: (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
-        :param str password_vault_secret_id: (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param str namespace: (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param str password_vault_secret_id: (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param Sequence['DrProtectionGroupMemberVnicMappingArgs'] vnic_mapping: (Updatable) A list of compute instance VNIC mappings.
         :param Sequence['DrProtectionGroupMemberVnicMappingArgs'] vnic_mappings: (Updatable) A list of compute instance VNIC mappings.
         """
         pulumi.set(__self__, "member_id", member_id)
         pulumi.set(__self__, "member_type", member_type)
+        if autonomous_database_standby_type_for_dr_drills is not None:
+            pulumi.set(__self__, "autonomous_database_standby_type_for_dr_drills", autonomous_database_standby_type_for_dr_drills)
         if backend_set_mappings is not None:
             pulumi.set(__self__, "backend_set_mappings", backend_set_mappings)
         if block_volume_operations is not None:
             pulumi.set(__self__, "block_volume_operations", block_volume_operations)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if connection_string_type is not None:
+            pulumi.set(__self__, "connection_string_type", connection_string_type)
         if destination_availability_domain is not None:
             pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
         if destination_capacity_reservation_id is not None:
@@ -1193,6 +1211,8 @@ class DrProtectionGroupMember(dict):
             pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
         if is_start_stop_enabled is not None:
             pulumi.set(__self__, "is_start_stop_enabled", is_start_stop_enabled)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
         if password_vault_secret_id is not None:
             pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         if vnic_mapping is not None:
@@ -1217,6 +1237,14 @@ class DrProtectionGroupMember(dict):
         return pulumi.get(self, "member_type")
 
     @property
+    @pulumi.getter(name="autonomousDatabaseStandbyTypeForDrDrills")
+    def autonomous_database_standby_type_for_dr_drills(self) -> Optional[str]:
+        """
+        (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        """
+        return pulumi.get(self, "autonomous_database_standby_type_for_dr_drills")
+
+    @property
     @pulumi.getter(name="backendSetMappings")
     def backend_set_mappings(self) -> Optional[Sequence['outputs.DrProtectionGroupMemberBackendSetMapping']]:
         """
@@ -1231,6 +1259,22 @@ class DrProtectionGroupMember(dict):
         (Updatable) A list of operations performed on block volumes used by the compute instance.
         """
         return pulumi.get(self, "block_volume_operations")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[str]:
+        """
+        (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="connectionStringType")
+    def connection_string_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        """
+        return pulumi.get(self, "connection_string_type")
 
     @property
     @pulumi.getter(name="destinationAvailabilityDomain")
@@ -1321,10 +1365,18 @@ class DrProtectionGroupMember(dict):
         return pulumi.get(self, "is_start_stop_enabled")
 
     @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
     @pulumi.getter(name="passwordVaultSecretId")
     def password_vault_secret_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         """
         return pulumi.get(self, "password_vault_secret_id")
 
@@ -3700,7 +3752,7 @@ class GetDrProtectionGroupLogLocationResult(dict):
                  namespace: str,
                  object: str):
         """
-        :param str bucket: The bucket name inside the object storage namespace.  Example: `operation_logs`
+        :param str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
         :param str namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
@@ -3712,7 +3764,7 @@ class GetDrProtectionGroupLogLocationResult(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The bucket name inside the object storage namespace.  Example: `operation_logs`
+        The bucket name inside the object storage namespace.  Example: `bucket_name`
         """
         return pulumi.get(self, "bucket")
 
@@ -3736,8 +3788,11 @@ class GetDrProtectionGroupLogLocationResult(dict):
 @pulumi.output_type
 class GetDrProtectionGroupMemberResult(dict):
     def __init__(__self__, *,
+                 autonomous_database_standby_type_for_dr_drills: str,
                  backend_set_mappings: Sequence['outputs.GetDrProtectionGroupMemberBackendSetMappingResult'],
                  block_volume_operations: Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeOperationResult'],
+                 bucket: str,
+                 connection_string_type: str,
                  destination_availability_domain: str,
                  destination_capacity_reservation_id: str,
                  destination_compartment_id: str,
@@ -3751,12 +3806,16 @@ class GetDrProtectionGroupMemberResult(dict):
                  is_start_stop_enabled: bool,
                  member_id: str,
                  member_type: str,
+                 namespace: str,
                  password_vault_secret_id: str,
                  vnic_mapping: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult'],
                  vnic_mappings: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult']):
         """
+        :param str autonomous_database_standby_type_for_dr_drills: This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
         :param Sequence['GetDrProtectionGroupMemberBackendSetMappingArgs'] backend_set_mappings: A list of backend set mappings that are used to transfer or update backends during DR.
         :param Sequence['GetDrProtectionGroupMemberBlockVolumeOperationArgs'] block_volume_operations: Operations performed on a list of block volumes used on the non-movable compute instance.
+        :param str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
+        :param str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         :param str destination_availability_domain: The availability domain of the destination mount target. Example: `BBTh:region-AD`
         :param str destination_capacity_reservation_id: The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param str destination_compartment_id: The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -3770,12 +3829,16 @@ class GetDrProtectionGroupMemberResult(dict):
         :param bool is_start_stop_enabled: A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
         :param str member_id: The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         :param str member_type: The type of the member.
-        :param str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param str namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupMemberVnicMappingArgs'] vnic_mapping: A list of compute instance VNIC mappings.
         :param Sequence['GetDrProtectionGroupMemberVnicMappingArgs'] vnic_mappings: A list of compute instance VNIC mappings.
         """
+        pulumi.set(__self__, "autonomous_database_standby_type_for_dr_drills", autonomous_database_standby_type_for_dr_drills)
         pulumi.set(__self__, "backend_set_mappings", backend_set_mappings)
         pulumi.set(__self__, "block_volume_operations", block_volume_operations)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "connection_string_type", connection_string_type)
         pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
         pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
@@ -3789,9 +3852,18 @@ class GetDrProtectionGroupMemberResult(dict):
         pulumi.set(__self__, "is_start_stop_enabled", is_start_stop_enabled)
         pulumi.set(__self__, "member_id", member_id)
         pulumi.set(__self__, "member_type", member_type)
+        pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         pulumi.set(__self__, "vnic_mapping", vnic_mapping)
         pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseStandbyTypeForDrDrills")
+    def autonomous_database_standby_type_for_dr_drills(self) -> str:
+        """
+        This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        """
+        return pulumi.get(self, "autonomous_database_standby_type_for_dr_drills")
 
     @property
     @pulumi.getter(name="backendSetMappings")
@@ -3808,6 +3880,22 @@ class GetDrProtectionGroupMemberResult(dict):
         Operations performed on a list of block volumes used on the non-movable compute instance.
         """
         return pulumi.get(self, "block_volume_operations")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The bucket name inside the object storage namespace.  Example: `bucket_name`
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="connectionStringType")
+    def connection_string_type(self) -> str:
+        """
+        The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        """
+        return pulumi.get(self, "connection_string_type")
 
     @property
     @pulumi.getter(name="destinationAvailabilityDomain")
@@ -3914,10 +4002,18 @@ class GetDrProtectionGroupMemberResult(dict):
         return pulumi.get(self, "member_type")
 
     @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
     @pulumi.getter(name="passwordVaultSecretId")
     def password_vault_secret_id(self) -> str:
         """
-        The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         """
         return pulumi.get(self, "password_vault_secret_id")
 
@@ -4499,7 +4595,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult(dict
                  namespace: str,
                  object: str):
         """
-        :param str bucket: The bucket name inside the object storage namespace.  Example: `operation_logs`
+        :param str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
         :param str namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
@@ -4511,7 +4607,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult(dict
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The bucket name inside the object storage namespace.  Example: `operation_logs`
+        The bucket name inside the object storage namespace.  Example: `bucket_name`
         """
         return pulumi.get(self, "bucket")
 
@@ -4535,8 +4631,11 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult(dict
 @pulumi.output_type
 class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
     def __init__(__self__, *,
+                 autonomous_database_standby_type_for_dr_drills: str,
                  backend_set_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingResult'],
                  block_volume_operations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationResult'],
+                 bucket: str,
+                 connection_string_type: str,
                  destination_availability_domain: str,
                  destination_capacity_reservation_id: str,
                  destination_compartment_id: str,
@@ -4550,12 +4649,16 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
                  is_start_stop_enabled: bool,
                  member_id: str,
                  member_type: str,
+                 namespace: str,
                  password_vault_secret_id: str,
                  vnic_mapping: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult'],
                  vnic_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult']):
         """
+        :param str autonomous_database_standby_type_for_dr_drills: This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs'] backend_set_mappings: A list of backend set mappings that are used to transfer or update backends during DR.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs'] block_volume_operations: Operations performed on a list of block volumes used on the non-movable compute instance.
+        :param str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
+        :param str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         :param str destination_availability_domain: The availability domain of the destination mount target. Example: `BBTh:region-AD`
         :param str destination_capacity_reservation_id: The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param str destination_compartment_id: The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -4569,12 +4672,16 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         :param bool is_start_stop_enabled: A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
         :param str member_id: The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         :param str member_type: The type of the member.
-        :param str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param str namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs'] vnic_mapping: A list of compute instance VNIC mappings.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs'] vnic_mappings: A list of compute instance VNIC mappings.
         """
+        pulumi.set(__self__, "autonomous_database_standby_type_for_dr_drills", autonomous_database_standby_type_for_dr_drills)
         pulumi.set(__self__, "backend_set_mappings", backend_set_mappings)
         pulumi.set(__self__, "block_volume_operations", block_volume_operations)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "connection_string_type", connection_string_type)
         pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
         pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
@@ -4588,9 +4695,18 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         pulumi.set(__self__, "is_start_stop_enabled", is_start_stop_enabled)
         pulumi.set(__self__, "member_id", member_id)
         pulumi.set(__self__, "member_type", member_type)
+        pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         pulumi.set(__self__, "vnic_mapping", vnic_mapping)
         pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseStandbyTypeForDrDrills")
+    def autonomous_database_standby_type_for_dr_drills(self) -> str:
+        """
+        This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        """
+        return pulumi.get(self, "autonomous_database_standby_type_for_dr_drills")
 
     @property
     @pulumi.getter(name="backendSetMappings")
@@ -4607,6 +4723,22 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         Operations performed on a list of block volumes used on the non-movable compute instance.
         """
         return pulumi.get(self, "block_volume_operations")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The bucket name inside the object storage namespace.  Example: `bucket_name`
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="connectionStringType")
+    def connection_string_type(self) -> str:
+        """
+        The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        """
+        return pulumi.get(self, "connection_string_type")
 
     @property
     @pulumi.getter(name="destinationAvailabilityDomain")
@@ -4713,10 +4845,18 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         return pulumi.get(self, "member_type")
 
     @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
     @pulumi.getter(name="passwordVaultSecretId")
     def password_vault_secret_id(self) -> str:
         """
-        The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         """
         return pulumi.get(self, "password_vault_secret_id")
 

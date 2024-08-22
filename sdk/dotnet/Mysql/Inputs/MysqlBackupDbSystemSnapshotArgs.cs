@@ -55,10 +55,22 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? CrashRecovery { get; set; }
 
         /// <summary>
-        /// Initial size of the data volume in GiBs that will be created and attached.
+        /// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
+
+        [Input("dataStorages")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotDataStorageArgs>? _dataStorages;
+
+        /// <summary>
+        /// Data Storage information.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotDataStorageArgs> DataStorages
+        {
+            get => _dataStorages ?? (_dataStorages = new InputList<Inputs.MysqlBackupDbSystemSnapshotDataStorageArgs>());
+            set => _dataStorages = value;
+        }
 
         /// <summary>
         /// Whether to enable monitoring via the Database Management service.

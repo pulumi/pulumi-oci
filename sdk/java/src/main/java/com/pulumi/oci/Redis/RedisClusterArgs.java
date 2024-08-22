@@ -21,14 +21,29 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     public static final RedisClusterArgs Empty = new RedisClusterArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * Specifies whether the cluster is sharded or non-sharded.
+     * 
+     */
+    @Import(name="clusterMode")
+    private @Nullable Output<String> clusterMode;
+
+    /**
+     * @return Specifies whether the cluster is sharded or non-sharded.
+     * 
+     */
+    public Optional<Output<String>> clusterMode() {
+        return Optional.ofNullable(this.clusterMode);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
      */
     public Output<String> compartmentId() {
@@ -81,14 +96,14 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The number of nodes in the Redis cluster.
+     * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * 
      */
     @Import(name="nodeCount", required=true)
     private Output<Integer> nodeCount;
 
     /**
-     * @return (Updatable) The number of nodes in the Redis cluster.
+     * @return (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * 
      */
     public Output<Integer> nodeCount() {
@@ -96,14 +111,14 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+     * (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
      * 
      */
     @Import(name="nodeMemoryInGbs", required=true)
     private Output<Double> nodeMemoryInGbs;
 
     /**
-     * @return (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+     * @return (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
      * 
      */
     public Output<Double> nodeMemoryInGbs() {
@@ -111,14 +126,14 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * @return (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -126,14 +141,29 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Redis version that the cluster is running.
+     * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     * 
+     */
+    @Import(name="shardCount")
+    private @Nullable Output<Integer> shardCount;
+
+    /**
+     * @return (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     * 
+     */
+    public Optional<Output<Integer>> shardCount() {
+        return Optional.ofNullable(this.shardCount);
+    }
+
+    /**
+     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     @Import(name="softwareVersion", required=true)
     private Output<String> softwareVersion;
 
     /**
-     * @return The Redis version that the cluster is running.
+     * @return The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     public Output<String> softwareVersion() {
@@ -141,7 +171,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,7 +181,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> subnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,6 +194,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     private RedisClusterArgs() {}
 
     private RedisClusterArgs(RedisClusterArgs $) {
+        this.clusterMode = $.clusterMode;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -171,6 +202,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.nodeCount = $.nodeCount;
         this.nodeMemoryInGbs = $.nodeMemoryInGbs;
         this.nsgIds = $.nsgIds;
+        this.shardCount = $.shardCount;
         this.softwareVersion = $.softwareVersion;
         this.subnetId = $.subnetId;
     }
@@ -194,7 +226,28 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+         * @param clusterMode Specifies whether the cluster is sharded or non-sharded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterMode(@Nullable Output<String> clusterMode) {
+            $.clusterMode = clusterMode;
+            return this;
+        }
+
+        /**
+         * @param clusterMode Specifies whether the cluster is sharded or non-sharded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterMode(String clusterMode) {
+            return clusterMode(Output.of(clusterMode));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
          * 
          * @return builder
          * 
@@ -205,7 +258,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
          * 
          * @return builder
          * 
@@ -278,7 +331,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCount (Updatable) The number of nodes in the Redis cluster.
+         * @param nodeCount (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
          * 
          * @return builder
          * 
@@ -289,7 +342,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCount (Updatable) The number of nodes in the Redis cluster.
+         * @param nodeCount (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
          * 
          * @return builder
          * 
@@ -299,7 +352,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeMemoryInGbs (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+         * @param nodeMemoryInGbs (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
          * 
          * @return builder
          * 
@@ -310,7 +363,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeMemoryInGbs (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+         * @param nodeMemoryInGbs (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
          * 
          * @return builder
          * 
@@ -320,7 +373,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          * 
          * @return builder
          * 
@@ -331,7 +384,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          * 
          * @return builder
          * 
@@ -341,7 +394,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          * 
          * @return builder
          * 
@@ -351,7 +404,28 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareVersion The Redis version that the cluster is running.
+         * @param shardCount (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shardCount(@Nullable Output<Integer> shardCount) {
+            $.shardCount = shardCount;
+            return this;
+        }
+
+        /**
+         * @param shardCount (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shardCount(Integer shardCount) {
+            return shardCount(Output.of(shardCount));
+        }
+
+        /**
+         * @param softwareVersion The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
          * 
          * @return builder
          * 
@@ -362,7 +436,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareVersion The Redis version that the cluster is running.
+         * @param softwareVersion The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
          * 
          * @return builder
          * 
@@ -372,7 +446,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -386,7 +460,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

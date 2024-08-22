@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Redis.Outputs
     public sealed class GetRedisClusterNodeCollectionItemResult
     {
         /// <summary>
-        /// A user-friendly name of a Redis cluster node.
+        /// A user-friendly name of a cluster node.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

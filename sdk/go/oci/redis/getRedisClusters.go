@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
 //
-// Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+// Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 //
 // ## Example Usage
 //
@@ -60,7 +60,7 @@ type GetRedisClustersArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetRedisClustersFilter `pulumi:"filters"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 	Id *string `pulumi:"id"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
@@ -68,16 +68,16 @@ type GetRedisClustersArgs struct {
 
 // A collection of values returned by getRedisClusters.
 type GetRedisClustersResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// A user-friendly name of a Redis cluster node.
+	// A user-friendly name of a cluster node.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetRedisClustersFilter `pulumi:"filters"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 	Id *string `pulumi:"id"`
 	// The list of redis_cluster_collection.
 	RedisClusterCollections []GetRedisClustersRedisClusterCollection `pulumi:"redisClusterCollections"`
-	// The current state of the Redis cluster.
+	// The current state of the cluster.
 	State *string `pulumi:"state"`
 }
 
@@ -101,7 +101,7 @@ type GetRedisClustersOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput            `pulumi:"displayName"`
 	Filters     GetRedisClustersFilterArrayInput `pulumi:"filters"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -126,12 +126,12 @@ func (o GetRedisClustersResultOutput) ToGetRedisClustersResultOutputWithContext(
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
 func (o GetRedisClustersResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRedisClustersResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// A user-friendly name of a Redis cluster node.
+// A user-friendly name of a cluster node.
 func (o GetRedisClustersResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRedisClustersResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -140,7 +140,7 @@ func (o GetRedisClustersResultOutput) Filters() GetRedisClustersFilterArrayOutpu
 	return o.ApplyT(func(v GetRedisClustersResult) []GetRedisClustersFilter { return v.Filters }).(GetRedisClustersFilterArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 func (o GetRedisClustersResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRedisClustersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -152,7 +152,7 @@ func (o GetRedisClustersResultOutput) RedisClusterCollections() GetRedisClusters
 	}).(GetRedisClustersRedisClusterCollectionArrayOutput)
 }
 
-// The current state of the Redis cluster.
+// The current state of the cluster.
 func (o GetRedisClustersResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRedisClustersResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

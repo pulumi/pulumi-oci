@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     targetResourceId: testResource.id,
  *     timeScheduled: maintenanceRunTimeScheduled,
  *     compartmentId: compartmentId,
+ *     databaseSoftwareImageId: testDatabaseSoftwareImage.id,
  *     isDstFileUpdateEnabled: maintenanceRunIsDstFileUpdateEnabled,
  *     patchingMode: maintenanceRunPatchingMode,
  * });
@@ -83,6 +84,10 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly customActionTimeoutInMins!: pulumi.Output<number>;
     /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     */
+    public readonly databaseSoftwareImageId!: pulumi.Output<string>;
+    /**
      * Description of the maintenance run.
      */
     public /*out*/ readonly description!: pulumi.Output<string>;
@@ -127,7 +132,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly patchId!: pulumi.Output<string>;
     /**
-     * Patch type, either "QUARTERLY" or "TIMEZONE".
+     * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
      */
     public readonly patchType!: pulumi.Output<string>;
     /**
@@ -206,6 +211,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["currentCustomActionTimeoutInMins"] = state ? state.currentCustomActionTimeoutInMins : undefined;
             resourceInputs["currentPatchingComponent"] = state ? state.currentPatchingComponent : undefined;
             resourceInputs["customActionTimeoutInMins"] = state ? state.customActionTimeoutInMins : undefined;
+            resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["estimatedComponentPatchingStartTime"] = state ? state.estimatedComponentPatchingStartTime : undefined;
@@ -243,6 +249,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
                 throw new Error("Missing required property 'timeScheduled'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["databaseSoftwareImageId"] = args ? args.databaseSoftwareImageId : undefined;
             resourceInputs["isDstFileUpdateEnabled"] = args ? args.isDstFileUpdateEnabled : undefined;
             resourceInputs["patchType"] = args ? args.patchType : undefined;
             resourceInputs["patchingMode"] = args ? args.patchingMode : undefined;
@@ -298,6 +305,10 @@ export interface MaintenanceRunState {
      */
     customActionTimeoutInMins?: pulumi.Input<number>;
     /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     */
+    databaseSoftwareImageId?: pulumi.Input<string>;
+    /**
      * Description of the maintenance run.
      */
     description?: pulumi.Input<string>;
@@ -342,7 +353,7 @@ export interface MaintenanceRunState {
      */
     patchId?: pulumi.Input<string>;
     /**
-     * Patch type, either "QUARTERLY" or "TIMEZONE".
+     * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
      */
     patchType?: pulumi.Input<string>;
     /**
@@ -414,11 +425,15 @@ export interface MaintenanceRunArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     */
+    databaseSoftwareImageId?: pulumi.Input<string>;
+    /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
     isDstFileUpdateEnabled?: pulumi.Input<boolean>;
     /**
-     * Patch type, either "QUARTERLY" or "TIMEZONE".
+     * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
      */
     patchType: pulumi.Input<string>;
     /**

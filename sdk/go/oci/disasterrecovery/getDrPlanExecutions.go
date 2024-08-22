@@ -14,6 +14,35 @@ import (
 // This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
 //
 // Get a summary list of all DR plan executions for a DR protection group.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DisasterRecovery"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DisasterRecovery.GetDrPlanExecutions(ctx, &disasterrecovery.GetDrPlanExecutionsArgs{
+//				DrProtectionGroupId: testDrProtectionGroup.Id,
+//				DisplayName:         pulumi.StringRef(drPlanExecutionDisplayName),
+//				DrPlanExecutionId:   pulumi.StringRef(testDrPlanExecution.Id),
+//				State:               pulumi.StringRef(drPlanExecutionState),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetDrPlanExecutions(ctx *pulumi.Context, args *GetDrPlanExecutionsArgs, opts ...pulumi.InvokeOption) (*GetDrPlanExecutionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrPlanExecutionsResult

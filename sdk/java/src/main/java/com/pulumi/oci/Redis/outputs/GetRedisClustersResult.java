@@ -16,18 +16,18 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetRedisClustersResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return A user-friendly name of a Redis cluster node.
+     * @return A user-friendly name of a cluster node.
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetRedisClustersFilter> filters;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      * 
      */
     private @Nullable String id;
@@ -37,21 +37,21 @@ public final class GetRedisClustersResult {
      */
     private List<GetRedisClustersRedisClusterCollection> redisClusterCollections;
     /**
-     * @return The current state of the Redis cluster.
+     * @return The current state of the cluster.
      * 
      */
     private @Nullable String state;
 
     private GetRedisClustersResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return A user-friendly name of a Redis cluster node.
+     * @return A user-friendly name of a cluster node.
      * 
      */
     public Optional<String> displayName() {
@@ -61,7 +61,7 @@ public final class GetRedisClustersResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      * 
      */
     public Optional<String> id() {
@@ -75,7 +75,7 @@ public final class GetRedisClustersResult {
         return this.redisClusterCollections;
     }
     /**
-     * @return The current state of the Redis cluster.
+     * @return The current state of the cluster.
      * 
      */
     public Optional<String> state() {

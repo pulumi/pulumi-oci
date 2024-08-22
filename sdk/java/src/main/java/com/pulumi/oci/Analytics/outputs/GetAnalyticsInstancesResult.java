@@ -21,7 +21,7 @@ public final class GetAnalyticsInstancesResult {
      */
     private List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances;
     /**
-     * @return The capacity model to use.
+     * @return The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
      * 
      */
     private @Nullable String capacityType;
@@ -61,7 +61,7 @@ public final class GetAnalyticsInstancesResult {
         return this.analyticsInstances;
     }
     /**
-     * @return The capacity model to use.
+     * @return The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
      * 
      */
     public Optional<String> capacityType() {

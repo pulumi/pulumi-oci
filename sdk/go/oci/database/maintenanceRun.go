@@ -34,12 +34,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.NewMaintenanceRun(ctx, "test_maintenance_run", &Database.MaintenanceRunArgs{
-//				PatchType:              pulumi.Any(maintenanceRunPatchType),
-//				TargetResourceId:       pulumi.Any(testResource.Id),
-//				TimeScheduled:          pulumi.Any(maintenanceRunTimeScheduled),
-//				CompartmentId:          pulumi.Any(compartmentId),
-//				IsDstFileUpdateEnabled: pulumi.Any(maintenanceRunIsDstFileUpdateEnabled),
-//				PatchingMode:           pulumi.Any(maintenanceRunPatchingMode),
+//				PatchType:               pulumi.Any(maintenanceRunPatchType),
+//				TargetResourceId:        pulumi.Any(testResource.Id),
+//				TimeScheduled:           pulumi.Any(maintenanceRunTimeScheduled),
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				DatabaseSoftwareImageId: pulumi.Any(testDatabaseSoftwareImage.Id),
+//				IsDstFileUpdateEnabled:  pulumi.Any(maintenanceRunIsDstFileUpdateEnabled),
+//				PatchingMode:            pulumi.Any(maintenanceRunPatchingMode),
 //			})
 //			if err != nil {
 //				return err
@@ -68,6 +69,8 @@ type MaintenanceRun struct {
 	CurrentPatchingComponent pulumi.StringOutput `pulumi:"currentPatchingComponent"`
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins pulumi.IntOutput `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
 	// Description of the maintenance run.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The user-friendly name for the maintenance run.
@@ -90,7 +93,7 @@ type MaintenanceRun struct {
 	PatchFailureCount pulumi.IntOutput `pulumi:"patchFailureCount"`
 	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
 	PatchId pulumi.StringOutput `pulumi:"patchId"`
-	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
 	PatchType pulumi.StringOutput `pulumi:"patchType"`
 	// The time when the patching operation ended.
 	PatchingEndTime pulumi.StringOutput `pulumi:"patchingEndTime"`
@@ -172,6 +175,8 @@ type maintenanceRunState struct {
 	CurrentPatchingComponent *string `pulumi:"currentPatchingComponent"`
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins *int `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// Description of the maintenance run.
 	Description *string `pulumi:"description"`
 	// The user-friendly name for the maintenance run.
@@ -194,7 +199,7 @@ type maintenanceRunState struct {
 	PatchFailureCount *int `pulumi:"patchFailureCount"`
 	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
 	PatchId *string `pulumi:"patchId"`
-	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
 	PatchType *string `pulumi:"patchType"`
 	// The time when the patching operation ended.
 	PatchingEndTime *string `pulumi:"patchingEndTime"`
@@ -238,6 +243,8 @@ type MaintenanceRunState struct {
 	CurrentPatchingComponent pulumi.StringPtrInput
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins pulumi.IntPtrInput
+	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// Description of the maintenance run.
 	Description pulumi.StringPtrInput
 	// The user-friendly name for the maintenance run.
@@ -260,7 +267,7 @@ type MaintenanceRunState struct {
 	PatchFailureCount pulumi.IntPtrInput
 	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
 	PatchId pulumi.StringPtrInput
-	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
 	PatchType pulumi.StringPtrInput
 	// The time when the patching operation ended.
 	PatchingEndTime pulumi.StringPtrInput
@@ -302,9 +309,11 @@ func (MaintenanceRunState) ElementType() reflect.Type {
 type maintenanceRunArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled *bool `pulumi:"isDstFileUpdateEnabled"`
-	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
 	PatchType string `pulumi:"patchType"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 	//
@@ -323,9 +332,11 @@ type maintenanceRunArgs struct {
 type MaintenanceRunArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
 	CompartmentId pulumi.StringPtrInput
+	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled pulumi.BoolPtrInput
-	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
 	PatchType pulumi.StringInput
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 	//
@@ -447,6 +458,11 @@ func (o MaintenanceRunOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
 }
 
+// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o MaintenanceRunOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
 // Description of the maintenance run.
 func (o MaintenanceRunOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
@@ -504,7 +520,7 @@ func (o MaintenanceRunOutput) PatchId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchId }).(pulumi.StringOutput)
 }
 
-// Patch type, either "QUARTERLY" or "TIMEZONE".
+// Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
 func (o MaintenanceRunOutput) PatchType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchType }).(pulumi.StringOutput)
 }

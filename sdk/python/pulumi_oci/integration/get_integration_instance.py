@@ -22,7 +22,7 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, data_retention_period=None, defined_tags=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, extend_data_retention_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -38,6 +38,9 @@ class GetIntegrationInstanceResult:
         if custom_endpoints and not isinstance(custom_endpoints, list):
             raise TypeError("Expected argument 'custom_endpoints' to be a list")
         pulumi.set(__self__, "custom_endpoints", custom_endpoints)
+        if data_retention_period and not isinstance(data_retention_period, str):
+            raise TypeError("Expected argument 'data_retention_period' to be a str")
+        pulumi.set(__self__, "data_retention_period", data_retention_period)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -50,6 +53,9 @@ class GetIntegrationInstanceResult:
         if enable_process_automation_trigger and not isinstance(enable_process_automation_trigger, int):
             raise TypeError("Expected argument 'enable_process_automation_trigger' to be a int")
         pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
+        if extend_data_retention_trigger and not isinstance(extend_data_retention_trigger, int):
+            raise TypeError("Expected argument 'extend_data_retention_trigger' to be a int")
+        pulumi.set(__self__, "extend_data_retention_trigger", extend_data_retention_trigger)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -149,6 +155,14 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "custom_endpoints")
 
     @property
+    @pulumi.getter(name="dataRetentionPeriod")
+    def data_retention_period(self) -> str:
+        """
+        Data retention period set for given integration instance
+        """
+        return pulumi.get(self, "data_retention_period")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
@@ -173,6 +187,11 @@ class GetIntegrationInstanceResult:
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> int:
         return pulumi.get(self, "enable_process_automation_trigger")
+
+    @property
+    @pulumi.getter(name="extendDataRetentionTrigger")
+    def extend_data_retention_trigger(self) -> int:
+        return pulumi.get(self, "extend_data_retention_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -220,7 +239,7 @@ class GetIntegrationInstanceResult:
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> str:
         """
-        Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -332,10 +351,12 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             compartment_id=self.compartment_id,
             consumption_model=self.consumption_model,
             custom_endpoints=self.custom_endpoints,
+            data_retention_period=self.data_retention_period,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             domain_id=self.domain_id,
             enable_process_automation_trigger=self.enable_process_automation_trigger,
+            extend_data_retention_trigger=self.extend_data_retention_trigger,
             freeform_tags=self.freeform_tags,
             id=self.id,
             idcs_at=self.idcs_at,
@@ -387,10 +408,12 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         consumption_model=pulumi.get(__ret__, 'consumption_model'),
         custom_endpoints=pulumi.get(__ret__, 'custom_endpoints'),
+        data_retention_period=pulumi.get(__ret__, 'data_retention_period'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         domain_id=pulumi.get(__ret__, 'domain_id'),
         enable_process_automation_trigger=pulumi.get(__ret__, 'enable_process_automation_trigger'),
+        extend_data_retention_trigger=pulumi.get(__ret__, 'extend_data_retention_trigger'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         idcs_at=pulumi.get(__ret__, 'idcs_at'),

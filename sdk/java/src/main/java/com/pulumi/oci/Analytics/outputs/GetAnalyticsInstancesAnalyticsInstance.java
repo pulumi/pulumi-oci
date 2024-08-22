@@ -14,6 +14,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAnalyticsInstancesAnalyticsInstance {
+    private String adminUser;
     /**
      * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      * 
@@ -35,10 +36,20 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
      */
     private String description;
     /**
+     * @return Identity domain OCID.
+     * 
+     */
+    private String domainId;
+    /**
      * @return Email address receiving notifications.
      * 
      */
     private String emailNotification;
+    /**
+     * @return The feature set of an Analytics instance.
+     * 
+     */
+    private String featureBundle;
     /**
      * @return A filter to only return resources matching the feature set. Values are case-insensitive.
      * 
@@ -56,7 +67,7 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
     private String id;
     private String idcsAccessToken;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
     private String kmsKeyId;
@@ -86,6 +97,11 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
      */
     private String state;
     /**
+     * @return System tags for this resource. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.key&#34;: &#34;value&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -97,6 +113,9 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
     private String timeUpdated;
 
     private GetAnalyticsInstancesAnalyticsInstance() {}
+    public String adminUser() {
+        return this.adminUser;
+    }
     /**
      * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      * 
@@ -126,11 +145,25 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
         return this.description;
     }
     /**
+     * @return Identity domain OCID.
+     * 
+     */
+    public String domainId() {
+        return this.domainId;
+    }
+    /**
      * @return Email address receiving notifications.
      * 
      */
     public String emailNotification() {
         return this.emailNotification;
+    }
+    /**
+     * @return The feature set of an Analytics instance.
+     * 
+     */
+    public String featureBundle() {
+        return this.featureBundle;
     }
     /**
      * @return A filter to only return resources matching the feature set. Values are case-insensitive.
@@ -157,7 +190,7 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
         return this.idcsAccessToken;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
     public String kmsKeyId() {
@@ -199,6 +232,13 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
         return this.state;
     }
     /**
+     * @return System tags for this resource. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -222,11 +262,14 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String adminUser;
         private List<GetAnalyticsInstancesAnalyticsInstanceCapacity> capacities;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
+        private String domainId;
         private String emailNotification;
+        private String featureBundle;
         private String featureSet;
         private Map<String,String> freeformTags;
         private String id;
@@ -237,16 +280,20 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
         private List<GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
         private String serviceUrl;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetAnalyticsInstancesAnalyticsInstance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.adminUser = defaults.adminUser;
     	      this.capacities = defaults.capacities;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.domainId = defaults.domainId;
     	      this.emailNotification = defaults.emailNotification;
+    	      this.featureBundle = defaults.featureBundle;
     	      this.featureSet = defaults.featureSet;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -257,10 +304,19 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
     	      this.serviceUrl = defaults.serviceUrl;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder adminUser(String adminUser) {
+            if (adminUser == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstance", "adminUser");
+            }
+            this.adminUser = adminUser;
+            return this;
+        }
         @CustomType.Setter
         public Builder capacities(List<GetAnalyticsInstancesAnalyticsInstanceCapacity> capacities) {
             if (capacities == null) {
@@ -297,11 +353,27 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder domainId(String domainId) {
+            if (domainId == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstance", "domainId");
+            }
+            this.domainId = domainId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder emailNotification(String emailNotification) {
             if (emailNotification == null) {
               throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstance", "emailNotification");
             }
             this.emailNotification = emailNotification;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder featureBundle(String featureBundle) {
+            if (featureBundle == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstance", "featureBundle");
+            }
+            this.featureBundle = featureBundle;
             return this;
         }
         @CustomType.Setter
@@ -388,6 +460,14 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstance", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstance", "timeCreated");
@@ -405,11 +485,14 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
         }
         public GetAnalyticsInstancesAnalyticsInstance build() {
             final var _resultValue = new GetAnalyticsInstancesAnalyticsInstance();
+            _resultValue.adminUser = adminUser;
             _resultValue.capacities = capacities;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
+            _resultValue.domainId = domainId;
             _resultValue.emailNotification = emailNotification;
+            _resultValue.featureBundle = featureBundle;
             _resultValue.featureSet = featureSet;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
@@ -420,6 +503,7 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
             _resultValue.networkEndpointDetails = networkEndpointDetails;
             _resultValue.serviceUrl = serviceUrl;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

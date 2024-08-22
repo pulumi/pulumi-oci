@@ -10,6 +10,11 @@ export const getRedisCluster: typeof import("./getRedisCluster").getRedisCluster
 export const getRedisClusterOutput: typeof import("./getRedisCluster").getRedisClusterOutput = null as any;
 utilities.lazyLoad(exports, ["getRedisCluster","getRedisClusterOutput"], () => require("./getRedisCluster"));
 
+export { GetRedisClusterNodesArgs, GetRedisClusterNodesResult, GetRedisClusterNodesOutputArgs } from "./getRedisClusterNodes";
+export const getRedisClusterNodes: typeof import("./getRedisClusterNodes").getRedisClusterNodes = null as any;
+export const getRedisClusterNodesOutput: typeof import("./getRedisClusterNodes").getRedisClusterNodesOutput = null as any;
+utilities.lazyLoad(exports, ["getRedisClusterNodes","getRedisClusterNodesOutput"], () => require("./getRedisClusterNodes"));
+
 export { GetRedisClustersArgs, GetRedisClustersResult, GetRedisClustersOutputArgs } from "./getRedisClusters";
 export const getRedisClusters: typeof import("./getRedisClusters").getRedisClusters = null as any;
 export const getRedisClustersOutput: typeof import("./getRedisClusters").getRedisClustersOutput = null as any;

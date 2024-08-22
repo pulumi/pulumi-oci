@@ -1429,11 +1429,11 @@ export namespace AiVision {
 export namespace Analytics {
     export interface AnalyticsInstanceCapacity {
         /**
-         * The capacity model to use.
+         * The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
          */
         capacityType: pulumi.Input<string>;
         /**
-         * (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
          */
         capacityValue: pulumi.Input<number>;
     }
@@ -32833,6 +32833,10 @@ export namespace DisasterRecovery {
 
     export interface DrProtectionGroupMember {
         /**
+         * (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+         */
+        autonomousDatabaseStandbyTypeForDrDrills?: pulumi.Input<string>;
+        /**
          * (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
          */
         backendSetMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBackendSetMapping>[]>;
@@ -32840,6 +32844,14 @@ export namespace DisasterRecovery {
          * (Updatable) A list of operations performed on block volumes used by the compute instance.
          */
         blockVolumeOperations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeOperation>[]>;
+        /**
+         * (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+         */
+        connectionStringType?: pulumi.Input<string>;
         /**
          * (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
          */
@@ -32893,7 +32905,11 @@ export namespace DisasterRecovery {
          */
         memberType: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+         * (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
          */
         passwordVaultSecretId?: pulumi.Input<string>;
         /**
@@ -68467,9 +68483,13 @@ export namespace Mysql {
          */
         crashRecovery?: pulumi.Input<string>;
         /**
-         * Initial size of the data volume in GiBs that will be created and attached.
+         * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
          */
         dataStorageSizeInGb?: pulumi.Input<number>;
+        /**
+         * Data Storage information.
+         */
+        dataStorages?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotDataStorage>[]>;
         /**
          * Whether to enable monitoring via the Database Management service.
          */
@@ -68584,6 +68604,29 @@ export namespace Mysql {
          * Specifies if PITR is enabled or disabled.
          */
         isEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotDataStorage {
+        /**
+         * The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+         */
+        allocatedStorageSizeInGbs?: pulumi.Input<number>;
+        /**
+         * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+         */
+        dataStorageSizeInGb?: pulumi.Input<number>;
+        /**
+         * The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+         */
+        dataStorageSizeLimitInGbs?: pulumi.Input<number>;
+        /**
+         * Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+         */
+        isAutoExpandStorageEnabled?: pulumi.Input<boolean>;
+        /**
+         * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+         */
+        maxStorageSizeInGbs?: pulumi.Input<number>;
     }
 
     export interface MysqlBackupDbSystemSnapshotDeletionPolicy {
@@ -69343,6 +69386,33 @@ export namespace Mysql {
          * For a standalone DB System, this defines the fault domain in which the DB System is placed.
          */
         faultDomain?: pulumi.Input<string>;
+    }
+
+    export interface MysqlDbSystemDataStorage {
+        /**
+         * The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+         */
+        allocatedStorageSizeInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+         */
+        dataStorageSizeInGb?: pulumi.Input<number>;
+        /**
+         * The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+         */
+        dataStorageSizeLimitInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+         */
+        isAutoExpandStorageEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+         *
+         * DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+         *
+         * It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+         */
+        maxStorageSizeInGbs?: pulumi.Input<number>;
     }
 
     export interface MysqlDbSystemDeletionPolicy {
@@ -75089,6 +75159,18 @@ export namespace RecoveryMod {
 }
 
 export namespace Redis {
+    export interface GetRedisClusterNodesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRedisClusterNodesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetRedisClustersFilter {
         name: string;
         regex?: boolean;

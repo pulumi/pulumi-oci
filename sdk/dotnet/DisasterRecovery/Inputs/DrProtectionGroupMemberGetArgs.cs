@@ -12,6 +12,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
 
     public sealed class DrProtectionGroupMemberGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        /// </summary>
+        [Input("autonomousDatabaseStandbyTypeForDrDrills")]
+        public Input<string>? AutonomousDatabaseStandbyTypeForDrDrills { get; set; }
+
         [Input("backendSetMappings")]
         private InputList<Inputs.DrProtectionGroupMemberBackendSetMappingGetArgs>? _backendSetMappings;
 
@@ -35,6 +41,18 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
             get => _blockVolumeOperations ?? (_blockVolumeOperations = new InputList<Inputs.DrProtectionGroupMemberBlockVolumeOperationGetArgs>());
             set => _blockVolumeOperations = value;
         }
+
+        /// <summary>
+        /// (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+        /// </summary>
+        [Input("bucket")]
+        public Input<string>? Bucket { get; set; }
+
+        /// <summary>
+        /// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        /// </summary>
+        [Input("connectionStringType")]
+        public Input<string>? ConnectionStringType { get; set; }
 
         /// <summary>
         /// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
@@ -126,11 +144,17 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("memberType", required: true)]
         public Input<string> MemberType { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        /// </summary>
+        [Input("namespace")]
+        public Input<string>? Namespace { get; set; }
+
         [Input("passwordVaultSecretId")]
         private Input<string>? _passwordVaultSecretId;
 
         /// <summary>
-        /// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        /// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         /// </summary>
         public Input<string>? PasswordVaultSecretId
         {

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
  *
- * Creates a new Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+ * Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  *
  * ## Example Usage
  *
@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     nodeMemoryInGbs: redisClusterNodeMemoryInGbs,
  *     softwareVersion: redisClusterSoftwareVersion,
  *     subnetId: testSubnet.id,
+ *     clusterMode: redisClusterClusterMode,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -31,6 +32,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     nsgIds: redisClusterNsgIds,
+ *     shardCount: redisClusterShardCount,
  * });
  * ```
  *
@@ -71,7 +73,11 @@ export class RedisCluster extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * Specifies whether the cluster is sharded or non-sharded.
+     */
+    public readonly clusterMode!: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -91,47 +97,51 @@ export class RedisCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The collection of Redis cluster nodes.
+     * The collection of  cluster nodes.
      */
     public /*out*/ readonly nodeCollections!: pulumi.Output<outputs.Redis.RedisClusterNodeCollection[]>;
     /**
-     * (Updatable) The number of nodes in the Redis cluster.
+     * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      */
     public readonly nodeCount!: pulumi.Output<number>;
     /**
-     * (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
      */
     public readonly nodeMemoryInGbs!: pulumi.Output<number>;
     /**
-     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
     /**
-     * The private IP address of the API endpoint for the Redis cluster's primary node.
+     * The private IP address of the API endpoint for the cluster's primary node.
      */
     public /*out*/ readonly primaryEndpointIpAddress!: pulumi.Output<string>;
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
      */
     public /*out*/ readonly primaryFqdn!: pulumi.Output<string>;
     /**
-     * The private IP address of the API endpoint for the Redis cluster's replica nodes.
+     * The private IP address of the API endpoint for the cluster's replica nodes.
      */
     public /*out*/ readonly replicasEndpointIpAddress!: pulumi.Output<string>;
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
      */
     public /*out*/ readonly replicasFqdn!: pulumi.Output<string>;
     /**
-     * The Redis version that the cluster is running.
+     * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     */
+    public readonly shardCount!: pulumi.Output<number>;
+    /**
+     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
     public readonly softwareVersion!: pulumi.Output<string>;
     /**
-     * The current state of the Redis cluster.
+     * The current state of the cluster.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      *
      *
      * ** IMPORTANT **
@@ -143,11 +153,11 @@ export class RedisCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -164,6 +174,7 @@ export class RedisCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RedisClusterState | undefined;
+            resourceInputs["clusterMode"] = state ? state.clusterMode : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -177,6 +188,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["primaryFqdn"] = state ? state.primaryFqdn : undefined;
             resourceInputs["replicasEndpointIpAddress"] = state ? state.replicasEndpointIpAddress : undefined;
             resourceInputs["replicasFqdn"] = state ? state.replicasFqdn : undefined;
+            resourceInputs["shardCount"] = state ? state.shardCount : undefined;
             resourceInputs["softwareVersion"] = state ? state.softwareVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
@@ -203,6 +215,7 @@ export class RedisCluster extends pulumi.CustomResource {
             if ((!args || args.subnetId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
+            resourceInputs["clusterMode"] = args ? args.clusterMode : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -210,6 +223,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
             resourceInputs["nodeMemoryInGbs"] = args ? args.nodeMemoryInGbs : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
+            resourceInputs["shardCount"] = args ? args.shardCount : undefined;
             resourceInputs["softwareVersion"] = args ? args.softwareVersion : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -233,7 +247,11 @@ export class RedisCluster extends pulumi.CustomResource {
  */
 export interface RedisClusterState {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * Specifies whether the cluster is sharded or non-sharded.
+     */
+    clusterMode?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -253,47 +271,51 @@ export interface RedisClusterState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The collection of Redis cluster nodes.
+     * The collection of  cluster nodes.
      */
     nodeCollections?: pulumi.Input<pulumi.Input<inputs.Redis.RedisClusterNodeCollection>[]>;
     /**
-     * (Updatable) The number of nodes in the Redis cluster.
+     * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      */
     nodeCount?: pulumi.Input<number>;
     /**
-     * (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
      */
     nodeMemoryInGbs?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The private IP address of the API endpoint for the Redis cluster's primary node.
+     * The private IP address of the API endpoint for the cluster's primary node.
      */
     primaryEndpointIpAddress?: pulumi.Input<string>;
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
      */
     primaryFqdn?: pulumi.Input<string>;
     /**
-     * The private IP address of the API endpoint for the Redis cluster's replica nodes.
+     * The private IP address of the API endpoint for the cluster's replica nodes.
      */
     replicasEndpointIpAddress?: pulumi.Input<string>;
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
      */
     replicasFqdn?: pulumi.Input<string>;
     /**
-     * The Redis version that the cluster is running.
+     * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     */
+    shardCount?: pulumi.Input<number>;
+    /**
+     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
     softwareVersion?: pulumi.Input<string>;
     /**
-     * The current state of the Redis cluster.
+     * The current state of the cluster.
      */
     state?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      *
      *
      * ** IMPORTANT **
@@ -305,11 +327,11 @@ export interface RedisClusterState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -319,7 +341,11 @@ export interface RedisClusterState {
  */
 export interface RedisClusterArgs {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * Specifies whether the cluster is sharded or non-sharded.
+     */
+    clusterMode?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -335,23 +361,27 @@ export interface RedisClusterArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The number of nodes in the Redis cluster.
+     * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      */
     nodeCount: pulumi.Input<number>;
     /**
-     * (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
      */
     nodeMemoryInGbs: pulumi.Input<number>;
     /**
-     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The Redis version that the cluster is running.
+     * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     */
+    shardCount?: pulumi.Input<number>;
+    /**
+     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
     softwareVersion: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      *
      *
      * ** IMPORTANT **

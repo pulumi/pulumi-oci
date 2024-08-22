@@ -85,7 +85,7 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     public /*out*/ readonly creationType!: pulumi.Output<string>;
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      */
     public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
     /**
@@ -246,7 +246,7 @@ export interface MysqlBackupState {
      */
     creationType?: pulumi.Input<string>;
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**

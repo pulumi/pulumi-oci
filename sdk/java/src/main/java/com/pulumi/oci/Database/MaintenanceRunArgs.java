@@ -33,6 +33,21 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    @Import(name="databaseSoftwareImageId")
+    private @Nullable Output<String> databaseSoftwareImageId;
+
+    /**
+     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    public Optional<Output<String>> databaseSoftwareImageId() {
+        return Optional.ofNullable(this.databaseSoftwareImageId);
+    }
+
+    /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
@@ -48,14 +63,14 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
      * 
      */
     @Import(name="patchType", required=true)
     private Output<String> patchType;
 
     /**
-     * @return Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * @return Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
      * 
      */
     public Output<String> patchType() {
@@ -121,6 +136,7 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
 
     private MaintenanceRunArgs(MaintenanceRunArgs $) {
         this.compartmentId = $.compartmentId;
+        this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.isDstFileUpdateEnabled = $.isDstFileUpdateEnabled;
         this.patchType = $.patchType;
         this.patchingMode = $.patchingMode;
@@ -168,6 +184,27 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
+         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseSoftwareImageId(@Nullable Output<String> databaseSoftwareImageId) {
+            $.databaseSoftwareImageId = databaseSoftwareImageId;
+            return this;
+        }
+
+        /**
+         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            return databaseSoftwareImageId(Output.of(databaseSoftwareImageId));
+        }
+
+        /**
          * @param isDstFileUpdateEnabled Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
          * 
          * @return builder
@@ -189,7 +226,7 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param patchType Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+         * @param patchType Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
          * 
          * @return builder
          * 
@@ -200,7 +237,7 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param patchType Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+         * @param patchType Patch type, either &#34;QUARTERLY&#34;, &#34;TIMEZONE&#34; or &#34;CUSTOM_DATABASE_SOFTWARE_IMAGE&#34;.
          * 
          * @return builder
          * 

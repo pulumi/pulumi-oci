@@ -21,14 +21,29 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     public static final RedisClusterState Empty = new RedisClusterState();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * Specifies whether the cluster is sharded or non-sharded.
+     * 
+     */
+    @Import(name="clusterMode")
+    private @Nullable Output<String> clusterMode;
+
+    /**
+     * @return Specifies whether the cluster is sharded or non-sharded.
+     * 
+     */
+    public Optional<Output<String>> clusterMode() {
+        return Optional.ofNullable(this.clusterMode);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -96,14 +111,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The collection of Redis cluster nodes.
+     * The collection of  cluster nodes.
      * 
      */
     @Import(name="nodeCollections")
     private @Nullable Output<List<RedisClusterNodeCollectionArgs>> nodeCollections;
 
     /**
-     * @return The collection of Redis cluster nodes.
+     * @return The collection of  cluster nodes.
      * 
      */
     public Optional<Output<List<RedisClusterNodeCollectionArgs>>> nodeCollections() {
@@ -111,14 +126,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The number of nodes in the Redis cluster.
+     * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * 
      */
     @Import(name="nodeCount")
     private @Nullable Output<Integer> nodeCount;
 
     /**
-     * @return (Updatable) The number of nodes in the Redis cluster.
+     * @return (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * 
      */
     public Optional<Output<Integer>> nodeCount() {
@@ -126,14 +141,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+     * (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
      * 
      */
     @Import(name="nodeMemoryInGbs")
     private @Nullable Output<Double> nodeMemoryInGbs;
 
     /**
-     * @return (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+     * @return (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
      * 
      */
     public Optional<Output<Double>> nodeMemoryInGbs() {
@@ -141,14 +156,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * @return (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -156,14 +171,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
+     * The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     @Import(name="primaryEndpointIpAddress")
     private @Nullable Output<String> primaryEndpointIpAddress;
 
     /**
-     * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
+     * @return The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     public Optional<Output<String>> primaryEndpointIpAddress() {
@@ -171,14 +186,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     @Import(name="primaryFqdn")
     private @Nullable Output<String> primaryFqdn;
 
     /**
-     * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
+     * @return The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s primary node.
      * 
      */
     public Optional<Output<String>> primaryFqdn() {
@@ -186,14 +201,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * The private IP address of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     @Import(name="replicasEndpointIpAddress")
     private @Nullable Output<String> replicasEndpointIpAddress;
 
     /**
-     * @return The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * @return The private IP address of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     public Optional<Output<String>> replicasEndpointIpAddress() {
@@ -201,14 +216,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     @Import(name="replicasFqdn")
     private @Nullable Output<String> replicasFqdn;
 
     /**
-     * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
+     * @return The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s replica nodes.
      * 
      */
     public Optional<Output<String>> replicasFqdn() {
@@ -216,14 +231,29 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Redis version that the cluster is running.
+     * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     * 
+     */
+    @Import(name="shardCount")
+    private @Nullable Output<Integer> shardCount;
+
+    /**
+     * @return (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     * 
+     */
+    public Optional<Output<Integer>> shardCount() {
+        return Optional.ofNullable(this.shardCount);
+    }
+
+    /**
+     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     @Import(name="softwareVersion")
     private @Nullable Output<String> softwareVersion;
 
     /**
-     * @return The Redis version that the cluster is running.
+     * @return The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     public Optional<Output<String>> softwareVersion() {
@@ -231,14 +261,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the Redis cluster.
+     * The current state of the cluster.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Redis cluster.
+     * @return The current state of the cluster.
      * 
      */
     public Optional<Output<String>> state() {
@@ -246,7 +276,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -256,7 +286,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -282,14 +312,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * @return The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -297,14 +327,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     * @return The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -314,6 +344,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     private RedisClusterState() {}
 
     private RedisClusterState(RedisClusterState $) {
+        this.clusterMode = $.clusterMode;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -327,6 +358,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         this.primaryFqdn = $.primaryFqdn;
         this.replicasEndpointIpAddress = $.replicasEndpointIpAddress;
         this.replicasFqdn = $.replicasFqdn;
+        this.shardCount = $.shardCount;
         this.softwareVersion = $.softwareVersion;
         this.state = $.state;
         this.subnetId = $.subnetId;
@@ -354,7 +386,28 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+         * @param clusterMode Specifies whether the cluster is sharded or non-sharded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterMode(@Nullable Output<String> clusterMode) {
+            $.clusterMode = clusterMode;
+            return this;
+        }
+
+        /**
+         * @param clusterMode Specifies whether the cluster is sharded or non-sharded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterMode(String clusterMode) {
+            return clusterMode(Output.of(clusterMode));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
          * 
          * @return builder
          * 
@@ -365,7 +418,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
          * 
          * @return builder
          * 
@@ -459,7 +512,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCollections The collection of Redis cluster nodes.
+         * @param nodeCollections The collection of  cluster nodes.
          * 
          * @return builder
          * 
@@ -470,7 +523,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCollections The collection of Redis cluster nodes.
+         * @param nodeCollections The collection of  cluster nodes.
          * 
          * @return builder
          * 
@@ -480,7 +533,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCollections The collection of Redis cluster nodes.
+         * @param nodeCollections The collection of  cluster nodes.
          * 
          * @return builder
          * 
@@ -490,7 +543,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCount (Updatable) The number of nodes in the Redis cluster.
+         * @param nodeCount (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
          * 
          * @return builder
          * 
@@ -501,7 +554,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCount (Updatable) The number of nodes in the Redis cluster.
+         * @param nodeCount (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
          * 
          * @return builder
          * 
@@ -511,7 +564,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeMemoryInGbs (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+         * @param nodeMemoryInGbs (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
          * 
          * @return builder
          * 
@@ -522,7 +575,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeMemoryInGbs (Updatable) The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
+         * @param nodeMemoryInGbs (Updatable) The amount of memory allocated to the cluster&#39;s nodes, in gigabytes.
          * 
          * @return builder
          * 
@@ -532,7 +585,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          * 
          * @return builder
          * 
@@ -543,7 +596,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          * 
          * @return builder
          * 
@@ -553,7 +606,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          * 
          * @return builder
          * 
@@ -563,7 +616,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primaryEndpointIpAddress The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
+         * @param primaryEndpointIpAddress The private IP address of the API endpoint for the cluster&#39;s primary node.
          * 
          * @return builder
          * 
@@ -574,7 +627,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primaryEndpointIpAddress The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
+         * @param primaryEndpointIpAddress The private IP address of the API endpoint for the cluster&#39;s primary node.
          * 
          * @return builder
          * 
@@ -584,7 +637,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primaryFqdn The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
+         * @param primaryFqdn The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s primary node.
          * 
          * @return builder
          * 
@@ -595,7 +648,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primaryFqdn The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
+         * @param primaryFqdn The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s primary node.
          * 
          * @return builder
          * 
@@ -605,7 +658,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param replicasEndpointIpAddress The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
+         * @param replicasEndpointIpAddress The private IP address of the API endpoint for the cluster&#39;s replica nodes.
          * 
          * @return builder
          * 
@@ -616,7 +669,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param replicasEndpointIpAddress The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
+         * @param replicasEndpointIpAddress The private IP address of the API endpoint for the cluster&#39;s replica nodes.
          * 
          * @return builder
          * 
@@ -626,7 +679,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param replicasFqdn The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
+         * @param replicasFqdn The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s replica nodes.
          * 
          * @return builder
          * 
@@ -637,7 +690,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param replicasFqdn The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
+         * @param replicasFqdn The fully qualified domain name (FQDN) of the API endpoint for the cluster&#39;s replica nodes.
          * 
          * @return builder
          * 
@@ -647,7 +700,28 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareVersion The Redis version that the cluster is running.
+         * @param shardCount (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shardCount(@Nullable Output<Integer> shardCount) {
+            $.shardCount = shardCount;
+            return this;
+        }
+
+        /**
+         * @param shardCount (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shardCount(Integer shardCount) {
+            return shardCount(Output.of(shardCount));
+        }
+
+        /**
+         * @param softwareVersion The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
          * 
          * @return builder
          * 
@@ -658,7 +732,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareVersion The Redis version that the cluster is running.
+         * @param softwareVersion The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
          * 
          * @return builder
          * 
@@ -668,7 +742,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the Redis cluster.
+         * @param state The current state of the cluster.
          * 
          * @return builder
          * 
@@ -679,7 +753,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the Redis cluster.
+         * @param state The current state of the cluster.
          * 
          * @return builder
          * 
@@ -689,7 +763,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -703,7 +777,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster&#39;s subnet.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -737,7 +811,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+         * @param timeCreated The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -748,7 +822,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+         * @param timeCreated The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -758,7 +832,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+         * @param timeUpdated The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -769,7 +843,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+         * @param timeUpdated The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 

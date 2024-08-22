@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class AnalyticsInstanceCapacity {
     /**
-     * @return The capacity model to use.
+     * @return The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
      * 
      */
     private String capacityType;
     /**
-     * @return (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+     * @return (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     private Integer capacityValue;
 
     private AnalyticsInstanceCapacity() {}
     /**
-     * @return The capacity model to use.
+     * @return The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
      * 
      */
     public String capacityType() {
         return this.capacityType;
     }
     /**
-     * @return (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+     * @return (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     public Integer capacityValue() {

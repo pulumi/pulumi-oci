@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly string CapacityType;
         /// <summary>
-        /// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
+        /// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
         public readonly int CapacityValue;
 

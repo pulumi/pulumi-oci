@@ -209,7 +209,7 @@ class _MysqlBackupState:
         :param pulumi.Input[str] backup_type: The type of backup.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
+        :param pulumi.Input[int] data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotArgs']]] db_system_snapshots: Snapshot of the DbSystem details at the time of the backup
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -327,7 +327,7 @@ class _MysqlBackupState:
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
         """
-        Initial size of the data volume in GiBs that will be created and attached.
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -750,7 +750,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[str] backup_type: The type of backup.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
+        :param pulumi.Input[int] data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupDbSystemSnapshotArgs', 'MysqlBackupDbSystemSnapshotArgsDict']]]] db_system_snapshots: Snapshot of the DbSystem details at the time of the backup
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -834,7 +834,7 @@ class MysqlBackup(pulumi.CustomResource):
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> pulumi.Output[int]:
         """
-        Initial size of the data volume in GiBs that will be created and attached.
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 

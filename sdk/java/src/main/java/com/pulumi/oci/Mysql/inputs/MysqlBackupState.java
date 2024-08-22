@@ -82,14 +82,14 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     @Import(name="dataStorageSizeInGb")
     private @Nullable Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return Initial size of the data volume in GiBs that will be created and attached.
+     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      * 
      */
     public Optional<Output<Integer>> dataStorageSizeInGb() {
@@ -489,7 +489,7 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataStorageSizeInGb Initial size of the data volume in GiBs that will be created and attached.
+         * @param dataStorageSizeInGb DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataStorageSizeInGb Initial size of the data volume in GiBs that will be created and attached.
+         * @param dataStorageSizeInGb DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
          * 
          * @return builder
          * 

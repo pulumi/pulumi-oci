@@ -52,6 +52,11 @@ namespace Pulumi.Oci.Mysql
     ///         },
     ///         ConfigurationId = testConfiguration.Id,
     ///         CrashRecovery = mysqlDbSystemCrashRecovery,
+    ///         DataStorage = new Oci.Mysql.Inputs.MysqlDbSystemDataStorageArgs
+    ///         {
+    ///             IsAutoExpandStorageEnabled = mysqlDbSystemDataStorageIsAutoExpandStorageEnabled,
+    ///             MaxStorageSizeInGbs = mysqlDbSystemDataStorageMaxStorageSizeInGbs,
+    ///         },
     ///         DataStorageSizeInGb = mysqlDbSystemDataStorageSizeInGb,
     ///         DatabaseManagement = mysqlDbSystemDatabaseManagement,
     ///         DefinedTags = 
@@ -166,6 +171,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("currentPlacements")]
         public Output<ImmutableArray<Outputs.MysqlDbSystemCurrentPlacement>> CurrentPlacements { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Data Storage configuration properties.
+        /// </summary>
+        [Output("dataStorage")]
+        public Output<Outputs.MysqlDbSystemDataStorage> DataStorage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
@@ -456,6 +467,12 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? CrashRecovery { get; set; }
 
         /// <summary>
+        /// (Updatable) Data Storage configuration properties.
+        /// </summary>
+        [Input("dataStorage")]
+        public Input<Inputs.MysqlDbSystemDataStorageArgs>? DataStorage { get; set; }
+
+        /// <summary>
         /// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         /// </summary>
         [Input("dataStorageSizeInGb")]
@@ -700,6 +717,12 @@ namespace Pulumi.Oci.Mysql
             get => _currentPlacements ?? (_currentPlacements = new InputList<Inputs.MysqlDbSystemCurrentPlacementGetArgs>());
             set => _currentPlacements = value;
         }
+
+        /// <summary>
+        /// (Updatable) Data Storage configuration properties.
+        /// </summary>
+        [Input("dataStorage")]
+        public Input<Inputs.MysqlDbSystemDataStorageGetArgs>? DataStorage { get; set; }
 
         /// <summary>
         /// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.

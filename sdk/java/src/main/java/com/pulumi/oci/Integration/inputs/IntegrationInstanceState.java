@@ -101,6 +101,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Data retention period set for given integration instance
+     * 
+     */
+    @Import(name="dataRetentionPeriod")
+    private @Nullable Output<String> dataRetentionPeriod;
+
+    /**
+     * @return Data retention period set for given integration instance
+     * 
+     */
+    public Optional<Output<String>> dataRetentionPeriod() {
+        return Optional.ofNullable(this.dataRetentionPeriod);
+    }
+
+    /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -145,11 +160,34 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.domainId);
     }
 
+    /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
     @Import(name="enableProcessAutomationTrigger")
     private @Nullable Output<Integer> enableProcessAutomationTrigger;
 
+    /**
+     * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
     public Optional<Output<Integer>> enableProcessAutomationTrigger() {
         return Optional.ofNullable(this.enableProcessAutomationTrigger);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     * 
+     */
+    @Import(name="extendDataRetentionTrigger")
+    private @Nullable Output<Integer> extendDataRetentionTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> extendDataRetentionTrigger() {
+        return Optional.ofNullable(this.extendDataRetentionTrigger);
     }
 
     /**
@@ -421,10 +459,12 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.compartmentId = $.compartmentId;
         this.consumptionModel = $.consumptionModel;
         this.customEndpoint = $.customEndpoint;
+        this.dataRetentionPeriod = $.dataRetentionPeriod;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.domainId = $.domainId;
         this.enableProcessAutomationTrigger = $.enableProcessAutomationTrigger;
+        this.extendDataRetentionTrigger = $.extendDataRetentionTrigger;
         this.freeformTags = $.freeformTags;
         this.idcsAt = $.idcsAt;
         this.idcsInfos = $.idcsInfos;
@@ -588,6 +628,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param dataRetentionPeriod Data retention period set for given integration instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataRetentionPeriod(@Nullable Output<String> dataRetentionPeriod) {
+            $.dataRetentionPeriod = dataRetentionPeriod;
+            return this;
+        }
+
+        /**
+         * @param dataRetentionPeriod Data retention period set for given integration instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataRetentionPeriod(String dataRetentionPeriod) {
+            return dataRetentionPeriod(Output.of(dataRetentionPeriod));
+        }
+
+        /**
          * @param definedTags (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -650,13 +711,46 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
             return domainId(Output.of(domainId));
         }
 
+        /**
+         * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableProcessAutomationTrigger(@Nullable Output<Integer> enableProcessAutomationTrigger) {
             $.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
             return this;
         }
 
+        /**
+         * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableProcessAutomationTrigger(Integer enableProcessAutomationTrigger) {
             return enableProcessAutomationTrigger(Output.of(enableProcessAutomationTrigger));
+        }
+
+        /**
+         * @param extendDataRetentionTrigger (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extendDataRetentionTrigger(@Nullable Output<Integer> extendDataRetentionTrigger) {
+            $.extendDataRetentionTrigger = extendDataRetentionTrigger;
+            return this;
+        }
+
+        /**
+         * @param extendDataRetentionTrigger (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extendDataRetentionTrigger(Integer extendDataRetentionTrigger) {
+            return extendDataRetentionTrigger(Output.of(extendDataRetentionTrigger));
         }
 
         /**

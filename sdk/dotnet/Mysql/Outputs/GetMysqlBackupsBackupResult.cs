@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string CreationType;
         /// <summary>
-        /// Initial size of the data volume in GiBs that will be created and attached.
+        /// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         /// </summary>
         public readonly int DataStorageSizeInGb;
         /// <summary>

@@ -29943,6 +29943,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
                  current_custom_action_timeout_in_mins: int,
                  current_patching_component: str,
                  custom_action_timeout_in_mins: int,
+                 database_software_image_id: str,
                  description: str,
                  display_name: str,
                  estimated_component_patching_start_time: str,
@@ -29973,6 +29974,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param str current_patching_component: The name of the current infrastruture component that is getting patched.
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        :param str database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param str description: Description of the maintenance run.
         :param str display_name: The user-friendly name for the maintenance run.
         :param str estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -30003,6 +30005,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
         pulumi.set(__self__, "current_patching_component", current_patching_component)
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "estimated_component_patching_start_time", estimated_component_patching_start_time)
@@ -30060,6 +30063,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> str:
+        """
+        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter
@@ -30411,6 +30422,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
                  current_custom_action_timeout_in_mins: int,
                  current_patching_component: str,
                  custom_action_timeout_in_mins: int,
+                 database_software_image_id: str,
                  description: str,
                  display_name: str,
                  estimated_component_patching_start_time: str,
@@ -30441,6 +30453,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param str current_patching_component: The name of the current infrastruture component that is getting patched.
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        :param str database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param str description: Description of the maintenance run.
         :param str display_name: The user-friendly name for the maintenance run.
         :param str estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -30471,6 +30484,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
         pulumi.set(__self__, "current_patching_component", current_patching_component)
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "estimated_component_patching_start_time", estimated_component_patching_start_time)
@@ -30528,6 +30542,14 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> str:
+        """
+        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter
@@ -42335,6 +42357,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
                  current_custom_action_timeout_in_mins: int,
                  current_patching_component: str,
                  custom_action_timeout_in_mins: int,
+                 database_software_image_id: str,
                  description: str,
                  display_name: str,
                  estimated_component_patching_start_time: str,
@@ -42366,6 +42389,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param str current_patching_component: The name of the current infrastruture component that is getting patched.
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        :param str database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param str description: Description of the maintenance run.
         :param str display_name: The user-friendly name for the maintenance run.
         :param str estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -42396,6 +42420,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
         pulumi.set(__self__, "current_patching_component", current_patching_component)
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "estimated_component_patching_start_time", estimated_component_patching_start_time)
@@ -42454,6 +42479,14 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> str:
+        """
+        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter

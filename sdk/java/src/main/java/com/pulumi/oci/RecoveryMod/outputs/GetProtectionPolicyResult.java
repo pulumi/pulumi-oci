@@ -54,6 +54,11 @@ public final class GetProtectionPolicyResult {
      */
     private String lifecycleDetails;
     /**
+     * @return Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     * 
+     */
+    private Boolean mustEnforceCloudLocality;
+    /**
      * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
      * 
      */
@@ -138,6 +143,13 @@ public final class GetProtectionPolicyResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     * 
+     */
+    public Boolean mustEnforceCloudLocality() {
+        return this.mustEnforceCloudLocality;
+    }
+    /**
      * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
      * 
      */
@@ -193,6 +205,7 @@ public final class GetProtectionPolicyResult {
         private String id;
         private Boolean isPredefinedPolicy;
         private String lifecycleDetails;
+        private Boolean mustEnforceCloudLocality;
         private String policyLockedDateTime;
         private String protectionPolicyId;
         private String state;
@@ -210,6 +223,7 @@ public final class GetProtectionPolicyResult {
     	      this.id = defaults.id;
     	      this.isPredefinedPolicy = defaults.isPredefinedPolicy;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.mustEnforceCloudLocality = defaults.mustEnforceCloudLocality;
     	      this.policyLockedDateTime = defaults.policyLockedDateTime;
     	      this.protectionPolicyId = defaults.protectionPolicyId;
     	      this.state = defaults.state;
@@ -283,6 +297,14 @@ public final class GetProtectionPolicyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder mustEnforceCloudLocality(Boolean mustEnforceCloudLocality) {
+            if (mustEnforceCloudLocality == null) {
+              throw new MissingRequiredPropertyException("GetProtectionPolicyResult", "mustEnforceCloudLocality");
+            }
+            this.mustEnforceCloudLocality = mustEnforceCloudLocality;
+            return this;
+        }
+        @CustomType.Setter
         public Builder policyLockedDateTime(String policyLockedDateTime) {
             if (policyLockedDateTime == null) {
               throw new MissingRequiredPropertyException("GetProtectionPolicyResult", "policyLockedDateTime");
@@ -340,6 +362,7 @@ public final class GetProtectionPolicyResult {
             _resultValue.id = id;
             _resultValue.isPredefinedPolicy = isPredefinedPolicy;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.mustEnforceCloudLocality = mustEnforceCloudLocality;
             _resultValue.policyLockedDateTime = policyLockedDateTime;
             _resultValue.protectionPolicyId = protectionPolicyId;
             _resultValue.state = state;

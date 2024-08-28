@@ -8,25 +8,34 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class AppFirewallPolicyActionBodyArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AppFirewallPolicyActionBodyArgs Empty = new AppFirewallPolicyActionBodyArgs();
 
+    @Import(name="template")
+    private @Nullable Output<String> template;
+
+    public Optional<Output<String>> template() {
+        return Optional.ofNullable(this.template);
+    }
+
     /**
      * (Updatable) Static response body text.
      * 
      */
-    @Import(name="text", required=true)
-    private Output<String> text;
+    @Import(name="text")
+    private @Nullable Output<String> text;
 
     /**
      * @return (Updatable) Static response body text.
      * 
      */
-    public Output<String> text() {
-        return this.text;
+    public Optional<Output<String>> text() {
+        return Optional.ofNullable(this.text);
     }
 
     /**
@@ -47,6 +56,7 @@ public final class AppFirewallPolicyActionBodyArgs extends com.pulumi.resources.
     private AppFirewallPolicyActionBodyArgs() {}
 
     private AppFirewallPolicyActionBodyArgs(AppFirewallPolicyActionBodyArgs $) {
+        this.template = $.template;
         this.text = $.text;
         this.type = $.type;
     }
@@ -69,13 +79,22 @@ public final class AppFirewallPolicyActionBodyArgs extends com.pulumi.resources.
             $ = new AppFirewallPolicyActionBodyArgs(Objects.requireNonNull(defaults));
         }
 
+        public Builder template(@Nullable Output<String> template) {
+            $.template = template;
+            return this;
+        }
+
+        public Builder template(String template) {
+            return template(Output.of(template));
+        }
+
         /**
          * @param text (Updatable) Static response body text.
          * 
          * @return builder
          * 
          */
-        public Builder text(Output<String> text) {
+        public Builder text(@Nullable Output<String> text) {
             $.text = text;
             return this;
         }
@@ -112,9 +131,6 @@ public final class AppFirewallPolicyActionBodyArgs extends com.pulumi.resources.
         }
 
         public AppFirewallPolicyActionBodyArgs build() {
-            if ($.text == null) {
-                throw new MissingRequiredPropertyException("AppFirewallPolicyActionBodyArgs", "text");
-            }
             if ($.type == null) {
                 throw new MissingRequiredPropertyException("AppFirewallPolicyActionBodyArgs", "type");
             }

@@ -33,6 +33,7 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
      * 
      */
     private @Nullable String version;
+    private @Nullable String versionToUpgrade;
 
     private GetSupportedVmwareSoftwareVersionsResult() {}
     public String compartmentId() {
@@ -65,6 +66,9 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
     public Optional<String> version() {
         return Optional.ofNullable(this.version);
     }
+    public Optional<String> versionToUpgrade() {
+        return Optional.ofNullable(this.versionToUpgrade);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -81,6 +85,7 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
         private String id;
         private List<GetSupportedVmwareSoftwareVersionsItem> items;
         private @Nullable String version;
+        private @Nullable String versionToUpgrade;
         public Builder() {}
         public Builder(GetSupportedVmwareSoftwareVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,6 +95,7 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
     	      this.id = defaults.id;
     	      this.items = defaults.items;
     	      this.version = defaults.version;
+    	      this.versionToUpgrade = defaults.versionToUpgrade;
         }
 
         @CustomType.Setter
@@ -140,6 +146,12 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
             this.version = version;
             return this;
         }
+        @CustomType.Setter
+        public Builder versionToUpgrade(@Nullable String versionToUpgrade) {
+
+            this.versionToUpgrade = versionToUpgrade;
+            return this;
+        }
         public GetSupportedVmwareSoftwareVersionsResult build() {
             final var _resultValue = new GetSupportedVmwareSoftwareVersionsResult();
             _resultValue.compartmentId = compartmentId;
@@ -148,6 +160,7 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
             _resultValue.id = id;
             _resultValue.items = items;
             _resultValue.version = version;
+            _resultValue.versionToUpgrade = versionToUpgrade;
             return _resultValue;
         }
     }

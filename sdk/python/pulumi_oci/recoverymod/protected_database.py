@@ -27,7 +27,8 @@ class ProtectedDatabaseArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deletion_schedule: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None):
+                 is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ProtectedDatabase resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the protected database.
@@ -44,6 +45,11 @@ class ProtectedDatabaseArgs:
                * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
+        :param pulumi.Input[str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_unique_name", db_unique_name)
@@ -63,6 +69,8 @@ class ProtectedDatabaseArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_redo_logs_shipped is not None:
             pulumi.set(__self__, "is_redo_logs_shipped", is_redo_logs_shipped)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -210,6 +218,22 @@ class ProtectedDatabaseArgs:
     def is_redo_logs_shipped(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_redo_logs_shipped", value)
 
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
+
 
 @pulumi.input_type
 class _ProtectedDatabaseState:
@@ -233,6 +257,7 @@ class _ProtectedDatabaseState:
                  protection_policy_id: Optional[pulumi.Input[str]] = None,
                  recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -260,6 +285,11 @@ class _ProtectedDatabaseState:
         :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
         :param pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         :param pulumi.Input[str] state: The current state of the Protected Database.
+        :param pulumi.Input[str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param pulumi.Input[str] time_created: An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -303,6 +333,8 @@ class _ProtectedDatabaseState:
             pulumi.set(__self__, "recovery_service_subnets", recovery_service_subnets)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
@@ -543,6 +575,22 @@ class _ProtectedDatabaseState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -608,6 +656,7 @@ class ProtectedDatabase(pulumi.CustomResource):
                  password: Optional[pulumi.Input[str]] = None,
                  protection_policy_id: Optional[pulumi.Input[str]] = None,
                  recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
@@ -638,7 +687,8 @@ class ProtectedDatabase(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_redo_logs_shipped=protected_database_is_redo_logs_shipped)
+            is_redo_logs_shipped=protected_database_is_redo_logs_shipped,
+            subscription_id=test_subscription["id"])
         ```
 
         ## Import
@@ -665,6 +715,11 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
         :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
+        :param pulumi.Input[str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -701,7 +756,8 @@ class ProtectedDatabase(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_redo_logs_shipped=protected_database_is_redo_logs_shipped)
+            is_redo_logs_shipped=protected_database_is_redo_logs_shipped,
+            subscription_id=test_subscription["id"])
         ```
 
         ## Import
@@ -739,6 +795,7 @@ class ProtectedDatabase(pulumi.CustomResource):
                  password: Optional[pulumi.Input[str]] = None,
                  protection_policy_id: Optional[pulumi.Input[str]] = None,
                  recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -772,6 +829,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             if recovery_service_subnets is None and not opts.urn:
                 raise TypeError("Missing required property 'recovery_service_subnets'")
             __props__.__dict__["recovery_service_subnets"] = recovery_service_subnets
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["health"] = None
             __props__.__dict__["health_details"] = None
             __props__.__dict__["is_read_only_resource"] = None
@@ -814,6 +872,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             protection_policy_id: Optional[pulumi.Input[str]] = None,
             recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            subscription_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -846,6 +905,11 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         :param pulumi.Input[str] state: The current state of the Protected Database.
+        :param pulumi.Input[str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param pulumi.Input[str] time_created: An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -874,6 +938,7 @@ class ProtectedDatabase(pulumi.CustomResource):
         __props__.__dict__["protection_policy_id"] = protection_policy_id
         __props__.__dict__["recovery_service_subnets"] = recovery_service_subnets
         __props__.__dict__["state"] = state
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -1033,6 +1098,18 @@ class ProtectedDatabase(pulumi.CustomResource):
         The current state of the Protected Database.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")

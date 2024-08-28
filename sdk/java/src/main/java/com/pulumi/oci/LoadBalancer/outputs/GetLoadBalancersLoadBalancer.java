@@ -67,10 +67,20 @@ public final class GetLoadBalancersLoadBalancer {
      */
     private Boolean isPrivate;
     /**
+     * @return Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+     * 
+     */
+    private Boolean isRequestIdEnabled;
+    /**
      * @return An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
      * 
      */
     private List<String> networkSecurityGroupIds;
+    /**
+     * @return If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+     * 
+     */
+    private String requestIdHeader;
     private List<GetLoadBalancersLoadBalancerReservedIp> reservedIps;
     /**
      * @return A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
@@ -175,11 +185,25 @@ public final class GetLoadBalancersLoadBalancer {
         return this.isPrivate;
     }
     /**
+     * @return Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+     * 
+     */
+    public Boolean isRequestIdEnabled() {
+        return this.isRequestIdEnabled;
+    }
+    /**
      * @return An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
      * 
      */
     public List<String> networkSecurityGroupIds() {
         return this.networkSecurityGroupIds;
+    }
+    /**
+     * @return If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+     * 
+     */
+    public String requestIdHeader() {
+        return this.requestIdHeader;
     }
     public List<GetLoadBalancersLoadBalancerReservedIp> reservedIps() {
         return this.reservedIps;
@@ -246,7 +270,9 @@ public final class GetLoadBalancersLoadBalancer {
         private String ipMode;
         private Boolean isDeleteProtectionEnabled;
         private Boolean isPrivate;
+        private Boolean isRequestIdEnabled;
         private List<String> networkSecurityGroupIds;
+        private String requestIdHeader;
         private List<GetLoadBalancersLoadBalancerReservedIp> reservedIps;
         private String shape;
         private List<GetLoadBalancersLoadBalancerShapeDetail> shapeDetails;
@@ -267,7 +293,9 @@ public final class GetLoadBalancersLoadBalancer {
     	      this.ipMode = defaults.ipMode;
     	      this.isDeleteProtectionEnabled = defaults.isDeleteProtectionEnabled;
     	      this.isPrivate = defaults.isPrivate;
+    	      this.isRequestIdEnabled = defaults.isRequestIdEnabled;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
+    	      this.requestIdHeader = defaults.requestIdHeader;
     	      this.reservedIps = defaults.reservedIps;
     	      this.shape = defaults.shape;
     	      this.shapeDetails = defaults.shapeDetails;
@@ -364,6 +392,14 @@ public final class GetLoadBalancersLoadBalancer {
             return this;
         }
         @CustomType.Setter
+        public Builder isRequestIdEnabled(Boolean isRequestIdEnabled) {
+            if (isRequestIdEnabled == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "isRequestIdEnabled");
+            }
+            this.isRequestIdEnabled = isRequestIdEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
             if (networkSecurityGroupIds == null) {
               throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "networkSecurityGroupIds");
@@ -373,6 +409,14 @@ public final class GetLoadBalancersLoadBalancer {
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
+        }
+        @CustomType.Setter
+        public Builder requestIdHeader(String requestIdHeader) {
+            if (requestIdHeader == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "requestIdHeader");
+            }
+            this.requestIdHeader = requestIdHeader;
+            return this;
         }
         @CustomType.Setter
         public Builder reservedIps(List<GetLoadBalancersLoadBalancerReservedIp> reservedIps) {
@@ -451,7 +495,9 @@ public final class GetLoadBalancersLoadBalancer {
             _resultValue.ipMode = ipMode;
             _resultValue.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
             _resultValue.isPrivate = isPrivate;
+            _resultValue.isRequestIdEnabled = isRequestIdEnabled;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.requestIdHeader = requestIdHeader;
             _resultValue.reservedIps = reservedIps;
             _resultValue.shape = shape;
             _resultValue.shapeDetails = shapeDetails;

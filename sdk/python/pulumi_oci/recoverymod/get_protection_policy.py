@@ -21,7 +21,7 @@ class GetProtectionPolicyResult:
     """
     A collection of values returned by getProtectionPolicy.
     """
-    def __init__(__self__, backup_retention_period_in_days=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_predefined_policy=None, lifecycle_details=None, policy_locked_date_time=None, protection_policy_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, backup_retention_period_in_days=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_predefined_policy=None, lifecycle_details=None, must_enforce_cloud_locality=None, policy_locked_date_time=None, protection_policy_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if backup_retention_period_in_days and not isinstance(backup_retention_period_in_days, int):
             raise TypeError("Expected argument 'backup_retention_period_in_days' to be a int")
         pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
@@ -46,6 +46,9 @@ class GetProtectionPolicyResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if must_enforce_cloud_locality and not isinstance(must_enforce_cloud_locality, bool):
+            raise TypeError("Expected argument 'must_enforce_cloud_locality' to be a bool")
+        pulumi.set(__self__, "must_enforce_cloud_locality", must_enforce_cloud_locality)
         if policy_locked_date_time and not isinstance(policy_locked_date_time, str):
             raise TypeError("Expected argument 'policy_locked_date_time' to be a str")
         pulumi.set(__self__, "policy_locked_date_time", policy_locked_date_time)
@@ -130,6 +133,14 @@ class GetProtectionPolicyResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="mustEnforceCloudLocality")
+    def must_enforce_cloud_locality(self) -> bool:
+        """
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        """
+        return pulumi.get(self, "must_enforce_cloud_locality")
+
+    @property
     @pulumi.getter(name="policyLockedDateTime")
     def policy_locked_date_time(self) -> str:
         """
@@ -189,6 +200,7 @@ class AwaitableGetProtectionPolicyResult(GetProtectionPolicyResult):
             id=self.id,
             is_predefined_policy=self.is_predefined_policy,
             lifecycle_details=self.lifecycle_details,
+            must_enforce_cloud_locality=self.must_enforce_cloud_locality,
             policy_locked_date_time=self.policy_locked_date_time,
             protection_policy_id=self.protection_policy_id,
             state=self.state,
@@ -230,6 +242,7 @@ def get_protection_policy(protection_policy_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_predefined_policy=pulumi.get(__ret__, 'is_predefined_policy'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        must_enforce_cloud_locality=pulumi.get(__ret__, 'must_enforce_cloud_locality'),
         policy_locked_date_time=pulumi.get(__ret__, 'policy_locked_date_time'),
         protection_policy_id=pulumi.get(__ret__, 'protection_policy_id'),
         state=pulumi.get(__ret__, 'state'),

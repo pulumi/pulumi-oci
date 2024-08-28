@@ -52,25 +52,10 @@ public final class BdsInstanceCloudSqlDetail {
      */
     private @Nullable Integer ocpus;
     /**
-     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-     * 
-     */
-    private @Nullable String odhVersion;
-    /**
-     * @return BDS-assigned Operating System version for the node.
-     * 
-     */
-    private @Nullable String osVersion;
-    /**
      * @return Shape of the node
      * 
      */
     private String shape;
-    /**
-     * @return The fingerprint of the SSH key used for node access
-     * 
-     */
-    private @Nullable String sshFingerprint;
 
     private BdsInstanceCloudSqlDetail() {}
     /**
@@ -123,32 +108,11 @@ public final class BdsInstanceCloudSqlDetail {
         return Optional.ofNullable(this.ocpus);
     }
     /**
-     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-     * 
-     */
-    public Optional<String> odhVersion() {
-        return Optional.ofNullable(this.odhVersion);
-    }
-    /**
-     * @return BDS-assigned Operating System version for the node.
-     * 
-     */
-    public Optional<String> osVersion() {
-        return Optional.ofNullable(this.osVersion);
-    }
-    /**
      * @return Shape of the node
      * 
      */
     public String shape() {
         return this.shape;
-    }
-    /**
-     * @return The fingerprint of the SSH key used for node access
-     * 
-     */
-    public Optional<String> sshFingerprint() {
-        return Optional.ofNullable(this.sshFingerprint);
     }
 
     public static Builder builder() {
@@ -167,10 +131,7 @@ public final class BdsInstanceCloudSqlDetail {
         private @Nullable Integer memoryInGbs;
         private @Nullable Integer nvmes;
         private @Nullable Integer ocpus;
-        private @Nullable String odhVersion;
-        private @Nullable String osVersion;
         private String shape;
-        private @Nullable String sshFingerprint;
         public Builder() {}
         public Builder(BdsInstanceCloudSqlDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -181,10 +142,7 @@ public final class BdsInstanceCloudSqlDetail {
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
-    	      this.odhVersion = defaults.odhVersion;
-    	      this.osVersion = defaults.osVersion;
     	      this.shape = defaults.shape;
-    	      this.sshFingerprint = defaults.sshFingerprint;
         }
 
         @CustomType.Setter
@@ -233,29 +191,11 @@ public final class BdsInstanceCloudSqlDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder odhVersion(@Nullable String odhVersion) {
-
-            this.odhVersion = odhVersion;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder osVersion(@Nullable String osVersion) {
-
-            this.osVersion = osVersion;
-            return this;
-        }
-        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("BdsInstanceCloudSqlDetail", "shape");
             }
             this.shape = shape;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder sshFingerprint(@Nullable String sshFingerprint) {
-
-            this.sshFingerprint = sshFingerprint;
             return this;
         }
         public BdsInstanceCloudSqlDetail build() {
@@ -267,10 +207,7 @@ public final class BdsInstanceCloudSqlDetail {
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
-            _resultValue.odhVersion = odhVersion;
-            _resultValue.osVersion = osVersion;
             _resultValue.shape = shape;
-            _resultValue.sshFingerprint = sshFingerprint;
             return _resultValue;
         }
     }

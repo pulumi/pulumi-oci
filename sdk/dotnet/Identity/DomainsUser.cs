@@ -214,6 +214,9 @@ namespace Pulumi.Oci.Identity
         [Output("externalId")]
         public Output<string> ExternalId { get; private set; } = null!;
 
+        [Output("forceDelete")]
+        public Output<bool?> ForceDelete { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
         /// 
@@ -981,6 +984,9 @@ namespace Pulumi.Oci.Identity
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
 
+        [Input("forceDelete")]
+        public Input<bool>? ForceDelete { get; set; }
+
         /// <summary>
         /// The basic endpoint for the identity domain
         /// </summary>
@@ -1680,6 +1686,9 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
+
+        [Input("forceDelete")]
+        public Input<bool>? ForceDelete { get; set; }
 
         [Input("groups")]
         private InputList<Inputs.DomainsUserGroupGetArgs>? _groups;

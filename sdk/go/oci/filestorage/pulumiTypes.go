@@ -2997,12 +2997,20 @@ type GetMountTargetsMountTarget struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
+	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ObservedThroughput string `pulumi:"observedThroughput"`
 	// The OCIDs of the private IP addresses associated with this mount target.
 	PrivateIpIds []string `pulumi:"privateIpIds"`
+	// * New throughput for mount target at the end of billing cycle in Gbps.
+	RequestedThroughput string `pulumi:"requestedThroughput"`
+	// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ReservedStorageCapacity string `pulumi:"reservedStorageCapacity"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
 	SubnetId string `pulumi:"subnetId"`
+	// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+	TimeBillingCycleEnd string `pulumi:"timeBillingCycleEnd"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -3045,12 +3053,20 @@ type GetMountTargetsMountTargetArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ObservedThroughput pulumi.StringInput `pulumi:"observedThroughput"`
 	// The OCIDs of the private IP addresses associated with this mount target.
 	PrivateIpIds pulumi.StringArrayInput `pulumi:"privateIpIds"`
+	// * New throughput for mount target at the end of billing cycle in Gbps.
+	RequestedThroughput pulumi.StringInput `pulumi:"requestedThroughput"`
+	// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ReservedStorageCapacity pulumi.StringInput `pulumi:"reservedStorageCapacity"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+	TimeBillingCycleEnd pulumi.StringInput `pulumi:"timeBillingCycleEnd"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -3174,9 +3190,24 @@ func (o GetMountTargetsMountTargetOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+func (o GetMountTargetsMountTargetOutput) ObservedThroughput() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.ObservedThroughput }).(pulumi.StringOutput)
+}
+
 // The OCIDs of the private IP addresses associated with this mount target.
 func (o GetMountTargetsMountTargetOutput) PrivateIpIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) []string { return v.PrivateIpIds }).(pulumi.StringArrayOutput)
+}
+
+// * New throughput for mount target at the end of billing cycle in Gbps.
+func (o GetMountTargetsMountTargetOutput) RequestedThroughput() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.RequestedThroughput }).(pulumi.StringOutput)
+}
+
+// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+func (o GetMountTargetsMountTargetOutput) ReservedStorageCapacity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.ReservedStorageCapacity }).(pulumi.StringOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -3187,6 +3218,11 @@ func (o GetMountTargetsMountTargetOutput) State() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
 func (o GetMountTargetsMountTargetOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMountTargetsMountTargetOutput) TimeBillingCycleEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.TimeBillingCycleEnd }).(pulumi.StringOutput)
 }
 
 // The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

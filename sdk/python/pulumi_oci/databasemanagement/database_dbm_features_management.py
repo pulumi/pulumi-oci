@@ -18,7 +18,8 @@ class DatabaseDbmFeaturesManagementArgs:
     def __init__(__self__, *,
                  database_id: pulumi.Input[str],
                  enable_database_dbm_feature: pulumi.Input[bool],
-                 feature_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None):
+                 feature_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
+                 modify_database_dbm_feature: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a DatabaseDbmFeaturesManagement resource.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
@@ -33,6 +34,8 @@ class DatabaseDbmFeaturesManagementArgs:
         pulumi.set(__self__, "enable_database_dbm_feature", enable_database_dbm_feature)
         if feature_details is not None:
             pulumi.set(__self__, "feature_details", feature_details)
+        if modify_database_dbm_feature is not None:
+            pulumi.set(__self__, "modify_database_dbm_feature", modify_database_dbm_feature)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -74,13 +77,23 @@ class DatabaseDbmFeaturesManagementArgs:
     def feature_details(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
         pulumi.set(self, "feature_details", value)
 
+    @property
+    @pulumi.getter(name="modifyDatabaseDbmFeature")
+    def modify_database_dbm_feature(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "modify_database_dbm_feature")
+
+    @modify_database_dbm_feature.setter
+    def modify_database_dbm_feature(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "modify_database_dbm_feature", value)
+
 
 @pulumi.input_type
 class _DatabaseDbmFeaturesManagementState:
     def __init__(__self__, *,
                  database_id: Optional[pulumi.Input[str]] = None,
                  enable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
-                 feature_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None):
+                 feature_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
+                 modify_database_dbm_feature: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering DatabaseDbmFeaturesManagement resources.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
@@ -97,6 +110,8 @@ class _DatabaseDbmFeaturesManagementState:
             pulumi.set(__self__, "enable_database_dbm_feature", enable_database_dbm_feature)
         if feature_details is not None:
             pulumi.set(__self__, "feature_details", feature_details)
+        if modify_database_dbm_feature is not None:
+            pulumi.set(__self__, "modify_database_dbm_feature", modify_database_dbm_feature)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -138,6 +153,15 @@ class _DatabaseDbmFeaturesManagementState:
     def feature_details(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
         pulumi.set(self, "feature_details", value)
 
+    @property
+    @pulumi.getter(name="modifyDatabaseDbmFeature")
+    def modify_database_dbm_feature(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "modify_database_dbm_feature")
+
+    @modify_database_dbm_feature.setter
+    def modify_database_dbm_feature(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "modify_database_dbm_feature", value)
+
 
 class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
     @overload
@@ -147,6 +171,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  database_id: Optional[pulumi.Input[str]] = None,
                  enable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
                  feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 modify_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -192,6 +217,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  database_id: Optional[pulumi.Input[str]] = None,
                  enable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
                  feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 modify_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -208,6 +234,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                 raise TypeError("Missing required property 'enable_database_dbm_feature'")
             __props__.__dict__["enable_database_dbm_feature"] = enable_database_dbm_feature
             __props__.__dict__["feature_details"] = feature_details
+            __props__.__dict__["modify_database_dbm_feature"] = modify_database_dbm_feature
         super(DatabaseDbmFeaturesManagement, __self__).__init__(
             'oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement',
             resource_name,
@@ -220,7 +247,8 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             enable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
-            feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'DatabaseDbmFeaturesManagement':
+            feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+            modify_database_dbm_feature: Optional[pulumi.Input[bool]] = None) -> 'DatabaseDbmFeaturesManagement':
         """
         Get an existing DatabaseDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -243,6 +271,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["enable_database_dbm_feature"] = enable_database_dbm_feature
         __props__.__dict__["feature_details"] = feature_details
+        __props__.__dict__["modify_database_dbm_feature"] = modify_database_dbm_feature
         return DatabaseDbmFeaturesManagement(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -272,4 +301,9 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
         The details required to enable the specified Database Management feature.
         """
         return pulumi.get(self, "feature_details")
+
+    @property
+    @pulumi.getter(name="modifyDatabaseDbmFeature")
+    def modify_database_dbm_feature(self) -> pulumi.Output[Optional[bool]]:
+        return pulumi.get(self, "modify_database_dbm_feature")
 

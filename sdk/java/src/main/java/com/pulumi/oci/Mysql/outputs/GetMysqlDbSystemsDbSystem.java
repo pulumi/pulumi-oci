@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemCurrentPlacement;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemCustomerContact;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDataStorage;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEndpoint;
@@ -63,7 +64,12 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     private List<GetMysqlDbSystemsDbSystemCurrentPlacement> currentPlacements;
     /**
-     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+     * @return The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemCustomerContact> customerContacts;
+    /**
+     * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
     private Integer dataStorageSizeInGb;
@@ -266,7 +272,14 @@ public final class GetMysqlDbSystemsDbSystem {
         return this.currentPlacements;
     }
     /**
-     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+     * @return The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemCustomerContact> customerContacts() {
+        return this.customerContacts;
+    }
+    /**
+     * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
     public Integer dataStorageSizeInGb() {
@@ -490,6 +503,7 @@ public final class GetMysqlDbSystemsDbSystem {
         private String configurationId;
         private String crashRecovery;
         private List<GetMysqlDbSystemsDbSystemCurrentPlacement> currentPlacements;
+        private List<GetMysqlDbSystemsDbSystemCustomerContact> customerContacts;
         private Integer dataStorageSizeInGb;
         private List<GetMysqlDbSystemsDbSystemDataStorage> dataStorages;
         private String databaseManagement;
@@ -532,6 +546,7 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.configurationId = defaults.configurationId;
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.currentPlacements = defaults.currentPlacements;
+    	      this.customerContacts = defaults.customerContacts;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorages = defaults.dataStorages;
     	      this.databaseManagement = defaults.databaseManagement;
@@ -644,6 +659,17 @@ public final class GetMysqlDbSystemsDbSystem {
         }
         public Builder currentPlacements(GetMysqlDbSystemsDbSystemCurrentPlacement... currentPlacements) {
             return currentPlacements(List.of(currentPlacements));
+        }
+        @CustomType.Setter
+        public Builder customerContacts(List<GetMysqlDbSystemsDbSystemCustomerContact> customerContacts) {
+            if (customerContacts == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "customerContacts");
+            }
+            this.customerContacts = customerContacts;
+            return this;
+        }
+        public Builder customerContacts(GetMysqlDbSystemsDbSystemCustomerContact... customerContacts) {
+            return customerContacts(List.of(customerContacts));
         }
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
@@ -920,6 +946,7 @@ public final class GetMysqlDbSystemsDbSystem {
             _resultValue.configurationId = configurationId;
             _resultValue.crashRecovery = crashRecovery;
             _resultValue.currentPlacements = currentPlacements;
+            _resultValue.customerContacts = customerContacts;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
             _resultValue.dataStorages = dataStorages;
             _resultValue.databaseManagement = databaseManagement;

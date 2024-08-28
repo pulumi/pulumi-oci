@@ -121,6 +121,12 @@ namespace Pulumi.Oci.Kms
         public Output<bool> IsPrimary { get; private set; } = null!;
 
         /// <summary>
+        /// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+        /// </summary>
+        [Output("isVaultReplicable")]
+        public Output<bool> IsVaultReplicable { get; private set; } = null!;
+
+        /// <summary>
         /// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
         /// </summary>
         [Output("managementEndpoint")]
@@ -371,6 +377,12 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         [Input("isPrimary")]
         public Input<bool>? IsPrimary { get; set; }
+
+        /// <summary>
+        /// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+        /// </summary>
+        [Input("isVaultReplicable")]
+        public Input<bool>? IsVaultReplicable { get; set; }
 
         /// <summary>
         /// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.

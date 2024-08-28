@@ -111,6 +111,7 @@ public final class GetDomainsUsersUser {
      * 
      */
     private String externalId;
+    private Boolean forceDelete;
     /**
      * @return A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
@@ -443,6 +444,9 @@ public final class GetDomainsUsersUser {
      */
     public String externalId() {
         return this.externalId;
+    }
+    public Boolean forceDelete() {
+        return this.forceDelete;
     }
     /**
      * @return A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
@@ -803,6 +807,7 @@ public final class GetDomainsUsersUser {
         private List<GetDomainsUsersUserEmail> emails;
         private List<GetDomainsUsersUserEntitlement> entitlements;
         private String externalId;
+        private Boolean forceDelete;
         private List<GetDomainsUsersUserGroup> groups;
         private String id;
         private List<GetDomainsUsersUserIdcsCreatedBy> idcsCreatedBies;
@@ -867,6 +872,7 @@ public final class GetDomainsUsersUser {
     	      this.emails = defaults.emails;
     	      this.entitlements = defaults.entitlements;
     	      this.externalId = defaults.externalId;
+    	      this.forceDelete = defaults.forceDelete;
     	      this.groups = defaults.groups;
     	      this.id = defaults.id;
     	      this.idcsCreatedBies = defaults.idcsCreatedBies;
@@ -1031,6 +1037,14 @@ public final class GetDomainsUsersUser {
               throw new MissingRequiredPropertyException("GetDomainsUsersUser", "externalId");
             }
             this.externalId = externalId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder forceDelete(Boolean forceDelete) {
+            if (forceDelete == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUser", "forceDelete");
+            }
+            this.forceDelete = forceDelete;
             return this;
         }
         @CustomType.Setter
@@ -1531,6 +1545,7 @@ public final class GetDomainsUsersUser {
             _resultValue.emails = emails;
             _resultValue.entitlements = entitlements;
             _resultValue.externalId = externalId;
+            _resultValue.forceDelete = forceDelete;
             _resultValue.groups = groups;
             _resultValue.id = id;
             _resultValue.idcsCreatedBies = idcsCreatedBies;

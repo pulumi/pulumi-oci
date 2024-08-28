@@ -109,6 +109,7 @@ import javax.annotation.Nullable;
  *                 .userSearchBase(mountTargetLdapIdmapUserSearchBase)
  *                 .build())
  *             .nsgIds(mountTargetNsgIds)
+ *             .requestedThroughput(mountTargetRequestedThroughput)
  *             .build());
  * 
  *     }
@@ -253,22 +254,14 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
         return this.idmapType;
     }
     /**
-     * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
-     * 
-     * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-     * 
-     * Example: `10.0.3.3`
+     * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
-     * @return A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
-     * 
-     * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-     * 
-     * Example: `10.0.3.3`
+     * @return A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
      * 
      */
     public Output<String> ipAddress() {
@@ -331,6 +324,20 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
         return this.nsgIds;
     }
     /**
+     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    @Export(name="observedThroughput", refs={String.class}, tree="[0]")
+    private Output<String> observedThroughput;
+
+    /**
+     * @return Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    public Output<String> observedThroughput() {
+        return this.observedThroughput;
+    }
+    /**
      * The OCIDs of the private IP addresses associated with this mount target.
      * 
      */
@@ -343,6 +350,34 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> privateIpIds() {
         return this.privateIpIds;
+    }
+    /**
+     * (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    @Export(name="requestedThroughput", refs={String.class}, tree="[0]")
+    private Output<String> requestedThroughput;
+
+    /**
+     * @return (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    public Output<String> requestedThroughput() {
+        return this.requestedThroughput;
+    }
+    /**
+     * * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    @Export(name="reservedStorageCapacity", refs={String.class}, tree="[0]")
+    private Output<String> reservedStorageCapacity;
+
+    /**
+     * @return * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    public Output<String> reservedStorageCapacity() {
+        return this.reservedStorageCapacity;
     }
     /**
      * The current state of the mount target.
@@ -377,6 +412,20 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    @Export(name="timeBillingCycleEnd", refs={String.class}, tree="[0]")
+    private Output<String> timeBillingCycleEnd;
+
+    /**
+     * @return The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public Output<String> timeBillingCycleEnd() {
+        return this.timeBillingCycleEnd;
     }
     /**
      * The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

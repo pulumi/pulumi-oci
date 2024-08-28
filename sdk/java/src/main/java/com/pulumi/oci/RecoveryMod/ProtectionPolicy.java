@@ -52,6 +52,7 @@ import javax.annotation.Nullable;
  *             .displayName(protectionPolicyDisplayName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .mustEnforceCloudLocality(protectionPolicyMustEnforceCloudLocality)
  *             .policyLockedDateTime(protectionPolicyPolicyLockedDateTime)
  *             .build());
  * 
@@ -169,6 +170,20 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+     * 
+     */
+    @Export(name="mustEnforceCloudLocality", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> mustEnforceCloudLocality;
+
+    /**
+     * @return Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+     * 
+     */
+    public Output<Boolean> mustEnforceCloudLocality() {
+        return this.mustEnforceCloudLocality;
     }
     /**
      * (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.

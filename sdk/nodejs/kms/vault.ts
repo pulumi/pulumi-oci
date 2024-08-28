@@ -116,6 +116,10 @@ export class Vault extends pulumi.CustomResource {
      */
     public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
     /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     */
+    public /*out*/ readonly isVaultReplicable!: pulumi.Output<boolean>;
+    /**
      * The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
      */
     public /*out*/ readonly managementEndpoint!: pulumi.Output<string>;
@@ -177,6 +181,7 @@ export class Vault extends pulumi.CustomResource {
             resourceInputs["externalKeyManagerMetadataSummaries"] = state ? state.externalKeyManagerMetadataSummaries : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
+            resourceInputs["isVaultReplicable"] = state ? state.isVaultReplicable : undefined;
             resourceInputs["managementEndpoint"] = state ? state.managementEndpoint : undefined;
             resourceInputs["replicaDetails"] = state ? state.replicaDetails : undefined;
             resourceInputs["restoreFromFile"] = state ? state.restoreFromFile : undefined;
@@ -211,6 +216,7 @@ export class Vault extends pulumi.CustomResource {
             resourceInputs["cryptoEndpoint"] = undefined /*out*/;
             resourceInputs["externalKeyManagerMetadataSummaries"] = undefined /*out*/;
             resourceInputs["isPrimary"] = undefined /*out*/;
+            resourceInputs["isVaultReplicable"] = undefined /*out*/;
             resourceInputs["managementEndpoint"] = undefined /*out*/;
             resourceInputs["replicaDetails"] = undefined /*out*/;
             resourceInputs["restoredFromVaultId"] = undefined /*out*/;
@@ -258,6 +264,10 @@ export interface VaultState {
      * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      */
     isPrimary?: pulumi.Input<boolean>;
+    /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     */
+    isVaultReplicable?: pulumi.Input<boolean>;
     /**
      * The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
      */

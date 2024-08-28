@@ -14,6 +14,7 @@ __all__ = [
     'AnnouncementSubscriptionFilterGroupsFilterArgs',
     'AnnouncementSubscriptionsFilterGroupFilterArgs',
     'GetAnnouncementSubscriptionsFilterArgs',
+    'GetServicesFilterArgs',
 ]
 
 @pulumi.input_type
@@ -22,7 +23,7 @@ class AnnouncementSubscriptionFilterGroupsArgs:
                  filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]],
                  name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+        :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]] filters: A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param pulumi.Input[str] name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
         pulumi.set(__self__, "filters", filters)
@@ -33,7 +34,7 @@ class AnnouncementSubscriptionFilterGroupsArgs:
     @pulumi.getter
     def filters(self) -> pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]]:
         """
-        A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+        A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "filters")
 
@@ -60,7 +61,7 @@ class AnnouncementSubscriptionFilterGroupsFilterArgs:
                  type: pulumi.Input[str],
                  value: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] type: The type of filter.
+        :param pulumi.Input[str] type: The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param pulumi.Input[str] value: The value of the filter.
         """
         pulumi.set(__self__, "type", type)
@@ -70,7 +71,7 @@ class AnnouncementSubscriptionFilterGroupsFilterArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type of filter.
+        The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "type")
 
@@ -97,7 +98,7 @@ class AnnouncementSubscriptionsFilterGroupFilterArgs:
                  type: pulumi.Input[str],
                  value: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] type: (Updatable) The type of filter.
+        :param pulumi.Input[str] type: (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param pulumi.Input[str] value: (Updatable) The value of the filter.
         """
         pulumi.set(__self__, "type", type)
@@ -107,7 +108,7 @@ class AnnouncementSubscriptionsFilterGroupFilterArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type of filter.
+        (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "type")
 
@@ -148,6 +149,45 @@ class GetAnnouncementSubscriptionsFilterArgs:
         """
         The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetServicesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

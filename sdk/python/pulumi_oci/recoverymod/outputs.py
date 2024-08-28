@@ -186,10 +186,6 @@ class ProtectedDatabaseRecoveryServiceSubnet(dict):
                  state: Optional[str] = None):
         """
         :param str recovery_service_subnet_id: (Updatable) The recovery service subnet OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str state: The current state of the Protected Database.
         """
         pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
@@ -201,10 +197,6 @@ class ProtectedDatabaseRecoveryServiceSubnet(dict):
     def recovery_service_subnet_id(self) -> str:
         """
         (Updatable) The recovery service subnet OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "recovery_service_subnet_id")
 
@@ -403,6 +395,7 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemResult(dict):
                  protection_policy_id: str,
                  recovery_service_subnets: Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult'],
                  state: str,
+                 subscription_id: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
@@ -426,6 +419,7 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemResult(dict):
         :param str protection_policy_id: The protection policy OCID.
         :param Sequence['GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArgs'] recovery_service_subnets: List of recovery service subnet resources associated with the protected database.
         :param str state: A filter to return only the resources that match the specified lifecycle state.
+        :param str subscription_id: The OCID of the cloud service subscription to which the protected database is linked.
         :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param str time_created: An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         :param str time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -451,6 +445,7 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemResult(dict):
         pulumi.set(__self__, "protection_policy_id", protection_policy_id)
         pulumi.set(__self__, "recovery_service_subnets", recovery_service_subnets)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -609,6 +604,14 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemResult(dict):
         A filter to return only the resources that match the specified lifecycle state.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The OCID of the cloud service subscription to which the protected database is linked.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")
@@ -817,6 +820,7 @@ class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
                  id: str,
                  is_predefined_policy: bool,
                  lifecycle_details: str,
+                 must_enforce_cloud_locality: bool,
                  policy_locked_date_time: str,
                  state: str,
                  system_tags: Mapping[str, str],
@@ -831,6 +835,7 @@ class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
         :param str id: The protection policy OCID.
         :param bool is_predefined_policy: Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
         :param str lifecycle_details: Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param bool must_enforce_cloud_locality: Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
         :param str policy_locked_date_time: An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -845,6 +850,7 @@ class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_predefined_policy", is_predefined_policy)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "must_enforce_cloud_locality", must_enforce_cloud_locality)
         pulumi.set(__self__, "policy_locked_date_time", policy_locked_date_time)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -914,6 +920,14 @@ class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
         Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="mustEnforceCloudLocality")
+    def must_enforce_cloud_locality(self) -> bool:
+        """
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        """
+        return pulumi.get(self, "must_enforce_cloud_locality")
 
     @property
     @pulumi.getter(name="policyLockedDateTime")

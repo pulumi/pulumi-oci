@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs, AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState } from "./autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement";
+export type AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = import("./autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement").AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement;
+export const AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement: typeof import("./autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement").AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = null as any;
+utilities.lazyLoad(exports, ["AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement"], () => require("./autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement"));
+
 export { DatabaseDbmFeaturesManagementArgs, DatabaseDbmFeaturesManagementState } from "./databaseDbmFeaturesManagement";
 export type DatabaseDbmFeaturesManagement = import("./databaseDbmFeaturesManagement").DatabaseDbmFeaturesManagement;
 export const DatabaseDbmFeaturesManagement: typeof import("./databaseDbmFeaturesManagement").DatabaseDbmFeaturesManagement = null as any;
@@ -650,6 +655,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement":
+                return new AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement":
                 return new DatabaseDbmFeaturesManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint":
@@ -711,6 +718,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/databaseDbmFeaturesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/dbManagementPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalAsm", _module)

@@ -60,6 +60,11 @@ public final class GetVaultsVault {
      */
     private Boolean isPrimary;
     /**
+     * @return A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     * 
+     */
+    private Boolean isVaultReplicable;
+    /**
      * @return The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */
@@ -159,6 +164,13 @@ public final class GetVaultsVault {
         return this.isPrimary;
     }
     /**
+     * @return A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     * 
+     */
+    public Boolean isVaultReplicable() {
+        return this.isVaultReplicable;
+    }
+    /**
      * @return The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */
@@ -235,6 +247,7 @@ public final class GetVaultsVault {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isPrimary;
+        private Boolean isVaultReplicable;
         private String managementEndpoint;
         private List<GetVaultsVaultReplicaDetail> replicaDetails;
         private List<GetVaultsVaultRestoreFromFile> restoreFromFiles;
@@ -257,6 +270,7 @@ public final class GetVaultsVault {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isPrimary = defaults.isPrimary;
+    	      this.isVaultReplicable = defaults.isVaultReplicable;
     	      this.managementEndpoint = defaults.managementEndpoint;
     	      this.replicaDetails = defaults.replicaDetails;
     	      this.restoreFromFiles = defaults.restoreFromFiles;
@@ -345,6 +359,14 @@ public final class GetVaultsVault {
               throw new MissingRequiredPropertyException("GetVaultsVault", "isPrimary");
             }
             this.isPrimary = isPrimary;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isVaultReplicable(Boolean isVaultReplicable) {
+            if (isVaultReplicable == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "isVaultReplicable");
+            }
+            this.isVaultReplicable = isVaultReplicable;
             return this;
         }
         @CustomType.Setter
@@ -447,6 +469,7 @@ public final class GetVaultsVault {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isPrimary = isPrimary;
+            _resultValue.isVaultReplicable = isVaultReplicable;
             _resultValue.managementEndpoint = managementEndpoint;
             _resultValue.replicaDetails = replicaDetails;
             _resultValue.restoreFromFiles = restoreFromFiles;

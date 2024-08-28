@@ -175,12 +175,6 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:BigDataService/bdsInstance:BdsInstance")
 public class BdsInstance extends com.pulumi.resources.CustomResource {
-    @Export(name="addKafkaTrigger", refs={Integer.class}, tree="[0]")
-    private Output</* @Nullable */ Integer> addKafkaTrigger;
-
-    public Output<Optional<Integer>> addKafkaTrigger() {
-        return Codegen.optional(this.addKafkaTrigger);
-    }
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      * 
@@ -346,20 +340,6 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
 
     public Output<Optional<BdsInstanceEdgeNode>> edgeNode() {
         return Codegen.optional(this.edgeNode);
-    }
-    /**
-     * (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-     * 
-     */
-    @Export(name="executeBootstrapScriptTrigger", refs={Integer.class}, tree="[0]")
-    private Output</* @Nullable */ Integer> executeBootstrapScriptTrigger;
-
-    /**
-     * @return (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-     * 
-     */
-    public Output<Optional<Integer>> executeBootstrapScriptTrigger() {
-        return Codegen.optional(this.executeBootstrapScriptTrigger);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -584,20 +564,6 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> osPatchVersion() {
         return Codegen.optional(this.osPatchVersion);
-    }
-    /**
-     * (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-     * 
-     */
-    @Export(name="removeKafkaTrigger", refs={Integer.class}, tree="[0]")
-    private Output</* @Nullable */ Integer> removeKafkaTrigger;
-
-    /**
-     * @return (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-     * 
-     */
-    public Output<Optional<Integer>> removeKafkaTrigger() {
-        return Codegen.optional(this.removeKafkaTrigger);
     }
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

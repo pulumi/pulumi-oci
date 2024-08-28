@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AnnouncementSubscriptionFilterGroups {
     /**
-     * @return A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+     * @return A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * 
      */
     private List<AnnouncementSubscriptionFilterGroupsFilter> filters;
@@ -27,7 +27,7 @@ public final class AnnouncementSubscriptionFilterGroups {
 
     private AnnouncementSubscriptionFilterGroups() {}
     /**
-     * @return A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+     * @return A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * 
      */
     public List<AnnouncementSubscriptionFilterGroupsFilter> filters() {

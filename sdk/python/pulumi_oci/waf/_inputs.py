@@ -186,26 +186,18 @@ class AppFirewallPolicyActionArgs:
 @pulumi.input_type
 class AppFirewallPolicyActionBodyArgs:
     def __init__(__self__, *,
-                 text: pulumi.Input[str],
-                 type: pulumi.Input[str]):
+                 type: pulumi.Input[str],
+                 template: Optional[pulumi.Input[str]] = None,
+                 text: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] text: (Updatable) Static response body text.
         :param pulumi.Input[str] type: (Updatable) Type of HttpResponseBody.
+        :param pulumi.Input[str] text: (Updatable) Static response body text.
         """
-        pulumi.set(__self__, "text", text)
         pulumi.set(__self__, "type", type)
-
-    @property
-    @pulumi.getter
-    def text(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Static response body text.
-        """
-        return pulumi.get(self, "text")
-
-    @text.setter
-    def text(self, value: pulumi.Input[str]):
-        pulumi.set(self, "text", value)
+        if template is not None:
+            pulumi.set(__self__, "template", template)
+        if text is not None:
+            pulumi.set(__self__, "text", text)
 
     @property
     @pulumi.getter
@@ -218,6 +210,27 @@ class AppFirewallPolicyActionBodyArgs:
     @type.setter
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def template(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "template")
+
+    @template.setter
+    def template(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "template", value)
+
+    @property
+    @pulumi.getter
+    def text(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Static response body text.
+        """
+        return pulumi.get(self, "text")
+
+    @text.setter
+    def text(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "text", value)
 
 
 @pulumi.input_type

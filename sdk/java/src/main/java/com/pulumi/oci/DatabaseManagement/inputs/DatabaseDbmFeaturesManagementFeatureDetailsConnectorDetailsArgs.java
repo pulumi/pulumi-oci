@@ -20,6 +20,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsAr
      * * PE: Private endpoint
      * * MACS: Management agent
      * * EXTERNAL: External database connector
+     * * DIRECT: Direct connection
      * 
      */
     @Import(name="connectorType")
@@ -30,6 +31,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsAr
      * * PE: Private endpoint
      * * MACS: Management agent
      * * EXTERNAL: External database connector
+     * * DIRECT: Direct connection
      * 
      */
     public Optional<Output<String>> connectorType() {
@@ -113,6 +115,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsAr
          * * PE: Private endpoint
          * * MACS: Management agent
          * * EXTERNAL: External database connector
+         * * DIRECT: Direct connection
          * 
          * @return builder
          * 
@@ -127,6 +130,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsAr
          * * PE: Private endpoint
          * * MACS: Management agent
          * * EXTERNAL: External database connector
+         * * DIRECT: Direct connection
          * 
          * @return builder
          * 

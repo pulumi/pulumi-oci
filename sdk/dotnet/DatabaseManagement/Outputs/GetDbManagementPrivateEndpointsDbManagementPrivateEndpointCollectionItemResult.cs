@@ -38,6 +38,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly bool IsCluster;
         /// <summary>
+        /// The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+        /// </summary>
+        public readonly bool IsDnsResolutionEnabled;
+        /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
         public readonly string Name;
@@ -84,6 +88,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             bool isCluster,
 
+            bool isDnsResolutionEnabled,
+
             string name,
 
             ImmutableArray<string> nsgIds,
@@ -106,6 +112,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsCluster = isCluster;
+            IsDnsResolutionEnabled = isDnsResolutionEnabled;
             Name = name;
             NsgIds = nsgIds;
             PrivateIp = privateIp;

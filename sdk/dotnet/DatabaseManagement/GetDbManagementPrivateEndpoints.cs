@@ -31,6 +31,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         CompartmentId = compartmentId,
         ///         IsCluster = dbManagementPrivateEndpointIsCluster,
+        ///         IsDnsResolutionEnabled = dbManagementPrivateEndpointIsDnsResolutionEnabled,
         ///         Name = dbManagementPrivateEndpointName,
         ///         State = dbManagementPrivateEndpointState,
         ///         VcnId = testVcn.Id,
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         CompartmentId = compartmentId,
         ///         IsCluster = dbManagementPrivateEndpointIsCluster,
+        ///         IsDnsResolutionEnabled = dbManagementPrivateEndpointIsDnsResolutionEnabled,
         ///         Name = dbManagementPrivateEndpointName,
         ///         State = dbManagementPrivateEndpointState,
         ///         VcnId = testVcn.Id,
@@ -96,6 +98,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("isCluster")]
         public bool? IsCluster { get; set; }
+
+        /// <summary>
+        /// The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+        /// </summary>
+        [Input("isDnsResolutionEnabled")]
+        public bool? IsDnsResolutionEnabled { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire name.
@@ -144,6 +152,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<bool>? IsCluster { get; set; }
 
         /// <summary>
+        /// The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+        /// </summary>
+        [Input("isDnsResolutionEnabled")]
+        public Input<bool>? IsDnsResolutionEnabled { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
         [Input("name")]
@@ -189,6 +203,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly bool? IsCluster;
         /// <summary>
+        /// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        /// </summary>
+        public readonly bool? IsDnsResolutionEnabled;
+        /// <summary>
         /// The display name of the Database Management private endpoint.
         /// </summary>
         public readonly string? Name;
@@ -213,6 +231,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             bool? isCluster,
 
+            bool? isDnsResolutionEnabled,
+
             string? name,
 
             string? state,
@@ -224,6 +244,7 @@ namespace Pulumi.Oci.DatabaseManagement
             Filters = filters;
             Id = id;
             IsCluster = isCluster;
+            IsDnsResolutionEnabled = isDnsResolutionEnabled;
             Name = name;
             State = state;
             VcnId = vcnId;

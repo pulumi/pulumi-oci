@@ -35,7 +35,7 @@ export function getCluster(args: GetClusterArgs, opts?: pulumi.InvokeOptions): P
  */
 export interface GetClusterArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      */
     clusterId: string;
 }
@@ -172,7 +172,7 @@ export function getClusterOutput(args: GetClusterOutputArgs, opts?: pulumi.Invok
  */
 export interface GetClusterOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      */
     clusterId: pulumi.Input<string>;
 }

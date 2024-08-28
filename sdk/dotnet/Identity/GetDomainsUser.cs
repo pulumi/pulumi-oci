@@ -222,6 +222,7 @@ namespace Pulumi.Oci.Identity
         /// An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
         /// </summary>
         public readonly string ExternalId;
+        public readonly bool ForceDelete;
         /// <summary>
         /// A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
         /// </summary>
@@ -441,6 +442,8 @@ namespace Pulumi.Oci.Identity
 
             string externalId,
 
+            bool forceDelete,
+
             ImmutableArray<Outputs.GetDomainsUserGroupResult> groups,
 
             string id,
@@ -552,6 +555,7 @@ namespace Pulumi.Oci.Identity
             Emails = emails;
             Entitlements = entitlements;
             ExternalId = externalId;
+            ForceDelete = forceDelete;
             Groups = groups;
             Id = id;
             IdcsCreatedBies = idcsCreatedBies;

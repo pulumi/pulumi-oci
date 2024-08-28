@@ -21,10 +21,6 @@ public final class GetAutonomousDatabasesResult {
      * 
      */
     private @Nullable String autonomousContainerDatabaseId;
-    /**
-     * @return The list of autonomous_databases.
-     * 
-     */
     private List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -96,10 +92,6 @@ public final class GetAutonomousDatabasesResult {
     public Optional<String> autonomousContainerDatabaseId() {
         return Optional.ofNullable(this.autonomousContainerDatabaseId);
     }
-    /**
-     * @return The list of autonomous_databases.
-     * 
-     */
     public List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases() {
         return this.autonomousDatabases;
     }

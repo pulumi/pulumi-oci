@@ -7,14 +7,17 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class AppFirewallPolicyActionBody {
+    private @Nullable String template;
     /**
      * @return (Updatable) Static response body text.
      * 
      */
-    private String text;
+    private @Nullable String text;
     /**
      * @return (Updatable) Type of HttpResponseBody.
      * 
@@ -22,12 +25,15 @@ public final class AppFirewallPolicyActionBody {
     private String type;
 
     private AppFirewallPolicyActionBody() {}
+    public Optional<String> template() {
+        return Optional.ofNullable(this.template);
+    }
     /**
      * @return (Updatable) Static response body text.
      * 
      */
-    public String text() {
-        return this.text;
+    public Optional<String> text() {
+        return Optional.ofNullable(this.text);
     }
     /**
      * @return (Updatable) Type of HttpResponseBody.
@@ -46,20 +52,26 @@ public final class AppFirewallPolicyActionBody {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String text;
+        private @Nullable String template;
+        private @Nullable String text;
         private String type;
         public Builder() {}
         public Builder(AppFirewallPolicyActionBody defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.template = defaults.template;
     	      this.text = defaults.text;
     	      this.type = defaults.type;
         }
 
         @CustomType.Setter
-        public Builder text(String text) {
-            if (text == null) {
-              throw new MissingRequiredPropertyException("AppFirewallPolicyActionBody", "text");
-            }
+        public Builder template(@Nullable String template) {
+
+            this.template = template;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder text(@Nullable String text) {
+
             this.text = text;
             return this;
         }
@@ -73,6 +85,7 @@ public final class AppFirewallPolicyActionBody {
         }
         public AppFirewallPolicyActionBody build() {
             final var _resultValue = new AppFirewallPolicyActionBody();
+            _resultValue.template = template;
             _resultValue.text = text;
             _resultValue.type = type;
             return _resultValue;

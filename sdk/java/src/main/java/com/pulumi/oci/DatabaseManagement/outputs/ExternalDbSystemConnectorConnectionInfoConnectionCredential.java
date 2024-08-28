@@ -22,6 +22,11 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredential {
      */
     private @Nullable String credentialType;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+     * 
+     */
+    private @Nullable String namedCredentialId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
      * 
      */
@@ -56,6 +61,13 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredential {
      */
     public Optional<String> credentialType() {
         return Optional.ofNullable(this.credentialType);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+     * 
+     */
+    public Optional<String> namedCredentialId() {
+        return Optional.ofNullable(this.namedCredentialId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
@@ -97,6 +109,7 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredential {
     public static final class Builder {
         private @Nullable String credentialName;
         private @Nullable String credentialType;
+        private @Nullable String namedCredentialId;
         private @Nullable String passwordSecretId;
         private @Nullable String role;
         private @Nullable String sslSecretId;
@@ -106,6 +119,7 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredential {
     	      Objects.requireNonNull(defaults);
     	      this.credentialName = defaults.credentialName;
     	      this.credentialType = defaults.credentialType;
+    	      this.namedCredentialId = defaults.namedCredentialId;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.sslSecretId = defaults.sslSecretId;
@@ -122,6 +136,12 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredential {
         public Builder credentialType(@Nullable String credentialType) {
 
             this.credentialType = credentialType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder namedCredentialId(@Nullable String namedCredentialId) {
+
+            this.namedCredentialId = namedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -152,6 +172,7 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredential {
             final var _resultValue = new ExternalDbSystemConnectorConnectionInfoConnectionCredential();
             _resultValue.credentialName = credentialName;
             _resultValue.credentialType = credentialType;
+            _resultValue.namedCredentialId = namedCredentialId;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.sslSecretId = sslSecretId;

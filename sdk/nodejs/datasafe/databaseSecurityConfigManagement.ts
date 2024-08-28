@@ -6,6 +6,40 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
+/**
+ * This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Updates the database security configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseSecurityConfigManagement = new oci.datasafe.DatabaseSecurityConfigManagement("test_database_security_config_management", {
+ *     compartmentId: compartmentId,
+ *     targetId: testTargetDatabase.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: databaseSecurityConfigManagementDescription,
+ *     displayName: databaseSecurityConfigManagementDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     sqlFirewallConfig: {
+ *         excludeJob: databaseSecurityConfigManagementSqlFirewallConfigExcludeJob,
+ *         status: databaseSecurityConfigManagementSqlFirewallConfigStatus,
+ *         violationLogAutoPurge: databaseSecurityConfigManagementSqlFirewallConfigViolationLogAutoPurge,
+ *     },
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Import is not supported for this resource.
+ */
 export class DatabaseSecurityConfigManagement extends pulumi.CustomResource {
     /**
      * Get an existing DatabaseSecurityConfigManagement resource's state with the given name, ID, and optional extra
@@ -34,19 +68,65 @@ export class DatabaseSecurityConfigManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === DatabaseSecurityConfigManagement.__pulumiType;
     }
 
+    /**
+     * (Updatable) The OCID of the compartment containing the database security config.
+     */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) The description of the security policy.
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+     */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+     */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Details about the current state of the database security config in Data Safe.
+     */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     public readonly refreshTrigger!: pulumi.Output<boolean | undefined>;
+    /**
+     * (Updatable) Details to update the SQL firewall config.
+     */
     public readonly sqlFirewallConfig!: pulumi.Output<outputs.DataSafe.DatabaseSecurityConfigManagementSqlFirewallConfig>;
+    /**
+     * The current state of the database security config.
+     */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Unique target identifier.
+     */
     public readonly targetId!: pulumi.Output<string | undefined>;
+    /**
+     * The time that the database security config was created, in the format defined by RFC3339.
+     */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The last date and time the database security config was refreshed, in the format defined by RFC3339.
+     */
     public /*out*/ readonly timeLastRefreshed!: pulumi.Output<string>;
+    /**
+     * The date and time the database security configuration was last updated, in the format defined by RFC3339.
+     */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
     /**
@@ -102,19 +182,65 @@ export class DatabaseSecurityConfigManagement extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DatabaseSecurityConfigManagement resources.
  */
 export interface DatabaseSecurityConfigManagementState {
+    /**
+     * (Updatable) The OCID of the compartment containing the database security config.
+     */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The description of the security policy.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+     */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Details about the current state of the database security config in Data Safe.
+     */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     refreshTrigger?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Details to update the SQL firewall config.
+     */
     sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigManagementSqlFirewallConfig>;
+    /**
+     * The current state of the database security config.
+     */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Unique target identifier.
+     */
     targetId?: pulumi.Input<string>;
+    /**
+     * The time that the database security config was created, in the format defined by RFC3339.
+     */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The last date and time the database security config was refreshed, in the format defined by RFC3339.
+     */
     timeLastRefreshed?: pulumi.Input<string>;
+    /**
+     * The date and time the database security configuration was last updated, in the format defined by RFC3339.
+     */
     timeUpdated?: pulumi.Input<string>;
 }
 
@@ -122,12 +248,40 @@ export interface DatabaseSecurityConfigManagementState {
  * The set of arguments for constructing a DatabaseSecurityConfigManagement resource.
  */
 export interface DatabaseSecurityConfigManagementArgs {
+    /**
+     * (Updatable) The OCID of the compartment containing the database security config.
+     */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The description of the security policy.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+     */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     refreshTrigger?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Details to update the SQL firewall config.
+     */
     sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigManagementSqlFirewallConfig>;
+    /**
+     * Unique target identifier.
+     */
     targetId?: pulumi.Input<string>;
 }

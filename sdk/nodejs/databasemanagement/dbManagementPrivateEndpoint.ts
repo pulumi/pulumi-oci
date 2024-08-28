@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
  *     nsgIds: dbManagementPrivateEndpointNsgIds,
  * });
  * ```
@@ -88,6 +89,10 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
      */
     public readonly isCluster!: pulumi.Output<boolean>;
     /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     */
+    public readonly isDnsResolutionEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) The display name of the Database Management private endpoint.
      */
     public readonly name!: pulumi.Output<string>;
@@ -142,6 +147,7 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCluster"] = state ? state.isCluster : undefined;
+            resourceInputs["isDnsResolutionEnabled"] = state ? state.isDnsResolutionEnabled : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["privateIp"] = state ? state.privateIp : undefined;
@@ -163,6 +169,7 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isCluster"] = args ? args.isCluster : undefined;
+            resourceInputs["isDnsResolutionEnabled"] = args ? args.isDnsResolutionEnabled : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -201,6 +208,10 @@ export interface DbManagementPrivateEndpointState {
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      */
     isCluster?: pulumi.Input<boolean>;
+    /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     */
+    isDnsResolutionEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The display name of the Database Management private endpoint.
      */
@@ -263,6 +274,10 @@ export interface DbManagementPrivateEndpointArgs {
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      */
     isCluster?: pulumi.Input<boolean>;
+    /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     */
+    isDnsResolutionEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The display name of the Database Management private endpoint.
      */

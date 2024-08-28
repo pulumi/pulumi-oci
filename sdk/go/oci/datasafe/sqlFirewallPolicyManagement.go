@@ -11,31 +11,106 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Sql Firewall Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
+//
+// Updates the SQL firewall policy.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewSqlFirewallPolicyManagement(ctx, "test_sql_firewall_policy_management", &DataSafe.SqlFirewallPolicyManagementArgs{
+//				CompartmentId:            pulumi.Any(compartmentId),
+//				TargetId:                 pulumi.Any(testTargetDatabase.Id),
+//				DbUserName:               pulumi.Any(testUser.Name),
+//				AllowedClientIps:         pulumi.Any(sqlFirewallPolicyManagementAllowedClientIps),
+//				AllowedClientOsUsernames: pulumi.Any(sqlFirewallPolicyManagementAllowedClientOsUsernames),
+//				AllowedClientPrograms:    pulumi.Any(sqlFirewallPolicyManagementAllowedClientPrograms),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description:      pulumi.Any(sqlFirewallPolicyManagementDescription),
+//				DisplayName:      pulumi.Any(sqlFirewallPolicyManagementDisplayName),
+//				EnforcementScope: pulumi.Any(sqlFirewallPolicyManagementEnforcementScope),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				Status:          pulumi.Any(sqlFirewallPolicyManagementStatus),
+//				ViolationAction: pulumi.Any(sqlFirewallPolicyManagementViolationAction),
+//				ViolationAudit:  pulumi.Any(sqlFirewallPolicyManagementViolationAudit),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type SqlFirewallPolicyManagement struct {
 	pulumi.CustomResourceState
 
-	AllowedClientIps         pulumi.StringArrayOutput `pulumi:"allowedClientIps"`
+	// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+	AllowedClientIps pulumi.StringArrayOutput `pulumi:"allowedClientIps"`
+	// (Updatable) List of allowed operating system user names for the SQL firewall policy.
 	AllowedClientOsUsernames pulumi.StringArrayOutput `pulumi:"allowedClientOsUsernames"`
-	AllowedClientPrograms    pulumi.StringArrayOutput `pulumi:"allowedClientPrograms"`
-	CompartmentId            pulumi.StringOutput      `pulumi:"compartmentId"`
-	DbUserName               pulumi.StringOutput      `pulumi:"dbUserName"`
-	DefinedTags              pulumi.StringMapOutput   `pulumi:"definedTags"`
-	Description              pulumi.StringOutput      `pulumi:"description"`
-	DisplayName              pulumi.StringOutput      `pulumi:"displayName"`
-	EnforcementScope         pulumi.StringOutput      `pulumi:"enforcementScope"`
-	FreeformTags             pulumi.StringMapOutput   `pulumi:"freeformTags"`
-	LifecycleDetails         pulumi.StringOutput      `pulumi:"lifecycleDetails"`
-	SecurityPolicyId         pulumi.StringOutput      `pulumi:"securityPolicyId"`
-	SqlFirewallPolicyId      pulumi.StringOutput      `pulumi:"sqlFirewallPolicyId"`
-	SqlLevel                 pulumi.StringOutput      `pulumi:"sqlLevel"`
-	State                    pulumi.StringOutput      `pulumi:"state"`
-	Status                   pulumi.StringOutput      `pulumi:"status"`
-	SystemTags               pulumi.StringMapOutput   `pulumi:"systemTags"`
-	TargetId                 pulumi.StringOutput      `pulumi:"targetId"`
-	TimeCreated              pulumi.StringOutput      `pulumi:"timeCreated"`
-	TimeUpdated              pulumi.StringOutput      `pulumi:"timeUpdated"`
-	ViolationAction          pulumi.StringOutput      `pulumi:"violationAction"`
-	ViolationAudit           pulumi.StringOutput      `pulumi:"violationAudit"`
+	// (Updatable) List of allowed client programs for the SQL firewall policy.
+	AllowedClientPrograms pulumi.StringArrayOutput `pulumi:"allowedClientPrograms"`
+	// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The database user name.
+	DbUserName pulumi.StringOutput `pulumi:"dbUserName"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// (Updatable) The description of the SQL firewall policy.
+	Description pulumi.StringOutput `pulumi:"description"`
+	// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) Specifies the SQL firewall policy enforcement option.
+	EnforcementScope pulumi.StringOutput `pulumi:"enforcementScope"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// Details about the current state of the SQL firewall policy in Data Safe.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// The OCID of the security policy corresponding to the SQL firewall policy.
+	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
+	// The OCID of the SQL firewall policy resource.
+	SqlFirewallPolicyId pulumi.StringOutput `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringOutput `pulumi:"sqlLevel"`
+	// The current state of the SQL firewall policy.
+	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+	Status pulumi.StringOutput `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// Unique target identifier.
+	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	// The time that the SQL firewall policy was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+	ViolationAction pulumi.StringOutput `pulumi:"violationAction"`
+	// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ViolationAudit pulumi.StringOutput `pulumi:"violationAudit"`
 }
 
 // NewSqlFirewallPolicyManagement registers a new resource with the given unique name, arguments, and options.
@@ -68,53 +143,103 @@ func GetSqlFirewallPolicyManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SqlFirewallPolicyManagement resources.
 type sqlFirewallPolicyManagementState struct {
-	AllowedClientIps         []string          `pulumi:"allowedClientIps"`
-	AllowedClientOsUsernames []string          `pulumi:"allowedClientOsUsernames"`
-	AllowedClientPrograms    []string          `pulumi:"allowedClientPrograms"`
-	CompartmentId            *string           `pulumi:"compartmentId"`
-	DbUserName               *string           `pulumi:"dbUserName"`
-	DefinedTags              map[string]string `pulumi:"definedTags"`
-	Description              *string           `pulumi:"description"`
-	DisplayName              *string           `pulumi:"displayName"`
-	EnforcementScope         *string           `pulumi:"enforcementScope"`
-	FreeformTags             map[string]string `pulumi:"freeformTags"`
-	LifecycleDetails         *string           `pulumi:"lifecycleDetails"`
-	SecurityPolicyId         *string           `pulumi:"securityPolicyId"`
-	SqlFirewallPolicyId      *string           `pulumi:"sqlFirewallPolicyId"`
-	SqlLevel                 *string           `pulumi:"sqlLevel"`
-	State                    *string           `pulumi:"state"`
-	Status                   *string           `pulumi:"status"`
-	SystemTags               map[string]string `pulumi:"systemTags"`
-	TargetId                 *string           `pulumi:"targetId"`
-	TimeCreated              *string           `pulumi:"timeCreated"`
-	TimeUpdated              *string           `pulumi:"timeUpdated"`
-	ViolationAction          *string           `pulumi:"violationAction"`
-	ViolationAudit           *string           `pulumi:"violationAudit"`
+	// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+	AllowedClientIps []string `pulumi:"allowedClientIps"`
+	// (Updatable) List of allowed operating system user names for the SQL firewall policy.
+	AllowedClientOsUsernames []string `pulumi:"allowedClientOsUsernames"`
+	// (Updatable) List of allowed client programs for the SQL firewall policy.
+	AllowedClientPrograms []string `pulumi:"allowedClientPrograms"`
+	// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// The database user name.
+	DbUserName *string `pulumi:"dbUserName"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) The description of the SQL firewall policy.
+	Description *string `pulumi:"description"`
+	// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Specifies the SQL firewall policy enforcement option.
+	EnforcementScope *string `pulumi:"enforcementScope"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Details about the current state of the SQL firewall policy in Data Safe.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The OCID of the security policy corresponding to the SQL firewall policy.
+	SecurityPolicyId *string `pulumi:"securityPolicyId"`
+	// The OCID of the SQL firewall policy resource.
+	SqlFirewallPolicyId *string `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel *string `pulumi:"sqlLevel"`
+	// The current state of the SQL firewall policy.
+	State *string `pulumi:"state"`
+	// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+	Status *string `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Unique target identifier.
+	TargetId *string `pulumi:"targetId"`
+	// The time that the SQL firewall policy was created, in the format defined by RFC3339.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+	ViolationAction *string `pulumi:"violationAction"`
+	// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ViolationAudit *string `pulumi:"violationAudit"`
 }
 
 type SqlFirewallPolicyManagementState struct {
-	AllowedClientIps         pulumi.StringArrayInput
+	// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+	AllowedClientIps pulumi.StringArrayInput
+	// (Updatable) List of allowed operating system user names for the SQL firewall policy.
 	AllowedClientOsUsernames pulumi.StringArrayInput
-	AllowedClientPrograms    pulumi.StringArrayInput
-	CompartmentId            pulumi.StringPtrInput
-	DbUserName               pulumi.StringPtrInput
-	DefinedTags              pulumi.StringMapInput
-	Description              pulumi.StringPtrInput
-	DisplayName              pulumi.StringPtrInput
-	EnforcementScope         pulumi.StringPtrInput
-	FreeformTags             pulumi.StringMapInput
-	LifecycleDetails         pulumi.StringPtrInput
-	SecurityPolicyId         pulumi.StringPtrInput
-	SqlFirewallPolicyId      pulumi.StringPtrInput
-	SqlLevel                 pulumi.StringPtrInput
-	State                    pulumi.StringPtrInput
-	Status                   pulumi.StringPtrInput
-	SystemTags               pulumi.StringMapInput
-	TargetId                 pulumi.StringPtrInput
-	TimeCreated              pulumi.StringPtrInput
-	TimeUpdated              pulumi.StringPtrInput
-	ViolationAction          pulumi.StringPtrInput
-	ViolationAudit           pulumi.StringPtrInput
+	// (Updatable) List of allowed client programs for the SQL firewall policy.
+	AllowedClientPrograms pulumi.StringArrayInput
+	// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+	CompartmentId pulumi.StringPtrInput
+	// The database user name.
+	DbUserName pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput
+	// (Updatable) The description of the SQL firewall policy.
+	Description pulumi.StringPtrInput
+	// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+	DisplayName pulumi.StringPtrInput
+	// (Updatable) Specifies the SQL firewall policy enforcement option.
+	EnforcementScope pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput
+	// Details about the current state of the SQL firewall policy in Data Safe.
+	LifecycleDetails pulumi.StringPtrInput
+	// The OCID of the security policy corresponding to the SQL firewall policy.
+	SecurityPolicyId pulumi.StringPtrInput
+	// The OCID of the SQL firewall policy resource.
+	SqlFirewallPolicyId pulumi.StringPtrInput
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringPtrInput
+	// The current state of the SQL firewall policy.
+	State pulumi.StringPtrInput
+	// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+	Status pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
+	// Unique target identifier.
+	TargetId pulumi.StringPtrInput
+	// The time that the SQL firewall policy was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringPtrInput
+	// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+	ViolationAction pulumi.StringPtrInput
+	// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ViolationAudit pulumi.StringPtrInput
 }
 
 func (SqlFirewallPolicyManagementState) ElementType() reflect.Type {
@@ -122,42 +247,80 @@ func (SqlFirewallPolicyManagementState) ElementType() reflect.Type {
 }
 
 type sqlFirewallPolicyManagementArgs struct {
-	AllowedClientIps         []string          `pulumi:"allowedClientIps"`
-	AllowedClientOsUsernames []string          `pulumi:"allowedClientOsUsernames"`
-	AllowedClientPrograms    []string          `pulumi:"allowedClientPrograms"`
-	CompartmentId            *string           `pulumi:"compartmentId"`
-	DbUserName               *string           `pulumi:"dbUserName"`
-	DefinedTags              map[string]string `pulumi:"definedTags"`
-	Description              *string           `pulumi:"description"`
-	DisplayName              *string           `pulumi:"displayName"`
-	EnforcementScope         *string           `pulumi:"enforcementScope"`
-	FreeformTags             map[string]string `pulumi:"freeformTags"`
-	SqlFirewallPolicyId      *string           `pulumi:"sqlFirewallPolicyId"`
-	State                    *string           `pulumi:"state"`
-	Status                   *string           `pulumi:"status"`
-	TargetId                 *string           `pulumi:"targetId"`
-	ViolationAction          *string           `pulumi:"violationAction"`
-	ViolationAudit           *string           `pulumi:"violationAudit"`
+	// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+	AllowedClientIps []string `pulumi:"allowedClientIps"`
+	// (Updatable) List of allowed operating system user names for the SQL firewall policy.
+	AllowedClientOsUsernames []string `pulumi:"allowedClientOsUsernames"`
+	// (Updatable) List of allowed client programs for the SQL firewall policy.
+	AllowedClientPrograms []string `pulumi:"allowedClientPrograms"`
+	// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// The database user name.
+	DbUserName *string `pulumi:"dbUserName"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) The description of the SQL firewall policy.
+	Description *string `pulumi:"description"`
+	// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Specifies the SQL firewall policy enforcement option.
+	EnforcementScope *string `pulumi:"enforcementScope"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the SQL firewall policy resource.
+	SqlFirewallPolicyId *string `pulumi:"sqlFirewallPolicyId"`
+	// The current state of the SQL firewall policy.
+	State *string `pulumi:"state"`
+	// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+	Status *string `pulumi:"status"`
+	// Unique target identifier.
+	TargetId *string `pulumi:"targetId"`
+	// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+	ViolationAction *string `pulumi:"violationAction"`
+	// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ViolationAudit *string `pulumi:"violationAudit"`
 }
 
 // The set of arguments for constructing a SqlFirewallPolicyManagement resource.
 type SqlFirewallPolicyManagementArgs struct {
-	AllowedClientIps         pulumi.StringArrayInput
+	// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+	AllowedClientIps pulumi.StringArrayInput
+	// (Updatable) List of allowed operating system user names for the SQL firewall policy.
 	AllowedClientOsUsernames pulumi.StringArrayInput
-	AllowedClientPrograms    pulumi.StringArrayInput
-	CompartmentId            pulumi.StringPtrInput
-	DbUserName               pulumi.StringPtrInput
-	DefinedTags              pulumi.StringMapInput
-	Description              pulumi.StringPtrInput
-	DisplayName              pulumi.StringPtrInput
-	EnforcementScope         pulumi.StringPtrInput
-	FreeformTags             pulumi.StringMapInput
-	SqlFirewallPolicyId      pulumi.StringPtrInput
-	State                    pulumi.StringPtrInput
-	Status                   pulumi.StringPtrInput
-	TargetId                 pulumi.StringPtrInput
-	ViolationAction          pulumi.StringPtrInput
-	ViolationAudit           pulumi.StringPtrInput
+	// (Updatable) List of allowed client programs for the SQL firewall policy.
+	AllowedClientPrograms pulumi.StringArrayInput
+	// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+	CompartmentId pulumi.StringPtrInput
+	// The database user name.
+	DbUserName pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput
+	// (Updatable) The description of the SQL firewall policy.
+	Description pulumi.StringPtrInput
+	// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+	DisplayName pulumi.StringPtrInput
+	// (Updatable) Specifies the SQL firewall policy enforcement option.
+	EnforcementScope pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput
+	// The OCID of the SQL firewall policy resource.
+	SqlFirewallPolicyId pulumi.StringPtrInput
+	// The current state of the SQL firewall policy.
+	State pulumi.StringPtrInput
+	// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+	Status pulumi.StringPtrInput
+	// Unique target identifier.
+	TargetId pulumi.StringPtrInput
+	// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+	ViolationAction pulumi.StringPtrInput
+	// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ViolationAudit pulumi.StringPtrInput
 }
 
 func (SqlFirewallPolicyManagementArgs) ElementType() reflect.Type {
@@ -247,90 +410,115 @@ func (o SqlFirewallPolicyManagementOutput) ToSqlFirewallPolicyManagementOutputWi
 	return o
 }
 
+// (Updatable) List of allowed ip addresses for the SQL firewall policy.
 func (o SqlFirewallPolicyManagementOutput) AllowedClientIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringArrayOutput { return v.AllowedClientIps }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) List of allowed operating system user names for the SQL firewall policy.
 func (o SqlFirewallPolicyManagementOutput) AllowedClientOsUsernames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringArrayOutput { return v.AllowedClientOsUsernames }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) List of allowed client programs for the SQL firewall policy.
 func (o SqlFirewallPolicyManagementOutput) AllowedClientPrograms() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringArrayOutput { return v.AllowedClientPrograms }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) The OCID of the compartment containing the SQL firewall policy.
 func (o SqlFirewallPolicyManagementOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The database user name.
 func (o SqlFirewallPolicyManagementOutput) DbUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.DbUserName }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 func (o SqlFirewallPolicyManagementOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) The description of the SQL firewall policy.
 func (o SqlFirewallPolicyManagementOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
 func (o SqlFirewallPolicyManagementOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies the SQL firewall policy enforcement option.
 func (o SqlFirewallPolicyManagementOutput) EnforcementScope() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.EnforcementScope }).(pulumi.StringOutput)
 }
 
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o SqlFirewallPolicyManagementOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// Details about the current state of the SQL firewall policy in Data Safe.
 func (o SqlFirewallPolicyManagementOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The OCID of the security policy corresponding to the SQL firewall policy.
 func (o SqlFirewallPolicyManagementOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
+// The OCID of the SQL firewall policy resource.
 func (o SqlFirewallPolicyManagementOutput) SqlFirewallPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.SqlFirewallPolicyId }).(pulumi.StringOutput)
 }
 
+// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
 func (o SqlFirewallPolicyManagementOutput) SqlLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.SqlLevel }).(pulumi.StringOutput)
 }
 
+// The current state of the SQL firewall policy.
 func (o SqlFirewallPolicyManagementOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
 func (o SqlFirewallPolicyManagementOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o SqlFirewallPolicyManagementOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// Unique target identifier.
 func (o SqlFirewallPolicyManagementOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
 }
 
+// The time that the SQL firewall policy was created, in the format defined by RFC3339.
 func (o SqlFirewallPolicyManagementOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
 func (o SqlFirewallPolicyManagementOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
 func (o SqlFirewallPolicyManagementOutput) ViolationAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.ViolationAction }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SqlFirewallPolicyManagementOutput) ViolationAudit() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.ViolationAudit }).(pulumi.StringOutput)
 }

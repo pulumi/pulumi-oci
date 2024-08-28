@@ -44,6 +44,11 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
      */
     private Boolean isCluster;
     /**
+     * @return The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     * 
+     */
+    private Boolean isDnsResolutionEnabled;
+    /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
@@ -128,6 +133,13 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
         return this.isCluster;
     }
     /**
+     * @return The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     * 
+     */
+    public Boolean isDnsResolutionEnabled() {
+        return this.isDnsResolutionEnabled;
+    }
+    /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
@@ -199,6 +211,7 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isCluster;
+        private Boolean isDnsResolutionEnabled;
         private String name;
         private List<String> nsgIds;
         private String privateIp;
@@ -216,6 +229,7 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
+    	      this.isDnsResolutionEnabled = defaults.isDnsResolutionEnabled;
     	      this.name = defaults.name;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
@@ -272,6 +286,14 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
               throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem", "isCluster");
             }
             this.isCluster = isCluster;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDnsResolutionEnabled(Boolean isDnsResolutionEnabled) {
+            if (isDnsResolutionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem", "isDnsResolutionEnabled");
+            }
+            this.isDnsResolutionEnabled = isDnsResolutionEnabled;
             return this;
         }
         @CustomType.Setter
@@ -349,6 +371,7 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isCluster = isCluster;
+            _resultValue.isDnsResolutionEnabled = isDnsResolutionEnabled;
             _resultValue.name = name;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;

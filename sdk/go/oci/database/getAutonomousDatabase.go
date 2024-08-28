@@ -77,6 +77,8 @@ type LookupAutonomousDatabaseResult struct {
 	AutonomousDatabaseId          string `pulumi:"autonomousDatabaseId"`
 	// The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType string `pulumi:"autonomousMaintenanceScheduleType"`
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 	AvailableUpgradeVersions []string `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
@@ -412,6 +414,11 @@ func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseId() pulumi.Stri
 // The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 func (o LookupAutonomousDatabaseResultOutput) AutonomousMaintenanceScheduleType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AutonomousMaintenanceScheduleType }).(pulumi.StringOutput)
+}
+
+// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+func (o LookupAutonomousDatabaseResultOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.

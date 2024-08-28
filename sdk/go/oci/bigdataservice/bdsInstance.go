@@ -26,7 +26,6 @@ import (
 type BdsInstance struct {
 	pulumi.CustomResourceState
 
-	AddKafkaTrigger pulumi.IntPtrOutput `pulumi:"addKafkaTrigger"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringOutput `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -51,8 +50,6 @@ type BdsInstance struct {
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringOutput          `pulumi:"displayName"`
 	EdgeNode    BdsInstanceEdgeNodePtrOutput `pulumi:"edgeNode"`
-	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-	ExecuteBootstrapScriptTrigger pulumi.IntPtrOutput `pulumi:"executeBootstrapScriptTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
@@ -85,8 +82,6 @@ type BdsInstance struct {
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntOutput `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrOutput `pulumi:"osPatchVersion"`
-	// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-	RemoveKafkaTrigger pulumi.IntPtrOutput `pulumi:"removeKafkaTrigger"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -165,7 +160,6 @@ func GetBdsInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BdsInstance resources.
 type bdsInstanceState struct {
-	AddKafkaTrigger *int `pulumi:"addKafkaTrigger"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -190,8 +184,6 @@ type bdsInstanceState struct {
 	// (Updatable) Name of the BDS instance
 	DisplayName *string              `pulumi:"displayName"`
 	EdgeNode    *BdsInstanceEdgeNode `pulumi:"edgeNode"`
-	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-	ExecuteBootstrapScriptTrigger *int `pulumi:"executeBootstrapScriptTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
@@ -224,8 +216,6 @@ type bdsInstanceState struct {
 	NumberOfNodesRequiringMaintenanceReboot *int `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
-	// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-	RemoveKafkaTrigger *int `pulumi:"removeKafkaTrigger"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -238,7 +228,6 @@ type bdsInstanceState struct {
 }
 
 type BdsInstanceState struct {
-	AddKafkaTrigger pulumi.IntPtrInput
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringPtrInput
 	// The information about added Cloud SQL capability
@@ -263,8 +252,6 @@ type BdsInstanceState struct {
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringPtrInput
 	EdgeNode    BdsInstanceEdgeNodePtrInput
-	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-	ExecuteBootstrapScriptTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
@@ -297,8 +284,6 @@ type BdsInstanceState struct {
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntPtrInput
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrInput
-	// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-	RemoveKafkaTrigger pulumi.IntPtrInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -315,7 +300,6 @@ func (BdsInstanceState) ElementType() reflect.Type {
 }
 
 type bdsInstanceArgs struct {
-	AddKafkaTrigger *int `pulumi:"addKafkaTrigger"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -336,8 +320,6 @@ type bdsInstanceArgs struct {
 	// (Updatable) Name of the BDS instance
 	DisplayName string               `pulumi:"displayName"`
 	EdgeNode    *BdsInstanceEdgeNode `pulumi:"edgeNode"`
-	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-	ExecuteBootstrapScriptTrigger *int `pulumi:"executeBootstrapScriptTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
@@ -364,8 +346,6 @@ type bdsInstanceArgs struct {
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
-	// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-	RemoveKafkaTrigger *int `pulumi:"removeKafkaTrigger"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The utility node in the BDS instance
@@ -375,7 +355,6 @@ type bdsInstanceArgs struct {
 
 // The set of arguments for constructing a BdsInstance resource.
 type BdsInstanceArgs struct {
-	AddKafkaTrigger pulumi.IntPtrInput
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringPtrInput
 	// The information about added Cloud SQL capability
@@ -396,8 +375,6 @@ type BdsInstanceArgs struct {
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringInput
 	EdgeNode    BdsInstanceEdgeNodePtrInput
-	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-	ExecuteBootstrapScriptTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
@@ -424,8 +401,6 @@ type BdsInstanceArgs struct {
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrInput
-	// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-	RemoveKafkaTrigger pulumi.IntPtrInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The utility node in the BDS instance
@@ -520,10 +495,6 @@ func (o BdsInstanceOutput) ToBdsInstanceOutputWithContext(ctx context.Context) B
 	return o
 }
 
-func (o BdsInstanceOutput) AddKafkaTrigger() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.IntPtrOutput { return v.AddKafkaTrigger }).(pulumi.IntPtrOutput)
-}
-
 // (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 func (o BdsInstanceOutput) BootstrapScriptUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.BootstrapScriptUrl }).(pulumi.StringOutput)
@@ -585,11 +556,6 @@ func (o BdsInstanceOutput) DisplayName() pulumi.StringOutput {
 
 func (o BdsInstanceOutput) EdgeNode() BdsInstanceEdgeNodePtrOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceEdgeNodePtrOutput { return v.EdgeNode }).(BdsInstanceEdgeNodePtrOutput)
-}
-
-// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-func (o BdsInstanceOutput) ExecuteBootstrapScriptTrigger() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.IntPtrOutput { return v.ExecuteBootstrapScriptTrigger }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -670,11 +636,6 @@ func (o BdsInstanceOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntO
 // (Updatable) The version of the patch to be upated.
 func (o BdsInstanceOutput) OsPatchVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.OsPatchVersion }).(pulumi.StringPtrOutput)
-}
-
-// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-func (o BdsInstanceOutput) RemoveKafkaTrigger() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.IntPtrOutput { return v.RemoveKafkaTrigger }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

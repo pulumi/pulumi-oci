@@ -357,6 +357,13 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.externalId);
     }
 
+    @Import(name="forceDelete")
+    private @Nullable Output<Boolean> forceDelete;
+
+    public Optional<Output<Boolean>> forceDelete() {
+        return Optional.ofNullable(this.forceDelete);
+    }
+
     /**
      * The basic endpoint for the identity domain
      * 
@@ -1335,6 +1342,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         this.emails = $.emails;
         this.entitlements = $.entitlements;
         this.externalId = $.externalId;
+        this.forceDelete = $.forceDelete;
         this.idcsEndpoint = $.idcsEndpoint;
         this.ims = $.ims;
         this.locale = $.locale;
@@ -1833,6 +1841,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder externalId(String externalId) {
             return externalId(Output.of(externalId));
+        }
+
+        public Builder forceDelete(@Nullable Output<Boolean> forceDelete) {
+            $.forceDelete = forceDelete;
+            return this;
+        }
+
+        public Builder forceDelete(Boolean forceDelete) {
+            return forceDelete(Output.of(forceDelete));
         }
 
         /**

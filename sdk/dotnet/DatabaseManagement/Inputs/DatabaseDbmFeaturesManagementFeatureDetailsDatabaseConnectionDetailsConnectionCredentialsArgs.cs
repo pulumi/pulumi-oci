@@ -26,6 +26,12 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         [Input("credentialType")]
         public Input<string>? CredentialType { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        /// </summary>
+        [Input("namedCredentialId")]
+        public Input<string>? NamedCredentialId { get; set; }
+
         [Input("passwordSecretId")]
         private Input<string>? _passwordSecretId;
 

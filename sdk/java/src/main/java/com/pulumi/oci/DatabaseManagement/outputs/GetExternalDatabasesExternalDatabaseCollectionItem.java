@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbmgmtFeatureConfig;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail;
 import java.lang.String;
 import java.util.List;
@@ -21,6 +22,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      */
     private String compartmentId;
     /**
+     * @return The operating system of database.
+     * 
+     */
+    private String databasePlatformName;
+    /**
      * @return The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
      * 
      */
@@ -30,6 +36,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      * 
      */
     private String databaseType;
+    /**
+     * @return The Oracle database version.
+     * 
+     */
+    private String databaseVersion;
     /**
      * @return The configuration of the Database Management service.
      * 
@@ -45,6 +56,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      * 
      */
     private String dbUniqueName;
+    /**
+     * @return The list of feature configurations
+     * 
+     */
+    private List<GetExternalDatabasesExternalDatabaseCollectionItemDbmgmtFeatureConfig> dbmgmtFeatureConfigs;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -105,6 +121,13 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
         return this.compartmentId;
     }
     /**
+     * @return The operating system of database.
+     * 
+     */
+    public String databasePlatformName() {
+        return this.databasePlatformName;
+    }
+    /**
      * @return The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
      * 
      */
@@ -117,6 +140,13 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      */
     public String databaseType() {
         return this.databaseType;
+    }
+    /**
+     * @return The Oracle database version.
+     * 
+     */
+    public String databaseVersion() {
+        return this.databaseVersion;
     }
     /**
      * @return The configuration of the Database Management service.
@@ -138,6 +168,13 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      */
     public String dbUniqueName() {
         return this.dbUniqueName;
+    }
+    /**
+     * @return The list of feature configurations
+     * 
+     */
+    public List<GetExternalDatabasesExternalDatabaseCollectionItemDbmgmtFeatureConfig> dbmgmtFeatureConfigs() {
+        return this.dbmgmtFeatureConfigs;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -220,11 +257,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String databasePlatformName;
         private String databaseSubType;
         private String databaseType;
+        private String databaseVersion;
         private List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs;
         private List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos;
         private String dbUniqueName;
+        private List<GetExternalDatabasesExternalDatabaseCollectionItemDbmgmtFeatureConfig> dbmgmtFeatureConfigs;
         private Map<String,String> definedTags;
         private String displayName;
         private String externalContainerDatabaseId;
@@ -239,11 +279,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
         public Builder(GetExternalDatabasesExternalDatabaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.databasePlatformName = defaults.databasePlatformName;
     	      this.databaseSubType = defaults.databaseSubType;
     	      this.databaseType = defaults.databaseType;
+    	      this.databaseVersion = defaults.databaseVersion;
     	      this.dbManagementConfigs = defaults.dbManagementConfigs;
     	      this.dbSystemInfos = defaults.dbSystemInfos;
     	      this.dbUniqueName = defaults.dbUniqueName;
+    	      this.dbmgmtFeatureConfigs = defaults.dbmgmtFeatureConfigs;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.externalContainerDatabaseId = defaults.externalContainerDatabaseId;
@@ -265,6 +308,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder databasePlatformName(String databasePlatformName) {
+            if (databasePlatformName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "databasePlatformName");
+            }
+            this.databasePlatformName = databasePlatformName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
             if (databaseSubType == null) {
               throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "databaseSubType");
@@ -278,6 +329,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
               throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "databaseType");
             }
             this.databaseType = databaseType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseVersion(String databaseVersion) {
+            if (databaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "databaseVersion");
+            }
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
@@ -309,6 +368,17 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
             }
             this.dbUniqueName = dbUniqueName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbmgmtFeatureConfigs(List<GetExternalDatabasesExternalDatabaseCollectionItemDbmgmtFeatureConfig> dbmgmtFeatureConfigs) {
+            if (dbmgmtFeatureConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "dbmgmtFeatureConfigs");
+            }
+            this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+            return this;
+        }
+        public Builder dbmgmtFeatureConfigs(GetExternalDatabasesExternalDatabaseCollectionItemDbmgmtFeatureConfig... dbmgmtFeatureConfigs) {
+            return dbmgmtFeatureConfigs(List.of(dbmgmtFeatureConfigs));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -396,11 +466,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
         public GetExternalDatabasesExternalDatabaseCollectionItem build() {
             final var _resultValue = new GetExternalDatabasesExternalDatabaseCollectionItem();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.databasePlatformName = databasePlatformName;
             _resultValue.databaseSubType = databaseSubType;
             _resultValue.databaseType = databaseType;
+            _resultValue.databaseVersion = databaseVersion;
             _resultValue.dbManagementConfigs = dbManagementConfigs;
             _resultValue.dbSystemInfos = dbSystemInfos;
             _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.externalContainerDatabaseId = externalContainerDatabaseId;

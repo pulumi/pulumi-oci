@@ -13,10 +13,11 @@ namespace Pulumi.Oci.Waf.Outputs
     [OutputType]
     public sealed class AppFirewallPolicyActionBody
     {
+        public readonly string? Template;
         /// <summary>
         /// (Updatable) Static response body text.
         /// </summary>
-        public readonly string Text;
+        public readonly string? Text;
         /// <summary>
         /// (Updatable) Type of HttpResponseBody.
         /// </summary>
@@ -24,10 +25,13 @@ namespace Pulumi.Oci.Waf.Outputs
 
         [OutputConstructor]
         private AppFirewallPolicyActionBody(
-            string text,
+            string? template,
+
+            string? text,
 
             string type)
         {
+            Template = template;
             Text = text;
             Type = type;
         }

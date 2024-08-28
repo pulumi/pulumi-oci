@@ -15,30 +15,62 @@ public final class DatabaseSecurityConfigManagementSqlFirewallConfigArgs extends
 
     public static final DatabaseSecurityConfigManagementSqlFirewallConfigArgs Empty = new DatabaseSecurityConfigManagementSqlFirewallConfigArgs();
 
+    /**
+     * (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+     * 
+     */
     @Import(name="excludeJob")
     private @Nullable Output<String> excludeJob;
 
+    /**
+     * @return (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+     * 
+     */
     public Optional<Output<String>> excludeJob() {
         return Optional.ofNullable(this.excludeJob);
     }
 
+    /**
+     * (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+     * 
+     */
     @Import(name="status")
     private @Nullable Output<String> status;
 
+    /**
+     * @return (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+     * 
+     */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * The most recent time when the firewall status is updated, in the format defined by RFC3339.
+     * 
+     */
     @Import(name="timeStatusUpdated")
     private @Nullable Output<String> timeStatusUpdated;
 
+    /**
+     * @return The most recent time when the firewall status is updated, in the format defined by RFC3339.
+     * 
+     */
     public Optional<Output<String>> timeStatusUpdated() {
         return Optional.ofNullable(this.timeStatusUpdated);
     }
 
+    /**
+     * (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+     * 
+     */
     @Import(name="violationLogAutoPurge")
     private @Nullable Output<String> violationLogAutoPurge;
 
+    /**
+     * @return (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+     * 
+     */
     public Optional<Output<String>> violationLogAutoPurge() {
         return Optional.ofNullable(this.violationLogAutoPurge);
     }
@@ -70,38 +102,86 @@ public final class DatabaseSecurityConfigManagementSqlFirewallConfigArgs extends
             $ = new DatabaseSecurityConfigManagementSqlFirewallConfigArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param excludeJob (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludeJob(@Nullable Output<String> excludeJob) {
             $.excludeJob = excludeJob;
             return this;
         }
 
+        /**
+         * @param excludeJob (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludeJob(String excludeJob) {
             return excludeJob(Output.of(excludeJob));
         }
 
+        /**
+         * @param status (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
             return this;
         }
 
+        /**
+         * @param status (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param timeStatusUpdated The most recent time when the firewall status is updated, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeStatusUpdated(@Nullable Output<String> timeStatusUpdated) {
             $.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
 
+        /**
+         * @param timeStatusUpdated The most recent time when the firewall status is updated, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeStatusUpdated(String timeStatusUpdated) {
             return timeStatusUpdated(Output.of(timeStatusUpdated));
         }
 
+        /**
+         * @param violationLogAutoPurge (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+         * 
+         * @return builder
+         * 
+         */
         public Builder violationLogAutoPurge(@Nullable Output<String> violationLogAutoPurge) {
             $.violationLogAutoPurge = violationLogAutoPurge;
             return this;
         }
 
+        /**
+         * @param violationLogAutoPurge (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+         * 
+         * @return builder
+         * 
+         */
         public Builder violationLogAutoPurge(String violationLogAutoPurge) {
             return violationLogAutoPurge(Output.of(violationLogAutoPurge));
         }

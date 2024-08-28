@@ -11,8 +11,11 @@ import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionArg
 import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionPlainArgs;
 import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionsArgs;
 import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionsPlainArgs;
+import com.pulumi.oci.AnnouncementsService.inputs.GetServicesArgs;
+import com.pulumi.oci.AnnouncementsService.inputs.GetServicesPlainArgs;
 import com.pulumi.oci.AnnouncementsService.outputs.GetAnnouncementSubscriptionResult;
 import com.pulumi.oci.AnnouncementsService.outputs.GetAnnouncementSubscriptionsResult;
+import com.pulumi.oci.AnnouncementsService.outputs.GetServicesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -396,5 +399,189 @@ public final class AnnouncementsServiceFunctions {
      */
     public static CompletableFuture<GetAnnouncementSubscriptionsResult> getAnnouncementSubscriptionsPlain(GetAnnouncementSubscriptionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", TypeShape.of(GetAnnouncementSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Services in Oracle Cloud Infrastructure.
+     * 
+     * List all OCI services
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = AnnouncementsServiceFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .commsManagerName(serviceCommsManagerName)
+     *             .platformType(servicePlatformType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServicesResult> getServices(GetServicesArgs args) {
+        return getServices(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Services in Oracle Cloud Infrastructure.
+     * 
+     * List all OCI services
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = AnnouncementsServiceFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .commsManagerName(serviceCommsManagerName)
+     *             .platformType(servicePlatformType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args) {
+        return getServicesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Services in Oracle Cloud Infrastructure.
+     * 
+     * List all OCI services
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = AnnouncementsServiceFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .commsManagerName(serviceCommsManagerName)
+     *             .platformType(servicePlatformType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServicesResult> getServices(GetServicesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AnnouncementsService/getServices:getServices", TypeShape.of(GetServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Services in Oracle Cloud Infrastructure.
+     * 
+     * List all OCI services
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = AnnouncementsServiceFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .commsManagerName(serviceCommsManagerName)
+     *             .platformType(servicePlatformType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AnnouncementsService/getServices:getServices", TypeShape.of(GetServicesResult.class), args, Utilities.withVersion(options));
     }
 }

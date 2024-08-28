@@ -33,6 +33,9 @@ namespace Pulumi.Oci.DatabaseManagement
         [Output("featureDetails")]
         public Output<Outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails?> FeatureDetails { get; private set; } = null!;
 
+        [Output("modifyPluggableDatabaseDbmFeature")]
+        public Output<bool?> ModifyPluggableDatabaseDbmFeature { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
         /// </summary>
@@ -101,6 +104,9 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("featureDetails")]
         public Input<Inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs>? FeatureDetails { get; set; }
 
+        [Input("modifyPluggableDatabaseDbmFeature")]
+        public Input<bool>? ModifyPluggableDatabaseDbmFeature { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
         /// </summary>
@@ -130,6 +136,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("featureDetails")]
         public Input<Inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsGetArgs>? FeatureDetails { get; set; }
+
+        [Input("modifyPluggableDatabaseDbmFeature")]
+        public Input<bool>? ModifyPluggableDatabaseDbmFeature { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.

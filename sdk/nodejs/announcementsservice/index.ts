@@ -30,6 +30,11 @@ export const getAnnouncementSubscriptions: typeof import("./getAnnouncementSubsc
 export const getAnnouncementSubscriptionsOutput: typeof import("./getAnnouncementSubscriptions").getAnnouncementSubscriptionsOutput = null as any;
 utilities.lazyLoad(exports, ["getAnnouncementSubscriptions","getAnnouncementSubscriptionsOutput"], () => require("./getAnnouncementSubscriptions"));
 
+export { GetServicesArgs, GetServicesResult, GetServicesOutputArgs } from "./getServices";
+export const getServices: typeof import("./getServices").getServices = null as any;
+export const getServicesOutput: typeof import("./getServices").getServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getServices","getServicesOutput"], () => require("./getServices"));
+
 
 const _module = {
     version: utilities.getVersion(),

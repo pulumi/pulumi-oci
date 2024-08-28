@@ -82,6 +82,7 @@ type LookupDataGuardAssociationResult struct {
 	DbSystemFreeformTags        map[string]string `pulumi:"dbSystemFreeformTags"`
 	DeleteStandbyDbHomeOnDelete string            `pulumi:"deleteStandbyDbHomeOnDelete"`
 	DisplayName                 string            `pulumi:"displayName"`
+	Domain                      string            `pulumi:"domain"`
 	FaultDomains                []string          `pulumi:"faultDomains"`
 	Hostname                    string            `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
@@ -238,6 +239,10 @@ func (o LookupDataGuardAssociationResultOutput) DeleteStandbyDbHomeOnDelete() pu
 
 func (o LookupDataGuardAssociationResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) FaultDomains() pulumi.StringArrayOutput {

@@ -74,6 +74,8 @@ type LookupProtectionPolicyResult struct {
 	IsPredefinedPolicy bool `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+	MustEnforceCloudLocality bool `pulumi:"mustEnforceCloudLocality"`
 	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
 	PolicyLockedDateTime string `pulumi:"policyLockedDateTime"`
 	ProtectionPolicyId   string `pulumi:"protectionPolicyId"`
@@ -163,6 +165,11 @@ func (o LookupProtectionPolicyResultOutput) IsPredefinedPolicy() pulumi.BoolOutp
 // Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 func (o LookupProtectionPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+func (o LookupProtectionPolicyResultOutput) MustEnforceCloudLocality() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) bool { return v.MustEnforceCloudLocality }).(pulumi.BoolOutput)
 }
 
 // An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.

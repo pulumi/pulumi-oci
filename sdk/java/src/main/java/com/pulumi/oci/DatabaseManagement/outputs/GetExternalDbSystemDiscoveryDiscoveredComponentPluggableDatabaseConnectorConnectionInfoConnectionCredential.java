@@ -21,6 +21,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
      */
     private String credentialType;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+     * 
+     */
+    private String namedCredentialId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
      * 
      */
@@ -55,6 +60,13 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
      */
     public String credentialType() {
         return this.credentialType;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+     * 
+     */
+    public String namedCredentialId() {
+        return this.namedCredentialId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
@@ -96,6 +108,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
     public static final class Builder {
         private String credentialName;
         private String credentialType;
+        private String namedCredentialId;
         private String passwordSecretId;
         private String role;
         private String sslSecretId;
@@ -105,6 +118,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
     	      Objects.requireNonNull(defaults);
     	      this.credentialName = defaults.credentialName;
     	      this.credentialType = defaults.credentialType;
+    	      this.namedCredentialId = defaults.namedCredentialId;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.sslSecretId = defaults.sslSecretId;
@@ -125,6 +139,14 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
               throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential", "credentialType");
             }
             this.credentialType = credentialType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder namedCredentialId(String namedCredentialId) {
+            if (namedCredentialId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential", "namedCredentialId");
+            }
+            this.namedCredentialId = namedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -163,6 +185,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
             final var _resultValue = new GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential();
             _resultValue.credentialName = credentialName;
             _resultValue.credentialType = credentialType;
+            _resultValue.namedCredentialId = namedCredentialId;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.sslSecretId = sslSecretId;

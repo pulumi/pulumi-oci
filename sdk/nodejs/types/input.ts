@@ -1528,7 +1528,7 @@ export namespace Analytics {
 export namespace AnnouncementsService {
     export interface AnnouncementSubscriptionFilterGroups {
         /**
-         * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+         * A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          */
         filters: pulumi.Input<pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionFilterGroupsFilter>[]>;
         /**
@@ -1539,7 +1539,7 @@ export namespace AnnouncementsService {
 
     export interface AnnouncementSubscriptionFilterGroupsFilter {
         /**
-         * The type of filter.
+         * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          */
         type: pulumi.Input<string>;
         /**
@@ -1550,7 +1550,7 @@ export namespace AnnouncementsService {
 
     export interface AnnouncementSubscriptionsFilterGroupFilter {
         /**
-         * (Updatable) The type of filter.
+         * (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          */
         type: pulumi.Input<string>;
         /**
@@ -1576,6 +1576,19 @@ export namespace AnnouncementsService {
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
+
+    export interface GetServicesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetServicesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
 }
 
 export namespace ApiGateway {
@@ -5110,21 +5123,9 @@ export namespace BigDataService {
          */
         ocpus?: pulumi.Input<number>;
         /**
-         * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-         */
-        odhVersion?: pulumi.Input<string>;
-        /**
-         * BDS-assigned Operating System version for the node.
-         */
-        osVersion?: pulumi.Input<string>;
-        /**
          * Shape of the node
          */
         shape: pulumi.Input<string>;
-        /**
-         * The fingerprint of the SSH key used for node access
-         */
-        sshFingerprint?: pulumi.Input<string>;
     }
 
     export interface BdsInstanceCloudSqlDetailKerberosDetail {
@@ -20288,9 +20289,21 @@ export namespace DataSafe {
     }
 
     export interface DatabaseSecurityConfigManagementSqlFirewallConfig {
+        /**
+         * (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+         */
         excludeJob?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+         */
         status?: pulumi.Input<string>;
+        /**
+         * The most recent time when the firewall status is updated, in the format defined by RFC3339.
+         */
         timeStatusUpdated?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+         */
         violationLogAutoPurge?: pulumi.Input<string>;
     }
 
@@ -23804,6 +23817,10 @@ export namespace Database {
 
     export interface AutonomousDatabaseLocalStandbyDb {
         /**
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
          * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
          */
         lagTimeInSeconds?: pulumi.Input<number>;
@@ -23932,6 +23949,10 @@ export namespace Database {
     }
 
     export interface AutonomousDatabaseStandbyDb {
+        /**
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         */
+        availabilityDomain?: pulumi.Input<string>;
         /**
          * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
          */
@@ -27409,6 +27430,104 @@ export namespace Database {
 }
 
 export namespace DatabaseManagement {
+    export interface AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails {
+        /**
+         * The connector details required to connect to an Oracle cloud database.
+         */
+        connectorDetails?: pulumi.Input<inputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails>;
+        /**
+         * The connection details required to connect to the database.
+         */
+        databaseConnectionDetails?: pulumi.Input<inputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails>;
+        /**
+         * The name of the Database Management feature.
+         */
+        feature: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails {
+        /**
+         * The list of supported connection types:
+         * * PE: Private endpoint
+         * * MACS: Management agent
+         * * EXTERNAL: External database connector
+         * * DIRECT: Direct connection
+         */
+        connectorType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+         */
+        databaseConnectorId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+         */
+        managementAgentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
+        privateEndPointId?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails {
+        /**
+         * The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+         */
+        connectionCredentials?: pulumi.Input<inputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials>;
+        /**
+         * The details of the Oracle Database connection string.
+         */
+        connectionString?: pulumi.Input<inputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString>;
+    }
+
+    export interface AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials {
+        /**
+         * The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+         *
+         * For example: inventorydb.abc112233445566778899
+         */
+        credentialName?: pulumi.Input<string>;
+        /**
+         * The type of credential used to connect to the database.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the user connecting to the database.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+         */
+        sslSecretId?: pulumi.Input<string>;
+        /**
+         * The user name used to connect to the database.
+         */
+        userName?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString {
+        /**
+         * The list of supported connection types:
+         * * BASIC: Basic connection details
+         */
+        connectionType?: pulumi.Input<string>;
+        /**
+         * The port number used to connect to the database.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * The protocol used to connect to the database.
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * The service name of the database.
+         */
+        service?: pulumi.Input<string>;
+    }
+
     export interface DatabaseDbmFeaturesManagementFeatureDetails {
         /**
          * The connector details required to connect to an Oracle cloud database.
@@ -27438,6 +27557,7 @@ export namespace DatabaseManagement {
          * * PE: Private endpoint
          * * MACS: Management agent
          * * EXTERNAL: External database connector
+         * * DIRECT: Direct connection
          */
         connectorType?: pulumi.Input<string>;
         /**
@@ -27476,6 +27596,10 @@ export namespace DatabaseManagement {
          * The type of credential used to connect to the database.
          */
         credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
          */
@@ -27626,6 +27750,10 @@ export namespace DatabaseManagement {
          * The type of the credential for tablespace administration tasks.
          */
         credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
@@ -28003,6 +28131,10 @@ export namespace DatabaseManagement {
          */
         credentialType?: pulumi.Input<string>;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
         passwordSecretId?: pulumi.Input<string>;
@@ -28129,6 +28261,10 @@ export namespace DatabaseManagement {
          * The type of the credential for tablespace administration tasks.
          */
         credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
@@ -28313,6 +28449,10 @@ export namespace DatabaseManagement {
          * The type of the credential for tablespace administration tasks.
          */
         credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
@@ -28937,6 +29077,7 @@ export namespace DatabaseManagement {
          * * PE: Private endpoint
          * * MACS: Management agent
          * * EXTERNAL: External database connector
+         * * DIRECT: Direct connection
          */
         connectorType?: pulumi.Input<string>;
         /**
@@ -28974,6 +29115,7 @@ export namespace DatabaseManagement {
          * * PE: Private endpoint
          * * MACS: Management agent
          * * EXTERNAL: External database connector
+         * * DIRECT: Direct connection
          */
         connectorType?: pulumi.Input<string>;
         /**
@@ -29007,6 +29149,7 @@ export namespace DatabaseManagement {
          * * PE: Private endpoint
          * * MACS: Management agent
          * * EXTERNAL: External database connector
+         * * DIRECT: Direct connection
          */
         connectorType?: pulumi.Input<string>;
         /**
@@ -29779,6 +29922,113 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface ManagedDatabaseDbmgmtFeatureConfig {
+        /**
+         * The connector details required to connect to an Oracle cloud database.
+         */
+        connectorDetails?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfigConnectorDetail>[]>;
+        /**
+         * The connection details required to connect to the database.
+         */
+        databaseConnectionDetails?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetail>[]>;
+        /**
+         * The name of the Database Management feature.
+         */
+        feature?: pulumi.Input<string>;
+        /**
+         * The list of statuses for Database Management features.
+         */
+        featureStatus?: pulumi.Input<string>;
+        /**
+         * The Oracle license model that applies to the external database.
+         */
+        licenseModel?: pulumi.Input<string>;
+    }
+
+    export interface ManagedDatabaseDbmgmtFeatureConfigConnectorDetail {
+        /**
+         * The list of supported connection types:
+         * * PE: Private endpoint
+         * * MACS: Management agent
+         * * EXTERNAL: External database connector
+         */
+        connectorType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+         */
+        databaseConnectorId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+         */
+        managementAgentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
+        privateEndPointId?: pulumi.Input<string>;
+    }
+
+    export interface ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetail {
+        /**
+         * The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+         */
+        connectionCredentials?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredential>[]>;
+        /**
+         * The details of the Oracle Database connection string.
+         */
+        connectionStrings?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionString>[]>;
+    }
+
+    export interface ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredential {
+        /**
+         * The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+         */
+        credentialName?: pulumi.Input<string>;
+        /**
+         * The type of credential used to connect to the database.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the user connecting to the database.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+         */
+        sslSecretId?: pulumi.Input<string>;
+        /**
+         * The user name used to connect to the database.
+         */
+        userName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionString {
+        /**
+         * The list of supported connection types:
+         * * BASIC: Basic connection details
+         */
+        connectionType?: pulumi.Input<string>;
+        /**
+         * The port number used to connect to the database.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * The protocol used to connect to the database.
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * The service name of the database.
+         */
+        service?: pulumi.Input<string>;
+    }
+
     export interface ManagedDatabaseGroupManagedDatabase {
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -30004,6 +30254,7 @@ export namespace DatabaseManagement {
          * * PE: Private endpoint
          * * MACS: Management agent
          * * EXTERNAL: External database connector
+         * * DIRECT: Direct connection
          */
         connectorType?: pulumi.Input<string>;
         /**
@@ -30042,6 +30293,10 @@ export namespace DatabaseManagement {
          * The type of credential used to connect to the database.
          */
         credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
          */
@@ -30874,6 +31129,105 @@ export namespace DatabaseTools {
     }
 }
 
+export namespace DelegateAccessControl {
+    export interface GetDelegatedResourceAccessRequestHistoriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDelegatedResourceAccessRequestHistoriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDelegatedResourceAccessRequestsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDelegatedResourceAccessRequestsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDelegationControlResourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDelegationControlResourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDelegationControlsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDelegationControlsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDelegationSubscriptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDelegationSubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetServiceProviderActionsFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetServiceProviderActionsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetServiceProvidersFilter {
+        /**
+         * A filter to return Service Provider resources that match the given name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetServiceProvidersFilterArgs {
+        /**
+         * A filter to return Service Provider resources that match the given name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+}
+
 export namespace DemandSignal {
     export interface GetOccDemandSignalsFilter {
         name: string;
@@ -30948,6 +31302,148 @@ export namespace DemandSignal {
          * (Updatable)
          */
         value: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+}
+
+export namespace Desktops {
+    export interface DesktopPoolAvailabilityPolicy {
+        /**
+         * (Updatable) Provides the schedule information for a desktop.
+         */
+        startSchedule: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicyStartSchedule>;
+        /**
+         * (Updatable) Provides the schedule information for a desktop.
+         */
+        stopSchedule: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicyStopSchedule>;
+    }
+
+    export interface DesktopPoolAvailabilityPolicyStartSchedule {
+        /**
+         * (Updatable) A cron expression describing the desktop's schedule.
+         */
+        cronExpression: pulumi.Input<string>;
+        /**
+         * (Updatable) The timezone of the desktop's schedule.
+         */
+        timezone: pulumi.Input<string>;
+    }
+
+    export interface DesktopPoolAvailabilityPolicyStopSchedule {
+        /**
+         * (Updatable) A cron expression describing the desktop's schedule.
+         */
+        cronExpression: pulumi.Input<string>;
+        /**
+         * (Updatable) The timezone of the desktop's schedule.
+         */
+        timezone: pulumi.Input<string>;
+    }
+
+    export interface DesktopPoolDevicePolicy {
+        /**
+         * (Updatable) The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
+         */
+        audioMode: pulumi.Input<string>;
+        /**
+         * (Updatable) The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
+         */
+        cdmMode: pulumi.Input<string>;
+        /**
+         * (Updatable) The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The clipboard can be used to transfer data to the desktop only.  FROMDESKTOP: The clipboard can be used to transfer data from the desktop only. FULL: The clipboard can be used to transfer data to and from the desktop.
+         */
+        clipboardMode: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates whether the display is enabled.
+         */
+        isDisplayEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether the keyboard is enabled.
+         */
+        isKeyboardEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether the pointer is enabled.
+         */
+        isPointerEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether printing is enabled.
+         */
+        isPrintingEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface DesktopPoolImage {
+        /**
+         * The OCID of the desktop image.
+         */
+        imageId: pulumi.Input<string>;
+        /**
+         * The name of the desktop image.
+         */
+        imageName: pulumi.Input<string>;
+    }
+
+    export interface DesktopPoolNetworkConfiguration {
+        /**
+         * The OCID of the subnet to use for the desktop pool.
+         */
+        subnetId: pulumi.Input<string>;
+        /**
+         * The OCID of the VCN used by the desktop pool.
+         */
+        vcnId: pulumi.Input<string>;
+    }
+
+    export interface GetDesktopPoolDesktopsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDesktopPoolDesktopsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDesktopPoolVolumesFilter {
+        /**
+         * The name of the desktop pool volume.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDesktopPoolVolumesFilterArgs {
+        /**
+         * The name of the desktop pool volume.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDesktopPoolsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDesktopPoolsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDesktopsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDesktopsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 }
 
@@ -33945,97 +34441,6 @@ export namespace FileStorage {
     }
 }
 
-export namespace FleetSoftwareUpdate {
-    export interface FsuCollectionActiveFsuCycle {
-        displayName?: pulumi.Input<string>;
-        id?: pulumi.Input<string>;
-    }
-
-    export interface FsuCollectionFleetDiscovery {
-        filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscoveryFilter>[]>;
-        fsuDiscoveryId?: pulumi.Input<string>;
-        query?: pulumi.Input<string>;
-        strategy: pulumi.Input<string>;
-        targets?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface FsuCollectionFleetDiscoveryFilter {
-        entityType?: pulumi.Input<string>;
-        identifiers?: pulumi.Input<pulumi.Input<string>[]>;
-        mode?: pulumi.Input<string>;
-        names?: pulumi.Input<pulumi.Input<string>[]>;
-        operator?: pulumi.Input<string>;
-        tags?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscoveryFilterTag>[]>;
-        type: pulumi.Input<string>;
-        versions?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface FsuCollectionFleetDiscoveryFilterTag {
-        key: pulumi.Input<string>;
-        namespace?: pulumi.Input<string>;
-        value: pulumi.Input<string>;
-    }
-
-    export interface FsuCycleApplyActionSchedule {
-        timeToStart: pulumi.Input<string>;
-        type: pulumi.Input<string>;
-    }
-
-    export interface FsuCycleBatchingStrategy {
-        isForceRolling?: pulumi.Input<boolean>;
-        isWaitForBatchResume?: pulumi.Input<boolean>;
-        percentage?: pulumi.Input<number>;
-        type?: pulumi.Input<string>;
-    }
-
-    export interface FsuCycleDiagnosticsCollection {
-        logCollectionMode?: pulumi.Input<string>;
-    }
-
-    export interface FsuCycleGoalVersionDetails {
-        homePolicy?: pulumi.Input<string>;
-        newHomePrefix?: pulumi.Input<string>;
-        softwareImageId?: pulumi.Input<string>;
-        type: pulumi.Input<string>;
-        version?: pulumi.Input<string>;
-    }
-
-    export interface FsuCycleNextActionToExecute {
-        timeToStart?: pulumi.Input<string>;
-        type?: pulumi.Input<string>;
-    }
-
-    export interface FsuCycleStageActionSchedule {
-        timeToStart: pulumi.Input<string>;
-        type: pulumi.Input<string>;
-    }
-
-    export interface GetFsuCollectionsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetFsuCollectionsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetFsuCyclesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetFsuCyclesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-}
-
 export namespace Functions {
     export interface ApplicationImagePolicyConfig {
         /**
@@ -34587,275 +34992,6 @@ export namespace GenerativeAi {
          * The type of the model metrics. Each type of model can expect a different set of model metrics.
          */
         modelMetricsType?: pulumi.Input<string>;
-    }
-}
-
-export namespace GloballyDistributedDatabase {
-    export interface GetPrivateEndpointsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetPrivateEndpointsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetShardedDatabasesFilter {
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetShardedDatabasesFilterArgs {
-        /**
-         * Name of the shard.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface ShardedDatabaseCatalogDetail {
-        /**
-         * Admin password for the catalog database.
-         */
-        adminPassword: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-         */
-        cloudAutonomousVmClusterId: pulumi.Input<string>;
-        /**
-         * The compute count for the catalog database. It has to be in multiple of 2.
-         */
-        computeCount: pulumi.Input<number>;
-        /**
-         * Identifier of the underlying container database.
-         */
-        containerDatabaseId?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying container database parent.
-         */
-        containerDatabaseParentId?: pulumi.Input<string>;
-        /**
-         * The data disk group size to be allocated in GBs for the catalog database.
-         */
-        dataStorageSizeInGbs: pulumi.Input<number>;
-        /**
-         * Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
-         */
-        encryptionKeyDetails?: pulumi.Input<inputs.GloballyDistributedDatabase.ShardedDatabaseCatalogDetailEncryptionKeyDetails>;
-        /**
-         * Determines the auto-scaling mode for the catalog database.
-         */
-        isAutoScalingEnabled: pulumi.Input<boolean>;
-        /**
-         * Additional metadata related to shard's underlying supporting resource.
-         */
-        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * Name of the shard.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-         */
-        peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
-        /**
-         * Name of the shard-group to which the shard belongs.
-         */
-        shardGroup?: pulumi.Input<string>;
-        /**
-         * Status of shard or catalog or gsm for the sharded database.
-         */
-        status?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying supporting resource.
-         */
-        supportingResourceId?: pulumi.Input<string>;
-        /**
-         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires?: pulumi.Input<string>;
-        /**
-         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabaseCatalogDetailEncryptionKeyDetails {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
-         */
-        kmsKeyId: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
-         */
-        kmsKeyVersionId?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
-         */
-        vaultId: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabaseConnectionString {
-        /**
-         * Collection of connection strings.
-         */
-        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    }
-
-    export interface ShardedDatabaseGsm {
-        /**
-         * The compute amount available to the underlying autonomous database associated with shard.
-         */
-        computeCount?: pulumi.Input<number>;
-        /**
-         * The data disk group size to be allocated in GBs.
-         */
-        dataStorageSizeInGbs?: pulumi.Input<number>;
-        /**
-         * Additional metadata related to shard's underlying supporting resource.
-         */
-        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * Name of the shard.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * Status of shard or catalog or gsm for the sharded database.
-         */
-        status?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying supporting resource.
-         */
-        supportingResourceId?: pulumi.Input<string>;
-        /**
-         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires?: pulumi.Input<string>;
-        /**
-         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabasePatchOperation {
-        /**
-         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
-         */
-        operation: pulumi.Input<string>;
-        /**
-         * (Updatable)
-         */
-        selection: pulumi.Input<string>;
-        /**
-         * (Updatable)
-         */
-        value: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabaseShardDetail {
-        /**
-         * Admin password for shard database.
-         */
-        adminPassword: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-         */
-        cloudAutonomousVmClusterId: pulumi.Input<string>;
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: pulumi.Input<number>;
-        /**
-         * Identifier of the underlying container database.
-         */
-        containerDatabaseId?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying container database parent.
-         */
-        containerDatabaseParentId?: pulumi.Input<string>;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: pulumi.Input<number>;
-        /**
-         * Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
-         */
-        encryptionKeyDetails?: pulumi.Input<inputs.GloballyDistributedDatabase.ShardedDatabaseShardDetailEncryptionKeyDetails>;
-        /**
-         * Determines the auto-scaling mode for the shard database.
-         */
-        isAutoScalingEnabled: pulumi.Input<boolean>;
-        /**
-         * Additional metadata related to shard's underlying supporting resource.
-         */
-        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * Name of the shard.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-         */
-        peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
-        /**
-         * Name of the shard-group to which the shard belongs.
-         */
-        shardGroup?: pulumi.Input<string>;
-        /**
-         * The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
-         */
-        shardSpace?: pulumi.Input<string>;
-        /**
-         * Status of shard or catalog or gsm for the sharded database.
-         */
-        status?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying supporting resource.
-         */
-        supportingResourceId?: pulumi.Input<string>;
-        /**
-         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires?: pulumi.Input<string>;
-        /**
-         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabaseShardDetailEncryptionKeyDetails {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
-         */
-        kmsKeyId: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
-         */
-        kmsKeyVersionId?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
-         */
-        vaultId: pulumi.Input<string>;
     }
 }
 
@@ -63736,7 +63872,7 @@ export namespace Kms {
 
     export interface KeyAutoKeyRotationDetails {
         /**
-         * (Updatable) The last execution status message.
+         * (Updatable) The last execution status message of auto key rotation.
          */
         lastRotationMessage?: pulumi.Input<string>;
         /**
@@ -63744,19 +63880,19 @@ export namespace Kms {
          */
         lastRotationStatus?: pulumi.Input<string>;
         /**
-         * (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+         * (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
          */
         rotationIntervalInDays?: pulumi.Input<number>;
         /**
-         * (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+         * (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
          */
         timeOfLastRotation?: pulumi.Input<string>;
         /**
-         * (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+         * (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
          */
         timeOfNextRotation?: pulumi.Input<string>;
         /**
-         * (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+         * (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
          */
         timeOfScheduleStart?: pulumi.Input<string>;
     }
@@ -69386,6 +69522,13 @@ export namespace Mysql {
          * For a standalone DB System, this defines the fault domain in which the DB System is placed.
          */
         faultDomain?: pulumi.Input<string>;
+    }
+
+    export interface MysqlDbSystemCustomerContact {
+        /**
+         * (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+         */
+        email: pulumi.Input<string>;
     }
 
     export interface MysqlDbSystemDataStorage {
@@ -75145,10 +75288,6 @@ export namespace RecoveryMod {
     export interface ProtectedDatabaseRecoveryServiceSubnet {
         /**
          * (Updatable) The recovery service subnet OCID.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         recoveryServiceSubnetId: pulumi.Input<string>;
         /**
@@ -79341,10 +79480,11 @@ export namespace Waf {
     }
 
     export interface AppFirewallPolicyActionBody {
+        template?: pulumi.Input<string>;
         /**
          * (Updatable) Static response body text.
          */
-        text: pulumi.Input<string>;
+        text?: pulumi.Input<string>;
         /**
          * (Updatable) Type of HttpResponseBody.
          */

@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement":
+		r = &AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement{}
 	case "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement":
 		r = &DatabaseDbmFeaturesManagement{}
 	case "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint":
@@ -90,6 +92,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/databaseDbmFeaturesManagement",

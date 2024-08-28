@@ -205,6 +205,37 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+     * 
+     * If &#34;true&#34;, the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+     * 
+     * If &#34;false&#34;, the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+     * 
+     * New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+     * 
+     * Example: `true`
+     * 
+     */
+    @Import(name="isRequestIdEnabled")
+    private @Nullable Output<Boolean> isRequestIdEnabled;
+
+    /**
+     * @return (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+     * 
+     * If &#34;true&#34;, the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+     * 
+     * If &#34;false&#34;, the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+     * 
+     * New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+     * 
+     * Example: `true`
+     * 
+     */
+    public Optional<Output<Boolean>> isRequestIdEnabled() {
+        return Optional.ofNullable(this.isRequestIdEnabled);
+    }
+
+    /**
      * (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
      * 
      * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
@@ -233,6 +264,41 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<String>>> networkSecurityGroupIds() {
         return Optional.ofNullable(this.networkSecurityGroupIds);
+    }
+
+    /**
+     * (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+     * 
+     * If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+     * 
+     * If isRequestIdEnabled is false then this field is ignored.
+     * 
+     * If this field is not set or is set to &#34;&#34; then this field defaults to X-Request-Id
+     * 
+     * **Notes:**
+     * * Unless the header name is &#34;&#34; it must start with &#34;X-&#34; prefix.
+     * * Setting the header name to &#34;&#34; will set it to the default: X-Request-Id.
+     * 
+     */
+    @Import(name="requestIdHeader")
+    private @Nullable Output<String> requestIdHeader;
+
+    /**
+     * @return (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+     * 
+     * If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+     * 
+     * If isRequestIdEnabled is false then this field is ignored.
+     * 
+     * If this field is not set or is set to &#34;&#34; then this field defaults to X-Request-Id
+     * 
+     * **Notes:**
+     * * Unless the header name is &#34;&#34; it must start with &#34;X-&#34; prefix.
+     * * Setting the header name to &#34;&#34; will set it to the default: X-Request-Id.
+     * 
+     */
+    public Optional<Output<String>> requestIdHeader() {
+        return Optional.ofNullable(this.requestIdHeader);
     }
 
     /**
@@ -358,7 +424,9 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         this.ipMode = $.ipMode;
         this.isDeleteProtectionEnabled = $.isDeleteProtectionEnabled;
         this.isPrivate = $.isPrivate;
+        this.isRequestIdEnabled = $.isRequestIdEnabled;
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
+        this.requestIdHeader = $.requestIdHeader;
         this.reservedIps = $.reservedIps;
         this.shape = $.shape;
         this.shapeDetails = $.shapeDetails;
@@ -648,6 +716,43 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isRequestIdEnabled (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+         * 
+         * If &#34;true&#34;, the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+         * 
+         * If &#34;false&#34;, the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+         * 
+         * New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+         * 
+         * Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRequestIdEnabled(@Nullable Output<Boolean> isRequestIdEnabled) {
+            $.isRequestIdEnabled = isRequestIdEnabled;
+            return this;
+        }
+
+        /**
+         * @param isRequestIdEnabled (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+         * 
+         * If &#34;true&#34;, the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+         * 
+         * If &#34;false&#34;, the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+         * 
+         * New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+         * 
+         * Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRequestIdEnabled(Boolean isRequestIdEnabled) {
+            return isRequestIdEnabled(Output.of(isRequestIdEnabled));
+        }
+
+        /**
          * @param networkSecurityGroupIds (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
          * 
          * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
@@ -700,6 +805,47 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
+        }
+
+        /**
+         * @param requestIdHeader (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+         * 
+         * If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+         * 
+         * If isRequestIdEnabled is false then this field is ignored.
+         * 
+         * If this field is not set or is set to &#34;&#34; then this field defaults to X-Request-Id
+         * 
+         * **Notes:**
+         * * Unless the header name is &#34;&#34; it must start with &#34;X-&#34; prefix.
+         * * Setting the header name to &#34;&#34; will set it to the default: X-Request-Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestIdHeader(@Nullable Output<String> requestIdHeader) {
+            $.requestIdHeader = requestIdHeader;
+            return this;
+        }
+
+        /**
+         * @param requestIdHeader (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+         * 
+         * If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+         * 
+         * If isRequestIdEnabled is false then this field is ignored.
+         * 
+         * If this field is not set or is set to &#34;&#34; then this field defaults to X-Request-Id
+         * 
+         * **Notes:**
+         * * Unless the header name is &#34;&#34; it must start with &#34;X-&#34; prefix.
+         * * Setting the header name to &#34;&#34; will set it to the default: X-Request-Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestIdHeader(String requestIdHeader) {
+            return requestIdHeader(Output.of(requestIdHeader));
         }
 
         /**

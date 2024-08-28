@@ -204,6 +204,27 @@ public final class ProtectedDatabaseArgs extends com.pulumi.resources.ResourceAr
         return this.recoveryServiceSubnets;
     }
 
+    /**
+     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
     private ProtectedDatabaseArgs() {}
 
     private ProtectedDatabaseArgs(ProtectedDatabaseArgs $) {
@@ -219,6 +240,7 @@ public final class ProtectedDatabaseArgs extends com.pulumi.resources.ResourceAr
         this.password = $.password;
         this.protectionPolicyId = $.protectionPolicyId;
         this.recoveryServiceSubnets = $.recoveryServiceSubnets;
+        this.subscriptionId = $.subscriptionId;
     }
 
     public static Builder builder() {
@@ -503,6 +525,33 @@ public final class ProtectedDatabaseArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder recoveryServiceSubnets(ProtectedDatabaseRecoveryServiceSubnetArgs... recoveryServiceSubnets) {
             return recoveryServiceSubnets(List.of(recoveryServiceSubnets));
+        }
+
+        /**
+         * @param subscriptionId (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         public ProtectedDatabaseArgs build() {

@@ -252,6 +252,13 @@ public final class DomainsGroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.externalId);
     }
 
+    @Import(name="forceDelete")
+    private @Nullable Output<Boolean> forceDelete;
+
+    public Optional<Output<Boolean>> forceDelete() {
+        return Optional.ofNullable(this.forceDelete);
+    }
+
     /**
      * (Updatable) The User or App who created the Resource
      * 
@@ -768,6 +775,7 @@ public final class DomainsGroupState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.domainOcid = $.domainOcid;
         this.externalId = $.externalId;
+        this.forceDelete = $.forceDelete;
         this.idcsCreatedBies = $.idcsCreatedBies;
         this.idcsEndpoint = $.idcsEndpoint;
         this.idcsLastModifiedBies = $.idcsLastModifiedBies;
@@ -1087,6 +1095,15 @@ public final class DomainsGroupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder externalId(String externalId) {
             return externalId(Output.of(externalId));
+        }
+
+        public Builder forceDelete(@Nullable Output<Boolean> forceDelete) {
+            $.forceDelete = forceDelete;
+            return this;
+        }
+
+        public Builder forceDelete(Boolean forceDelete) {
+            return forceDelete(Output.of(forceDelete));
         }
 
         /**

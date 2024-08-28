@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string CapacityReservationId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
         /// </summary>
         public readonly string ClusterId;
         /// <summary>

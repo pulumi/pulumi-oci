@@ -46,6 +46,10 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        /// </summary>
+        public readonly bool MustEnforceCloudLocality;
+        /// <summary>
         /// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
         /// </summary>
         public readonly string PolicyLockedDateTime;
@@ -84,6 +88,8 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
 
             string lifecycleDetails,
 
+            bool mustEnforceCloudLocality,
+
             string policyLockedDateTime,
 
             string state,
@@ -102,6 +108,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
             Id = id;
             IsPredefinedPolicy = isPredefinedPolicy;
             LifecycleDetails = lifecycleDetails;
+            MustEnforceCloudLocality = mustEnforceCloudLocality;
             PolicyLockedDateTime = policyLockedDateTime;
             State = state;
             SystemTags = systemTags;

@@ -18,58 +18,128 @@ public final class DatabaseSecurityConfigManagementArgs extends com.pulumi.resou
 
     public static final DatabaseSecurityConfigManagementArgs Empty = new DatabaseSecurityConfigManagementArgs();
 
+    /**
+     * (Updatable) The OCID of the compartment containing the database security config.
+     * 
+     */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
+    /**
+     * @return (Updatable) The OCID of the compartment containing the database security config.
+     * 
+     */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
 
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
+    /**
+     * (Updatable) The description of the security policy.
+     * 
+     */
     @Import(name="description")
     private @Nullable Output<String> description;
 
+    /**
+     * @return (Updatable) The description of the security policy.
+     * 
+     */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+     * 
+     */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
+    /**
+     * @return (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+     * 
+     */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Import(name="refreshTrigger")
     private @Nullable Output<Boolean> refreshTrigger;
 
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<Output<Boolean>> refreshTrigger() {
         return Optional.ofNullable(this.refreshTrigger);
     }
 
+    /**
+     * (Updatable) Details to update the SQL firewall config.
+     * 
+     */
     @Import(name="sqlFirewallConfig")
     private @Nullable Output<DatabaseSecurityConfigManagementSqlFirewallConfigArgs> sqlFirewallConfig;
 
+    /**
+     * @return (Updatable) Details to update the SQL firewall config.
+     * 
+     */
     public Optional<Output<DatabaseSecurityConfigManagementSqlFirewallConfigArgs>> sqlFirewallConfig() {
         return Optional.ofNullable(this.sqlFirewallConfig);
     }
 
+    /**
+     * Unique target identifier.
+     * 
+     */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
+    /**
+     * @return Unique target identifier.
+     * 
+     */
     public Optional<Output<String>> targetId() {
         return Optional.ofNullable(this.targetId);
     }
@@ -105,74 +175,176 @@ public final class DatabaseSecurityConfigManagementArgs extends com.pulumi.resou
             $ = new DatabaseSecurityConfigManagementArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId (Updatable) The OCID of the compartment containing the database security config.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
+        /**
+         * @param compartmentId (Updatable) The OCID of the compartment containing the database security config.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
 
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
 
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
+        /**
+         * @param description (Updatable) The description of the security policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
             return this;
         }
 
+        /**
+         * @param description (Updatable) The description of the security policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param displayName (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
+        /**
+         * @param displayName (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
         }
 
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
 
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder refreshTrigger(@Nullable Output<Boolean> refreshTrigger) {
             $.refreshTrigger = refreshTrigger;
             return this;
         }
 
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder refreshTrigger(Boolean refreshTrigger) {
             return refreshTrigger(Output.of(refreshTrigger));
         }
 
+        /**
+         * @param sqlFirewallConfig (Updatable) Details to update the SQL firewall config.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sqlFirewallConfig(@Nullable Output<DatabaseSecurityConfigManagementSqlFirewallConfigArgs> sqlFirewallConfig) {
             $.sqlFirewallConfig = sqlFirewallConfig;
             return this;
         }
 
+        /**
+         * @param sqlFirewallConfig (Updatable) Details to update the SQL firewall config.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sqlFirewallConfig(DatabaseSecurityConfigManagementSqlFirewallConfigArgs sqlFirewallConfig) {
             return sqlFirewallConfig(Output.of(sqlFirewallConfig));
         }
 
+        /**
+         * @param targetId Unique target identifier.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targetId(@Nullable Output<String> targetId) {
             $.targetId = targetId;
             return this;
         }
 
+        /**
+         * @param targetId Unique target identifier.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
         }

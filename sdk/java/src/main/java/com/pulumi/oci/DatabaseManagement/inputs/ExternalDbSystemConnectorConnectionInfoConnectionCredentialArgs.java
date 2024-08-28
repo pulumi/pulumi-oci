@@ -46,6 +46,21 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredentialAr
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+     * 
+     */
+    @Import(name="namedCredentialId")
+    private @Nullable Output<String> namedCredentialId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+     * 
+     */
+    public Optional<Output<String>> namedCredentialId() {
+        return Optional.ofNullable(this.namedCredentialId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
      * 
      */
@@ -110,6 +125,7 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredentialAr
     private ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs(ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs $) {
         this.credentialName = $.credentialName;
         this.credentialType = $.credentialType;
+        this.namedCredentialId = $.namedCredentialId;
         this.passwordSecretId = $.passwordSecretId;
         this.role = $.role;
         this.sslSecretId = $.sslSecretId;
@@ -174,6 +190,27 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredentialAr
          */
         public Builder credentialType(String credentialType) {
             return credentialType(Output.of(credentialType));
+        }
+
+        /**
+         * @param namedCredentialId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namedCredentialId(@Nullable Output<String> namedCredentialId) {
+            $.namedCredentialId = namedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param namedCredentialId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namedCredentialId(String namedCredentialId) {
+            return namedCredentialId(Output.of(namedCredentialId));
         }
 
         /**

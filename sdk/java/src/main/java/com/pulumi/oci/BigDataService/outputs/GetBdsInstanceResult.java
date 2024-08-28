@@ -24,7 +24,6 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBdsInstanceResult {
-    private Integer addKafkaTrigger;
     private String bdsInstanceId;
     /**
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -75,7 +74,6 @@ public final class GetBdsInstanceResult {
      */
     private String displayName;
     private List<GetBdsInstanceEdgeNode> edgeNodes;
-    private Integer executeBootstrapScriptTrigger;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -137,7 +135,6 @@ public final class GetBdsInstanceResult {
      */
     private Integer numberOfNodesRequiringMaintenanceReboot;
     private String osPatchVersion;
-    private Integer removeKafkaTrigger;
     /**
      * @return The state of the cluster.
      * 
@@ -157,9 +154,6 @@ public final class GetBdsInstanceResult {
     private List<GetBdsInstanceWorkerNode> workerNodes;
 
     private GetBdsInstanceResult() {}
-    public Integer addKafkaTrigger() {
-        return this.addKafkaTrigger;
-    }
     public String bdsInstanceId() {
         return this.bdsInstanceId;
     }
@@ -237,9 +231,6 @@ public final class GetBdsInstanceResult {
     }
     public List<GetBdsInstanceEdgeNode> edgeNodes() {
         return this.edgeNodes;
-    }
-    public Integer executeBootstrapScriptTrigger() {
-        return this.executeBootstrapScriptTrigger;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -336,9 +327,6 @@ public final class GetBdsInstanceResult {
     public String osPatchVersion() {
         return this.osPatchVersion;
     }
-    public Integer removeKafkaTrigger() {
-        return this.removeKafkaTrigger;
-    }
     /**
      * @return The state of the cluster.
      * 
@@ -376,7 +364,6 @@ public final class GetBdsInstanceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer addKafkaTrigger;
         private String bdsInstanceId;
         private String bootstrapScriptUrl;
         private List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails;
@@ -391,7 +378,6 @@ public final class GetBdsInstanceResult {
         private Map<String,String> definedTags;
         private String displayName;
         private List<GetBdsInstanceEdgeNode> edgeNodes;
-        private Integer executeBootstrapScriptTrigger;
         private Map<String,String> freeformTags;
         private String id;
         private List<String> ignoreExistingNodesShapes;
@@ -409,7 +395,6 @@ public final class GetBdsInstanceResult {
         private Integer numberOfNodes;
         private Integer numberOfNodesRequiringMaintenanceReboot;
         private String osPatchVersion;
-        private Integer removeKafkaTrigger;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -418,7 +403,6 @@ public final class GetBdsInstanceResult {
         public Builder() {}
         public Builder(GetBdsInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.addKafkaTrigger = defaults.addKafkaTrigger;
     	      this.bdsInstanceId = defaults.bdsInstanceId;
     	      this.bootstrapScriptUrl = defaults.bootstrapScriptUrl;
     	      this.cloudSqlDetails = defaults.cloudSqlDetails;
@@ -433,7 +417,6 @@ public final class GetBdsInstanceResult {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.edgeNodes = defaults.edgeNodes;
-    	      this.executeBootstrapScriptTrigger = defaults.executeBootstrapScriptTrigger;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.ignoreExistingNodesShapes = defaults.ignoreExistingNodesShapes;
@@ -451,7 +434,6 @@ public final class GetBdsInstanceResult {
     	      this.numberOfNodes = defaults.numberOfNodes;
     	      this.numberOfNodesRequiringMaintenanceReboot = defaults.numberOfNodesRequiringMaintenanceReboot;
     	      this.osPatchVersion = defaults.osPatchVersion;
-    	      this.removeKafkaTrigger = defaults.removeKafkaTrigger;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -459,14 +441,6 @@ public final class GetBdsInstanceResult {
     	      this.workerNodes = defaults.workerNodes;
         }
 
-        @CustomType.Setter
-        public Builder addKafkaTrigger(Integer addKafkaTrigger) {
-            if (addKafkaTrigger == null) {
-              throw new MissingRequiredPropertyException("GetBdsInstanceResult", "addKafkaTrigger");
-            }
-            this.addKafkaTrigger = addKafkaTrigger;
-            return this;
-        }
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             if (bdsInstanceId == null) {
@@ -590,14 +564,6 @@ public final class GetBdsInstanceResult {
         }
         public Builder edgeNodes(GetBdsInstanceEdgeNode... edgeNodes) {
             return edgeNodes(List.of(edgeNodes));
-        }
-        @CustomType.Setter
-        public Builder executeBootstrapScriptTrigger(Integer executeBootstrapScriptTrigger) {
-            if (executeBootstrapScriptTrigger == null) {
-              throw new MissingRequiredPropertyException("GetBdsInstanceResult", "executeBootstrapScriptTrigger");
-            }
-            this.executeBootstrapScriptTrigger = executeBootstrapScriptTrigger;
-            return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
@@ -751,14 +717,6 @@ public final class GetBdsInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder removeKafkaTrigger(Integer removeKafkaTrigger) {
-            if (removeKafkaTrigger == null) {
-              throw new MissingRequiredPropertyException("GetBdsInstanceResult", "removeKafkaTrigger");
-            }
-            this.removeKafkaTrigger = removeKafkaTrigger;
-            return this;
-        }
-        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceResult", "state");
@@ -806,7 +764,6 @@ public final class GetBdsInstanceResult {
         }
         public GetBdsInstanceResult build() {
             final var _resultValue = new GetBdsInstanceResult();
-            _resultValue.addKafkaTrigger = addKafkaTrigger;
             _resultValue.bdsInstanceId = bdsInstanceId;
             _resultValue.bootstrapScriptUrl = bootstrapScriptUrl;
             _resultValue.cloudSqlDetails = cloudSqlDetails;
@@ -821,7 +778,6 @@ public final class GetBdsInstanceResult {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.edgeNodes = edgeNodes;
-            _resultValue.executeBootstrapScriptTrigger = executeBootstrapScriptTrigger;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.ignoreExistingNodesShapes = ignoreExistingNodesShapes;
@@ -839,7 +795,6 @@ public final class GetBdsInstanceResult {
             _resultValue.numberOfNodes = numberOfNodes;
             _resultValue.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             _resultValue.osPatchVersion = osPatchVersion;
-            _resultValue.removeKafkaTrigger = removeKafkaTrigger;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

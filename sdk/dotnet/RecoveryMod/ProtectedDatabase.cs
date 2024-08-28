@@ -50,6 +50,7 @@ namespace Pulumi.Oci.RecoveryMod
     ///             { "bar-key", "value" },
     ///         },
     ///         IsRedoLogsShipped = protectedDatabaseIsRedoLogsShipped,
+    ///         SubscriptionId = testSubscription.Id,
     ///     });
     /// 
     /// });
@@ -181,6 +182,16 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -358,6 +369,16 @@ namespace Pulumi.Oci.RecoveryMod
             set => _recoveryServiceSubnets = value;
         }
 
+        /// <summary>
+        /// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
         public ProtectedDatabaseArgs()
         {
         }
@@ -515,6 +536,16 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

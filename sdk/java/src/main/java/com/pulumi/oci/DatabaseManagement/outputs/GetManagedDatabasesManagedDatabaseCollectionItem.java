@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfig;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup;
 import java.lang.Boolean;
 import java.lang.String;
@@ -24,6 +25,11 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The operating system of database.
+     * 
+     */
+    private String databasePlatformName;
     /**
      * @return The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      * 
@@ -49,6 +55,11 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      * 
      */
     private String dbSystemId;
+    /**
+     * @return The list of feature configurations
+     * 
+     */
+    private List<GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfig> dbmgmtFeatureConfigs;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -100,6 +111,11 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      */
     private String storageSystemId;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the Managed Database was created.
      * 
      */
@@ -124,6 +140,13 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The operating system of database.
+     * 
+     */
+    public String databasePlatformName() {
+        return this.databasePlatformName;
     }
     /**
      * @return The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
@@ -159,6 +182,13 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      */
     public String dbSystemId() {
         return this.dbSystemId;
+    }
+    /**
+     * @return The list of feature configurations
+     * 
+     */
+    public List<GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfig> dbmgmtFeatureConfigs() {
+        return this.dbmgmtFeatureConfigs;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -231,6 +261,13 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         return this.storageSystemId;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the Managed Database was created.
      * 
      */
@@ -256,11 +293,13 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
     public static final class Builder {
         private Map<String,String> additionalDetails;
         private String compartmentId;
+        private String databasePlatformName;
         private String databaseStatus;
         private String databaseSubType;
         private String databaseType;
         private String databaseVersion;
         private String dbSystemId;
+        private List<GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfig> dbmgmtFeatureConfigs;
         private Map<String,String> definedTags;
         private String deploymentType;
         private Map<String,String> freeformTags;
@@ -271,6 +310,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         private String name;
         private String parentContainerId;
         private String storageSystemId;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String workloadType;
         public Builder() {}
@@ -278,11 +318,13 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDetails = defaults.additionalDetails;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.databasePlatformName = defaults.databasePlatformName;
     	      this.databaseStatus = defaults.databaseStatus;
     	      this.databaseSubType = defaults.databaseSubType;
     	      this.databaseType = defaults.databaseType;
     	      this.databaseVersion = defaults.databaseVersion;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.dbmgmtFeatureConfigs = defaults.dbmgmtFeatureConfigs;
     	      this.definedTags = defaults.definedTags;
     	      this.deploymentType = defaults.deploymentType;
     	      this.freeformTags = defaults.freeformTags;
@@ -293,6 +335,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
     	      this.name = defaults.name;
     	      this.parentContainerId = defaults.parentContainerId;
     	      this.storageSystemId = defaults.storageSystemId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.workloadType = defaults.workloadType;
         }
@@ -311,6 +354,14 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
               throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databasePlatformName(String databasePlatformName) {
+            if (databasePlatformName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "databasePlatformName");
+            }
+            this.databasePlatformName = databasePlatformName;
             return this;
         }
         @CustomType.Setter
@@ -352,6 +403,17 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
             }
             this.dbSystemId = dbSystemId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbmgmtFeatureConfigs(List<GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfig> dbmgmtFeatureConfigs) {
+            if (dbmgmtFeatureConfigs == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "dbmgmtFeatureConfigs");
+            }
+            this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+            return this;
+        }
+        public Builder dbmgmtFeatureConfigs(GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfig... dbmgmtFeatureConfigs) {
+            return dbmgmtFeatureConfigs(List.of(dbmgmtFeatureConfigs));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -437,6 +499,14 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "timeCreated");
@@ -456,11 +526,13 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
             final var _resultValue = new GetManagedDatabasesManagedDatabaseCollectionItem();
             _resultValue.additionalDetails = additionalDetails;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.databasePlatformName = databasePlatformName;
             _resultValue.databaseStatus = databaseStatus;
             _resultValue.databaseSubType = databaseSubType;
             _resultValue.databaseType = databaseType;
             _resultValue.databaseVersion = databaseVersion;
             _resultValue.dbSystemId = dbSystemId;
+            _resultValue.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
             _resultValue.definedTags = definedTags;
             _resultValue.deploymentType = deploymentType;
             _resultValue.freeformTags = freeformTags;
@@ -471,6 +543,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
             _resultValue.name = name;
             _resultValue.parentContainerId = parentContainerId;
             _resultValue.storageSystemId = storageSystemId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.workloadType = workloadType;
             return _resultValue;

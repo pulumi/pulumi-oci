@@ -173,6 +173,10 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The OCID of the cloud service subscription to which the protected database is linked.
+        /// </summary>
+        public readonly string SubscriptionId;
+        /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
@@ -233,6 +237,8 @@ namespace Pulumi.Oci.RecoveryMod
 
             string state,
 
+            string subscriptionId,
+
             ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
@@ -262,6 +268,7 @@ namespace Pulumi.Oci.RecoveryMod
             ProtectionPolicyId = protectionPolicyId;
             RecoveryServiceSubnets = recoveryServiceSubnets;
             State = state;
+            SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

@@ -56,6 +56,21 @@ public final class GetDbManagementPrivateEndpointsPlainArgs extends com.pulumi.r
     }
 
     /**
+     * The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     * 
+     */
+    @Import(name="isDnsResolutionEnabled")
+    private @Nullable Boolean isDnsResolutionEnabled;
+
+    /**
+     * @return The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     * 
+     */
+    public Optional<Boolean> isDnsResolutionEnabled() {
+        return Optional.ofNullable(this.isDnsResolutionEnabled);
+    }
+
+    /**
      * A filter to return only resources that match the entire name.
      * 
      */
@@ -106,6 +121,7 @@ public final class GetDbManagementPrivateEndpointsPlainArgs extends com.pulumi.r
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.isCluster = $.isCluster;
+        this.isDnsResolutionEnabled = $.isDnsResolutionEnabled;
         this.name = $.name;
         this.state = $.state;
         this.vcnId = $.vcnId;
@@ -157,6 +173,17 @@ public final class GetDbManagementPrivateEndpointsPlainArgs extends com.pulumi.r
          */
         public Builder isCluster(@Nullable Boolean isCluster) {
             $.isCluster = isCluster;
+            return this;
+        }
+
+        /**
+         * @param isDnsResolutionEnabled The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDnsResolutionEnabled(@Nullable Boolean isDnsResolutionEnabled) {
+            $.isDnsResolutionEnabled = isDnsResolutionEnabled;
             return this;
         }
 

@@ -80,6 +80,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly autonomousMaintenanceScheduleType: string;
     /**
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     */
+    readonly availabilityDomain: string;
+    /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      */
     readonly availableUpgradeVersions: string[];

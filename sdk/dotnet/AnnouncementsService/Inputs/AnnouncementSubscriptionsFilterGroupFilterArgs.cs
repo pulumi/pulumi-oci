@@ -13,7 +13,7 @@ namespace Pulumi.Oci.AnnouncementsService.Inputs
     public sealed class AnnouncementSubscriptionsFilterGroupFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The type of filter.
+        /// (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

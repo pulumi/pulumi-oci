@@ -224,22 +224,18 @@ class AppFirewallPolicyAction(dict):
 @pulumi.output_type
 class AppFirewallPolicyActionBody(dict):
     def __init__(__self__, *,
-                 text: str,
-                 type: str):
+                 type: str,
+                 template: Optional[str] = None,
+                 text: Optional[str] = None):
         """
-        :param str text: (Updatable) Static response body text.
         :param str type: (Updatable) Type of HttpResponseBody.
+        :param str text: (Updatable) Static response body text.
         """
-        pulumi.set(__self__, "text", text)
         pulumi.set(__self__, "type", type)
-
-    @property
-    @pulumi.getter
-    def text(self) -> str:
-        """
-        (Updatable) Static response body text.
-        """
-        return pulumi.get(self, "text")
+        if template is not None:
+            pulumi.set(__self__, "template", template)
+        if text is not None:
+            pulumi.set(__self__, "text", text)
 
     @property
     @pulumi.getter
@@ -248,6 +244,19 @@ class AppFirewallPolicyActionBody(dict):
         (Updatable) Type of HttpResponseBody.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def template(self) -> Optional[str]:
+        return pulumi.get(self, "template")
+
+    @property
+    @pulumi.getter
+    def text(self) -> Optional[str]:
+        """
+        (Updatable) Static response body text.
+        """
+        return pulumi.get(self, "text")
 
 
 @pulumi.output_type
@@ -2656,14 +2665,21 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult(di
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult(dict):
     def __init__(__self__, *,
+                 template: str,
                  text: str,
                  type: str):
         """
         :param str text: Static response body text.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
+        pulumi.set(__self__, "template", template)
         pulumi.set(__self__, "text", text)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def template(self) -> str:
+        return pulumi.get(self, "template")
 
     @property
     @pulumi.getter
@@ -3748,14 +3764,21 @@ class GetWebAppFirewallPolicyActionResult(dict):
 @pulumi.output_type
 class GetWebAppFirewallPolicyActionBodyResult(dict):
     def __init__(__self__, *,
+                 template: str,
                  text: str,
                  type: str):
         """
         :param str text: Static response body text.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
+        pulumi.set(__self__, "template", template)
         pulumi.set(__self__, "text", text)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def template(self) -> str:
+        return pulumi.get(self, "template")
 
     @property
     @pulumi.getter

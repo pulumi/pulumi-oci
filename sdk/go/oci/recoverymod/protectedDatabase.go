@@ -51,6 +51,7 @@ import (
 //					"bar-key": pulumi.String("value"),
 //				},
 //				IsRedoLogsShipped: pulumi.Any(protectedDatabaseIsRedoLogsShipped),
+//				SubscriptionId:    pulumi.Any(testSubscription.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -111,6 +112,11 @@ type ProtectedDatabase struct {
 	RecoveryServiceSubnets ProtectedDatabaseRecoveryServiceSubnetArrayOutput `pulumi:"recoveryServiceSubnets"`
 	// The current state of the Protected Database.
 	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -216,6 +222,11 @@ type protectedDatabaseState struct {
 	RecoveryServiceSubnets []ProtectedDatabaseRecoveryServiceSubnet `pulumi:"recoveryServiceSubnets"`
 	// The current state of the Protected Database.
 	State *string `pulumi:"state"`
+	// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -267,6 +278,11 @@ type ProtectedDatabaseState struct {
 	RecoveryServiceSubnets ProtectedDatabaseRecoveryServiceSubnetArrayInput
 	// The current state of the Protected Database.
 	State pulumi.StringPtrInput
+	// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubscriptionId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.StringMapInput
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -308,6 +324,11 @@ type protectedDatabaseArgs struct {
 	ProtectionPolicyId string `pulumi:"protectionPolicyId"`
 	// (Updatable) List of recovery service subnet resources associated with the protected database.
 	RecoveryServiceSubnets []ProtectedDatabaseRecoveryServiceSubnet `pulumi:"recoveryServiceSubnets"`
+	// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 // The set of arguments for constructing a ProtectedDatabase resource.
@@ -338,6 +359,11 @@ type ProtectedDatabaseArgs struct {
 	ProtectionPolicyId pulumi.StringInput
 	// (Updatable) List of recovery service subnet resources associated with the protected database.
 	RecoveryServiceSubnets ProtectedDatabaseRecoveryServiceSubnetArrayInput
+	// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubscriptionId pulumi.StringPtrInput
 }
 
 func (ProtectedDatabaseArgs) ElementType() reflect.Type {
@@ -524,6 +550,14 @@ func (o ProtectedDatabaseOutput) RecoveryServiceSubnets() ProtectedDatabaseRecov
 // The current state of the Protected Database.
 func (o ProtectedDatabaseOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ProtectedDatabaseOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)

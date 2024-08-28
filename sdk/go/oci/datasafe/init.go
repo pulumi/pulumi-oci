@@ -73,6 +73,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MaskingPoliciesMaskingColumn{}
 	case "oci:DataSafe/maskingPolicy:MaskingPolicy":
 		r = &MaskingPolicy{}
+	case "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement":
+		r = &MaskingPolicyHealthReportManagement{}
+	case "oci:DataSafe/maskingReportManagement:MaskingReportManagement":
+		r = &MaskingReportManagement{}
 	case "oci:DataSafe/onPremConnector:OnPremConnector":
 		r = &OnPremConnector{}
 	case "oci:DataSafe/report:Report":
@@ -101,8 +105,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SensitiveType{}
 	case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
 		r = &SetSecurityAssessmentBaseline{}
+	case "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement":
+		r = &SetSecurityAssessmentBaselineManagement{}
 	case "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline":
 		r = &SetUserAssessmentBaseline{}
+	case "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement":
+		r = &SetUserAssessmentBaselineManagement{}
 	case "oci:DataSafe/sqlCollection:SqlCollection":
 		r = &SqlCollection{}
 	case "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy":
@@ -117,8 +125,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TargetDatabasePeerTargetDatabase{}
 	case "oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline":
 		r = &UnsetSecurityAssessmentBaseline{}
+	case "oci:DataSafe/unsetSecurityAssessmentBaselineManagement:UnsetSecurityAssessmentBaselineManagement":
+		r = &UnsetSecurityAssessmentBaselineManagement{}
 	case "oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline":
 		r = &UnsetUserAssessmentBaseline{}
+	case "oci:DataSafe/unsetUserAssessmentBaselineManagement:UnsetUserAssessmentBaselineManagement":
+		r = &UnsetUserAssessmentBaselineManagement{}
 	case "oci:DataSafe/userAssessment:UserAssessment":
 		r = &UserAssessment{}
 	default:
@@ -266,6 +278,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/maskingPolicyHealthReportManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/maskingReportManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/onPremConnector",
 		&module{version},
 	)
@@ -336,7 +358,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/setSecurityAssessmentBaselineManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/setUserAssessmentBaseline",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/setUserAssessmentBaselineManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -376,7 +408,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/unsetSecurityAssessmentBaselineManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/unsetUserAssessmentBaseline",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/unsetUserAssessmentBaselineManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

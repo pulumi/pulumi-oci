@@ -75,6 +75,10 @@ export interface GetProtectionPolicyResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     */
+    readonly mustEnforceCloudLocality: boolean;
+    /**
      * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
      */
     readonly policyLockedDateTime: string;

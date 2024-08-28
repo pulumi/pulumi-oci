@@ -475,6 +475,12 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     public Output<String> externalId() {
         return this.externalId;
     }
+    @Export(name="forceDelete", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> forceDelete;
+
+    public Output<Optional<Boolean>> forceDelete() {
+        return Codegen.optional(this.forceDelete);
+    }
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 

@@ -15,7 +15,6 @@ import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceUtilNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceWorkerNodeArgs;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -27,13 +26,6 @@ import javax.annotation.Nullable;
 public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BdsInstanceArgs Empty = new BdsInstanceArgs();
-
-    @Import(name="addKafkaTrigger")
-    private @Nullable Output<Integer> addKafkaTrigger;
-
-    public Optional<Output<Integer>> addKafkaTrigger() {
-        return Optional.ofNullable(this.addKafkaTrigger);
-    }
 
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
@@ -182,21 +174,6 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<BdsInstanceEdgeNodeArgs>> edgeNode() {
         return Optional.ofNullable(this.edgeNode);
-    }
-
-    /**
-     * (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-     * 
-     */
-    @Import(name="executeBootstrapScriptTrigger")
-    private @Nullable Output<Integer> executeBootstrapScriptTrigger;
-
-    /**
-     * @return (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-     * 
-     */
-    public Optional<Output<Integer>> executeBootstrapScriptTrigger() {
-        return Optional.ofNullable(this.executeBootstrapScriptTrigger);
     }
 
     /**
@@ -395,21 +372,6 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-     * 
-     */
-    @Import(name="removeKafkaTrigger")
-    private @Nullable Output<Integer> removeKafkaTrigger;
-
-    /**
-     * @return (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-     * 
-     */
-    public Optional<Output<Integer>> removeKafkaTrigger() {
-        return Optional.ofNullable(this.removeKafkaTrigger);
-    }
-
-    /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
@@ -449,7 +411,6 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     private BdsInstanceArgs() {}
 
     private BdsInstanceArgs(BdsInstanceArgs $) {
-        this.addKafkaTrigger = $.addKafkaTrigger;
         this.bootstrapScriptUrl = $.bootstrapScriptUrl;
         this.cloudSqlDetails = $.cloudSqlDetails;
         this.clusterAdminPassword = $.clusterAdminPassword;
@@ -461,7 +422,6 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.edgeNode = $.edgeNode;
-        this.executeBootstrapScriptTrigger = $.executeBootstrapScriptTrigger;
         this.freeformTags = $.freeformTags;
         this.ignoreExistingNodesShapes = $.ignoreExistingNodesShapes;
         this.isCloudSqlConfigured = $.isCloudSqlConfigured;
@@ -475,7 +435,6 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.masterNode = $.masterNode;
         this.networkConfig = $.networkConfig;
         this.osPatchVersion = $.osPatchVersion;
-        this.removeKafkaTrigger = $.removeKafkaTrigger;
         this.state = $.state;
         this.utilNode = $.utilNode;
         this.workerNode = $.workerNode;
@@ -497,15 +456,6 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(BdsInstanceArgs defaults) {
             $ = new BdsInstanceArgs(Objects.requireNonNull(defaults));
-        }
-
-        public Builder addKafkaTrigger(@Nullable Output<Integer> addKafkaTrigger) {
-            $.addKafkaTrigger = addKafkaTrigger;
-            return this;
-        }
-
-        public Builder addKafkaTrigger(Integer addKafkaTrigger) {
-            return addKafkaTrigger(Output.of(addKafkaTrigger));
         }
 
         /**
@@ -723,27 +673,6 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder edgeNode(BdsInstanceEdgeNodeArgs edgeNode) {
             return edgeNode(Output.of(edgeNode));
-        }
-
-        /**
-         * @param executeBootstrapScriptTrigger (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder executeBootstrapScriptTrigger(@Nullable Output<Integer> executeBootstrapScriptTrigger) {
-            $.executeBootstrapScriptTrigger = executeBootstrapScriptTrigger;
-            return this;
-        }
-
-        /**
-         * @param executeBootstrapScriptTrigger (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder executeBootstrapScriptTrigger(Integer executeBootstrapScriptTrigger) {
-            return executeBootstrapScriptTrigger(Output.of(executeBootstrapScriptTrigger));
         }
 
         /**
@@ -1027,27 +956,6 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder osPatchVersion(String osPatchVersion) {
             return osPatchVersion(Output.of(osPatchVersion));
-        }
-
-        /**
-         * @param removeKafkaTrigger (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder removeKafkaTrigger(@Nullable Output<Integer> removeKafkaTrigger) {
-            $.removeKafkaTrigger = removeKafkaTrigger;
-            return this;
-        }
-
-        /**
-         * @param removeKafkaTrigger (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder removeKafkaTrigger(Integer removeKafkaTrigger) {
-            return removeKafkaTrigger(Output.of(removeKafkaTrigger));
         }
 
         /**

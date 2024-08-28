@@ -71,7 +71,9 @@ import (
 //				IpMode:                    pulumi.Any(loadBalancerIpMode),
 //				IsDeleteProtectionEnabled: pulumi.Any(loadBalancerIsDeleteProtectionEnabled),
 //				IsPrivate:                 pulumi.Any(loadBalancerIsPrivate),
+//				IsRequestIdEnabled:        pulumi.Any(loadBalancerIsRequestIdEnabled),
 //				NetworkSecurityGroupIds:   pulumi.Any(loadBalancerNetworkSecurityGroupIds),
+//				RequestIdHeader:           pulumi.Any(loadBalancerRequestIdHeader),
 //				ReservedIps: loadbalancer.LoadBalancerReservedIpArray{
 //					&loadbalancer.LoadBalancerReservedIpArgs{
 //						Id: pulumi.Any(loadBalancerReservedIpsId),
@@ -141,6 +143,16 @@ type LoadBalancer struct {
 	//
 	// Example: `true`
 	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
+	// (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+	//
+	// If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+	//
+	// If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+	//
+	// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+	//
+	// Example: `true`
+	IsRequestIdEnabled pulumi.BoolOutput `pulumi:"isRequestIdEnabled"`
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 	//
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -151,6 +163,18 @@ type LoadBalancer struct {
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+	//
+	// If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+	//
+	// If isRequestIdEnabled is false then this field is ignored.
+	//
+	// If this field is not set or is set to "" then this field defaults to X-Request-Id
+	//
+	// **Notes:**
+	// * Unless the header name is "" it must start with "X-" prefix.
+	// * Setting the header name to "" will set it to the default: X-Request-Id.
+	RequestIdHeader pulumi.StringOutput `pulumi:"requestIdHeader"`
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayOutput `pulumi:"reservedIps"`
 	// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
@@ -252,6 +276,16 @@ type loadBalancerState struct {
 	//
 	// Example: `true`
 	IsPrivate *bool `pulumi:"isPrivate"`
+	// (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+	//
+	// If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+	//
+	// If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+	//
+	// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+	//
+	// Example: `true`
+	IsRequestIdEnabled *bool `pulumi:"isRequestIdEnabled"`
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 	//
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -262,6 +296,18 @@ type loadBalancerState struct {
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+	//
+	// If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+	//
+	// If isRequestIdEnabled is false then this field is ignored.
+	//
+	// If this field is not set or is set to "" then this field defaults to X-Request-Id
+	//
+	// **Notes:**
+	// * Unless the header name is "" it must start with "X-" prefix.
+	// * Setting the header name to "" will set it to the default: X-Request-Id.
+	RequestIdHeader *string `pulumi:"requestIdHeader"`
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []LoadBalancerReservedIp `pulumi:"reservedIps"`
 	// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
@@ -322,6 +368,16 @@ type LoadBalancerState struct {
 	//
 	// Example: `true`
 	IsPrivate pulumi.BoolPtrInput
+	// (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+	//
+	// If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+	//
+	// If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+	//
+	// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+	//
+	// Example: `true`
+	IsRequestIdEnabled pulumi.BoolPtrInput
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 	//
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -332,6 +388,18 @@ type LoadBalancerState struct {
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayInput
+	// (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+	//
+	// If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+	//
+	// If isRequestIdEnabled is false then this field is ignored.
+	//
+	// If this field is not set or is set to "" then this field defaults to X-Request-Id
+	//
+	// **Notes:**
+	// * Unless the header name is "" it must start with "X-" prefix.
+	// * Setting the header name to "" will set it to the default: X-Request-Id.
+	RequestIdHeader pulumi.StringPtrInput
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayInput
 	// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
@@ -390,6 +458,16 @@ type loadBalancerArgs struct {
 	//
 	// Example: `true`
 	IsPrivate *bool `pulumi:"isPrivate"`
+	// (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+	//
+	// If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+	//
+	// If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+	//
+	// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+	//
+	// Example: `true`
+	IsRequestIdEnabled *bool `pulumi:"isRequestIdEnabled"`
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 	//
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -400,6 +478,18 @@ type loadBalancerArgs struct {
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+	//
+	// If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+	//
+	// If isRequestIdEnabled is false then this field is ignored.
+	//
+	// If this field is not set or is set to "" then this field defaults to X-Request-Id
+	//
+	// **Notes:**
+	// * Unless the header name is "" it must start with "X-" prefix.
+	// * Setting the header name to "" will set it to the default: X-Request-Id.
+	RequestIdHeader *string `pulumi:"requestIdHeader"`
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []LoadBalancerReservedIp `pulumi:"reservedIps"`
 	// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
@@ -449,6 +539,16 @@ type LoadBalancerArgs struct {
 	//
 	// Example: `true`
 	IsPrivate pulumi.BoolPtrInput
+	// (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+	//
+	// If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+	//
+	// If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+	//
+	// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+	//
+	// Example: `true`
+	IsRequestIdEnabled pulumi.BoolPtrInput
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 	//
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -459,6 +559,18 @@ type LoadBalancerArgs struct {
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayInput
+	// (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+	//
+	// If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+	//
+	// If isRequestIdEnabled is false then this field is ignored.
+	//
+	// If this field is not set or is set to "" then this field defaults to X-Request-Id
+	//
+	// **Notes:**
+	// * Unless the header name is "" it must start with "X-" prefix.
+	// * Setting the header name to "" will set it to the default: X-Request-Id.
+	RequestIdHeader pulumi.StringPtrInput
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayInput
 	// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
@@ -626,6 +738,19 @@ func (o LoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.BoolOutput { return v.IsPrivate }).(pulumi.BoolOutput)
 }
 
+// (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+//
+// If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+//
+// If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+//
+// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+//
+// Example: `true`
+func (o LoadBalancerOutput) IsRequestIdEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.BoolOutput { return v.IsRequestIdEnabled }).(pulumi.BoolOutput)
+}
+
 // (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 //
 // During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -637,6 +762,21 @@ func (o LoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
 // Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 func (o LoadBalancerOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringArrayOutput { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+//
+// If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+//
+// If isRequestIdEnabled is false then this field is ignored.
+//
+// If this field is not set or is set to "" then this field defaults to X-Request-Id
+//
+// **Notes:**
+// * Unless the header name is "" it must start with "X-" prefix.
+// * Setting the header name to "" will set it to the default: X-Request-Id.
+func (o LoadBalancerOutput) RequestIdHeader() pulumi.StringOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.RequestIdHeader }).(pulumi.StringOutput)
 }
 
 // An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.

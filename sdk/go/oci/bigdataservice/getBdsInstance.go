@@ -58,8 +58,7 @@ type LookupBdsInstanceArgs struct {
 
 // A collection of values returned by getBdsInstance.
 type LookupBdsInstanceResult struct {
-	AddKafkaTrigger int    `pulumi:"addKafkaTrigger"`
-	BdsInstanceId   string `pulumi:"bdsInstanceId"`
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -80,9 +79,8 @@ type LookupBdsInstanceResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The name of the node.
-	DisplayName                   string                   `pulumi:"displayName"`
-	EdgeNodes                     []GetBdsInstanceEdgeNode `pulumi:"edgeNodes"`
-	ExecuteBootstrapScriptTrigger int                      `pulumi:"executeBootstrapScriptTrigger"`
+	DisplayName string                   `pulumi:"displayName"`
+	EdgeNodes   []GetBdsInstanceEdgeNode `pulumi:"edgeNodes"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
@@ -111,7 +109,6 @@ type LookupBdsInstanceResult struct {
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	OsPatchVersion                          string `pulumi:"osPatchVersion"`
-	RemoveKafkaTrigger                      int    `pulumi:"removeKafkaTrigger"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -158,10 +155,6 @@ func (o LookupBdsInstanceResultOutput) ToLookupBdsInstanceResultOutput() LookupB
 
 func (o LookupBdsInstanceResultOutput) ToLookupBdsInstanceResultOutputWithContext(ctx context.Context) LookupBdsInstanceResultOutput {
 	return o
-}
-
-func (o LookupBdsInstanceResultOutput) AddKafkaTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) int { return v.AddKafkaTrigger }).(pulumi.IntOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) BdsInstanceId() pulumi.StringOutput {
@@ -227,10 +220,6 @@ func (o LookupBdsInstanceResultOutput) DisplayName() pulumi.StringOutput {
 
 func (o LookupBdsInstanceResultOutput) EdgeNodes() GetBdsInstanceEdgeNodeArrayOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceEdgeNode { return v.EdgeNodes }).(GetBdsInstanceEdgeNodeArrayOutput)
-}
-
-func (o LookupBdsInstanceResultOutput) ExecuteBootstrapScriptTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) int { return v.ExecuteBootstrapScriptTrigger }).(pulumi.IntOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
@@ -310,10 +299,6 @@ func (o LookupBdsInstanceResultOutput) NumberOfNodesRequiringMaintenanceReboot()
 
 func (o LookupBdsInstanceResultOutput) OsPatchVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.OsPatchVersion }).(pulumi.StringOutput)
-}
-
-func (o LookupBdsInstanceResultOutput) RemoveKafkaTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) int { return v.RemoveKafkaTrigger }).(pulumi.IntOutput)
 }
 
 // The state of the cluster.

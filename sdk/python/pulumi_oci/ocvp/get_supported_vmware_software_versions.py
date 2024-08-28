@@ -23,7 +23,7 @@ class GetSupportedVmwareSoftwareVersionsResult:
     """
     A collection of values returned by getSupportedVmwareSoftwareVersions.
     """
-    def __init__(__self__, compartment_id=None, filters=None, host_shape_name=None, id=None, items=None, version=None):
+    def __init__(__self__, compartment_id=None, filters=None, host_shape_name=None, id=None, items=None, version=None, version_to_upgrade=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +42,9 @@ class GetSupportedVmwareSoftwareVersionsResult:
         if version and not isinstance(version, str):
             raise TypeError("Expected argument 'version' to be a str")
         pulumi.set(__self__, "version", version)
+        if version_to_upgrade and not isinstance(version_to_upgrade, str):
+            raise TypeError("Expected argument 'version_to_upgrade' to be a str")
+        pulumi.set(__self__, "version_to_upgrade", version_to_upgrade)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -82,6 +85,11 @@ class GetSupportedVmwareSoftwareVersionsResult:
         """
         return pulumi.get(self, "version")
 
+    @property
+    @pulumi.getter(name="versionToUpgrade")
+    def version_to_upgrade(self) -> Optional[str]:
+        return pulumi.get(self, "version_to_upgrade")
+
 
 class AwaitableGetSupportedVmwareSoftwareVersionsResult(GetSupportedVmwareSoftwareVersionsResult):
     # pylint: disable=using-constant-test
@@ -94,13 +102,15 @@ class AwaitableGetSupportedVmwareSoftwareVersionsResult(GetSupportedVmwareSoftwa
             host_shape_name=self.host_shape_name,
             id=self.id,
             items=self.items,
-            version=self.version)
+            version=self.version,
+            version_to_upgrade=self.version_to_upgrade)
 
 
 def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
                                            filters: Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]] = None,
                                            host_shape_name: Optional[str] = None,
                                            version: Optional[str] = None,
+                                           version_to_upgrade: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedVmwareSoftwareVersionsResult:
     """
     This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -116,19 +126,22 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
 
     test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
         host_shape_name=test_shape["name"],
-        version=supported_vmware_software_version_version)
+        version=supported_vmware_software_version_version,
+        version_to_upgrade=supported_vmware_software_version_version_to_upgrade)
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str host_shape_name: A filter to return only resources that match or support the given ESXi host shape.
     :param str version: A filter to return only resources that match the given VMware software version exactly.
+    :param str version_to_upgrade: A filter to return only VMware software versions that the given VMware software version can be upgraded to.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['hostShapeName'] = host_shape_name
     __args__['version'] = version
+    __args__['versionToUpgrade'] = version_to_upgrade
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions', __args__, opts=opts, typ=GetSupportedVmwareSoftwareVersionsResult).value
 
@@ -138,7 +151,8 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
         host_shape_name=pulumi.get(__ret__, 'host_shape_name'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
-        version=pulumi.get(__ret__, 'version'))
+        version=pulumi.get(__ret__, 'version'),
+        version_to_upgrade=pulumi.get(__ret__, 'version_to_upgrade'))
 
 
 @_utilities.lift_output_func(get_supported_vmware_software_versions)
@@ -146,6 +160,7 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]]]] = None,
                                                   host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                   version: Optional[pulumi.Input[Optional[str]]] = None,
+                                                  version_to_upgrade: Optional[pulumi.Input[Optional[str]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedVmwareSoftwareVersionsResult]:
     """
     This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -161,12 +176,14 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
 
     test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
         host_shape_name=test_shape["name"],
-        version=supported_vmware_software_version_version)
+        version=supported_vmware_software_version_version,
+        version_to_upgrade=supported_vmware_software_version_version_to_upgrade)
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str host_shape_name: A filter to return only resources that match or support the given ESXi host shape.
     :param str version: A filter to return only resources that match the given VMware software version exactly.
+    :param str version_to_upgrade: A filter to return only VMware software versions that the given VMware software version can be upgraded to.
     """
     ...

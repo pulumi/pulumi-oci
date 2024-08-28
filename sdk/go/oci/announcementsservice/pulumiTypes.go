@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AnnouncementSubscriptionFilterGroups struct {
-	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+	// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Filters []AnnouncementSubscriptionFilterGroupsFilter `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
@@ -32,7 +32,7 @@ type AnnouncementSubscriptionFilterGroupsInput interface {
 }
 
 type AnnouncementSubscriptionFilterGroupsArgs struct {
-	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+	// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Filters AnnouncementSubscriptionFilterGroupsFilterArrayInput `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -115,7 +115,7 @@ func (o AnnouncementSubscriptionFilterGroupsOutput) ToAnnouncementSubscriptionFi
 	}).(AnnouncementSubscriptionFilterGroupsPtrOutput)
 }
 
-// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 func (o AnnouncementSubscriptionFilterGroupsOutput) Filters() AnnouncementSubscriptionFilterGroupsFilterArrayOutput {
 	return o.ApplyT(func(v AnnouncementSubscriptionFilterGroups) []AnnouncementSubscriptionFilterGroupsFilter {
 		return v.Filters
@@ -151,7 +151,7 @@ func (o AnnouncementSubscriptionFilterGroupsPtrOutput) Elem() AnnouncementSubscr
 	}).(AnnouncementSubscriptionFilterGroupsOutput)
 }
 
-// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 func (o AnnouncementSubscriptionFilterGroupsPtrOutput) Filters() AnnouncementSubscriptionFilterGroupsFilterArrayOutput {
 	return o.ApplyT(func(v *AnnouncementSubscriptionFilterGroups) []AnnouncementSubscriptionFilterGroupsFilter {
 		if v == nil {
@@ -172,7 +172,7 @@ func (o AnnouncementSubscriptionFilterGroupsPtrOutput) Name() pulumi.StringPtrOu
 }
 
 type AnnouncementSubscriptionFilterGroupsFilter struct {
-	// The type of filter.
+	// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Type string `pulumi:"type"`
 	// The value of the filter.
 	Value string `pulumi:"value"`
@@ -190,7 +190,7 @@ type AnnouncementSubscriptionFilterGroupsFilterInput interface {
 }
 
 type AnnouncementSubscriptionFilterGroupsFilterArgs struct {
-	// The type of filter.
+	// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Type pulumi.StringInput `pulumi:"type"`
 	// The value of the filter.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -247,7 +247,7 @@ func (o AnnouncementSubscriptionFilterGroupsFilterOutput) ToAnnouncementSubscrip
 	return o
 }
 
-// The type of filter.
+// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 func (o AnnouncementSubscriptionFilterGroupsFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AnnouncementSubscriptionFilterGroupsFilter) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -278,7 +278,7 @@ func (o AnnouncementSubscriptionFilterGroupsFilterArrayOutput) Index(i pulumi.In
 }
 
 type AnnouncementSubscriptionsFilterGroupFilter struct {
-	// (Updatable) The type of filter.
+	// (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Type string `pulumi:"type"`
 	// (Updatable) The value of the filter.
 	Value string `pulumi:"value"`
@@ -296,7 +296,7 @@ type AnnouncementSubscriptionsFilterGroupFilterInput interface {
 }
 
 type AnnouncementSubscriptionsFilterGroupFilterArgs struct {
-	// (Updatable) The type of filter.
+	// (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Type pulumi.StringInput `pulumi:"type"`
 	// (Updatable) The value of the filter.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -353,7 +353,7 @@ func (o AnnouncementSubscriptionsFilterGroupFilterOutput) ToAnnouncementSubscrip
 	return o
 }
 
-// (Updatable) The type of filter.
+// (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 func (o AnnouncementSubscriptionsFilterGroupFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AnnouncementSubscriptionsFilterGroupFilter) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -384,7 +384,7 @@ func (o AnnouncementSubscriptionsFilterGroupFilterArrayOutput) Index(i pulumi.In
 }
 
 type GetAnnouncementSubscriptionFilterGroup struct {
-	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+	// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Filters []GetAnnouncementSubscriptionFilterGroupFilter `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 	Name string `pulumi:"name"`
@@ -402,7 +402,7 @@ type GetAnnouncementSubscriptionFilterGroupInput interface {
 }
 
 type GetAnnouncementSubscriptionFilterGroupArgs struct {
-	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+	// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Filters GetAnnouncementSubscriptionFilterGroupFilterArrayInput `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -459,7 +459,7 @@ func (o GetAnnouncementSubscriptionFilterGroupOutput) ToGetAnnouncementSubscript
 	return o
 }
 
-// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 func (o GetAnnouncementSubscriptionFilterGroupOutput) Filters() GetAnnouncementSubscriptionFilterGroupFilterArrayOutput {
 	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroup) []GetAnnouncementSubscriptionFilterGroupFilter {
 		return v.Filters
@@ -492,7 +492,7 @@ func (o GetAnnouncementSubscriptionFilterGroupArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetAnnouncementSubscriptionFilterGroupFilter struct {
-	// The type of filter.
+	// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Type string `pulumi:"type"`
 	// The value of the filter.
 	Value string `pulumi:"value"`
@@ -510,7 +510,7 @@ type GetAnnouncementSubscriptionFilterGroupFilterInput interface {
 }
 
 type GetAnnouncementSubscriptionFilterGroupFilterArgs struct {
-	// The type of filter.
+	// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Type pulumi.StringInput `pulumi:"type"`
 	// The value of the filter.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -567,7 +567,7 @@ func (o GetAnnouncementSubscriptionFilterGroupFilterOutput) ToGetAnnouncementSub
 	return o
 }
 
-// The type of filter.
+// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 func (o GetAnnouncementSubscriptionFilterGroupFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroupFilter) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -712,9 +712,9 @@ type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
 	OnsTopicId string `pulumi:"onsTopicId"`
-	// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+	// (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
 	PreferredLanguage string `pulumi:"preferredLanguage"`
-	// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+	// The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	PreferredTimeZone string `pulumi:"preferredTimeZone"`
 	// A filter to return only announcement subscriptions that match the given lifecycle state.
 	State string `pulumi:"state"`
@@ -756,9 +756,9 @@ type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArgs stru
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
 	OnsTopicId pulumi.StringInput `pulumi:"onsTopicId"`
-	// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+	// (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
 	PreferredLanguage pulumi.StringInput `pulumi:"preferredLanguage"`
-	// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+	// The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	PreferredTimeZone pulumi.StringInput `pulumi:"preferredTimeZone"`
 	// A filter to return only announcement subscriptions that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
@@ -880,14 +880,14 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput
 	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string { return v.OnsTopicId }).(pulumi.StringOutput)
 }
 
-// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+// (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) PreferredLanguage() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
 		return v.PreferredLanguage
 	}).(pulumi.StringOutput)
 }
 
-// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+// The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) PreferredTimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
 		return v.PreferredTimeZone
@@ -941,7 +941,7 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayO
 }
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup struct {
-	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+	// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Filters []GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 	Name string `pulumi:"name"`
@@ -959,7 +959,7 @@ type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGro
 }
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArgs struct {
-	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+	// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Filters GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayInput `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -1016,7 +1016,7 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 	return o
 }
 
-// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+// A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput) Filters() GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput {
 	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup) []GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter {
 		return v.Filters
@@ -1051,7 +1051,7 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 }
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter struct {
-	// The type of filter.
+	// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Type string `pulumi:"type"`
 	// The value of the filter.
 	Value string `pulumi:"value"`
@@ -1069,7 +1069,7 @@ type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGro
 }
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs struct {
-	// The type of filter.
+	// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 	Type pulumi.StringInput `pulumi:"type"`
 	// The value of the filter.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -1126,7 +1126,7 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 	return o
 }
 
-// The type of filter.
+// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter) string {
 		return v.Type
@@ -1269,6 +1269,399 @@ func (o GetAnnouncementSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetAnnouncementSubscriptionsFilterOutput)
 }
 
+type GetServicesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetServicesFilterInput is an input type that accepts GetServicesFilterArgs and GetServicesFilterOutput values.
+// You can construct a concrete instance of `GetServicesFilterInput` via:
+//
+//	GetServicesFilterArgs{...}
+type GetServicesFilterInput interface {
+	pulumi.Input
+
+	ToGetServicesFilterOutput() GetServicesFilterOutput
+	ToGetServicesFilterOutputWithContext(context.Context) GetServicesFilterOutput
+}
+
+type GetServicesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetServicesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesFilter)(nil)).Elem()
+}
+
+func (i GetServicesFilterArgs) ToGetServicesFilterOutput() GetServicesFilterOutput {
+	return i.ToGetServicesFilterOutputWithContext(context.Background())
+}
+
+func (i GetServicesFilterArgs) ToGetServicesFilterOutputWithContext(ctx context.Context) GetServicesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterOutput)
+}
+
+// GetServicesFilterArrayInput is an input type that accepts GetServicesFilterArray and GetServicesFilterArrayOutput values.
+// You can construct a concrete instance of `GetServicesFilterArrayInput` via:
+//
+//	GetServicesFilterArray{ GetServicesFilterArgs{...} }
+type GetServicesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetServicesFilterArrayOutput() GetServicesFilterArrayOutput
+	ToGetServicesFilterArrayOutputWithContext(context.Context) GetServicesFilterArrayOutput
+}
+
+type GetServicesFilterArray []GetServicesFilterInput
+
+func (GetServicesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesFilter)(nil)).Elem()
+}
+
+func (i GetServicesFilterArray) ToGetServicesFilterArrayOutput() GetServicesFilterArrayOutput {
+	return i.ToGetServicesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetServicesFilterArray) ToGetServicesFilterArrayOutputWithContext(ctx context.Context) GetServicesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterArrayOutput)
+}
+
+type GetServicesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetServicesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesFilter)(nil)).Elem()
+}
+
+func (o GetServicesFilterOutput) ToGetServicesFilterOutput() GetServicesFilterOutput {
+	return o
+}
+
+func (o GetServicesFilterOutput) ToGetServicesFilterOutputWithContext(ctx context.Context) GetServicesFilterOutput {
+	return o
+}
+
+func (o GetServicesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetServicesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetServicesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetServicesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServicesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetServicesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServicesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesFilter)(nil)).Elem()
+}
+
+func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutput() GetServicesFilterArrayOutput {
+	return o
+}
+
+func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutputWithContext(ctx context.Context) GetServicesFilterArrayOutput {
+	return o
+}
+
+func (o GetServicesFilterArrayOutput) Index(i pulumi.IntInput) GetServicesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServicesFilter {
+		return vs[0].([]GetServicesFilter)[vs[1].(int)]
+	}).(GetServicesFilterOutput)
+}
+
+type GetServicesServicesCollection struct {
+	Items []GetServicesServicesCollectionItem `pulumi:"items"`
+}
+
+// GetServicesServicesCollectionInput is an input type that accepts GetServicesServicesCollectionArgs and GetServicesServicesCollectionOutput values.
+// You can construct a concrete instance of `GetServicesServicesCollectionInput` via:
+//
+//	GetServicesServicesCollectionArgs{...}
+type GetServicesServicesCollectionInput interface {
+	pulumi.Input
+
+	ToGetServicesServicesCollectionOutput() GetServicesServicesCollectionOutput
+	ToGetServicesServicesCollectionOutputWithContext(context.Context) GetServicesServicesCollectionOutput
+}
+
+type GetServicesServicesCollectionArgs struct {
+	Items GetServicesServicesCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetServicesServicesCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesServicesCollection)(nil)).Elem()
+}
+
+func (i GetServicesServicesCollectionArgs) ToGetServicesServicesCollectionOutput() GetServicesServicesCollectionOutput {
+	return i.ToGetServicesServicesCollectionOutputWithContext(context.Background())
+}
+
+func (i GetServicesServicesCollectionArgs) ToGetServicesServicesCollectionOutputWithContext(ctx context.Context) GetServicesServicesCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServicesCollectionOutput)
+}
+
+// GetServicesServicesCollectionArrayInput is an input type that accepts GetServicesServicesCollectionArray and GetServicesServicesCollectionArrayOutput values.
+// You can construct a concrete instance of `GetServicesServicesCollectionArrayInput` via:
+//
+//	GetServicesServicesCollectionArray{ GetServicesServicesCollectionArgs{...} }
+type GetServicesServicesCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetServicesServicesCollectionArrayOutput() GetServicesServicesCollectionArrayOutput
+	ToGetServicesServicesCollectionArrayOutputWithContext(context.Context) GetServicesServicesCollectionArrayOutput
+}
+
+type GetServicesServicesCollectionArray []GetServicesServicesCollectionInput
+
+func (GetServicesServicesCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesServicesCollection)(nil)).Elem()
+}
+
+func (i GetServicesServicesCollectionArray) ToGetServicesServicesCollectionArrayOutput() GetServicesServicesCollectionArrayOutput {
+	return i.ToGetServicesServicesCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetServicesServicesCollectionArray) ToGetServicesServicesCollectionArrayOutputWithContext(ctx context.Context) GetServicesServicesCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServicesCollectionArrayOutput)
+}
+
+type GetServicesServicesCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetServicesServicesCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesServicesCollection)(nil)).Elem()
+}
+
+func (o GetServicesServicesCollectionOutput) ToGetServicesServicesCollectionOutput() GetServicesServicesCollectionOutput {
+	return o
+}
+
+func (o GetServicesServicesCollectionOutput) ToGetServicesServicesCollectionOutputWithContext(ctx context.Context) GetServicesServicesCollectionOutput {
+	return o
+}
+
+func (o GetServicesServicesCollectionOutput) Items() GetServicesServicesCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetServicesServicesCollection) []GetServicesServicesCollectionItem { return v.Items }).(GetServicesServicesCollectionItemArrayOutput)
+}
+
+type GetServicesServicesCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServicesServicesCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesServicesCollection)(nil)).Elem()
+}
+
+func (o GetServicesServicesCollectionArrayOutput) ToGetServicesServicesCollectionArrayOutput() GetServicesServicesCollectionArrayOutput {
+	return o
+}
+
+func (o GetServicesServicesCollectionArrayOutput) ToGetServicesServicesCollectionArrayOutputWithContext(ctx context.Context) GetServicesServicesCollectionArrayOutput {
+	return o
+}
+
+func (o GetServicesServicesCollectionArrayOutput) Index(i pulumi.IntInput) GetServicesServicesCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServicesServicesCollection {
+		return vs[0].([]GetServicesServicesCollection)[vs[1].(int)]
+	}).(GetServicesServicesCollectionOutput)
+}
+
+type GetServicesServicesCollectionItem struct {
+	// Filter by comms manager name
+	CommsManagerName string `pulumi:"commsManagerName"`
+	// The list of realms where this service is not available to be used.
+	ExcludedRealms []string `pulumi:"excludedRealms"`
+	// ID of the service object.
+	Id string `pulumi:"id"`
+	// A filter to return only services underlying a specific platform.
+	PlatformType string `pulumi:"platformType"`
+	// The list of previously used names for this service object.
+	PreviousServiceNames []string `pulumi:"previousServiceNames"`
+	// Name of the service represented by this object.
+	ServiceName string `pulumi:"serviceName"`
+	// Short name of the team to whom this service object is related.
+	ShortName string `pulumi:"shortName"`
+	// Current state of the service object.
+	State string `pulumi:"state"`
+	// Team name to which this service object is related.
+	TeamName string `pulumi:"teamName"`
+	// The date and time when the service object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the service object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	Type        string `pulumi:"type"`
+}
+
+// GetServicesServicesCollectionItemInput is an input type that accepts GetServicesServicesCollectionItemArgs and GetServicesServicesCollectionItemOutput values.
+// You can construct a concrete instance of `GetServicesServicesCollectionItemInput` via:
+//
+//	GetServicesServicesCollectionItemArgs{...}
+type GetServicesServicesCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetServicesServicesCollectionItemOutput() GetServicesServicesCollectionItemOutput
+	ToGetServicesServicesCollectionItemOutputWithContext(context.Context) GetServicesServicesCollectionItemOutput
+}
+
+type GetServicesServicesCollectionItemArgs struct {
+	// Filter by comms manager name
+	CommsManagerName pulumi.StringInput `pulumi:"commsManagerName"`
+	// The list of realms where this service is not available to be used.
+	ExcludedRealms pulumi.StringArrayInput `pulumi:"excludedRealms"`
+	// ID of the service object.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only services underlying a specific platform.
+	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	// The list of previously used names for this service object.
+	PreviousServiceNames pulumi.StringArrayInput `pulumi:"previousServiceNames"`
+	// Name of the service represented by this object.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// Short name of the team to whom this service object is related.
+	ShortName pulumi.StringInput `pulumi:"shortName"`
+	// Current state of the service object.
+	State pulumi.StringInput `pulumi:"state"`
+	// Team name to which this service object is related.
+	TeamName pulumi.StringInput `pulumi:"teamName"`
+	// The date and time when the service object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the service object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	Type        pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetServicesServicesCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesServicesCollectionItem)(nil)).Elem()
+}
+
+func (i GetServicesServicesCollectionItemArgs) ToGetServicesServicesCollectionItemOutput() GetServicesServicesCollectionItemOutput {
+	return i.ToGetServicesServicesCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetServicesServicesCollectionItemArgs) ToGetServicesServicesCollectionItemOutputWithContext(ctx context.Context) GetServicesServicesCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServicesCollectionItemOutput)
+}
+
+// GetServicesServicesCollectionItemArrayInput is an input type that accepts GetServicesServicesCollectionItemArray and GetServicesServicesCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetServicesServicesCollectionItemArrayInput` via:
+//
+//	GetServicesServicesCollectionItemArray{ GetServicesServicesCollectionItemArgs{...} }
+type GetServicesServicesCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetServicesServicesCollectionItemArrayOutput() GetServicesServicesCollectionItemArrayOutput
+	ToGetServicesServicesCollectionItemArrayOutputWithContext(context.Context) GetServicesServicesCollectionItemArrayOutput
+}
+
+type GetServicesServicesCollectionItemArray []GetServicesServicesCollectionItemInput
+
+func (GetServicesServicesCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesServicesCollectionItem)(nil)).Elem()
+}
+
+func (i GetServicesServicesCollectionItemArray) ToGetServicesServicesCollectionItemArrayOutput() GetServicesServicesCollectionItemArrayOutput {
+	return i.ToGetServicesServicesCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetServicesServicesCollectionItemArray) ToGetServicesServicesCollectionItemArrayOutputWithContext(ctx context.Context) GetServicesServicesCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServicesCollectionItemArrayOutput)
+}
+
+type GetServicesServicesCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetServicesServicesCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesServicesCollectionItem)(nil)).Elem()
+}
+
+func (o GetServicesServicesCollectionItemOutput) ToGetServicesServicesCollectionItemOutput() GetServicesServicesCollectionItemOutput {
+	return o
+}
+
+func (o GetServicesServicesCollectionItemOutput) ToGetServicesServicesCollectionItemOutputWithContext(ctx context.Context) GetServicesServicesCollectionItemOutput {
+	return o
+}
+
+// Filter by comms manager name
+func (o GetServicesServicesCollectionItemOutput) CommsManagerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.CommsManagerName }).(pulumi.StringOutput)
+}
+
+// The list of realms where this service is not available to be used.
+func (o GetServicesServicesCollectionItemOutput) ExcludedRealms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) []string { return v.ExcludedRealms }).(pulumi.StringArrayOutput)
+}
+
+// ID of the service object.
+func (o GetServicesServicesCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only services underlying a specific platform.
+func (o GetServicesServicesCollectionItemOutput) PlatformType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.PlatformType }).(pulumi.StringOutput)
+}
+
+// The list of previously used names for this service object.
+func (o GetServicesServicesCollectionItemOutput) PreviousServiceNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) []string { return v.PreviousServiceNames }).(pulumi.StringArrayOutput)
+}
+
+// Name of the service represented by this object.
+func (o GetServicesServicesCollectionItemOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// Short name of the team to whom this service object is related.
+func (o GetServicesServicesCollectionItemOutput) ShortName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.ShortName }).(pulumi.StringOutput)
+}
+
+// Current state of the service object.
+func (o GetServicesServicesCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Team name to which this service object is related.
+func (o GetServicesServicesCollectionItemOutput) TeamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.TeamName }).(pulumi.StringOutput)
+}
+
+// The date and time when the service object was created.
+func (o GetServicesServicesCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the service object was updated.
+func (o GetServicesServicesCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetServicesServicesCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesServicesCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetServicesServicesCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServicesServicesCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesServicesCollectionItem)(nil)).Elem()
+}
+
+func (o GetServicesServicesCollectionItemArrayOutput) ToGetServicesServicesCollectionItemArrayOutput() GetServicesServicesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetServicesServicesCollectionItemArrayOutput) ToGetServicesServicesCollectionItemArrayOutputWithContext(ctx context.Context) GetServicesServicesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetServicesServicesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetServicesServicesCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServicesServicesCollectionItem {
+		return vs[0].([]GetServicesServicesCollectionItem)[vs[1].(int)]
+	}).(GetServicesServicesCollectionItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AnnouncementSubscriptionFilterGroupsInput)(nil)).Elem(), AnnouncementSubscriptionFilterGroupsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AnnouncementSubscriptionFilterGroupsPtrInput)(nil)).Elem(), AnnouncementSubscriptionFilterGroupsArgs{})
@@ -1290,6 +1683,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayInput)(nil)).Elem(), GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementSubscriptionsFilterInput)(nil)).Elem(), GetAnnouncementSubscriptionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementSubscriptionsFilterArrayInput)(nil)).Elem(), GetAnnouncementSubscriptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesFilterInput)(nil)).Elem(), GetServicesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesFilterArrayInput)(nil)).Elem(), GetServicesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesServicesCollectionInput)(nil)).Elem(), GetServicesServicesCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesServicesCollectionArrayInput)(nil)).Elem(), GetServicesServicesCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesServicesCollectionItemInput)(nil)).Elem(), GetServicesServicesCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesServicesCollectionItemArrayInput)(nil)).Elem(), GetServicesServicesCollectionItemArray{})
 	pulumi.RegisterOutputType(AnnouncementSubscriptionFilterGroupsOutput{})
 	pulumi.RegisterOutputType(AnnouncementSubscriptionFilterGroupsPtrOutput{})
 	pulumi.RegisterOutputType(AnnouncementSubscriptionFilterGroupsFilterOutput{})
@@ -1310,4 +1709,10 @@ func init() {
 	pulumi.RegisterOutputType(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAnnouncementSubscriptionsFilterOutput{})
 	pulumi.RegisterOutputType(GetAnnouncementSubscriptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetServicesFilterOutput{})
+	pulumi.RegisterOutputType(GetServicesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetServicesServicesCollectionOutput{})
+	pulumi.RegisterOutputType(GetServicesServicesCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetServicesServicesCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetServicesServicesCollectionItemArrayOutput{})
 }

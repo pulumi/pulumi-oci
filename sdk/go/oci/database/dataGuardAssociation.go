@@ -58,6 +58,7 @@ import (
 //				DbSystemDefinedTags:          pulumi.Any(dataGuardAssociationDbSystemDefinedTags),
 //				DbSystemFreeformTags:         pulumi.Any(dataGuardAssociationDbSystemFreeformTags),
 //				DisplayName:                  pulumi.Any(dataGuardAssociationDisplayName),
+//				Domain:                       pulumi.Any(dataGuardAssociationDomain),
 //				FaultDomains:                 pulumi.Any(dataGuardAssociationFaultDomains),
 //				Hostname:                     pulumi.Any(dataGuardAssociationHostname),
 //				IsActiveDataGuardEnabled:     pulumi.Any(dataGuardAssociationIsActiveDataGuardEnabled),
@@ -130,6 +131,8 @@ type DataGuardAssociation struct {
 	DeleteStandbyDbHomeOnDelete pulumi.StringOutput    `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+	Domain pulumi.StringOutput `pulumi:"domain"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 	//
 	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -303,6 +306,8 @@ type dataGuardAssociationState struct {
 	DeleteStandbyDbHomeOnDelete *string           `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+	Domain *string `pulumi:"domain"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 	//
 	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -422,6 +427,8 @@ type DataGuardAssociationState struct {
 	DeleteStandbyDbHomeOnDelete pulumi.StringPtrInput
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+	Domain pulumi.StringPtrInput
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 	//
 	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -541,6 +548,8 @@ type dataGuardAssociationArgs struct {
 	DeleteStandbyDbHomeOnDelete string            `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+	Domain *string `pulumi:"domain"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 	//
 	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -643,6 +652,8 @@ type DataGuardAssociationArgs struct {
 	DeleteStandbyDbHomeOnDelete pulumi.StringInput
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+	Domain pulumi.StringPtrInput
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 	//
 	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -885,6 +896,11 @@ func (o DataGuardAssociationOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringO
 // The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 func (o DataGuardAssociationOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+func (o DataGuardAssociationOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
 // A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.

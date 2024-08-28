@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAnnouncementSubscriptionFilterGroupFilter {
     /**
-     * @return The type of filter.
+     * @return The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * 
      */
     private String type;
@@ -23,7 +23,7 @@ public final class GetAnnouncementSubscriptionFilterGroupFilter {
 
     private GetAnnouncementSubscriptionFilterGroupFilter() {}
     /**
-     * @return The type of filter.
+     * @return The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * 
      */
     public String type() {

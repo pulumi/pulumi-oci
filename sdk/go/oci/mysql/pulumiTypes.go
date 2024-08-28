@@ -6227,6 +6227,103 @@ func (o MysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) Mysql
 	}).(MysqlDbSystemCurrentPlacementOutput)
 }
 
+type MysqlDbSystemCustomerContact struct {
+	// (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+	Email string `pulumi:"email"`
+}
+
+// MysqlDbSystemCustomerContactInput is an input type that accepts MysqlDbSystemCustomerContactArgs and MysqlDbSystemCustomerContactOutput values.
+// You can construct a concrete instance of `MysqlDbSystemCustomerContactInput` via:
+//
+//	MysqlDbSystemCustomerContactArgs{...}
+type MysqlDbSystemCustomerContactInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemCustomerContactOutput() MysqlDbSystemCustomerContactOutput
+	ToMysqlDbSystemCustomerContactOutputWithContext(context.Context) MysqlDbSystemCustomerContactOutput
+}
+
+type MysqlDbSystemCustomerContactArgs struct {
+	// (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+	Email pulumi.StringInput `pulumi:"email"`
+}
+
+func (MysqlDbSystemCustomerContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (i MysqlDbSystemCustomerContactArgs) ToMysqlDbSystemCustomerContactOutput() MysqlDbSystemCustomerContactOutput {
+	return i.ToMysqlDbSystemCustomerContactOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemCustomerContactArgs) ToMysqlDbSystemCustomerContactOutputWithContext(ctx context.Context) MysqlDbSystemCustomerContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemCustomerContactOutput)
+}
+
+// MysqlDbSystemCustomerContactArrayInput is an input type that accepts MysqlDbSystemCustomerContactArray and MysqlDbSystemCustomerContactArrayOutput values.
+// You can construct a concrete instance of `MysqlDbSystemCustomerContactArrayInput` via:
+//
+//	MysqlDbSystemCustomerContactArray{ MysqlDbSystemCustomerContactArgs{...} }
+type MysqlDbSystemCustomerContactArrayInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemCustomerContactArrayOutput() MysqlDbSystemCustomerContactArrayOutput
+	ToMysqlDbSystemCustomerContactArrayOutputWithContext(context.Context) MysqlDbSystemCustomerContactArrayOutput
+}
+
+type MysqlDbSystemCustomerContactArray []MysqlDbSystemCustomerContactInput
+
+func (MysqlDbSystemCustomerContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (i MysqlDbSystemCustomerContactArray) ToMysqlDbSystemCustomerContactArrayOutput() MysqlDbSystemCustomerContactArrayOutput {
+	return i.ToMysqlDbSystemCustomerContactArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemCustomerContactArray) ToMysqlDbSystemCustomerContactArrayOutputWithContext(ctx context.Context) MysqlDbSystemCustomerContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemCustomerContactArrayOutput)
+}
+
+type MysqlDbSystemCustomerContactOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemCustomerContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (o MysqlDbSystemCustomerContactOutput) ToMysqlDbSystemCustomerContactOutput() MysqlDbSystemCustomerContactOutput {
+	return o
+}
+
+func (o MysqlDbSystemCustomerContactOutput) ToMysqlDbSystemCustomerContactOutputWithContext(ctx context.Context) MysqlDbSystemCustomerContactOutput {
+	return o
+}
+
+// (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+func (o MysqlDbSystemCustomerContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemCustomerContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+type MysqlDbSystemCustomerContactArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemCustomerContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (o MysqlDbSystemCustomerContactArrayOutput) ToMysqlDbSystemCustomerContactArrayOutput() MysqlDbSystemCustomerContactArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemCustomerContactArrayOutput) ToMysqlDbSystemCustomerContactArrayOutputWithContext(ctx context.Context) MysqlDbSystemCustomerContactArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemCustomerContactArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemCustomerContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemCustomerContact {
+		return vs[0].([]MysqlDbSystemCustomerContact)[vs[1].(int)]
+	}).(MysqlDbSystemCustomerContactOutput)
+}
+
 type MysqlDbSystemDataStorage struct {
 	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
 	AllocatedStorageSizeInGbs *int `pulumi:"allocatedStorageSizeInGbs"`
@@ -16258,10 +16355,107 @@ func (o GetMysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) Ge
 	}).(GetMysqlDbSystemCurrentPlacementOutput)
 }
 
+type GetMysqlDbSystemCustomerContact struct {
+	// The email address used by Oracle to send notifications regarding the DB System.
+	Email string `pulumi:"email"`
+}
+
+// GetMysqlDbSystemCustomerContactInput is an input type that accepts GetMysqlDbSystemCustomerContactArgs and GetMysqlDbSystemCustomerContactOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemCustomerContactInput` via:
+//
+//	GetMysqlDbSystemCustomerContactArgs{...}
+type GetMysqlDbSystemCustomerContactInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemCustomerContactOutput() GetMysqlDbSystemCustomerContactOutput
+	ToGetMysqlDbSystemCustomerContactOutputWithContext(context.Context) GetMysqlDbSystemCustomerContactOutput
+}
+
+type GetMysqlDbSystemCustomerContactArgs struct {
+	// The email address used by Oracle to send notifications regarding the DB System.
+	Email pulumi.StringInput `pulumi:"email"`
+}
+
+func (GetMysqlDbSystemCustomerContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemCustomerContactArgs) ToGetMysqlDbSystemCustomerContactOutput() GetMysqlDbSystemCustomerContactOutput {
+	return i.ToGetMysqlDbSystemCustomerContactOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemCustomerContactArgs) ToGetMysqlDbSystemCustomerContactOutputWithContext(ctx context.Context) GetMysqlDbSystemCustomerContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemCustomerContactOutput)
+}
+
+// GetMysqlDbSystemCustomerContactArrayInput is an input type that accepts GetMysqlDbSystemCustomerContactArray and GetMysqlDbSystemCustomerContactArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemCustomerContactArrayInput` via:
+//
+//	GetMysqlDbSystemCustomerContactArray{ GetMysqlDbSystemCustomerContactArgs{...} }
+type GetMysqlDbSystemCustomerContactArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemCustomerContactArrayOutput() GetMysqlDbSystemCustomerContactArrayOutput
+	ToGetMysqlDbSystemCustomerContactArrayOutputWithContext(context.Context) GetMysqlDbSystemCustomerContactArrayOutput
+}
+
+type GetMysqlDbSystemCustomerContactArray []GetMysqlDbSystemCustomerContactInput
+
+func (GetMysqlDbSystemCustomerContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemCustomerContactArray) ToGetMysqlDbSystemCustomerContactArrayOutput() GetMysqlDbSystemCustomerContactArrayOutput {
+	return i.ToGetMysqlDbSystemCustomerContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemCustomerContactArray) ToGetMysqlDbSystemCustomerContactArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemCustomerContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemCustomerContactArrayOutput)
+}
+
+type GetMysqlDbSystemCustomerContactOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemCustomerContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemCustomerContactOutput) ToGetMysqlDbSystemCustomerContactOutput() GetMysqlDbSystemCustomerContactOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemCustomerContactOutput) ToGetMysqlDbSystemCustomerContactOutputWithContext(ctx context.Context) GetMysqlDbSystemCustomerContactOutput {
+	return o
+}
+
+// The email address used by Oracle to send notifications regarding the DB System.
+func (o GetMysqlDbSystemCustomerContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemCustomerContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemCustomerContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemCustomerContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemCustomerContactArrayOutput) ToGetMysqlDbSystemCustomerContactArrayOutput() GetMysqlDbSystemCustomerContactArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemCustomerContactArrayOutput) ToGetMysqlDbSystemCustomerContactArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemCustomerContactArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemCustomerContactArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemCustomerContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemCustomerContact {
+		return vs[0].([]GetMysqlDbSystemCustomerContact)[vs[1].(int)]
+	}).(GetMysqlDbSystemCustomerContactOutput)
+}
+
 type GetMysqlDbSystemDataStorage struct {
 	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
 	AllocatedStorageSizeInGbs int `pulumi:"allocatedStorageSizeInGbs"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
 	DataStorageSizeLimitInGbs int `pulumi:"dataStorageSizeLimitInGbs"`
@@ -16285,7 +16479,7 @@ type GetMysqlDbSystemDataStorageInput interface {
 type GetMysqlDbSystemDataStorageArgs struct {
 	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
 	AllocatedStorageSizeInGbs pulumi.IntInput `pulumi:"allocatedStorageSizeInGbs"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
 	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
 	DataStorageSizeLimitInGbs pulumi.IntInput `pulumi:"dataStorageSizeLimitInGbs"`
@@ -16351,7 +16545,7 @@ func (o GetMysqlDbSystemDataStorageOutput) AllocatedStorageSizeInGbs() pulumi.In
 	return o.ApplyT(func(v GetMysqlDbSystemDataStorage) int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
-// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+// Initial size of the data volume in GiBs that will be created and attached.
 func (o GetMysqlDbSystemDataStorageOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemDataStorage) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }
@@ -17273,7 +17467,9 @@ type GetMysqlDbSystemsDbSystem struct {
 	CrashRecovery string `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements []GetMysqlDbSystemsDbSystemCurrentPlacement `pulumi:"currentPlacements"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+	CustomerContacts []GetMysqlDbSystemsDbSystemCustomerContact `pulumi:"customerContacts"`
+	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages []GetMysqlDbSystemsDbSystemDataStorage `pulumi:"dataStorages"`
@@ -17362,7 +17558,9 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput `pulumi:"currentPlacements"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+	CustomerContacts GetMysqlDbSystemsDbSystemCustomerContactArrayInput `pulumi:"customerContacts"`
+	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages GetMysqlDbSystemsDbSystemDataStorageArrayInput `pulumi:"dataStorages"`
@@ -17519,7 +17717,14 @@ func (o GetMysqlDbSystemsDbSystemOutput) CurrentPlacements() GetMysqlDbSystemsDb
 	}).(GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput)
 }
 
-// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+func (o GetMysqlDbSystemsDbSystemOutput) CustomerContacts() GetMysqlDbSystemsDbSystemCustomerContactArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemCustomerContact {
+		return v.CustomerContacts
+	}).(GetMysqlDbSystemsDbSystemCustomerContactArrayOutput)
+}
+
+// Initial size of the data volume in GiBs that will be created and attached.
 func (o GetMysqlDbSystemsDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }
@@ -18885,10 +19090,107 @@ func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) Index(i pulumi.Int
 	}).(GetMysqlDbSystemsDbSystemCurrentPlacementOutput)
 }
 
+type GetMysqlDbSystemsDbSystemCustomerContact struct {
+	// The email address used by Oracle to send notifications regarding the DB System.
+	Email string `pulumi:"email"`
+}
+
+// GetMysqlDbSystemsDbSystemCustomerContactInput is an input type that accepts GetMysqlDbSystemsDbSystemCustomerContactArgs and GetMysqlDbSystemsDbSystemCustomerContactOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemCustomerContactInput` via:
+//
+//	GetMysqlDbSystemsDbSystemCustomerContactArgs{...}
+type GetMysqlDbSystemsDbSystemCustomerContactInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemCustomerContactOutput() GetMysqlDbSystemsDbSystemCustomerContactOutput
+	ToGetMysqlDbSystemsDbSystemCustomerContactOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemCustomerContactOutput
+}
+
+type GetMysqlDbSystemsDbSystemCustomerContactArgs struct {
+	// The email address used by Oracle to send notifications regarding the DB System.
+	Email pulumi.StringInput `pulumi:"email"`
+}
+
+func (GetMysqlDbSystemsDbSystemCustomerContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemCustomerContactArgs) ToGetMysqlDbSystemsDbSystemCustomerContactOutput() GetMysqlDbSystemsDbSystemCustomerContactOutput {
+	return i.ToGetMysqlDbSystemsDbSystemCustomerContactOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemCustomerContactArgs) ToGetMysqlDbSystemsDbSystemCustomerContactOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemCustomerContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemCustomerContactOutput)
+}
+
+// GetMysqlDbSystemsDbSystemCustomerContactArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemCustomerContactArray and GetMysqlDbSystemsDbSystemCustomerContactArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemCustomerContactArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemCustomerContactArray{ GetMysqlDbSystemsDbSystemCustomerContactArgs{...} }
+type GetMysqlDbSystemsDbSystemCustomerContactArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemCustomerContactArrayOutput() GetMysqlDbSystemsDbSystemCustomerContactArrayOutput
+	ToGetMysqlDbSystemsDbSystemCustomerContactArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemCustomerContactArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemCustomerContactArray []GetMysqlDbSystemsDbSystemCustomerContactInput
+
+func (GetMysqlDbSystemsDbSystemCustomerContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemCustomerContactArray) ToGetMysqlDbSystemsDbSystemCustomerContactArrayOutput() GetMysqlDbSystemsDbSystemCustomerContactArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemCustomerContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemCustomerContactArray) ToGetMysqlDbSystemsDbSystemCustomerContactArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemCustomerContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemCustomerContactArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemCustomerContactOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemCustomerContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemCustomerContactOutput) ToGetMysqlDbSystemsDbSystemCustomerContactOutput() GetMysqlDbSystemsDbSystemCustomerContactOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemCustomerContactOutput) ToGetMysqlDbSystemsDbSystemCustomerContactOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemCustomerContactOutput {
+	return o
+}
+
+// The email address used by Oracle to send notifications regarding the DB System.
+func (o GetMysqlDbSystemsDbSystemCustomerContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemCustomerContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemCustomerContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemCustomerContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemCustomerContact)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemCustomerContactArrayOutput) ToGetMysqlDbSystemsDbSystemCustomerContactArrayOutput() GetMysqlDbSystemsDbSystemCustomerContactArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemCustomerContactArrayOutput) ToGetMysqlDbSystemsDbSystemCustomerContactArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemCustomerContactArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemCustomerContactArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemCustomerContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemCustomerContact {
+		return vs[0].([]GetMysqlDbSystemsDbSystemCustomerContact)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemCustomerContactOutput)
+}
+
 type GetMysqlDbSystemsDbSystemDataStorage struct {
 	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
 	AllocatedStorageSizeInGbs int `pulumi:"allocatedStorageSizeInGbs"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
 	DataStorageSizeLimitInGbs int `pulumi:"dataStorageSizeLimitInGbs"`
@@ -18912,7 +19214,7 @@ type GetMysqlDbSystemsDbSystemDataStorageInput interface {
 type GetMysqlDbSystemsDbSystemDataStorageArgs struct {
 	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
 	AllocatedStorageSizeInGbs pulumi.IntInput `pulumi:"allocatedStorageSizeInGbs"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
 	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
 	DataStorageSizeLimitInGbs pulumi.IntInput `pulumi:"dataStorageSizeLimitInGbs"`
@@ -18978,7 +19280,7 @@ func (o GetMysqlDbSystemsDbSystemDataStorageOutput) AllocatedStorageSizeInGbs() 
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDataStorage) int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
-// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+// Initial size of the data volume in GiBs that will be created and attached.
 func (o GetMysqlDbSystemsDbSystemDataStorageOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDataStorage) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }
@@ -21429,6 +21731,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), MysqlDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCurrentPlacementInput)(nil)).Elem(), MysqlDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCurrentPlacementArrayInput)(nil)).Elem(), MysqlDbSystemCurrentPlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCustomerContactInput)(nil)).Elem(), MysqlDbSystemCustomerContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCustomerContactArrayInput)(nil)).Elem(), MysqlDbSystemCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDataStorageInput)(nil)).Elem(), MysqlDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDataStoragePtrInput)(nil)).Elem(), MysqlDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDeletionPolicyInput)(nil)).Elem(), MysqlDbSystemDeletionPolicyArgs{})
@@ -21549,6 +21853,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCurrentPlacementInput)(nil)).Elem(), GetMysqlDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCurrentPlacementArrayInput)(nil)).Elem(), GetMysqlDbSystemCurrentPlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCustomerContactInput)(nil)).Elem(), GetMysqlDbSystemCustomerContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCustomerContactArrayInput)(nil)).Elem(), GetMysqlDbSystemCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDataStorageInput)(nil)).Elem(), GetMysqlDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDataStorageArrayInput)(nil)).Elem(), GetMysqlDbSystemDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemDeletionPolicyArgs{})
@@ -21585,6 +21891,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCurrentPlacementInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCurrentPlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCustomerContactInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCustomerContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCustomerContactArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorageInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorageArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDeletionPolicyArgs{})
@@ -21679,6 +21987,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemCurrentPlacementArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemCustomerContactOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDataStorageOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDataStoragePtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDeletionPolicyOutput{})
@@ -21799,6 +22109,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemCurrentPlacementArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemCustomerContactOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDataStorageOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDeletionPolicyOutput{})
@@ -21835,6 +22147,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCustomerContactOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDataStorageOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDeletionPolicyOutput{})

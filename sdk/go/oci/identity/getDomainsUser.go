@@ -95,7 +95,8 @@ type LookupDomainsUserResult struct {
 	// A list of entitlements for the User that represent a thing the User has.
 	Entitlements []GetDomainsUserEntitlement `pulumi:"entitlements"`
 	// An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-	ExternalId string `pulumi:"externalId"`
+	ExternalId  string `pulumi:"externalId"`
+	ForceDelete bool   `pulumi:"forceDelete"`
 	// A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	Groups []GetDomainsUserGroup `pulumi:"groups"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
@@ -302,6 +303,10 @@ func (o LookupDomainsUserResultOutput) Entitlements() GetDomainsUserEntitlementA
 // An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
 func (o LookupDomainsUserResultOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.ExternalId }).(pulumi.StringOutput)
+}
+
+func (o LookupDomainsUserResultOutput) ForceDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) bool { return v.ForceDelete }).(pulumi.BoolOutput)
 }
 
 // A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated

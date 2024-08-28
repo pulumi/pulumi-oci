@@ -17,6 +17,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         /// * PE: Private endpoint
         /// * MACS: Management agent
         /// * EXTERNAL: External database connector
+        /// * DIRECT: Direct connection
         /// </summary>
         [Input("connectorType")]
         public Input<string>? ConnectorType { get; set; }

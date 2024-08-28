@@ -56,6 +56,10 @@ export class ManagedDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
+     * The operating system of database.
+     */
+    public /*out*/ readonly databasePlatformName!: pulumi.Output<string>;
+    /**
      * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      */
     public /*out*/ readonly databaseStatus!: pulumi.Output<string>;
@@ -75,6 +79,10 @@ export class ManagedDatabase extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
      */
     public /*out*/ readonly dbSystemId!: pulumi.Output<string>;
+    /**
+     * The list of feature configurations
+     */
+    public /*out*/ readonly dbmgmtFeatureConfigs!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfig[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
@@ -147,11 +155,13 @@ export class ManagedDatabase extends pulumi.CustomResource {
             const state = argsOrState as ManagedDatabaseState | undefined;
             resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["databasePlatformName"] = state ? state.databasePlatformName : undefined;
             resourceInputs["databaseStatus"] = state ? state.databaseStatus : undefined;
             resourceInputs["databaseSubType"] = state ? state.databaseSubType : undefined;
             resourceInputs["databaseType"] = state ? state.databaseType : undefined;
             resourceInputs["databaseVersion"] = state ? state.databaseVersion : undefined;
             resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
+            resourceInputs["dbmgmtFeatureConfigs"] = state ? state.dbmgmtFeatureConfigs : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -175,11 +185,13 @@ export class ManagedDatabase extends pulumi.CustomResource {
             resourceInputs["managedDatabaseId"] = args ? args.managedDatabaseId : undefined;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["databasePlatformName"] = undefined /*out*/;
             resourceInputs["databaseStatus"] = undefined /*out*/;
             resourceInputs["databaseSubType"] = undefined /*out*/;
             resourceInputs["databaseType"] = undefined /*out*/;
             resourceInputs["databaseVersion"] = undefined /*out*/;
             resourceInputs["dbSystemId"] = undefined /*out*/;
+            resourceInputs["dbmgmtFeatureConfigs"] = undefined /*out*/;
             resourceInputs["deploymentType"] = undefined /*out*/;
             resourceInputs["isCluster"] = undefined /*out*/;
             resourceInputs["managedDatabaseGroups"] = undefined /*out*/;
@@ -209,6 +221,10 @@ export interface ManagedDatabaseState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * The operating system of database.
+     */
+    databasePlatformName?: pulumi.Input<string>;
+    /**
      * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      */
     databaseStatus?: pulumi.Input<string>;
@@ -228,6 +244,10 @@ export interface ManagedDatabaseState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
      */
     dbSystemId?: pulumi.Input<string>;
+    /**
+     * The list of feature configurations
+     */
+    dbmgmtFeatureConfigs?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfig>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */

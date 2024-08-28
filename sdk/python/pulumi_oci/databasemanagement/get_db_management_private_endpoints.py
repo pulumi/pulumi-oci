@@ -23,7 +23,7 @@ class GetDbManagementPrivateEndpointsResult:
     """
     A collection of values returned by getDbManagementPrivateEndpoints.
     """
-    def __init__(__self__, compartment_id=None, db_management_private_endpoint_collections=None, filters=None, id=None, is_cluster=None, name=None, state=None, vcn_id=None):
+    def __init__(__self__, compartment_id=None, db_management_private_endpoint_collections=None, filters=None, id=None, is_cluster=None, is_dns_resolution_enabled=None, name=None, state=None, vcn_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -39,6 +39,9 @@ class GetDbManagementPrivateEndpointsResult:
         if is_cluster and not isinstance(is_cluster, bool):
             raise TypeError("Expected argument 'is_cluster' to be a bool")
         pulumi.set(__self__, "is_cluster", is_cluster)
+        if is_dns_resolution_enabled and not isinstance(is_dns_resolution_enabled, bool):
+            raise TypeError("Expected argument 'is_dns_resolution_enabled' to be a bool")
+        pulumi.set(__self__, "is_dns_resolution_enabled", is_dns_resolution_enabled)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -87,6 +90,14 @@ class GetDbManagementPrivateEndpointsResult:
         return pulumi.get(self, "is_cluster")
 
     @property
+    @pulumi.getter(name="isDnsResolutionEnabled")
+    def is_dns_resolution_enabled(self) -> Optional[bool]:
+        """
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        """
+        return pulumi.get(self, "is_dns_resolution_enabled")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
@@ -122,6 +133,7 @@ class AwaitableGetDbManagementPrivateEndpointsResult(GetDbManagementPrivateEndpo
             filters=self.filters,
             id=self.id,
             is_cluster=self.is_cluster,
+            is_dns_resolution_enabled=self.is_dns_resolution_enabled,
             name=self.name,
             state=self.state,
             vcn_id=self.vcn_id)
@@ -130,6 +142,7 @@ class AwaitableGetDbManagementPrivateEndpointsResult(GetDbManagementPrivateEndpo
 def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
                                         filters: Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict']]] = None,
                                         is_cluster: Optional[bool] = None,
+                                        is_dns_resolution_enabled: Optional[bool] = None,
                                         name: Optional[str] = None,
                                         state: Optional[str] = None,
                                         vcn_id: Optional[str] = None,
@@ -147,6 +160,7 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
 
     test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=compartment_id,
         is_cluster=db_management_private_endpoint_is_cluster,
+        is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled,
         name=db_management_private_endpoint_name,
         state=db_management_private_endpoint_state,
         vcn_id=test_vcn["id"])
@@ -155,6 +169,7 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param bool is_cluster: The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
+    :param bool is_dns_resolution_enabled: The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
     :param str name: A filter to return only resources that match the entire name.
     :param str state: The lifecycle state of a resource.
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -163,6 +178,7 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['isCluster'] = is_cluster
+    __args__['isDnsResolutionEnabled'] = is_dns_resolution_enabled
     __args__['name'] = name
     __args__['state'] = state
     __args__['vcnId'] = vcn_id
@@ -175,6 +191,7 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         is_cluster=pulumi.get(__ret__, 'is_cluster'),
+        is_dns_resolution_enabled=pulumi.get(__ret__, 'is_dns_resolution_enabled'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
@@ -184,6 +201,7 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
 def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict']]]]] = None,
                                                is_cluster: Optional[pulumi.Input[Optional[bool]]] = None,
+                                               is_dns_resolution_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                                vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -201,6 +219,7 @@ def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.I
 
     test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=compartment_id,
         is_cluster=db_management_private_endpoint_is_cluster,
+        is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled,
         name=db_management_private_endpoint_name,
         state=db_management_private_endpoint_state,
         vcn_id=test_vcn["id"])
@@ -209,6 +228,7 @@ def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.I
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param bool is_cluster: The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
+    :param bool is_dns_resolution_enabled: The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
     :param str name: A filter to return only resources that match the entire name.
     :param str state: The lifecycle state of a resource.
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.

@@ -26,7 +26,8 @@ type DatabaseDbmFeaturesManagement struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseDbmFeature pulumi.BoolOutput `pulumi:"enableDatabaseDbmFeature"`
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails DatabaseDbmFeaturesManagementFeatureDetailsPtrOutput `pulumi:"featureDetails"`
+	FeatureDetails           DatabaseDbmFeaturesManagementFeatureDetailsPtrOutput `pulumi:"featureDetails"`
+	ModifyDatabaseDbmFeature pulumi.BoolPtrOutput                                 `pulumi:"modifyDatabaseDbmFeature"`
 }
 
 // NewDatabaseDbmFeaturesManagement registers a new resource with the given unique name, arguments, and options.
@@ -73,7 +74,8 @@ type databaseDbmFeaturesManagementState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseDbmFeature *bool `pulumi:"enableDatabaseDbmFeature"`
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails *DatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
+	FeatureDetails           *DatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
+	ModifyDatabaseDbmFeature *bool                                        `pulumi:"modifyDatabaseDbmFeature"`
 }
 
 type DatabaseDbmFeaturesManagementState struct {
@@ -85,7 +87,8 @@ type DatabaseDbmFeaturesManagementState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseDbmFeature pulumi.BoolPtrInput
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails DatabaseDbmFeaturesManagementFeatureDetailsPtrInput
+	FeatureDetails           DatabaseDbmFeaturesManagementFeatureDetailsPtrInput
+	ModifyDatabaseDbmFeature pulumi.BoolPtrInput
 }
 
 func (DatabaseDbmFeaturesManagementState) ElementType() reflect.Type {
@@ -101,7 +104,8 @@ type databaseDbmFeaturesManagementArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseDbmFeature bool `pulumi:"enableDatabaseDbmFeature"`
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails *DatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
+	FeatureDetails           *DatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
+	ModifyDatabaseDbmFeature *bool                                        `pulumi:"modifyDatabaseDbmFeature"`
 }
 
 // The set of arguments for constructing a DatabaseDbmFeaturesManagement resource.
@@ -114,7 +118,8 @@ type DatabaseDbmFeaturesManagementArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseDbmFeature pulumi.BoolInput
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails DatabaseDbmFeaturesManagementFeatureDetailsPtrInput
+	FeatureDetails           DatabaseDbmFeaturesManagementFeatureDetailsPtrInput
+	ModifyDatabaseDbmFeature pulumi.BoolPtrInput
 }
 
 func (DatabaseDbmFeaturesManagementArgs) ElementType() reflect.Type {
@@ -222,6 +227,10 @@ func (o DatabaseDbmFeaturesManagementOutput) FeatureDetails() DatabaseDbmFeature
 	return o.ApplyT(func(v *DatabaseDbmFeaturesManagement) DatabaseDbmFeaturesManagementFeatureDetailsPtrOutput {
 		return v.FeatureDetails
 	}).(DatabaseDbmFeaturesManagementFeatureDetailsPtrOutput)
+}
+
+func (o DatabaseDbmFeaturesManagementOutput) ModifyDatabaseDbmFeature() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatabaseDbmFeaturesManagement) pulumi.BoolPtrOutput { return v.ModifyDatabaseDbmFeature }).(pulumi.BoolPtrOutput)
 }
 
 type DatabaseDbmFeaturesManagementArrayOutput struct{ *pulumi.OutputState }

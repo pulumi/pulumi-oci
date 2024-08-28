@@ -83,6 +83,10 @@ export interface GetVaultResult {
      */
     readonly isPrimary: boolean;
     /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     */
+    readonly isVaultReplicable: boolean;
+    /**
      * The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
      */
     readonly managementEndpoint: string;

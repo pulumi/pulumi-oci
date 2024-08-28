@@ -1217,10 +1217,7 @@ class BdsInstanceCloudSqlDetailArgs:
                  kerberos_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgs']]]] = None,
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
-                 ocpus: Optional[pulumi.Input[int]] = None,
-                 odh_version: Optional[pulumi.Input[str]] = None,
-                 os_version: Optional[pulumi.Input[str]] = None,
-                 ssh_fingerprint: Optional[pulumi.Input[str]] = None):
+                 ocpus: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] shape: Shape of the node
         :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -1230,9 +1227,6 @@ class BdsInstanceCloudSqlDetailArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-        :param pulumi.Input[str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        :param pulumi.Input[str] os_version: BDS-assigned Operating System version for the node.
-        :param pulumi.Input[str] ssh_fingerprint: The fingerprint of the SSH key used for node access
         """
         pulumi.set(__self__, "shape", shape)
         if block_volume_size_in_gbs is not None:
@@ -1249,12 +1243,6 @@ class BdsInstanceCloudSqlDetailArgs:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
-        if odh_version is not None:
-            pulumi.set(__self__, "odh_version", odh_version)
-        if os_version is not None:
-            pulumi.set(__self__, "os_version", os_version)
-        if ssh_fingerprint is not None:
-            pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
 
     @property
     @pulumi.getter
@@ -1351,42 +1339,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "ocpus", value)
-
-    @property
-    @pulumi.getter(name="odhVersion")
-    def odh_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        """
-        return pulumi.get(self, "odh_version")
-
-    @odh_version.setter
-    def odh_version(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "odh_version", value)
-
-    @property
-    @pulumi.getter(name="osVersion")
-    def os_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        BDS-assigned Operating System version for the node.
-        """
-        return pulumi.get(self, "os_version")
-
-    @os_version.setter
-    def os_version(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "os_version", value)
-
-    @property
-    @pulumi.getter(name="sshFingerprint")
-    def ssh_fingerprint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fingerprint of the SSH key used for node access
-        """
-        return pulumi.get(self, "ssh_fingerprint")
-
-    @ssh_fingerprint.setter
-    def ssh_fingerprint(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "ssh_fingerprint", value)
 
 
 @pulumi.input_type

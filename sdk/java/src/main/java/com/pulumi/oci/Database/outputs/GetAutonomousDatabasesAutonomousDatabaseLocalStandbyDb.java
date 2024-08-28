@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
     /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    private String availabilityDomain;
+    /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
@@ -22,7 +27,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
      */
     private String lifecycleDetails;
     /**
-     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * @return The current state of the Autonomous Database.
      * 
      */
     private String state;
@@ -39,6 +44,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
 
     private GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb() {}
     /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
+    }
+    /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
@@ -53,7 +65,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
         return this.lifecycleDetails;
     }
     /**
-     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * @return The current state of the Autonomous Database.
      * 
      */
     public String state() {
@@ -83,6 +95,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String availabilityDomain;
         private Integer lagTimeInSeconds;
         private String lifecycleDetails;
         private String state;
@@ -91,6 +104,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
         public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
@@ -98,6 +112,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
         }
 
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
         @CustomType.Setter
         public Builder lagTimeInSeconds(Integer lagTimeInSeconds) {
             if (lagTimeInSeconds == null) {
@@ -140,6 +162,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
         }
         public GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb build() {
             final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb();
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.lagTimeInSeconds = lagTimeInSeconds;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;

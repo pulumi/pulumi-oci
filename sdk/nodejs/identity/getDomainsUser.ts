@@ -117,6 +117,7 @@ export interface GetDomainsUserResult {
      * An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
      */
     readonly externalId: string;
+    readonly forceDelete: boolean;
     /**
      * A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      */

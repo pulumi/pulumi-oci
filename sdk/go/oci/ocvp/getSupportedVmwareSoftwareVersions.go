@@ -31,9 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSupportedVmwareSoftwareVersions(ctx, &ocvp.GetSupportedVmwareSoftwareVersionsArgs{
-//				CompartmentId: compartmentId,
-//				HostShapeName: pulumi.StringRef(testShape.Name),
-//				Version:       pulumi.StringRef(supportedVmwareSoftwareVersionVersion),
+//				CompartmentId:    compartmentId,
+//				HostShapeName:    pulumi.StringRef(testShape.Name),
+//				Version:          pulumi.StringRef(supportedVmwareSoftwareVersionVersion),
+//				VersionToUpgrade: pulumi.StringRef(supportedVmwareSoftwareVersionVersionToUpgrade),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -62,6 +63,8 @@ type GetSupportedVmwareSoftwareVersionsArgs struct {
 	HostShapeName *string `pulumi:"hostShapeName"`
 	// A filter to return only resources that match the given VMware software version exactly.
 	Version *string `pulumi:"version"`
+	// A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+	VersionToUpgrade *string `pulumi:"versionToUpgrade"`
 }
 
 // A collection of values returned by getSupportedVmwareSoftwareVersions.
@@ -74,7 +77,8 @@ type GetSupportedVmwareSoftwareVersionsResult struct {
 	// A list of the supported versions of bundled VMware software.
 	Items []GetSupportedVmwareSoftwareVersionsItem `pulumi:"items"`
 	// A short, unique string that identifies the version of bundled software.
-	Version *string `pulumi:"version"`
+	Version          *string `pulumi:"version"`
+	VersionToUpgrade *string `pulumi:"versionToUpgrade"`
 }
 
 func GetSupportedVmwareSoftwareVersionsOutput(ctx *pulumi.Context, args GetSupportedVmwareSoftwareVersionsOutputArgs, opts ...pulumi.InvokeOption) GetSupportedVmwareSoftwareVersionsResultOutput {
@@ -99,6 +103,8 @@ type GetSupportedVmwareSoftwareVersionsOutputArgs struct {
 	HostShapeName pulumi.StringPtrInput `pulumi:"hostShapeName"`
 	// A filter to return only resources that match the given VMware software version exactly.
 	Version pulumi.StringPtrInput `pulumi:"version"`
+	// A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+	VersionToUpgrade pulumi.StringPtrInput `pulumi:"versionToUpgrade"`
 }
 
 func (GetSupportedVmwareSoftwareVersionsOutputArgs) ElementType() reflect.Type {
@@ -149,6 +155,10 @@ func (o GetSupportedVmwareSoftwareVersionsResultOutput) Items() GetSupportedVmwa
 // A short, unique string that identifies the version of bundled software.
 func (o GetSupportedVmwareSoftwareVersionsResultOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSupportedVmwareSoftwareVersionsResultOutput) VersionToUpgrade() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) *string { return v.VersionToUpgrade }).(pulumi.StringPtrOutput)
 }
 
 func init() {

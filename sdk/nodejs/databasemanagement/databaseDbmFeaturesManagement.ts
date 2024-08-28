@@ -55,6 +55,7 @@ export class DatabaseDbmFeaturesManagement extends pulumi.CustomResource {
      * The details required to enable the specified Database Management feature.
      */
     public readonly featureDetails!: pulumi.Output<outputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetails | undefined>;
+    public readonly modifyDatabaseDbmFeature!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a DatabaseDbmFeaturesManagement resource with the given unique name, arguments, and options.
@@ -72,6 +73,7 @@ export class DatabaseDbmFeaturesManagement extends pulumi.CustomResource {
             resourceInputs["databaseId"] = state ? state.databaseId : undefined;
             resourceInputs["enableDatabaseDbmFeature"] = state ? state.enableDatabaseDbmFeature : undefined;
             resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
+            resourceInputs["modifyDatabaseDbmFeature"] = state ? state.modifyDatabaseDbmFeature : undefined;
         } else {
             const args = argsOrState as DatabaseDbmFeaturesManagementArgs | undefined;
             if ((!args || args.databaseId === undefined) && !opts.urn) {
@@ -83,6 +85,7 @@ export class DatabaseDbmFeaturesManagement extends pulumi.CustomResource {
             resourceInputs["databaseId"] = args ? args.databaseId : undefined;
             resourceInputs["enableDatabaseDbmFeature"] = args ? args.enableDatabaseDbmFeature : undefined;
             resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
+            resourceInputs["modifyDatabaseDbmFeature"] = args ? args.modifyDatabaseDbmFeature : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DatabaseDbmFeaturesManagement.__pulumiType, name, resourceInputs, opts);
@@ -109,6 +112,7 @@ export interface DatabaseDbmFeaturesManagementState {
      * The details required to enable the specified Database Management feature.
      */
     featureDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetails>;
+    modifyDatabaseDbmFeature?: pulumi.Input<boolean>;
 }
 
 /**
@@ -131,4 +135,5 @@ export interface DatabaseDbmFeaturesManagementArgs {
      * The details required to enable the specified Database Management feature.
      */
     featureDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetails>;
+    modifyDatabaseDbmFeature?: pulumi.Input<boolean>;
 }

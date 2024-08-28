@@ -59,7 +59,7 @@ export function getExsiHosts(args?: GetExsiHostsArgs, opts?: pulumi.InvokeOption
  */
 export interface GetExsiHostsArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      */
     clusterId?: string;
     /**
@@ -173,7 +173,7 @@ export function getExsiHostsOutput(args?: GetExsiHostsOutputArgs, opts?: pulumi.
  */
 export interface GetExsiHostsOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      */
     clusterId?: pulumi.Input<string>;
     /**

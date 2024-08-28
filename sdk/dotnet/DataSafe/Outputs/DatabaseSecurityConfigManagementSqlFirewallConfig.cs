@@ -13,9 +13,21 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class DatabaseSecurityConfigManagementSqlFirewallConfig
     {
+        /// <summary>
+        /// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+        /// </summary>
         public readonly string? ExcludeJob;
+        /// <summary>
+        /// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+        /// </summary>
         public readonly string? Status;
+        /// <summary>
+        /// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        /// </summary>
         public readonly string? TimeStatusUpdated;
+        /// <summary>
+        /// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        /// </summary>
         public readonly string? ViolationLogAutoPurge;
 
         [OutputConstructor]

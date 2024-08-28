@@ -209,6 +209,20 @@ public class Vault extends com.pulumi.resources.CustomResource {
         return this.isPrimary;
     }
     /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     * 
+     */
+    @Export(name="isVaultReplicable", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isVaultReplicable;
+
+    /**
+     * @return A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     * 
+     */
+    public Output<Boolean> isVaultReplicable() {
+        return this.isVaultReplicable;
+    }
+    /**
      * The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */

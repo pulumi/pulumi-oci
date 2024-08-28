@@ -94,6 +94,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly autonomousMaintenanceScheduleType!: pulumi.Output<string>;
     /**
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     */
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      */
     public /*out*/ readonly availableUpgradeVersions!: pulumi.Output<string[]>;
@@ -689,6 +693,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["autonomousDatabaseBackupId"] = state ? state.autonomousDatabaseBackupId : undefined;
             resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
             resourceInputs["autonomousMaintenanceScheduleType"] = state ? state.autonomousMaintenanceScheduleType : undefined;
+            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["availableUpgradeVersions"] = state ? state.availableUpgradeVersions : undefined;
             resourceInputs["backupConfigs"] = state ? state.backupConfigs : undefined;
             resourceInputs["backupRetentionPeriodInDays"] = state ? state.backupRetentionPeriodInDays : undefined;
@@ -904,6 +909,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["actualUsedDataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["allocatedStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["apexDetails"] = undefined /*out*/;
+            resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableUpgradeVersions"] = undefined /*out*/;
             resourceInputs["backupConfigs"] = undefined /*out*/;
             resourceInputs["clusterPlacementGroupId"] = undefined /*out*/;
@@ -1014,6 +1020,10 @@ export interface AutonomousDatabaseState {
      * The maintenance schedule type of the Autonomous Database Serverless instances. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
      */
     autonomousMaintenanceScheduleType?: pulumi.Input<string>;
+    /**
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     */
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      */

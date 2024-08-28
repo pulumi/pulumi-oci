@@ -11,21 +11,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatabaseSecurityConfigManagementSqlFirewallConfig {
+    /**
+     * @return (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+     * 
+     */
     private @Nullable String excludeJob;
+    /**
+     * @return (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+     * 
+     */
     private @Nullable String status;
+    /**
+     * @return The most recent time when the firewall status is updated, in the format defined by RFC3339.
+     * 
+     */
     private @Nullable String timeStatusUpdated;
+    /**
+     * @return (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+     * 
+     */
     private @Nullable String violationLogAutoPurge;
 
     private DatabaseSecurityConfigManagementSqlFirewallConfig() {}
+    /**
+     * @return (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+     * 
+     */
     public Optional<String> excludeJob() {
         return Optional.ofNullable(this.excludeJob);
     }
+    /**
+     * @return (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+     * 
+     */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
+    /**
+     * @return The most recent time when the firewall status is updated, in the format defined by RFC3339.
+     * 
+     */
     public Optional<String> timeStatusUpdated() {
         return Optional.ofNullable(this.timeStatusUpdated);
     }
+    /**
+     * @return (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+     * 
+     */
     public Optional<String> violationLogAutoPurge() {
         return Optional.ofNullable(this.violationLogAutoPurge);
     }

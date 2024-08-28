@@ -24,6 +24,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string? CredentialType;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        /// </summary>
+        public readonly string? NamedCredentialId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         /// </summary>
         public readonly string? PasswordSecretId;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string? credentialType,
 
+            string? namedCredentialId,
+
             string? passwordSecretId,
 
             string? role,
@@ -56,6 +62,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         {
             CredentialName = credentialName;
             CredentialType = credentialType;
+            NamedCredentialId = namedCredentialId;
             PasswordSecretId = passwordSecretId;
             Role = role;
             SslSecretId = sslSecretId;

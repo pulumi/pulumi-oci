@@ -63,6 +63,7 @@ public final class GetDomainsGroupsGroup {
      * 
      */
     private String externalId;
+    private Boolean forceDelete;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
@@ -220,6 +221,9 @@ public final class GetDomainsGroupsGroup {
      */
     public String externalId() {
         return this.externalId;
+    }
+    public Boolean forceDelete() {
+        return this.forceDelete;
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
@@ -379,6 +383,7 @@ public final class GetDomainsGroupsGroup {
         private String displayName;
         private String domainOcid;
         private String externalId;
+        private Boolean forceDelete;
         private String id;
         private List<GetDomainsGroupsGroupIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
@@ -410,6 +415,7 @@ public final class GetDomainsGroupsGroup {
     	      this.displayName = defaults.displayName;
     	      this.domainOcid = defaults.domainOcid;
     	      this.externalId = defaults.externalId;
+    	      this.forceDelete = defaults.forceDelete;
     	      this.id = defaults.id;
     	      this.idcsCreatedBies = defaults.idcsCreatedBies;
     	      this.idcsEndpoint = defaults.idcsEndpoint;
@@ -497,6 +503,14 @@ public final class GetDomainsGroupsGroup {
               throw new MissingRequiredPropertyException("GetDomainsGroupsGroup", "externalId");
             }
             this.externalId = externalId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder forceDelete(Boolean forceDelete) {
+            if (forceDelete == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroup", "forceDelete");
+            }
+            this.forceDelete = forceDelete;
             return this;
         }
         @CustomType.Setter
@@ -708,6 +722,7 @@ public final class GetDomainsGroupsGroup {
             _resultValue.displayName = displayName;
             _resultValue.domainOcid = domainOcid;
             _resultValue.externalId = externalId;
+            _resultValue.forceDelete = forceDelete;
             _resultValue.id = id;
             _resultValue.idcsCreatedBies = idcsCreatedBies;
             _resultValue.idcsEndpoint = idcsEndpoint;

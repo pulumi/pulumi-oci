@@ -22,7 +22,7 @@ class GetProtectedDatabaseResult:
     """
     A collection of values returned by getProtectedDatabase.
     """
-    def __init__(__self__, compartment_id=None, database_id=None, database_size=None, db_unique_name=None, defined_tags=None, deletion_schedule=None, display_name=None, freeform_tags=None, health=None, health_details=None, id=None, is_read_only_resource=None, is_redo_logs_shipped=None, lifecycle_details=None, metrics=None, password=None, policy_locked_date_time=None, protected_database_id=None, protection_policy_id=None, recovery_service_subnets=None, state=None, system_tags=None, time_created=None, time_updated=None, vpc_user_name=None):
+    def __init__(__self__, compartment_id=None, database_id=None, database_size=None, db_unique_name=None, defined_tags=None, deletion_schedule=None, display_name=None, freeform_tags=None, health=None, health_details=None, id=None, is_read_only_resource=None, is_redo_logs_shipped=None, lifecycle_details=None, metrics=None, password=None, policy_locked_date_time=None, protected_database_id=None, protection_policy_id=None, recovery_service_subnets=None, state=None, subscription_id=None, system_tags=None, time_created=None, time_updated=None, vpc_user_name=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -86,6 +86,9 @@ class GetProtectedDatabaseResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -259,6 +262,14 @@ class GetProtectedDatabaseResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The OCID of the cloud service subscription to which the protected database is linked.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, str]:
         """
@@ -318,6 +329,7 @@ class AwaitableGetProtectedDatabaseResult(GetProtectedDatabaseResult):
             protection_policy_id=self.protection_policy_id,
             recovery_service_subnets=self.recovery_service_subnets,
             state=self.state,
+            subscription_id=self.subscription_id,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
@@ -370,6 +382,7 @@ def get_protected_database(protected_database_id: Optional[str] = None,
         protection_policy_id=pulumi.get(__ret__, 'protection_policy_id'),
         recovery_service_subnets=pulumi.get(__ret__, 'recovery_service_subnets'),
         state=pulumi.get(__ret__, 'state'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),

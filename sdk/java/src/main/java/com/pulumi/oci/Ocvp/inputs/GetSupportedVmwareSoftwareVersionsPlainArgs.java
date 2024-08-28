@@ -69,6 +69,21 @@ public final class GetSupportedVmwareSoftwareVersionsPlainArgs extends com.pulum
         return Optional.ofNullable(this.version);
     }
 
+    /**
+     * A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+     * 
+     */
+    @Import(name="versionToUpgrade")
+    private @Nullable String versionToUpgrade;
+
+    /**
+     * @return A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+     * 
+     */
+    public Optional<String> versionToUpgrade() {
+        return Optional.ofNullable(this.versionToUpgrade);
+    }
+
     private GetSupportedVmwareSoftwareVersionsPlainArgs() {}
 
     private GetSupportedVmwareSoftwareVersionsPlainArgs(GetSupportedVmwareSoftwareVersionsPlainArgs $) {
@@ -76,6 +91,7 @@ public final class GetSupportedVmwareSoftwareVersionsPlainArgs extends com.pulum
         this.filters = $.filters;
         this.hostShapeName = $.hostShapeName;
         this.version = $.version;
+        this.versionToUpgrade = $.versionToUpgrade;
     }
 
     public static Builder builder() {
@@ -135,6 +151,17 @@ public final class GetSupportedVmwareSoftwareVersionsPlainArgs extends com.pulum
          */
         public Builder version(@Nullable String version) {
             $.version = version;
+            return this;
+        }
+
+        /**
+         * @param versionToUpgrade A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionToUpgrade(@Nullable String versionToUpgrade) {
+            $.versionToUpgrade = versionToUpgrade;
             return this;
         }
 

@@ -138,22 +138,14 @@ public final class MountTargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
-     * 
-     * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-     * 
-     * Example: `10.0.3.3`
+     * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
-     * 
-     * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-     * 
-     * Example: `10.0.3.3`
+     * @return A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -206,6 +198,21 @@ public final class MountTargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    @Import(name="requestedThroughput")
+    private @Nullable Output<String> requestedThroughput;
+
+    /**
+     * @return (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    public Optional<Output<String>> requestedThroughput() {
+        return Optional.ofNullable(this.requestedThroughput);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
      * 
      * ** IMPORTANT **
@@ -240,6 +247,7 @@ public final class MountTargetArgs extends com.pulumi.resources.ResourceArgs {
         this.kerberos = $.kerberos;
         this.ldapIdmap = $.ldapIdmap;
         this.nsgIds = $.nsgIds;
+        this.requestedThroughput = $.requestedThroughput;
         this.subnetId = $.subnetId;
     }
 
@@ -421,11 +429,7 @@ public final class MountTargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
-         * 
-         * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-         * 
-         * Example: `10.0.3.3`
+         * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
          * 
          * @return builder
          * 
@@ -436,11 +440,7 @@ public final class MountTargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
-         * 
-         * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-         * 
-         * Example: `10.0.3.3`
+         * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
          * 
          * @return builder
          * 
@@ -520,6 +520,27 @@ public final class MountTargetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
+        }
+
+        /**
+         * @param requestedThroughput (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestedThroughput(@Nullable Output<String> requestedThroughput) {
+            $.requestedThroughput = requestedThroughput;
+            return this;
+        }
+
+        /**
+         * @param requestedThroughput (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestedThroughput(String requestedThroughput) {
+            return requestedThroughput(Output.of(requestedThroughput));
         }
 
         /**

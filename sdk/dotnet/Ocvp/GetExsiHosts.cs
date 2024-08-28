@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Ocvp
     public sealed class GetExsiHostsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
         /// </summary>
         [Input("clusterId")]
         public string? ClusterId { get; set; }
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Ocvp
     public sealed class GetExsiHostsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }

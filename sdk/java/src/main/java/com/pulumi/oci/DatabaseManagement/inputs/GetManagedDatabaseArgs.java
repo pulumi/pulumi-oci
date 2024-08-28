@@ -8,11 +8,28 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetManagedDatabaseArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetManagedDatabaseArgs Empty = new GetManagedDatabaseArgs();
+
+    /**
+     * The operating system of database.
+     * 
+     */
+    @Import(name="databasePlatformName")
+    private @Nullable Output<String> databasePlatformName;
+
+    /**
+     * @return The operating system of database.
+     * 
+     */
+    public Optional<Output<String>> databasePlatformName() {
+        return Optional.ofNullable(this.databasePlatformName);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -32,6 +49,7 @@ public final class GetManagedDatabaseArgs extends com.pulumi.resources.InvokeArg
     private GetManagedDatabaseArgs() {}
 
     private GetManagedDatabaseArgs(GetManagedDatabaseArgs $) {
+        this.databasePlatformName = $.databasePlatformName;
         this.managedDatabaseId = $.managedDatabaseId;
     }
 
@@ -51,6 +69,27 @@ public final class GetManagedDatabaseArgs extends com.pulumi.resources.InvokeArg
 
         public Builder(GetManagedDatabaseArgs defaults) {
             $ = new GetManagedDatabaseArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param databasePlatformName The operating system of database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databasePlatformName(@Nullable Output<String> databasePlatformName) {
+            $.databasePlatformName = databasePlatformName;
+            return this;
+        }
+
+        /**
+         * @param databasePlatformName The operating system of database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databasePlatformName(String databasePlatformName) {
+            return databasePlatformName(Output.of(databasePlatformName));
         }
 
         /**

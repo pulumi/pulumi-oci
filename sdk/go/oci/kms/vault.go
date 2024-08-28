@@ -93,6 +93,8 @@ type Vault struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
+	// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+	IsVaultReplicable pulumi.BoolOutput `pulumi:"isVaultReplicable"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
 	ManagementEndpoint pulumi.StringOutput `pulumi:"managementEndpoint"`
 	// Vault replica details
@@ -172,6 +174,8 @@ type vaultState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary *bool `pulumi:"isPrimary"`
+	// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+	IsVaultReplicable *bool `pulumi:"isVaultReplicable"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
 	ManagementEndpoint *string `pulumi:"managementEndpoint"`
 	// Vault replica details
@@ -213,6 +217,8 @@ type VaultState struct {
 	FreeformTags pulumi.StringMapInput
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary pulumi.BoolPtrInput
+	// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+	IsVaultReplicable pulumi.BoolPtrInput
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
 	ManagementEndpoint pulumi.StringPtrInput
 	// Vault replica details
@@ -419,6 +425,11 @@ func (o VaultOutput) FreeformTags() pulumi.StringMapOutput {
 // A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 func (o VaultOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Vault) pulumi.BoolOutput { return v.IsPrimary }).(pulumi.BoolOutput)
+}
+
+// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+func (o VaultOutput) IsVaultReplicable() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Vault) pulumi.BoolOutput { return v.IsVaultReplicable }).(pulumi.BoolOutput)
 }
 
 // The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.

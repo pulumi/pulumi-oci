@@ -77,6 +77,7 @@ export interface GetDataGuardAssociationResult {
     readonly dbSystemFreeformTags: {[key: string]: string};
     readonly deleteStandbyDbHomeOnDelete: string;
     readonly displayName: string;
+    readonly domain: string;
     readonly faultDomains: string[];
     readonly hostname: string;
     /**

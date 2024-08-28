@@ -21,6 +21,9 @@ __all__ = [
     'GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupResult',
     'GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult',
     'GetAnnouncementSubscriptionsFilterResult',
+    'GetServicesFilterResult',
+    'GetServicesServicesCollectionResult',
+    'GetServicesServicesCollectionItemResult',
 ]
 
 @pulumi.output_type
@@ -29,7 +32,7 @@ class AnnouncementSubscriptionFilterGroups(dict):
                  filters: Sequence['outputs.AnnouncementSubscriptionFilterGroupsFilter'],
                  name: Optional[str] = None):
         """
-        :param Sequence['AnnouncementSubscriptionFilterGroupsFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+        :param Sequence['AnnouncementSubscriptionFilterGroupsFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
         pulumi.set(__self__, "filters", filters)
@@ -40,7 +43,7 @@ class AnnouncementSubscriptionFilterGroups(dict):
     @pulumi.getter
     def filters(self) -> Sequence['outputs.AnnouncementSubscriptionFilterGroupsFilter']:
         """
-        A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+        A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "filters")
 
@@ -59,7 +62,7 @@ class AnnouncementSubscriptionFilterGroupsFilter(dict):
                  type: str,
                  value: str):
         """
-        :param str type: The type of filter.
+        :param str type: The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param str value: The value of the filter.
         """
         pulumi.set(__self__, "type", type)
@@ -69,7 +72,7 @@ class AnnouncementSubscriptionFilterGroupsFilter(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of filter.
+        The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "type")
 
@@ -88,7 +91,7 @@ class AnnouncementSubscriptionsFilterGroupFilter(dict):
                  type: str,
                  value: str):
         """
-        :param str type: (Updatable) The type of filter.
+        :param str type: (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param str value: (Updatable) The value of the filter.
         """
         pulumi.set(__self__, "type", type)
@@ -98,7 +101,7 @@ class AnnouncementSubscriptionsFilterGroupFilter(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) The type of filter.
+        (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "type")
 
@@ -117,7 +120,7 @@ class GetAnnouncementSubscriptionFilterGroupResult(dict):
                  filters: Sequence['outputs.GetAnnouncementSubscriptionFilterGroupFilterResult'],
                  name: str):
         """
-        :param Sequence['GetAnnouncementSubscriptionFilterGroupFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+        :param Sequence['GetAnnouncementSubscriptionFilterGroupFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
         pulumi.set(__self__, "filters", filters)
@@ -127,7 +130,7 @@ class GetAnnouncementSubscriptionFilterGroupResult(dict):
     @pulumi.getter
     def filters(self) -> Sequence['outputs.GetAnnouncementSubscriptionFilterGroupFilterResult']:
         """
-        A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+        A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "filters")
 
@@ -146,7 +149,7 @@ class GetAnnouncementSubscriptionFilterGroupFilterResult(dict):
                  type: str,
                  value: str):
         """
-        :param str type: The type of filter.
+        :param str type: The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param str value: The value of the filter.
         """
         pulumi.set(__self__, "type", type)
@@ -156,7 +159,7 @@ class GetAnnouncementSubscriptionFilterGroupFilterResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of filter.
+        The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "type")
 
@@ -209,8 +212,8 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
         :param str id: The OCID of the announcement subscription.
         :param str lifecycle_details: A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
         :param str ons_topic_id: The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
-        :param str preferred_language: (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-        :param str preferred_time_zone: The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        :param str preferred_language: (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
+        :param str preferred_time_zone: The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param str state: A filter to return only announcement subscriptions that match the given lifecycle state.
         :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -308,7 +311,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
     @pulumi.getter(name="preferredLanguage")
     def preferred_language(self) -> str:
         """
-        (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
         """
         return pulumi.get(self, "preferred_language")
 
@@ -316,7 +319,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
     @pulumi.getter(name="preferredTimeZone")
     def preferred_time_zone(self) -> str:
         """
-        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "preferred_time_zone")
 
@@ -359,7 +362,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
                  filters: Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult'],
                  name: str):
         """
-        :param Sequence['GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+        :param Sequence['GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
         pulumi.set(__self__, "filters", filters)
@@ -369,7 +372,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
     @pulumi.getter
     def filters(self) -> Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult']:
         """
-        A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+        A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "filters")
 
@@ -388,7 +391,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
                  type: str,
                  value: str):
         """
-        :param str type: The type of filter.
+        :param str type: The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param str value: The value of the filter.
         """
         pulumi.set(__self__, "type", type)
@@ -398,7 +401,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of filter.
+        The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         """
         return pulumi.get(self, "type")
 
@@ -442,5 +445,179 @@ class GetAnnouncementSubscriptionsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetServicesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetServicesServicesCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetServicesServicesCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetServicesServicesCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetServicesServicesCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 comms_manager_name: str,
+                 excluded_realms: Sequence[str],
+                 id: str,
+                 platform_type: str,
+                 previous_service_names: Sequence[str],
+                 service_name: str,
+                 short_name: str,
+                 state: str,
+                 team_name: str,
+                 time_created: str,
+                 time_updated: str,
+                 type: str):
+        """
+        :param str comms_manager_name: Filter by comms manager name
+        :param Sequence[str] excluded_realms: The list of realms where this service is not available to be used.
+        :param str id: ID of the service object.
+        :param str platform_type: A filter to return only services underlying a specific platform.
+        :param Sequence[str] previous_service_names: The list of previously used names for this service object.
+        :param str service_name: Name of the service represented by this object.
+        :param str short_name: Short name of the team to whom this service object is related.
+        :param str state: Current state of the service object.
+        :param str team_name: Team name to which this service object is related.
+        :param str time_created: The date and time when the service object was created.
+        :param str time_updated: The date and time when the service object was updated.
+        """
+        pulumi.set(__self__, "comms_manager_name", comms_manager_name)
+        pulumi.set(__self__, "excluded_realms", excluded_realms)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "platform_type", platform_type)
+        pulumi.set(__self__, "previous_service_names", previous_service_names)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "short_name", short_name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "team_name", team_name)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commsManagerName")
+    def comms_manager_name(self) -> str:
+        """
+        Filter by comms manager name
+        """
+        return pulumi.get(self, "comms_manager_name")
+
+    @property
+    @pulumi.getter(name="excludedRealms")
+    def excluded_realms(self) -> Sequence[str]:
+        """
+        The list of realms where this service is not available to be used.
+        """
+        return pulumi.get(self, "excluded_realms")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        ID of the service object.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="platformType")
+    def platform_type(self) -> str:
+        """
+        A filter to return only services underlying a specific platform.
+        """
+        return pulumi.get(self, "platform_type")
+
+    @property
+    @pulumi.getter(name="previousServiceNames")
+    def previous_service_names(self) -> Sequence[str]:
+        """
+        The list of previously used names for this service object.
+        """
+        return pulumi.get(self, "previous_service_names")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        Name of the service represented by this object.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="shortName")
+    def short_name(self) -> str:
+        """
+        Short name of the team to whom this service object is related.
+        """
+        return pulumi.get(self, "short_name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Current state of the service object.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="teamName")
+    def team_name(self) -> str:
+        """
+        Team name to which this service object is related.
+        """
+        return pulumi.get(self, "team_name")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time when the service object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time when the service object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
 
 

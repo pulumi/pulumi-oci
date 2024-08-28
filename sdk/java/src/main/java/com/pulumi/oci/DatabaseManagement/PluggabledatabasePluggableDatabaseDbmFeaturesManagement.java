@@ -67,6 +67,7 @@ import javax.annotation.Nullable;
  *                     .connectionCredentials(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs.builder()
  *                         .credentialName(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName)
  *                         .credentialType(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType)
+ *                         .namedCredentialId(testNamedCredential.id())
  *                         .passwordSecretId(testSecret.id())
  *                         .role(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole)
  *                         .sslSecretId(testSecret.id())
@@ -79,8 +80,8 @@ import javax.annotation.Nullable;
  *                         .service(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService)
  *                         .build())
  *                     .build())
- *                 .managementType(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsManagementType)
  *                 .isAutoEnablePluggableDatabase(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase)
+ *                 .managementType(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsManagementType)
  *                 .build())
  *             .build());
  * 
@@ -126,6 +127,12 @@ public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com
      */
     public Output<Optional<PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails>> featureDetails() {
         return Codegen.optional(this.featureDetails);
+    }
+    @Export(name="modifyPluggableDatabaseDbmFeature", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> modifyPluggableDatabaseDbmFeature;
+
+    public Output<Optional<Boolean>> modifyPluggableDatabaseDbmFeature() {
+        return Codegen.optional(this.modifyPluggableDatabaseDbmFeature);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.

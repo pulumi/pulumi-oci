@@ -93,7 +93,8 @@ type DomainsGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId  pulumi.StringOutput  `pulumi:"externalId"`
+	ForceDelete pulumi.BoolPtrOutput `pulumi:"forceDelete"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -350,7 +351,8 @@ type domainsGroupState struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId *string `pulumi:"externalId"`
+	ExternalId  *string `pulumi:"externalId"`
+	ForceDelete *bool   `pulumi:"forceDelete"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -569,7 +571,8 @@ type DomainsGroupState struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringPtrInput
+	ExternalId  pulumi.StringPtrInput
+	ForceDelete pulumi.BoolPtrInput
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -756,7 +759,8 @@ type domainsGroupArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId *string `pulumi:"externalId"`
+	ExternalId  *string `pulumi:"externalId"`
+	ForceDelete *bool   `pulumi:"forceDelete"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
 	// (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
@@ -871,7 +875,8 @@ type DomainsGroupArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringPtrInput
+	ExternalId  pulumi.StringPtrInput
+	ForceDelete pulumi.BoolPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
 	// (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
@@ -1130,6 +1135,10 @@ func (o DomainsGroupOutput) DomainOcid() pulumi.StringOutput {
 // * uniqueness: none
 func (o DomainsGroupOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+}
+
+func (o DomainsGroupOutput) ForceDelete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.BoolPtrOutput { return v.ForceDelete }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource

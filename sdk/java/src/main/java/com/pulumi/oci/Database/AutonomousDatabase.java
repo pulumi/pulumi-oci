@@ -206,6 +206,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.autonomousMaintenanceScheduleType;
     }
     /**
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
+    private Output<String> availabilityDomain;
+
+    /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    public Output<String> availabilityDomain() {
+        return this.availabilityDomain;
+    }
+    /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */

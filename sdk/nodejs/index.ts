@@ -54,19 +54,19 @@ import * as dataintegration from "./dataintegration";
 import * as datalabellingservice from "./datalabellingservice";
 import * as datasafe from "./datasafe";
 import * as datascience from "./datascience";
+import * as delegateaccesscontrol from "./delegateaccesscontrol";
 import * as demandsignal from "./demandsignal";
+import * as desktops from "./desktops";
 import * as devops from "./devops";
 import * as disasterrecovery from "./disasterrecovery";
 import * as dns from "./dns";
 import * as email from "./email";
 import * as events from "./events";
 import * as filestorage from "./filestorage";
-import * as fleetsoftwareupdate from "./fleetsoftwareupdate";
 import * as functions from "./functions";
 import * as fusionapps from "./fusionapps";
 import * as generativeai from "./generativeai";
 import * as genericartifactscontent from "./genericartifactscontent";
-import * as globallydistributeddatabase from "./globallydistributeddatabase";
 import * as goldengate from "./goldengate";
 import * as healthchecks from "./healthchecks";
 import * as identity from "./identity";
@@ -174,19 +174,19 @@ export {
     datalabellingservice,
     datasafe,
     datascience,
+    delegateaccesscontrol,
     demandsignal,
+    desktops,
     devops,
     disasterrecovery,
     dns,
     email,
     events,
     filestorage,
-    fleetsoftwareupdate,
     functions,
     fusionapps,
     generativeai,
     genericartifactscontent,
-    globallydistributeddatabase,
     goldengate,
     healthchecks,
     identity,

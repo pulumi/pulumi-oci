@@ -12,6 +12,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlDbSystemState;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemCurrentPlacement;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemCustomerContact;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDataStorage;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEndpoint;
@@ -48,6 +49,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.MysqlDbSystemArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemCustomerContactArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDataStorageArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
@@ -85,6 +87,9 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .configurationId(testConfiguration.id())
  *             .crashRecovery(mysqlDbSystemCrashRecovery)
+ *             .customerContacts(MysqlDbSystemCustomerContactArgs.builder()
+ *                 .email(mysqlDbSystemCustomerContactsEmail)
+ *                 .build())
  *             .dataStorage(MysqlDbSystemDataStorageArgs.builder()
  *                 .isAutoExpandStorageEnabled(mysqlDbSystemDataStorageIsAutoExpandStorageEnabled)
  *                 .maxStorageSizeInGbs(mysqlDbSystemDataStorageMaxStorageSizeInGbs)
@@ -269,6 +274,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<List<MysqlDbSystemCurrentPlacement>> currentPlacements() {
         return this.currentPlacements;
+    }
+    /**
+     * (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+     * 
+     */
+    @Export(name="customerContacts", refs={List.class,MysqlDbSystemCustomerContact.class}, tree="[0,1]")
+    private Output<List<MysqlDbSystemCustomerContact>> customerContacts;
+
+    /**
+     * @return (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+     * 
+     */
+    public Output<List<MysqlDbSystemCustomerContact>> customerContacts() {
+        return this.customerContacts;
     }
     /**
      * (Updatable) Data Storage configuration properties.

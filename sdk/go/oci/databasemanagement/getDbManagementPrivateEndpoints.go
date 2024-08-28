@@ -30,11 +30,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetDbManagementPrivateEndpoints(ctx, &databasemanagement.GetDbManagementPrivateEndpointsArgs{
-//				CompartmentId: compartmentId,
-//				IsCluster:     pulumi.BoolRef(dbManagementPrivateEndpointIsCluster),
-//				Name:          pulumi.StringRef(dbManagementPrivateEndpointName),
-//				State:         pulumi.StringRef(dbManagementPrivateEndpointState),
-//				VcnId:         pulumi.StringRef(testVcn.Id),
+//				CompartmentId:          compartmentId,
+//				IsCluster:              pulumi.BoolRef(dbManagementPrivateEndpointIsCluster),
+//				IsDnsResolutionEnabled: pulumi.BoolRef(dbManagementPrivateEndpointIsDnsResolutionEnabled),
+//				Name:                   pulumi.StringRef(dbManagementPrivateEndpointName),
+//				State:                  pulumi.StringRef(dbManagementPrivateEndpointState),
+//				VcnId:                  pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,6 +62,8 @@ type GetDbManagementPrivateEndpointsArgs struct {
 	Filters       []GetDbManagementPrivateEndpointsFilter `pulumi:"filters"`
 	// The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
 	IsCluster *bool `pulumi:"isCluster"`
+	// The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+	IsDnsResolutionEnabled *bool `pulumi:"isDnsResolutionEnabled"`
 	// A filter to return only resources that match the entire name.
 	Name *string `pulumi:"name"`
 	// The lifecycle state of a resource.
@@ -80,6 +83,8 @@ type GetDbManagementPrivateEndpointsResult struct {
 	Id string `pulumi:"id"`
 	// Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
 	IsCluster *bool `pulumi:"isCluster"`
+	// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+	IsDnsResolutionEnabled *bool `pulumi:"isDnsResolutionEnabled"`
 	// The display name of the Database Management private endpoint.
 	Name *string `pulumi:"name"`
 	// The current lifecycle state of the Database Management private endpoint.
@@ -108,6 +113,8 @@ type GetDbManagementPrivateEndpointsOutputArgs struct {
 	Filters       GetDbManagementPrivateEndpointsFilterArrayInput `pulumi:"filters"`
 	// The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
 	IsCluster pulumi.BoolPtrInput `pulumi:"isCluster"`
+	// The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+	IsDnsResolutionEnabled pulumi.BoolPtrInput `pulumi:"isDnsResolutionEnabled"`
 	// A filter to return only resources that match the entire name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The lifecycle state of a resource.
@@ -161,6 +168,11 @@ func (o GetDbManagementPrivateEndpointsResultOutput) Id() pulumi.StringOutput {
 // Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
 func (o GetDbManagementPrivateEndpointsResultOutput) IsCluster() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetDbManagementPrivateEndpointsResult) *bool { return v.IsCluster }).(pulumi.BoolPtrOutput)
+}
+
+// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+func (o GetDbManagementPrivateEndpointsResultOutput) IsDnsResolutionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbManagementPrivateEndpointsResult) *bool { return v.IsDnsResolutionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The display name of the Database Management private endpoint.

@@ -144,6 +144,21 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     * 
+     */
+    @Import(name="isVaultReplicable")
+    private @Nullable Output<Boolean> isVaultReplicable;
+
+    /**
+     * @return A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     * 
+     */
+    public Optional<Output<Boolean>> isVaultReplicable() {
+        return Optional.ofNullable(this.isVaultReplicable);
+    }
+
+    /**
      * The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */
@@ -302,6 +317,7 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
         this.externalKeyManagerMetadataSummaries = $.externalKeyManagerMetadataSummaries;
         this.freeformTags = $.freeformTags;
         this.isPrimary = $.isPrimary;
+        this.isVaultReplicable = $.isVaultReplicable;
         this.managementEndpoint = $.managementEndpoint;
         this.replicaDetails = $.replicaDetails;
         this.restoreFromFile = $.restoreFromFile;
@@ -508,6 +524,27 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isPrimary(Boolean isPrimary) {
             return isPrimary(Output.of(isPrimary));
+        }
+
+        /**
+         * @param isVaultReplicable A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVaultReplicable(@Nullable Output<Boolean> isVaultReplicable) {
+            $.isVaultReplicable = isVaultReplicable;
+            return this;
+        }
+
+        /**
+         * @param isVaultReplicable A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVaultReplicable(Boolean isVaultReplicable) {
+            return isVaultReplicable(Output.of(isVaultReplicable));
         }
 
         /**

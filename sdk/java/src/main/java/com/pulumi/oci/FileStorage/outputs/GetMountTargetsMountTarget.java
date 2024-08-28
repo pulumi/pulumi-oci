@@ -77,10 +77,25 @@ public final class GetMountTargetsMountTarget {
      */
     private List<String> nsgIds;
     /**
+     * @return Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    private String observedThroughput;
+    /**
      * @return The OCIDs of the private IP addresses associated with this mount target.
      * 
      */
     private List<String> privateIpIds;
+    /**
+     * @return * New throughput for mount target at the end of billing cycle in Gbps.
+     * 
+     */
+    private String requestedThroughput;
+    /**
+     * @return * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    private String reservedStorageCapacity;
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
@@ -91,6 +106,11 @@ public final class GetMountTargetsMountTarget {
      * 
      */
     private String subnetId;
+    /**
+     * @return The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    private String timeBillingCycleEnd;
     /**
      * @return The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -189,11 +209,32 @@ public final class GetMountTargetsMountTarget {
         return this.nsgIds;
     }
     /**
+     * @return Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    public String observedThroughput() {
+        return this.observedThroughput;
+    }
+    /**
      * @return The OCIDs of the private IP addresses associated with this mount target.
      * 
      */
     public List<String> privateIpIds() {
         return this.privateIpIds;
+    }
+    /**
+     * @return * New throughput for mount target at the end of billing cycle in Gbps.
+     * 
+     */
+    public String requestedThroughput() {
+        return this.requestedThroughput;
+    }
+    /**
+     * @return * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * 
+     */
+    public String reservedStorageCapacity() {
+        return this.reservedStorageCapacity;
     }
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -208,6 +249,13 @@ public final class GetMountTargetsMountTarget {
      */
     public String subnetId() {
         return this.subnetId;
+    }
+    /**
+     * @return The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public String timeBillingCycleEnd() {
+        return this.timeBillingCycleEnd;
     }
     /**
      * @return The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -240,9 +288,13 @@ public final class GetMountTargetsMountTarget {
         private List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
         private String lifecycleDetails;
         private List<String> nsgIds;
+        private String observedThroughput;
         private List<String> privateIpIds;
+        private String requestedThroughput;
+        private String reservedStorageCapacity;
         private String state;
         private String subnetId;
+        private String timeBillingCycleEnd;
         private String timeCreated;
         public Builder() {}
         public Builder(GetMountTargetsMountTarget defaults) {
@@ -261,9 +313,13 @@ public final class GetMountTargetsMountTarget {
     	      this.ldapIdmaps = defaults.ldapIdmaps;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.observedThroughput = defaults.observedThroughput;
     	      this.privateIpIds = defaults.privateIpIds;
+    	      this.requestedThroughput = defaults.requestedThroughput;
+    	      this.reservedStorageCapacity = defaults.reservedStorageCapacity;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.timeBillingCycleEnd = defaults.timeBillingCycleEnd;
     	      this.timeCreated = defaults.timeCreated;
         }
 
@@ -389,6 +445,14 @@ public final class GetMountTargetsMountTarget {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder observedThroughput(String observedThroughput) {
+            if (observedThroughput == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "observedThroughput");
+            }
+            this.observedThroughput = observedThroughput;
+            return this;
+        }
+        @CustomType.Setter
         public Builder privateIpIds(List<String> privateIpIds) {
             if (privateIpIds == null) {
               throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "privateIpIds");
@@ -398,6 +462,22 @@ public final class GetMountTargetsMountTarget {
         }
         public Builder privateIpIds(String... privateIpIds) {
             return privateIpIds(List.of(privateIpIds));
+        }
+        @CustomType.Setter
+        public Builder requestedThroughput(String requestedThroughput) {
+            if (requestedThroughput == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "requestedThroughput");
+            }
+            this.requestedThroughput = requestedThroughput;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder reservedStorageCapacity(String reservedStorageCapacity) {
+            if (reservedStorageCapacity == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "reservedStorageCapacity");
+            }
+            this.reservedStorageCapacity = reservedStorageCapacity;
+            return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -413,6 +493,14 @@ public final class GetMountTargetsMountTarget {
               throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "subnetId");
             }
             this.subnetId = subnetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeBillingCycleEnd(String timeBillingCycleEnd) {
+            if (timeBillingCycleEnd == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "timeBillingCycleEnd");
+            }
+            this.timeBillingCycleEnd = timeBillingCycleEnd;
             return this;
         }
         @CustomType.Setter
@@ -439,9 +527,13 @@ public final class GetMountTargetsMountTarget {
             _resultValue.ldapIdmaps = ldapIdmaps;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.observedThroughput = observedThroughput;
             _resultValue.privateIpIds = privateIpIds;
+            _resultValue.requestedThroughput = requestedThroughput;
+            _resultValue.reservedStorageCapacity = reservedStorageCapacity;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.timeBillingCycleEnd = timeBillingCycleEnd;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }

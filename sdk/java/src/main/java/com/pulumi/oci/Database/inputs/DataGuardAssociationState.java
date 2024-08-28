@@ -276,6 +276,21 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     }
 
     /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     * 
+     */
+    @Import(name="domain")
+    private @Nullable Output<String> domain;
+
+    /**
+     * @return A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     * 
+     */
+    public Optional<Output<String>> domain() {
+        return Optional.ofNullable(this.domain);
+    }
+
+    /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      * 
      * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -722,6 +737,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         this.dbSystemFreeformTags = $.dbSystemFreeformTags;
         this.deleteStandbyDbHomeOnDelete = $.deleteStandbyDbHomeOnDelete;
         this.displayName = $.displayName;
+        this.domain = $.domain;
         this.faultDomains = $.faultDomains;
         this.hostname = $.hostname;
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
@@ -1124,6 +1140,27 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param domain A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domain(@Nullable Output<String> domain) {
+            $.domain = domain;
+            return this;
+        }
+
+        /**
+         * @param domain A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domain(String domain) {
+            return domain(Output.of(domain));
         }
 
         /**

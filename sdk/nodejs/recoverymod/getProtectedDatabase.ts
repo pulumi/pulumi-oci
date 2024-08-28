@@ -120,6 +120,10 @@ export interface GetProtectedDatabaseResult {
      */
     readonly state: string;
     /**
+     * The OCID of the cloud service subscription to which the protected database is linked.
+     */
+    readonly subscriptionId: string;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
     readonly systemTags: {[key: string]: string};

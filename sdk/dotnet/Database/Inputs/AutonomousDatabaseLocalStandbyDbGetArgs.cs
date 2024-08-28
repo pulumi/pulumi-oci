@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseLocalStandbyDbGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
+        /// <summary>
         /// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         /// </summary>
         [Input("lagTimeInSeconds")]

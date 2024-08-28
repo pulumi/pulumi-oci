@@ -202,6 +202,7 @@ namespace Pulumi.Oci.Identity
         /// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         /// </summary>
         public readonly string ExternalId;
+        public readonly bool ForceDelete;
         public readonly string GroupId;
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
@@ -296,6 +297,8 @@ namespace Pulumi.Oci.Identity
 
             string externalId,
 
+            bool forceDelete,
+
             string groupId,
 
             string id,
@@ -346,6 +349,7 @@ namespace Pulumi.Oci.Identity
             DisplayName = displayName;
             DomainOcid = domainOcid;
             ExternalId = externalId;
+            ForceDelete = forceDelete;
             GroupId = groupId;
             Id = id;
             IdcsCreatedBies = idcsCreatedBies;

@@ -67,6 +67,7 @@ import javax.annotation.Nullable;
  *                     .connectionCredentials(DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs.builder()
  *                         .credentialName(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName)
  *                         .credentialType(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType)
+ *                         .namedCredentialId(testNamedCredential.id())
  *                         .passwordSecretId(testSecret.id())
  *                         .role(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole)
  *                         .sslSecretId(testSecret.id())
@@ -79,8 +80,8 @@ import javax.annotation.Nullable;
  *                         .service(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService)
  *                         .build())
  *                     .build())
- *                 .managementType(databaseDbmFeaturesManagementFeatureDetailsManagementType)
  *                 .isAutoEnablePluggableDatabase(databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase)
+ *                 .managementType(databaseDbmFeaturesManagementFeatureDetailsManagementType)
  *                 .build())
  *             .build());
  * 
@@ -140,6 +141,12 @@ public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomRe
      */
     public Output<Optional<DatabaseDbmFeaturesManagementFeatureDetails>> featureDetails() {
         return Codegen.optional(this.featureDetails);
+    }
+    @Export(name="modifyDatabaseDbmFeature", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> modifyDatabaseDbmFeature;
+
+    public Output<Optional<Boolean>> modifyDatabaseDbmFeature() {
+        return Codegen.optional(this.modifyDatabaseDbmFeature);
     }
 
     /**

@@ -22,7 +22,7 @@ class GetDataGuardAssociationResult:
     """
     A collection of values returned by getDataGuardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, delete_standby_db_home_on_delete=None, display_name=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -77,6 +77,9 @@ class GetDataGuardAssociationResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if domain and not isinstance(domain, str):
+            raise TypeError("Expected argument 'domain' to be a str")
+        pulumi.set(__self__, "domain", domain)
         if fault_domains and not isinstance(fault_domains, list):
             raise TypeError("Expected argument 'fault_domains' to be a list")
         pulumi.set(__self__, "fault_domains", fault_domains)
@@ -254,6 +257,11 @@ class GetDataGuardAssociationResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="faultDomains")
@@ -449,6 +457,7 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             db_system_freeform_tags=self.db_system_freeform_tags,
             delete_standby_db_home_on_delete=self.delete_standby_db_home_on_delete,
             display_name=self.display_name,
+            domain=self.domain,
             fault_domains=self.fault_domains,
             hostname=self.hostname,
             id=self.id,
@@ -524,6 +533,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         db_system_freeform_tags=pulumi.get(__ret__, 'db_system_freeform_tags'),
         delete_standby_db_home_on_delete=pulumi.get(__ret__, 'delete_standby_db_home_on_delete'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        domain=pulumi.get(__ret__, 'domain'),
         fault_domains=pulumi.get(__ret__, 'fault_domains'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),

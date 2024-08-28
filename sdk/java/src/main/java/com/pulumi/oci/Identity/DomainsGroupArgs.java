@@ -13,6 +13,7 @@ import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracle
 import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs;
 import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs;
 import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -141,6 +142,13 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> externalId() {
         return Optional.ofNullable(this.externalId);
+    }
+
+    @Import(name="forceDelete")
+    private @Nullable Output<Boolean> forceDelete;
+
+    public Optional<Output<Boolean>> forceDelete() {
+        return Optional.ofNullable(this.forceDelete);
     }
 
     /**
@@ -441,6 +449,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         this.authorization = $.authorization;
         this.displayName = $.displayName;
         this.externalId = $.externalId;
+        this.forceDelete = $.forceDelete;
         this.idcsEndpoint = $.idcsEndpoint;
         this.members = $.members;
         this.nonUniqueDisplayName = $.nonUniqueDisplayName;
@@ -630,6 +639,15 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder externalId(String externalId) {
             return externalId(Output.of(externalId));
+        }
+
+        public Builder forceDelete(@Nullable Output<Boolean> forceDelete) {
+            $.forceDelete = forceDelete;
+            return this;
+        }
+
+        public Builder forceDelete(Boolean forceDelete) {
+            return forceDelete(Output.of(forceDelete));
         }
 
         /**

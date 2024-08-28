@@ -126,36 +126,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-     * 
-     */
-    @Import(name="odhVersion")
-    private @Nullable Output<String> odhVersion;
-
-    /**
-     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-     * 
-     */
-    public Optional<Output<String>> odhVersion() {
-        return Optional.ofNullable(this.odhVersion);
-    }
-
-    /**
-     * BDS-assigned Operating System version for the node.
-     * 
-     */
-    @Import(name="osVersion")
-    private @Nullable Output<String> osVersion;
-
-    /**
-     * @return BDS-assigned Operating System version for the node.
-     * 
-     */
-    public Optional<Output<String>> osVersion() {
-        return Optional.ofNullable(this.osVersion);
-    }
-
-    /**
      * Shape of the node
      * 
      */
@@ -170,21 +140,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         return this.shape;
     }
 
-    /**
-     * The fingerprint of the SSH key used for node access
-     * 
-     */
-    @Import(name="sshFingerprint")
-    private @Nullable Output<String> sshFingerprint;
-
-    /**
-     * @return The fingerprint of the SSH key used for node access
-     * 
-     */
-    public Optional<Output<String>> sshFingerprint() {
-        return Optional.ofNullable(this.sshFingerprint);
-    }
-
     private BdsInstanceCloudSqlDetailArgs() {}
 
     private BdsInstanceCloudSqlDetailArgs(BdsInstanceCloudSqlDetailArgs $) {
@@ -195,10 +150,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         this.memoryInGbs = $.memoryInGbs;
         this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
-        this.odhVersion = $.odhVersion;
-        this.osVersion = $.osVersion;
         this.shape = $.shape;
-        this.sshFingerprint = $.sshFingerprint;
     }
 
     public static Builder builder() {
@@ -377,48 +329,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder odhVersion(@Nullable Output<String> odhVersion) {
-            $.odhVersion = odhVersion;
-            return this;
-        }
-
-        /**
-         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder odhVersion(String odhVersion) {
-            return odhVersion(Output.of(odhVersion));
-        }
-
-        /**
-         * @param osVersion BDS-assigned Operating System version for the node.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder osVersion(@Nullable Output<String> osVersion) {
-            $.osVersion = osVersion;
-            return this;
-        }
-
-        /**
-         * @param osVersion BDS-assigned Operating System version for the node.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder osVersion(String osVersion) {
-            return osVersion(Output.of(osVersion));
-        }
-
-        /**
          * @param shape Shape of the node
          * 
          * @return builder
@@ -437,27 +347,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
          */
         public Builder shape(String shape) {
             return shape(Output.of(shape));
-        }
-
-        /**
-         * @param sshFingerprint The fingerprint of the SSH key used for node access
-         * 
-         * @return builder
-         * 
-         */
-        public Builder sshFingerprint(@Nullable Output<String> sshFingerprint) {
-            $.sshFingerprint = sshFingerprint;
-            return this;
-        }
-
-        /**
-         * @param sshFingerprint The fingerprint of the SSH key used for node access
-         * 
-         * @return builder
-         * 
-         */
-        public Builder sshFingerprint(String sshFingerprint) {
-            return sshFingerprint(Output.of(sshFingerprint));
         }
 
         public BdsInstanceCloudSqlDetailArgs build() {

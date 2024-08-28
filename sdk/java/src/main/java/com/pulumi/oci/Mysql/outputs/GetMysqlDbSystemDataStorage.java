@@ -17,7 +17,7 @@ public final class GetMysqlDbSystemDataStorage {
      */
     private Integer allocatedStorageSizeInGbs;
     /**
-     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+     * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
     private Integer dataStorageSizeInGb;
@@ -46,7 +46,7 @@ public final class GetMysqlDbSystemDataStorage {
         return this.allocatedStorageSizeInGbs;
     }
     /**
-     * @return DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+     * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
     public Integer dataStorageSizeInGb() {

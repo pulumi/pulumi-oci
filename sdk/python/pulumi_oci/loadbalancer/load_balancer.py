@@ -25,7 +25,9 @@ class LoadBalancerArgs:
                  ip_mode: Optional[pulumi.Input[str]] = None,
                  is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
+                 is_request_id_enabled: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 request_id_header: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
                  shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None):
         """
@@ -63,6 +65,15 @@ class LoadBalancerArgs:
                A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
                
                Example: `true`
+        :param pulumi.Input[bool] is_request_id_enabled: (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+               
+               If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+               
+               If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+               
+               New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
                
                During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -72,6 +83,17 @@ class LoadBalancerArgs:
                *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
+        :param pulumi.Input[str] request_id_header: (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+               
+               If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+               
+               If isRequestIdEnabled is false then this field is ignored.
+               
+               If this field is not set or is set to "" then this field defaults to X-Request-Id
+               
+               **Notes:**
+               * Unless the header name is "" it must start with "X-" prefix.
+               * Setting the header name to "" will set it to the default: X-Request-Id.
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         """
@@ -89,8 +111,12 @@ class LoadBalancerArgs:
             pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         if is_private is not None:
             pulumi.set(__self__, "is_private", is_private)
+        if is_request_id_enabled is not None:
+            pulumi.set(__self__, "is_request_id_enabled", is_request_id_enabled)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if request_id_header is not None:
+            pulumi.set(__self__, "request_id_header", request_id_header)
         if reserved_ips is not None:
             pulumi.set(__self__, "reserved_ips", reserved_ips)
         if shape_details is not None:
@@ -229,6 +255,26 @@ class LoadBalancerArgs:
         pulumi.set(self, "is_private", value)
 
     @property
+    @pulumi.getter(name="isRequestIdEnabled")
+    def is_request_id_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+
+        If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+
+        If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+
+        New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+
+        Example: `true`
+        """
+        return pulumi.get(self, "is_request_id_enabled")
+
+    @is_request_id_enabled.setter
+    def is_request_id_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_request_id_enabled", value)
+
+    @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -247,6 +293,28 @@ class LoadBalancerArgs:
     @network_security_group_ids.setter
     def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
+
+    @property
+    @pulumi.getter(name="requestIdHeader")
+    def request_id_header(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+
+        If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+
+        If isRequestIdEnabled is false then this field is ignored.
+
+        If this field is not set or is set to "" then this field defaults to X-Request-Id
+
+        **Notes:**
+        * Unless the header name is "" it must start with "X-" prefix.
+        * Setting the header name to "" will set it to the default: X-Request-Id.
+        """
+        return pulumi.get(self, "request_id_header")
+
+    @request_id_header.setter
+    def request_id_header(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "request_id_header", value)
 
     @property
     @pulumi.getter(name="reservedIps")
@@ -285,7 +353,9 @@ class _LoadBalancerState:
                  ip_mode: Optional[pulumi.Input[str]] = None,
                  is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
+                 is_request_id_enabled: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 request_id_header: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None,
@@ -324,6 +394,15 @@ class _LoadBalancerState:
                A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
                
                Example: `true`
+        :param pulumi.Input[bool] is_request_id_enabled: (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+               
+               If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+               
+               If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+               
+               New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
                
                During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -333,6 +412,17 @@ class _LoadBalancerState:
                *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
+        :param pulumi.Input[str] request_id_header: (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+               
+               If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+               
+               If isRequestIdEnabled is false then this field is ignored.
+               
+               If this field is not set or is set to "" then this field defaults to X-Request-Id
+               
+               **Notes:**
+               * Unless the header name is "" it must start with "X-" prefix.
+               * Setting the header name to "" will set it to the default: X-Request-Id.
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
@@ -366,8 +456,12 @@ class _LoadBalancerState:
             pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         if is_private is not None:
             pulumi.set(__self__, "is_private", is_private)
+        if is_request_id_enabled is not None:
+            pulumi.set(__self__, "is_request_id_enabled", is_request_id_enabled)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if request_id_header is not None:
+            pulumi.set(__self__, "request_id_header", request_id_header)
         if reserved_ips is not None:
             pulumi.set(__self__, "reserved_ips", reserved_ips)
         if shape is not None:
@@ -513,6 +607,26 @@ class _LoadBalancerState:
         pulumi.set(self, "is_private", value)
 
     @property
+    @pulumi.getter(name="isRequestIdEnabled")
+    def is_request_id_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+
+        If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+
+        If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+
+        New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+
+        Example: `true`
+        """
+        return pulumi.get(self, "is_request_id_enabled")
+
+    @is_request_id_enabled.setter
+    def is_request_id_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_request_id_enabled", value)
+
+    @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -531,6 +645,28 @@ class _LoadBalancerState:
     @network_security_group_ids.setter
     def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
+
+    @property
+    @pulumi.getter(name="requestIdHeader")
+    def request_id_header(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+
+        If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+
+        If isRequestIdEnabled is false then this field is ignored.
+
+        If this field is not set or is set to "" then this field defaults to X-Request-Id
+
+        **Notes:**
+        * Unless the header name is "" it must start with "X-" prefix.
+        * Setting the header name to "" will set it to the default: X-Request-Id.
+        """
+        return pulumi.get(self, "request_id_header")
+
+    @request_id_header.setter
+    def request_id_header(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "request_id_header", value)
 
     @property
     @pulumi.getter(name="reservedIps")
@@ -633,7 +769,9 @@ class LoadBalancer(pulumi.CustomResource):
                  ip_mode: Optional[pulumi.Input[str]] = None,
                  is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
+                 is_request_id_enabled: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 request_id_header: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
@@ -691,7 +829,9 @@ class LoadBalancer(pulumi.CustomResource):
             ip_mode=load_balancer_ip_mode,
             is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
             is_private=load_balancer_is_private,
+            is_request_id_enabled=load_balancer_is_request_id_enabled,
             network_security_group_ids=load_balancer_network_security_group_ids,
+            request_id_header=load_balancer_request_id_header,
             reserved_ips=[{
                 "id": load_balancer_reserved_ips_id,
             }],
@@ -738,6 +878,15 @@ class LoadBalancer(pulumi.CustomResource):
                A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
                
                Example: `true`
+        :param pulumi.Input[bool] is_request_id_enabled: (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+               
+               If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+               
+               If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+               
+               New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
                
                During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -747,6 +896,17 @@ class LoadBalancer(pulumi.CustomResource):
                *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
+        :param pulumi.Input[str] request_id_header: (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+               
+               If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+               
+               If isRequestIdEnabled is false then this field is ignored.
+               
+               If this field is not set or is set to "" then this field defaults to X-Request-Id
+               
+               **Notes:**
+               * Unless the header name is "" it must start with "X-" prefix.
+               * Setting the header name to "" will set it to the default: X-Request-Id.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
@@ -814,7 +974,9 @@ class LoadBalancer(pulumi.CustomResource):
             ip_mode=load_balancer_ip_mode,
             is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
             is_private=load_balancer_is_private,
+            is_request_id_enabled=load_balancer_is_request_id_enabled,
             network_security_group_ids=load_balancer_network_security_group_ids,
+            request_id_header=load_balancer_request_id_header,
             reserved_ips=[{
                 "id": load_balancer_reserved_ips_id,
             }],
@@ -854,7 +1016,9 @@ class LoadBalancer(pulumi.CustomResource):
                  ip_mode: Optional[pulumi.Input[str]] = None,
                  is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
+                 is_request_id_enabled: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 request_id_header: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
@@ -879,7 +1043,9 @@ class LoadBalancer(pulumi.CustomResource):
             __props__.__dict__["ip_mode"] = ip_mode
             __props__.__dict__["is_delete_protection_enabled"] = is_delete_protection_enabled
             __props__.__dict__["is_private"] = is_private
+            __props__.__dict__["is_request_id_enabled"] = is_request_id_enabled
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
+            __props__.__dict__["request_id_header"] = request_id_header
             __props__.__dict__["reserved_ips"] = reserved_ips
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
@@ -912,7 +1078,9 @@ class LoadBalancer(pulumi.CustomResource):
             ip_mode: Optional[pulumi.Input[str]] = None,
             is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
             is_private: Optional[pulumi.Input[bool]] = None,
+            is_request_id_enabled: Optional[pulumi.Input[bool]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            request_id_header: Optional[pulumi.Input[str]] = None,
             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
@@ -956,6 +1124,15 @@ class LoadBalancer(pulumi.CustomResource):
                A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
                
                Example: `true`
+        :param pulumi.Input[bool] is_request_id_enabled: (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+               
+               If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+               
+               If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+               
+               New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
                
                During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -965,6 +1142,17 @@ class LoadBalancer(pulumi.CustomResource):
                *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
+        :param pulumi.Input[str] request_id_header: (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+               
+               If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+               
+               If isRequestIdEnabled is false then this field is ignored.
+               
+               If this field is not set or is set to "" then this field defaults to X-Request-Id
+               
+               **Notes:**
+               * Unless the header name is "" it must start with "X-" prefix.
+               * Setting the header name to "" will set it to the default: X-Request-Id.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
@@ -990,7 +1178,9 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["ip_mode"] = ip_mode
         __props__.__dict__["is_delete_protection_enabled"] = is_delete_protection_enabled
         __props__.__dict__["is_private"] = is_private
+        __props__.__dict__["is_request_id_enabled"] = is_request_id_enabled
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
+        __props__.__dict__["request_id_header"] = request_id_header
         __props__.__dict__["reserved_ips"] = reserved_ips
         __props__.__dict__["shape"] = shape
         __props__.__dict__["shape_details"] = shape_details
@@ -1094,6 +1284,22 @@ class LoadBalancer(pulumi.CustomResource):
         return pulumi.get(self, "is_private")
 
     @property
+    @pulumi.getter(name="isRequestIdEnabled")
+    def is_request_id_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+
+        If "true", the load balancer will attach a unique request id header to every request passed through from the load balancer to load balancer backends. This same request id header also will be added to the response the lb received from the backend handling the request before the load balancer returns the response to the requestor. The name of the unique request id header is set the by value of requestIdHeader.
+
+        If "false", the loadbalancer not add this unique request id header to either the request passed through to the load balancer backends nor to the reponse returned to the user.
+
+        New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+
+        Example: `true`
+        """
+        return pulumi.get(self, "is_request_id_enabled")
+
+    @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
@@ -1108,6 +1314,24 @@ class LoadBalancer(pulumi.CustomResource):
         Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         """
         return pulumi.get(self, "network_security_group_ids")
+
+    @property
+    @pulumi.getter(name="requestIdHeader")
+    def request_id_header(self) -> pulumi.Output[str]:
+        """
+        (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+
+        If a request to the load balancer already contains a header with same name as specified in requestIdHeader then the load balancer will not change the value of that field.
+
+        If isRequestIdEnabled is false then this field is ignored.
+
+        If this field is not set or is set to "" then this field defaults to X-Request-Id
+
+        **Notes:**
+        * Unless the header name is "" it must start with "X-" prefix.
+        * Setting the header name to "" will set it to the default: X-Request-Id.
+        """
+        return pulumi.get(self, "request_id_header")
 
     @property
     @pulumi.getter(name="reservedIps")

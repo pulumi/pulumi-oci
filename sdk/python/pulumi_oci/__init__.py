@@ -93,8 +93,12 @@ if typing.TYPE_CHECKING:
     datasafe = __datasafe
     import pulumi_oci.datascience as __datascience
     datascience = __datascience
+    import pulumi_oci.delegateaccesscontrol as __delegateaccesscontrol
+    delegateaccesscontrol = __delegateaccesscontrol
     import pulumi_oci.demandsignal as __demandsignal
     demandsignal = __demandsignal
+    import pulumi_oci.desktops as __desktops
+    desktops = __desktops
     import pulumi_oci.devops as __devops
     devops = __devops
     import pulumi_oci.disasterrecovery as __disasterrecovery
@@ -107,8 +111,6 @@ if typing.TYPE_CHECKING:
     events = __events
     import pulumi_oci.filestorage as __filestorage
     filestorage = __filestorage
-    import pulumi_oci.fleetsoftwareupdate as __fleetsoftwareupdate
-    fleetsoftwareupdate = __fleetsoftwareupdate
     import pulumi_oci.functions as __functions
     functions = __functions
     import pulumi_oci.fusionapps as __fusionapps
@@ -117,8 +119,6 @@ if typing.TYPE_CHECKING:
     generativeai = __generativeai
     import pulumi_oci.genericartifactscontent as __genericartifactscontent
     genericartifactscontent = __genericartifactscontent
-    import pulumi_oci.globallydistributeddatabase as __globallydistributeddatabase
-    globallydistributeddatabase = __globallydistributeddatabase
     import pulumi_oci.goldengate as __goldengate
     goldengate = __goldengate
     import pulumi_oci.healthchecks as __healthchecks
@@ -286,19 +286,19 @@ else:
     datalabellingservice = _utilities.lazy_import('pulumi_oci.datalabellingservice')
     datasafe = _utilities.lazy_import('pulumi_oci.datasafe')
     datascience = _utilities.lazy_import('pulumi_oci.datascience')
+    delegateaccesscontrol = _utilities.lazy_import('pulumi_oci.delegateaccesscontrol')
     demandsignal = _utilities.lazy_import('pulumi_oci.demandsignal')
+    desktops = _utilities.lazy_import('pulumi_oci.desktops')
     devops = _utilities.lazy_import('pulumi_oci.devops')
     disasterrecovery = _utilities.lazy_import('pulumi_oci.disasterrecovery')
     dns = _utilities.lazy_import('pulumi_oci.dns')
     email = _utilities.lazy_import('pulumi_oci.email')
     events = _utilities.lazy_import('pulumi_oci.events')
     filestorage = _utilities.lazy_import('pulumi_oci.filestorage')
-    fleetsoftwareupdate = _utilities.lazy_import('pulumi_oci.fleetsoftwareupdate')
     functions = _utilities.lazy_import('pulumi_oci.functions')
     fusionapps = _utilities.lazy_import('pulumi_oci.fusionapps')
     generativeai = _utilities.lazy_import('pulumi_oci.generativeai')
     genericartifactscontent = _utilities.lazy_import('pulumi_oci.genericartifactscontent')
-    globallydistributeddatabase = _utilities.lazy_import('pulumi_oci.globallydistributeddatabase')
     goldengate = _utilities.lazy_import('pulumi_oci.goldengate')
     healthchecks = _utilities.lazy_import('pulumi_oci.healthchecks')
     identity = _utilities.lazy_import('pulumi_oci.identity')
@@ -2087,6 +2087,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/maskingPolicyHealthReportManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement": "MaskingPolicyHealthReportManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/maskingReportManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/maskingReportManagement:MaskingReportManagement": "MaskingReportManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/onPremConnector",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -2199,10 +2215,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/setSecurityAssessmentBaselineManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement": "SetSecurityAssessmentBaselineManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/setUserAssessmentBaseline",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline": "SetUserAssessmentBaseline"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/setUserAssessmentBaselineManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement": "SetUserAssessmentBaselineManagement"
   }
  },
  {
@@ -2263,10 +2295,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/unsetSecurityAssessmentBaselineManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/unsetSecurityAssessmentBaselineManagement:UnsetSecurityAssessmentBaselineManagement": "UnsetSecurityAssessmentBaselineManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/unsetUserAssessmentBaseline",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline": "UnsetUserAssessmentBaseline"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/unsetUserAssessmentBaselineManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/unsetUserAssessmentBaselineManagement:UnsetUserAssessmentBaselineManagement": "UnsetUserAssessmentBaselineManagement"
   }
  },
  {
@@ -2887,6 +2935,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement": "AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/databaseDbmFeaturesManagement",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
@@ -3151,10 +3207,34 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DelegateAccessControl/delegationControl",
+  "fqn": "pulumi_oci.delegateaccesscontrol",
+  "classes": {
+   "oci:DelegateAccessControl/delegationControl:DelegationControl": "DelegationControl"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DelegateAccessControl/delegationSubscription",
+  "fqn": "pulumi_oci.delegateaccesscontrol",
+  "classes": {
+   "oci:DelegateAccessControl/delegationSubscription:DelegationSubscription": "DelegationSubscription"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DemandSignal/occDemandSignal",
   "fqn": "pulumi_oci.demandsignal",
   "classes": {
    "oci:DemandSignal/occDemandSignal:OccDemandSignal": "OccDemandSignal"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Desktops/desktopPool",
+  "fqn": "pulumi_oci.desktops",
+  "classes": {
+   "oci:Desktops/desktopPool:DesktopPool": "DesktopPool"
   }
  },
  {
@@ -3511,22 +3591,6 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "FleetSoftwareUpdate/fsuCollection",
-  "fqn": "pulumi_oci.fleetsoftwareupdate",
-  "classes": {
-   "oci:FleetSoftwareUpdate/fsuCollection:FsuCollection": "FsuCollection"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "FleetSoftwareUpdate/fsuCycle",
-  "fqn": "pulumi_oci.fleetsoftwareupdate",
-  "classes": {
-   "oci:FleetSoftwareUpdate/fsuCycle:FsuCycle": "FsuCycle"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "Functions/application",
   "fqn": "pulumi_oci.functions",
   "classes": {
@@ -3627,22 +3691,6 @@ _utilities.register(
   "fqn": "pulumi_oci.genericartifactscontent",
   "classes": {
    "oci:GenericArtifactsContent/artifactByPath:ArtifactByPath": "ArtifactByPath"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "GloballyDistributedDatabase/privateEndpoint",
-  "fqn": "pulumi_oci.globallydistributeddatabase",
-  "classes": {
-   "oci:GloballyDistributedDatabase/privateEndpoint:PrivateEndpoint": "PrivateEndpoint"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "GloballyDistributedDatabase/shardedDatabase",
-  "fqn": "pulumi_oci.globallydistributeddatabase",
-  "classes": {
-   "oci:GloballyDistributedDatabase/shardedDatabase:ShardedDatabase": "ShardedDatabase"
   }
  },
  {

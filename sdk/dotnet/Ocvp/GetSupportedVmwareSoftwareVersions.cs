@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Ocvp
         ///         CompartmentId = compartmentId,
         ///         HostShapeName = testShape.Name,
         ///         Version = supportedVmwareSoftwareVersionVersion,
+        ///         VersionToUpgrade = supportedVmwareSoftwareVersionVersionToUpgrade,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Ocvp
         ///         CompartmentId = compartmentId,
         ///         HostShapeName = testShape.Name,
         ///         Version = supportedVmwareSoftwareVersionVersion,
+        ///         VersionToUpgrade = supportedVmwareSoftwareVersionVersionToUpgrade,
         ///     });
         /// 
         /// });
@@ -101,6 +103,12 @@ namespace Pulumi.Oci.Ocvp
         [Input("version")]
         public string? Version { get; set; }
 
+        /// <summary>
+        /// A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+        /// </summary>
+        [Input("versionToUpgrade")]
+        public string? VersionToUpgrade { get; set; }
+
         public GetSupportedVmwareSoftwareVersionsArgs()
         {
         }
@@ -135,6 +143,12 @@ namespace Pulumi.Oci.Ocvp
         [Input("version")]
         public Input<string>? Version { get; set; }
 
+        /// <summary>
+        /// A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+        /// </summary>
+        [Input("versionToUpgrade")]
+        public Input<string>? VersionToUpgrade { get; set; }
+
         public GetSupportedVmwareSoftwareVersionsInvokeArgs()
         {
         }
@@ -160,6 +174,7 @@ namespace Pulumi.Oci.Ocvp
         /// A short, unique string that identifies the version of bundled software.
         /// </summary>
         public readonly string? Version;
+        public readonly string? VersionToUpgrade;
 
         [OutputConstructor]
         private GetSupportedVmwareSoftwareVersionsResult(
@@ -173,7 +188,9 @@ namespace Pulumi.Oci.Ocvp
 
             ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsItemResult> items,
 
-            string? version)
+            string? version,
+
+            string? versionToUpgrade)
         {
             CompartmentId = compartmentId;
             Filters = filters;
@@ -181,6 +198,7 @@ namespace Pulumi.Oci.Ocvp
             Id = id;
             Items = items;
             Version = version;
+            VersionToUpgrade = versionToUpgrade;
         }
     }
 }

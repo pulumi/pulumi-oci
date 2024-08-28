@@ -18,14 +18,14 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
     public static final GetExsiHostsPlainArgs Empty = new GetExsiHostsPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      * 
      */
     @Import(name="clusterId")
     private @Nullable String clusterId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      * 
      */
     public Optional<String> clusterId() {
@@ -177,7 +177,7 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param clusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+         * @param clusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
          * 
          * @return builder
          * 

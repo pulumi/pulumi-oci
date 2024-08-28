@@ -4663,22 +4663,9 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * ## 
+     * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
-     * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
-     * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -4691,7 +4678,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -4705,7 +4692,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
      *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .dbVersion(autonomousDatabaseDbVersion)
@@ -4731,22 +4718,9 @@ public final class DatabaseFunctions {
         return getAutonomousDatabases(args, InvokeOptions.Empty);
     }
     /**
-     * ## 
+     * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
-     * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
-     * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -4759,7 +4733,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -4773,7 +4747,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
      *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .dbVersion(autonomousDatabaseDbVersion)
@@ -4799,22 +4773,9 @@ public final class DatabaseFunctions {
         return getAutonomousDatabasesPlain(args, InvokeOptions.Empty);
     }
     /**
-     * ## 
+     * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
-     * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
-     * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -4827,7 +4788,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -4841,7 +4802,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
      *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .dbVersion(autonomousDatabaseDbVersion)
@@ -4867,22 +4828,9 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * ## 
+     * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
-     * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
-     * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -4895,7 +4843,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -4909,7 +4857,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
      *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .dbVersion(autonomousDatabaseDbVersion)

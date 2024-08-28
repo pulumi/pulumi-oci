@@ -199,7 +199,9 @@ var mappedMods = map[string]string{
 	"dataflow":                       dataFlowMod,
 	"dataintegration":                dataIntegrationMod,
 	"datascience":                    dataScienceMod,
+	"delegate_access_control":        "DelegateAccessControl",
 	"demand_signal":                  demandSignalMod,
+	"desktops":                       "Desktops",
 	"devops":                         devopsMod,
 	"disaster_recovery":              disasterRecoveryMod,
 	"dns":                            dnsMod,
@@ -1731,13 +1733,11 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_data_safe_sql_firewall_policy_management",
 		"oci_integration_private_endpoint_outbound_connection",
 		"oci_bds_bds_instance_os_patch_action",
-		"oci_fleet_software_update_fsu_collection",
-		"oci_fleet_software_update_fsu_cycle",
 	}
-	for _, r := range resourcesMissingDocs {
-		_, ok := prov.Resources[r]
-		contract.Assertf(ok, "Expected resource %s", r)
-		prov.Resources[r].Docs = &tfbridge.DocInfo{Markdown: []byte{' '}}
+	for _, tk := range resourcesMissingDocs {
+		r, ok := prov.Resources[tk]
+		contract.Assertf(ok, "Expected resource %s", tk)
+		r.Docs = &tfbridge.DocInfo{AllowMissing: true}
 	}
 
 	datasourcesMissingDocs := []string{
@@ -1751,15 +1751,11 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_network_load_balancer_backend_set_health",
 		"oci_objectstorage_namespace_metadata",
 		"oci_data_safe_security_assessment_finding",
-		"oci_fleet_software_update_fsu_collection",
-		"oci_fleet_software_update_fsu_collections",
-		"oci_fleet_software_update_fsu_cycle",
-		"oci_fleet_software_update_fsu_cycles",
 	}
-	for _, d := range datasourcesMissingDocs {
-		_, ok := prov.DataSources[d]
-		contract.Assertf(ok, "Expected datasource %s", d)
-		prov.DataSources[d].Docs = &tfbridge.DocInfo{Markdown: []byte{' '}}
+	for _, tk := range datasourcesMissingDocs {
+		d, ok := prov.DataSources[tk]
+		contract.Assertf(ok, "Expected datasource %s", tk)
+		d.Docs = &tfbridge.DocInfo{AllowMissing: true}
 	}
 
 	prov.MustApplyAutoAliases()

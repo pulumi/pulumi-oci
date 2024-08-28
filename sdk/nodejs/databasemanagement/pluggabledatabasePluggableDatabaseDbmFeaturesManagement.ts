@@ -51,6 +51,7 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
      * The details required to enable the specified Database Management feature.
      */
     public readonly featureDetails!: pulumi.Output<outputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
+    public readonly modifyPluggableDatabaseDbmFeature!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
      */
@@ -71,6 +72,7 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
             const state = argsOrState as PluggabledatabasePluggableDatabaseDbmFeaturesManagementState | undefined;
             resourceInputs["enablePluggableDatabaseDbmFeature"] = state ? state.enablePluggableDatabaseDbmFeature : undefined;
             resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
+            resourceInputs["modifyPluggableDatabaseDbmFeature"] = state ? state.modifyPluggableDatabaseDbmFeature : undefined;
             resourceInputs["pluggableDatabaseId"] = state ? state.pluggableDatabaseId : undefined;
         } else {
             const args = argsOrState as PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs | undefined;
@@ -82,6 +84,7 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
             }
             resourceInputs["enablePluggableDatabaseDbmFeature"] = args ? args.enablePluggableDatabaseDbmFeature : undefined;
             resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
+            resourceInputs["modifyPluggableDatabaseDbmFeature"] = args ? args.modifyPluggableDatabaseDbmFeature : undefined;
             resourceInputs["pluggableDatabaseId"] = args ? args.pluggableDatabaseId : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -105,6 +108,7 @@ export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementState {
      * The details required to enable the specified Database Management feature.
      */
     featureDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails>;
+    modifyPluggableDatabaseDbmFeature?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
      */
@@ -127,6 +131,7 @@ export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs {
      * The details required to enable the specified Database Management feature.
      */
     featureDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails>;
+    modifyPluggableDatabaseDbmFeature?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
      */

@@ -97,6 +97,8 @@ type LookupProtectedDatabaseResult struct {
 	RecoveryServiceSubnets []GetProtectedDatabaseRecoveryServiceSubnet `pulumi:"recoveryServiceSubnets"`
 	// The current state of the Protected Database.
 	State string `pulumi:"state"`
+	// The OCID of the cloud service subscription to which the protected database is linked.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -247,6 +249,11 @@ func (o LookupProtectedDatabaseResultOutput) RecoveryServiceSubnets() GetProtect
 // The current state of the Protected Database.
 func (o LookupProtectedDatabaseResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud service subscription to which the protected database is linked.
+func (o LookupProtectedDatabaseResultOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)

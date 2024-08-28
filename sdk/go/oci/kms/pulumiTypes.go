@@ -201,17 +201,17 @@ func (o GeneratedKeyKeyShapePtrOutput) Length() pulumi.IntPtrOutput {
 }
 
 type KeyAutoKeyRotationDetails struct {
-	// (Updatable) The last execution status message.
+	// (Updatable) The last execution status message of auto key rotation.
 	LastRotationMessage *string `pulumi:"lastRotationMessage"`
 	// (Updatable) The status of last execution of auto key rotation.
 	LastRotationStatus *string `pulumi:"lastRotationStatus"`
-	// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 	RotationIntervalInDays *int `pulumi:"rotationIntervalInDays"`
-	// (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	// (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 	TimeOfLastRotation *string `pulumi:"timeOfLastRotation"`
-	// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 	TimeOfNextRotation *string `pulumi:"timeOfNextRotation"`
-	// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 	TimeOfScheduleStart *string `pulumi:"timeOfScheduleStart"`
 }
 
@@ -227,17 +227,17 @@ type KeyAutoKeyRotationDetailsInput interface {
 }
 
 type KeyAutoKeyRotationDetailsArgs struct {
-	// (Updatable) The last execution status message.
+	// (Updatable) The last execution status message of auto key rotation.
 	LastRotationMessage pulumi.StringPtrInput `pulumi:"lastRotationMessage"`
 	// (Updatable) The status of last execution of auto key rotation.
 	LastRotationStatus pulumi.StringPtrInput `pulumi:"lastRotationStatus"`
-	// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 	RotationIntervalInDays pulumi.IntPtrInput `pulumi:"rotationIntervalInDays"`
-	// (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	// (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 	TimeOfLastRotation pulumi.StringPtrInput `pulumi:"timeOfLastRotation"`
-	// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 	TimeOfNextRotation pulumi.StringPtrInput `pulumi:"timeOfNextRotation"`
-	// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 	TimeOfScheduleStart pulumi.StringPtrInput `pulumi:"timeOfScheduleStart"`
 }
 
@@ -318,7 +318,7 @@ func (o KeyAutoKeyRotationDetailsOutput) ToKeyAutoKeyRotationDetailsPtrOutputWit
 	}).(KeyAutoKeyRotationDetailsPtrOutput)
 }
 
-// (Updatable) The last execution status message.
+// (Updatable) The last execution status message of auto key rotation.
 func (o KeyAutoKeyRotationDetailsOutput) LastRotationMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.LastRotationMessage }).(pulumi.StringPtrOutput)
 }
@@ -328,22 +328,22 @@ func (o KeyAutoKeyRotationDetailsOutput) LastRotationStatus() pulumi.StringPtrOu
 	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.LastRotationStatus }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 func (o KeyAutoKeyRotationDetailsOutput) RotationIntervalInDays() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *int { return v.RotationIntervalInDays }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+// (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 func (o KeyAutoKeyRotationDetailsOutput) TimeOfLastRotation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.TimeOfLastRotation }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 func (o KeyAutoKeyRotationDetailsOutput) TimeOfNextRotation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.TimeOfNextRotation }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 func (o KeyAutoKeyRotationDetailsOutput) TimeOfScheduleStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.TimeOfScheduleStart }).(pulumi.StringPtrOutput)
 }
@@ -372,7 +372,7 @@ func (o KeyAutoKeyRotationDetailsPtrOutput) Elem() KeyAutoKeyRotationDetailsOutp
 	}).(KeyAutoKeyRotationDetailsOutput)
 }
 
-// (Updatable) The last execution status message.
+// (Updatable) The last execution status message of auto key rotation.
 func (o KeyAutoKeyRotationDetailsPtrOutput) LastRotationMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
 		if v == nil {
@@ -392,7 +392,7 @@ func (o KeyAutoKeyRotationDetailsPtrOutput) LastRotationStatus() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 func (o KeyAutoKeyRotationDetailsPtrOutput) RotationIntervalInDays() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *int {
 		if v == nil {
@@ -402,7 +402,7 @@ func (o KeyAutoKeyRotationDetailsPtrOutput) RotationIntervalInDays() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+// (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 func (o KeyAutoKeyRotationDetailsPtrOutput) TimeOfLastRotation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
 		if v == nil {
@@ -412,7 +412,7 @@ func (o KeyAutoKeyRotationDetailsPtrOutput) TimeOfLastRotation() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 func (o KeyAutoKeyRotationDetailsPtrOutput) TimeOfNextRotation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
 		if v == nil {
@@ -422,7 +422,7 @@ func (o KeyAutoKeyRotationDetailsPtrOutput) TimeOfNextRotation() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 func (o KeyAutoKeyRotationDetailsPtrOutput) TimeOfScheduleStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
 		if v == nil {
@@ -2942,17 +2942,17 @@ func (o GetEkmsPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetEk
 }
 
 type GetKeyAutoKeyRotationDetail struct {
-	// The last execution status message.
+	// The last execution status message of auto key rotation.
 	LastRotationMessage string `pulumi:"lastRotationMessage"`
 	// The status of last execution of auto key rotation.
 	LastRotationStatus string `pulumi:"lastRotationStatus"`
-	// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	// The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 	RotationIntervalInDays int `pulumi:"rotationIntervalInDays"`
-	// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	// A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 	TimeOfLastRotation string `pulumi:"timeOfLastRotation"`
-	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 	TimeOfNextRotation string `pulumi:"timeOfNextRotation"`
-	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 	TimeOfScheduleStart string `pulumi:"timeOfScheduleStart"`
 }
 
@@ -2968,17 +2968,17 @@ type GetKeyAutoKeyRotationDetailInput interface {
 }
 
 type GetKeyAutoKeyRotationDetailArgs struct {
-	// The last execution status message.
+	// The last execution status message of auto key rotation.
 	LastRotationMessage pulumi.StringInput `pulumi:"lastRotationMessage"`
 	// The status of last execution of auto key rotation.
 	LastRotationStatus pulumi.StringInput `pulumi:"lastRotationStatus"`
-	// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	// The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 	RotationIntervalInDays pulumi.IntInput `pulumi:"rotationIntervalInDays"`
-	// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	// A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 	TimeOfLastRotation pulumi.StringInput `pulumi:"timeOfLastRotation"`
-	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 	TimeOfNextRotation pulumi.StringInput `pulumi:"timeOfNextRotation"`
-	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 	TimeOfScheduleStart pulumi.StringInput `pulumi:"timeOfScheduleStart"`
 }
 
@@ -3033,7 +3033,7 @@ func (o GetKeyAutoKeyRotationDetailOutput) ToGetKeyAutoKeyRotationDetailOutputWi
 	return o
 }
 
-// The last execution status message.
+// The last execution status message of auto key rotation.
 func (o GetKeyAutoKeyRotationDetailOutput) LastRotationMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.LastRotationMessage }).(pulumi.StringOutput)
 }
@@ -3043,22 +3043,22 @@ func (o GetKeyAutoKeyRotationDetailOutput) LastRotationStatus() pulumi.StringOut
 	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.LastRotationStatus }).(pulumi.StringOutput)
 }
 
-// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+// The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 func (o GetKeyAutoKeyRotationDetailOutput) RotationIntervalInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) int { return v.RotationIntervalInDays }).(pulumi.IntOutput)
 }
 
-// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+// A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 func (o GetKeyAutoKeyRotationDetailOutput) TimeOfLastRotation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.TimeOfLastRotation }).(pulumi.StringOutput)
 }
 
-// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 func (o GetKeyAutoKeyRotationDetailOutput) TimeOfNextRotation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.TimeOfNextRotation }).(pulumi.StringOutput)
 }
 
-// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 func (o GetKeyAutoKeyRotationDetailOutput) TimeOfScheduleStart() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.TimeOfScheduleStart }).(pulumi.StringOutput)
 }
@@ -4900,17 +4900,17 @@ func (o GetKeysKeyArrayOutput) Index(i pulumi.IntInput) GetKeysKeyOutput {
 }
 
 type GetKeysKeyAutoKeyRotationDetail struct {
-	// The last execution status message.
+	// The last execution status message of auto key rotation.
 	LastRotationMessage string `pulumi:"lastRotationMessage"`
 	// The status of last execution of auto key rotation.
 	LastRotationStatus string `pulumi:"lastRotationStatus"`
-	// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	// The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 	RotationIntervalInDays int `pulumi:"rotationIntervalInDays"`
-	// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	// A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 	TimeOfLastRotation string `pulumi:"timeOfLastRotation"`
-	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 	TimeOfNextRotation string `pulumi:"timeOfNextRotation"`
-	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 	TimeOfScheduleStart string `pulumi:"timeOfScheduleStart"`
 }
 
@@ -4926,17 +4926,17 @@ type GetKeysKeyAutoKeyRotationDetailInput interface {
 }
 
 type GetKeysKeyAutoKeyRotationDetailArgs struct {
-	// The last execution status message.
+	// The last execution status message of auto key rotation.
 	LastRotationMessage pulumi.StringInput `pulumi:"lastRotationMessage"`
 	// The status of last execution of auto key rotation.
 	LastRotationStatus pulumi.StringInput `pulumi:"lastRotationStatus"`
-	// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	// The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 	RotationIntervalInDays pulumi.IntInput `pulumi:"rotationIntervalInDays"`
-	// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	// A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 	TimeOfLastRotation pulumi.StringInput `pulumi:"timeOfLastRotation"`
-	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 	TimeOfNextRotation pulumi.StringInput `pulumi:"timeOfNextRotation"`
-	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 	TimeOfScheduleStart pulumi.StringInput `pulumi:"timeOfScheduleStart"`
 }
 
@@ -4991,7 +4991,7 @@ func (o GetKeysKeyAutoKeyRotationDetailOutput) ToGetKeysKeyAutoKeyRotationDetail
 	return o
 }
 
-// The last execution status message.
+// The last execution status message of auto key rotation.
 func (o GetKeysKeyAutoKeyRotationDetailOutput) LastRotationMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.LastRotationMessage }).(pulumi.StringOutput)
 }
@@ -5001,22 +5001,22 @@ func (o GetKeysKeyAutoKeyRotationDetailOutput) LastRotationStatus() pulumi.Strin
 	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.LastRotationStatus }).(pulumi.StringOutput)
 }
 
-// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+// The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 func (o GetKeysKeyAutoKeyRotationDetailOutput) RotationIntervalInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) int { return v.RotationIntervalInDays }).(pulumi.IntOutput)
 }
 
-// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+// A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 func (o GetKeysKeyAutoKeyRotationDetailOutput) TimeOfLastRotation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.TimeOfLastRotation }).(pulumi.StringOutput)
 }
 
-// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 func (o GetKeysKeyAutoKeyRotationDetailOutput) TimeOfNextRotation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.TimeOfNextRotation }).(pulumi.StringOutput)
 }
 
-// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
 func (o GetKeysKeyAutoKeyRotationDetailOutput) TimeOfScheduleStart() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.TimeOfScheduleStart }).(pulumi.StringOutput)
 }
@@ -6945,6 +6945,8 @@ type GetVaultsVault struct {
 	Id string `pulumi:"id"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary bool `pulumi:"isPrimary"`
+	// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+	IsVaultReplicable bool `pulumi:"isVaultReplicable"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
 	ManagementEndpoint string `pulumi:"managementEndpoint"`
 	// Vault replica details
@@ -6993,6 +6995,8 @@ type GetVaultsVaultArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
+	// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+	IsVaultReplicable pulumi.BoolInput `pulumi:"isVaultReplicable"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
 	ManagementEndpoint pulumi.StringInput `pulumi:"managementEndpoint"`
 	// Vault replica details
@@ -7109,6 +7113,11 @@ func (o GetVaultsVaultOutput) Id() pulumi.StringOutput {
 // A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 func (o GetVaultsVaultOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVaultsVault) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+}
+
+// A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+func (o GetVaultsVaultOutput) IsVaultReplicable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVaultsVault) bool { return v.IsVaultReplicable }).(pulumi.BoolOutput)
 }
 
 // The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.

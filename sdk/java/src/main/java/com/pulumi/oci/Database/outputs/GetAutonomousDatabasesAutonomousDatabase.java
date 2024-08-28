@@ -66,12 +66,21 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String autonomousContainerDatabaseId;
     private String autonomousDatabaseBackupId;
+    /**
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
     private String autonomousDatabaseId;
     /**
      * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     private String autonomousMaintenanceScheduleType;
+    /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    private String availabilityDomain;
     /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
@@ -100,7 +109,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String clusterPlacementGroupId;
     /**
-     * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     private String compartmentId;
@@ -175,12 +184,16 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail> dbToolsDetails;
     /**
-     * @return A filter to return only autonomous database resources that match the specified dbVersion.
+     * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
     private String dbVersion;
     /**
-     * @return A filter to return only autonomous database resources that match the specified workload type.
+     * @return The Autonomous Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous Transaction Processing database
+     * * DW - indicates an Autonomous Data Warehouse database
+     * * AJD - indicates an Autonomous JSON Database
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
     private String dbWorkload;
@@ -200,7 +213,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String disasterRecoveryType;
     /**
-     * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
     private String displayName;
@@ -230,7 +243,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Integer inMemoryPercentage;
     /**
-     * @return A filter to return only resources that match the given Infrastructure Type.
+     * @return The infrastructure type this resource belongs to.
      * 
      */
     private String infrastructureType;
@@ -250,7 +263,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isAutoScalingForStorageEnabled;
     /**
-     * @return A filter to return only resources that have Data Guard enabled.
+     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     private Boolean isDataGuardEnabled;
@@ -265,7 +278,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isDevTier;
     /**
-     * @return Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
     private Boolean isFreeTier;
@@ -291,7 +304,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isReconnectCloneEnabled;
     /**
-     * @return Filter on the value of the resource&#39;s &#39;isRefreshableClone&#39; property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+     * @return Indicates if the Autonomous Database is a refreshable clone.
      * 
      */
     private Boolean isRefreshableClone;
@@ -378,7 +391,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Integer maxCpuCoreCount;
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * @return The amount of memory (in GBs) enabled per ECPU or OCPU.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -475,7 +488,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private List<GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
     private String remoteDisasterRecoveryType;
     /**
-     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String resourcePoolLeaderId;
@@ -520,7 +533,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private List<String> standbyWhitelistedIps;
     /**
-     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * @return The current state of the Autonomous Database.
      * 
      */
     private String state;
@@ -531,6 +544,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private String subnetId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
      */
     private String subscriptionId;
@@ -710,6 +724,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public String autonomousDatabaseBackupId() {
         return this.autonomousDatabaseBackupId;
     }
+    /**
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }
@@ -719,6 +737,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public String autonomousMaintenanceScheduleType() {
         return this.autonomousMaintenanceScheduleType;
+    }
+    /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
     }
     /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -762,7 +787,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.clusterPlacementGroupId;
     }
     /**
-     * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     public String compartmentId() {
@@ -867,14 +892,18 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.dbToolsDetails;
     }
     /**
-     * @return A filter to return only autonomous database resources that match the specified dbVersion.
+     * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
     public String dbVersion() {
         return this.dbVersion;
     }
     /**
-     * @return A filter to return only autonomous database resources that match the specified workload type.
+     * @return The Autonomous Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous Transaction Processing database
+     * * DW - indicates an Autonomous Data Warehouse database
+     * * AJD - indicates an Autonomous JSON Database
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
     public String dbWorkload() {
@@ -902,7 +931,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.disasterRecoveryType;
     }
     /**
-     * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
     public String displayName() {
@@ -944,7 +973,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.inMemoryPercentage;
     }
     /**
-     * @return A filter to return only resources that match the given Infrastructure Type.
+     * @return The infrastructure type this resource belongs to.
      * 
      */
     public String infrastructureType() {
@@ -972,7 +1001,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isAutoScalingForStorageEnabled;
     }
     /**
-     * @return A filter to return only resources that have Data Guard enabled.
+     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Boolean isDataGuardEnabled() {
@@ -993,7 +1022,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isDevTier;
     }
     /**
-     * @return Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
     public Boolean isFreeTier() {
@@ -1031,7 +1060,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isReconnectCloneEnabled;
     }
     /**
-     * @return Filter on the value of the resource&#39;s &#39;isRefreshableClone&#39; property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+     * @return Indicates if the Autonomous Database is a refreshable clone.
      * 
      */
     public Boolean isRefreshableClone() {
@@ -1152,7 +1181,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.maxCpuCoreCount;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * @return The amount of memory (in GBs) enabled per ECPU or OCPU.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -1289,7 +1318,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.remoteDisasterRecoveryType;
     }
     /**
-     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String resourcePoolLeaderId() {
@@ -1360,7 +1389,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.standbyWhitelistedIps;
     }
     /**
-     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * @return The current state of the Autonomous Database.
      * 
      */
     public String state() {
@@ -1375,6 +1404,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
      */
     public String subscriptionId() {
@@ -1574,6 +1604,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String autonomousDatabaseBackupId;
         private String autonomousDatabaseId;
         private String autonomousMaintenanceScheduleType;
+        private String availabilityDomain;
         private List<String> availableUpgradeVersions;
         private List<GetAutonomousDatabasesAutonomousDatabaseBackupConfig> backupConfigs;
         private Integer backupRetentionPeriodInDays;
@@ -1714,6 +1745,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.autonomousDatabaseBackupId = defaults.autonomousDatabaseBackupId;
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
     	      this.autonomousMaintenanceScheduleType = defaults.autonomousMaintenanceScheduleType;
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableUpgradeVersions = defaults.availableUpgradeVersions;
     	      this.backupConfigs = defaults.backupConfigs;
     	      this.backupRetentionPeriodInDays = defaults.backupRetentionPeriodInDays;
@@ -1931,6 +1963,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "autonomousMaintenanceScheduleType");
             }
             this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
@@ -3014,6 +3054,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
             _resultValue.autonomousDatabaseId = autonomousDatabaseId;
             _resultValue.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availableUpgradeVersions = availableUpgradeVersions;
             _resultValue.backupConfigs = backupConfigs;
             _resultValue.backupRetentionPeriodInDays = backupRetentionPeriodInDays;

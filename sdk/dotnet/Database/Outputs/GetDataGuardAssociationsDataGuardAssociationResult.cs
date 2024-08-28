@@ -39,6 +39,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly ImmutableDictionary<string, string> DbSystemFreeformTags;
         public readonly string DeleteStandbyDbHomeOnDelete;
         public readonly string DisplayName;
+        public readonly string Domain;
         public readonly ImmutableArray<string> FaultDomains;
         public readonly string Hostname;
         /// <summary>
@@ -141,6 +142,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string displayName,
 
+            string domain,
+
             ImmutableArray<string> faultDomains,
 
             string hostname,
@@ -210,6 +213,7 @@ namespace Pulumi.Oci.Database.Outputs
             DbSystemFreeformTags = dbSystemFreeformTags;
             DeleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
             DisplayName = displayName;
+            Domain = domain;
             FaultDomains = faultDomains;
             Hostname = hostname;
             Id = id;

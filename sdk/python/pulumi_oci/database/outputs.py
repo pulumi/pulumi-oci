@@ -2268,7 +2268,9 @@ class AutonomousDatabaseLocalStandbyDb(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "lagTimeInSeconds":
+        if key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "lagTimeInSeconds":
             suggest = "lag_time_in_seconds"
         elif key == "lifecycleDetails":
             suggest = "lifecycle_details"
@@ -2289,18 +2291,22 @@ class AutonomousDatabaseLocalStandbyDb(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 availability_domain: Optional[str] = None,
                  lag_time_in_seconds: Optional[int] = None,
                  lifecycle_details: Optional[str] = None,
                  state: Optional[str] = None,
                  time_data_guard_role_changed: Optional[str] = None,
                  time_disaster_recovery_role_changed: Optional[str] = None):
         """
+        :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
@@ -2311,6 +2317,14 @@ class AutonomousDatabaseLocalStandbyDb(dict):
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         if time_disaster_recovery_role_changed is not None:
             pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -2779,7 +2793,9 @@ class AutonomousDatabaseStandbyDb(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "lagTimeInSeconds":
+        if key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "lagTimeInSeconds":
             suggest = "lag_time_in_seconds"
         elif key == "lifecycleDetails":
             suggest = "lifecycle_details"
@@ -2800,18 +2816,22 @@ class AutonomousDatabaseStandbyDb(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 availability_domain: Optional[str] = None,
                  lag_time_in_seconds: Optional[int] = None,
                  lifecycle_details: Optional[str] = None,
                  state: Optional[str] = None,
                  time_data_guard_role_changed: Optional[str] = None,
                  time_disaster_recovery_role_changed: Optional[str] = None):
         """
+        :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
@@ -2822,6 +2842,14 @@ class AutonomousDatabaseStandbyDb(dict):
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         if time_disaster_recovery_role_changed is not None:
             pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -16305,23 +16333,34 @@ class GetAutonomousDatabaseKeyHistoryEntryResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabaseLocalStandbyDbResult(dict):
     def __init__(__self__, *,
+                 availability_domain: str,
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
                  time_data_guard_role_changed: str,
                  time_disaster_recovery_role_changed: str):
         """
+        :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -16970,23 +17009,34 @@ class GetAutonomousDatabaseSoftwareImagesFilterResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabaseStandbyDbResult(dict):
     def __init__(__self__, *,
+                 availability_domain: str,
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
                  time_data_guard_role_changed: str,
                  time_disaster_recovery_role_changed: str):
         """
+        :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -17043,6 +17093,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  autonomous_database_backup_id: str,
                  autonomous_database_id: str,
                  autonomous_maintenance_schedule_type: str,
+                 availability_domain: str,
                  available_upgrade_versions: Sequence[str],
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult'],
                  backup_retention_period_in_days: int,
@@ -17177,13 +17228,15 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         :param int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
-        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param float compute_count: Compute used by database tools.
         :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -17198,30 +17251,34 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str dataguard_region_type: The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         :param str db_name: The database name.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailArgs'] db_tools_details: The list of database tools details.
-        :param str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
-        :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
+        :param str db_version: A valid Oracle Database version for Autonomous Database.
+        :param str db_workload: The Autonomous Database workload type. The following values are valid:
+               * OLTP - indicates an Autonomous Transaction Processing database
+               * DW - indicates an Autonomous Data Warehouse database
+               * AJD - indicates an Autonomous JSON Database
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
         :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
-        :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
+        :param str infrastructure_type: The infrastructure type this resource belongs to.
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
-        :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
+        :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         :param bool is_dev_tier: Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
-        :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+        :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         :param bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
         :param bool is_preview: Indicates if the Autonomous Database version is a preview version.
         :param bool is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
-        :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+        :param bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
         :param bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
@@ -17237,7 +17294,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param str net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
@@ -17257,7 +17314,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
-        :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+        :param str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summaries: The configuration details for resource pool
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
@@ -17265,9 +17322,10 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
         :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
-        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str state: The current state of the Autonomous Database.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+               These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         :param Sequence[str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time the Autonomous Database was created.
@@ -17303,6 +17361,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
@@ -17499,6 +17558,9 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> str:
+        """
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
         return pulumi.get(self, "autonomous_database_id")
 
     @property
@@ -17508,6 +17570,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         """
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="availableUpgradeVersions")
@@ -17563,7 +17633,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -17683,7 +17753,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        A filter to return only autonomous database resources that match the specified dbVersion.
+        A valid Oracle Database version for Autonomous Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -17691,7 +17761,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> str:
         """
-        A filter to return only autonomous database resources that match the specified workload type.
+        The Autonomous Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous Transaction Processing database
+        * DW - indicates an Autonomous Data Warehouse database
+        * AJD - indicates an Autonomous JSON Database
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
         """
         return pulumi.get(self, "db_workload")
 
@@ -17723,7 +17797,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        The user-friendly name for the Autonomous Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -17771,7 +17845,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> str:
         """
-        A filter to return only resources that match the given Infrastructure Type.
+        The infrastructure type this resource belongs to.
         """
         return pulumi.get(self, "infrastructure_type")
 
@@ -17803,7 +17877,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> bool:
         """
-        A filter to return only resources that have Data Guard enabled.
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -17827,7 +17901,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> bool:
         """
-        Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         """
         return pulumi.get(self, "is_free_tier")
 
@@ -17872,7 +17946,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> bool:
         """
-        Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+        Indicates if the Autonomous Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
 
@@ -18006,7 +18080,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU.
+        The amount of memory (in GBs) enabled per ECPU or OCPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -18164,7 +18238,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="resourcePoolLeaderId")
     def resource_pool_leader_id(self) -> str:
         """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+        The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "resource_pool_leader_id")
 
@@ -18253,7 +18327,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources that match the given lifecycle state exactly.
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -18270,6 +18344,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     def subscription_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         """
         return pulumi.get(self, "subscription_id")
 
@@ -18623,12 +18698,11 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
                  value: str):
         """
         :param str consumer_group: Consumer group used by the connection.
-        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param str host_format: Host format used in connection string.
-        :param bool is_regional: True for a regional connection string, applicable to cross-region DG only.
         :param str protocol: Protocol used by the connection.
         :param str session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        :param str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
         :param str tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param str value: Connection string value.
         """
@@ -18654,7 +18728,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        The user-friendly name for the Autonomous Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -18669,9 +18743,6 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
     @property
     @pulumi.getter(name="isRegional")
     def is_regional(self) -> bool:
-        """
-        True for a regional connection string, applicable to cross-region DG only.
-        """
         return pulumi.get(self, "is_regional")
 
     @property
@@ -18694,7 +18765,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> str:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -18933,23 +19004,34 @@ class GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
     def __init__(__self__, *,
+                 availability_domain: str,
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
                  time_data_guard_role_changed: str,
                  time_disaster_recovery_role_changed: str):
         """
+        :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
-        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -18971,7 +19053,7 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources that match the given lifecycle state exactly.
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -19271,23 +19353,34 @@ class GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult(
 @pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
     def __init__(__self__, *,
+                 availability_domain: str,
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
                  time_data_guard_role_changed: str,
                  time_disaster_recovery_role_changed: str):
         """
+        :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
-        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -19309,7 +19402,7 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources that match the given lifecycle state exactly.
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -19341,6 +19434,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  auto_refresh_point_lag_in_seconds: int,
                  autonomous_container_database_id: str,
                  autonomous_maintenance_schedule_type: str,
+                 availability_domain: str,
                  available_upgrade_versions: Sequence[str],
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult'],
                  backup_retention_period_in_days: int,
@@ -19458,7 +19552,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         :param int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle* `availability_domain` - The availability domain where the Autonomous Database Serverless instance is located.
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
@@ -19517,7 +19611,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -19544,7 +19638,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -19580,6 +19674,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "auto_refresh_point_lag_in_seconds", auto_refresh_point_lag_in_seconds)
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
@@ -19750,9 +19845,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
     def autonomous_maintenance_schedule_type(self) -> str:
         """
-        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle* `availability_domain` - The availability domain where the Autonomous Database Serverless instance is located.
         """
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="availableUpgradeVersions")
@@ -20199,7 +20299,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult']:
         """
-        Autonomous Data Guard standby database details.
+        Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         """
         return pulumi.get(self, "local_standby_dbs")
 
@@ -20408,7 +20508,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyDbs")
     def standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult']:
         """
-        **Deprecated** Autonomous Data Guard standby database details.
+        **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         """
         return pulumi.get(self, "standby_dbs")
 
@@ -21081,6 +21181,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
     def __init__(__self__, *,
+                 availability_domain: str,
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
@@ -21093,11 +21194,17 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -21423,6 +21530,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekR
 @pulumi.output_type
 class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
     def __init__(__self__, *,
+                 availability_domain: str,
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
@@ -21435,11 +21543,17 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -28824,6 +28938,7 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
                  db_system_freeform_tags: Mapping[str, str],
                  delete_standby_db_home_on_delete: str,
                  display_name: str,
+                 domain: str,
                  fault_domains: Sequence[str],
                  hostname: str,
                  id: str,
@@ -28885,6 +29000,7 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
         pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
@@ -29005,6 +29121,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="faultDomains")

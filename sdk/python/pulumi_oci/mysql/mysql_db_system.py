@@ -25,6 +25,7 @@ class MysqlDbSystemArgs:
                  backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]] = None,
                  data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
@@ -61,6 +62,7 @@ class MysqlDbSystemArgs:
         :param pulumi.Input['MysqlDbSystemBackupPolicyArgs'] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param pulumi.Input['MysqlDbSystemDataStorageArgs'] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
@@ -109,6 +111,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "configuration_id", configuration_id)
         if crash_recovery is not None:
             pulumi.set(__self__, "crash_recovery", crash_recovery)
+        if customer_contacts is not None:
+            pulumi.set(__self__, "customer_contacts", customer_contacts)
         if data_storage is not None:
             pulumi.set(__self__, "data_storage", data_storage)
         if data_storage_size_in_gb is not None:
@@ -262,6 +266,18 @@ class MysqlDbSystemArgs:
     @crash_recovery.setter
     def crash_recovery(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "crash_recovery", value)
+
+    @property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]:
+        """
+        (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        """
+        return pulumi.get(self, "customer_contacts")
+
+    @customer_contacts.setter
+    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]):
+        pulumi.set(self, "customer_contacts", value)
 
     @property
     @pulumi.getter(name="dataStorage")
@@ -529,6 +545,7 @@ class _MysqlDbSystemState:
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
                  current_placements: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]] = None,
                  data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
@@ -573,6 +590,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]] current_placements: The availability domain and fault domain a DB System is placed in.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param pulumi.Input['MysqlDbSystemDataStorageArgs'] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
@@ -635,6 +653,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "crash_recovery", crash_recovery)
         if current_placements is not None:
             pulumi.set(__self__, "current_placements", current_placements)
+        if customer_contacts is not None:
+            pulumi.set(__self__, "customer_contacts", customer_contacts)
         if data_storage is not None:
             pulumi.set(__self__, "data_storage", data_storage)
         if data_storage_size_in_gb is not None:
@@ -805,6 +825,18 @@ class _MysqlDbSystemState:
     @current_placements.setter
     def current_placements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]]):
         pulumi.set(self, "current_placements", value)
+
+    @property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]:
+        """
+        (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        """
+        return pulumi.get(self, "customer_contacts")
+
+    @customer_contacts.setter
+    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]):
+        pulumi.set(self, "customer_contacts", value)
 
     @property
     @pulumi.getter(name="dataStorage")
@@ -1181,6 +1213,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
                  data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
@@ -1238,6 +1271,9 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             configuration_id=test_configuration["id"],
             crash_recovery=mysql_db_system_crash_recovery,
+            customer_contacts=[{
+                "email": mysql_db_system_customer_contacts_email,
+            }],
             data_storage={
                 "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled,
                 "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
@@ -1297,6 +1333,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
@@ -1374,6 +1411,9 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             configuration_id=test_configuration["id"],
             crash_recovery=mysql_db_system_crash_recovery,
+            customer_contacts=[{
+                "email": mysql_db_system_customer_contacts_email,
+            }],
             data_storage={
                 "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled,
                 "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
@@ -1442,6 +1482,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
                  data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
@@ -1484,6 +1525,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["configuration_id"] = configuration_id
             __props__.__dict__["crash_recovery"] = crash_recovery
+            __props__.__dict__["customer_contacts"] = customer_contacts
             __props__.__dict__["data_storage"] = data_storage
             __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
             __props__.__dict__["database_management"] = database_management
@@ -1540,6 +1582,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             configuration_id: Optional[pulumi.Input[str]] = None,
             crash_recovery: Optional[pulumi.Input[str]] = None,
             current_placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict']]]]] = None,
+            customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
             data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
             database_management: Optional[pulumi.Input[str]] = None,
@@ -1589,6 +1632,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict']]]] current_placements: The availability domain and fault domain a DB System is placed in.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
@@ -1646,6 +1690,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["configuration_id"] = configuration_id
         __props__.__dict__["crash_recovery"] = crash_recovery
         __props__.__dict__["current_placements"] = current_placements
+        __props__.__dict__["customer_contacts"] = customer_contacts
         __props__.__dict__["data_storage"] = data_storage
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
         __props__.__dict__["database_management"] = database_management
@@ -1752,6 +1797,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         The availability domain and fault domain a DB System is placed in.
         """
         return pulumi.get(self, "current_placements")
+
+    @property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> pulumi.Output[Sequence['outputs.MysqlDbSystemCustomerContact']]:
+        """
+        (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        """
+        return pulumi.get(self, "customer_contacts")
 
     @property
     @pulumi.getter(name="dataStorage")

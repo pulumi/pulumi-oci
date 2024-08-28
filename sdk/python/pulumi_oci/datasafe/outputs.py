@@ -1689,6 +1689,12 @@ class DatabaseSecurityConfigManagementSqlFirewallConfig(dict):
                  status: Optional[str] = None,
                  time_status_updated: Optional[str] = None,
                  violation_log_auto_purge: Optional[str] = None):
+        """
+        :param str exclude_job: (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+        :param str status: (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+        :param str time_status_updated: The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        :param str violation_log_auto_purge: (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        """
         if exclude_job is not None:
             pulumi.set(__self__, "exclude_job", exclude_job)
         if status is not None:
@@ -1701,21 +1707,33 @@ class DatabaseSecurityConfigManagementSqlFirewallConfig(dict):
     @property
     @pulumi.getter(name="excludeJob")
     def exclude_job(self) -> Optional[str]:
+        """
+        (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+        """
         return pulumi.get(self, "exclude_job")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
+        """
+        (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeStatusUpdated")
     def time_status_updated(self) -> Optional[str]:
+        """
+        The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        """
         return pulumi.get(self, "time_status_updated")
 
     @property
     @pulumi.getter(name="violationLogAutoPurge")
     def violation_log_auto_purge(self) -> Optional[str]:
+        """
+        (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        """
         return pulumi.get(self, "violation_log_auto_purge")
 
 

@@ -53,6 +53,11 @@ import (
 //				},
 //				ConfigurationId: pulumi.Any(testConfiguration.Id),
 //				CrashRecovery:   pulumi.Any(mysqlDbSystemCrashRecovery),
+//				CustomerContacts: mysql.MysqlDbSystemCustomerContactArray{
+//					&mysql.MysqlDbSystemCustomerContactArgs{
+//						Email: pulumi.Any(mysqlDbSystemCustomerContactsEmail),
+//					},
+//				},
 //				DataStorage: &mysql.MysqlDbSystemDataStorageArgs{
 //					IsAutoExpandStorageEnabled: pulumi.Any(mysqlDbSystemDataStorageIsAutoExpandStorageEnabled),
 //					MaxStorageSizeInGbs:        pulumi.Any(mysqlDbSystemDataStorageMaxStorageSizeInGbs),
@@ -133,6 +138,8 @@ type MysqlDbSystem struct {
 	CrashRecovery pulumi.StringOutput `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements MysqlDbSystemCurrentPlacementArrayOutput `pulumi:"currentPlacements"`
+	// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+	CustomerContacts MysqlDbSystemCustomerContactArrayOutput `pulumi:"customerContacts"`
 	// (Updatable) Data Storage configuration properties.
 	DataStorage MysqlDbSystemDataStorageOutput `pulumi:"dataStorage"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
@@ -278,6 +285,8 @@ type mysqlDbSystemState struct {
 	CrashRecovery *string `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements []MysqlDbSystemCurrentPlacement `pulumi:"currentPlacements"`
+	// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+	CustomerContacts []MysqlDbSystemCustomerContact `pulumi:"customerContacts"`
 	// (Updatable) Data Storage configuration properties.
 	DataStorage *MysqlDbSystemDataStorage `pulumi:"dataStorage"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
@@ -375,6 +384,8 @@ type MysqlDbSystemState struct {
 	CrashRecovery pulumi.StringPtrInput
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements MysqlDbSystemCurrentPlacementArrayInput
+	// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+	CustomerContacts MysqlDbSystemCustomerContactArrayInput
 	// (Updatable) Data Storage configuration properties.
 	DataStorage MysqlDbSystemDataStoragePtrInput
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
@@ -472,6 +483,8 @@ type mysqlDbSystemArgs struct {
 	ConfigurationId *string `pulumi:"configurationId"`
 	// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery *string `pulumi:"crashRecovery"`
+	// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+	CustomerContacts []MysqlDbSystemCustomerContact `pulumi:"customerContacts"`
 	// (Updatable) Data Storage configuration properties.
 	DataStorage *MysqlDbSystemDataStorage `pulumi:"dataStorage"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
@@ -552,6 +565,8 @@ type MysqlDbSystemArgs struct {
 	ConfigurationId pulumi.StringPtrInput
 	// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery pulumi.StringPtrInput
+	// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+	CustomerContacts MysqlDbSystemCustomerContactArrayInput
 	// (Updatable) Data Storage configuration properties.
 	DataStorage MysqlDbSystemDataStoragePtrInput
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
@@ -746,6 +761,11 @@ func (o MysqlDbSystemOutput) CrashRecovery() pulumi.StringOutput {
 // The availability domain and fault domain a DB System is placed in.
 func (o MysqlDbSystemOutput) CurrentPlacements() MysqlDbSystemCurrentPlacementArrayOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemCurrentPlacementArrayOutput { return v.CurrentPlacements }).(MysqlDbSystemCurrentPlacementArrayOutput)
+}
+
+// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+func (o MysqlDbSystemOutput) CustomerContacts() MysqlDbSystemCustomerContactArrayOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemCustomerContactArrayOutput { return v.CustomerContacts }).(MysqlDbSystemCustomerContactArrayOutput)
 }
 
 // (Updatable) Data Storage configuration properties.

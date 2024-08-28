@@ -65,10 +65,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String autonomousContainerDatabaseId;
     /**
-     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle* `availability_domain` - The availability domain where the Autonomous Database Serverless instance is located.
      * 
      */
     private String autonomousMaintenanceScheduleType;
+    private String availabilityDomain;
     /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
@@ -345,7 +346,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String localDisasterRecoveryType;
     /**
-     * @return Autonomous Data Guard standby database details.
+     * @return Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
@@ -476,7 +477,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String sourceId;
     /**
-     * @return **Deprecated** Autonomous Data Guard standby database details.
+     * @return **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs;
@@ -663,11 +664,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.autonomousContainerDatabaseId;
     }
     /**
-     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle* `availability_domain` - The availability domain where the Autonomous Database Serverless instance is located.
      * 
      */
     public String autonomousMaintenanceScheduleType() {
         return this.autonomousMaintenanceScheduleType;
+    }
+    public String availabilityDomain() {
+        return this.availabilityDomain;
     }
     /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -1055,7 +1059,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.localDisasterRecoveryType;
     }
     /**
-     * @return Autonomous Data Guard standby database details.
+     * @return Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs() {
@@ -1238,7 +1242,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.sourceId;
     }
     /**
-     * @return **Deprecated** Autonomous Data Guard standby database details.
+     * @return **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs() {
@@ -1447,6 +1451,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private Integer autoRefreshPointLagInSeconds;
         private String autonomousContainerDatabaseId;
         private String autonomousMaintenanceScheduleType;
+        private String availabilityDomain;
         private List<String> availableUpgradeVersions;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs;
         private Integer backupRetentionPeriodInDays;
@@ -1567,6 +1572,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.autoRefreshPointLagInSeconds = defaults.autoRefreshPointLagInSeconds;
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
     	      this.autonomousMaintenanceScheduleType = defaults.autonomousMaintenanceScheduleType;
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableUpgradeVersions = defaults.availableUpgradeVersions;
     	      this.backupConfigs = defaults.backupConfigs;
     	      this.backupRetentionPeriodInDays = defaults.backupRetentionPeriodInDays;
@@ -1743,6 +1749,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "autonomousMaintenanceScheduleType");
             }
             this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
@@ -2687,6 +2701,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
             _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             _resultValue.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availableUpgradeVersions = availableUpgradeVersions;
             _resultValue.backupConfigs = backupConfigs;
             _resultValue.backupRetentionPeriodInDays = backupRetentionPeriodInDays;

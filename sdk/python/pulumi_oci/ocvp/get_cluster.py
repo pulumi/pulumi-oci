@@ -368,7 +368,7 @@ def get_cluster(cluster_id: Optional[str] = None,
     ```
 
 
-    :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+    :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -423,6 +423,6 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+    :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
     """
     ...

@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The operating system of database.
+        /// </summary>
+        public readonly string DatabasePlatformName;
+        /// <summary>
         /// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
         /// </summary>
         public readonly string DatabaseStatus;
@@ -41,6 +45,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
         /// </summary>
         public readonly string DbSystemId;
+        /// <summary>
+        /// The list of feature configurations
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfigResult> DbmgmtFeatureConfigs;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -82,6 +90,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string StorageSystemId;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time the Managed Database was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -96,6 +108,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string compartmentId,
 
+            string databasePlatformName,
+
             string databaseStatus,
 
             string databaseSubType,
@@ -105,6 +119,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             string databaseVersion,
 
             string dbSystemId,
+
+            ImmutableArray<Outputs.GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfigResult> dbmgmtFeatureConfigs,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -126,17 +142,21 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string storageSystemId,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string workloadType)
         {
             AdditionalDetails = additionalDetails;
             CompartmentId = compartmentId;
+            DatabasePlatformName = databasePlatformName;
             DatabaseStatus = databaseStatus;
             DatabaseSubType = databaseSubType;
             DatabaseType = databaseType;
             DatabaseVersion = databaseVersion;
             DbSystemId = dbSystemId;
+            DbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
             DefinedTags = definedTags;
             DeploymentType = deploymentType;
             FreeformTags = freeformTags;
@@ -147,6 +167,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             Name = name;
             ParentContainerId = parentContainerId;
             StorageSystemId = storageSystemId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             WorkloadType = workloadType;
         }

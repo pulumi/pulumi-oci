@@ -22,7 +22,7 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
         if admin_password and not isinstance(admin_password, str):
             raise TypeError("Expected argument 'admin_password' to be a str")
         pulumi.set(__self__, "admin_password", admin_password)
@@ -50,6 +50,9 @@ class GetMysqlDbSystemResult:
         if current_placements and not isinstance(current_placements, list):
             raise TypeError("Expected argument 'current_placements' to be a list")
         pulumi.set(__self__, "current_placements", current_placements)
+        if customer_contacts and not isinstance(customer_contacts, list):
+            raise TypeError("Expected argument 'customer_contacts' to be a list")
+        pulumi.set(__self__, "customer_contacts", customer_contacts)
         if data_storage_size_in_gb and not isinstance(data_storage_size_in_gb, int):
             raise TypeError("Expected argument 'data_storage_size_in_gb' to be a int")
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
@@ -211,10 +214,18 @@ class GetMysqlDbSystemResult:
         return pulumi.get(self, "current_placements")
 
     @property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> Sequence['outputs.GetMysqlDbSystemCustomerContactResult']:
+        """
+        The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        """
+        return pulumi.get(self, "customer_contacts")
+
+    @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> int:
         """
-        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -471,6 +482,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             configuration_id=self.configuration_id,
             crash_recovery=self.crash_recovery,
             current_placements=self.current_placements,
+            customer_contacts=self.customer_contacts,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             data_storages=self.data_storages,
             database_management=self.database_management,
@@ -538,6 +550,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         configuration_id=pulumi.get(__ret__, 'configuration_id'),
         crash_recovery=pulumi.get(__ret__, 'crash_recovery'),
         current_placements=pulumi.get(__ret__, 'current_placements'),
+        customer_contacts=pulumi.get(__ret__, 'customer_contacts'),
         data_storage_size_in_gb=pulumi.get(__ret__, 'data_storage_size_in_gb'),
         data_storages=pulumi.get(__ret__, 'data_storages'),
         database_management=pulumi.get(__ret__, 'database_management'),

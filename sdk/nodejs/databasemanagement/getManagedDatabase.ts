@@ -26,6 +26,7 @@ export function getManagedDatabase(args: GetManagedDatabaseArgs, opts?: pulumi.I
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", {
+        "databasePlatformName": args.databasePlatformName,
         "managedDatabaseId": args.managedDatabaseId,
     }, opts);
 }
@@ -34,6 +35,10 @@ export function getManagedDatabase(args: GetManagedDatabaseArgs, opts?: pulumi.I
  * A collection of arguments for invoking getManagedDatabase.
  */
 export interface GetManagedDatabaseArgs {
+    /**
+     * The operating system of database.
+     */
+    databasePlatformName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -52,6 +57,10 @@ export interface GetManagedDatabaseResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      */
     readonly compartmentId: string;
+    /**
+     * The operating system of database.
+     */
+    readonly databasePlatformName?: string;
     /**
      * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      */
@@ -72,6 +81,10 @@ export interface GetManagedDatabaseResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
      */
     readonly dbSystemId: string;
+    /**
+     * The list of feature configurations
+     */
+    readonly dbmgmtFeatureConfigs: outputs.DatabaseManagement.GetManagedDatabaseDbmgmtFeatureConfig[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
@@ -114,6 +127,10 @@ export interface GetManagedDatabaseResult {
      */
     readonly storageSystemId: string;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * The date and time the Managed Database was created.
      */
     readonly timeCreated: string;
@@ -146,6 +163,10 @@ export function getManagedDatabaseOutput(args: GetManagedDatabaseOutputArgs, opt
  * A collection of arguments for invoking getManagedDatabase.
  */
 export interface GetManagedDatabaseOutputArgs {
+    /**
+     * The operating system of database.
+     */
+    databasePlatformName?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

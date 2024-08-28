@@ -123,6 +123,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly bool IsCluster;
         /// <summary>
+        /// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        /// </summary>
+        public readonly bool IsDnsResolutionEnabled;
+        /// <summary>
         /// The display name of the Database Management private endpoint.
         /// </summary>
         public readonly string Name;
@@ -171,6 +175,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             bool isCluster,
 
+            bool isDnsResolutionEnabled,
+
             string name,
 
             ImmutableArray<string> nsgIds,
@@ -194,6 +200,7 @@ namespace Pulumi.Oci.DatabaseManagement
             FreeformTags = freeformTags;
             Id = id;
             IsCluster = isCluster;
+            IsDnsResolutionEnabled = isDnsResolutionEnabled;
             Name = name;
             NsgIds = nsgIds;
             PrivateIp = privateIp;

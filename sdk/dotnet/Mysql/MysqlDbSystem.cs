@@ -52,6 +52,13 @@ namespace Pulumi.Oci.Mysql
     ///         },
     ///         ConfigurationId = testConfiguration.Id,
     ///         CrashRecovery = mysqlDbSystemCrashRecovery,
+    ///         CustomerContacts = new[]
+    ///         {
+    ///             new Oci.Mysql.Inputs.MysqlDbSystemCustomerContactArgs
+    ///             {
+    ///                 Email = mysqlDbSystemCustomerContactsEmail,
+    ///             },
+    ///         },
     ///         DataStorage = new Oci.Mysql.Inputs.MysqlDbSystemDataStorageArgs
     ///         {
     ///             IsAutoExpandStorageEnabled = mysqlDbSystemDataStorageIsAutoExpandStorageEnabled,
@@ -171,6 +178,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("currentPlacements")]
         public Output<ImmutableArray<Outputs.MysqlDbSystemCurrentPlacement>> CurrentPlacements { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        /// </summary>
+        [Output("customerContacts")]
+        public Output<ImmutableArray<Outputs.MysqlDbSystemCustomerContact>> CustomerContacts { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Data Storage configuration properties.
@@ -466,6 +479,18 @@ namespace Pulumi.Oci.Mysql
         [Input("crashRecovery")]
         public Input<string>? CrashRecovery { get; set; }
 
+        [Input("customerContacts")]
+        private InputList<Inputs.MysqlDbSystemCustomerContactArgs>? _customerContacts;
+
+        /// <summary>
+        /// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        /// </summary>
+        public InputList<Inputs.MysqlDbSystemCustomerContactArgs> CustomerContacts
+        {
+            get => _customerContacts ?? (_customerContacts = new InputList<Inputs.MysqlDbSystemCustomerContactArgs>());
+            set => _customerContacts = value;
+        }
+
         /// <summary>
         /// (Updatable) Data Storage configuration properties.
         /// </summary>
@@ -716,6 +741,18 @@ namespace Pulumi.Oci.Mysql
         {
             get => _currentPlacements ?? (_currentPlacements = new InputList<Inputs.MysqlDbSystemCurrentPlacementGetArgs>());
             set => _currentPlacements = value;
+        }
+
+        [Input("customerContacts")]
+        private InputList<Inputs.MysqlDbSystemCustomerContactGetArgs>? _customerContacts;
+
+        /// <summary>
+        /// (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        /// </summary>
+        public InputList<Inputs.MysqlDbSystemCustomerContactGetArgs> CustomerContacts
+        {
+            get => _customerContacts ?? (_customerContacts = new InputList<Inputs.MysqlDbSystemCustomerContactGetArgs>());
+            set => _customerContacts = value;
         }
 
         /// <summary>

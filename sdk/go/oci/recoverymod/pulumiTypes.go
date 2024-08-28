@@ -175,9 +175,6 @@ func (o ProtectedDatabaseMetricArrayOutput) Index(i pulumi.IntInput) ProtectedDa
 
 type ProtectedDatabaseRecoveryServiceSubnet struct {
 	// (Updatable) The recovery service subnet OCID.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RecoveryServiceSubnetId string `pulumi:"recoveryServiceSubnetId"`
 	// The current state of the Protected Database.
 	State *string `pulumi:"state"`
@@ -196,9 +193,6 @@ type ProtectedDatabaseRecoveryServiceSubnetInput interface {
 
 type ProtectedDatabaseRecoveryServiceSubnetArgs struct {
 	// (Updatable) The recovery service subnet OCID.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RecoveryServiceSubnetId pulumi.StringInput `pulumi:"recoveryServiceSubnetId"`
 	// The current state of the Protected Database.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -256,9 +250,6 @@ func (o ProtectedDatabaseRecoveryServiceSubnetOutput) ToProtectedDatabaseRecover
 }
 
 // (Updatable) The recovery service subnet OCID.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ProtectedDatabaseRecoveryServiceSubnetOutput) RecoveryServiceSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v ProtectedDatabaseRecoveryServiceSubnet) string { return v.RecoveryServiceSubnetId }).(pulumi.StringOutput)
 }
@@ -795,6 +786,8 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItem struct {
 	RecoveryServiceSubnets []GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet `pulumi:"recoveryServiceSubnets"`
 	// A filter to return only the resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
+	// The OCID of the cloud service subscription to which the protected database is linked.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -855,6 +848,8 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemArgs struct {
 	RecoveryServiceSubnets GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayInput `pulumi:"recoveryServiceSubnets"`
 	// A filter to return only the resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the cloud service subscription to which the protected database is linked.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -1016,6 +1011,11 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) RecoveryServ
 // A filter to return only the resources that match the specified lifecycle state.
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud service subscription to which the protected database is linked.
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -1559,6 +1559,8 @@ type GetProtectionPoliciesProtectionPolicyCollectionItem struct {
 	IsPredefinedPolicy bool `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+	MustEnforceCloudLocality bool `pulumi:"mustEnforceCloudLocality"`
 	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
 	PolicyLockedDateTime string `pulumi:"policyLockedDateTime"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -1599,6 +1601,8 @@ type GetProtectionPoliciesProtectionPolicyCollectionItemArgs struct {
 	IsPredefinedPolicy pulumi.BoolInput `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+	MustEnforceCloudLocality pulumi.BoolInput `pulumi:"mustEnforceCloudLocality"`
 	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
 	PolicyLockedDateTime pulumi.StringInput `pulumi:"policyLockedDateTime"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -1700,6 +1704,11 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) IsPredefinedP
 // Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) MustEnforceCloudLocality() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) bool { return v.MustEnforceCloudLocality }).(pulumi.BoolOutput)
 }
 
 // An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.

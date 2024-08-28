@@ -71,6 +71,8 @@ type LookupDbManagementPrivateEndpointResult struct {
 	Id string `pulumi:"id"`
 	// Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
 	IsCluster bool `pulumi:"isCluster"`
+	// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+	IsDnsResolutionEnabled bool `pulumi:"isDnsResolutionEnabled"`
 	// The display name of the Database Management private endpoint.
 	Name string `pulumi:"name"`
 	// The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
@@ -159,6 +161,11 @@ func (o LookupDbManagementPrivateEndpointResultOutput) Id() pulumi.StringOutput 
 // Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
 func (o LookupDbManagementPrivateEndpointResultOutput) IsCluster() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) bool { return v.IsCluster }).(pulumi.BoolOutput)
+}
+
+// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+func (o LookupDbManagementPrivateEndpointResultOutput) IsDnsResolutionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) bool { return v.IsDnsResolutionEnabled }).(pulumi.BoolOutput)
 }
 
 // The display name of the Database Management private endpoint.

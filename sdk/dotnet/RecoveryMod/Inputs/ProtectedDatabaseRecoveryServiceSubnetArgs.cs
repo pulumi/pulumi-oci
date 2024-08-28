@@ -14,10 +14,6 @@ namespace Pulumi.Oci.RecoveryMod.Inputs
     {
         /// <summary>
         /// (Updatable) The recovery service subnet OCID.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("recoveryServiceSubnetId", required: true)]
         public Input<string> RecoveryServiceSubnetId { get; set; } = null!;

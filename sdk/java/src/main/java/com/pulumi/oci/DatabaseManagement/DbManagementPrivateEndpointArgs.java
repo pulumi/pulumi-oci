@@ -95,6 +95,21 @@ public final class DbManagementPrivateEndpointArgs extends com.pulumi.resources.
     }
 
     /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * 
+     */
+    @Import(name="isDnsResolutionEnabled")
+    private @Nullable Output<Boolean> isDnsResolutionEnabled;
+
+    /**
+     * @return Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * 
+     */
+    public Optional<Output<Boolean>> isDnsResolutionEnabled() {
+        return Optional.ofNullable(this.isDnsResolutionEnabled);
+    }
+
+    /**
      * (Updatable) The display name of the Database Management private endpoint.
      * 
      */
@@ -153,6 +168,7 @@ public final class DbManagementPrivateEndpointArgs extends com.pulumi.resources.
         this.description = $.description;
         this.freeformTags = $.freeformTags;
         this.isCluster = $.isCluster;
+        this.isDnsResolutionEnabled = $.isDnsResolutionEnabled;
         this.name = $.name;
         this.nsgIds = $.nsgIds;
         this.subnetId = $.subnetId;
@@ -279,6 +295,27 @@ public final class DbManagementPrivateEndpointArgs extends com.pulumi.resources.
          */
         public Builder isCluster(Boolean isCluster) {
             return isCluster(Output.of(isCluster));
+        }
+
+        /**
+         * @param isDnsResolutionEnabled Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDnsResolutionEnabled(@Nullable Output<Boolean> isDnsResolutionEnabled) {
+            $.isDnsResolutionEnabled = isDnsResolutionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isDnsResolutionEnabled Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDnsResolutionEnabled(Boolean isDnsResolutionEnabled) {
+            return isDnsResolutionEnabled(Output.of(isDnsResolutionEnabled));
         }
 
         /**

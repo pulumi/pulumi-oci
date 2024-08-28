@@ -15,14 +15,14 @@ public final class AnnouncementSubscriptionsFilterGroupFilterArgs extends com.pu
     public static final AnnouncementSubscriptionsFilterGroupFilterArgs Empty = new AnnouncementSubscriptionsFilterGroupFilterArgs();
 
     /**
-     * (Updatable) The type of filter.
+     * (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of filter.
+     * @return (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * 
      */
     public Output<String> type() {
@@ -70,7 +70,7 @@ public final class AnnouncementSubscriptionsFilterGroupFilterArgs extends com.pu
         }
 
         /**
-         * @param type (Updatable) The type of filter.
+         * @param type (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class AnnouncementSubscriptionsFilterGroupFilterArgs extends com.pu
         }
 
         /**
-         * @param type (Updatable) The type of filter.
+         * @param type (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          * 
          * @return builder
          * 

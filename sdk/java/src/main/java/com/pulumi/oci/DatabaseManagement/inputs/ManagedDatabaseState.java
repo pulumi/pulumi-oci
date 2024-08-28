@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabaseDbmgmtFeatureConfigArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabaseManagedDatabaseGroupArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -47,6 +48,21 @@ public final class ManagedDatabaseState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * The operating system of database.
+     * 
+     */
+    @Import(name="databasePlatformName")
+    private @Nullable Output<String> databasePlatformName;
+
+    /**
+     * @return The operating system of database.
+     * 
+     */
+    public Optional<Output<String>> databasePlatformName() {
+        return Optional.ofNullable(this.databasePlatformName);
     }
 
     /**
@@ -122,6 +138,21 @@ public final class ManagedDatabaseState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> dbSystemId() {
         return Optional.ofNullable(this.dbSystemId);
+    }
+
+    /**
+     * The list of feature configurations
+     * 
+     */
+    @Import(name="dbmgmtFeatureConfigs")
+    private @Nullable Output<List<ManagedDatabaseDbmgmtFeatureConfigArgs>> dbmgmtFeatureConfigs;
+
+    /**
+     * @return The list of feature configurations
+     * 
+     */
+    public Optional<Output<List<ManagedDatabaseDbmgmtFeatureConfigArgs>>> dbmgmtFeatureConfigs() {
+        return Optional.ofNullable(this.dbmgmtFeatureConfigs);
     }
 
     /**
@@ -330,11 +361,13 @@ public final class ManagedDatabaseState extends com.pulumi.resources.ResourceArg
     private ManagedDatabaseState(ManagedDatabaseState $) {
         this.additionalDetails = $.additionalDetails;
         this.compartmentId = $.compartmentId;
+        this.databasePlatformName = $.databasePlatformName;
         this.databaseStatus = $.databaseStatus;
         this.databaseSubType = $.databaseSubType;
         this.databaseType = $.databaseType;
         this.databaseVersion = $.databaseVersion;
         this.dbSystemId = $.dbSystemId;
+        this.dbmgmtFeatureConfigs = $.dbmgmtFeatureConfigs;
         this.definedTags = $.definedTags;
         this.deploymentType = $.deploymentType;
         this.freeformTags = $.freeformTags;
@@ -408,6 +441,27 @@ public final class ManagedDatabaseState extends com.pulumi.resources.ResourceArg
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param databasePlatformName The operating system of database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databasePlatformName(@Nullable Output<String> databasePlatformName) {
+            $.databasePlatformName = databasePlatformName;
+            return this;
+        }
+
+        /**
+         * @param databasePlatformName The operating system of database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databasePlatformName(String databasePlatformName) {
+            return databasePlatformName(Output.of(databasePlatformName));
         }
 
         /**
@@ -513,6 +567,37 @@ public final class ManagedDatabaseState extends com.pulumi.resources.ResourceArg
          */
         public Builder dbSystemId(String dbSystemId) {
             return dbSystemId(Output.of(dbSystemId));
+        }
+
+        /**
+         * @param dbmgmtFeatureConfigs The list of feature configurations
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbmgmtFeatureConfigs(@Nullable Output<List<ManagedDatabaseDbmgmtFeatureConfigArgs>> dbmgmtFeatureConfigs) {
+            $.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+            return this;
+        }
+
+        /**
+         * @param dbmgmtFeatureConfigs The list of feature configurations
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbmgmtFeatureConfigs(List<ManagedDatabaseDbmgmtFeatureConfigArgs> dbmgmtFeatureConfigs) {
+            return dbmgmtFeatureConfigs(Output.of(dbmgmtFeatureConfigs));
+        }
+
+        /**
+         * @param dbmgmtFeatureConfigs The list of feature configurations
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbmgmtFeatureConfigs(ManagedDatabaseDbmgmtFeatureConfigArgs... dbmgmtFeatureConfigs) {
+            return dbmgmtFeatureConfigs(List.of(dbmgmtFeatureConfigs));
         }
 
         /**

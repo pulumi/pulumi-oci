@@ -234,8 +234,9 @@ func (o AppFirewallPolicyActionArrayOutput) Index(i pulumi.IntInput) AppFirewall
 }
 
 type AppFirewallPolicyActionBody struct {
+	Template *string `pulumi:"template"`
 	// (Updatable) Static response body text.
-	Text string `pulumi:"text"`
+	Text *string `pulumi:"text"`
 	// (Updatable) Type of HttpResponseBody.
 	Type string `pulumi:"type"`
 }
@@ -252,8 +253,9 @@ type AppFirewallPolicyActionBodyInput interface {
 }
 
 type AppFirewallPolicyActionBodyArgs struct {
+	Template pulumi.StringPtrInput `pulumi:"template"`
 	// (Updatable) Static response body text.
-	Text pulumi.StringInput `pulumi:"text"`
+	Text pulumi.StringPtrInput `pulumi:"text"`
 	// (Updatable) Type of HttpResponseBody.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -335,9 +337,13 @@ func (o AppFirewallPolicyActionBodyOutput) ToAppFirewallPolicyActionBodyPtrOutpu
 	}).(AppFirewallPolicyActionBodyPtrOutput)
 }
 
+func (o AppFirewallPolicyActionBodyOutput) Template() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppFirewallPolicyActionBody) *string { return v.Template }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Static response body text.
-func (o AppFirewallPolicyActionBodyOutput) Text() pulumi.StringOutput {
-	return o.ApplyT(func(v AppFirewallPolicyActionBody) string { return v.Text }).(pulumi.StringOutput)
+func (o AppFirewallPolicyActionBodyOutput) Text() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppFirewallPolicyActionBody) *string { return v.Text }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Type of HttpResponseBody.
@@ -369,13 +375,22 @@ func (o AppFirewallPolicyActionBodyPtrOutput) Elem() AppFirewallPolicyActionBody
 	}).(AppFirewallPolicyActionBodyOutput)
 }
 
+func (o AppFirewallPolicyActionBodyPtrOutput) Template() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppFirewallPolicyActionBody) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Template
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Static response body text.
 func (o AppFirewallPolicyActionBodyPtrOutput) Text() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyActionBody) *string {
 		if v == nil {
 			return nil
 		}
-		return &v.Text
+		return v.Text
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -6019,6 +6034,7 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayOu
 }
 
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody struct {
+	Template string `pulumi:"template"`
 	// Static response body text.
 	Text string `pulumi:"text"`
 	// Type of WebAppFirewallPolicyRule.
@@ -6037,6 +6053,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyInput 
 }
 
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArgs struct {
+	Template pulumi.StringInput `pulumi:"template"`
 	// Static response body text.
 	Text pulumi.StringInput `pulumi:"text"`
 	// Type of WebAppFirewallPolicyRule.
@@ -6092,6 +6109,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOut
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput) Template() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody) string {
+		return v.Template
+	}).(pulumi.StringOutput)
 }
 
 // Static response body text.
@@ -8882,6 +8905,7 @@ func (o GetWebAppFirewallPolicyActionArrayOutput) Index(i pulumi.IntInput) GetWe
 }
 
 type GetWebAppFirewallPolicyActionBody struct {
+	Template string `pulumi:"template"`
 	// Static response body text.
 	Text string `pulumi:"text"`
 	// Type of WebAppFirewallPolicyRule.
@@ -8900,6 +8924,7 @@ type GetWebAppFirewallPolicyActionBodyInput interface {
 }
 
 type GetWebAppFirewallPolicyActionBodyArgs struct {
+	Template pulumi.StringInput `pulumi:"template"`
 	// Static response body text.
 	Text pulumi.StringInput `pulumi:"text"`
 	// Type of WebAppFirewallPolicyRule.
@@ -8955,6 +8980,10 @@ func (o GetWebAppFirewallPolicyActionBodyOutput) ToGetWebAppFirewallPolicyAction
 
 func (o GetWebAppFirewallPolicyActionBodyOutput) ToGetWebAppFirewallPolicyActionBodyOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyActionBodyOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyActionBodyOutput) Template() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyActionBody) string { return v.Template }).(pulumi.StringOutput)
 }
 
 // Static response body text.

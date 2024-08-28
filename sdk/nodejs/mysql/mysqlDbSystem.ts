@@ -40,6 +40,9 @@ import * as utilities from "../utilities";
  *     },
  *     configurationId: testConfiguration.id,
  *     crashRecovery: mysqlDbSystemCrashRecovery,
+ *     customerContacts: [{
+ *         email: mysqlDbSystemCustomerContactsEmail,
+ *     }],
  *     dataStorage: {
  *         isAutoExpandStorageEnabled: mysqlDbSystemDataStorageIsAutoExpandStorageEnabled,
  *         maxStorageSizeInGbs: mysqlDbSystemDataStorageMaxStorageSizeInGbs,
@@ -155,6 +158,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      * The availability domain and fault domain a DB System is placed in.
      */
     public /*out*/ readonly currentPlacements!: pulumi.Output<outputs.Mysql.MysqlDbSystemCurrentPlacement[]>;
+    /**
+     * (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+     */
+    public readonly customerContacts!: pulumi.Output<outputs.Mysql.MysqlDbSystemCustomerContact[]>;
     /**
      * (Updatable) Data Storage configuration properties.
      */
@@ -308,6 +315,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["configurationId"] = state ? state.configurationId : undefined;
             resourceInputs["crashRecovery"] = state ? state.crashRecovery : undefined;
             resourceInputs["currentPlacements"] = state ? state.currentPlacements : undefined;
+            resourceInputs["customerContacts"] = state ? state.customerContacts : undefined;
             resourceInputs["dataStorage"] = state ? state.dataStorage : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["databaseManagement"] = state ? state.databaseManagement : undefined;
@@ -358,6 +366,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["configurationId"] = args ? args.configurationId : undefined;
             resourceInputs["crashRecovery"] = args ? args.crashRecovery : undefined;
+            resourceInputs["customerContacts"] = args ? args.customerContacts : undefined;
             resourceInputs["dataStorage"] = args ? args.dataStorage : undefined;
             resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
             resourceInputs["databaseManagement"] = args ? args.databaseManagement : undefined;
@@ -441,6 +450,10 @@ export interface MysqlDbSystemState {
      * The availability domain and fault domain a DB System is placed in.
      */
     currentPlacements?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCurrentPlacement>[]>;
+    /**
+     * (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+     */
+    customerContacts?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCustomerContact>[]>;
     /**
      * (Updatable) Data Storage configuration properties.
      */
@@ -609,6 +622,10 @@ export interface MysqlDbSystemArgs {
      * (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      */
     crashRecovery?: pulumi.Input<string>;
+    /**
+     * (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+     */
+    customerContacts?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCustomerContact>[]>;
     /**
      * (Updatable) Data Storage configuration properties.
      */

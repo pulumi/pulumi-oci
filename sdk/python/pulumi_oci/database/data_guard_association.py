@@ -33,6 +33,7 @@ class DataGuardAssociationArgs:
                  db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
@@ -87,6 +88,7 @@ class DataGuardAssociationArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+        :param pulumi.Input[str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
                
                If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -146,6 +148,8 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
         if hostname is not None:
@@ -399,6 +403,18 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
     @pulumi.getter(name="faultDomains")
     def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -625,6 +641,7 @@ class _DataGuardAssociationState:
                  db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
@@ -675,6 +692,7 @@ class _DataGuardAssociationState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+        :param pulumi.Input[str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
                
                If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -762,6 +780,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
         if hostname is not None:
@@ -1018,6 +1038,18 @@ class _DataGuardAssociationState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
 
     @property
     @pulumi.getter(name="faultDomains")
@@ -1367,6 +1399,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1425,6 +1458,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             db_system_defined_tags=data_guard_association_db_system_defined_tags,
             db_system_freeform_tags=data_guard_association_db_system_freeform_tags,
             display_name=data_guard_association_display_name,
+            domain=data_guard_association_domain,
             fault_domains=data_guard_association_fault_domains,
             hostname=data_guard_association_hostname,
             is_active_data_guard_enabled=data_guard_association_is_active_data_guard_enabled,
@@ -1470,6 +1504,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+        :param pulumi.Input[str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
                
                If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -1561,6 +1596,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             db_system_defined_tags=data_guard_association_db_system_defined_tags,
             db_system_freeform_tags=data_guard_association_db_system_freeform_tags,
             display_name=data_guard_association_display_name,
+            domain=data_guard_association_domain,
             fault_domains=data_guard_association_fault_domains,
             hostname=data_guard_association_hostname,
             is_active_data_guard_enabled=data_guard_association_is_active_data_guard_enabled,
@@ -1613,6 +1649,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1663,6 +1700,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                 raise TypeError("Missing required property 'delete_standby_db_home_on_delete'")
             __props__.__dict__["delete_standby_db_home_on_delete"] = delete_standby_db_home_on_delete
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["domain"] = domain
             __props__.__dict__["fault_domains"] = fault_domains
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["is_active_data_guard_enabled"] = is_active_data_guard_enabled
@@ -1723,6 +1761,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            domain: Optional[pulumi.Input[str]] = None,
             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
             is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1778,6 +1817,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+        :param pulumi.Input[str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
                
                If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -1852,6 +1892,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["db_system_freeform_tags"] = db_system_freeform_tags
         __props__.__dict__["delete_standby_db_home_on_delete"] = delete_standby_db_home_on_delete
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["domain"] = domain
         __props__.__dict__["fault_domains"] = fault_domains
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["is_active_data_guard_enabled"] = is_active_data_guard_enabled
@@ -2016,6 +2057,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> pulumi.Output[str]:
+        """
+        A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+        """
+        return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="faultDomains")

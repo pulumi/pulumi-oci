@@ -210,6 +210,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * uniqueness: none
      */
     public readonly externalId!: pulumi.Output<string>;
+    public readonly forceDelete!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      *
@@ -695,6 +696,7 @@ export class DomainsUser extends pulumi.CustomResource {
             resourceInputs["emails"] = state ? state.emails : undefined;
             resourceInputs["entitlements"] = state ? state.entitlements : undefined;
             resourceInputs["externalId"] = state ? state.externalId : undefined;
+            resourceInputs["forceDelete"] = state ? state.forceDelete : undefined;
             resourceInputs["groups"] = state ? state.groups : undefined;
             resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
             resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
@@ -763,6 +765,7 @@ export class DomainsUser extends pulumi.CustomResource {
             resourceInputs["emails"] = args ? args.emails : undefined;
             resourceInputs["entitlements"] = args ? args.entitlements : undefined;
             resourceInputs["externalId"] = args ? args.externalId : undefined;
+            resourceInputs["forceDelete"] = args ? args.forceDelete : undefined;
             resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
             resourceInputs["ims"] = args ? args.ims : undefined;
             resourceInputs["locale"] = args ? args.locale : undefined;
@@ -988,6 +991,7 @@ export interface DomainsUserState {
      * * uniqueness: none
      */
     externalId?: pulumi.Input<string>;
+    forceDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      *
@@ -1573,6 +1577,7 @@ export interface DomainsUserArgs {
      * * uniqueness: none
      */
     externalId?: pulumi.Input<string>;
+    forceDelete?: pulumi.Input<boolean>;
     /**
      * The basic endpoint for the identity domain
      */

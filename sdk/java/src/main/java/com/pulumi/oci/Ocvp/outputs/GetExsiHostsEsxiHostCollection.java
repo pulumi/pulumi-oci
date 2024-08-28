@@ -33,7 +33,7 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     private String capacityReservationId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      * 
      */
     private String clusterId;
@@ -220,7 +220,7 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.capacityReservationId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      * 
      */
     public String clusterId() {

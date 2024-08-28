@@ -81,11 +81,13 @@ class _ManagedDatabaseState:
     def __init__(__self__, *,
                  additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 database_platform_name: Optional[pulumi.Input[str]] = None,
                  database_status: Optional[pulumi.Input[str]] = None,
                  database_sub_type: Optional[pulumi.Input[str]] = None,
                  database_type: Optional[pulumi.Input[str]] = None,
                  database_version: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
+                 dbmgmt_feature_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -103,11 +105,13 @@ class _ManagedDatabaseState:
         Input properties used for looking up and filtering ManagedDatabase resources.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_details: The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+        :param pulumi.Input[str] database_platform_name: The operating system of database.
         :param pulumi.Input[str] database_status: The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
         :param pulumi.Input[str] database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param pulumi.Input[str] database_type: The type of Oracle Database installation.
         :param pulumi.Input[str] database_version: The Oracle Database version.
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]] dbmgmt_feature_configs: The list of feature configurations
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] deployment_type: The infrastructure used to deploy the Oracle Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -130,6 +134,8 @@ class _ManagedDatabaseState:
             pulumi.set(__self__, "additional_details", additional_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_platform_name is not None:
+            pulumi.set(__self__, "database_platform_name", database_platform_name)
         if database_status is not None:
             pulumi.set(__self__, "database_status", database_status)
         if database_sub_type is not None:
@@ -140,6 +146,8 @@ class _ManagedDatabaseState:
             pulumi.set(__self__, "database_version", database_version)
         if db_system_id is not None:
             pulumi.set(__self__, "db_system_id", db_system_id)
+        if dbmgmt_feature_configs is not None:
+            pulumi.set(__self__, "dbmgmt_feature_configs", dbmgmt_feature_configs)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_type is not None:
@@ -190,6 +198,18 @@ class _ManagedDatabaseState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="databasePlatformName")
+    def database_platform_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The operating system of database.
+        """
+        return pulumi.get(self, "database_platform_name")
+
+    @database_platform_name.setter
+    def database_platform_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_platform_name", value)
 
     @property
     @pulumi.getter(name="databaseStatus")
@@ -250,6 +270,18 @@ class _ManagedDatabaseState:
     @db_system_id.setter
     def db_system_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "db_system_id", value)
+
+    @property
+    @pulumi.getter(name="dbmgmtFeatureConfigs")
+    def dbmgmt_feature_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]]:
+        """
+        The list of feature configurations
+        """
+        return pulumi.get(self, "dbmgmt_feature_configs")
+
+    @dbmgmt_feature_configs.setter
+    def dbmgmt_feature_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]]):
+        pulumi.set(self, "dbmgmt_feature_configs", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -497,11 +529,13 @@ class ManagedDatabase(pulumi.CustomResource):
             __props__.__dict__["managed_database_id"] = managed_database_id
             __props__.__dict__["additional_details"] = None
             __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["database_platform_name"] = None
             __props__.__dict__["database_status"] = None
             __props__.__dict__["database_sub_type"] = None
             __props__.__dict__["database_type"] = None
             __props__.__dict__["database_version"] = None
             __props__.__dict__["db_system_id"] = None
+            __props__.__dict__["dbmgmt_feature_configs"] = None
             __props__.__dict__["deployment_type"] = None
             __props__.__dict__["is_cluster"] = None
             __props__.__dict__["managed_database_groups"] = None
@@ -524,11 +558,13 @@ class ManagedDatabase(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            database_platform_name: Optional[pulumi.Input[str]] = None,
             database_status: Optional[pulumi.Input[str]] = None,
             database_sub_type: Optional[pulumi.Input[str]] = None,
             database_type: Optional[pulumi.Input[str]] = None,
             database_version: Optional[pulumi.Input[str]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
+            dbmgmt_feature_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseDbmgmtFeatureConfigArgs', 'ManagedDatabaseDbmgmtFeatureConfigArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             deployment_type: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -551,11 +587,13 @@ class ManagedDatabase(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_details: The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+        :param pulumi.Input[str] database_platform_name: The operating system of database.
         :param pulumi.Input[str] database_status: The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
         :param pulumi.Input[str] database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param pulumi.Input[str] database_type: The type of Oracle Database installation.
         :param pulumi.Input[str] database_version: The Oracle Database version.
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseDbmgmtFeatureConfigArgs', 'ManagedDatabaseDbmgmtFeatureConfigArgsDict']]]] dbmgmt_feature_configs: The list of feature configurations
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] deployment_type: The infrastructure used to deploy the Oracle Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -580,11 +618,13 @@ class ManagedDatabase(pulumi.CustomResource):
 
         __props__.__dict__["additional_details"] = additional_details
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["database_platform_name"] = database_platform_name
         __props__.__dict__["database_status"] = database_status
         __props__.__dict__["database_sub_type"] = database_sub_type
         __props__.__dict__["database_type"] = database_type
         __props__.__dict__["database_version"] = database_version
         __props__.__dict__["db_system_id"] = db_system_id
+        __props__.__dict__["dbmgmt_feature_configs"] = dbmgmt_feature_configs
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["deployment_type"] = deployment_type
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -615,6 +655,14 @@ class ManagedDatabase(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="databasePlatformName")
+    def database_platform_name(self) -> pulumi.Output[str]:
+        """
+        The operating system of database.
+        """
+        return pulumi.get(self, "database_platform_name")
 
     @property
     @pulumi.getter(name="databaseStatus")
@@ -655,6 +703,14 @@ class ManagedDatabase(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
         """
         return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="dbmgmtFeatureConfigs")
+    def dbmgmt_feature_configs(self) -> pulumi.Output[Sequence['outputs.ManagedDatabaseDbmgmtFeatureConfig']]:
+        """
+        The list of feature configurations
+        """
+        return pulumi.get(self, "dbmgmt_feature_configs")
 
     @property
     @pulumi.getter(name="definedTags")

@@ -103,12 +103,12 @@ class KeyAutoKeyRotationDetailsArgs:
                  time_of_next_rotation: Optional[pulumi.Input[str]] = None,
                  time_of_schedule_start: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] last_rotation_message: (Updatable) The last execution status message.
+        :param pulumi.Input[str] last_rotation_message: (Updatable) The last execution status message of auto key rotation.
         :param pulumi.Input[str] last_rotation_status: (Updatable) The status of last execution of auto key rotation.
-        :param pulumi.Input[int] rotation_interval_in_days: (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
-        :param pulumi.Input[str] time_of_last_rotation: (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
-        :param pulumi.Input[str] time_of_next_rotation: (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
-        :param pulumi.Input[str] time_of_schedule_start: (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        :param pulumi.Input[int] rotation_interval_in_days: (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
+        :param pulumi.Input[str] time_of_last_rotation: (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
+        :param pulumi.Input[str] time_of_next_rotation: (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
+        :param pulumi.Input[str] time_of_schedule_start: (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
         """
         if last_rotation_message is not None:
             pulumi.set(__self__, "last_rotation_message", last_rotation_message)
@@ -127,7 +127,7 @@ class KeyAutoKeyRotationDetailsArgs:
     @pulumi.getter(name="lastRotationMessage")
     def last_rotation_message(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The last execution status message.
+        (Updatable) The last execution status message of auto key rotation.
         """
         return pulumi.get(self, "last_rotation_message")
 
@@ -151,7 +151,7 @@ class KeyAutoKeyRotationDetailsArgs:
     @pulumi.getter(name="rotationIntervalInDays")
     def rotation_interval_in_days(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
         """
         return pulumi.get(self, "rotation_interval_in_days")
 
@@ -163,7 +163,7 @@ class KeyAutoKeyRotationDetailsArgs:
     @pulumi.getter(name="timeOfLastRotation")
     def time_of_last_rotation(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
         """
         return pulumi.get(self, "time_of_last_rotation")
 
@@ -175,7 +175,7 @@ class KeyAutoKeyRotationDetailsArgs:
     @pulumi.getter(name="timeOfNextRotation")
     def time_of_next_rotation(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
         """
         return pulumi.get(self, "time_of_next_rotation")
 
@@ -187,7 +187,7 @@ class KeyAutoKeyRotationDetailsArgs:
     @pulumi.getter(name="timeOfScheduleStart")
     def time_of_schedule_start(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
         """
         return pulumi.get(self, "time_of_schedule_start")
 

@@ -22,10 +22,7 @@ class GetBdsInstanceResult:
     """
     A collection of values returned by getBdsInstance.
     """
-    def __init__(__self__, add_kafka_trigger=None, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, execute_bootstrap_script_trigger=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, remove_kafka_trigger=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
-        if add_kafka_trigger and not isinstance(add_kafka_trigger, int):
-            raise TypeError("Expected argument 'add_kafka_trigger' to be a int")
-        pulumi.set(__self__, "add_kafka_trigger", add_kafka_trigger)
+    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -68,9 +65,6 @@ class GetBdsInstanceResult:
         if edge_nodes and not isinstance(edge_nodes, list):
             raise TypeError("Expected argument 'edge_nodes' to be a list")
         pulumi.set(__self__, "edge_nodes", edge_nodes)
-        if execute_bootstrap_script_trigger and not isinstance(execute_bootstrap_script_trigger, int):
-            raise TypeError("Expected argument 'execute_bootstrap_script_trigger' to be a int")
-        pulumi.set(__self__, "execute_bootstrap_script_trigger", execute_bootstrap_script_trigger)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -122,9 +116,6 @@ class GetBdsInstanceResult:
         if os_patch_version and not isinstance(os_patch_version, str):
             raise TypeError("Expected argument 'os_patch_version' to be a str")
         pulumi.set(__self__, "os_patch_version", os_patch_version)
-        if remove_kafka_trigger and not isinstance(remove_kafka_trigger, int):
-            raise TypeError("Expected argument 'remove_kafka_trigger' to be a int")
-        pulumi.set(__self__, "remove_kafka_trigger", remove_kafka_trigger)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -140,11 +131,6 @@ class GetBdsInstanceResult:
         if worker_nodes and not isinstance(worker_nodes, list):
             raise TypeError("Expected argument 'worker_nodes' to be a list")
         pulumi.set(__self__, "worker_nodes", worker_nodes)
-
-    @property
-    @pulumi.getter(name="addKafkaTrigger")
-    def add_kafka_trigger(self) -> int:
-        return pulumi.get(self, "add_kafka_trigger")
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -242,11 +228,6 @@ class GetBdsInstanceResult:
     @pulumi.getter(name="edgeNodes")
     def edge_nodes(self) -> Sequence['outputs.GetBdsInstanceEdgeNodeResult']:
         return pulumi.get(self, "edge_nodes")
-
-    @property
-    @pulumi.getter(name="executeBootstrapScriptTrigger")
-    def execute_bootstrap_script_trigger(self) -> int:
-        return pulumi.get(self, "execute_bootstrap_script_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -367,11 +348,6 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "os_patch_version")
 
     @property
-    @pulumi.getter(name="removeKafkaTrigger")
-    def remove_kafka_trigger(self) -> int:
-        return pulumi.get(self, "remove_kafka_trigger")
-
-    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -412,7 +388,6 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
         if False:
             yield self
         return GetBdsInstanceResult(
-            add_kafka_trigger=self.add_kafka_trigger,
             bds_instance_id=self.bds_instance_id,
             bootstrap_script_url=self.bootstrap_script_url,
             cloud_sql_details=self.cloud_sql_details,
@@ -427,7 +402,6 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             edge_nodes=self.edge_nodes,
-            execute_bootstrap_script_trigger=self.execute_bootstrap_script_trigger,
             freeform_tags=self.freeform_tags,
             id=self.id,
             ignore_existing_nodes_shapes=self.ignore_existing_nodes_shapes,
@@ -445,7 +419,6 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             number_of_nodes=self.number_of_nodes,
             number_of_nodes_requiring_maintenance_reboot=self.number_of_nodes_requiring_maintenance_reboot,
             os_patch_version=self.os_patch_version,
-            remove_kafka_trigger=self.remove_kafka_trigger,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated,
@@ -478,7 +451,6 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getBdsInstance:getBdsInstance', __args__, opts=opts, typ=GetBdsInstanceResult).value
 
     return AwaitableGetBdsInstanceResult(
-        add_kafka_trigger=pulumi.get(__ret__, 'add_kafka_trigger'),
         bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
         bootstrap_script_url=pulumi.get(__ret__, 'bootstrap_script_url'),
         cloud_sql_details=pulumi.get(__ret__, 'cloud_sql_details'),
@@ -493,7 +465,6 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         edge_nodes=pulumi.get(__ret__, 'edge_nodes'),
-        execute_bootstrap_script_trigger=pulumi.get(__ret__, 'execute_bootstrap_script_trigger'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         ignore_existing_nodes_shapes=pulumi.get(__ret__, 'ignore_existing_nodes_shapes'),
@@ -511,7 +482,6 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         number_of_nodes=pulumi.get(__ret__, 'number_of_nodes'),
         number_of_nodes_requiring_maintenance_reboot=pulumi.get(__ret__, 'number_of_nodes_requiring_maintenance_reboot'),
         os_patch_version=pulumi.get(__ret__, 'os_patch_version'),
-        remove_kafka_trigger=pulumi.get(__ret__, 'remove_kafka_trigger'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),

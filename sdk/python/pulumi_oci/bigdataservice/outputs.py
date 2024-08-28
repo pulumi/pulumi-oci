@@ -1420,12 +1420,6 @@ class BdsInstanceCloudSqlDetail(dict):
             suggest = "kerberos_details"
         elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
-        elif key == "odhVersion":
-            suggest = "odh_version"
-        elif key == "osVersion":
-            suggest = "os_version"
-        elif key == "sshFingerprint":
-            suggest = "ssh_fingerprint"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in BdsInstanceCloudSqlDetail. Access the value via the '{suggest}' property getter instead.")
@@ -1446,10 +1440,7 @@ class BdsInstanceCloudSqlDetail(dict):
                  kerberos_details: Optional[Sequence['outputs.BdsInstanceCloudSqlDetailKerberosDetail']] = None,
                  memory_in_gbs: Optional[int] = None,
                  nvmes: Optional[int] = None,
-                 ocpus: Optional[int] = None,
-                 odh_version: Optional[str] = None,
-                 os_version: Optional[str] = None,
-                 ssh_fingerprint: Optional[str] = None):
+                 ocpus: Optional[int] = None):
         """
         :param str shape: Shape of the node
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -1459,9 +1450,6 @@ class BdsInstanceCloudSqlDetail(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        :param str os_version: BDS-assigned Operating System version for the node.
-        :param str ssh_fingerprint: The fingerprint of the SSH key used for node access
         """
         pulumi.set(__self__, "shape", shape)
         if block_volume_size_in_gbs is not None:
@@ -1478,12 +1466,6 @@ class BdsInstanceCloudSqlDetail(dict):
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
-        if odh_version is not None:
-            pulumi.set(__self__, "odh_version", odh_version)
-        if os_version is not None:
-            pulumi.set(__self__, "os_version", os_version)
-        if ssh_fingerprint is not None:
-            pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
 
     @property
     @pulumi.getter
@@ -1548,30 +1530,6 @@ class BdsInstanceCloudSqlDetail(dict):
         The total number of OCPUs available to the node.
         """
         return pulumi.get(self, "ocpus")
-
-    @property
-    @pulumi.getter(name="odhVersion")
-    def odh_version(self) -> Optional[str]:
-        """
-        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        """
-        return pulumi.get(self, "odh_version")
-
-    @property
-    @pulumi.getter(name="osVersion")
-    def os_version(self) -> Optional[str]:
-        """
-        BDS-assigned Operating System version for the node.
-        """
-        return pulumi.get(self, "os_version")
-
-    @property
-    @pulumi.getter(name="sshFingerprint")
-    def ssh_fingerprint(self) -> Optional[str]:
-        """
-        The fingerprint of the SSH key used for node access
-        """
-        return pulumi.get(self, "ssh_fingerprint")
 
 
 @pulumi.output_type
@@ -4990,10 +4948,7 @@ class GetBdsInstanceCloudSqlDetailResult(dict):
                  memory_in_gbs: int,
                  nvmes: int,
                  ocpus: int,
-                 odh_version: str,
-                 os_version: str,
-                 shape: str,
-                 ssh_fingerprint: str):
+                 shape: str):
         """
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param str ip_address: IP address of the node.
@@ -5002,10 +4957,7 @@ class GetBdsInstanceCloudSqlDetailResult(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        :param str os_version: BDS-assigned Operating System version for the node.
         :param str shape: Shape of the node.
-        :param str ssh_fingerprint: The fingerprint of the SSH key used for node access.
         """
         pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "ip_address", ip_address)
@@ -5014,10 +4966,7 @@ class GetBdsInstanceCloudSqlDetailResult(dict):
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "odh_version", odh_version)
-        pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
 
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
@@ -5076,36 +5025,12 @@ class GetBdsInstanceCloudSqlDetailResult(dict):
         return pulumi.get(self, "ocpus")
 
     @property
-    @pulumi.getter(name="odhVersion")
-    def odh_version(self) -> str:
-        """
-        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        """
-        return pulumi.get(self, "odh_version")
-
-    @property
-    @pulumi.getter(name="osVersion")
-    def os_version(self) -> str:
-        """
-        BDS-assigned Operating System version for the node.
-        """
-        return pulumi.get(self, "os_version")
-
-    @property
     @pulumi.getter
     def shape(self) -> str:
         """
         Shape of the node.
         """
         return pulumi.get(self, "shape")
-
-    @property
-    @pulumi.getter(name="sshFingerprint")
-    def ssh_fingerprint(self) -> str:
-        """
-        The fingerprint of the SSH key used for node access.
-        """
-        return pulumi.get(self, "ssh_fingerprint")
 
 
 @pulumi.output_type
@@ -6625,7 +6550,6 @@ class GetBdsInstanceWorkerNodeShapeConfigResult(dict):
 @pulumi.output_type
 class GetBdsInstancesBdsInstanceResult(dict):
     def __init__(__self__, *,
-                 add_kafka_trigger: int,
                  bootstrap_script_url: str,
                  cloud_sql_details: Sequence['outputs.GetBdsInstancesBdsInstanceCloudSqlDetailResult'],
                  cluster_admin_password: str,
@@ -6639,7 +6563,6 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  defined_tags: Mapping[str, str],
                  display_name: str,
                  edge_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceEdgeNodeResult'],
-                 execute_bootstrap_script_trigger: int,
                  freeform_tags: Mapping[str, str],
                  id: str,
                  ignore_existing_nodes_shapes: Sequence[str],
@@ -6657,7 +6580,6 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  number_of_nodes: int,
                  number_of_nodes_requiring_maintenance_reboot: int,
                  os_patch_version: str,
-                 remove_kafka_trigger: int,
                  state: str,
                  time_created: str,
                  time_updated: str,
@@ -6688,7 +6610,6 @@ class GetBdsInstancesBdsInstanceResult(dict):
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param str time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
         """
-        pulumi.set(__self__, "add_kafka_trigger", add_kafka_trigger)
         pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
         pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -6702,7 +6623,6 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "edge_nodes", edge_nodes)
-        pulumi.set(__self__, "execute_bootstrap_script_trigger", execute_bootstrap_script_trigger)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ignore_existing_nodes_shapes", ignore_existing_nodes_shapes)
@@ -6720,17 +6640,11 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
         pulumi.set(__self__, "os_patch_version", os_patch_version)
-        pulumi.set(__self__, "remove_kafka_trigger", remove_kafka_trigger)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "util_nodes", util_nodes)
         pulumi.set(__self__, "worker_nodes", worker_nodes)
-
-    @property
-    @pulumi.getter(name="addKafkaTrigger")
-    def add_kafka_trigger(self) -> int:
-        return pulumi.get(self, "add_kafka_trigger")
 
     @property
     @pulumi.getter(name="bootstrapScriptUrl")
@@ -6823,11 +6737,6 @@ class GetBdsInstancesBdsInstanceResult(dict):
     @pulumi.getter(name="edgeNodes")
     def edge_nodes(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceEdgeNodeResult']:
         return pulumi.get(self, "edge_nodes")
-
-    @property
-    @pulumi.getter(name="executeBootstrapScriptTrigger")
-    def execute_bootstrap_script_trigger(self) -> int:
-        return pulumi.get(self, "execute_bootstrap_script_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -6948,11 +6857,6 @@ class GetBdsInstancesBdsInstanceResult(dict):
         return pulumi.get(self, "os_patch_version")
 
     @property
-    @pulumi.getter(name="removeKafkaTrigger")
-    def remove_kafka_trigger(self) -> int:
-        return pulumi.get(self, "remove_kafka_trigger")
-
-    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -6997,10 +6901,7 @@ class GetBdsInstancesBdsInstanceCloudSqlDetailResult(dict):
                  memory_in_gbs: int,
                  nvmes: int,
                  ocpus: int,
-                 odh_version: str,
-                 os_version: str,
-                 shape: str,
-                 ssh_fingerprint: str):
+                 shape: str):
         """
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param str ip_address: IP address of the node.
@@ -7009,10 +6910,7 @@ class GetBdsInstancesBdsInstanceCloudSqlDetailResult(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        :param str os_version: BDS-assigned Operating System version for the node.
         :param str shape: Shape of the node.
-        :param str ssh_fingerprint: The fingerprint of the SSH key used for node access.
         """
         pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "ip_address", ip_address)
@@ -7021,10 +6919,7 @@ class GetBdsInstancesBdsInstanceCloudSqlDetailResult(dict):
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "odh_version", odh_version)
-        pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
 
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
@@ -7083,36 +6978,12 @@ class GetBdsInstancesBdsInstanceCloudSqlDetailResult(dict):
         return pulumi.get(self, "ocpus")
 
     @property
-    @pulumi.getter(name="odhVersion")
-    def odh_version(self) -> str:
-        """
-        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        """
-        return pulumi.get(self, "odh_version")
-
-    @property
-    @pulumi.getter(name="osVersion")
-    def os_version(self) -> str:
-        """
-        BDS-assigned Operating System version for the node.
-        """
-        return pulumi.get(self, "os_version")
-
-    @property
     @pulumi.getter
     def shape(self) -> str:
         """
         Shape of the node.
         """
         return pulumi.get(self, "shape")
-
-    @property
-    @pulumi.getter(name="sshFingerprint")
-    def ssh_fingerprint(self) -> str:
-        """
-        The fingerprint of the SSH key used for node access.
-        """
-        return pulumi.get(self, "ssh_fingerprint")
 
 
 @pulumi.output_type

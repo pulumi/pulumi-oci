@@ -10,6 +10,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody {
+    private String template;
     /**
      * @return Static response body text.
      * 
@@ -22,6 +23,9 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
     private String type;
 
     private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody() {}
+    public String template() {
+        return this.template;
+    }
     /**
      * @return Static response body text.
      * 
@@ -46,15 +50,25 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
     }
     @CustomType.Builder
     public static final class Builder {
+        private String template;
         private String text;
         private String type;
         public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.template = defaults.template;
     	      this.text = defaults.text;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder template(String template) {
+            if (template == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody", "template");
+            }
+            this.template = template;
+            return this;
+        }
         @CustomType.Setter
         public Builder text(String text) {
             if (text == null) {
@@ -73,6 +87,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody build() {
             final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody();
+            _resultValue.template = template;
             _resultValue.text = text;
             _resultValue.type = type;
             return _resultValue;

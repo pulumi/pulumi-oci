@@ -68,6 +68,10 @@ export interface GetDbManagementPrivateEndpointResult {
      */
     readonly isCluster: boolean;
     /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     */
+    readonly isDnsResolutionEnabled: boolean;
+    /**
      * The display name of the Database Management private endpoint.
      */
     readonly name: string;

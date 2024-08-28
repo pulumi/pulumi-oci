@@ -39,6 +39,9 @@ namespace Pulumi.Oci.DatabaseManagement
         [Output("featureDetails")]
         public Output<Outputs.DatabaseDbmFeaturesManagementFeatureDetails?> FeatureDetails { get; private set; } = null!;
 
+        [Output("modifyDatabaseDbmFeature")]
+        public Output<bool?> ModifyDatabaseDbmFeature { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a DatabaseDbmFeaturesManagement resource with the given unique name, arguments, and options.
@@ -107,6 +110,9 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("featureDetails")]
         public Input<Inputs.DatabaseDbmFeaturesManagementFeatureDetailsArgs>? FeatureDetails { get; set; }
 
+        [Input("modifyDatabaseDbmFeature")]
+        public Input<bool>? ModifyDatabaseDbmFeature { get; set; }
+
         public DatabaseDbmFeaturesManagementArgs()
         {
         }
@@ -136,6 +142,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("featureDetails")]
         public Input<Inputs.DatabaseDbmFeaturesManagementFeatureDetailsGetArgs>? FeatureDetails { get; set; }
+
+        [Input("modifyDatabaseDbmFeature")]
+        public Input<bool>? ModifyDatabaseDbmFeature { get; set; }
 
         public DatabaseDbmFeaturesManagementState()
         {

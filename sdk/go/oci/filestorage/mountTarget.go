@@ -92,7 +92,8 @@ import (
 //					SchemaType:                   pulumi.Any(mountTargetLdapIdmapSchemaType),
 //					UserSearchBase:               pulumi.Any(mountTargetLdapIdmapUserSearchBase),
 //				},
-//				NsgIds: pulumi.Any(mountTargetNsgIds),
+//				NsgIds:              pulumi.Any(mountTargetNsgIds),
+//				RequestedThroughput: pulumi.Any(mountTargetRequestedThroughput),
 //			})
 //			if err != nil {
 //				return err
@@ -135,11 +136,7 @@ type MountTarget struct {
 	HostnameLabel pulumi.StringOutput `pulumi:"hostnameLabel"`
 	// (Updatable) The method used to map a Unix UID to secondary groups, if any.
 	IdmapType pulumi.StringOutput `pulumi:"idmapType"`
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-	//
-	// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-	//
-	// Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos MountTargetKerberosPtrOutput `pulumi:"kerberos"`
@@ -149,8 +146,14 @@ type MountTarget struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ObservedThroughput pulumi.StringOutput `pulumi:"observedThroughput"`
 	// The OCIDs of the private IP addresses associated with this mount target.
 	PrivateIpIds pulumi.StringArrayOutput `pulumi:"privateIpIds"`
+	// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	RequestedThroughput pulumi.StringOutput `pulumi:"requestedThroughput"`
+	// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ReservedStorageCapacity pulumi.StringOutput `pulumi:"reservedStorageCapacity"`
 	// The current state of the mount target.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
@@ -158,6 +161,8 @@ type MountTarget struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+	TimeBillingCycleEnd pulumi.StringOutput `pulumi:"timeBillingCycleEnd"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -223,11 +228,7 @@ type mountTargetState struct {
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// (Updatable) The method used to map a Unix UID to secondary groups, if any.
 	IdmapType *string `pulumi:"idmapType"`
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-	//
-	// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-	//
-	// Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos *MountTargetKerberos `pulumi:"kerberos"`
@@ -237,8 +238,14 @@ type mountTargetState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
+	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ObservedThroughput *string `pulumi:"observedThroughput"`
 	// The OCIDs of the private IP addresses associated with this mount target.
 	PrivateIpIds []string `pulumi:"privateIpIds"`
+	// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	RequestedThroughput *string `pulumi:"requestedThroughput"`
+	// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ReservedStorageCapacity *string `pulumi:"reservedStorageCapacity"`
 	// The current state of the mount target.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
@@ -246,6 +253,8 @@ type mountTargetState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
+	// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+	TimeBillingCycleEnd *string `pulumi:"timeBillingCycleEnd"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -273,11 +282,7 @@ type MountTargetState struct {
 	HostnameLabel pulumi.StringPtrInput
 	// (Updatable) The method used to map a Unix UID to secondary groups, if any.
 	IdmapType pulumi.StringPtrInput
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-	//
-	// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-	//
-	// Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos MountTargetKerberosPtrInput
@@ -287,8 +292,14 @@ type MountTargetState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput
+	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ObservedThroughput pulumi.StringPtrInput
 	// The OCIDs of the private IP addresses associated with this mount target.
 	PrivateIpIds pulumi.StringArrayInput
+	// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	RequestedThroughput pulumi.StringPtrInput
+	// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	ReservedStorageCapacity pulumi.StringPtrInput
 	// The current state of the mount target.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
@@ -296,6 +307,8 @@ type MountTargetState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
+	// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+	TimeBillingCycleEnd pulumi.StringPtrInput
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 }
@@ -325,11 +338,7 @@ type mountTargetArgs struct {
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// (Updatable) The method used to map a Unix UID to secondary groups, if any.
 	IdmapType *string `pulumi:"idmapType"`
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-	//
-	// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-	//
-	// Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos *MountTargetKerberos `pulumi:"kerberos"`
@@ -337,6 +346,8 @@ type mountTargetArgs struct {
 	LdapIdmap *MountTargetLdapIdmap `pulumi:"ldapIdmap"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	RequestedThroughput *string `pulumi:"requestedThroughput"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
 	//
 	// ** IMPORTANT **
@@ -366,11 +377,7 @@ type MountTargetArgs struct {
 	HostnameLabel pulumi.StringPtrInput
 	// (Updatable) The method used to map a Unix UID to secondary groups, if any.
 	IdmapType pulumi.StringPtrInput
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-	//
-	// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-	//
-	// Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos MountTargetKerberosPtrInput
@@ -378,6 +385,8 @@ type MountTargetArgs struct {
 	LdapIdmap MountTargetLdapIdmapPtrInput
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+	RequestedThroughput pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
 	//
 	// ** IMPORTANT **
@@ -518,11 +527,7 @@ func (o MountTargetOutput) IdmapType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.IdmapType }).(pulumi.StringOutput)
 }
 
-// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-//
-// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-//
-// Example: `10.0.3.3`
+// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 func (o MountTargetOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
 }
@@ -547,9 +552,24 @@ func (o MountTargetOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+func (o MountTargetOutput) ObservedThroughput() pulumi.StringOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.ObservedThroughput }).(pulumi.StringOutput)
+}
+
 // The OCIDs of the private IP addresses associated with this mount target.
 func (o MountTargetOutput) PrivateIpIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringArrayOutput { return v.PrivateIpIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+func (o MountTargetOutput) RequestedThroughput() pulumi.StringOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.RequestedThroughput }).(pulumi.StringOutput)
+}
+
+// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+func (o MountTargetOutput) ReservedStorageCapacity() pulumi.StringOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.ReservedStorageCapacity }).(pulumi.StringOutput)
 }
 
 // The current state of the mount target.
@@ -563,6 +583,11 @@ func (o MountTargetOutput) State() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MountTargetOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+func (o MountTargetOutput) TimeBillingCycleEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.TimeBillingCycleEnd }).(pulumi.StringOutput)
 }
 
 // The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

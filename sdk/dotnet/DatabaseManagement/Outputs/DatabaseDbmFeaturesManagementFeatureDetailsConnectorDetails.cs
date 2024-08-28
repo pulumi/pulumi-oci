@@ -18,6 +18,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// * PE: Private endpoint
         /// * MACS: Management agent
         /// * EXTERNAL: External database connector
+        /// * DIRECT: Direct connection
         /// </summary>
         public readonly string? ConnectorType;
         /// <summary>

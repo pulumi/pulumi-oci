@@ -24,7 +24,8 @@ type PluggabledatabasePluggableDatabaseDbmFeaturesManagement struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggableDatabaseDbmFeature pulumi.BoolOutput `pulumi:"enablePluggableDatabaseDbmFeature"`
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrOutput `pulumi:"featureDetails"`
+	FeatureDetails                    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrOutput `pulumi:"featureDetails"`
+	ModifyPluggableDatabaseDbmFeature pulumi.BoolPtrOutput                                                           `pulumi:"modifyPluggableDatabaseDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
 	PluggableDatabaseId pulumi.StringOutput `pulumi:"pluggableDatabaseId"`
 }
@@ -71,7 +72,8 @@ type pluggabledatabasePluggableDatabaseDbmFeaturesManagementState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggableDatabaseDbmFeature *bool `pulumi:"enablePluggableDatabaseDbmFeature"`
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails *PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
+	FeatureDetails                    *PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
+	ModifyPluggableDatabaseDbmFeature *bool                                                                  `pulumi:"modifyPluggableDatabaseDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
 	PluggableDatabaseId *string `pulumi:"pluggableDatabaseId"`
 }
@@ -83,7 +85,8 @@ type PluggabledatabasePluggableDatabaseDbmFeaturesManagementState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggableDatabaseDbmFeature pulumi.BoolPtrInput
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrInput
+	FeatureDetails                    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrInput
+	ModifyPluggableDatabaseDbmFeature pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
 	PluggableDatabaseId pulumi.StringPtrInput
 }
@@ -99,7 +102,8 @@ type pluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggableDatabaseDbmFeature bool `pulumi:"enablePluggableDatabaseDbmFeature"`
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails *PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
+	FeatureDetails                    *PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
+	ModifyPluggableDatabaseDbmFeature *bool                                                                  `pulumi:"modifyPluggableDatabaseDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
 	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
 }
@@ -112,7 +116,8 @@ type PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggableDatabaseDbmFeature pulumi.BoolInput
 	// The details required to enable the specified Database Management feature.
-	FeatureDetails PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrInput
+	FeatureDetails                    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrInput
+	ModifyPluggableDatabaseDbmFeature pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
 	PluggableDatabaseId pulumi.StringInput
 }
@@ -219,6 +224,12 @@ func (o PluggabledatabasePluggableDatabaseDbmFeaturesManagementOutput) FeatureDe
 	return o.ApplyT(func(v *PluggabledatabasePluggableDatabaseDbmFeaturesManagement) PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrOutput {
 		return v.FeatureDetails
 	}).(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrOutput)
+}
+
+func (o PluggabledatabasePluggableDatabaseDbmFeaturesManagementOutput) ModifyPluggableDatabaseDbmFeature() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PluggabledatabasePluggableDatabaseDbmFeaturesManagement) pulumi.BoolPtrOutput {
+		return v.ModifyPluggableDatabaseDbmFeature
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.

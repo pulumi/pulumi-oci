@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testDbManagementPrivateEndpoints = oci.DatabaseManagement.getDbManagementPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
  *     name: dbManagementPrivateEndpointName,
  *     state: dbManagementPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -33,6 +34,7 @@ export function getDbManagementPrivateEndpoints(args: GetDbManagementPrivateEndp
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "isCluster": args.isCluster,
+        "isDnsResolutionEnabled": args.isDnsResolutionEnabled,
         "name": args.name,
         "state": args.state,
         "vcnId": args.vcnId,
@@ -52,6 +54,10 @@ export interface GetDbManagementPrivateEndpointsArgs {
      * The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
      */
     isCluster?: boolean;
+    /**
+     * The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     */
+    isDnsResolutionEnabled?: boolean;
     /**
      * A filter to return only resources that match the entire name.
      */
@@ -88,6 +94,10 @@ export interface GetDbManagementPrivateEndpointsResult {
      */
     readonly isCluster?: boolean;
     /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     */
+    readonly isDnsResolutionEnabled?: boolean;
+    /**
      * The display name of the Database Management private endpoint.
      */
     readonly name?: string;
@@ -114,6 +124,7 @@ export interface GetDbManagementPrivateEndpointsResult {
  * const testDbManagementPrivateEndpoints = oci.DatabaseManagement.getDbManagementPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
  *     name: dbManagementPrivateEndpointName,
  *     state: dbManagementPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -137,6 +148,10 @@ export interface GetDbManagementPrivateEndpointsOutputArgs {
      * The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
      */
     isCluster?: pulumi.Input<boolean>;
+    /**
+     * The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     */
+    isDnsResolutionEnabled?: pulumi.Input<boolean>;
     /**
      * A filter to return only resources that match the entire name.
      */

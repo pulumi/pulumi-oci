@@ -7656,9 +7656,13 @@ type GetLoadBalancersLoadBalancer struct {
 	IsDeleteProtectionEnabled bool `pulumi:"isDeleteProtectionEnabled"`
 	// Whether the load balancer has a VCN-local (private) IP address.
 	IsPrivate bool `pulumi:"isPrivate"`
+	// Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+	IsRequestIdEnabled bool `pulumi:"isRequestIdEnabled"`
 	// An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
-	NetworkSecurityGroupIds []string                                 `pulumi:"networkSecurityGroupIds"`
-	ReservedIps             []GetLoadBalancersLoadBalancerReservedIp `pulumi:"reservedIps"`
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+	RequestIdHeader string                                   `pulumi:"requestIdHeader"`
+	ReservedIps     []GetLoadBalancersLoadBalancerReservedIp `pulumi:"reservedIps"`
 	// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
 	Shape string `pulumi:"shape"`
 	// The configuration details to update load balancer to a different shape.
@@ -7706,9 +7710,13 @@ type GetLoadBalancersLoadBalancerArgs struct {
 	IsDeleteProtectionEnabled pulumi.BoolInput `pulumi:"isDeleteProtectionEnabled"`
 	// Whether the load balancer has a VCN-local (private) IP address.
 	IsPrivate pulumi.BoolInput `pulumi:"isPrivate"`
+	// Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+	IsRequestIdEnabled pulumi.BoolInput `pulumi:"isRequestIdEnabled"`
 	// An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
-	NetworkSecurityGroupIds pulumi.StringArrayInput                          `pulumi:"networkSecurityGroupIds"`
-	ReservedIps             GetLoadBalancersLoadBalancerReservedIpArrayInput `pulumi:"reservedIps"`
+	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+	RequestIdHeader pulumi.StringInput                               `pulumi:"requestIdHeader"`
+	ReservedIps     GetLoadBalancersLoadBalancerReservedIpArrayInput `pulumi:"reservedIps"`
 	// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The configuration details to update load balancer to a different shape.
@@ -7827,9 +7835,19 @@ func (o GetLoadBalancersLoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) bool { return v.IsPrivate }).(pulumi.BoolOutput)
 }
 
+// Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+func (o GetLoadBalancersLoadBalancerOutput) IsRequestIdEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) bool { return v.IsRequestIdEnabled }).(pulumi.BoolOutput)
+}
+
 // An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
 func (o GetLoadBalancersLoadBalancerOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+func (o GetLoadBalancersLoadBalancerOutput) RequestIdHeader() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.RequestIdHeader }).(pulumi.StringOutput)
 }
 
 func (o GetLoadBalancersLoadBalancerOutput) ReservedIps() GetLoadBalancersLoadBalancerReservedIpArrayOutput {

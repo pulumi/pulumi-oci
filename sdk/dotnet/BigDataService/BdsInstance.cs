@@ -25,9 +25,6 @@ namespace Pulumi.Oci.BigDataService
     [OciResourceType("oci:BigDataService/bdsInstance:BdsInstance")]
     public partial class BdsInstance : global::Pulumi.CustomResource
     {
-        [Output("addKafkaTrigger")]
-        public Output<int?> AddKafkaTrigger { get; private set; } = null!;
-
         /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         /// </summary>
@@ -99,12 +96,6 @@ namespace Pulumi.Oci.BigDataService
 
         [Output("edgeNode")]
         public Output<Outputs.BdsInstanceEdgeNode?> EdgeNode { get; private set; } = null!;
-
-        /// <summary>
-        /// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-        /// </summary>
-        [Output("executeBootstrapScriptTrigger")]
-        public Output<int?> ExecuteBootstrapScriptTrigger { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -203,12 +194,6 @@ namespace Pulumi.Oci.BigDataService
         public Output<string?> OsPatchVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-        /// </summary>
-        [Output("removeKafkaTrigger")]
-        public Output<int?> RemoveKafkaTrigger { get; private set; } = null!;
-
-        /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         /// </summary>
         [Output("state")]
@@ -285,9 +270,6 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceArgs : global::Pulumi.ResourceArgs
     {
-        [Input("addKafkaTrigger")]
-        public Input<int>? AddKafkaTrigger { get; set; }
-
         /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         /// </summary>
@@ -369,12 +351,6 @@ namespace Pulumi.Oci.BigDataService
 
         [Input("edgeNode")]
         public Input<Inputs.BdsInstanceEdgeNodeArgs>? EdgeNode { get; set; }
-
-        /// <summary>
-        /// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-        /// </summary>
-        [Input("executeBootstrapScriptTrigger")]
-        public Input<int>? ExecuteBootstrapScriptTrigger { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
@@ -467,12 +443,6 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? OsPatchVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-        /// </summary>
-        [Input("removeKafkaTrigger")]
-        public Input<int>? RemoveKafkaTrigger { get; set; }
-
-        /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         /// </summary>
         [Input("state")]
@@ -495,9 +465,6 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceState : global::Pulumi.ResourceArgs
     {
-        [Input("addKafkaTrigger")]
-        public Input<int>? AddKafkaTrigger { get; set; }
-
         /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         /// </summary>
@@ -597,12 +564,6 @@ namespace Pulumi.Oci.BigDataService
 
         [Input("edgeNode")]
         public Input<Inputs.BdsInstanceEdgeNodeGetArgs>? EdgeNode { get; set; }
-
-        /// <summary>
-        /// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-        /// </summary>
-        [Input("executeBootstrapScriptTrigger")]
-        public Input<int>? ExecuteBootstrapScriptTrigger { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
@@ -717,12 +678,6 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("osPatchVersion")]
         public Input<string>? OsPatchVersion { get; set; }
-
-        /// <summary>
-        /// (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
-        /// </summary>
-        [Input("removeKafkaTrigger")]
-        public Input<int>? RemoveKafkaTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

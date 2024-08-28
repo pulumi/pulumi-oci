@@ -74,7 +74,9 @@ type LookupMysqlDbSystemResult struct {
 	CrashRecovery string `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements []GetMysqlDbSystemCurrentPlacement `pulumi:"currentPlacements"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+	// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+	CustomerContacts []GetMysqlDbSystemCustomerContact `pulumi:"customerContacts"`
+	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages []GetMysqlDbSystemDataStorage `pulumi:"dataStorages"`
@@ -218,7 +220,12 @@ func (o LookupMysqlDbSystemResultOutput) CurrentPlacements() GetMysqlDbSystemCur
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemCurrentPlacement { return v.CurrentPlacements }).(GetMysqlDbSystemCurrentPlacementArrayOutput)
 }
 
-// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+func (o LookupMysqlDbSystemResultOutput) CustomerContacts() GetMysqlDbSystemCustomerContactArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemCustomerContact { return v.CustomerContacts }).(GetMysqlDbSystemCustomerContactArrayOutput)
+}
+
+// Initial size of the data volume in GiBs that will be created and attached.
 func (o LookupMysqlDbSystemResultOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }

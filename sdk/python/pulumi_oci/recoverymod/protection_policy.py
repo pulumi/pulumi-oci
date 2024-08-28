@@ -19,6 +19,7 @@ class ProtectionPolicyArgs:
                  display_name: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 must_enforce_cloud_locality: Optional[pulumi.Input[bool]] = None,
                  policy_locked_date_time: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ProtectionPolicy resource.
@@ -27,6 +28,7 @@ class ProtectionPolicyArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] must_enforce_cloud_locality: Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
         :param pulumi.Input[str] policy_locked_date_time: (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
                * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
                * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
@@ -46,6 +48,8 @@ class ProtectionPolicyArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if must_enforce_cloud_locality is not None:
+            pulumi.set(__self__, "must_enforce_cloud_locality", must_enforce_cloud_locality)
         if policy_locked_date_time is not None:
             pulumi.set(__self__, "policy_locked_date_time", policy_locked_date_time)
 
@@ -110,6 +114,18 @@ class ProtectionPolicyArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="mustEnforceCloudLocality")
+    def must_enforce_cloud_locality(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+        """
+        return pulumi.get(self, "must_enforce_cloud_locality")
+
+    @must_enforce_cloud_locality.setter
+    def must_enforce_cloud_locality(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "must_enforce_cloud_locality", value)
+
+    @property
     @pulumi.getter(name="policyLockedDateTime")
     def policy_locked_date_time(self) -> Optional[pulumi.Input[str]]:
         """
@@ -142,6 +158,7 @@ class _ProtectionPolicyState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_predefined_policy: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 must_enforce_cloud_locality: Optional[pulumi.Input[bool]] = None,
                  policy_locked_date_time: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -156,6 +173,7 @@ class _ProtectionPolicyState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_predefined_policy: Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
         :param pulumi.Input[str] lifecycle_details: Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param pulumi.Input[bool] must_enforce_cloud_locality: Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
         :param pulumi.Input[str] policy_locked_date_time: (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
                * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
                * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
@@ -186,6 +204,8 @@ class _ProtectionPolicyState:
             pulumi.set(__self__, "is_predefined_policy", is_predefined_policy)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if must_enforce_cloud_locality is not None:
+            pulumi.set(__self__, "must_enforce_cloud_locality", must_enforce_cloud_locality)
         if policy_locked_date_time is not None:
             pulumi.set(__self__, "policy_locked_date_time", policy_locked_date_time)
         if state is not None:
@@ -282,6 +302,18 @@ class _ProtectionPolicyState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="mustEnforceCloudLocality")
+    def must_enforce_cloud_locality(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+        """
+        return pulumi.get(self, "must_enforce_cloud_locality")
+
+    @must_enforce_cloud_locality.setter
+    def must_enforce_cloud_locality(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "must_enforce_cloud_locality", value)
+
+    @property
     @pulumi.getter(name="policyLockedDateTime")
     def policy_locked_date_time(self) -> Optional[pulumi.Input[str]]:
         """
@@ -362,6 +394,7 @@ class ProtectionPolicy(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 must_enforce_cloud_locality: Optional[pulumi.Input[bool]] = None,
                  policy_locked_date_time: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -385,6 +418,7 @@ class ProtectionPolicy(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality,
             policy_locked_date_time=protection_policy_policy_locked_date_time)
         ```
 
@@ -403,6 +437,7 @@ class ProtectionPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param pulumi.Input[str] display_name: (Updatable) A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] must_enforce_cloud_locality: Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
         :param pulumi.Input[str] policy_locked_date_time: (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
                * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
                * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
@@ -442,6 +477,7 @@ class ProtectionPolicy(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality,
             policy_locked_date_time=protection_policy_policy_locked_date_time)
         ```
 
@@ -473,6 +509,7 @@ class ProtectionPolicy(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 must_enforce_cloud_locality: Optional[pulumi.Input[bool]] = None,
                  policy_locked_date_time: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -494,6 +531,7 @@ class ProtectionPolicy(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["must_enforce_cloud_locality"] = must_enforce_cloud_locality
             __props__.__dict__["policy_locked_date_time"] = policy_locked_date_time
             __props__.__dict__["is_predefined_policy"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -518,6 +556,7 @@ class ProtectionPolicy(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_predefined_policy: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            must_enforce_cloud_locality: Optional[pulumi.Input[bool]] = None,
             policy_locked_date_time: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -537,6 +576,7 @@ class ProtectionPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_predefined_policy: Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
         :param pulumi.Input[str] lifecycle_details: Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param pulumi.Input[bool] must_enforce_cloud_locality: Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
         :param pulumi.Input[str] policy_locked_date_time: (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
                * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
                * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
@@ -564,6 +604,7 @@ class ProtectionPolicy(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_predefined_policy"] = is_predefined_policy
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["must_enforce_cloud_locality"] = must_enforce_cloud_locality
         __props__.__dict__["policy_locked_date_time"] = policy_locked_date_time
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -626,6 +667,14 @@ class ProtectionPolicy(pulumi.CustomResource):
         Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="mustEnforceCloudLocality")
+    def must_enforce_cloud_locality(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned. This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+        """
+        return pulumi.get(self, "must_enforce_cloud_locality")
 
     @property
     @pulumi.getter(name="policyLockedDateTime")

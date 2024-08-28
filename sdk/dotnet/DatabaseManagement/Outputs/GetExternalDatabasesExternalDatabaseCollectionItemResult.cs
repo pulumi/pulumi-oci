@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The operating system of database.
+        /// </summary>
+        public readonly string DatabasePlatformName;
+        /// <summary>
         /// The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
         /// </summary>
         public readonly string DatabaseSubType;
@@ -25,6 +29,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The type of Oracle Database installation.
         /// </summary>
         public readonly string DatabaseType;
+        /// <summary>
+        /// The Oracle database version.
+        /// </summary>
+        public readonly string DatabaseVersion;
         /// <summary>
         /// The configuration of the Database Management service.
         /// </summary>
@@ -37,6 +45,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The `DB_UNIQUE_NAME` of the external database.
         /// </summary>
         public readonly string DbUniqueName;
+        /// <summary>
+        /// The list of feature configurations
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbmgmtFeatureConfigResult> DbmgmtFeatureConfigs;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -82,15 +94,21 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         private GetExternalDatabasesExternalDatabaseCollectionItemResult(
             string compartmentId,
 
+            string databasePlatformName,
+
             string databaseSubType,
 
             string databaseType,
+
+            string databaseVersion,
 
             ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult> dbManagementConfigs,
 
             ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult> dbSystemInfos,
 
             string dbUniqueName,
+
+            ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbmgmtFeatureConfigResult> dbmgmtFeatureConfigs,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -113,11 +131,14 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             string timeCreated)
         {
             CompartmentId = compartmentId;
+            DatabasePlatformName = databasePlatformName;
             DatabaseSubType = databaseSubType;
             DatabaseType = databaseType;
+            DatabaseVersion = databaseVersion;
             DbManagementConfigs = dbManagementConfigs;
             DbSystemInfos = dbSystemInfos;
             DbUniqueName = dbUniqueName;
+            DbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
             DefinedTags = definedTags;
             DisplayName = displayName;
             ExternalContainerDatabaseId = externalContainerDatabaseId;

@@ -1671,9 +1671,13 @@ class GetMountTargetsMountTargetResult(dict):
                  ldap_idmaps: Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult'],
                  lifecycle_details: str,
                  nsg_ids: Sequence[str],
+                 observed_throughput: str,
                  private_ip_ids: Sequence[str],
+                 requested_throughput: str,
+                 reserved_storage_capacity: str,
                  state: str,
                  subnet_id: str,
+                 time_billing_cycle_end: str,
                  time_created: str):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -1688,9 +1692,13 @@ class GetMountTargetsMountTargetResult(dict):
         :param Sequence['GetMountTargetsMountTargetLdapIdmapArgs'] ldap_idmaps: Mount target details about the LDAP ID mapping configuration.
         :param str lifecycle_details: Additional information about the current 'lifecycleState'.
         :param Sequence[str] nsg_ids: A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        :param str observed_throughput: Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param Sequence[str] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
+        :param str requested_throughput: * New throughput for mount target at the end of billing cycle in Gbps.
+        :param str reserved_storage_capacity: * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
+        :param str time_billing_cycle_end: The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -1707,9 +1715,13 @@ class GetMountTargetsMountTargetResult(dict):
         pulumi.set(__self__, "ldap_idmaps", ldap_idmaps)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "observed_throughput", observed_throughput)
         pulumi.set(__self__, "private_ip_ids", private_ip_ids)
+        pulumi.set(__self__, "requested_throughput", requested_throughput)
+        pulumi.set(__self__, "reserved_storage_capacity", reserved_storage_capacity)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "time_billing_cycle_end", time_billing_cycle_end)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -1819,12 +1831,36 @@ class GetMountTargetsMountTargetResult(dict):
         return pulumi.get(self, "nsg_ids")
 
     @property
+    @pulumi.getter(name="observedThroughput")
+    def observed_throughput(self) -> str:
+        """
+        Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        """
+        return pulumi.get(self, "observed_throughput")
+
+    @property
     @pulumi.getter(name="privateIpIds")
     def private_ip_ids(self) -> Sequence[str]:
         """
         The OCIDs of the private IP addresses associated with this mount target.
         """
         return pulumi.get(self, "private_ip_ids")
+
+    @property
+    @pulumi.getter(name="requestedThroughput")
+    def requested_throughput(self) -> str:
+        """
+        * New throughput for mount target at the end of billing cycle in Gbps.
+        """
+        return pulumi.get(self, "requested_throughput")
+
+    @property
+    @pulumi.getter(name="reservedStorageCapacity")
+    def reserved_storage_capacity(self) -> str:
+        """
+        * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        """
+        return pulumi.get(self, "reserved_storage_capacity")
 
     @property
     @pulumi.getter
@@ -1841,6 +1877,14 @@ class GetMountTargetsMountTargetResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="timeBillingCycleEnd")
+    def time_billing_cycle_end(self) -> str:
+        """
+        The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_billing_cycle_end")
 
     @property
     @pulumi.getter(name="timeCreated")

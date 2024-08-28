@@ -29,6 +29,7 @@ class DomainsUserArgs:
                  emails: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]] = None,
                  entitlements: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  ims: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]] = None,
                  locale: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input['DomainsUserNameArgs']] = None,
@@ -422,6 +423,8 @@ class DomainsUserArgs:
             pulumi.set(__self__, "entitlements", entitlements)
         if external_id is not None:
             pulumi.set(__self__, "external_id", external_id)
+        if force_delete is not None:
+            pulumi.set(__self__, "force_delete", force_delete)
         if ims is not None:
             pulumi.set(__self__, "ims", ims)
         if locale is not None:
@@ -750,6 +753,15 @@ class DomainsUserArgs:
     @external_id.setter
     def external_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "force_delete")
+
+    @force_delete.setter
+    def force_delete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_delete", value)
 
     @property
     @pulumi.getter
@@ -1358,6 +1370,7 @@ class _DomainsUserState:
                  emails: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]] = None,
                  entitlements: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserGroupArgs']]]] = None,
                  idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
@@ -1875,6 +1888,8 @@ class _DomainsUserState:
             pulumi.set(__self__, "entitlements", entitlements)
         if external_id is not None:
             pulumi.set(__self__, "external_id", external_id)
+        if force_delete is not None:
+            pulumi.set(__self__, "force_delete", force_delete)
         if groups is not None:
             pulumi.set(__self__, "groups", groups)
         if idcs_created_bies is not None:
@@ -2236,6 +2251,15 @@ class _DomainsUserState:
     @external_id.setter
     def external_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "force_delete")
+
+    @force_delete.setter
+    def force_delete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_delete", value)
 
     @property
     @pulumi.getter
@@ -3087,6 +3111,7 @@ class DomainsUser(pulumi.CustomResource):
                  emails: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
                  entitlements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  ims: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]]] = None,
                  locale: Optional[pulumi.Input[str]] = None,
@@ -3518,6 +3543,7 @@ class DomainsUser(pulumi.CustomResource):
                  emails: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
                  entitlements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  ims: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]]] = None,
                  locale: Optional[pulumi.Input[str]] = None,
@@ -3574,6 +3600,7 @@ class DomainsUser(pulumi.CustomResource):
             __props__.__dict__["emails"] = emails
             __props__.__dict__["entitlements"] = entitlements
             __props__.__dict__["external_id"] = external_id
+            __props__.__dict__["force_delete"] = force_delete
             if idcs_endpoint is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
@@ -3655,6 +3682,7 @@ class DomainsUser(pulumi.CustomResource):
             emails: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
             entitlements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
             external_id: Optional[pulumi.Input[str]] = None,
+            force_delete: Optional[pulumi.Input[bool]] = None,
             groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserGroupArgs', 'DomainsUserGroupArgsDict']]]]] = None,
             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserIdcsCreatedByArgs', 'DomainsUserIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
@@ -4168,6 +4196,7 @@ class DomainsUser(pulumi.CustomResource):
         __props__.__dict__["emails"] = emails
         __props__.__dict__["entitlements"] = entitlements
         __props__.__dict__["external_id"] = external_id
+        __props__.__dict__["force_delete"] = force_delete
         __props__.__dict__["groups"] = groups
         __props__.__dict__["idcs_created_bies"] = idcs_created_bies
         __props__.__dict__["idcs_endpoint"] = idcs_endpoint
@@ -4431,6 +4460,11 @@ class DomainsUser(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> pulumi.Output[Optional[bool]]:
+        return pulumi.get(self, "force_delete")
 
     @property
     @pulumi.getter

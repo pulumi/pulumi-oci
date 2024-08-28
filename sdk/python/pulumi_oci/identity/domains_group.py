@@ -23,6 +23,7 @@ class DomainsGroupArgs:
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  members: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupMemberArgs']]]] = None,
                  non_unique_display_name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
@@ -141,6 +142,8 @@ class DomainsGroupArgs:
             pulumi.set(__self__, "authorization", authorization)
         if external_id is not None:
             pulumi.set(__self__, "external_id", external_id)
+        if force_delete is not None:
+            pulumi.set(__self__, "force_delete", force_delete)
         if members is not None:
             pulumi.set(__self__, "members", members)
         if non_unique_display_name is not None:
@@ -277,6 +280,15 @@ class DomainsGroupArgs:
     @external_id.setter
     def external_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "force_delete")
+
+    @force_delete.setter
+    def force_delete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_delete", value)
 
     @property
     @pulumi.getter
@@ -455,6 +467,7 @@ class _DomainsGroupState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_ocid: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsCreatedByArgs']]]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsLastModifiedByArgs']]]] = None,
@@ -682,6 +695,8 @@ class _DomainsGroupState:
             pulumi.set(__self__, "domain_ocid", domain_ocid)
         if external_id is not None:
             pulumi.set(__self__, "external_id", external_id)
+        if force_delete is not None:
+            pulumi.set(__self__, "force_delete", force_delete)
         if idcs_created_bies is not None:
             pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
@@ -868,6 +883,15 @@ class _DomainsGroupState:
     @external_id.setter
     def external_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "force_delete")
+
+    @force_delete.setter
+    def force_delete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_delete", value)
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
@@ -1218,6 +1242,7 @@ class DomainsGroup(pulumi.CustomResource):
                  authorization: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict']]]]] = None,
                  non_unique_display_name: Optional[pulumi.Input[str]] = None,
@@ -1380,6 +1405,7 @@ class DomainsGroup(pulumi.CustomResource):
                  authorization: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict']]]]] = None,
                  non_unique_display_name: Optional[pulumi.Input[str]] = None,
@@ -1408,6 +1434,7 @@ class DomainsGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["external_id"] = external_id
+            __props__.__dict__["force_delete"] = force_delete
             if idcs_endpoint is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
@@ -1452,6 +1479,7 @@ class DomainsGroup(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
             external_id: Optional[pulumi.Input[str]] = None,
+            force_delete: Optional[pulumi.Input[bool]] = None,
             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupIdcsCreatedByArgs', 'DomainsGroupIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupIdcsLastModifiedByArgs', 'DomainsGroupIdcsLastModifiedByArgsDict']]]]] = None,
@@ -1680,6 +1708,7 @@ class DomainsGroup(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["domain_ocid"] = domain_ocid
         __props__.__dict__["external_id"] = external_id
+        __props__.__dict__["force_delete"] = force_delete
         __props__.__dict__["idcs_created_bies"] = idcs_created_bies
         __props__.__dict__["idcs_endpoint"] = idcs_endpoint
         __props__.__dict__["idcs_last_modified_bies"] = idcs_last_modified_bies
@@ -1816,6 +1845,11 @@ class DomainsGroup(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> pulumi.Output[Optional[bool]]:
+        return pulumi.get(self, "force_delete")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")

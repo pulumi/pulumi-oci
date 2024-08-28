@@ -3715,7 +3715,9 @@ class GetLoadBalancersLoadBalancerResult(dict):
                  ip_mode: str,
                  is_delete_protection_enabled: bool,
                  is_private: bool,
+                 is_request_id_enabled: bool,
                  network_security_group_ids: Sequence[str],
+                 request_id_header: str,
                  reserved_ips: Sequence['outputs.GetLoadBalancersLoadBalancerReservedIpResult'],
                  shape: str,
                  shape_details: Sequence['outputs.GetLoadBalancersLoadBalancerShapeDetailResult'],
@@ -3733,7 +3735,9 @@ class GetLoadBalancersLoadBalancerResult(dict):
         :param Sequence[str] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead.
         :param bool is_delete_protection_enabled: Whether or not the load balancer has delete protection enabled.
         :param bool is_private: Whether the load balancer has a VCN-local (private) IP address.
+        :param bool is_request_id_enabled: Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
         :param Sequence[str] network_security_group_ids: An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
+        :param str request_id_header: If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
         :param str shape: A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
         :param Sequence['GetLoadBalancersLoadBalancerShapeDetailArgs'] shape_details: The configuration details to update load balancer to a different shape.
         :param str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
@@ -3751,7 +3755,9 @@ class GetLoadBalancersLoadBalancerResult(dict):
         pulumi.set(__self__, "ip_mode", ip_mode)
         pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         pulumi.set(__self__, "is_private", is_private)
+        pulumi.set(__self__, "is_request_id_enabled", is_request_id_enabled)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "request_id_header", request_id_header)
         pulumi.set(__self__, "reserved_ips", reserved_ips)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_details", shape_details)
@@ -3839,12 +3845,28 @@ class GetLoadBalancersLoadBalancerResult(dict):
         return pulumi.get(self, "is_private")
 
     @property
+    @pulumi.getter(name="isRequestIdEnabled")
+    def is_request_id_enabled(self) -> bool:
+        """
+        Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+        """
+        return pulumi.get(self, "is_request_id_enabled")
+
+    @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Sequence[str]:
         """
         An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
         """
         return pulumi.get(self, "network_security_group_ids")
+
+    @property
+    @pulumi.getter(name="requestIdHeader")
+    def request_id_header(self) -> str:
+        """
+        If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+        """
+        return pulumi.get(self, "request_id_header")
 
     @property
     @pulumi.getter(name="reservedIps")

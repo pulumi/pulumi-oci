@@ -17,14 +17,14 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
     public static final KeyAutoKeyRotationDetailsArgs Empty = new KeyAutoKeyRotationDetailsArgs();
 
     /**
-     * (Updatable) The last execution status message.
+     * (Updatable) The last execution status message of auto key rotation.
      * 
      */
     @Import(name="lastRotationMessage")
     private @Nullable Output<String> lastRotationMessage;
 
     /**
-     * @return (Updatable) The last execution status message.
+     * @return (Updatable) The last execution status message of auto key rotation.
      * 
      */
     public Optional<Output<String>> lastRotationMessage() {
@@ -47,14 +47,14 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+     * (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
      * 
      */
     @Import(name="rotationIntervalInDays")
     private @Nullable Output<Integer> rotationIntervalInDays;
 
     /**
-     * @return (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+     * @return (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
      * 
      */
     public Optional<Output<Integer>> rotationIntervalInDays() {
@@ -62,14 +62,14 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+     * (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
      * 
      */
     @Import(name="timeOfLastRotation")
     private @Nullable Output<String> timeOfLastRotation;
 
     /**
-     * @return (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+     * @return (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
      * 
      */
     public Optional<Output<String>> timeOfLastRotation() {
@@ -77,14 +77,14 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+     * (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
      * 
      */
     @Import(name="timeOfNextRotation")
     private @Nullable Output<String> timeOfNextRotation;
 
     /**
-     * @return (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+     * @return (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
      * 
      */
     public Optional<Output<String>> timeOfNextRotation() {
@@ -92,14 +92,14 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+     * (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
      * 
      */
     @Import(name="timeOfScheduleStart")
     private @Nullable Output<String> timeOfScheduleStart;
 
     /**
-     * @return (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+     * @return (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
      * 
      */
     public Optional<Output<String>> timeOfScheduleStart() {
@@ -136,7 +136,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param lastRotationMessage (Updatable) The last execution status message.
+         * @param lastRotationMessage (Updatable) The last execution status message of auto key rotation.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param lastRotationMessage (Updatable) The last execution status message.
+         * @param lastRotationMessage (Updatable) The last execution status message of auto key rotation.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param rotationIntervalInDays (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+         * @param rotationIntervalInDays (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param rotationIntervalInDays (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+         * @param rotationIntervalInDays (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeOfLastRotation (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+         * @param timeOfLastRotation (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeOfLastRotation (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+         * @param timeOfLastRotation (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeOfNextRotation (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+         * @param timeOfNextRotation (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeOfNextRotation (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+         * @param timeOfNextRotation (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeOfScheduleStart (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+         * @param timeOfScheduleStart (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class KeyAutoKeyRotationDetailsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeOfScheduleStart (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+         * @param timeOfScheduleStart (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
          * 
          * @return builder
          * 

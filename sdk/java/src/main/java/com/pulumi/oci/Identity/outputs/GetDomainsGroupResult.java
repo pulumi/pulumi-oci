@@ -53,6 +53,7 @@ public final class GetDomainsGroupResult {
      * 
      */
     private String externalId;
+    private Boolean forceDelete;
     private String groupId;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
@@ -191,6 +192,9 @@ public final class GetDomainsGroupResult {
      */
     public String externalId() {
         return this.externalId;
+    }
+    public Boolean forceDelete() {
+        return this.forceDelete;
     }
     public String groupId() {
         return this.groupId;
@@ -345,6 +349,7 @@ public final class GetDomainsGroupResult {
         private String displayName;
         private String domainOcid;
         private String externalId;
+        private Boolean forceDelete;
         private String groupId;
         private String id;
         private List<GetDomainsGroupIdcsCreatedBy> idcsCreatedBies;
@@ -377,6 +382,7 @@ public final class GetDomainsGroupResult {
     	      this.displayName = defaults.displayName;
     	      this.domainOcid = defaults.domainOcid;
     	      this.externalId = defaults.externalId;
+    	      this.forceDelete = defaults.forceDelete;
     	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
     	      this.idcsCreatedBies = defaults.idcsCreatedBies;
@@ -459,6 +465,14 @@ public final class GetDomainsGroupResult {
               throw new MissingRequiredPropertyException("GetDomainsGroupResult", "externalId");
             }
             this.externalId = externalId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder forceDelete(Boolean forceDelete) {
+            if (forceDelete == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "forceDelete");
+            }
+            this.forceDelete = forceDelete;
             return this;
         }
         @CustomType.Setter
@@ -676,6 +690,7 @@ public final class GetDomainsGroupResult {
             _resultValue.displayName = displayName;
             _resultValue.domainOcid = domainOcid;
             _resultValue.externalId = externalId;
+            _resultValue.forceDelete = forceDelete;
             _resultValue.groupId = groupId;
             _resultValue.id = id;
             _resultValue.idcsCreatedBies = idcsCreatedBies;

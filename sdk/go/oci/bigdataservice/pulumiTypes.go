@@ -3219,14 +3219,8 @@ type BdsInstanceCloudSqlDetail struct {
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-	OdhVersion *string `pulumi:"odhVersion"`
-	// BDS-assigned Operating System version for the node.
-	OsVersion *string `pulumi:"osVersion"`
 	// Shape of the node
 	Shape string `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access
-	SshFingerprint *string `pulumi:"sshFingerprint"`
 }
 
 // BdsInstanceCloudSqlDetailInput is an input type that accepts BdsInstanceCloudSqlDetailArgs and BdsInstanceCloudSqlDetailOutput values.
@@ -3255,14 +3249,8 @@ type BdsInstanceCloudSqlDetailArgs struct {
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
-	// BDS-assigned Operating System version for the node.
-	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access
-	SshFingerprint pulumi.StringPtrInput `pulumi:"sshFingerprint"`
 }
 
 func (BdsInstanceCloudSqlDetailArgs) ElementType() reflect.Type {
@@ -3351,24 +3339,9 @@ func (o BdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
 
-// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-func (o BdsInstanceCloudSqlDetailOutput) OdhVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.OdhVersion }).(pulumi.StringPtrOutput)
-}
-
-// BDS-assigned Operating System version for the node.
-func (o BdsInstanceCloudSqlDetailOutput) OsVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
-}
-
 // Shape of the node
 func (o BdsInstanceCloudSqlDetailOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) string { return v.Shape }).(pulumi.StringOutput)
-}
-
-// The fingerprint of the SSH key used for node access
-func (o BdsInstanceCloudSqlDetailOutput) SshFingerprint() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.SshFingerprint }).(pulumi.StringPtrOutput)
 }
 
 type BdsInstanceCloudSqlDetailArrayOutput struct{ *pulumi.OutputState }
@@ -12214,14 +12187,8 @@ type GetBdsInstanceCloudSqlDetail struct {
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-	OdhVersion string `pulumi:"odhVersion"`
-	// BDS-assigned Operating System version for the node.
-	OsVersion string `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access.
-	SshFingerprint string `pulumi:"sshFingerprint"`
 }
 
 // GetBdsInstanceCloudSqlDetailInput is an input type that accepts GetBdsInstanceCloudSqlDetailArgs and GetBdsInstanceCloudSqlDetailOutput values.
@@ -12250,14 +12217,8 @@ type GetBdsInstanceCloudSqlDetailArgs struct {
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
-	// BDS-assigned Operating System version for the node.
-	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access.
-	SshFingerprint pulumi.StringInput `pulumi:"sshFingerprint"`
 }
 
 func (GetBdsInstanceCloudSqlDetailArgs) ElementType() reflect.Type {
@@ -12348,24 +12309,9 @@ func (o GetBdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) int { return v.Ocpus }).(pulumi.IntOutput)
 }
 
-// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-func (o GetBdsInstanceCloudSqlDetailOutput) OdhVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) string { return v.OdhVersion }).(pulumi.StringOutput)
-}
-
-// BDS-assigned Operating System version for the node.
-func (o GetBdsInstanceCloudSqlDetailOutput) OsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) string { return v.OsVersion }).(pulumi.StringOutput)
-}
-
 // Shape of the node.
 func (o GetBdsInstanceCloudSqlDetailOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) string { return v.Shape }).(pulumi.StringOutput)
-}
-
-// The fingerprint of the SSH key used for node access.
-func (o GetBdsInstanceCloudSqlDetailOutput) SshFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) string { return v.SshFingerprint }).(pulumi.StringOutput)
 }
 
 type GetBdsInstanceCloudSqlDetailArrayOutput struct{ *pulumi.OutputState }
@@ -15864,7 +15810,6 @@ func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetBdsInstancesBdsInstance struct {
-	AddKafkaTrigger int `pulumi:"addKafkaTrigger"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -15885,9 +15830,8 @@ type GetBdsInstancesBdsInstance struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName                   string                               `pulumi:"displayName"`
-	EdgeNodes                     []GetBdsInstancesBdsInstanceEdgeNode `pulumi:"edgeNodes"`
-	ExecuteBootstrapScriptTrigger int                                  `pulumi:"executeBootstrapScriptTrigger"`
+	DisplayName string                               `pulumi:"displayName"`
+	EdgeNodes   []GetBdsInstancesBdsInstanceEdgeNode `pulumi:"edgeNodes"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
@@ -15916,7 +15860,6 @@ type GetBdsInstancesBdsInstance struct {
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	OsPatchVersion                          string `pulumi:"osPatchVersion"`
-	RemoveKafkaTrigger                      int    `pulumi:"removeKafkaTrigger"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -15939,7 +15882,6 @@ type GetBdsInstancesBdsInstanceInput interface {
 }
 
 type GetBdsInstancesBdsInstanceArgs struct {
-	AddKafkaTrigger pulumi.IntInput `pulumi:"addKafkaTrigger"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl pulumi.StringInput `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -15960,9 +15902,8 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName                   pulumi.StringInput                           `pulumi:"displayName"`
-	EdgeNodes                     GetBdsInstancesBdsInstanceEdgeNodeArrayInput `pulumi:"edgeNodes"`
-	ExecuteBootstrapScriptTrigger pulumi.IntInput                              `pulumi:"executeBootstrapScriptTrigger"`
+	DisplayName pulumi.StringInput                           `pulumi:"displayName"`
+	EdgeNodes   GetBdsInstancesBdsInstanceEdgeNodeArrayInput `pulumi:"edgeNodes"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
@@ -15991,7 +15932,6 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntInput    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	OsPatchVersion                          pulumi.StringInput `pulumi:"osPatchVersion"`
-	RemoveKafkaTrigger                      pulumi.IntInput    `pulumi:"removeKafkaTrigger"`
 	// The state of the cluster.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -16051,10 +15991,6 @@ func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutput() G
 
 func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceOutput) AddKafkaTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBdsInstancesBdsInstance) int { return v.AddKafkaTrigger }).(pulumi.IntOutput)
 }
 
 // pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -16120,10 +16056,6 @@ func (o GetBdsInstancesBdsInstanceOutput) DisplayName() pulumi.StringOutput {
 
 func (o GetBdsInstancesBdsInstanceOutput) EdgeNodes() GetBdsInstancesBdsInstanceEdgeNodeArrayOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceEdgeNode { return v.EdgeNodes }).(GetBdsInstancesBdsInstanceEdgeNodeArrayOutput)
-}
-
-func (o GetBdsInstancesBdsInstanceOutput) ExecuteBootstrapScriptTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBdsInstancesBdsInstance) int { return v.ExecuteBootstrapScriptTrigger }).(pulumi.IntOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
@@ -16207,10 +16139,6 @@ func (o GetBdsInstancesBdsInstanceOutput) OsPatchVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.OsPatchVersion }).(pulumi.StringOutput)
 }
 
-func (o GetBdsInstancesBdsInstanceOutput) RemoveKafkaTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBdsInstancesBdsInstance) int { return v.RemoveKafkaTrigger }).(pulumi.IntOutput)
-}
-
 // The state of the cluster.
 func (o GetBdsInstancesBdsInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.State }).(pulumi.StringOutput)
@@ -16269,14 +16197,8 @@ type GetBdsInstancesBdsInstanceCloudSqlDetail struct {
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-	OdhVersion string `pulumi:"odhVersion"`
-	// BDS-assigned Operating System version for the node.
-	OsVersion string `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access.
-	SshFingerprint string `pulumi:"sshFingerprint"`
 }
 
 // GetBdsInstancesBdsInstanceCloudSqlDetailInput is an input type that accepts GetBdsInstancesBdsInstanceCloudSqlDetailArgs and GetBdsInstancesBdsInstanceCloudSqlDetailOutput values.
@@ -16305,14 +16227,8 @@ type GetBdsInstancesBdsInstanceCloudSqlDetailArgs struct {
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
-	// BDS-assigned Operating System version for the node.
-	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access.
-	SshFingerprint pulumi.StringInput `pulumi:"sshFingerprint"`
 }
 
 func (GetBdsInstancesBdsInstanceCloudSqlDetailArgs) ElementType() reflect.Type {
@@ -16403,24 +16319,9 @@ func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntOutput
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) int { return v.Ocpus }).(pulumi.IntOutput)
 }
 
-// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) OdhVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) string { return v.OdhVersion }).(pulumi.StringOutput)
-}
-
-// BDS-assigned Operating System version for the node.
-func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) OsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) string { return v.OsVersion }).(pulumi.StringOutput)
-}
-
 // Shape of the node.
 func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) string { return v.Shape }).(pulumi.StringOutput)
-}
-
-// The fingerprint of the SSH key used for node access.
-func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) SshFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) string { return v.SshFingerprint }).(pulumi.StringOutput)
 }
 
 type GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput struct{ *pulumi.OutputState }

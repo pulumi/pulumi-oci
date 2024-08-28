@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     hostShapeName: testShape.name,
  *     version: supportedVmwareSoftwareVersionVersion,
+ *     versionToUpgrade: supportedVmwareSoftwareVersionVersionToUpgrade,
  * });
  * ```
  */
@@ -33,6 +34,7 @@ export function getSupportedVmwareSoftwareVersions(args: GetSupportedVmwareSoftw
         "filters": args.filters,
         "hostShapeName": args.hostShapeName,
         "version": args.version,
+        "versionToUpgrade": args.versionToUpgrade,
     }, opts);
 }
 
@@ -53,6 +55,10 @@ export interface GetSupportedVmwareSoftwareVersionsArgs {
      * A filter to return only resources that match the given VMware software version exactly.
      */
     version?: string;
+    /**
+     * A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+     */
+    versionToUpgrade?: string;
 }
 
 /**
@@ -74,6 +80,7 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
      * A short, unique string that identifies the version of bundled software.
      */
     readonly version?: string;
+    readonly versionToUpgrade?: string;
 }
 /**
  * This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -91,6 +98,7 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
  *     compartmentId: compartmentId,
  *     hostShapeName: testShape.name,
  *     version: supportedVmwareSoftwareVersionVersion,
+ *     versionToUpgrade: supportedVmwareSoftwareVersionVersionToUpgrade,
  * });
  * ```
  */
@@ -115,4 +123,8 @@ export interface GetSupportedVmwareSoftwareVersionsOutputArgs {
      * A filter to return only resources that match the given VMware software version exactly.
      */
     version?: pulumi.Input<string>;
+    /**
+     * A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+     */
+    versionToUpgrade?: pulumi.Input<string>;
 }

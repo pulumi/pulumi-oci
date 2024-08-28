@@ -131,6 +131,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * uniqueness: none
      */
     public readonly externalId!: pulumi.Output<string>;
+    public readonly forceDelete!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -339,6 +340,7 @@ export class DomainsGroup extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
             resourceInputs["externalId"] = state ? state.externalId : undefined;
+            resourceInputs["forceDelete"] = state ? state.forceDelete : undefined;
             resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
             resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
             resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
@@ -374,6 +376,7 @@ export class DomainsGroup extends pulumi.CustomResource {
             resourceInputs["authorization"] = args ? args.authorization : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["externalId"] = args ? args.externalId : undefined;
+            resourceInputs["forceDelete"] = args ? args.forceDelete : undefined;
             resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
             resourceInputs["members"] = args ? args.members : undefined;
             resourceInputs["nonUniqueDisplayName"] = args ? args.nonUniqueDisplayName : undefined;
@@ -490,6 +493,7 @@ export interface DomainsGroupState {
      * * uniqueness: none
      */
     externalId?: pulumi.Input<string>;
+    forceDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -724,6 +728,7 @@ export interface DomainsGroupArgs {
      * * uniqueness: none
      */
     externalId?: pulumi.Input<string>;
+    forceDelete?: pulumi.Input<boolean>;
     /**
      * The basic endpoint for the identity domain
      */

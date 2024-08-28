@@ -14,7 +14,7 @@ namespace Pulumi.Oci.AnnouncementsService.Outputs
     public sealed class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult
     {
         /// <summary>
-        /// The type of filter.
+        /// The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         /// </summary>
         public readonly string Type;
         /// <summary>

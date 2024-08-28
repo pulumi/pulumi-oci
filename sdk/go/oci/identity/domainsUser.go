@@ -162,7 +162,8 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId  pulumi.StringOutput  `pulumi:"externalId"`
+	ForceDelete pulumi.BoolPtrOutput `pulumi:"forceDelete"`
 	// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	//
 	// **SCIM++ Properties:**
@@ -711,7 +712,8 @@ type domainsUserState struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId *string `pulumi:"externalId"`
+	ExternalId  *string `pulumi:"externalId"`
+	ForceDelete *bool   `pulumi:"forceDelete"`
 	// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	//
 	// **SCIM++ Properties:**
@@ -1215,7 +1217,8 @@ type DomainsUserState struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringPtrInput
+	ExternalId  pulumi.StringPtrInput
+	ForceDelete pulumi.BoolPtrInput
 	// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	//
 	// **SCIM++ Properties:**
@@ -1687,7 +1690,8 @@ type domainsUserArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId *string `pulumi:"externalId"`
+	ExternalId  *string `pulumi:"externalId"`
+	ForceDelete *bool   `pulumi:"forceDelete"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
 	// (Updatable) User's instant messaging addresses
@@ -2071,7 +2075,8 @@ type DomainsUserArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringPtrInput
+	ExternalId  pulumi.StringPtrInput
+	ForceDelete pulumi.BoolPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
 	// (Updatable) User's instant messaging addresses
@@ -2614,6 +2619,10 @@ func (o DomainsUserOutput) Entitlements() DomainsUserEntitlementArrayOutput {
 // * uniqueness: none
 func (o DomainsUserOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+}
+
+func (o DomainsUserOutput) ForceDelete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.BoolPtrOutput { return v.ForceDelete }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated

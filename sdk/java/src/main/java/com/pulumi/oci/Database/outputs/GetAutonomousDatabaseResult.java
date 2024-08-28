@@ -73,6 +73,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private String autonomousMaintenanceScheduleType;
     /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    private String availabilityDomain;
+    /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
@@ -724,6 +729,13 @@ public final class GetAutonomousDatabaseResult {
      */
     public String autonomousMaintenanceScheduleType() {
         return this.autonomousMaintenanceScheduleType;
+    }
+    /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
     }
     /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -1584,6 +1596,7 @@ public final class GetAutonomousDatabaseResult {
         private String autonomousDatabaseBackupId;
         private String autonomousDatabaseId;
         private String autonomousMaintenanceScheduleType;
+        private String availabilityDomain;
         private List<String> availableUpgradeVersions;
         private List<GetAutonomousDatabaseBackupConfig> backupConfigs;
         private Integer backupRetentionPeriodInDays;
@@ -1724,6 +1737,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.autonomousDatabaseBackupId = defaults.autonomousDatabaseBackupId;
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
     	      this.autonomousMaintenanceScheduleType = defaults.autonomousMaintenanceScheduleType;
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableUpgradeVersions = defaults.availableUpgradeVersions;
     	      this.backupConfigs = defaults.backupConfigs;
     	      this.backupRetentionPeriodInDays = defaults.backupRetentionPeriodInDays;
@@ -1941,6 +1955,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "autonomousMaintenanceScheduleType");
             }
             this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
@@ -3024,6 +3046,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
             _resultValue.autonomousDatabaseId = autonomousDatabaseId;
             _resultValue.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availableUpgradeVersions = availableUpgradeVersions;
             _resultValue.backupConfigs = backupConfigs;
             _resultValue.backupRetentionPeriodInDays = backupRetentionPeriodInDays;

@@ -37,6 +37,7 @@ __all__ = [
     'MysqlDbSystemChannelTargetArgs',
     'MysqlDbSystemChannelTargetFilterArgs',
     'MysqlDbSystemCurrentPlacementArgs',
+    'MysqlDbSystemCustomerContactArgs',
     'MysqlDbSystemDataStorageArgs',
     'MysqlDbSystemDeletionPolicyArgs',
     'MysqlDbSystemEndpointArgs',
@@ -3886,6 +3887,28 @@ class MysqlDbSystemCurrentPlacementArgs:
     @fault_domain.setter
     def fault_domain(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "fault_domain", value)
+
+
+@pulumi.input_type
+class MysqlDbSystemCustomerContactArgs:
+    def __init__(__self__, *,
+                 email: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] email: (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+        """
+        pulumi.set(__self__, "email", email)
+
+    @property
+    @pulumi.getter
+    def email(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: pulumi.Input[str]):
+        pulumi.set(self, "email", value)
 
 
 @pulumi.input_type

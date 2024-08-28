@@ -191,6 +191,7 @@ class _VaultState:
                  external_key_manager_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_primary: Optional[pulumi.Input[bool]] = None,
+                 is_vault_replicable: Optional[pulumi.Input[bool]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
                  replica_details: Optional[pulumi.Input[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]] = None,
                  restore_from_file: Optional[pulumi.Input['VaultRestoreFromFileArgs']] = None,
@@ -211,6 +212,7 @@ class _VaultState:
         :param pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
+        :param pulumi.Input[bool] is_vault_replicable: A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
         :param pulumi.Input[Sequence[pulumi.Input['VaultReplicaDetailArgs']]] replica_details: Vault replica details
         :param pulumi.Input['VaultRestoreFromFileArgs'] restore_from_file: (Updatable) Details where vault was backed up.
@@ -240,6 +242,8 @@ class _VaultState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_primary is not None:
             pulumi.set(__self__, "is_primary", is_primary)
+        if is_vault_replicable is not None:
+            pulumi.set(__self__, "is_vault_replicable", is_vault_replicable)
         if management_endpoint is not None:
             pulumi.set(__self__, "management_endpoint", management_endpoint)
         if replica_details is not None:
@@ -356,6 +360,18 @@ class _VaultState:
     @is_primary.setter
     def is_primary(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_primary", value)
+
+    @property
+    @pulumi.getter(name="isVaultReplicable")
+    def is_vault_replicable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+        """
+        return pulumi.get(self, "is_vault_replicable")
+
+    @is_vault_replicable.setter
+    def is_vault_replicable(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_vault_replicable", value)
 
     @property
     @pulumi.getter(name="managementEndpoint")
@@ -664,6 +680,7 @@ class Vault(pulumi.CustomResource):
             __props__.__dict__["crypto_endpoint"] = None
             __props__.__dict__["external_key_manager_metadata_summaries"] = None
             __props__.__dict__["is_primary"] = None
+            __props__.__dict__["is_vault_replicable"] = None
             __props__.__dict__["management_endpoint"] = None
             __props__.__dict__["replica_details"] = None
             __props__.__dict__["restored_from_vault_id"] = None
@@ -687,6 +704,7 @@ class Vault(pulumi.CustomResource):
             external_key_manager_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_primary: Optional[pulumi.Input[bool]] = None,
+            is_vault_replicable: Optional[pulumi.Input[bool]] = None,
             management_endpoint: Optional[pulumi.Input[str]] = None,
             replica_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict']]]]] = None,
             restore_from_file: Optional[pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
@@ -712,6 +730,7 @@ class Vault(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict']]]] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
+        :param pulumi.Input[bool] is_vault_replicable: A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict']]]] replica_details: Vault replica details
         :param pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']] restore_from_file: (Updatable) Details where vault was backed up.
@@ -737,6 +756,7 @@ class Vault(pulumi.CustomResource):
         __props__.__dict__["external_key_manager_metadata_summaries"] = external_key_manager_metadata_summaries
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_primary"] = is_primary
+        __props__.__dict__["is_vault_replicable"] = is_vault_replicable
         __props__.__dict__["management_endpoint"] = management_endpoint
         __props__.__dict__["replica_details"] = replica_details
         __props__.__dict__["restore_from_file"] = restore_from_file
@@ -812,6 +832,14 @@ class Vault(pulumi.CustomResource):
         A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         """
         return pulumi.get(self, "is_primary")
+
+    @property
+    @pulumi.getter(name="isVaultReplicable")
+    def is_vault_replicable(self) -> pulumi.Output[bool]:
+        """
+        A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+        """
+        return pulumi.get(self, "is_vault_replicable")
 
     @property
     @pulumi.getter(name="managementEndpoint")

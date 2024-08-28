@@ -52,6 +52,8 @@ func LookupManagedDatabase(ctx *pulumi.Context, args *LookupManagedDatabaseArgs,
 
 // A collection of arguments for invoking getManagedDatabase.
 type LookupManagedDatabaseArgs struct {
+	// The operating system of database.
+	DatabasePlatformName *string `pulumi:"databasePlatformName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 }
@@ -62,6 +64,8 @@ type LookupManagedDatabaseResult struct {
 	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The operating system of database.
+	DatabasePlatformName *string `pulumi:"databasePlatformName"`
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
 	DatabaseStatus string `pulumi:"databaseStatus"`
 	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -72,6 +76,8 @@ type LookupManagedDatabaseResult struct {
 	DatabaseVersion string `pulumi:"databaseVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// The list of feature configurations
+	DbmgmtFeatureConfigs []GetManagedDatabaseDbmgmtFeatureConfig `pulumi:"dbmgmtFeatureConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
@@ -93,6 +99,8 @@ type LookupManagedDatabaseResult struct {
 	ParentContainerId string `pulumi:"parentContainerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
 	StorageSystemId string `pulumi:"storageSystemId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Managed Database was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The workload type of the Autonomous Database.
@@ -114,6 +122,8 @@ func LookupManagedDatabaseOutput(ctx *pulumi.Context, args LookupManagedDatabase
 
 // A collection of arguments for invoking getManagedDatabase.
 type LookupManagedDatabaseOutputArgs struct {
+	// The operating system of database.
+	DatabasePlatformName pulumi.StringPtrInput `pulumi:"databasePlatformName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 }
@@ -147,6 +157,11 @@ func (o LookupManagedDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The operating system of database.
+func (o LookupManagedDatabaseResultOutput) DatabasePlatformName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) *string { return v.DatabasePlatformName }).(pulumi.StringPtrOutput)
+}
+
 // The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
 func (o LookupManagedDatabaseResultOutput) DatabaseStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DatabaseStatus }).(pulumi.StringOutput)
@@ -170,6 +185,13 @@ func (o LookupManagedDatabaseResultOutput) DatabaseVersion() pulumi.StringOutput
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 func (o LookupManagedDatabaseResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The list of feature configurations
+func (o LookupManagedDatabaseResultOutput) DbmgmtFeatureConfigs() GetManagedDatabaseDbmgmtFeatureConfigArrayOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) []GetManagedDatabaseDbmgmtFeatureConfig {
+		return v.DbmgmtFeatureConfigs
+	}).(GetManagedDatabaseDbmgmtFeatureConfigArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -226,6 +248,11 @@ func (o LookupManagedDatabaseResultOutput) ParentContainerId() pulumi.StringOutp
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
 func (o LookupManagedDatabaseResultOutput) StorageSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.StorageSystemId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupManagedDatabaseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Managed Database was created.

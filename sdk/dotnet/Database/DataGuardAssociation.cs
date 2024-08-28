@@ -54,6 +54,7 @@ namespace Pulumi.Oci.Database
     ///         DbSystemDefinedTags = dataGuardAssociationDbSystemDefinedTags,
     ///         DbSystemFreeformTags = dataGuardAssociationDbSystemFreeformTags,
     ///         DisplayName = dataGuardAssociationDisplayName,
+    ///         Domain = dataGuardAssociationDomain,
     ///         FaultDomains = dataGuardAssociationFaultDomains,
     ///         Hostname = dataGuardAssociationHostname,
     ///         IsActiveDataGuardEnabled = dataGuardAssociationIsActiveDataGuardEnabled,
@@ -185,6 +186,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+        /// </summary>
+        [Output("domain")]
+        public Output<string> Domain { get; private set; } = null!;
 
         /// <summary>
         /// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -545,6 +552,12 @@ namespace Pulumi.Oci.Database
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+        /// </summary>
+        [Input("domain")]
+        public Input<string>? Domain { get; set; }
+
         [Input("faultDomains")]
         private InputList<string>? _faultDomains;
 
@@ -843,6 +856,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+        /// </summary>
+        [Input("domain")]
+        public Input<string>? Domain { get; set; }
 
         [Input("faultDomains")]
         private InputList<string>? _faultDomains;

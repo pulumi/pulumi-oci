@@ -22,7 +22,7 @@ class GetDomainsGroupResult:
     """
     A collection of values returned by getDomainsGroup.
     """
-    def __init__(__self__, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, delete_in_progress=None, display_name=None, domain_ocid=None, external_id=None, group_id=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, members=None, metas=None, non_unique_display_name=None, ocid=None, resource_type_schema_version=None, schemas=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextension_oci_tags=None, urnietfparamsscimschemasoracleidcsextensiondbcs_groups=None, urnietfparamsscimschemasoracleidcsextensiondynamic_groups=None, urnietfparamsscimschemasoracleidcsextensiongroup_groups=None, urnietfparamsscimschemasoracleidcsextensionposix_groups=None, urnietfparamsscimschemasoracleidcsextensionrequestable_groups=None):
+    def __init__(__self__, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, delete_in_progress=None, display_name=None, domain_ocid=None, external_id=None, force_delete=None, group_id=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, members=None, metas=None, non_unique_display_name=None, ocid=None, resource_type_schema_version=None, schemas=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextension_oci_tags=None, urnietfparamsscimschemasoracleidcsextensiondbcs_groups=None, urnietfparamsscimschemasoracleidcsextensiondynamic_groups=None, urnietfparamsscimschemasoracleidcsextensiongroup_groups=None, urnietfparamsscimschemasoracleidcsextensionposix_groups=None, urnietfparamsscimschemasoracleidcsextensionrequestable_groups=None):
         if attribute_sets and not isinstance(attribute_sets, list):
             raise TypeError("Expected argument 'attribute_sets' to be a list")
         pulumi.set(__self__, "attribute_sets", attribute_sets)
@@ -47,6 +47,9 @@ class GetDomainsGroupResult:
         if external_id and not isinstance(external_id, str):
             raise TypeError("Expected argument 'external_id' to be a str")
         pulumi.set(__self__, "external_id", external_id)
+        if force_delete and not isinstance(force_delete, bool):
+            raise TypeError("Expected argument 'force_delete' to be a bool")
+        pulumi.set(__self__, "force_delete", force_delete)
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
@@ -165,6 +168,11 @@ class GetDomainsGroupResult:
         An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         """
         return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> bool:
+        return pulumi.get(self, "force_delete")
 
     @property
     @pulumi.getter(name="groupId")
@@ -340,6 +348,7 @@ class AwaitableGetDomainsGroupResult(GetDomainsGroupResult):
             display_name=self.display_name,
             domain_ocid=self.domain_ocid,
             external_id=self.external_id,
+            force_delete=self.force_delete,
             group_id=self.group_id,
             id=self.id,
             idcs_created_bies=self.idcs_created_bies,
@@ -416,6 +425,7 @@ def get_domains_group(attribute_sets: Optional[Sequence[str]] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         domain_ocid=pulumi.get(__ret__, 'domain_ocid'),
         external_id=pulumi.get(__ret__, 'external_id'),
+        force_delete=pulumi.get(__ret__, 'force_delete'),
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
         idcs_created_bies=pulumi.get(__ret__, 'idcs_created_bies'),

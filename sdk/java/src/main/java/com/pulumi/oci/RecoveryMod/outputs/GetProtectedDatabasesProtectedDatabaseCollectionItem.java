@@ -108,6 +108,11 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
      */
     private String state;
     /**
+     * @return The OCID of the cloud service subscription to which the protected database is linked.
+     * 
+     */
+    private String subscriptionId;
+    /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
@@ -262,6 +267,13 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
         return this.state;
     }
     /**
+     * @return The OCID of the cloud service subscription to which the protected database is linked.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
@@ -319,6 +331,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
         private String protectionPolicyId;
         private List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets;
         private String state;
+        private String subscriptionId;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
@@ -346,6 +359,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
     	      this.protectionPolicyId = defaults.protectionPolicyId;
     	      this.recoveryServiceSubnets = defaults.recoveryServiceSubnets;
     	      this.state = defaults.state;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -519,6 +533,14 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "systemTags");
@@ -572,6 +594,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
             _resultValue.protectionPolicyId = protectionPolicyId;
             _resultValue.recoveryServiceSubnets = recoveryServiceSubnets;
             _resultValue.state = state;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

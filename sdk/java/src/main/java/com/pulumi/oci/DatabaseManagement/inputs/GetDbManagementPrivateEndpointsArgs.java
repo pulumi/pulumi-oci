@@ -57,6 +57,21 @@ public final class GetDbManagementPrivateEndpointsArgs extends com.pulumi.resour
     }
 
     /**
+     * The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     * 
+     */
+    @Import(name="isDnsResolutionEnabled")
+    private @Nullable Output<Boolean> isDnsResolutionEnabled;
+
+    /**
+     * @return The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     * 
+     */
+    public Optional<Output<Boolean>> isDnsResolutionEnabled() {
+        return Optional.ofNullable(this.isDnsResolutionEnabled);
+    }
+
+    /**
      * A filter to return only resources that match the entire name.
      * 
      */
@@ -107,6 +122,7 @@ public final class GetDbManagementPrivateEndpointsArgs extends com.pulumi.resour
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.isCluster = $.isCluster;
+        this.isDnsResolutionEnabled = $.isDnsResolutionEnabled;
         this.name = $.name;
         this.state = $.state;
         this.vcnId = $.vcnId;
@@ -183,6 +199,27 @@ public final class GetDbManagementPrivateEndpointsArgs extends com.pulumi.resour
          */
         public Builder isCluster(Boolean isCluster) {
             return isCluster(Output.of(isCluster));
+        }
+
+        /**
+         * @param isDnsResolutionEnabled The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDnsResolutionEnabled(@Nullable Output<Boolean> isDnsResolutionEnabled) {
+            $.isDnsResolutionEnabled = isDnsResolutionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isDnsResolutionEnabled The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDnsResolutionEnabled(Boolean isDnsResolutionEnabled) {
+            return isDnsResolutionEnabled(Output.of(isDnsResolutionEnabled));
         }
 
         /**

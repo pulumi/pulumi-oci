@@ -17,6 +17,21 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
     public static final AutonomousDatabaseStandbyDbArgs Empty = new AutonomousDatabaseStandbyDbArgs();
 
     /**
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
      * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
@@ -94,6 +109,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
     private AutonomousDatabaseStandbyDbArgs() {}
 
     private AutonomousDatabaseStandbyDbArgs(AutonomousDatabaseStandbyDbArgs $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.lagTimeInSeconds = $.lagTimeInSeconds;
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
@@ -117,6 +133,27 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
 
         public Builder(AutonomousDatabaseStandbyDbArgs defaults) {
             $ = new AutonomousDatabaseStandbyDbArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param availabilityDomain The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**

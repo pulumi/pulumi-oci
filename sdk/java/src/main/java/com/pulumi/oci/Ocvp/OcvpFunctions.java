@@ -2159,6 +2159,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .hostShapeName(testShape.name())
      *             .version(supportedVmwareSoftwareVersionVersion)
+     *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());
      * 
      *     }
@@ -2206,6 +2207,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .hostShapeName(testShape.name())
      *             .version(supportedVmwareSoftwareVersionVersion)
+     *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());
      * 
      *     }
@@ -2253,6 +2255,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .hostShapeName(testShape.name())
      *             .version(supportedVmwareSoftwareVersionVersion)
+     *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());
      * 
      *     }
@@ -2300,6 +2303,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .hostShapeName(testShape.name())
      *             .version(supportedVmwareSoftwareVersionVersion)
+     *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());
      * 
      *     }

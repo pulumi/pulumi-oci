@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int AllocatedStorageSizeInGbs;
         /// <summary>
-        /// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        /// Initial size of the data volume in GiBs that will be created and attached.
         /// </summary>
         public readonly int DataStorageSizeInGb;
         /// <summary>

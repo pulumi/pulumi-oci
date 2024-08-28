@@ -11,6 +11,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
+    private String availabilityDomain;
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
@@ -38,6 +39,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
     private String timeDisasterRecoveryRoleChanged;
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb() {}
+    public String availabilityDomain() {
+        return this.availabilityDomain;
+    }
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
@@ -83,6 +87,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String availabilityDomain;
         private Integer lagTimeInSeconds;
         private String lifecycleDetails;
         private String state;
@@ -91,6 +96,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
@@ -98,6 +104,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
         }
 
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
         @CustomType.Setter
         public Builder lagTimeInSeconds(Integer lagTimeInSeconds) {
             if (lagTimeInSeconds == null) {
@@ -140,6 +154,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb build() {
             final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb();
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.lagTimeInSeconds = lagTimeInSeconds;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;

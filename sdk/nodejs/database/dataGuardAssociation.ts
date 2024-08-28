@@ -45,6 +45,7 @@ import * as utilities from "../utilities";
  *     dbSystemDefinedTags: dataGuardAssociationDbSystemDefinedTags,
  *     dbSystemFreeformTags: dataGuardAssociationDbSystemFreeformTags,
  *     displayName: dataGuardAssociationDisplayName,
+ *     domain: dataGuardAssociationDomain,
  *     faultDomains: dataGuardAssociationFaultDomains,
  *     hostname: dataGuardAssociationHostname,
  *     isActiveDataGuardEnabled: dataGuardAssociationIsActiveDataGuardEnabled,
@@ -166,6 +167,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     */
+    public readonly domain!: pulumi.Output<string>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      *
@@ -324,6 +329,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["dbSystemFreeformTags"] = state ? state.dbSystemFreeformTags : undefined;
             resourceInputs["deleteStandbyDbHomeOnDelete"] = state ? state.deleteStandbyDbHomeOnDelete : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
             resourceInputs["faultDomains"] = state ? state.faultDomains : undefined;
             resourceInputs["hostname"] = state ? state.hostname : undefined;
             resourceInputs["isActiveDataGuardEnabled"] = state ? state.isActiveDataGuardEnabled : undefined;
@@ -384,6 +390,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["dbSystemFreeformTags"] = args ? args.dbSystemFreeformTags : undefined;
             resourceInputs["deleteStandbyDbHomeOnDelete"] = args ? args.deleteStandbyDbHomeOnDelete : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
             resourceInputs["faultDomains"] = args ? args.faultDomains : undefined;
             resourceInputs["hostname"] = args ? args.hostname : undefined;
             resourceInputs["isActiveDataGuardEnabled"] = args ? args.isActiveDataGuardEnabled : undefined;
@@ -493,6 +500,10 @@ export interface DataGuardAssociationState {
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     */
+    domain?: pulumi.Input<string>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      *
@@ -688,6 +699,10 @@ export interface DataGuardAssociationArgs {
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     */
+    domain?: pulumi.Input<string>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      *

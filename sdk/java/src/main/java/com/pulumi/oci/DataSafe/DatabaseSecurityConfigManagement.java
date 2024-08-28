@@ -17,89 +17,263 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
+/**
+ * This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
+ * 
+ * Updates the database security configuration.
+ * 
+ * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.DatabaseSecurityConfigManagement;
+ * import com.pulumi.oci.DataSafe.DatabaseSecurityConfigManagementArgs;
+ * import com.pulumi.oci.DataSafe.inputs.DatabaseSecurityConfigManagementSqlFirewallConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseSecurityConfigManagement = new DatabaseSecurityConfigManagement("testDatabaseSecurityConfigManagement", DatabaseSecurityConfigManagementArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .targetId(testTargetDatabase.id())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(databaseSecurityConfigManagementDescription)
+ *             .displayName(databaseSecurityConfigManagementDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .sqlFirewallConfig(DatabaseSecurityConfigManagementSqlFirewallConfigArgs.builder()
+ *                 .excludeJob(databaseSecurityConfigManagementSqlFirewallConfigExcludeJob)
+ *                 .status(databaseSecurityConfigManagementSqlFirewallConfigStatus)
+ *                 .violationLogAutoPurge(databaseSecurityConfigManagementSqlFirewallConfigViolationLogAutoPurge)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
+ * ## Import
+ * 
+ * Import is not supported for this resource.
+ * 
+ */
 @ResourceType(type="oci:DataSafe/databaseSecurityConfigManagement:DatabaseSecurityConfigManagement")
 public class DatabaseSecurityConfigManagement extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The OCID of the compartment containing the database security config.
+     * 
+     */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
+    /**
+     * @return (Updatable) The OCID of the compartment containing the database security config.
+     * 
+     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
+    /**
+     * (Updatable) The description of the security policy.
+     * 
+     */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
+    /**
+     * @return (Updatable) The description of the security policy.
+     * 
+     */
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+     * 
+     */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
+    /**
+     * @return (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
+     * 
+     */
     public Output<String> displayName() {
         return this.displayName;
     }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
 
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
+    /**
+     * Details about the current state of the database security config in Data Safe.
+     * 
+     */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
+    /**
+     * @return Details about the current state of the database security config in Data Safe.
+     * 
+     */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Export(name="refreshTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> refreshTrigger;
 
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Output<Optional<Boolean>> refreshTrigger() {
         return Codegen.optional(this.refreshTrigger);
     }
+    /**
+     * (Updatable) Details to update the SQL firewall config.
+     * 
+     */
     @Export(name="sqlFirewallConfig", refs={DatabaseSecurityConfigManagementSqlFirewallConfig.class}, tree="[0]")
     private Output<DatabaseSecurityConfigManagementSqlFirewallConfig> sqlFirewallConfig;
 
+    /**
+     * @return (Updatable) Details to update the SQL firewall config.
+     * 
+     */
     public Output<DatabaseSecurityConfigManagementSqlFirewallConfig> sqlFirewallConfig() {
         return this.sqlFirewallConfig;
     }
+    /**
+     * The current state of the database security config.
+     * 
+     */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
+    /**
+     * @return The current state of the database security config.
+     * 
+     */
     public Output<String> state() {
         return this.state;
     }
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> systemTags;
 
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }
+    /**
+     * Unique target identifier.
+     * 
+     */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> targetId;
 
+    /**
+     * @return Unique target identifier.
+     * 
+     */
     public Output<Optional<String>> targetId() {
         return Codegen.optional(this.targetId);
     }
+    /**
+     * The time that the database security config was created, in the format defined by RFC3339.
+     * 
+     */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
+    /**
+     * @return The time that the database security config was created, in the format defined by RFC3339.
+     * 
+     */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * The last date and time the database security config was refreshed, in the format defined by RFC3339.
+     * 
+     */
     @Export(name="timeLastRefreshed", refs={String.class}, tree="[0]")
     private Output<String> timeLastRefreshed;
 
+    /**
+     * @return The last date and time the database security config was refreshed, in the format defined by RFC3339.
+     * 
+     */
     public Output<String> timeLastRefreshed() {
         return this.timeLastRefreshed;
     }
+    /**
+     * The date and time the database security configuration was last updated, in the format defined by RFC3339.
+     * 
+     */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
+    /**
+     * @return The date and time the database security configuration was last updated, in the format defined by RFC3339.
+     * 
+     */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }

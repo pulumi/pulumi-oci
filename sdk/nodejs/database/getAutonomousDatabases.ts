@@ -7,44 +7,9 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## 
+ * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
  *
- * ***
- * ## subcategory: "Database"
- *
- * layout: "oci"
- * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
- * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
- * description: |-
- *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
- * ---
- *
- * # Data Source: oci.Database.getAutonomousDatabases
- * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
- *
- * Gets a list of Autonomous Databases based on the query parameters specified.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
- *     compartmentId: compartmentId,
- *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
- *     dbVersion: autonomousDatabaseDbVersion,
- *     dbWorkload: autonomousDatabaseDbWorkload,
- *     displayName: autonomousDatabaseDisplayName,
- *     infrastructureType: autonomousDatabaseInfrastructureType,
- *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
- *     isFreeTier: autonomousDatabaseIsFreeTier,
- *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
- *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
- *     resourcePoolLeaderId: testResourcePoolLeader.id,
- *     state: autonomousDatabaseState,
- * });
- * ```
+ * Gets the details of the specified Autonomous Database.
  */
 export function getAutonomousDatabases(args: GetAutonomousDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabasesResult> {
 
@@ -75,48 +40,49 @@ export interface GetAutonomousDatabasesArgs {
      */
     autonomousContainerDatabaseId?: string;
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: string;
     /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
+     * A valid Oracle Database version for Autonomous Database.
      */
     dbVersion?: string;
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * The Autonomous Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous Transaction Processing database
+     * * DW - indicates an Autonomous Data Warehouse database
+     * * AJD - indicates an Autonomous JSON Database
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      */
     dbWorkload?: string;
     /**
-     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     displayName?: string;
     filters?: inputs.Database.GetAutonomousDatabasesFilter[];
     /**
-     * A filter to return only resources that match the given Infrastructure Type.
+     * The infrastructure type this resource belongs to.
      */
     infrastructureType?: string;
     /**
-     * A filter to return only resources that have Data Guard enabled.
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isDataGuardEnabled?: boolean;
     /**
-     * Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      */
     isFreeTier?: boolean;
     /**
-     * Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+     * Indicates if the Autonomous Database is a refreshable clone.
      */
     isRefreshableClone?: boolean;
-    /**
-     * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
-     */
     isResourcePoolLeader?: boolean;
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     resourcePoolLeaderId?: string;
     /**
-     * A filter to return only resources that match the given lifecycle state exactly.
+     * The current state of the Autonomous Database.
      */
     state?: string;
 }
@@ -129,9 +95,6 @@ export interface GetAutonomousDatabasesResult {
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly autonomousContainerDatabaseId?: string;
-    /**
-     * The list of autonomous_databases.
-     */
     readonly autonomousDatabases: outputs.Database.GetAutonomousDatabasesAutonomousDatabase[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -185,44 +148,9 @@ export interface GetAutonomousDatabasesResult {
     readonly state?: string;
 }
 /**
- * ## 
+ * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
  *
- * ***
- * ## subcategory: "Database"
- *
- * layout: "oci"
- * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
- * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
- * description: |-
- *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
- * ---
- *
- * # Data Source: oci.Database.getAutonomousDatabases
- * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
- *
- * Gets a list of Autonomous Databases based on the query parameters specified.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
- *     compartmentId: compartmentId,
- *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
- *     dbVersion: autonomousDatabaseDbVersion,
- *     dbWorkload: autonomousDatabaseDbWorkload,
- *     displayName: autonomousDatabaseDisplayName,
- *     infrastructureType: autonomousDatabaseInfrastructureType,
- *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
- *     isFreeTier: autonomousDatabaseIsFreeTier,
- *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
- *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
- *     resourcePoolLeaderId: testResourcePoolLeader.id,
- *     state: autonomousDatabaseState,
- * });
- * ```
+ * Gets the details of the specified Autonomous Database.
  */
 export function getAutonomousDatabasesOutput(args: GetAutonomousDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabasesResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDatabases(a, opts))
@@ -237,48 +165,49 @@ export interface GetAutonomousDatabasesOutputArgs {
      */
     autonomousContainerDatabaseId?: pulumi.Input<string>;
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
+     * A valid Oracle Database version for Autonomous Database.
      */
     dbVersion?: pulumi.Input<string>;
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * The Autonomous Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous Transaction Processing database
+     * * DW - indicates an Autonomous Data Warehouse database
+     * * AJD - indicates an Autonomous JSON Database
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      */
     dbWorkload?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabasesFilterArgs>[]>;
     /**
-     * A filter to return only resources that match the given Infrastructure Type.
+     * The infrastructure type this resource belongs to.
      */
     infrastructureType?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that have Data Guard enabled.
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isDataGuardEnabled?: pulumi.Input<boolean>;
     /**
-     * Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      */
     isFreeTier?: pulumi.Input<boolean>;
     /**
-     * Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+     * Indicates if the Autonomous Database is a refreshable clone.
      */
     isRefreshableClone?: pulumi.Input<boolean>;
-    /**
-     * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
-     */
     isResourcePoolLeader?: pulumi.Input<boolean>;
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     resourcePoolLeaderId?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the given lifecycle state exactly.
+     * The current state of the Autonomous Database.
      */
     state?: pulumi.Input<string>;
 }

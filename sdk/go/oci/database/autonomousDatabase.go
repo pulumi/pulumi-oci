@@ -50,6 +50,8 @@ type AutonomousDatabase struct {
 	AutonomousDatabaseId pulumi.StringOutput `pulumi:"autonomousDatabaseId"`
 	// The maintenance schedule type of the Autonomous Database Serverless instances. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
 	AutonomousMaintenanceScheduleType pulumi.StringOutput `pulumi:"autonomousMaintenanceScheduleType"`
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 	AvailableUpgradeVersions pulumi.StringArrayOutput `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
@@ -444,6 +446,8 @@ type autonomousDatabaseState struct {
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
 	// The maintenance schedule type of the Autonomous Database Serverless instances. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
 	AutonomousMaintenanceScheduleType *string `pulumi:"autonomousMaintenanceScheduleType"`
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 	AvailableUpgradeVersions []string `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
@@ -796,6 +800,8 @@ type AutonomousDatabaseState struct {
 	AutonomousDatabaseId pulumi.StringPtrInput
 	// The maintenance schedule type of the Autonomous Database Serverless instances. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
 	AutonomousMaintenanceScheduleType pulumi.StringPtrInput
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+	AvailabilityDomain pulumi.StringPtrInput
 	// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 	AvailableUpgradeVersions pulumi.StringArrayInput
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
@@ -1748,6 +1754,11 @@ func (o AutonomousDatabaseOutput) AutonomousDatabaseId() pulumi.StringOutput {
 // The maintenance schedule type of the Autonomous Database Serverless instances. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
 func (o AutonomousDatabaseOutput) AutonomousMaintenanceScheduleType() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.AutonomousMaintenanceScheduleType }).(pulumi.StringOutput)
+}
+
+// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+func (o AutonomousDatabaseOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.

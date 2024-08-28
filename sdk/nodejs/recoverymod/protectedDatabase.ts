@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     isRedoLogsShipped: protectedDatabaseIsRedoLogsShipped,
+ *     subscriptionId: testSubscription.id,
  * });
  * ```
  *
@@ -154,6 +155,14 @@ export class ProtectedDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly subscriptionId!: pulumi.Output<string>;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
@@ -202,6 +211,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
             resourceInputs["protectionPolicyId"] = state ? state.protectionPolicyId : undefined;
             resourceInputs["recoveryServiceSubnets"] = state ? state.recoveryServiceSubnets : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -238,6 +248,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["protectionPolicyId"] = args ? args.protectionPolicyId : undefined;
             resourceInputs["recoveryServiceSubnets"] = args ? args.recoveryServiceSubnets : undefined;
+            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["health"] = undefined /*out*/;
             resourceInputs["healthDetails"] = undefined /*out*/;
             resourceInputs["isReadOnlyResource"] = undefined /*out*/;
@@ -340,6 +351,14 @@ export interface ProtectedDatabaseState {
      */
     state?: pulumi.Input<string>;
     /**
+     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    subscriptionId?: pulumi.Input<string>;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -411,4 +430,12 @@ export interface ProtectedDatabaseArgs {
      * (Updatable) List of recovery service subnet resources associated with the protected database.
      */
     recoveryServiceSubnets: pulumi.Input<pulumi.Input<inputs.RecoveryMod.ProtectedDatabaseRecoveryServiceSubnet>[]>;
+    /**
+     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    subscriptionId?: pulumi.Input<string>;
 }

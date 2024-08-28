@@ -64,9 +64,21 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
+        /// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        public readonly string ObservedThroughput;
+        /// <summary>
         /// The OCIDs of the private IP addresses associated with this mount target.
         /// </summary>
         public readonly ImmutableArray<string> PrivateIpIds;
+        /// <summary>
+        /// * New throughput for mount target at the end of billing cycle in Gbps.
+        /// </summary>
+        public readonly string RequestedThroughput;
+        /// <summary>
+        /// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        public readonly string ReservedStorageCapacity;
         /// <summary>
         /// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         /// </summary>
@@ -75,6 +87,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
         /// </summary>
         public readonly string SubnetId;
+        /// <summary>
+        /// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        public readonly string TimeBillingCycleEnd;
         /// <summary>
         /// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
@@ -110,11 +126,19 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             ImmutableArray<string> nsgIds,
 
+            string observedThroughput,
+
             ImmutableArray<string> privateIpIds,
+
+            string requestedThroughput,
+
+            string reservedStorageCapacity,
 
             string state,
 
             string subnetId,
+
+            string timeBillingCycleEnd,
 
             string timeCreated)
         {
@@ -132,9 +156,13 @@ namespace Pulumi.Oci.FileStorage.Outputs
             LdapIdmaps = ldapIdmaps;
             LifecycleDetails = lifecycleDetails;
             NsgIds = nsgIds;
+            ObservedThroughput = observedThroughput;
             PrivateIpIds = privateIpIds;
+            RequestedThroughput = requestedThroughput;
+            ReservedStorageCapacity = reservedStorageCapacity;
             State = state;
             SubnetId = subnetId;
+            TimeBillingCycleEnd = timeBillingCycleEnd;
             TimeCreated = timeCreated;
         }
     }

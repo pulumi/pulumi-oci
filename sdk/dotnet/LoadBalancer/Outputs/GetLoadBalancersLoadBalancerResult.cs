@@ -51,9 +51,17 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly bool IsPrivate;
         /// <summary>
+        /// Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+        /// </summary>
+        public readonly bool IsRequestIdEnabled;
+        /// <summary>
         /// An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
         /// </summary>
         public readonly ImmutableArray<string> NetworkSecurityGroupIds;
+        /// <summary>
+        /// If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+        /// </summary>
+        public readonly string RequestIdHeader;
         public readonly ImmutableArray<Outputs.GetLoadBalancersLoadBalancerReservedIpResult> ReservedIps;
         /// <summary>
         /// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
@@ -102,7 +110,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             bool isPrivate,
 
+            bool isRequestIdEnabled,
+
             ImmutableArray<string> networkSecurityGroupIds,
+
+            string requestIdHeader,
 
             ImmutableArray<Outputs.GetLoadBalancersLoadBalancerReservedIpResult> reservedIps,
 
@@ -128,7 +140,9 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             IpMode = ipMode;
             IsDeleteProtectionEnabled = isDeleteProtectionEnabled;
             IsPrivate = isPrivate;
+            IsRequestIdEnabled = isRequestIdEnabled;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
+            RequestIdHeader = requestIdHeader;
             ReservedIps = reservedIps;
             Shape = shape;
             ShapeDetails = shapeDetails;

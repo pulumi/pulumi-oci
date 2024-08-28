@@ -64,6 +64,7 @@ import javax.annotation.Nullable;
  *             .deletionSchedule("DELETE_AFTER_72_HOURS")
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isRedoLogsShipped(protectedDatabaseIsRedoLogsShipped)
+ *             .subscriptionId(testSubscription.id())
  *             .build());
  * 
  *     }
@@ -352,6 +353,26 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)

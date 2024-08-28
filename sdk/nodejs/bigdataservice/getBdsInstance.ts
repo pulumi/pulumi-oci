@@ -44,7 +44,6 @@ export interface GetBdsInstanceArgs {
  * A collection of values returned by getBdsInstance.
  */
 export interface GetBdsInstanceResult {
-    readonly addKafkaTrigger: number;
     readonly bdsInstanceId: string;
     /**
      * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -86,7 +85,6 @@ export interface GetBdsInstanceResult {
      */
     readonly displayName: string;
     readonly edgeNodes: outputs.BigDataService.GetBdsInstanceEdgeNode[];
-    readonly executeBootstrapScriptTrigger: number;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
      */
@@ -137,7 +135,6 @@ export interface GetBdsInstanceResult {
      */
     readonly numberOfNodesRequiringMaintenanceReboot: number;
     readonly osPatchVersion: string;
-    readonly removeKafkaTrigger: number;
     /**
      * The state of the cluster.
      */

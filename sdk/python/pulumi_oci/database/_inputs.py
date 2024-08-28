@@ -1891,18 +1891,22 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
 @pulumi.input_type
 class AutonomousDatabaseLocalStandbyDbArgs:
     def __init__(__self__, *,
+                 availability_domain: Optional[pulumi.Input[str]] = None,
                  lag_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
                  time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
@@ -1913,6 +1917,18 @@ class AutonomousDatabaseLocalStandbyDbArgs:
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         if time_disaster_recovery_role_changed is not None:
             pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -2370,18 +2386,22 @@ class AutonomousDatabaseScheduledOperationDayOfWeekArgs:
 @pulumi.input_type
 class AutonomousDatabaseStandbyDbArgs:
     def __init__(__self__, *,
+                 availability_domain: Optional[pulumi.Input[str]] = None,
                  lag_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
                  time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
@@ -2392,6 +2412,18 @@ class AutonomousDatabaseStandbyDbArgs:
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         if time_disaster_recovery_role_changed is not None:
             pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")

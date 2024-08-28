@@ -12,11 +12,14 @@ namespace Pulumi.Oci.Waf.Inputs
 
     public sealed class AppFirewallPolicyActionBodyGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("template")]
+        public Input<string>? Template { get; set; }
+
         /// <summary>
         /// (Updatable) Static response body text.
         /// </summary>
-        [Input("text", required: true)]
-        public Input<string> Text { get; set; } = null!;
+        [Input("text")]
+        public Input<string>? Text { get; set; }
 
         /// <summary>
         /// (Updatable) Type of HttpResponseBody.

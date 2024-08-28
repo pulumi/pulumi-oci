@@ -45,6 +45,7 @@ public final class GetDataGuardAssociationResult {
     private Map<String,String> dbSystemFreeformTags;
     private String deleteStandbyDbHomeOnDelete;
     private String displayName;
+    private String domain;
     private List<String> faultDomains;
     private String hostname;
     /**
@@ -190,6 +191,9 @@ public final class GetDataGuardAssociationResult {
     }
     public String displayName() {
         return this.displayName;
+    }
+    public String domain() {
+        return this.domain;
     }
     public List<String> faultDomains() {
         return this.faultDomains;
@@ -349,6 +353,7 @@ public final class GetDataGuardAssociationResult {
         private Map<String,String> dbSystemFreeformTags;
         private String deleteStandbyDbHomeOnDelete;
         private String displayName;
+        private String domain;
         private List<String> faultDomains;
         private String hostname;
         private String id;
@@ -396,6 +401,7 @@ public final class GetDataGuardAssociationResult {
     	      this.dbSystemFreeformTags = defaults.dbSystemFreeformTags;
     	      this.deleteStandbyDbHomeOnDelete = defaults.deleteStandbyDbHomeOnDelete;
     	      this.displayName = defaults.displayName;
+    	      this.domain = defaults.domain;
     	      this.faultDomains = defaults.faultDomains;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
@@ -572,6 +578,14 @@ public final class GetDataGuardAssociationResult {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domain(String domain) {
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
@@ -808,6 +822,7 @@ public final class GetDataGuardAssociationResult {
             _resultValue.dbSystemFreeformTags = dbSystemFreeformTags;
             _resultValue.deleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
             _resultValue.displayName = displayName;
+            _resultValue.domain = domain;
             _resultValue.faultDomains = faultDomains;
             _resultValue.hostname = hostname;
             _resultValue.id = id;

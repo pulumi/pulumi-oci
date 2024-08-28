@@ -1449,6 +1449,7 @@ class _AutonomousDatabaseState:
                  autonomous_database_backup_id: Optional[pulumi.Input[str]] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
+                 availability_domain: Optional[pulumi.Input[str]] = None,
                  available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]] = None,
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
@@ -1587,6 +1588,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless instances. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+        :param pulumi.Input[str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param pulumi.Input[int] backup_retention_period_in_days: (Updatable) Retention period, in days, for backups.
@@ -1810,6 +1812,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         if autonomous_maintenance_schedule_type is not None:
             pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if available_upgrade_versions is not None:
             pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         if backup_configs is not None:
@@ -2195,6 +2199,18 @@ class _AutonomousDatabaseState:
     @autonomous_maintenance_schedule_type.setter
     def autonomous_maintenance_schedule_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "autonomous_maintenance_schedule_type", value)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @property
     @pulumi.getter(name="availableUpgradeVersions")
@@ -4235,6 +4251,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["actual_used_data_storage_size_in_tbs"] = None
             __props__.__dict__["allocated_storage_size_in_tbs"] = None
             __props__.__dict__["apex_details"] = None
+            __props__.__dict__["availability_domain"] = None
             __props__.__dict__["available_upgrade_versions"] = None
             __props__.__dict__["backup_configs"] = None
             __props__.__dict__["cluster_placement_group_id"] = None
@@ -4312,6 +4329,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             autonomous_database_backup_id: Optional[pulumi.Input[str]] = None,
             autonomous_database_id: Optional[pulumi.Input[str]] = None,
             autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
+            availability_domain: Optional[pulumi.Input[str]] = None,
             available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupConfigArgs', 'AutonomousDatabaseBackupConfigArgsDict']]]]] = None,
             backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
@@ -4455,6 +4473,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless instances. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+        :param pulumi.Input[str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupConfigArgs', 'AutonomousDatabaseBackupConfigArgsDict']]]] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param pulumi.Input[int] backup_retention_period_in_days: (Updatable) Retention period, in days, for backups.
@@ -4671,6 +4690,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["autonomous_database_backup_id"] = autonomous_database_backup_id
         __props__.__dict__["autonomous_database_id"] = autonomous_database_id
         __props__.__dict__["autonomous_maintenance_schedule_type"] = autonomous_maintenance_schedule_type
+        __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["available_upgrade_versions"] = available_upgrade_versions
         __props__.__dict__["backup_configs"] = backup_configs
         __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
@@ -4885,6 +4905,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The maintenance schedule type of the Autonomous Database Serverless instances. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         """
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Output[str]:
+        """
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="availableUpgradeVersions")

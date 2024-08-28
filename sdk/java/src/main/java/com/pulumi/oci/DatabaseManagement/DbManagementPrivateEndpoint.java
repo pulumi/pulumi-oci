@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *             .description(dbManagementPrivateEndpointDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isCluster(dbManagementPrivateEndpointIsCluster)
+ *             .isDnsResolutionEnabled(dbManagementPrivateEndpointIsDnsResolutionEnabled)
  *             .nsgIds(dbManagementPrivateEndpointNsgIds)
  *             .build());
  * 
@@ -143,6 +144,20 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      */
     public Output<Boolean> isCluster() {
         return this.isCluster;
+    }
+    /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * 
+     */
+    @Export(name="isDnsResolutionEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDnsResolutionEnabled;
+
+    /**
+     * @return Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * 
+     */
+    public Output<Boolean> isDnsResolutionEnabled() {
+        return this.isDnsResolutionEnabled;
     }
     /**
      * (Updatable) The display name of the Database Management private endpoint.

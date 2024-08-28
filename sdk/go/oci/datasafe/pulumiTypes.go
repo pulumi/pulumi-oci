@@ -1670,9 +1670,13 @@ func (o DataSafeConfigurationGlobalSettingArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type DatabaseSecurityConfigManagementSqlFirewallConfig struct {
-	ExcludeJob            *string `pulumi:"excludeJob"`
-	Status                *string `pulumi:"status"`
-	TimeStatusUpdated     *string `pulumi:"timeStatusUpdated"`
+	// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob *string `pulumi:"excludeJob"`
+	// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+	Status *string `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated *string `pulumi:"timeStatusUpdated"`
+	// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
 	ViolationLogAutoPurge *string `pulumi:"violationLogAutoPurge"`
 }
 
@@ -1688,9 +1692,13 @@ type DatabaseSecurityConfigManagementSqlFirewallConfigInput interface {
 }
 
 type DatabaseSecurityConfigManagementSqlFirewallConfigArgs struct {
-	ExcludeJob            pulumi.StringPtrInput `pulumi:"excludeJob"`
-	Status                pulumi.StringPtrInput `pulumi:"status"`
-	TimeStatusUpdated     pulumi.StringPtrInput `pulumi:"timeStatusUpdated"`
+	// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob pulumi.StringPtrInput `pulumi:"excludeJob"`
+	// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringPtrInput `pulumi:"timeStatusUpdated"`
+	// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
 	ViolationLogAutoPurge pulumi.StringPtrInput `pulumi:"violationLogAutoPurge"`
 }
 
@@ -1771,18 +1779,22 @@ func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ToDatabaseSecur
 	}).(DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput)
 }
 
+// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
 func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ExcludeJob() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseSecurityConfigManagementSqlFirewallConfig) *string { return v.ExcludeJob }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
 func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseSecurityConfigManagementSqlFirewallConfig) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
+// The most recent time when the firewall status is updated, in the format defined by RFC3339.
 func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseSecurityConfigManagementSqlFirewallConfig) *string { return v.TimeStatusUpdated }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
 func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ViolationLogAutoPurge() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseSecurityConfigManagementSqlFirewallConfig) *string { return v.ViolationLogAutoPurge }).(pulumi.StringPtrOutput)
 }
@@ -1811,6 +1823,7 @@ func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) Elem() Datab
 	}).(DatabaseSecurityConfigManagementSqlFirewallConfigOutput)
 }
 
+// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
 func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ExcludeJob() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) *string {
 		if v == nil {
@@ -1820,6 +1833,7 @@ func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ExcludeJob()
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
 func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) *string {
 		if v == nil {
@@ -1829,6 +1843,7 @@ func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) Status() pul
 	}).(pulumi.StringPtrOutput)
 }
 
+// The most recent time when the firewall status is updated, in the format defined by RFC3339.
 func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) *string {
 		if v == nil {
@@ -1838,6 +1853,7 @@ func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) TimeStatusUp
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
 func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ViolationLogAutoPurge() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) *string {
 		if v == nil {

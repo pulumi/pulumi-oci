@@ -16,6 +16,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails {
      * * PE: Private endpoint
      * * MACS: Management agent
      * * EXTERNAL: External database connector
+     * * DIRECT: Direct connection
      * 
      */
     private @Nullable String connectorType;
@@ -41,6 +42,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails {
      * * PE: Private endpoint
      * * MACS: Management agent
      * * EXTERNAL: External database connector
+     * * DIRECT: Direct connection
      * 
      */
     public Optional<String> connectorType() {

@@ -135,6 +135,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string AutonomousMaintenanceScheduleType;
         /// <summary>
+        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        /// </summary>
+        public readonly string AvailabilityDomain;
+        /// <summary>
         /// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         /// </summary>
         public readonly ImmutableArray<string> AvailableUpgradeVersions;
@@ -627,6 +631,8 @@ namespace Pulumi.Oci.Database
 
             string autonomousMaintenanceScheduleType,
 
+            string availabilityDomain,
+
             ImmutableArray<string> availableUpgradeVersions,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseBackupConfigResult> backupConfigs,
@@ -890,6 +896,7 @@ namespace Pulumi.Oci.Database
             AutonomousDatabaseBackupId = autonomousDatabaseBackupId;
             AutonomousDatabaseId = autonomousDatabaseId;
             AutonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            AvailabilityDomain = availabilityDomain;
             AvailableUpgradeVersions = availableUpgradeVersions;
             BackupConfigs = backupConfigs;
             BackupRetentionPeriodInDays = backupRetentionPeriodInDays;

@@ -78,6 +78,7 @@ import javax.annotation.Nullable;
  *             .dbSystemDefinedTags(dataGuardAssociationDbSystemDefinedTags)
  *             .dbSystemFreeformTags(dataGuardAssociationDbSystemFreeformTags)
  *             .displayName(dataGuardAssociationDisplayName)
+ *             .domain(dataGuardAssociationDomain)
  *             .faultDomains(dataGuardAssociationFaultDomains)
  *             .hostname(dataGuardAssociationHostname)
  *             .isActiveDataGuardEnabled(dataGuardAssociationIsActiveDataGuardEnabled)
@@ -346,6 +347,20 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     * 
+     */
+    @Export(name="domain", refs={String.class}, tree="[0]")
+    private Output<String> domain;
+
+    /**
+     * @return A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     * 
+     */
+    public Output<String> domain() {
+        return this.domain;
     }
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.

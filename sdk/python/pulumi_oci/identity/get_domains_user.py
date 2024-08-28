@@ -22,7 +22,7 @@ class GetDomainsUserResult:
     """
     A collection of values returned by getDomainsUser.
     """
-    def __init__(__self__, active=None, addresses=None, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, delete_in_progress=None, description=None, display_name=None, domain_ocid=None, emails=None, entitlements=None, external_id=None, groups=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, ims=None, locale=None, metas=None, names=None, nick_name=None, ocid=None, password=None, phone_numbers=None, photos=None, preferred_language=None, profile_url=None, resource_type_schema_version=None, roles=None, schemas=None, tags=None, tenancy_ocid=None, timezone=None, title=None, urnietfparamsscimschemasextensionenterprise20users=None, urnietfparamsscimschemasoracleidcsextension_oci_tags=None, urnietfparamsscimschemasoracleidcsextensionadaptive_users=None, urnietfparamsscimschemasoracleidcsextensioncapabilities_users=None, urnietfparamsscimschemasoracleidcsextensiondb_credentials_users=None, urnietfparamsscimschemasoracleidcsextensiondb_user_users=None, urnietfparamsscimschemasoracleidcsextensionkerberos_user_users=None, urnietfparamsscimschemasoracleidcsextensionmfa_users=None, urnietfparamsscimschemasoracleidcsextensionpassword_state_users=None, urnietfparamsscimschemasoracleidcsextensionpasswordless_users=None, urnietfparamsscimschemasoracleidcsextensionposix_users=None, urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, urnietfparamsscimschemasoracleidcsextensionself_registration_users=None, urnietfparamsscimschemasoracleidcsextensionsff_users=None, urnietfparamsscimschemasoracleidcsextensionsocial_account_users=None, urnietfparamsscimschemasoracleidcsextensionterms_of_use_users=None, urnietfparamsscimschemasoracleidcsextensionuser_credentials_users=None, urnietfparamsscimschemasoracleidcsextensionuser_state_users=None, urnietfparamsscimschemasoracleidcsextensionuser_users=None, user_id=None, user_name=None, user_type=None, x509certificates=None):
+    def __init__(__self__, active=None, addresses=None, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, delete_in_progress=None, description=None, display_name=None, domain_ocid=None, emails=None, entitlements=None, external_id=None, force_delete=None, groups=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, ims=None, locale=None, metas=None, names=None, nick_name=None, ocid=None, password=None, phone_numbers=None, photos=None, preferred_language=None, profile_url=None, resource_type_schema_version=None, roles=None, schemas=None, tags=None, tenancy_ocid=None, timezone=None, title=None, urnietfparamsscimschemasextensionenterprise20users=None, urnietfparamsscimschemasoracleidcsextension_oci_tags=None, urnietfparamsscimschemasoracleidcsextensionadaptive_users=None, urnietfparamsscimschemasoracleidcsextensioncapabilities_users=None, urnietfparamsscimschemasoracleidcsextensiondb_credentials_users=None, urnietfparamsscimschemasoracleidcsextensiondb_user_users=None, urnietfparamsscimschemasoracleidcsextensionkerberos_user_users=None, urnietfparamsscimschemasoracleidcsextensionmfa_users=None, urnietfparamsscimschemasoracleidcsextensionpassword_state_users=None, urnietfparamsscimschemasoracleidcsextensionpasswordless_users=None, urnietfparamsscimschemasoracleidcsextensionposix_users=None, urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, urnietfparamsscimschemasoracleidcsextensionself_registration_users=None, urnietfparamsscimschemasoracleidcsextensionsff_users=None, urnietfparamsscimschemasoracleidcsextensionsocial_account_users=None, urnietfparamsscimschemasoracleidcsextensionterms_of_use_users=None, urnietfparamsscimschemasoracleidcsextensionuser_credentials_users=None, urnietfparamsscimschemasoracleidcsextensionuser_state_users=None, urnietfparamsscimschemasoracleidcsextensionuser_users=None, user_id=None, user_name=None, user_type=None, x509certificates=None):
         if active and not isinstance(active, bool):
             raise TypeError("Expected argument 'active' to be a bool")
         pulumi.set(__self__, "active", active)
@@ -62,6 +62,9 @@ class GetDomainsUserResult:
         if external_id and not isinstance(external_id, str):
             raise TypeError("Expected argument 'external_id' to be a str")
         pulumi.set(__self__, "external_id", external_id)
+        if force_delete and not isinstance(force_delete, bool):
+            raise TypeError("Expected argument 'force_delete' to be a bool")
+        pulumi.set(__self__, "force_delete", force_delete)
         if groups and not isinstance(groups, list):
             raise TypeError("Expected argument 'groups' to be a list")
         pulumi.set(__self__, "groups", groups)
@@ -304,6 +307,11 @@ class GetDomainsUserResult:
         An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
         """
         return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> bool:
+        return pulumi.get(self, "force_delete")
 
     @property
     @pulumi.getter
@@ -711,6 +719,7 @@ class AwaitableGetDomainsUserResult(GetDomainsUserResult):
             emails=self.emails,
             entitlements=self.entitlements,
             external_id=self.external_id,
+            force_delete=self.force_delete,
             groups=self.groups,
             id=self.id,
             idcs_created_bies=self.idcs_created_bies,
@@ -820,6 +829,7 @@ def get_domains_user(attribute_sets: Optional[Sequence[str]] = None,
         emails=pulumi.get(__ret__, 'emails'),
         entitlements=pulumi.get(__ret__, 'entitlements'),
         external_id=pulumi.get(__ret__, 'external_id'),
+        force_delete=pulumi.get(__ret__, 'force_delete'),
         groups=pulumi.get(__ret__, 'groups'),
         id=pulumi.get(__ret__, 'id'),
         idcs_created_bies=pulumi.get(__ret__, 'idcs_created_bies'),

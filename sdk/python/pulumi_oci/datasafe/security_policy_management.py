@@ -22,6 +22,12 @@ class SecurityPolicyManagementArgs:
                  target_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SecurityPolicyManagement resource.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the security policy.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] description: (Updatable) The description of the security policy.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] target_id: Unique target identifier.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -39,6 +45,9 @@ class SecurityPolicyManagementArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the compartment containing the security policy.
+        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -48,6 +57,9 @@ class SecurityPolicyManagementArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -57,6 +69,9 @@ class SecurityPolicyManagementArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The description of the security policy.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -66,6 +81,9 @@ class SecurityPolicyManagementArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
+        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -75,6 +93,9 @@ class SecurityPolicyManagementArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -84,6 +105,9 @@ class SecurityPolicyManagementArgs:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique target identifier.
+        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -107,6 +131,17 @@ class _SecurityPolicyManagementState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SecurityPolicyManagement resources.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the security policy.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] description: (Updatable) The description of the security policy.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the security policy in Data Safe.
+        :param pulumi.Input[str] state: The current state of the security policy.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[str] target_id: Unique target identifier.
+        :param pulumi.Input[str] time_created: The time that the security policy was created, in the format defined by RFC3339.
+        :param pulumi.Input[str] time_updated: The last date and time the security policy was updated, in the format defined by RFC3339.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -134,6 +169,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the compartment containing the security policy.
+        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -143,6 +181,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -152,6 +193,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The description of the security policy.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -161,6 +205,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
+        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -170,6 +217,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -179,6 +229,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Details about the current state of the security policy in Data Safe.
+        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -188,6 +241,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the security policy.
+        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -197,6 +253,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -206,6 +265,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique target identifier.
+        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -215,6 +277,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time that the security policy was created, in the format defined by RFC3339.
+        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -224,6 +289,9 @@ class _SecurityPolicyManagementState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The last date and time the security policy was updated, in the format defined by RFC3339.
+        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -244,9 +312,41 @@ class SecurityPolicyManagement(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a SecurityPolicyManagement resource with the given unique name, props, and options.
+        This resource provides the Security Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
+
+        Updates the security policy.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_security_policy_management = oci.data_safe.SecurityPolicyManagement("test_security_policy_management",
+            compartment_id=compartment_id,
+            target_id=test_target_database["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=security_policy_management_description,
+            display_name=security_policy_management_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the security policy.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] description: (Updatable) The description of the security policy.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] target_id: Unique target identifier.
         """
         ...
     @overload
@@ -255,7 +355,33 @@ class SecurityPolicyManagement(pulumi.CustomResource):
                  args: Optional[SecurityPolicyManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SecurityPolicyManagement resource with the given unique name, props, and options.
+        This resource provides the Security Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
+
+        Updates the security policy.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_security_policy_management = oci.data_safe.SecurityPolicyManagement("test_security_policy_management",
+            compartment_id=compartment_id,
+            target_id=test_target_database["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=security_policy_management_description,
+            display_name=security_policy_management_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param SecurityPolicyManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -325,6 +451,17 @@ class SecurityPolicyManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the security policy.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] description: (Updatable) The description of the security policy.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the security policy in Data Safe.
+        :param pulumi.Input[str] state: The current state of the security policy.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[str] target_id: Unique target identifier.
+        :param pulumi.Input[str] time_created: The time that the security policy was created, in the format defined by RFC3339.
+        :param pulumi.Input[str] time_updated: The last date and time the security policy was updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -346,55 +483,88 @@ class SecurityPolicyManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The OCID of the compartment containing the security policy.
+        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The description of the security policy.
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
+        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        Details about the current state of the security policy in Data Safe.
+        """
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
+        """
+        The current state of the security policy.
+        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[str]:
+        """
+        Unique target identifier.
+        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
+        """
+        The time that the security policy was created, in the format defined by RFC3339.
+        """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
+        """
+        The last date and time the security policy was updated, in the format defined by RFC3339.
+        """
         return pulumi.get(self, "time_updated")
 

@@ -10,6 +10,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetWebAppFirewallPolicyActionBody {
+    private String template;
     /**
      * @return Static response body text.
      * 
@@ -22,6 +23,9 @@ public final class GetWebAppFirewallPolicyActionBody {
     private String type;
 
     private GetWebAppFirewallPolicyActionBody() {}
+    public String template() {
+        return this.template;
+    }
     /**
      * @return Static response body text.
      * 
@@ -46,15 +50,25 @@ public final class GetWebAppFirewallPolicyActionBody {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String template;
         private String text;
         private String type;
         public Builder() {}
         public Builder(GetWebAppFirewallPolicyActionBody defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.template = defaults.template;
     	      this.text = defaults.text;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder template(String template) {
+            if (template == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyActionBody", "template");
+            }
+            this.template = template;
+            return this;
+        }
         @CustomType.Setter
         public Builder text(String text) {
             if (text == null) {
@@ -73,6 +87,7 @@ public final class GetWebAppFirewallPolicyActionBody {
         }
         public GetWebAppFirewallPolicyActionBody build() {
             final var _resultValue = new GetWebAppFirewallPolicyActionBody();
+            _resultValue.template = template;
             _resultValue.text = text;
             _resultValue.type = type;
             return _resultValue;

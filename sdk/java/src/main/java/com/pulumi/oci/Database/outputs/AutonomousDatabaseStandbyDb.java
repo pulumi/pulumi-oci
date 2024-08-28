@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseStandbyDb {
     /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    private @Nullable String availabilityDomain;
+    /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
@@ -39,6 +44,13 @@ public final class AutonomousDatabaseStandbyDb {
     private @Nullable String timeDisasterRecoveryRoleChanged;
 
     private AutonomousDatabaseStandbyDb() {}
+    /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
@@ -84,6 +96,7 @@ public final class AutonomousDatabaseStandbyDb {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String availabilityDomain;
         private @Nullable Integer lagTimeInSeconds;
         private @Nullable String lifecycleDetails;
         private @Nullable String state;
@@ -92,6 +105,7 @@ public final class AutonomousDatabaseStandbyDb {
         public Builder() {}
         public Builder(AutonomousDatabaseStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
@@ -99,6 +113,12 @@ public final class AutonomousDatabaseStandbyDb {
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
         }
 
+        @CustomType.Setter
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
         @CustomType.Setter
         public Builder lagTimeInSeconds(@Nullable Integer lagTimeInSeconds) {
 
@@ -131,6 +151,7 @@ public final class AutonomousDatabaseStandbyDb {
         }
         public AutonomousDatabaseStandbyDb build() {
             final var _resultValue = new AutonomousDatabaseStandbyDb();
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.lagTimeInSeconds = lagTimeInSeconds;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;

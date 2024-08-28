@@ -42,9 +42,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AutonomousContainerDatabaseId;
         /// <summary>
-        /// The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        /// The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle* `availability_domain` - The availability domain where the Autonomous Database Serverless instance is located.
         /// </summary>
         public readonly string AutonomousMaintenanceScheduleType;
+        public readonly string AvailabilityDomain;
         /// <summary>
         /// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         /// </summary>
@@ -267,7 +268,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LocalDisasterRecoveryType;
         /// <summary>
-        /// Autonomous Data Guard standby database details.
+        /// Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult> LocalStandbyDbs;
         /// <summary>
@@ -372,7 +373,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SourceId;
         /// <summary>
-        /// **Deprecated** Autonomous Data Guard standby database details.
+        /// **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult> StandbyDbs;
         /// <summary>
@@ -498,6 +499,8 @@ namespace Pulumi.Oci.Database.Outputs
             string autonomousContainerDatabaseId,
 
             string autonomousMaintenanceScheduleType,
+
+            string availabilityDomain,
 
             ImmutableArray<string> availableUpgradeVersions,
 
@@ -725,6 +728,7 @@ namespace Pulumi.Oci.Database.Outputs
             AutoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
             AutonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            AvailabilityDomain = availabilityDomain;
             AvailableUpgradeVersions = availableUpgradeVersions;
             BackupConfigs = backupConfigs;
             BackupRetentionPeriodInDays = backupRetentionPeriodInDays;

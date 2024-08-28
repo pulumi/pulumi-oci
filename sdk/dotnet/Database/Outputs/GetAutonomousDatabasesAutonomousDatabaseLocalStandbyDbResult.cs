@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult
     {
         /// <summary>
+        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        /// </summary>
+        public readonly string AvailabilityDomain;
+        /// <summary>
         /// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         /// </summary>
         public readonly int LagTimeInSeconds;
@@ -22,7 +26,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// A filter to return only resources that match the given lifecycle state exactly.
+        /// The current state of the Autonomous Database.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -36,6 +40,8 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(
+            string availabilityDomain,
+
             int lagTimeInSeconds,
 
             string lifecycleDetails,
@@ -46,6 +52,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timeDisasterRecoveryRoleChanged)
         {
+            AvailabilityDomain = availabilityDomain;
             LagTimeInSeconds = lagTimeInSeconds;
             LifecycleDetails = lifecycleDetails;
             State = state;

@@ -85,8 +85,9 @@ type LookupDomainsGroupResult struct {
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	DomainOcid string `pulumi:"domainOcid"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-	ExternalId string `pulumi:"externalId"`
-	GroupId    string `pulumi:"groupId"`
+	ExternalId  string `pulumi:"externalId"`
+	ForceDelete bool   `pulumi:"forceDelete"`
+	GroupId     string `pulumi:"groupId"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
 	Id string `pulumi:"id"`
 	// The User or App who created the Resource
@@ -210,6 +211,10 @@ func (o LookupDomainsGroupResultOutput) DomainOcid() pulumi.StringOutput {
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 func (o LookupDomainsGroupResultOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.ExternalId }).(pulumi.StringOutput)
+}
+
+func (o LookupDomainsGroupResultOutput) ForceDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) bool { return v.ForceDelete }).(pulumi.BoolOutput)
 }
 
 func (o LookupDomainsGroupResultOutput) GroupId() pulumi.StringOutput {

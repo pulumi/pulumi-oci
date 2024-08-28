@@ -68,12 +68,20 @@ public final class DatabaseDbmFeaturesManagementState extends com.pulumi.resourc
         return Optional.ofNullable(this.featureDetails);
     }
 
+    @Import(name="modifyDatabaseDbmFeature")
+    private @Nullable Output<Boolean> modifyDatabaseDbmFeature;
+
+    public Optional<Output<Boolean>> modifyDatabaseDbmFeature() {
+        return Optional.ofNullable(this.modifyDatabaseDbmFeature);
+    }
+
     private DatabaseDbmFeaturesManagementState() {}
 
     private DatabaseDbmFeaturesManagementState(DatabaseDbmFeaturesManagementState $) {
         this.databaseId = $.databaseId;
         this.enableDatabaseDbmFeature = $.enableDatabaseDbmFeature;
         this.featureDetails = $.featureDetails;
+        this.modifyDatabaseDbmFeature = $.modifyDatabaseDbmFeature;
     }
 
     public static Builder builder() {
@@ -161,6 +169,15 @@ public final class DatabaseDbmFeaturesManagementState extends com.pulumi.resourc
          */
         public Builder featureDetails(DatabaseDbmFeaturesManagementFeatureDetailsArgs featureDetails) {
             return featureDetails(Output.of(featureDetails));
+        }
+
+        public Builder modifyDatabaseDbmFeature(@Nullable Output<Boolean> modifyDatabaseDbmFeature) {
+            $.modifyDatabaseDbmFeature = modifyDatabaseDbmFeature;
+            return this;
+        }
+
+        public Builder modifyDatabaseDbmFeature(Boolean modifyDatabaseDbmFeature) {
+            return modifyDatabaseDbmFeature(Output.of(modifyDatabaseDbmFeature));
         }
 
         public DatabaseDbmFeaturesManagementState build() {

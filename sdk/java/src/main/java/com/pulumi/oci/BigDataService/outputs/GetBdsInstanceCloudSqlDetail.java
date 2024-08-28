@@ -50,25 +50,10 @@ public final class GetBdsInstanceCloudSqlDetail {
      */
     private Integer ocpus;
     /**
-     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-     * 
-     */
-    private String odhVersion;
-    /**
-     * @return BDS-assigned Operating System version for the node.
-     * 
-     */
-    private String osVersion;
-    /**
      * @return Shape of the node.
      * 
      */
     private String shape;
-    /**
-     * @return The fingerprint of the SSH key used for node access.
-     * 
-     */
-    private String sshFingerprint;
 
     private GetBdsInstanceCloudSqlDetail() {}
     /**
@@ -121,32 +106,11 @@ public final class GetBdsInstanceCloudSqlDetail {
         return this.ocpus;
     }
     /**
-     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-     * 
-     */
-    public String odhVersion() {
-        return this.odhVersion;
-    }
-    /**
-     * @return BDS-assigned Operating System version for the node.
-     * 
-     */
-    public String osVersion() {
-        return this.osVersion;
-    }
-    /**
      * @return Shape of the node.
      * 
      */
     public String shape() {
         return this.shape;
-    }
-    /**
-     * @return The fingerprint of the SSH key used for node access.
-     * 
-     */
-    public String sshFingerprint() {
-        return this.sshFingerprint;
     }
 
     public static Builder builder() {
@@ -165,10 +129,7 @@ public final class GetBdsInstanceCloudSqlDetail {
         private Integer memoryInGbs;
         private Integer nvmes;
         private Integer ocpus;
-        private String odhVersion;
-        private String osVersion;
         private String shape;
-        private String sshFingerprint;
         public Builder() {}
         public Builder(GetBdsInstanceCloudSqlDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -179,10 +140,7 @@ public final class GetBdsInstanceCloudSqlDetail {
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
-    	      this.odhVersion = defaults.odhVersion;
-    	      this.osVersion = defaults.osVersion;
     	      this.shape = defaults.shape;
-    	      this.sshFingerprint = defaults.sshFingerprint;
         }
 
         @CustomType.Setter
@@ -245,35 +203,11 @@ public final class GetBdsInstanceCloudSqlDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder odhVersion(String odhVersion) {
-            if (odhVersion == null) {
-              throw new MissingRequiredPropertyException("GetBdsInstanceCloudSqlDetail", "odhVersion");
-            }
-            this.odhVersion = odhVersion;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder osVersion(String osVersion) {
-            if (osVersion == null) {
-              throw new MissingRequiredPropertyException("GetBdsInstanceCloudSqlDetail", "osVersion");
-            }
-            this.osVersion = osVersion;
-            return this;
-        }
-        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceCloudSqlDetail", "shape");
             }
             this.shape = shape;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder sshFingerprint(String sshFingerprint) {
-            if (sshFingerprint == null) {
-              throw new MissingRequiredPropertyException("GetBdsInstanceCloudSqlDetail", "sshFingerprint");
-            }
-            this.sshFingerprint = sshFingerprint;
             return this;
         }
         public GetBdsInstanceCloudSqlDetail build() {
@@ -285,10 +219,7 @@ public final class GetBdsInstanceCloudSqlDetail {
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
-            _resultValue.odhVersion = odhVersion;
-            _resultValue.osVersion = osVersion;
             _resultValue.shape = shape;
-            _resultValue.sshFingerprint = sshFingerprint;
             return _resultValue;
         }
     }

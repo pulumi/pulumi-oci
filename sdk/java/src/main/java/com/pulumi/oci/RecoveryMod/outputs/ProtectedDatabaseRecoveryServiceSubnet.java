@@ -15,9 +15,6 @@ public final class ProtectedDatabaseRecoveryServiceSubnet {
     /**
      * @return (Updatable) The recovery service subnet OCID.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String recoveryServiceSubnetId;
     /**
@@ -29,9 +26,6 @@ public final class ProtectedDatabaseRecoveryServiceSubnet {
     private ProtectedDatabaseRecoveryServiceSubnet() {}
     /**
      * @return (Updatable) The recovery service subnet OCID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String recoveryServiceSubnetId() {

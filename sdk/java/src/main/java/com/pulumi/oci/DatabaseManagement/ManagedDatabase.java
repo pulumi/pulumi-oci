@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DatabaseManagement.ManagedDatabaseArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabaseState;
+import com.pulumi.oci.DatabaseManagement.outputs.ManagedDatabaseDbmgmtFeatureConfig;
 import com.pulumi.oci.DatabaseManagement.outputs.ManagedDatabaseManagedDatabaseGroup;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -60,6 +61,20 @@ public class ManagedDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The operating system of database.
+     * 
+     */
+    @Export(name="databasePlatformName", refs={String.class}, tree="[0]")
+    private Output<String> databasePlatformName;
+
+    /**
+     * @return The operating system of database.
+     * 
+     */
+    public Output<String> databasePlatformName() {
+        return this.databasePlatformName;
     }
     /**
      * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
@@ -130,6 +145,20 @@ public class ManagedDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> dbSystemId() {
         return this.dbSystemId;
+    }
+    /**
+     * The list of feature configurations
+     * 
+     */
+    @Export(name="dbmgmtFeatureConfigs", refs={List.class,ManagedDatabaseDbmgmtFeatureConfig.class}, tree="[0,1]")
+    private Output<List<ManagedDatabaseDbmgmtFeatureConfig>> dbmgmtFeatureConfigs;
+
+    /**
+     * @return The list of feature configurations
+     * 
+     */
+    public Output<List<ManagedDatabaseDbmgmtFeatureConfig>> dbmgmtFeatureConfigs() {
+        return this.dbmgmtFeatureConfigs;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`

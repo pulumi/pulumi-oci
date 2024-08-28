@@ -19,14 +19,14 @@ public final class AnnouncementSubscriptionFilterGroupsArgs extends com.pulumi.r
     public static final AnnouncementSubscriptionFilterGroupsArgs Empty = new AnnouncementSubscriptionFilterGroupsArgs();
 
     /**
-     * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+     * A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * 
      */
     @Import(name="filters", required=true)
     private Output<List<AnnouncementSubscriptionFilterGroupsFilterArgs>> filters;
 
     /**
-     * @return A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+     * @return A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * 
      */
     public Output<List<AnnouncementSubscriptionFilterGroupsFilterArgs>> filters() {
@@ -74,7 +74,7 @@ public final class AnnouncementSubscriptionFilterGroupsArgs extends com.pulumi.r
         }
 
         /**
-         * @param filters A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+         * @param filters A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class AnnouncementSubscriptionFilterGroupsArgs extends com.pulumi.r
         }
 
         /**
-         * @param filters A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+         * @param filters A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          * 
          * @return builder
          * 
@@ -95,7 +95,7 @@ public final class AnnouncementSubscriptionFilterGroupsArgs extends com.pulumi.r
         }
 
         /**
-         * @param filters A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+         * @param filters A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          * 
          * @return builder
          * 

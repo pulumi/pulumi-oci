@@ -75,7 +75,11 @@ export interface GetMysqlDbSystemResult {
      */
     readonly currentPlacements: outputs.Mysql.GetMysqlDbSystemCurrentPlacement[];
     /**
-     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+     * The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+     */
+    readonly customerContacts: outputs.Mysql.GetMysqlDbSystemCustomerContact[];
+    /**
+     * Initial size of the data volume in GiBs that will be created and attached.
      */
     readonly dataStorageSizeInGb: number;
     /**

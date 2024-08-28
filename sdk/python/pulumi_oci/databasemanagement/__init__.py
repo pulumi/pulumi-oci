@@ -5,6 +5,7 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .autonomous_database_autonomous_database_dbm_features_management import *
 from .database_dbm_features_management import *
 from .db_management_private_endpoint import *
 from .external_asm import *

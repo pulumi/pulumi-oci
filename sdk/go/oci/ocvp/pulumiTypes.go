@@ -3715,7 +3715,7 @@ type GetExsiHostsEsxiHostCollection struct {
 	BillingDonorHostId string `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId string `pulumi:"clusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -3803,7 +3803,7 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	BillingDonorHostId pulumi.StringInput `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -3939,7 +3939,7 @@ func (o GetExsiHostsEsxiHostCollectionOutput) CapacityReservationId() pulumi.Str
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 func (o GetExsiHostsEsxiHostCollectionOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ClusterId }).(pulumi.StringOutput)
 }

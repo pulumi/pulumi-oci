@@ -22,7 +22,7 @@ class GetVaultResult:
     """
     A collection of values returned by getVault.
     """
-    def __init__(__self__, compartment_id=None, crypto_endpoint=None, defined_tags=None, display_name=None, external_key_manager_metadata_summaries=None, external_key_manager_metadatas=None, freeform_tags=None, id=None, is_primary=None, management_endpoint=None, replica_details=None, restore_from_files=None, restore_from_object_stores=None, restore_trigger=None, restored_from_vault_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None, vault_type=None):
+    def __init__(__self__, compartment_id=None, crypto_endpoint=None, defined_tags=None, display_name=None, external_key_manager_metadata_summaries=None, external_key_manager_metadatas=None, freeform_tags=None, id=None, is_primary=None, is_vault_replicable=None, management_endpoint=None, replica_details=None, restore_from_files=None, restore_from_object_stores=None, restore_trigger=None, restored_from_vault_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None, vault_type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +50,9 @@ class GetVaultResult:
         if is_primary and not isinstance(is_primary, bool):
             raise TypeError("Expected argument 'is_primary' to be a bool")
         pulumi.set(__self__, "is_primary", is_primary)
+        if is_vault_replicable and not isinstance(is_vault_replicable, bool):
+            raise TypeError("Expected argument 'is_vault_replicable' to be a bool")
+        pulumi.set(__self__, "is_vault_replicable", is_vault_replicable)
         if management_endpoint and not isinstance(management_endpoint, str):
             raise TypeError("Expected argument 'management_endpoint' to be a str")
         pulumi.set(__self__, "management_endpoint", management_endpoint)
@@ -154,6 +157,14 @@ class GetVaultResult:
         return pulumi.get(self, "is_primary")
 
     @property
+    @pulumi.getter(name="isVaultReplicable")
+    def is_vault_replicable(self) -> bool:
+        """
+        A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+        """
+        return pulumi.get(self, "is_vault_replicable")
+
+    @property
     @pulumi.getter(name="managementEndpoint")
     def management_endpoint(self) -> str:
         """
@@ -254,6 +265,7 @@ class AwaitableGetVaultResult(GetVaultResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_primary=self.is_primary,
+            is_vault_replicable=self.is_vault_replicable,
             management_endpoint=self.management_endpoint,
             replica_details=self.replica_details,
             restore_from_files=self.restore_from_files,
@@ -306,6 +318,7 @@ def get_vault(vault_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_primary=pulumi.get(__ret__, 'is_primary'),
+        is_vault_replicable=pulumi.get(__ret__, 'is_vault_replicable'),
         management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
         replica_details=pulumi.get(__ret__, 'replica_details'),
         restore_from_files=pulumi.get(__ret__, 'restore_from_files'),

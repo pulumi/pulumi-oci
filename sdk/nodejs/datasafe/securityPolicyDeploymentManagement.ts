@@ -4,6 +4,35 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
+/**
+ * This resource provides the Security Policy Deployment Management resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Updates the security policy deployment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityPolicyDeploymentManagement = new oci.datasafe.SecurityPolicyDeploymentManagement("test_security_policy_deployment_management", {
+ *     compartmentId: compartmentId,
+ *     targetId: testTargetDatabase.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: securityPolicyDeploymentManagementDescription,
+ *     displayName: securityPolicyDeploymentManagementDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Import is not supported for this resource.
+ */
 export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
     /**
      * Get an existing SecurityPolicyDeploymentManagement resource's state with the given name, ID, and optional extra
@@ -32,17 +61,53 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === SecurityPolicyDeploymentManagement.__pulumiType;
     }
 
+    /**
+     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) The description of the security policy deployment.
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
+     */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+     */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Details about the current state of the security policy deployment in Data Safe.
+     */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * The OCID of the security policy corresponding to the security policy deployment.
+     */
     public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
+    /**
+     * The current state of the security policy deployment.
+     */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Unique target identifier.
+     */
     public readonly targetId!: pulumi.Output<string>;
+    /**
+     * The time that the security policy deployment was created, in the format defined by RFC3339.
+     */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+     */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
     /**
@@ -94,17 +159,53 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
  * Input properties used for looking up and filtering SecurityPolicyDeploymentManagement resources.
  */
 export interface SecurityPolicyDeploymentManagementState {
+    /**
+     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The description of the security policy deployment.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+     */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Details about the current state of the security policy deployment in Data Safe.
+     */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * The OCID of the security policy corresponding to the security policy deployment.
+     */
     securityPolicyId?: pulumi.Input<string>;
+    /**
+     * The current state of the security policy deployment.
+     */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Unique target identifier.
+     */
     targetId?: pulumi.Input<string>;
+    /**
+     * The time that the security policy deployment was created, in the format defined by RFC3339.
+     */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+     */
     timeUpdated?: pulumi.Input<string>;
 }
 
@@ -112,10 +213,28 @@ export interface SecurityPolicyDeploymentManagementState {
  * The set of arguments for constructing a SecurityPolicyDeploymentManagement resource.
  */
 export interface SecurityPolicyDeploymentManagementArgs {
+    /**
+     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The description of the security policy deployment.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+     */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Unique target identifier.
+     */
     targetId?: pulumi.Input<string>;
 }

@@ -67,7 +67,7 @@ func GetExsiHosts(ctx *pulumi.Context, args *GetExsiHostsArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getExsiHosts.
 type GetExsiHostsArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId *string `pulumi:"clusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -124,7 +124,7 @@ func GetExsiHostsOutput(ctx *pulumi.Context, args GetExsiHostsOutputArgs, opts .
 
 // A collection of arguments for invoking getExsiHosts.
 type GetExsiHostsOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`

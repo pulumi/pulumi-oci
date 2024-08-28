@@ -468,6 +468,13 @@ public final class DomainsUserState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.externalId);
     }
 
+    @Import(name="forceDelete")
+    private @Nullable Output<Boolean> forceDelete;
+
+    public Optional<Output<Boolean>> forceDelete() {
+        return Optional.ofNullable(this.forceDelete);
+    }
+
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
@@ -1729,6 +1736,7 @@ public final class DomainsUserState extends com.pulumi.resources.ResourceArgs {
         this.emails = $.emails;
         this.entitlements = $.entitlements;
         this.externalId = $.externalId;
+        this.forceDelete = $.forceDelete;
         this.groups = $.groups;
         this.idcsCreatedBies = $.idcsCreatedBies;
         this.idcsEndpoint = $.idcsEndpoint;
@@ -2360,6 +2368,15 @@ public final class DomainsUserState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder externalId(String externalId) {
             return externalId(Output.of(externalId));
+        }
+
+        public Builder forceDelete(@Nullable Output<Boolean> forceDelete) {
+            $.forceDelete = forceDelete;
+            return this;
+        }
+
+        public Builder forceDelete(Boolean forceDelete) {
+            return forceDelete(Output.of(forceDelete));
         }
 
         /**

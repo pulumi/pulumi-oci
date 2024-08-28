@@ -20,6 +20,7 @@ class DbManagementPrivateEndpointArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_cluster: Optional[pulumi.Input[bool]] = None,
+                 is_dns_resolution_enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
@@ -34,6 +35,7 @@ class DbManagementPrivateEndpointArgs:
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cluster: Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
+        :param pulumi.Input[bool] is_dns_resolution_enabled: Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
         :param pulumi.Input[str] name: (Updatable) The display name of the Database Management private endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
         """
@@ -47,6 +49,8 @@ class DbManagementPrivateEndpointArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cluster is not None:
             pulumi.set(__self__, "is_cluster", is_cluster)
+        if is_dns_resolution_enabled is not None:
+            pulumi.set(__self__, "is_dns_resolution_enabled", is_dns_resolution_enabled)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if nsg_ids is not None:
@@ -129,6 +133,18 @@ class DbManagementPrivateEndpointArgs:
         pulumi.set(self, "is_cluster", value)
 
     @property
+    @pulumi.getter(name="isDnsResolutionEnabled")
+    def is_dns_resolution_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        """
+        return pulumi.get(self, "is_dns_resolution_enabled")
+
+    @is_dns_resolution_enabled.setter
+    def is_dns_resolution_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_dns_resolution_enabled", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -161,6 +177,7 @@ class _DbManagementPrivateEndpointState:
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_cluster: Optional[pulumi.Input[bool]] = None,
+                 is_dns_resolution_enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
@@ -176,6 +193,7 @@ class _DbManagementPrivateEndpointState:
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cluster: Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
+        :param pulumi.Input[bool] is_dns_resolution_enabled: Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
         :param pulumi.Input[str] name: (Updatable) The display name of the Database Management private endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
         :param pulumi.Input[str] private_ip: The IP addresses assigned to the Database Management private endpoint.
@@ -199,6 +217,8 @@ class _DbManagementPrivateEndpointState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cluster is not None:
             pulumi.set(__self__, "is_cluster", is_cluster)
+        if is_dns_resolution_enabled is not None:
+            pulumi.set(__self__, "is_dns_resolution_enabled", is_dns_resolution_enabled)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if nsg_ids is not None:
@@ -275,6 +295,18 @@ class _DbManagementPrivateEndpointState:
     @is_cluster.setter
     def is_cluster(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_cluster", value)
+
+    @property
+    @pulumi.getter(name="isDnsResolutionEnabled")
+    def is_dns_resolution_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        """
+        return pulumi.get(self, "is_dns_resolution_enabled")
+
+    @is_dns_resolution_enabled.setter
+    def is_dns_resolution_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_dns_resolution_enabled", value)
 
     @property
     @pulumi.getter
@@ -387,6 +419,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_cluster: Optional[pulumi.Input[bool]] = None,
+                 is_dns_resolution_enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -414,6 +447,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_cluster=db_management_private_endpoint_is_cluster,
+            is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled,
             nsg_ids=db_management_private_endpoint_nsg_ids)
         ```
 
@@ -432,6 +466,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cluster: Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
+        :param pulumi.Input[bool] is_dns_resolution_enabled: Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
         :param pulumi.Input[str] name: (Updatable) The display name of the Database Management private endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -469,6 +504,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_cluster=db_management_private_endpoint_is_cluster,
+            is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled,
             nsg_ids=db_management_private_endpoint_nsg_ids)
         ```
 
@@ -500,6 +536,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_cluster: Optional[pulumi.Input[bool]] = None,
+                 is_dns_resolution_enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -519,6 +556,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_cluster"] = is_cluster
+            __props__.__dict__["is_dns_resolution_enabled"] = is_dns_resolution_enabled
             __props__.__dict__["name"] = name
             __props__.__dict__["nsg_ids"] = nsg_ids
             if subnet_id is None and not opts.urn:
@@ -544,6 +582,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_cluster: Optional[pulumi.Input[bool]] = None,
+            is_dns_resolution_enabled: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_ip: Optional[pulumi.Input[str]] = None,
@@ -564,6 +603,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cluster: Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
+        :param pulumi.Input[bool] is_dns_resolution_enabled: Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
         :param pulumi.Input[str] name: (Updatable) The display name of the Database Management private endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
         :param pulumi.Input[str] private_ip: The IP addresses assigned to the Database Management private endpoint.
@@ -586,6 +626,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_cluster"] = is_cluster
+        __props__.__dict__["is_dns_resolution_enabled"] = is_dns_resolution_enabled
         __props__.__dict__["name"] = name
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["private_ip"] = private_ip
@@ -635,6 +676,14 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
         """
         return pulumi.get(self, "is_cluster")
+
+    @property
+    @pulumi.getter(name="isDnsResolutionEnabled")
+    def is_dns_resolution_enabled(self) -> pulumi.Output[bool]:
+        """
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        """
+        return pulumi.get(self, "is_dns_resolution_enabled")
 
     @property
     @pulumi.getter

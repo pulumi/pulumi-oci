@@ -45,6 +45,11 @@ public final class GetDbManagementPrivateEndpointResult {
      */
     private Boolean isCluster;
     /**
+     * @return Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * 
+     */
+    private Boolean isDnsResolutionEnabled;
+    /**
      * @return The display name of the Database Management private endpoint.
      * 
      */
@@ -132,6 +137,13 @@ public final class GetDbManagementPrivateEndpointResult {
         return this.isCluster;
     }
     /**
+     * @return Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * 
+     */
+    public Boolean isDnsResolutionEnabled() {
+        return this.isDnsResolutionEnabled;
+    }
+    /**
      * @return The display name of the Database Management private endpoint.
      * 
      */
@@ -204,6 +216,7 @@ public final class GetDbManagementPrivateEndpointResult {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isCluster;
+        private Boolean isDnsResolutionEnabled;
         private String name;
         private List<String> nsgIds;
         private String privateIp;
@@ -222,6 +235,7 @@ public final class GetDbManagementPrivateEndpointResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
+    	      this.isDnsResolutionEnabled = defaults.isDnsResolutionEnabled;
     	      this.name = defaults.name;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
@@ -286,6 +300,14 @@ public final class GetDbManagementPrivateEndpointResult {
               throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointResult", "isCluster");
             }
             this.isCluster = isCluster;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDnsResolutionEnabled(Boolean isDnsResolutionEnabled) {
+            if (isDnsResolutionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointResult", "isDnsResolutionEnabled");
+            }
+            this.isDnsResolutionEnabled = isDnsResolutionEnabled;
             return this;
         }
         @CustomType.Setter
@@ -364,6 +386,7 @@ public final class GetDbManagementPrivateEndpointResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isCluster = isCluster;
+            _resultValue.isDnsResolutionEnabled = isDnsResolutionEnabled;
             _resultValue.name = name;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;

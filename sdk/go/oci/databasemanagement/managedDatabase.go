@@ -30,6 +30,8 @@ type ManagedDatabase struct {
 	AdditionalDetails pulumi.StringMapOutput `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The operating system of database.
+	DatabasePlatformName pulumi.StringOutput `pulumi:"databasePlatformName"`
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
 	DatabaseStatus pulumi.StringOutput `pulumi:"databaseStatus"`
 	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -40,6 +42,8 @@ type ManagedDatabase struct {
 	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
+	// The list of feature configurations
+	DbmgmtFeatureConfigs ManagedDatabaseDbmgmtFeatureConfigArrayOutput `pulumi:"dbmgmtFeatureConfigs"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
@@ -108,6 +112,8 @@ type managedDatabaseState struct {
 	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The operating system of database.
+	DatabasePlatformName *string `pulumi:"databasePlatformName"`
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
 	DatabaseStatus *string `pulumi:"databaseStatus"`
 	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -118,6 +124,8 @@ type managedDatabaseState struct {
 	DatabaseVersion *string `pulumi:"databaseVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId *string `pulumi:"dbSystemId"`
+	// The list of feature configurations
+	DbmgmtFeatureConfigs []ManagedDatabaseDbmgmtFeatureConfig `pulumi:"dbmgmtFeatureConfigs"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
@@ -154,6 +162,8 @@ type ManagedDatabaseState struct {
 	AdditionalDetails pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId pulumi.StringPtrInput
+	// The operating system of database.
+	DatabasePlatformName pulumi.StringPtrInput
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
 	DatabaseStatus pulumi.StringPtrInput
 	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -164,6 +174,8 @@ type ManagedDatabaseState struct {
 	DatabaseVersion pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId pulumi.StringPtrInput
+	// The list of feature configurations
+	DbmgmtFeatureConfigs ManagedDatabaseDbmgmtFeatureConfigArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// The infrastructure used to deploy the Oracle Database.
@@ -321,6 +333,11 @@ func (o ManagedDatabaseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The operating system of database.
+func (o ManagedDatabaseOutput) DatabasePlatformName() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringOutput { return v.DatabasePlatformName }).(pulumi.StringOutput)
+}
+
 // The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
 func (o ManagedDatabaseOutput) DatabaseStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringOutput { return v.DatabaseStatus }).(pulumi.StringOutput)
@@ -344,6 +361,11 @@ func (o ManagedDatabaseOutput) DatabaseVersion() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 func (o ManagedDatabaseOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The list of feature configurations
+func (o ManagedDatabaseOutput) DbmgmtFeatureConfigs() ManagedDatabaseDbmgmtFeatureConfigArrayOutput {
+	return o.ApplyT(func(v *ManagedDatabase) ManagedDatabaseDbmgmtFeatureConfigArrayOutput { return v.DbmgmtFeatureConfigs }).(ManagedDatabaseDbmgmtFeatureConfigArrayOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

@@ -21,7 +21,7 @@ class GetDbManagementPrivateEndpointResult:
     """
     A collection of values returned by getDbManagementPrivateEndpoint.
     """
-    def __init__(__self__, compartment_id=None, db_management_private_endpoint_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, is_cluster=None, name=None, nsg_ids=None, private_ip=None, state=None, subnet_id=None, system_tags=None, time_created=None, vcn_id=None):
+    def __init__(__self__, compartment_id=None, db_management_private_endpoint_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, is_cluster=None, is_dns_resolution_enabled=None, name=None, nsg_ids=None, private_ip=None, state=None, subnet_id=None, system_tags=None, time_created=None, vcn_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -43,6 +43,9 @@ class GetDbManagementPrivateEndpointResult:
         if is_cluster and not isinstance(is_cluster, bool):
             raise TypeError("Expected argument 'is_cluster' to be a bool")
         pulumi.set(__self__, "is_cluster", is_cluster)
+        if is_dns_resolution_enabled and not isinstance(is_dns_resolution_enabled, bool):
+            raise TypeError("Expected argument 'is_dns_resolution_enabled' to be a bool")
+        pulumi.set(__self__, "is_dns_resolution_enabled", is_dns_resolution_enabled)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -122,6 +125,14 @@ class GetDbManagementPrivateEndpointResult:
         return pulumi.get(self, "is_cluster")
 
     @property
+    @pulumi.getter(name="isDnsResolutionEnabled")
+    def is_dns_resolution_enabled(self) -> bool:
+        """
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        """
+        return pulumi.get(self, "is_dns_resolution_enabled")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
@@ -199,6 +210,7 @@ class AwaitableGetDbManagementPrivateEndpointResult(GetDbManagementPrivateEndpoi
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_cluster=self.is_cluster,
+            is_dns_resolution_enabled=self.is_dns_resolution_enabled,
             name=self.name,
             nsg_ids=self.nsg_ids,
             private_ip=self.private_ip,
@@ -241,6 +253,7 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_cluster=pulumi.get(__ret__, 'is_cluster'),
+        is_dns_resolution_enabled=pulumi.get(__ret__, 'is_dns_resolution_enabled'),
         name=pulumi.get(__ret__, 'name'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_ip=pulumi.get(__ret__, 'private_ip'),

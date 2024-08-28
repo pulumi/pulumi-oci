@@ -44,7 +44,11 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult> CurrentPlacements;
         /// <summary>
-        /// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        /// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemCustomerContactResult> CustomerContacts;
+        /// <summary>
+        /// Initial size of the data volume in GiBs that will be created and attached.
         /// </summary>
         public readonly int DataStorageSizeInGb;
         /// <summary>
@@ -181,6 +185,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult> currentPlacements,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemCustomerContactResult> customerContacts,
+
             int dataStorageSizeInGb,
 
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemDataStorageResult> dataStorages,
@@ -250,6 +256,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             ConfigurationId = configurationId;
             CrashRecovery = crashRecovery;
             CurrentPlacements = currentPlacements;
+            CustomerContacts = customerContacts;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorages = dataStorages;
             DatabaseManagement = databaseManagement;

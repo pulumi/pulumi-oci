@@ -39,6 +39,7 @@ namespace Pulumi.Oci.DatabaseManagement
     ///             { "Department", "Finance" },
     ///         },
     ///         IsCluster = dbManagementPrivateEndpointIsCluster,
+    ///         IsDnsResolutionEnabled = dbManagementPrivateEndpointIsDnsResolutionEnabled,
     ///         NsgIds = dbManagementPrivateEndpointNsgIds,
     ///     });
     /// 
@@ -85,6 +86,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Output("isCluster")]
         public Output<bool> IsCluster { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        /// </summary>
+        [Output("isDnsResolutionEnabled")]
+        public Output<bool> IsDnsResolutionEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the Database Management private endpoint.
@@ -227,6 +234,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<bool>? IsCluster { get; set; }
 
         /// <summary>
+        /// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        /// </summary>
+        [Input("isDnsResolutionEnabled")]
+        public Input<bool>? IsDnsResolutionEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The display name of the Database Management private endpoint.
         /// </summary>
         [Input("name")]
@@ -303,6 +316,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("isCluster")]
         public Input<bool>? IsCluster { get; set; }
+
+        /// <summary>
+        /// Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+        /// </summary>
+        [Input("isDnsResolutionEnabled")]
+        public Input<bool>? IsDnsResolutionEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The display name of the Database Management private endpoint.

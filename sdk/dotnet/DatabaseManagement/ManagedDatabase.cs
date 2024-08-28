@@ -38,6 +38,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// The operating system of database.
+        /// </summary>
+        [Output("databasePlatformName")]
+        public Output<string> DatabasePlatformName { get; private set; } = null!;
+
+        /// <summary>
         /// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
         /// </summary>
         [Output("databaseStatus")]
@@ -66,6 +72,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Output("dbSystemId")]
         public Output<string> DbSystemId { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of feature configurations
+        /// </summary>
+        [Output("dbmgmtFeatureConfigs")]
+        public Output<ImmutableArray<Outputs.ManagedDatabaseDbmgmtFeatureConfig>> DbmgmtFeatureConfigs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -256,6 +268,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
+        /// The operating system of database.
+        /// </summary>
+        [Input("databasePlatformName")]
+        public Input<string>? DatabasePlatformName { get; set; }
+
+        /// <summary>
         /// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
         /// </summary>
         [Input("databaseStatus")]
@@ -284,6 +302,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("dbSystemId")]
         public Input<string>? DbSystemId { get; set; }
+
+        [Input("dbmgmtFeatureConfigs")]
+        private InputList<Inputs.ManagedDatabaseDbmgmtFeatureConfigGetArgs>? _dbmgmtFeatureConfigs;
+
+        /// <summary>
+        /// The list of feature configurations
+        /// </summary>
+        public InputList<Inputs.ManagedDatabaseDbmgmtFeatureConfigGetArgs> DbmgmtFeatureConfigs
+        {
+            get => _dbmgmtFeatureConfigs ?? (_dbmgmtFeatureConfigs = new InputList<Inputs.ManagedDatabaseDbmgmtFeatureConfigGetArgs>());
+            set => _dbmgmtFeatureConfigs = value;
+        }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;

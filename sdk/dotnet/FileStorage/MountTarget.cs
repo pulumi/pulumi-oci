@@ -92,6 +92,7 @@ namespace Pulumi.Oci.FileStorage
     ///             UserSearchBase = mountTargetLdapIdmapUserSearchBase,
     ///         },
     ///         NsgIds = mountTargetNsgIds,
+    ///         RequestedThroughput = mountTargetRequestedThroughput,
     ///     });
     /// 
     /// });
@@ -163,11 +164,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> IdmapType { get; private set; } = null!;
 
         /// <summary>
-        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-        /// 
-        /// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-        /// 
-        /// Example: `10.0.3.3`
+        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         /// </summary>
         [Output("ipAddress")]
         public Output<string> IpAddress { get; private set; } = null!;
@@ -197,10 +194,28 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
+        /// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        [Output("observedThroughput")]
+        public Output<string> ObservedThroughput { get; private set; } = null!;
+
+        /// <summary>
         /// The OCIDs of the private IP addresses associated with this mount target.
         /// </summary>
         [Output("privateIpIds")]
         public Output<ImmutableArray<string>> PrivateIpIds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        [Output("requestedThroughput")]
+        public Output<string> RequestedThroughput { get; private set; } = null!;
+
+        /// <summary>
+        /// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        [Output("reservedStorageCapacity")]
+        public Output<string> ReservedStorageCapacity { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the mount target.
@@ -217,6 +232,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Output("timeBillingCycleEnd")]
+        public Output<string> TimeBillingCycleEnd { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -331,11 +352,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? IdmapType { get; set; }
 
         /// <summary>
-        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-        /// 
-        /// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-        /// 
-        /// Example: `10.0.3.3`
+        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
@@ -363,6 +380,12 @@ namespace Pulumi.Oci.FileStorage
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
+
+        /// <summary>
+        /// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        [Input("requestedThroughput")]
+        public Input<string>? RequestedThroughput { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
@@ -449,11 +472,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? IdmapType { get; set; }
 
         /// <summary>
-        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-        /// 
-        /// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-        /// 
-        /// Example: `10.0.3.3`
+        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
@@ -488,6 +507,12 @@ namespace Pulumi.Oci.FileStorage
             set => _nsgIds = value;
         }
 
+        /// <summary>
+        /// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        [Input("observedThroughput")]
+        public Input<string>? ObservedThroughput { get; set; }
+
         [Input("privateIpIds")]
         private InputList<string>? _privateIpIds;
 
@@ -499,6 +524,18 @@ namespace Pulumi.Oci.FileStorage
             get => _privateIpIds ?? (_privateIpIds = new InputList<string>());
             set => _privateIpIds = value;
         }
+
+        /// <summary>
+        /// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        [Input("requestedThroughput")]
+        public Input<string>? RequestedThroughput { get; set; }
+
+        /// <summary>
+        /// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        /// </summary>
+        [Input("reservedStorageCapacity")]
+        public Input<string>? ReservedStorageCapacity { get; set; }
 
         /// <summary>
         /// The current state of the mount target.
@@ -515,6 +552,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
+        /// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Input("timeBillingCycleEnd")]
+        public Input<string>? TimeBillingCycleEnd { get; set; }
 
         /// <summary>
         /// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

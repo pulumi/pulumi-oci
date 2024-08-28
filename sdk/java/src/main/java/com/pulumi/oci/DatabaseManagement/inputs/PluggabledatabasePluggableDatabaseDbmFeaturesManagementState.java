@@ -53,6 +53,13 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementState 
         return Optional.ofNullable(this.featureDetails);
     }
 
+    @Import(name="modifyPluggableDatabaseDbmFeature")
+    private @Nullable Output<Boolean> modifyPluggableDatabaseDbmFeature;
+
+    public Optional<Output<Boolean>> modifyPluggableDatabaseDbmFeature() {
+        return Optional.ofNullable(this.modifyPluggableDatabaseDbmFeature);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
      * 
@@ -73,6 +80,7 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementState 
     private PluggabledatabasePluggableDatabaseDbmFeaturesManagementState(PluggabledatabasePluggableDatabaseDbmFeaturesManagementState $) {
         this.enablePluggableDatabaseDbmFeature = $.enablePluggableDatabaseDbmFeature;
         this.featureDetails = $.featureDetails;
+        this.modifyPluggableDatabaseDbmFeature = $.modifyPluggableDatabaseDbmFeature;
         this.pluggableDatabaseId = $.pluggableDatabaseId;
     }
 
@@ -140,6 +148,15 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementState 
          */
         public Builder featureDetails(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs featureDetails) {
             return featureDetails(Output.of(featureDetails));
+        }
+
+        public Builder modifyPluggableDatabaseDbmFeature(@Nullable Output<Boolean> modifyPluggableDatabaseDbmFeature) {
+            $.modifyPluggableDatabaseDbmFeature = modifyPluggableDatabaseDbmFeature;
+            return this;
+        }
+
+        public Builder modifyPluggableDatabaseDbmFeature(Boolean modifyPluggableDatabaseDbmFeature) {
+            return modifyPluggableDatabaseDbmFeature(Output.of(modifyPluggableDatabaseDbmFeature));
         }
 
         /**

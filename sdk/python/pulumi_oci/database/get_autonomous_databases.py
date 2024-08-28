@@ -81,9 +81,6 @@ class GetAutonomousDatabasesResult:
     @property
     @pulumi.getter(name="autonomousDatabases")
     def autonomous_databases(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseResult']:
-        """
-        The list of autonomous_databases.
-        """
         return pulumi.get(self, "autonomous_databases")
 
     @property
@@ -227,56 +224,26 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesResult:
     """
-    ## 
+    This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
 
-    ***
-    ## subcategory: "Database"
-
-    layout: "oci"
-    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
-    sidebar_current: "docs-oci-datasource-database-autonomous_databases"
-    description: |-
-      Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-    ---
-
-    # Data Source: database_get_autonomous_databases
-    This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of Autonomous Databases based on the query parameters specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
-        autonomous_container_database_id=test_autonomous_container_database["id"],
-        db_version=autonomous_database_db_version,
-        db_workload=autonomous_database_db_workload,
-        display_name=autonomous_database_display_name,
-        infrastructure_type=autonomous_database_infrastructure_type,
-        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
-        is_free_tier=autonomous_database_is_free_tier,
-        is_refreshable_clone=autonomous_database_is_refreshable_clone,
-        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
-        resource_pool_leader_id=test_resource_pool_leader["id"],
-        state=autonomous_database_state)
-    ```
+    Gets the details of the specified Autonomous Database.
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
-    :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
-    :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
-    :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
-    :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
-    :param bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
-    :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str db_version: A valid Oracle Database version for Autonomous Database.
+    :param str db_workload: The Autonomous Database workload type. The following values are valid:
+           * OLTP - indicates an Autonomous Transaction Processing database
+           * DW - indicates an Autonomous Data Warehouse database
+           * AJD - indicates an Autonomous JSON Database
+           * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+    :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
+    :param str infrastructure_type: The infrastructure type this resource belongs to.
+    :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+    :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+    :param bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
+    :param str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str state: The current state of the Autonomous Database.
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
@@ -329,55 +296,25 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
     """
-    ## 
+    This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
 
-    ***
-    ## subcategory: "Database"
-
-    layout: "oci"
-    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
-    sidebar_current: "docs-oci-datasource-database-autonomous_databases"
-    description: |-
-      Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-    ---
-
-    # Data Source: database_get_autonomous_databases
-    This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of Autonomous Databases based on the query parameters specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
-        autonomous_container_database_id=test_autonomous_container_database["id"],
-        db_version=autonomous_database_db_version,
-        db_workload=autonomous_database_db_workload,
-        display_name=autonomous_database_display_name,
-        infrastructure_type=autonomous_database_infrastructure_type,
-        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
-        is_free_tier=autonomous_database_is_free_tier,
-        is_refreshable_clone=autonomous_database_is_refreshable_clone,
-        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
-        resource_pool_leader_id=test_resource_pool_leader["id"],
-        state=autonomous_database_state)
-    ```
+    Gets the details of the specified Autonomous Database.
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
-    :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
-    :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
-    :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
-    :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
-    :param bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
-    :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str db_version: A valid Oracle Database version for Autonomous Database.
+    :param str db_workload: The Autonomous Database workload type. The following values are valid:
+           * OLTP - indicates an Autonomous Transaction Processing database
+           * DW - indicates an Autonomous Data Warehouse database
+           * AJD - indicates an Autonomous JSON Database
+           * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+    :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
+    :param str infrastructure_type: The infrastructure type this resource belongs to.
+    :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+    :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+    :param bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
+    :param str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str state: The current state of the Autonomous Database.
     """
     ...

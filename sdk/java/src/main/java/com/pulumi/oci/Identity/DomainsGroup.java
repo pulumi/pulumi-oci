@@ -264,6 +264,12 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
     public Output<String> externalId() {
         return this.externalId;
     }
+    @Export(name="forceDelete", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> forceDelete;
+
+    public Output<Optional<Boolean>> forceDelete() {
+        return Codegen.optional(this.forceDelete);
+    }
     /**
      * (Updatable) The User or App who created the Resource
      * 

@@ -38,6 +38,11 @@ public final class GetDbManagementPrivateEndpointsResult {
      */
     private @Nullable Boolean isCluster;
     /**
+     * @return Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * 
+     */
+    private @Nullable Boolean isDnsResolutionEnabled;
+    /**
      * @return The display name of the Database Management private endpoint.
      * 
      */
@@ -86,6 +91,13 @@ public final class GetDbManagementPrivateEndpointsResult {
         return Optional.ofNullable(this.isCluster);
     }
     /**
+     * @return Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * 
+     */
+    public Optional<Boolean> isDnsResolutionEnabled() {
+        return Optional.ofNullable(this.isDnsResolutionEnabled);
+    }
+    /**
      * @return The display name of the Database Management private endpoint.
      * 
      */
@@ -121,6 +133,7 @@ public final class GetDbManagementPrivateEndpointsResult {
         private @Nullable List<GetDbManagementPrivateEndpointsFilter> filters;
         private String id;
         private @Nullable Boolean isCluster;
+        private @Nullable Boolean isDnsResolutionEnabled;
         private @Nullable String name;
         private @Nullable String state;
         private @Nullable String vcnId;
@@ -132,6 +145,7 @@ public final class GetDbManagementPrivateEndpointsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
+    	      this.isDnsResolutionEnabled = defaults.isDnsResolutionEnabled;
     	      this.name = defaults.name;
     	      this.state = defaults.state;
     	      this.vcnId = defaults.vcnId;
@@ -180,6 +194,12 @@ public final class GetDbManagementPrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isDnsResolutionEnabled(@Nullable Boolean isDnsResolutionEnabled) {
+
+            this.isDnsResolutionEnabled = isDnsResolutionEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
 
             this.name = name;
@@ -204,6 +224,7 @@ public final class GetDbManagementPrivateEndpointsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.isCluster = isCluster;
+            _resultValue.isDnsResolutionEnabled = isDnsResolutionEnabled;
             _resultValue.name = name;
             _resultValue.state = state;
             _resultValue.vcnId = vcnId;

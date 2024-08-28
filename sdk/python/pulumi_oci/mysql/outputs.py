@@ -38,6 +38,7 @@ __all__ = [
     'MysqlDbSystemChannelTarget',
     'MysqlDbSystemChannelTargetFilter',
     'MysqlDbSystemCurrentPlacement',
+    'MysqlDbSystemCustomerContact',
     'MysqlDbSystemDataStorage',
     'MysqlDbSystemDeletionPolicy',
     'MysqlDbSystemEndpoint',
@@ -98,6 +99,7 @@ __all__ = [
     'GetMysqlDbSystemChannelTargetResult',
     'GetMysqlDbSystemChannelTargetFilterResult',
     'GetMysqlDbSystemCurrentPlacementResult',
+    'GetMysqlDbSystemCustomerContactResult',
     'GetMysqlDbSystemDataStorageResult',
     'GetMysqlDbSystemDeletionPolicyResult',
     'GetMysqlDbSystemEndpointResult',
@@ -116,6 +118,7 @@ __all__ = [
     'GetMysqlDbSystemsDbSystemChannelTargetResult',
     'GetMysqlDbSystemsDbSystemChannelTargetFilterResult',
     'GetMysqlDbSystemsDbSystemCurrentPlacementResult',
+    'GetMysqlDbSystemsDbSystemCustomerContactResult',
     'GetMysqlDbSystemsDbSystemDataStorageResult',
     'GetMysqlDbSystemsDbSystemDeletionPolicyResult',
     'GetMysqlDbSystemsDbSystemEndpointResult',
@@ -3824,6 +3827,24 @@ class MysqlDbSystemCurrentPlacement(dict):
         For a standalone DB System, this defines the fault domain in which the DB System is placed.
         """
         return pulumi.get(self, "fault_domain")
+
+
+@pulumi.output_type
+class MysqlDbSystemCustomerContact(dict):
+    def __init__(__self__, *,
+                 email: str):
+        """
+        :param str email: (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+        """
+        pulumi.set(__self__, "email", email)
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+        """
+        return pulumi.get(self, "email")
 
 
 @pulumi.output_type
@@ -9710,6 +9731,24 @@ class GetMysqlDbSystemCurrentPlacementResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlDbSystemCustomerContactResult(dict):
+    def __init__(__self__, *,
+                 email: str):
+        """
+        :param str email: The email address used by Oracle to send notifications regarding the DB System.
+        """
+        pulumi.set(__self__, "email", email)
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email address used by Oracle to send notifications regarding the DB System.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
 class GetMysqlDbSystemDataStorageResult(dict):
     def __init__(__self__, *,
                  allocated_storage_size_in_gbs: int,
@@ -9719,7 +9758,7 @@ class GetMysqlDbSystemDataStorageResult(dict):
                  max_storage_size_in_gbs: int):
         """
         :param int allocated_storage_size_in_gbs: The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
-        :param int data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param int data_storage_size_limit_in_gbs: The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
         :param bool is_auto_expand_storage_enabled: Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
         :param int max_storage_size_in_gbs: Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
@@ -9742,7 +9781,7 @@ class GetMysqlDbSystemDataStorageResult(dict):
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> int:
         """
-        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -10136,6 +10175,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  configuration_id: str,
                  crash_recovery: str,
                  current_placements: Sequence['outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult'],
+                 customer_contacts: Sequence['outputs.GetMysqlDbSystemsDbSystemCustomerContactResult'],
                  data_storage_size_in_gb: int,
                  data_storages: Sequence['outputs.GetMysqlDbSystemsDbSystemDataStorageResult'],
                  database_management: str,
@@ -10174,7 +10214,8 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param str configuration_id: The requested Configuration instance.
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param Sequence['GetMysqlDbSystemsDbSystemCurrentPlacementArgs'] current_placements: The availability domain and fault domain a DB System is placed in.
-        :param int data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        :param Sequence['GetMysqlDbSystemsDbSystemCustomerContactArgs'] customer_contacts: The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param Sequence['GetMysqlDbSystemsDbSystemDataStorageArgs'] data_storages: Data Storage information.
         :param str database_management: Filter DB Systems by their Database Management configuration.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -10213,6 +10254,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "configuration_id", configuration_id)
         pulumi.set(__self__, "crash_recovery", crash_recovery)
         pulumi.set(__self__, "current_placements", current_placements)
+        pulumi.set(__self__, "customer_contacts", customer_contacts)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storages", data_storages)
         pulumi.set(__self__, "database_management", database_management)
@@ -10311,10 +10353,18 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         return pulumi.get(self, "current_placements")
 
     @property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemCustomerContactResult']:
+        """
+        The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        """
+        return pulumi.get(self, "customer_contacts")
+
+    @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> int:
         """
-        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -11085,6 +11135,24 @@ class GetMysqlDbSystemsDbSystemCurrentPlacementResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlDbSystemsDbSystemCustomerContactResult(dict):
+    def __init__(__self__, *,
+                 email: str):
+        """
+        :param str email: The email address used by Oracle to send notifications regarding the DB System.
+        """
+        pulumi.set(__self__, "email", email)
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email address used by Oracle to send notifications regarding the DB System.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
 class GetMysqlDbSystemsDbSystemDataStorageResult(dict):
     def __init__(__self__, *,
                  allocated_storage_size_in_gbs: int,
@@ -11094,7 +11162,7 @@ class GetMysqlDbSystemsDbSystemDataStorageResult(dict):
                  max_storage_size_in_gbs: int):
         """
         :param int allocated_storage_size_in_gbs: The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
-        :param int data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param int data_storage_size_limit_in_gbs: The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
         :param bool is_auto_expand_storage_enabled: Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
         :param int max_storage_size_in_gbs: Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
@@ -11117,7 +11185,7 @@ class GetMysqlDbSystemsDbSystemDataStorageResult(dict):
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> int:
         """
-        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 

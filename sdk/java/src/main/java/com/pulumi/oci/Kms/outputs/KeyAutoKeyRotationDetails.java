@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class KeyAutoKeyRotationDetails {
     /**
-     * @return (Updatable) The last execution status message.
+     * @return (Updatable) The last execution status message of auto key rotation.
      * 
      */
     private @Nullable String lastRotationMessage;
@@ -23,29 +23,29 @@ public final class KeyAutoKeyRotationDetails {
      */
     private @Nullable String lastRotationStatus;
     /**
-     * @return (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+     * @return (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
      * 
      */
     private @Nullable Integer rotationIntervalInDays;
     /**
-     * @return (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+     * @return (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
      * 
      */
     private @Nullable String timeOfLastRotation;
     /**
-     * @return (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+     * @return (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
      * 
      */
     private @Nullable String timeOfNextRotation;
     /**
-     * @return (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+     * @return (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
      * 
      */
     private @Nullable String timeOfScheduleStart;
 
     private KeyAutoKeyRotationDetails() {}
     /**
-     * @return (Updatable) The last execution status message.
+     * @return (Updatable) The last execution status message of auto key rotation.
      * 
      */
     public Optional<String> lastRotationMessage() {
@@ -59,28 +59,28 @@ public final class KeyAutoKeyRotationDetails {
         return Optional.ofNullable(this.lastRotationStatus);
     }
     /**
-     * @return (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+     * @return (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
      * 
      */
     public Optional<Integer> rotationIntervalInDays() {
         return Optional.ofNullable(this.rotationIntervalInDays);
     }
     /**
-     * @return (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+     * @return (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
      * 
      */
     public Optional<String> timeOfLastRotation() {
         return Optional.ofNullable(this.timeOfLastRotation);
     }
     /**
-     * @return (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+     * @return (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
      * 
      */
     public Optional<String> timeOfNextRotation() {
         return Optional.ofNullable(this.timeOfNextRotation);
     }
     /**
-     * @return (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+     * @return (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
      * 
      */
     public Optional<String> timeOfScheduleStart() {

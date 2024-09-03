@@ -73,21 +73,45 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:ManagementAgent/managementAgent:ManagementAgent")
 public class ManagementAgent extends com.pulumi.resources.CustomResource {
+    /**
+     * The current availability status of managementAgent
+     * 
+     */
     @Export(name="availabilityStatus", refs={String.class}, tree="[0]")
     private Output<String> availabilityStatus;
 
+    /**
+     * @return The current availability status of managementAgent
+     * 
+     */
     public Output<String> availabilityStatus() {
         return this.availabilityStatus;
     }
+    /**
+     * Compartment owning this DataSource.
+     * 
+     */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
+    /**
+     * @return Compartment owning this DataSource.
+     * 
+     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * list of dataSources associated with the agent
+     * 
+     */
     @Export(name="dataSourceLists", refs={List.class,ManagementAgentDataSourceList.class}, tree="[0,1]")
     private Output<List<ManagementAgentDataSourceList>> dataSourceLists;
 
+    /**
+     * @return list of dataSources associated with the agent
+     * 
+     */
     public Output<List<ManagementAgentDataSourceList>> dataSourceLists() {
         return this.dataSourceLists;
     }
@@ -98,14 +122,14 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
         return this.dataSourceSummaryLists;
     }
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Output<Map<String,String>> definedTags() {
@@ -118,28 +142,28 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.deployPluginsIds);
     }
     /**
-     * Management Agent Name
+     * (Updatable) New displayName of Agent.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return Management Agent Name
+     * @return (Updatable) New displayName of Agent.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Output<Map<String,String>> freeformTags() {

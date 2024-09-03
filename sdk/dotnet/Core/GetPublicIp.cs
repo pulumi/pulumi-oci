@@ -26,7 +26,6 @@ namespace Pulumi.Oci.Core
         /// moved to a different private IP, the service returns the public IP object with
         /// `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ### Get a public ip by public ip id
@@ -97,7 +96,6 @@ namespace Pulumi.Oci.Core
         /// **Note:** If you're fetching a reserved public IP that is in the process of being
         /// moved to a different private IP, the service returns the public IP object with
         /// `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
-        /// 
         /// 
         /// ## Example Usage
         /// 

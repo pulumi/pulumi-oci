@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Core
         /// Currently, the only supported volume attachment type are [IScsiVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IScsiVolumeAttachment/) and
         /// [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Currently, the only supported volume attachment type are [IScsiVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IScsiVolumeAttachment/) and
         /// [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
-        /// 
         /// 
         /// ## Example Usage
         /// 

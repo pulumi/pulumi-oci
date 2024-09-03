@@ -64,8 +64,7 @@ export class AnnouncementSubscriptionsActionsChangeCompartment extends pulumi.Cu
      */
     public readonly announcementSubscriptionId!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -112,8 +111,7 @@ export interface AnnouncementSubscriptionsActionsChangeCompartmentState {
      */
     announcementSubscriptionId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -130,8 +128,7 @@ export interface AnnouncementSubscriptionsActionsChangeCompartmentArgs {
      */
     announcementSubscriptionId: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -100,14 +100,14 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
         return this.blockTraffic;
     }
     /**
-     * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * (Updatable) The [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartment to contain the service gateway.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * @return (Updatable) The [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartment to contain the service gateway.
      * 
      */
     public Output<String> compartmentId() {

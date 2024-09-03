@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the cross-connects in the specified compartment. You can filter the list
         /// by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the cross-connects in the specified compartment. You can filter the list
         /// by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
-        /// 
         /// 
         /// ## Example Usage
         /// 

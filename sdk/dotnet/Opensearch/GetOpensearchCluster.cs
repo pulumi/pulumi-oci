@@ -12,6 +12,15 @@ namespace Pulumi.Oci.Opensearch
     public static class GetOpensearchCluster
     {
         /// <summary>
+        /// subcategory: "Opensearch"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Opensearch.Cluster"
+        /// sidebar_current: "docs-oci-datasource-opensearch-opensearch_cluster"
+        /// description: |-
+        /// Provides details about a specific Opensearch Cluster in Oracle Cloud Infrastructure Opensearch service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.Opensearch.Cluster
         /// This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
         /// 
         /// Gets a OpensearchCluster by identifier
@@ -28,8 +37,7 @@ namespace Pulumi.Oci.Opensearch
         /// Allow service opensearch to manage vcns in compartment {Compartment-Name}
         /// ```
         /// 
-        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
-        /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+        /// For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
         /// 
         /// ## Example Usage
         /// 
@@ -53,6 +61,15 @@ namespace Pulumi.Oci.Opensearch
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOpensearchClusterResult>("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", args ?? new GetOpensearchClusterArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Opensearch"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Opensearch.Cluster"
+        /// sidebar_current: "docs-oci-datasource-opensearch-opensearch_cluster"
+        /// description: |-
+        /// Provides details about a specific Opensearch Cluster in Oracle Cloud Infrastructure Opensearch service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.Opensearch.Cluster
         /// This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
         /// 
         /// Gets a OpensearchCluster by identifier
@@ -69,8 +86,7 @@ namespace Pulumi.Oci.Opensearch
         /// Allow service opensearch to manage vcns in compartment {Compartment-Name}
         /// ```
         /// 
-        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
-        /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+        /// For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
         /// 
         /// ## Example Usage
         /// 

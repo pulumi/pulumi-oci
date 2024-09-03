@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Kms
         /// details about whether the operation associated with the given replicationId has been
         /// successfully applied across replicas.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Kms
         /// keys, is replicated and has an associated replicationId. Replication status provides
         /// details about whether the operation associated with the given replicationId has been
         /// successfully applied across replicas.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -25,7 +25,6 @@ class ClusterWorkloadMappingArgs:
         :param pulumi.Input[str] mapped_compartment_id: (Updatable) The OCID of the mapped customer compartment.
         :param pulumi.Input[str] namespace: The namespace of the workloadMapping.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -68,7 +67,6 @@ class ClusterWorkloadMappingArgs:
     def namespace(self) -> pulumi.Input[str]:
         """
         The namespace of the workloadMapping.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -123,7 +121,6 @@ class _ClusterWorkloadMappingState:
         :param pulumi.Input[str] mapped_compartment_id: (Updatable) The OCID of the mapped customer compartment.
         :param pulumi.Input[str] mapped_tenancy_id: The OCID of the mapped customer tenancy.
         :param pulumi.Input[str] namespace: The namespace of the workloadMapping.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,7 +210,6 @@ class _ClusterWorkloadMappingState:
         """
         The namespace of the workloadMapping.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -297,7 +293,6 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] mapped_compartment_id: (Updatable) The OCID of the mapped customer compartment.
         :param pulumi.Input[str] namespace: The namespace of the workloadMapping.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -414,7 +409,6 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
         :param pulumi.Input[str] mapped_tenancy_id: The OCID of the mapped customer tenancy.
         :param pulumi.Input[str] namespace: The namespace of the workloadMapping.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The state of the workloadMapping.
@@ -479,7 +473,6 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
     def namespace(self) -> pulumi.Output[str]:
         """
         The namespace of the workloadMapping.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

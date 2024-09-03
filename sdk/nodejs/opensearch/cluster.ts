@@ -5,6 +5,15 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Opensearch"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Opensearch.Cluster"
+ * sidebar_current: "docs-oci-resource-opensearch-opensearch_cluster"
+ * description: |-
+ * Provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # oci.Opensearch.Cluster
  * This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
  *
  * Creates a new OpensearchCluster.
@@ -15,8 +24,7 @@ import * as utilities from "../utilities";
  *
  * ##### {Compartment-Name} - Name of  your compartment
  *
- * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
- * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+ * For latest documentation on OpenSearch use please refer to <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm>Required permissions: <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm>
  *
  * ## Example Usage
  *
@@ -249,7 +257,6 @@ export class Cluster extends pulumi.CustomResource {
     public readonly vcnCompartmentId!: pulumi.Output<string>;
     /**
      * The OCID of the cluster's VCN.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -573,7 +580,6 @@ export interface ClusterState {
     /**
      * The OCID of the cluster's VCN.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -690,7 +696,6 @@ export interface ClusterArgs {
     vcnCompartmentId: pulumi.Input<string>;
     /**
      * The OCID of the cluster's VCN.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

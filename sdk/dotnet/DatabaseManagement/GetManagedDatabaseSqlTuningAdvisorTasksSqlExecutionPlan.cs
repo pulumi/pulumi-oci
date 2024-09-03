@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Retrieves a SQL execution plan for the SQL being tuned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Sql Execution Plan resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Retrieves a SQL execution plan for the SQL being tuned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -116,7 +116,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNamespaceScheduledTaskActionResult> Actions;
         /// <summary>
-        /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+        /// most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
         /// </summary>
         public readonly string WorkRequestId;
 

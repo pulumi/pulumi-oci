@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

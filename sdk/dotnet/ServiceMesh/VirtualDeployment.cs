@@ -154,7 +154,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// The OCID of the service mesh in which this access policy is created.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -276,7 +275,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// The OCID of the service mesh in which this access policy is created.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -395,7 +393,6 @@ namespace Pulumi.Oci.ServiceMesh
 
         /// <summary>
         /// The OCID of the service mesh in which this access policy is created.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

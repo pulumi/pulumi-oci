@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Apm
         /// 
         /// Lists all APM domains for the specified tenant compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Apm
         /// This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
         /// 
         /// Lists all APM domains for the specified tenant compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

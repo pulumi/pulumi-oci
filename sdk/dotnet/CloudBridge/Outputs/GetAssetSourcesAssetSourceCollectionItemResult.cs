@@ -90,7 +90,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
+        /// Endpoint for VMware asset discovery and replication in the form of `https://&lt;host&gt;:&lt;port&gt;/sdk`
         /// </summary>
         public readonly string VcenterEndpoint;
 

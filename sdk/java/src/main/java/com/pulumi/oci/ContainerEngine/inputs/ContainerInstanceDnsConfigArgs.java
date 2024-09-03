@@ -32,14 +32,14 @@ public final class ContainerInstanceDnsConfigArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
+     * Options allows certain internal resolver variables to be modified. Options are a list of objects in &lt;https://man7.org/linux/man-pages/man5/resolv.conf.5.html&gt;. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
      * 
      */
     @Import(name="options")
     private @Nullable Output<List<String>> options;
 
     /**
-     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
+     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in &lt;https://man7.org/linux/man-pages/man5/resolv.conf.5.html&gt;. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
      * 
      */
     public Optional<Output<List<String>>> options() {
@@ -119,7 +119,7 @@ public final class ContainerInstanceDnsConfigArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param options Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
+         * @param options Options allows certain internal resolver variables to be modified. Options are a list of objects in &lt;https://man7.org/linux/man-pages/man5/resolv.conf.5.html&gt;. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class ContainerInstanceDnsConfigArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param options Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
+         * @param options Options allows certain internal resolver variables to be modified. Options are a list of objects in &lt;https://man7.org/linux/man-pages/man5/resolv.conf.5.html&gt;. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class ContainerInstanceDnsConfigArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param options Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
+         * @param options Options allows certain internal resolver variables to be modified. Options are a list of objects in &lt;https://man7.org/linux/man-pages/man5/resolv.conf.5.html&gt;. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
          * 
          * @return builder
          * 

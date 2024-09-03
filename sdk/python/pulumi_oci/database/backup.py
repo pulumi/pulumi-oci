@@ -21,7 +21,6 @@ class BackupArgs:
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -45,7 +44,6 @@ class BackupArgs:
     def display_name(self) -> pulumi.Input[str]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -86,7 +84,6 @@ class _BackupState:
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[float] database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -205,7 +202,6 @@ class _BackupState:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -398,7 +394,6 @@ class Backup(pulumi.CustomResource):
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -522,7 +517,6 @@ class Backup(pulumi.CustomResource):
         :param pulumi.Input[float] database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -607,7 +601,6 @@ class Backup(pulumi.CustomResource):
     def display_name(self) -> pulumi.Output[str]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

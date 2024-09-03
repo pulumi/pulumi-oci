@@ -12,6 +12,15 @@ namespace Pulumi.Oci.DatabaseManagement
     public static class GetManagedDatabases
     {
         /// <summary>
+        /// subcategory: "Database Management"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getManagedDatabases"
+        /// sidebar_current: "docs-oci-datasource-database_management-managed_databases"
+        /// description: |-
+        /// Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.DatabaseManagement.getManagedDatabases
         /// This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
@@ -20,7 +29,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// are listed. Managed Databases can also be filtered based on the deployment type and management option.
         /// If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
         /// considered and Managed Databases with `ADVANCED` management option are listed.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -49,6 +57,15 @@ namespace Pulumi.Oci.DatabaseManagement
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Database Management"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getManagedDatabases"
+        /// sidebar_current: "docs-oci-datasource-database_management-managed_databases"
+        /// description: |-
+        /// Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.DatabaseManagement.getManagedDatabases
         /// This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
@@ -57,7 +74,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// are listed. Managed Databases can also be filtered based on the deployment type and management option.
         /// If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
         /// considered and Managed Databases with `ADVANCED` management option are listed.
-        /// 
         /// 
         /// ## Example Usage
         /// 

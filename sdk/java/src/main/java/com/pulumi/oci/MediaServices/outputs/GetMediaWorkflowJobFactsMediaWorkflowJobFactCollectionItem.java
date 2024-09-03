@@ -10,65 +10,25 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
-    /**
-     * @return The body of the detail captured as JSON.
-     * 
-     */
     private String detail;
-    /**
-     * @return Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-     * 
-     */
     private String key;
-    /**
-     * @return Unique MediaWorkflowJob identifier.
-     * 
-     */
     private String mediaWorkflowJobId;
-    /**
-     * @return Unique name. It is read-only and generated for the fact.
-     * 
-     */
     private String name;
-    /**
-     * @return Types of details to include.
-     * 
-     */
     private String type;
 
     private GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem() {}
-    /**
-     * @return The body of the detail captured as JSON.
-     * 
-     */
     public String detail() {
         return this.detail;
     }
-    /**
-     * @return Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-     * 
-     */
     public String key() {
         return this.key;
     }
-    /**
-     * @return Unique MediaWorkflowJob identifier.
-     * 
-     */
     public String mediaWorkflowJobId() {
         return this.mediaWorkflowJobId;
     }
-    /**
-     * @return Unique name. It is read-only and generated for the fact.
-     * 
-     */
     public String name() {
         return this.name;
     }
-    /**
-     * @return Types of details to include.
-     * 
-     */
     public String type() {
         return this.type;
     }

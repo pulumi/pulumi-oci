@@ -33,7 +33,6 @@ class ConfigArgs:
         :param pulumi.Input[str] license: (Updatable) License edition.
         :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -142,7 +141,6 @@ class ConfigArgs:
         """
         The type of resource to configure for automatic promotion.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -178,7 +176,6 @@ class _ConfigState:
         :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         :param pulumi.Input[str] license: (Updatable) License edition.
         :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -302,7 +299,6 @@ class _ConfigState:
         """
         The type of resource to configure for automatic promotion.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -425,7 +421,6 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         :param pulumi.Input[str] license: (Updatable) License edition.
         :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -562,7 +557,6 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] license: (Updatable) License edition.
         :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the configuration.
@@ -649,7 +643,6 @@ class Config(pulumi.CustomResource):
     def resource_type(self) -> pulumi.Output[str]:
         """
         The type of resource to configure for automatic promotion.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

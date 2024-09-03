@@ -37,7 +37,6 @@ class LoadBalancerArgs:
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -79,8 +78,8 @@ class LoadBalancerArgs:
                During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
                
                The benefits of using NSGs with the load balancer include:
-               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+               * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+               * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[str] request_id_header: (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
@@ -163,7 +162,6 @@ class LoadBalancerArgs:
     def subnet_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -283,8 +281,8 @@ class LoadBalancerArgs:
         During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 
         The benefits of using NSGs with the load balancer include:
-        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+        * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+        * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 
         Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         """
@@ -408,8 +406,8 @@ class _LoadBalancerState:
                During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
                
                The benefits of using NSGs with the load balancer include:
-               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+               * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+               * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[str] request_id_header: (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
@@ -428,7 +426,6 @@ class _LoadBalancerState:
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -635,8 +632,8 @@ class _LoadBalancerState:
         During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 
         The benefits of using NSGs with the load balancer include:
-        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+        * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+        * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 
         Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         """
@@ -721,7 +718,6 @@ class _LoadBalancerState:
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -892,8 +888,8 @@ class LoadBalancer(pulumi.CustomResource):
                During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
                
                The benefits of using NSGs with the load balancer include:
-               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+               * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+               * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[str] request_id_header: (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
@@ -911,7 +907,6 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1138,8 +1133,8 @@ class LoadBalancer(pulumi.CustomResource):
                During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
                
                The benefits of using NSGs with the load balancer include:
-               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+               * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+               * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[str] request_id_header: (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
@@ -1158,7 +1153,6 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1308,8 +1302,8 @@ class LoadBalancer(pulumi.CustomResource):
         During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 
         The benefits of using NSGs with the load balancer include:
-        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+        * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+        * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 
         Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         """
@@ -1370,7 +1364,6 @@ class LoadBalancer(pulumi.CustomResource):
     def subnet_ids(self) -> pulumi.Output[Sequence[str]]:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

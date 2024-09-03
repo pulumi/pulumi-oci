@@ -34,31 +34,15 @@ public final class AlarmOverride {
      * 
      * Example of threshold alarm:
      * 
-     * ***
-     * 
-     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-     * 
-     * ***
-     * 
-     * Example of absence alarm:
-     * 
-     * ***
-     * 
-     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
-     * 
-     * ----- Example of absence alarm with custom absence detection period of 20 hours:
-     * 
-     * ----- CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent(20h) -----
-     * 
      */
     private @Nullable String query;
     /**
-     * @return (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+     * @return (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      * 
      */
     private @Nullable String ruleName;
     /**
-     * @return (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+     * @return (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
     private @Nullable String severity;
@@ -91,35 +75,19 @@ public final class AlarmOverride {
      * 
      * Example of threshold alarm:
      * 
-     * ***
-     * 
-     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-     * 
-     * ***
-     * 
-     * Example of absence alarm:
-     * 
-     * ***
-     * 
-     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
-     * 
-     * ----- Example of absence alarm with custom absence detection period of 20 hours:
-     * 
-     * ----- CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent(20h) -----
-     * 
      */
     public Optional<String> query() {
         return Optional.ofNullable(this.query);
     }
     /**
-     * @return (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+     * @return (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      * 
      */
     public Optional<String> ruleName() {
         return Optional.ofNullable(this.ruleName);
     }
     /**
-     * @return (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+     * @return (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
     public Optional<String> severity() {

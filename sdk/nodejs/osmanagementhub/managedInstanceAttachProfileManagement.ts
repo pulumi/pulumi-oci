@@ -65,7 +65,6 @@ export class ManagedInstanceAttachProfileManagement extends pulumi.CustomResourc
     /**
      * The profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the managed instance.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -113,7 +112,6 @@ export interface ManagedInstanceAttachProfileManagementState {
     /**
      * The profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the managed instance.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -130,7 +128,6 @@ export interface ManagedInstanceAttachProfileManagementArgs {
     managedInstanceId: pulumi.Input<string>;
     /**
      * The profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the managed instance.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

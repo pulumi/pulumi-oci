@@ -21,7 +21,6 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// (Updatable) The type of pattern.
         /// * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

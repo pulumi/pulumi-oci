@@ -189,7 +189,6 @@ namespace Pulumi.Oci.Logging.Inputs
         /// <summary>
         /// (Updatable) If true, keep the original event time in the parsed result.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

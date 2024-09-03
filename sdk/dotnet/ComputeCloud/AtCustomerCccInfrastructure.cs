@@ -151,7 +151,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// <summary>
         /// (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -291,7 +290,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// <summary>
         /// (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -422,7 +420,6 @@ namespace Pulumi.Oci.ComputeCloud
 
         /// <summary>
         /// (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

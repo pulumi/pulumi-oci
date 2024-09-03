@@ -54,8 +54,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<ImmutableArray<Outputs.LogAnalyticsPreferencesManagementItem>> Items { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -122,8 +121,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -152,8 +150,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

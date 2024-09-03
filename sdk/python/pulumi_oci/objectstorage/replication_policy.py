@@ -27,7 +27,6 @@ class ReplicationPolicyArgs:
         :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
@@ -86,7 +85,6 @@ class ReplicationPolicyArgs:
         """
         The Object Storage namespace used for the request.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -139,7 +137,6 @@ class _ReplicationPolicyState:
         :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -235,7 +232,6 @@ class _ReplicationPolicyState:
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
         The Object Storage namespace used for the request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -341,7 +337,6 @@ class ReplicationPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -460,7 +455,6 @@ class ReplicationPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] status: The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
@@ -527,7 +521,6 @@ class ReplicationPolicy(pulumi.CustomResource):
     def namespace(self) -> pulumi.Output[str]:
         """
         The Object Storage namespace used for the request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

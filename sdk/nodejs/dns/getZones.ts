@@ -72,7 +72,7 @@ export interface GetZonesArgs {
      */
     nameContains?: string;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+     * Specifies to operate only on resources that have a matching DNS scope. This value will be null
      * for zones in the global DNS and `PRIVATE` when listing private zones.
      */
     scope?: string;
@@ -207,7 +207,7 @@ export interface GetZonesOutputArgs {
      */
     nameContains?: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+     * Specifies to operate only on resources that have a matching DNS scope. This value will be null
      * for zones in the global DNS and `PRIVATE` when listing private zones.
      */
     scope?: pulumi.Input<string>;

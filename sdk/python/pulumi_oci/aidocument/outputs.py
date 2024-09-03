@@ -715,7 +715,6 @@ class ModelValidationDataset(dict):
         :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
         :param str object: The object name of the input data file.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -766,7 +765,6 @@ class ModelValidationDataset(dict):
     def object(self) -> Optional[str]:
         """
         The object name of the input data file.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -955,7 +953,6 @@ class ProcessorJobProcessorConfig(dict):
         :param Sequence['ProcessorJobProcessorConfigFeatureArgs'] features: The types of document analysis requested.
         :param str processor_type: The type of the processor.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str document_type: The document type.
@@ -984,7 +981,6 @@ class ProcessorJobProcessorConfig(dict):
     def processor_type(self) -> str:
         """
         The type of the processor.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

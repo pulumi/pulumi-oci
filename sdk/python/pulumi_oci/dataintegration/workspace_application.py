@@ -36,7 +36,6 @@ class WorkspaceApplicationArgs:
         :param pulumi.Input[str] model_type: (Updatable) The type of the application.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -106,7 +105,6 @@ class WorkspaceApplicationArgs:
     def workspace_id(self) -> pulumi.Input[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -305,7 +303,6 @@ class _WorkspaceApplicationState:
         :param pulumi.Input[str] time_patched: The date and time the application was patched, in the timestamp format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -655,7 +652,6 @@ class _WorkspaceApplicationState:
         """
         The workspace ID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -752,7 +748,6 @@ class WorkspaceApplication(pulumi.CustomResource):
         :param pulumi.Input[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict']] source_application_info: The information about the application.
         :param pulumi.Input[str] state: (Updatable) The current state of the workspace.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -949,7 +944,6 @@ class WorkspaceApplication(pulumi.CustomResource):
         :param pulumi.Input[str] time_patched: The date and time the application was patched, in the timestamp format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1182,7 +1176,6 @@ class WorkspaceApplication(pulumi.CustomResource):
     def workspace_id(self) -> pulumi.Output[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

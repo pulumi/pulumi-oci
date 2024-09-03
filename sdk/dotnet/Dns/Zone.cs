@@ -124,7 +124,7 @@ namespace Pulumi.Oci.Dns
         public Output<ImmutableArray<Outputs.ZoneNameserver>> Nameservers { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         /// </summary>
         [Output("scope")]
@@ -173,8 +173,7 @@ namespace Pulumi.Oci.Dns
         public Output<ImmutableArray<Outputs.ZoneZoneTransferServer>> ZoneTransferServers { get; private set; } = null!;
 
         /// <summary>
-        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-        /// 
+        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -293,7 +292,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         /// </summary>
         [Input("scope")]
@@ -306,8 +305,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? ViewId { get; set; }
 
         /// <summary>
-        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-        /// 
+        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -406,7 +404,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         /// </summary>
         [Input("scope")]
@@ -461,8 +459,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-        /// 
+        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

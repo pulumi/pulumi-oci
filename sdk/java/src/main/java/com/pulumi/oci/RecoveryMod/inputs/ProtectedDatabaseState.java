@@ -235,14 +235,14 @@ public final class ProtectedDatabaseState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
+     * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (&lt;https://docs.cloud.oracle.com/iaas/api/#&gt;) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
+     * @return (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (&lt;https://docs.cloud.oracle.com/iaas/api/#&gt;) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
      * 
      */
     public Optional<Output<String>> password() {
@@ -746,7 +746,7 @@ public final class ProtectedDatabaseState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param password (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
+         * @param password (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (&lt;https://docs.cloud.oracle.com/iaas/api/#&gt;) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class ProtectedDatabaseState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param password (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
+         * @param password (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (&lt;https://docs.cloud.oracle.com/iaas/api/#&gt;) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
          * 
          * @return builder
          * 

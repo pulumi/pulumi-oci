@@ -13,9 +13,6 @@ namespace Pulumi.Oci.MediaServices.Outputs
     [OutputType]
     public sealed class GetMediaWorkflowJobFactsFilterResult
     {
-        /// <summary>
-        /// Unique name. It is read-only and generated for the fact.
-        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

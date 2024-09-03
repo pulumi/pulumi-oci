@@ -136,7 +136,6 @@ export class NewsReport extends pulumi.CustomResource {
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -286,7 +285,6 @@ export interface NewsReportState {
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -355,7 +353,6 @@ export interface NewsReportArgs {
     onsTopicId: pulumi.Input<string>;
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

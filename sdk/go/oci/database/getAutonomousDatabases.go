@@ -11,6 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Database"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: Database.AutonomousDatabase"
+// sidebar_current: "docs-oci-datasource-database-autonomous_database"
+// description: |-
+// Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+// <!-- yaml: line 7: could not find expected ':' -->
+//
+// # Data Source: Database.AutonomousDatabase
 // This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
 //
 // Gets the details of the specified Autonomous Database.

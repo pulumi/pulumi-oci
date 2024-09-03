@@ -99,8 +99,7 @@ export class TagDefault extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
-     *
+     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -190,8 +189,7 @@ export interface TagDefaultState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
-     *
+     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -220,8 +218,7 @@ export interface TagDefaultArgs {
      */
     tagDefinitionId: pulumi.Input<string>;
     /**
-     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
-     *
+     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

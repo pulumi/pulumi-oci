@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Lists all versions for the specified certificate authority (CA).
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all versions for the specified certificate authority (CA).
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
-        /// 
         /// 
         /// ## Example Usage
         /// 

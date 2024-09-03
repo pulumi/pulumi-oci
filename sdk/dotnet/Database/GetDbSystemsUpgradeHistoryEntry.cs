@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the details of the specified operating system upgrade operation for the specified DB system.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the details of the specified operating system upgrade operation for the specified DB system.
-        /// 
         /// 
         /// ## Example Usage
         /// 

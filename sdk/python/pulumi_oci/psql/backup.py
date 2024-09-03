@@ -33,7 +33,6 @@ class BackupArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] retention_period: (Updatable) Backup retention period in days.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -127,7 +126,6 @@ class BackupArgs:
         """
         (Updatable) Backup retention period in days.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -172,7 +170,6 @@ class _BackupState:
         :param pulumi.Input[str] last_completed_request_token: lastCompletedRequestToken from MP.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[int] retention_period: (Updatable) Backup retention period in days.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -355,7 +352,6 @@ class _BackupState:
         """
         (Updatable) Backup retention period in days.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -481,7 +477,6 @@ class Backup(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] retention_period: (Updatable) Backup retention period in days.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -626,7 +621,6 @@ class Backup(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[int] retention_period: (Updatable) Backup retention period in days.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or by a management policy.
@@ -751,7 +745,6 @@ class Backup(pulumi.CustomResource):
     def retention_period(self) -> pulumi.Output[int]:
         """
         (Updatable) Backup retention period in days.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

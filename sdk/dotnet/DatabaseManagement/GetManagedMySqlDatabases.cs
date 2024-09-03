@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of Managed MySQL Databases in a specific compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the list of Managed MySQL Databases in a specific compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

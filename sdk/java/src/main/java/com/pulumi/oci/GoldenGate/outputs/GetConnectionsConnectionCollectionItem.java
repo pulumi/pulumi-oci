@@ -129,7 +129,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String displayName;
     /**
-     * @return Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
      * 
      */
     private String endpoint;
@@ -503,7 +503,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
      * 
      */
     public String endpoint() {

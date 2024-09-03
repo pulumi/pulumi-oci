@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSummarizeResourceInventoryResult {
     /**
-     * @return The number of _active_ fleets.
+     * @return The number of *active* fleets.
      * 
      */
     private Integer activeFleetCount;
@@ -49,7 +49,7 @@ public final class GetSummarizeResourceInventoryResult {
 
     private GetSummarizeResourceInventoryResult() {}
     /**
-     * @return The number of _active_ fleets.
+     * @return The number of *active* fleets.
      * 
      */
     public Integer activeFleetCount() {

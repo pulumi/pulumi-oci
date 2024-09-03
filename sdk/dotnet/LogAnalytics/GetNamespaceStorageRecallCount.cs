@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API gets the number of recalls made and the maximum recalls that can be made
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// This API gets the number of recalls made and the maximum recalls that can be made
-        /// 
         /// 
         /// ## Example Usage
         /// 

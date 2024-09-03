@@ -165,7 +165,6 @@ export class VolumeAttachment extends pulumi.CustomResource {
     /**
      * The OCID of the volume.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -350,7 +349,6 @@ export interface VolumeAttachmentState {
     /**
      * The OCID of the volume.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -409,7 +407,6 @@ export interface VolumeAttachmentArgs {
     useChap?: pulumi.Input<boolean>;
     /**
      * The OCID of the volume.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

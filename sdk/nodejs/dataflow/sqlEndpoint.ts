@@ -8,6 +8,7 @@ import * as utilities from "../utilities";
 
 /**
  * This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+ *
  * ## Note
  *
  * Resource Discovery is not supported for this resource.
@@ -115,7 +116,7 @@ export class SqlEndpoint extends pulumi.CustomResource {
      */
     public readonly networkConfiguration!: pulumi.Output<outputs.DataFlow.SqlEndpointNetworkConfiguration>;
     /**
-     * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
     public readonly sparkAdvancedConfigurations!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -143,8 +144,7 @@ export class SqlEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-     *
+     * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -316,7 +316,7 @@ export interface SqlEndpointState {
      */
     networkConfiguration?: pulumi.Input<inputs.DataFlow.SqlEndpointNetworkConfiguration>;
     /**
-     * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
     sparkAdvancedConfigurations?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -344,8 +344,7 @@ export interface SqlEndpointState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-     *
+     * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -410,7 +409,7 @@ export interface SqlEndpointArgs {
      */
     networkConfiguration: pulumi.Input<inputs.DataFlow.SqlEndpointNetworkConfiguration>;
     /**
-     * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
     sparkAdvancedConfigurations?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**

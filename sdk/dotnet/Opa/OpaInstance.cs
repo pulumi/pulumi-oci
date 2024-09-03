@@ -155,8 +155,7 @@ namespace Pulumi.Oci.Opa
         public Output<string> ShapeName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -301,8 +300,7 @@ namespace Pulumi.Oci.Opa
         public Input<string> ShapeName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -433,8 +431,7 @@ namespace Pulumi.Oci.Opa
         public Input<string>? ShapeName { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

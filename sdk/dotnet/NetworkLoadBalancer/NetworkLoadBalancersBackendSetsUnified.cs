@@ -137,8 +137,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<string> NetworkLoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-        /// 
+        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -251,8 +250,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<string> NetworkLoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-        /// 
+        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -327,8 +325,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<string>? NetworkLoadBalancerId { get; set; }
 
         /// <summary>
-        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-        /// 
+        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

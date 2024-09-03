@@ -254,7 +254,6 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -556,7 +555,6 @@ export interface ConnectionState {
     /**
      * (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -697,7 +695,6 @@ export interface ConnectionArgs {
     vaultId: pulumi.Input<string>;
     /**
      * (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

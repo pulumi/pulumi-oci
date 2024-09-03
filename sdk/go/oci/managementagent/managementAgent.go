@@ -53,16 +53,19 @@ import (
 type ManagementAgent struct {
 	pulumi.CustomResourceState
 
-	AvailabilityStatus     pulumi.StringOutput                             `pulumi:"availabilityStatus"`
-	CompartmentId          pulumi.StringOutput                             `pulumi:"compartmentId"`
+	// The current availability status of managementAgent
+	AvailabilityStatus pulumi.StringOutput `pulumi:"availabilityStatus"`
+	// Compartment owning this DataSource.
+	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// list of dataSources associated with the agent
 	DataSourceLists        ManagementAgentDataSourceListArrayOutput        `pulumi:"dataSourceLists"`
 	DataSourceSummaryLists ManagementAgentDataSourceSummaryListArrayOutput `pulumi:"dataSourceSummaryLists"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags      pulumi.StringMapOutput   `pulumi:"definedTags"`
 	DeployPluginsIds pulumi.StringArrayOutput `pulumi:"deployPluginsIds"`
-	// Management Agent Name
+	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Management Agent host machine name
 	Host pulumi.StringOutput `pulumi:"host"`
@@ -139,16 +142,19 @@ func GetManagementAgent(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagementAgent resources.
 type managementAgentState struct {
-	AvailabilityStatus     *string                                `pulumi:"availabilityStatus"`
-	CompartmentId          *string                                `pulumi:"compartmentId"`
+	// The current availability status of managementAgent
+	AvailabilityStatus *string `pulumi:"availabilityStatus"`
+	// Compartment owning this DataSource.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// list of dataSources associated with the agent
 	DataSourceLists        []ManagementAgentDataSourceList        `pulumi:"dataSourceLists"`
 	DataSourceSummaryLists []ManagementAgentDataSourceSummaryList `pulumi:"dataSourceSummaryLists"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags      map[string]string `pulumi:"definedTags"`
 	DeployPluginsIds []string          `pulumi:"deployPluginsIds"`
-	// Management Agent Name
+	// (Updatable) New displayName of Agent.
 	DisplayName *string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Management Agent host machine name
 	Host *string `pulumi:"host"`
@@ -193,16 +199,19 @@ type managementAgentState struct {
 }
 
 type ManagementAgentState struct {
-	AvailabilityStatus     pulumi.StringPtrInput
-	CompartmentId          pulumi.StringPtrInput
+	// The current availability status of managementAgent
+	AvailabilityStatus pulumi.StringPtrInput
+	// Compartment owning this DataSource.
+	CompartmentId pulumi.StringPtrInput
+	// list of dataSources associated with the agent
 	DataSourceLists        ManagementAgentDataSourceListArrayInput
 	DataSourceSummaryLists ManagementAgentDataSourceSummaryListArrayInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags      pulumi.StringMapInput
 	DeployPluginsIds pulumi.StringArrayInput
-	// Management Agent Name
+	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringPtrInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// Management Agent host machine name
 	Host pulumi.StringPtrInput
@@ -251,12 +260,12 @@ func (ManagementAgentState) ElementType() reflect.Type {
 }
 
 type managementAgentArgs struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags      map[string]string `pulumi:"definedTags"`
 	DeployPluginsIds []string          `pulumi:"deployPluginsIds"`
-	// Management Agent Name
+	// (Updatable) New displayName of Agent.
 	DisplayName *string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique Management Agent identifier
 	ManagedAgentId string `pulumi:"managedAgentId"`
@@ -264,12 +273,12 @@ type managementAgentArgs struct {
 
 // The set of arguments for constructing a ManagementAgent resource.
 type ManagementAgentArgs struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags      pulumi.StringMapInput
 	DeployPluginsIds pulumi.StringArrayInput
-	// Management Agent Name
+	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringPtrInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// Unique Management Agent identifier
 	ManagedAgentId pulumi.StringInput
@@ -362,14 +371,17 @@ func (o ManagementAgentOutput) ToManagementAgentOutputWithContext(ctx context.Co
 	return o
 }
 
+// The current availability status of managementAgent
 func (o ManagementAgentOutput) AvailabilityStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.AvailabilityStatus }).(pulumi.StringOutput)
 }
 
+// Compartment owning this DataSource.
 func (o ManagementAgentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// list of dataSources associated with the agent
 func (o ManagementAgentOutput) DataSourceLists() ManagementAgentDataSourceListArrayOutput {
 	return o.ApplyT(func(v *ManagementAgent) ManagementAgentDataSourceListArrayOutput { return v.DataSourceLists }).(ManagementAgentDataSourceListArrayOutput)
 }
@@ -380,7 +392,7 @@ func (o ManagementAgentOutput) DataSourceSummaryLists() ManagementAgentDataSourc
 	}).(ManagementAgentDataSourceSummaryListArrayOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o ManagementAgentOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -389,12 +401,12 @@ func (o ManagementAgentOutput) DeployPluginsIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringArrayOutput { return v.DeployPluginsIds }).(pulumi.StringArrayOutput)
 }
 
-// Management Agent Name
+// (Updatable) New displayName of Agent.
 func (o ManagementAgentOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o ManagementAgentOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }

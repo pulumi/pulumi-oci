@@ -21,7 +21,6 @@ namespace Pulumi.Oci.Kms
         /// otherwise valid request when the total rate of management read operations exceeds 10 requests per second
         /// for a given tenancy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -57,7 +56,6 @@ namespace Pulumi.Oci.Kms
         /// of requests across all management read operations. Key Management might throttle this call to reject an
         /// otherwise valid request when the total rate of management read operations exceeds 10 requests per second
         /// for a given tenancy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

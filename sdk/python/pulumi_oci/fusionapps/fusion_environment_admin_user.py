@@ -31,7 +31,6 @@ class FusionEnvironmentAdminUserArgs:
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -108,7 +107,6 @@ class FusionEnvironmentAdminUserArgs:
         """
         The username for the administrator.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -138,7 +136,6 @@ class _FusionEnvironmentAdminUserState:
         :param pulumi.Input[str] last_name: The administrator's last name.
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -236,7 +233,6 @@ class _FusionEnvironmentAdminUserState:
         """
         The username for the administrator.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -295,7 +291,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[str] last_name: The administrator's last name.
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -417,7 +412,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -487,7 +481,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
     def username(self) -> pulumi.Output[str]:
         """
         The username for the administrator.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

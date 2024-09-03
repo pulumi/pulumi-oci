@@ -121,7 +121,6 @@ export class FileSystem extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -279,7 +278,6 @@ export interface FileSystemState {
     /**
      * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -366,7 +364,6 @@ export interface FileSystemArgs {
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -52,8 +52,7 @@ export class Hostname extends pulumi.CustomResource {
      */
     public readonly loadBalancerId!: pulumi.Output<string>;
     /**
-     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001` 
-     *
+     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -109,8 +108,7 @@ export interface HostnameState {
      */
     loadBalancerId?: pulumi.Input<string>;
     /**
-     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001` 
-     *
+     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,8 +130,7 @@ export interface HostnameArgs {
      */
     loadBalancerId: pulumi.Input<string>;
     /**
-     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001` 
-     *
+     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

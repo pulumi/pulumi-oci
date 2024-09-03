@@ -102,7 +102,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Example: `/mediafiles`
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -214,7 +213,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Example: `/mediafiles`
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -275,7 +273,6 @@ namespace Pulumi.Oci.FileStorage
         /// Avoid entering confidential information.
         /// 
         /// Example: `/mediafiles`
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

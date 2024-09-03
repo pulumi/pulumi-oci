@@ -17,6 +17,15 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * subcategory: &#34;Opensearch&#34;
+ * layout: &#34;oci&#34;
+ * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.Cluster&#34;
+ * sidebar_current: &#34;docs-oci-resource-opensearch-opensearch_cluster&#34;
+ * description: |-
+ * Provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service
+ * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+ * 
+ * # oci.Opensearch.Cluster
  * This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
  * 
  * Creates a new OpensearchCluster.
@@ -27,8 +36,7 @@ import javax.annotation.Nullable;
  * 
  * ##### {Compartment-Name} - Name of  your compartment
  * 
- * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
- * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+ * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
  * 
  * ## Example Usage
  * 

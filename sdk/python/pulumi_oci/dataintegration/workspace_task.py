@@ -47,7 +47,6 @@ class WorkspaceTaskArgs:
         :param pulumi.Input['WorkspaceTaskRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
@@ -157,7 +156,6 @@ class WorkspaceTaskArgs:
     def workspace_id(self) -> pulumi.Input[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -468,7 +466,6 @@ class _WorkspaceTaskState:
         :param pulumi.Input['WorkspaceTaskRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskTypedExpressionArgs']]] typed_expressions: (Updatable) List of typed expressions.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -846,7 +843,6 @@ class _WorkspaceTaskState:
         """
         The workspace ID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -926,7 +922,6 @@ class WorkspaceTask(pulumi.CustomResource):
         :param pulumi.Input[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict']]]] typed_expressions: (Updatable) List of typed expressions.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1104,7 +1099,6 @@ class WorkspaceTask(pulumi.CustomResource):
         :param pulumi.Input[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict']]]] typed_expressions: (Updatable) List of typed expressions.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1355,7 +1349,6 @@ class WorkspaceTask(pulumi.CustomResource):
     def workspace_id(self) -> pulumi.Output[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Sch
         /// For more information, see
         /// [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Sch
         /// Gets the specified connector's configuration information.
         /// For more information, see
         /// [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

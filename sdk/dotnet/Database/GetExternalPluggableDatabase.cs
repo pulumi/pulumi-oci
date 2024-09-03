@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Database
         /// Gets information about a specific
         /// [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about a specific
         /// [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
-        /// 
         /// 
         /// ## Example Usage
         /// 

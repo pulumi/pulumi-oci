@@ -24,7 +24,6 @@ class SecurityPolicyDeploymentArgs:
         The set of arguments for constructing a SecurityPolicyDeployment resource.
         :param pulumi.Input[str] security_policy_deployment_id: The OCID of the security policy deployment resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the security policy deployment.
@@ -50,7 +49,6 @@ class SecurityPolicyDeploymentArgs:
     def security_policy_deployment_id(self) -> pulumi.Input[str]:
         """
         The OCID of the security policy deployment resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -147,7 +145,6 @@ class _SecurityPolicyDeploymentState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the security policy deployment in Data Safe.
         :param pulumi.Input[str] security_policy_deployment_id: The OCID of the security policy deployment resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,7 +259,6 @@ class _SecurityPolicyDeploymentState:
     def security_policy_deployment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the security policy deployment resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -380,7 +376,6 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] security_policy_deployment_id: The OCID of the security policy deployment resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -486,7 +481,6 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the security policy deployment in Data Safe.
         :param pulumi.Input[str] security_policy_deployment_id: The OCID of the security policy deployment resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] security_policy_id: The OCID of the security policy corresponding to the security policy deployment.
@@ -568,7 +562,6 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
     def security_policy_deployment_id(self) -> pulumi.Output[str]:
         """
         The OCID of the security policy deployment resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

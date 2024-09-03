@@ -158,8 +158,8 @@ type LoadBalancer struct {
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 	//
 	// The benefits of using NSGs with the load balancer include:
-	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	// * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
@@ -291,8 +291,8 @@ type loadBalancerState struct {
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 	//
 	// The benefits of using NSGs with the load balancer include:
-	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	// * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
@@ -383,8 +383,8 @@ type LoadBalancerState struct {
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 	//
 	// The benefits of using NSGs with the load balancer include:
-	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	// * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayInput
@@ -473,8 +473,8 @@ type loadBalancerArgs struct {
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 	//
 	// The benefits of using NSGs with the load balancer include:
-	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	// * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
@@ -554,8 +554,8 @@ type LoadBalancerArgs struct {
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 	//
 	// The benefits of using NSGs with the load balancer include:
-	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	// * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 	//
 	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayInput
@@ -756,8 +756,8 @@ func (o LoadBalancerOutput) IsRequestIdEnabled() pulumi.BoolOutput {
 // During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
 //
 // The benefits of using NSGs with the load balancer include:
-// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+// * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+// * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
 //
 // Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 func (o LoadBalancerOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {

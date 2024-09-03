@@ -26,7 +26,6 @@ namespace Pulumi.Oci.Core
         /// **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
         /// The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +68,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
         /// The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

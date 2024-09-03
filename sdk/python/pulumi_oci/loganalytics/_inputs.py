@@ -365,7 +365,7 @@ class NamespaceIngestTimeRuleActionArgs:
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
         :param pulumi.Input[str] metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param pulumi.Input[str] namespace: (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param pulumi.Input[str] type: (Updatable) Discriminator.
@@ -385,7 +385,7 @@ class NamespaceIngestTimeRuleActionArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -606,7 +606,7 @@ class NamespaceScheduledTaskActionArgs:
         :param pulumi.Input[str] data_type: the type of the log data to be purged
         :param pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs'] metric_extraction: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
         :param pulumi.Input[str] purge_compartment_id: the compartment OCID under which the data will be purged
-        :param pulumi.Input[str] purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        :param pulumi.Input[str] purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param pulumi.Input[str] query_string: Purge query string.
         :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
         """
@@ -690,7 +690,7 @@ class NamespaceScheduledTaskActionArgs:
     @pulumi.getter(name="purgeDuration")
     def purge_duration(self) -> Optional[pulumi.Input[str]]:
         """
-        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         """
         return pulumi.get(self, "purge_duration")
 
@@ -731,7 +731,7 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
         :param pulumi.Input[str] metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param pulumi.Input[str] namespace: The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param pulumi.Input[str] resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -749,7 +749,7 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -823,7 +823,7 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
         :param pulumi.Input[str] type: Schedule type discriminator.
         :param pulumi.Input[str] expression: Value in cron format.
         :param pulumi.Input[str] misfire_policy: Schedule misfire retry policy.
-        :param pulumi.Input[str] recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        :param pulumi.Input[str] recurring_interval: Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         :param pulumi.Input[int] repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         :param pulumi.Input[str] time_zone: Time zone, by default UTC.
         """
@@ -879,7 +879,7 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> Optional[pulumi.Input[str]]:
         """
-        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         """
         return pulumi.get(self, "recurring_interval")
 

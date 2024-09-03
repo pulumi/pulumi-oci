@@ -26,7 +26,6 @@ class RecordArgs:
         :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
@@ -84,7 +83,6 @@ class RecordArgs:
     def zone_name_or_id(self) -> pulumi.Input[str]:
         """
         The name or OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -155,7 +153,6 @@ class _RecordState:
         :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -293,7 +290,6 @@ class _RecordState:
         """
         The name or OCID of the target zone.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -354,7 +350,6 @@ class Record(pulumi.CustomResource):
         :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -476,7 +471,6 @@ class Record(pulumi.CustomResource):
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -567,7 +561,6 @@ class Record(pulumi.CustomResource):
     def zone_name_or_id(self) -> pulumi.Output[str]:
         """
         The name or OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

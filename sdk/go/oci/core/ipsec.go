@@ -30,8 +30,8 @@ import (
 // After creating the IPSec connection, you need to configure your on-premises router
 // with tunnel-specific information. For tunnel status and the required configuration information, see:
 //
-//   - [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
-//   - [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
+// * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
+// * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
 //
 // To configure tunnel-specific information, use `Core.IpsecConnectionTunnelManagement` to update the tunnels. If
 // you configure at least one tunnel to use static routing, then in the Core.Ipsec request you must provide

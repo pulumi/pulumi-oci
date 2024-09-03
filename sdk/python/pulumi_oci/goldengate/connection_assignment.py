@@ -23,7 +23,6 @@ class ConnectionAssignmentArgs:
         :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -62,7 +61,6 @@ class ConnectionAssignmentArgs:
         """
         Whether to override locks (if any exist).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -91,7 +89,6 @@ class _ConnectionAssignmentState:
         :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -169,7 +166,6 @@ class _ConnectionAssignmentState:
     def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
         """
         Whether to override locks (if any exist).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -256,7 +252,6 @@ class ConnectionAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -362,7 +357,6 @@ class ConnectionAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: Possible lifecycle states for connection assignments.
@@ -420,7 +414,6 @@ class ConnectionAssignment(pulumi.CustomResource):
     def is_lock_override(self) -> pulumi.Output[bool]:
         """
         Whether to override locks (if any exist).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

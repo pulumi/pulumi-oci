@@ -16,7 +16,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Gets the configuration for the specified ping monitor.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.HealthChecks
         /// This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
         /// 
         /// Gets the configuration for the specified ping monitor.
-        /// 
         /// 
         /// ## Example Usage
         /// 

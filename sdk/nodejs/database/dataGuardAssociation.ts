@@ -293,7 +293,6 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      *
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -626,7 +625,6 @@ export interface DataGuardAssociationState {
      *
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -796,7 +794,6 @@ export interface DataGuardAssociationArgs {
      * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
      *
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

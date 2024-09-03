@@ -53,8 +53,7 @@ class SteeringPolicyArgs:
         :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
                
                The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-               
+        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,8 +192,7 @@ class SteeringPolicyArgs:
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-
+        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -252,8 +250,7 @@ class _SteeringPolicyState:
                * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
                * `CUSTOM` - Allows a customized configuration of rules.
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-               
+        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -437,8 +434,7 @@ class _SteeringPolicyState:
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-
+        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -549,8 +545,7 @@ class SteeringPolicy(pulumi.CustomResource):
                * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
                * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
                * `CUSTOM` - Allows a customized configuration of rules.
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-               
+        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -726,8 +721,7 @@ class SteeringPolicy(pulumi.CustomResource):
                * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
                * `CUSTOM` - Allows a customized configuration of rules.
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-               
+        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -860,8 +854,7 @@ class SteeringPolicy(pulumi.CustomResource):
     @pulumi.getter
     def ttl(self) -> pulumi.Output[int]:
         """
-        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-
+        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

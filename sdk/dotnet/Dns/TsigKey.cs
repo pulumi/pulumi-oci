@@ -86,7 +86,6 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// A base64 string encoding the binary shared secret.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -219,7 +218,6 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// A base64 string encoding the binary shared secret.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -292,7 +290,6 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// A base64 string encoding the binary shared secret.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

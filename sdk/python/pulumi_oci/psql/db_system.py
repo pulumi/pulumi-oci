@@ -59,7 +59,6 @@ class DbSystemArgs:
         :param pulumi.Input['DbSystemSourceArgs'] source: The source used to restore the database system.
         :param pulumi.Input[str] system_type: Type of the database system.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -332,7 +331,6 @@ class DbSystemArgs:
         """
         Type of the database system.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -400,7 +398,6 @@ class _DbSystemState:
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] system_type: Type of the database system.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -756,7 +753,6 @@ class _DbSystemState:
         """
         Type of the database system.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -922,7 +918,6 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source used to restore the database system.
         :param pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[str] system_type: Type of the database system.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1169,7 +1164,6 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] system_type: Type of the database system.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -1405,7 +1399,6 @@ class DbSystem(pulumi.CustomResource):
     def system_type(self) -> pulumi.Output[str]:
         """
         Type of the database system.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

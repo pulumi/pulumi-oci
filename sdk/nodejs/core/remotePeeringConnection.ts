@@ -97,7 +97,6 @@ export class RemotePeeringConnection extends pulumi.CustomResource {
     /**
      * The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -205,7 +204,6 @@ export interface RemotePeeringConnectionState {
     /**
      * The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -258,7 +256,6 @@ export interface RemotePeeringConnectionArgs {
     peerId?: pulumi.Input<string>;
     /**
      * The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

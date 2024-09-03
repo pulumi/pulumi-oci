@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a specific Java license acceptance record in a tenancy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides details about a specific Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
         /// 
         /// Returns a specific Java license acceptance record in a tenancy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

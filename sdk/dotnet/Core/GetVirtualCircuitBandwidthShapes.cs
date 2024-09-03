@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
         /// 
         /// For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

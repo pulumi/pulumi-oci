@@ -104,7 +104,7 @@ export interface GetJmsPluginResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      */
     readonly timeLastSeen: string;
     /**

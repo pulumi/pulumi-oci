@@ -18,14 +18,14 @@ public final class LogAnalyticsLogGroupArgs extends com.pulumi.resources.Resourc
     public static final LogAnalyticsLogGroupArgs Empty = new LogAnalyticsLogGroupArgs();
 
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     public Output<String> compartmentId() {
@@ -143,7 +143,7 @@ public final class LogAnalyticsLogGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class LogAnalyticsLogGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
          * 
          * @return builder
          * 

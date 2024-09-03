@@ -128,8 +128,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string> ResourceCategory { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-        /// 
+        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -274,8 +273,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? ResourceCategory { get; set; }
 
         /// <summary>
-        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-        /// 
+        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -358,8 +356,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? ResourceCategory { get; set; }
 
         /// <summary>
-        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-        /// 
+        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

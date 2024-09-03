@@ -225,8 +225,7 @@ class ObjectLifecyclePolicyRule(dict):
         :param bool is_enabled: (Updatable) A Boolean that determines whether this rule is currently enabled.
         :param str name: (Updatable) The name of the lifecycle rule to be applied.
         :param str time_amount: (Updatable) Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-        :param str time_unit: (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
-               
+        :param str time_unit: (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -279,8 +278,7 @@ class ObjectLifecyclePolicyRule(dict):
     @pulumi.getter(name="timeUnit")
     def time_unit(self) -> str:
         """
-        (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
-
+        (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -432,7 +430,6 @@ class StorageObjectSourceUriDetails(dict):
         :param str source_object_if_match_etag: The entity tag to match the source object.
         :param str source_version_id: The version id of the object to be restored.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -510,7 +507,6 @@ class StorageObjectSourceUriDetails(dict):
     def source_version_id(self) -> Optional[str]:
         """
         The version id of the object to be restored.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

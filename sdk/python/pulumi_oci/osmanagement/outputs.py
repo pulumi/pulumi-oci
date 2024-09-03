@@ -298,7 +298,6 @@ class ManagedInstanceManagementParentSoftwareSource(dict):
         :param str id: software source identifier
         :param str name: software source name
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -320,7 +319,6 @@ class ManagedInstanceManagementParentSoftwareSource(dict):
     def name(self) -> Optional[str]:
         """
         software source name
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

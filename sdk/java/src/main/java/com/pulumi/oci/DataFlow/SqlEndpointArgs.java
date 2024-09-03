@@ -217,14 +217,14 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     @Import(name="sparkAdvancedConfigurations")
     private @Nullable Output<Map<String,String>> sparkAdvancedConfigurations;
 
     /**
-     * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * @return The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     public Optional<Output<Map<String,String>>> sparkAdvancedConfigurations() {
@@ -558,7 +558,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sparkAdvancedConfigurations The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+         * @param sparkAdvancedConfigurations The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
          * 
          * @return builder
          * 
@@ -569,7 +569,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sparkAdvancedConfigurations The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+         * @param sparkAdvancedConfigurations The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
          * 
          * @return builder
          * 

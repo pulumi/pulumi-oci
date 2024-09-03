@@ -59,8 +59,8 @@ public final class GetRuleSetsRuleSetItem {
     private List<GetRuleSetsRuleSetItemIpMaxConnection> ipMaxConnections;
     /**
      * @return A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-     * *  value cannot contain `$`
-     * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+     * * value cannot contain `$`
+     * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
     private String prefix;
@@ -81,15 +81,15 @@ public final class GetRuleSetsRuleSetItem {
     private Integer statusCode;
     /**
      * @return A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-     * *  value cannot contain `$`
-     * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+     * * value cannot contain `$`
+     * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
     private String suffix;
     /**
      * @return A header value that conforms to RFC 7230. With the following exceptions:
-     * *  value cannot contain `$`
-     * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+     * * value cannot contain `$`
+     * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
     private String value;
@@ -156,8 +156,8 @@ public final class GetRuleSetsRuleSetItem {
     }
     /**
      * @return A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-     * *  value cannot contain `$`
-     * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+     * * value cannot contain `$`
+     * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
     public String prefix() {
@@ -186,8 +186,8 @@ public final class GetRuleSetsRuleSetItem {
     }
     /**
      * @return A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-     * *  value cannot contain `$`
-     * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+     * * value cannot contain `$`
+     * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
     public String suffix() {
@@ -195,8 +195,8 @@ public final class GetRuleSetsRuleSetItem {
     }
     /**
      * @return A header value that conforms to RFC 7230. With the following exceptions:
-     * *  value cannot contain `$`
-     * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+     * * value cannot contain `$`
+     * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
     public String value() {

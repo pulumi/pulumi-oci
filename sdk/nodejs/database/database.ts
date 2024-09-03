@@ -130,7 +130,7 @@ export class Database extends pulumi.CustomResource {
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
     /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
      */
     public readonly kmsKeyMigration!: pulumi.Output<boolean | undefined>;
     /**
@@ -170,8 +170,7 @@ export class Database extends pulumi.CustomResource {
      */
     public /*out*/ readonly sidPrefix!: pulumi.Output<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-     *
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -383,7 +382,7 @@ export interface DatabaseState {
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
      */
     kmsKeyMigration?: pulumi.Input<boolean>;
     /**
@@ -423,8 +422,7 @@ export interface DatabaseState {
      */
     sidPrefix?: pulumi.Input<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-     *
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -481,7 +479,7 @@ export interface DatabaseArgs {
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
      */
     kmsKeyMigration?: pulumi.Input<boolean>;
     /**
@@ -493,8 +491,7 @@ export interface DatabaseArgs {
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-     *
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

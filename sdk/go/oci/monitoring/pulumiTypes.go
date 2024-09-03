@@ -29,26 +29,10 @@ type AlarmOverride struct {
 	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 	//
 	// Example of threshold alarm:
-	//
-	// ***
-	//
-	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-	//
-	// ***
-	//
-	// Example of absence alarm:
-	//
-	// ***
-	//
-	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-	//
-	// ----- Example of absence alarm with custom absence detection period of 20 hours:
-	//
-	// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
 	Query *string `pulumi:"query"`
-	// (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
 	RuleName *string `pulumi:"ruleName"`
-	// (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity *string `pulumi:"severity"`
 }
 
@@ -79,26 +63,10 @@ type AlarmOverrideArgs struct {
 	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 	//
 	// Example of threshold alarm:
-	//
-	// ***
-	//
-	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-	//
-	// ***
-	//
-	// Example of absence alarm:
-	//
-	// ***
-	//
-	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-	//
-	// ----- Example of absence alarm with custom absence detection period of 20 hours:
-	//
-	// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
 	Query pulumi.StringPtrInput `pulumi:"query"`
-	// (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
 	RuleName pulumi.StringPtrInput `pulumi:"ruleName"`
-	// (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity pulumi.StringPtrInput `pulumi:"severity"`
 }
 
@@ -174,32 +142,16 @@ func (o AlarmOverrideOutput) PendingDuration() pulumi.StringPtrOutput {
 // (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 //
 // Example of threshold alarm:
-//
-// ***
-//
-// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-//
-// ***
-//
-// Example of absence alarm:
-//
-// ***
-//
-// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-//
-// ----- Example of absence alarm with custom absence detection period of 20 hours:
-//
-// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
 func (o AlarmOverrideOutput) Query() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AlarmOverride) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
 func (o AlarmOverrideOutput) RuleName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AlarmOverride) *string { return v.RuleName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 func (o AlarmOverrideOutput) Severity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AlarmOverride) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }

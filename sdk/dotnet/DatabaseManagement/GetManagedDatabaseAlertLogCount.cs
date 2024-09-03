@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Get the counts of alert logs for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Get the counts of alert logs for the specified Managed Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

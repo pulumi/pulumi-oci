@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides details about a specific Masking Reports Masked Column resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

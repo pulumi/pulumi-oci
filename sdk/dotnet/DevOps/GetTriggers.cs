@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of triggers.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns a list of triggers.
-        /// 
         /// 
         /// ## Example Usage
         /// 

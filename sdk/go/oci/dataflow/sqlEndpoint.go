@@ -13,6 +13,7 @@ import (
 )
 
 // This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+//
 // ## Note
 //
 // Resource Discovery is not supported for this resource.
@@ -61,7 +62,7 @@ type SqlEndpoint struct {
 	MinExecutorCount pulumi.IntOutput `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationOutput `pulumi:"networkConfiguration"`
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations pulumi.StringMapOutput `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringOutput `pulumi:"sqlEndpointVersion"`
@@ -75,7 +76,7 @@ type SqlEndpoint struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,7 +172,7 @@ type sqlEndpointState struct {
 	MinExecutorCount *int `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration *SqlEndpointNetworkConfiguration `pulumi:"networkConfiguration"`
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations map[string]string `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion *string `pulumi:"sqlEndpointVersion"`
@@ -185,7 +186,7 @@ type sqlEndpointState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -225,7 +226,7 @@ type SqlEndpointState struct {
 	MinExecutorCount pulumi.IntPtrInput
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationPtrInput
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations pulumi.StringMapInput
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringPtrInput
@@ -239,7 +240,7 @@ type SqlEndpointState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
-	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,7 +278,7 @@ type sqlEndpointArgs struct {
 	MinExecutorCount int `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfiguration `pulumi:"networkConfiguration"`
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations map[string]string `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion string `pulumi:"sqlEndpointVersion"`
@@ -311,7 +312,7 @@ type SqlEndpointArgs struct {
 	MinExecutorCount pulumi.IntInput
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationInput
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations pulumi.StringMapInput
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringInput
@@ -484,7 +485,7 @@ func (o SqlEndpointOutput) NetworkConfiguration() SqlEndpointNetworkConfiguratio
 	return o.ApplyT(func(v *SqlEndpoint) SqlEndpointNetworkConfigurationOutput { return v.NetworkConfiguration }).(SqlEndpointNetworkConfigurationOutput)
 }
 
-// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+// The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 func (o SqlEndpointOutput) SparkAdvancedConfigurations() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringMapOutput { return v.SparkAdvancedConfigurations }).(pulumi.StringMapOutput)
 }
@@ -519,7 +520,7 @@ func (o SqlEndpointOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

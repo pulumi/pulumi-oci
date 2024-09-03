@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the specified IPSec connection's specified tunnel basic information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets the specified IPSec connection's specified tunnel basic information.
-        /// 
         /// 
         /// ## Example Usage
         /// 

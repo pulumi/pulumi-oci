@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NamespaceIngestTimeRuleAction {
     /**
-     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * @return (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
      * 
      */
     private String compartmentId;
@@ -46,7 +46,7 @@ public final class NamespaceIngestTimeRuleAction {
 
     private NamespaceIngestTimeRuleAction() {}
     /**
-     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * @return (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
      * 
      */
     public String compartmentId() {

@@ -11,7 +11,7 @@ import * as utilities from "../utilities";
  *
  * Create a new model.
  *
- *   Updates the model metadata only selected path parameter.
+ * Updates the model metadata only selected path parameter.
  *
  * ## Import
  *

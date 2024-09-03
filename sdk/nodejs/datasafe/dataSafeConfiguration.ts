@@ -78,7 +78,6 @@ export class DataSafeConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) Indicates if Data Safe is enabled.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -165,7 +164,6 @@ export interface DataSafeConfigurationState {
     /**
      * (Updatable) Indicates if Data Safe is enabled.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -194,7 +192,6 @@ export interface DataSafeConfigurationArgs {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) Indicates if Data Safe is enabled.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

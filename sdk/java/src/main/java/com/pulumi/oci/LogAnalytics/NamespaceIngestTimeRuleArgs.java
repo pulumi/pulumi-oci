@@ -36,14 +36,14 @@ public final class NamespaceIngestTimeRuleArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     public Output<String> compartmentId() {
@@ -209,7 +209,7 @@ public final class NamespaceIngestTimeRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class NamespaceIngestTimeRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
          * 
          * @return builder
          * 

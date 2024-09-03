@@ -210,8 +210,7 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsIpv6enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-        /// 
+        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -388,8 +387,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsIpv6enabled { get; set; }
 
         /// <summary>
-        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-        /// 
+        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -552,8 +550,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsIpv6enabled { get; set; }
 
         /// <summary>
-        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-        /// 
+        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

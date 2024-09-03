@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -2570,7 +2570,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	Description string `pulumi:"description"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName string `pulumi:"displayName"`
-	// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	// Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 	Endpoint    string `pulumi:"endpoint"`
 	Fingerprint string `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -2737,7 +2737,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	// Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 	Endpoint    pulumi.StringInput `pulumi:"endpoint"`
 	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -3019,7 +3019,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) DisplayName() pulumi.Strin
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+// Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 func (o GetConnectionsConnectionCollectionItemOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Endpoint }).(pulumi.StringOutput)
 }

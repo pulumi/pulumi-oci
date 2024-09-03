@@ -119,8 +119,7 @@ namespace Pulumi.Oci.ServiceMesh
         public Output<Outputs.VirtualServiceMtls> Mtls { get; private set; } = null!;
 
         /// <summary>
-        /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
-        /// 
+        /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -265,8 +264,7 @@ namespace Pulumi.Oci.ServiceMesh
         public Input<Inputs.VirtualServiceMtlsArgs>? Mtls { get; set; }
 
         /// <summary>
-        /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
-        /// 
+        /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -355,8 +353,7 @@ namespace Pulumi.Oci.ServiceMesh
         public Input<Inputs.VirtualServiceMtlsGetArgs>? Mtls { get; set; }
 
         /// <summary>
-        /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
-        /// 
+        /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

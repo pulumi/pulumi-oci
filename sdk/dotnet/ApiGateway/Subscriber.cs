@@ -116,8 +116,7 @@ namespace Pulumi.Oci.ApiGateway
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
-        /// 
+        /// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -223,8 +222,7 @@ namespace Pulumi.Oci.ApiGateway
         private InputList<string>? _usagePlans;
 
         /// <summary>
-        /// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
-        /// 
+        /// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -319,8 +317,7 @@ namespace Pulumi.Oci.ApiGateway
         private InputList<string>? _usagePlans;
 
         /// <summary>
-        /// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
-        /// 
+        /// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Desktops
         /// 
         /// Returns a list of desktops within a given desktop pool. You can limit the results to an availability domain, desktop name, or desktop state. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Desktops
         /// This data source provides the list of Desktop Pool Desktops in Oracle Cloud Infrastructure Desktops service.
         /// 
         /// Returns a list of desktops within a given desktop pool. You can limit the results to an availability domain, desktop name, or desktop state. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -27,7 +27,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
      */
     private String nodeId;
     /**
-     * @return A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * @return A filter to return only resources that match the entire PURL given (&lt;https://github.com/package-url/purl-spec/)&gt;.
      * 
      */
     private String purl;
@@ -65,7 +65,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
         return this.nodeId;
     }
     /**
-     * @return A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * @return A filter to return only resources that match the entire PURL given (&lt;https://github.com/package-url/purl-spec/)&gt;.
      * 
      */
     public String purl() {

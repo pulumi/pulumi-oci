@@ -224,6 +224,15 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesResult:
     """
+    subcategory: "Database"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: Database.AutonomousDatabase"
+    sidebar_current: "docs-oci-datasource-database-autonomous_database"
+    description: |-
+    Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: Database.AutonomousDatabase
     This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
 
     Gets the details of the specified Autonomous Database.
@@ -296,6 +305,15 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
     """
+    subcategory: "Database"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: Database.AutonomousDatabase"
+    sidebar_current: "docs-oci-datasource-database-autonomous_database"
+    description: |-
+    Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: Database.AutonomousDatabase
     This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
 
     Gets the details of the specified Autonomous Database.

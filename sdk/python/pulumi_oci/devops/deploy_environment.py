@@ -31,7 +31,6 @@ class DeployEnvironmentArgs:
         :param pulumi.Input[str] deploy_environment_type: (Updatable) Deployment environment type.
         :param pulumi.Input[str] project_id: The OCID of a project.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
@@ -79,7 +78,6 @@ class DeployEnvironmentArgs:
     def project_id(self) -> pulumi.Input[str]:
         """
         The OCID of a project.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -220,7 +218,6 @@ class _DeployEnvironmentState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of a project.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -400,7 +397,6 @@ class _DeployEnvironmentState:
         """
         The OCID of a project.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -534,7 +530,6 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
         :param pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of a project.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -692,7 +687,6 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of a project.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the deployment environment.
@@ -815,7 +809,6 @@ class DeployEnvironment(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[str]:
         """
         The OCID of a project.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

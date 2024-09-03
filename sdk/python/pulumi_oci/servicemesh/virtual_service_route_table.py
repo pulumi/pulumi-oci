@@ -30,7 +30,6 @@ class VirtualServiceRouteTableArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleArgs']]] route_rules: (Updatable) The route rules for the virtual service.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -82,7 +81,6 @@ class VirtualServiceRouteTableArgs:
     def virtual_service_id(self) -> pulumi.Input[str]:
         """
         The OCID of the service mesh in which this access policy is created.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,7 +183,6 @@ class _VirtualServiceRouteTableState:
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,7 +364,6 @@ class _VirtualServiceRouteTableState:
         """
         The OCID of the service mesh in which this access policy is created.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -447,7 +443,6 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualServiceRouteTableRouteRuleArgs', 'VirtualServiceRouteTableRouteRuleArgsDict']]]] route_rules: (Updatable) The route rules for the virtual service.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -598,7 +593,6 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -722,7 +716,6 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
     def virtual_service_id(self) -> pulumi.Output[str]:
         """
         The OCID of the service mesh in which this access policy is created.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

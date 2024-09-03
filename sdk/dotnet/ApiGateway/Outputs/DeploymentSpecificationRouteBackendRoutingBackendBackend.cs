@@ -14,38 +14,44 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteBackendRoutingBackendBackend
     {
         /// <summary>
-        /// The body of the stock response from the mock backend.
+        /// (Updatable) The body of the stock response from the mock backend.
         /// </summary>
         public readonly string? Body;
         /// <summary>
-        /// Defines a timeout for establishing a connection with a proxied server.
+        /// (Updatable) Defines a timeout for establishing a connection with a proxied server.
         /// </summary>
         public readonly double? ConnectTimeoutInSeconds;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         /// </summary>
         public readonly string? FunctionId;
+        /// <summary>
+        /// (Updatable) The headers of the stock response from the mock backend.
+        /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeader> Headers;
         /// <summary>
-        /// Defines whether or not to uphold SSL verification.
+        /// (Updatable) Defines whether or not to uphold SSL verification.
         /// </summary>
         public readonly bool? IsSslVerifyDisabled;
         /// <summary>
-        /// Defines a timeout for reading a response from the proxied server.
+        /// (Updatable) Defines a timeout for reading a response from the proxied server.
         /// </summary>
         public readonly double? ReadTimeoutInSeconds;
         /// <summary>
-        /// Defines a timeout for transmitting a request to the proxied server.
+        /// (Updatable) Defines a timeout for transmitting a request to the proxied server.
         /// </summary>
         public readonly double? SendTimeoutInSeconds;
         /// <summary>
-        /// The status code of the stock response from the mock backend.
+        /// (Updatable) The status code of the stock response from the mock backend.
         /// </summary>
         public readonly int? Status;
         /// <summary>
-        /// Type of the Response Cache Store Policy.
+        /// (Updatable) Type of the API backend.
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// (Updatable) The url of the proxied server.
+        /// </summary>
         public readonly string? Url;
 
         [OutputConstructor]

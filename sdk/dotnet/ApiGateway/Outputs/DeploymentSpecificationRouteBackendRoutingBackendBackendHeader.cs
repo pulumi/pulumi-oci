@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteBackendRoutingBackendBackendHeader
     {
         /// <summary>
-        /// The case-insensitive name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) Name of the header.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// Value of the header.
+        /// (Updatable) Value of the header.
         /// </summary>
         public readonly string? Value;
 

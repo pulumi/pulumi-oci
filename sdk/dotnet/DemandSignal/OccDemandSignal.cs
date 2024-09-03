@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DemandSignal
     /// 
     /// Creates a OccDemandSignal.
     /// 
-    ///   Updates the data of an OccDemandSignal.
+    /// Updates the data of an OccDemandSignal.
     /// 
     /// ## Import
     /// 

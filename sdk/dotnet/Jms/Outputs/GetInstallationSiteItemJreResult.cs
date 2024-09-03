@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Jms.Outputs
     public sealed class GetInstallationSiteItemJreResult
     {
         /// <summary>
-        /// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        /// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
         /// </summary>
         public readonly string Distribution;
         /// <summary>

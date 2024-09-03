@@ -97,8 +97,7 @@ export class Listener extends pulumi.CustomResource {
      */
     public readonly tcpIdleTimeout!: pulumi.Output<number>;
     /**
-     * (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-     *
+     * (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,8 +192,7 @@ export interface ListenerState {
      */
     tcpIdleTimeout?: pulumi.Input<number>;
     /**
-     * (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-     *
+     * (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -239,8 +237,7 @@ export interface ListenerArgs {
      */
     tcpIdleTimeout?: pulumi.Input<number>;
     /**
-     * (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-     *
+     * (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

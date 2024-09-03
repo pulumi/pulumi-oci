@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrProtectionGroupMemberGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        /// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html&gt; for information about these clone types. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html&gt; for information about snapshot standby.
         /// </summary>
         [Input("autonomousDatabaseStandbyTypeForDrDrills")]
         public Input<string>? AutonomousDatabaseStandbyTypeForDrDrills { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        /// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html&gt; for information about these service types.
         /// </summary>
         [Input("connectionStringType")]
         public Input<string>? ConnectionStringType { get; set; }

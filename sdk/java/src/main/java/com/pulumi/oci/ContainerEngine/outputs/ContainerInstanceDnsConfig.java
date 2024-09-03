@@ -17,7 +17,7 @@ public final class ContainerInstanceDnsConfig {
      */
     private @Nullable List<String> nameservers;
     /**
-     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
+     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in &lt;https://man7.org/linux/man-pages/man5/resolv.conf.5.html&gt;. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
      * 
      */
     private @Nullable List<String> options;
@@ -36,7 +36,7 @@ public final class ContainerInstanceDnsConfig {
         return this.nameservers == null ? List.of() : this.nameservers;
     }
     /**
-     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
+     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in &lt;https://man7.org/linux/man-pages/man5/resolv.conf.5.html&gt;. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
      * 
      */
     public List<String> options() {

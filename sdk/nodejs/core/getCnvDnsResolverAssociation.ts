@@ -43,7 +43,7 @@ export interface GetCnvDnsResolverAssociationArgs {
  */
 export interface GetCnvDnsResolverAssociationResult {
     /**
-     * The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn 
+     * The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn
      * is created, we will create it asynchronously. It would be null until it is actually created.
      */
     readonly dnsResolverId: string;

@@ -179,7 +179,6 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -385,7 +384,6 @@ export interface InstanceState {
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -462,7 +460,6 @@ export interface InstanceArgs {
     upgradeSchedule?: pulumi.Input<string>;
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

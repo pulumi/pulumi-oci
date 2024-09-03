@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// This is a collection API which returns a list of Invoices for given filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.OneSubsription
         /// This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
         /// 
         /// This is a collection API which returns a list of Invoices for given filters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

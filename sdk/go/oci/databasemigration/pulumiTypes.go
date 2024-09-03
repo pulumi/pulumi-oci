@@ -1295,15 +1295,15 @@ func (o MigrationAdvisorSettingsPtrOutput) IsSkipAdvisor() pulumi.BoolPtrOutput 
 }
 
 type MigrationDataTransferMediumDetails struct {
-	// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	AccessKeyId *string `pulumi:"accessKeyId"`
 	// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
 	Name *string `pulumi:"name"`
 	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBucket *MigrationDataTransferMediumDetailsObjectStorageBucket `pulumi:"objectStorageBucket"`
-	// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 	Region *string `pulumi:"region"`
-	// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	SecretAccessKey *string `pulumi:"secretAccessKey"`
 	// (Updatable) OCID of the shared storage mount target
 	SharedStorageMountTargetId *string `pulumi:"sharedStorageMountTargetId"`
@@ -1327,15 +1327,15 @@ type MigrationDataTransferMediumDetailsInput interface {
 }
 
 type MigrationDataTransferMediumDetailsArgs struct {
-	// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
 	// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBucket MigrationDataTransferMediumDetailsObjectStorageBucketPtrInput `pulumi:"objectStorageBucket"`
-	// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 	Region pulumi.StringPtrInput `pulumi:"region"`
-	// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	SecretAccessKey pulumi.StringPtrInput `pulumi:"secretAccessKey"`
 	// (Updatable) OCID of the shared storage mount target
 	SharedStorageMountTargetId pulumi.StringPtrInput `pulumi:"sharedStorageMountTargetId"`
@@ -1424,7 +1424,7 @@ func (o MigrationDataTransferMediumDetailsOutput) ToMigrationDataTransferMediumD
 	}).(MigrationDataTransferMediumDetailsPtrOutput)
 }
 
-// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+// (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 func (o MigrationDataTransferMediumDetailsOutput) AccessKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *string { return v.AccessKeyId }).(pulumi.StringPtrOutput)
 }
@@ -1441,12 +1441,12 @@ func (o MigrationDataTransferMediumDetailsOutput) ObjectStorageBucket() Migratio
 	}).(MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput)
 }
 
-// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 func (o MigrationDataTransferMediumDetailsOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+// (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 func (o MigrationDataTransferMediumDetailsOutput) SecretAccessKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *string { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
 }
@@ -1495,7 +1495,7 @@ func (o MigrationDataTransferMediumDetailsPtrOutput) Elem() MigrationDataTransfe
 	}).(MigrationDataTransferMediumDetailsOutput)
 }
 
-// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+// (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 func (o MigrationDataTransferMediumDetailsPtrOutput) AccessKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
 		if v == nil {
@@ -1525,7 +1525,7 @@ func (o MigrationDataTransferMediumDetailsPtrOutput) ObjectStorageBucket() Migra
 	}).(MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput)
 }
 
-// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 func (o MigrationDataTransferMediumDetailsPtrOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
 		if v == nil {
@@ -1535,7 +1535,7 @@ func (o MigrationDataTransferMediumDetailsPtrOutput) Region() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+// (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 func (o MigrationDataTransferMediumDetailsPtrOutput) SecretAccessKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
 		if v == nil {
@@ -6522,15 +6522,15 @@ func (o GetMigrationAdvisorSettingArrayOutput) Index(i pulumi.IntInput) GetMigra
 }
 
 type GetMigrationDataTransferMediumDetail struct {
-	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Name of directory object in database
 	Name string `pulumi:"name"`
 	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBuckets []GetMigrationDataTransferMediumDetailObjectStorageBucket `pulumi:"objectStorageBuckets"`
-	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 	Region string `pulumi:"region"`
-	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	SecretAccessKey string `pulumi:"secretAccessKey"`
 	// OCID of the shared storage mount target
 	SharedStorageMountTargetId string `pulumi:"sharedStorageMountTargetId"`
@@ -6554,15 +6554,15 @@ type GetMigrationDataTransferMediumDetailInput interface {
 }
 
 type GetMigrationDataTransferMediumDetailArgs struct {
-	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
 	// Name of directory object in database
 	Name pulumi.StringInput `pulumi:"name"`
 	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBuckets GetMigrationDataTransferMediumDetailObjectStorageBucketArrayInput `pulumi:"objectStorageBuckets"`
-	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 	Region pulumi.StringInput `pulumi:"region"`
-	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
 	// OCID of the shared storage mount target
 	SharedStorageMountTargetId pulumi.StringInput `pulumi:"sharedStorageMountTargetId"`
@@ -6625,7 +6625,7 @@ func (o GetMigrationDataTransferMediumDetailOutput) ToGetMigrationDataTransferMe
 	return o
 }
 
-// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+// AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 func (o GetMigrationDataTransferMediumDetailOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -6642,12 +6642,12 @@ func (o GetMigrationDataTransferMediumDetailOutput) ObjectStorageBuckets() GetMi
 	}).(GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput)
 }
 
-// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+// AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 func (o GetMigrationDataTransferMediumDetailOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+// AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 func (o GetMigrationDataTransferMediumDetailOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
@@ -9519,15 +9519,15 @@ func (o GetMigrationsAdvisorSettingArrayOutput) Index(i pulumi.IntInput) GetMigr
 }
 
 type GetMigrationsDataTransferMediumDetail struct {
-	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Name of directory object in database
 	Name string `pulumi:"name"`
 	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBuckets []GetMigrationsDataTransferMediumDetailObjectStorageBucket `pulumi:"objectStorageBuckets"`
-	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 	Region string `pulumi:"region"`
-	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	SecretAccessKey string `pulumi:"secretAccessKey"`
 	// OCID of the shared storage mount target
 	SharedStorageMountTargetId string `pulumi:"sharedStorageMountTargetId"`
@@ -9551,15 +9551,15 @@ type GetMigrationsDataTransferMediumDetailInput interface {
 }
 
 type GetMigrationsDataTransferMediumDetailArgs struct {
-	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
 	// Name of directory object in database
 	Name pulumi.StringInput `pulumi:"name"`
 	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBuckets GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayInput `pulumi:"objectStorageBuckets"`
-	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 	Region pulumi.StringInput `pulumi:"region"`
-	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	// AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
 	// OCID of the shared storage mount target
 	SharedStorageMountTargetId pulumi.StringInput `pulumi:"sharedStorageMountTargetId"`
@@ -9622,7 +9622,7 @@ func (o GetMigrationsDataTransferMediumDetailOutput) ToGetMigrationsDataTransfer
 	return o
 }
 
-// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+// AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 func (o GetMigrationsDataTransferMediumDetailOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -9639,12 +9639,12 @@ func (o GetMigrationsDataTransferMediumDetailOutput) ObjectStorageBuckets() GetM
 	}).(GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput)
 }
 
-// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+// AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
 func (o GetMigrationsDataTransferMediumDetailOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+// AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
 func (o GetMigrationsDataTransferMediumDetailOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }

@@ -272,8 +272,7 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<Outputs.ContainerInstanceShapeConfig> ShapeConfig { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -468,8 +467,7 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<Inputs.ContainerInstanceShapeConfigArgs> ShapeConfig { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -626,8 +624,7 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<Inputs.ContainerInstanceShapeConfigGetArgs>? ShapeConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of JavaDownloadTokens.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Java Download Tokens in Oracle Cloud Infrastructure Jms Java Downloads service.
         /// 
         /// Returns a list of JavaDownloadTokens.
-        /// 
         /// 
         /// ## Example Usage
         /// 

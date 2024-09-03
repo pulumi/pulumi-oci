@@ -22,7 +22,6 @@ class RepositoryProtectedBranchManagementArgs:
         :param pulumi.Input[str] branch_name: Name of a branch to protect.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protection_levels: Level of protection to add on a branch.
@@ -49,7 +48,6 @@ class RepositoryProtectedBranchManagementArgs:
     def repository_id(self) -> pulumi.Input[str]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -86,7 +84,6 @@ class _RepositoryProtectedBranchManagementState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protection_levels: Level of protection to add on a branch.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -142,7 +139,6 @@ class _RepositoryProtectedBranchManagementState:
         """
         Unique repository identifier.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -188,7 +184,6 @@ class RepositoryProtectedBranchManagement(pulumi.CustomResource):
         :param pulumi.Input[str] branch_name: Name of a branch to protect.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protection_levels: Level of protection to add on a branch.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -281,7 +276,6 @@ class RepositoryProtectedBranchManagement(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protection_levels: Level of protection to add on a branch.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -324,7 +318,6 @@ class RepositoryProtectedBranchManagement(pulumi.CustomResource):
     def repository_id(self) -> pulumi.Output[str]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

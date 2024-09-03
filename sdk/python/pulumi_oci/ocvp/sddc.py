@@ -70,7 +70,7 @@ class SddcArgs:
         :param pulumi.Input[float] initial_host_ocpu_count: (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         :param pulumi.Input[str] initial_host_shape_name: (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         :param pulumi.Input[str] initial_sku: (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initial_commitment` of `initial_cluster_configurations` instead.
-        :param pulumi.Input[str] instance_display_name_prefix: (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
+        :param pulumi.Input[str] instance_display_name_prefix: (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
                
                For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
@@ -91,7 +91,6 @@ class SddcArgs:
         :param pulumi.Input[str] vsan_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsan_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[str] vsphere_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphere_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[str] workload_network_cidr: (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -441,7 +440,7 @@ class SddcArgs:
     @_utilities.deprecated("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
     def instance_display_name_prefix(self) -> Optional[pulumi.Input[str]]:
         """
-        (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
+        (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 
         For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
         """
@@ -651,7 +650,6 @@ class SddcArgs:
         """
         (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -753,7 +751,7 @@ class _SddcState:
         :param pulumi.Input[float] initial_host_ocpu_count: (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         :param pulumi.Input[str] initial_host_shape_name: (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         :param pulumi.Input[str] initial_sku: (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initial_commitment` of `initial_cluster_configurations` instead.
-        :param pulumi.Input[str] instance_display_name_prefix: (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
+        :param pulumi.Input[str] instance_display_name_prefix: (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
                
                For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
@@ -796,7 +794,6 @@ class _SddcState:
         :param pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]] vsphere_upgrade_objects: (**Deprecated**) The links to binary objects needed to upgrade vSphere.
         :param pulumi.Input[str] vsphere_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphere_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[str] workload_network_cidr: (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1310,7 +1307,7 @@ class _SddcState:
     @_utilities.deprecated("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
     def instance_display_name_prefix(self) -> Optional[pulumi.Input[str]]:
         """
-        (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
+        (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 
         For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
         """
@@ -1791,7 +1788,6 @@ class _SddcState:
         """
         (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1869,7 +1865,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[float] initial_host_ocpu_count: (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         :param pulumi.Input[str] initial_host_shape_name: (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         :param pulumi.Input[str] initial_sku: (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initial_commitment` of `initial_cluster_configurations` instead.
-        :param pulumi.Input[str] instance_display_name_prefix: (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
+        :param pulumi.Input[str] instance_display_name_prefix: (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
                
                For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
@@ -1892,7 +1888,6 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[str] vsan_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsan_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[str] vsphere_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphere_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[str] workload_network_cidr: (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2141,7 +2136,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[float] initial_host_ocpu_count: (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         :param pulumi.Input[str] initial_host_shape_name: (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         :param pulumi.Input[str] initial_sku: (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initial_commitment` of `initial_cluster_configurations` instead.
-        :param pulumi.Input[str] instance_display_name_prefix: (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
+        :param pulumi.Input[str] instance_display_name_prefix: (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
                
                For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
@@ -2184,7 +2179,6 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['SddcVsphereUpgradeObjectArgs', 'SddcVsphereUpgradeObjectArgsDict']]]] vsphere_upgrade_objects: (**Deprecated**) The links to binary objects needed to upgrade vSphere.
         :param pulumi.Input[str] vsphere_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphere_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[str] workload_network_cidr: (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2456,7 +2450,7 @@ class Sddc(pulumi.CustomResource):
     @_utilities.deprecated("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
     def instance_display_name_prefix(self) -> pulumi.Output[str]:
         """
-        (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
+        (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 
         For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
         """
@@ -2784,7 +2778,6 @@ class Sddc(pulumi.CustomResource):
     def workload_network_cidr(self) -> pulumi.Output[str]:
         """
         (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

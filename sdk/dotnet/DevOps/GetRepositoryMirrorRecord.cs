@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns either current mirror record or last successful mirror record for a specific mirror repository.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns either current mirror record or last successful mirror record for a specific mirror repository.
-        /// 
         /// 
         /// ## Example Usage
         /// 

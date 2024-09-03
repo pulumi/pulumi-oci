@@ -35,7 +35,6 @@ class AuditPolicyArgs:
         :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
         :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -145,7 +144,6 @@ class AuditPolicyArgs:
         """
         (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -192,7 +190,6 @@ class _AuditPolicyState:
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit policy in Data Safe.
         :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
         :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -381,7 +378,6 @@ class _AuditPolicyState:
         """
         (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -514,7 +510,6 @@ class AuditPolicy(pulumi.CustomResource):
         :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
         :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -638,7 +633,6 @@ class AuditPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit policy in Data Safe.
         :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
         :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -768,7 +762,6 @@ class AuditPolicy(pulumi.CustomResource):
     def retrieve_from_target_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

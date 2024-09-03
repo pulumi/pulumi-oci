@@ -26,7 +26,6 @@ class BuildPipelineArgs:
         The set of arguments for constructing a BuildPipeline resource.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['BuildPipelineBuildPipelineParametersArgs'] build_pipeline_parameters: (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
@@ -52,7 +51,6 @@ class BuildPipelineArgs:
     def project_id(self) -> pulumi.Input[str]:
         """
         The OCID of the DevOps project.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,7 +147,6 @@ class _BuildPipelineState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -273,7 +270,6 @@ class _BuildPipelineState:
         """
         The OCID of the DevOps project.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -390,7 +386,6 @@ class BuildPipeline(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Build pipeline display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -521,7 +516,6 @@ class BuildPipeline(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the build pipeline.
@@ -608,7 +602,6 @@ class BuildPipeline(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[str]:
         """
         The OCID of the DevOps project.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -37,7 +37,6 @@ class HttpProbeArgs:
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -161,7 +160,6 @@ class HttpProbeArgs:
         """
         A list of names of vantage points from which to execute the probe.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -203,7 +201,6 @@ class _HttpProbeState:
         :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -373,7 +370,6 @@ class _HttpProbeState:
         """
         A list of names of vantage points from which to execute the probe.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -446,7 +442,6 @@ class HttpProbe(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: A list of targets (hostnames or IP addresses) of the probe.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -586,7 +581,6 @@ class HttpProbe(pulumi.CustomResource):
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -703,7 +697,6 @@ class HttpProbe(pulumi.CustomResource):
     def vantage_point_names(self) -> pulumi.Output[Sequence[str]]:
         """
         A list of names of vantage points from which to execute the probe.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

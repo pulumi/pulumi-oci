@@ -4721,8 +4721,7 @@ class ExternalDbSystemDiscoveryPatchOperation(dict):
         """
         :param str operation: (Updatable) The operation can be one of these values: `MERGE`
         :param str selection: (Updatable)
-        :param 'ExternalDbSystemDiscoveryPatchOperationValueArgs' value: (Updatable) 
-               
+        :param 'ExternalDbSystemDiscoveryPatchOperationValueArgs' value: (Updatable)
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4752,8 +4751,7 @@ class ExternalDbSystemDiscoveryPatchOperation(dict):
     @pulumi.getter
     def value(self) -> Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValue']:
         """
-        (Updatable) 
-
+        (Updatable)
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5189,7 +5187,6 @@ class ExternalDbSystemStackMonitoringConfig(dict):
         :param bool is_enabled: The status of the associated service.
         :param str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5210,7 +5207,6 @@ class ExternalDbSystemStackMonitoringConfig(dict):
     def metadata(self) -> Optional[str]:
         """
         The associated service-specific inputs in JSON string format, which Database Management can identify.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5739,8 +5735,7 @@ class ExternalExadataStorageGridStorageServer(dict):
         :param float cpu_count: The CPU count of the Exadata storage server.
         :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
-               
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5853,8 +5848,7 @@ class ExternalExadataStorageGridStorageServer(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
-
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6065,8 +6059,7 @@ class ExternalExadataStorageServerConnector(dict):
         :param str connection_uri: The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
-               
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6161,8 +6154,7 @@ class ExternalExadataStorageServerConnector(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
-
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7402,8 +7394,7 @@ class ManagedDatabaseGroupManagedDatabase(dict):
         :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str deployment_type: The infrastructure used to deploy the Oracle Database.
         :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
-               
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7487,8 +7478,7 @@ class ManagedDatabaseGroupManagedDatabase(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
-
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -18019,7 +18009,7 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
         """
         :param Mapping[str, str] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Sequence[str] database_compartments: The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        :param Sequence[str] database_compartments: The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
         :param Sequence['GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs'] database_systems: A list of DB systems.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The optional single value query filter parameter on the entity display name.
@@ -18080,7 +18070,7 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
     @pulumi.getter(name="databaseCompartments")
     def database_compartments(self) -> Sequence[str]:
         """
-        The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
         """
         return pulumi.get(self, "database_compartments")
 

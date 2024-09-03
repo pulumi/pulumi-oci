@@ -26,7 +26,6 @@ class CatalogArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -60,7 +59,6 @@ class CatalogArgs:
     def attached_catalog_private_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The list of private reverse connection endpoints attached to the catalog
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -129,7 +127,6 @@ class _CatalogState:
         Input properties used for looking up and filtering Catalog resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
@@ -180,7 +177,6 @@ class _CatalogState:
     def attached_catalog_private_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The list of private reverse connection endpoints attached to the catalog
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -394,7 +390,6 @@ class Catalog(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
@@ -517,7 +512,6 @@ class Catalog(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
@@ -559,7 +553,6 @@ class Catalog(pulumi.CustomResource):
     def attached_catalog_private_endpoints(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) The list of private reverse connection endpoints attached to the catalog
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

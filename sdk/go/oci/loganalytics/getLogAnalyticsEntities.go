@@ -97,7 +97,7 @@ type GetLogAnalyticsEntitiesArgs struct {
 type GetLogAnalyticsEntitiesResult struct {
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId *string `pulumi:"cloudResourceId"`
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Log analytics entity type name.
 	EntityTypeNames []string                        `pulumi:"entityTypeNames"`
@@ -190,7 +190,7 @@ func (o GetLogAnalyticsEntitiesResultOutput) CloudResourceId() pulumi.StringPtrO
 	return o.ApplyT(func(v GetLogAnalyticsEntitiesResult) *string { return v.CloudResourceId }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetLogAnalyticsEntitiesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsEntitiesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

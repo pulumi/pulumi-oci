@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Opsi
         /// Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
         /// Values specified in configItemField param will determine what fields for each configuration items have to be returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
         /// Values specified in configItemField param will determine what fields for each configuration items have to be returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

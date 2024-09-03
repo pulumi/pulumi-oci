@@ -128,7 +128,6 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -263,7 +262,6 @@ export interface OperationsInsightsPrivateEndpointState {
     /**
      * The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -312,7 +310,6 @@ export interface OperationsInsightsPrivateEndpointArgs {
     subnetId: pulumi.Input<string>;
     /**
      * The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

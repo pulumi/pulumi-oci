@@ -12,6 +12,15 @@ namespace Pulumi.Oci.DatabaseManagement
     public static class GetExternalDbNodes
     {
         /// <summary>
+        /// subcategory: "Database Management"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDbNodes"
+        /// sidebar_current: "docs-oci-datasource-database_management-external_db_nodes"
+        /// description: |-
+        /// Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.DatabaseManagement.getExternalDbNodes
         /// This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the external DB nodes in the specified external DB system.
@@ -40,6 +49,15 @@ namespace Pulumi.Oci.DatabaseManagement
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDbNodesResult>("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", args ?? new GetExternalDbNodesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Database Management"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDbNodes"
+        /// sidebar_current: "docs-oci-datasource-database_management-external_db_nodes"
+        /// description: |-
+        /// Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.DatabaseManagement.getExternalDbNodes
         /// This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the external DB nodes in the specified external DB system.

@@ -5,6 +5,15 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Data Safe"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DataSafe.TargetAlertPolicyAssociation"
+ * sidebar_current: "docs-oci-resource-data_safe-target_alert_policy_association"
+ * description: |-
+ * 	Provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service
+ * <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+ *
+ * # oci.DataSafe.TargetAlertPolicyAssociation
  * This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
  *
  * Creates a new target-alert policy association to track a alert policy applied on target.
@@ -109,7 +118,6 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the target.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +238,6 @@ export interface TargetAlertPolicyAssociationState {
     /**
      * The OCID of the target.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -279,7 +286,6 @@ export interface TargetAlertPolicyAssociationArgs {
     policyId: pulumi.Input<string>;
     /**
      * The OCID of the target.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

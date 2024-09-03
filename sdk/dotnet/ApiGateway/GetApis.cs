@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// Returns a list of APIs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ApiGateway
         /// This data source provides the list of Apis in Oracle Cloud Infrastructure API Gateway service.
         /// 
         /// Returns a list of APIs.
-        /// 
         /// 
         /// ## Example Usage
         /// 

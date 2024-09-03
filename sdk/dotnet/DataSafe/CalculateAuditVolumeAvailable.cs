@@ -73,7 +73,6 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The trail locations for which the audit data volume has to be calculated.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -150,7 +149,6 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The trail locations for which the audit data volume has to be calculated.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -203,7 +201,6 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The trail locations for which the audit data volume has to be calculated.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

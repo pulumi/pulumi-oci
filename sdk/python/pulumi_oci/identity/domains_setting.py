@@ -561,7 +561,6 @@ class DomainsSettingArgs:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1698,7 +1697,6 @@ class DomainsSettingArgs:
         * type: string
         * uniqueness: none
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2446,7 +2444,6 @@ class _DomainsSettingState:
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3970,7 +3967,6 @@ class _DomainsSettingState:
         * type: string
         * uniqueness: none
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -4544,7 +4540,6 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5467,7 +5462,6 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6669,7 +6663,6 @@ class DomainsSetting(pulumi.CustomResource):
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

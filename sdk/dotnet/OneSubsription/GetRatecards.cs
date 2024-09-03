@@ -17,7 +17,6 @@ namespace Pulumi.Oci.OneSubsription
         /// List API that returns all ratecards for given Subscription Id and Account ID (if provided) and
         /// for a particular date range
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// List API that returns all ratecards for given Subscription Id and Account ID (if provided) and
         /// for a particular date range
-        /// 
         /// 
         /// ## Example Usage
         /// 

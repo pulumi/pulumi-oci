@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns information about the specified lifecycle stage.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns information about the specified lifecycle stage.
-        /// 
         /// 
         /// ## Example Usage
         /// 

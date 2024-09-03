@@ -157,8 +157,7 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeModified!: pulumi.Output<string>;
     /**
-     * The vendor of the operating system that will be used by the managed instances in the group. 
-     *
+     * The vendor of the operating system that will be used by the managed instances in the group.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -328,8 +327,7 @@ export interface ManagedInstanceGroupState {
      */
     timeModified?: pulumi.Input<string>;
     /**
-     * The vendor of the operating system that will be used by the managed instances in the group. 
-     *
+     * The vendor of the operating system that will be used by the managed instances in the group.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -390,8 +388,7 @@ export interface ManagedInstanceGroupArgs {
      */
     softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The vendor of the operating system that will be used by the managed instances in the group. 
-     *
+     * The vendor of the operating system that will be used by the managed instances in the group.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

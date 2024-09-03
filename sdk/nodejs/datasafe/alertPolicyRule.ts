@@ -5,6 +5,15 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Data Safe"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DataSafe.AlertPolicyRule"
+ * sidebar_current: "docs-oci-resource-data_safe-alert_policy_rule"
+ * description: |-
+ * 	Provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service
+ * <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+ *
+ * # oci.DataSafe.AlertPolicyRule
  * This resource provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
  *
  * Creates a new rule for the alert policy.
@@ -73,7 +82,6 @@ export class AlertPolicyRule extends pulumi.CustomResource {
     public readonly displayName!: pulumi.Output<string>;
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -152,7 +160,6 @@ export interface AlertPolicyRuleState {
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -189,7 +196,6 @@ export interface AlertPolicyRuleArgs {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

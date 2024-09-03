@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

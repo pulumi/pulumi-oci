@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// </summary>
         public readonly string ActionName;
         /// <summary>
-        /// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        /// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         /// </summary>
         public readonly int CollaborativeActionThreshold;
         /// <summary>

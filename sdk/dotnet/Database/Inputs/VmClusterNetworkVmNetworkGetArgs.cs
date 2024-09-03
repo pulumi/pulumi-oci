@@ -13,25 +13,25 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class VmClusterNetworkVmNetworkGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The network domain name.
+        /// (Updatable) The network domain name.
         /// </summary>
         [Input("domainName")]
         public Input<string>? DomainName { get; set; }
 
         /// <summary>
-        /// The network gateway.
+        /// (Updatable) The network gateway.
         /// </summary>
         [Input("gateway")]
         public Input<string>? Gateway { get; set; }
 
         /// <summary>
-        /// The network netmask.
+        /// (Updatable) The network netmask.
         /// </summary>
         [Input("netmask")]
         public Input<string>? Netmask { get; set; }
 
         /// <summary>
-        /// The network type.
+        /// (Updatable) The network type.
         /// </summary>
         [Input("networkType", required: true)]
         public Input<string> NetworkType { get; set; } = null!;
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database.Inputs
         private InputList<Inputs.VmClusterNetworkVmNetworkNodeGetArgs>? _nodes;
 
         /// <summary>
-        /// The list of node details.
+        /// (Updatable) The list of node details.
         /// </summary>
         public InputList<Inputs.VmClusterNetworkVmNetworkNodeGetArgs> Nodes
         {
@@ -49,7 +49,10 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// The network VLAN ID.
+        /// (Updatable) The network VLAN ID.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vlanId")]
         public Input<string>? VlanId { get; set; }

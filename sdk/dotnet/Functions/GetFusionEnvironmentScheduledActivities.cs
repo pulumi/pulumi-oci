@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Returns a list of ScheduledActivities.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Functions
         /// This data source provides the list of Fusion Environment Scheduled Activities in Oracle Cloud Infrastructure Fusion Apps service.
         /// 
         /// Returns a list of ScheduledActivities.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -29,7 +29,6 @@ class MigrationArgs:
         :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -110,7 +109,6 @@ class MigrationArgs:
         """
         (Updatable) Replication schedule identifier
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -144,7 +142,6 @@ class _MigrationState:
         :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -253,7 +250,6 @@ class _MigrationState:
     def replication_schedule_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Replication schedule identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -365,7 +361,6 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -489,7 +484,6 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of migration.
@@ -567,7 +561,6 @@ class Migration(pulumi.CustomResource):
     def replication_schedule_id(self) -> pulumi.Output[str]:
         """
         (Updatable) Replication schedule identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -26,7 +26,6 @@ class TsigKeyArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the TSIG key.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -76,7 +75,6 @@ class TsigKeyArgs:
     def secret(self) -> pulumi.Input[str]:
         """
         A base64 string encoding the binary shared secret.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -153,7 +151,6 @@ class _TsigKeyState:
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -252,7 +249,6 @@ class _TsigKeyState:
     def secret(self) -> Optional[pulumi.Input[str]]:
         """
         A base64 string encoding the binary shared secret.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -365,7 +361,6 @@ class TsigKey(pulumi.CustomResource):
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -491,7 +486,6 @@ class TsigKey(pulumi.CustomResource):
         :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
@@ -564,7 +558,6 @@ class TsigKey(pulumi.CustomResource):
     def secret(self) -> pulumi.Output[str]:
         """
         A base64 string encoding the binary shared secret.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

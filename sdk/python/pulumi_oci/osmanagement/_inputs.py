@@ -254,7 +254,6 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
         :param pulumi.Input[str] id: software source identifier
         :param pulumi.Input[str] name: software source name
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -280,7 +279,6 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         software source name
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

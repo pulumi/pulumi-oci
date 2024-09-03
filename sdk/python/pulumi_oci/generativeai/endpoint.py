@@ -30,7 +30,6 @@ class EndpointArgs:
         :param pulumi.Input[str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
         :param pulumi.Input[str] model_id: The ID of the model that's used to create this endpoint.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['EndpointContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
@@ -82,7 +81,6 @@ class EndpointArgs:
     def model_id(self) -> pulumi.Input[str]:
         """
         The ID of the model that's used to create this endpoint.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,7 +179,6 @@ class _EndpointState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state of the endpoint in more detail that can provide actionable information.
         :param pulumi.Input[str] model_id: The ID of the model that's used to create this endpoint.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -319,7 +316,6 @@ class _EndpointState:
         """
         The ID of the model that's used to create this endpoint.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -440,7 +436,6 @@ class Endpoint(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] model_id: The ID of the model that's used to create this endpoint.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -580,7 +575,6 @@ class Endpoint(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state of the endpoint in more detail that can provide actionable information.
         :param pulumi.Input[str] model_id: The ID of the model that's used to create this endpoint.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the endpoint.
@@ -676,7 +670,6 @@ class Endpoint(pulumi.CustomResource):
     def model_id(self) -> pulumi.Output[str]:
         """
         The ID of the model that's used to create this endpoint.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

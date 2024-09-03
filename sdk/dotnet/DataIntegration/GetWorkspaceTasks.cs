@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves a list of all tasks in a specified project or folder.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DataIntegration
         /// This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
         /// 
         /// Retrieves a list of all tasks in a specified project or folder.
-        /// 
         /// 
         /// ## Example Usage
         /// 

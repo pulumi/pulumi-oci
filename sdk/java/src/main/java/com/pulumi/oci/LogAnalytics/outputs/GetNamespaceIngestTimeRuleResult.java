@@ -21,7 +21,7 @@ public final class GetNamespaceIngestTimeRuleResult {
      */
     private List<GetNamespaceIngestTimeRuleAction> actions;
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     private String compartmentId;
@@ -91,7 +91,7 @@ public final class GetNamespaceIngestTimeRuleResult {
         return this.actions;
     }
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     public String compartmentId() {

@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// subcategory: "Data Safe"
+    /// layout: "oci"
+    /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.TargetAlertPolicyAssociation"
+    /// sidebar_current: "docs-oci-resource-data_safe-target_alert_policy_association"
+    /// description: |-
+    /// 	Provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service
+    /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+    /// 
+    /// # oci.DataSafe.TargetAlertPolicyAssociation
     /// This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
     /// Creates a new target-alert policy association to track a alert policy applied on target.
@@ -118,7 +127,6 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The OCID of the target.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -241,7 +249,6 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the target.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -336,7 +343,6 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The OCID of the target.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -66,22 +66,6 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * Example of threshold alarm:
      * 
-     * ***
-     * 
-     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-     * 
-     * ***
-     * 
-     * Example of absence alarm:
-     * 
-     * ***
-     * 
-     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
-     * 
-     * ----- Example of absence alarm with custom absence detection period of 20 hours:
-     * 
-     * ----- CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent(20h) -----
-     * 
      */
     @Import(name="query")
     private @Nullable Output<String> query;
@@ -91,36 +75,20 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * Example of threshold alarm:
      * 
-     * ***
-     * 
-     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-     * 
-     * ***
-     * 
-     * Example of absence alarm:
-     * 
-     * ***
-     * 
-     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
-     * 
-     * ----- Example of absence alarm with custom absence detection period of 20 hours:
-     * 
-     * ----- CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent(20h) -----
-     * 
      */
     public Optional<Output<String>> query() {
         return Optional.ofNullable(this.query);
     }
 
     /**
-     * (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+     * (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      * 
      */
     @Import(name="ruleName")
     private @Nullable Output<String> ruleName;
 
     /**
-     * @return (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+     * @return (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      * 
      */
     public Optional<Output<String>> ruleName() {
@@ -128,14 +96,14 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+     * (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
     @Import(name="severity")
     private @Nullable Output<String> severity;
 
     /**
-     * @return (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+     * @return (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
     public Optional<Output<String>> severity() {
@@ -233,22 +201,6 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * Example of threshold alarm:
          * 
-         * ***
-         * 
-         * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-         * 
-         * ***
-         * 
-         * Example of absence alarm:
-         * 
-         * ***
-         * 
-         * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
-         * 
-         * ----- Example of absence alarm with custom absence detection period of 20 hours:
-         * 
-         * ----- CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent(20h) -----
-         * 
          * @return builder
          * 
          */
@@ -262,22 +214,6 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * Example of threshold alarm:
          * 
-         * ***
-         * 
-         * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-         * 
-         * ***
-         * 
-         * Example of absence alarm:
-         * 
-         * ***
-         * 
-         * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
-         * 
-         * ----- Example of absence alarm with custom absence detection period of 20 hours:
-         * 
-         * ----- CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent(20h) -----
-         * 
          * @return builder
          * 
          */
@@ -286,7 +222,7 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+         * @param ruleName (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
          * 
          * @return builder
          * 
@@ -297,7 +233,7 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+         * @param ruleName (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
          * 
          * @return builder
          * 
@@ -307,7 +243,7 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param severity (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+         * @param severity (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
          * 
          * @return builder
          * 
@@ -318,7 +254,7 @@ public final class AlarmOverrideArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param severity (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+         * @param severity (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
          * 
          * @return builder
          * 

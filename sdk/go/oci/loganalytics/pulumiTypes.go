@@ -653,7 +653,7 @@ func (o LogAnalyticsPreferencesManagementItemArrayOutput) Index(i pulumi.IntInpu
 }
 
 type NamespaceIngestTimeRuleAction struct {
-	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+	// (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
 	Dimensions []string `pulumi:"dimensions"`
@@ -679,7 +679,7 @@ type NamespaceIngestTimeRuleActionInput interface {
 }
 
 type NamespaceIngestTimeRuleActionArgs struct {
-	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+	// (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
 	Dimensions pulumi.StringArrayInput `pulumi:"dimensions"`
@@ -744,7 +744,7 @@ func (o NamespaceIngestTimeRuleActionOutput) ToNamespaceIngestTimeRuleActionOutp
 	return o
 }
 
-// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+// (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
 func (o NamespaceIngestTimeRuleActionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -1133,7 +1133,7 @@ type NamespaceScheduledTaskAction struct {
 	MetricExtraction *NamespaceScheduledTaskActionMetricExtraction `pulumi:"metricExtraction"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId *string `pulumi:"purgeCompartmentId"`
-	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 	PurgeDuration *string `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString *string `pulumi:"queryString"`
@@ -1163,7 +1163,7 @@ type NamespaceScheduledTaskActionArgs struct {
 	MetricExtraction NamespaceScheduledTaskActionMetricExtractionPtrInput `pulumi:"metricExtraction"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId pulumi.StringPtrInput `pulumi:"purgeCompartmentId"`
-	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 	PurgeDuration pulumi.StringPtrInput `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString pulumi.StringPtrInput `pulumi:"queryString"`
@@ -1272,7 +1272,7 @@ func (o NamespaceScheduledTaskActionOutput) PurgeCompartmentId() pulumi.StringPt
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) *string { return v.PurgeCompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 func (o NamespaceScheduledTaskActionOutput) PurgeDuration() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) *string { return v.PurgeDuration }).(pulumi.StringPtrOutput)
 }
@@ -1356,7 +1356,7 @@ func (o NamespaceScheduledTaskActionPtrOutput) PurgeCompartmentId() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 func (o NamespaceScheduledTaskActionPtrOutput) PurgeDuration() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTaskAction) *string {
 		if v == nil {
@@ -1397,7 +1397,7 @@ func (o NamespaceScheduledTaskActionPtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type NamespaceScheduledTaskActionMetricExtraction struct {
-	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+	// (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName *string `pulumi:"metricName"`
@@ -1419,7 +1419,7 @@ type NamespaceScheduledTaskActionMetricExtractionInput interface {
 }
 
 type NamespaceScheduledTaskActionMetricExtractionArgs struct {
-	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+	// (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
@@ -1506,7 +1506,7 @@ func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToNamespaceScheduled
 	}).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
 }
 
-// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+// (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
 func (o NamespaceScheduledTaskActionMetricExtractionOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskActionMetricExtraction) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -1550,7 +1550,7 @@ func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) Elem() NamespaceS
 	}).(NamespaceScheduledTaskActionMetricExtractionOutput)
 }
 
-// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+// (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
 func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTaskActionMetricExtraction) *string {
 		if v == nil {
@@ -1728,7 +1728,7 @@ type NamespaceScheduledTaskSchedulesSchedule struct {
 	Expression *string `pulumi:"expression"`
 	// Schedule misfire retry policy.
 	MisfirePolicy *string `pulumi:"misfirePolicy"`
-	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+	// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 	RecurringInterval *string `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 	RepeatCount *int `pulumi:"repeatCount"`
@@ -1754,7 +1754,7 @@ type NamespaceScheduledTaskSchedulesScheduleArgs struct {
 	Expression pulumi.StringPtrInput `pulumi:"expression"`
 	// Schedule misfire retry policy.
 	MisfirePolicy pulumi.StringPtrInput `pulumi:"misfirePolicy"`
-	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+	// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 	RecurringInterval pulumi.StringPtrInput `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 	RepeatCount pulumi.IntPtrInput `pulumi:"repeatCount"`
@@ -1825,7 +1825,7 @@ func (o NamespaceScheduledTaskSchedulesScheduleOutput) MisfirePolicy() pulumi.St
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedulesSchedule) *string { return v.MisfirePolicy }).(pulumi.StringPtrOutput)
 }
 
-// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) RecurringInterval() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedulesSchedule) *string { return v.RecurringInterval }).(pulumi.StringPtrOutput)
 }
@@ -3354,7 +3354,7 @@ type GetLogAnalyticsEntityTopologyItemNodeItem struct {
 	AreLogsCollected bool `pulumi:"areLogsCollected"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId string `pulumi:"cloudResourceId"`
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -3400,7 +3400,7 @@ type GetLogAnalyticsEntityTopologyItemNodeItemArgs struct {
 	AreLogsCollected pulumi.BoolInput `pulumi:"areLogsCollected"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId pulumi.StringInput `pulumi:"cloudResourceId"`
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -3491,7 +3491,7 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) CloudResourceId() pulum
 	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.CloudResourceId }).(pulumi.StringOutput)
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -5617,7 +5617,7 @@ func (o GetNamespaceEffectivePropertiesFilterArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetNamespaceIngestTimeRuleAction struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
 	Dimensions []string `pulumi:"dimensions"`
@@ -5643,7 +5643,7 @@ type GetNamespaceIngestTimeRuleActionInput interface {
 }
 
 type GetNamespaceIngestTimeRuleActionArgs struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
 	Dimensions pulumi.StringArrayInput `pulumi:"dimensions"`
@@ -5708,7 +5708,7 @@ func (o GetNamespaceIngestTimeRuleActionOutput) ToGetNamespaceIngestTimeRuleActi
 	return o
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetNamespaceIngestTimeRuleActionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -7304,7 +7304,7 @@ type GetNamespaceScheduledTaskAction struct {
 	MetricExtractions []GetNamespaceScheduledTaskActionMetricExtraction `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId string `pulumi:"purgeCompartmentId"`
-	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 	PurgeDuration string `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString string `pulumi:"queryString"`
@@ -7334,7 +7334,7 @@ type GetNamespaceScheduledTaskActionArgs struct {
 	MetricExtractions GetNamespaceScheduledTaskActionMetricExtractionArrayInput `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId pulumi.StringInput `pulumi:"purgeCompartmentId"`
-	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 	PurgeDuration pulumi.StringInput `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString pulumi.StringInput `pulumi:"queryString"`
@@ -7417,7 +7417,7 @@ func (o GetNamespaceScheduledTaskActionOutput) PurgeCompartmentId() pulumi.Strin
 	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.PurgeCompartmentId }).(pulumi.StringOutput)
 }
 
-// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 func (o GetNamespaceScheduledTaskActionOutput) PurgeDuration() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.PurgeDuration }).(pulumi.StringOutput)
 }
@@ -7458,7 +7458,7 @@ func (o GetNamespaceScheduledTaskActionArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetNamespaceScheduledTaskActionMetricExtraction struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName string `pulumi:"metricName"`
@@ -7480,7 +7480,7 @@ type GetNamespaceScheduledTaskActionMetricExtractionInput interface {
 }
 
 type GetNamespaceScheduledTaskActionMetricExtractionArgs struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName pulumi.StringInput `pulumi:"metricName"`
@@ -7541,7 +7541,7 @@ func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ToGetNamespaceSch
 	return o
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -7682,7 +7682,7 @@ type GetNamespaceScheduledTaskScheduleSchedule struct {
 	Expression string `pulumi:"expression"`
 	// Schedule misfire retry policy.
 	MisfirePolicy string `pulumi:"misfirePolicy"`
-	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+	// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 	RecurringInterval string `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 	RepeatCount int `pulumi:"repeatCount"`
@@ -7708,7 +7708,7 @@ type GetNamespaceScheduledTaskScheduleScheduleArgs struct {
 	Expression pulumi.StringInput `pulumi:"expression"`
 	// Schedule misfire retry policy.
 	MisfirePolicy pulumi.StringInput `pulumi:"misfirePolicy"`
-	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+	// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 	RecurringInterval pulumi.StringInput `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 	RepeatCount pulumi.IntInput `pulumi:"repeatCount"`
@@ -7779,7 +7779,7 @@ func (o GetNamespaceScheduledTaskScheduleScheduleOutput) MisfirePolicy() pulumi.
 	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) string { return v.MisfirePolicy }).(pulumi.StringOutput)
 }
 
-// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 func (o GetNamespaceScheduledTaskScheduleScheduleOutput) RecurringInterval() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) string { return v.RecurringInterval }).(pulumi.StringOutput)
 }
@@ -8054,7 +8054,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 	WorkRequestId string `pulumi:"workRequestId"`
 }
 
@@ -8102,7 +8102,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
 }
 
@@ -8244,7 +8244,7 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TimeUpdated
 	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.WorkRequestId }).(pulumi.StringOutput)
 }
@@ -8277,7 +8277,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemAction struct {
 	MetricExtractions []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId string `pulumi:"purgeCompartmentId"`
-	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 	PurgeDuration string `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString string `pulumi:"queryString"`
@@ -8306,7 +8306,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs struct {
 	MetricExtractions GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId pulumi.StringInput `pulumi:"purgeCompartmentId"`
-	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 	PurgeDuration pulumi.StringInput `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString pulumi.StringInput `pulumi:"queryString"`
@@ -8392,7 +8392,7 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) Purge
 	}).(pulumi.StringOutput)
 }
 
-// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) PurgeDuration() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string { return v.PurgeDuration }).(pulumi.StringOutput)
 }
@@ -8659,7 +8659,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule struc
 	Expression string `pulumi:"expression"`
 	// Schedule misfire retry policy.
 	MisfirePolicy string `pulumi:"misfirePolicy"`
-	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+	// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 	RecurringInterval string `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 	RepeatCount int `pulumi:"repeatCount"`
@@ -8685,7 +8685,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs s
 	Expression pulumi.StringInput `pulumi:"expression"`
 	// Schedule misfire retry policy.
 	MisfirePolicy pulumi.StringInput `pulumi:"misfirePolicy"`
-	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+	// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 	RecurringInterval pulumi.StringInput `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 	RepeatCount pulumi.IntInput `pulumi:"repeatCount"`
@@ -8760,7 +8760,7 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOut
 	}).(pulumi.StringOutput)
 }
 
-// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+// Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) RecurringInterval() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) string {
 		return v.RecurringInterval

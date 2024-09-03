@@ -49,8 +49,7 @@ class AnalyticsInstanceArgs:
         :param pulumi.Input[str] kms_key_id: OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -268,8 +267,7 @@ class AnalyticsInstanceArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -322,8 +320,7 @@ class _AnalyticsInstanceState:
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] service_url: URL of the Analytics service.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -568,8 +565,7 @@ class _AnalyticsInstanceState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -712,8 +708,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -903,8 +898,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] service_url: URL of the Analytics service.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1070,8 +1064,7 @@ class AnalyticsInstance(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

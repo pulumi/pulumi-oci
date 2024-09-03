@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the saved schedule list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the saved schedule list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

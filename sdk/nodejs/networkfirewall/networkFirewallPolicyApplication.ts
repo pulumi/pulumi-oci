@@ -83,7 +83,6 @@ export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {
     /**
      * Describes the type of application. The accepted values are - * ICMP * ICMP_V6
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -158,7 +157,6 @@ export interface NetworkFirewallPolicyApplicationState {
     /**
      * Describes the type of application. The accepted values are - * ICMP * ICMP_V6
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -187,7 +185,6 @@ export interface NetworkFirewallPolicyApplicationArgs {
     networkFirewallPolicyId: pulumi.Input<string>;
     /**
      * Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

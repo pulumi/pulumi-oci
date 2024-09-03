@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
-        /// 
         /// 
         /// ## Example Usage
         /// 

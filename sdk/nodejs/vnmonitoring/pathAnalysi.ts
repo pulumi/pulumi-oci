@@ -136,7 +136,6 @@ export class PathAnalysi extends pulumi.CustomResource {
     /**
      * The type of the `PathAnalysis` query.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -223,7 +222,6 @@ export interface PathAnalysiState {
     /**
      * The type of the `PathAnalysis` query.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -268,7 +266,6 @@ export interface PathAnalysiArgs {
     sourceEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiSourceEndpoint>;
     /**
      * The type of the `PathAnalysis` query.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

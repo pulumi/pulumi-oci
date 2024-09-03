@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsubSubscription
         /// 
         /// This API returns the commitment details corresponding to the id provided
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.OsubSubscription
         /// This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Osub Subscription service.
         /// 
         /// This API returns the commitment details corresponding to the id provided
-        /// 
         /// 
         /// ## Example Usage
         /// 

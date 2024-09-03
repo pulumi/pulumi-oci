@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the summary report for the specified SQL Tuning Advisor task.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Summary Report resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the summary report for the specified SQL Tuning Advisor task.
-        /// 
         /// 
         /// ## Example Usage
         /// 

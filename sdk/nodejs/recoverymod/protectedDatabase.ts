@@ -135,7 +135,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly metrics!: pulumi.Output<outputs.RecoveryMod.ProtectedDatabaseMetric[]>;
     /**
-     * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+     * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
     public readonly password!: pulumi.Output<string>;
     /**
@@ -155,8 +155,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-     *
+     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -331,7 +330,7 @@ export interface ProtectedDatabaseState {
      */
     metrics?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.ProtectedDatabaseMetric>[]>;
     /**
-     * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+     * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
     password?: pulumi.Input<string>;
     /**
@@ -351,8 +350,7 @@ export interface ProtectedDatabaseState {
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-     *
+     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -419,7 +417,7 @@ export interface ProtectedDatabaseArgs {
      */
     isRedoLogsShipped?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+     * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
     password: pulumi.Input<string>;
     /**
@@ -431,8 +429,7 @@ export interface ProtectedDatabaseArgs {
      */
     recoveryServiceSubnets: pulumi.Input<pulumi.Input<inputs.RecoveryMod.ProtectedDatabaseRecoveryServiceSubnet>[]>;
     /**
-     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-     *
+     * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

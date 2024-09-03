@@ -4534,14 +4534,16 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
                  status: Optional[pulumi.Input[int]] = None,
                  url: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] type: Type of the Response Cache Store Policy.
-        :param pulumi.Input[str] body: The body of the stock response from the mock backend.
-        :param pulumi.Input[float] connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
-        :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        :param pulumi.Input[bool] is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
-        :param pulumi.Input[float] read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
-        :param pulumi.Input[float] send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
-        :param pulumi.Input[int] status: The status code of the stock response from the mock backend.
+        :param pulumi.Input[str] type: (Updatable) Type of the API backend.
+        :param pulumi.Input[str] body: (Updatable) The body of the stock response from the mock backend.
+        :param pulumi.Input[float] connect_timeout_in_seconds: (Updatable) Defines a timeout for establishing a connection with a proxied server.
+        :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs']]] headers: (Updatable) The headers of the stock response from the mock backend.
+        :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
+        :param pulumi.Input[float] read_timeout_in_seconds: (Updatable) Defines a timeout for reading a response from the proxied server.
+        :param pulumi.Input[float] send_timeout_in_seconds: (Updatable) Defines a timeout for transmitting a request to the proxied server.
+        :param pulumi.Input[int] status: (Updatable) The status code of the stock response from the mock backend.
+        :param pulumi.Input[str] url: (Updatable) The url of the proxied server.
         """
         pulumi.set(__self__, "type", type)
         if body is not None:
@@ -4567,7 +4569,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        Type of the Response Cache Store Policy.
+        (Updatable) Type of the API backend.
         """
         return pulumi.get(self, "type")
 
@@ -4579,7 +4581,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @pulumi.getter
     def body(self) -> Optional[pulumi.Input[str]]:
         """
-        The body of the stock response from the mock backend.
+        (Updatable) The body of the stock response from the mock backend.
         """
         return pulumi.get(self, "body")
 
@@ -4591,7 +4593,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @pulumi.getter(name="connectTimeoutInSeconds")
     def connect_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
         """
-        Defines a timeout for establishing a connection with a proxied server.
+        (Updatable) Defines a timeout for establishing a connection with a proxied server.
         """
         return pulumi.get(self, "connect_timeout_in_seconds")
 
@@ -4603,7 +4605,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         """
         return pulumi.get(self, "function_id")
 
@@ -4614,6 +4616,9 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs']]]]:
+        """
+        (Updatable) The headers of the stock response from the mock backend.
+        """
         return pulumi.get(self, "headers")
 
     @headers.setter
@@ -4624,7 +4629,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Defines whether or not to uphold SSL verification.
+        (Updatable) Defines whether or not to uphold SSL verification.
         """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
@@ -4636,7 +4641,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @pulumi.getter(name="readTimeoutInSeconds")
     def read_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
         """
-        Defines a timeout for reading a response from the proxied server.
+        (Updatable) Defines a timeout for reading a response from the proxied server.
         """
         return pulumi.get(self, "read_timeout_in_seconds")
 
@@ -4648,7 +4653,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @pulumi.getter(name="sendTimeoutInSeconds")
     def send_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
         """
-        Defines a timeout for transmitting a request to the proxied server.
+        (Updatable) Defines a timeout for transmitting a request to the proxied server.
         """
         return pulumi.get(self, "send_timeout_in_seconds")
 
@@ -4660,7 +4665,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[int]]:
         """
-        The status code of the stock response from the mock backend.
+        (Updatable) The status code of the stock response from the mock backend.
         """
         return pulumi.get(self, "status")
 
@@ -4671,6 +4676,9 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The url of the proxied server.
+        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -4684,8 +4692,8 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] value: Value of the header.
+        :param pulumi.Input[str] name: (Updatable) Name of the header.
+        :param pulumi.Input[str] value: (Updatable) Value of the header.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -4696,7 +4704,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The case-insensitive name of the header.  This name must be unique across transformation policies.
+        (Updatable) Name of the header.
         """
         return pulumi.get(self, "name")
 
@@ -4708,7 +4716,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        Value of the header.
+        (Updatable) Value of the header.
         """
         return pulumi.get(self, "value")
 
@@ -6396,7 +6404,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
         :param pulumi.Input[int] time_to_live_in_seconds: (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -6420,7 +6427,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

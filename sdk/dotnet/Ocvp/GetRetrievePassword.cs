@@ -12,8 +12,16 @@ namespace Pulumi.Oci.Ocvp
     public static class GetRetrievePassword
     {
         /// <summary>
-        /// This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// subcategory: "Oracle Cloud VMware Solution"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Ocvp.getRetrievePassword"
+        /// sidebar_current: "docs-oci-datasource-ocvp-retrieve_password"
+        /// description: |-
+        /// Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
         /// 
+        /// # Data Source: oci.Ocvp.getRetrievePassword
+        /// This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
         /// ## Example Usage
         /// 
@@ -38,8 +46,16 @@ namespace Pulumi.Oci.Ocvp
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRetrievePasswordResult>("oci:Ocvp/getRetrievePassword:getRetrievePassword", args ?? new GetRetrievePasswordArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// subcategory: "Oracle Cloud VMware Solution"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Ocvp.getRetrievePassword"
+        /// sidebar_current: "docs-oci-datasource-ocvp-retrieve_password"
+        /// description: |-
+        /// Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
         /// 
+        /// # Data Source: oci.Ocvp.getRetrievePassword
+        /// This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
         /// ## Example Usage
         /// 

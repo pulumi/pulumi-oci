@@ -19,9 +19,9 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         public readonly string BackendSetName;
         /// <summary>
         /// The path string to match against the incoming URI path.
-        /// *  Path strings are case-insensitive.
-        /// *  Asterisk (*) wildcards are not supported.
-        /// *  Regular expressions are not supported.
+        /// * Path strings are case-insensitive.
+        /// * Asterisk (*) wildcards are not supported.
+        /// * Regular expressions are not supported.
         /// </summary>
         public readonly string Path;
         /// <summary>

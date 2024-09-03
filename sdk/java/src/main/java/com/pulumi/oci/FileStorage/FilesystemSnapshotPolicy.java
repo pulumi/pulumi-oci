@@ -175,7 +175,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      * 
-     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
+     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;`
      * 
      */
     @Export(name="schedules", refs={List.class,FilesystemSnapshotPolicySchedule.class}, tree="[0,1]")
@@ -184,7 +184,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
     /**
      * @return (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      * 
-     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
+     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;`
      * 
      */
     public Output<List<FilesystemSnapshotPolicySchedule>> schedules() {

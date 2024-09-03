@@ -37,8 +37,7 @@ class ResolverArgs:
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
-               
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,8 +150,7 @@ class ResolverArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        If specified, must be `PRIVATE` when creating private name resolvers. 
-
+        If specified, must be `PRIVATE` when creating private name resolvers.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -200,8 +198,7 @@ class _ResolverState:
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
-               
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -383,8 +380,7 @@ class _ResolverState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        If specified, must be `PRIVATE` when creating private name resolvers. 
-
+        If specified, must be `PRIVATE` when creating private name resolvers.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -487,8 +483,7 @@ class Resolver(pulumi.CustomResource):
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
-               
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -613,8 +608,7 @@ class Resolver(pulumi.CustomResource):
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
-               
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -741,8 +735,7 @@ class Resolver(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        If specified, must be `PRIVATE` when creating private name resolvers. 
-
+        If specified, must be `PRIVATE` when creating private name resolvers.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

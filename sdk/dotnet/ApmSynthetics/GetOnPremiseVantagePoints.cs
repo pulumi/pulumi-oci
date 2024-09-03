@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// Returns a list of On-premise vantage points.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
         /// 
         /// Returns a list of On-premise vantage points.
-        /// 
         /// 
         /// ## Example Usage
         /// 

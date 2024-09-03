@@ -72,11 +72,11 @@ type GetBackendHealthResult struct {
 	Id                    string `pulumi:"id"`
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
 	// The general health status of the specified backend server.
-	// *   **OK:**  All health check probes return `OK`
-	// *   **WARNING:** At least one of the health check probes does not return `OK`
-	// *   **CRITICAL:** None of the health check probes return `OK`. *
-	// *   **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
-	// *   or the system is unable to retrieve metrics at this time.
+	// * **OK:**  All health check probes return `OK`
+	// * **WARNING:** At least one of the health check probes does not return `OK`
+	// * **CRITICAL:** None of the health check probes return `OK`. *
+	// * **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
+	// * or the system is unable to retrieve metrics at this time.
 	Status string `pulumi:"status"`
 }
 
@@ -145,11 +145,11 @@ func (o GetBackendHealthResultOutput) NetworkLoadBalancerId() pulumi.StringOutpu
 }
 
 // The general health status of the specified backend server.
-// *   **OK:**  All health check probes return `OK`
-// *   **WARNING:** At least one of the health check probes does not return `OK`
-// *   **CRITICAL:** None of the health check probes return `OK`. *
-// *   **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
-// *   or the system is unable to retrieve metrics at this time.
+// * **OK:**  All health check probes return `OK`
+// * **WARNING:** At least one of the health check probes does not return `OK`
+// * **CRITICAL:** None of the health check probes return `OK`. *
+// * **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
+// * or the system is unable to retrieve metrics at this time.
 func (o GetBackendHealthResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendHealthResult) string { return v.Status }).(pulumi.StringOutput)
 }

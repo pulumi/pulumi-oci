@@ -136,8 +136,7 @@ namespace Pulumi.Oci.Jms
         public Output<string> TimeEnd { get; private set; } = null!;
 
         /// <summary>
-        /// The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
-        /// 
+        /// The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -234,8 +233,7 @@ namespace Pulumi.Oci.Jms
         public Input<string>? TimeEnd { get; set; }
 
         /// <summary>
-        /// The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
-        /// 
+        /// The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -360,8 +358,7 @@ namespace Pulumi.Oci.Jms
         public Input<string>? TimeEnd { get; set; }
 
         /// <summary>
-        /// The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
-        /// 
+        /// The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

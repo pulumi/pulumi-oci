@@ -99,8 +99,7 @@ export class Resolver extends pulumi.CustomResource {
      */
     public readonly rules!: pulumi.Output<outputs.Dns.ResolverRule[] | undefined>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers. 
-     *
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -232,8 +231,7 @@ export interface ResolverState {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverRule>[]>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers. 
-     *
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -294,8 +292,7 @@ export interface ResolverArgs {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverRule>[]>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers. 
-     *
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

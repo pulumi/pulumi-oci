@@ -13,8 +13,8 @@ import * as utilities from "../utilities";
  * it in the `summaryOf` query parameter.
  *
  * **Example:** /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
- *              &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
- *              &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
+ * &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
+ * &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
  *
  * ## Example Usage
  *
@@ -130,8 +130,8 @@ export interface GetAuditEventAnalyticResult {
  * it in the `summaryOf` query parameter.
  *
  * **Example:** /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
- *              &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
- *              &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
+ * &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
+ * &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
  *
  * ## Example Usage
  *

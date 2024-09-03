@@ -245,7 +245,6 @@ class AutoScalingConfigurationPolicyDetails(dict):
         :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs'] schedule_details: (Updatable) Details of a horizontal scaling schedule.
         :param str timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str trigger_type: The type of autoscaling trigger.
@@ -329,7 +328,6 @@ class AutoScalingConfigurationPolicyDetails(dict):
     def timezone(self) -> Optional[str]:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2210,6 +2208,9 @@ class BdsInstanceKafkaBrokerNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -2239,6 +2240,9 @@ class BdsInstanceKafkaBrokerNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 

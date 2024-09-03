@@ -32,7 +32,6 @@ class WorkspaceFolderArgs:
         :param pulumi.Input['WorkspaceFolderRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] category_name: (Updatable) The category name.
@@ -89,7 +88,6 @@ class WorkspaceFolderArgs:
     def workspace_id(self) -> pulumi.Input[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,7 +214,6 @@ class _WorkspaceFolderState:
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderParentRefArgs']]] parent_reves: A reference to the object's parent.
         :param pulumi.Input['WorkspaceFolderRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -423,7 +420,6 @@ class _WorkspaceFolderState:
         """
         The workspace ID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -499,7 +495,6 @@ class WorkspaceFolder(pulumi.CustomResource):
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[Union['WorkspaceFolderRegistryMetadataArgs', 'WorkspaceFolderRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -650,7 +645,6 @@ class WorkspaceFolder(pulumi.CustomResource):
         :param pulumi.Input[Union['WorkspaceFolderRegistryMetadataArgs', 'WorkspaceFolderRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -789,7 +783,6 @@ class WorkspaceFolder(pulumi.CustomResource):
     def workspace_id(self) -> pulumi.Output[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

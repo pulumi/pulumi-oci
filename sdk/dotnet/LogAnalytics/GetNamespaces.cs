@@ -17,7 +17,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
         /// result also indicates if the tenancy is onboarded with Logging Analytics.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
         /// result also indicates if the tenancy is onboarded with Logging Analytics.
-        /// 
         /// 
         /// ## Example Usage
         /// 

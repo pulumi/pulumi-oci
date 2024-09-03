@@ -130,8 +130,7 @@ namespace Pulumi.Oci.DataScience
         public Output<string> SubDomain { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the subnet. 
-        /// 
+        /// The OCID of the subnet.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -270,8 +269,7 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? SubDomain { get; set; }
 
         /// <summary>
-        /// The OCID of the subnet. 
-        /// 
+        /// The OCID of the subnet.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -378,8 +376,7 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? SubDomain { get; set; }
 
         /// <summary>
-        /// The OCID of the subnet. 
-        /// 
+        /// The OCID of the subnet.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

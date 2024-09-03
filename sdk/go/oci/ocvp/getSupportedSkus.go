@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-// !> **WARNING:** This data source is deprecated and will be removed, please use "Ocvp.getSupportedCommitments" instead.
+// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.!> **WARNING:** This data source is deprecated and will be removed, please use "Ocvp.getSupportedCommitments" instead.
 //
 // Lists supported SKUs.
 //

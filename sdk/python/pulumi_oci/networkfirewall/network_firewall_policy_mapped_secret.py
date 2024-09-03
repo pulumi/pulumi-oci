@@ -30,7 +30,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: Unique name to identify the group of urls to be used in the policy rules.
@@ -99,7 +98,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
         """
         (Updatable) Version number of the secret to be used.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -143,7 +141,6 @@ class _NetworkFirewallPolicyMappedSecretState:
                * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,7 +240,6 @@ class _NetworkFirewallPolicyMappedSecretState:
         """
         (Updatable) Version number of the secret to be used.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -304,7 +300,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
                * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -424,7 +419,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -496,7 +490,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
     def version_number(self) -> pulumi.Output[int]:
         """
         (Updatable) Version number of the secret to be used.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

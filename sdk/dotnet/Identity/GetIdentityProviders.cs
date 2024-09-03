@@ -21,7 +21,6 @@ namespace Pulumi.Oci.Identity
         /// compartment ID (remember that the tenancy is simply the root compartment).
         /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -55,7 +54,6 @@ namespace Pulumi.Oci.Identity
         /// identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
         /// compartment ID (remember that the tenancy is simply the root compartment).
         /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-        /// 
         /// 
         /// ## Example Usage
         /// 

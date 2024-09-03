@@ -11,6 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Database Management"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: DatabaseManagement.getExternalDatabases"
+// sidebar_current: "docs-oci-datasource-database_management-external_databases"
+// description: |-
+// Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+// <!-- yaml: line 7: could not find expected ':' -->
+//
+// # Data Source: DatabaseManagement.getExternalDatabases
 // This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
 //
 // Lists the external databases in the specified compartment or in the specified DB system.

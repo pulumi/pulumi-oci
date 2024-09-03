@@ -33,7 +33,6 @@ class DetectAnomalyJobArgs:
         :param pulumi.Input[str] display_name: (Updatable) Detect anomaly job display name.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -126,7 +125,6 @@ class DetectAnomalyJobArgs:
         """
         The value that customer can adjust to control the sensitivity of anomaly detection
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -169,7 +167,6 @@ class _DetectAnomalyJobState:
         :param pulumi.Input['DetectAnomalyJobOutputDetailsArgs'] output_details: Detect anomaly job output details.
         :param pulumi.Input[str] project_id: The OCID of the project.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -338,7 +335,6 @@ class _DetectAnomalyJobState:
         """
         The value that customer can adjust to control the sensitivity of anomaly detection
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -444,7 +440,6 @@ class DetectAnomalyJob(pulumi.CustomResource):
         :param pulumi.Input[str] model_id: The OCID of the trained model.
         :param pulumi.Input[Union['DetectAnomalyJobOutputDetailsArgs', 'DetectAnomalyJobOutputDetailsArgsDict']] output_details: Detect anomaly job output details.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -568,7 +563,6 @@ class DetectAnomalyJob(pulumi.CustomResource):
         :param pulumi.Input[str] project_id: The OCID of the project.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the batch document job.
@@ -684,7 +678,6 @@ class DetectAnomalyJob(pulumi.CustomResource):
     def sensitivity(self) -> pulumi.Output[float]:
         """
         The value that customer can adjust to control the sensitivity of anomaly detection
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

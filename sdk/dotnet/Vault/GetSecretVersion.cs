@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Vault
         /// 
         /// Gets information about the specified version of a secret.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Vault
         /// This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
         /// 
         /// Gets information about the specified version of a secret.
-        /// 
         /// 
         /// ## Example Usage
         /// 

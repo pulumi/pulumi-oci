@@ -25,7 +25,7 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public Input<string>? MisfirePolicy { get; set; }
 
         /// <summary>
-        /// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        /// Recurring interval in ISO 8601 extended format as described in &lt;https://en.wikipedia.org/wiki/ISO_8601#Durations&gt;. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         /// </summary>
         [Input("recurringInterval")]
         public Input<string>? RecurringInterval { get; set; }

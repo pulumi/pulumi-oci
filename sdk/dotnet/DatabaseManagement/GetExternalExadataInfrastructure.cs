@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
         /// Exadata infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
         /// Exadata infrastructure.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -110,7 +108,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        /// The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
         /// </summary>
         public readonly ImmutableArray<string> DatabaseCompartments;
         /// <summary>

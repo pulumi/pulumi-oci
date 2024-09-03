@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-        /// 
         /// 
         /// ## Example Usage
         /// 

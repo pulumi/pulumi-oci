@@ -89,7 +89,7 @@ type LookupJmsPluginResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen string `pulumi:"timeLastSeen"`
 	// The date and time the plugin was registered.
 	TimeRegistered string `pulumi:"timeRegistered"`
@@ -212,7 +212,7 @@ func (o LookupJmsPluginResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupJmsPluginResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 func (o LookupJmsPluginResultOutput) TimeLastSeen() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJmsPluginResult) string { return v.TimeLastSeen }).(pulumi.StringOutput)
 }

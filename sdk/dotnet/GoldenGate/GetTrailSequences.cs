@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
-        /// 
         /// 
         /// ## Example Usage
         /// 

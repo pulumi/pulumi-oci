@@ -168,7 +168,7 @@ class ModelFineTuneDetails(dict):
                  training_config: Optional['outputs.ModelFineTuneDetailsTrainingConfig'] = None):
         """
         :param str dedicated_ai_cluster_id: The OCID of the dedicated AI cluster this fine-tuning runs on.
-        :param 'ModelFineTuneDetailsTrainingDatasetArgs' training_dataset: The dataset used to fine-tune the model. 
+        :param 'ModelFineTuneDetailsTrainingDatasetArgs' training_dataset: The dataset used to fine-tune the model.
                
                Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
         :param 'ModelFineTuneDetailsTrainingConfigArgs' training_config: The fine-tuning method and hyperparameters used for fine-tuning a custom model.
@@ -190,7 +190,7 @@ class ModelFineTuneDetails(dict):
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> 'outputs.ModelFineTuneDetailsTrainingDataset':
         """
-        The dataset used to fine-tune the model. 
+        The dataset used to fine-tune the model.
 
         Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
         """
@@ -261,7 +261,7 @@ class ModelFineTuneDetailsTrainingConfig(dict):
         :param int early_stopping_patience: Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
         :param float early_stopping_threshold: How much the loss must improve to prevent early stopping.
         :param float learning_rate: The initial learning rate to be used during training
-        :param int log_model_metrics_interval_in_steps: Determines how frequently to log model metrics. 
+        :param int log_model_metrics_interval_in_steps: Determines how frequently to log model metrics.
                
                Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
         :param int lora_alpha: This parameter represents the scaling factor for the weight matrices in LoRA.
@@ -329,7 +329,7 @@ class ModelFineTuneDetailsTrainingConfig(dict):
     @pulumi.getter(name="logModelMetricsIntervalInSteps")
     def log_model_metrics_interval_in_steps(self) -> Optional[int]:
         """
-        Determines how frequently to log model metrics. 
+        Determines how frequently to log model metrics.
 
         Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
         """

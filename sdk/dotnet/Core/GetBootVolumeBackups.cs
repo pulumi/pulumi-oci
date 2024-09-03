@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Boot Volume Backups in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
-        /// 
         /// 
         /// ## Example Usage
         /// 

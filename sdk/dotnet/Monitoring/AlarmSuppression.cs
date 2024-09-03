@@ -134,8 +134,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> TimeSuppressFrom { get; private set; } = null!;
 
         /// <summary>
-        /// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-        /// 
+        /// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,8 +261,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string> TimeSuppressFrom { get; set; } = null!;
 
         /// <summary>
-        /// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-        /// 
+        /// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -364,8 +362,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? TimeSuppressFrom { get; set; }
 
         /// <summary>
-        /// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-        /// 
+        /// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

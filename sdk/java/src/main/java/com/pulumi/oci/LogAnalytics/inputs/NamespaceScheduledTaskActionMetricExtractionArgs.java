@@ -16,14 +16,14 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
     public static final NamespaceScheduledTaskActionMetricExtractionArgs Empty = new NamespaceScheduledTaskActionMetricExtractionArgs();
 
     /**
-     * (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * @return (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -103,7 +103,7 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+         * @param compartmentId (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+         * @param compartmentId (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
          * 
          * @return builder
          * 

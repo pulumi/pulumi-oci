@@ -39,7 +39,6 @@ class ManagedListArgs:
         :param pulumi.Input[str] list_type: Type of information stored in the list
         :param pulumi.Input[str] source_managed_list_id: OCID of the source managed list
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -154,7 +153,6 @@ class ManagedListArgs:
         """
         OCID of the source managed list
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -202,7 +200,6 @@ class _ManagedListState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_items: (Updatable) List of items in the managed list
         :param pulumi.Input[str] list_type: Type of information stored in the list
         :param pulumi.Input[str] source_managed_list_id: OCID of the source managed list
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -374,7 +371,6 @@ class _ManagedListState:
         """
         OCID of the source managed list
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -476,7 +472,6 @@ class ManagedList(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_items: (Updatable) List of items in the managed list
         :param pulumi.Input[str] list_type: Type of information stored in the list
         :param pulumi.Input[str] source_managed_list_id: OCID of the source managed list
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -601,7 +596,6 @@ class ManagedList(pulumi.CustomResource):
         :param pulumi.Input[str] list_type: Type of information stored in the list
         :param pulumi.Input[str] source_managed_list_id: OCID of the source managed list
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current lifecycle state of the resource
@@ -721,7 +715,6 @@ class ManagedList(pulumi.CustomResource):
     def source_managed_list_id(self) -> pulumi.Output[str]:
         """
         OCID of the source managed list
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

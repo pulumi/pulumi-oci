@@ -35,7 +35,6 @@ class WorkspaceApplicationScheduleArgs:
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
@@ -102,7 +101,6 @@ class WorkspaceApplicationScheduleArgs:
     def workspace_id(self) -> pulumi.Input[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,7 +269,6 @@ class _WorkspaceApplicationScheduleState:
         :param pulumi.Input['WorkspaceApplicationScheduleRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] timezone: (Updatable) The timezone for the schedule.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -495,7 +492,6 @@ class _WorkspaceApplicationScheduleState:
         """
         The workspace ID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -594,7 +590,6 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         :param pulumi.Input[Union['WorkspaceApplicationScheduleRegistryMetadataArgs', 'WorkspaceApplicationScheduleRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] timezone: (Updatable) The timezone for the schedule.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -768,7 +763,6 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         :param pulumi.Input[str] timezone: (Updatable) The timezone for the schedule.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -919,7 +913,6 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
     def workspace_id(self) -> pulumi.Output[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

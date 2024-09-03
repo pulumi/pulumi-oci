@@ -31,7 +31,6 @@ class AuditTrailManagementArgs:
         The set of arguments for constructing a AuditTrailManagement resource.
         :param pulumi.Input[str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the target.
@@ -79,7 +78,6 @@ class AuditTrailManagementArgs:
     def audit_collection_start_time(self) -> Optional[pulumi.Input[str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -263,7 +261,6 @@ class _AuditTrailManagementState:
         Input properties used for looking up and filtering AuditTrailManagement resources.
         :param pulumi.Input[str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] audit_profile_id: The OCID of the  parent audit.
@@ -335,7 +332,6 @@ class _AuditTrailManagementState:
     def audit_collection_start_time(self) -> Optional[pulumi.Input[str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -639,7 +635,6 @@ class AuditTrailManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the target.
@@ -788,7 +783,6 @@ class AuditTrailManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] audit_profile_id: The OCID of the  parent audit.
@@ -844,7 +838,6 @@ class AuditTrailManagement(pulumi.CustomResource):
     def audit_collection_start_time(self) -> pulumi.Output[Optional[str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

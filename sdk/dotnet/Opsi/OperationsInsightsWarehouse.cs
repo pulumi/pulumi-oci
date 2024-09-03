@@ -117,8 +117,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Storage allocated to OPSI Warehouse ADW. 
-        /// 
+        /// (Updatable) Storage allocated to OPSI Warehouse ADW.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -245,8 +244,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// (Updatable) Storage allocated to OPSI Warehouse ADW. 
-        /// 
+        /// (Updatable) Storage allocated to OPSI Warehouse ADW.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -335,8 +333,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) Storage allocated to OPSI Warehouse ADW. 
-        /// 
+        /// (Updatable) Storage allocated to OPSI Warehouse ADW.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

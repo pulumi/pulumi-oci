@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
-        /// 
         /// 
         /// ## Example Usage
         /// 

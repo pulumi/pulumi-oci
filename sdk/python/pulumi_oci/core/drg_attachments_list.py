@@ -25,7 +25,6 @@ class DrgAttachmentsListArgs:
         :param pulumi.Input[str] attachment_type: The type for the network resource attached to the DRG.
         :param pulumi.Input[bool] is_cross_tenancy: Whether the DRG attachment lives in a different tenancy than the DRG.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -65,7 +64,6 @@ class DrgAttachmentsListArgs:
         """
         Whether the DRG attachment lives in a different tenancy than the DRG.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -89,7 +87,6 @@ class _DrgAttachmentsListState:
         :param pulumi.Input[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]] drg_all_attachments: The list of drg_attachments.
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         :param pulumi.Input[bool] is_cross_tenancy: Whether the DRG attachment lives in a different tenancy than the DRG.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,7 +142,6 @@ class _DrgAttachmentsListState:
         """
         Whether the DRG attachment lives in a different tenancy than the DRG.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -191,7 +187,6 @@ class DrgAttachmentsList(pulumi.CustomResource):
         :param pulumi.Input[str] attachment_type: The type for the network resource attached to the DRG.
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         :param pulumi.Input[bool] is_cross_tenancy: Whether the DRG attachment lives in a different tenancy than the DRG.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -282,7 +277,6 @@ class DrgAttachmentsList(pulumi.CustomResource):
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         :param pulumi.Input[bool] is_cross_tenancy: Whether the DRG attachment lives in a different tenancy than the DRG.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -325,7 +319,6 @@ class DrgAttachmentsList(pulumi.CustomResource):
     def is_cross_tenancy(self) -> pulumi.Output[Optional[bool]]:
         """
         Whether the DRG attachment lives in a different tenancy than the DRG.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

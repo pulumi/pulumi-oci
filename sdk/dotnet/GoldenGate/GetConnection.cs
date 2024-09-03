@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Retrieves a Connection.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Retrieves a Connection.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -191,7 +189,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        /// Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
         /// </summary>
         public readonly string Endpoint;
         public readonly string Fingerprint;

@@ -23,7 +23,6 @@ namespace Pulumi.Oci.DataSafe
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -59,7 +58,6 @@ namespace Pulumi.Oci.DataSafe
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -39,7 +39,7 @@ public final class GetListJreUsageItem {
      */
     private Integer daysUnderSecurityBaseline;
     /**
-     * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+     * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
      * 
      */
     private String distribution;
@@ -84,12 +84,12 @@ public final class GetListJreUsageItem {
      */
     private String timeEnd;
     /**
-     * @return The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * @return The date and time the resource was *first* reported to JMS. This is potentially *before* the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
     private String timeFirstSeen;
     /**
-     * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * @return The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
     private String timeLastSeen;
@@ -146,7 +146,7 @@ public final class GetListJreUsageItem {
         return this.daysUnderSecurityBaseline;
     }
     /**
-     * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+     * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
      * 
      */
     public String distribution() {
@@ -209,14 +209,14 @@ public final class GetListJreUsageItem {
         return this.timeEnd;
     }
     /**
-     * @return The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * @return The date and time the resource was *first* reported to JMS. This is potentially *before* the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
     public String timeFirstSeen() {
         return this.timeFirstSeen;
     }
     /**
-     * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * @return The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
     public String timeLastSeen() {

@@ -70,7 +70,7 @@ type Database struct {
 	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
 	KmsKeyMigration pulumi.BoolPtrOutput `pulumi:"kmsKeyMigration"`
 	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
 	KmsKeyRotation pulumi.IntPtrOutput `pulumi:"kmsKeyRotation"`
@@ -188,7 +188,7 @@ type databaseState struct {
 	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
 	KmsKeyMigration *bool `pulumi:"kmsKeyMigration"`
 	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
 	KmsKeyRotation *int `pulumi:"kmsKeyRotation"`
@@ -268,7 +268,7 @@ type DatabaseState struct {
 	KeyStoreWalletName pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
 	KmsKeyMigration pulumi.BoolPtrInput
 	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
 	KmsKeyRotation pulumi.IntPtrInput
@@ -324,7 +324,7 @@ type databaseArgs struct {
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
 	KmsKeyMigration *bool `pulumi:"kmsKeyMigration"`
 	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
 	KmsKeyRotation *int `pulumi:"kmsKeyRotation"`
@@ -355,7 +355,7 @@ type DatabaseArgs struct {
 	KeyStoreId pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
 	KmsKeyMigration pulumi.BoolPtrInput
 	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
 	KmsKeyRotation pulumi.IntPtrInput
@@ -556,7 +556,7 @@ func (o DatabaseOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
-// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(<https://www.oracle.com/security/cloud-security/key-management/faq/>)
 func (o DatabaseOutput) KmsKeyMigration() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Database) pulumi.BoolPtrOutput { return v.KmsKeyMigration }).(pulumi.BoolPtrOutput)
 }

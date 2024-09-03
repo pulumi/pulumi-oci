@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Lists supported compute shapes for ESXi hosts.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Ocvp
         /// This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
         /// Lists supported compute shapes for ESXi hosts.
-        /// 
         /// 
         /// ## Example Usage
         /// 

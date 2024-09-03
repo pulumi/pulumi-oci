@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// Gets a list of all NetworkAddressLists in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Waf
         /// This data source provides the list of Network Address Lists in Oracle Cloud Infrastructure Waf service.
         /// 
         /// Gets a list of all NetworkAddressLists in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

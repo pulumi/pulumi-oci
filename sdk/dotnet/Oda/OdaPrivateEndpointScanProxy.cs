@@ -76,8 +76,7 @@ namespace Pulumi.Oci.Oda
         public Output<ImmutableArray<Outputs.OdaPrivateEndpointScanProxyScanListenerInfo>> ScanListenerInfos { get; private set; } = null!;
 
         /// <summary>
-        /// Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-        /// 
+        /// Type indicating whether Scan listener is specified by its FQDN or list of IPs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -168,8 +167,7 @@ namespace Pulumi.Oci.Oda
         }
 
         /// <summary>
-        /// Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-        /// 
+        /// Type indicating whether Scan listener is specified by its FQDN or list of IPs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -210,8 +208,7 @@ namespace Pulumi.Oci.Oda
         }
 
         /// <summary>
-        /// Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-        /// 
+        /// Type indicating whether Scan listener is specified by its FQDN or list of IPs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

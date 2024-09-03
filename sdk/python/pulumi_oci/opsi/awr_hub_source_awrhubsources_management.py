@@ -21,7 +21,6 @@ class AwrHubSourceAwrhubsourcesManagementArgs:
         :param pulumi.Input[str] awr_hub_source_id: Unique Awr Hub Source identifier
         :param pulumi.Input[bool] enable_awrhubsource: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -46,7 +45,6 @@ class AwrHubSourceAwrhubsourcesManagementArgs:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -66,7 +64,6 @@ class _AwrHubSourceAwrhubsourcesManagementState:
         Input properties used for looking up and filtering AwrHubSourceAwrhubsourcesManagement resources.
         :param pulumi.Input[str] awr_hub_source_id: Unique Awr Hub Source identifier
         :param pulumi.Input[bool] enable_awrhubsource: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -93,7 +90,6 @@ class _AwrHubSourceAwrhubsourcesManagementState:
     def enable_awrhubsource(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -133,7 +129,6 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] awr_hub_source_id: Unique Awr Hub Source identifier
         :param pulumi.Input[bool] enable_awrhubsource: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -214,7 +209,6 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
         :param pulumi.Input[str] awr_hub_source_id: Unique Awr Hub Source identifier
         :param pulumi.Input[bool] enable_awrhubsource: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -239,7 +233,6 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
     def enable_awrhubsource(self) -> pulumi.Output[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

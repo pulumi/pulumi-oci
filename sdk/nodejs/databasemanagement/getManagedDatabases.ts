@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Database Management"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getManagedDatabases"
+ * sidebar_current: "docs-oci-datasource-database_management-managed_databases"
+ * description: |-
+ * Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.DatabaseManagement.getManagedDatabases
  * This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
  *
  * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
@@ -109,6 +118,15 @@ export interface GetManagedDatabasesResult {
     readonly name?: string;
 }
 /**
+ * subcategory: "Database Management"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getManagedDatabases"
+ * sidebar_current: "docs-oci-datasource-database_management-managed_databases"
+ * description: |-
+ * Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.DatabaseManagement.getManagedDatabases
  * This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
  *
  * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.

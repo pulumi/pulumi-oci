@@ -154,7 +154,6 @@ namespace Pulumi.Oci.OsManagement
         /// <summary>
         /// OCID for the parent software source, if there is one
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -312,7 +311,6 @@ namespace Pulumi.Oci.OsManagement
         /// <summary>
         /// OCID for the parent software source, if there is one
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -437,7 +435,6 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// OCID for the parent software source, if there is one
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

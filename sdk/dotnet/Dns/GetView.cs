@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Dns
         /// view in the DELETED lifecycleState will result in a `404` response to be
         /// consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Dns
         /// Gets information about a specific view. Note that attempting to get a
         /// view in the DELETED lifecycleState will result in a `404` response to be
         /// consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
-        /// 
         /// 
         /// ## Example Usage
         /// 

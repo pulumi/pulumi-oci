@@ -77,7 +77,7 @@ type GetNamespaceIngestTimeRulesArgs struct {
 
 // A collection of values returned by getNamespaceIngestTimeRules.
 type GetNamespaceIngestTimeRulesResult struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string  `pulumi:"compartmentId"`
 	ConditionKind *string `pulumi:"conditionKind"`
 	// The ingest time rule display name.
@@ -148,7 +148,7 @@ func (o GetNamespaceIngestTimeRulesResultOutput) ToGetNamespaceIngestTimeRulesRe
 	return o
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetNamespaceIngestTimeRulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceIngestTimeRulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

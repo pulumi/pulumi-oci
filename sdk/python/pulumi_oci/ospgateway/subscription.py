@@ -29,7 +29,6 @@ class SubscriptionArgs:
         :param pulumi.Input['SubscriptionSubscriptionArgs'] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -93,7 +92,6 @@ class SubscriptionArgs:
         """
         Subscription id(OCID).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -152,7 +150,6 @@ class _SubscriptionState:
         :param pulumi.Input[str] ship_to_cust_acct_site_id: Ship to customer account site address id.
         :param pulumi.Input['SubscriptionSubscriptionArgs'] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -425,7 +422,6 @@ class _SubscriptionState:
         """
         Subscription id(OCID).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -551,7 +547,6 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[str] osp_home_region: (Updatable) The home region's public name of the logged in user.
         :param pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -699,7 +694,6 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[str] ship_to_cust_acct_site_id: Ship to customer account site address id.
         :param pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -883,7 +877,6 @@ class Subscription(pulumi.CustomResource):
     def subscription_id(self) -> pulumi.Output[str]:
         """
         Subscription id(OCID).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

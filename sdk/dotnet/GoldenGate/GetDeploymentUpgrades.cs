@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the Deployment Upgrades in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Deployment Upgrades in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Lists the Deployment Upgrades in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

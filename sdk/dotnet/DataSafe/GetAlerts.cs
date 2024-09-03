@@ -12,10 +12,18 @@ namespace Pulumi.Oci.DataSafe
     public static class GetAlerts
     {
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getAlerts"
+        /// sidebar_current: "docs-oci-datasource-data_safe-alerts"
+        /// description: |-
+        /// 	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getAlerts
         /// This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all alerts.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -44,10 +52,18 @@ namespace Pulumi.Oci.DataSafe
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlertsResult>("oci:DataSafe/getAlerts:getAlerts", args ?? new GetAlertsArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getAlerts"
+        /// sidebar_current: "docs-oci-datasource-data_safe-alerts"
+        /// description: |-
+        /// 	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getAlerts
         /// This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all alerts.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// For more information about Oracle defined backup policies and user defined backup policies,
         /// see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// For more information about Oracle defined backup policies and user defined backup policies,
         /// see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

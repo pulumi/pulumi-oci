@@ -654,7 +654,6 @@ class MediaWorkflowTask(dict):
         :param str type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         :param str version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str enable_parameter_reference: (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
@@ -701,7 +700,6 @@ class MediaWorkflowTask(dict):
     def version(self) -> str:
         """
         (Updatable) The version of the MediaWorkflowTaskDeclaration.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -953,7 +951,6 @@ class StreamCdnConfigLock(dict):
         :param str compartment_id: The compartment ID of the lock.
         :param str type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -982,7 +979,6 @@ class StreamCdnConfigLock(dict):
     def type(self) -> str:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1047,7 +1043,6 @@ class StreamDistributionChannelLock(dict):
         :param str compartment_id: (Updatable) The compartment ID of the lock.
         :param str type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1076,7 +1071,6 @@ class StreamDistributionChannelLock(dict):
     def type(self) -> str:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2153,9 +2147,6 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique name. It is read-only and generated for the fact.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2164,9 +2155,6 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique name. It is read-only and generated for the fact.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2200,13 +2188,6 @@ class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult(dict):
                  media_workflow_job_id: str,
                  name: str,
                  type: str):
-        """
-        :param str detail: The body of the detail captured as JSON.
-        :param str key: Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-        :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
-        :param str name: Unique name. It is read-only and generated for the fact.
-        :param str type: Types of details to include.
-        """
         pulumi.set(__self__, "detail", detail)
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
@@ -2216,41 +2197,26 @@ class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult(dict):
     @property
     @pulumi.getter
     def detail(self) -> str:
-        """
-        The body of the detail captured as JSON.
-        """
         return pulumi.get(self, "detail")
 
     @property
     @pulumi.getter
     def key(self) -> str:
-        """
-        Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="mediaWorkflowJobId")
     def media_workflow_job_id(self) -> str:
-        """
-        Unique MediaWorkflowJob identifier.
-        """
         return pulumi.get(self, "media_workflow_job_id")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique name. It is read-only and generated for the fact.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        Types of details to include.
-        """
         return pulumi.get(self, "type")
 
 

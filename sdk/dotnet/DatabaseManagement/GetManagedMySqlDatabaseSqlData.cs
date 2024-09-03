@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Retrieves SQL performance data for given MySQL Instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Retrieves SQL performance data for given MySQL Instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

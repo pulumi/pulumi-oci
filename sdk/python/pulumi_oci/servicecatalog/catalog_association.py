@@ -22,7 +22,6 @@ class CatalogAssociationArgs:
         :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
@@ -49,7 +48,6 @@ class CatalogAssociationArgs:
     def service_catalog_id(self) -> pulumi.Input[str]:
         """
         Identifier of the service catalog.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -85,7 +83,6 @@ class _CatalogAssociationState:
         :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -129,7 +126,6 @@ class _CatalogAssociationState:
     def service_catalog_id(self) -> Optional[pulumi.Input[str]]:
         """
         Identifier of the service catalog.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -192,7 +188,6 @@ class CatalogAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -288,7 +283,6 @@ class CatalogAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Timestamp of when the resource was associated with service catalog.
@@ -324,7 +318,6 @@ class CatalogAssociation(pulumi.CustomResource):
     def service_catalog_id(self) -> pulumi.Output[str]:
         """
         Identifier of the service catalog.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

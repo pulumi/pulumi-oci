@@ -8637,7 +8637,7 @@ type GetInstallationSiteItem struct {
 	SecurityStatus string `pulumi:"securityStatus"`
 	// The lifecycle state of the installation site.
 	State string `pulumi:"state"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen string `pulumi:"timeLastSeen"`
 }
 
@@ -8671,7 +8671,7 @@ type GetInstallationSiteItemArgs struct {
 	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
 	// The lifecycle state of the installation site.
 	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
 }
 
@@ -8771,7 +8771,7 @@ func (o GetInstallationSiteItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSiteItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 func (o GetInstallationSiteItemOutput) TimeLastSeen() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSiteItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
 }
@@ -8903,7 +8903,7 @@ func (o GetInstallationSiteItemBlocklistArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetInstallationSiteItemJre struct {
-	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 	Distribution string `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
 	JreKey string `pulumi:"jreKey"`
@@ -8925,7 +8925,7 @@ type GetInstallationSiteItemJreInput interface {
 }
 
 type GetInstallationSiteItemJreArgs struct {
-	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 	Distribution pulumi.StringInput `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
 	JreKey pulumi.StringInput `pulumi:"jreKey"`
@@ -8986,7 +8986,7 @@ func (o GetInstallationSiteItemJreOutput) ToGetInstallationSiteItemJreOutputWith
 	return o
 }
 
-// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 func (o GetInstallationSiteItemJreOutput) Distribution() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSiteItemJre) string { return v.Distribution }).(pulumi.StringOutput)
 }
@@ -9485,7 +9485,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItem struct {
 	SecurityStatus string `pulumi:"securityStatus"`
 	// The lifecycle state of the installation site.
 	State string `pulumi:"state"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen string `pulumi:"timeLastSeen"`
 }
 
@@ -9519,7 +9519,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemArgs struct {
 	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
 	// The lifecycle state of the installation site.
 	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
 }
 
@@ -9627,7 +9627,7 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) State() pu
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) TimeLastSeen() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
 }
@@ -9759,7 +9759,7 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutp
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemItemJre struct {
-	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 	Distribution string `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
 	JreKey string `pulumi:"jreKey"`
@@ -9781,7 +9781,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemJreInput interface {
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemItemJreArgs struct {
-	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 	Distribution pulumi.StringInput `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
 	JreKey pulumi.StringInput `pulumi:"jreKey"`
@@ -9842,7 +9842,7 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToGetIn
 	return o
 }
 
-// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Distribution() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.Distribution }).(pulumi.StringOutput)
 }
@@ -16351,7 +16351,7 @@ type GetJmsPluginsJmsPluginCollectionItem struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen string `pulumi:"timeLastSeen"`
 	// The date and time the plugin was registered.
 	TimeRegistered string `pulumi:"timeRegistered"`
@@ -16399,7 +16399,7 @@ type GetJmsPluginsJmsPluginCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
 	// The date and time the plugin was registered.
 	TimeRegistered pulumi.StringInput `pulumi:"timeRegistered"`
@@ -16531,7 +16531,7 @@ func (o GetJmsPluginsJmsPluginCollectionItemOutput) SystemTags() pulumi.StringMa
 	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 func (o GetJmsPluginsJmsPluginCollectionItemOutput) TimeLastSeen() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
 }
@@ -16572,7 +16572,7 @@ type GetListJreUsageItem struct {
 	ApproximatePendingWorkRequestCount int `pulumi:"approximatePendingWorkRequestCount"`
 	// The number of days since this release has been under the security baseline.
 	DaysUnderSecurityBaseline int `pulumi:"daysUnderSecurityBaseline"`
-	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 	Distribution string `pulumi:"distribution"`
 	// The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
@@ -16590,9 +16590,9 @@ type GetListJreUsageItem struct {
 	SecurityStatus string `pulumi:"securityStatus"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeEnd string `pulumi:"timeEnd"`
-	// The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *first* reported to JMS. This is potentially *before* the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeFirstSeen string `pulumi:"timeFirstSeen"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen string `pulumi:"timeLastSeen"`
 	// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeStart string `pulumi:"timeStart"`
@@ -16624,7 +16624,7 @@ type GetListJreUsageItemArgs struct {
 	ApproximatePendingWorkRequestCount pulumi.IntInput `pulumi:"approximatePendingWorkRequestCount"`
 	// The number of days since this release has been under the security baseline.
 	DaysUnderSecurityBaseline pulumi.IntInput `pulumi:"daysUnderSecurityBaseline"`
-	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 	Distribution pulumi.StringInput `pulumi:"distribution"`
 	// The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
@@ -16642,9 +16642,9 @@ type GetListJreUsageItemArgs struct {
 	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
-	// The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *first* reported to JMS. This is potentially *before* the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeFirstSeen pulumi.StringInput `pulumi:"timeFirstSeen"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
 	// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeStart pulumi.StringInput `pulumi:"timeStart"`
@@ -16730,7 +16730,7 @@ func (o GetListJreUsageItemOutput) DaysUnderSecurityBaseline() pulumi.IntOutput 
 	return o.ApplyT(func(v GetListJreUsageItem) int { return v.DaysUnderSecurityBaseline }).(pulumi.IntOutput)
 }
 
-// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
 func (o GetListJreUsageItemOutput) Distribution() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.Distribution }).(pulumi.StringOutput)
 }
@@ -16775,12 +16775,12 @@ func (o GetListJreUsageItemOutput) TimeEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.TimeEnd }).(pulumi.StringOutput)
 }
 
-// The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
+// The date and time the resource was *first* reported to JMS. This is potentially *before* the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
 func (o GetListJreUsageItemOutput) TimeFirstSeen() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.TimeFirstSeen }).(pulumi.StringOutput)
 }
 
-// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+// The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 func (o GetListJreUsageItemOutput) TimeLastSeen() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
 }

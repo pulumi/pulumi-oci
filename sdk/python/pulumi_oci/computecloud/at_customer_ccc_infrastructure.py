@@ -31,7 +31,6 @@ class AtCustomerCccInfrastructureArgs:
         :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
         :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ccc_upgrade_schedule_id: (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
@@ -86,7 +85,6 @@ class AtCustomerCccInfrastructureArgs:
     def subnet_id(self) -> pulumi.Input[str]:
         """
         (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,7 +209,6 @@ class _AtCustomerCccInfrastructureState:
         :param pulumi.Input[str] short_name: The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
         :param pulumi.Input[str] state: The current state of the Compute Cloud@Customer infrastructure.
         :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -447,7 +444,6 @@ class _AtCustomerCccInfrastructureState:
         """
         (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -568,7 +564,6 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -728,7 +723,6 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the Compute Cloud@Customer infrastructure.
         :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -887,7 +881,6 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[str]:
         """
         (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

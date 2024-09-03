@@ -32,7 +32,7 @@ public final class DeploymentDeploymentArgumentsItemArgs extends com.pulumi.reso
 
     /**
      * value of the argument.
-     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+     * * To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
      * 
      */
     @Import(name="value")
@@ -40,7 +40,7 @@ public final class DeploymentDeploymentArgumentsItemArgs extends com.pulumi.reso
 
     /**
      * @return value of the argument.
-     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+     * * To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
      * 
      */
     public Optional<Output<String>> value() {
@@ -95,7 +95,7 @@ public final class DeploymentDeploymentArgumentsItemArgs extends com.pulumi.reso
 
         /**
          * @param value value of the argument.
-         * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+         * * To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class DeploymentDeploymentArgumentsItemArgs extends com.pulumi.reso
 
         /**
          * @param value value of the argument.
-         * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+         * * To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
          * 
          * @return builder
          * 

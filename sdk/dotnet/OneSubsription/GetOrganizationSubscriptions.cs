@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// API that returns data for the list of subscription ids returned from Organizations API
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.OneSubsription
         /// This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
         /// 
         /// API that returns data for the list of subscription ids returned from Organizations API
-        /// 
         /// 
         /// ## Example Usage
         /// 

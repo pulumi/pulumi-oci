@@ -3392,6 +3392,15 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalClusters:getExternalClusters", TypeShape.of(GetExternalClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_databases&#34;
+     * description: |-
+     * Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDatabases
      * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external databases in the specified compartment or in the specified DB system.
@@ -3439,6 +3448,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDatabases(GetExternalDatabasesArgs.Empty, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_databases&#34;
+     * description: |-
+     * Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDatabases
      * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external databases in the specified compartment or in the specified DB system.
@@ -3486,6 +3504,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDatabasesPlain(GetExternalDatabasesPlainArgs.Empty, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_databases&#34;
+     * description: |-
+     * Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDatabases
      * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external databases in the specified compartment or in the specified DB system.
@@ -3533,6 +3560,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDatabases(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_databases&#34;
+     * description: |-
+     * Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDatabases
      * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external databases in the specified compartment or in the specified DB system.
@@ -3580,6 +3616,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDatabasesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_databases&#34;
+     * description: |-
+     * Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDatabases
      * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external databases in the specified compartment or in the specified DB system.
@@ -3627,6 +3672,15 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", TypeShape.of(GetExternalDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_databases&#34;
+     * description: |-
+     * Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDatabases
      * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external databases in the specified compartment or in the specified DB system.
@@ -4126,6 +4180,15 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", TypeShape.of(GetExternalDbHomesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.ExternalDbNode&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_node&#34;
+     * description: |-
+     * Provides details about a specific External Db Node in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.ExternalDbNode
      * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the details for the external DB node specified by `externalDbNodeId`.
@@ -4170,6 +4233,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDbNode(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.ExternalDbNode&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_node&#34;
+     * description: |-
+     * Provides details about a specific External Db Node in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.ExternalDbNode
      * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the details for the external DB node specified by `externalDbNodeId`.
@@ -4214,6 +4286,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDbNodePlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.ExternalDbNode&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_node&#34;
+     * description: |-
+     * Provides details about a specific External Db Node in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.ExternalDbNode
      * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the details for the external DB node specified by `externalDbNodeId`.
@@ -4258,6 +4339,15 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", TypeShape.of(GetExternalDbNodeResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.ExternalDbNode&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_node&#34;
+     * description: |-
+     * Provides details about a specific External Db Node in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.ExternalDbNode
      * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the details for the external DB node specified by `externalDbNodeId`.
@@ -4302,6 +4392,15 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", TypeShape.of(GetExternalDbNodeResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDbNodes&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_nodes&#34;
+     * description: |-
+     * Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDbNodes
      * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external DB nodes in the specified external DB system.
@@ -4348,6 +4447,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDbNodes(GetExternalDbNodesArgs.Empty, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDbNodes&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_nodes&#34;
+     * description: |-
+     * Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDbNodes
      * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external DB nodes in the specified external DB system.
@@ -4394,6 +4502,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDbNodesPlain(GetExternalDbNodesPlainArgs.Empty, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDbNodes&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_nodes&#34;
+     * description: |-
+     * Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDbNodes
      * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external DB nodes in the specified external DB system.
@@ -4440,6 +4557,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDbNodes(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDbNodes&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_nodes&#34;
+     * description: |-
+     * Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDbNodes
      * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external DB nodes in the specified external DB system.
@@ -4486,6 +4612,15 @@ public final class DatabaseManagementFunctions {
         return getExternalDbNodesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDbNodes&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_nodes&#34;
+     * description: |-
+     * Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDbNodes
      * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external DB nodes in the specified external DB system.
@@ -4532,6 +4667,15 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", TypeShape.of(GetExternalDbNodesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDbNodes&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-external_db_nodes&#34;
+     * description: |-
+     * Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getExternalDbNodes
      * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the external DB nodes in the specified external DB system.
@@ -17018,6 +17162,15 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseUsers:getManagedDatabaseUsers", TypeShape.of(GetManagedDatabaseUsersResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getManagedDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-managed_databases&#34;
+     * description: |-
+     * Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getManagedDatabases
      * This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
@@ -17072,6 +17225,15 @@ public final class DatabaseManagementFunctions {
         return getManagedDatabases(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getManagedDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-managed_databases&#34;
+     * description: |-
+     * Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getManagedDatabases
      * This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
@@ -17126,6 +17288,15 @@ public final class DatabaseManagementFunctions {
         return getManagedDatabasesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getManagedDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-managed_databases&#34;
+     * description: |-
+     * Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getManagedDatabases
      * This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
@@ -17180,6 +17351,15 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", TypeShape.of(GetManagedDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database Management&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DatabaseManagement.getManagedDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database_management-managed_databases&#34;
+     * description: |-
+     * Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.DatabaseManagement.getManagedDatabases
      * This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// Returns a list of Decryption Profile for the Network Firewall Policy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Returns a list of Decryption Profile for the Network Firewall Policy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

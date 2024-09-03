@@ -24,7 +24,6 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs:
         The set of arguments for constructing a PluggabledatabasePluggableDatabaseDbmFeaturesManagement resource.
         :param pulumi.Input[bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
@@ -42,7 +41,6 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs:
     def enable_pluggable_database_dbm_feature(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -98,7 +96,6 @@ class _PluggabledatabasePluggableDatabaseDbmFeaturesManagementState:
         Input properties used for looking up and filtering PluggabledatabasePluggableDatabaseDbmFeaturesManagement resources.
         :param pulumi.Input[bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs'] feature_details: The details required to enable the specified Database Management feature.
@@ -118,7 +115,6 @@ class _PluggabledatabasePluggableDatabaseDbmFeaturesManagementState:
     def enable_pluggable_database_dbm_feature(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,7 +177,6 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -258,7 +253,6 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
@@ -279,7 +273,6 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
     def enable_pluggable_database_dbm_feature(self) -> pulumi.Output[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

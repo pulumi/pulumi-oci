@@ -30,14 +30,20 @@ public final class MysqlBackupSourceDetailsArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The OCID of the compartment the backup exists in.
+     * The OCID of the compartment where DB system backup is to be copied to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment the backup exists in.
+     * @return The OCID of the compartment where DB system backup is to be copied to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> compartmentId() {
@@ -107,7 +113,10 @@ public final class MysqlBackupSourceDetailsArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment the backup exists in.
+         * @param compartmentId The OCID of the compartment where DB system backup is to be copied to.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -118,7 +127,10 @@ public final class MysqlBackupSourceDetailsArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment the backup exists in.
+         * @param compartmentId The OCID of the compartment where DB system backup is to be copied to.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

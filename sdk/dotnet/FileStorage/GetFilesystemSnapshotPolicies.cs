@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Lists file system snapshot policies in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.FileStorage
         /// This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
         /// 
         /// Lists file system snapshot policies in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API retrieves details of the configured bucket that stores unprocessed payloads.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// This API retrieves details of the configured bucket that stores unprocessed payloads.
-        /// 
         /// 
         /// ## Example Usage
         /// 

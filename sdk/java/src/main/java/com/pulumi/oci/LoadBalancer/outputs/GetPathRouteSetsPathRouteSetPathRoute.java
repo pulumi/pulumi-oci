@@ -18,9 +18,9 @@ public final class GetPathRouteSetsPathRouteSetPathRoute {
     private String backendSetName;
     /**
      * @return The path string to match against the incoming URI path.
-     * *  Path strings are case-insensitive.
-     * *  Asterisk (*) wildcards are not supported.
-     * *  Regular expressions are not supported.
+     * * Path strings are case-insensitive.
+     * * Asterisk (*) wildcards are not supported.
+     * * Regular expressions are not supported.
      * 
      */
     private String path;
@@ -40,9 +40,9 @@ public final class GetPathRouteSetsPathRouteSetPathRoute {
     }
     /**
      * @return The path string to match against the incoming URI path.
-     * *  Path strings are case-insensitive.
-     * *  Asterisk (*) wildcards are not supported.
-     * *  Regular expressions are not supported.
+     * * Path strings are case-insensitive.
+     * * Asterisk (*) wildcards are not supported.
+     * * Regular expressions are not supported.
      * 
      */
     public String path() {

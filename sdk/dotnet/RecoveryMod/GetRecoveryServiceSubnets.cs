@@ -16,7 +16,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// Returns a list of Recovery Service Subnets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// This data source provides the list of Recovery Service Subnets in Oracle Cloud Infrastructure Recovery service.
         /// 
         /// Returns a list of Recovery Service Subnets.
-        /// 
         /// 
         /// ## Example Usage
         /// 

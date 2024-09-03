@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Return details of the specified Java license type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides details about a specific Java License resource in Oracle Cloud Infrastructure Jms Java Downloads service.
         /// 
         /// Return details of the specified Java license type.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// Decrypts data using the given DecryptDataDetails resource.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Kms
         /// The `oci.Kms.getDecryptedData` data source provides details about a specific DecryptedData
         /// 
         /// Decrypts data using the given DecryptDataDetails resource.
-        /// 
         /// 
         /// ## Example Usage
         /// 

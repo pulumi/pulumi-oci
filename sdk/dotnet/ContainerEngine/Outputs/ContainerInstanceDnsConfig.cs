@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Nameservers;
         /// <summary>
-        /// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+        /// Options allows certain internal resolver variables to be modified. Options are a list of objects in &lt;https://man7.org/linux/man-pages/man5/resolv.conf.5.html&gt;. Examples: ["ndots:n", "edns0"].
         /// </summary>
         public readonly ImmutableArray<string> Options;
         /// <summary>

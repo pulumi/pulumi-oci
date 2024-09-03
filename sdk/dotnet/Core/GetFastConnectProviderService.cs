@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Gets the specified provider service.
         /// For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the specified provider service.
         /// For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

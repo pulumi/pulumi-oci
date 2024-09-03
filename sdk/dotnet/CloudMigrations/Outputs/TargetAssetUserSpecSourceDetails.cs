@@ -36,8 +36,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
-        /// (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-        /// 
+        /// (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

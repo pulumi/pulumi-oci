@@ -55,7 +55,7 @@ export interface GetNamespaceScheduledTaskResult {
      */
     readonly actions: outputs.LogAnalytics.GetNamespaceScheduledTaskAction[];
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     readonly compartmentId: string;
     /**
@@ -116,7 +116,7 @@ export interface GetNamespaceScheduledTaskResult {
      */
     readonly timeUpdated: string;
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
      */
     readonly workRequestId: string;
 }

@@ -22,7 +22,6 @@ class AgentPluginArgs:
         :param pulumi.Input[str] agent_id: Unique Agent identifier path parameter.
         :param pulumi.Input[str] plugin_name: Unique plugin identifier path parameter.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] desired_state: (Updatable) State to which the customer wants the plugin to move to.
@@ -49,7 +48,6 @@ class AgentPluginArgs:
     def plugin_name(self) -> pulumi.Input[str]:
         """
         Unique plugin identifier path parameter.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -97,7 +95,6 @@ class _AgentPluginState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] name: Plugin identifier, which can be renamed.
         :param pulumi.Input[str] plugin_name: Unique plugin identifier path parameter.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -210,7 +207,6 @@ class _AgentPluginState:
         """
         Unique plugin identifier path parameter.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -320,7 +316,6 @@ class AgentPlugin(pulumi.CustomResource):
         :param pulumi.Input[str] agent_id: Unique Agent identifier path parameter.
         :param pulumi.Input[str] desired_state: (Updatable) State to which the customer wants the plugin to move to.
         :param pulumi.Input[str] plugin_name: Unique plugin identifier path parameter.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -436,7 +431,6 @@ class AgentPlugin(pulumi.CustomResource):
         :param pulumi.Input[str] name: Plugin identifier, which can be renamed.
         :param pulumi.Input[str] plugin_name: Unique plugin identifier path parameter.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] plugin_version: Plugin version.
@@ -516,7 +510,6 @@ class AgentPlugin(pulumi.CustomResource):
     def plugin_name(self) -> pulumi.Output[str]:
         """
         Unique plugin identifier path parameter.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

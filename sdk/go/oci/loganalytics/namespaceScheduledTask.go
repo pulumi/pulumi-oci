@@ -28,7 +28,7 @@ type NamespaceScheduledTask struct {
 
 	// Action for scheduled task.
 	Action NamespaceScheduledTaskActionOutput `pulumi:"action"`
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -60,7 +60,7 @@ type NamespaceScheduledTask struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 	WorkRequestId pulumi.StringOutput `pulumi:"workRequestId"`
 }
 
@@ -114,7 +114,7 @@ func GetNamespaceScheduledTask(ctx *pulumi.Context,
 type namespaceScheduledTaskState struct {
 	// Action for scheduled task.
 	Action *NamespaceScheduledTaskAction `pulumi:"action"`
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -146,14 +146,14 @@ type namespaceScheduledTaskState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 type NamespaceScheduledTaskState struct {
 	// Action for scheduled task.
 	Action NamespaceScheduledTaskActionPtrInput
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -185,7 +185,7 @@ type NamespaceScheduledTaskState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 	WorkRequestId pulumi.StringPtrInput
 }
 
@@ -196,7 +196,7 @@ func (NamespaceScheduledTaskState) ElementType() reflect.Type {
 type namespaceScheduledTaskArgs struct {
 	// Action for scheduled task.
 	Action NamespaceScheduledTaskAction `pulumi:"action"`
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -223,7 +223,7 @@ type namespaceScheduledTaskArgs struct {
 type NamespaceScheduledTaskArgs struct {
 	// Action for scheduled task.
 	Action NamespaceScheduledTaskActionInput
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -338,7 +338,7 @@ func (o NamespaceScheduledTaskOutput) Action() NamespaceScheduledTaskActionOutpu
 	return o.ApplyT(func(v *NamespaceScheduledTask) NamespaceScheduledTaskActionOutput { return v.Action }).(NamespaceScheduledTaskActionOutput)
 }
 
-// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o NamespaceScheduledTaskOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -415,7 +415,7 @@ func (o NamespaceScheduledTaskOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 func (o NamespaceScheduledTaskOutput) WorkRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.WorkRequestId }).(pulumi.StringOutput)
 }

@@ -174,7 +174,7 @@ class RemediationRecipeScmConfigurationArgs:
         :param pulumi.Input[str] external_scm_type: (Updatable) The type of External Source Code Management.
         :param pulumi.Input[str] oci_code_repository_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
         :param pulumi.Input[str] pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
-        :param pulumi.Input[str] repository_url: (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+        :param pulumi.Input[str] repository_url: (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
         :param pulumi.Input[str] username: (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
         """
         pulumi.set(__self__, "branch", branch)
@@ -281,7 +281,7 @@ class RemediationRecipeScmConfigurationArgs:
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+        (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
         """
         return pulumi.get(self, "repository_url")
 
@@ -322,7 +322,7 @@ class RemediationRecipeVerifyConfigurationArgs:
         :param pulumi.Input[str] job_name: (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
         :param pulumi.Input[str] pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
         :param pulumi.Input[str] pipeline_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
-        :param pulumi.Input[str] repository_url: (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param pulumi.Input[str] repository_url: (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         :param pulumi.Input[str] trigger_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
         :param pulumi.Input[str] username: (Updatable) The username that will be used to authenticate with Jenkins.
         :param pulumi.Input[str] workflow_name: (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
@@ -423,7 +423,7 @@ class RemediationRecipeVerifyConfigurationArgs:
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         """
         return pulumi.get(self, "repository_url")
 
@@ -566,7 +566,7 @@ class VulnerabilityAuditApplicationDependencyArgs:
         :param pulumi.Input[str] node_id: Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
         :param pulumi.Input[Sequence[pulumi.Input[str]]] application_dependency_node_ids: List of application dependencies on which this application dependency depends, each identified by its nodeId.
         :param pulumi.Input[str] gav: Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example: org.graalvm.nativeimage:svm:21.1.0. "N/A" for non-maven artifacts.
-        :param pulumi.Input[str] purl: Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        :param pulumi.Input[str] purl: Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
         pulumi.set(__self__, "node_id", node_id)
         if application_dependency_node_ids is not None:
@@ -616,7 +616,7 @@ class VulnerabilityAuditApplicationDependencyArgs:
     @pulumi.getter
     def purl(self) -> Optional[pulumi.Input[str]]:
         """
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
         return pulumi.get(self, "purl")
 
@@ -761,8 +761,7 @@ class VulnerabilityAuditUsageDataArgs:
         :param pulumi.Input[str] bucket: The Object Storage bucket to read the usage data from.
         :param pulumi.Input[str] namespace: The Object Storage namespace to read the usage data from.
         :param pulumi.Input[str] object: The Object Storage object name to read the usage data from.
-        :param pulumi.Input[str] source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-               
+        :param pulumi.Input[str] source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -812,8 +811,7 @@ class VulnerabilityAuditUsageDataArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
         """
-        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

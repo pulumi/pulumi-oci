@@ -36,7 +36,6 @@ class RedisClusterArgs:
         :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
@@ -127,7 +126,6 @@ class RedisClusterArgs:
     def subnet_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,7 +241,6 @@ class _RedisClusterState:
         :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[str] state: The current state of the cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -504,7 +501,6 @@ class _RedisClusterState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -618,7 +614,6 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -790,7 +785,6 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[str] state: The current state of the cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -966,7 +960,6 @@ class RedisCluster(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

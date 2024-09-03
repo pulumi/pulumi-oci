@@ -23,9 +23,9 @@ import javax.annotation.Nullable;
  * Updates the resource action that corresponds to the specified OCID.
  * Use this operation to implement the following actions:
  * 
- *   * Postpone resource action
- *   * Ignore resource action
- *   * Reactivate resource action
+ * * Postpone resource action
+ * * Ignore resource action
+ * * Reactivate resource action
  * 
  * ## Import
  * 

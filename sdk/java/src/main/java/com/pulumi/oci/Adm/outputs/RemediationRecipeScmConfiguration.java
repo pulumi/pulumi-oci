@@ -44,7 +44,7 @@ public final class RemediationRecipeScmConfiguration {
      */
     private @Nullable String patSecretId;
     /**
-     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is &lt;https://gitlab.com/[groupName]/[repoName]&gt;
      * 
      */
     private @Nullable String repositoryUrl;
@@ -103,7 +103,7 @@ public final class RemediationRecipeScmConfiguration {
         return Optional.ofNullable(this.patSecretId);
     }
     /**
-     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is &lt;https://gitlab.com/[groupName]/[repoName]&gt;
      * 
      */
     public Optional<String> repositoryUrl() {

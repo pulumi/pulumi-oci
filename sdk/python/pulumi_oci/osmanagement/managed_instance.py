@@ -25,7 +25,6 @@ class ManagedInstanceArgs:
         :param pulumi.Input[bool] is_data_collection_authorized: (Updatable) True if user allow data collection for this instance
         :param pulumi.Input[str] notification_topic_id: (Updatable) OCID of the ONS topic used to send notification to users
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -64,7 +63,6 @@ class ManagedInstanceArgs:
     def notification_topic_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) OCID of the ONS topic used to send notification to users
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -122,7 +120,6 @@ class _ManagedInstanceState:
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagedInstanceGroupArgs']]] managed_instance_groups: The ids of the managed instance groups of which this instance is a member.
         :param pulumi.Input[str] managed_instance_id: OCID for the managed instance
         :param pulumi.Input[str] notification_topic_id: (Updatable) OCID of the ONS topic used to send notification to users
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -365,7 +362,6 @@ class _ManagedInstanceState:
         """
         (Updatable) OCID of the ONS topic used to send notification to users
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -536,7 +532,6 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[str] managed_instance_id: OCID for the managed instance
         :param pulumi.Input[str] notification_topic_id: (Updatable) OCID of the ONS topic used to send notification to users
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -672,7 +667,6 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict']]]] managed_instance_groups: The ids of the managed instance groups of which this instance is a member.
         :param pulumi.Input[str] managed_instance_id: OCID for the managed instance
         :param pulumi.Input[str] notification_topic_id: (Updatable) OCID of the ONS topic used to send notification to users
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -837,7 +831,6 @@ class ManagedInstance(pulumi.CustomResource):
     def notification_topic_id(self) -> pulumi.Output[str]:
         """
         (Updatable) OCID of the ONS topic used to send notification to users
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

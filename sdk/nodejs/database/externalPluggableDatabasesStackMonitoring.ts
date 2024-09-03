@@ -57,7 +57,6 @@ export class ExternalPluggableDatabasesStackMonitoring extends pulumi.CustomReso
     /**
      * (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -114,7 +113,6 @@ export interface ExternalPluggableDatabasesStackMonitoringState {
     /**
      * (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -135,7 +133,6 @@ export interface ExternalPluggableDatabasesStackMonitoringState {
 export interface ExternalPluggableDatabasesStackMonitoringArgs {
     /**
      * (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

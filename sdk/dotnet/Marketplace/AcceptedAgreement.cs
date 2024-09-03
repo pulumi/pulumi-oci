@@ -100,8 +100,7 @@ namespace Pulumi.Oci.Marketplace
         public Output<string> PackageVersion { get; private set; } = null!;
 
         /// <summary>
-        /// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-        /// 
+        /// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,8 +215,7 @@ namespace Pulumi.Oci.Marketplace
         public Input<string> PackageVersion { get; set; } = null!;
 
         /// <summary>
-        /// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-        /// 
+        /// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -288,8 +286,7 @@ namespace Pulumi.Oci.Marketplace
         public Input<string>? PackageVersion { get; set; }
 
         /// <summary>
-        /// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-        /// 
+        /// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

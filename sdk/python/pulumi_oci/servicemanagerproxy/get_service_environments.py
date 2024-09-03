@@ -136,7 +136,7 @@ def get_service_environments(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
     :param str display_name: The display name of the resource.
-    :param str service_environment_id: The unique identifier associated with the service environment. 
+    :param str service_environment_id: The unique identifier associated with the service environment.
            
            **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str service_environment_type: The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
@@ -188,7 +188,7 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
     :param str display_name: The display name of the resource.
-    :param str service_environment_id: The unique identifier associated with the service environment. 
+    :param str service_environment_id: The unique identifier associated with the service environment.
            
            **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str service_environment_type: The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".

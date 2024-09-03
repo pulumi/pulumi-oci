@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// Get the detailed information for a specific service environment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
         /// 
         /// Get the detailed information for a specific service environment.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -78,7 +76,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The unique identifier associated with the service environment. 
+        /// The unique identifier associated with the service environment.
         /// 
         /// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -100,7 +98,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The unique identifier associated with the service environment. 
+        /// The unique identifier associated with the service environment.
         /// 
         /// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>

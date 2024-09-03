@@ -97,7 +97,7 @@ type LookupAssetSourceResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
 	Type string `pulumi:"type"`
-	// Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	// Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
 	VcenterEndpoint string `pulumi:"vcenterEndpoint"`
 }
 
@@ -238,7 +238,7 @@ func (o LookupAssetSourceResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+// Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
 func (o LookupAssetSourceResultOutput) VcenterEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.VcenterEndpoint }).(pulumi.StringOutput)
 }

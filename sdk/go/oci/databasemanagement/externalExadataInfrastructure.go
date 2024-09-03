@@ -16,11 +16,10 @@ import (
 //
 // Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
 // The following resource/subresources are created:
-//
-//	Infrastructure
-//	Storage server connectors
-//	Storage servers
-//	Storage grids
+// Infrastructure
+// Storage server connectors
+// Storage servers
+// Storage grids
 //
 // ## Example Usage
 //
@@ -73,7 +72,7 @@ type ExternalExadataInfrastructure struct {
 	AdditionalDetails pulumi.StringMapOutput `pulumi:"additionalDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+	// The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
 	DatabaseCompartments pulumi.StringArrayOutput `pulumi:"databaseCompartments"`
 	// A list of DB systems.
 	DatabaseSystems ExternalExadataInfrastructureDatabaseSystemArrayOutput `pulumi:"databaseSystems"`
@@ -159,7 +158,7 @@ type externalExadataInfrastructureState struct {
 	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+	// The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
 	DatabaseCompartments []string `pulumi:"databaseCompartments"`
 	// A list of DB systems.
 	DatabaseSystems []ExternalExadataInfrastructureDatabaseSystem `pulumi:"databaseSystems"`
@@ -207,7 +206,7 @@ type ExternalExadataInfrastructureState struct {
 	AdditionalDetails pulumi.StringMapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+	// The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
 	DatabaseCompartments pulumi.StringArrayInput
 	// A list of DB systems.
 	DatabaseSystems ExternalExadataInfrastructureDatabaseSystemArrayInput
@@ -396,7 +395,7 @@ func (o ExternalExadataInfrastructureOutput) CompartmentId() pulumi.StringOutput
 	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+// The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
 func (o ExternalExadataInfrastructureOutput) DatabaseCompartments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringArrayOutput { return v.DatabaseCompartments }).(pulumi.StringArrayOutput)
 }

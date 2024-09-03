@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the saved custom table list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides the list of Custom Tables in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the saved custom table list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

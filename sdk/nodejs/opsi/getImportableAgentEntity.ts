@@ -11,9 +11,9 @@ import * as utilities from "../utilities";
  *
  * Gets a list of agent entities available to add a new hostInsight.  An agent entity is "available"
  * and will be shown if all the following conditions are true:
- *    1.  The agent OCID is not already being used for an existing hostInsight.
- *    2.  The agent availabilityStatus = 'ACTIVE'
- *    3.  The agent lifecycleState = 'ACTIVE'
+ * 1. The agent OCID is not already being used for an existing hostInsight.
+ * 2. The agent availabilityStatus = 'ACTIVE'
+ * 3. The agent lifecycleState = 'ACTIVE'
  *
  * ## Example Usage
  *
@@ -63,9 +63,9 @@ export interface GetImportableAgentEntityResult {
  *
  * Gets a list of agent entities available to add a new hostInsight.  An agent entity is "available"
  * and will be shown if all the following conditions are true:
- *    1.  The agent OCID is not already being used for an existing hostInsight.
- *    2.  The agent availabilityStatus = 'ACTIVE'
- *    3.  The agent lifecycleState = 'ACTIVE'
+ * 1. The agent OCID is not already being used for an existing hostInsight.
+ * 2. The agent availabilityStatus = 'ACTIVE'
+ * 3. The agent lifecycleState = 'ACTIVE'
  *
  * ## Example Usage
  *

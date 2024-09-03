@@ -16,7 +16,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// API to get the details of all Discovery Jobs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// This data source provides the list of Discovery Jobs in Oracle Cloud Infrastructure Stack Monitoring service.
         /// 
         /// API to get the details of all Discovery Jobs.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -33,7 +33,6 @@ class ContainerImageSignatureArgs:
         :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -129,7 +128,6 @@ class ContainerImageSignatureArgs:
         """
         The algorithm to be used for signing. These are the only supported signing algorithms for container images.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -194,7 +192,6 @@ class _ContainerImageSignatureState:
         :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
         :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -357,7 +354,6 @@ class _ContainerImageSignatureState:
         """
         The algorithm to be used for signing. These are the only supported signing algorithms for container images.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -465,7 +461,6 @@ class ContainerImageSignature(pulumi.CustomResource):
         :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
         :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -615,7 +610,6 @@ class ContainerImageSignature(pulumi.CustomResource):
         :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the container image signature.
@@ -727,7 +721,6 @@ class ContainerImageSignature(pulumi.CustomResource):
     def signing_algorithm(self) -> pulumi.Output[str]:
         """
         The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

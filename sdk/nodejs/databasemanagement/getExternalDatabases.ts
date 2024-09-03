@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Database Management"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases"
+ * sidebar_current: "docs-oci-datasource-database_management-external_databases"
+ * description: |-
+ * Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.DatabaseManagement.getExternalDatabases
  * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
  *
  * Lists the external databases in the specified compartment or in the specified DB system.
@@ -86,6 +95,15 @@ export interface GetExternalDatabasesResult {
     readonly id: string;
 }
 /**
+ * subcategory: "Database Management"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases"
+ * sidebar_current: "docs-oci-datasource-database_management-external_databases"
+ * description: |-
+ * Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.DatabaseManagement.getExternalDatabases
  * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
  *
  * Lists the external databases in the specified compartment or in the specified DB system.

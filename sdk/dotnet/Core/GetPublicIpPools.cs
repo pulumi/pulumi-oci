@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the public IP pools in the specified compartment.
         /// You can filter the list using query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the public IP pools in the specified compartment.
         /// You can filter the list using query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

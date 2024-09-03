@@ -43,7 +43,6 @@ class MigrationArgs:
         :param pulumi.Input[str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]] advanced_parameters: (Updatable) List of Migration Parameter objects.
@@ -148,7 +147,6 @@ class MigrationArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -386,7 +384,6 @@ class _MigrationState:
         :param pulumi.Input[str] time_last_migration: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -753,7 +750,6 @@ class _MigrationState:
         """
         (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -964,7 +960,6 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1268,7 +1263,6 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] wait_after: You can optionally pause a migration after a job phase. This property allows you to optionally specify the phase after which you can pause the migration.
@@ -1511,7 +1505,6 @@ class Migration(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

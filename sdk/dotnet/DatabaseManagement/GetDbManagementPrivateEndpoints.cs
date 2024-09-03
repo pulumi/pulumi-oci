@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets a list of Database Management private endpoints.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Db Management Private Endpoints in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets a list of Database Management private endpoints.
-        /// 
         /// 
         /// ## Example Usage
         /// 

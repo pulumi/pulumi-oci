@@ -522,7 +522,6 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * multiValued: false
      * * uniqueness: none
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -1064,7 +1063,6 @@ export interface DomainsIdentityPropagationTrustState {
      * * multiValued: false
      * * uniqueness: none
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -1382,7 +1380,6 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * type: string
      * * multiValued: false
      * * uniqueness: none
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

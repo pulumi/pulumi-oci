@@ -31,8 +31,7 @@ class IdentityProviderArgs:
         :param pulumi.Input[str] metadata: (Updatable) The XML that contains the information required for federating.
         :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
         :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2` 
-               
+        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -120,8 +119,7 @@ class IdentityProviderArgs:
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
         """
-        (Updatable) The protocol used for federation.  Example: `SAML2` 
-
+        (Updatable) The protocol used for federation.  Example: `SAML2`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,8 +209,7 @@ class _IdentityProviderState:
         :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
         :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
         :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2` 
-               
+        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -376,8 +373,7 @@ class _IdentityProviderState:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The protocol used for federation.  Example: `SAML2` 
-
+        (Updatable) The protocol used for federation.  Example: `SAML2`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -515,8 +511,7 @@ class IdentityProvider(pulumi.CustomResource):
         :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
         :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
         :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2` 
-               
+        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -681,8 +676,7 @@ class IdentityProvider(pulumi.CustomResource):
         :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
         :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
         :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2` 
-               
+        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -796,8 +790,7 @@ class IdentityProvider(pulumi.CustomResource):
     @pulumi.getter
     def protocol(self) -> pulumi.Output[str]:
         """
-        (Updatable) The protocol used for federation.  Example: `SAML2` 
-
+        (Updatable) The protocol used for federation.  Example: `SAML2`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

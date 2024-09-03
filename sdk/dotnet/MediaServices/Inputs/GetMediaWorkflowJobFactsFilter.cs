@@ -12,9 +12,6 @@ namespace Pulumi.Oci.MediaServices.Inputs
 
     public sealed class GetMediaWorkflowJobFactsFilterArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Unique name. It is read-only and generated for the fact.
-        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 

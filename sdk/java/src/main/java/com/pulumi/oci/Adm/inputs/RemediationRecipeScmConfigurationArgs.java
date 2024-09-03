@@ -108,14 +108,14 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+     * (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is &lt;https://gitlab.com/[groupName]/[repoName]&gt;
      * 
      */
     @Import(name="repositoryUrl")
     private @Nullable Output<String> repositoryUrl;
 
     /**
-     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is &lt;https://gitlab.com/[groupName]/[repoName]&gt;
      * 
      */
     public Optional<Output<String>> repositoryUrl() {
@@ -311,7 +311,7 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         /**
-         * @param repositoryUrl (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+         * @param repositoryUrl (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is &lt;https://gitlab.com/[groupName]/[repoName]&gt;
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         /**
-         * @param repositoryUrl (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+         * @param repositoryUrl (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is &lt;https://gitlab.com/[groupName]/[repoName]&gt;
          * 
          * @return builder
          * 

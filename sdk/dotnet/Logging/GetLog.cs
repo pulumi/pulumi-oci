@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Logging
         /// 
         /// Gets the log object configuration for the log object OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Logging
         /// This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.
         /// 
         /// Gets the log object configuration for the log object OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

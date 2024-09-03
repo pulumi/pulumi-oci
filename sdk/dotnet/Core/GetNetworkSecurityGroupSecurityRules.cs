@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the security rules in the specified network security group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the security rules in the specified network security group.
-        /// 
         /// 
         /// ## Example Usage
         /// 

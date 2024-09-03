@@ -2466,7 +2466,10 @@ func (o MysqlBackupDbSystemSnapshotSummaryArrayOutput) Index(i pulumi.IntInput) 
 type MysqlBackupSourceDetails struct {
 	// The OCID of the source backup.
 	BackupId string `pulumi:"backupId"`
-	// (Updatable) The OCID of the compartment the backup exists in.
+	// The OCID of the compartment where DB system backup is to be copied to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CompartmentId string `pulumi:"compartmentId"`
 	// The region of the backup source.
 	Region string `pulumi:"region"`
@@ -2486,7 +2489,10 @@ type MysqlBackupSourceDetailsInput interface {
 type MysqlBackupSourceDetailsArgs struct {
 	// The OCID of the source backup.
 	BackupId pulumi.StringInput `pulumi:"backupId"`
-	// (Updatable) The OCID of the compartment the backup exists in.
+	// The OCID of the compartment where DB system backup is to be copied to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The region of the backup source.
 	Region pulumi.StringInput `pulumi:"region"`
@@ -2574,7 +2580,10 @@ func (o MysqlBackupSourceDetailsOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v MysqlBackupSourceDetails) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the compartment the backup exists in.
+// The OCID of the compartment where DB system backup is to be copied to.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MysqlBackupSourceDetailsOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v MysqlBackupSourceDetails) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -2618,7 +2627,10 @@ func (o MysqlBackupSourceDetailsPtrOutput) BackupId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the compartment the backup exists in.
+// The OCID of the compartment where DB system backup is to be copied to.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MysqlBackupSourceDetailsPtrOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlBackupSourceDetails) *string {
 		if v == nil {
@@ -2639,7 +2651,7 @@ func (o MysqlBackupSourceDetailsPtrOutput) Region() pulumi.StringPtrOutput {
 }
 
 type MysqlConfigurationInitVariables struct {
-	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 	//
 	// lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
 	//
@@ -2661,7 +2673,7 @@ type MysqlConfigurationInitVariablesInput interface {
 }
 
 type MysqlConfigurationInitVariablesArgs struct {
-	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 	//
 	// lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
 	//
@@ -2748,7 +2760,7 @@ func (o MysqlConfigurationInitVariablesOutput) ToMysqlConfigurationInitVariables
 	}).(MysqlConfigurationInitVariablesPtrOutput)
 }
 
-// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 //
 // lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
 //
@@ -2783,7 +2795,7 @@ func (o MysqlConfigurationInitVariablesPtrOutput) Elem() MysqlConfigurationInitV
 	}).(MysqlConfigurationInitVariablesOutput)
 }
 
-// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 //
 // lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
 //
@@ -2872,9 +2884,9 @@ type MysqlConfigurationVariables struct {
 	//
 	// The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
 	InnodbBufferPoolSize *string `pulumi:"innodbBufferPoolSize"`
-	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 	InnodbDdlBufferSize *string `pulumi:"innodbDdlBufferSize"`
-	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 	InnodbDdlThreads *int `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword *bool `pulumi:"innodbFtEnableStopword"`
@@ -3026,7 +3038,7 @@ type MysqlConfigurationVariables struct {
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryPreallocSize *string `pulumi:"queryPreallocSize"`
-	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 	RegexpTimeLimit *int `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	//
@@ -3149,9 +3161,9 @@ type MysqlConfigurationVariablesArgs struct {
 	//
 	// The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
 	InnodbBufferPoolSize pulumi.StringPtrInput `pulumi:"innodbBufferPoolSize"`
-	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 	InnodbDdlBufferSize pulumi.StringPtrInput `pulumi:"innodbDdlBufferSize"`
-	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 	InnodbDdlThreads pulumi.IntPtrInput `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword pulumi.BoolPtrInput `pulumi:"innodbFtEnableStopword"`
@@ -3303,7 +3315,7 @@ type MysqlConfigurationVariablesArgs struct {
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryPreallocSize pulumi.StringPtrInput `pulumi:"queryPreallocSize"`
-	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 	RegexpTimeLimit pulumi.IntPtrInput `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	//
@@ -3554,12 +3566,12 @@ func (o MysqlConfigurationVariablesOutput) InnodbBufferPoolSize() pulumi.StringP
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbBufferPoolSize }).(pulumi.StringPtrOutput)
 }
 
-// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 func (o MysqlConfigurationVariablesOutput) InnodbDdlBufferSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbDdlBufferSize }).(pulumi.StringPtrOutput)
 }
 
-// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 func (o MysqlConfigurationVariablesOutput) InnodbDdlThreads() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbDdlThreads }).(pulumi.IntPtrOutput)
 }
@@ -3849,7 +3861,7 @@ func (o MysqlConfigurationVariablesOutput) QueryPreallocSize() pulumi.StringPtrO
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.QueryPreallocSize }).(pulumi.StringPtrOutput)
 }
 
-// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 func (o MysqlConfigurationVariablesOutput) RegexpTimeLimit() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.RegexpTimeLimit }).(pulumi.IntPtrOutput)
 }
@@ -4183,7 +4195,7 @@ func (o MysqlConfigurationVariablesPtrOutput) InnodbBufferPoolSize() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 func (o MysqlConfigurationVariablesPtrOutput) InnodbDdlBufferSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
 		if v == nil {
@@ -4193,7 +4205,7 @@ func (o MysqlConfigurationVariablesPtrOutput) InnodbDdlBufferSize() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 func (o MysqlConfigurationVariablesPtrOutput) InnodbDdlThreads() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
 		if v == nil {
@@ -4713,7 +4725,7 @@ func (o MysqlConfigurationVariablesPtrOutput) QueryPreallocSize() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 func (o MysqlConfigurationVariablesPtrOutput) RegexpTimeLimit() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
 		if v == nil {
@@ -12943,7 +12955,7 @@ func (o GetMysqlBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlBacku
 }
 
 type GetMysqlConfigurationInitVariable struct {
-	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 	LowerCaseTableNames string `pulumi:"lowerCaseTableNames"`
 }
 
@@ -12959,7 +12971,7 @@ type GetMysqlConfigurationInitVariableInput interface {
 }
 
 type GetMysqlConfigurationInitVariableArgs struct {
-	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 	LowerCaseTableNames pulumi.StringInput `pulumi:"lowerCaseTableNames"`
 }
 
@@ -13014,7 +13026,7 @@ func (o GetMysqlConfigurationInitVariableOutput) ToGetMysqlConfigurationInitVari
 	return o
 }
 
-// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 func (o GetMysqlConfigurationInitVariableOutput) LowerCaseTableNames() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationInitVariable) string { return v.LowerCaseTableNames }).(pulumi.StringOutput)
 }
@@ -13088,9 +13100,9 @@ type GetMysqlConfigurationVariable struct {
 	InnodbBufferPoolInstances int `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize string `pulumi:"innodbBufferPoolSize"`
-	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 	InnodbDdlBufferSize string `pulumi:"innodbDdlBufferSize"`
-	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 	InnodbDdlThreads int `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword bool `pulumi:"innodbFtEnableStopword"`
@@ -13194,7 +13206,7 @@ type GetMysqlConfigurationVariable struct {
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryPreallocSize string `pulumi:"queryPreallocSize"`
-	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	SortBufferSize string `pulumi:"sortBufferSize"`
@@ -13278,9 +13290,9 @@ type GetMysqlConfigurationVariableArgs struct {
 	InnodbBufferPoolInstances pulumi.IntInput `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize pulumi.StringInput `pulumi:"innodbBufferPoolSize"`
-	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 	InnodbDdlBufferSize pulumi.StringInput `pulumi:"innodbDdlBufferSize"`
-	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 	InnodbDdlThreads pulumi.IntInput `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword pulumi.BoolInput `pulumi:"innodbFtEnableStopword"`
@@ -13384,7 +13396,7 @@ type GetMysqlConfigurationVariableArgs struct {
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
-	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	SortBufferSize pulumi.StringInput `pulumi:"sortBufferSize"`
@@ -13570,12 +13582,12 @@ func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.Strin
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
 }
 
-// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 func (o GetMysqlConfigurationVariableOutput) InnodbDdlBufferSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbDdlBufferSize }).(pulumi.StringOutput)
 }
 
-// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 func (o GetMysqlConfigurationVariableOutput) InnodbDdlThreads() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbDdlThreads }).(pulumi.IntOutput)
 }
@@ -13817,7 +13829,7 @@ func (o GetMysqlConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOu
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
 }
 
-// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 func (o GetMysqlConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.RegexpTimeLimit }).(pulumi.IntOutput)
 }
@@ -14111,7 +14123,7 @@ func (o GetMysqlConfigurationsConfigurationArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetMysqlConfigurationsConfigurationInitVariable struct {
-	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 	LowerCaseTableNames string `pulumi:"lowerCaseTableNames"`
 }
 
@@ -14127,7 +14139,7 @@ type GetMysqlConfigurationsConfigurationInitVariableInput interface {
 }
 
 type GetMysqlConfigurationsConfigurationInitVariableArgs struct {
-	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 	LowerCaseTableNames pulumi.StringInput `pulumi:"lowerCaseTableNames"`
 }
 
@@ -14182,7 +14194,7 @@ func (o GetMysqlConfigurationsConfigurationInitVariableOutput) ToGetMysqlConfigu
 	return o
 }
 
-// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+// Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 func (o GetMysqlConfigurationsConfigurationInitVariableOutput) LowerCaseTableNames() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationInitVariable) string { return v.LowerCaseTableNames }).(pulumi.StringOutput)
 }
@@ -14256,9 +14268,9 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	InnodbBufferPoolInstances int `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize string `pulumi:"innodbBufferPoolSize"`
-	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 	InnodbDdlBufferSize string `pulumi:"innodbDdlBufferSize"`
-	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 	InnodbDdlThreads int `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword bool `pulumi:"innodbFtEnableStopword"`
@@ -14362,7 +14374,7 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryPreallocSize string `pulumi:"queryPreallocSize"`
-	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	SortBufferSize string `pulumi:"sortBufferSize"`
@@ -14446,9 +14458,9 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	InnodbBufferPoolInstances pulumi.IntInput `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize pulumi.StringInput `pulumi:"innodbBufferPoolSize"`
-	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 	InnodbDdlBufferSize pulumi.StringInput `pulumi:"innodbDdlBufferSize"`
-	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 	InnodbDdlThreads pulumi.IntInput `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword pulumi.BoolInput `pulumi:"innodbFtEnableStopword"`
@@ -14552,7 +14564,7 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
-	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	SortBufferSize pulumi.StringInput `pulumi:"sortBufferSize"`
@@ -14738,12 +14750,12 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolSize(
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
 }
 
-// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
 func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbDdlBufferSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbDdlBufferSize }).(pulumi.StringOutput)
 }
 
-// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
 func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbDdlThreads() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbDdlThreads }).(pulumi.IntOutput)
 }
@@ -14987,7 +14999,7 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryPreallocSize() p
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
 }
 
-// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
 func (o GetMysqlConfigurationsConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.RegexpTimeLimit }).(pulumi.IntOutput)
 }

@@ -21,7 +21,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
         The set of arguments for constructing a MetricExtensionMetricExtensionOnGivenResourcesManagement resource.
         :param pulumi.Input[bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
@@ -36,7 +35,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
     def enable_metric_extension_on_given_resources(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -82,7 +80,6 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
         Input properties used for looking up and filtering MetricExtensionMetricExtensionOnGivenResourcesManagement resources.
         :param pulumi.Input[bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
@@ -100,7 +97,6 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
     def enable_metric_extension_on_given_resources(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,7 +161,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -253,7 +248,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
@@ -273,7 +267,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
     def enable_metric_extension_on_given_resources(self) -> pulumi.Output[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

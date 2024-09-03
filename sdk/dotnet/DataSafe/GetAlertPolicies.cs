@@ -12,10 +12,18 @@ namespace Pulumi.Oci.DataSafe
     public static class GetAlertPolicies
     {
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getAlertPolicies"
+        /// sidebar_current: "docs-oci-datasource-data_safe-alert_policies"
+        /// description: |-
+        /// 	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getAlertPolicies
         /// This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all alert policies.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -48,10 +56,18 @@ namespace Pulumi.Oci.DataSafe
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlertPoliciesResult>("oci:DataSafe/getAlertPolicies:getAlertPolicies", args ?? new GetAlertPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getAlertPolicies"
+        /// sidebar_current: "docs-oci-datasource-data_safe-alert_policies"
+        /// description: |-
+        /// 	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getAlertPolicies
         /// This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all alert policies.
-        /// 
         /// 
         /// ## Example Usage
         /// 

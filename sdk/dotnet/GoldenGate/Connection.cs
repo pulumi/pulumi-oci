@@ -291,7 +291,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        /// (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
         /// </summary>
         [Output("endpoint")]
         public Output<string> Endpoint { get; private set; } = null!;
@@ -410,7 +410,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> PrivateIp { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
         /// </summary>
         [Output("privateKeyFile")]
         public Output<string> PrivateKeyFile { get; private set; } = null!;
@@ -428,7 +428,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> ProducerProperties { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
         /// </summary>
         [Output("publicKeyFingerprint")]
         public Output<string> PublicKeyFingerprint { get; private set; } = null!;
@@ -638,7 +638,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> VaultId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -864,7 +864,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        /// (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -1012,7 +1012,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyFile;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
         /// </summary>
         public Input<string>? PrivateKeyFile
         {
@@ -1047,7 +1047,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ProducerProperties { get; set; }
 
         /// <summary>
-        /// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
         /// </summary>
         [Input("publicKeyFingerprint")]
         public Input<string>? PublicKeyFingerprint { get; set; }
@@ -1253,7 +1253,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1432,7 +1432,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        /// (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -1598,7 +1598,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyFile;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
         /// </summary>
         public Input<string>? PrivateKeyFile
         {
@@ -1633,7 +1633,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ProducerProperties { get; set; }
 
         /// <summary>
-        /// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
         /// </summary>
         [Input("publicKeyFingerprint")]
         public Input<string>? PublicKeyFingerprint { get; set; }
@@ -1869,7 +1869,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

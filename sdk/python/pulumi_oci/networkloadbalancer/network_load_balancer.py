@@ -49,7 +49,7 @@ class NetworkLoadBalancerArgs:
                A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
                
                Example: `true`
-        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
                
                Example: `true`
                Example: `true`
@@ -58,14 +58,13 @@ class NetworkLoadBalancerArgs:
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
                
                The benefits of associating the network load balancer with network security groups include:
-               *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-               *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+               * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+               * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
         :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,7 +215,7 @@ class NetworkLoadBalancerArgs:
     @pulumi.getter(name="isSymmetricHashEnabled")
     def is_symmetric_hash_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 
         Example: `true`
         Example: `true`
@@ -236,8 +235,8 @@ class NetworkLoadBalancerArgs:
         During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 
         The benefits of associating the network load balancer with network security groups include:
-        *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-        *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+        * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 
         Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         """
@@ -276,7 +275,6 @@ class NetworkLoadBalancerArgs:
     def subnet_ipv6cidr(self) -> Optional[pulumi.Input[str]]:
         """
         IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -330,7 +328,7 @@ class _NetworkLoadBalancerState:
                A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
                
                Example: `true`
-        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
                
                Example: `true`
                Example: `true`
@@ -340,8 +338,8 @@ class _NetworkLoadBalancerState:
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
                
                The benefits of associating the network load balancer with network security groups include:
-               *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-               *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+               * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+               * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
@@ -349,7 +347,6 @@ class _NetworkLoadBalancerState:
         :param pulumi.Input[str] state: The current state of the network load balancer.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -518,7 +515,7 @@ class _NetworkLoadBalancerState:
     @pulumi.getter(name="isSymmetricHashEnabled")
     def is_symmetric_hash_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 
         Example: `true`
         Example: `true`
@@ -550,8 +547,8 @@ class _NetworkLoadBalancerState:
         During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 
         The benefits of associating the network load balancer with network security groups include:
-        *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-        *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+        * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 
         Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         """
@@ -614,7 +611,6 @@ class _NetworkLoadBalancerState:
     def subnet_ipv6cidr(self) -> Optional[pulumi.Input[str]]:
         """
         IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -713,7 +709,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
                
                Example: `true`
-        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
                
                Example: `true`
                Example: `true`
@@ -722,15 +718,14 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
                
                The benefits of associating the network load balancer with network security groups include:
-               *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-               *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+               * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+               * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -872,7 +867,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
                
                Example: `true`
-        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
                
                Example: `true`
                Example: `true`
@@ -882,8 +877,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
                
                The benefits of associating the network load balancer with network security groups include:
-               *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-               *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+               * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+               * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
@@ -891,7 +886,6 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the network load balancer.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1009,7 +1003,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     @pulumi.getter(name="isSymmetricHashEnabled")
     def is_symmetric_hash_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 
         Example: `true`
         Example: `true`
@@ -1033,8 +1027,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 
         The benefits of associating the network load balancer with network security groups include:
-        *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-        *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+        * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 
         Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         """
@@ -1077,7 +1071,6 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     def subnet_ipv6cidr(self) -> pulumi.Output[Optional[str]]:
         """
         IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

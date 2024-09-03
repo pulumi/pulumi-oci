@@ -665,7 +665,6 @@ class ModelValidationDatasetArgs:
         :param pulumi.Input[str] namespace: The namespace name of the Object Storage bucket that contains the input data file.
         :param pulumi.Input[str] object: The object name of the input data file.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -732,7 +731,6 @@ class ModelValidationDatasetArgs:
     def object(self) -> Optional[pulumi.Input[str]]:
         """
         The object name of the input data file.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -921,7 +919,6 @@ class ProcessorJobProcessorConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigFeatureArgs']]] features: The types of document analysis requested.
         :param pulumi.Input[str] processor_type: The type of the processor.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] document_type: The document type.
@@ -954,7 +951,6 @@ class ProcessorJobProcessorConfigArgs:
     def processor_type(self) -> pulumi.Input[str]:
         """
         The type of the processor.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

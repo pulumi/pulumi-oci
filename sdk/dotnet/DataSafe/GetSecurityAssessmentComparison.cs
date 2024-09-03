@@ -12,6 +12,15 @@ namespace Pulumi.Oci.DataSafe
     public static class GetSecurityAssessmentComparison
     {
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentComparison"
+        /// sidebar_current: "docs-oci-datasource-data_safe-security_assessment_comparison"
+        /// description: |-
+        /// 	Provides details about a specific Security Assessment Comparison in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getSecurityAssessmentComparison
         /// This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets the details of the comparison report for the security assessments submitted for comparison.
@@ -39,6 +48,15 @@ namespace Pulumi.Oci.DataSafe
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentComparisonResult>("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", args ?? new GetSecurityAssessmentComparisonArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentComparison"
+        /// sidebar_current: "docs-oci-datasource-data_safe-security_assessment_comparison"
+        /// description: |-
+        /// 	Provides details about a specific Security Assessment Comparison in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getSecurityAssessmentComparison
         /// This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets the details of the comparison report for the security assessments submitted for comparison.

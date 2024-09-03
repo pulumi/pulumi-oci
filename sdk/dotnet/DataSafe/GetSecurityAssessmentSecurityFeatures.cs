@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -56,7 +55,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Assessment Security Features in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
-        /// 
         /// 
         /// ## Example Usage
         /// 

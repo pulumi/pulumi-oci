@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns the configuration details for a Cloud Guard tenancy,
         /// identified by root compartment OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns the configuration details for a Cloud Guard tenancy,
         /// identified by root compartment OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists the tag namespaces in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Identity
         /// This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
         /// 
         /// Lists the tag namespaces in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

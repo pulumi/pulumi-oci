@@ -33,8 +33,7 @@ class SensitiveDataModelArgs:
         """
         The set of arguments for constructing a SensitiveDataModel resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the sensitive data model should be created.
-        :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-               
+        :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -94,8 +93,7 @@ class SensitiveDataModelArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-
+        (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -289,8 +287,7 @@ class _SensitiveDataModelState:
         :param pulumi.Input[str] state: The current state of the sensitive data model.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]] tables_for_discoveries: (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
-        :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-               
+        :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -518,8 +515,7 @@ class _SensitiveDataModelState:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-
+        (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -635,8 +631,7 @@ class SensitiveDataModel(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: (Updatable) The schemas to be scanned by data discovery jobs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]] tables_for_discoveries: (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
-        :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-               
+        :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -802,8 +797,7 @@ class SensitiveDataModel(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the sensitive data model.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]] tables_for_discoveries: (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
-        :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-               
+        :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -958,8 +952,7 @@ class SensitiveDataModel(pulumi.CustomResource):
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-
+        (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

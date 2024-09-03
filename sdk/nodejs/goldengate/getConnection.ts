@@ -136,7 +136,7 @@ export interface GetConnectionResult {
      */
     readonly displayName: string;
     /**
-     * Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
      */
     readonly endpoint: string;
     readonly fingerprint: string;

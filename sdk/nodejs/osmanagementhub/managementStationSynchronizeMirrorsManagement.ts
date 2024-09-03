@@ -64,7 +64,6 @@ export class ManagementStationSynchronizeMirrorsManagement extends pulumi.Custom
     /**
      * List of Software Source OCIDs to synchronize
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -112,7 +111,6 @@ export interface ManagementStationSynchronizeMirrorsManagementState {
     /**
      * List of Software Source OCIDs to synchronize
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -129,7 +127,6 @@ export interface ManagementStationSynchronizeMirrorsManagementArgs {
     managementStationId: pulumi.Input<string>;
     /**
      * List of Software Source OCIDs to synchronize
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

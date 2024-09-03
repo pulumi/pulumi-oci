@@ -30,7 +30,6 @@ class BdsInstanceMetastoreConfigArgs:
         :param pulumi.Input[str] metastore_id: The OCID of the Data Catalog metastore.
         :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the metastore configuration
@@ -111,7 +110,6 @@ class BdsInstanceMetastoreConfigArgs:
         """
         (Updatable) An optional integer, when flipped triggers activation of metastore config.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -151,7 +149,6 @@ class _BdsInstanceMetastoreConfigState:
         """
         Input properties used for looking up and filtering BdsInstanceMetastoreConfig resources.
         :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,7 +191,6 @@ class _BdsInstanceMetastoreConfigState:
     def activate_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional integer, when flipped triggers activation of metastore config.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -371,7 +367,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
@@ -499,7 +494,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
@@ -535,7 +529,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
     def activate_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional integer, when flipped triggers activation of metastore config.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

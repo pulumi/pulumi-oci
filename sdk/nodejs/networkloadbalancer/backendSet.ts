@@ -120,8 +120,7 @@ export class BackendSet extends pulumi.CustomResource {
      */
     public readonly networkLoadBalancerId!: pulumi.Output<string>;
     /**
-     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-     *
+     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -217,8 +216,7 @@ export interface BackendSetState {
      */
     networkLoadBalancerId?: pulumi.Input<string>;
     /**
-     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-     *
+     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -263,8 +261,7 @@ export interface BackendSetArgs {
      */
     networkLoadBalancerId: pulumi.Input<string>;
     /**
-     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-     *
+     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

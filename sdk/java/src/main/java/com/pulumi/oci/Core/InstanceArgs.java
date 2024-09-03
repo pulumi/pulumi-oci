@@ -339,7 +339,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      * 
-     * For more information about iPXE, see http://ipxe.org.
+     * For more information about iPXE, see &lt;http://ipxe.org&gt;.
      * 
      */
     @Import(name="ipxeScript")
@@ -358,7 +358,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      * 
-     * For more information about iPXE, see http://ipxe.org.
+     * For more information about iPXE, see &lt;http://ipxe.org&gt;.
      * 
      */
     public Optional<Output<String>> ipxeScript() {
@@ -1126,7 +1126,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          * 
-         * For more information about iPXE, see http://ipxe.org.
+         * For more information about iPXE, see &lt;http://ipxe.org&gt;.
          * 
          * @return builder
          * 
@@ -1149,7 +1149,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          * 
-         * For more information about iPXE, see http://ipxe.org.
+         * For more information about iPXE, see &lt;http://ipxe.org&gt;.
          * 
          * @return builder
          * 

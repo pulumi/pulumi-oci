@@ -103,14 +103,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
      * 
      */
     @Import(name="kmsKeyMigration")
     private @Nullable Output<Boolean> kmsKeyMigration;
 
     /**
-     * @return The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+     * @return The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
      * 
      */
     public Optional<Output<Boolean>> kmsKeyMigration() {
@@ -330,7 +330,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyMigration The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+         * @param kmsKeyMigration The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyMigration The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+         * @param kmsKeyMigration The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
          * 
          * @return builder
          * 

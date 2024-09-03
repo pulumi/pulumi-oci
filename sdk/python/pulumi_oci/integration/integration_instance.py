@@ -57,7 +57,6 @@ class IntegrationInstanceArgs:
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -317,7 +316,6 @@ class IntegrationInstanceArgs:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -385,7 +383,6 @@ class _IntegrationInstanceState:
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -733,7 +730,6 @@ class _IntegrationInstanceState:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -895,7 +891,6 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1115,7 +1110,6 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1347,7 +1341,6 @@ class IntegrationInstance(pulumi.CustomResource):
     def state(self) -> pulumi.Output[str]:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

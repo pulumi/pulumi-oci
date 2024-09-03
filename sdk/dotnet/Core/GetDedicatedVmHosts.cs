@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// You can limit the list by specifying a dedicated virtual machine host display name. The list will include all the identically-named
         /// dedicated virtual machine hosts in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -54,7 +53,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// You can limit the list by specifying a dedicated virtual machine host display name. The list will include all the identically-named
         /// dedicated virtual machine hosts in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

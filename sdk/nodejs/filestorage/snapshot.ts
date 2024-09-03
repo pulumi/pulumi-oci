@@ -100,7 +100,6 @@ export class Snapshot extends pulumi.CustomResource {
      *
      * Example: `Sunday`
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -218,7 +217,6 @@ export interface SnapshotState {
      *
      * Example: `Sunday`
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -274,7 +272,6 @@ export interface SnapshotArgs {
      * Avoid entering confidential information.
      *
      * Example: `Sunday`
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

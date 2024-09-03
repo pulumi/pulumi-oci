@@ -51,7 +51,6 @@ class WorkspaceArgs:
         :param pulumi.Input[str] subnet_id: The OCID of the subnet for customer connected databases.
         :param pulumi.Input[str] vcn_id: The OCID of the VCN the subnet is in.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -294,7 +293,6 @@ class WorkspaceArgs:
         """
         The OCID of the VCN the subnet is in.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -352,7 +350,6 @@ class _WorkspaceState:
         :param pulumi.Input[str] time_created: The date and time the workspace was created, in the timestamp format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] vcn_id: The OCID of the VCN the subnet is in.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -654,7 +651,6 @@ class _WorkspaceState:
         """
         The OCID of the VCN the subnet is in.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -749,7 +745,6 @@ class Workspace(pulumi.CustomResource):
         :param pulumi.Input[str] registry_name: DCMS Data Asset Registry display name
         :param pulumi.Input[str] subnet_id: The OCID of the subnet for customer connected databases.
         :param pulumi.Input[str] vcn_id: The OCID of the VCN the subnet is in.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -929,7 +924,6 @@ class Workspace(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the workspace was created, in the timestamp format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] vcn_id: The OCID of the VCN the subnet is in.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1129,7 +1123,6 @@ class Workspace(pulumi.CustomResource):
     def vcn_id(self) -> pulumi.Output[str]:
         """
         The OCID of the VCN the subnet is in.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

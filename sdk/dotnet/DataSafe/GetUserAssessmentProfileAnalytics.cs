@@ -30,7 +30,6 @@ namespace Pulumi.Oci.DataSafe
         /// To use ListProfileAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
         /// set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +74,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// To use ListProfileAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
         /// set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
-        /// 
         /// 
         /// ## Example Usage
         /// 

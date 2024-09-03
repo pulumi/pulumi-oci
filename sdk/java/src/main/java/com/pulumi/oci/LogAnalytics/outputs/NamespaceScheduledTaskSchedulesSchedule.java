@@ -24,7 +24,7 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
      */
     private @Nullable String misfirePolicy;
     /**
-     * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * @return Recurring interval in ISO 8601 extended format as described in &lt;https://en.wikipedia.org/wiki/ISO_8601#Durations&gt;. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
     private @Nullable String recurringInterval;
@@ -60,7 +60,7 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
         return Optional.ofNullable(this.misfirePolicy);
     }
     /**
-     * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * @return Recurring interval in ISO 8601 extended format as described in &lt;https://en.wikipedia.org/wiki/ISO_8601#Durations&gt;. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
     public Optional<String> recurringInterval() {

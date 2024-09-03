@@ -17,7 +17,7 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
      */
     private Integer activeEntitiesCount;
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     private String compartmentId;
@@ -47,7 +47,7 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
         return this.activeEntitiesCount;
     }
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     public String compartmentId() {

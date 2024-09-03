@@ -14,8 +14,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
         /// 
-        /// Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment. 
-        /// 
+        /// Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
         /// 
         /// ## Example Usage
         /// 
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
         /// 
-        /// Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment. 
-        /// 
+        /// Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -144,7 +142,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetLogAnalyticsLogGroupsResult
     {
         /// <summary>
-        /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

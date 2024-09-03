@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of Data Safe private endpoints.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Data Safe Private Endpoints in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of Data Safe private endpoints.
-        /// 
         /// 
         /// ## Example Usage
         /// 

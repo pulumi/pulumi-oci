@@ -25,47 +25,23 @@ public final class GetMediaWorkflowJobFactsArgs extends com.pulumi.resources.Inv
         return Optional.ofNullable(this.filters);
     }
 
-    /**
-     * Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-     * 
-     */
     @Import(name="key")
     private @Nullable Output<String> key;
 
-    /**
-     * @return Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-     * 
-     */
     public Optional<Output<String>> key() {
         return Optional.ofNullable(this.key);
     }
 
-    /**
-     * Unique MediaWorkflowJob identifier.
-     * 
-     */
     @Import(name="mediaWorkflowJobId", required=true)
     private Output<String> mediaWorkflowJobId;
 
-    /**
-     * @return Unique MediaWorkflowJob identifier.
-     * 
-     */
     public Output<String> mediaWorkflowJobId() {
         return this.mediaWorkflowJobId;
     }
 
-    /**
-     * Types of details to include.
-     * 
-     */
     @Import(name="type")
     private @Nullable Output<String> type;
 
-    /**
-     * @return Types of details to include.
-     * 
-     */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
     }
@@ -110,65 +86,29 @@ public final class GetMediaWorkflowJobFactsArgs extends com.pulumi.resources.Inv
             return filters(List.of(filters));
         }
 
-        /**
-         * @param key Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(@Nullable Output<String> key) {
             $.key = key;
             return this;
         }
 
-        /**
-         * @param key Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(String key) {
             return key(Output.of(key));
         }
 
-        /**
-         * @param mediaWorkflowJobId Unique MediaWorkflowJob identifier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder mediaWorkflowJobId(Output<String> mediaWorkflowJobId) {
             $.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
 
-        /**
-         * @param mediaWorkflowJobId Unique MediaWorkflowJob identifier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
             return mediaWorkflowJobId(Output.of(mediaWorkflowJobId));
         }
 
-        /**
-         * @param type Types of details to include.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param type Types of details to include.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             return type(Output.of(type));
         }

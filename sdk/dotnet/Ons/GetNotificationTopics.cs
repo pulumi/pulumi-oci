@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Ons
         /// 
         /// Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Ons
         /// Lists topics in the specified compartment.
         /// 
         /// Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
-        /// 
         /// 
         /// ## Example Usage
         /// 

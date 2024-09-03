@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the cross-connect groups in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Cross Connect Groups in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the cross-connect groups in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

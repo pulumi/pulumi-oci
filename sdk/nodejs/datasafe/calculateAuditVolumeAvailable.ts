@@ -80,7 +80,6 @@ export class CalculateAuditVolumeAvailable extends pulumi.CustomResource {
     /**
      * The trail locations for which the audit data volume has to be calculated.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -143,7 +142,6 @@ export interface CalculateAuditVolumeAvailableState {
     /**
      * The trail locations for which the audit data volume has to be calculated.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -168,7 +166,6 @@ export interface CalculateAuditVolumeAvailableArgs {
     databaseUniqueName?: pulumi.Input<string>;
     /**
      * The trail locations for which the audit data volume has to be calculated.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

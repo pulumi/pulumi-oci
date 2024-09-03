@@ -26,7 +26,6 @@ class SavedQueryArgs:
         :param pulumi.Input[str] display_name: (Updatable) Display name of the saved query
         :param pulumi.Input[str] query: (Updatable) The adhoc query expression that is run
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -74,7 +73,6 @@ class SavedQueryArgs:
     def query(self) -> pulumi.Input[str]:
         """
         (Updatable) The adhoc query expression that is run
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -147,7 +145,6 @@ class _SavedQueryState:
                
                Avoid entering confidential information.
         :param pulumi.Input[str] query: (Updatable) The adhoc query expression that is run
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -244,7 +241,6 @@ class _SavedQueryState:
     def query(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The adhoc query expression that is run
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -358,7 +354,6 @@ class SavedQuery(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[str] query: (Updatable) The adhoc query expression that is run
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -483,7 +478,6 @@ class SavedQuery(pulumi.CustomResource):
                Avoid entering confidential information.
         :param pulumi.Input[str] query: (Updatable) The adhoc query expression that is run
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current lifecycle state of the resource
@@ -554,7 +548,6 @@ class SavedQuery(pulumi.CustomResource):
     def query(self) -> pulumi.Output[str]:
         """
         (Updatable) The adhoc query expression that is run
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

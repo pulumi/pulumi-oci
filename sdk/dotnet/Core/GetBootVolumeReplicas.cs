@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the boot volume replicas in the specified compartment and availability domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the boot volume replicas in the specified compartment and availability domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

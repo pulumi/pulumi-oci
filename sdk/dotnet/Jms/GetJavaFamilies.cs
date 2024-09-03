@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Jms
         /// Returns a list of the Java release family information.
         /// A Java release family is typically a major version in the Java version identifier.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of the Java release family information.
         /// A Java release family is typically a major version in the Java version identifier.
-        /// 
         /// 
         /// ## Example Usage
         /// 

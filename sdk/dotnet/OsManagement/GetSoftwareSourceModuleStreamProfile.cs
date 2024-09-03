@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// Retrieve a detailed description of a module stream profile from a software source.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OsManagement
         /// This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure OS Management service.
         /// 
         /// Retrieve a detailed description of a module stream profile from a software source.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -22,7 +22,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
     private List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections;
     private @Nullable List<GetRemediationRunApplicationDependencyRecommendationsFilter> filters;
     /**
-     * @return Unique Group Artifact Version (GAV) identifier in the format _Group:Artifact:Version_, e.g. org.graalvm.nativeimage:svm:21.1.0.
+     * @return Unique Group Artifact Version (GAV) identifier in the format *Group:Artifact:Version*, e.g. org.graalvm.nativeimage:svm:21.1.0.
      * 
      */
     private @Nullable String gav;
@@ -32,7 +32,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
      */
     private String id;
     /**
-     * @return Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm{@literal @}21.1.0
+     * @return Package URL defined in &lt;https://github.com/package-url/purl-spec&gt;, e.g. pkg:maven/org.graalvm.nativeimage/svm{@literal @}21.1.0
      * 
      */
     private @Nullable String purl;
@@ -50,7 +50,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique Group Artifact Version (GAV) identifier in the format _Group:Artifact:Version_, e.g. org.graalvm.nativeimage:svm:21.1.0.
+     * @return Unique Group Artifact Version (GAV) identifier in the format *Group:Artifact:Version*, e.g. org.graalvm.nativeimage:svm:21.1.0.
      * 
      */
     public Optional<String> gav() {
@@ -64,7 +64,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
         return this.id;
     }
     /**
-     * @return Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm{@literal @}21.1.0
+     * @return Package URL defined in &lt;https://github.com/package-url/purl-spec&gt;, e.g. pkg:maven/org.graalvm.nativeimage/svm{@literal @}21.1.0
      * 
      */
     public Optional<String> purl() {

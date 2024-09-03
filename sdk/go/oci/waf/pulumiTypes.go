@@ -1193,7 +1193,7 @@ func (o AppFirewallPolicyRequestProtectionRuleArrayOutput) Index(i pulumi.IntInp
 type AppFirewallPolicyRequestProtectionRuleProtectionCapability struct {
 	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName *string `pulumi:"actionName"`
-	// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold *int `pulumi:"collaborativeActionThreshold"`
 	// (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights []AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight `pulumi:"collaborativeWeights"`
@@ -1219,7 +1219,7 @@ type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityInput interface {
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs struct {
 	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName pulumi.StringPtrInput `pulumi:"actionName"`
-	// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold pulumi.IntPtrInput `pulumi:"collaborativeActionThreshold"`
 	// (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput `pulumi:"collaborativeWeights"`
@@ -1287,7 +1287,7 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) Action
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtectionRuleProtectionCapability) *string { return v.ActionName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) CollaborativeActionThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtectionRuleProtectionCapability) *int {
 		return v.CollaborativeActionThreshold
@@ -2833,7 +2833,7 @@ func (o AppFirewallPolicyResponseProtectionRuleArrayOutput) Index(i pulumi.IntIn
 type AppFirewallPolicyResponseProtectionRuleProtectionCapability struct {
 	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName *string `pulumi:"actionName"`
-	// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold *int `pulumi:"collaborativeActionThreshold"`
 	// (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights []AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight `pulumi:"collaborativeWeights"`
@@ -2859,7 +2859,7 @@ type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityInput interface 
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs struct {
 	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName pulumi.StringPtrInput `pulumi:"actionName"`
-	// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold pulumi.IntPtrInput `pulumi:"collaborativeActionThreshold"`
 	// (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput `pulumi:"collaborativeWeights"`
@@ -2927,7 +2927,7 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) Actio
 	return o.ApplyT(func(v AppFirewallPolicyResponseProtectionRuleProtectionCapability) *string { return v.ActionName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) CollaborativeActionThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseProtectionRuleProtectionCapability) *int {
 		return v.CollaborativeActionThreshold
@@ -6818,7 +6818,7 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability struct {
 	// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName string `pulumi:"actionName"`
-	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold int `pulumi:"collaborativeActionThreshold"`
 	// Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight `pulumi:"collaborativeWeights"`
@@ -6844,7 +6844,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArgs struct {
 	// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
-	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold pulumi.IntInput `pulumi:"collaborativeActionThreshold"`
 	// Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput `pulumi:"collaborativeWeights"`
@@ -6914,7 +6914,7 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	}).(pulumi.StringOutput)
 }
 
-// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput) CollaborativeActionThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability) int {
 		return v.CollaborativeActionThreshold
@@ -8246,7 +8246,7 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability struct {
 	// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName string `pulumi:"actionName"`
-	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold int `pulumi:"collaborativeActionThreshold"`
 	// Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight `pulumi:"collaborativeWeights"`
@@ -8272,7 +8272,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArgs struct {
 	// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
-	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold pulumi.IntInput `pulumi:"collaborativeActionThreshold"`
 	// Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput `pulumi:"collaborativeWeights"`
@@ -8342,7 +8342,7 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	}).(pulumi.StringOutput)
 }
 
-// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput) CollaborativeActionThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability) int {
 		return v.CollaborativeActionThreshold
@@ -9661,7 +9661,7 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleArrayOutput) Index(i pulumi.
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability struct {
 	// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName string `pulumi:"actionName"`
-	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold int `pulumi:"collaborativeActionThreshold"`
 	// Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights []GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight `pulumi:"collaborativeWeights"`
@@ -9687,7 +9687,7 @@ type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityInput inter
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs struct {
 	// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
-	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold pulumi.IntInput `pulumi:"collaborativeActionThreshold"`
 	// Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput `pulumi:"collaborativeWeights"`
@@ -9755,7 +9755,7 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) 
 	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability) string { return v.ActionName }).(pulumi.StringOutput)
 }
 
-// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) CollaborativeActionThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability) int {
 		return v.CollaborativeActionThreshold
@@ -11047,7 +11047,7 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleArrayOutput) Index(i pulumi
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability struct {
 	// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName string `pulumi:"actionName"`
-	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold int `pulumi:"collaborativeActionThreshold"`
 	// Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights []GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight `pulumi:"collaborativeWeights"`
@@ -11073,7 +11073,7 @@ type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityInput inte
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs struct {
 	// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
-	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+	// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 	CollaborativeActionThreshold pulumi.IntInput `pulumi:"collaborativeActionThreshold"`
 	// Explicit weight values to use for associated collaborative protection capabilities.
 	CollaborativeWeights GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput `pulumi:"collaborativeWeights"`
@@ -11141,7 +11141,7 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput)
 	return o.ApplyT(func(v GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability) string { return v.ActionName }).(pulumi.StringOutput)
 }
 
-// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) CollaborativeActionThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability) int {
 		return v.CollaborativeActionThreshold

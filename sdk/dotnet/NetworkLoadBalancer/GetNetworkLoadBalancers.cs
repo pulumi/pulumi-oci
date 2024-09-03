@@ -16,7 +16,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// Returns a list of network load balancers.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// This data source provides the list of Network Load Balancers in Oracle Cloud Infrastructure Network Load Balancer service.
         /// 
         /// Returns a list of network load balancers.
-        /// 
         /// 
         /// ## Example Usage
         /// 

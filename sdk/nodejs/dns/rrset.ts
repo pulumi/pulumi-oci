@@ -85,7 +85,7 @@ export class Rrset extends pulumi.CustomResource {
      */
     public readonly domain!: pulumi.Output<string>;
     /**
-     * (Updatable) 
+     * (Updatable)
      * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
      */
     public readonly items!: pulumi.Output<outputs.Dns.RrsetItem[]>;
@@ -94,7 +94,7 @@ export class Rrset extends pulumi.CustomResource {
      */
     public readonly rtype!: pulumi.Output<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
+     * Specifies to operate only on resources that have a matching DNS scope.
      * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
      */
     public readonly scope!: pulumi.Output<string | undefined>;
@@ -104,7 +104,6 @@ export class Rrset extends pulumi.CustomResource {
     public readonly viewId!: pulumi.Output<string | undefined>;
     /**
      * The name or OCID of the target zone.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -168,7 +167,7 @@ export interface RrsetState {
      */
     domain?: pulumi.Input<string>;
     /**
-     * (Updatable) 
+     * (Updatable)
      * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[]>;
@@ -177,7 +176,7 @@ export interface RrsetState {
      */
     rtype?: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
+     * Specifies to operate only on resources that have a matching DNS scope.
      * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
      */
     scope?: pulumi.Input<string>;
@@ -187,7 +186,6 @@ export interface RrsetState {
     viewId?: pulumi.Input<string>;
     /**
      * The name or OCID of the target zone.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -208,7 +206,7 @@ export interface RrsetArgs {
      */
     domain: pulumi.Input<string>;
     /**
-     * (Updatable) 
+     * (Updatable)
      * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[]>;
@@ -217,7 +215,7 @@ export interface RrsetArgs {
      */
     rtype: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
+     * Specifies to operate only on resources that have a matching DNS scope.
      * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
      */
     scope?: pulumi.Input<string>;
@@ -227,7 +225,6 @@ export interface RrsetArgs {
     viewId?: pulumi.Input<string>;
     /**
      * The name or OCID of the target zone.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

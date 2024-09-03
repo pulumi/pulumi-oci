@@ -11,10 +11,10 @@ import * as utilities from "../utilities";
  *
  * Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
  * The following resource/subresources are created:
- *   Infrastructure
- *   Storage server connectors
- *   Storage servers
- *   Storage grids
+ * Infrastructure
+ * Storage server connectors
+ * Storage servers
+ * Storage grids
  *
  * ## Example Usage
  *
@@ -83,7 +83,7 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
      */
     public /*out*/ readonly databaseCompartments!: pulumi.Output<string[]>;
     /**
@@ -140,7 +140,6 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
     public /*out*/ readonly storageGrids!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureStorageGrid[]>;
     /**
      * (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -248,7 +247,7 @@ export interface ExternalExadataInfrastructureState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
      */
     databaseCompartments?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -306,7 +305,6 @@ export interface ExternalExadataInfrastructureState {
     /**
      * (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -363,7 +361,6 @@ export interface ExternalExadataInfrastructureArgs {
     licenseModel?: pulumi.Input<string>;
     /**
      * (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

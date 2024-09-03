@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the boot volume attachments in the specified compartment. You can filter the
         /// list by specifying an instance OCID, boot volume OCID, or both.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the boot volume attachments in the specified compartment. You can filter the
         /// list by specifying an instance OCID, boot volume OCID, or both.
-        /// 
         /// 
         /// ## Example Usage
         /// 

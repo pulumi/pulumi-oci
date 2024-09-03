@@ -53,8 +53,7 @@ class VcnArgs:
                
                **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-               
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -219,8 +218,7 @@ class VcnArgs:
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -285,8 +283,7 @@ class _VcnState:
                
                **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-               
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -531,8 +528,7 @@ class _VcnState:
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -702,8 +698,7 @@ class Vcn(pulumi.CustomResource):
                
                **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-               
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -914,8 +909,7 @@ class Vcn(pulumi.CustomResource):
                
                **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-               
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1086,8 +1080,7 @@ class Vcn(pulumi.CustomResource):
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> pulumi.Output[bool]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

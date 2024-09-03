@@ -872,12 +872,11 @@ class ContainerInstanceContainerArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
         :param pulumi.Input[bool] is_resource_principal_disabled: Determines if the container will have access to the container instance resource principal.
                
-               This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+               This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see <https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal>.
         :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param pulumi.Input['ContainerInstanceContainerResourceConfigArgs'] resource_config: The size and amount of resources available to the container.
         :param pulumi.Input['ContainerInstanceContainerSecurityContextArgs'] security_context: Security context for container.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1115,7 +1114,7 @@ class ContainerInstanceContainerArgs:
         """
         Determines if the container will have access to the container instance resource principal.
 
-        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see <https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal>.
         """
         return pulumi.get(self, "is_resource_principal_disabled")
 
@@ -1163,8 +1162,7 @@ class ContainerInstanceContainerArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1796,7 +1794,7 @@ class ContainerInstanceDnsConfigArgs:
                  searches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nameservers: IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
         :param pulumi.Input[Sequence[pulumi.Input[str]]] searches: Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
         """
         if nameservers is not None:
@@ -1822,7 +1820,7 @@ class ContainerInstanceDnsConfigArgs:
     @pulumi.getter
     def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+        Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
         """
         return pulumi.get(self, "options")
 
@@ -3414,7 +3412,6 @@ class VirtualNodePoolVirtualNodeTagsArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3440,7 +3437,6 @@ class VirtualNodePoolVirtualNodeTagsArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

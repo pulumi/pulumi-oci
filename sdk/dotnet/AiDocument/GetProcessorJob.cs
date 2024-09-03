@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiDocument
         /// 
         /// Get the details of a processor job.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.AiDocument
         /// This data source provides details about a specific Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
         /// 
         /// Get the details of a processor job.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -12,10 +12,18 @@ namespace Pulumi.Oci.DatabaseManagement
     public static class GetExternalDbNode
     {
         /// <summary>
+        /// subcategory: "Database Management"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.ExternalDbNode"
+        /// sidebar_current: "docs-oci-datasource-database_management-external_db_node"
+        /// description: |-
+        /// Provides details about a specific External Db Node in Oracle Cloud Infrastructure Database Management service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.DatabaseManagement.ExternalDbNode
         /// This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the details for the external DB node specified by `externalDbNodeId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -39,10 +47,18 @@ namespace Pulumi.Oci.DatabaseManagement
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDbNodeResult>("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", args ?? new GetExternalDbNodeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Database Management"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.ExternalDbNode"
+        /// sidebar_current: "docs-oci-datasource-database_management-external_db_node"
+        /// description: |-
+        /// Provides details about a specific External Db Node in Oracle Cloud Infrastructure Database Management service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.DatabaseManagement.ExternalDbNode
         /// This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the details for the external DB node specified by `externalDbNodeId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

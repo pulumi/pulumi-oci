@@ -163,8 +163,7 @@ export class PipelineRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly stepRuns!: pulumi.Output<outputs.DataScience.PipelineRunStepRun[]>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -331,8 +330,7 @@ export interface PipelineRunState {
      */
     stepRuns?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepRun>[]>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -402,8 +400,7 @@ export interface PipelineRunArgs {
      */
     stepOverrideDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetail>[]>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

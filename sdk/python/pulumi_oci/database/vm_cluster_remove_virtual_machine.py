@@ -23,7 +23,6 @@ class VmClusterRemoveVirtualMachineArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]] db_servers: The list of Exacc DB servers for the cluster to be removed.
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -47,7 +46,6 @@ class VmClusterRemoveVirtualMachineArgs:
     def vm_cluster_id(self) -> pulumi.Input[str]:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,7 +115,6 @@ class _VmClusterRemoveVirtualMachineState:
         :param pulumi.Input[str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -484,7 +481,6 @@ class _VmClusterRemoveVirtualMachineState:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -545,7 +541,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]] db_servers: The list of Exacc DB servers for the cluster to be removed.
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -709,7 +704,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -953,7 +947,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
     def vm_cluster_id(self) -> pulumi.Output[str]:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

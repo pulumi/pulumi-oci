@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific Managed Databases Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
-        /// 
         /// 
         /// ## Example Usage
         /// 

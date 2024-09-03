@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// Returns a list of Compute Cloud@Customer upgrade schedules.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
         /// 
         /// Returns a list of Compute Cloud@Customer upgrade schedules.
-        /// 
         /// 
         /// ## Example Usage
         /// 

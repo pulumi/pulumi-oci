@@ -130,7 +130,6 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// The output format for the package.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -267,7 +266,6 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// The output format for the package.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -359,7 +357,6 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// The output format for the package.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

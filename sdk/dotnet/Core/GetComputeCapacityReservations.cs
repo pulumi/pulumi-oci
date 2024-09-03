@@ -16,9 +16,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the compute capacity reservations that match the specified criteria and compartment.
         /// 
-        /// You can limit the list by specifying a compute capacity reservation display name 
+        /// You can limit the list by specifying a compute capacity reservation display name
         /// (the list will include all the identically-named compute capacity reservations in the compartment).
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -49,9 +48,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the compute capacity reservations that match the specified criteria and compartment.
         /// 
-        /// You can limit the list by specifying a compute capacity reservation display name 
+        /// You can limit the list by specifying a compute capacity reservation display name
         /// (the list will include all the identically-named compute capacity reservations in the compartment).
-        /// 
         /// 
         /// ## Example Usage
         /// 

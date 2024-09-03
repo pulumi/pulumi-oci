@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Ons
         /// 
         /// Gets the specified topic's configuration information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Ons
         /// This data source provides details about a specific Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
         /// 
         /// Gets the specified topic's configuration information.
-        /// 
         /// 
         /// ## Example Usage
         /// 

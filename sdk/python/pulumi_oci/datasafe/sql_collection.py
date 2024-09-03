@@ -45,7 +45,6 @@ class SqlCollectionArgs:
         :param pulumi.Input[str] status: Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
         :param pulumi.Input[bool] stop_trigger: (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -237,7 +236,6 @@ class SqlCollectionArgs:
         """
         (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -289,7 +287,6 @@ class _SqlCollectionState:
         :param pulumi.Input[str] state: The current state of the SQL collection.
         :param pulumi.Input[str] status: Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
         :param pulumi.Input[bool] stop_trigger: (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -517,7 +514,6 @@ class _SqlCollectionState:
         """
         (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -670,7 +666,6 @@ class SqlCollection(pulumi.CustomResource):
         :param pulumi.Input[bool] start_trigger: (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
         :param pulumi.Input[str] status: Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
         :param pulumi.Input[bool] stop_trigger: (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -836,7 +831,6 @@ class SqlCollection(pulumi.CustomResource):
         :param pulumi.Input[str] status: Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
         :param pulumi.Input[bool] stop_trigger: (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -990,7 +984,6 @@ class SqlCollection(pulumi.CustomResource):
     def stop_trigger(self) -> pulumi.Output[Optional[bool]]:
         """
         (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

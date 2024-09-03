@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// Gets a list of all WebAppFirewalls in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Waf
         /// This data source provides the list of Web App Firewalls in Oracle Cloud Infrastructure Waf service.
         /// 
         /// Gets a list of all WebAppFirewalls in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

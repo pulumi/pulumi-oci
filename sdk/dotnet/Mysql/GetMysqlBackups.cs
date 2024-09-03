@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// Get a list of DB System backups.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Mysql
         /// This data source provides the list of Mysql Backups in Oracle Cloud Infrastructure MySQL Database service.
         /// 
         /// Get a list of DB System backups.
-        /// 
         /// 
         /// ## Example Usage
         /// 

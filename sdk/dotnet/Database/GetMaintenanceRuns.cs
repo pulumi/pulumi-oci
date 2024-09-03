@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the maintenance runs in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of the maintenance runs in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

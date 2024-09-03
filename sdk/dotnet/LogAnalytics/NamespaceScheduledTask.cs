@@ -32,7 +32,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<Outputs.NamespaceScheduledTaskAction> Action { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -103,7 +103,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// Task type.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -123,7 +122,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+        /// most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
         /// </summary>
         [Output("workRequestId")]
         public Output<string> WorkRequestId { get; private set; } = null!;
@@ -181,7 +180,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<Inputs.NamespaceScheduledTaskActionArgs> Action { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -243,7 +242,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// Task type.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -265,7 +263,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<Inputs.NamespaceScheduledTaskActionGetArgs>? Action { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -348,7 +346,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// Task type.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -368,7 +365,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+        /// most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
         /// </summary>
         [Input("workRequestId")]
         public Input<string>? WorkRequestId { get; set; }

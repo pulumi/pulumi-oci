@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiDocument
         /// 
         /// Returns a list of models in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.AiDocument
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Document service.
         /// 
         /// Returns a list of models in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

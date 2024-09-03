@@ -71,7 +71,7 @@ type GetNamespaceScheduledTasksArgs struct {
 
 // A collection of values returned by getNamespaceScheduledTasks.
 type GetNamespaceScheduledTasksResult struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName *string                            `pulumi:"displayName"`
@@ -133,7 +133,7 @@ func (o GetNamespaceScheduledTasksResultOutput) ToGetNamespaceScheduledTasksResu
 	return o
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetNamespaceScheduledTasksResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

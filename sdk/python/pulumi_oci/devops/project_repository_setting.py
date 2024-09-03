@@ -23,7 +23,6 @@ class ProjectRepositorySettingArgs:
         The set of arguments for constructing a ProjectRepositorySetting resource.
         :param pulumi.Input[str] project_id: Unique project identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['ProjectRepositorySettingApprovalRulesArgs'] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
@@ -40,7 +39,6 @@ class ProjectRepositorySettingArgs:
     def project_id(self) -> pulumi.Input[str]:
         """
         Unique project identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -88,7 +86,6 @@ class _ProjectRepositorySettingState:
         :param pulumi.Input['ProjectRepositorySettingMergeSettingsArgs'] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[str] project_id: Unique project identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -128,7 +125,6 @@ class _ProjectRepositorySettingState:
     def project_id(self) -> Optional[pulumi.Input[str]]:
         """
         Unique project identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -191,7 +187,6 @@ class ProjectRepositorySetting(pulumi.CustomResource):
         :param pulumi.Input[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict']] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
         :param pulumi.Input[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict']] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[str] project_id: Unique project identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -295,7 +290,6 @@ class ProjectRepositorySetting(pulumi.CustomResource):
         :param pulumi.Input[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict']] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[str] project_id: Unique project identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -329,7 +323,6 @@ class ProjectRepositorySetting(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[str]:
         """
         Unique project identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

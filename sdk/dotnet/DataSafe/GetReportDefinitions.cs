@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// The ListReportDefinitions operation returns only the report definitions in the specified `compartmentId`.
         /// It also returns the seeded report definitions which are available to all the compartments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of report definitions.
         /// The ListReportDefinitions operation returns only the report definitions in the specified `compartmentId`.
         /// It also returns the seeded report definitions which are available to all the compartments.
-        /// 
         /// 
         /// ## Example Usage
         /// 

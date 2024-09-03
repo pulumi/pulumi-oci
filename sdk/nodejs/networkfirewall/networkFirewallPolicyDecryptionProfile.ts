@@ -110,7 +110,6 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
     /**
      * Unique Network Firewall Policy identifier
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -224,7 +223,6 @@ export interface NetworkFirewallPolicyDecryptionProfileState {
     /**
      * Unique Network Firewall Policy identifier
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -285,7 +283,6 @@ export interface NetworkFirewallPolicyDecryptionProfileArgs {
     name?: pulumi.Input<string>;
     /**
      * Unique Network Firewall Policy identifier
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

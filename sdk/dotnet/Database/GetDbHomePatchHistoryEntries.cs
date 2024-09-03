@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the history of patch operations on the specified Database Home.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the history of patch operations on the specified Database Home.
-        /// 
         /// 
         /// ## Example Usage
         /// 

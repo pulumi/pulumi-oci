@@ -99,7 +99,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -214,7 +213,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -281,7 +279,6 @@ namespace Pulumi.Oci.CloudGuard
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// 
         /// Avoid entering confidential information.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

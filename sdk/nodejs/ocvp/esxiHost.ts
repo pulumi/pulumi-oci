@@ -148,7 +148,6 @@ export class EsxiHost extends pulumi.CustomResource {
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      *
@@ -372,7 +371,6 @@ export interface EsxiHostState {
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      *
@@ -479,7 +477,6 @@ export interface EsxiHostArgs {
     nonUpgradedEsxiHostId?: pulumi.Input<string>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

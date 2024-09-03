@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetNamespaceScheduledTasksResult {
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     private String compartmentId;
@@ -46,7 +46,7 @@ public final class GetNamespaceScheduledTasksResult {
 
     private GetNamespaceScheduledTasksResult() {}
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     public String compartmentId() {

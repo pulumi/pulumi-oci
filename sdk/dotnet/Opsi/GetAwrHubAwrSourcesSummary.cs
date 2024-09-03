@@ -14,8 +14,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// This data source provides details about a specific Awr Hub Awr Sources Summary resource in Oracle Cloud Infrastructure Opsi service.
         /// 
-        /// Gets a list of summary of AWR Sources.        
-        /// 
+        /// Gets a list of summary of AWR Sources.
         /// 
         /// ## Example Usage
         /// 
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// This data source provides details about a specific Awr Hub Awr Sources Summary resource in Oracle Cloud Infrastructure Opsi service.
         /// 
-        /// Gets a list of summary of AWR Sources.        
-        /// 
+        /// Gets a list of summary of AWR Sources.
         /// 
         /// ## Example Usage
         /// 

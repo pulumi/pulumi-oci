@@ -49,7 +49,6 @@ class SqlFirewallPolicyManagementArgs:
         :param pulumi.Input[str] violation_action: (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
         :param pulumi.Input[str] violation_audit: (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -272,7 +271,6 @@ class SqlFirewallPolicyManagementArgs:
         """
         (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -332,7 +330,6 @@ class _SqlFirewallPolicyManagementState:
         :param pulumi.Input[str] time_updated: The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
         :param pulumi.Input[str] violation_action: (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
         :param pulumi.Input[str] violation_audit: (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -640,7 +637,6 @@ class _SqlFirewallPolicyManagementState:
         """
         (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -727,7 +723,6 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
         :param pulumi.Input[str] target_id: Unique target identifier.
         :param pulumi.Input[str] violation_action: (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
         :param pulumi.Input[str] violation_audit: (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -897,7 +892,6 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
         :param pulumi.Input[str] violation_action: (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
         :param pulumi.Input[str] violation_audit: (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1103,7 +1097,6 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
     def violation_audit(self) -> pulumi.Output[str]:
         """
         (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

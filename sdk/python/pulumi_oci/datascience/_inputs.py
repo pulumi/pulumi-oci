@@ -2049,12 +2049,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
                
                Example of threshold alarm:
-               
-               -----
-               
-               CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-               
-               -----
         :param pulumi.Input[str] scaling_configuration_type: (Updatable) The type of scaling configuration.
         :param pulumi.Input[int] threshold: (Updatable) A metric value at which the scaling operation will be triggered.
         """
@@ -2102,12 +2096,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
 
         Example of threshold alarm:
-
-        -----
-
-        CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-
-        -----
         """
         return pulumi.get(self, "query")
 
@@ -2156,12 +2144,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
                
                Example of threshold alarm:
-               
-               -----
-               
-               CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-               
-               -----
         :param pulumi.Input[str] scaling_configuration_type: (Updatable) The type of scaling configuration.
         :param pulumi.Input[int] threshold: (Updatable) A metric value at which the scaling operation will be triggered.
         """
@@ -2209,12 +2191,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
 
         Example of threshold alarm:
-
-        -----
-
-        CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-
-        -----
         """
         return pulumi.get(self, "query")
 
@@ -3676,7 +3652,6 @@ class PipelineStepDetailArgs:
         :param pulumi.Input[str] step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param pulumi.Input[str] step_type: (Updatable) The type of step.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] depends_ons: The list of step names this current step depends on for execution.
@@ -3721,7 +3696,6 @@ class PipelineStepDetailArgs:
     def step_type(self) -> pulumi.Input[str]:
         """
         (Updatable) The type of step.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

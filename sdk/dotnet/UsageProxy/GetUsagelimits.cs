@@ -16,7 +16,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// Returns the list of usage limit for the subscription ID and tenant ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.UsageProxy
         /// This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
         /// 
         /// Returns the list of usage limit for the subscription ID and tenant ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

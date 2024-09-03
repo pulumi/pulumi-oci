@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// subcategory: "Data Safe"
+    /// layout: "oci"
+    /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.AlertPolicy"
+    /// sidebar_current: "docs-oci-resource-data_safe-alert_policy"
+    /// description: |-
+    /// 	Provides the Alert Policy resource in Oracle Cloud Infrastructure Data Safe service
+    /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+    /// 
+    /// # oci.DataSafe.AlertPolicy
     /// This resource provides the Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
     /// Creates a new user-defined alert policy.
@@ -120,7 +129,6 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Severity level of the alert raised by this policy.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -261,7 +269,6 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// (Updatable) Severity level of the alert raised by this policy.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -350,7 +357,6 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Severity level of the alert raised by this policy.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

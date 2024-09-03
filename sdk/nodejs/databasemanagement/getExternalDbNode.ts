@@ -5,6 +5,15 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Database Management"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.ExternalDbNode"
+ * sidebar_current: "docs-oci-datasource-database_management-external_db_node"
+ * description: |-
+ * Provides details about a specific External Db Node in Oracle Cloud Infrastructure Database Management service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.DatabaseManagement.ExternalDbNode
  * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Gets the details for the external DB node specified by `externalDbNodeId`.
@@ -117,6 +126,15 @@ export interface GetExternalDbNodeResult {
     readonly timeUpdated: string;
 }
 /**
+ * subcategory: "Database Management"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.ExternalDbNode"
+ * sidebar_current: "docs-oci-datasource-database_management-external_db_node"
+ * description: |-
+ * Provides details about a specific External Db Node in Oracle Cloud Infrastructure Database Management service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.DatabaseManagement.ExternalDbNode
  * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Gets the details for the external DB node specified by `externalDbNodeId`.

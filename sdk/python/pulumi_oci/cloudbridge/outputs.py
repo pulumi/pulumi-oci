@@ -1398,7 +1398,6 @@ class AssetVmwareVm(dict):
         :param str path: (Updatable) Path directory of the asset.
         :param str vmware_tools_status: (Updatable) VMware tools status.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1510,7 +1509,6 @@ class AssetVmwareVm(dict):
     def vmware_tools_status(self) -> Optional[str]:
         """
         (Updatable) VMware tools status.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3389,7 +3387,7 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
         :param str time_created: The time when the asset source was created in the RFC3339 format.
         :param str time_updated: The point in time that the asset source was last updated in the RFC3339 format.
         :param str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-        :param str vcenter_endpoint: Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+        :param str vcenter_endpoint: Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
         """
         pulumi.set(__self__, "are_historical_metrics_collected", are_historical_metrics_collected)
         pulumi.set(__self__, "are_realtime_metrics_collected", are_realtime_metrics_collected)
@@ -3568,7 +3566,7 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
     @pulumi.getter(name="vcenterEndpoint")
     def vcenter_endpoint(self) -> str:
         """
-        Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+        Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
         """
         return pulumi.get(self, "vcenter_endpoint")
 

@@ -94,7 +94,6 @@ export class ManagedList extends pulumi.CustomResource {
     /**
      * OCID of the source managed list
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -226,7 +225,6 @@ export interface ManagedListState {
     /**
      * OCID of the source managed list
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -289,7 +287,6 @@ export interface ManagedListArgs {
     listType?: pulumi.Input<string>;
     /**
      * OCID of the source managed list
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -12,10 +12,18 @@ namespace Pulumi.Oci.DataSafe
     public static class GetTargetAlertPolicyAssociations
     {
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getTargetAlertPolicyAssociations"
+        /// sidebar_current: "docs-oci-datasource-data_safe-target_alert_policy_associations"
+        /// description: |-
+        /// 	Provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getTargetAlertPolicyAssociations
         /// This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all target-alert policy associations.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -47,10 +55,18 @@ namespace Pulumi.Oci.DataSafe
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getTargetAlertPolicyAssociations"
+        /// sidebar_current: "docs-oci-datasource-data_safe-target_alert_policy_associations"
+        /// description: |-
+        /// 	Provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getTargetAlertPolicyAssociations
         /// This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all target-alert policy associations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

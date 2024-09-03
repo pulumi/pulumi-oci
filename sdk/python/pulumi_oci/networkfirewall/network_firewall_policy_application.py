@@ -25,7 +25,6 @@ class NetworkFirewallPolicyApplicationArgs:
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
@@ -68,7 +67,6 @@ class NetworkFirewallPolicyApplicationArgs:
     def type(self) -> pulumi.Input[str]:
         """
         Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -121,7 +119,6 @@ class _NetworkFirewallPolicyApplicationState:
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this application belongs to.
         :param pulumi.Input[str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -205,7 +202,6 @@ class _NetworkFirewallPolicyApplicationState:
         """
         Describes the type of application. The accepted values are - * ICMP * ICMP_V6
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -261,7 +257,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         :param pulumi.Input[str] name: Name of the application
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -370,7 +365,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this application belongs to.
         :param pulumi.Input[str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -431,7 +425,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

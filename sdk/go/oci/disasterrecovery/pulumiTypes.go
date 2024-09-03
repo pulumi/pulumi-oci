@@ -1726,7 +1726,7 @@ func (o DrProtectionGroupLogLocationPtrOutput) Object() pulumi.StringPtrOutput {
 }
 
 type DrProtectionGroupMember struct {
-	// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 	AutonomousDatabaseStandbyTypeForDrDrills *string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []DrProtectionGroupMemberBackendSetMapping `pulumi:"backendSetMappings"`
@@ -1734,7 +1734,7 @@ type DrProtectionGroupMember struct {
 	BlockVolumeOperations []DrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket *string `pulumi:"bucket"`
-	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 	ConnectionStringType *string `pulumi:"connectionStringType"`
 	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain *string `pulumi:"destinationAvailabilityDomain"`
@@ -1784,7 +1784,7 @@ type DrProtectionGroupMemberInput interface {
 }
 
 type DrProtectionGroupMemberArgs struct {
-	// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringPtrInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings DrProtectionGroupMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
@@ -1792,7 +1792,7 @@ type DrProtectionGroupMemberArgs struct {
 	BlockVolumeOperations DrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 	ConnectionStringType pulumi.StringPtrInput `pulumi:"connectionStringType"`
 	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringPtrInput `pulumi:"destinationAvailabilityDomain"`
@@ -1881,7 +1881,7 @@ func (o DrProtectionGroupMemberOutput) ToDrProtectionGroupMemberOutputWithContex
 	return o
 }
 
-// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+// (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 func (o DrProtectionGroupMemberOutput) AutonomousDatabaseStandbyTypeForDrDrills() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.AutonomousDatabaseStandbyTypeForDrDrills }).(pulumi.StringPtrOutput)
 }
@@ -1905,7 +1905,7 @@ func (o DrProtectionGroupMemberOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 func (o DrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.ConnectionStringType }).(pulumi.StringPtrOutput)
 }
@@ -6928,7 +6928,7 @@ func (o GetDrProtectionGroupLogLocationArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDrProtectionGroupMember struct {
-	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 	AutonomousDatabaseStandbyTypeForDrDrills string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []GetDrProtectionGroupMemberBackendSetMapping `pulumi:"backendSetMappings"`
@@ -6936,7 +6936,7 @@ type GetDrProtectionGroupMember struct {
 	BlockVolumeOperations []GetDrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
-	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 	ConnectionStringType string `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
@@ -6986,7 +6986,7 @@ type GetDrProtectionGroupMemberInput interface {
 }
 
 type GetDrProtectionGroupMemberArgs struct {
-	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings GetDrProtectionGroupMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
@@ -6994,7 +6994,7 @@ type GetDrProtectionGroupMemberArgs struct {
 	BlockVolumeOperations GetDrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 	ConnectionStringType pulumi.StringInput `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
@@ -7083,7 +7083,7 @@ func (o GetDrProtectionGroupMemberOutput) ToGetDrProtectionGroupMemberOutputWith
 	return o
 }
 
-// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 func (o GetDrProtectionGroupMemberOutput) AutonomousDatabaseStandbyTypeForDrDrills() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.AutonomousDatabaseStandbyTypeForDrDrills }).(pulumi.StringOutput)
 }
@@ -7107,7 +7107,7 @@ func (o GetDrProtectionGroupMemberOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 func (o GetDrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.ConnectionStringType }).(pulumi.StringOutput)
 }
@@ -8798,7 +8798,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutp
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
-	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 	AutonomousDatabaseStandbyTypeForDrDrills string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping `pulumi:"backendSetMappings"`
@@ -8806,7 +8806,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	BlockVolumeOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
-	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 	ConnectionStringType string `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
@@ -8856,7 +8856,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberInput interface {
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
-	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+	// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
@@ -8864,7 +8864,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	BlockVolumeOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 	ConnectionStringType pulumi.StringInput `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
@@ -8953,7 +8953,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToGetD
 	return o
 }
 
-// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+// This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) AutonomousDatabaseStandbyTypeForDrDrills() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.AutonomousDatabaseStandbyTypeForDrDrills
@@ -8979,7 +8979,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Bucket
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ConnectionStringType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.ConnectionStringType

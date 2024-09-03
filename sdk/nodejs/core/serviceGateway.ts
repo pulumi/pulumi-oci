@@ -83,7 +83,7 @@ export class ServiceGateway extends pulumi.CustomResource {
      */
     public /*out*/ readonly blockTraffic!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -121,8 +121,7 @@ export class ServiceGateway extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. 
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -188,7 +187,7 @@ export interface ServiceGatewayState {
      */
     blockTraffic?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -226,8 +225,7 @@ export interface ServiceGatewayState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. 
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -240,7 +238,7 @@ export interface ServiceGatewayState {
  */
 export interface ServiceGatewayArgs {
     /**
-     * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -270,8 +268,7 @@ export interface ServiceGatewayArgs {
      */
     services: pulumi.Input<pulumi.Input<inputs.Core.ServiceGatewayService>[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. 
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

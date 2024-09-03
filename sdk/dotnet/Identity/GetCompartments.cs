@@ -33,7 +33,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -80,7 +79,6 @@ namespace Pulumi.Oci.Identity
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
         /// 
         /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-        /// 
         /// 
         /// ## Example Usage
         /// 

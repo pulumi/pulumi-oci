@@ -28,7 +28,6 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// (Updatable) The email subject line to use when contacting support.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// Gets the trace snapshots data identified by trace ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.ApmTraces
         /// This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
         /// 
         /// Gets the trace snapshots data identified by trace ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

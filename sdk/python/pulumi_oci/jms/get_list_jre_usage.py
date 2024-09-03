@@ -88,7 +88,7 @@ class GetListJreUsageResult:
     @pulumi.getter(name="timeEnd")
     def time_end(self) -> Optional[str]:
         """
-        Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+        Upper bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
         """
         return pulumi.get(self, "time_end")
 
@@ -96,7 +96,7 @@ class GetListJreUsageResult:
     @pulumi.getter(name="timeStart")
     def time_start(self) -> Optional[str]:
         """
-        Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+        Lower bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
         """
         return pulumi.get(self, "time_start")
 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// Returns a list of all the Anomaly Detection jobs in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
         /// 
         /// Returns a list of all the Anomaly Detection jobs in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

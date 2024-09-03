@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
         /// Managed Database, findings, recommendations, rationale, and examples.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
         /// Managed Database, findings, recommendations, rationale, and examples.
-        /// 
         /// 
         /// ## Example Usage
         /// 

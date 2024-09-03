@@ -241,8 +241,8 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
      * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
      * 
      * The benefits of using NSGs with the load balancer include:
-     * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-     * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+     * * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
      * 
      * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
      * 
@@ -256,8 +256,8 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
      * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
      * 
      * The benefits of using NSGs with the load balancer include:
-     * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-     * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+     * * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
      * 
      * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
      * 
@@ -758,8 +758,8 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
          * 
          * The benefits of using NSGs with the load balancer include:
-         * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-         * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+         * * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
          * 
          * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
          * 
@@ -777,8 +777,8 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
          * 
          * The benefits of using NSGs with the load balancer include:
-         * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-         * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+         * * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
          * 
          * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
          * 
@@ -795,8 +795,8 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
          * 
          * The benefits of using NSGs with the load balancer include:
-         * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-         * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+         * * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
          * 
          * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
          * 

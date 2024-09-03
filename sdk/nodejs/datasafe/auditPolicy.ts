@@ -94,7 +94,6 @@ export class AuditPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -241,7 +240,6 @@ export interface AuditPolicyState {
     /**
      * (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -310,7 +308,6 @@ export interface AuditPolicyArgs {
     provisionTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

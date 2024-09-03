@@ -61,7 +61,7 @@ type LookupLogAnalyticsLogGroupArgs struct {
 
 // A collection of values returned by getLogAnalyticsLogGroup.
 type LookupLogAnalyticsLogGroupResult struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -121,7 +121,7 @@ func (o LookupLogAnalyticsLogGroupResultOutput) ToLookupLogAnalyticsLogGroupResu
 	return o
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o LookupLogAnalyticsLogGroupResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

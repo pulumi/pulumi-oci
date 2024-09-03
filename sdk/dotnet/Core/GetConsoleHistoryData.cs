@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Core
         /// See [CaptureConsoleHistory](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ConsoleHistory/CaptureConsoleHistory)
         /// for details about using the console history operations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// Gets the actual console history data (not the metadata).
         /// See [CaptureConsoleHistory](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ConsoleHistory/CaptureConsoleHistory)
         /// for details about using the console history operations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -104,7 +104,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        /// Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
         /// </summary>
         public readonly string Endpoint;
         public readonly string Fingerprint;

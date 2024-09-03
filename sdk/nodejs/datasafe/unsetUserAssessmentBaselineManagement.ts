@@ -60,7 +60,6 @@ export class UnsetUserAssessmentBaselineManagement extends pulumi.CustomResource
     /**
      * The compartment OCID where the assessment resides.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -108,7 +107,6 @@ export interface UnsetUserAssessmentBaselineManagementState {
     /**
      * The compartment OCID where the assessment resides.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -125,7 +123,6 @@ export interface UnsetUserAssessmentBaselineManagementState {
 export interface UnsetUserAssessmentBaselineManagementArgs {
     /**
      * The compartment OCID where the assessment resides.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

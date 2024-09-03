@@ -40,8 +40,7 @@ class PipelineRunArgs:
         :param pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -201,8 +200,7 @@ class PipelineRunArgs:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -257,8 +255,7 @@ class _PipelineRunState:
         :param pulumi.Input[str] state: The state of the step run.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepRunArgs']]] step_runs: Array of StepRun object for each step.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -517,8 +514,7 @@ class _PipelineRunState:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -670,8 +666,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -863,8 +858,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[str] state: The state of the step run.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepRunArgs', 'PipelineRunStepRunArgsDict']]]] step_runs: Array of StepRun object for each step.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1038,8 +1032,7 @@ class PipelineRun(pulumi.CustomResource):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

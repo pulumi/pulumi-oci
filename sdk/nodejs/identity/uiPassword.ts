@@ -79,7 +79,6 @@ export class UiPassword extends pulumi.CustomResource {
     /**
      * The OCID of the user.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -142,7 +141,6 @@ export interface UiPasswordState {
     /**
      * The OCID of the user.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -155,7 +153,6 @@ export interface UiPasswordState {
 export interface UiPasswordArgs {
     /**
      * The OCID of the user.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

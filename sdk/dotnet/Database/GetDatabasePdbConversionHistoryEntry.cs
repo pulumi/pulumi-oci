@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
-        /// 
         /// 
         /// ## Example Usage
         /// 

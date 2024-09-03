@@ -63,8 +63,7 @@ export class LogAnalyticsPreferencesManagement extends pulumi.CustomResource {
      */
     public readonly items!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsPreferencesManagementItem[] | undefined>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -108,8 +107,7 @@ export interface LogAnalyticsPreferencesManagementState {
      */
     items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[]>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -126,8 +124,7 @@ export interface LogAnalyticsPreferencesManagementArgs {
      */
     items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[]>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

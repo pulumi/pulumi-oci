@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// List the replication sources of a destination bucket.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
         /// 
         /// List the replication sources of a destination bucket.
-        /// 
         /// 
         /// ## Example Usage
         /// 

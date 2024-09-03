@@ -156,7 +156,6 @@ class NetworkFirewallPolicyDecryptionRulePosition(dict):
         :param str after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param str before_rule: (Updatable) Identifier for rule before which this rule lies.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -178,7 +177,6 @@ class NetworkFirewallPolicyDecryptionRulePosition(dict):
     def before_rule(self) -> Optional[str]:
         """
         (Updatable) Identifier for rule before which this rule lies.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -300,7 +298,6 @@ class NetworkFirewallPolicySecurityRulePosition(dict):
         :param str after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param str before_rule: (Updatable) Identifier for rule before which this rule lies.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -322,7 +319,6 @@ class NetworkFirewallPolicySecurityRulePosition(dict):
     def before_rule(self) -> Optional[str]:
         """
         (Updatable) Identifier for rule before which this rule lies.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -525,7 +521,6 @@ class NetworkFirewallPolicyUrlListUrl(dict):
         :param str type: (Updatable) The type of pattern.
                * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -546,7 +541,6 @@ class NetworkFirewallPolicyUrlListUrl(dict):
         """
         (Updatable) The type of pattern.
         * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -33,7 +33,6 @@ class WorkspaceApplicationPatchArgs:
         :param pulumi.Input[str] patch_type: The type of the patch applied or being applied on the application.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: Detailed description for the object.
@@ -94,7 +93,6 @@ class WorkspaceApplicationPatchArgs:
     def workspace_id(self) -> pulumi.Input[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -251,7 +249,6 @@ class _WorkspaceApplicationPatchState:
         :param pulumi.Input['WorkspaceApplicationPatchRegistryMetadataArgs'] registry_metadata: Information about the object and its parent.
         :param pulumi.Input[str] time_patched: The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -559,7 +556,6 @@ class _WorkspaceApplicationPatchState:
         """
         The workspace ID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -639,7 +635,6 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         :param pulumi.Input[str] patch_type: The type of the patch applied or being applied on the application.
         :param pulumi.Input[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict']] registry_metadata: Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -813,7 +808,6 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         :param pulumi.Input[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict']] registry_metadata: Information about the object and its parent.
         :param pulumi.Input[str] time_patched: The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1019,7 +1013,6 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
     def workspace_id(self) -> pulumi.Output[str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

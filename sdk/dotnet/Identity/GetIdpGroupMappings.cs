@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists the group mappings for the specified identity provider.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Identity
         /// **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
         /// 
         /// Lists the group mappings for the specified identity provider.
-        /// 
         /// 
         /// ## Example Usage
         /// 

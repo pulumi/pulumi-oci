@@ -92,7 +92,7 @@ type LookupSqlEndpointResult struct {
 	MinExecutorCount int `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfigurations []GetSqlEndpointNetworkConfiguration `pulumi:"networkConfigurations"`
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations map[string]string `pulumi:"sparkAdvancedConfigurations"`
 	SqlEndpointId               string            `pulumi:"sqlEndpointId"`
 	// The version of SQL Endpoint.
@@ -107,7 +107,7 @@ type LookupSqlEndpointResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
 	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
 }
 
@@ -234,7 +234,7 @@ func (o LookupSqlEndpointResultOutput) NetworkConfigurations() GetSqlEndpointNet
 	return o.ApplyT(func(v LookupSqlEndpointResult) []GetSqlEndpointNetworkConfiguration { return v.NetworkConfigurations }).(GetSqlEndpointNetworkConfigurationArrayOutput)
 }
 
-// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+// The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 func (o LookupSqlEndpointResultOutput) SparkAdvancedConfigurations() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSqlEndpointResult) map[string]string { return v.SparkAdvancedConfigurations }).(pulumi.StringMapOutput)
 }
@@ -273,7 +273,7 @@ func (o LookupSqlEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSqlEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
 func (o LookupSqlEndpointResultOutput) WarehouseBucketUri() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSqlEndpointResult) string { return v.WarehouseBucketUri }).(pulumi.StringOutput)
 }

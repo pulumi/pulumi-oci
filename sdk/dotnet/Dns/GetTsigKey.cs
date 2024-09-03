@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets information about the specified TSIG key.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Dns
         /// This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
         /// 
         /// Gets information about the specified TSIG key.
-        /// 
         /// 
         /// ## Example Usage
         /// 

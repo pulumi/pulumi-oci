@@ -752,11 +752,11 @@ class MigrationDataTransferMediumDetailsArgs:
                  target: Optional[pulumi.Input['MigrationDataTransferMediumDetailsTargetArgs']] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the data transfer medium to use.
-        :param pulumi.Input[str] access_key_id: (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        :param pulumi.Input[str] access_key_id: (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         :param pulumi.Input[str] name: (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
         :param pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageBucketArgs'] object_storage_bucket: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-        :param pulumi.Input[str] region: (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-        :param pulumi.Input[str] secret_access_key: (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        :param pulumi.Input[str] region: (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
+        :param pulumi.Input[str] secret_access_key: (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         :param pulumi.Input[str] shared_storage_mount_target_id: (Updatable) OCID of the shared storage mount target
         :param pulumi.Input['MigrationDataTransferMediumDetailsSourceArgs'] source: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
         :param pulumi.Input['MigrationDataTransferMediumDetailsTargetArgs'] target: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
@@ -795,7 +795,7 @@ class MigrationDataTransferMediumDetailsArgs:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         """
         return pulumi.get(self, "access_key_id")
 
@@ -831,7 +831,7 @@ class MigrationDataTransferMediumDetailsArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
         """
         return pulumi.get(self, "region")
 
@@ -843,7 +843,7 @@ class MigrationDataTransferMediumDetailsArgs:
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         """
         return pulumi.get(self, "secret_access_key")
 

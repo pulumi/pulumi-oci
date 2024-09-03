@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Core
         public Output<string> OracleCanInitiate { get; private set; } = null!;
 
         /// <summary>
-        /// Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        /// Configuration details for IKE phase one (ISAKMP) configuration parameters.
         /// 
         /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         /// </summary>
@@ -317,7 +317,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? OracleCanInitiate { get; set; }
 
         /// <summary>
-        /// Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        /// Configuration details for IKE phase one (ISAKMP) configuration parameters.
         /// 
         /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         /// </summary>
@@ -461,7 +461,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? OracleCanInitiate { get; set; }
 
         /// <summary>
-        /// Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        /// Configuration details for IKE phase one (ISAKMP) configuration parameters.
         /// 
         /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         /// </summary>

@@ -32,8 +32,7 @@ class AlarmSuppressionInitArgs:
                The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,8 +110,7 @@ class AlarmSuppressionInitArgs:
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Input[str]:
         """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-
+        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -197,8 +195,7 @@ class _AlarmSuppressionState:
         :param pulumi.Input[str] state: The current lifecycle state of the alarm suppression.  Example: `DELETED`
         :param pulumi.Input[str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -359,8 +356,7 @@ class _AlarmSuppressionState:
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> Optional[pulumi.Input[str]]:
         """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-
+        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -457,8 +453,7 @@ class AlarmSuppression(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -612,8 +607,7 @@ class AlarmSuppression(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current lifecycle state of the alarm suppression.  Example: `DELETED`
         :param pulumi.Input[str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -727,8 +721,7 @@ class AlarmSuppression(pulumi.CustomResource):
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Output[str]:
         """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-
+        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

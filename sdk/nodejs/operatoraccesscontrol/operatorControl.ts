@@ -112,7 +112,6 @@ export class OperatorControl extends pulumi.CustomResource {
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -277,7 +276,6 @@ export interface OperatorControlState {
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -350,7 +348,6 @@ export interface OperatorControlArgs {
     resourceType: pulumi.Input<string>;
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

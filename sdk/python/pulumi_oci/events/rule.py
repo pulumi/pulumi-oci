@@ -42,8 +42,7 @@ class RuleArgs:
                
                Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
         :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -127,8 +126,7 @@ class RuleArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,8 +209,7 @@ class _RuleState:
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -343,8 +340,7 @@ class _RuleState:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -470,8 +466,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -625,8 +620,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -723,8 +717,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

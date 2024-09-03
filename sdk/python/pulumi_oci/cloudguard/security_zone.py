@@ -26,7 +26,6 @@ class SecurityZoneArgs:
         :param pulumi.Input[str] display_name: (Updatable) The security zone's display name
         :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -74,7 +73,6 @@ class SecurityZoneArgs:
     def security_zone_recipe_id(self) -> pulumi.Input[str]:
         """
         (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,7 +149,6 @@ class _SecurityZoneState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,7 +274,6 @@ class _SecurityZoneState:
         """
         (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -391,7 +387,6 @@ class SecurityZone(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -523,7 +518,6 @@ class SecurityZone(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] security_zone_target_id: The OCID of the target associated with the security zone
@@ -612,7 +606,6 @@ class SecurityZone(pulumi.CustomResource):
     def security_zone_recipe_id(self) -> pulumi.Output[str]:
         """
         (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

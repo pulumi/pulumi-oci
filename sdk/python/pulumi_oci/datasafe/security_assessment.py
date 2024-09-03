@@ -29,7 +29,6 @@ class SecurityAssessmentArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
         :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -73,7 +72,6 @@ class SecurityAssessmentArgs:
     def target_id(self) -> pulumi.Input[str]:
         """
         The OCID of the target database on which security assessment is to be run.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,7 +209,6 @@ class _SecurityAssessmentState:
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticArgs']]] statistics: Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -500,7 +497,6 @@ class _SecurityAssessmentState:
         """
         The OCID of the target database on which security assessment is to be run.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -657,7 +653,6 @@ class SecurityAssessment(pulumi.CustomResource):
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
         :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -830,7 +825,6 @@ class SecurityAssessment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentStatisticArgs', 'SecurityAssessmentStatisticArgsDict']]]] statistics: Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1025,7 +1019,6 @@ class SecurityAssessment(pulumi.CustomResource):
     def target_id(self) -> pulumi.Output[str]:
         """
         The OCID of the target database on which security assessment is to be run.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

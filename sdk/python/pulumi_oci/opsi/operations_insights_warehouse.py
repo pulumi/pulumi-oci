@@ -27,8 +27,7 @@ class OperationsInsightsWarehouseArgs:
         :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
-               
+        :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -107,8 +106,7 @@ class OperationsInsightsWarehouseArgs:
     @pulumi.getter(name="storageAllocatedInGbs")
     def storage_allocated_in_gbs(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) Storage allocated to OPSI Warehouse ADW. 
-
+        (Updatable) Storage allocated to OPSI Warehouse ADW.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,8 +149,7 @@ class _OperationsInsightsWarehouseState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] operations_insights_tenancy_id: Tenancy Identifier of Ops Insights service
         :param pulumi.Input[str] state: Possible lifecycle states
-        :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
-               
+        :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -319,8 +316,7 @@ class _OperationsInsightsWarehouseState:
     @pulumi.getter(name="storageAllocatedInGbs")
     def storage_allocated_in_gbs(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) Storage allocated to OPSI Warehouse ADW. 
-
+        (Updatable) Storage allocated to OPSI Warehouse ADW.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -445,8 +441,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
-               
+        :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -586,8 +581,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] operations_insights_tenancy_id: Tenancy Identifier of Ops Insights service
         :param pulumi.Input[str] state: Possible lifecycle states
-        :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
-               
+        :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -703,8 +697,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
     @pulumi.getter(name="storageAllocatedInGbs")
     def storage_allocated_in_gbs(self) -> pulumi.Output[float]:
         """
-        (Updatable) Storage allocated to OPSI Warehouse ADW. 
-
+        (Updatable) Storage allocated to OPSI Warehouse ADW.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

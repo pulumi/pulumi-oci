@@ -52,8 +52,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of standard tag namespace that will be imported in bulk 
-        /// 
+        /// The name of standard tag namespace that will be imported in bulk
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,8 +116,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The name of standard tag namespace that will be imported in bulk 
-        /// 
+        /// The name of standard tag namespace that will be imported in bulk
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -141,8 +139,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The name of standard tag namespace that will be imported in bulk 
-        /// 
+        /// The name of standard tag namespace that will be imported in bulk
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

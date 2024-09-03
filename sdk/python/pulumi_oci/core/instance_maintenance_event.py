@@ -37,7 +37,6 @@ class InstanceMaintenanceEventArgs:
                
                The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -139,7 +138,6 @@ class InstanceMaintenanceEventArgs:
 
         The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -211,7 +209,6 @@ class _InstanceMaintenanceEventState:
         :param pulumi.Input[str] time_window_start: (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
                
                The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -567,7 +564,6 @@ class _InstanceMaintenanceEventState:
 
         The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -619,7 +615,6 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
         :param pulumi.Input[str] time_window_start: (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
                
                The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -774,7 +769,6 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
         :param pulumi.Input[str] time_window_start: (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
                
                The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1013,7 +1007,6 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
         (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
 
         The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

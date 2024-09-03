@@ -112,8 +112,7 @@ namespace Pulumi.Oci.Core
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether this CPE is of type `private` or not. 
-        /// 
+        /// Indicates whether this CPE is of type `private` or not.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,8 +227,7 @@ namespace Pulumi.Oci.Core
         public Input<string> IpAddress { get; set; } = null!;
 
         /// <summary>
-        /// Indicates whether this CPE is of type `private` or not. 
-        /// 
+        /// Indicates whether this CPE is of type `private` or not.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -300,8 +298,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// Indicates whether this CPE is of type `private` or not. 
-        /// 
+        /// Indicates whether this CPE is of type `private` or not.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

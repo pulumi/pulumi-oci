@@ -218,8 +218,7 @@ export class ContainerInstance extends pulumi.CustomResource {
      */
     public readonly shapeConfig!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceShapeConfig>;
     /**
-     * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -400,8 +399,7 @@ export interface ContainerInstanceState {
      */
     shapeConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceShapeConfig>;
     /**
-     * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -492,8 +490,7 @@ export interface ContainerInstanceArgs {
      */
     shapeConfig: pulumi.Input<inputs.ContainerEngine.ContainerInstanceShapeConfig>;
     /**
-     * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

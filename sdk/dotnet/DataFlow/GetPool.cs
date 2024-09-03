@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves a pool using a `poolId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DataFlow
         /// This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.
         /// 
         /// Retrieves a pool using a `poolId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

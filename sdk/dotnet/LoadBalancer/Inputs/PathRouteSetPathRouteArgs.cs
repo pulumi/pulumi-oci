@@ -20,9 +20,9 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) The path string to match against the incoming URI path.
-        /// *  Path strings are case-insensitive.
-        /// *  Asterisk (*) wildcards are not supported.
-        /// *  Regular expressions are not supported.
+        /// * Path strings are case-insensitive.
+        /// * Asterisk (*) wildcards are not supported.
+        /// * Regular expressions are not supported.
         /// 
         /// Example: `/example/video/123`
         /// </summary>

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DataScience
         /// This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
         /// 
         /// Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

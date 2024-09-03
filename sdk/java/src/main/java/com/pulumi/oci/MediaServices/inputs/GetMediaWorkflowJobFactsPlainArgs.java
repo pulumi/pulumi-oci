@@ -24,47 +24,23 @@ public final class GetMediaWorkflowJobFactsPlainArgs extends com.pulumi.resource
         return Optional.ofNullable(this.filters);
     }
 
-    /**
-     * Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-     * 
-     */
     @Import(name="key")
     private @Nullable String key;
 
-    /**
-     * @return Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-     * 
-     */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
 
-    /**
-     * Unique MediaWorkflowJob identifier.
-     * 
-     */
     @Import(name="mediaWorkflowJobId", required=true)
     private String mediaWorkflowJobId;
 
-    /**
-     * @return Unique MediaWorkflowJob identifier.
-     * 
-     */
     public String mediaWorkflowJobId() {
         return this.mediaWorkflowJobId;
     }
 
-    /**
-     * Types of details to include.
-     * 
-     */
     @Import(name="type")
     private @Nullable String type;
 
-    /**
-     * @return Types of details to include.
-     * 
-     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
@@ -105,34 +81,16 @@ public final class GetMediaWorkflowJobFactsPlainArgs extends com.pulumi.resource
             return filters(List.of(filters));
         }
 
-        /**
-         * @param key Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(@Nullable String key) {
             $.key = key;
             return this;
         }
 
-        /**
-         * @param mediaWorkflowJobId Unique MediaWorkflowJob identifier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
             $.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
 
-        /**
-         * @param type Types of details to include.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable String type) {
             $.type = type;
             return this;

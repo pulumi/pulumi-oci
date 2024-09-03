@@ -77,7 +77,6 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
     /**
      * The version of the patch to be installed.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -142,7 +141,6 @@ export interface BdsInstancePatchActionState {
     /**
      * The version of the patch to be installed.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -167,7 +165,6 @@ export interface BdsInstancePatchActionArgs {
     patchingConfig?: pulumi.Input<inputs.BigDataService.BdsInstancePatchActionPatchingConfig>;
     /**
      * The version of the patch to be installed.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

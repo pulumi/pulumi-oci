@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns information about the specified erratum based on its advisory name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides details about a specific Erratum resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns information about the specified erratum based on its advisory name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

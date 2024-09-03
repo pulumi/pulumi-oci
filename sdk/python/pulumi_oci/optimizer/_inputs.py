@@ -152,7 +152,6 @@ class ProfileTargetTagsItemArgs:
                When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tag_values: (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -207,7 +206,6 @@ class ProfileTargetTagsItemArgs:
     def tag_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

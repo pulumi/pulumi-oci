@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Returns a list of MediaAssetSummary.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.MediaServices
         /// This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
         /// 
         /// Returns a list of MediaAssetSummary.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -129,6 +129,15 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
                                     state: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesClonesResult:
     """
+    subcategory: "Database"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases_clones"
+    sidebar_current: "docs-oci-datasource-database-autonomous_databases_clones"
+    description: |-
+    Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: database_get_autonomous_databases_clones
     This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
 
     Lists the Autonomous Database clones for the specified Autonomous Database.
@@ -183,6 +192,15 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesClonesResult]:
     """
+    subcategory: "Database"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases_clones"
+    sidebar_current: "docs-oci-datasource-database-autonomous_databases_clones"
+    description: |-
+    Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: database_get_autonomous_databases_clones
     This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
 
     Lists the Autonomous Database clones for the specified Autonomous Database.

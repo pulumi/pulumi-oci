@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

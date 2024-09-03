@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Monitoring
         /// Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         /// or transactions, per second (TPS) for a given tenancy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -61,7 +60,6 @@ namespace Pulumi.Oci.Monitoring
         /// This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         /// Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         /// or transactions, per second (TPS) for a given tenancy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

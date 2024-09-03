@@ -17,12 +17,11 @@ namespace Pulumi.Oci.Core
         /// Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
         /// on one of these filters:
         /// 
-        ///   * Subnet OCID.
-        ///   * VNIC OCID.
-        ///   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+        /// * Subnet OCID.
+        /// * VNIC OCID.
+        /// * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
         ///   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
         ///   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -53,12 +52,11 @@ namespace Pulumi.Oci.Core
         /// Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
         /// on one of these filters:
         /// 
-        ///   * Subnet OCID.
-        ///   * VNIC OCID.
-        ///   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+        /// * Subnet OCID.
+        /// * VNIC OCID.
+        /// * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
         ///   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
         ///   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Os Management Hub"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.OsManagementHub.getErrata"
+ * sidebar_current: "docs-oci-datasource-os_management_hub-errata"
+ * description: |-
+ * 	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+ * <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+ *
+ * # Data Source: oci.OsManagementHub.getErrata
  * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
  *
  * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
@@ -127,6 +136,15 @@ export interface GetErrataResult {
     readonly timeIssueDateStart?: string;
 }
 /**
+ * subcategory: "Os Management Hub"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.OsManagementHub.getErrata"
+ * sidebar_current: "docs-oci-datasource-os_management_hub-errata"
+ * description: |-
+ * 	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+ * <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+ *
+ * # Data Source: oci.OsManagementHub.getErrata
  * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
  *
  * Lists all of the currently available errata. Filter the list against a variety of criteria including but not

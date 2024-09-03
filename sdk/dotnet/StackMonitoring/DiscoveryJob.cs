@@ -121,8 +121,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-        /// 
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -267,8 +266,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-        /// 
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -333,8 +331,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-        /// 
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

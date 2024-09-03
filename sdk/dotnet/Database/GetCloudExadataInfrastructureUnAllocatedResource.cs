@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets unallocated resources information for the specified Cloud Exadata infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets unallocated resources information for the specified Cloud Exadata infrastructure.
-        /// 
         /// 
         /// ## Example Usage
         /// 

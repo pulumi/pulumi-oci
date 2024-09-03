@@ -5,6 +5,15 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Oracle Cloud VMware Solution"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Ocvp.getRetrievePassword"
+ * sidebar_current: "docs-oci-datasource-ocvp-retrieve_password"
+ * description: |-
+ * Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.Ocvp.getRetrievePassword
  * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
  *
  * ## Example Usage
@@ -59,6 +68,15 @@ export interface GetRetrievePasswordResult {
     readonly type: string;
 }
 /**
+ * subcategory: "Oracle Cloud VMware Solution"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Ocvp.getRetrievePassword"
+ * sidebar_current: "docs-oci-datasource-ocvp-retrieve_password"
+ * description: |-
+ * Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.Ocvp.getRetrievePassword
  * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
  *
  * ## Example Usage

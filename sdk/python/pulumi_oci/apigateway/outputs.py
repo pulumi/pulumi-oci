@@ -4773,14 +4773,16 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
                  status: Optional[int] = None,
                  url: Optional[str] = None):
         """
-        :param str type: Type of the Response Cache Store Policy.
-        :param str body: The body of the stock response from the mock backend.
-        :param float connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
-        :param str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        :param bool is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
-        :param float read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
-        :param float send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
-        :param int status: The status code of the stock response from the mock backend.
+        :param str type: (Updatable) Type of the API backend.
+        :param str body: (Updatable) The body of the stock response from the mock backend.
+        :param float connect_timeout_in_seconds: (Updatable) Defines a timeout for establishing a connection with a proxied server.
+        :param str function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param Sequence['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs'] headers: (Updatable) The headers of the stock response from the mock backend.
+        :param bool is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
+        :param float read_timeout_in_seconds: (Updatable) Defines a timeout for reading a response from the proxied server.
+        :param float send_timeout_in_seconds: (Updatable) Defines a timeout for transmitting a request to the proxied server.
+        :param int status: (Updatable) The status code of the stock response from the mock backend.
+        :param str url: (Updatable) The url of the proxied server.
         """
         pulumi.set(__self__, "type", type)
         if body is not None:
@@ -4806,7 +4808,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Type of the Response Cache Store Policy.
+        (Updatable) Type of the API backend.
         """
         return pulumi.get(self, "type")
 
@@ -4814,7 +4816,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @pulumi.getter
     def body(self) -> Optional[str]:
         """
-        The body of the stock response from the mock backend.
+        (Updatable) The body of the stock response from the mock backend.
         """
         return pulumi.get(self, "body")
 
@@ -4822,7 +4824,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @pulumi.getter(name="connectTimeoutInSeconds")
     def connect_timeout_in_seconds(self) -> Optional[float]:
         """
-        Defines a timeout for establishing a connection with a proxied server.
+        (Updatable) Defines a timeout for establishing a connection with a proxied server.
         """
         return pulumi.get(self, "connect_timeout_in_seconds")
 
@@ -4830,20 +4832,23 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         """
         return pulumi.get(self, "function_id")
 
     @property
     @pulumi.getter
     def headers(self) -> Optional[Sequence['outputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeader']]:
+        """
+        (Updatable) The headers of the stock response from the mock backend.
+        """
         return pulumi.get(self, "headers")
 
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[bool]:
         """
-        Defines whether or not to uphold SSL verification.
+        (Updatable) Defines whether or not to uphold SSL verification.
         """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
@@ -4851,7 +4856,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @pulumi.getter(name="readTimeoutInSeconds")
     def read_timeout_in_seconds(self) -> Optional[float]:
         """
-        Defines a timeout for reading a response from the proxied server.
+        (Updatable) Defines a timeout for reading a response from the proxied server.
         """
         return pulumi.get(self, "read_timeout_in_seconds")
 
@@ -4859,7 +4864,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @pulumi.getter(name="sendTimeoutInSeconds")
     def send_timeout_in_seconds(self) -> Optional[float]:
         """
-        Defines a timeout for transmitting a request to the proxied server.
+        (Updatable) Defines a timeout for transmitting a request to the proxied server.
         """
         return pulumi.get(self, "send_timeout_in_seconds")
 
@@ -4867,13 +4872,16 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @pulumi.getter
     def status(self) -> Optional[int]:
         """
-        The status code of the stock response from the mock backend.
+        (Updatable) The status code of the stock response from the mock backend.
         """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
+        """
+        (Updatable) The url of the proxied server.
+        """
         return pulumi.get(self, "url")
 
 
@@ -4883,8 +4891,8 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeader(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param str value: Value of the header.
+        :param str name: (Updatable) Name of the header.
+        :param str value: (Updatable) Value of the header.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -4895,7 +4903,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeader(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The case-insensitive name of the header.  This name must be unique across transformation policies.
+        (Updatable) Name of the header.
         """
         return pulumi.get(self, "name")
 
@@ -4903,7 +4911,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeader(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        Value of the header.
+        (Updatable) Value of the header.
         """
         return pulumi.get(self, "value")
 
@@ -6678,7 +6686,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStore(dict):
         :param int time_to_live_in_seconds: (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         :param str type: (Updatable) Type of the Response Cache Store Policy.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -6698,7 +6705,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStore(dict):
     def type(self) -> str:
         """
         (Updatable) Type of the Response Cache Store Policy.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

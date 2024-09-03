@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Data Safe"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getAlertPolicies"
+ * sidebar_current: "docs-oci-datasource-data_safe-alert_policies"
+ * description: |-
+ * 	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+ * <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+ *
+ * # Data Source: oci.DataSafe.getAlertPolicies
  * This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets a list of all alert policies.
@@ -137,6 +146,15 @@ export interface GetAlertPoliciesResult {
     readonly type?: string;
 }
 /**
+ * subcategory: "Data Safe"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getAlertPolicies"
+ * sidebar_current: "docs-oci-datasource-data_safe-alert_policies"
+ * description: |-
+ * 	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+ * <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+ *
+ * # Data Source: oci.DataSafe.getAlertPolicies
  * This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets a list of all alert policies.

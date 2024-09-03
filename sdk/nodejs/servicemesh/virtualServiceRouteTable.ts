@@ -131,7 +131,6 @@ export class VirtualServiceRouteTable extends pulumi.CustomResource {
     /**
      * The OCID of the service mesh in which this access policy is created.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -248,7 +247,6 @@ export interface VirtualServiceRouteTableState {
     /**
      * The OCID of the service mesh in which this access policy is created.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -289,7 +287,6 @@ export interface VirtualServiceRouteTableArgs {
     routeRules: pulumi.Input<pulumi.Input<inputs.ServiceMesh.VirtualServiceRouteTableRouteRule>[]>;
     /**
      * The OCID of the service mesh in which this access policy is created.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

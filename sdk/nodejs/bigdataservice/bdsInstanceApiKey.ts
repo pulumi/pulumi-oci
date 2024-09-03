@@ -65,7 +65,7 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
      */
     public readonly bdsInstanceId!: pulumi.Output<string>;
     /**
-     * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+     * The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
      */
     public readonly defaultRegion!: pulumi.Output<string>;
     /**
@@ -98,7 +98,6 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -169,7 +168,7 @@ export interface BdsInstanceApiKeyState {
      */
     bdsInstanceId?: pulumi.Input<string>;
     /**
-     * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+     * The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
      */
     defaultRegion?: pulumi.Input<string>;
     /**
@@ -203,7 +202,6 @@ export interface BdsInstanceApiKeyState {
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -219,7 +217,7 @@ export interface BdsInstanceApiKeyArgs {
      */
     bdsInstanceId: pulumi.Input<string>;
     /**
-     * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+     * The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
      */
     defaultRegion?: pulumi.Input<string>;
     /**
@@ -232,7 +230,6 @@ export interface BdsInstanceApiKeyArgs {
     passphrase: pulumi.Input<string>;
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

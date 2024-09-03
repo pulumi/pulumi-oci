@@ -42,7 +42,6 @@ export class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManageme
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -96,7 +95,6 @@ export interface ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMana
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -117,7 +115,6 @@ export interface ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMana
 export interface ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs {
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns the details of the specified Data Safe peer target database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides details about a specific Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Returns the details of the specified Data Safe peer target database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

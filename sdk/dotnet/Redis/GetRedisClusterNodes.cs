@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Redis
         /// 
         /// Gets the list of all nodes in a cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Redis
         /// This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
         /// 
         /// Gets the list of all nodes in a cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -28,8 +28,7 @@ class RepositoryArgs:
         """
         The set of arguments for constructing a Repository resource.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
-               
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -74,8 +73,7 @@ class RepositoryArgs:
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
-
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -214,8 +212,7 @@ class _RepositoryState:
         :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
         :param pulumi.Input[str] project_name: Unique project name in a namespace.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
-               
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -458,8 +455,7 @@ class _RepositoryState:
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
-
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -593,8 +589,7 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[str] name: (Updatable) Name of the repository. Should be unique within the project.
         :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
-               
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -733,8 +728,7 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
         :param pulumi.Input[str] project_name: Unique project name in a namespace.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
-               
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -899,8 +893,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
-
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

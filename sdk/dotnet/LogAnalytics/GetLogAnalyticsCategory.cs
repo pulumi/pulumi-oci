@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets detailed information about the category with the specified name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Gets detailed information about the category with the specified name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

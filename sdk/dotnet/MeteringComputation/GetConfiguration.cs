@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the configurations list for the UI drop-down list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the configurations list for the UI drop-down list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

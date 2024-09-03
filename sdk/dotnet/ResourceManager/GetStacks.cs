@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ResourceManager
         /// - If called using the compartment ID, returns all stacks in the specified compartment.
         /// - If called using the stack ID, returns the specified stack.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.ResourceManager
         /// Returns a list of stacks.
         /// - If called using the compartment ID, returns all stacks in the specified compartment.
         /// - If called using the stack ID, returns the specified stack.
-        /// 
         /// 
         /// ## Example Usage
         /// 

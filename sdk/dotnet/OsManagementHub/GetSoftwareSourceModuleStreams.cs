@@ -14,9 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
+        /// Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -46,9 +45,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
+        /// Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

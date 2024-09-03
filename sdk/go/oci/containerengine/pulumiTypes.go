@@ -2093,7 +2093,7 @@ type ContainerInstanceContainer struct {
 	ImageUrl string `pulumi:"imageUrl"`
 	// Determines if the container will have access to the container instance resource principal.
 	//
-	// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+	// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see <https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal>.
 	IsResourcePrincipalDisabled *bool `pulumi:"isResourcePrincipalDisabled"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -2169,7 +2169,7 @@ type ContainerInstanceContainerArgs struct {
 	ImageUrl pulumi.StringInput `pulumi:"imageUrl"`
 	// Determines if the container will have access to the container instance resource principal.
 	//
-	// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+	// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see <https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal>.
 	IsResourcePrincipalDisabled pulumi.BoolPtrInput `pulumi:"isResourcePrincipalDisabled"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -2326,7 +2326,7 @@ func (o ContainerInstanceContainerOutput) ImageUrl() pulumi.StringOutput {
 
 // Determines if the container will have access to the container instance resource principal.
 //
-// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see <https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal>.
 func (o ContainerInstanceContainerOutput) IsResourcePrincipalDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *bool { return v.IsResourcePrincipalDisabled }).(pulumi.BoolPtrOutput)
 }
@@ -3435,7 +3435,7 @@ func (o ContainerInstanceContainerVolumeMountArrayOutput) Index(i pulumi.IntInpu
 type ContainerInstanceDnsConfig struct {
 	// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
 	Nameservers []string `pulumi:"nameservers"`
-	// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+	// Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
 	Options []string `pulumi:"options"`
 	// Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
 	Searches []string `pulumi:"searches"`
@@ -3455,7 +3455,7 @@ type ContainerInstanceDnsConfigInput interface {
 type ContainerInstanceDnsConfigArgs struct {
 	// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
 	Nameservers pulumi.StringArrayInput `pulumi:"nameservers"`
-	// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+	// Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
 	Options pulumi.StringArrayInput `pulumi:"options"`
 	// Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
 	Searches pulumi.StringArrayInput `pulumi:"searches"`
@@ -3543,7 +3543,7 @@ func (o ContainerInstanceDnsConfigOutput) Nameservers() pulumi.StringArrayOutput
 	return o.ApplyT(func(v ContainerInstanceDnsConfig) []string { return v.Nameservers }).(pulumi.StringArrayOutput)
 }
 
-// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+// Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
 func (o ContainerInstanceDnsConfigOutput) Options() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceDnsConfig) []string { return v.Options }).(pulumi.StringArrayOutput)
 }
@@ -3587,7 +3587,7 @@ func (o ContainerInstanceDnsConfigPtrOutput) Nameservers() pulumi.StringArrayOut
 	}).(pulumi.StringArrayOutput)
 }
 
-// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+// Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
 func (o ContainerInstanceDnsConfigPtrOutput) Options() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ContainerInstanceDnsConfig) []string {
 		if v == nil {

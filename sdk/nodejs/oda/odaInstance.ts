@@ -139,7 +139,6 @@ export class OdaInstance extends pulumi.CustomResource {
     /**
      * Shape or size of the instance.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -307,7 +306,6 @@ export interface OdaInstanceState {
     /**
      * Shape or size of the instance.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -368,7 +366,6 @@ export interface OdaInstanceArgs {
     isRoleBasedAccess?: pulumi.Input<boolean>;
     /**
      * Shape or size of the instance.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Returns a list of Management Agent installed Keys.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
         /// 
         /// Returns a list of Management Agent installed Keys.
-        /// 
         /// 
         /// ## Example Usage
         /// 

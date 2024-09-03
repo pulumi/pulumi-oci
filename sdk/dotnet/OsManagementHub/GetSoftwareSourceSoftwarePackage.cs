@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns information about the specified software package.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns information about the specified software package.
-        /// 
         /// 
         /// ## Example Usage
         /// 

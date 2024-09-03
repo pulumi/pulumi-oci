@@ -12,6 +12,17 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Data Safe"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: DataSafe.Alert"
+// sidebar_current: "docs-oci-resource-data_safe-alert"
+// description: |-
+//
+//	Provides the Alert resource in Oracle Cloud Infrastructure Data Safe service
+//
+// <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+//
+// # DataSafe.Alert
 // This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
 //
 // Updates the status of the specified alert.

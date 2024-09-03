@@ -4099,7 +4099,6 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLo
 }
 
 type GetMediaWorkflowJobFactsFilter struct {
-	// Unique name. It is read-only and generated for the fact.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -4117,7 +4116,6 @@ type GetMediaWorkflowJobFactsFilterInput interface {
 }
 
 type GetMediaWorkflowJobFactsFilterArgs struct {
-	// Unique name. It is read-only and generated for the fact.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -4174,7 +4172,6 @@ func (o GetMediaWorkflowJobFactsFilterOutput) ToGetMediaWorkflowJobFactsFilterOu
 	return o
 }
 
-// Unique name. It is read-only and generated for the fact.
 func (o GetMediaWorkflowJobFactsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -4304,16 +4301,11 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) Index
 }
 
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem struct {
-	// The body of the detail captured as JSON.
-	Detail string `pulumi:"detail"`
-	// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-	Key string `pulumi:"key"`
-	// Unique MediaWorkflowJob identifier.
+	Detail             string `pulumi:"detail"`
+	Key                string `pulumi:"key"`
 	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
-	// Unique name. It is read-only and generated for the fact.
-	Name string `pulumi:"name"`
-	// Types of details to include.
-	Type string `pulumi:"type"`
+	Name               string `pulumi:"name"`
+	Type               string `pulumi:"type"`
 }
 
 // GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemInput is an input type that accepts GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs and GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput values.
@@ -4328,16 +4320,11 @@ type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemInput interface {
 }
 
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs struct {
-	// The body of the detail captured as JSON.
-	Detail pulumi.StringInput `pulumi:"detail"`
-	// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-	Key pulumi.StringInput `pulumi:"key"`
-	// Unique MediaWorkflowJob identifier.
+	Detail             pulumi.StringInput `pulumi:"detail"`
+	Key                pulumi.StringInput `pulumi:"key"`
 	MediaWorkflowJobId pulumi.StringInput `pulumi:"mediaWorkflowJobId"`
-	// Unique name. It is read-only and generated for the fact.
-	Name pulumi.StringInput `pulumi:"name"`
-	// Types of details to include.
-	Type pulumi.StringInput `pulumi:"type"`
+	Name               pulumi.StringInput `pulumi:"name"`
+	Type               pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs) ElementType() reflect.Type {
@@ -4391,27 +4378,22 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) ToGetM
 	return o
 }
 
-// The body of the detail captured as JSON.
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Detail() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.Detail }).(pulumi.StringOutput)
 }
 
-// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Unique MediaWorkflowJob identifier.
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) MediaWorkflowJobId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
 }
 
-// Unique name. It is read-only and generated for the fact.
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Types of details to include.
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }

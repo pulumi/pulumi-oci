@@ -31,7 +31,6 @@ class ViewArgs:
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating a view for private zones.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -103,7 +102,6 @@ class ViewArgs:
         """
         If specified, must be `PRIVATE` when creating a view for private zones.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -139,7 +137,6 @@ class _ViewState:
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating a view for private zones.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -238,7 +235,6 @@ class _ViewState:
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
         If specified, must be `PRIVATE` when creating a view for private zones.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -347,7 +343,6 @@ class View(pulumi.CustomResource):
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating a view for private zones.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -464,7 +459,6 @@ class View(pulumi.CustomResource):
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating a view for private zones.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
@@ -537,7 +531,6 @@ class View(pulumi.CustomResource):
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
         If specified, must be `PRIVATE` when creating a view for private zones.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

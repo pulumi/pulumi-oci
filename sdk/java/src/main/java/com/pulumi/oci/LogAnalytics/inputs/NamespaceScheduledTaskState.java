@@ -34,14 +34,14 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -257,14 +257,14 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
     }
 
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
      * 
      */
     @Import(name="workRequestId")
     private @Nullable Output<String> workRequestId;
 
     /**
-     * @return most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * @return most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
      * 
      */
     public Optional<Output<String>> workRequestId() {
@@ -333,7 +333,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
          * 
          * @return builder
          * 
@@ -642,7 +642,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param workRequestId most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         * @param workRequestId most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
          * 
          * @return builder
          * 
@@ -653,7 +653,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param workRequestId most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         * @param workRequestId most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
          * 
          * @return builder
          * 

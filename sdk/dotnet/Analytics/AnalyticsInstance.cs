@@ -181,8 +181,7 @@ namespace Pulumi.Oci.Analytics
         public Output<string> ServiceUrl { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -371,8 +370,7 @@ namespace Pulumi.Oci.Analytics
         public Input<Inputs.AnalyticsInstanceNetworkEndpointDetailsArgs>? NetworkEndpointDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -507,8 +505,7 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? ServiceUrl { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

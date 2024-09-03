@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// Returns a list of monitors.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
         /// 
         /// Returns a list of monitors.
-        /// 
         /// 
         /// ## Example Usage
         /// 

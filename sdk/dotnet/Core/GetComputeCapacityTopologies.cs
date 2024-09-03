@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
         /// capacity topology display name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
         /// capacity topology display name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

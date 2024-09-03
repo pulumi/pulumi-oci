@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Integration
         /// 
         /// Returns a list of Integration Instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Integration
         /// This data source provides the list of Integration Instances in Oracle Cloud Infrastructure Integration service.
         /// 
         /// Returns a list of Integration Instances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -48,14 +48,14 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     }
 
     /**
-     * Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * Recurring interval in ISO 8601 extended format as described in &lt;https://en.wikipedia.org/wiki/ISO_8601#Durations&gt;. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
     @Import(name="recurringInterval")
     private @Nullable Output<String> recurringInterval;
 
     /**
-     * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * @return Recurring interval in ISO 8601 extended format as described in &lt;https://en.wikipedia.org/wiki/ISO_8601#Durations&gt;. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
     public Optional<Output<String>> recurringInterval() {
@@ -179,7 +179,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param recurringInterval Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+         * @param recurringInterval Recurring interval in ISO 8601 extended format as described in &lt;https://en.wikipedia.org/wiki/ISO_8601#Durations&gt;. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param recurringInterval Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+         * @param recurringInterval Recurring interval in ISO 8601 extended format as described in &lt;https://en.wikipedia.org/wiki/ISO_8601#Durations&gt;. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
          * 
          * @return builder
          * 

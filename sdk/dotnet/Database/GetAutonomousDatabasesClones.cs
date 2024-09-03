@@ -12,10 +12,18 @@ namespace Pulumi.Oci.Database
     public static class GetAutonomousDatabasesClones
     {
         /// <summary>
+        /// subcategory: "Database"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabasesClones"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases_clones"
+        /// description: |-
+        /// Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.Database.getAutonomousDatabasesClones
         /// This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the Autonomous Database clones for the specified Autonomous Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -43,10 +51,18 @@ namespace Pulumi.Oci.Database
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesClonesResult>("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", args ?? new GetAutonomousDatabasesClonesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Database"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabasesClones"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases_clones"
+        /// description: |-
+        /// Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.Database.getAutonomousDatabasesClones
         /// This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the Autonomous Database clones for the specified Autonomous Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

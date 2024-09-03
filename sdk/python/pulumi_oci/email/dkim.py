@@ -31,7 +31,6 @@ class DkimArgs:
                
                Example: `mydomain-phx-20210228`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -103,7 +102,6 @@ class DkimArgs:
 
         Example: `mydomain-phx-20210228`
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -146,7 +144,6 @@ class _DkimState:
                Avoid entering confidential information.
                
                Example: `mydomain-phx-20210228`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -291,7 +288,6 @@ class _DkimState:
 
         Example: `mydomain-phx-20210228`
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -419,7 +415,6 @@ class Dkim(pulumi.CustomResource):
                Avoid entering confidential information.
                
                Example: `mydomain-phx-20210228`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -555,7 +550,6 @@ class Dkim(pulumi.CustomResource):
                
                Example: `mydomain-phx-20210228`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the DKIM.
@@ -657,7 +651,6 @@ class Dkim(pulumi.CustomResource):
         Avoid entering confidential information.
 
         Example: `mydomain-phx-20210228`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

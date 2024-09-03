@@ -373,7 +373,7 @@ class OccDemandSignal(pulumi.CustomResource):
 
         Creates a OccDemandSignal.
 
-          Updates the data of an OccDemandSignal.
+        Updates the data of an OccDemandSignal.
 
         ## Import
 
@@ -404,7 +404,7 @@ class OccDemandSignal(pulumi.CustomResource):
 
         Creates a OccDemandSignal.
 
-          Updates the data of an OccDemandSignal.
+        Updates the data of an OccDemandSignal.
 
         ## Import
 

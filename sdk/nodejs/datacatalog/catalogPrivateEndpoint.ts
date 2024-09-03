@@ -104,8 +104,7 @@ export class CatalogPrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * The OCID of subnet to which the reverse connection is to be created 
-     *
+     * The OCID of subnet to which the reverse connection is to be created
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -221,8 +220,7 @@ export interface CatalogPrivateEndpointState {
      */
     state?: pulumi.Input<string>;
     /**
-     * The OCID of subnet to which the reverse connection is to be created 
-     *
+     * The OCID of subnet to which the reverse connection is to be created
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -267,8 +265,7 @@ export interface CatalogPrivateEndpointArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The OCID of subnet to which the reverse connection is to be created 
-     *
+     * The OCID of subnet to which the reverse connection is to be created
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

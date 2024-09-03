@@ -11,7 +11,7 @@ import * as utilities from "../utilities";
  *
  * Creates a OccDemandSignal.
  *
- *   Updates the data of an OccDemandSignal.
+ * Updates the data of an OccDemandSignal.
  *
  * ## Import
  *

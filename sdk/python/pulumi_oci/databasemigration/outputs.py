@@ -799,11 +799,11 @@ class MigrationDataTransferMediumDetails(dict):
                  target: Optional['outputs.MigrationDataTransferMediumDetailsTarget'] = None):
         """
         :param str type: (Updatable) Type of the data transfer medium to use.
-        :param str access_key_id: (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        :param str access_key_id: (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         :param str name: (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
         :param 'MigrationDataTransferMediumDetailsObjectStorageBucketArgs' object_storage_bucket: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-        :param str region: (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-        :param str secret_access_key: (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        :param str region: (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
+        :param str secret_access_key: (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         :param str shared_storage_mount_target_id: (Updatable) OCID of the shared storage mount target
         :param 'MigrationDataTransferMediumDetailsSourceArgs' source: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
         :param 'MigrationDataTransferMediumDetailsTargetArgs' target: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
@@ -838,7 +838,7 @@ class MigrationDataTransferMediumDetails(dict):
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> Optional[str]:
         """
-        (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         """
         return pulumi.get(self, "access_key_id")
 
@@ -862,7 +862,7 @@ class MigrationDataTransferMediumDetails(dict):
     @pulumi.getter
     def region(self) -> Optional[str]:
         """
-        (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
         """
         return pulumi.get(self, "region")
 
@@ -870,7 +870,7 @@ class MigrationDataTransferMediumDetails(dict):
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> Optional[str]:
         """
-        (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -2944,11 +2944,11 @@ class GetMigrationDataTransferMediumDetailResult(dict):
                  targets: Sequence['outputs.GetMigrationDataTransferMediumDetailTargetResult'],
                  type: str):
         """
-        :param str access_key_id: AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        :param str access_key_id: AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         :param str name: Name of directory object in database
         :param Sequence['GetMigrationDataTransferMediumDetailObjectStorageBucketArgs'] object_storage_buckets: In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-        :param str region: AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-        :param str secret_access_key: AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        :param str region: AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
+        :param str secret_access_key: AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         :param str shared_storage_mount_target_id: OCID of the shared storage mount target
         :param Sequence['GetMigrationDataTransferMediumDetailSourceArgs'] sources: Optional additional properties for dump transfer in source or target host. Default kind is CURL.
         :param Sequence['GetMigrationDataTransferMediumDetailTargetArgs'] targets: Optional additional properties for dump transfer in source or target host. Default kind is CURL.
@@ -2968,7 +2968,7 @@ class GetMigrationDataTransferMediumDetailResult(dict):
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> str:
         """
-        AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         """
         return pulumi.get(self, "access_key_id")
 
@@ -2992,7 +2992,7 @@ class GetMigrationDataTransferMediumDetailResult(dict):
     @pulumi.getter
     def region(self) -> str:
         """
-        AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
         """
         return pulumi.get(self, "region")
 
@@ -3000,7 +3000,7 @@ class GetMigrationDataTransferMediumDetailResult(dict):
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> str:
         """
-        AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -4066,11 +4066,11 @@ class GetMigrationsDataTransferMediumDetailResult(dict):
                  targets: Sequence['outputs.GetMigrationsDataTransferMediumDetailTargetResult'],
                  type: str):
         """
-        :param str access_key_id: AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        :param str access_key_id: AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         :param str name: Name of directory object in database
         :param Sequence['GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs'] object_storage_buckets: In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-        :param str region: AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-        :param str secret_access_key: AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        :param str region: AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
+        :param str secret_access_key: AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         :param str shared_storage_mount_target_id: OCID of the shared storage mount target
         :param Sequence['GetMigrationsDataTransferMediumDetailSourceArgs'] sources: Optional additional properties for dump transfer in source or target host. Default kind is CURL.
         :param Sequence['GetMigrationsDataTransferMediumDetailTargetArgs'] targets: Optional additional properties for dump transfer in source or target host. Default kind is CURL.
@@ -4090,7 +4090,7 @@ class GetMigrationsDataTransferMediumDetailResult(dict):
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> str:
         """
-        AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         """
         return pulumi.get(self, "access_key_id")
 
@@ -4114,7 +4114,7 @@ class GetMigrationsDataTransferMediumDetailResult(dict):
     @pulumi.getter
     def region(self) -> str:
         """
-        AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
         """
         return pulumi.get(self, "region")
 
@@ -4122,7 +4122,7 @@ class GetMigrationsDataTransferMediumDetailResult(dict):
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> str:
         """
-        AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
         """
         return pulumi.get(self, "secret_access_key")
 

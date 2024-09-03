@@ -27,7 +27,6 @@ class ContainerRepositoryReadmeArgs:
         :param pulumi.Input[str] content: (Updatable) Readme content. Avoid entering confidential information.
         :param pulumi.Input[str] format: (Updatable) Readme format. Supported formats are text/plain and text/markdown.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -51,7 +50,6 @@ class ContainerRepositoryReadmeArgs:
     def format(self) -> pulumi.Input[str]:
         """
         (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

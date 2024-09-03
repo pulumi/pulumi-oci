@@ -29,7 +29,6 @@ class AlertArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] status: (Updatable) The status of the alert.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -111,7 +110,6 @@ class AlertArgs:
         """
         (Updatable) The status of the alert.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -170,7 +168,6 @@ class _AlertState:
         :param pulumi.Input[str] severity: Severity level of the alert.
         :param pulumi.Input[str] state: The current state of the alert.
         :param pulumi.Input[str] status: (Updatable) The status of the alert.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -451,7 +448,6 @@ class _AlertState:
         """
         (Updatable) The status of the alert.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -535,6 +531,15 @@ class Alert(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        subcategory: "Data Safe"
+        layout: "oci"
+        page_title: "Oracle Cloud Infrastructure: DataSafe.Alert"
+        sidebar_current: "docs-oci-resource-data_safe-alert"
+        description: |-
+        	Provides the Alert resource in Oracle Cloud Infrastructure Data Safe service
+        <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+        # DataSafe.Alert
         This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
 
         Updates the status of the specified alert.
@@ -556,7 +561,6 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] status: (Updatable) The status of the alert.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -567,6 +571,15 @@ class Alert(pulumi.CustomResource):
                  args: AlertArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        subcategory: "Data Safe"
+        layout: "oci"
+        page_title: "Oracle Cloud Infrastructure: DataSafe.Alert"
+        sidebar_current: "docs-oci-resource-data_safe-alert"
+        description: |-
+        	Provides the Alert resource in Oracle Cloud Infrastructure Data Safe service
+        <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+        # DataSafe.Alert
         This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
 
         Updates the status of the specified alert.
@@ -695,7 +708,6 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[str] severity: Severity level of the alert.
         :param pulumi.Input[str] state: The current state of the alert.
         :param pulumi.Input[str] status: (Updatable) The status of the alert.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -884,7 +896,6 @@ class Alert(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) The status of the alert.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

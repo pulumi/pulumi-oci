@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Use this endpoint to list schedules.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DataIntegration
         /// This data source provides the list of Workspace Application Schedules in Oracle Cloud Infrastructure Data Integration service.
         /// 
         /// Use this endpoint to list schedules.
-        /// 
         /// 
         /// ## Example Usage
         /// 

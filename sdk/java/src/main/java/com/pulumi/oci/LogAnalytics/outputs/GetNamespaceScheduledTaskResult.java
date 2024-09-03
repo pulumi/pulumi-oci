@@ -20,7 +20,7 @@ public final class GetNamespaceScheduledTaskResult {
      */
     private List<GetNamespaceScheduledTaskAction> actions;
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     private String compartmentId;
@@ -96,7 +96,7 @@ public final class GetNamespaceScheduledTaskResult {
      */
     private String timeUpdated;
     /**
-     * @return most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * @return most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
      * 
      */
     private String workRequestId;
@@ -110,7 +110,7 @@ public final class GetNamespaceScheduledTaskResult {
         return this.actions;
     }
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     public String compartmentId() {
@@ -218,7 +218,7 @@ public final class GetNamespaceScheduledTaskResult {
         return this.timeUpdated;
     }
     /**
-     * @return most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * @return most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
      * 
      */
     public String workRequestId() {

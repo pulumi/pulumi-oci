@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Identity
         /// To determine which policies apply to a particular group or compartment, you must view the individual
         /// statements inside all your policies. There isn't a way to automatically obtain that information via the API.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// To determine which policies apply to a particular group or compartment, you must view the individual
         /// statements inside all your policies. There isn't a way to automatically obtain that information via the API.
-        /// 
         /// 
         /// ## Example Usage
         /// 

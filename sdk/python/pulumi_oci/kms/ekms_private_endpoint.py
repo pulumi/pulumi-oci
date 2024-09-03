@@ -28,8 +28,7 @@ class EkmsPrivateEndpointArgs:
         :param pulumi.Input[str] compartment_id: Compartment identifier.
         :param pulumi.Input[str] display_name: (Updatable) Display name of the EKMS private endpoint resource being created.
         :param pulumi.Input[str] external_key_manager_ip: External private IP to connect to from this EKMS private endpoint
-        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created 
-               
+        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -101,8 +100,7 @@ class EkmsPrivateEndpointArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
         """
-        The OCID of subnet in which the EKMS private endpoint is to be created 
-
+        The OCID of subnet in which the EKMS private endpoint is to be created
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -178,8 +176,7 @@ class _EkmsPrivateEndpointState:
         :param pulumi.Input[int] port: The port of the external key manager system
         :param pulumi.Input[str] private_endpoint_ip: The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
         :param pulumi.Input[str] state: The current state of the EKMS private endpoint resource.
-        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created 
-               
+        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -337,8 +334,7 @@ class _EkmsPrivateEndpointState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of subnet in which the EKMS private endpoint is to be created 
-
+        The OCID of subnet in which the EKMS private endpoint is to be created
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -431,8 +427,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] external_key_manager_ip: External private IP to connect to from this EKMS private endpoint
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] port: The port of the external key manager system
-        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created 
-               
+        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -572,8 +567,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[int] port: The port of the external key manager system
         :param pulumi.Input[str] private_endpoint_ip: The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
         :param pulumi.Input[str] state: The current state of the EKMS private endpoint resource.
-        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created 
-               
+        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -683,8 +677,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
         """
-        The OCID of subnet in which the EKMS private endpoint is to be created 
-
+        The OCID of subnet in which the EKMS private endpoint is to be created
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

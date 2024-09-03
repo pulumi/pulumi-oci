@@ -29,7 +29,6 @@ class TargetAlertPolicyAssociationArgs:
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] target_id: The OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -91,7 +90,6 @@ class TargetAlertPolicyAssociationArgs:
     def target_id(self) -> pulumi.Input[str]:
         """
         The OCID of the target.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -180,7 +178,6 @@ class _TargetAlertPolicyAssociationState:
         :param pulumi.Input[str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the target.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -340,7 +337,6 @@ class _TargetAlertPolicyAssociationState:
         """
         The OCID of the target.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -390,6 +386,15 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        subcategory: "Data Safe"
+        layout: "oci"
+        page_title: "Oracle Cloud Infrastructure: DataSafe.TargetAlertPolicyAssociation"
+        sidebar_current: "docs-oci-resource-data_safe-target_alert_policy_association"
+        description: |-
+        	Provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service
+        <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+        # DataSafe.TargetAlertPolicyAssociation
         This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
 
         Creates a new target-alert policy association to track a alert policy applied on target.
@@ -434,7 +439,6 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] target_id: The OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -445,6 +449,15 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                  args: TargetAlertPolicyAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        subcategory: "Data Safe"
+        layout: "oci"
+        page_title: "Oracle Cloud Infrastructure: DataSafe.TargetAlertPolicyAssociation"
+        sidebar_current: "docs-oci-resource-data_safe-target_alert_policy_association"
+        description: |-
+        	Provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service
+        <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+        # DataSafe.TargetAlertPolicyAssociation
         This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
 
         Creates a new target-alert policy association to track a alert policy applied on target.
@@ -573,7 +586,6 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -683,7 +695,6 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
     def target_id(self) -> pulumi.Output[str]:
         """
         The OCID of the target.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

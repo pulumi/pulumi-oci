@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the shapes that can be used to launch an instance within the specified compartment. You can
         /// filter the list by compatibility with a specific image.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the shapes that can be used to launch an instance within the specified compartment. You can
         /// filter the list by compatibility with a specific image.
-        /// 
         /// 
         /// ## Example Usage
         /// 

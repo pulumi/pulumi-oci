@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Only one of the parameters, ID or name should be provided. If none of these parameters is provided,
         /// all the Managed Database Groups in the compartment are listed.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// a specific compartment. Managed Database Groups can also be filtered based on the name parameter.
         /// Only one of the parameters, ID or name should be provided. If none of these parameters is provided,
         /// all the Managed Database Groups in the compartment are listed.
-        /// 
         /// 
         /// ## Example Usage
         /// 

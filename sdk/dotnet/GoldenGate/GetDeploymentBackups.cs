@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the Backups in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Deployment Backups in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Lists the Backups in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

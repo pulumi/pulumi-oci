@@ -51,7 +51,6 @@ class InstanceArgs:
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -282,7 +281,6 @@ class InstanceArgs:
         """
         (Updatable) Web Application Firewall(WAF) primary domain
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -350,7 +348,6 @@ class _InstanceState:
         :param pulumi.Input[str] time_updated: The time the OceInstance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -714,7 +711,6 @@ class _InstanceState:
         """
         (Updatable) Web Application Firewall(WAF) primary domain
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -810,7 +806,6 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] tenancy_name: Tenancy Name
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1014,7 +1009,6 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The time the OceInstance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1256,7 +1250,6 @@ class Instance(pulumi.CustomResource):
     def waf_primary_domain(self) -> pulumi.Output[str]:
         """
         (Updatable) Web Application Firewall(WAF) primary domain
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

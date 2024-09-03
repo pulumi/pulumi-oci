@@ -3367,9 +3367,9 @@ public final class OpsiFunctions {
      * 
      * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1.  The agent OCID is not already being used for an existing hostInsight.
-     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
-     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. The agent OCID is not already being used for an existing hostInsight.
+     * 2. The agent availabilityStatus = &#39;ACTIVE&#39;
+     * 3. The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3415,9 +3415,9 @@ public final class OpsiFunctions {
      * 
      * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1.  The agent OCID is not already being used for an existing hostInsight.
-     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
-     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. The agent OCID is not already being used for an existing hostInsight.
+     * 2. The agent availabilityStatus = &#39;ACTIVE&#39;
+     * 3. The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3463,9 +3463,9 @@ public final class OpsiFunctions {
      * 
      * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1.  The agent OCID is not already being used for an existing hostInsight.
-     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
-     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. The agent OCID is not already being used for an existing hostInsight.
+     * 2. The agent availabilityStatus = &#39;ACTIVE&#39;
+     * 3. The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3511,9 +3511,9 @@ public final class OpsiFunctions {
      * 
      * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1.  The agent OCID is not already being used for an existing hostInsight.
-     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
-     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. The agent OCID is not already being used for an existing hostInsight.
+     * 2. The agent availabilityStatus = &#39;ACTIVE&#39;
+     * 3. The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3559,9 +3559,9 @@ public final class OpsiFunctions {
      * 
      * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1.  The agent OCID is not already being used for an existing hostInsight.
-     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
-     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. The agent OCID is not already being used for an existing hostInsight.
+     * 2. The agent availabilityStatus = &#39;ACTIVE&#39;
+     * 3. The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3607,9 +3607,9 @@ public final class OpsiFunctions {
      * 
      * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1.  The agent OCID is not already being used for an existing hostInsight.
-     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
-     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. The agent OCID is not already being used for an existing hostInsight.
+     * 2. The agent availabilityStatus = &#39;ACTIVE&#39;
+     * 3. The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3655,9 +3655,9 @@ public final class OpsiFunctions {
      * 
      * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1.  The agent OCID is not already being used for an existing hostInsight.
-     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
-     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. The agent OCID is not already being used for an existing hostInsight.
+     * 2. The agent availabilityStatus = &#39;ACTIVE&#39;
+     * 3. The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3703,9 +3703,9 @@ public final class OpsiFunctions {
      * 
      * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1.  The agent OCID is not already being used for an existing hostInsight.
-     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
-     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. The agent OCID is not already being used for an existing hostInsight.
+     * 2. The agent availabilityStatus = &#39;ACTIVE&#39;
+     * 3. The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3751,11 +3751,11 @@ public final class OpsiFunctions {
      * 
      * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1. Compute is running OCA
-     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-     *       2.1 The agent OCID is not already being used for an existing hostInsight.
-     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
-     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. Compute is running OCA
+     * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *    2.1 The agent OCID is not already being used for an existing hostInsight.
+     *    2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3801,11 +3801,11 @@ public final class OpsiFunctions {
      * 
      * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1. Compute is running OCA
-     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-     *       2.1 The agent OCID is not already being used for an existing hostInsight.
-     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
-     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. Compute is running OCA
+     * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *    2.1 The agent OCID is not already being used for an existing hostInsight.
+     *    2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3851,11 +3851,11 @@ public final class OpsiFunctions {
      * 
      * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1. Compute is running OCA
-     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-     *       2.1 The agent OCID is not already being used for an existing hostInsight.
-     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
-     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. Compute is running OCA
+     * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *    2.1 The agent OCID is not already being used for an existing hostInsight.
+     *    2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3901,11 +3901,11 @@ public final class OpsiFunctions {
      * 
      * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1. Compute is running OCA
-     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-     *       2.1 The agent OCID is not already being used for an existing hostInsight.
-     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
-     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. Compute is running OCA
+     * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *    2.1 The agent OCID is not already being used for an existing hostInsight.
+     *    2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -3951,11 +3951,11 @@ public final class OpsiFunctions {
      * 
      * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1. Compute is running OCA
-     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-     *       2.1 The agent OCID is not already being used for an existing hostInsight.
-     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
-     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. Compute is running OCA
+     * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *    2.1 The agent OCID is not already being used for an existing hostInsight.
+     *    2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -4001,11 +4001,11 @@ public final class OpsiFunctions {
      * 
      * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1. Compute is running OCA
-     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-     *       2.1 The agent OCID is not already being used for an existing hostInsight.
-     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
-     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. Compute is running OCA
+     * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *    2.1 The agent OCID is not already being used for an existing hostInsight.
+     *    2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -4051,11 +4051,11 @@ public final class OpsiFunctions {
      * 
      * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1. Compute is running OCA
-     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-     *       2.1 The agent OCID is not already being used for an existing hostInsight.
-     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
-     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. Compute is running OCA
+     * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *    2.1 The agent OCID is not already being used for an existing hostInsight.
+     *    2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 
@@ -4101,11 +4101,11 @@ public final class OpsiFunctions {
      * 
      * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
      * and will be shown if all the following conditions are true:
-     *    1. Compute is running OCA
-     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-     *       2.1 The agent OCID is not already being used for an existing hostInsight.
-     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
-     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 1. Compute is running OCA
+     * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *    2.1 The agent OCID is not already being used for an existing hostInsight.
+     *    2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
      * 

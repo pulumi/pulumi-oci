@@ -69,10 +69,10 @@ export interface GetBackendHealthResult {
     readonly loadBalancerId: string;
     /**
      * The general health status of the specified backend server as reported by the primary and standby load balancers.
-     * *   **OK:** Both health checks returned `OK`.
-     * *   **WARNING:** One health check returned `OK` and one did not.
-     * *   **CRITICAL:** Neither health check returned `OK`.
-     * *   **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
+     * * **OK:** Both health checks returned `OK`.
+     * * **WARNING:** One health check returned `OK` and one did not.
+     * * **CRITICAL:** Neither health check returned `OK`.
+     * * **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
      */
     readonly status: string;
 }

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AppMgmtControl
         /// 
         /// Returns a list of monitored instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.AppMgmtControl
         /// This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
         /// 
         /// Returns a list of monitored instances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

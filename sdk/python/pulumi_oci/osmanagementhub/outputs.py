@@ -864,7 +864,6 @@ class LifecycleEnvironmentStage(dict):
         :param str time_modified: The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param str vendor_name: The vendor of the operating system used by the managed instances in the lifecycle environment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1034,7 +1033,6 @@ class LifecycleEnvironmentStage(dict):
     def vendor_name(self) -> Optional[str]:
         """
         The vendor of the operating system used by the managed instances in the lifecycle environment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1253,7 +1251,6 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRe
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1275,7 +1272,6 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRe
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1358,7 +1354,6 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRe
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1380,7 +1375,6 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRe
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1414,7 +1408,6 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails(dict):
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1436,7 +1429,6 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails(dict):
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1520,7 +1512,6 @@ class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails(dic
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1542,7 +1533,6 @@ class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails(dic
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1576,7 +1566,6 @@ class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetails(dict
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1598,7 +1587,6 @@ class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetails(dict
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1682,7 +1670,6 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails(dict
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1704,7 +1691,6 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails(dict
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1738,7 +1724,6 @@ class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails(dict):
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1760,7 +1745,6 @@ class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails(dict):
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1794,7 +1778,6 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails(dict
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1816,7 +1799,6 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails(dict
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2124,7 +2106,6 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails(dict):
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2146,7 +2127,6 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails(dict):
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2180,7 +2160,6 @@ class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails(dict):
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2202,7 +2181,6 @@ class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails(dict):
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2324,7 +2302,6 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails(dict):
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2346,7 +2323,6 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails(dict):
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2380,7 +2356,6 @@ class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails(dict):
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2402,7 +2377,6 @@ class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails(dict):
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2668,7 +2642,6 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetails(dict):
         :param str description: User-specified information about the job. Avoid entering confidential information.
         :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2690,7 +2663,6 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetails(dict):
     def display_name(self) -> Optional[str]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3675,7 +3647,6 @@ class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability(dict)
         """
         :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str availability: Availability of the software source to instances in private data centers or third-party clouds.
@@ -3692,7 +3663,6 @@ class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability(dict)
     def software_source_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4012,7 +3982,6 @@ class SoftwareSourceVendorSoftwareSource(dict):
         :param str display_name: (Updatable) User-friendly name.
         :param str id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -4034,7 +4003,6 @@ class SoftwareSourceVendorSoftwareSource(dict):
     def id(self) -> Optional[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

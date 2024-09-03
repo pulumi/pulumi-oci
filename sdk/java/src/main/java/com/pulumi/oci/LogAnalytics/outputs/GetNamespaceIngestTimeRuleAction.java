@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetNamespaceIngestTimeRuleAction {
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     private String compartmentId;
@@ -44,7 +44,7 @@ public final class GetNamespaceIngestTimeRuleAction {
 
     private GetNamespaceIngestTimeRuleAction() {}
     /**
-     * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
      * 
      */
     public String compartmentId() {

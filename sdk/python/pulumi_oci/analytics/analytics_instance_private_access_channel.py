@@ -29,8 +29,7 @@ class AnalyticsInstancePrivateAccessChannelArgs:
         :param pulumi.Input[str] display_name: (Updatable) Display Name of the Private Access Channel.
         :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         :param pulumi.Input[str] subnet_id: (Updatable) OCID of the customer subnet connected to private access channel.
-        :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel. 
-               
+        :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -99,8 +98,7 @@ class AnalyticsInstancePrivateAccessChannelArgs:
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) OCID of the customer VCN peered with private access channel. 
-
+        (Updatable) OCID of the customer VCN peered with private access channel.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -160,8 +158,7 @@ class _AnalyticsInstancePrivateAccessChannelState:
         :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]] private_source_scan_hosts: (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
         :param pulumi.Input[str] subnet_id: (Updatable) OCID of the customer subnet connected to private access channel.
-        :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel. 
-               
+        :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -299,8 +296,7 @@ class _AnalyticsInstancePrivateAccessChannelState:
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) OCID of the customer VCN peered with private access channel. 
-
+        (Updatable) OCID of the customer VCN peered with private access channel.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -370,8 +366,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs', 'AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgsDict']]]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs', 'AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgsDict']]]] private_source_scan_hosts: (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
         :param pulumi.Input[str] subnet_id: (Updatable) OCID of the customer subnet connected to private access channel.
-        :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel. 
-               
+        :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -506,8 +501,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs', 'AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgsDict']]]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs', 'AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgsDict']]]] private_source_scan_hosts: (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
         :param pulumi.Input[str] subnet_id: (Updatable) OCID of the customer subnet connected to private access channel.
-        :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel. 
-               
+        :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -604,8 +598,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) OCID of the customer VCN peered with private access channel. 
-
+        (Updatable) OCID of the customer VCN peered with private access channel.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

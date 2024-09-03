@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Adm
         /// Returns a list of KnowledgeBases based on the specified query parameters.
         /// At least id or compartmentId query parameter must be provided.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Adm
         /// 
         /// Returns a list of KnowledgeBases based on the specified query parameters.
         /// At least id or compartmentId query parameter must be provided.
-        /// 
         /// 
         /// ## Example Usage
         /// 

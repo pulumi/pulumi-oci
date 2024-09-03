@@ -416,7 +416,7 @@ class NamespaceIngestTimeRuleAction(dict):
                  dimensions: Optional[Sequence[str]] = None,
                  resource_group: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        :param str compartment_id: (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
         :param str metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param str namespace: (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param str type: (Updatable) Discriminator.
@@ -436,7 +436,7 @@ class NamespaceIngestTimeRuleAction(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -674,7 +674,7 @@ class NamespaceScheduledTaskAction(dict):
         :param str data_type: the type of the log data to be purged
         :param 'NamespaceScheduledTaskActionMetricExtractionArgs' metric_extraction: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
         :param str purge_compartment_id: the compartment OCID under which the data will be purged
-        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param str query_string: Purge query string.
         :param str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
         """
@@ -738,7 +738,7 @@ class NamespaceScheduledTaskAction(dict):
     @pulumi.getter(name="purgeDuration")
     def purge_duration(self) -> Optional[str]:
         """
-        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         """
         return pulumi.get(self, "purge_duration")
 
@@ -788,7 +788,7 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
                  namespace: Optional[str] = None,
                  resource_group: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        :param str compartment_id: (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
         :param str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param str namespace: The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param str resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -806,7 +806,7 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -883,7 +883,7 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
         :param str type: Schedule type discriminator.
         :param str expression: Value in cron format.
         :param str misfire_policy: Schedule misfire retry policy.
-        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         :param int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         :param str time_zone: Time zone, by default UTC.
         """
@@ -927,7 +927,7 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> Optional[str]:
         """
-        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         """
         return pulumi.get(self, "recurring_interval")
 
@@ -1553,7 +1553,7 @@ class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
         """
         :param bool are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param str cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compartment_id: Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str entity_type_internal_name: Internal name for the log analytics entity type.
         :param str entity_type_name: Log analytics entity type name.
@@ -1605,7 +1605,7 @@ class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2590,7 +2590,7 @@ class GetNamespaceIngestTimeRuleActionResult(dict):
                  resource_group: str,
                  type: str):
         """
-        :param str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compartment_id: Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param Sequence[str] dimensions: Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
         :param str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param str namespace: The Logging Analytics namespace used for the request.
@@ -2608,7 +2608,7 @@ class GetNamespaceIngestTimeRuleActionResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -3308,7 +3308,7 @@ class GetNamespaceScheduledTaskActionResult(dict):
         :param str data_type: the type of the log data to be purged
         :param Sequence['GetNamespaceScheduledTaskActionMetricExtractionArgs'] metric_extractions: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
         :param str purge_compartment_id: the compartment OCID under which the data will be purged
-        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param str query_string: Purge query string.
         :param str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
         :param str type: Schedule type discriminator.
@@ -3358,7 +3358,7 @@ class GetNamespaceScheduledTaskActionResult(dict):
     @pulumi.getter(name="purgeDuration")
     def purge_duration(self) -> str:
         """
-        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         """
         return pulumi.get(self, "purge_duration")
 
@@ -3395,7 +3395,7 @@ class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
                  namespace: str,
                  resource_group: str):
         """
-        :param str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compartment_id: Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param str namespace: The Logging Analytics namespace used for the request.
         :param str resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -3409,7 +3409,7 @@ class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -3462,7 +3462,7 @@ class GetNamespaceScheduledTaskScheduleScheduleResult(dict):
         """
         :param str expression: Value in cron format.
         :param str misfire_policy: Schedule misfire retry policy.
-        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         :param int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         :param str time_zone: Time zone, by default UTC.
         :param str type: Schedule type discriminator.
@@ -3494,7 +3494,7 @@ class GetNamespaceScheduledTaskScheduleScheduleResult(dict):
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> str:
         """
-        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         """
         return pulumi.get(self, "recurring_interval")
 
@@ -3599,7 +3599,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
         :param str task_type: Required parameter to specify schedule task type.
         :param str time_created: The date and time the scheduled task was created, in the format defined by RFC3339.
         :param str time_updated: The date and time the scheduled task was last updated, in the format defined by RFC3339.
-        :param str work_request_id: most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+        :param str work_request_id: most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
         """
         pulumi.set(__self__, "actions", actions)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -3754,7 +3754,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
     @pulumi.getter(name="workRequestId")
     def work_request_id(self) -> str:
         """
-        most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+        most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
         """
         return pulumi.get(self, "work_request_id")
 
@@ -3774,7 +3774,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
         :param bool compartment_id_in_subtree: if true, purge child compartments data
         :param str data_type: the type of the log data to be purged
         :param str purge_compartment_id: the compartment OCID under which the data will be purged
-        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param str query_string: Purge query string.
         :param str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
         :param str type: Schedule type discriminator.
@@ -3821,7 +3821,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
     @pulumi.getter(name="purgeDuration")
     def purge_duration(self) -> str:
         """
-        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         """
         return pulumi.get(self, "purge_duration")
 
@@ -3917,7 +3917,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
         """
         :param str expression: Value in cron format.
         :param str misfire_policy: Schedule misfire retry policy.
-        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         :param int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         :param str time_zone: Time zone, by default UTC.
         :param str type: Schedule type discriminator.
@@ -3949,7 +3949,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> str:
         """
-        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         """
         return pulumi.get(self, "recurring_interval")
 

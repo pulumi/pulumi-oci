@@ -112,14 +112,13 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
         /// 
-        /// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
+        /// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
         /// </summary>
         [Output("schedules")]
         public Output<ImmutableArray<Outputs.FilesystemSnapshotPolicySchedule>> Schedules { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -233,7 +232,7 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
         /// 
-        /// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
+        /// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
         /// </summary>
         public InputList<Inputs.FilesystemSnapshotPolicyScheduleArgs> Schedules
         {
@@ -242,8 +241,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -313,7 +311,7 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
         /// 
-        /// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
+        /// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
         /// </summary>
         public InputList<Inputs.FilesystemSnapshotPolicyScheduleGetArgs> Schedules
         {
@@ -322,8 +320,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -45,8 +45,7 @@ namespace Pulumi.Oci.Audit
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
-        /// 
+        /// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -107,8 +106,7 @@ namespace Pulumi.Oci.Audit
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
-        /// 
+        /// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -131,8 +129,7 @@ namespace Pulumi.Oci.Audit
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
-        /// 
+        /// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

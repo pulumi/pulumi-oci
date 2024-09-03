@@ -182,6 +182,15 @@ def get_alert_policies(access_level: Optional[str] = None,
                        type: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertPoliciesResult:
     """
+    subcategory: "Data Safe"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: data_safe_get_alert_policies"
+    sidebar_current: "docs-oci-datasource-data_safe-alert_policies"
+    description: |-
+    	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: data_safe_get_alert_policies
     This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
 
     Gets a list of all alert policies.
@@ -265,6 +274,15 @@ def get_alert_policies_output(access_level: Optional[pulumi.Input[Optional[str]]
                               type: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertPoliciesResult]:
     """
+    subcategory: "Data Safe"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: data_safe_get_alert_policies"
+    sidebar_current: "docs-oci-datasource-data_safe-alert_policies"
+    description: |-
+    	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: data_safe_get_alert_policies
     This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
 
     Gets a list of all alert policies.

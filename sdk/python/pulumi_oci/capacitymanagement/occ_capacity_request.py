@@ -47,7 +47,6 @@ class OccCapacityRequestArgs:
         :param pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestPatchOperationArgs']]] patch_operations: (Updatable)
         :param pulumi.Input[str] request_state: (Updatable) The subset of request states available for creating the capacity request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -234,7 +233,6 @@ class OccCapacityRequestArgs:
         """
         (Updatable) The subset of request states available for creating the capacity request.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -284,7 +282,6 @@ class _OccCapacityRequestState:
         :param pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestPatchOperationArgs']]] patch_operations: (Updatable)
         :param pulumi.Input[str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[str] request_state: (Updatable) The subset of request states available for creating the capacity request.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -506,7 +503,6 @@ class _OccCapacityRequestState:
         """
         (Updatable) The subset of request states available for creating the capacity request.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -589,7 +585,7 @@ class OccCapacityRequest(pulumi.CustomResource):
         This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
 
         Create Capacity Request.
-          Updates the OccCapacityRequest by evaluating a sequence of instructions.
+        Updates the OccCapacityRequest by evaluating a sequence of instructions.
 
         ## Import
 
@@ -616,7 +612,6 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param pulumi.Input[str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[str] request_state: (Updatable) The subset of request states available for creating the capacity request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -630,7 +625,7 @@ class OccCapacityRequest(pulumi.CustomResource):
         This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
 
         Create Capacity Request.
-          Updates the OccCapacityRequest by evaluating a sequence of instructions.
+        Updates the OccCapacityRequest by evaluating a sequence of instructions.
 
         ## Import
 
@@ -764,7 +759,6 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]] patch_operations: (Updatable)
         :param pulumi.Input[str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[str] request_state: (Updatable) The subset of request states available for creating the capacity request.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -915,7 +909,6 @@ class OccCapacityRequest(pulumi.CustomResource):
     def request_state(self) -> pulumi.Output[str]:
         """
         (Updatable) The subset of request states available for creating the capacity request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Returns a list of MediaWorkflowConfigurations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.MediaServices
         /// This data source provides the list of Media Workflow Configurations in Oracle Cloud Infrastructure Media Services service.
         /// 
         /// Returns a list of MediaWorkflowConfigurations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

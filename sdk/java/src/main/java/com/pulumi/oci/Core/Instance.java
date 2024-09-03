@@ -382,7 +382,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      * 
-     * For more information about iPXE, see http://ipxe.org.
+     * For more information about iPXE, see &lt;http://ipxe.org&gt;.
      * 
      */
     @Export(name="ipxeScript", refs={String.class}, tree="[0]")
@@ -401,7 +401,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      * 
-     * For more information about iPXE, see http://ipxe.org.
+     * For more information about iPXE, see &lt;http://ipxe.org&gt;.
      * 
      */
     public Output<String> ipxeScript() {

@@ -39,7 +39,6 @@ class PingMonitorArgs:
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -187,7 +186,6 @@ class PingMonitorArgs:
         """
         (Updatable) A list of names of vantage points from which to execute the probe.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -231,7 +229,6 @@ class _PingMonitorState:
         :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -427,7 +424,6 @@ class _PingMonitorState:
         """
         (Updatable) A list of names of vantage points from which to execute the probe.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -507,7 +503,6 @@ class PingMonitor(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: (Updatable) A list of targets (hostnames or IP addresses) of the probe.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -662,7 +657,6 @@ class PingMonitor(pulumi.CustomResource):
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -795,7 +789,6 @@ class PingMonitor(pulumi.CustomResource):
     def vantage_point_names(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) A list of names of vantage points from which to execute the probe.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

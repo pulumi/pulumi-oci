@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns a list of software sources that can be attached to the specified managed instance. Any software sources already attached to the instance are not included in the list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instance Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns a list of software sources that can be attached to the specified managed instance. Any software sources already attached to the instance are not included in the list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

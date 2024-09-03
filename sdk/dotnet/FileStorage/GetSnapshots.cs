@@ -22,7 +22,6 @@ namespace Pulumi.Oci.FileStorage
         /// Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
         /// (sort by name is NOT supported for listing snapshots by policy and compartment).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -58,7 +57,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
         /// (sort by name is NOT supported for listing snapshots by policy and compartment).
-        /// 
         /// 
         /// ## Example Usage
         /// 

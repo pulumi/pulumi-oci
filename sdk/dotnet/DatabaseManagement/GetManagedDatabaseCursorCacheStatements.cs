@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the SQL statements from shared SQL area, also called the cursor cache.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the SQL statements from shared SQL area, also called the cursor cache.
-        /// 
         /// 
         /// ## Example Usage
         /// 

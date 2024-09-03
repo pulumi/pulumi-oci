@@ -294,7 +294,6 @@ class AccessPolicyRuleSource(dict):
         :param str protocol: (Updatable) Protocol of the external service
         :param str virtual_service_id: (Updatable) The OCID of the virtual service resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -365,7 +364,6 @@ class AccessPolicyRuleSource(dict):
     def virtual_service_id(self) -> Optional[str]:
         """
         (Updatable) The OCID of the virtual service resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -817,7 +815,6 @@ class IngressGatewayRouteTableRouteRule(dict):
         :param Sequence['IngressGatewayRouteTableRouteRuleDestinationArgs'] destinations: (Updatable) The destination of the request.
         :param str type: (Updatable) Type of protocol.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param 'IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs' ingress_gateway_host: (Updatable) The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
@@ -858,7 +855,6 @@ class IngressGatewayRouteTableRouteRule(dict):
     def type(self) -> str:
         """
         (Updatable) Type of protocol.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1034,8 +1030,7 @@ class MeshMtls(dict):
     def __init__(__self__, *,
                  minimum: str):
         """
-        :param str minimum: (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
-               
+        :param str minimum: (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1046,8 +1041,7 @@ class MeshMtls(dict):
     @pulumi.getter
     def minimum(self) -> str:
         """
-        (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
-
+        (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

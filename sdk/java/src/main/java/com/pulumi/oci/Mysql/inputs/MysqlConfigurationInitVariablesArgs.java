@@ -16,7 +16,7 @@ public final class MysqlConfigurationInitVariablesArgs extends com.pulumi.resour
     public static final MysqlConfigurationInitVariablesArgs Empty = new MysqlConfigurationInitVariablesArgs();
 
     /**
-     * Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+     * Represents the MySQL server system variable lower_case_table_names (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)&gt;.
      * 
      * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
      * 
@@ -29,7 +29,7 @@ public final class MysqlConfigurationInitVariablesArgs extends com.pulumi.resour
     private @Nullable Output<String> lowerCaseTableNames;
 
     /**
-     * @return Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+     * @return Represents the MySQL server system variable lower_case_table_names (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)&gt;.
      * 
      * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
      * 
@@ -67,7 +67,7 @@ public final class MysqlConfigurationInitVariablesArgs extends com.pulumi.resour
         }
 
         /**
-         * @param lowerCaseTableNames Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         * @param lowerCaseTableNames Represents the MySQL server system variable lower_case_table_names (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)&gt;.
          * 
          * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
          * 
@@ -84,7 +84,7 @@ public final class MysqlConfigurationInitVariablesArgs extends com.pulumi.resour
         }
 
         /**
-         * @param lowerCaseTableNames Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         * @param lowerCaseTableNames Represents the MySQL server system variable lower_case_table_names (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)&gt;.
          * 
          * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
          * 

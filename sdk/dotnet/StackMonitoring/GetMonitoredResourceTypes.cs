@@ -14,13 +14,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
         /// 
-        /// Returns list of resource types accessible to the customer. 
-        /// There are two types of resource types - System resource types and User resource types. 
-        /// System resource types are available out of the box in the stack monitoring resource service 
-        /// and are accessible to all the tenant users. User resource types are created in the context 
-        /// of a tenancy and are visible only for the tenancy. By default, both System resource types 
+        /// Returns list of resource types accessible to the customer.
+        /// There are two types of resource types - System resource types and User resource types.
+        /// System resource types are available out of the box in the stack monitoring resource service
+        /// and are accessible to all the tenant users. User resource types are created in the context
+        /// of a tenancy and are visible only for the tenancy. By default, both System resource types
         /// and User resource types are returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -52,13 +51,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
         /// 
-        /// Returns list of resource types accessible to the customer. 
-        /// There are two types of resource types - System resource types and User resource types. 
-        /// System resource types are available out of the box in the stack monitoring resource service 
-        /// and are accessible to all the tenant users. User resource types are created in the context 
-        /// of a tenancy and are visible only for the tenancy. By default, both System resource types 
+        /// Returns list of resource types accessible to the customer.
+        /// There are two types of resource types - System resource types and User resource types.
+        /// System resource types are available out of the box in the stack monitoring resource service
+        /// and are accessible to all the tenant users. User resource types are created in the context
+        /// of a tenancy and are visible only for the tenancy. By default, both System resource types
         /// and User resource types are returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

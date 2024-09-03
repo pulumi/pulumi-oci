@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the maintenance event for the given instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets the maintenance event for the given instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

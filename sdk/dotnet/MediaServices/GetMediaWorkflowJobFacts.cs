@@ -11,61 +11,9 @@ namespace Pulumi.Oci.MediaServices
 {
     public static class GetMediaWorkflowJobFacts
     {
-        /// <summary>
-        /// &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
-        /// This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
-        /// 
-        /// Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testMediaWorkflowJobFacts = Oci.MediaServices.GetMediaWorkflowJobFacts.Invoke(new()
-        ///     {
-        ///         MediaWorkflowJobId = testMediaWorkflowJob.Id,
-        ///         Key = mediaWorkflowJobFactKey,
-        ///         Type = mediaWorkflowJobFactType,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// </summary>
         public static Task<GetMediaWorkflowJobFactsResult> InvokeAsync(GetMediaWorkflowJobFactsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMediaWorkflowJobFactsResult>("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", args ?? new GetMediaWorkflowJobFactsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
-        /// This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
-        /// 
-        /// Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testMediaWorkflowJobFacts = Oci.MediaServices.GetMediaWorkflowJobFacts.Invoke(new()
-        ///     {
-        ///         MediaWorkflowJobId = testMediaWorkflowJob.Id,
-        ///         Key = mediaWorkflowJobFactKey,
-        ///         Type = mediaWorkflowJobFactType,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// </summary>
         public static Output<GetMediaWorkflowJobFactsResult> Invoke(GetMediaWorkflowJobFactsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowJobFactsResult>("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", args ?? new GetMediaWorkflowJobFactsInvokeArgs(), options.WithDefaults());
     }
@@ -81,21 +29,12 @@ namespace Pulumi.Oci.MediaServices
             set => _filters = value;
         }
 
-        /// <summary>
-        /// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-        /// </summary>
         [Input("key")]
         public string? Key { get; set; }
 
-        /// <summary>
-        /// Unique MediaWorkflowJob identifier.
-        /// </summary>
         [Input("mediaWorkflowJobId", required: true)]
         public string MediaWorkflowJobId { get; set; } = null!;
 
-        /// <summary>
-        /// Types of details to include.
-        /// </summary>
         [Input("type")]
         public string? Type { get; set; }
 
@@ -115,21 +54,12 @@ namespace Pulumi.Oci.MediaServices
             set => _filters = value;
         }
 
-        /// <summary>
-        /// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-        /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
-        /// <summary>
-        /// Unique MediaWorkflowJob identifier.
-        /// </summary>
         [Input("mediaWorkflowJobId", required: true)]
         public Input<string> MediaWorkflowJobId { get; set; } = null!;
 
-        /// <summary>
-        /// Types of details to include.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
@@ -148,21 +78,9 @@ namespace Pulumi.Oci.MediaServices
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
-        /// </summary>
         public readonly string? Key;
-        /// <summary>
-        /// The list of media_workflow_job_fact_collection.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionResult> MediaWorkflowJobFactCollections;
-        /// <summary>
-        /// Reference to the parent job.
-        /// </summary>
         public readonly string MediaWorkflowJobId;
-        /// <summary>
-        /// The type of information contained in this detail.
-        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

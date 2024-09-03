@@ -91,7 +91,7 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
      */
     public readonly actions!: pulumi.Output<outputs.LogAnalytics.NamespaceIngestTimeRuleAction[]>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -120,8 +120,7 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
      */
     public /*out*/ readonly isEnabled!: pulumi.Output<boolean>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,7 +210,7 @@ export interface NamespaceIngestTimeRuleState {
      */
     actions?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceIngestTimeRuleAction>[]>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -240,8 +239,7 @@ export interface NamespaceIngestTimeRuleState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -270,7 +268,7 @@ export interface NamespaceIngestTimeRuleArgs {
      */
     actions: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceIngestTimeRuleAction>[]>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -294,8 +292,7 @@ export interface NamespaceIngestTimeRuleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

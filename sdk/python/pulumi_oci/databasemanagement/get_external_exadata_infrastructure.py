@@ -113,7 +113,7 @@ class GetExternalExadataInfrastructureResult:
     @pulumi.getter(name="databaseCompartments")
     def database_compartments(self) -> Sequence[str]:
         """
-        The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
         """
         return pulumi.get(self, "database_compartments")
 

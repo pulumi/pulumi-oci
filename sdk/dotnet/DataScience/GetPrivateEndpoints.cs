@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn't include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DataScience
         /// This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
         /// 
         /// Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn't include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// This list API returns all subscribed services for given Subscription ID
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OneSubsription
         /// This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
         /// 
         /// This list API returns all subscribed services for given Subscription ID
-        /// 
         /// 
         /// ## Example Usage
         /// 

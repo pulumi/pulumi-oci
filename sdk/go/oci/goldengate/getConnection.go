@@ -109,7 +109,7 @@ type LookupConnectionResult struct {
 	Description string `pulumi:"description"`
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
-	// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	// Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 	Endpoint    string `pulumi:"endpoint"`
 	Fingerprint string `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -378,7 +378,7 @@ func (o LookupConnectionResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+// Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 func (o LookupConnectionResultOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Endpoint }).(pulumi.StringOutput)
 }

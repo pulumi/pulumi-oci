@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the security lists in the specified VCN and compartment.
         /// If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the security lists in the specified VCN and compartment.
         /// If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -12,6 +12,15 @@ namespace Pulumi.Oci.DataSafe
     public static class GetSecurityAssessmentFindings
     {
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentFindings"
+        /// sidebar_current: "docs-oci-datasource-data_safe-security_assessment_findings"
+        /// description: |-
+        /// 	Provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getSecurityAssessmentFindings
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// List all the findings from all the targets in the specified compartment.
@@ -20,6 +29,15 @@ namespace Pulumi.Oci.DataSafe
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Data Safe"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentFindings"
+        /// sidebar_current: "docs-oci-datasource-data_safe-security_assessment_findings"
+        /// description: |-
+        /// 	Provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.DataSafe.getSecurityAssessmentFindings
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// List all the findings from all the targets in the specified compartment.

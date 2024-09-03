@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Database"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.AutonomousDatabase"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_database"
+ * description: |-
+ * Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.Database.AutonomousDatabase
  * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
  *
  * Gets the details of the specified Autonomous Database.
@@ -148,6 +157,15 @@ export interface GetAutonomousDatabasesResult {
     readonly state?: string;
 }
 /**
+ * subcategory: "Database"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.AutonomousDatabase"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_database"
+ * description: |-
+ * Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.Database.AutonomousDatabase
  * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
  *
  * Gets the details of the specified Autonomous Database.

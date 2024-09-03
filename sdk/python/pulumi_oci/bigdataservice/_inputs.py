@@ -120,7 +120,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]] schedule_details: (Updatable) Details of a horizontal scaling schedule.
         :param pulumi.Input[str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] trigger_type: The type of autoscaling trigger.
@@ -232,7 +231,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     def timezone(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1987,6 +1985,9 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -2024,6 +2025,9 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
     def ocpus(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of OCPUs available to the node.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 

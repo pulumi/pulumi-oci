@@ -57,7 +57,6 @@ export class ExternalContainerDatabasesStackMonitoring extends pulumi.CustomReso
     /**
      * (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -114,7 +113,6 @@ export interface ExternalContainerDatabasesStackMonitoringState {
     /**
      * (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -135,7 +133,6 @@ export interface ExternalContainerDatabasesStackMonitoringState {
 export interface ExternalContainerDatabasesStackMonitoringArgs {
     /**
      * (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

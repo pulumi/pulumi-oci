@@ -20,7 +20,6 @@ class SetUserAssessmentBaselineArgs:
         The set of arguments for constructing a SetUserAssessmentBaseline resource.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
@@ -34,7 +33,6 @@ class SetUserAssessmentBaselineArgs:
     def user_assessment_id(self) -> pulumi.Input[str]:
         """
         The OCID of the user assessment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68,7 +66,6 @@ class _SetUserAssessmentBaselineState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -94,7 +91,6 @@ class _SetUserAssessmentBaselineState:
     def user_assessment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the user assessment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -142,7 +138,6 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -229,7 +224,6 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -254,7 +248,6 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
     def user_assessment_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user assessment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -25,7 +25,7 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
      */
     private String compartmentId;
     /**
-     * @return The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * @return The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
      * 
      */
     private List<String> databaseCompartments;
@@ -129,7 +129,7 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
         return this.compartmentId;
     }
     /**
-     * @return The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * @return The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
      * 
      */
     public List<String> databaseCompartments() {

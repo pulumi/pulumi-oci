@@ -87,7 +87,7 @@ class InstanceArgs:
                
                For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
                
-               For more information about iPXE, see http://ipxe.org.
+               For more information about iPXE, see <http://ipxe.org>.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         :param pulumi.Input['InstanceLaunchOptionsArgs'] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
@@ -476,7 +476,7 @@ class InstanceArgs:
 
         For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 
-        For more information about iPXE, see http://ipxe.org.
+        For more information about iPXE, see <http://ipxe.org>.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -785,7 +785,7 @@ class _InstanceState:
                
                For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
                
-               For more information about iPXE, see http://ipxe.org.
+               For more information about iPXE, see <http://ipxe.org>.
         :param pulumi.Input[bool] is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
@@ -1218,7 +1218,7 @@ class _InstanceState:
 
         For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 
-        For more information about iPXE, see http://ipxe.org.
+        For more information about iPXE, see <http://ipxe.org>.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -1675,7 +1675,7 @@ class Instance(pulumi.CustomResource):
                
                For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
                
-               For more information about iPXE, see http://ipxe.org.
+               For more information about iPXE, see <http://ipxe.org>.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         :param pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
@@ -2004,7 +2004,7 @@ class Instance(pulumi.CustomResource):
                
                For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
                
-               For more information about iPXE, see http://ipxe.org.
+               For more information about iPXE, see <http://ipxe.org>.
         :param pulumi.Input[bool] is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
@@ -2310,7 +2310,7 @@ class Instance(pulumi.CustomResource):
 
         For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 
-        For more information about iPXE, see http://ipxe.org.
+        For more information about iPXE, see <http://ipxe.org>.
         """
         return pulumi.get(self, "ipxe_script")
 

@@ -178,7 +178,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -287,7 +286,6 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
         /// 
         /// The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -479,7 +477,6 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
         /// 
         /// The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

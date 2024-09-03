@@ -114,7 +114,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
         /// * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -209,7 +208,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
         /// * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -277,7 +275,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
         /// * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

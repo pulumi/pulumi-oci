@@ -39,7 +39,6 @@ class OutboundConnectorArgs:
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -173,7 +172,6 @@ class OutboundConnectorArgs:
         """
         Version of the password secret in the Vault to use.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -211,7 +209,6 @@ class _OutboundConnectorState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -357,7 +354,6 @@ class _OutboundConnectorState:
         """
         Version of the password secret in the Vault to use.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -478,7 +474,6 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -643,7 +638,6 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of this outbound connector.
@@ -744,7 +738,6 @@ class OutboundConnector(pulumi.CustomResource):
     def password_secret_version(self) -> pulumi.Output[int]:
         """
         Version of the password secret in the Vault to use.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

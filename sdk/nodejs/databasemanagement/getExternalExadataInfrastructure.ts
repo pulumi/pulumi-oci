@@ -54,7 +54,7 @@ export interface GetExternalExadataInfrastructureResult {
      */
     readonly compartmentId: string;
     /**
-     * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
      */
     readonly databaseCompartments: string[];
     /**

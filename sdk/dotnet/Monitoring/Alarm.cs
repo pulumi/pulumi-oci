@@ -203,7 +203,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> NotificationVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// (Updatable) A set of overrides that control evaluations of the alarm.
         /// 
         /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         /// </summary>
@@ -228,22 +228,6 @@ namespace Pulumi.Oci.Monitoring
         /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
-        /// 
-        /// -----
-        /// 
-        /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-        /// 
-        /// -----
-        /// 
-        /// Example of absence alarm:
-        /// 
-        /// -----
-        /// 
-        /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-        /// 
-        /// ----- Example of absence alarm with custom absence detection period of 20 hours:
-        /// 
-        /// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
         /// </summary>
         [Output("query")]
         public Output<string> Query { get; private set; } = null!;
@@ -477,7 +461,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<Inputs.AlarmOverrideArgs>? _overrides;
 
         /// <summary>
-        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// (Updatable) A set of overrides that control evaluations of the alarm.
         /// 
         /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         /// </summary>
@@ -505,22 +489,6 @@ namespace Pulumi.Oci.Monitoring
         /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
-        /// 
-        /// -----
-        /// 
-        /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-        /// 
-        /// -----
-        /// 
-        /// Example of absence alarm:
-        /// 
-        /// -----
-        /// 
-        /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-        /// 
-        /// ----- Example of absence alarm with custom absence detection period of 20 hours:
-        /// 
-        /// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
         /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
@@ -698,7 +666,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<Inputs.AlarmOverrideGetArgs>? _overrides;
 
         /// <summary>
-        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// (Updatable) A set of overrides that control evaluations of the alarm.
         /// 
         /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         /// </summary>
@@ -726,22 +694,6 @@ namespace Pulumi.Oci.Monitoring
         /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
-        /// 
-        /// -----
-        /// 
-        /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
-        /// 
-        /// -----
-        /// 
-        /// Example of absence alarm:
-        /// 
-        /// -----
-        /// 
-        /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-        /// 
-        /// ----- Example of absence alarm with custom absence detection period of 20 hours:
-        /// 
-        /// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
         /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }

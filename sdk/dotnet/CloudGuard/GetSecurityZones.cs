@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns a list of security zones (SecurityZone resources) in a compartment identified by
         /// compartmentId. List is contained in a page of SecurityZoneSummary resources.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of security zones (SecurityZone resources) in a compartment identified by
         /// compartmentId. List is contained in a page of SecurityZoneSummary resources.
-        /// 
         /// 
         /// ## Example Usage
         /// 

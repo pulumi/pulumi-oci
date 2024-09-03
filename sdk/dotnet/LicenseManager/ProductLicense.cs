@@ -178,8 +178,7 @@ namespace Pulumi.Oci.LicenseManager
         public Output<double> TotalLicenseUnitsConsumed { get; private set; } = null!;
 
         /// <summary>
-        /// The product license vendor name, for example: Microsoft, RHEL, and so on. 
-        /// 
+        /// The product license vendor name, for example: Microsoft, RHEL, and so on.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -294,8 +293,7 @@ namespace Pulumi.Oci.LicenseManager
         public Input<string> LicenseUnit { get; set; } = null!;
 
         /// <summary>
-        /// The product license vendor name, for example: Microsoft, RHEL, and so on. 
-        /// 
+        /// The product license vendor name, for example: Microsoft, RHEL, and so on.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -450,8 +448,7 @@ namespace Pulumi.Oci.LicenseManager
         public Input<double>? TotalLicenseUnitsConsumed { get; set; }
 
         /// <summary>
-        /// The product license vendor name, for example: Microsoft, RHEL, and so on. 
-        /// 
+        /// The product license vendor name, for example: Microsoft, RHEL, and so on.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

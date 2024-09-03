@@ -64,7 +64,6 @@ export class FusionEnvironmentDataMaskingActivity extends pulumi.CustomResource 
     /**
      * This allows the Data Safe service to resume the previously failed data masking activity.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -127,7 +126,6 @@ export interface FusionEnvironmentDataMaskingActivityState {
     /**
      * This allows the Data Safe service to resume the previously failed data masking activity.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -156,7 +154,6 @@ export interface FusionEnvironmentDataMaskingActivityArgs {
     fusionEnvironmentId: pulumi.Input<string>;
     /**
      * This allows the Data Safe service to resume the previously failed data masking activity.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -1325,7 +1325,6 @@ class AssetVmwareVmArgs:
         :param pulumi.Input[str] path: (Updatable) Path directory of the asset.
         :param pulumi.Input[str] vmware_tools_status: (Updatable) VMware tools status.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1477,7 +1476,6 @@ class AssetVmwareVmArgs:
     def vmware_tools_status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) VMware tools status.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

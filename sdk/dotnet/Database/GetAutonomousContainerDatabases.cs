@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the Autonomous Container Databases in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Container Databases in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of the Autonomous Container Databases in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

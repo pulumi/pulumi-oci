@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the identified error for the specified IPSec tunnel ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets the identified error for the specified IPSec tunnel ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

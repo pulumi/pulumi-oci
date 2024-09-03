@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Lists all certificate authorities (CAs) in the specified compartment.
         /// Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all certificate authorities (CAs) in the specified compartment.
         /// Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
-        /// 
         /// 
         /// ## Example Usage
         /// 

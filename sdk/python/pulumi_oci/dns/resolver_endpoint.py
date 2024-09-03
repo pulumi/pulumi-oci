@@ -31,7 +31,6 @@ class ResolverEndpointInitArgs:
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
@@ -99,7 +98,6 @@ class ResolverEndpointInitArgs:
     def subnet_id(self) -> pulumi.Input[str]:
         """
         The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,7 +214,6 @@ class _ResolverEndpointState:
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -404,7 +401,6 @@ class _ResolverEndpointState:
         """
         The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -504,7 +500,6 @@ class ResolverEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
         :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -655,7 +650,6 @@ class ResolverEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -783,7 +777,6 @@ class ResolverEndpoint(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[str]:
         """
         The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

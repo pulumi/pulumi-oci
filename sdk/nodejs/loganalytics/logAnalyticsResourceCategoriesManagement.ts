@@ -68,8 +68,7 @@ export class LogAnalyticsResourceCategoriesManagement extends pulumi.CustomResou
      */
     public readonly resourceId!: pulumi.Output<string>;
     /**
-     * The resource type of the resource for which categories are managed. 
-     *
+     * The resource type of the resource for which categories are managed.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -134,8 +133,7 @@ export interface LogAnalyticsResourceCategoriesManagementState {
      */
     resourceId?: pulumi.Input<string>;
     /**
-     * The resource type of the resource for which categories are managed. 
-     *
+     * The resource type of the resource for which categories are managed.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -160,8 +158,7 @@ export interface LogAnalyticsResourceCategoriesManagementArgs {
      */
     resourceId: pulumi.Input<string>;
     /**
-     * The resource type of the resource for which categories are managed. 
-     *
+     * The resource type of the resource for which categories are managed.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

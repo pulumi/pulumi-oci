@@ -156,7 +156,6 @@ export class Workspace extends pulumi.CustomResource {
     /**
      * The OCID of the VCN the subnet is in.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -318,7 +317,6 @@ export interface WorkspaceState {
     /**
      * The OCID of the VCN the subnet is in.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -393,7 +391,6 @@ export interface WorkspaceArgs {
     subnetId?: pulumi.Input<string>;
     /**
      * The OCID of the VCN the subnet is in.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

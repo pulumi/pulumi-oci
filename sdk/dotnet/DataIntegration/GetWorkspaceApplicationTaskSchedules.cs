@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// This endpoint can be used to get the list of all the TaskSchedule objects.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DataIntegration
         /// This data source provides the list of Workspace Application Task Schedules in Oracle Cloud Infrastructure Data Integration service.
         /// 
         /// This endpoint can be used to get the list of all the TaskSchedule objects.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// List all changes made by user to risk level of findings of the specified assessment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Assessment Findings Change Audit Logs in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// List all changes made by user to risk level of findings of the specified assessment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

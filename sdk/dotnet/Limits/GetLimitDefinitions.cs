@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Limits
         /// If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
         /// compartment level.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Limits
         /// Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
         /// If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
         /// compartment level.
-        /// 
         /// 
         /// ## Example Usage
         /// 

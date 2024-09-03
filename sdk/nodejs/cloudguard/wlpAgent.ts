@@ -99,7 +99,6 @@ export class WlpAgent extends pulumi.CustomResource {
     /**
      * Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -215,7 +214,6 @@ export interface WlpAgentState {
     /**
      * Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -266,7 +264,6 @@ export interface WlpAgentArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

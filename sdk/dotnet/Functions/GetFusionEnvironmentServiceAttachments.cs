@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Returns a list of service attachments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Functions
         /// This data source provides the list of Fusion Environment Service Attachments in Oracle Cloud Infrastructure Fusion Apps service.
         /// 
         /// Returns a list of service attachments.
-        /// 
         /// 
         /// ## Example Usage
         /// 

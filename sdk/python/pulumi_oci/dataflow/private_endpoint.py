@@ -30,8 +30,7 @@ class PrivateEndpointArgs:
         The set of arguments for constructing a PrivateEndpoint resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. 
-               
+        :param pulumi.Input[str] subnet_id: The OCID of a subnet.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -89,8 +88,7 @@ class PrivateEndpointArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
         """
-        The OCID of a subnet. 
-
+        The OCID of a subnet.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -220,8 +218,7 @@ class _PrivateEndpointState:
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input['PrivateEndpointScanDetailArgs']]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         :param pulumi.Input[str] state: The current state of this private endpoint.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. 
-               
+        :param pulumi.Input[str] subnet_id: The OCID of a subnet.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -421,8 +418,7 @@ class _PrivateEndpointState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of a subnet. 
-
+        The OCID of a subnet.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -494,8 +490,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[int] max_host_count: (Updatable) The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict']]]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. 
-               
+        :param pulumi.Input[str] subnet_id: The OCID of a subnet.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -617,8 +612,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict']]]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         :param pulumi.Input[str] state: The current state of this private endpoint.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. 
-               
+        :param pulumi.Input[str] subnet_id: The OCID of a subnet.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -755,8 +749,7 @@ class PrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
         """
-        The OCID of a subnet. 
-
+        The OCID of a subnet.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

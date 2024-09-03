@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Kms
         /// This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
         /// 
         /// Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
-        /// 
         /// 
         /// ## Example Usage
         /// 

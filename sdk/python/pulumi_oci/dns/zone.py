@@ -28,8 +28,7 @@ class ZoneArgs:
         """
         The set of arguments for constructing a Zone resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-               
+        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -42,7 +41,7 @@ class ZoneArgs:
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
+        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
                This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         """
@@ -79,8 +78,7 @@ class ZoneArgs:
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> pulumi.Input[str]:
         """
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-
+        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -159,7 +157,7 @@ class ZoneArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
+        Specifies to operate only on resources that have a matching DNS scope.
         This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         """
         return pulumi.get(self, "scope")
@@ -215,7 +213,7 @@ class _ZoneState:
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] name: The name of the zone.
         :param pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]] nameservers: The authoritative nameservers for the zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
+        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
                This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[int] serial: The current serial of the zone. As seen in the zone's SOA record.
@@ -224,8 +222,7 @@ class _ZoneState:
         :param pulumi.Input[str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         :param pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-               
+        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -369,7 +366,7 @@ class _ZoneState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
+        Specifies to operate only on resources that have a matching DNS scope.
         This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         """
         return pulumi.get(self, "scope")
@@ -466,8 +463,7 @@ class _ZoneState:
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-
+        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -549,11 +545,10 @@ class Zone(pulumi.CustomResource):
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
+        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
                This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
-        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-               
+        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -707,7 +702,7 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] name: The name of the zone.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]] nameservers: The authoritative nameservers for the zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
+        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
                This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[int] serial: The current serial of the zone. As seen in the zone's SOA record.
@@ -716,8 +711,7 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-               
+        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -817,7 +811,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[str]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
+        Specifies to operate only on resources that have a matching DNS scope.
         This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         """
         return pulumi.get(self, "scope")
@@ -882,8 +876,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> pulumi.Output[str]:
         """
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-
+        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

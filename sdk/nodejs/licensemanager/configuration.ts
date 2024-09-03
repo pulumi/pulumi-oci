@@ -64,7 +64,6 @@ export class Configuration extends pulumi.CustomResource {
     /**
      * (Updatable) List of email IDs associated with the configuration.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -124,7 +123,6 @@ export interface ConfigurationState {
     /**
      * (Updatable) List of email IDs associated with the configuration.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -149,7 +147,6 @@ export interface ConfigurationArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) List of email IDs associated with the configuration.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

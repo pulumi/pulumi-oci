@@ -55,7 +55,6 @@ export class ClusterCompleteCredentialRotationManagement extends pulumi.CustomRe
     /**
      * The OCID of the cluster.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -94,7 +93,6 @@ export interface ClusterCompleteCredentialRotationManagementState {
     /**
      * The OCID of the cluster.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -107,7 +105,6 @@ export interface ClusterCompleteCredentialRotationManagementState {
 export interface ClusterCompleteCredentialRotationManagementArgs {
     /**
      * The OCID of the cluster.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

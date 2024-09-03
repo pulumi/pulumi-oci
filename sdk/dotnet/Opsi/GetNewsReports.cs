@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Opsi
         /// This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
         /// 
         /// Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-        /// 
         /// 
         /// ## Example Usage
         /// 

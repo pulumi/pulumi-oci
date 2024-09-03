@@ -21,7 +21,6 @@ class SoftwareSourceAddPackagesManagementArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the full package name (NEVRA.rpm).
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -46,7 +45,6 @@ class SoftwareSourceAddPackagesManagementArgs:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -66,7 +64,6 @@ class _SoftwareSourceAddPackagesManagementState:
         Input properties used for looking up and filtering SoftwareSourceAddPackagesManagement resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the full package name (NEVRA.rpm).
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -93,7 +90,6 @@ class _SoftwareSourceAddPackagesManagementState:
     def software_source_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -142,7 +138,6 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the full package name (NEVRA.rpm).
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -232,7 +227,6 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the full package name (NEVRA.rpm).
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -257,7 +251,6 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
     def software_source_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

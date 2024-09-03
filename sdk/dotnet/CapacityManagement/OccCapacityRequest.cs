@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CapacityManagement
     /// This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
     /// 
     /// Create Capacity Request.
-    ///   Updates the OccCapacityRequest by evaluating a sequence of instructions.
+    /// Updates the OccCapacityRequest by evaluating a sequence of instructions.
     /// 
     /// ## Import
     /// 
@@ -112,7 +112,6 @@ namespace Pulumi.Oci.CapacityManagement
 
         /// <summary>
         /// (Updatable) The subset of request states available for creating the capacity request.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -295,7 +294,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// <summary>
         /// (Updatable) The subset of request states available for creating the capacity request.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -420,7 +418,6 @@ namespace Pulumi.Oci.CapacityManagement
 
         /// <summary>
         /// (Updatable) The subset of request states available for creating the capacity request.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

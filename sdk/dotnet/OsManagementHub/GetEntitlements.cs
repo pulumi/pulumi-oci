@@ -14,9 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Entitlements in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists entitlements in the specified tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but 
+        /// Lists entitlements in the specified tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but
         /// not limited to its Customer Support Identifier (CSI), and vendor name.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -44,9 +43,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Entitlements in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists entitlements in the specified tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but 
+        /// Lists entitlements in the specified tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but
         /// not limited to its Customer Support Identifier (CSI), and vendor name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

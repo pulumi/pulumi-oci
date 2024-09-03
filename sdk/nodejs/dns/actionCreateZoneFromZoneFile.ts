@@ -126,7 +126,6 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
     /**
      * The OCID of the view the resource is associated with.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -270,7 +269,6 @@ export interface ActionCreateZoneFromZoneFileState {
     /**
      * The OCID of the view the resource is associated with.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -303,7 +301,6 @@ export interface ActionCreateZoneFromZoneFileArgs {
     scope?: pulumi.Input<string>;
     /**
      * The OCID of the view the resource is associated with.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

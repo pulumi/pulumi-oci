@@ -126,12 +126,12 @@ public final class GetMysqlConfigurationVariable {
      */
     private String innodbBufferPoolSize;
     /**
-     * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+     * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size&gt;)
      * 
      */
     private String innodbDdlBufferSize;
     /**
-     * @return innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+     * @return innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads&gt;)
      * 
      */
     private Integer innodbDdlThreads;
@@ -385,7 +385,7 @@ public final class GetMysqlConfigurationVariable {
     @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
     private String queryPreallocSize;
     /**
-     * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+     * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit&gt;)
      * 
      */
     private Integer regexpTimeLimit;
@@ -597,14 +597,14 @@ public final class GetMysqlConfigurationVariable {
         return this.innodbBufferPoolSize;
     }
     /**
-     * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+     * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size&gt;)
      * 
      */
     public String innodbDdlBufferSize() {
         return this.innodbDdlBufferSize;
     }
     /**
-     * @return innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+     * @return innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads&gt;)
      * 
      */
     public Integer innodbDdlThreads() {
@@ -950,7 +950,7 @@ public final class GetMysqlConfigurationVariable {
         return this.queryPreallocSize;
     }
     /**
-     * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+     * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit&gt;)
      * 
      */
     public Integer regexpTimeLimit() {

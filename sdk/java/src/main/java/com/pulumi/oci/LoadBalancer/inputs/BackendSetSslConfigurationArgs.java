@@ -54,13 +54,13 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
      * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
      * 
      * **Notes:**
-     * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
-     * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
-     * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-     * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-     * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
-     * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-     * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+     * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+     * * You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+     * * If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+     * * If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+     * * The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+     * * If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+     * * The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
      * 
      * example: `example_cipher_suite`
      * 
@@ -74,13 +74,13 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
      * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
      * 
      * **Notes:**
-     * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
-     * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
-     * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-     * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-     * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
-     * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-     * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+     * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+     * * You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+     * * If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+     * * If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+     * * The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+     * * If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+     * * The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
      * 
      * example: `example_cipher_suite`
      * 
@@ -95,19 +95,19 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
      * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
      * 
      * The Load Balancing service supports the following protocols:
-     * *  TLSv1
-     * *  TLSv1.1
-     * *  TLSv1.2
-     * *  TLSv1.3
+     * * TLSv1
+     * * TLSv1.1
+     * * TLSv1.2
+     * * TLSv1.3
      * 
      * If this field is not specified, TLSv1.2 is the default.
      * 
      * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
      * 
      * **Notes:**
-     * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-     * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-     * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+     * * The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+     * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+     * * For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
      * 
      * example: `[&#34;TLSv1.1&#34;, &#34;TLSv1.2&#34;]`
      * 
@@ -121,19 +121,19 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
      * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
      * 
      * The Load Balancing service supports the following protocols:
-     * *  TLSv1
-     * *  TLSv1.1
-     * *  TLSv1.2
-     * *  TLSv1.3
+     * * TLSv1
+     * * TLSv1.1
+     * * TLSv1.2
+     * * TLSv1.3
      * 
      * If this field is not specified, TLSv1.2 is the default.
      * 
      * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
      * 
      * **Notes:**
-     * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-     * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-     * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+     * * The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+     * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+     * * For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
      * 
      * example: `[&#34;TLSv1.1&#34;, &#34;TLSv1.2&#34;]`
      * 
@@ -301,13 +301,13 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
          * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
          * 
          * **Notes:**
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
-         * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
-         * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-         * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-         * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
-         * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-         * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+         * * You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+         * * If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * * If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * * The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+         * * If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+         * * The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
          * 
          * example: `example_cipher_suite`
          * 
@@ -325,13 +325,13 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
          * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
          * 
          * **Notes:**
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
-         * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
-         * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-         * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-         * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
-         * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-         * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+         * * You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+         * * If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * * If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * * The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+         * * If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+         * * The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
          * 
          * example: `example_cipher_suite`
          * 
@@ -348,19 +348,19 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
          * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
          * 
          * The Load Balancing service supports the following protocols:
-         * *  TLSv1
-         * *  TLSv1.1
-         * *  TLSv1.2
-         * *  TLSv1.3
+         * * TLSv1
+         * * TLSv1.1
+         * * TLSv1.2
+         * * TLSv1.3
          * 
          * If this field is not specified, TLSv1.2 is the default.
          * 
          * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
          * 
          * **Notes:**
-         * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-         * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+         * * The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+         * * For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
          * 
          * example: `[&#34;TLSv1.1&#34;, &#34;TLSv1.2&#34;]`
          * 
@@ -378,19 +378,19 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
          * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
          * 
          * The Load Balancing service supports the following protocols:
-         * *  TLSv1
-         * *  TLSv1.1
-         * *  TLSv1.2
-         * *  TLSv1.3
+         * * TLSv1
+         * * TLSv1.1
+         * * TLSv1.2
+         * * TLSv1.3
          * 
          * If this field is not specified, TLSv1.2 is the default.
          * 
          * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
          * 
          * **Notes:**
-         * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-         * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+         * * The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+         * * For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
          * 
          * example: `[&#34;TLSv1.1&#34;, &#34;TLSv1.2&#34;]`
          * 
@@ -407,19 +407,19 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
          * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
          * 
          * The Load Balancing service supports the following protocols:
-         * *  TLSv1
-         * *  TLSv1.1
-         * *  TLSv1.2
-         * *  TLSv1.3
+         * * TLSv1
+         * * TLSv1.1
+         * * TLSv1.2
+         * * TLSv1.3
          * 
          * If this field is not specified, TLSv1.2 is the default.
          * 
          * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
          * 
          * **Notes:**
-         * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-         * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+         * * The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+         * * For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
          * 
          * example: `[&#34;TLSv1.1&#34;, &#34;TLSv1.2&#34;]`
          * 

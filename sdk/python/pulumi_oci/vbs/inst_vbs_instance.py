@@ -33,7 +33,6 @@ class InstVbsInstanceArgs:
         :param pulumi.Input[str] name: Service Instance Name
         :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -142,7 +141,6 @@ class InstVbsInstanceArgs:
         """
         (Updatable) Compartment where VBS may create additional resources for the service instance
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -181,7 +179,6 @@ class _InstVbsInstanceState:
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] name: Service Instance Name
         :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -322,7 +319,6 @@ class _InstVbsInstanceState:
         """
         (Updatable) Compartment where VBS may create additional resources for the service instance
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -451,7 +447,6 @@ class InstVbsInstance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_resource_usage_agreement_granted: (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
         :param pulumi.Input[str] name: Service Instance Name
         :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -587,7 +582,6 @@ class InstVbsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] name: Service Instance Name
         :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the VbsInstance.
@@ -685,7 +679,6 @@ class InstVbsInstance(pulumi.CustomResource):
     def resource_compartment_id(self) -> pulumi.Output[str]:
         """
         (Updatable) Compartment where VBS may create additional resources for the service instance
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

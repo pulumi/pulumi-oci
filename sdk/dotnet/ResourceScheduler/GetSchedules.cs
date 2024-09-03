@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ResourceScheduler
         /// 
         /// This API gets a list of schedules
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.ResourceScheduler
         /// This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
         /// 
         /// This API gets a list of schedules
-        /// 
         /// 
         /// ## Example Usage
         /// 

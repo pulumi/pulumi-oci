@@ -4745,7 +4745,7 @@ type TargetAssetUserSpec struct {
 	//
 	// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 	//
-	// For more information about iPXE, see http://ipxe.org.
+	// For more information about iPXE, see <http://ipxe.org>.
 	IpxeScript *string `pulumi:"ipxeScript"`
 	// (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
 	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
@@ -4819,7 +4819,7 @@ type TargetAssetUserSpecArgs struct {
 	//
 	// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 	//
-	// For more information about iPXE, see http://ipxe.org.
+	// For more information about iPXE, see <http://ipxe.org>.
 	IpxeScript pulumi.StringPtrInput `pulumi:"ipxeScript"`
 	// (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
 	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput `pulumi:"isPvEncryptionInTransitEnabled"`
@@ -4994,7 +4994,7 @@ func (o TargetAssetUserSpecOutput) InstanceOptions() TargetAssetUserSpecInstance
 //
 // For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 //
-// For more information about iPXE, see http://ipxe.org.
+// For more information about iPXE, see <http://ipxe.org>.
 func (o TargetAssetUserSpecOutput) IpxeScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetAssetUserSpec) *string { return v.IpxeScript }).(pulumi.StringPtrOutput)
 }
@@ -5194,7 +5194,7 @@ func (o TargetAssetUserSpecPtrOutput) InstanceOptions() TargetAssetUserSpecInsta
 //
 // For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 //
-// For more information about iPXE, see http://ipxe.org.
+// For more information about iPXE, see <http://ipxe.org>.
 func (o TargetAssetUserSpecPtrOutput) IpxeScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetAssetUserSpec) *string {
 		if v == nil {

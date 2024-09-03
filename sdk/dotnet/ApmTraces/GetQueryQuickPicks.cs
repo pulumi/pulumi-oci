@@ -17,7 +17,6 @@ namespace Pulumi.Oci.ApmTraces
         /// Returns a list of predefined Quick Pick queries intended to assist the user
         /// to choose a query to run.  There is no sorting applied on the results.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// Returns a list of predefined Quick Pick queries intended to assist the user
         /// to choose a query to run.  There is no sorting applied on the results.
-        /// 
         /// 
         /// ## Example Usage
         /// 

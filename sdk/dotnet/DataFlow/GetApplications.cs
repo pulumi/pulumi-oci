@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DataFlow
         /// This data source provides the list of Applications in Oracle Cloud Infrastructure Data Flow service.
         /// 
         /// Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

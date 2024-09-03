@@ -684,7 +684,7 @@ class Model(pulumi.CustomResource):
 
         Create a new model.
 
-          Updates the model metadata only selected path parameter.
+        Updates the model metadata only selected path parameter.
 
         ## Import
 
@@ -722,7 +722,7 @@ class Model(pulumi.CustomResource):
 
         Create a new model.
 
-          Updates the model metadata only selected path parameter.
+        Updates the model metadata only selected path parameter.
 
         ## Import
 

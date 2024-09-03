@@ -99,8 +99,7 @@ namespace Pulumi.Oci.Dns
         public Output<ImmutableArray<Outputs.ResolverRule>> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers. 
-        /// 
+        /// If specified, must be `PRIVATE` when creating private name resolvers.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -249,8 +248,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers. 
-        /// 
+        /// If specified, must be `PRIVATE` when creating private name resolvers.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,8 +365,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers. 
-        /// 
+        /// If specified, must be `PRIVATE` when creating private name resolvers.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

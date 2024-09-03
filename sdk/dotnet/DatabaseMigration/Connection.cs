@@ -324,7 +324,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -620,7 +619,6 @@ namespace Pulumi.Oci.DatabaseMigration
 
         /// <summary>
         /// (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -934,7 +932,6 @@ namespace Pulumi.Oci.DatabaseMigration
 
         /// <summary>
         /// (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

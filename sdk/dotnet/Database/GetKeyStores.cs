@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of key stores in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of key stores in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

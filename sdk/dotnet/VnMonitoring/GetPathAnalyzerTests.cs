@@ -16,7 +16,6 @@ namespace Pulumi.Oci.VnMonitoring
         /// 
         /// Returns a list of all `PathAnalyzerTests` in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.VnMonitoring
         /// This data source provides the list of Path Analyzer Tests in Oracle Cloud Infrastructure Vn Monitoring service.
         /// 
         /// Returns a list of all `PathAnalyzerTests` in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

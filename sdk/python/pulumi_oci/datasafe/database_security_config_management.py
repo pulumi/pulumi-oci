@@ -33,7 +33,6 @@ class DatabaseSecurityConfigManagementArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DatabaseSecurityConfigManagementSqlFirewallConfigArgs'] sql_firewall_config: (Updatable) Details to update the SQL firewall config.
@@ -122,7 +121,6 @@ class DatabaseSecurityConfigManagementArgs:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -183,7 +181,6 @@ class _DatabaseSecurityConfigManagementState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the database security config in Data Safe.
         :param pulumi.Input[bool] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -301,7 +298,6 @@ class _DatabaseSecurityConfigManagementState:
     def refresh_trigger(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -453,7 +449,6 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['DatabaseSecurityConfigManagementSqlFirewallConfigArgs', 'DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict']] sql_firewall_config: (Updatable) Details to update the SQL firewall config.
@@ -583,7 +578,6 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the database security config in Data Safe.
         :param pulumi.Input[bool] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['DatabaseSecurityConfigManagementSqlFirewallConfigArgs', 'DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict']] sql_firewall_config: (Updatable) Details to update the SQL firewall config.
@@ -667,7 +661,6 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
     def refresh_trigger(self) -> pulumi.Output[Optional[bool]]:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

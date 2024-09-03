@@ -58,7 +58,7 @@ type BdsInstanceApiKey struct {
 
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringOutput `pulumi:"bdsInstanceId"`
-	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+	// The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
 	DefaultRegion pulumi.StringOutput `pulumi:"defaultRegion"`
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
@@ -132,7 +132,7 @@ func GetBdsInstanceApiKey(ctx *pulumi.Context,
 type bdsInstanceApiKeyState struct {
 	// The OCID of the cluster.
 	BdsInstanceId *string `pulumi:"bdsInstanceId"`
-	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+	// The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
 	DefaultRegion *string `pulumi:"defaultRegion"`
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint *string `pulumi:"fingerprint"`
@@ -158,7 +158,7 @@ type bdsInstanceApiKeyState struct {
 type BdsInstanceApiKeyState struct {
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringPtrInput
-	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+	// The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
 	DefaultRegion pulumi.StringPtrInput
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint pulumi.StringPtrInput
@@ -188,7 +188,7 @@ func (BdsInstanceApiKeyState) ElementType() reflect.Type {
 type bdsInstanceApiKeyArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
-	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+	// The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
 	DefaultRegion *string `pulumi:"defaultRegion"`
 	// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
 	KeyAlias string `pulumi:"keyAlias"`
@@ -205,7 +205,7 @@ type bdsInstanceApiKeyArgs struct {
 type BdsInstanceApiKeyArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringInput
-	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+	// The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
 	DefaultRegion pulumi.StringPtrInput
 	// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
 	KeyAlias pulumi.StringInput
@@ -310,7 +310,7 @@ func (o BdsInstanceApiKeyOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
 
-// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+// The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
 func (o BdsInstanceApiKeyOutput) DefaultRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.DefaultRegion }).(pulumi.StringOutput)
 }

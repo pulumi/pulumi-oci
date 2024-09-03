@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Identity
         /// Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
         /// the secret key itself. The actual secret key is returned only upon creation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
         /// the secret key itself. The actual secret key is returned only upon creation.
-        /// 
         /// 
         /// ## Example Usage
         /// 

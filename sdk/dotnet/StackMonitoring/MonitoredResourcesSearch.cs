@@ -205,8 +205,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string?> TimeUpdatedLessThan { get; private set; } = null!;
 
         /// <summary>
-        /// A filter to return resources that match resource type. 
-        /// 
+        /// A filter to return resources that match resource type.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -425,8 +424,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? TimeUpdatedLessThan { get; set; }
 
         /// <summary>
-        /// A filter to return resources that match resource type. 
-        /// 
+        /// A filter to return resources that match resource type.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -619,8 +617,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? TimeUpdatedLessThan { get; set; }
 
         /// <summary>
-        /// A filter to return resources that match resource type. 
-        /// 
+        /// A filter to return resources that match resource type.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

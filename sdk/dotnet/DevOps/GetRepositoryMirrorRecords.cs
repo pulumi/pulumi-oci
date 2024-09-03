@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of mirror entry in history within 30 days.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns a list of mirror entry in history within 30 days.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Gets information about the specified scheduled job.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides details about a specific Scheduled Job resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Gets information about the specified scheduled job.
-        /// 
         /// 
         /// ## Example Usage
         /// 

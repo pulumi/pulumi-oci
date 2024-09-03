@@ -20,7 +20,6 @@ class SetUserAssessmentBaselineManagementArgs:
         The set of arguments for constructing a SetUserAssessmentBaselineManagement resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] target_id: The target OCID for which UA needs to be set as baseline.
@@ -33,7 +32,6 @@ class SetUserAssessmentBaselineManagementArgs:
     def compartment_id(self) -> pulumi.Input[str]:
         """
         The compartment OCID of the target.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68,7 +66,6 @@ class _SetUserAssessmentBaselineManagementState:
         Input properties used for looking up and filtering SetUserAssessmentBaselineManagement resources.
         :param pulumi.Input[str] compartment_id: The compartment OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] target_id: The target OCID for which UA needs to be set as baseline.
@@ -96,7 +93,6 @@ class _SetUserAssessmentBaselineManagementState:
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The compartment OCID of the target.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,7 +160,6 @@ class SetUserAssessmentBaselineManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID of the target.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -257,7 +252,6 @@ class SetUserAssessmentBaselineManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] target_id: The target OCID for which UA needs to be set as baseline.
@@ -282,7 +276,6 @@ class SetUserAssessmentBaselineManagement(pulumi.CustomResource):
     def compartment_id(self) -> pulumi.Output[str]:
         """
         The compartment OCID of the target.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

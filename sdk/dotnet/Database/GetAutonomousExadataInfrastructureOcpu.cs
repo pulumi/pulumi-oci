@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
-        /// 
         /// 
         /// ## Example Usage
         /// 

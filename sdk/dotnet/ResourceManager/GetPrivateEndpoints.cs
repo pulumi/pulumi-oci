@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ResourceManager
         /// - For `compartmentId`, lists all private endpoint in the matching compartment.
         /// - For `privateEndpointId`, lists the matching private endpoint.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.ResourceManager
         /// Lists private endpoints according to the specified filter.
         /// - For `compartmentId`, lists all private endpoint in the matching compartment.
         /// - For `privateEndpointId`, lists the matching private endpoint.
-        /// 
         /// 
         /// ## Example Usage
         /// 

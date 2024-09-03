@@ -4921,9 +4921,9 @@ func (o DeployEnvironmentComputeInstanceGroupSelectorsPtrOutput) Items() DeployE
 type DeployEnvironmentComputeInstanceGroupSelectorsItem struct {
 	// (Updatable) Compute instance OCID identifiers that are members of this group.
 	ComputeInstanceIds []string `pulumi:"computeInstanceIds"`
-	// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+	// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 	Query *string `pulumi:"query"`
-	// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 	Region *string `pulumi:"region"`
 	// (Updatable) Defines the type of the instance selector for the group.
 	SelectorType string `pulumi:"selectorType"`
@@ -4943,9 +4943,9 @@ type DeployEnvironmentComputeInstanceGroupSelectorsItemInput interface {
 type DeployEnvironmentComputeInstanceGroupSelectorsItemArgs struct {
 	// (Updatable) Compute instance OCID identifiers that are members of this group.
 	ComputeInstanceIds pulumi.StringArrayInput `pulumi:"computeInstanceIds"`
-	// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+	// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 	Query pulumi.StringPtrInput `pulumi:"query"`
-	// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 	Region pulumi.StringPtrInput `pulumi:"region"`
 	// (Updatable) Defines the type of the instance selector for the group.
 	SelectorType pulumi.StringInput `pulumi:"selectorType"`
@@ -5007,12 +5007,12 @@ func (o DeployEnvironmentComputeInstanceGroupSelectorsItemOutput) ComputeInstanc
 	return o.ApplyT(func(v DeployEnvironmentComputeInstanceGroupSelectorsItem) []string { return v.ComputeInstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 func (o DeployEnvironmentComputeInstanceGroupSelectorsItemOutput) Query() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployEnvironmentComputeInstanceGroupSelectorsItem) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 func (o DeployEnvironmentComputeInstanceGroupSelectorsItemOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployEnvironmentComputeInstanceGroupSelectorsItem) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
@@ -11165,7 +11165,7 @@ type DeploymentDeploymentArgumentsItem struct {
 	// Name of the parameter (case-sensitive).
 	Name *string `pulumi:"name"`
 	// value of the argument.
-	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+	// * To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 	Value *string `pulumi:"value"`
 }
 
@@ -11184,7 +11184,7 @@ type DeploymentDeploymentArgumentsItemArgs struct {
 	// Name of the parameter (case-sensitive).
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// value of the argument.
-	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+	// * To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -11245,7 +11245,7 @@ func (o DeploymentDeploymentArgumentsItemOutput) Name() pulumi.StringPtrOutput {
 }
 
 // value of the argument.
-// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+// * To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 func (o DeploymentDeploymentArgumentsItemOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeploymentArgumentsItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -22966,9 +22966,9 @@ func (o GetDeployEnvironmentComputeInstanceGroupSelectorArrayOutput) Index(i pul
 type GetDeployEnvironmentComputeInstanceGroupSelectorItem struct {
 	// Compute instance OCID identifiers that are members of this group.
 	ComputeInstanceIds []string `pulumi:"computeInstanceIds"`
-	// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+	// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 	Query string `pulumi:"query"`
-	// Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	// Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 	Region string `pulumi:"region"`
 	// Defines the type of the instance selector for the group.
 	SelectorType string `pulumi:"selectorType"`
@@ -22988,9 +22988,9 @@ type GetDeployEnvironmentComputeInstanceGroupSelectorItemInput interface {
 type GetDeployEnvironmentComputeInstanceGroupSelectorItemArgs struct {
 	// Compute instance OCID identifiers that are members of this group.
 	ComputeInstanceIds pulumi.StringArrayInput `pulumi:"computeInstanceIds"`
-	// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+	// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 	Query pulumi.StringInput `pulumi:"query"`
-	// Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	// Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 	Region pulumi.StringInput `pulumi:"region"`
 	// Defines the type of the instance selector for the group.
 	SelectorType pulumi.StringInput `pulumi:"selectorType"`
@@ -23052,12 +23052,12 @@ func (o GetDeployEnvironmentComputeInstanceGroupSelectorItemOutput) ComputeInsta
 	return o.ApplyT(func(v GetDeployEnvironmentComputeInstanceGroupSelectorItem) []string { return v.ComputeInstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 func (o GetDeployEnvironmentComputeInstanceGroupSelectorItemOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployEnvironmentComputeInstanceGroupSelectorItem) string { return v.Query }).(pulumi.StringOutput)
 }
 
-// Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+// Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 func (o GetDeployEnvironmentComputeInstanceGroupSelectorItemOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployEnvironmentComputeInstanceGroupSelectorItem) string { return v.Region }).(pulumi.StringOutput)
 }
@@ -23648,9 +23648,9 @@ func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroup
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem struct {
 	// Compute instance OCID identifiers that are members of this group.
 	ComputeInstanceIds []string `pulumi:"computeInstanceIds"`
-	// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+	// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 	Query string `pulumi:"query"`
-	// Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	// Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 	Region string `pulumi:"region"`
 	// Defines the type of the instance selector for the group.
 	SelectorType string `pulumi:"selectorType"`
@@ -23670,9 +23670,9 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSel
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArgs struct {
 	// Compute instance OCID identifiers that are members of this group.
 	ComputeInstanceIds pulumi.StringArrayInput `pulumi:"computeInstanceIds"`
-	// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+	// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 	Query pulumi.StringInput `pulumi:"query"`
-	// Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	// Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 	Region pulumi.StringInput `pulumi:"region"`
 	// Defines the type of the instance selector for the group.
 	SelectorType pulumi.StringInput `pulumi:"selectorType"`
@@ -23736,14 +23736,14 @@ func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroup
 	}).(pulumi.StringArrayOutput)
 }
 
-// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
 func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem) string {
 		return v.Query
 	}).(pulumi.StringOutput)
 }
 
-// Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+// Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
 func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem) string {
 		return v.Region

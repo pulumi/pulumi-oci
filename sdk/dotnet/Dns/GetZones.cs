@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets a list of all zones in the specified compartment. The collection
         /// can be filtered by name, time created, scope, associated view, and zone type.
-        /// Additionally, for Private DNS, the `scope` query parameter is required when 
+        /// Additionally, for Private DNS, the `scope` query parameter is required when
         /// listing private zones.
         /// 
         /// ## Example Usage
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets a list of all zones in the specified compartment. The collection
         /// can be filtered by name, time created, scope, associated view, and zone type.
-        /// Additionally, for Private DNS, the `scope` query parameter is required when 
+        /// Additionally, for Private DNS, the `scope` query parameter is required when
         /// listing private zones.
         /// 
         /// ## Example Usage
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.Dns
         public string? NameContains { get; set; }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null
         /// for zones in the global DNS and `PRIVATE` when listing private zones.
         /// </summary>
         [Input("scope")]
@@ -207,7 +207,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? NameContains { get; set; }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null
         /// for zones in the global DNS and `PRIVATE` when listing private zones.
         /// </summary>
         [Input("scope")]

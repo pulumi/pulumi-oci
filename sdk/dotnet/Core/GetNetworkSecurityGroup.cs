@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Core
         /// To list the security rules in an NSG, see
         /// [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -54,7 +53,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// To list the security rules in an NSG, see
         /// [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
-        /// 
         /// 
         /// ## Example Usage
         /// 

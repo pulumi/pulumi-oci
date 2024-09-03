@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// Returns a list of database systems.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Psql
         /// This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
         /// 
         /// Returns a list of database systems.
-        /// 
         /// 
         /// ## Example Usage
         /// 

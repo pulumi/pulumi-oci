@@ -36,14 +36,14 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityAr
     }
 
     /**
-     * (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+     * (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
     @Import(name="collaborativeActionThreshold")
     private @Nullable Output<Integer> collaborativeActionThreshold;
 
     /**
-     * @return (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+     * @return (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
     public Optional<Output<Integer>> collaborativeActionThreshold() {
@@ -161,7 +161,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityAr
         }
 
         /**
-         * @param collaborativeActionThreshold (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+         * @param collaborativeActionThreshold (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityAr
         }
 
         /**
-         * @param collaborativeActionThreshold (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+         * @param collaborativeActionThreshold (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
          * 
          * @return builder
          * 

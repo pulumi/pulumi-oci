@@ -14,9 +14,8 @@ namespace Pulumi.Oci.Secrets
         /// <summary>
         /// This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
         /// 
-        /// Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter. 
+        /// Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
         /// If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -45,9 +44,8 @@ namespace Pulumi.Oci.Secrets
         /// <summary>
         /// This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
         /// 
-        /// Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter. 
+        /// Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
         /// If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

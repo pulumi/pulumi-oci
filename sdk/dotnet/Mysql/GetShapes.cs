@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Mysql
         /// CPU cores and memory for VM shapes; CPU cores, memory and
         /// storage for non-VM (or bare metal) shapes.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Mysql
         /// The shape determines the resources allocated to the DB System:
         /// CPU cores and memory for VM shapes; CPU cores, memory and
         /// storage for non-VM (or bare metal) shapes.
-        /// 
         /// 
         /// ## Example Usage
         /// 

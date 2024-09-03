@@ -82,7 +82,6 @@ export class UserCapabilitiesManagement extends pulumi.CustomResource {
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -151,7 +150,6 @@ export interface UserCapabilitiesManagementState {
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -184,7 +182,6 @@ export interface UserCapabilitiesManagementArgs {
     canUseCustomerSecretKeys?: pulumi.Input<boolean>;
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

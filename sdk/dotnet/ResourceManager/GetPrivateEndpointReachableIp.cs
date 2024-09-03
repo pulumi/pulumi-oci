@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.ResourceManager
         /// This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
         /// 
         /// Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
-        /// 
         /// 
         /// ## Example Usage
         /// 

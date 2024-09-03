@@ -187,7 +187,6 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -362,7 +361,6 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -542,7 +540,6 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

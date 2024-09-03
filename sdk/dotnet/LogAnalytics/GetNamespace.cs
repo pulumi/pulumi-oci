@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
-        /// 
         /// 
         /// ## Example Usage
         /// 

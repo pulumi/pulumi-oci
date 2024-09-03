@@ -130,7 +130,7 @@ public final class GetConnectionResult {
      */
     private String displayName;
     /**
-     * @return Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
      * 
      */
     private String endpoint;
@@ -507,7 +507,7 @@ public final class GetConnectionResult {
         return this.displayName;
     }
     /**
-     * @return Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
      * 
      */
     public String endpoint() {

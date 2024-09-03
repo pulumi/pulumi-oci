@@ -128,7 +128,6 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -287,7 +286,6 @@ export interface SqlFirewallPolicyState {
     /**
      * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -348,7 +346,6 @@ export interface SqlFirewallPolicyArgs {
     violationAction?: pulumi.Input<string>;
     /**
      * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

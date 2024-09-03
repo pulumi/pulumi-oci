@@ -119,7 +119,6 @@ export class OccAvailabilityCatalog extends pulumi.CustomResource {
     /**
      * The OCID of the customer group.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -260,7 +259,6 @@ export interface OccAvailabilityCatalogState {
     /**
      * The OCID of the customer group.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -321,7 +319,6 @@ export interface OccAvailabilityCatalogArgs {
     namespace: pulumi.Input<string>;
     /**
      * The OCID of the customer group.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -11,6 +11,17 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Data Safe"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: DataSafe.getSecurityAssessmentFindings"
+// sidebar_current: "docs-oci-datasource-data_safe-security_assessment_findings"
+// description: |-
+//
+//	Provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service
+//
+// <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+//
+// # Data Source: DataSafe.getSecurityAssessmentFindings
 // This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
 //
 // List all the findings from all the targets in the specified compartment.

@@ -20,7 +20,7 @@ public final class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabil
      */
     private String actionName;
     /**
-     * @return The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+     * @return The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
     private Integer collaborativeActionThreshold;
@@ -54,7 +54,7 @@ public final class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabil
         return this.actionName;
     }
     /**
-     * @return The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+     * @return The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
     public Integer collaborativeActionThreshold() {

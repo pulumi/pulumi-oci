@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Database
         /// Gets the list of resource usage details for all the Cloud Autonomous Container Database
         /// in the specified Cloud Autonomous Exadata VM cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the list of resource usage details for all the Cloud Autonomous Container Database
         /// in the specified Cloud Autonomous Exadata VM cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

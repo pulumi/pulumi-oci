@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Retrieves an private endpoint using a `privateEndpointId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DataScience
         /// This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
         /// 
         /// Retrieves an private endpoint using a `privateEndpointId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

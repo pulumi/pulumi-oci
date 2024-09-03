@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Vm Cluster Patches in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
-        /// 
         /// 
         /// ## Example Usage
         /// 

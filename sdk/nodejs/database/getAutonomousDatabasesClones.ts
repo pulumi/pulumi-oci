@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Database"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabasesClones"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_databases_clones"
+ * description: |-
+ * Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.Database.getAutonomousDatabasesClones
  * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
  *
  * Lists the Autonomous Database clones for the specified Autonomous Database.
@@ -95,6 +104,15 @@ export interface GetAutonomousDatabasesClonesResult {
     readonly state?: string;
 }
 /**
+ * subcategory: "Database"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabasesClones"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_databases_clones"
+ * description: |-
+ * Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # Data Source: oci.Database.getAutonomousDatabasesClones
  * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
  *
  * Lists the Autonomous Database clones for the specified Autonomous Database.

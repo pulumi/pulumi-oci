@@ -96,8 +96,8 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-        /// *  value cannot contain `$`
-        /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// * value cannot contain `$`
+        /// * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// 
         /// Example: `example_prefix_value`
         /// </summary>
@@ -114,11 +114,11 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// Be sure to configure valid percent-encoding (URL encoding) when needed.
         /// 
         /// In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
-        /// *  {protocol} : The protocol from the incoming HTTP request URI.
-        /// *  {host}     : The domain name from the incoming HTTP request URI.
-        /// *  {port}     : The port from the incoming HTTP request URI.
-        /// *  {path}     : The path from the incoming HTTP request URI.
-        /// *  {query}    : The query string from the incoming HTTP request URI.
+        /// * {protocol} : The protocol from the incoming HTTP request URI.
+        /// * {host}     : The domain name from the incoming HTTP request URI.
+        /// * {port}     : The port from the incoming HTTP request URI.
+        /// * {path}     : The path from the incoming HTTP request URI.
+        /// * {query}    : The query string from the incoming HTTP request URI.
         /// 
         /// The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
         /// 
@@ -137,11 +137,11 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// (Updatable) The HTTP status code to return when the incoming request is redirected.
         /// 
         /// The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
-        /// *  301
-        /// *  302
-        /// *  303
-        /// *  307
-        /// *  308
+        /// * 301
+        /// * 302
+        /// * 303
+        /// * 307
+        /// * 308
         /// 
         /// The default value is `302` (Found).
         /// 
@@ -158,8 +158,8 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-        /// *  value cannot contain `$`
-        /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// * value cannot contain `$`
+        /// * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// 
         /// Example: `example_suffix_value`
         /// </summary>
@@ -168,8 +168,8 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
-        /// *  value cannot contain `$`
-        /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// * value cannot contain `$`
+        /// * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// 
         /// Example: `example_value`
         /// </summary>

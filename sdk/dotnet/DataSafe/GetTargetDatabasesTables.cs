@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns a list of table metadata objects.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Target Databases Tables in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Returns a list of table metadata objects.
-        /// 
         /// 
         /// ## Example Usage
         /// 

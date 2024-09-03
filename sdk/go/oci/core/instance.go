@@ -128,7 +128,7 @@ type Instance struct {
 	//
 	// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 	//
-	// For more information about iPXE, see http://ipxe.org.
+	// For more information about iPXE, see <http://ipxe.org>.
 	IpxeScript pulumi.StringOutput `pulumi:"ipxeScript"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode pulumi.BoolOutput `pulumi:"isCrossNumaNode"`
@@ -319,7 +319,7 @@ type instanceState struct {
 	//
 	// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 	//
-	// For more information about iPXE, see http://ipxe.org.
+	// For more information about iPXE, see <http://ipxe.org>.
 	IpxeScript *string `pulumi:"ipxeScript"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode *bool `pulumi:"isCrossNumaNode"`
@@ -475,7 +475,7 @@ type InstanceState struct {
 	//
 	// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 	//
-	// For more information about iPXE, see http://ipxe.org.
+	// For more information about iPXE, see <http://ipxe.org>.
 	IpxeScript pulumi.StringPtrInput
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode pulumi.BoolPtrInput
@@ -633,7 +633,7 @@ type instanceArgs struct {
 	//
 	// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 	//
-	// For more information about iPXE, see http://ipxe.org.
+	// For more information about iPXE, see <http://ipxe.org>.
 	IpxeScript *string `pulumi:"ipxeScript"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
 	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
@@ -768,7 +768,7 @@ type InstanceArgs struct {
 	//
 	// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 	//
-	// For more information about iPXE, see http://ipxe.org.
+	// For more information about iPXE, see <http://ipxe.org>.
 	IpxeScript pulumi.StringPtrInput
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput
@@ -1050,7 +1050,7 @@ func (o InstanceOutput) InstanceOptions() InstanceInstanceOptionsOutput {
 //
 // For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 //
-// For more information about iPXE, see http://ipxe.org.
+// For more information about iPXE, see <http://ipxe.org>.
 func (o InstanceOutput) IpxeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.IpxeScript }).(pulumi.StringOutput)
 }

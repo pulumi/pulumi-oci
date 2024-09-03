@@ -25,13 +25,13 @@ namespace Pulumi.Oci.DevOps.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+        /// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
         /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }
 
         /// <summary>
-        /// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        /// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }

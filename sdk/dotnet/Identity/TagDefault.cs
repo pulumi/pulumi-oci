@@ -100,8 +100,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
-        /// 
+        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -178,8 +177,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> TagDefinitionId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
-        /// 
+        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -242,8 +240,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
-        /// 
+        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -21,7 +21,6 @@ class ManagementStationSynchronizeMirrorsManagementArgs:
         :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of Software Source OCIDs to synchronize
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -46,7 +45,6 @@ class ManagementStationSynchronizeMirrorsManagementArgs:
         """
         List of Software Source OCIDs to synchronize
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -66,7 +64,6 @@ class _ManagementStationSynchronizeMirrorsManagementState:
         Input properties used for looking up and filtering ManagementStationSynchronizeMirrorsManagement resources.
         :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of Software Source OCIDs to synchronize
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -93,7 +90,6 @@ class _ManagementStationSynchronizeMirrorsManagementState:
     def software_source_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         List of Software Source OCIDs to synchronize
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -141,7 +137,6 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of Software Source OCIDs to synchronize
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +225,6 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
         :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of Software Source OCIDs to synchronize
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -255,7 +249,6 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
     def software_source_lists(self) -> pulumi.Output[Sequence[str]]:
         """
         List of Software Source OCIDs to synchronize
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// Gets a Compute Cloud@Customer upgrade schedule by the specified
         /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// Gets a Compute Cloud@Customer upgrade schedule by the specified
         /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

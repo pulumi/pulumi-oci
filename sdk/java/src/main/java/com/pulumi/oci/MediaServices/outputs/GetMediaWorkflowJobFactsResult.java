@@ -21,25 +21,9 @@ public final class GetMediaWorkflowJobFactsResult {
      * 
      */
     private String id;
-    /**
-     * @return System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
-     * 
-     */
     private @Nullable String key;
-    /**
-     * @return The list of media_workflow_job_fact_collection.
-     * 
-     */
     private List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections;
-    /**
-     * @return Reference to the parent job.
-     * 
-     */
     private String mediaWorkflowJobId;
-    /**
-     * @return The type of information contained in this detail.
-     * 
-     */
     private @Nullable String type;
 
     private GetMediaWorkflowJobFactsResult() {}
@@ -53,31 +37,15 @@ public final class GetMediaWorkflowJobFactsResult {
     public String id() {
         return this.id;
     }
-    /**
-     * @return System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
-     * 
-     */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
-    /**
-     * @return The list of media_workflow_job_fact_collection.
-     * 
-     */
     public List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections() {
         return this.mediaWorkflowJobFactCollections;
     }
-    /**
-     * @return Reference to the parent job.
-     * 
-     */
     public String mediaWorkflowJobId() {
         return this.mediaWorkflowJobId;
     }
-    /**
-     * @return The type of information contained in this detail.
-     * 
-     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }

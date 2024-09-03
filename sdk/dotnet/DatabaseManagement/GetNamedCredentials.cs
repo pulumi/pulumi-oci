@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets a single named credential specified by the name or all the named credentials in a specific compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets a single named credential specified by the name or all the named credentials in a specific compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -12,11 +12,19 @@ namespace Pulumi.Oci.OsManagementHub
     public static class GetErrata
     {
         /// <summary>
+        /// subcategory: "Os Management Hub"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.OsManagementHub.getErrata"
+        /// sidebar_current: "docs-oci-datasource-os_management_hub-errata"
+        /// description: |-
+        /// 	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.OsManagementHub.getErrata
         /// This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists all of the currently available errata. Filter the list against a variety of criteria including but not
         /// limited to its name, classification type, advisory severity, and OS family.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -48,11 +56,19 @@ namespace Pulumi.Oci.OsManagementHub
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetErrataResult>("oci:OsManagementHub/getErrata:getErrata", args ?? new GetErrataArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Os Management Hub"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.OsManagementHub.getErrata"
+        /// sidebar_current: "docs-oci-datasource-os_management_hub-errata"
+        /// description: |-
+        /// 	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+        /// &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+        /// 
+        /// # Data Source: oci.OsManagementHub.getErrata
         /// This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists all of the currently available errata. Filter the list against a variety of criteria including but not
         /// limited to its name, classification type, advisory severity, and OS family.
-        /// 
         /// 
         /// ## Example Usage
         /// 

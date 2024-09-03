@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns the list of available deployment versions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Returns the list of available deployment versions.
-        /// 
         /// 
         /// ## Example Usage
         /// 

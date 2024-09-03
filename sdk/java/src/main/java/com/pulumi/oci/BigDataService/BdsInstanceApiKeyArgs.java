@@ -32,14 +32,14 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+     * The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
      * 
      */
     @Import(name="defaultRegion")
     private @Nullable Output<String> defaultRegion;
 
     /**
-     * @return The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+     * @return The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
      * 
      */
     public Optional<Output<String>> defaultRegion() {
@@ -147,7 +147,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param defaultRegion The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+         * @param defaultRegion The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param defaultRegion The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+         * @param defaultRegion The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
          * 
          * @return builder
          * 

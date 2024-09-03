@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about a specified patch package.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets information about a specified patch package.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the public IP prefixes and their details for the specified
         /// public virtual circuit.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the public IP prefixes and their details for the specified
         /// public virtual circuit.
-        /// 
         /// 
         /// ## Example Usage
         /// 

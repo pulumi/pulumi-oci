@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -58,7 +57,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Sensitive Data Models Sensitive Columns in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

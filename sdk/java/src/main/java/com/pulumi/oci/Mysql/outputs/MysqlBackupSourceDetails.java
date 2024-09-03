@@ -16,7 +16,10 @@ public final class MysqlBackupSourceDetails {
      */
     private String backupId;
     /**
-     * @return (Updatable) The OCID of the compartment the backup exists in.
+     * @return The OCID of the compartment where DB system backup is to be copied to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String compartmentId;
@@ -35,7 +38,10 @@ public final class MysqlBackupSourceDetails {
         return this.backupId;
     }
     /**
-     * @return (Updatable) The OCID of the compartment the backup exists in.
+     * @return The OCID of the compartment where DB system backup is to be copied to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String compartmentId() {

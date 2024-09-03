@@ -20,7 +20,6 @@ class UnsetSecurityAssessmentBaselineManagementArgs:
         The set of arguments for constructing a UnsetSecurityAssessmentBaselineManagement resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID where the assessment resides.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
@@ -33,7 +32,6 @@ class UnsetSecurityAssessmentBaselineManagementArgs:
     def compartment_id(self) -> pulumi.Input[str]:
         """
         The compartment OCID where the assessment resides.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -66,7 +64,6 @@ class _UnsetSecurityAssessmentBaselineManagementState:
         Input properties used for looking up and filtering UnsetSecurityAssessmentBaselineManagement resources.
         :param pulumi.Input[str] compartment_id: The compartment OCID where the assessment resides.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
@@ -81,7 +78,6 @@ class _UnsetSecurityAssessmentBaselineManagementState:
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The compartment OCID where the assessment resides.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -140,7 +136,6 @@ class UnsetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID where the assessment resides.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -229,7 +224,6 @@ class UnsetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID where the assessment resides.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
@@ -247,7 +241,6 @@ class UnsetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
     def compartment_id(self) -> pulumi.Output[str]:
         """
         The compartment OCID where the assessment resides.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

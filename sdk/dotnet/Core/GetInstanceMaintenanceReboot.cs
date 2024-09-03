@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
         /// [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
         /// [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

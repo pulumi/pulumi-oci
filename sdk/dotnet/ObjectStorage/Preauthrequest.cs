@@ -116,8 +116,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-        /// 
+        /// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -214,8 +213,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? ObjectName { get; set; }
 
         /// <summary>
-        /// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-        /// 
+        /// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -298,8 +296,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-        /// 
+        /// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

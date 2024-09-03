@@ -55,7 +55,7 @@ export interface GetNamespaceIngestTimeRuleResult {
      */
     readonly actions: outputs.LogAnalytics.GetNamespaceIngestTimeRuleAction[];
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     readonly compartmentId: string;
     /**

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the details for the external DB system specified by `externalDbSystemId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the details for the external DB system specified by `externalDbSystemId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -133,6 +133,15 @@ def get_managed_databases(compartment_id: Optional[str] = None,
                           name: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesResult:
     """
+    subcategory: "Database Management"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_management_get_managed_databases"
+    sidebar_current: "docs-oci-datasource-database_management-managed_databases"
+    description: |-
+    Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: database_management_get_managed_databases
     This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
 
     Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
@@ -196,6 +205,15 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesResult]:
     """
+    subcategory: "Database Management"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_management_get_managed_databases"
+    sidebar_current: "docs-oci-datasource-database_management-managed_databases"
+    description: |-
+    Provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: database_management_get_managed_databases
     This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
 
     Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.

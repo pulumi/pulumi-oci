@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Mysql
         /// This data source provides details about a specific Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
         /// 
         /// Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
-        /// 
         /// 
         /// ## Example Usage
         /// 

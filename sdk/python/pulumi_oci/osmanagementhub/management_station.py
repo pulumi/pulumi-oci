@@ -37,7 +37,6 @@ class ManagementStationArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -157,7 +156,6 @@ class ManagementStationArgs:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -209,7 +207,6 @@ class _ManagementStationState:
         :param pulumi.Input[str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         :param pulumi.Input['ManagementStationProxyArgs'] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -445,7 +442,6 @@ class _ManagementStationState:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -574,7 +570,6 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
         :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -746,7 +741,6 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] scheduled_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
@@ -905,7 +899,6 @@ class ManagementStation(pulumi.CustomResource):
     def refresh_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

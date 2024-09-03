@@ -359,8 +359,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<int> VantagePointCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-        /// 
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -556,8 +555,7 @@ namespace Pulumi.Oci.ApmSynthetics
         private InputList<Inputs.ConfigVantagePointArgs>? _vantagePoints;
 
         /// <summary>
-        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-        /// 
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -748,8 +746,7 @@ namespace Pulumi.Oci.ApmSynthetics
         private InputList<Inputs.ConfigVantagePointGetArgs>? _vantagePoints;
 
         /// <summary>
-        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-        /// 
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -52,7 +52,7 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
      */
     public readonly action!: pulumi.Output<outputs.LogAnalytics.NamespaceScheduledTaskAction>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -99,7 +99,6 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
     /**
      * Task type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -113,7 +112,7 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
      */
     public /*out*/ readonly workRequestId!: pulumi.Output<string>;
 
@@ -199,7 +198,7 @@ export interface NamespaceScheduledTaskState {
      */
     action?: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskAction>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -246,7 +245,6 @@ export interface NamespaceScheduledTaskState {
     /**
      * Task type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -260,7 +258,7 @@ export interface NamespaceScheduledTaskState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
      */
     workRequestId?: pulumi.Input<string>;
 }
@@ -274,7 +272,7 @@ export interface NamespaceScheduledTaskArgs {
      */
     action: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskAction>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -307,7 +305,6 @@ export interface NamespaceScheduledTaskArgs {
     schedules: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskSchedules>;
     /**
      * Task type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

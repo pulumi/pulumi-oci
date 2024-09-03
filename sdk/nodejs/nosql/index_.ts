@@ -101,7 +101,6 @@ export class Index extends pulumi.CustomResource {
     /**
      * A table name within the compartment, or a table OCID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -191,7 +190,6 @@ export interface IndexState {
     /**
      * A table name within the compartment, or a table OCID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -220,7 +218,6 @@ export interface IndexArgs {
     name?: pulumi.Input<string>;
     /**
      * A table name within the compartment, or a table OCID.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

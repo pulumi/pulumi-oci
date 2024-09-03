@@ -63,7 +63,7 @@ type LookupNamespaceScheduledTaskArgs struct {
 type LookupNamespaceScheduledTaskResult struct {
 	// Action for scheduled task.
 	Actions []GetNamespaceScheduledTaskAction `pulumi:"actions"`
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -94,7 +94,7 @@ type LookupNamespaceScheduledTaskResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 	WorkRequestId string `pulumi:"workRequestId"`
 }
 
@@ -143,7 +143,7 @@ func (o LookupNamespaceScheduledTaskResultOutput) Actions() GetNamespaceSchedule
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) []GetNamespaceScheduledTaskAction { return v.Actions }).(GetNamespaceScheduledTaskActionArrayOutput)
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o LookupNamespaceScheduledTaskResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -222,7 +222,7 @@ func (o LookupNamespaceScheduledTaskResultOutput) TimeUpdated() pulumi.StringOut
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+// most recent Work Request Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) for the asynchronous request.
 func (o LookupNamespaceScheduledTaskResultOutput) WorkRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.WorkRequestId }).(pulumi.StringOutput)
 }

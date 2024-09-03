@@ -18,17 +18,9 @@ public final class GetMediaWorkflowJobFactsFilterArgs extends com.pulumi.resourc
 
     public static final GetMediaWorkflowJobFactsFilterArgs Empty = new GetMediaWorkflowJobFactsFilterArgs();
 
-    /**
-     * Unique name. It is read-only and generated for the fact.
-     * 
-     */
     @Import(name="name", required=true)
     private Output<String> name;
 
-    /**
-     * @return Unique name. It is read-only and generated for the fact.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
@@ -73,23 +65,11 @@ public final class GetMediaWorkflowJobFactsFilterArgs extends com.pulumi.resourc
             $ = new GetMediaWorkflowJobFactsFilterArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name Unique name. It is read-only and generated for the fact.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name Unique name. It is read-only and generated for the fact.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

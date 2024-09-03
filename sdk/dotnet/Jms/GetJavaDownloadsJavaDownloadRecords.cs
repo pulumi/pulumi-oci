@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Jms
         /// See [JavaReleases API](https://docs.cloud.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases)
         /// for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.Jms
         /// Returns a list of Java download records in a tenancy based on specified parameters.
         /// See [JavaReleases API](https://docs.cloud.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases)
         /// for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

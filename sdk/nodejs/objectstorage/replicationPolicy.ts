@@ -83,7 +83,6 @@ export class ReplicationPolicy extends pulumi.CustomResource {
     /**
      * The Object Storage namespace used for the request.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -185,7 +184,6 @@ export interface ReplicationPolicyState {
     /**
      * The Object Storage namespace used for the request.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -234,7 +232,6 @@ export interface ReplicationPolicyArgs {
     name?: pulumi.Input<string>;
     /**
      * The Object Storage namespace used for the request.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

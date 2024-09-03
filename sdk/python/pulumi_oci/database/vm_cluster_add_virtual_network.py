@@ -23,7 +23,6 @@ class VmClusterAddVirtualNetworkArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDbServerArgs']]] db_servers: The list of Exacc DB servers for the cluster to be added.
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -47,7 +46,6 @@ class VmClusterAddVirtualNetworkArgs:
     def vm_cluster_id(self) -> pulumi.Input[str]:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -120,7 +118,6 @@ class _VmClusterAddVirtualNetworkState:
         :param pulumi.Input[str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -512,7 +509,6 @@ class _VmClusterAddVirtualNetworkState:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -575,7 +571,6 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict']]]] db_servers: The list of Exacc DB servers for the cluster to be added.
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -746,7 +741,6 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1005,7 +999,6 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
     def vm_cluster_id(self) -> pulumi.Output[str]:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

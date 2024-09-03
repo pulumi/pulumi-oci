@@ -995,7 +995,6 @@ class ModelTrainingDatasetLocationDetails(dict):
         :param str namespace: Object storage namespace
         :param Sequence[str] object_names: Array of files which need to be processed in the bucket
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1033,7 +1032,6 @@ class ModelTrainingDatasetLocationDetails(dict):
     def object_names(self) -> Sequence[str]:
         """
         Array of files which need to be processed in the bucket
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

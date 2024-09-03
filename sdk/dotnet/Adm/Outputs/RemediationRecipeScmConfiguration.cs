@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly string? PatSecretId;
         /// <summary>
-        /// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+        /// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is &lt;https://gitlab.com/[groupName]/[repoName]&gt;
         /// </summary>
         public readonly string? RepositoryUrl;
         /// <summary>

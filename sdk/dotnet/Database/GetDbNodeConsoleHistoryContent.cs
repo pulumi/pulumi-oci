@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Retrieves the specified database node console history contents upto a megabyte.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Db Node Console History Content resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Retrieves the specified database node console history contents upto a megabyte.
-        /// 
         /// 
         /// ## Example Usage
         /// 

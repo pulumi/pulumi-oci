@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/lines"
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides details about a specific Repository File Line resource in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/lines"
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -19,7 +19,6 @@ class ManagedInstanceDetachProfileManagementArgs:
         The set of arguments for constructing a ManagedInstanceDetachProfileManagement resource.
         :param pulumi.Input[str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -30,7 +29,6 @@ class ManagedInstanceDetachProfileManagementArgs:
     def managed_instance_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -50,7 +48,6 @@ class _ManagedInstanceDetachProfileManagementState:
         Input properties used for looking up and filtering ManagedInstanceDetachProfileManagement resources.
         :param pulumi.Input[str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -62,7 +59,6 @@ class _ManagedInstanceDetachProfileManagementState:
     def managed_instance_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -107,7 +103,6 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,7 +184,6 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -205,7 +199,6 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
     def managed_instance_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

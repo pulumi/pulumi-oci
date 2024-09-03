@@ -4636,7 +4636,7 @@ class CloudVmClusterDataCollectionOptions(dict):
         """
         :param bool is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
         :param bool is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param bool is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        :param bool is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
@@ -4665,7 +4665,7 @@ class CloudVmClusterDataCollectionOptions(dict):
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[bool]:
         """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         return pulumi.get(self, "is_incident_logs_enabled")
 
@@ -5896,7 +5896,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetails(dict):
                * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
                * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5942,7 +5941,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetails(dict):
         The source of the Oracle Database software to be used for the upgrade.
         * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
         * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10696,7 +10694,6 @@ class KeyStoreTypeDetails(dict):
         :param str type: (Updatable) The type of key store.
         :param str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -10743,7 +10740,6 @@ class KeyStoreTypeDetails(dict):
     def vault_id(self) -> str:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10926,7 +10922,6 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
         """
         :param bool enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the pluggable database.
@@ -10946,7 +10941,6 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
     def enable_pluggabledatabasemanagement(self) -> bool:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -11053,7 +11047,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig(di
         """
         :param bool enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str management_status: The status of the Pluggable Database Management service.
@@ -11067,7 +11060,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig(di
     def enable_pluggabledatabasemanagement(self) -> bool:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12166,12 +12158,15 @@ class VmClusterNetworkVmNetwork(dict):
                  netmask: Optional[str] = None,
                  vlan_id: Optional[str] = None):
         """
-        :param str network_type: The network type.
-        :param Sequence['VmClusterNetworkVmNetworkNodeArgs'] nodes: The list of node details.
-        :param str domain_name: The network domain name.
-        :param str gateway: The network gateway.
-        :param str netmask: The network netmask.
-        :param str vlan_id: The network VLAN ID.
+        :param str network_type: (Updatable) The network type.
+        :param Sequence['VmClusterNetworkVmNetworkNodeArgs'] nodes: (Updatable) The list of node details.
+        :param str domain_name: (Updatable) The network domain name.
+        :param str gateway: (Updatable) The network gateway.
+        :param str netmask: (Updatable) The network netmask.
+        :param str vlan_id: (Updatable) The network VLAN ID.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "nodes", nodes)
@@ -12188,7 +12183,7 @@ class VmClusterNetworkVmNetwork(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> str:
         """
-        The network type.
+        (Updatable) The network type.
         """
         return pulumi.get(self, "network_type")
 
@@ -12196,7 +12191,7 @@ class VmClusterNetworkVmNetwork(dict):
     @pulumi.getter
     def nodes(self) -> Sequence['outputs.VmClusterNetworkVmNetworkNode']:
         """
-        The list of node details.
+        (Updatable) The list of node details.
         """
         return pulumi.get(self, "nodes")
 
@@ -12204,7 +12199,7 @@ class VmClusterNetworkVmNetwork(dict):
     @pulumi.getter(name="domainName")
     def domain_name(self) -> Optional[str]:
         """
-        The network domain name.
+        (Updatable) The network domain name.
         """
         return pulumi.get(self, "domain_name")
 
@@ -12212,7 +12207,7 @@ class VmClusterNetworkVmNetwork(dict):
     @pulumi.getter
     def gateway(self) -> Optional[str]:
         """
-        The network gateway.
+        (Updatable) The network gateway.
         """
         return pulumi.get(self, "gateway")
 
@@ -12220,7 +12215,7 @@ class VmClusterNetworkVmNetwork(dict):
     @pulumi.getter
     def netmask(self) -> Optional[str]:
         """
-        The network netmask.
+        (Updatable) The network netmask.
         """
         return pulumi.get(self, "netmask")
 
@@ -12228,7 +12223,10 @@ class VmClusterNetworkVmNetwork(dict):
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[str]:
         """
-        The network VLAN ID.
+        (Updatable) The network VLAN ID.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vlan_id")
 
@@ -12262,12 +12260,12 @@ class VmClusterNetworkVmNetworkNode(dict):
                  vip: Optional[str] = None,
                  vip_hostname: Optional[str] = None):
         """
-        :param str hostname: The node host name.
-        :param str ip: The node IP address.
-        :param str db_server_id: The Db server associated with the node.
-        :param str state: The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        :param str vip: The node virtual IP (VIP) address.
-        :param str vip_hostname: The node virtual IP (VIP) host name.
+        :param str hostname: (Updatable) The node host name.
+        :param str ip: (Updatable) The node IP address.
+        :param str db_server_id: (Updatable) The Db server associated with the node.
+        :param str state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        :param str vip: (Updatable) The node virtual IP (VIP) address.
+        :param str vip_hostname: (Updatable) The node virtual IP (VIP) host name.
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
@@ -12284,7 +12282,7 @@ class VmClusterNetworkVmNetworkNode(dict):
     @pulumi.getter
     def hostname(self) -> str:
         """
-        The node host name.
+        (Updatable) The node host name.
         """
         return pulumi.get(self, "hostname")
 
@@ -12292,7 +12290,7 @@ class VmClusterNetworkVmNetworkNode(dict):
     @pulumi.getter
     def ip(self) -> str:
         """
-        The node IP address.
+        (Updatable) The node IP address.
         """
         return pulumi.get(self, "ip")
 
@@ -12300,7 +12298,7 @@ class VmClusterNetworkVmNetworkNode(dict):
     @pulumi.getter(name="dbServerId")
     def db_server_id(self) -> Optional[str]:
         """
-        The Db server associated with the node.
+        (Updatable) The Db server associated with the node.
         """
         return pulumi.get(self, "db_server_id")
 
@@ -12308,7 +12306,7 @@ class VmClusterNetworkVmNetworkNode(dict):
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -12316,7 +12314,7 @@ class VmClusterNetworkVmNetworkNode(dict):
     @pulumi.getter
     def vip(self) -> Optional[str]:
         """
-        The node virtual IP (VIP) address.
+        (Updatable) The node virtual IP (VIP) address.
         """
         return pulumi.get(self, "vip")
 
@@ -12324,7 +12322,7 @@ class VmClusterNetworkVmNetworkNode(dict):
     @pulumi.getter(name="vipHostname")
     def vip_hostname(self) -> Optional[str]:
         """
-        The node virtual IP (VIP) host name.
+        (Updatable) The node virtual IP (VIP) host name.
         """
         return pulumi.get(self, "vip_hostname")
 
@@ -17287,7 +17285,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_lifecycle_details: KMS key lifecycle details.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
@@ -17321,7 +17319,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
-        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param str state: The current state of the Autonomous Database.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -17348,7 +17346,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
         pulumi.set(__self__, "admin_password", admin_password)
@@ -18024,7 +18022,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -18319,7 +18317,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyWhitelistedIps")
     def standby_whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "standby_whitelisted_ips")
 
@@ -18548,7 +18546,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -19607,7 +19605,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_lifecycle_details: KMS key lifecycle details.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
@@ -19639,7 +19637,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
-        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -19664,7 +19662,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
         pulumi.set(__self__, "allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
@@ -20267,7 +20265,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -20516,7 +20514,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyWhitelistedIps")
     def standby_whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "standby_whitelisted_ips")
 
@@ -20721,7 +20719,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -26148,7 +26146,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param bool is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
-        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param int max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
@@ -26464,7 +26462,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -37738,7 +37736,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         """
         :param int activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
         :param int additional_compute_count: The requested number of additional compute servers for the Exadata infrastructure.
-        :param str additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        :param str additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
         :param int additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param str admin_network_cidr: The CIDR block for the Exadata administration network.
         :param str availability_domain: The name of the availability domain that the Exadata infrastructure is located in.
@@ -37859,7 +37857,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
     @pulumi.getter(name="additionalComputeSystemModel")
     def additional_compute_system_model(self) -> str:
         """
-        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
         """
         return pulumi.get(self, "additional_compute_system_model")
 

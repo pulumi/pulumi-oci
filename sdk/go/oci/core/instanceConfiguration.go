@@ -12,6 +12,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Core"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: Core.InstanceConfiguration"
+// sidebar_current: "docs-oci-resource-core-instance_configuration"
+// description: |-
+// Provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service
+// <!-- yaml: line 7: could not find expected ':' -->
+//
+// # Core.InstanceConfiguration
 // This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
 //
 // Creates an instance configuration. An instance configuration is a template that defines the

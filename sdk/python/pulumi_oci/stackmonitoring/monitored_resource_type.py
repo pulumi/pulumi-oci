@@ -37,8 +37,7 @@ class MonitoredResourceTypeArgs:
         :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         :param pulumi.Input[str] resource_category: (Updatable) Resource Category to indicate the kind of resource type.
-        :param pulumi.Input[str] source_type: (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-               
+        :param pulumi.Input[str] source_type: (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -175,8 +174,7 @@ class MonitoredResourceTypeArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-
+        (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,8 +214,7 @@ class _MonitoredResourceTypeState:
         :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         :param pulumi.Input[str] resource_category: (Updatable) Resource Category to indicate the kind of resource type.
-        :param pulumi.Input[str] source_type: (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-               
+        :param pulumi.Input[str] source_type: (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,8 +364,7 @@ class _MonitoredResourceTypeState:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-
+        (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -501,8 +497,7 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         :param pulumi.Input[str] resource_category: (Updatable) Resource Category to indicate the kind of resource type.
-        :param pulumi.Input[str] source_type: (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-               
+        :param pulumi.Input[str] source_type: (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -649,8 +644,7 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         :param pulumi.Input[str] resource_category: (Updatable) Resource Category to indicate the kind of resource type.
-        :param pulumi.Input[str] source_type: (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-               
+        :param pulumi.Input[str] source_type: (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -755,8 +749,7 @@ class MonitoredResourceType(pulumi.CustomResource):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-
+        (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -14,9 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Profiles in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a 
+        /// Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a
         /// variety of criteria including but not limited to its name, status, vendor name, and architecture type.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -53,9 +52,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Profiles in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a 
+        /// Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a
         /// variety of criteria including but not limited to its name, status, vendor name, and architecture type.
-        /// 
         /// 
         /// ## Example Usage
         /// 

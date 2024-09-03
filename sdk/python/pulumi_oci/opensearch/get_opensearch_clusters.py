@@ -110,6 +110,15 @@ def get_opensearch_clusters(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpensearchClustersResult:
     """
+    subcategory: "Opensearch"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: opensearch_get_opensearch_clusters"
+    sidebar_current: "docs-oci-datasource-opensearch-opensearch_clusters"
+    description: |-
+    Provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: opensearch_get_opensearch_clusters
     This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
 
     Returns a list of OpensearchClusters.
@@ -120,8 +129,7 @@ def get_opensearch_clusters(compartment_id: Optional[str] = None,
 
     ##### {Compartment-Name} - Name of  your compartment
 
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+    For latest documentation on OpenSearch use please refer to <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm>Required permissions: <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm>
 
     ## Example Usage
 
@@ -167,6 +175,15 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchClustersResult]:
     """
+    subcategory: "Opensearch"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: opensearch_get_opensearch_clusters"
+    sidebar_current: "docs-oci-datasource-opensearch-opensearch_clusters"
+    description: |-
+    Provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: opensearch_get_opensearch_clusters
     This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
 
     Returns a list of OpensearchClusters.
@@ -177,8 +194,7 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ##### {Compartment-Name} - Name of  your compartment
 
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+    For latest documentation on OpenSearch use please refer to <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm>Required permissions: <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm>
 
     ## Example Usage
 

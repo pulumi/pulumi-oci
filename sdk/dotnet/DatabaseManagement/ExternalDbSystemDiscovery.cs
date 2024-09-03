@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// Creates an external DB system discovery resource and initiates the discovery process.
     /// 
-    ///   Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
+    /// Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
     /// 
     /// ## Import
     /// 

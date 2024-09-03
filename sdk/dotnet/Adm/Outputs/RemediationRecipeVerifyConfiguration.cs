@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly string? PipelineId;
         /// <summary>
-        /// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        /// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         /// </summary>
         public readonly string? RepositoryUrl;
         /// <summary>

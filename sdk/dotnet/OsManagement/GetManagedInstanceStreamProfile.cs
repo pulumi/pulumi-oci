@@ -39,7 +39,6 @@ namespace Pulumi.Oci.OsManagement
         /// When sorting by display name, the result set is sorted first by
         /// module name, then by stream name, and finally by profile name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -93,7 +92,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// When sorting by display name, the result set is sorted first by
         /// module name, then by stream name, and finally by profile name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

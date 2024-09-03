@@ -4663,6 +4663,15 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.AutonomousDatabase&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_database&#34;
+     * description: |-
+     * Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Database.AutonomousDatabase
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
      * Gets the details of the specified Autonomous Database.
@@ -4718,6 +4727,15 @@ public final class DatabaseFunctions {
         return getAutonomousDatabases(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.AutonomousDatabase&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_database&#34;
+     * description: |-
+     * Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Database.AutonomousDatabase
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
      * Gets the details of the specified Autonomous Database.
@@ -4773,6 +4791,15 @@ public final class DatabaseFunctions {
         return getAutonomousDatabasesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.AutonomousDatabase&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_database&#34;
+     * description: |-
+     * Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Database.AutonomousDatabase
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
      * Gets the details of the specified Autonomous Database.
@@ -4828,6 +4855,15 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.AutonomousDatabase&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_database&#34;
+     * description: |-
+     * Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Database.AutonomousDatabase
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
      * Gets the details of the specified Autonomous Database.
@@ -4883,6 +4919,15 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabasesClones&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases_clones&#34;
+     * description: |-
+     * Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabasesClones
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
      * Lists the Autonomous Database clones for the specified Autonomous Database.
@@ -4931,6 +4976,15 @@ public final class DatabaseFunctions {
         return getAutonomousDatabasesClones(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabasesClones&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases_clones&#34;
+     * description: |-
+     * Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabasesClones
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
      * Lists the Autonomous Database clones for the specified Autonomous Database.
@@ -4979,6 +5033,15 @@ public final class DatabaseFunctions {
         return getAutonomousDatabasesClonesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Database&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabasesClones&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases_clones&#34;
+     * description: |-
+     * Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabasesClones
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
      * Lists the Autonomous Database clones for the specified Autonomous Database.
@@ -5027,6 +5090,15 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", TypeShape.of(GetAutonomousDatabasesClonesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Database&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabasesClones&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases_clones&#34;
+     * description: |-
+     * Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabasesClones
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
      * Lists the Autonomous Database clones for the specified Autonomous Database.
@@ -5078,7 +5150,7 @@ public final class DatabaseFunctions {
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Autonomous Database Serverless (&lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html&gt;) databases.
      * 
      * ## Example Usage
      * 
@@ -5123,7 +5195,7 @@ public final class DatabaseFunctions {
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Autonomous Database Serverless (&lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html&gt;) databases.
      * 
      * ## Example Usage
      * 
@@ -5168,7 +5240,7 @@ public final class DatabaseFunctions {
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Autonomous Database Serverless (&lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html&gt;) databases.
      * 
      * ## Example Usage
      * 
@@ -5213,7 +5285,7 @@ public final class DatabaseFunctions {
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Autonomous Database Serverless (&lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html&gt;) databases.
      * 
      * ## Example Usage
      * 

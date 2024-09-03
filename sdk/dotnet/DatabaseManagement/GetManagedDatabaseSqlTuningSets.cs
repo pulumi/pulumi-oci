@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the SQL tuning sets for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the SQL tuning sets for the specified Managed Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

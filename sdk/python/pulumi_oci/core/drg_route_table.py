@@ -29,8 +29,7 @@ class DrgRouteTableArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] import_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         :param pulumi.Input[bool] is_ecmp_enabled: (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
-        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
-               
+        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,8 +124,7 @@ class DrgRouteTableArgs:
     @pulumi.getter(name="removeImportTrigger")
     def remove_import_trigger(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
-
+        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -160,8 +158,7 @@ class _DrgRouteTableState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] import_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         :param pulumi.Input[bool] is_ecmp_enabled: (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
-        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
-               
+        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,8 +274,7 @@ class _DrgRouteTableState:
     @pulumi.getter(name="removeImportTrigger")
     def remove_import_trigger(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
-
+        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -368,8 +364,7 @@ class DrgRouteTable(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] import_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         :param pulumi.Input[bool] is_ecmp_enabled: (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
-        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
-               
+        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -490,8 +485,7 @@ class DrgRouteTable(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] import_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         :param pulumi.Input[bool] is_ecmp_enabled: (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
-        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
-               
+        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -574,8 +568,7 @@ class DrgRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="removeImportTrigger")
     def remove_import_trigger(self) -> pulumi.Output[Optional[bool]]:
         """
-        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
-
+        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

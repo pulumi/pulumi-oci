@@ -12,6 +12,15 @@ namespace Pulumi.Oci.Database
     public static class GetAutonomousDatabases
     {
         /// <summary>
+        /// subcategory: "Database"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.AutonomousDatabase"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_database"
+        /// description: |-
+        /// Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.Database.AutonomousDatabase
         /// This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the details of the specified Autonomous Database.
@@ -20,6 +29,15 @@ namespace Pulumi.Oci.Database
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Database"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.AutonomousDatabase"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_database"
+        /// description: |-
+        /// Provides details about a specific Autonomous Database in Oracle Cloud Infrastructure Database service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.Database.AutonomousDatabase
         /// This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the details of the specified Autonomous Database.

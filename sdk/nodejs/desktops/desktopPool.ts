@@ -200,7 +200,6 @@ export class DesktopPool extends pulumi.CustomResource {
     /**
      * (Updatable) The stop time of the desktop pool.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -419,7 +418,6 @@ export interface DesktopPoolState {
     /**
      * (Updatable) The stop time of the desktop pool.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -512,7 +510,6 @@ export interface DesktopPoolArgs {
     timeStartScheduled?: pulumi.Input<string>;
     /**
      * (Updatable) The stop time of the desktop pool.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

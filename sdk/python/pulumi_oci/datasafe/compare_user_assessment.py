@@ -21,7 +21,6 @@ class CompareUserAssessmentArgs:
         :param pulumi.Input[str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -46,7 +45,6 @@ class CompareUserAssessmentArgs:
         """
         The OCID of the user assessment.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -66,7 +64,6 @@ class _CompareUserAssessmentState:
         Input properties used for looking up and filtering CompareUserAssessment resources.
         :param pulumi.Input[str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -93,7 +90,6 @@ class _CompareUserAssessmentState:
     def user_assessment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the user assessment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -142,7 +138,6 @@ class CompareUserAssessment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -232,7 +227,6 @@ class CompareUserAssessment(pulumi.CustomResource):
         :param pulumi.Input[str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -257,7 +251,6 @@ class CompareUserAssessment(pulumi.CustomResource):
     def user_assessment_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user assessment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

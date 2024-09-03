@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists the tag defaults for tag definitions in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Identity
         /// This data source provides the list of Tag Defaults in Oracle Cloud Infrastructure Identity service.
         /// 
         /// Lists the tag defaults for tag definitions in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

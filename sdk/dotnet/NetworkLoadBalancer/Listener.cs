@@ -100,8 +100,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<int> TcpIdleTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-        /// 
+        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -204,8 +203,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<int>? TcpIdleTimeout { get; set; }
 
         /// <summary>
-        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-        /// 
+        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -270,8 +268,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<int>? TcpIdleTimeout { get; set; }
 
         /// <summary>
-        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-        /// 
+        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

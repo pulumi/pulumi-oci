@@ -384,14 +384,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
      * 
      */
     @Import(name="endpoint")
     private @Nullable Output<String> endpoint;
 
     /**
-     * @return (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
      * 
      */
     public Optional<Output<String>> endpoint() {
@@ -650,14 +650,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
      * 
      */
     @Import(name="privateKeyFile")
     private @Nullable Output<String> privateKeyFile;
 
     /**
-     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
      * 
      */
     public Optional<Output<String>> privateKeyFile() {
@@ -695,14 +695,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
      * 
      */
     @Import(name="publicKeyFingerprint")
     private @Nullable Output<String> publicKeyFingerprint;
 
     /**
-     * @return (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * @return (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
      * 
      */
     public Optional<Output<String>> publicKeyFingerprint() {
@@ -1805,7 +1805,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoint (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+         * @param endpoint (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
          * 
          * @return builder
          * 
@@ -1816,7 +1816,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoint (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+         * @param endpoint (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
          * 
          * @return builder
          * 
@@ -2195,7 +2195,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKeyFile (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * @param privateKeyFile (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
          * 
          * @return builder
          * 
@@ -2206,7 +2206,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKeyFile (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * @param privateKeyFile (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
          * 
          * @return builder
          * 
@@ -2258,7 +2258,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKeyFingerprint (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * @param publicKeyFingerprint (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
          * 
          * @return builder
          * 
@@ -2269,7 +2269,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKeyFingerprint (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * @param publicKeyFingerprint (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
          * 
          * @return builder
          * 

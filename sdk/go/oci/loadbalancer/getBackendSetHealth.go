@@ -68,10 +68,10 @@ type GetBackendSetHealthResult struct {
 	Id             string `pulumi:"id"`
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// Overall health status of the backend set.
-	// *  **OK:** All backend servers in the backend set return a status of `OK`.
-	// *  **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
-	// *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
-	// *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
+	// * **OK:** All backend servers in the backend set return a status of `OK`.
+	// * **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
+	// * **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
+	// * **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
 	Status string `pulumi:"status"`
 	// The total number of backend servers in this backend set.  Example: `7`
 	TotalBackendCount int `pulumi:"totalBackendCount"`
@@ -140,10 +140,10 @@ func (o GetBackendSetHealthResultOutput) LoadBalancerId() pulumi.StringOutput {
 }
 
 // Overall health status of the backend set.
-// *  **OK:** All backend servers in the backend set return a status of `OK`.
-// *  **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
-// *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
-// *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
+// * **OK:** All backend servers in the backend set return a status of `OK`.
+// * **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
+// * **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
+// * **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
 func (o GetBackendSetHealthResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetHealthResult) string { return v.Status }).(pulumi.StringOutput)
 }

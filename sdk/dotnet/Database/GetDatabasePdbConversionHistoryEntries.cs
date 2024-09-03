@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
-        /// 
         /// 
         /// ## Example Usage
         /// 

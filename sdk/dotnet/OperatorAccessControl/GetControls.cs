@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// Lists the operator controls in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
         /// 
         /// Lists the operator controls in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

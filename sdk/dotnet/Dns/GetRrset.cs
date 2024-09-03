@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Dns
         /// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
         /// parameter is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.Dns
         /// private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
         /// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
         /// parameter is required.
-        /// 
         /// 
         /// ## Example Usage
         /// 

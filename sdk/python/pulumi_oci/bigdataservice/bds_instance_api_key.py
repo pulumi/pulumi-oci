@@ -26,10 +26,9 @@ class BdsInstanceApiKeyArgs:
         :param pulumi.Input[str] passphrase: Base64 passphrase used to secure the private key which will be created on user behalf.
         :param pulumi.Input[str] user_id: The OCID of the user for whom this new generated API key pair will be created.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "key_alias", key_alias)
@@ -80,7 +79,6 @@ class BdsInstanceApiKeyArgs:
         """
         The OCID of the user for whom this new generated API key pair will be created.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -94,7 +92,7 @@ class BdsInstanceApiKeyArgs:
     @pulumi.getter(name="defaultRegion")
     def default_region(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
         """
         return pulumi.get(self, "default_region")
 
@@ -119,7 +117,7 @@ class _BdsInstanceApiKeyState:
         """
         Input properties used for looking up and filtering BdsInstanceApiKey resources.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
         :param pulumi.Input[str] fingerprint: The fingerprint that corresponds to the public API key requested.
         :param pulumi.Input[str] key_alias: User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
         :param pulumi.Input[str] passphrase: Base64 passphrase used to secure the private key which will be created on user behalf.
@@ -128,7 +126,6 @@ class _BdsInstanceApiKeyState:
         :param pulumi.Input[str] tenant_id: The OCID of your tenancy.
         :param pulumi.Input[str] time_created: The time the API key was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[str] user_id: The OCID of the user for whom this new generated API key pair will be created.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -170,7 +167,7 @@ class _BdsInstanceApiKeyState:
     @pulumi.getter(name="defaultRegion")
     def default_region(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
         """
         return pulumi.get(self, "default_region")
 
@@ -268,7 +265,6 @@ class _BdsInstanceApiKeyState:
         """
         The OCID of the user for whom this new generated API key pair will be created.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -320,11 +316,10 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
         :param pulumi.Input[str] key_alias: User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
         :param pulumi.Input[str] passphrase: Base64 passphrase used to secure the private key which will be created on user behalf.
         :param pulumi.Input[str] user_id: The OCID of the user for whom this new generated API key pair will be created.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -439,7 +434,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
         :param pulumi.Input[str] fingerprint: The fingerprint that corresponds to the public API key requested.
         :param pulumi.Input[str] key_alias: User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
         :param pulumi.Input[str] passphrase: Base64 passphrase used to secure the private key which will be created on user behalf.
@@ -448,7 +443,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         :param pulumi.Input[str] tenant_id: The OCID of your tenancy.
         :param pulumi.Input[str] time_created: The time the API key was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[str] user_id: The OCID of the user for whom this new generated API key pair will be created.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -481,7 +475,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
     @pulumi.getter(name="defaultRegion")
     def default_region(self) -> pulumi.Output[str]:
         """
-        The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        The name of the region to establish the Object Storage endpoint. See <https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/> for additional information.
         """
         return pulumi.get(self, "default_region")
 
@@ -546,7 +540,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user for whom this new generated API key pair will be created.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

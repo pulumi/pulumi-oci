@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Bastion
         /// 
         /// Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Bastion
         /// This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
         /// 
         /// Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
-        /// 
         /// 
         /// ## Example Usage
         /// 

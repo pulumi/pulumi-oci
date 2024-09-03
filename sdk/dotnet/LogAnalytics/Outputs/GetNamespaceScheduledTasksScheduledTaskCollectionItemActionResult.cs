@@ -27,7 +27,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string PurgeCompartmentId;
         /// <summary>
-        /// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        /// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in &lt;https://en.wikipedia.org/wiki/ISO_8601#Durations&gt;. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         /// </summary>
         public readonly string PurgeDuration;
         /// <summary>

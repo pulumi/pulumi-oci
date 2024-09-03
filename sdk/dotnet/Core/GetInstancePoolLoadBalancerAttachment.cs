@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets information about a load balancer that is attached to the specified instance pool.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets information about a load balancer that is attached to the specified instance pool.
-        /// 
         /// 
         /// ## Example Usage
         /// 

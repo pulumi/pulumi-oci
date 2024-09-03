@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -186,7 +184,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespaceRulesResult
     {
         /// <summary>
-        /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

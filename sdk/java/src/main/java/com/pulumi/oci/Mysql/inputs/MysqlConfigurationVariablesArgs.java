@@ -397,14 +397,14 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     }
 
     /**
-     * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+     * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size&gt;)
      * 
      */
     @Import(name="innodbDdlBufferSize")
     private @Nullable Output<String> innodbDdlBufferSize;
 
     /**
-     * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+     * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size&gt;)
      * 
      */
     public Optional<Output<String>> innodbDdlBufferSize() {
@@ -412,14 +412,14 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     }
 
     /**
-     * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+     * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads&gt;)
      * 
      */
     @Import(name="innodbDdlThreads")
     private @Nullable Output<Integer> innodbDdlThreads;
 
     /**
-     * @return innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+     * @return innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads&gt;)
      * 
      */
     public Optional<Output<Integer>> innodbDdlThreads() {
@@ -1246,14 +1246,14 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     }
 
     /**
-     * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+     * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit&gt;)
      * 
      */
     @Import(name="regexpTimeLimit")
     private @Nullable Output<Integer> regexpTimeLimit;
 
     /**
-     * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+     * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit&gt;)
      * 
      */
     public Optional<Output<Integer>> regexpTimeLimit() {
@@ -2048,7 +2048,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param innodbDdlBufferSize innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         * @param innodbDdlBufferSize innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size&gt;)
          * 
          * @return builder
          * 
@@ -2059,7 +2059,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param innodbDdlBufferSize innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         * @param innodbDdlBufferSize innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size&gt;)
          * 
          * @return builder
          * 
@@ -2069,7 +2069,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param innodbDdlThreads innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         * @param innodbDdlThreads innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads&gt;)
          * 
          * @return builder
          * 
@@ -2080,7 +2080,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param innodbDdlThreads innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         * @param innodbDdlThreads innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads&gt;)
          * 
          * @return builder
          * 
@@ -3179,7 +3179,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param regexpTimeLimit regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         * @param regexpTimeLimit regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit&gt;)
          * 
          * @return builder
          * 
@@ -3190,7 +3190,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param regexpTimeLimit regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         * @param regexpTimeLimit regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit&gt;)
          * 
          * @return builder
          * 

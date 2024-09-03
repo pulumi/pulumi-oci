@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// Returns a list of dedicated vantage points.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
         /// 
         /// Returns a list of dedicated vantage points.
-        /// 
         /// 
         /// ## Example Usage
         /// 

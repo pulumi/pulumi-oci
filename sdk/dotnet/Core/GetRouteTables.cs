@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// The response includes the default route table that automatically comes with
         /// each VCN in the specified compartment, plus any route tables you've created.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Core
         /// If the VCN ID is not provided, then the list includes the route tables from all VCNs in the specified compartment.
         /// The response includes the default route table that automatically comes with
         /// each VCN in the specified compartment, plus any route tables you've created.
-        /// 
         /// 
         /// ## Example Usage
         /// 

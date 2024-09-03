@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
     public sealed class NamespaceScheduledTaskActionMetricExtractionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        /// (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

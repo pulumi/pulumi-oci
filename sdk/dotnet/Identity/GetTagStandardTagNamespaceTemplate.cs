@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Retrieve the standard tag namespace template given the standard tag namespace name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Identity
         /// This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.
         /// 
         /// Retrieve the standard tag namespace template given the standard tag namespace name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

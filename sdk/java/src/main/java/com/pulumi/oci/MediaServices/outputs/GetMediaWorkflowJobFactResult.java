@@ -10,42 +10,18 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMediaWorkflowJobFactResult {
-    /**
-     * @return The body of the detail captured as JSON.
-     * 
-     */
     private String detail;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     private String id;
-    /**
-     * @return System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
-     * 
-     */
     private String key;
-    /**
-     * @return Reference to the parent job.
-     * 
-     */
     private String mediaWorkflowJobId;
-    /**
-     * @return Unique name. It is read-only and generated for the fact.
-     * 
-     */
     private String name;
-    /**
-     * @return The type of information contained in this detail.
-     * 
-     */
     private String type;
 
     private GetMediaWorkflowJobFactResult() {}
-    /**
-     * @return The body of the detail captured as JSON.
-     * 
-     */
     public String detail() {
         return this.detail;
     }
@@ -56,31 +32,15 @@ public final class GetMediaWorkflowJobFactResult {
     public String id() {
         return this.id;
     }
-    /**
-     * @return System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
-     * 
-     */
     public String key() {
         return this.key;
     }
-    /**
-     * @return Reference to the parent job.
-     * 
-     */
     public String mediaWorkflowJobId() {
         return this.mediaWorkflowJobId;
     }
-    /**
-     * @return Unique name. It is read-only and generated for the fact.
-     * 
-     */
     public String name() {
         return this.name;
     }
-    /**
-     * @return The type of information contained in this detail.
-     * 
-     */
     public String type() {
         return this.type;
     }

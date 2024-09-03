@@ -25,8 +25,7 @@ class OdaPrivateEndpointScanProxyArgs:
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-               
+        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -76,8 +75,7 @@ class OdaPrivateEndpointScanProxyArgs:
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> pulumi.Input[str]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -103,8 +101,7 @@ class _OdaPrivateEndpointScanProxyState:
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-               
+        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,8 +161,7 @@ class _OdaPrivateEndpointScanProxyState:
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -249,8 +245,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-               
+        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -362,8 +357,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-               
+        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -410,8 +404,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> pulumi.Output[str]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

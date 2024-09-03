@@ -109,12 +109,11 @@ export class FilesystemSnapshotPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      *
-     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
+     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
      */
     public readonly schedules!: pulumi.Output<outputs.FileStorage.FilesystemSnapshotPolicySchedule[]>;
     /**
-     * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -201,12 +200,11 @@ export interface FilesystemSnapshotPolicyState {
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      *
-     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
+     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
      */
     schedules?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicySchedule>[]>;
     /**
-     * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -249,12 +247,11 @@ export interface FilesystemSnapshotPolicyArgs {
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      *
-     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
+     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
      */
     schedules?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicySchedule>[]>;
     /**
-     * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

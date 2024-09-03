@@ -487,7 +487,6 @@ class TableTableLimits(dict):
         :param int max_storage_in_gbs: (Updatable) Maximum size of storage used by the table.
         :param int max_write_units: (Updatable) Maximum sustained write throughput limit for the table.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
@@ -519,7 +518,6 @@ class TableTableLimits(dict):
     def max_write_units(self) -> int:
         """
         (Updatable) Maximum sustained write throughput limit for the table.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

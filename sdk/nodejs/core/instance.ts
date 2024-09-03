@@ -186,7 +186,7 @@ export class Instance extends pulumi.CustomResource {
      *
      * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
-     * For more information about iPXE, see http://ipxe.org.
+     * For more information about iPXE, see <http://ipxe.org>.
      */
     public readonly ipxeScript!: pulumi.Output<string>;
     /**
@@ -545,7 +545,7 @@ export interface InstanceState {
      *
      * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
-     * For more information about iPXE, see http://ipxe.org.
+     * For more information about iPXE, see <http://ipxe.org>.
      */
     ipxeScript?: pulumi.Input<string>;
     /**
@@ -788,7 +788,7 @@ export interface InstanceArgs {
      *
      * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
-     * For more information about iPXE, see http://ipxe.org.
+     * For more information about iPXE, see <http://ipxe.org>.
      */
     ipxeScript?: pulumi.Input<string>;
     /**

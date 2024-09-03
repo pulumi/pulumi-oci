@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the configuration list for the UI drop-down list of carbon emission console.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the configuration list for the UI drop-down list of carbon emission console.
-        /// 
         /// 
         /// ## Example Usage
         /// 

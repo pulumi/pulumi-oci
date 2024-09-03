@@ -55,8 +55,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -135,8 +134,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,8 +163,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

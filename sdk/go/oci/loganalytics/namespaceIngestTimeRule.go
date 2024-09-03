@@ -86,7 +86,7 @@ type NamespaceIngestTimeRule struct {
 
 	// (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
 	Actions NamespaceIngestTimeRuleActionArrayOutput `pulumi:"actions"`
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions NamespaceIngestTimeRuleConditionsOutput `pulumi:"conditions"`
@@ -161,7 +161,7 @@ func GetNamespaceIngestTimeRule(ctx *pulumi.Context,
 type namespaceIngestTimeRuleState struct {
 	// (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
 	Actions []NamespaceIngestTimeRuleAction `pulumi:"actions"`
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions *NamespaceIngestTimeRuleConditions `pulumi:"conditions"`
@@ -192,7 +192,7 @@ type namespaceIngestTimeRuleState struct {
 type NamespaceIngestTimeRuleState struct {
 	// (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
 	Actions NamespaceIngestTimeRuleActionArrayInput
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions NamespaceIngestTimeRuleConditionsPtrInput
@@ -227,7 +227,7 @@ func (NamespaceIngestTimeRuleState) ElementType() reflect.Type {
 type namespaceIngestTimeRuleArgs struct {
 	// (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
 	Actions []NamespaceIngestTimeRuleAction `pulumi:"actions"`
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions NamespaceIngestTimeRuleConditions `pulumi:"conditions"`
@@ -250,7 +250,7 @@ type namespaceIngestTimeRuleArgs struct {
 type NamespaceIngestTimeRuleArgs struct {
 	// (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
 	Actions NamespaceIngestTimeRuleActionArrayInput
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions NamespaceIngestTimeRuleConditionsInput
@@ -361,7 +361,7 @@ func (o NamespaceIngestTimeRuleOutput) Actions() NamespaceIngestTimeRuleActionAr
 	return o.ApplyT(func(v *NamespaceIngestTimeRule) NamespaceIngestTimeRuleActionArrayOutput { return v.Actions }).(NamespaceIngestTimeRuleActionArrayOutput)
 }
 
-// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o NamespaceIngestTimeRuleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

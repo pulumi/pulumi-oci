@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// Info for a specific Analytics instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Analytics
         /// This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
         /// 
         /// Info for a specific Analytics instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

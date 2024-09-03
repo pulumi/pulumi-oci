@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Identity
         /// [ListUserGroupMemberships](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships) and
         /// provide the group's OCID as a query parameter in the request.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Identity
         /// This operation does not return a list of all the users in the group. To do that, use
         /// [ListUserGroupMemberships](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships) and
         /// provide the group's OCID as a query parameter in the request.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -108,7 +108,6 @@ export class Endpoint extends pulumi.CustomResource {
     /**
      * The ID of the model that's used to create this endpoint.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -225,7 +224,6 @@ export interface EndpointState {
     /**
      * The ID of the model that's used to create this endpoint.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -282,7 +280,6 @@ export interface EndpointArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The ID of the model that's used to create this endpoint.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

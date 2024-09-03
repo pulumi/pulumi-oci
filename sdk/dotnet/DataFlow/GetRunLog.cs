@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves the content of an run log.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataFlow
         /// This data source provides details about a specific Run Log resource in Oracle Cloud Infrastructure Data Flow service.
         /// 
         /// Retrieves the content of an run log.
-        /// 
         /// 
         /// ## Example Usage
         /// 

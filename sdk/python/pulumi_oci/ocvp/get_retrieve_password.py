@@ -79,6 +79,15 @@ def get_retrieve_password(sddc_id: Optional[str] = None,
                           type: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRetrievePasswordResult:
     """
+    subcategory: "Oracle Cloud VMware Solution"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: ocvp_get_retrieve_password"
+    sidebar_current: "docs-oci-datasource-ocvp-retrieve_password"
+    description: |-
+    Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: ocvp_get_retrieve_password
     This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
     ## Example Usage
@@ -113,6 +122,15 @@ def get_retrieve_password_output(sddc_id: Optional[pulumi.Input[str]] = None,
                                  type: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRetrievePasswordResult]:
     """
+    subcategory: "Oracle Cloud VMware Solution"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: ocvp_get_retrieve_password"
+    sidebar_current: "docs-oci-datasource-ocvp-retrieve_password"
+    description: |-
+    Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: ocvp_get_retrieve_password
     This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
     ## Example Usage

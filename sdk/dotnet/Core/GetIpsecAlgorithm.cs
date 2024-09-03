@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// The parameters allowed for IKE IPSec tunnels.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// The parameters allowed for IKE IPSec tunnels.
-        /// 
         /// 
         /// ## Example Usage
         /// 

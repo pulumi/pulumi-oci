@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Lists all CA bundles that match the query parameters.
         /// Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all CA bundles that match the query parameters.
         /// Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
-        /// 
         /// 
         /// ## Example Usage
         /// 

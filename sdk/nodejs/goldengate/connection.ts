@@ -244,7 +244,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
      */
     public readonly endpoint!: pulumi.Output<string>;
     /**
@@ -323,7 +323,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly privateIp!: pulumi.Output<string>;
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
      */
     public readonly privateKeyFile!: pulumi.Output<string>;
     /**
@@ -335,7 +335,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly producerProperties!: pulumi.Output<string>;
     /**
-     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
      */
     public readonly publicKeyFingerprint!: pulumi.Output<string>;
     /**
@@ -475,7 +475,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly vaultId!: pulumi.Output<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -784,7 +784,7 @@ export interface ConnectionState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
      */
     endpoint?: pulumi.Input<string>;
     /**
@@ -863,7 +863,7 @@ export interface ConnectionState {
      */
     privateIp?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
      */
     privateKeyFile?: pulumi.Input<string>;
     /**
@@ -875,7 +875,7 @@ export interface ConnectionState {
      */
     producerProperties?: pulumi.Input<string>;
     /**
-     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
      */
     publicKeyFingerprint?: pulumi.Input<string>;
     /**
@@ -1015,7 +1015,7 @@ export interface ConnectionState {
      */
     vaultId?: pulumi.Input<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1124,7 +1124,7 @@ export interface ConnectionArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
      */
     endpoint?: pulumi.Input<string>;
     /**
@@ -1195,7 +1195,7 @@ export interface ConnectionArgs {
      */
     privateIp?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
      */
     privateKeyFile?: pulumi.Input<string>;
     /**
@@ -1207,7 +1207,7 @@ export interface ConnectionArgs {
      */
     producerProperties?: pulumi.Input<string>;
     /**
-     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
      */
     publicKeyFingerprint?: pulumi.Input<string>;
     /**
@@ -1331,7 +1331,7 @@ export interface ConnectionArgs {
      */
     vaultId?: pulumi.Input<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -24,7 +24,6 @@ class RepositorySettingArgs:
         The set of arguments for constructing a RepositorySetting resource.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['RepositorySettingApprovalRulesArgs'] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
@@ -44,7 +43,6 @@ class RepositorySettingArgs:
     def repository_id(self) -> pulumi.Input[str]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -106,7 +104,6 @@ class _RepositorySettingState:
         :param pulumi.Input['RepositorySettingMergeSettingsArgs'] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -160,7 +157,6 @@ class _RepositorySettingState:
     def repository_id(self) -> Optional[pulumi.Input[str]]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,7 +224,6 @@ class RepositorySetting(pulumi.CustomResource):
         :param pulumi.Input[Union['RepositorySettingMergeChecksArgs', 'RepositorySettingMergeChecksArgsDict']] merge_checks: (Updatable) Criteria which must be satisfied to merge a pull request.
         :param pulumi.Input[Union['RepositorySettingMergeSettingsArgs', 'RepositorySettingMergeSettingsArgsDict']] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -339,7 +334,6 @@ class RepositorySetting(pulumi.CustomResource):
         :param pulumi.Input[Union['RepositorySettingMergeSettingsArgs', 'RepositorySettingMergeSettingsArgsDict']] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -382,7 +376,6 @@ class RepositorySetting(pulumi.CustomResource):
     def repository_id(self) -> pulumi.Output[str]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

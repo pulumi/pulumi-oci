@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Gets the Cloud Advisor enrollment status.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Optimizer
         /// This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
         /// 
         /// Gets the Cloud Advisor enrollment status.
-        /// 
         /// 
         /// ## Example Usage
         /// 

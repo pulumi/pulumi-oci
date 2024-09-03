@@ -29,12 +29,6 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * 
      * Example of threshold alarm:
      * 
-     * ***
-     * 
-     * CPUUtilization[1m]{resourceId = &#34;MODEL_DEPLOYMENT_OCID&#34;}.grouping().mean() &lt; 25 CPUUtilization[1m]{resourceId = &#34;MODEL_DEPLOYMENT_OCID&#34;}.grouping().mean() &gt; 75
-     * 
-     * ***
-     * 
      */
     private @Nullable String query;
     /**
@@ -69,12 +63,6 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
      * 
      * Example of threshold alarm:
-     * 
-     * ***
-     * 
-     * CPUUtilization[1m]{resourceId = &#34;MODEL_DEPLOYMENT_OCID&#34;}.grouping().mean() &lt; 25 CPUUtilization[1m]{resourceId = &#34;MODEL_DEPLOYMENT_OCID&#34;}.grouping().mean() &gt; 75
-     * 
-     * ***
      * 
      */
     public Optional<String> query() {

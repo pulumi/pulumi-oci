@@ -17,7 +17,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists the software sources in the tenancy that contain the software package. Filter the list against a
         /// variety of criteria including but not limited to its name, type, architecture, and OS family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -54,7 +53,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists the software sources in the tenancy that contain the software package. Filter the list against a
         /// variety of criteria including but not limited to its name, type, architecture, and OS family.
-        /// 
         /// 
         /// ## Example Usage
         /// 

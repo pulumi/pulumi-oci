@@ -40,7 +40,6 @@ class JobArgs:
         :param pulumi.Input[str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
         :param pulumi.Input[str] artifact_content_length: The content length of the body.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -145,7 +144,6 @@ class JobArgs:
     def artifact_content_length(self) -> Optional[pulumi.Input[str]]:
         """
         The content length of the body.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -295,7 +293,6 @@ class _JobState:
         :param pulumi.Input[str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
         :param pulumi.Input[str] artifact_content_length: The content length of the body.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -378,7 +375,6 @@ class _JobState:
     def artifact_content_length(self) -> Optional[pulumi.Input[str]]:
         """
         The content length of the body.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -719,7 +715,6 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
         :param pulumi.Input[str] artifact_content_length: The content length of the body.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -925,7 +920,6 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
         :param pulumi.Input[str] artifact_content_length: The content length of the body.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -987,7 +981,6 @@ class Job(pulumi.CustomResource):
     def artifact_content_length(self) -> pulumi.Output[Optional[str]]:
         """
         The content length of the body.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -141,7 +141,7 @@ export class StorageObject extends pulumi.CustomResource {
      */
     public readonly source!: pulumi.Output<string | undefined>;
     /**
-     * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+     * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
      * Note: To enable object copy, you must authorize the service to manage objects on your behalf.
      */
     public readonly sourceUriDetails!: pulumi.Output<outputs.ObjectStorage.StorageObjectSourceUriDetails | undefined>;
@@ -291,7 +291,7 @@ export interface StorageObjectState {
      */
     source?: pulumi.Input<string>;
     /**
-     * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+     * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
      * Note: To enable object copy, you must authorize the service to manage objects on your behalf.
      */
     sourceUriDetails?: pulumi.Input<inputs.ObjectStorage.StorageObjectSourceUriDetails>;
@@ -368,7 +368,7 @@ export interface StorageObjectArgs {
      */
     source?: pulumi.Input<string>;
     /**
-     * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+     * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
      * Note: To enable object copy, you must authorize the service to manage objects on your behalf.
      */
     sourceUriDetails?: pulumi.Input<inputs.ObjectStorage.StorageObjectSourceUriDetails>;

@@ -119,8 +119,7 @@ export class DrPlan extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * The type of DR plan to be created. 
-     *
+     * The type of DR plan to be created.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -242,8 +241,7 @@ export interface DrPlanState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The type of DR plan to be created. 
-     *
+     * The type of DR plan to be created.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -272,8 +270,7 @@ export interface DrPlanArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The type of DR plan to be created. 
-     *
+     * The type of DR plan to be created.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

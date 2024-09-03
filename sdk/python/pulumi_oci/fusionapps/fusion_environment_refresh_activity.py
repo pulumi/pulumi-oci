@@ -23,7 +23,6 @@ class FusionEnvironmentRefreshActivityArgs:
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -47,7 +46,6 @@ class FusionEnvironmentRefreshActivityArgs:
     def source_fusion_environment_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -83,7 +81,6 @@ class _FusionEnvironmentRefreshActivityState:
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -195,7 +192,6 @@ class _FusionEnvironmentRefreshActivityState:
     def source_fusion_environment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -316,7 +312,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -430,7 +425,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the refreshActivity.
@@ -509,7 +503,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
     def source_fusion_environment_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -685,7 +685,6 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs:
         """
         :param pulumi.Input[bool] is_enabled: (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -697,7 +696,6 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs:
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -755,7 +753,6 @@ class FleetOperationLogArgs:
         :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -779,7 +776,6 @@ class FleetOperationLogArgs:
     def log_id(self) -> pulumi.Input[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

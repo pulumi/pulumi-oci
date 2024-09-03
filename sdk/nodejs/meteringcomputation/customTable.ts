@@ -82,7 +82,6 @@ export class CustomTable extends pulumi.CustomResource {
     /**
      * The associated saved report OCID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -139,7 +138,6 @@ export interface CustomTableState {
     /**
      * The associated saved report OCID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -160,7 +158,6 @@ export interface CustomTableArgs {
     savedCustomTable: pulumi.Input<inputs.MeteringComputation.CustomTableSavedCustomTable>;
     /**
      * The associated saved report OCID.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

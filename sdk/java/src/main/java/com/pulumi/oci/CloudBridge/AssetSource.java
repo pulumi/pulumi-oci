@@ -343,7 +343,7 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
         return this.type;
     }
     /**
-     * (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
+     * (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://&lt;host&gt;:&lt;port&gt;/sdk`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -353,7 +353,7 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
     private Output<String> vcenterEndpoint;
 
     /**
-     * @return (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
+     * @return (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://&lt;host&gt;:&lt;port&gt;/sdk`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiDocument
         /// 
         /// Returns a list of projects.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.AiDocument
         /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Document service.
         /// 
         /// Returns a list of projects.
-        /// 
         /// 
         /// ## Example Usage
         /// 

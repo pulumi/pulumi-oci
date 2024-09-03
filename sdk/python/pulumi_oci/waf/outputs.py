@@ -108,7 +108,7 @@ class AppFirewallPolicyAction(dict):
                  headers: Optional[Sequence['outputs.AppFirewallPolicyActionHeader']] = None):
         """
         :param str name: (Updatable) Action name. Can be used to reference the action.
-        :param str type: (Updatable) 
+        :param str type: (Updatable)
                * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
                * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
                * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
@@ -163,7 +163,7 @@ class AppFirewallPolicyAction(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) 
+        (Updatable)
         * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
         * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
         * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
@@ -666,7 +666,7 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapability(dict):
         :param str key: (Updatable) Unique key of referenced protection capability.
         :param int version: (Updatable) Version of referenced protection capability.
         :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        :param int collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         :param Sequence['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
         :param 'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs' exclusions: (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         """
@@ -709,7 +709,7 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapability(dict):
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> Optional[int]:
         """
-        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
@@ -1373,7 +1373,7 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapability(dict):
         :param str key: (Updatable) Unique key of referenced protection capability.
         :param int version: (Updatable) Version of referenced protection capability.
         :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        :param int collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         :param Sequence['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
         :param 'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs' exclusions: (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         """
@@ -1416,7 +1416,7 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapability(dict):
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> Optional[int]:
         """
-        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
@@ -1646,7 +1646,6 @@ class NetworkAddressListVcnAddress(dict):
         :param str addresses: (Updatable) A private IP address or CIDR IP address range.
         :param str vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1668,7 +1667,6 @@ class NetworkAddressListVcnAddress(dict):
     def vcn_id(self) -> Optional[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2972,7 +2970,7 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
                  version: int):
         """
         :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: Explicit weight values to use for associated collaborative protection capabilities.
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArgs'] exclusions: Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         :param str key: Unique key of referenced protection capability.
@@ -2997,7 +2995,7 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> int:
         """
-        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
@@ -3506,7 +3504,7 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
                  version: int):
         """
         :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: Explicit weight values to use for associated collaborative protection capabilities.
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArgs'] exclusions: Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         :param str key: Unique key of referenced protection capability.
@@ -3531,7 +3529,7 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> int:
         """
-        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
@@ -4071,7 +4069,7 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult(dic
                  version: int):
         """
         :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: Explicit weight values to use for associated collaborative protection capabilities.
         :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArgs'] exclusions: Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         :param str key: Unique key of referenced protection capability.
@@ -4096,7 +4094,7 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult(dic
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> int:
         """
-        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
@@ -4605,7 +4603,7 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult(di
                  version: int):
         """
         :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: Explicit weight values to use for associated collaborative protection capabilities.
         :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArgs'] exclusions: Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         :param str key: Unique key of referenced protection capability.
@@ -4630,7 +4628,7 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult(di
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> int:
         """
-        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 

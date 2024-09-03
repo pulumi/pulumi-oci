@@ -183,8 +183,8 @@ export class LoadBalancer extends pulumi.CustomResource {
      * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
      *
      * The benefits of using NSGs with the load balancer include:
-     * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-     * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+     * * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
      *
      * Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
      */
@@ -221,7 +221,6 @@ export class LoadBalancer extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -387,8 +386,8 @@ export interface LoadBalancerState {
      * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
      *
      * The benefits of using NSGs with the load balancer include:
-     * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-     * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+     * * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
      *
      * Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
      */
@@ -425,7 +424,6 @@ export interface LoadBalancerState {
     state?: pulumi.Input<string>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -511,8 +509,8 @@ export interface LoadBalancerArgs {
      * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
      *
      * The benefits of using NSGs with the load balancer include:
-     * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-     * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+     * * NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * * The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
      *
      * Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
      */
@@ -545,7 +543,6 @@ export interface LoadBalancerArgs {
     shapeDetails?: pulumi.Input<inputs.LoadBalancer.LoadBalancerShapeDetails>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

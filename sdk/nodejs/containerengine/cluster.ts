@@ -180,7 +180,6 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -321,7 +320,6 @@ export interface ClusterState {
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -378,7 +376,6 @@ export interface ClusterArgs {
     type?: pulumi.Input<string>;
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

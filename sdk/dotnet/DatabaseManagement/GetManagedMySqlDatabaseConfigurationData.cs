@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Retrieves Configuration Data for given MySQL Instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Retrieves Configuration Data for given MySQL Instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

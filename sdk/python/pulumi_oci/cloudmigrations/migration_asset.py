@@ -30,7 +30,6 @@ class MigrationAssetArgs:
         :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
         :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -101,7 +100,6 @@ class MigrationAssetArgs:
     def snap_shot_bucket_name(self) -> pulumi.Input[str]:
         """
         Name of snapshot bucket
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,7 +181,6 @@ class _MigrationAssetState:
         :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -383,7 +380,6 @@ class _MigrationAssetState:
         """
         Name of snapshot bucket
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -514,7 +510,6 @@ class MigrationAsset(pulumi.CustomResource):
         :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -650,7 +645,6 @@ class MigrationAsset(pulumi.CustomResource):
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
@@ -785,7 +779,6 @@ class MigrationAsset(pulumi.CustomResource):
     def snap_shot_bucket_name(self) -> pulumi.Output[str]:
         """
         Name of snapshot bucket
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -73,9 +73,9 @@ def get_importable_agent_entities(compartment_id: Optional[str] = None,
 
     Gets a list of agent entities available to add a new hostInsight.  An agent entity is "available"
     and will be shown if all the following conditions are true:
-       1.  The agent OCID is not already being used for an existing hostInsight.
-       2.  The agent availabilityStatus = 'ACTIVE'
-       3.  The agent lifecycleState = 'ACTIVE'
+    1. The agent OCID is not already being used for an existing hostInsight.
+    2. The agent availabilityStatus = 'ACTIVE'
+    3. The agent lifecycleState = 'ACTIVE'
 
     ## Example Usage
 
@@ -108,9 +108,9 @@ def get_importable_agent_entities_output(compartment_id: Optional[pulumi.Input[s
 
     Gets a list of agent entities available to add a new hostInsight.  An agent entity is "available"
     and will be shown if all the following conditions are true:
-       1.  The agent OCID is not already being used for an existing hostInsight.
-       2.  The agent availabilityStatus = 'ACTIVE'
-       3.  The agent lifecycleState = 'ACTIVE'
+    1. The agent OCID is not already being used for an existing hostInsight.
+    2. The agent availabilityStatus = 'ACTIVE'
+    3. The agent lifecycleState = 'ACTIVE'
 
     ## Example Usage
 

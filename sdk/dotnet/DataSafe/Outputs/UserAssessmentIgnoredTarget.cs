@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The OCID of the target database on which the user assessment is to be run.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified Exadata Database Storage Vaults in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets information about the specified Exadata Database Storage Vaults in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

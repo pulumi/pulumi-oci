@@ -927,7 +927,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
         :param pulumi.Input[str] namespace: Object storage namespace
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_names: Array of files which need to be processed in the bucket
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -977,7 +976,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
     def object_names(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         Array of files which need to be processed in the bucket
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

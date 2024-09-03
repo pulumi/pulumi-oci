@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// Returns the attributes of the Proxy such as proxy image version.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
         /// 
         /// Returns the attributes of the Proxy such as proxy image version.
-        /// 
         /// 
         /// ## Example Usage
         /// 

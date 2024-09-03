@@ -78,11 +78,11 @@ class GetBackendHealthResult:
     def status(self) -> str:
         """
         The general health status of the specified backend server.
-        *   **OK:**  All health check probes return `OK`
-        *   **WARNING:** At least one of the health check probes does not return `OK`
-        *   **CRITICAL:** None of the health check probes return `OK`. *
-        *   **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
-        *   or the system is unable to retrieve metrics at this time.
+        * **OK:**  All health check probes return `OK`
+        * **WARNING:** At least one of the health check probes does not return `OK`
+        * **CRITICAL:** None of the health check probes return `OK`. *
+        * **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
+        * or the system is unable to retrieve metrics at this time.
         """
         return pulumi.get(self, "status")
 

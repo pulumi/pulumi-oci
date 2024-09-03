@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Streaming
         /// If the stream pool id is specified, the action will be scoped to that stream pool.
         /// The compartment id and stream pool id cannot be specified at the same time.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.Streaming
         /// If the compartment id is specified, it will list streams in the compartment, regardless of their stream pool.
         /// If the stream pool id is specified, the action will be scoped to that stream pool.
         /// The compartment id and stream pool id cannot be specified at the same time.
-        /// 
         /// 
         /// ## Example Usage
         /// 

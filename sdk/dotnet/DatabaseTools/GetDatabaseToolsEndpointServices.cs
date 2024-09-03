@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// Returns a list of Database Tools endpoint services.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseTools
         /// This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
         /// 
         /// Returns a list of Database Tools endpoint services.
-        /// 
         /// 
         /// ## Example Usage
         /// 

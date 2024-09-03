@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// The routes advertised to the on-premises network and the routes received from the on-premises network.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
         /// 
         /// The routes advertised to the on-premises network and the routes received from the on-premises network.
-        /// 
         /// 
         /// ## Example Usage
         /// 

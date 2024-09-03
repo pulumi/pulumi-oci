@@ -146,7 +146,7 @@ namespace Pulumi.Oci.Database
         public Output<string> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+        /// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
         /// </summary>
         [Output("kmsKeyMigration")]
         public Output<bool?> KmsKeyMigration { get; private set; } = null!;
@@ -206,8 +206,7 @@ namespace Pulumi.Oci.Database
         public Output<string> SidPrefix { get; private set; } = null!;
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-        /// 
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -326,7 +325,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+        /// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
         /// </summary>
         [Input("kmsKeyMigration")]
         public Input<bool>? KmsKeyMigration { get; set; }
@@ -344,8 +343,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyVersionId { get; set; }
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-        /// 
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -516,7 +514,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+        /// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
         /// </summary>
         [Input("kmsKeyMigration")]
         public Input<bool>? KmsKeyMigration { get; set; }
@@ -576,8 +574,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? SidPrefix { get; set; }
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-        /// 
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

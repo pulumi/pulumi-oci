@@ -15,9 +15,8 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Policy Report Database Table Access Entries in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Retrieves a list of all database table access entries in Data Safe.
-        ///   
-        /// The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
         /// 
+        /// The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
         /// 
         /// ## Example Usage
         /// 
@@ -45,9 +44,8 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Policy Report Database Table Access Entries in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Retrieves a list of all database table access entries in Data Safe.
-        ///   
-        /// The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
         /// 
+        /// The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
         /// 
         /// ## Example Usage
         /// 

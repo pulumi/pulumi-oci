@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Mysql
         /// Get a list of DB Systems in the specified compartment.
         /// The default sort order is by timeUpdated, descending.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// Get a list of DB Systems in the specified compartment.
         /// The default sort order is by timeUpdated, descending.
-        /// 
         /// 
         /// ## Example Usage
         /// 

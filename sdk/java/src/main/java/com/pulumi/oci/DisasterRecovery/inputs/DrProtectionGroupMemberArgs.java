@@ -24,14 +24,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     public static final DrProtectionGroupMemberArgs Empty = new DrProtectionGroupMemberArgs();
 
     /**
-     * (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     * (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html&gt; for information about these clone types. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html&gt; for information about snapshot standby.
      * 
      */
     @Import(name="autonomousDatabaseStandbyTypeForDrDrills")
     private @Nullable Output<String> autonomousDatabaseStandbyTypeForDrDrills;
 
     /**
-     * @return (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     * @return (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html&gt; for information about these clone types. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html&gt; for information about snapshot standby.
      * 
      */
     public Optional<Output<String>> autonomousDatabaseStandbyTypeForDrDrills() {
@@ -84,14 +84,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+     * (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html&gt; for information about these service types.
      * 
      */
     @Import(name="connectionStringType")
     private @Nullable Output<String> connectionStringType;
 
     /**
-     * @return (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+     * @return (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html&gt; for information about these service types.
      * 
      */
     public Optional<Output<String>> connectionStringType() {
@@ -399,7 +399,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param autonomousDatabaseStandbyTypeForDrDrills (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+         * @param autonomousDatabaseStandbyTypeForDrDrills (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html&gt; for information about these clone types. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html&gt; for information about snapshot standby.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param autonomousDatabaseStandbyTypeForDrDrills (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+         * @param autonomousDatabaseStandbyTypeForDrDrills (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html&gt; for information about these clone types. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html&gt; for information about snapshot standby.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param connectionStringType (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+         * @param connectionStringType (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html&gt; for information about these service types.
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param connectionStringType (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+         * @param connectionStringType (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html&gt; for information about these service types.
          * 
          * @return builder
          * 

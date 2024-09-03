@@ -18,7 +18,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string BackupId;
         /// <summary>
-        /// (Updatable) The OCID of the compartment the backup exists in.
+        /// The OCID of the compartment where DB system backup is to be copied to.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

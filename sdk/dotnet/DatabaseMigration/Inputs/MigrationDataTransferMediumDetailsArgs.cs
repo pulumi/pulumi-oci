@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
     public sealed class MigrationDataTransferMediumDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        /// (Updatable) AWS access key credentials identifier Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
         /// </summary>
         [Input("accessKeyId")]
         public Input<string>? AccessKeyId { get; set; }
@@ -31,13 +31,13 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public Input<Inputs.MigrationDataTransferMediumDetailsObjectStorageBucketArgs>? ObjectStorageBucket { get; set; }
 
         /// <summary>
-        /// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        /// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: &lt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions&gt;
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        /// (Updatable) AWS secret access key credentials Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
         /// </summary>
         [Input("secretAccessKey")]
         public Input<string>? SecretAccessKey { get; set; }

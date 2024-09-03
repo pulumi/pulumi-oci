@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the databases in the specified Database Home.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of the databases in the specified Database Home.
-        /// 
         /// 
         /// ## Example Usage
         /// 

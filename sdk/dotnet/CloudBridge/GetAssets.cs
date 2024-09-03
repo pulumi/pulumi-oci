@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// Returns a list of assets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.CloudBridge
         /// This data source provides the list of Assets in Oracle Cloud Infrastructure Cloud Bridge service.
         /// 
         /// Returns a list of assets.
-        /// 
         /// 
         /// ## Example Usage
         /// 

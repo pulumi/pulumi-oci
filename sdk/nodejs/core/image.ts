@@ -178,7 +178,6 @@ export class Image extends pulumi.CustomResource {
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -324,7 +323,6 @@ export interface ImageState {
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -394,7 +392,6 @@ export interface ImageArgs {
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

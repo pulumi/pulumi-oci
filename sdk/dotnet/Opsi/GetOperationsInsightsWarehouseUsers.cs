@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Opsi
         /// This data source provides the list of Operations Insights Warehouse Users in Oracle Cloud Infrastructure Opsi service.
         /// 
         /// Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -180,8 +180,7 @@ namespace Pulumi.Oci.CloudBridge
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
-        /// 
+        /// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://&lt;host&gt;:&lt;port&gt;/sdk`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -338,8 +337,7 @@ namespace Pulumi.Oci.CloudBridge
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
-        /// 
+        /// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://&lt;host&gt;:&lt;port&gt;/sdk`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -482,8 +480,7 @@ namespace Pulumi.Oci.CloudBridge
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
-        /// 
+        /// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://&lt;host&gt;:&lt;port&gt;/sdk`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

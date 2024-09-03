@@ -13,32 +13,16 @@ public final class GetMediaWorkflowJobFactPlainArgs extends com.pulumi.resources
 
     public static final GetMediaWorkflowJobFactPlainArgs Empty = new GetMediaWorkflowJobFactPlainArgs();
 
-    /**
-     * Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-     * 
-     */
     @Import(name="key", required=true)
     private String key;
 
-    /**
-     * @return Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-     * 
-     */
     public String key() {
         return this.key;
     }
 
-    /**
-     * Unique MediaWorkflowJob identifier.
-     * 
-     */
     @Import(name="mediaWorkflowJobId", required=true)
     private String mediaWorkflowJobId;
 
-    /**
-     * @return Unique MediaWorkflowJob identifier.
-     * 
-     */
     public String mediaWorkflowJobId() {
         return this.mediaWorkflowJobId;
     }
@@ -68,23 +52,11 @@ public final class GetMediaWorkflowJobFactPlainArgs extends com.pulumi.resources
             $ = new GetMediaWorkflowJobFactPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param key Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(String key) {
             $.key = key;
             return this;
         }
 
-        /**
-         * @param mediaWorkflowJobId Unique MediaWorkflowJob identifier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
             $.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;

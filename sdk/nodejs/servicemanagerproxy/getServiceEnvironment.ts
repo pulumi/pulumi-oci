@@ -41,7 +41,7 @@ export interface GetServiceEnvironmentArgs {
      */
     compartmentId: string;
     /**
-     * The unique identifier associated with the service environment. 
+     * The unique identifier associated with the service environment.
      *
      * **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -112,7 +112,7 @@ export interface GetServiceEnvironmentOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The unique identifier associated with the service environment. 
+     * The unique identifier associated with the service environment.
      *
      * **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

@@ -23,7 +23,6 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs:
         The set of arguments for constructing a ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resource.
         :param pulumi.Input[bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
@@ -39,7 +38,6 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs:
     def enable_external_pluggable_dbm_feature(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -85,7 +83,6 @@ class _ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState:
         Input properties used for looking up and filtering ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resources.
         :param pulumi.Input[bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
@@ -103,7 +100,6 @@ class _ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState:
     def enable_external_pluggable_dbm_feature(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -156,7 +152,6 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +225,6 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
@@ -250,7 +244,6 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
     def enable_external_pluggable_dbm_feature(self) -> pulumi.Output[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

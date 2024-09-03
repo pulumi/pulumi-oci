@@ -35,7 +35,6 @@ class UsageCarbonEmissionArgs:
         :param pulumi.Input[bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
         :param pulumi.Input[str] usage_carbon_emission_filter: The filter object for query usage.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -143,7 +142,6 @@ class UsageCarbonEmissionArgs:
         """
         The filter object for query usage.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -177,7 +175,6 @@ class _UsageCarbonEmissionState:
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
         :param pulumi.Input[str] usage_carbon_emission_filter: The filter object for query usage.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -303,7 +300,6 @@ class _UsageCarbonEmissionState:
         """
         The filter object for query usage.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -372,7 +368,6 @@ class UsageCarbonEmission(pulumi.CustomResource):
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
         :param pulumi.Input[str] usage_carbon_emission_filter: The filter object for query usage.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -500,7 +495,6 @@ class UsageCarbonEmission(pulumi.CustomResource):
         :param pulumi.Input[str] time_usage_started: The usage start time.
         :param pulumi.Input[str] usage_carbon_emission_filter: The filter object for query usage.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -588,7 +582,6 @@ class UsageCarbonEmission(pulumi.CustomResource):
     def usage_carbon_emission_filter(self) -> pulumi.Output[str]:
         """
         The filter object for query usage.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

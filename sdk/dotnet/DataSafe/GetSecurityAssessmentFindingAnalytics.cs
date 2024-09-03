@@ -15,7 +15,7 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of findings aggregated details in the specified compartment. This provides information about the overall state
-        /// of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey, 
+        /// of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey,
         /// and as well as get the list of the targets that match the condition.
         /// This data is especially useful content for the statistic chart or to support analytics.
         /// 
@@ -24,7 +24,6 @@ namespace Pulumi.Oci.DataSafe
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -58,7 +57,7 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of findings aggregated details in the specified compartment. This provides information about the overall state
-        /// of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey, 
+        /// of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey,
         /// and as well as get the list of the targets that match the condition.
         /// This data is especially useful content for the statistic chart or to support analytics.
         /// 
@@ -67,7 +66,6 @@ namespace Pulumi.Oci.DataSafe
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

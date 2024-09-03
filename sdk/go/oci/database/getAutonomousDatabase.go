@@ -192,7 +192,7 @@ type LookupAutonomousDatabaseResult struct {
 	KmsKeyLifecycleDetails string `pulumi:"kmsKeyLifecycleDetails"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
-	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -265,7 +265,7 @@ type LookupAutonomousDatabaseResult struct {
 	SourceId string `pulumi:"sourceId"`
 	// **Deprecated** Autonomous Data Guard standby database details.
 	StandbyDbs []GetAutonomousDatabaseStandbyDb `pulumi:"standbyDbs"`
-	// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+	// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 	StandbyWhitelistedIps []string `pulumi:"standbyWhitelistedIps"`
 	// The current state of the Autonomous Database.
 	State string `pulumi:"state"`
@@ -322,7 +322,7 @@ type LookupAutonomousDatabaseResult struct {
 	UsedDataStorageSizeInTbs int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId string `pulumi:"vaultId"`
-	// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+	// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -708,7 +708,7 @@ func (o LookupAutonomousDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOut
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
 
-// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 func (o LookupAutonomousDatabaseResultOutput) LicenseModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LicenseModel }).(pulumi.StringOutput)
 }
@@ -908,7 +908,7 @@ func (o LookupAutonomousDatabaseResultOutput) StandbyDbs() GetAutonomousDatabase
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseStandbyDb { return v.StandbyDbs }).(GetAutonomousDatabaseStandbyDbArrayOutput)
 }
 
-// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 func (o LookupAutonomousDatabaseResultOutput) StandbyWhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []string { return v.StandbyWhitelistedIps }).(pulumi.StringArrayOutput)
 }
@@ -1055,7 +1055,7 @@ func (o LookupAutonomousDatabaseResultOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.VaultId }).(pulumi.StringOutput)
 }
 
-// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 func (o LookupAutonomousDatabaseResultOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }

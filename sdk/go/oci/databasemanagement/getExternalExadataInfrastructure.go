@@ -63,7 +63,7 @@ type LookupExternalExadataInfrastructureResult struct {
 	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+	// The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
 	DatabaseCompartments []string `pulumi:"databaseCompartments"`
 	// A list of DB systems.
 	DatabaseSystems []GetExternalExadataInfrastructureDatabaseSystem `pulumi:"databaseSystems"`
@@ -151,7 +151,7 @@ func (o LookupExternalExadataInfrastructureResultOutput) CompartmentId() pulumi.
 	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+// The list of [OCIDs] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartments.
 func (o LookupExternalExadataInfrastructureResultOutput) DatabaseCompartments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) []string { return v.DatabaseCompartments }).(pulumi.StringArrayOutput)
 }

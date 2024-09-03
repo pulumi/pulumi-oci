@@ -130,14 +130,14 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.applicationLogConfig;
     }
     /**
-     * (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See &lt;https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat&gt;.
      * 
      */
     @Export(name="archiveUri", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> archiveUri;
 
     /**
-     * @return (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See &lt;https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat&gt;.
      * 
      */
     public Output<Optional<String>> archiveUri() {
@@ -186,14 +186,14 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * (Updatable) The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     @Export(name="configuration", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> configuration;
 
     /**
-     * @return (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * @return (Updatable) The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     public Output<Map<String,String>> configuration() {
@@ -270,14 +270,14 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.driverShapeConfig;
     }
     /**
-     * (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+     * (Updatable) The input used for spark-submit command. For more details see &lt;https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit&gt;. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
     @Export(name="execute", refs={String.class}, tree="[0]")
     private Output<String> execute;
 
     /**
-     * @return (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+     * @return (Updatable) The input used for spark-submit command. For more details see &lt;https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit&gt;. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
     public Output<String> execute() {
@@ -312,14 +312,14 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.executorShapeConfig;
     }
     /**
-     * (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See &lt;https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat&gt;.
      * 
      */
     @Export(name="fileUri", refs={String.class}, tree="[0]")
     private Output<String> fileUri;
 
     /**
-     * @return (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See &lt;https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat&gt;.
      * 
      */
     public Output<String> fileUri() {
@@ -368,14 +368,14 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.language;
     }
     /**
-     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See &lt;https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat&gt;.
      * 
      */
     @Export(name="logsBucketUri", refs={String.class}, tree="[0]")
     private Output<String> logsBucketUri;
 
     /**
-     * @return (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See &lt;https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat&gt;.
      * 
      */
     public Output<String> logsBucketUri() {
@@ -564,7 +564,7 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.type;
     }
     /**
-     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See &lt;https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat&gt;.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -574,7 +574,7 @@ public class Application extends com.pulumi.resources.CustomResource {
     private Output<String> warehouseBucketUri;
 
     /**
-     * @return (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See &lt;https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat&gt;.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

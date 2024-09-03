@@ -27,7 +27,6 @@ class EncryptedDataArgs:
         :param pulumi.Input[str] key_id: The OCID of the key to encrypt with.
         :param pulumi.Input[str] plaintext: The plaintext data to encrypt.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
@@ -76,7 +75,6 @@ class EncryptedDataArgs:
     def plaintext(self) -> pulumi.Input[str]:
         """
         The plaintext data to encrypt.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -157,7 +155,6 @@ class _EncryptedDataState:
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to encrypt the ciphertext.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         :param pulumi.Input[str] plaintext: The plaintext data to encrypt.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -269,7 +266,6 @@ class _EncryptedDataState:
         """
         The plaintext data to encrypt.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -328,7 +324,6 @@ class EncryptedData(pulumi.CustomResource):
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to encrypt the ciphertext.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         :param pulumi.Input[str] plaintext: The plaintext data to encrypt.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -444,7 +439,6 @@ class EncryptedData(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         :param pulumi.Input[str] plaintext: The plaintext data to encrypt.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -523,7 +517,6 @@ class EncryptedData(pulumi.CustomResource):
     def plaintext(self) -> pulumi.Output[str]:
         """
         The plaintext data to encrypt.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

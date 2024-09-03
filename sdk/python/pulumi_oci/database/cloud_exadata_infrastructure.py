@@ -43,7 +43,6 @@ class CloudExadataInfrastructureArgs:
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -206,7 +205,6 @@ class CloudExadataInfrastructureArgs:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -289,7 +287,6 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -746,7 +743,6 @@ class _CloudExadataInfrastructureState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -878,7 +874,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1105,7 +1100,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1407,7 +1401,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     def subscription_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the patches applicable to the requested container database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the patches applicable to the requested container database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

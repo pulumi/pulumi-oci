@@ -104,7 +104,6 @@ export class NotificationTopic extends pulumi.CustomResource {
     /**
      * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -203,7 +202,6 @@ export interface NotificationTopicState {
     /**
      * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -248,7 +246,6 @@ export interface NotificationTopicArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

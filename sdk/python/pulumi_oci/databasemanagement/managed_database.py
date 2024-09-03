@@ -23,7 +23,6 @@ class ManagedDatabaseArgs:
         The set of arguments for constructing a ManagedDatabase resource.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -40,7 +39,6 @@ class ManagedDatabaseArgs:
     def managed_database_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,7 +116,6 @@ class _ManagedDatabaseState:
         :param pulumi.Input[bool] is_cluster: Indicates whether the Oracle Database is part of a cluster.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseManagedDatabaseGroupArgs']]] managed_database_groups: A list of Managed Database Groups that the Managed Database belongs to.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -349,7 +346,6 @@ class _ManagedDatabaseState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -471,7 +467,6 @@ class ManagedDatabase(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -600,7 +595,6 @@ class ManagedDatabase(pulumi.CustomResource):
         :param pulumi.Input[bool] is_cluster: Indicates whether the Oracle Database is part of a cluster.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseManagedDatabaseGroupArgs', 'ManagedDatabaseManagedDatabaseGroupArgsDict']]]] managed_database_groups: A list of Managed Database Groups that the Managed Database belongs to.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -757,7 +751,6 @@ class ManagedDatabase(pulumi.CustomResource):
     def managed_database_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

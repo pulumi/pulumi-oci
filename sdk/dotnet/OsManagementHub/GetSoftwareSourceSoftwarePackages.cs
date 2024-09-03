@@ -14,9 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists software packages in the specified software source.  Filter the list against a variety of criteria 
+        /// Lists software packages in the specified software source.  Filter the list against a variety of criteria
         /// including but not limited to its name.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -45,9 +44,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists software packages in the specified software source.  Filter the list against a variety of criteria 
+        /// Lists software packages in the specified software source.  Filter the list against a variety of criteria
         /// including but not limited to its name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
         /// 
         /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
-        /// 
         /// 
         /// ## Example Usage
         /// 

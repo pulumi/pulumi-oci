@@ -27,7 +27,6 @@ class RecommendationArgs:
                
                For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -67,7 +66,6 @@ class RecommendationArgs:
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
 
         For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,7 +115,6 @@ class _RecommendationState:
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
                
                For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -332,7 +329,6 @@ class _RecommendationState:
 
         For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -370,9 +366,9 @@ class Recommendation(pulumi.CustomResource):
         Updates the recommendation that corresponds to the specified OCID.
         Use this operation to implement the following actions:
 
-          * Postpone recommendation
-          * Dismiss recommendation
-          * Reactivate recommendation
+        * Postpone recommendation
+        * Dismiss recommendation
+        * Reactivate recommendation
 
         ## Import
 
@@ -390,7 +386,6 @@ class Recommendation(pulumi.CustomResource):
                
                For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -406,9 +401,9 @@ class Recommendation(pulumi.CustomResource):
         Updates the recommendation that corresponds to the specified OCID.
         Use this operation to implement the following actions:
 
-          * Postpone recommendation
-          * Dismiss recommendation
-          * Reactivate recommendation
+        * Postpone recommendation
+        * Dismiss recommendation
+        * Reactivate recommendation
 
         ## Import
 
@@ -515,7 +510,6 @@ class Recommendation(pulumi.CustomResource):
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
                
                For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -662,7 +656,6 @@ class Recommendation(pulumi.CustomResource):
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
 
         For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

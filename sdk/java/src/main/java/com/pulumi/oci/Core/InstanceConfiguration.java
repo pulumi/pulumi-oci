@@ -17,6 +17,15 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * subcategory: &#34;Core&#34;
+ * layout: &#34;oci&#34;
+ * page_title: &#34;Oracle Cloud Infrastructure: oci.Core.InstanceConfiguration&#34;
+ * sidebar_current: &#34;docs-oci-resource-core-instance_configuration&#34;
+ * description: |-
+ * Provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service
+ * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+ * 
+ * # oci.Core.InstanceConfiguration
  * This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
  * 
  * Creates an instance configuration. An instance configuration is a template that defines the

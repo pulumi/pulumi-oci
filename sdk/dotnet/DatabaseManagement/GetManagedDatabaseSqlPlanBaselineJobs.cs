@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

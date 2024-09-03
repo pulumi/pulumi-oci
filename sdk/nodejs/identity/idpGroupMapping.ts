@@ -76,7 +76,6 @@ export class IdpGroupMapping extends pulumi.CustomResource {
     /**
      * (Updatable) The name of the IdP group you want to map.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -157,7 +156,6 @@ export interface IdpGroupMappingState {
     /**
      * (Updatable) The name of the IdP group you want to map.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -190,7 +188,6 @@ export interface IdpGroupMappingArgs {
     identityProviderId: pulumi.Input<string>;
     /**
      * (Updatable) The name of the IdP group you want to map.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

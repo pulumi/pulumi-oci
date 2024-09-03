@@ -150,7 +150,7 @@ export namespace Adm {
          */
         patSecretId?: pulumi.Input<string>;
         /**
-         * (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+         * (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
          */
         repositoryUrl?: pulumi.Input<string>;
         /**
@@ -189,7 +189,7 @@ export namespace Adm {
          */
         pipelineId?: pulumi.Input<string>;
         /**
-         * (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         * (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
          */
         repositoryUrl?: pulumi.Input<string>;
         /**
@@ -243,7 +243,7 @@ export namespace Adm {
          */
         nodeId: pulumi.Input<string>;
         /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         * Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
          */
         purl?: pulumi.Input<string>;
     }
@@ -296,8 +296,7 @@ export namespace Adm {
          */
         object: pulumi.Input<string>;
         /**
-         * The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-         *
+         * The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -904,7 +903,6 @@ export namespace AiDocument {
         /**
          * The object name of the input data file.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -977,7 +975,6 @@ export namespace AiDocument {
         language?: pulumi.Input<string>;
         /**
          * The type of the processor.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1319,7 +1316,6 @@ export namespace AiLanguage {
         /**
          * Array of files which need to be processed in the bucket
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -1417,7 +1413,6 @@ export namespace AiVision {
         namespaceName?: pulumi.Input<string>;
         /**
          * The object name of the input data file.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2780,48 +2775,54 @@ export namespace ApiGateway {
 
     export interface DeploymentSpecificationRouteBackendRoutingBackendBackend {
         /**
-         * The body of the stock response from the mock backend.
+         * (Updatable) The body of the stock response from the mock backend.
          */
         body?: pulumi.Input<string>;
         /**
-         * Defines a timeout for establishing a connection with a proxied server.
+         * (Updatable) Defines a timeout for establishing a connection with a proxied server.
          */
         connectTimeoutInSeconds?: pulumi.Input<number>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
          */
         functionId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The headers of the stock response from the mock backend.
+         */
         headers?: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteBackendRoutingBackendBackendHeader>[]>;
         /**
-         * Defines whether or not to uphold SSL verification.
+         * (Updatable) Defines whether or not to uphold SSL verification.
          */
         isSslVerifyDisabled?: pulumi.Input<boolean>;
         /**
-         * Defines a timeout for reading a response from the proxied server.
+         * (Updatable) Defines a timeout for reading a response from the proxied server.
          */
         readTimeoutInSeconds?: pulumi.Input<number>;
         /**
-         * Defines a timeout for transmitting a request to the proxied server.
+         * (Updatable) Defines a timeout for transmitting a request to the proxied server.
          */
         sendTimeoutInSeconds?: pulumi.Input<number>;
         /**
-         * The status code of the stock response from the mock backend.
+         * (Updatable) The status code of the stock response from the mock backend.
          */
         status?: pulumi.Input<number>;
         /**
-         * Type of the Response Cache Store Policy.
+         * (Updatable) Type of the API backend.
          */
         type: pulumi.Input<string>;
+        /**
+         * (Updatable) The url of the proxied server.
+         */
         url?: pulumi.Input<string>;
     }
 
     export interface DeploymentSpecificationRouteBackendRoutingBackendBackendHeader {
         /**
-         * The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * (Updatable) Name of the header.
          */
         name?: pulumi.Input<string>;
         /**
-         * Value of the header.
+         * (Updatable) Value of the header.
          */
         value?: pulumi.Input<string>;
     }
@@ -3325,7 +3326,6 @@ export namespace ApiGateway {
         /**
          * (Updatable) Type of the Response Cache Store Policy.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -3686,8 +3686,7 @@ export namespace ApmConfig {
          */
         satisfiedResponseTime?: pulumi.Input<number>;
         /**
-         * (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
-         *
+         * (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4396,7 +4395,6 @@ export namespace ApmSynthetics {
         /**
          * (Updatable) Value of the parameter.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -4461,7 +4459,6 @@ export namespace Artifacts {
         content: pulumi.Input<string>;
         /**
          * (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4768,7 +4765,6 @@ export namespace Bastion {
         /**
          * The private IP address of the target resource that the session connects to.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -4819,7 +4815,6 @@ export namespace BigDataService {
         scheduleDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetailsScheduleDetail>[]>;
         /**
          * (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5303,6 +5298,9 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -5824,7 +5822,6 @@ export namespace Blockchain {
     export interface OsnOcpuAllocationParam {
         /**
          * (Updatable) Number of OCPU allocation
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7125,7 +7122,6 @@ export namespace CloudBridge {
         /**
          * (Updatable) VMware tools status.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -7422,7 +7418,6 @@ export namespace CloudGuard {
         /**
          * (Updatable) Enablement status of data source.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -7436,7 +7431,6 @@ export namespace CloudGuard {
         kind: pulumi.Input<string>;
         /**
          * (Updatable) Types of targets
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8859,7 +8853,6 @@ export namespace CloudGuard {
         /**
          * (Updatable) Unique identifier for target detector recipe
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -9200,7 +9193,6 @@ export namespace CloudMigrations {
         targetEnvironmentType: pulumi.Input<string>;
         /**
          * (Updatable) OCID of the VM configuration VCN.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -9939,7 +9931,7 @@ export namespace CloudMigrations {
          *
          * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
-         * For more information about iPXE, see http://ipxe.org.
+         * For more information about iPXE, see <http://ipxe.org>.
          */
         ipxeScript?: pulumi.Input<string>;
         /**
@@ -10164,8 +10156,7 @@ export namespace CloudMigrations {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-         *
+         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10740,7 +10731,7 @@ export namespace ContainerEngine {
         /**
          * Determines if the container will have access to the container instance resource principal.
          *
-         * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+         * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see <https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal>.
          */
         isResourcePrincipalDisabled?: pulumi.Input<boolean>;
         /**
@@ -10756,8 +10747,7 @@ export namespace ContainerEngine {
          */
         securityContext?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerSecurityContext>;
         /**
-         * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-         *
+         * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10936,7 +10926,7 @@ export namespace ContainerEngine {
          */
         nameservers?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+         * Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
          */
         options?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -11527,7 +11517,6 @@ export namespace ContainerEngine {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -11865,8 +11854,7 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-         *
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12094,7 +12082,6 @@ export namespace Core {
         /**
          * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -12143,8 +12130,7 @@ export namespace Core {
          */
         nvmes?: pulumi.Input<number>;
         /**
-         * The total number of OCPUs available to the instance. 
-         *
+         * The total number of OCPUs available to the instance.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12243,7 +12229,6 @@ export namespace Core {
         primaryKey?: pulumi.Input<inputs.Core.CrossConnectGroupMacsecPropertiesPrimaryKey>;
         /**
          * (Updatable) Indicates whether or not MACsec is enabled.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12425,7 +12410,7 @@ export namespace Core {
          */
         searchDomainNames?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) 
+         * (Updatable)
          * * **VcnLocal:** Reserved for future use.
          * * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
@@ -14097,7 +14082,7 @@ export namespace Core {
          */
         clusterPlacementGroupId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+         * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -14106,26 +14091,38 @@ export namespace Core {
         createVnicDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails>;
         /**
          * The OCID of the dedicated virtual machine host to place the instance on.
+         *
+         * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
          */
         dedicatedVmHostId?: pulumi.Input<string>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
          * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+         *
+         * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+         *
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
          */
         extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+         *
+         * If you do not specify the fault domain, the system selects one for you.
+         *
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         *
+         * Example: `FAULT-DOMAIN-1`
          */
         faultDomain?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -14134,10 +14131,20 @@ export namespace Core {
         instanceOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions>;
         /**
          * This is an advanced option.
+         *
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         *
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+         *
+         * The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         *
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         *
+         * For more information about iPXE, see <http://ipxe.org>.
          */
         ipxeScript?: pulumi.Input<string>;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
@@ -14154,10 +14161,38 @@ export namespace Core {
         launchOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions>;
         /**
          * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+         *
+         * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+         * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+         * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+         *
+         * **Providing Cloud-Init Metadata**
+         *
+         * You can use the following metadata key names to provide information to Cloud-Init:
+         *
+         * **"sshAuthorizedKeys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
+         *
+         * **"userData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         *
+         * **Metadata Example**
+         *
+         * "metadata" : { "quakeBotLevel" : "Severe", "sshAuthorizedKeys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "userData" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+         *
+         * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+         *
+         * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+         *
+         * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+         *
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
          */
         metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * The platform configuration requested for the instance.
+         * (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
+         *
+         * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          */
         platformConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig>;
         /**
@@ -14240,9 +14275,12 @@ export namespace Core {
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails {
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
         assignIpv6ip?: pulumi.Input<boolean>;
         /**
-         * Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
@@ -14250,21 +14288,24 @@ export namespace Core {
          */
         assignPublicIp?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         hostnameLabel?: pulumi.Input<string>;
+        /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
         ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
         /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -14285,7 +14326,13 @@ export namespace Core {
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+         */
         ipv6address?: pulumi.Input<string>;
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
         ipv6subnetCidr?: pulumi.Input<string>;
     }
 
@@ -14368,7 +14415,9 @@ export namespace Core {
          */
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         *
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
          */
         isSymmetricMultiThreadingEnabled?: pulumi.Input<boolean>;
         /**
@@ -15464,7 +15513,6 @@ export namespace Core {
         /**
          * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -16471,7 +16519,6 @@ export namespace Core {
          * - `UTC`
          * - `REGIONAL_DATA_CENTER_TIME`
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -16489,7 +16536,6 @@ export namespace Core {
         region: pulumi.Input<string>;
         /**
          * The OCID of the source volume backup.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -16523,8 +16569,6 @@ export namespace Core {
         region: pulumi.Input<string>;
         /**
          * The OCID of the source volume group backup.
-         *
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -20081,7 +20125,6 @@ export namespace DataSafe {
         /**
          * Indicates whether the privileged user list is managed by Data Safe.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -20344,7 +20387,6 @@ export namespace DataSafe {
         schemaName: pulumi.Input<string>;
         /**
          * This contains an optional list of the table names.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -21435,7 +21477,6 @@ export namespace DataSafe {
         /**
          * (Updatable) Additional scim filters used to get the specific summary.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -22030,7 +22071,6 @@ export namespace DataSafe {
         /**
          * (Updatable) Base64 encoded string of trust store file content.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -22057,7 +22097,6 @@ export namespace DataSafe {
         /**
          * (Updatable) Base64 encoded string of trust store file content.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -22068,7 +22107,6 @@ export namespace DataSafe {
         lifecycleState?: pulumi.Input<string>;
         /**
          * The OCID of the target database on which the user assessment is to be run.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -22830,12 +22868,6 @@ export namespace DataScience {
          * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
          *
          * Example of threshold alarm:
-         *
-         * -----
-         *
-         * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-         *
-         * -----
          */
         query?: pulumi.Input<string>;
         /**
@@ -22863,12 +22895,6 @@ export namespace DataScience {
          * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
          *
          * Example of threshold alarm:
-         *
-         * -----
-         *
-         * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-         *
-         * -----
          */
         query?: pulumi.Input<string>;
         /**
@@ -23291,7 +23317,6 @@ export namespace DataScience {
         stepName: pulumi.Input<string>;
         /**
          * (Updatable) The type of step.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -24457,7 +24482,7 @@ export namespace Database {
          */
         isHealthMonitoringEnabled?: pulumi.Input<boolean>;
         /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
          */
         isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
@@ -24782,7 +24807,6 @@ export namespace Database {
          * The source of the Oracle Database software to be used for the upgrade.
          * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
          * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -27011,7 +27035,6 @@ export namespace Database {
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -27060,7 +27083,6 @@ export namespace Database {
         /**
          * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -27089,7 +27111,6 @@ export namespace Database {
     export interface PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig {
         /**
          * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -27343,54 +27364,57 @@ export namespace Database {
 
     export interface VmClusterNetworkVmNetwork {
         /**
-         * The network domain name.
+         * (Updatable) The network domain name.
          */
         domainName?: pulumi.Input<string>;
         /**
-         * The network gateway.
+         * (Updatable) The network gateway.
          */
         gateway?: pulumi.Input<string>;
         /**
-         * The network netmask.
+         * (Updatable) The network netmask.
          */
         netmask?: pulumi.Input<string>;
         /**
-         * The network type.
+         * (Updatable) The network type.
          */
         networkType: pulumi.Input<string>;
         /**
-         * The list of node details.
+         * (Updatable) The list of node details.
          */
         nodes: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkVmNetworkNode>[]>;
         /**
-         * The network VLAN ID.
+         * (Updatable) The network VLAN ID.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vlanId?: pulumi.Input<string>;
     }
 
     export interface VmClusterNetworkVmNetworkNode {
         /**
-         * The Db server associated with the node.
+         * (Updatable) The Db server associated with the node.
          */
         dbServerId?: pulumi.Input<string>;
         /**
-         * The node host name.
+         * (Updatable) The node host name.
          */
         hostname: pulumi.Input<string>;
         /**
-         * The node IP address.
+         * (Updatable) The node IP address.
          */
         ip: pulumi.Input<string>;
         /**
-         * The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+         * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
          */
         state?: pulumi.Input<string>;
         /**
-         * The node virtual IP (VIP) address.
+         * (Updatable) The node virtual IP (VIP) address.
          */
         vip?: pulumi.Input<string>;
         /**
-         * The node virtual IP (VIP) host name.
+         * (Updatable) The node virtual IP (VIP) host name.
          */
         vipHostname?: pulumi.Input<string>;
     }
@@ -28565,8 +28589,7 @@ export namespace DatabaseManagement {
          */
         selection: pulumi.Input<string>;
         /**
-         * (Updatable) 
-         *
+         * (Updatable)
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -28684,7 +28707,6 @@ export namespace DatabaseManagement {
         isEnabled: pulumi.Input<boolean>;
         /**
          * The associated service-specific inputs in JSON string format, which Database Management can identify.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -28835,8 +28857,7 @@ export namespace DatabaseManagement {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
-         *
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -28934,8 +28955,7 @@ export namespace DatabaseManagement {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
-         *
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -30055,8 +30075,7 @@ export namespace DatabaseManagement {
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
-         *
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -30561,7 +30580,7 @@ export namespace DatabaseMigration {
 
     export interface MigrationDataTransferMediumDetails {
         /**
-         * (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * (Updatable) AWS access key credentials identifier Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
          */
         accessKeyId?: pulumi.Input<string>;
         /**
@@ -30573,11 +30592,11 @@ export namespace DatabaseMigration {
          */
         objectStorageBucket?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsObjectStorageBucket>;
         /**
-         * (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         * (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions>
          */
         region?: pulumi.Input<string>;
         /**
-         * (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * (Updatable) AWS secret access key credentials Details: <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
          */
         secretAccessKey?: pulumi.Input<string>;
         /**
@@ -31045,7 +31064,6 @@ export namespace DatabaseTools {
         secretId: pulumi.Input<string>;
         /**
          * (Updatable) The value type of the user password.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -31574,7 +31592,6 @@ export namespace DevOps {
         /**
          * (Updatable) Wait criteria type.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -31958,11 +31975,11 @@ export namespace DevOps {
          */
         computeInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+         * (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
          */
         query?: pulumi.Input<string>;
         /**
-         * (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+         * (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
          */
         region?: pulumi.Input<string>;
         /**
@@ -32360,7 +32377,6 @@ export namespace DevOps {
         /**
          * (Updatable) Wait criteria type.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -32505,7 +32521,7 @@ export namespace DevOps {
         name?: pulumi.Input<string>;
         /**
          * value of the argument.
-         * *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+         * * To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
          */
         value?: pulumi.Input<string>;
     }
@@ -32817,7 +32833,6 @@ export namespace DevOps {
         /**
          * (Updatable) The topic ID for notifications.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -32996,7 +33011,6 @@ export namespace DevOps {
         include?: pulumi.Input<inputs.DevOps.TriggerActionFilterInclude>;
         /**
          * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -33191,8 +33205,7 @@ export namespace DisasterRecovery {
          */
         steps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanPlanGroupStep>[]>;
         /**
-         * The type of DR plan to be created. 
-         *
+         * The type of DR plan to be created.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -33230,8 +33243,7 @@ export namespace DisasterRecovery {
          */
         timeout?: pulumi.Input<number>;
         /**
-         * The type of DR plan to be created. 
-         *
+         * The type of DR plan to be created.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -33329,7 +33341,7 @@ export namespace DisasterRecovery {
 
     export interface DrProtectionGroupMember {
         /**
-         * (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+         * (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
          */
         autonomousDatabaseStandbyTypeForDrDrills?: pulumi.Input<string>;
         /**
@@ -33345,7 +33357,7 @@ export namespace DisasterRecovery {
          */
         bucket?: pulumi.Input<string>;
         /**
-         * (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+         * (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
          */
         connectionStringType?: pulumi.Input<string>;
         /**
@@ -34466,8 +34478,7 @@ export namespace Functions {
          */
         domainId?: pulumi.Input<string>;
         /**
-         * (Updatable) Define if tracing is enabled for the resource. 
-         *
+         * (Updatable) Define if tracing is enabled for the resource.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -34499,8 +34510,7 @@ export namespace Functions {
 
     export interface FunctionTraceConfig {
         /**
-         * (Updatable) Define if tracing is enabled for the resource. 
-         *
+         * (Updatable) Define if tracing is enabled for the resource.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -34701,7 +34711,6 @@ export namespace FusionApps {
         /**
          * The username for the administrator.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -34814,8 +34823,7 @@ export namespace FusionApps {
          */
         conditions: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRuleCondition>[]>;
         /**
-         * (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
-         *
+         * (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -34904,7 +34912,7 @@ export namespace GenerativeAi {
          */
         trainingConfig?: pulumi.Input<inputs.GenerativeAi.ModelFineTuneDetailsTrainingConfig>;
         /**
-         * The dataset used to fine-tune the model. 
+         * The dataset used to fine-tune the model.
          *
          * Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
          */
@@ -34925,7 +34933,7 @@ export namespace GenerativeAi {
          */
         learningRate?: pulumi.Input<number>;
         /**
-         * Determines how frequently to log model metrics. 
+         * Determines how frequently to log model metrics.
          *
          * Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
          */
@@ -35452,7 +35460,6 @@ export namespace Identity {
         isUsernameContainmentAllowed?: pulumi.Input<boolean>;
         /**
          * (Updatable) Minimum password length required.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -36058,7 +36065,6 @@ export namespace Identity {
          * * returned: always
          * * type: string
          * * uniqueness: none
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -40957,7 +40963,6 @@ export namespace Identity {
          * * type: string
          * * uniqueness: none
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -42368,7 +42373,6 @@ export namespace Identity {
          * * returned: always
          * * type: string
          * * uniqueness: none
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -44248,7 +44252,6 @@ export namespace Identity {
          * * type: string
          * * uniqueness: none
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -44869,7 +44872,6 @@ export namespace Identity {
          * * returned: default
          * * type: string
          * * uniqueness: none
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -45544,7 +45546,6 @@ export namespace Identity {
          * * type: string
          * * uniqueness: none
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -46004,7 +46005,6 @@ export namespace Identity {
          * * type: binary
          * * mutability: readOnly
          * * returned: request
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -47741,7 +47741,6 @@ export namespace Identity {
          * * returned: request
          * * type: boolean
          * * uniqueness: none
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -50091,7 +50090,6 @@ export namespace Identity {
          * * type: string
          * * uniqueness: none
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -50416,7 +50414,6 @@ export namespace Identity {
          * * type: string
          * * uniqueness: none
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -50740,7 +50737,6 @@ export namespace Identity {
          * * returned: always
          * * type: string
          * * uniqueness: none
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -51092,7 +51088,6 @@ export namespace Identity {
          * * returned: always
          * * type: string
          * * uniqueness: none
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -52528,7 +52523,6 @@ export namespace Identity {
          * * type: string
          * * uniqueness: none
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -53523,7 +53517,6 @@ export namespace Identity {
          * * returned: always
          * * type: string
          * * uniqueness: none
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -56236,7 +56229,6 @@ export namespace Identity {
          * * type: string
          * * uniqueness: none
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -58121,7 +58113,6 @@ export namespace Identity {
          * * returned: always
          * * type: string
          * * uniqueness: none
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -62615,7 +62606,6 @@ export namespace Identity {
          * * type: binary
          * * uniqueness: none
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -63460,7 +63450,6 @@ export namespace Jms {
         /**
          * (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -63485,7 +63474,6 @@ export namespace Jms {
         logGroupId: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -64338,8 +64326,8 @@ export namespace LoadBalancer {
          * (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to "X-Oracle-BMC-LBS-Route".  Example: `exampleCookie`
          *
          * **Notes:**
-         * *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as "X-Oracle-OCI-" for this field.
-         * *  If a backend server and the load balancer both insert cookies with the same name, the client or browser behavior can vary depending on the domain and path values associated with the cookie. If the name, domain, and path values of the `Set-cookie` generated by a backend server and the `Set-cookie` generated by the load balancer are all the same, the client or browser treats them as one cookie and returns only one of the cookie values in subsequent requests. If both `Set-cookie` names are the same, but the domain and path names are different, the client or browser treats them as two different cookies.
+         * * Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as "X-Oracle-OCI-" for this field.
+         * * If a backend server and the load balancer both insert cookies with the same name, the client or browser behavior can vary depending on the domain and path values associated with the cookie. If the name, domain, and path values of the `Set-cookie` generated by a backend server and the `Set-cookie` generated by the load balancer are all the same, the client or browser treats them as one cookie and returns only one of the cookie values in subsequent requests. If both `Set-cookie` names are the same, but the domain and path names are different, the client or browser treats them as two different cookies.
          */
         cookieName?: pulumi.Input<string>;
         /**
@@ -64352,10 +64340,10 @@ export namespace LoadBalancer {
          * This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
          *
          * **Notes:**
-         * *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
+         * * [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
          *
          * If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
-         * *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
+         * * Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
          *
          * Example: `example.com`
          */
@@ -64418,13 +64406,13 @@ export namespace LoadBalancer {
          * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
          *
          * **Notes:**
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
-         * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
-         * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-         * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-         * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
-         * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-         * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+         * * You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+         * * If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * * If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * * The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+         * * If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+         * * The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
          *
          * example: `exampleCipherSuite`
          */
@@ -64435,19 +64423,19 @@ export namespace LoadBalancer {
          * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
          *
          * The Load Balancing service supports the following protocols:
-         * *  TLSv1
-         * *  TLSv1.1
-         * *  TLSv1.2
-         * *  TLSv1.3
+         * * TLSv1
+         * * TLSv1.1
+         * * TLSv1.2
+         * * TLSv1.3
          *
          * If this field is not specified, TLSv1.2 is the default.
          *
          * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
          *
          * **Notes:**
-         * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-         * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+         * * The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+         * * For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
          *
          * example: `["TLSv1.1", "TLSv1.2"]`
          */
@@ -64467,7 +64455,7 @@ export namespace LoadBalancer {
          */
         verifyDepth?: pulumi.Input<number>;
         /**
-         * (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+         * (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -64733,13 +64721,13 @@ export namespace LoadBalancer {
          * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
          *
          * **Notes:**
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
-         * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
-         * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-         * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-         * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
-         * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-         * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+         * * You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+         * * If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * * If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * * The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+         * * If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+         * * The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
          *
          * example: `exampleCipherSuite`
          */
@@ -64754,19 +64742,19 @@ export namespace LoadBalancer {
          * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
          *
          * The Load Balancing service supports the following protocols:
-         * *  TLSv1
-         * *  TLSv1.1
-         * *  TLSv1.2
-         * *  TLSv1.3
+         * * TLSv1
+         * * TLSv1.1
+         * * TLSv1.2
+         * * TLSv1.3
          *
          * If this field is not specified, TLSv1.2 is the default.
          *
          * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
          *
          * **Notes:**
-         * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-         * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+         * * The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * * You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+         * * For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
          *
          * example: `["TLSv1.1", "TLSv1.2"]`
          */
@@ -64786,8 +64774,7 @@ export namespace LoadBalancer {
          */
         verifyDepth?: pulumi.Input<number>;
         /**
-         * (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
-         *
+         * (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -64839,8 +64826,7 @@ export namespace LoadBalancer {
          */
         condition: pulumi.Input<string>;
         /**
-         * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-         *
+         * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -64881,9 +64867,9 @@ export namespace LoadBalancer {
         backendSetName: pulumi.Input<string>;
         /**
          * (Updatable) The path string to match against the incoming URI path.
-         * *  Path strings are case-insensitive.
-         * *  Asterisk (*) wildcards are not supported.
-         * *  Regular expressions are not supported.
+         * * Path strings are case-insensitive.
+         * * Asterisk (*) wildcards are not supported.
+         * * Regular expressions are not supported.
          *
          * Example: `/example/video/123`
          */
@@ -64897,13 +64883,12 @@ export namespace LoadBalancer {
     export interface PathRouteSetPathRoutePathMatchType {
         /**
          * (Updatable) Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object's `path` string against the incoming URI.
-         * *  **EXACT_MATCH** - Looks for a `path` string that exactly matches the incoming URI path.
-         * *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
-         * *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
-         * *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+         * * **EXACT_MATCH** - Looks for a `path` string that exactly matches the incoming URI path.
+         * * **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
+         * * **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
+         * * **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
          *
          * For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -64960,8 +64945,8 @@ export namespace LoadBalancer {
         ipMaxConnections?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.RuleSetItemIpMaxConnection>[]>;
         /**
          * (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-         * *  value cannot contain `$`
-         * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+         * * value cannot contain `$`
+         * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          *
          * Example: `examplePrefixValue`
          */
@@ -64976,11 +64961,11 @@ export namespace LoadBalancer {
          * Be sure to configure valid percent-encoding (URL encoding) when needed.
          *
          * In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
-         * *  {protocol} : The protocol from the incoming HTTP request URI.
-         * *  {host}     : The domain name from the incoming HTTP request URI.
-         * *  {port}     : The port from the incoming HTTP request URI.
-         * *  {path}     : The path from the incoming HTTP request URI.
-         * *  {query}    : The query string from the incoming HTTP request URI.
+         * * {protocol} : The protocol from the incoming HTTP request URI.
+         * * {host}     : The domain name from the incoming HTTP request URI.
+         * * {port}     : The port from the incoming HTTP request URI.
+         * * {path}     : The path from the incoming HTTP request URI.
+         * * {query}    : The query string from the incoming HTTP request URI.
          *
          * The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
          *
@@ -64997,11 +64982,11 @@ export namespace LoadBalancer {
          * (Updatable) The HTTP status code to return when the incoming request is redirected.
          *
          * The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
-         * *  301
-         * *  302
-         * *  303
-         * *  307
-         * *  308
+         * * 301
+         * * 302
+         * * 303
+         * * 307
+         * * 308
          *
          * The default value is `302` (Found).
          *
@@ -65014,16 +64999,16 @@ export namespace LoadBalancer {
         statusCode?: pulumi.Input<number>;
         /**
          * (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-         * *  value cannot contain `$`
-         * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+         * * value cannot contain `$`
+         * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          *
          * Example: `exampleSuffixValue`
          */
         suffix?: pulumi.Input<string>;
         /**
          * (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
-         * *  value cannot contain `$`
-         * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+         * * value cannot contain `$`
+         * * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          *
          * Example: `exampleValue`
          */
@@ -65044,10 +65029,10 @@ export namespace LoadBalancer {
         attributeValue: pulumi.Input<string>;
         /**
          * (Updatable) A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
-         * *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
-         * *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
-         * *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
-         * *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
+         * * **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
+         * * **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
+         * * **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
+         * * **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
          */
         operator?: pulumi.Input<string>;
     }
@@ -65074,9 +65059,9 @@ export namespace LoadBalancer {
          * Curly braces are valid in this property only to surround tokens, such as `{host}`
          *
          * Examples:
-         * *  **example.com** appears as `example.com` in the redirect URI.
-         * *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
-         * *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
+         * * **example.com** appears as `example.com` in the redirect URI.
+         * * **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+         * * **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
          */
         host?: pulumi.Input<string>;
         /**
@@ -65089,13 +65074,13 @@ export namespace LoadBalancer {
          * The path string must begin with `/` if it does not begin with the `{path}` token.
          *
          * Examples:
-         * *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
-         * *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
-         * *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
-         * *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
-         * *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
-         * *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
-         * *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
+         * * **&#47;example/video/123** appears as `/example/video/123` in the redirect URI.
+         * * **&#47;example{path}** appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
+         * * **{path}/123** appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+         * * **{path}123** appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+         * * **&#47;{host}/123** appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+         * * **&#47;{host}/{port}** appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
+         * * **&#47;{query}** appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
          */
         path?: pulumi.Input<string>;
         /**
@@ -65112,9 +65097,9 @@ export namespace LoadBalancer {
          * (Updatable) The HTTP protocol to use in the redirect URI.
          *
          * When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
-         * *  HTTP
-         * *  HTTPS
-         * *  {protocol}
+         * * HTTP
+         * * HTTPS
+         * * {protocol}
          *
          * `{protocol}` is the only valid token for this property. It can appear only once in the value string.
          *
@@ -65138,8 +65123,8 @@ export namespace LoadBalancer {
          * * **lang=en&time_zone=PST** appears as `lang=en&time_zone=PST` in the redirect URI.
          * * **{query}** appears as `lang=en&time_zone=PST` in the redirect URI if `lang=en&time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
          * * **lang=en&{query}&time_zone=PST** appears as `lang=en&country=us&time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&time_zone=PST`.
-         * *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
-         * *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
+         * * **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
+         * * **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
          */
         query?: pulumi.Input<string>;
     }
@@ -65371,7 +65356,7 @@ export namespace LogAnalytics {
 
     export interface NamespaceIngestTimeRuleAction {
         /**
-         * (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+         * (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
          */
         compartmentId: pulumi.Input<string>;
         /**
@@ -65452,7 +65437,7 @@ export namespace LogAnalytics {
          */
         purgeCompartmentId?: pulumi.Input<string>;
         /**
-         * The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+         * The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
          */
         purgeDuration?: pulumi.Input<string>;
         /**
@@ -65471,7 +65456,7 @@ export namespace LogAnalytics {
 
     export interface NamespaceScheduledTaskActionMetricExtraction {
         /**
-         * (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+         * (Updatable) The compartment OCID (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the extracted metric.
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -65502,7 +65487,7 @@ export namespace LogAnalytics {
          */
         misfirePolicy?: pulumi.Input<string>;
         /**
-         * Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+         * Recurring interval in ISO 8601 extended format as described in <https://en.wikipedia.org/wiki/ISO_8601#Durations>. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
          */
         recurringInterval?: pulumi.Input<string>;
         /**
@@ -66302,7 +66287,6 @@ export namespace Logging {
         /**
          * (Updatable) If true, keep the original event time in the parsed result.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -66652,17 +66636,41 @@ export namespace ManagementAgent {
     }
 
     export interface ManagementAgentDataSourceList {
+        /**
+         * Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+         */
         allowMetrics?: pulumi.Input<string>;
+        /**
+         * Compartment owning this DataSource.
+         */
         compartmentId?: pulumi.Input<string>;
+        /**
+         * Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+         */
         connectionTimeout?: pulumi.Input<number>;
+        /**
+         * If the Kubernetes cluster type is Daemon set then this will be set to true.
+         */
         isDaemonSet?: pulumi.Input<boolean>;
+        /**
+         * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+         */
         key?: pulumi.Input<string>;
+        /**
+         * The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+         */
         metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceListMetricDimension>[]>;
         /**
          * Name of the property
          */
         name?: pulumi.Input<string>;
+        /**
+         * The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+         */
         namespace?: pulumi.Input<string>;
+        /**
+         * The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+         */
         proxyUrl?: pulumi.Input<string>;
         /**
          * Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
@@ -66707,6 +66715,9 @@ export namespace ManagementAgent {
          * Name of the property
          */
         name?: pulumi.Input<string>;
+        /**
+         * Value of the metric dimension
+         */
         value?: pulumi.Input<string>;
     }
 
@@ -66722,7 +66733,13 @@ export namespace ManagementAgent {
     }
 
     export interface ManagementAgentDataSourceSummaryList {
+        /**
+         * If the Kubernetes cluster type is Daemon set then this will be set to true.
+         */
         isDaemonSet?: pulumi.Input<boolean>;
+        /**
+         * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+         */
         key?: pulumi.Input<string>;
         /**
          * Name of the property
@@ -67008,7 +67025,6 @@ export namespace Marketplace {
         /**
          * (Updatable) The email subject line to use when contacting support.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -67095,18 +67111,12 @@ export namespace MediaServices {
     }
 
     export interface GetMediaWorkflowJobFactsFilter {
-        /**
-         * Unique name. It is read-only and generated for the fact.
-         */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
     export interface GetMediaWorkflowJobFactsFilterArgs {
-        /**
-         * Unique name. It is read-only and generated for the fact.
-         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -67348,7 +67358,6 @@ export namespace MediaServices {
         /**
          * (Updatable) The version of the MediaWorkflowTaskDeclaration.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -67426,7 +67435,6 @@ export namespace MediaServices {
         /**
          * Type of the lock.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -67452,7 +67460,6 @@ export namespace MediaServices {
         timeCreated?: pulumi.Input<string>;
         /**
          * Type of the lock.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -67631,7 +67638,6 @@ export namespace MeteringComputation {
         reportQuery: pulumi.Input<inputs.MeteringComputation.QueryQueryDefinitionReportQuery>;
         /**
          * (Updatable) The saved query version.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -67941,7 +67947,6 @@ export namespace MeteringComputation {
         /**
          * (Updatable) The saved query version.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -68155,7 +68160,6 @@ export namespace MeteringComputation {
         /**
          * The usage start time.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -68231,30 +68235,14 @@ export namespace Monitoring {
          * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
          * Example of threshold alarm:
-         *
-         * -----
-         *
-         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-         *
-         * -----
-         *
-         * Example of absence alarm:
-         *
-         * -----
-         *
-         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-         *
-         * ----- Example of absence alarm with custom absence detection period of 20 hours:
-         *
-         * ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
          */
         query?: pulumi.Input<string>;
         /**
-         * (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+         * (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
          */
         ruleName?: pulumi.Input<string>;
         /**
-         * (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+         * (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
          */
         severity?: pulumi.Input<string>;
     }
@@ -68273,8 +68261,7 @@ export namespace Monitoring {
          */
         timeSuppressFrom: pulumi.Input<string>;
         /**
-         * (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-         *
+         * (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68460,7 +68447,6 @@ export namespace Mysql {
         tablesWithoutPrimaryKeyHandling?: pulumi.Input<string>;
         /**
          * (Updatable) The specific target identifier.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68858,7 +68844,10 @@ export namespace Mysql {
          */
         backupId: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the compartment the backup exists in.
+         * The OCID of the compartment where DB system backup is to be copied to.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         compartmentId: pulumi.Input<string>;
         /**
@@ -68869,7 +68858,7 @@ export namespace Mysql {
 
     export interface MysqlConfigurationInitVariables {
         /**
-         * Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         * Represents the MySQL server system variable lowerCaseTableNames (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
          *
          * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
          *
@@ -68996,11 +68985,11 @@ export namespace Mysql {
          */
         innodbBufferPoolSize?: pulumi.Input<string>;
         /**
-         * innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         * innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
          */
         innodbDdlBufferSize?: pulumi.Input<string>;
         /**
-         * innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         * innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
          */
         innodbDdlThreads?: pulumi.Input<number>;
         /**
@@ -69244,7 +69233,7 @@ export namespace Mysql {
          */
         queryPreallocSize?: pulumi.Input<string>;
         /**
-         * regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         * regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
          */
         regexpTimeLimit?: pulumi.Input<number>;
         /**
@@ -69297,7 +69286,6 @@ export namespace Mysql {
          * The number of seconds the server waits for activity on a noninteractive connection before closing it.
          *
          * waitTimeout corresponds to the MySQL system variable. [waitTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -69710,8 +69698,7 @@ export namespace Mysql {
          */
         mysqlVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-         *
+         * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -69955,7 +69942,6 @@ export namespace NetworkFirewall {
         /**
          * (Updatable) Identifier for rule before which this rule lies.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -69992,7 +69978,6 @@ export namespace NetworkFirewall {
         afterRule?: pulumi.Input<string>;
         /**
          * (Updatable) Identifier for rule before which this rule lies.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -70048,7 +70033,6 @@ export namespace NetworkFirewall {
         /**
          * (Updatable) The type of pattern.
          * * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -70566,7 +70550,6 @@ export namespace Nosql {
         /**
          * (Updatable) Maximum sustained write throughput limit for the table.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -70741,8 +70724,7 @@ export namespace ObjectStorage {
          */
         timeAmount: pulumi.Input<string>;
         /**
-         * (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
-         *
+         * (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -70806,7 +70788,6 @@ export namespace ObjectStorage {
         sourceObjectIfMatchEtag?: pulumi.Input<string>;
         /**
          * The version id of the object to be restored.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -71582,7 +71563,7 @@ export namespace Opa {
          */
         targetInstanceUrl?: pulumi.Input<string>;
         /**
-         * The role of the target attachment. 
+         * The role of the target attachment.
          * * `PARENT` - The target instance is the parent of this attachment.
          * * `CHILD` - The target instance is the child of this attachment.
          */
@@ -72373,7 +72354,6 @@ export namespace Optimizer {
         /**
          * (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -72569,7 +72549,6 @@ export namespace OsManagement {
         id?: pulumi.Input<string>;
         /**
          * software source name
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73326,7 +73305,6 @@ export namespace OsManagementHub {
         /**
          * The vendor of the operating system used by the managed instances in the lifecycle environment.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -73386,7 +73364,6 @@ export namespace OsManagementHub {
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -73412,7 +73389,6 @@ export namespace OsManagementHub {
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -73426,7 +73402,6 @@ export namespace OsManagementHub {
         description?: pulumi.Input<string>;
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73453,7 +73428,6 @@ export namespace OsManagementHub {
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -73467,7 +73441,6 @@ export namespace OsManagementHub {
         description?: pulumi.Input<string>;
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73494,7 +73467,6 @@ export namespace OsManagementHub {
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -73509,7 +73481,6 @@ export namespace OsManagementHub {
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -73523,7 +73494,6 @@ export namespace OsManagementHub {
         description?: pulumi.Input<string>;
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73607,7 +73577,6 @@ export namespace OsManagementHub {
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -73621,7 +73590,6 @@ export namespace OsManagementHub {
         description?: pulumi.Input<string>;
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73660,7 +73628,6 @@ export namespace OsManagementHub {
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -73674,7 +73641,6 @@ export namespace OsManagementHub {
         description?: pulumi.Input<string>;
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73745,7 +73711,6 @@ export namespace OsManagementHub {
         description?: pulumi.Input<string>;
         /**
          * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -74022,7 +73987,6 @@ export namespace OsManagementHub {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -74100,7 +74064,6 @@ export namespace OsManagementHub {
         displayName?: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -74213,7 +74176,6 @@ export namespace OspGateway {
         streetName?: pulumi.Input<string>;
         /**
          * Street number of the address.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -75875,7 +75837,6 @@ export namespace ServiceMesh {
         /**
          * (Updatable) The OCID of the virtual service resource.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -76142,7 +76103,6 @@ export namespace ServiceMesh {
         /**
          * (Updatable) Type of protocol.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -76184,8 +76144,7 @@ export namespace ServiceMesh {
 
     export interface MeshMtls {
         /**
-         * (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
-         *
+         * (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -77045,7 +77004,6 @@ export namespace StackMonitoring {
         /**
          * Task type.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -77311,8 +77269,7 @@ export namespace StackMonitoring {
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * A filter to return resources that match resource type. 
-         *
+         * A filter to return resources that match resource type.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -77353,7 +77310,6 @@ export namespace StackMonitoring {
         processLineRegexPattern?: pulumi.Input<string>;
         /**
          * (Updatable) String literal used for exact matching on process user.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -77457,8 +77413,7 @@ export namespace Streaming {
          */
         privateEndpointIp?: pulumi.Input<string>;
         /**
-         * If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
-         *
+         * If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -77736,7 +77691,7 @@ export namespace VisualBuilder {
          */
         targetInstanceUrl?: pulumi.Input<string>;
         /**
-         * The role of the target attachment. 
+         * The role of the target attachment.
          * * `PARENT` - The target instance is the parent of this attachment.
          * * `CHILD` - The target instance is the child of this attachment.
          */
@@ -78020,8 +77975,7 @@ export namespace VnMonitoring {
          */
         vlanId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
-         *
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -78034,7 +77988,6 @@ export namespace VulnerabilityScanning {
     export interface ContainerScanRecipeScanSettings {
         /**
          * (Updatable) The scan level
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -78057,7 +78010,6 @@ export namespace VulnerabilityScanning {
         type: pulumi.Input<string>;
         /**
          * (Updatable) URL of the registry. Required for non-OCIR registry types (for OCIR registry types, it can be inferred from the tenancy).
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -78217,7 +78169,6 @@ export namespace VulnerabilityScanning {
         dayOfWeek?: pulumi.Input<string>;
         /**
          * (Updatable) How often the scan occurs
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -78500,7 +78451,6 @@ export namespace Waas {
         protocol: pulumi.Input<string>;
         /**
          * (Updatable) The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -78844,8 +78794,8 @@ export namespace Waas {
          * * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
          * * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
          * * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-         * * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-         * * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+         * * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (<https://www.pcre.org>).
+         * * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (<https://www.pcre.org>).
          * * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
          * * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
          * * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
@@ -79270,8 +79220,8 @@ export namespace Waas {
          * * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
          * * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
          * * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-         * * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-         * * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+         * * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (<https://www.pcre.org>).
+         * * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (<https://www.pcre.org>).
          * * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
          * * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
          * * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
@@ -79404,7 +79354,6 @@ export namespace Waas {
         /**
          * (Updatable) The unique name of the whitelist.
          *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -79471,7 +79420,7 @@ export namespace Waf {
          */
         name: pulumi.Input<string>;
         /**
-         * (Updatable) 
+         * (Updatable)
          * * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
          * * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
          * * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
@@ -79605,7 +79554,7 @@ export namespace Waf {
          */
         actionName?: pulumi.Input<string>;
         /**
-         * (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+         * (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
          */
         collaborativeActionThreshold?: pulumi.Input<number>;
         /**
@@ -79805,7 +79754,7 @@ export namespace Waf {
          */
         actionName?: pulumi.Input<string>;
         /**
-         * (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+         * (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
          */
         collaborativeActionThreshold?: pulumi.Input<number>;
         /**
@@ -79954,7 +79903,6 @@ export namespace Waf {
         addresses?: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

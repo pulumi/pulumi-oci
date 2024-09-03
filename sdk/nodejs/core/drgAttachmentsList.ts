@@ -71,7 +71,6 @@ export class DrgAttachmentsList extends pulumi.CustomResource {
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -128,7 +127,6 @@ export interface DrgAttachmentsListState {
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -149,7 +147,6 @@ export interface DrgAttachmentsListArgs {
     drgId: pulumi.Input<string>;
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

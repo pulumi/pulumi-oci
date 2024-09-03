@@ -18,7 +18,6 @@ namespace Pulumi.Oci.CloudGuard
         /// (securityPolicyId). When a policy is enabled in a security zone, then any action in
         /// the zone that attempts to violate that policy is blocked.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
         /// (securityPolicyId). When a policy is enabled in a security zone, then any action in
         /// the zone that attempts to violate that policy is blocked.
-        /// 
         /// 
         /// ## Example Usage
         /// 

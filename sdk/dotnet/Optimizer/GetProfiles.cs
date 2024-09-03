@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Lists the existing profiles.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Optimizer
         /// This data source provides the list of Profiles in Oracle Cloud Infrastructure Optimizer service.
         /// 
         /// Lists the existing profiles.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -28,7 +28,6 @@ namespace Pulumi.Oci.OsManagement
         /// without a "moduleName".  It is also not valid to supply a "profileName"
         /// without a "streamName".
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -70,7 +69,6 @@ namespace Pulumi.Oci.OsManagement
         /// by the triple is returned.  It is not valid to supply a "streamName"
         /// without a "moduleName".  It is also not valid to supply a "profileName"
         /// without a "streamName".
-        /// 
         /// 
         /// ## Example Usage
         /// 

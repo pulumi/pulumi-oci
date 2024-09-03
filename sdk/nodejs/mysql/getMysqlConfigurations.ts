@@ -14,9 +14,9 @@ import * as utilities from "../utilities";
  * This may include DEFAULT configurations per Shape and CUSTOM configurations.
  *
  * The default sort order is a multi-part sort by:
- *   - shapeName, ascending
- *   - DEFAULT-before-CUSTOM
- *   - displayName ascending
+ * - shapeName, ascending
+ * - DEFAULT-before-CUSTOM
+ * - displayName ascending
  *
  * ## Example Usage
  *
@@ -122,9 +122,9 @@ export interface GetMysqlConfigurationsResult {
  * This may include DEFAULT configurations per Shape and CUSTOM configurations.
  *
  * The default sort order is a multi-part sort by:
- *   - shapeName, ascending
- *   - DEFAULT-before-CUSTOM
- *   - displayName ascending
+ * - shapeName, ascending
+ * - DEFAULT-before-CUSTOM
+ * - displayName ascending
  *
  * ## Example Usage
  *

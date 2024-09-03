@@ -16,7 +16,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// 
         /// Returns a list of Vb Instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.
         /// 
         /// Returns a list of Vb Instances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

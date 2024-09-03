@@ -12,6 +12,17 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Data Safe"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: DataSafe.TargetAlertPolicyAssociation"
+// sidebar_current: "docs-oci-resource-data_safe-target_alert_policy_association"
+// description: |-
+//
+//	Provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service
+//
+// <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+//
+// # DataSafe.TargetAlertPolicyAssociation
 // This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
 //
 // Creates a new target-alert policy association to track a alert policy applied on target.

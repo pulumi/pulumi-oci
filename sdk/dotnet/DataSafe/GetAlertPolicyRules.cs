@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DataSafe
         /// Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
         /// If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
         /// If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -24,6 +24,15 @@ import java.util.concurrent.CompletableFuture;
 
 public final class OpensearchFunctions {
     /**
+     * subcategory: &#34;Opensearch&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.Cluster&#34;
+     * sidebar_current: &#34;docs-oci-datasource-opensearch-opensearch_cluster&#34;
+     * description: |-
+     * Provides details about a specific Opensearch Cluster in Oracle Cloud Infrastructure Opensearch service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Opensearch.Cluster
      * This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Gets a OpensearchCluster by identifier
@@ -34,8 +43,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -77,6 +85,15 @@ public final class OpensearchFunctions {
         return getOpensearchCluster(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Opensearch&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.Cluster&#34;
+     * sidebar_current: &#34;docs-oci-datasource-opensearch-opensearch_cluster&#34;
+     * description: |-
+     * Provides details about a specific Opensearch Cluster in Oracle Cloud Infrastructure Opensearch service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Opensearch.Cluster
      * This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Gets a OpensearchCluster by identifier
@@ -87,8 +104,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -130,6 +146,15 @@ public final class OpensearchFunctions {
         return getOpensearchClusterPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Opensearch&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.Cluster&#34;
+     * sidebar_current: &#34;docs-oci-datasource-opensearch-opensearch_cluster&#34;
+     * description: |-
+     * Provides details about a specific Opensearch Cluster in Oracle Cloud Infrastructure Opensearch service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Opensearch.Cluster
      * This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Gets a OpensearchCluster by identifier
@@ -140,8 +165,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -183,6 +207,15 @@ public final class OpensearchFunctions {
         return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", TypeShape.of(GetOpensearchClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Opensearch&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.Cluster&#34;
+     * sidebar_current: &#34;docs-oci-datasource-opensearch-opensearch_cluster&#34;
+     * description: |-
+     * Provides details about a specific Opensearch Cluster in Oracle Cloud Infrastructure Opensearch service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Opensearch.Cluster
      * This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Gets a OpensearchCluster by identifier
@@ -193,8 +226,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -236,6 +268,15 @@ public final class OpensearchFunctions {
         return Deployment.getInstance().invokeAsync("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", TypeShape.of(GetOpensearchClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Opensearch&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.getOpensearchClusters&#34;
+     * sidebar_current: &#34;docs-oci-datasource-opensearch-opensearch_clusters&#34;
+     * description: |-
+     * Provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Opensearch.getOpensearchClusters
      * This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Returns a list of OpensearchClusters.
@@ -246,8 +287,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -292,6 +332,15 @@ public final class OpensearchFunctions {
         return getOpensearchClusters(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Opensearch&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.getOpensearchClusters&#34;
+     * sidebar_current: &#34;docs-oci-datasource-opensearch-opensearch_clusters&#34;
+     * description: |-
+     * Provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Opensearch.getOpensearchClusters
      * This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Returns a list of OpensearchClusters.
@@ -302,8 +351,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -348,6 +396,15 @@ public final class OpensearchFunctions {
         return getOpensearchClustersPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Opensearch&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.getOpensearchClusters&#34;
+     * sidebar_current: &#34;docs-oci-datasource-opensearch-opensearch_clusters&#34;
+     * description: |-
+     * Provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Opensearch.getOpensearchClusters
      * This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Returns a list of OpensearchClusters.
@@ -358,8 +415,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -404,6 +460,15 @@ public final class OpensearchFunctions {
         return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", TypeShape.of(GetOpensearchClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Opensearch&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Opensearch.getOpensearchClusters&#34;
+     * sidebar_current: &#34;docs-oci-datasource-opensearch-opensearch_clusters&#34;
+     * description: |-
+     * Provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Opensearch.getOpensearchClusters
      * This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Returns a list of OpensearchClusters.
@@ -414,8 +479,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -470,8 +534,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -523,8 +586,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -576,8 +638,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -629,8 +690,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -682,8 +742,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -735,8 +794,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -788,8 +846,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 
@@ -841,8 +898,7 @@ public final class OpensearchFunctions {
      * 
      * ##### {Compartment-Name} - Name of  your compartment
      * 
-     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * For latest documentation on OpenSearch use please refer to &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&gt;Required permissions: &lt;https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm&gt;
      * 
      * ## Example Usage
      * 

@@ -19,7 +19,10 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string> BackupId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment the backup exists in.
+        /// The OCID of the compartment where DB system backup is to be copied to.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;

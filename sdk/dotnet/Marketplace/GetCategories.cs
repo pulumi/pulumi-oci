@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Marketplace
         /// Gets the list of all the categories for listings published to Oracle Cloud Infrastructure Marketplace. Categories apply
         /// to the software product provided by the listing.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Gets the list of all the categories for listings published to Oracle Cloud Infrastructure Marketplace. Categories apply
         /// to the software product provided by the listing.
-        /// 
         /// 
         /// ## Example Usage
         /// 

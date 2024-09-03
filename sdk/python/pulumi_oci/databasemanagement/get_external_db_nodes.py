@@ -109,6 +109,15 @@ def get_external_db_nodes(compartment_id: Optional[str] = None,
                           filters: Optional[Sequence[Union['GetExternalDbNodesFilterArgs', 'GetExternalDbNodesFilterArgsDict']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbNodesResult:
     """
+    subcategory: "Database Management"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_management_get_external_db_nodes"
+    sidebar_current: "docs-oci-datasource-database_management-external_db_nodes"
+    description: |-
+    Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: database_management_get_external_db_nodes
     This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
 
     Lists the external DB nodes in the specified external DB system.
@@ -153,6 +162,15 @@ def get_external_db_nodes_output(compartment_id: Optional[pulumi.Input[Optional[
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDbNodesFilterArgs', 'GetExternalDbNodesFilterArgsDict']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbNodesResult]:
     """
+    subcategory: "Database Management"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_management_get_external_db_nodes"
+    sidebar_current: "docs-oci-datasource-database_management-external_db_nodes"
+    description: |-
+    Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: database_management_get_external_db_nodes
     This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
 
     Lists the external DB nodes in the specified external DB system.

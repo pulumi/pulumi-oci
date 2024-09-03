@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Lists the existing strategies.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Optimizer
         /// This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
         /// 
         /// Lists the existing strategies.
-        /// 
         /// 
         /// ## Example Usage
         /// 

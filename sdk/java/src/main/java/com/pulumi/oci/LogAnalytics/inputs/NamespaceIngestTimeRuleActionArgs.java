@@ -18,14 +18,14 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
     public static final NamespaceIngestTimeRuleActionArgs Empty = new NamespaceIngestTimeRuleActionArgs();
 
     /**
-     * (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * @return (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
      * 
      */
     public Output<String> compartmentId() {
@@ -137,7 +137,7 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+         * @param compartmentId (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+         * @param compartmentId (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
          * 
          * @return builder
          * 

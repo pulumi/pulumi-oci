@@ -14,10 +14,10 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
     /// The following resource/subresources are created:
-    ///   Infrastructure
-    ///   Storage server connectors
-    ///   Storage servers
-    ///   Storage grids
+    /// Infrastructure
+    /// Storage server connectors
+    /// Storage servers
+    /// Storage grids
     /// 
     /// ## Example Usage
     /// 
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        /// The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
         /// </summary>
         [Output("databaseCompartments")]
         public Output<ImmutableArray<string>> DatabaseCompartments { get; private set; } = null!;
@@ -159,7 +159,6 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -303,7 +302,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -343,7 +341,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private InputList<string>? _databaseCompartments;
 
         /// <summary>
-        /// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        /// The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
         /// </summary>
         public InputList<string> DatabaseCompartments
         {
@@ -464,7 +462,6 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Identity
         /// List all domains that are homed or have a replica region in current region.
         /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// List all domains that are homed or have a replica region in current region.
         /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataFlow
         /// This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
         /// 
         /// Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

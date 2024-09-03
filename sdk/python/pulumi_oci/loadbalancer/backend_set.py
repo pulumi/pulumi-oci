@@ -508,8 +508,8 @@ class BackendSet(pulumi.CustomResource):
             })
         ```
         **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
-              (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
-              attributes per backend set.
+        (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
+        attributes per backend set.
 
         ## Import
 
@@ -624,8 +624,8 @@ class BackendSet(pulumi.CustomResource):
             })
         ```
         **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
-              (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
-              attributes per backend set.
+        (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
+        attributes per backend set.
 
         ## Import
 

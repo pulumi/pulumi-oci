@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Dedicated Vm Host Shapes in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

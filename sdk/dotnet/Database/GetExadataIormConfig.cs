@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Database
         /// The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Exadata systems using the
         /// new resource model.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -58,7 +57,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Exadata systems using the
         /// new resource model.
-        /// 
         /// 
         /// ## Example Usage
         /// 

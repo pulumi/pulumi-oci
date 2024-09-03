@@ -206,7 +206,7 @@ class GetJmsPluginResult:
     @pulumi.getter(name="timeLastSeen")
     def time_last_seen(self) -> str:
         """
-        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         return pulumi.get(self, "time_last_seen")
 

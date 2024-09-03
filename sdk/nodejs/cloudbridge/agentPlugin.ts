@@ -85,7 +85,6 @@ export class AgentPlugin extends pulumi.CustomResource {
     /**
      * Unique plugin identifier path parameter.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -193,7 +192,6 @@ export interface AgentPluginState {
     /**
      * Unique plugin identifier path parameter.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -234,7 +232,6 @@ export interface AgentPluginArgs {
     desiredState?: pulumi.Input<string>;
     /**
      * Unique plugin identifier path parameter.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

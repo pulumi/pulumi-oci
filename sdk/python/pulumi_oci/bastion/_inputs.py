@@ -57,7 +57,6 @@ class SessionTargetResourceDetailsArgs:
         :param pulumi.Input[int] target_resource_port: The port number to connect to on the target resource.
         :param pulumi.Input[str] target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -152,7 +151,6 @@ class SessionTargetResourceDetailsArgs:
     def target_resource_private_ip_address(self) -> Optional[pulumi.Input[str]]:
         """
         The private IP address of the target resource that the session connects to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

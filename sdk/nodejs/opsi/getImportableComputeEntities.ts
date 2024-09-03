@@ -11,11 +11,11 @@ import * as utilities from "../utilities";
  *
  * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is "available"
  * and will be shown if all the following conditions are true:
- *    1. Compute is running OCA
- *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
- *       2.1 The agent OCID is not already being used for an existing hostInsight.
- *       2.2 The agent availabilityStatus = 'ACTIVE'
- *       2.3 The agent lifecycleState = 'ACTIVE'
+ * 1. Compute is running OCA
+ * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+ *    2.1 The agent OCID is not already being used for an existing hostInsight.
+ *    2.2 The agent availabilityStatus = 'ACTIVE'
+ *    2.3 The agent lifecycleState = 'ACTIVE'
  *
  * ## Example Usage
  *
@@ -68,11 +68,11 @@ export interface GetImportableComputeEntitiesResult {
  *
  * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is "available"
  * and will be shown if all the following conditions are true:
- *    1. Compute is running OCA
- *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
- *       2.1 The agent OCID is not already being used for an existing hostInsight.
- *       2.2 The agent availabilityStatus = 'ACTIVE'
- *       2.3 The agent lifecycleState = 'ACTIVE'
+ * 1. Compute is running OCA
+ * 2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+ *    2.1 The agent OCID is not already being used for an existing hostInsight.
+ *    2.2 The agent availabilityStatus = 'ACTIVE'
+ *    2.3 The agent lifecycleState = 'ACTIVE'
  *
  * ## Example Usage
  *

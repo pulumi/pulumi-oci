@@ -50,14 +50,14 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
     }
 
     /**
-     * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
      * 
      */
     @Import(name="databaseCompartments")
     private @Nullable Output<List<String>> databaseCompartments;
 
     /**
-     * @return The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * @return The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
      * 
      */
     public Optional<Output<List<String>>> databaseCompartments() {
@@ -427,7 +427,7 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
         }
 
         /**
-         * @param databaseCompartments The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+         * @param databaseCompartments The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
          * 
          * @return builder
          * 
@@ -438,7 +438,7 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
         }
 
         /**
-         * @param databaseCompartments The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+         * @param databaseCompartments The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
         }
 
         /**
-         * @param databaseCompartments The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+         * @param databaseCompartments The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
          * 
          * @return builder
          * 

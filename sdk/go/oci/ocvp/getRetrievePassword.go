@@ -11,6 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Oracle Cloud VMware Solution"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: Ocvp.getRetrievePassword"
+// sidebar_current: "docs-oci-datasource-ocvp-retrieve_password"
+// description: |-
+// Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+// <!-- yaml: line 7: could not find expected ':' -->
+//
+// # Data Source: Ocvp.getRetrievePassword
 // This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 //
 // ## Example Usage

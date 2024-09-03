@@ -29,7 +29,6 @@ class ApmDomainArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -110,7 +109,6 @@ class ApmDomainArgs:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -143,7 +141,6 @@ class _ApmDomainState:
         :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -250,7 +247,6 @@ class _ApmDomainState:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -349,7 +345,6 @@ class ApmDomain(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -471,7 +466,6 @@ class ApmDomain(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current lifecycle state of the APM domain.
@@ -547,7 +541,6 @@ class ApmDomain(pulumi.CustomResource):
     def is_free_tier(self) -> pulumi.Output[bool]:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

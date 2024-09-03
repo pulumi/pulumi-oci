@@ -14,12 +14,11 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
         /// 
-        /// Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection 
+        /// Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
         /// containing an array of PbfListingVersionSummary response models.
         /// 
-        /// Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall 
+        /// Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
         /// be thrown.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -49,12 +48,11 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
         /// 
-        /// Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection 
+        /// Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
         /// containing an array of PbfListingVersionSummary response models.
         /// 
-        /// Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall 
+        /// Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
         /// be thrown.
-        /// 
         /// 
         /// ## Example Usage
         /// 

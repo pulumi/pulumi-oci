@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// Returns a list of VirtualService objects.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// This data source provides the list of Virtual Services in Oracle Cloud Infrastructure Service Mesh service.
         /// 
         /// Returns a list of VirtualService objects.
-        /// 
         /// 
         /// ## Example Usage
         /// 

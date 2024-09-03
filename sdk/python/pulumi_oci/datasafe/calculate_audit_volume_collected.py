@@ -25,7 +25,6 @@ class CalculateAuditVolumeCollectedArgs:
         :param pulumi.Input[str] time_from_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
         :param pulumi.Input[str] time_to_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -64,7 +63,6 @@ class CalculateAuditVolumeCollectedArgs:
         """
         The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -88,7 +86,6 @@ class _CalculateAuditVolumeCollectedState:
         :param pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs']]] collected_audit_volumes: List of collected audit volumes.
         :param pulumi.Input[str] time_from_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
         :param pulumi.Input[str] time_to_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -144,7 +141,6 @@ class _CalculateAuditVolumeCollectedState:
         """
         The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -194,7 +190,6 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[str] time_from_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
         :param pulumi.Input[str] time_to_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -291,7 +286,6 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
         :param pulumi.Input[str] time_from_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
         :param pulumi.Input[str] time_to_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -334,7 +328,6 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
     def time_to_month(self) -> pulumi.Output[str]:
         """
         The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

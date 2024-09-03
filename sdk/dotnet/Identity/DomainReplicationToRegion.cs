@@ -59,8 +59,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> DomainId { get; private set; } = null!;
 
         /// <summary>
-        /// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-        /// 
+        /// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -121,8 +120,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> DomainId { get; set; } = null!;
 
         /// <summary>
-        /// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-        /// 
+        /// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,8 +143,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? DomainId { get; set; }
 
         /// <summary>
-        /// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-        /// 
+        /// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

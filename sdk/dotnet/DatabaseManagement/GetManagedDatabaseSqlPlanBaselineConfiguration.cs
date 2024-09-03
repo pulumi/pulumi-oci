@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Managed Database. The details include the settings for the capture and use of
         /// SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the configuration details of SQL plan baselines for the specified
         /// Managed Database. The details include the settings for the capture and use of
         /// SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
-        /// 
         /// 
         /// ## Example Usage
         /// 

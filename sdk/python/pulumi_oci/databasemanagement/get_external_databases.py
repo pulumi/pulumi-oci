@@ -116,6 +116,15 @@ def get_external_databases(compartment_id: Optional[str] = None,
                            filters: Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabasesResult:
     """
+    subcategory: "Database Management"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_management_get_external_databases"
+    sidebar_current: "docs-oci-datasource-database_management-external_databases"
+    description: |-
+    Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: database_management_get_external_databases
     This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
 
     Lists the external databases in the specified compartment or in the specified DB system.
@@ -165,6 +174,15 @@ def get_external_databases_output(compartment_id: Optional[pulumi.Input[Optional
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabasesResult]:
     """
+    subcategory: "Database Management"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_management_get_external_databases"
+    sidebar_current: "docs-oci-datasource-database_management-external_databases"
+    description: |-
+    Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+    <!-- yaml: line 7: could not find expected ':' -->
+
+    # Data Source: database_management_get_external_databases
     This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
 
     Lists the external databases in the specified compartment or in the specified DB system.

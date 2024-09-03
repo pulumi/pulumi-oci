@@ -54,7 +54,7 @@ class GetSummarizeResourceInventoryResult:
     @pulumi.getter(name="activeFleetCount")
     def active_fleet_count(self) -> int:
         """
-        The number of _active_ fleets.
+        The number of *active* fleets.
         """
         return pulumi.get(self, "active_fleet_count")
 
@@ -138,7 +138,7 @@ def get_summarize_resource_inventory(compartment_id: Optional[str] = None,
     """
     This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
 
-    Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
+    Retrieve the inventory of JMS resources in the specified compartment: a list of the number of *active* fleets, managed instances, Java Runtimes, Java installations, and applications.
 
     ## Example Usage
 
@@ -183,7 +183,7 @@ def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Inpu
     """
     This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
 
-    Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
+    Retrieve the inventory of JMS resources in the specified compartment: a list of the number of *active* fleets, managed instances, Java Runtimes, Java installations, and applications.
 
     ## Example Usage
 

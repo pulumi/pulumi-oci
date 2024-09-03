@@ -148,7 +148,6 @@ export class SecurityAssessment extends pulumi.CustomResource {
     /**
      * The OCID of the target database on which security assessment is to be run.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -342,7 +341,6 @@ export interface SecurityAssessmentState {
     /**
      * The OCID of the target database on which security assessment is to be run.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -413,7 +411,6 @@ export interface SecurityAssessmentArgs {
     schedule?: pulumi.Input<string>;
     /**
      * The OCID of the target database on which security assessment is to be run.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// Returns a list of public vantage points.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
         /// 
         /// Returns a list of public vantage points.
-        /// 
         /// 
         /// ## Example Usage
         /// 

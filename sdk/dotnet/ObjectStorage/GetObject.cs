@@ -14,8 +14,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
         /// 
-        /// Gets the metadata and body of an object.  
-        /// 
+        /// Gets the metadata and body of an object.
         /// 
         /// ## Example Usage
         /// 
@@ -50,8 +49,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
         /// 
-        /// Gets the metadata and body of an object.  
-        /// 
+        /// Gets the metadata and body of an object.
         /// 
         /// ## Example Usage
         /// 

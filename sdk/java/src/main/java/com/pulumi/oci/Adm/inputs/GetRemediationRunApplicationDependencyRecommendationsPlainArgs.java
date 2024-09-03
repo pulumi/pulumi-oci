@@ -40,14 +40,14 @@ public final class GetRemediationRunApplicationDependencyRecommendationsPlainArg
     }
 
     /**
-     * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * A filter to return only resources that match the entire PURL given (&lt;https://github.com/package-url/purl-spec/)&gt;.
      * 
      */
     @Import(name="purl")
     private @Nullable String purl;
 
     /**
-     * @return A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * @return A filter to return only resources that match the entire PURL given (&lt;https://github.com/package-url/purl-spec/)&gt;.
      * 
      */
     public Optional<String> purl() {
@@ -117,7 +117,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsPlainArg
         }
 
         /**
-         * @param purl A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+         * @param purl A filter to return only resources that match the entire PURL given (&lt;https://github.com/package-url/purl-spec/)&gt;.
          * 
          * @return builder
          * 

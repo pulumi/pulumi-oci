@@ -41,7 +41,6 @@ class MediaAssetArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] bucket: The name of the object storage bucket where this asset is located.
@@ -118,7 +117,6 @@ class MediaAssetArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) The type of the media asset.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -395,7 +393,6 @@ class _MediaAssetState:
         :param pulumi.Input[str] time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -728,7 +725,6 @@ class _MediaAssetState:
         """
         (Updatable) The type of the media asset.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -799,7 +795,6 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] source_media_workflow_id: The ID of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -959,7 +954,6 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1180,7 +1174,6 @@ class MediaAsset(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         (Updatable) The type of the media asset.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -81,7 +81,6 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
         :param pulumi.Input[str] after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param pulumi.Input[str] before_rule: (Updatable) Identifier for rule before which this rule lies.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -107,7 +106,6 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
     def before_rule(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Identifier for rule before which this rule lies.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -215,7 +213,6 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
         :param pulumi.Input[str] after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param pulumi.Input[str] before_rule: (Updatable) Identifier for rule before which this rule lies.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -241,7 +238,6 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
     def before_rule(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Identifier for rule before which this rule lies.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -402,7 +398,6 @@ class NetworkFirewallPolicyUrlListUrlArgs:
         :param pulumi.Input[str] type: (Updatable) The type of pattern.
                * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -427,7 +422,6 @@ class NetworkFirewallPolicyUrlListUrlArgs:
         """
         (Updatable) The type of pattern.
         * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

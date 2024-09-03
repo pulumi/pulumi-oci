@@ -123,7 +123,6 @@ export class WorkspaceProject extends pulumi.CustomResource {
     /**
      * The workspace ID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -240,7 +239,6 @@ export interface WorkspaceProjectState {
     /**
      * The workspace ID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -282,7 +280,6 @@ export interface WorkspaceProjectArgs {
     registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceProjectRegistryMetadata>;
     /**
      * The workspace ID.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

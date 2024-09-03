@@ -126,7 +126,6 @@ export class Secret extends pulumi.CustomResource {
     /**
      * The OCID of the vault where you want to create the secret.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -288,7 +287,6 @@ export interface SecretState {
     /**
      * The OCID of the vault where you want to create the secret.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -341,7 +339,6 @@ export interface SecretArgs {
     secretRules?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSecretRule>[]>;
     /**
      * The OCID of the vault where you want to create the secret.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

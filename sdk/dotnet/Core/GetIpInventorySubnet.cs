@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Ip Inventory Subnet resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

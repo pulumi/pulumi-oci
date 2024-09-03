@@ -14,9 +14,8 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
         /// 
-        /// Lists changes to the recommendations based on user activity. 
+        /// Lists changes to the recommendations based on user activity.
         /// For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -50,9 +49,8 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
         /// 
-        /// Lists changes to the recommendations based on user activity. 
+        /// Lists changes to the recommendations based on user activity.
         /// For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
-        /// 
         /// 
         /// ## Example Usage
         /// 

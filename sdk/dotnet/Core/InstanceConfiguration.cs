@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// subcategory: "Core"
+    /// layout: "oci"
+    /// page_title: "Oracle Cloud Infrastructure: oci.Core.InstanceConfiguration"
+    /// sidebar_current: "docs-oci-resource-core-instance_configuration"
+    /// description: |-
+    /// Provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service
+    /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+    /// 
+    /// # oci.Core.InstanceConfiguration
     /// This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
     /// 
     /// Creates an instance configuration. An instance configuration is a template that defines the
@@ -545,7 +554,6 @@ namespace Pulumi.Oci.Core
         /// * `NONE`: Creates an instance configuration using the list of settings that you specify.
         /// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -662,7 +670,6 @@ namespace Pulumi.Oci.Core
         /// * `NONE`: Creates an instance configuration using the list of settings that you specify.
         /// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -746,7 +753,6 @@ namespace Pulumi.Oci.Core
         /// The following values are supported:
         /// * `NONE`: Creates an instance configuration using the list of settings that you specify.
         /// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

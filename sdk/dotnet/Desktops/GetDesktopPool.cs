@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Desktops
         /// 
         /// Returns information about the desktop pool including all configuration parameters and the current state.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Desktops
         /// This data source provides details about a specific Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
         /// 
         /// Returns information about the desktop pool including all configuration parameters and the current state.
-        /// 
         /// 
         /// ## Example Usage
         /// 

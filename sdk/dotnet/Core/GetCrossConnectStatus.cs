@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the status of the specified cross-connect.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets the status of the specified cross-connect.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -92,7 +92,7 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
      */
     public readonly isPrivate!: pulumi.Output<boolean>;
     /**
-     * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+     * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      *
      * Example: `true`
      * Example: `true`
@@ -108,8 +108,8 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
      * During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
      *
      * The benefits of associating the network load balancer with network security groups include:
-     * *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-     * *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+     * * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+     * * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
      *
      * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      */
@@ -132,7 +132,6 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
     public readonly subnetId!: pulumi.Output<string>;
     /**
      * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -270,7 +269,7 @@ export interface NetworkLoadBalancerState {
      */
     isPrivate?: pulumi.Input<boolean>;
     /**
-     * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+     * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      *
      * Example: `true`
      * Example: `true`
@@ -286,8 +285,8 @@ export interface NetworkLoadBalancerState {
      * During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
      *
      * The benefits of associating the network load balancer with network security groups include:
-     * *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-     * *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+     * * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+     * * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
      *
      * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      */
@@ -310,7 +309,6 @@ export interface NetworkLoadBalancerState {
     subnetId?: pulumi.Input<string>;
     /**
      * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -375,7 +373,7 @@ export interface NetworkLoadBalancerArgs {
      */
     isPrivate?: pulumi.Input<boolean>;
     /**
-     * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+     * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      *
      * Example: `true`
      * Example: `true`
@@ -387,8 +385,8 @@ export interface NetworkLoadBalancerArgs {
      * During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
      *
      * The benefits of associating the network load balancer with network security groups include:
-     * *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-     * *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+     * * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+     * * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
      *
      * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      */
@@ -407,7 +405,6 @@ export interface NetworkLoadBalancerArgs {
     subnetId: pulumi.Input<string>;
     /**
      * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

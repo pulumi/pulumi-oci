@@ -13,8 +13,7 @@ import * as utilities from "../utilities";
  * Adds a parent software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance. Software sources that have this software source as a parent will be able to be added to this managed instance.
  * Removes a software source from a managed instance. All child software sources will also be removed from the managed instance. Packages will no longer be able to be installed from these software sources.
  *
- * Adds a child software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance.\
- * Removes a child software source from a managed instance. Packages will no longer be able to be installed from these software sources.
+ * Adds a child software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance.Removes a child software source from a managed instance. Packages will no longer be able to be installed from these software sources.
  *
  * Adds a Managed Instance to a Managed Instance Group. After the Managed Instance has been added, then operations can be performed on the Managed Instance Group which will then apply to all Managed Instances in the group.
  * Removes a Managed Instance from a Managed Instance Group.

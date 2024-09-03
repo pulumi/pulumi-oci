@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns a list of Windows updates that can be installed on the specified managed instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instance Available Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns a list of Windows updates that can be installed on the specified managed instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

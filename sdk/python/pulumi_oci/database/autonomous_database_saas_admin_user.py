@@ -30,7 +30,6 @@ class AutonomousDatabaseSaasAdminUserArgs:
         :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
         :param pulumi.Input[int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -114,7 +113,6 @@ class AutonomousDatabaseSaasAdminUserArgs:
         """
         The version of the vault secret. If no version is specified, the latest version will be used.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -152,7 +150,6 @@ class _AutonomousDatabaseSaasAdminUserState:
         :param pulumi.Input[str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
         :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
         :param pulumi.Input[int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -238,7 +235,6 @@ class _AutonomousDatabaseSaasAdminUserState:
         """
         The version of the vault secret. If no version is specified, the latest version will be used.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -299,7 +295,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         :param pulumi.Input[str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
         :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
         :param pulumi.Input[int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -403,7 +398,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
         :param pulumi.Input[int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -465,7 +459,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     def secret_version_number(self) -> pulumi.Output[Optional[int]]:
         """
         The version of the vault secret. If no version is specified, the latest version will be used.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

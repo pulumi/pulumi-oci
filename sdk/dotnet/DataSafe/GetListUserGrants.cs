@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataSafe
         /// roles a privilege grant is. The userKey in this operation is a system-generated identifier. Perform the operation ListUsers
         /// to get the userKey for a particular user.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -56,7 +55,6 @@ namespace Pulumi.Oci.DataSafe
         /// privilege name, type, category, and depth level. The depth level indicates how deep in the hierarchy of roles granted to
         /// roles a privilege grant is. The userKey in this operation is a system-generated identifier. Perform the operation ListUsers
         /// to get the userKey for a particular user.
-        /// 
         /// 
         /// ## Example Usage
         /// 

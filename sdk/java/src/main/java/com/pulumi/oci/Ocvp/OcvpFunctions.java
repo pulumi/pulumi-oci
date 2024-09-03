@@ -1033,6 +1033,15 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getExsiHosts:getExsiHosts", TypeShape.of(GetExsiHostsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Oracle Cloud VMware Solution&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Ocvp.getRetrievePassword&#34;
+     * sidebar_current: &#34;docs-oci-datasource-ocvp-retrieve_password&#34;
+     * description: |-
+     * Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Ocvp.getRetrievePassword
      * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * ## Example Usage
@@ -1076,6 +1085,15 @@ public final class OcvpFunctions {
         return getRetrievePassword(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Oracle Cloud VMware Solution&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Ocvp.getRetrievePassword&#34;
+     * sidebar_current: &#34;docs-oci-datasource-ocvp-retrieve_password&#34;
+     * description: |-
+     * Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Ocvp.getRetrievePassword
      * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * ## Example Usage
@@ -1119,6 +1137,15 @@ public final class OcvpFunctions {
         return getRetrievePasswordPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Oracle Cloud VMware Solution&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Ocvp.getRetrievePassword&#34;
+     * sidebar_current: &#34;docs-oci-datasource-ocvp-retrieve_password&#34;
+     * description: |-
+     * Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Ocvp.getRetrievePassword
      * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * ## Example Usage
@@ -1162,6 +1189,15 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invoke("oci:Ocvp/getRetrievePassword:getRetrievePassword", TypeShape.of(GetRetrievePasswordResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Oracle Cloud VMware Solution&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Ocvp.getRetrievePassword&#34;
+     * sidebar_current: &#34;docs-oci-datasource-ocvp-retrieve_password&#34;
+     * description: |-
+     * Retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service
+     * &lt;!-- yaml: line 7: could not find expected &#39;:&#39; --&gt;
+     * 
+     * # Data Source: oci.Ocvp.getRetrievePassword
      * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * ## Example Usage
@@ -1941,8 +1977,7 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", TypeShape.of(GetSupportedHostShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.!&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -1987,8 +2022,7 @@ public final class OcvpFunctions {
         return getSupportedSkus(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.!&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -2033,8 +2067,7 @@ public final class OcvpFunctions {
         return getSupportedSkusPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.!&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -2079,8 +2112,7 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invoke("oci:Ocvp/getSupportedSkus:getSupportedSkus", TypeShape.of(GetSupportedSkusResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.!&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 

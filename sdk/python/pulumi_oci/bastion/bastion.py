@@ -31,7 +31,6 @@ class BastionArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
@@ -92,7 +91,6 @@ class BastionArgs:
     def target_subnet_id(self) -> pulumi.Input[str]:
         """
         The unique identifier (OCID) of the subnet that the bastion connects to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -240,7 +238,6 @@ class _BastionState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -473,7 +470,6 @@ class _BastionState:
         """
         The unique identifier (OCID) of the subnet that the bastion connects to.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -587,7 +583,6 @@ class Bastion(pulumi.CustomResource):
         :param pulumi.Input[str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -748,7 +743,6 @@ class Bastion(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] target_vcn_id: The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
@@ -905,7 +899,6 @@ class Bastion(pulumi.CustomResource):
     def target_subnet_id(self) -> pulumi.Output[str]:
         """
         The unique identifier (OCID) of the subnet that the bastion connects to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

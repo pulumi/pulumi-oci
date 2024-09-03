@@ -18,7 +18,6 @@ namespace Pulumi.Oci.HealthChecks
         /// the `probeConfigurationId` is the OCID of either a monitor or an
         /// on-demand probe.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.HealthChecks
         /// Gets the HTTP probe results for the specified probe or monitor, where
         /// the `probeConfigurationId` is the OCID of either a monitor or an
         /// on-demand probe.
-        /// 
         /// 
         /// ## Example Usage
         /// 

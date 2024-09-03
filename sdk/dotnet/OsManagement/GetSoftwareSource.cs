@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// Returns a specific Software Source.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.OsManagement
         /// This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
         /// 
         /// Returns a specific Software Source.
-        /// 
         /// 
         /// ## Example Usage
         /// 

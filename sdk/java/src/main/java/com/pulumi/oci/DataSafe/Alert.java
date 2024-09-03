@@ -16,6 +16,15 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * subcategory: &#34;Data Safe&#34;
+ * layout: &#34;oci&#34;
+ * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.Alert&#34;
+ * sidebar_current: &#34;docs-oci-resource-data_safe-alert&#34;
+ * description: |-
+ * 	Provides the Alert resource in Oracle Cloud Infrastructure Data Safe service
+ * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+ * 
+ * # oci.DataSafe.Alert
  * This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
  * 
  * Updates the status of the specified alert.

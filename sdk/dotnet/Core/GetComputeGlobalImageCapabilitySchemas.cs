@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists Compute Global Image Capability Schema in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists Compute Global Image Capability Schema in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

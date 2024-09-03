@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// Returns a list of all Managed Instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.OsManagement
         /// This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
         /// 
         /// Returns a list of all Managed Instances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

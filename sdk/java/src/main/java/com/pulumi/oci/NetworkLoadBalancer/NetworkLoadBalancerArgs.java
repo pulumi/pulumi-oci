@@ -183,8 +183,8 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
      * During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
      * 
      * The benefits of associating the network load balancer with network security groups include:
-     * *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-     * *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+     * * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+     * * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
      * 
      * Example: [&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]
      * 
@@ -198,8 +198,8 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
      * During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
      * 
      * The benefits of associating the network load balancer with network security groups include:
-     * *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-     * *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+     * * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+     * * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
      * 
      * Example: [&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]
      * 
@@ -528,8 +528,8 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
          * During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
          * 
          * The benefits of associating the network load balancer with network security groups include:
-         * *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-         * *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+         * * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+         * * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
          * 
          * Example: [&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]
          * 
@@ -547,8 +547,8 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
          * During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
          * 
          * The benefits of associating the network load balancer with network security groups include:
-         * *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-         * *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+         * * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+         * * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
          * 
          * Example: [&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]
          * 
@@ -565,8 +565,8 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
          * During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
          * 
          * The benefits of associating the network load balancer with network security groups include:
-         * *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-         * *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+         * * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+         * * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
          * 
          * Example: [&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]
          * 

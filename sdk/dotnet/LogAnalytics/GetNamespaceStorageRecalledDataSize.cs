@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API gets the datasize of recalls for a given timeframe
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// This API gets the datasize of recalls for a given timeframe
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -62,8 +62,7 @@ export class GeneratedScopedAccessToken extends pulumi.CustomResource {
      */
     public readonly publicKey!: pulumi.Output<string>;
     /**
-     * Scope definition for the scoped access token 
-     *
+     * Scope definition for the scoped access token
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -116,8 +115,7 @@ export interface GeneratedScopedAccessTokenState {
      */
     publicKey?: pulumi.Input<string>;
     /**
-     * Scope definition for the scoped access token 
-     *
+     * Scope definition for the scoped access token
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -138,8 +136,7 @@ export interface GeneratedScopedAccessTokenArgs {
      */
     publicKey: pulumi.Input<string>;
     /**
-     * Scope definition for the scoped access token 
-     *
+     * Scope definition for the scoped access token
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

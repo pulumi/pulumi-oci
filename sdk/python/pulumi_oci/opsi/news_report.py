@@ -43,7 +43,6 @@ class NewsReportArgs:
         :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -204,7 +203,6 @@ class NewsReportArgs:
         """
         (Updatable) Defines if the news report will be enabled or disabled.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -251,7 +249,6 @@ class _NewsReportState:
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[str] state: The current state of the news report.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -456,7 +453,6 @@ class _NewsReportState:
         """
         (Updatable) Defines if the news report will be enabled or disabled.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -581,7 +577,6 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -752,7 +747,6 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the news report.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -891,7 +885,6 @@ class NewsReport(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) Defines if the news report will be enabled or disabled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -36,7 +36,6 @@ class ConnectorArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]] tasks: (Updatable) The list of tasks.
@@ -146,7 +145,6 @@ class ConnectorArgs:
         """
         (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -195,7 +193,6 @@ class _ConnectorState:
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         :param pulumi.Input['ConnectorSourceArgs'] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -321,7 +318,6 @@ class _ConnectorState:
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -528,7 +524,6 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -745,7 +740,6 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -834,7 +828,6 @@ class Connector(pulumi.CustomResource):
     def state(self) -> pulumi.Output[str]:
         """
         (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

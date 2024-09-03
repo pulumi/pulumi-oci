@@ -513,7 +513,6 @@ class AuditPolicyManagementAuditConditionArgs:
         :param pulumi.Input[bool] is_enabled: Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
         :param pulumi.Input[bool] is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -581,7 +580,6 @@ class AuditPolicyManagementAuditConditionArgs:
     def is_priv_users_managed_by_data_safe(self) -> Optional[pulumi.Input[bool]]:
         """
         Indicates whether the privileged user list is managed by Data Safe.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1601,7 +1599,6 @@ class DiscoveryModTablesForDiscoveryArgs:
         :param pulumi.Input[str] schema_name: This contains the name of the schema.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] table_names: This contains an optional list of the table names.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1626,7 +1623,6 @@ class DiscoveryModTablesForDiscoveryArgs:
     def table_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         This contains an optional list of the table names.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2776,7 +2772,6 @@ class ReportDefinitionSummaryArgs:
         :param pulumi.Input[bool] is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2856,7 +2851,6 @@ class ReportDefinitionSummaryArgs:
     def scim_filter(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Additional scim filters used to get the specific summary.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5049,7 +5043,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
         :param pulumi.Input[str] store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param pulumi.Input[str] trust_store_content: (Updatable) Base64 encoded string of trust store file content.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5116,7 +5109,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
     def trust_store_content(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Base64 encoded string of trust store file content.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5143,7 +5135,6 @@ class TargetDatabaseTlsConfigArgs:
         :param pulumi.Input[str] store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param pulumi.Input[str] trust_store_content: (Updatable) Base64 encoded string of trust store file content.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5211,7 +5202,6 @@ class TargetDatabaseTlsConfigArgs:
         """
         (Updatable) Base64 encoded string of trust store file content.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5230,7 +5220,6 @@ class UserAssessmentIgnoredTargetArgs:
                  user_assessment_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] target_id: The OCID of the target database on which the user assessment is to be run.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5256,7 +5245,6 @@ class UserAssessmentIgnoredTargetArgs:
     def target_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the target database on which the user assessment is to be run.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

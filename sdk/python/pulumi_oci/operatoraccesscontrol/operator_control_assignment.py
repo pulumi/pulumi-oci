@@ -55,7 +55,6 @@ class OperatorControlAssignmentArgs:
         :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[int] validate_assignment_trigger: (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -313,7 +312,6 @@ class OperatorControlAssignmentArgs:
         """
         (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -389,7 +387,6 @@ class _OperatorControlAssignmentState:
         :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
         :param pulumi.Input[int] validate_assignment_trigger: (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -809,7 +806,6 @@ class _OperatorControlAssignmentState:
         """
         (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -906,7 +902,6 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[int] validate_assignment_trigger: (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1121,7 +1116,6 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
         :param pulumi.Input[int] validate_assignment_trigger: (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1399,7 +1393,6 @@ class OperatorControlAssignment(pulumi.CustomResource):
     def validate_assignment_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

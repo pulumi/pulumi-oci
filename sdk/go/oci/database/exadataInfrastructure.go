@@ -115,7 +115,7 @@ type ExadataInfrastructure struct {
 	ActivationFile pulumi.StringPtrOutput `pulumi:"activationFile"`
 	// The requested number of additional compute servers for the Exadata infrastructure.
 	AdditionalComputeCount pulumi.IntOutput `pulumi:"additionalComputeCount"`
-	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
 	AdditionalComputeSystemModel pulumi.StringOutput `pulumi:"additionalComputeSystemModel"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
 	//
@@ -281,7 +281,7 @@ type exadataInfrastructureState struct {
 	ActivationFile *string `pulumi:"activationFile"`
 	// The requested number of additional compute servers for the Exadata infrastructure.
 	AdditionalComputeCount *int `pulumi:"additionalComputeCount"`
-	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
 	AdditionalComputeSystemModel *string `pulumi:"additionalComputeSystemModel"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
 	//
@@ -382,7 +382,7 @@ type ExadataInfrastructureState struct {
 	ActivationFile pulumi.StringPtrInput
 	// The requested number of additional compute servers for the Exadata infrastructure.
 	AdditionalComputeCount pulumi.IntPtrInput
-	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
 	AdditionalComputeSystemModel pulumi.StringPtrInput
 	// The requested number of additional storage servers for the Exadata infrastructure.
 	//
@@ -697,7 +697,7 @@ func (o ExadataInfrastructureOutput) AdditionalComputeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.IntOutput { return v.AdditionalComputeCount }).(pulumi.IntOutput)
 }
 
-// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
 func (o ExadataInfrastructureOutput) AdditionalComputeSystemModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.AdditionalComputeSystemModel }).(pulumi.StringOutput)
 }

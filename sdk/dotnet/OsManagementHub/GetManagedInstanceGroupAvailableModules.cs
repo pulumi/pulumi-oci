@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

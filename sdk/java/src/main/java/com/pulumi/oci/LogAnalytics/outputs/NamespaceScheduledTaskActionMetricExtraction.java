@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NamespaceScheduledTaskActionMetricExtraction {
     /**
-     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * @return (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
      * 
      */
     private @Nullable String compartmentId;
@@ -34,7 +34,7 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
 
     private NamespaceScheduledTaskActionMetricExtraction() {}
     /**
-     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * @return (Updatable) The compartment OCID (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the extracted metric.
      * 
      */
     public Optional<String> compartmentId() {

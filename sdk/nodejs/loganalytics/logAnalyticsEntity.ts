@@ -90,7 +90,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      */
     public readonly cloudResourceId!: pulumi.Output<string>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -166,8 +166,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) The timezone region of the log analytics entity. 
-     *
+     * (Updatable) The timezone region of the log analytics entity.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -261,7 +260,7 @@ export interface LogAnalyticsEntityState {
      */
     cloudResourceId?: pulumi.Input<string>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -337,8 +336,7 @@ export interface LogAnalyticsEntityState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) The timezone region of the log analytics entity. 
-     *
+     * (Updatable) The timezone region of the log analytics entity.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -355,7 +353,7 @@ export interface LogAnalyticsEntityArgs {
      */
     cloudResourceId?: pulumi.Input<string>;
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -403,8 +401,7 @@ export interface LogAnalyticsEntityArgs {
      */
     timeLastDiscovered?: pulumi.Input<string>;
     /**
-     * (Updatable) The timezone region of the log analytics entity. 
-     *
+     * (Updatable) The timezone region of the log analytics entity.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the saved query.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides details about a specific Query resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the saved query.
-        /// 
         /// 
         /// ## Example Usage
         /// 

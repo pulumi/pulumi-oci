@@ -27,7 +27,6 @@ class NotificationTopicArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -95,7 +94,6 @@ class NotificationTopicArgs:
         """
         The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -129,7 +127,6 @@ class _NotificationTopicState:
         :param pulumi.Input[str] etag: For optimistic concurrency control. See `if-match`.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -238,7 +235,6 @@ class _NotificationTopicState:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -360,7 +356,6 @@ class NotificationTopic(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the topic being created. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -493,7 +488,6 @@ class NotificationTopic(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] short_topic_id: A unique short topic Id. This is used only for SMS subscriptions.
@@ -571,7 +565,6 @@ class NotificationTopic(pulumi.CustomResource):
     def name(self) -> pulumi.Output[str]:
         """
         The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

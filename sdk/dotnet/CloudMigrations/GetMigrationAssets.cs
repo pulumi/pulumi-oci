@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Returns a list of migration assets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// This data source provides the list of Migration Assets in Oracle Cloud Infrastructure Cloud Migrations service.
         /// 
         /// Returns a list of migration assets.
-        /// 
         /// 
         /// ## Example Usage
         /// 

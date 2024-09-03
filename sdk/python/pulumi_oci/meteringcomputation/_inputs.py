@@ -211,7 +211,6 @@ class QueryQueryDefinitionArgs:
         :param pulumi.Input['QueryQueryDefinitionReportQueryArgs'] report_query: (Updatable) The request of the generated Cost Analysis report.
         :param pulumi.Input[float] version: (Updatable) The saved query version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -261,7 +260,6 @@ class QueryQueryDefinitionArgs:
     def version(self) -> pulumi.Input[float]:
         """
         (Updatable) The saved query version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1373,7 +1371,6 @@ class UsageCarbonEmissionsQueryQueryDefinitionArgs:
         :param pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs'] report_query: (Updatable) The request of the generated usage carbon emissions report.
         :param pulumi.Input[int] version: (Updatable) The saved query version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1423,7 +1420,6 @@ class UsageCarbonEmissionsQueryQueryDefinitionArgs:
     def version(self) -> pulumi.Input[int]:
         """
         (Updatable) The saved query version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1852,7 +1848,6 @@ class UsageItemArgs:
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] unit: The usage unit.
@@ -2251,7 +2246,6 @@ class UsageItemArgs:
     def time_usage_started(self) -> Optional[pulumi.Input[str]]:
         """
         The usage start time.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

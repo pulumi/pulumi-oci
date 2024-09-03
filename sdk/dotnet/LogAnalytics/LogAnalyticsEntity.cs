@@ -86,7 +86,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> CloudResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -200,8 +200,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The timezone region of the log analytics entity. 
-        /// 
+        /// (Updatable) The timezone region of the log analytics entity.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,7 +261,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? CloudResourceId { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -352,8 +351,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? TimeLastDiscovered { get; set; }
 
         /// <summary>
-        /// (Updatable) The timezone region of the log analytics entity. 
-        /// 
+        /// (Updatable) The timezone region of the log analytics entity.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -382,7 +380,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? CloudResourceId { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -514,8 +512,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The timezone region of the log analytics entity. 
-        /// 
+        /// (Updatable) The timezone region of the log analytics entity.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

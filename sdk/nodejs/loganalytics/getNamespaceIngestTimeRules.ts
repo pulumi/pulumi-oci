@@ -83,7 +83,7 @@ export interface GetNamespaceIngestTimeRulesArgs {
  */
 export interface GetNamespaceIngestTimeRulesResult {
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     readonly compartmentId: string;
     readonly conditionKind?: string;

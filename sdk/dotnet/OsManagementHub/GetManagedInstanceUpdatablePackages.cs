@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns a list of updatable packages for a managed instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instance Updatable Packages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns a list of updatable packages for a managed instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

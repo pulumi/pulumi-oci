@@ -682,7 +682,6 @@ class CloudGuardDataSourceRegionStatusDetailArgs:
         :param pulumi.Input[str] region: Data source replication region
         :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -709,7 +708,6 @@ class CloudGuardDataSourceRegionStatusDetailArgs:
         """
         (Updatable) Enablement status of data source.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -728,7 +726,6 @@ class DataMaskRuleTargetSelectedArgs:
         """
         :param pulumi.Input[str] kind: (Updatable) Kind of target selection to be used
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Types of targets
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -754,7 +751,6 @@ class DataMaskRuleTargetSelectedArgs:
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) Types of targets
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5171,7 +5167,6 @@ class TargetTargetResponderRecipeResponderRuleArgs:
         :param pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsArgs'] details: (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
         :param pulumi.Input[str] responder_rule_id: (Updatable) Unique identifier for target detector recipe
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: Compartment OCID where the resource is created
@@ -5229,7 +5224,6 @@ class TargetTargetResponderRecipeResponderRuleArgs:
     def responder_rule_id(self) -> pulumi.Input[str]:
         """
         (Updatable) Unique identifier for target detector recipe
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

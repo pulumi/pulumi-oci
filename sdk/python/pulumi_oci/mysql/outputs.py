@@ -422,7 +422,6 @@ class ChannelTarget(dict):
         :param str db_system_id: The OCID of the target DB System.
         :param str target_type: (Updatable) The specific target identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str applier_username: (Updatable) The username for the replication applier of the target MySQL DB System.
@@ -457,7 +456,6 @@ class ChannelTarget(dict):
     def target_type(self) -> str:
         """
         (Updatable) The specific target identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1633,7 +1631,10 @@ class MysqlBackupSourceDetails(dict):
                  region: str):
         """
         :param str backup_id: The OCID of the source backup.
-        :param str compartment_id: (Updatable) The OCID of the compartment the backup exists in.
+        :param str compartment_id: The OCID of the compartment where DB system backup is to be copied to.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str region: The region of the backup source.
         """
         pulumi.set(__self__, "backup_id", backup_id)
@@ -1652,7 +1653,10 @@ class MysqlBackupSourceDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        (Updatable) The OCID of the compartment the backup exists in.
+        The OCID of the compartment where DB system backup is to be copied to.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1687,7 +1691,7 @@ class MysqlConfigurationInitVariables(dict):
     def __init__(__self__, *,
                  lower_case_table_names: Optional[str] = None):
         """
-        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
                
                lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
                
@@ -1702,7 +1706,7 @@ class MysqlConfigurationInitVariables(dict):
     @pulumi.getter(name="lowerCaseTableNames")
     def lower_case_table_names(self) -> Optional[str]:
         """
-        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        Represents the MySQL server system variable lower_case_table_names (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 
         lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
 
@@ -2016,8 +2020,8 @@ class MysqlConfigurationVariables(dict):
                innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
                
                The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
-        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
+        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
         :param bool innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
         :param int innodb_ft_max_token_size: ("innodb_ft_max_token_size")
         :param int innodb_ft_min_token_size: ("innodb_ft_min_token_size")
@@ -2111,7 +2115,7 @@ class MysqlConfigurationVariables(dict):
         :param str parser_max_mem_size: ("parser_max_mem_size")
         :param str query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         :param str query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
-        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
         :param str sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
                
                sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
@@ -2134,7 +2138,6 @@ class MysqlConfigurationVariables(dict):
         :param int wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
                
                waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2499,7 +2502,7 @@ class MysqlConfigurationVariables(dict):
     @pulumi.getter(name="innodbDdlBufferSize")
     def innodb_ddl_buffer_size(self) -> Optional[str]:
         """
-        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
         """
         return pulumi.get(self, "innodb_ddl_buffer_size")
 
@@ -2507,7 +2510,7 @@ class MysqlConfigurationVariables(dict):
     @pulumi.getter(name="innodbDdlThreads")
     def innodb_ddl_threads(self) -> Optional[int]:
         """
-        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
         """
         return pulumi.get(self, "innodb_ddl_threads")
 
@@ -2929,7 +2932,7 @@ class MysqlConfigurationVariables(dict):
     @pulumi.getter(name="regexpTimeLimit")
     def regexp_time_limit(self) -> Optional[int]:
         """
-        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
         """
         return pulumi.get(self, "regexp_time_limit")
 
@@ -3022,7 +3025,6 @@ class MysqlConfigurationVariables(dict):
         The number of seconds the server waits for activity on a noninteractive connection before closing it.
 
         waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4528,8 +4530,7 @@ class ReplicaReplicaOverrides(dict):
         """
         :param str configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
         :param str mysql_version: (Updatable) The MySQL version to be used by the read replica.
-        :param str shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-               
+        :param str shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4561,8 +4562,7 @@ class ReplicaReplicaOverrides(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[str]:
         """
-        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-
+        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7193,7 +7193,7 @@ class GetMysqlConfigurationInitVariableResult(dict):
     def __init__(__self__, *,
                  lower_case_table_names: str):
         """
-        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
         """
         pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
 
@@ -7201,7 +7201,7 @@ class GetMysqlConfigurationInitVariableResult(dict):
     @pulumi.getter(name="lowerCaseTableNames")
     def lower_case_table_names(self) -> str:
         """
-        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        Represents the MySQL server system variable lower_case_table_names (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
         """
         return pulumi.get(self, "lower_case_table_names")
 
@@ -7314,8 +7314,8 @@ class GetMysqlConfigurationVariableResult(dict):
         :param int innodb_buffer_pool_dump_pct: Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
         :param int innodb_buffer_pool_instances: ("innodb_buffer_pool_instances")
         :param str innodb_buffer_pool_size: The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
+        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
         :param bool innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
         :param int innodb_ft_max_token_size: ("innodb_ft_max_token_size")
         :param int innodb_ft_min_token_size: ("innodb_ft_min_token_size")
@@ -7361,7 +7361,7 @@ class GetMysqlConfigurationVariableResult(dict):
         :param str parser_max_mem_size: ("parser_max_mem_size")
         :param str query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         :param str query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
-        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
         :param str sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
         :param str sql_mode: ("sql_mode")
         :param bool sql_require_primary_key: ("sql_require_primary_key")
@@ -7630,7 +7630,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="innodbDdlBufferSize")
     def innodb_ddl_buffer_size(self) -> str:
         """
-        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
         """
         return pulumi.get(self, "innodb_ddl_buffer_size")
 
@@ -7638,7 +7638,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="innodbDdlThreads")
     def innodb_ddl_threads(self) -> int:
         """
-        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
         """
         return pulumi.get(self, "innodb_ddl_threads")
 
@@ -8012,7 +8012,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="regexpTimeLimit")
     def regexp_time_limit(self) -> int:
         """
-        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
         """
         return pulumi.get(self, "regexp_time_limit")
 
@@ -8263,7 +8263,7 @@ class GetMysqlConfigurationsConfigurationInitVariableResult(dict):
     def __init__(__self__, *,
                  lower_case_table_names: str):
         """
-        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
         """
         pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
 
@@ -8271,7 +8271,7 @@ class GetMysqlConfigurationsConfigurationInitVariableResult(dict):
     @pulumi.getter(name="lowerCaseTableNames")
     def lower_case_table_names(self) -> str:
         """
-        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        Represents the MySQL server system variable lower_case_table_names (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
         """
         return pulumi.get(self, "lower_case_table_names")
 
@@ -8384,8 +8384,8 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         :param int innodb_buffer_pool_dump_pct: Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
         :param int innodb_buffer_pool_instances: ("innodb_buffer_pool_instances")
         :param str innodb_buffer_pool_size: The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
+        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
         :param bool innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
         :param int innodb_ft_max_token_size: ("innodb_ft_max_token_size")
         :param int innodb_ft_min_token_size: ("innodb_ft_min_token_size")
@@ -8431,7 +8431,7 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         :param str parser_max_mem_size: ("parser_max_mem_size")
         :param str query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         :param str query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
-        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
         :param str sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
         :param str sql_mode: ("sql_mode")
         :param bool sql_require_primary_key: ("sql_require_primary_key")
@@ -8700,7 +8700,7 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
     @pulumi.getter(name="innodbDdlBufferSize")
     def innodb_ddl_buffer_size(self) -> str:
         """
-        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
         """
         return pulumi.get(self, "innodb_ddl_buffer_size")
 
@@ -8708,7 +8708,7 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
     @pulumi.getter(name="innodbDdlThreads")
     def innodb_ddl_threads(self) -> int:
         """
-        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
         """
         return pulumi.get(self, "innodb_ddl_threads")
 
@@ -9082,7 +9082,7 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
     @pulumi.getter(name="regexpTimeLimit")
     def regexp_time_limit(self) -> int:
         """
-        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
         """
         return pulumi.get(self, "regexp_time_limit")
 

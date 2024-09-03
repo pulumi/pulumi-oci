@@ -16,6 +16,15 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * subcategory: &#34;Data Safe&#34;
+ * layout: &#34;oci&#34;
+ * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.TargetAlertPolicyAssociation&#34;
+ * sidebar_current: &#34;docs-oci-resource-data_safe-target_alert_policy_association&#34;
+ * description: |-
+ * 	Provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service
+ * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+ * 
+ * # oci.DataSafe.TargetAlertPolicyAssociation
  * This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
  * 
  * Creates a new target-alert policy association to track a alert policy applied on target.

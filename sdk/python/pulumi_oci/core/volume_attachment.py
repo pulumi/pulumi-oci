@@ -34,7 +34,6 @@ class VolumeAttachmentArgs:
         :param pulumi.Input[str] instance_id: The OCID of the instance.
         :param pulumi.Input[str] volume_id: The OCID of the volume.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
@@ -101,7 +100,6 @@ class VolumeAttachmentArgs:
     def volume_id(self) -> pulumi.Input[str]:
         """
         The OCID of the volume.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -275,7 +273,6 @@ class _VolumeAttachmentState:
         :param pulumi.Input[str] time_created: The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         :param pulumi.Input[str] volume_id: The OCID of the volume.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -615,7 +612,6 @@ class _VolumeAttachmentState:
         """
         The OCID of the volume.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -691,7 +687,6 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         :param pulumi.Input[str] volume_id: The OCID of the volume.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -866,7 +861,6 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         :param pulumi.Input[str] volume_id: The OCID of the volume.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1091,7 +1085,6 @@ class VolumeAttachment(pulumi.CustomResource):
     def volume_id(self) -> pulumi.Output[str]:
         """
         The OCID of the volume.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

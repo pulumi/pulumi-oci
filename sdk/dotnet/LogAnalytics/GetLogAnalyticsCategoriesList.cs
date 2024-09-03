@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
-        /// 
         /// 
         /// ## Example Usage
         /// 

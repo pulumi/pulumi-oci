@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the Autonomous Database regional wallet details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the Autonomous Database regional wallet details.
-        /// 
         /// 
         /// ## Example Usage
         /// 

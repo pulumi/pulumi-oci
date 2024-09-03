@@ -240,7 +240,7 @@ def get_zones(compartment_id: Optional[str] = None,
     :param str compartment_id: The OCID of the compartment the resource belongs to.
     :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
     :param str name_contains: Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
-    :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+    :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null
            for zones in the global DNS and `PRIVATE` when listing private zones.
     :param str sort_by: The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
     :param str sort_order: The order to sort the resources. Allowed values are: ASC|DESC
@@ -331,7 +331,7 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str compartment_id: The OCID of the compartment the resource belongs to.
     :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
     :param str name_contains: Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
-    :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+    :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null
            for zones in the global DNS and `PRIVATE` when listing private zones.
     :param str sort_by: The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
     :param str sort_order: The order to sort the resources. Allowed values are: ASC|DESC

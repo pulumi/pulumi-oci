@@ -111,7 +111,7 @@ public final class FilesystemSnapshotPolicyState extends com.pulumi.resources.Re
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      * 
-     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
+     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;`
      * 
      */
     @Import(name="schedules")
@@ -120,7 +120,7 @@ public final class FilesystemSnapshotPolicyState extends com.pulumi.resources.Re
     /**
      * @return (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      * 
-     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
+     * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;`
      * 
      */
     public Optional<Output<List<FilesystemSnapshotPolicyScheduleArgs>>> schedules() {
@@ -324,7 +324,7 @@ public final class FilesystemSnapshotPolicyState extends com.pulumi.resources.Re
         /**
          * @param schedules (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
          * 
-         * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
+         * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;`
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class FilesystemSnapshotPolicyState extends com.pulumi.resources.Re
         /**
          * @param schedules (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
          * 
-         * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
+         * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;`
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class FilesystemSnapshotPolicyState extends com.pulumi.resources.Re
         /**
          * @param schedules (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
          * 
-         * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
+         * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;`
          * 
          * @return builder
          * 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// Lists of available group tags filtered by query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Waf
         /// This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
         /// 
         /// Lists of available group tags filtered by query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

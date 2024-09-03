@@ -308,7 +308,6 @@ class ChannelTargetArgs:
         :param pulumi.Input[str] db_system_id: The OCID of the target DB System.
         :param pulumi.Input[str] target_type: (Updatable) The specific target identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] applier_username: (Updatable) The username for the replication applier of the target MySQL DB System.
@@ -347,7 +346,6 @@ class ChannelTargetArgs:
     def target_type(self) -> pulumi.Input[str]:
         """
         (Updatable) The specific target identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1536,7 +1534,10 @@ class MysqlBackupSourceDetailsArgs:
                  region: pulumi.Input[str]):
         """
         :param pulumi.Input[str] backup_id: The OCID of the source backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
+        :param pulumi.Input[str] compartment_id: The OCID of the compartment where DB system backup is to be copied to.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] region: The region of the backup source.
         """
         pulumi.set(__self__, "backup_id", backup_id)
@@ -1559,7 +1560,10 @@ class MysqlBackupSourceDetailsArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the compartment the backup exists in.
+        The OCID of the compartment where DB system backup is to be copied to.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1585,7 +1589,7 @@ class MysqlConfigurationInitVariablesArgs:
     def __init__(__self__, *,
                  lower_case_table_names: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        :param pulumi.Input[str] lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
                
                lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
                
@@ -1600,7 +1604,7 @@ class MysqlConfigurationInitVariablesArgs:
     @pulumi.getter(name="lowerCaseTableNames")
     def lower_case_table_names(self) -> Optional[pulumi.Input[str]]:
         """
-        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        Represents the MySQL server system variable lower_case_table_names (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names)>.
 
         lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
 
@@ -1747,8 +1751,8 @@ class MysqlConfigurationVariablesArgs:
                innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
                
                The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
-        :param pulumi.Input[str] innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-        :param pulumi.Input[int] innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        :param pulumi.Input[str] innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
+        :param pulumi.Input[int] innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
         :param pulumi.Input[bool] innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
         :param pulumi.Input[int] innodb_ft_max_token_size: ("innodb_ft_max_token_size")
         :param pulumi.Input[int] innodb_ft_min_token_size: ("innodb_ft_min_token_size")
@@ -1842,7 +1846,7 @@ class MysqlConfigurationVariablesArgs:
         :param pulumi.Input[str] parser_max_mem_size: ("parser_max_mem_size")
         :param pulumi.Input[str] query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         :param pulumi.Input[str] query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
-        :param pulumi.Input[int] regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param pulumi.Input[int] regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
         :param pulumi.Input[str] sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
                
                sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
@@ -1865,7 +1869,6 @@ class MysqlConfigurationVariablesArgs:
         :param pulumi.Input[int] wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
                
                waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2335,7 +2338,7 @@ class MysqlConfigurationVariablesArgs:
     @pulumi.getter(name="innodbDdlBufferSize")
     def innodb_ddl_buffer_size(self) -> Optional[pulumi.Input[str]]:
         """
-        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size>)
         """
         return pulumi.get(self, "innodb_ddl_buffer_size")
 
@@ -2347,7 +2350,7 @@ class MysqlConfigurationVariablesArgs:
     @pulumi.getter(name="innodbDdlThreads")
     def innodb_ddl_threads(self) -> Optional[pulumi.Input[int]]:
         """
-        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (<https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads>)
         """
         return pulumi.get(self, "innodb_ddl_threads")
 
@@ -2953,7 +2956,7 @@ class MysqlConfigurationVariablesArgs:
     @pulumi.getter(name="regexpTimeLimit")
     def regexp_time_limit(self) -> Optional[pulumi.Input[int]]:
         """
-        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (<https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit>)
         """
         return pulumi.get(self, "regexp_time_limit")
 
@@ -3086,7 +3089,6 @@ class MysqlConfigurationVariablesArgs:
         The number of seconds the server waits for activity on a noninteractive connection before closing it.
 
         waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4527,8 +4529,7 @@ class ReplicaReplicaOverridesArgs:
         """
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
         :param pulumi.Input[str] mysql_version: (Updatable) The MySQL version to be used by the read replica.
-        :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-               
+        :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4568,8 +4569,7 @@ class ReplicaReplicaOverridesArgs:
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-
+        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

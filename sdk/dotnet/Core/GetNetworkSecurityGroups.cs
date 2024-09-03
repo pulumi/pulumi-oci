@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
         /// You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
         /// You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -29,12 +29,12 @@ public final class GetListJreUsageResult {
      */
     private List<GetListJreUsageItem> items;
     /**
-     * @return Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * @return Upper bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
      * 
      */
     private @Nullable String timeEnd;
     /**
-     * @return Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * @return Lower bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
      * 
      */
     private @Nullable String timeStart;
@@ -67,14 +67,14 @@ public final class GetListJreUsageResult {
         return this.items;
     }
     /**
-     * @return Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * @return Upper bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
      * 
      */
     public Optional<String> timeEnd() {
         return Optional.ofNullable(this.timeEnd);
     }
     /**
-     * @return Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * @return Lower bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
      * 
      */
     public Optional<String> timeStart() {

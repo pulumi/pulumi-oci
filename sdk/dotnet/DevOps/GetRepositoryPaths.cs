@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieves a list of files and directories in a repository.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Repository Paths in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Retrieves a list of files and directories in a repository.
-        /// 
         /// 
         /// ## Example Usage
         /// 

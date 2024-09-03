@@ -10,7 +10,7 @@ import * as utilities from "../utilities";
  * This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
  *
  * Create Capacity Request.
- *   Updates the OccCapacityRequest by evaluating a sequence of instructions.
+ * Updates the OccCapacityRequest by evaluating a sequence of instructions.
  *
  * ## Import
  *
@@ -106,7 +106,6 @@ export class OccCapacityRequest extends pulumi.CustomResource {
     public readonly region!: pulumi.Output<string>;
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -275,7 +274,6 @@ export interface OccCapacityRequestState {
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -356,7 +354,6 @@ export interface OccCapacityRequestArgs {
     region: pulumi.Input<string>;
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -24,7 +24,6 @@ class FusionEnvironmentServiceAttachmentArgs:
         :param pulumi.Input[str] service_instance_id: The service instance OCID of the instance being attached
         :param pulumi.Input[str] service_instance_type: Type of the ServiceInstance being attached.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -64,7 +63,6 @@ class FusionEnvironmentServiceAttachmentArgs:
     def service_instance_type(self) -> pulumi.Input[str]:
         """
         Type of the ServiceInstance being attached.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -113,7 +111,6 @@ class _FusionEnvironmentServiceAttachmentState:
         :param pulumi.Input[bool] is_sku_based: Whether this service is provisioned due to the customer being subscribed to a specific SKU
         :param pulumi.Input[str] service_instance_id: The service instance OCID of the instance being attached
         :param pulumi.Input[str] service_instance_type: Type of the ServiceInstance being attached.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,7 +234,6 @@ class _FusionEnvironmentServiceAttachmentState:
         """
         Type of the ServiceInstance being attached.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -337,7 +333,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] service_instance_id: The service instance OCID of the instance being attached
         :param pulumi.Input[str] service_instance_type: Type of the ServiceInstance being attached.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -457,7 +452,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
         :param pulumi.Input[str] service_instance_id: The service instance OCID of the instance being attached
         :param pulumi.Input[str] service_instance_type: Type of the ServiceInstance being attached.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] service_url: Public URL
@@ -544,7 +538,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
     def service_instance_type(self) -> pulumi.Output[str]:
         """
         Type of the ServiceInstance being attached.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

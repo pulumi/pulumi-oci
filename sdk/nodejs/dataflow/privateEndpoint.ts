@@ -96,8 +96,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * The OCID of a subnet. 
-     *
+     * The OCID of a subnet.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -231,8 +230,7 @@ export interface PrivateEndpointState {
      */
     state?: pulumi.Input<string>;
     /**
-     * The OCID of a subnet. 
-     *
+     * The OCID of a subnet.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -289,8 +287,7 @@ export interface PrivateEndpointArgs {
      */
     scanDetails?: pulumi.Input<pulumi.Input<inputs.DataFlow.PrivateEndpointScanDetail>[]>;
     /**
-     * The OCID of a subnet. 
-     *
+     * The OCID of a subnet.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

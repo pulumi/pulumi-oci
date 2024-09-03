@@ -21,7 +21,6 @@ class FusionEnvironmentDataMaskingActivityArgs:
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -47,7 +46,6 @@ class FusionEnvironmentDataMaskingActivityArgs:
         """
         This allows the Data Safe service to resume the previously failed data masking activity.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -70,7 +68,6 @@ class _FusionEnvironmentDataMaskingActivityState:
         Input properties used for looking up and filtering FusionEnvironmentDataMaskingActivity resources.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -106,7 +103,6 @@ class _FusionEnvironmentDataMaskingActivityState:
     def is_resume_data_masking(self) -> Optional[pulumi.Input[bool]]:
         """
         This allows the Data Safe service to resume the previously failed data masking activity.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -190,7 +186,6 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -283,7 +278,6 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the DataMaskingActivity.
@@ -314,7 +308,6 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
     def is_resume_data_masking(self) -> pulumi.Output[bool]:
         """
         This allows the Data Safe service to resume the previously failed data masking activity.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

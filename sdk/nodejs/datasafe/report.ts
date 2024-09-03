@@ -80,7 +80,6 @@ export class Report extends pulumi.CustomResource {
     /**
      * Unique report identifier
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -191,7 +190,6 @@ export interface ReportState {
     /**
      * Unique report identifier
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -232,7 +230,6 @@ export interface ReportArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Unique report identifier
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

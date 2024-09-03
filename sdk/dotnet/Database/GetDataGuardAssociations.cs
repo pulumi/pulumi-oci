@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists all Data Guard associations for the specified database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists all Data Guard associations for the specified database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

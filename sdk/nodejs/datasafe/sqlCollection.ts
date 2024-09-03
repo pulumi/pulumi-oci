@@ -127,7 +127,6 @@ export class SqlCollection extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -292,7 +291,6 @@ export interface SqlCollectionState {
     /**
      * (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -377,7 +375,6 @@ export interface SqlCollectionArgs {
     status?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

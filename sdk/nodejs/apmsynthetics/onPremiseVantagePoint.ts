@@ -102,7 +102,6 @@ export class OnPremiseVantagePoint extends pulumi.CustomResource {
     /**
      * Type of On-premise vantage point.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -195,7 +194,6 @@ export interface OnPremiseVantagePointState {
     /**
      * Type of On-premise vantage point.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -232,7 +230,6 @@ export interface OnPremiseVantagePointArgs {
     name?: pulumi.Input<string>;
     /**
      * Type of On-premise vantage point.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

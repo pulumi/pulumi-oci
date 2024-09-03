@@ -85,7 +85,7 @@ class GetLogAnalyticsEntitiesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 

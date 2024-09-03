@@ -14,10 +14,9 @@ namespace Pulumi.Oci.ManagementDashboard
         /// <summary>
         /// This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
         /// 
-        /// Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard. 
-        /// Here's an example of how you can use CLI to export a dashboard: 
+        /// Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
+        /// Here's an example of how you can use CLI to export a dashboard:
         /// `$oci management-dashboard dashboard export --query data --export-dashboard-id "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}"  &gt; dashboards.json`
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -43,10 +42,9 @@ namespace Pulumi.Oci.ManagementDashboard
         /// <summary>
         /// This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
         /// 
-        /// Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard. 
-        /// Here's an example of how you can use CLI to export a dashboard: 
+        /// Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
+        /// Here's an example of how you can use CLI to export a dashboard:
         /// `$oci management-dashboard dashboard export --query data --export-dashboard-id "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}"  &gt; dashboards.json`
-        /// 
         /// 
         /// ## Example Usage
         /// 

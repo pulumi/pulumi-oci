@@ -20,14 +20,14 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
     public static final MigrationDataTransferMediumDetailsArgs Empty = new MigrationDataTransferMediumDetailsArgs();
 
     /**
-     * (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * (Updatable) AWS access key credentials identifier Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
      * 
      */
     @Import(name="accessKeyId")
     private @Nullable Output<String> accessKeyId;
 
     /**
-     * @return (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * @return (Updatable) AWS access key credentials identifier Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
      * 
      */
     public Optional<Output<String>> accessKeyId() {
@@ -65,14 +65,14 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     * (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: &lt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions&gt;
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: &lt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions&gt;
      * 
      */
     public Optional<Output<String>> region() {
@@ -80,14 +80,14 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * (Updatable) AWS secret access key credentials Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
      * 
      */
     @Import(name="secretAccessKey")
     private @Nullable Output<String> secretAccessKey;
 
     /**
-     * @return (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * @return (Updatable) AWS secret access key credentials Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
      * 
      */
     public Optional<Output<String>> secretAccessKey() {
@@ -187,7 +187,7 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param accessKeyId (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * @param accessKeyId (Updatable) AWS access key credentials identifier Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param accessKeyId (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * @param accessKeyId (Updatable) AWS access key credentials identifier Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param region (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         * @param region (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: &lt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions&gt;
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param region (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         * @param region (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: &lt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions&gt;
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param secretAccessKey (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * @param secretAccessKey (Updatable) AWS secret access key credentials Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class MigrationDataTransferMediumDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param secretAccessKey (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * @param secretAccessKey (Updatable) AWS secret access key credentials Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
          * 
          * @return builder
          * 

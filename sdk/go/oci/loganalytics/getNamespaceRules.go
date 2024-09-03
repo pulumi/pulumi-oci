@@ -74,7 +74,7 @@ type GetNamespaceRulesArgs struct {
 
 // A collection of values returned by getNamespaceRules.
 type GetNamespaceRulesResult struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The ingest time rule or scheduled task display name.
 	DisplayName *string                   `pulumi:"displayName"`
@@ -141,7 +141,7 @@ func (o GetNamespaceRulesResultOutput) ToGetNamespaceRulesResultOutputWithContex
 	return o
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetNamespaceRulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceRulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

@@ -43,8 +43,7 @@ class BudgetArgs:
         :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -239,8 +238,7 @@ class BudgetArgs:
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-
+        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -296,8 +294,7 @@ class _BudgetState:
         :param pulumi.Input[str] state: The current state of the budget.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -563,8 +560,7 @@ class _BudgetState:
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-
+        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -699,8 +695,7 @@ class Budget(pulumi.CustomResource):
         :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -873,8 +868,7 @@ class Budget(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the budget.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1052,8 +1046,7 @@ class Budget(pulumi.CustomResource):
     @pulumi.getter
     def targets(self) -> pulumi.Output[Sequence[str]]:
         """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-
+        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

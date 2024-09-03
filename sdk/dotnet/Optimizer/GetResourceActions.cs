@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Lists the Cloud Advisor resource actions that are supported.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.Optimizer
         /// This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
         /// 
         /// Lists the Cloud Advisor resource actions that are supported.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -93,7 +91,7 @@ namespace Pulumi.Oci.Optimizer
         private List<string>? _childTenancyIds;
 
         /// <summary>
-        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
+        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
         /// 
         /// If this list contains a tenancy id that isn't part of the organization of parent P, the request will  fail. That is, let's say there is an organization with parent P with children A and B, and also one  other tenant T that isn't part of the organization. If T is included in the list of  childTenancyIds, the request will fail.
         /// 
@@ -193,7 +191,7 @@ namespace Pulumi.Oci.Optimizer
         private InputList<string>? _childTenancyIds;
 
         /// <summary>
-        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
+        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
         /// 
         /// If this list contains a tenancy id that isn't part of the organization of parent P, the request will  fail. That is, let's say there is an organization with parent P with children A and B, and also one  other tenant T that isn't part of the organization. If T is included in the list of  childTenancyIds, the request will fail.
         /// 

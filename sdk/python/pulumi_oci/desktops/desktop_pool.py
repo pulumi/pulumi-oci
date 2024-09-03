@@ -61,7 +61,6 @@ class DesktopPoolArgs:
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -339,7 +338,6 @@ class DesktopPoolArgs:
         """
         (Updatable) The stop time of the desktop pool.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -403,7 +401,6 @@ class _DesktopPoolState:
         :param pulumi.Input[str] time_created: The date and time the resource was created.
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -739,7 +736,6 @@ class _DesktopPoolState:
         """
         (Updatable) The stop time of the desktop pool.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -870,7 +866,6 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[int] storage_size_in_gbs: The size in GBs of the storage for the desktop pool.
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1116,7 +1111,6 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1339,7 +1333,6 @@ class DesktopPool(pulumi.CustomResource):
     def time_stop_scheduled(self) -> pulumi.Output[Optional[str]]:
         """
         (Updatable) The stop time of the desktop pool.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

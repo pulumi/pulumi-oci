@@ -873,7 +873,6 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis(dict):
         """
         :param bool is_enabled: (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -885,7 +884,6 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis(dict):
     def is_enabled(self) -> Optional[bool]:
         """
         (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -969,7 +967,6 @@ class FleetOperationLog(dict):
         :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -989,7 +986,6 @@ class FleetOperationLog(dict):
     def log_id(self) -> str:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3490,7 +3486,7 @@ class GetInstallationSiteItemResult(dict):
         :param str path: The file system path of the installation.
         :param str security_status: The security status of the Java Runtime.
         :param str state: The lifecycle state of the installation site.
-        :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        :param str time_last_seen: The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         pulumi.set(__self__, "approximate_application_count", approximate_application_count)
         pulumi.set(__self__, "blocklists", blocklists)
@@ -3579,7 +3575,7 @@ class GetInstallationSiteItemResult(dict):
     @pulumi.getter(name="timeLastSeen")
     def time_last_seen(self) -> str:
         """
-        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         return pulumi.get(self, "time_last_seen")
 
@@ -3621,7 +3617,7 @@ class GetInstallationSiteItemJreResult(dict):
                  vendor: str,
                  version: str):
         """
-        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
         :param str jre_key: The unique identifier for a Java Runtime.
         :param str vendor: The vendor of the Java Runtime.
         :param str version: The version of the operating system as provided by the Java system property os.version.
@@ -3635,7 +3631,7 @@ class GetInstallationSiteItemJreResult(dict):
     @pulumi.getter
     def distribution(self) -> str:
         """
-        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
         """
         return pulumi.get(self, "distribution")
 
@@ -3818,7 +3814,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
         :param str path: The file system path of the installation.
         :param str security_status: The security status of the Java Runtime.
         :param str state: The lifecycle state of the installation site.
-        :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        :param str time_last_seen: The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         pulumi.set(__self__, "approximate_application_count", approximate_application_count)
         pulumi.set(__self__, "blocklists", blocklists)
@@ -3907,7 +3903,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
     @pulumi.getter(name="timeLastSeen")
     def time_last_seen(self) -> str:
         """
-        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         return pulumi.get(self, "time_last_seen")
 
@@ -3949,7 +3945,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
                  vendor: str,
                  version: str):
         """
-        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
         :param str jre_key: The unique identifier for a Java Runtime.
         :param str vendor: The vendor of the Java Runtime.
         :param str version: The version of the operating system as provided by the Java system property os.version.
@@ -3963,7 +3959,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
     @pulumi.getter
     def distribution(self) -> str:
         """
-        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
         """
         return pulumi.get(self, "distribution")
 
@@ -7023,7 +7019,7 @@ class GetJmsPluginsJmsPluginCollectionItemResult(dict):
         :param str plugin_version: The version of the plugin.
         :param str state: Filter JmsPlugin with its lifecycle state.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        :param str time_last_seen: The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         :param str time_registered: The date and time the plugin was registered.
         """
         pulumi.set(__self__, "agent_id", agent_id)
@@ -7168,7 +7164,7 @@ class GetJmsPluginsJmsPluginCollectionItemResult(dict):
     @pulumi.getter(name="timeLastSeen")
     def time_last_seen(self) -> str:
         """
-        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         return pulumi.get(self, "time_last_seen")
 
@@ -7209,7 +7205,7 @@ class GetListJreUsageItemResult(dict):
         :param int approximate_managed_instance_count: The approximate count of the managed instances that report this Java Runtime.
         :param int approximate_pending_work_request_count: The approximate count of work requests working on this Java Runtime.
         :param int days_under_security_baseline: The number of days since this release has been under the security baseline.
-        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
         :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
         :param str id: The internal identifier of the Java Runtime.
@@ -7218,8 +7214,8 @@ class GetListJreUsageItemResult(dict):
         :param str release_date: The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str security_status: The security status of the Java Runtime.
         :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str time_first_seen: The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        :param str time_first_seen: The date and time the resource was *first* reported to JMS. This is potentially *before* the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        :param str time_last_seen: The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str vendor: The vendor of the Java Runtime.
         :param str version: The version of the Java Runtime.
@@ -7288,7 +7284,7 @@ class GetListJreUsageItemResult(dict):
     @pulumi.getter
     def distribution(self) -> str:
         """
-        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example *Java(TM) SE Runtime Environment*.
         """
         return pulumi.get(self, "distribution")
 
@@ -7360,7 +7356,7 @@ class GetListJreUsageItemResult(dict):
     @pulumi.getter(name="timeFirstSeen")
     def time_first_seen(self) -> str:
         """
-        The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        The date and time the resource was *first* reported to JMS. This is potentially *before* the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         return pulumi.get(self, "time_first_seen")
 
@@ -7368,7 +7364,7 @@ class GetListJreUsageItemResult(dict):
     @pulumi.getter(name="timeLastSeen")
     def time_last_seen(self) -> str:
         """
-        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         return pulumi.get(self, "time_last_seen")
 

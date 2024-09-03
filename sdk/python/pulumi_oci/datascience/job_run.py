@@ -33,7 +33,6 @@ class JobRunArgs:
         :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] asynchronous: If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
@@ -94,7 +93,6 @@ class JobRunArgs:
     def project_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,7 +241,6 @@ class _JobRunState:
         :param pulumi.Input[Sequence[pulumi.Input['JobRunLogDetailArgs']]] log_details: Customer logging details for job run.
         :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -479,7 +476,6 @@ class _JobRunState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -622,7 +618,6 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[Union['JobRunJobLogConfigurationOverrideDetailsArgs', 'JobRunJobLogConfigurationOverrideDetailsArgsDict']] job_log_configuration_override_details: Logging configuration for resource.
         :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -802,7 +797,6 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The state of the job run.
@@ -961,7 +955,6 @@ class JobRun(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

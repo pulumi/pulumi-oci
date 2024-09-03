@@ -98,8 +98,7 @@ class ApplicationTraceConfigArgs:
                  is_enabled: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] domain_id: (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Define if tracing is enabled for the resource. 
-               
+        :param pulumi.Input[bool] is_enabled: (Updatable) Define if tracing is enabled for the resource.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,8 +124,7 @@ class ApplicationTraceConfigArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Define if tracing is enabled for the resource. 
-
+        (Updatable) Define if tracing is enabled for the resource.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -218,8 +216,7 @@ class FunctionTraceConfigArgs:
     def __init__(__self__, *,
                  is_enabled: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Define if tracing is enabled for the resource. 
-               
+        :param pulumi.Input[bool] is_enabled: (Updatable) Define if tracing is enabled for the resource.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -231,8 +228,7 @@ class FunctionTraceConfigArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Define if tracing is enabled for the resource. 
-
+        (Updatable) Define if tracing is enabled for the resource.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

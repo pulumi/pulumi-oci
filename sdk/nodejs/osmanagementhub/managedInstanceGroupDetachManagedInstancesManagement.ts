@@ -64,7 +64,6 @@ export class ManagedInstanceGroupDetachManagedInstancesManagement extends pulumi
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -112,7 +111,6 @@ export interface ManagedInstanceGroupDetachManagedInstancesManagementState {
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -129,7 +127,6 @@ export interface ManagedInstanceGroupDetachManagedInstancesManagementArgs {
     managedInstanceGroupId: pulumi.Input<string>;
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

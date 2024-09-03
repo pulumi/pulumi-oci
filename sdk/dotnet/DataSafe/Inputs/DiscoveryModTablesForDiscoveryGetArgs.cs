@@ -24,7 +24,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         /// <summary>
         /// This contains an optional list of the table names.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

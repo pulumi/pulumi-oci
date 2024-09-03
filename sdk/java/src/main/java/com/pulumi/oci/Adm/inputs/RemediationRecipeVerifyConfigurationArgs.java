@@ -108,14 +108,14 @@ public final class RemediationRecipeVerifyConfigurationArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
     @Import(name="repositoryUrl")
     private @Nullable Output<String> repositoryUrl;
 
     /**
-     * @return (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * @return (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
     public Optional<Output<String>> repositoryUrl() {
@@ -327,7 +327,7 @@ public final class RemediationRecipeVerifyConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param repositoryUrl (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         * @param repositoryUrl (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class RemediationRecipeVerifyConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param repositoryUrl (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         * @param repositoryUrl (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
          * 
          * @return builder
          * 

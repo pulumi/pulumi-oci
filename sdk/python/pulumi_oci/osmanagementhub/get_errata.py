@@ -172,6 +172,15 @@ def get_errata(advisory_severities: Optional[Sequence[str]] = None,
                time_issue_date_start: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetErrataResult:
     """
+    subcategory: "Os Management Hub"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: os_management_hub_get_errata"
+    sidebar_current: "docs-oci-datasource-os_management_hub-errata"
+    description: |-
+    	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: os_management_hub_get_errata
     This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
 
     Lists all of the currently available errata. Filter the list against a variety of criteria including but not
@@ -247,6 +256,15 @@ def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequen
                       time_issue_date_start: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetErrataResult]:
     """
+    subcategory: "Os Management Hub"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: os_management_hub_get_errata"
+    sidebar_current: "docs-oci-datasource-os_management_hub-errata"
+    description: |-
+    	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: os_management_hub_get_errata
     This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
 
     Lists all of the currently available errata. Filter the list against a variety of criteria including but not

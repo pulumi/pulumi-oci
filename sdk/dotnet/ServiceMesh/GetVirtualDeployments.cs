@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// Returns a list of VirtualDeployments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// This data source provides the list of Virtual Deployments in Oracle Cloud Infrastructure Service Mesh service.
         /// 
         /// Returns a list of VirtualDeployments.
-        /// 
         /// 
         /// ## Example Usage
         /// 

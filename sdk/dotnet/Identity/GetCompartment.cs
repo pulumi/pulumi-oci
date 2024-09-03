@@ -23,7 +23,6 @@ namespace Pulumi.Oci.Identity
         /// call the [ListInstances](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances) operation in the Cloud Compute
         /// Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -56,7 +55,6 @@ namespace Pulumi.Oci.Identity
         /// each resource type and specify the compartment's OCID as a query parameter in the request. For example,
         /// call the [ListInstances](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances) operation in the Cloud Compute
         /// Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
-        /// 
         /// 
         /// ## Example Usage
         /// 

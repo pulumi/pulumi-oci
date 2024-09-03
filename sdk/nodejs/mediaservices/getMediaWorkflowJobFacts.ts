@@ -6,25 +6,6 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
-/**
- * > **_NOTE:_** This data source has been deprecated and is no longer supported.
- * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
- *
- * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testMediaWorkflowJobFacts = oci.MediaServices.getMediaWorkflowJobFacts({
- *     mediaWorkflowJobId: testMediaWorkflowJob.id,
- *     key: mediaWorkflowJobFactKey,
- *     type: mediaWorkflowJobFactType,
- * });
- * ```
- */
 export function getMediaWorkflowJobFacts(args: GetMediaWorkflowJobFactsArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaWorkflowJobFactsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -41,17 +22,8 @@ export function getMediaWorkflowJobFacts(args: GetMediaWorkflowJobFactsArgs, opt
  */
 export interface GetMediaWorkflowJobFactsArgs {
     filters?: inputs.MediaServices.GetMediaWorkflowJobFactsFilter[];
-    /**
-     * Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-     */
     key?: string;
-    /**
-     * Unique MediaWorkflowJob identifier.
-     */
     mediaWorkflowJobId: string;
-    /**
-     * Types of details to include.
-     */
     type?: string;
 }
 
@@ -64,42 +36,11 @@ export interface GetMediaWorkflowJobFactsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
-     */
     readonly key?: string;
-    /**
-     * The list of media_workflow_job_fact_collection.
-     */
     readonly mediaWorkflowJobFactCollections: outputs.MediaServices.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection[];
-    /**
-     * Reference to the parent job.
-     */
     readonly mediaWorkflowJobId: string;
-    /**
-     * The type of information contained in this detail.
-     */
     readonly type?: string;
 }
-/**
- * > **_NOTE:_** This data source has been deprecated and is no longer supported.
- * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
- *
- * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testMediaWorkflowJobFacts = oci.MediaServices.getMediaWorkflowJobFacts({
- *     mediaWorkflowJobId: testMediaWorkflowJob.id,
- *     key: mediaWorkflowJobFactKey,
- *     type: mediaWorkflowJobFactType,
- * });
- * ```
- */
 export function getMediaWorkflowJobFactsOutput(args: GetMediaWorkflowJobFactsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaWorkflowJobFactsResult> {
     return pulumi.output(args).apply((a: any) => getMediaWorkflowJobFacts(a, opts))
 }
@@ -109,16 +50,7 @@ export function getMediaWorkflowJobFactsOutput(args: GetMediaWorkflowJobFactsOut
  */
 export interface GetMediaWorkflowJobFactsOutputArgs {
     filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaWorkflowJobFactsFilterArgs>[]>;
-    /**
-     * Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-     */
     key?: pulumi.Input<string>;
-    /**
-     * Unique MediaWorkflowJob identifier.
-     */
     mediaWorkflowJobId: pulumi.Input<string>;
-    /**
-     * Types of details to include.
-     */
     type?: pulumi.Input<string>;
 }

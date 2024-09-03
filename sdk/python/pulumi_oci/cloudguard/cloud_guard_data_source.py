@@ -35,7 +35,6 @@ class CloudGuardDataSourceArgs:
                Avoid entering confidential information.
         :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -131,7 +130,6 @@ class CloudGuardDataSourceArgs:
         """
         (Updatable) Enablement status of data source.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -172,7 +170,6 @@ class _CloudGuardDataSourceState:
         :param pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]] region_status_details: Information about the region and status of query replication
         :param pulumi.Input[str] state: The current lifecycle state of the resource.
         :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -323,7 +320,6 @@ class _CloudGuardDataSourceState:
         """
         (Updatable) Enablement status of data source.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -452,7 +448,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -614,7 +609,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current lifecycle state of the resource.
         :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -719,7 +713,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) Enablement status of data source.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

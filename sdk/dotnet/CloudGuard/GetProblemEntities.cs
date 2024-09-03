@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns a list of entities for a CloudGuard Problem
         /// Returns a list of entities for a problem.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of entities for a CloudGuard Problem
         /// Returns a list of entities for a problem.
-        /// 
         /// 
         /// ## Example Usage
         /// 

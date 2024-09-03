@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Retrieves the specified tag default.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Identity
         /// This data source provides details about a specific Tag Default resource in Oracle Cloud Infrastructure Identity service.
         /// 
         /// Retrieves the specified tag default.
-        /// 
         /// 
         /// ## Example Usage
         /// 

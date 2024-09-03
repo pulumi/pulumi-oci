@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Exadb Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
-        /// 
         /// 
         /// ## Example Usage
         /// 

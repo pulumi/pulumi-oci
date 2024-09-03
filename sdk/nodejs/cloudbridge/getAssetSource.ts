@@ -122,7 +122,7 @@ export interface GetAssetSourceResult {
      */
     readonly type: string;
     /**
-     * Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+     * Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
      */
     readonly vcenterEndpoint: string;
 }

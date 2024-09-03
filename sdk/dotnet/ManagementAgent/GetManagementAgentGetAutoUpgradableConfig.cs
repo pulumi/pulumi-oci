@@ -17,7 +17,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// Get the AutoUpgradable configuration for all agents in a tenancy.
         /// The supplied compartmentId must be a tenancy root.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Get the AutoUpgradable configuration for all agents in a tenancy.
         /// The supplied compartmentId must be a tenancy root.
-        /// 
         /// 
         /// ## Example Usage
         /// 

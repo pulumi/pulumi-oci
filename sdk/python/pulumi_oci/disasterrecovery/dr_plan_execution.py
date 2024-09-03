@@ -24,8 +24,7 @@ class DrPlanExecutionArgs:
         """
         The set of arguments for constructing a DrPlanExecution resource.
         :param pulumi.Input['DrPlanExecutionExecutionOptionsArgs'] execution_options: The options for a plan execution.
-        :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-               
+        :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -58,8 +57,7 @@ class DrPlanExecutionArgs:
     @pulumi.getter(name="planId")
     def plan_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-
+        The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,8 +143,7 @@ class _DrPlanExecutionState:
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] plan_execution_type: The type of the DR plan executed.
-        :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-               
+        :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -358,8 +355,7 @@ class _DrPlanExecutionState:
     @pulumi.getter(name="planId")
     def plan_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-
+        The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -495,8 +491,7 @@ class DrPlanExecution(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
         :param pulumi.Input[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict']] execution_options: The options for a plan execution.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-               
+        :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -645,8 +640,7 @@ class DrPlanExecution(pulumi.CustomResource):
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] plan_execution_type: The type of the DR plan executed.
-        :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-               
+        :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -791,8 +785,7 @@ class DrPlanExecution(pulumi.CustomResource):
     @pulumi.getter(name="planId")
     def plan_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-
+        The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

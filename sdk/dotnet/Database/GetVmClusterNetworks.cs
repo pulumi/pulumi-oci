@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
-        /// 
         /// 
         /// ## Example Usage
         /// 

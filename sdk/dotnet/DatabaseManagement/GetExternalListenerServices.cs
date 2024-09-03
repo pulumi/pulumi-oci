@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the database services registered with the specified external listener
         /// for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the database services registered with the specified external listener
         /// for the specified Managed Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

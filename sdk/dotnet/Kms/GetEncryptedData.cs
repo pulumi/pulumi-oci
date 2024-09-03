@@ -14,10 +14,9 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The `oci.Kms.EncryptedData` data source provides details about a specific EncryptedData
         /// 
-        /// Encrypts data using the given EncryptDataDetails resource. 
-        /// Plaintext included in the example request is a base64-encoded value 
+        /// Encrypts data using the given EncryptDataDetails resource.
+        /// Plaintext included in the example request is a base64-encoded value
         /// of a UTF-8 string.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -46,10 +45,9 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The `oci.Kms.EncryptedData` data source provides details about a specific EncryptedData
         /// 
-        /// Encrypts data using the given EncryptDataDetails resource. 
-        /// Plaintext included in the example request is a base64-encoded value 
+        /// Encrypts data using the given EncryptDataDetails resource.
+        /// Plaintext included in the example request is a base64-encoded value
         /// of a UTF-8 string.
-        /// 
         /// 
         /// ## Example Usage
         /// 

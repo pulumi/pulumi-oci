@@ -16,7 +16,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// 
         /// Returns a list of published and staged applications of a Visual Builder instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
         /// 
         /// Returns a list of published and staged applications of a Visual Builder instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

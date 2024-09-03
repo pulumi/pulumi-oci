@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Email
         /// `compartmentId` for suppressions must be a tenancy OCID. The returned list
         /// is sorted by creation time in descending order.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Email
         /// Gets a list of suppressed recipient email addresses for a user. The
         /// `compartmentId` for suppressions must be a tenancy OCID. The returned list
         /// is sorted by creation time in descending order.
-        /// 
         /// 
         /// ## Example Usage
         /// 

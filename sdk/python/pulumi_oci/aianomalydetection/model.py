@@ -29,7 +29,6 @@ class ModelArgs:
         :param pulumi.Input['ModelModelTrainingDetailsArgs'] model_training_details: Specifies the details of the MSET model during the create call.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -78,7 +77,6 @@ class ModelArgs:
     def project_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,7 +163,6 @@ class _ModelState:
         :param pulumi.Input['ModelModelTrainingDetailsArgs'] model_training_details: Specifies the details of the MSET model during the create call.
         :param pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultArgs']]] model_training_results: Specifies the details for an Anomaly Detection model trained with MSET.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -303,7 +300,6 @@ class _ModelState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -423,7 +419,6 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Union['ModelModelTrainingDetailsArgs', 'ModelModelTrainingDetailsArgsDict']] model_training_details: Specifies the details of the MSET model during the create call.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -563,7 +558,6 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ModelModelTrainingResultArgs', 'ModelModelTrainingResultArgsDict']]]] model_training_results: Specifies the details for an Anomaly Detection model trained with MSET.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The state of the model.
@@ -659,7 +653,6 @@ class Model(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

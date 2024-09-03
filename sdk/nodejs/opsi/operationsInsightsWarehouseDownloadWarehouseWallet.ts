@@ -64,7 +64,6 @@ export class OperationsInsightsWarehouseDownloadWarehouseWallet extends pulumi.C
     /**
      * User provided ADW wallet password for the Ops Insights Warehouse.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -114,7 +113,6 @@ export interface OperationsInsightsWarehouseDownloadWarehouseWalletState {
     /**
      * User provided ADW wallet password for the Ops Insights Warehouse.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -131,7 +129,6 @@ export interface OperationsInsightsWarehouseDownloadWarehouseWalletArgs {
     operationsInsightsWarehouseId: pulumi.Input<string>;
     /**
      * User provided ADW wallet password for the Ops Insights Warehouse.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

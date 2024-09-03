@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Return the saved usage statement email recipient group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Return the saved usage statement email recipient group.
-        /// 
         /// 
         /// ## Example Usage
         /// 

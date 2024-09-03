@@ -490,7 +490,6 @@ class OsnOcpuAllocationParam(dict):
         """
         :param float ocpu_allocation_number: (Updatable) Number of OCPU allocation
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -501,7 +500,6 @@ class OsnOcpuAllocationParam(dict):
     def ocpu_allocation_number(self) -> float:
         """
         (Updatable) Number of OCPU allocation
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

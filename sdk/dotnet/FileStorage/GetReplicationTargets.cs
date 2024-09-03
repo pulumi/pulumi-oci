@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Lists the replication target resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.FileStorage
         /// This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
         /// 
         /// Lists the replication target resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

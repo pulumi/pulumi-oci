@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.CloudGuard
         /// This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
         /// Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
-        /// 
         /// 
         /// ## Example Usage
         /// 

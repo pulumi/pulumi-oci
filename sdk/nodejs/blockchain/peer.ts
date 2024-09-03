@@ -91,7 +91,6 @@ export class Peer extends pulumi.CustomResource {
     /**
      * Peer role
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -181,7 +180,6 @@ export interface PeerState {
     /**
      * Peer role
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -214,7 +212,6 @@ export interface PeerArgs {
     ocpuAllocationParam: pulumi.Input<inputs.Blockchain.PeerOcpuAllocationParam>;
     /**
      * Peer role
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -81,9 +81,9 @@ type GetListJreUsageResult struct {
 	Id string `pulumi:"id"`
 	// A list of Java Runtimes.
 	Items []GetListJreUsageItem `pulumi:"items"`
-	// Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+	// Upper bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
 	TimeEnd *string `pulumi:"timeEnd"`
-	// Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+	// Lower bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
 	TimeStart *string `pulumi:"timeStart"`
 }
 
@@ -161,12 +161,12 @@ func (o GetListJreUsageResultOutput) Items() GetListJreUsageItemArrayOutput {
 	return o.ApplyT(func(v GetListJreUsageResult) []GetListJreUsageItem { return v.Items }).(GetListJreUsageItemArrayOutput)
 }
 
-// Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+// Upper bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
 func (o GetListJreUsageResultOutput) TimeEnd() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetListJreUsageResult) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
-// Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+// Lower bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
 func (o GetListJreUsageResultOutput) TimeStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetListJreUsageResult) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }

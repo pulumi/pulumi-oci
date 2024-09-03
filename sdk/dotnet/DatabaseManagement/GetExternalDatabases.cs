@@ -12,6 +12,15 @@ namespace Pulumi.Oci.DatabaseManagement
     public static class GetExternalDatabases
     {
         /// <summary>
+        /// subcategory: "Database Management"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases"
+        /// sidebar_current: "docs-oci-datasource-database_management-external_databases"
+        /// description: |-
+        /// Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.DatabaseManagement.getExternalDatabases
         /// This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the external databases in the specified compartment or in the specified DB system.
@@ -41,6 +50,15 @@ namespace Pulumi.Oci.DatabaseManagement
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDatabasesResult>("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", args ?? new GetExternalDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// subcategory: "Database Management"
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.DatabaseManagement.getExternalDatabases"
+        /// sidebar_current: "docs-oci-datasource-database_management-external_databases"
+        /// description: |-
+        /// Provides the list of External Databases in Oracle Cloud Infrastructure Database Management service
+        /// &lt;!-- yaml: line 7: could not find expected ':' --&gt;
+        /// 
+        /// # Data Source: oci.DatabaseManagement.getExternalDatabases
         /// This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the external databases in the specified compartment or in the specified DB system.

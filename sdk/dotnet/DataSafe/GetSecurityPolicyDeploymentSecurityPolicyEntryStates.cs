@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DataSafe
         /// Retrieves a list of all security policy entry states in Data Safe.
         /// 
         /// The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
-        /// 
         /// 
         /// ## Example Usage
         /// 

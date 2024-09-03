@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsubSubscription
         /// 
         /// This list API returns all commitments for a particular Subscribed Service
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OsubSubscription
         /// This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
         /// 
         /// This list API returns all commitments for a particular Subscribed Service
-        /// 
         /// 
         /// ## Example Usage
         /// 

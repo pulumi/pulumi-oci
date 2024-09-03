@@ -21,7 +21,6 @@ class MetricExtensionsTestManagementArgs:
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         :param pulumi.Input[str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -46,7 +45,6 @@ class MetricExtensionsTestManagementArgs:
         """
         List of Resource IDs [OCID]. Currently, supports only one resource id per request.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -70,7 +68,6 @@ class _MetricExtensionsTestManagementState:
         Input properties used for looking up and filtering MetricExtensionsTestManagement resources.
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         :param pulumi.Input[str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -109,7 +106,6 @@ class _MetricExtensionsTestManagementState:
     def resource_ids(self) -> Optional[pulumi.Input[str]]:
         """
         List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -202,7 +198,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         :param pulumi.Input[str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -294,7 +289,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         :param pulumi.Input[str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] test_run_id: Test Run Id
@@ -327,7 +321,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
     def resource_ids(self) -> pulumi.Output[str]:
         """
         List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

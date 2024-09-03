@@ -102,7 +102,6 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -226,7 +225,6 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -299,7 +297,6 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

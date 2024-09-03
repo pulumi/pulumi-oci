@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
         /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
         /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

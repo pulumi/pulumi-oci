@@ -76,7 +76,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Determines if the container will have access to the container instance resource principal.
         /// 
-        /// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+        /// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see &lt;https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal&gt;.
         /// </summary>
         public readonly bool? IsResourcePrincipalDisabled;
         /// <summary>
@@ -92,8 +92,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly Outputs.ContainerInstanceContainerSecurityContext? SecurityContext;
         /// <summary>
-        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

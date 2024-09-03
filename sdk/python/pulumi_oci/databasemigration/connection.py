@@ -85,7 +85,6 @@ class ConnectionArgs:
         :param pulumi.Input[str] subnet_id: (Updatable) Oracle Cloud Infrastructure resource ID.
         :param pulumi.Input[str] wallet: (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -538,7 +537,6 @@ class ConnectionArgs:
         """
         (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -636,7 +634,6 @@ class _ConnectionState:
         :param pulumi.Input[str] username: (Updatable) The username (credential) used when creating or updating this resource.
         :param pulumi.Input[str] vault_id: (Updatable) Oracle Cloud Infrastructure resource ID.
         :param pulumi.Input[str] wallet: (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1210,7 +1207,6 @@ class _ConnectionState:
         """
         (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1351,7 +1347,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] username: (Updatable) The username (credential) used when creating or updating this resource.
         :param pulumi.Input[str] vault_id: (Updatable) Oracle Cloud Infrastructure resource ID.
         :param pulumi.Input[str] wallet: (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1633,7 +1628,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] username: (Updatable) The username (credential) used when creating or updating this resource.
         :param pulumi.Input[str] vault_id: (Updatable) Oracle Cloud Infrastructure resource ID.
         :param pulumi.Input[str] wallet: (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2010,7 +2004,6 @@ class Connection(pulumi.CustomResource):
     def wallet(self) -> pulumi.Output[str]:
         """
         (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

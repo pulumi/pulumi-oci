@@ -30,7 +30,6 @@ class OdaInstanceArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Identifier of the compartment.
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -75,7 +74,6 @@ class OdaInstanceArgs:
     def shape_name(self) -> pulumi.Input[str]:
         """
         Shape or size of the instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -215,7 +213,6 @@ class _OdaInstanceState:
         :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
         :param pulumi.Input[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -468,7 +465,6 @@ class _OdaInstanceState:
         """
         Shape or size of the instance.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -601,7 +597,6 @@ class OdaInstance(pulumi.CustomResource):
         :param pulumi.Input[str] identity_domain: If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
         :param pulumi.Input[bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -765,7 +760,6 @@ class OdaInstance(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
         :param pulumi.Input[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict']]]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -936,7 +930,6 @@ class OdaInstance(pulumi.CustomResource):
     def shape_name(self) -> pulumi.Output[str]:
         """
         Shape or size of the instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

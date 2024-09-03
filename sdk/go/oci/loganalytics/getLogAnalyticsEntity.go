@@ -65,7 +65,7 @@ type LookupLogAnalyticsEntityResult struct {
 	AreLogsCollected bool `pulumi:"areLogsCollected"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId string `pulumi:"cloudResourceId"`
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -159,7 +159,7 @@ func (o LookupLogAnalyticsEntityResultOutput) CloudResourceId() pulumi.StringOut
 	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.CloudResourceId }).(pulumi.StringOutput)
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o LookupLogAnalyticsEntityResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

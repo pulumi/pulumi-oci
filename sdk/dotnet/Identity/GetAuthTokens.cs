@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Identity
         /// Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
         /// the token itself. The actual token is returned only upon creation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
         /// the token itself. The actual token is returned only upon creation.
-        /// 
         /// 
         /// ## Example Usage
         /// 

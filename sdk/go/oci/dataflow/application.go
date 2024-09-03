@@ -99,7 +99,7 @@ type Application struct {
 
 	// (Updatable) Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfig ApplicationApplicationLogConfigOutput `pulumi:"applicationLogConfig"`
-	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	ArchiveUri pulumi.StringPtrOutput `pulumi:"archiveUri"`
 	// (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments pulumi.StringArrayOutput `pulumi:"arguments"`
@@ -107,7 +107,7 @@ type Application struct {
 	ClassName pulumi.StringPtrOutput `pulumi:"className"`
 	// (Updatable) The OCID of a compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration pulumi.StringMapOutput `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -119,13 +119,13 @@ type Application struct {
 	DriverShape pulumi.StringOutput `pulumi:"driverShape"`
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfig ApplicationDriverShapeConfigOutput `pulumi:"driverShapeConfig"`
-	// (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+	// (Updatable) The input used for spark-submit command. For more details see <https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit>. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute pulumi.StringOutput `pulumi:"execute"`
 	// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape pulumi.StringOutput `pulumi:"executorShape"`
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig ApplicationExecutorShapeConfigOutput `pulumi:"executorShapeConfig"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	FileUri pulumi.StringOutput `pulumi:"fileUri"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
@@ -133,7 +133,7 @@ type Application struct {
 	IdleTimeoutInMinutes pulumi.StringOutput `pulumi:"idleTimeoutInMinutes"`
 	// (Updatable) The Spark language.
 	Language pulumi.StringOutput `pulumi:"language"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	LogsBucketUri pulumi.StringOutput `pulumi:"logsBucketUri"`
 	// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
 	MaxDurationInMinutes pulumi.StringOutput `pulumi:"maxDurationInMinutes"`
@@ -161,7 +161,7 @@ type Application struct {
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The Spark application processing type.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -221,7 +221,7 @@ func GetApplication(ctx *pulumi.Context,
 type applicationState struct {
 	// (Updatable) Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfig *ApplicationApplicationLogConfig `pulumi:"applicationLogConfig"`
-	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	ArchiveUri *string `pulumi:"archiveUri"`
 	// (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments []string `pulumi:"arguments"`
@@ -229,7 +229,7 @@ type applicationState struct {
 	ClassName *string `pulumi:"className"`
 	// (Updatable) The OCID of a compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration map[string]string `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -241,13 +241,13 @@ type applicationState struct {
 	DriverShape *string `pulumi:"driverShape"`
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfig *ApplicationDriverShapeConfig `pulumi:"driverShapeConfig"`
-	// (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+	// (Updatable) The input used for spark-submit command. For more details see <https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit>. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute *string `pulumi:"execute"`
 	// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape *string `pulumi:"executorShape"`
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig *ApplicationExecutorShapeConfig `pulumi:"executorShapeConfig"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	FileUri *string `pulumi:"fileUri"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -255,7 +255,7 @@ type applicationState struct {
 	IdleTimeoutInMinutes *string `pulumi:"idleTimeoutInMinutes"`
 	// (Updatable) The Spark language.
 	Language *string `pulumi:"language"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	LogsBucketUri *string `pulumi:"logsBucketUri"`
 	// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
 	MaxDurationInMinutes *string `pulumi:"maxDurationInMinutes"`
@@ -283,7 +283,7 @@ type applicationState struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The Spark application processing type.
 	Type *string `pulumi:"type"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -293,7 +293,7 @@ type applicationState struct {
 type ApplicationState struct {
 	// (Updatable) Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfig ApplicationApplicationLogConfigPtrInput
-	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	ArchiveUri pulumi.StringPtrInput
 	// (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments pulumi.StringArrayInput
@@ -301,7 +301,7 @@ type ApplicationState struct {
 	ClassName pulumi.StringPtrInput
 	// (Updatable) The OCID of a compartment.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration pulumi.StringMapInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -313,13 +313,13 @@ type ApplicationState struct {
 	DriverShape pulumi.StringPtrInput
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfig ApplicationDriverShapeConfigPtrInput
-	// (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+	// (Updatable) The input used for spark-submit command. For more details see <https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit>. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute pulumi.StringPtrInput
 	// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape pulumi.StringPtrInput
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig ApplicationExecutorShapeConfigPtrInput
-	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	FileUri pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -327,7 +327,7 @@ type ApplicationState struct {
 	IdleTimeoutInMinutes pulumi.StringPtrInput
 	// (Updatable) The Spark language.
 	Language pulumi.StringPtrInput
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	LogsBucketUri pulumi.StringPtrInput
 	// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
 	MaxDurationInMinutes pulumi.StringPtrInput
@@ -355,7 +355,7 @@ type ApplicationState struct {
 	TimeUpdated pulumi.StringPtrInput
 	// The Spark application processing type.
 	Type pulumi.StringPtrInput
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -369,7 +369,7 @@ func (ApplicationState) ElementType() reflect.Type {
 type applicationArgs struct {
 	// (Updatable) Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfig *ApplicationApplicationLogConfig `pulumi:"applicationLogConfig"`
-	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	ArchiveUri *string `pulumi:"archiveUri"`
 	// (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments []string `pulumi:"arguments"`
@@ -377,7 +377,7 @@ type applicationArgs struct {
 	ClassName *string `pulumi:"className"`
 	// (Updatable) The OCID of a compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration map[string]string `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -389,13 +389,13 @@ type applicationArgs struct {
 	DriverShape string `pulumi:"driverShape"`
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfig *ApplicationDriverShapeConfig `pulumi:"driverShapeConfig"`
-	// (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+	// (Updatable) The input used for spark-submit command. For more details see <https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit>. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute *string `pulumi:"execute"`
 	// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape string `pulumi:"executorShape"`
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig *ApplicationExecutorShapeConfig `pulumi:"executorShapeConfig"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	FileUri *string `pulumi:"fileUri"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -403,7 +403,7 @@ type applicationArgs struct {
 	IdleTimeoutInMinutes *string `pulumi:"idleTimeoutInMinutes"`
 	// (Updatable) The Spark language.
 	Language string `pulumi:"language"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	LogsBucketUri *string `pulumi:"logsBucketUri"`
 	// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
 	MaxDurationInMinutes *string `pulumi:"maxDurationInMinutes"`
@@ -421,7 +421,7 @@ type applicationArgs struct {
 	SparkVersion string `pulumi:"sparkVersion"`
 	// The Spark application processing type.
 	Type *string `pulumi:"type"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -432,7 +432,7 @@ type applicationArgs struct {
 type ApplicationArgs struct {
 	// (Updatable) Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfig ApplicationApplicationLogConfigPtrInput
-	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	ArchiveUri pulumi.StringPtrInput
 	// (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments pulumi.StringArrayInput
@@ -440,7 +440,7 @@ type ApplicationArgs struct {
 	ClassName pulumi.StringPtrInput
 	// (Updatable) The OCID of a compartment.
 	CompartmentId pulumi.StringInput
-	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration pulumi.StringMapInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -452,13 +452,13 @@ type ApplicationArgs struct {
 	DriverShape pulumi.StringInput
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfig ApplicationDriverShapeConfigPtrInput
-	// (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+	// (Updatable) The input used for spark-submit command. For more details see <https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit>. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute pulumi.StringPtrInput
 	// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape pulumi.StringInput
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig ApplicationExecutorShapeConfigPtrInput
-	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	FileUri pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -466,7 +466,7 @@ type ApplicationArgs struct {
 	IdleTimeoutInMinutes pulumi.StringPtrInput
 	// (Updatable) The Spark language.
 	Language pulumi.StringInput
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	LogsBucketUri pulumi.StringPtrInput
 	// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
 	MaxDurationInMinutes pulumi.StringPtrInput
@@ -484,7 +484,7 @@ type ApplicationArgs struct {
 	SparkVersion pulumi.StringInput
 	// The Spark application processing type.
 	Type pulumi.StringPtrInput
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -583,7 +583,7 @@ func (o ApplicationOutput) ApplicationLogConfig() ApplicationApplicationLogConfi
 	return o.ApplyT(func(v *Application) ApplicationApplicationLogConfigOutput { return v.ApplicationLogConfig }).(ApplicationApplicationLogConfigOutput)
 }
 
-// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, “oci://path/to/a.zip,oci://path/to/b.zip“. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 func (o ApplicationOutput) ArchiveUri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.ArchiveUri }).(pulumi.StringPtrOutput)
 }
@@ -603,7 +603,7 @@ func (o ApplicationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+// (Updatable) The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 func (o ApplicationOutput) Configuration() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringMapOutput { return v.Configuration }).(pulumi.StringMapOutput)
 }
@@ -633,7 +633,7 @@ func (o ApplicationOutput) DriverShapeConfig() ApplicationDriverShapeConfigOutpu
 	return o.ApplyT(func(v *Application) ApplicationDriverShapeConfigOutput { return v.DriverShapeConfig }).(ApplicationDriverShapeConfigOutput)
 }
 
-// (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include “--class“, “--file“, “--jars“, “--conf“, “--py-files“, and main application file with arguments. Example: “--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10“ Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+// (Updatable) The input used for spark-submit command. For more details see <https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit>. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 func (o ApplicationOutput) Execute() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.Execute }).(pulumi.StringOutput)
 }
@@ -648,7 +648,7 @@ func (o ApplicationOutput) ExecutorShapeConfig() ApplicationExecutorShapeConfigO
 	return o.ApplyT(func(v *Application) ApplicationExecutorShapeConfigOutput { return v.ExecutorShapeConfig }).(ApplicationExecutorShapeConfigOutput)
 }
 
-// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 func (o ApplicationOutput) FileUri() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.FileUri }).(pulumi.StringOutput)
 }
@@ -668,7 +668,7 @@ func (o ApplicationOutput) Language() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.Language }).(pulumi.StringOutput)
 }
 
-// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 func (o ApplicationOutput) LogsBucketUri() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.LogsBucketUri }).(pulumi.StringOutput)
 }
@@ -738,7 +738,7 @@ func (o ApplicationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

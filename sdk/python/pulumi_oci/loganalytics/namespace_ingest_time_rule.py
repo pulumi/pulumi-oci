@@ -27,11 +27,10 @@ class NamespaceIngestTimeRuleArgs:
         """
         The set of arguments for constructing a NamespaceIngestTimeRule resource.
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param pulumi.Input['NamespaceIngestTimeRuleConditionsArgs'] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
         :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -67,7 +66,7 @@ class NamespaceIngestTimeRuleArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -103,8 +102,7 @@ class NamespaceIngestTimeRuleArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        The Logging Analytics namespace used for the request. 
-
+        The Logging Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,15 +169,14 @@ class _NamespaceIngestTimeRuleState:
         """
         Input properties used for looking up and filtering NamespaceIngestTimeRule resources.
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param pulumi.Input['NamespaceIngestTimeRuleConditionsArgs'] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: A flag indicating whether or not the ingest time rule is enabled.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +227,7 @@ class _NamespaceIngestTimeRuleState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -323,8 +320,7 @@ class _NamespaceIngestTimeRuleState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The Logging Analytics namespace used for the request. 
-
+        The Logging Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -440,14 +436,13 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceIngestTimeRuleActionArgs', 'NamespaceIngestTimeRuleActionArgsDict']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param pulumi.Input[Union['NamespaceIngestTimeRuleConditionsArgs', 'NamespaceIngestTimeRuleConditionsArgsDict']] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -595,15 +590,14 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceIngestTimeRuleActionArgs', 'NamespaceIngestTimeRuleActionArgsDict']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param pulumi.Input[Union['NamespaceIngestTimeRuleConditionsArgs', 'NamespaceIngestTimeRuleConditionsArgsDict']] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: A flag indicating whether or not the ingest time rule is enabled.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -642,7 +636,7 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -703,8 +697,7 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
         """
-        The Logging Analytics namespace used for the request. 
-
+        The Logging Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

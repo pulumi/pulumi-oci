@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Redis
         /// 
         /// Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Redis
         /// This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
         /// 
         /// Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

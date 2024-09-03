@@ -42,24 +42,8 @@ class AlarmOverrideArgs:
         :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
                
                Example of threshold alarm:
-               
-               -----
-               
-               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-               
-               -----
-               
-               Example of absence alarm:
-               
-               -----
-               
-               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-               
-               ----- Example of absence alarm with custom absence detection period of 20 hours:
-               
-               ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
-        :param pulumi.Input[str] rule_name: (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
-        :param pulumi.Input[str] severity: (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+        :param pulumi.Input[str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         """
         if body is not None:
             pulumi.set(__self__, "body", body)
@@ -111,22 +95,6 @@ class AlarmOverrideArgs:
         (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 
         Example of threshold alarm:
-
-        -----
-
-        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-
-        -----
-
-        Example of absence alarm:
-
-        -----
-
-        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-
-        ----- Example of absence alarm with custom absence detection period of 20 hours:
-
-        ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
         """
         return pulumi.get(self, "query")
 
@@ -138,7 +106,7 @@ class AlarmOverrideArgs:
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+        (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         """
         return pulumi.get(self, "rule_name")
 
@@ -150,7 +118,7 @@ class AlarmOverrideArgs:
     @pulumi.getter
     def severity(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+        (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         """
         return pulumi.get(self, "severity")
 
@@ -167,8 +135,7 @@ class AlarmSuppressionArgs:
                  description: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[str] time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[str] time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -199,8 +166,7 @@ class AlarmSuppressionArgs:
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Input[str]:
         """
-        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-
+        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

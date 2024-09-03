@@ -144,7 +144,6 @@ export class UserAssessment extends pulumi.CustomResource {
     /**
      * The OCID of the target database on which the user assessment is to be run.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -326,7 +325,6 @@ export interface UserAssessmentState {
     /**
      * The OCID of the target database on which the user assessment is to be run.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -393,7 +391,6 @@ export interface UserAssessmentArgs {
     schedule?: pulumi.Input<string>;
     /**
      * The OCID of the target database on which the user assessment is to be run.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

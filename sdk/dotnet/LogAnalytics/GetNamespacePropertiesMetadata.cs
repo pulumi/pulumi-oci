@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of properties along with their metadata.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns a list of properties along with their metadata.
-        /// 
         /// 
         /// ## Example Usage
         /// 

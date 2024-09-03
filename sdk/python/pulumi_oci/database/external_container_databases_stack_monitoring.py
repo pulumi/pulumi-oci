@@ -21,7 +21,6 @@ class ExternalContainerDatabasesStackMonitoringArgs:
         The set of arguments for constructing a ExternalContainerDatabasesStackMonitoring resource.
         :param pulumi.Input[bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -36,7 +35,6 @@ class ExternalContainerDatabasesStackMonitoringArgs:
     def enable_stack_monitoring(self) -> pulumi.Input[bool]:
         """
         (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -82,7 +80,6 @@ class _ExternalContainerDatabasesStackMonitoringState:
         Input properties used for looking up and filtering ExternalContainerDatabasesStackMonitoring resources.
         :param pulumi.Input[bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -100,7 +97,6 @@ class _ExternalContainerDatabasesStackMonitoringState:
     def enable_stack_monitoring(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -169,7 +165,6 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -261,7 +256,6 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -281,7 +275,6 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
     def enable_stack_monitoring(self) -> pulumi.Output[bool]:
         """
         (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

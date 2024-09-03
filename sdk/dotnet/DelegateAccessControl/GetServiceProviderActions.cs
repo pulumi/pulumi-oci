@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// 
         /// Lists all the ServiceProviderActions available in the system.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// This data source provides the list of Service Provider Actions in Oracle Cloud Infrastructure Delegate Access Control service.
         /// 
         /// Lists all the ServiceProviderActions available in the system.
-        /// 
         /// 
         /// ## Example Usage
         /// 

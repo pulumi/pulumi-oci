@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// Returns a list of Models.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
         /// 
         /// Returns a list of Models.
-        /// 
         /// 
         /// ## Example Usage
         /// 

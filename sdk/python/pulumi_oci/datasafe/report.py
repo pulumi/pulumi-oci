@@ -22,7 +22,6 @@ class ReportArgs:
         The set of arguments for constructing a Report resource.
         :param pulumi.Input[str] report_id: Unique report identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the report.
@@ -42,7 +41,6 @@ class ReportArgs:
     def report_id(self) -> pulumi.Input[str]:
         """
         Unique report identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,7 +115,6 @@ class _ReportState:
         :param pulumi.Input[str] mime_type: Specifies the format of report to be .xls or .pdf or .json
         :param pulumi.Input[str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[str] report_id: Unique report identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,7 +252,6 @@ class _ReportState:
         """
         Unique report identifier
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -343,7 +339,6 @@ class Report(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] report_id: Unique report identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -450,7 +445,6 @@ class Report(pulumi.CustomResource):
         :param pulumi.Input[str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[str] report_id: Unique report identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the audit report.
@@ -546,7 +540,6 @@ class Report(pulumi.CustomResource):
     def report_id(self) -> pulumi.Output[str]:
         """
         Unique report identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// This API has been deprecated so it won't return the updated list of supported protocls.
         /// Lists all supported traffic protocols.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// This API has been deprecated so it won't return the updated list of supported protocls.
         /// Lists all supported traffic protocols.
-        /// 
         /// 
         /// ## Example Usage
         /// 

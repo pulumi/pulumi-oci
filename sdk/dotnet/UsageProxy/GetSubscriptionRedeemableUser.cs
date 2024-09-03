@@ -16,7 +16,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// Provides the list of user summary that can redeem rewards for the given subscription ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.UsageProxy
         /// This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
         /// 
         /// Provides the list of user summary that can redeem rewards for the given subscription ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

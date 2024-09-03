@@ -13,19 +13,19 @@ import * as utilities from "../utilities";
  * in the specified compartment. You can filter the list by using query parameters.
  *
  * To list your reserved public IPs:
- *   * Set `scope` = `REGION`  (required)
- *   * Leave the `availabilityDomain` parameter empty
- *   * Set `lifetime` = `RESERVED`
+ * * Set `scope` = `REGION`  (required)
+ * * Leave the `availabilityDomain` parameter empty
+ * * Set `lifetime` = `RESERVED`
  *
  * To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
- *   * Set `scope` = `REGION`  (required)
- *   * Leave the `availabilityDomain` parameter empty
- *   * Set `lifetime` = `EPHEMERAL`
+ * * Set `scope` = `REGION`  (required)
+ * * Leave the `availabilityDomain` parameter empty
+ * * Set `lifetime` = `EPHEMERAL`
  *
  * To list the ephemeral public IPs assigned to private IPs:
- *   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
- *   * Set the `availabilityDomain` parameter to the desired availability domain (required)
- *   * Set `lifetime` = `EPHEMERAL`
+ * * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+ * * Set the `availabilityDomain` parameter to the desired availability domain (required)
+ * * Set `lifetime` = `EPHEMERAL`
  *
  * **Note:** An ephemeral public IP assigned to a private IP
  * is always in the same availability domain and compartment as the private IP.
@@ -132,19 +132,19 @@ export interface GetPublicIpsResult {
  * in the specified compartment. You can filter the list by using query parameters.
  *
  * To list your reserved public IPs:
- *   * Set `scope` = `REGION`  (required)
- *   * Leave the `availabilityDomain` parameter empty
- *   * Set `lifetime` = `RESERVED`
+ * * Set `scope` = `REGION`  (required)
+ * * Leave the `availabilityDomain` parameter empty
+ * * Set `lifetime` = `RESERVED`
  *
  * To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
- *   * Set `scope` = `REGION`  (required)
- *   * Leave the `availabilityDomain` parameter empty
- *   * Set `lifetime` = `EPHEMERAL`
+ * * Set `scope` = `REGION`  (required)
+ * * Leave the `availabilityDomain` parameter empty
+ * * Set `lifetime` = `EPHEMERAL`
  *
  * To list the ephemeral public IPs assigned to private IPs:
- *   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
- *   * Set the `availabilityDomain` parameter to the desired availability domain (required)
- *   * Set `lifetime` = `EPHEMERAL`
+ * * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+ * * Set the `availabilityDomain` parameter to the desired availability domain (required)
+ * * Set `lifetime` = `EPHEMERAL`
  *
  * **Note:** An ephemeral public IP assigned to a private IP
  * is always in the same availability domain and compartment as the private IP.

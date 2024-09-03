@@ -130,8 +130,7 @@ export class Pool extends pulumi.CustomResource {
      */
     public readonly schedules!: pulumi.Output<outputs.DataFlow.PoolSchedule[]>;
     /**
-     * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-     *
+     * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -259,8 +258,7 @@ export interface PoolState {
      */
     schedules?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolSchedule>[]>;
     /**
-     * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-     *
+     * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -313,8 +311,7 @@ export interface PoolArgs {
      */
     schedules?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolSchedule>[]>;
     /**
-     * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-     *
+     * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

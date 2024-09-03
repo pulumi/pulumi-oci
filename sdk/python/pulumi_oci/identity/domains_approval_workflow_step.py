@@ -67,7 +67,6 @@ class DomainsApprovalWorkflowStepArgs:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['DomainsApprovalWorkflowStepApproverArgs']]] approvers: Approvers of the ApprovalWorkflowStep.
@@ -228,7 +227,6 @@ class DomainsApprovalWorkflowStepArgs:
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -619,7 +617,6 @@ class _DomainsApprovalWorkflowStepState:
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1096,7 +1093,6 @@ class _DomainsApprovalWorkflowStepState:
         * type: string
         * uniqueness: none
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1238,7 +1234,6 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1559,7 +1554,6 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1934,7 +1928,6 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

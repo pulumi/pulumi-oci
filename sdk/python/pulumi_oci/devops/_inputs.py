@@ -556,7 +556,6 @@ class BuildPipelineStageWaitCriteriaArgs:
         :param pulumi.Input[str] wait_duration: (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
         :param pulumi.Input[str] wait_type: (Updatable) Wait criteria type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -580,7 +579,6 @@ class BuildPipelineStageWaitCriteriaArgs:
     def wait_type(self) -> pulumi.Input[str]:
         """
         (Updatable) Wait criteria type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1954,8 +1952,8 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs:
         """
         :param pulumi.Input[str] selector_type: (Updatable) Defines the type of the instance selector for the group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] compute_instance_ids: (Updatable) Compute instance OCID identifiers that are members of this group.
-        :param pulumi.Input[str] query: (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
-        :param pulumi.Input[str] region: (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        :param pulumi.Input[str] query: (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
+        :param pulumi.Input[str] region: (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
         """
         pulumi.set(__self__, "selector_type", selector_type)
         if compute_instance_ids is not None:
@@ -1993,7 +1991,7 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs:
     @pulumi.getter
     def query(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+        (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
         """
         return pulumi.get(self, "query")
 
@@ -2005,7 +2003,7 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
         """
         return pulumi.get(self, "region")
 
@@ -3369,7 +3367,6 @@ class DeployStageWaitCriteriaArgs:
         :param pulumi.Input[str] wait_duration: (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
         :param pulumi.Input[str] wait_type: (Updatable) Wait criteria type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3393,7 +3390,6 @@ class DeployStageWaitCriteriaArgs:
     def wait_type(self) -> pulumi.Input[str]:
         """
         (Updatable) Wait criteria type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3872,7 +3868,7 @@ class DeploymentDeploymentArgumentsItemArgs:
         """
         :param pulumi.Input[str] name: Name of the parameter (case-sensitive).
         :param pulumi.Input[str] value: value of the argument.
-               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+               * To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3896,7 +3892,7 @@ class DeploymentDeploymentArgumentsItemArgs:
     def value(self) -> Optional[pulumi.Input[str]]:
         """
         value of the argument.
-        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+        * To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         return pulumi.get(self, "value")
 
@@ -3967,7 +3963,6 @@ class ProjectNotificationConfigArgs:
         """
         :param pulumi.Input[str] topic_id: (Updatable) The topic ID for notifications.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3978,7 +3973,6 @@ class ProjectNotificationConfigArgs:
     def topic_id(self) -> pulumi.Input[str]:
         """
         (Updatable) The topic ID for notifications.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4560,7 +4554,6 @@ class TriggerActionFilterArgs:
         """
         :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] events: The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
@@ -4580,7 +4573,6 @@ class TriggerActionFilterArgs:
     def trigger_source(self) -> pulumi.Input[str]:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

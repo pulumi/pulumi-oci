@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Data Safe"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getAlerts"
+ * sidebar_current: "docs-oci-datasource-data_safe-alerts"
+ * description: |-
+ * 	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+ * <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+ *
+ * # Data Source: oci.DataSafe.getAlerts
  * This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets a list of all alerts.
@@ -97,6 +106,15 @@ export interface GetAlertsResult {
     readonly scimQuery?: string;
 }
 /**
+ * subcategory: "Data Safe"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.DataSafe.getAlerts"
+ * sidebar_current: "docs-oci-datasource-data_safe-alerts"
+ * description: |-
+ * 	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+ * <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+ *
+ * # Data Source: oci.DataSafe.getAlerts
  * This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets a list of all alerts.

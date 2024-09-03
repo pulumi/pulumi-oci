@@ -134,7 +134,7 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
      */
     public readonly oracleCanInitiate!: pulumi.Output<string>;
     /**
-     * Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+     * Configuration details for IKE phase one (ISAKMP) configuration parameters.
      *
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      */
@@ -313,7 +313,7 @@ export interface IpsecConnectionTunnelManagementState {
      */
     oracleCanInitiate?: pulumi.Input<string>;
     /**
-     * Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+     * Configuration details for IKE phase one (ISAKMP) configuration parameters.
      *
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      */
@@ -398,7 +398,7 @@ export interface IpsecConnectionTunnelManagementArgs {
      */
     oracleCanInitiate?: pulumi.Input<string>;
     /**
-     * Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+     * Configuration details for IKE phase one (ISAKMP) configuration parameters.
      *
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      */

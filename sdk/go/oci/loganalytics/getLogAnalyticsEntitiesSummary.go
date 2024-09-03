@@ -63,7 +63,7 @@ type GetLogAnalyticsEntitiesSummaryArgs struct {
 type GetLogAnalyticsEntitiesSummaryResult struct {
 	// Total number of ACTIVE entities
 	ActiveEntitiesCount int `pulumi:"activeEntitiesCount"`
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Entities with log collection enabled
 	EntitiesWithHasLogsCollectedCount int `pulumi:"entitiesWithHasLogsCollectedCount"`
@@ -119,7 +119,7 @@ func (o GetLogAnalyticsEntitiesSummaryResultOutput) ActiveEntitiesCount() pulumi
 	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) int { return v.ActiveEntitiesCount }).(pulumi.IntOutput)
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetLogAnalyticsEntitiesSummaryResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

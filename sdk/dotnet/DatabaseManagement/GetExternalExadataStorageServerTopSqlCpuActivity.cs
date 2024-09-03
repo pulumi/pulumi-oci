@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the SQL IDs with the top CPU activity from the Exadata storage server.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the SQL IDs with the top CPU activity from the Exadata storage server.
-        /// 
         /// 
         /// ## Example Usage
         /// 

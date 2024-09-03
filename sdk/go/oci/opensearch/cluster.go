@@ -12,6 +12,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Opensearch"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: Opensearch.Cluster"
+// sidebar_current: "docs-oci-resource-opensearch-opensearch_cluster"
+// description: |-
+// Provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service
+// <!-- yaml: line 7: could not find expected ':' -->
+//
+// # Opensearch.Cluster
 // This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
 //
 // Creates a new OpensearchCluster.
@@ -22,8 +31,7 @@ import (
 //
 // ##### {Compartment-Name} - Name of  your compartment
 //
-// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+// For latest documentation on OpenSearch use please refer to <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm>Required permissions: <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm>
 //
 // ## Example Usage
 //

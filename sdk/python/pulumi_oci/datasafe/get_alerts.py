@@ -124,6 +124,15 @@ def get_alerts(access_level: Optional[str] = None,
                scim_query: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertsResult:
     """
+    subcategory: "Data Safe"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: data_safe_get_alerts"
+    sidebar_current: "docs-oci-datasource-data_safe-alerts"
+    description: |-
+    	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: data_safe_get_alerts
     This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
 
     Gets a list of all alerts.
@@ -184,6 +193,15 @@ def get_alerts_output(access_level: Optional[pulumi.Input[Optional[str]]] = None
                       scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertsResult]:
     """
+    subcategory: "Data Safe"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: data_safe_get_alerts"
+    sidebar_current: "docs-oci-datasource-data_safe-alerts"
+    description: |-
+    	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: data_safe_get_alerts
     This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
 
     Gets a list of all alerts.

@@ -135,7 +135,6 @@ export class VirtualDeployment extends pulumi.CustomResource {
     /**
      * The OCID of the service mesh in which this access policy is created.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -255,7 +254,6 @@ export interface VirtualDeploymentState {
     /**
      * The OCID of the service mesh in which this access policy is created.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -300,7 +298,6 @@ export interface VirtualDeploymentArgs {
     serviceDiscovery?: pulumi.Input<inputs.ServiceMesh.VirtualDeploymentServiceDiscovery>;
     /**
      * The OCID of the service mesh in which this access policy is created.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

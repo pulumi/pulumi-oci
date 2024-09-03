@@ -84,14 +84,14 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
         return this.bdsInstanceId;
     }
     /**
-     * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+     * The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
      * 
      */
     @Export(name="defaultRegion", refs={String.class}, tree="[0]")
     private Output<String> defaultRegion;
 
     /**
-     * @return The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+     * @return The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
      * 
      */
     public Output<String> defaultRegion() {

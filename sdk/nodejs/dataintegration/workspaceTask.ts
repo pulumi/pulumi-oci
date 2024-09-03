@@ -154,7 +154,6 @@ export class WorkspaceTask extends pulumi.CustomResource {
     /**
      * The workspace ID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -358,7 +357,6 @@ export interface WorkspaceTaskState {
     /**
      * The workspace ID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -463,7 +461,6 @@ export interface WorkspaceTaskArgs {
     typedExpressions?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpression>[]>;
     /**
      * The workspace ID.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

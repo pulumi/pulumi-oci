@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Get Datasource details for given Id and given Management Agent.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
         /// 
         /// Get Datasource details for given Id and given Management Agent.
-        /// 
         /// 
         /// ## Example Usage
         /// 

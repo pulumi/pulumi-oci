@@ -35,7 +35,6 @@ class FusionEnvironmentAdminUserItemArgs:
         :param pulumi.Input[str] last_name: The administrator's last name.
         :param pulumi.Input[str] username: The username for the administrator.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -89,7 +88,6 @@ class FusionEnvironmentAdminUserItemArgs:
     def username(self) -> Optional[pulumi.Input[str]]:
         """
         The username for the administrator.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -508,8 +506,7 @@ class FusionEnvironmentRuleArgs:
         """
         :param pulumi.Input[str] action: (Updatable) Rule type
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleConditionArgs']]] conditions: (Updatable)
-        :param pulumi.Input[str] description: (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
-               
+        :param pulumi.Input[str] description: (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -547,8 +544,7 @@ class FusionEnvironmentRuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
-
+        (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Opa
         /// 
         /// Returns a list of OpaInstances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Opa
         /// This data source provides the list of Opa Instances in Oracle Cloud Infrastructure Opa service.
         /// 
         /// Returns a list of OpaInstances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

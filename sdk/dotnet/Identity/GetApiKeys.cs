@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Identity
         /// Every user has permission to use this API call for *their own user ID*.  An administrator in your
         /// organization does not need to write a policy to give users this ability.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Every user has permission to use this API call for *their own user ID*.  An administrator in your
         /// organization does not need to write a policy to give users this ability.
-        /// 
         /// 
         /// ## Example Usage
         /// 

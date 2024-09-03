@@ -32,7 +32,6 @@ class ManagedInstanceGroupArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
@@ -116,7 +115,6 @@ class ManagedInstanceGroupArgs:
         """
         The list of managed instance OCIDs to be added to the managed instance group.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -160,7 +158,6 @@ class _ManagedInstanceGroupState:
         :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -264,7 +261,6 @@ class _ManagedInstanceGroupState:
         """
         The list of managed instance OCIDs to be added to the managed instance group.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -367,7 +363,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -493,7 +488,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManagedInstanceArgs', 'ManagedInstanceGroupManagedInstanceArgsDict']]]] managed_instances: list of Managed Instances in the group
@@ -566,7 +560,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     def managed_instance_ids(self) -> pulumi.Output[Sequence[str]]:
         """
         The list of managed instance OCIDs to be added to the managed instance group.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

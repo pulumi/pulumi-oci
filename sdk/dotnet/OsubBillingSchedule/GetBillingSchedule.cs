@@ -17,7 +17,6 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// This list API returns all billing schedules for given subscription id and
         /// for a particular Subscribed Service if provided
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// 
         /// This list API returns all billing schedules for given subscription id and
         /// for a particular Subscribed Service if provided
-        /// 
         /// 
         /// ## Example Usage
         /// 

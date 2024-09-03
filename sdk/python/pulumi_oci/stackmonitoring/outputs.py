@@ -1647,7 +1647,6 @@ class MonitoredResourceTaskTaskDetails(dict):
                * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
         :param str type: Task type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param int availability_proxy_metric_collection_interval: Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
@@ -1714,7 +1713,6 @@ class MonitoredResourceTaskTaskDetails(dict):
     def type(self) -> str:
         """
         Task type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2607,8 +2605,7 @@ class MonitoredResourcesSearchItem(dict):
         :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
         :param str time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
-        :param str type: A filter to return resources that match resource type. 
-               
+        :param str type: A filter to return resources that match resource type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2790,8 +2787,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        A filter to return resources that match resource type. 
-
+        A filter to return resources that match resource type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2882,7 +2878,6 @@ class ProcessSetSpecificationItem(dict):
         :param str process_line_regex_pattern: (Updatable) Regex pattern matching on process arguments.
         :param str process_user: (Updatable) String literal used for exact matching on process user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2924,7 +2919,6 @@ class ProcessSetSpecificationItem(dict):
     def process_user(self) -> Optional[str]:
         """
         (Updatable) String literal used for exact matching on process user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

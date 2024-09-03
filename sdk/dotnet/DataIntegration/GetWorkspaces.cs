@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves a list of Data Integration workspaces.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DataIntegration
         /// This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
         /// 
         /// Retrieves a list of Data Integration workspaces.
-        /// 
         /// 
         /// ## Example Usage
         /// 

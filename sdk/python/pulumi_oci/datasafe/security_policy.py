@@ -24,7 +24,6 @@ class SecurityPolicyArgs:
         The set of arguments for constructing a SecurityPolicy resource.
         :param pulumi.Input[str] security_policy_id: The OCID of the security policy resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the security policy.
@@ -50,7 +49,6 @@ class SecurityPolicyArgs:
     def security_policy_id(self) -> pulumi.Input[str]:
         """
         The OCID of the security policy resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,7 +143,6 @@ class _SecurityPolicyState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the security policy in Data Safe.
         :param pulumi.Input[str] security_policy_id: The OCID of the security policy resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,7 +252,6 @@ class _SecurityPolicyState:
         """
         The OCID of the security policy resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -347,7 +343,6 @@ class SecurityPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] security_policy_id: The OCID of the security policy resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -450,7 +445,6 @@ class SecurityPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the security policy in Data Safe.
         :param pulumi.Input[str] security_policy_id: The OCID of the security policy resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the security policy.
@@ -528,7 +522,6 @@ class SecurityPolicy(pulumi.CustomResource):
     def security_policy_id(self) -> pulumi.Output[str]:
         """
         The OCID of the security policy resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Sch
         /// For more information, see
         /// [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Sch
         /// Lists connectors in the specified compartment.
         /// For more information, see
         /// [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

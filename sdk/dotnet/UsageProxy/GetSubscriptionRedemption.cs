@@ -16,7 +16,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// Returns the list of redemption for the subscription ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.UsageProxy
         /// This data source provides details about a specific Subscription Redemption resource in Oracle Cloud Infrastructure Usage Proxy service.
         /// 
         /// Returns the list of redemption for the subscription ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

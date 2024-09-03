@@ -21,7 +21,6 @@ namespace Pulumi.Oci.Kms
         /// throttle this call to reject an otherwise valid request when the total rate of provisioning
         /// write operations exceeds 10 requests per second for a given tenancy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.Kms
         /// the total number of requests across all provisioning write operations. Key Management might
         /// throttle this call to reject an otherwise valid request when the total rate of provisioning
         /// write operations exceeds 10 requests per second for a given tenancy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

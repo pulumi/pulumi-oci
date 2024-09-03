@@ -89,7 +89,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<ImmutableArray<Outputs.NamespaceIngestTimeRuleAction>> Actions { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -134,8 +134,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -220,7 +219,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -268,8 +267,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -298,7 +296,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// (Updatable) Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -355,8 +353,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
-        /// 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

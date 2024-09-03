@@ -29,8 +29,7 @@ class ModelProvenanceArgs:
         :param pulumi.Input[str] repository_url: (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
         :param pulumi.Input[str] script_dir: (Updatable) For model reproducibility purposes. Path to model artifacts.
         :param pulumi.Input[str] training_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-               
+        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,8 +124,7 @@ class ModelProvenanceArgs:
     @pulumi.getter(name="trainingScript")
     def training_script(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-
+        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -156,8 +154,7 @@ class _ModelProvenanceState:
         :param pulumi.Input[str] repository_url: (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
         :param pulumi.Input[str] script_dir: (Updatable) For model reproducibility purposes. Path to model artifacts.
         :param pulumi.Input[str] training_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-               
+        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -253,8 +250,7 @@ class _ModelProvenanceState:
     @pulumi.getter(name="trainingScript")
     def training_script(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-
+        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -316,8 +312,7 @@ class ModelProvenance(pulumi.CustomResource):
         :param pulumi.Input[str] repository_url: (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
         :param pulumi.Input[str] script_dir: (Updatable) For model reproducibility purposes. Path to model artifacts.
         :param pulumi.Input[str] training_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-               
+        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -427,8 +422,7 @@ class ModelProvenance(pulumi.CustomResource):
         :param pulumi.Input[str] repository_url: (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
         :param pulumi.Input[str] script_dir: (Updatable) For model reproducibility purposes. Path to model artifacts.
         :param pulumi.Input[str] training_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-               
+        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -498,8 +492,7 @@ class ModelProvenance(pulumi.CustomResource):
     @pulumi.getter(name="trainingScript")
     def training_script(self) -> pulumi.Output[str]:
         """
-        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-
+        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

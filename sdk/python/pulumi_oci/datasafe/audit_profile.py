@@ -29,7 +29,6 @@ class AuditProfileArgs:
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
@@ -72,7 +71,6 @@ class AuditProfileArgs:
     def change_retention_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,7 +183,6 @@ class _AuditProfileState:
         :param pulumi.Input[Sequence[pulumi.Input['AuditProfileAuditTrailArgs']]] audit_trails: Indicates the list of available audit trails on the target.
         :param pulumi.Input[int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
@@ -284,7 +281,6 @@ class _AuditProfileState:
     def change_retention_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -508,7 +504,6 @@ class AuditProfile(pulumi.CustomResource):
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
@@ -631,7 +626,6 @@ class AuditProfile(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AuditProfileAuditTrailArgs', 'AuditProfileAuditTrailArgsDict']]]] audit_trails: Indicates the list of available audit trails on the target.
         :param pulumi.Input[int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
@@ -704,7 +698,6 @@ class AuditProfile(pulumi.CustomResource):
     def change_retention_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -242,7 +242,7 @@ class GetSqlEndpointResult:
     @pulumi.getter(name="sparkAdvancedConfigurations")
     def spark_advanced_configurations(self) -> Mapping[str, str]:
         """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "spark_advanced_configurations")
 
@@ -303,7 +303,7 @@ class GetSqlEndpointResult:
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> str:
         """
-        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
         """
         return pulumi.get(self, "warehouse_bucket_uri")
 

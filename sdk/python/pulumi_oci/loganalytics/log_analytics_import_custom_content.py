@@ -26,7 +26,6 @@ class LogAnalyticsImportCustomContentArgs:
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_overwrite: A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
@@ -68,7 +67,6 @@ class LogAnalyticsImportCustomContentArgs:
         """
         A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -108,7 +106,6 @@ class _LogAnalyticsImportCustomContentState:
         :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]] change_lists: LogAnalyticsImportCustomChangeList
         :param pulumi.Input[str] content_name: The content name.
         :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -167,7 +164,6 @@ class _LogAnalyticsImportCustomContentState:
     def expect(self) -> Optional[pulumi.Input[str]]:
         """
         A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -287,7 +283,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] import_custom_content_file: Path to the file to upload which contains the custom content.
@@ -393,7 +388,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         :param pulumi.Input[str] content_name: The content name.
         :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] field_names: The field names.
@@ -439,7 +433,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
     def expect(self) -> pulumi.Output[str]:
         """
         A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

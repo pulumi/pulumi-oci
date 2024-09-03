@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

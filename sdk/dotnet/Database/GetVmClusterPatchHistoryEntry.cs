@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the patch history details for the specified patch history entry.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the patch history details for the specified patch history entry.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -35,8 +35,7 @@ class CpeArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_private: Indicates whether this CPE is of type `private` or not. 
-               
+        :param pulumi.Input[bool] is_private: Indicates whether this CPE is of type `private` or not.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -136,8 +135,7 @@ class CpeArgs:
     @pulumi.getter(name="isPrivate")
     def is_private(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether this CPE is of type `private` or not. 
-
+        Indicates whether this CPE is of type `private` or not.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -174,8 +172,7 @@ class _CpeState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_address: The public IP address of the on-premises router.  Example: `203.0.113.2`
-        :param pulumi.Input[bool] is_private: Indicates whether this CPE is of type `private` or not. 
-               
+        :param pulumi.Input[bool] is_private: Indicates whether this CPE is of type `private` or not.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -280,8 +277,7 @@ class _CpeState:
     @pulumi.getter(name="isPrivate")
     def is_private(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether this CPE is of type `private` or not. 
-
+        Indicates whether this CPE is of type `private` or not.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -379,8 +375,7 @@ class Cpe(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_address: The public IP address of the on-premises router.  Example: `203.0.113.2`
-        :param pulumi.Input[bool] is_private: Indicates whether this CPE is of type `private` or not. 
-               
+        :param pulumi.Input[bool] is_private: Indicates whether this CPE is of type `private` or not.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -518,8 +513,7 @@ class Cpe(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_address: The public IP address of the on-premises router.  Example: `203.0.113.2`
-        :param pulumi.Input[bool] is_private: Indicates whether this CPE is of type `private` or not. 
-               
+        :param pulumi.Input[bool] is_private: Indicates whether this CPE is of type `private` or not.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -597,8 +591,7 @@ class Cpe(pulumi.CustomResource):
     @pulumi.getter(name="isPrivate")
     def is_private(self) -> pulumi.Output[bool]:
         """
-        Indicates whether this CPE is of type `private` or not. 
-
+        Indicates whether this CPE is of type `private` or not.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

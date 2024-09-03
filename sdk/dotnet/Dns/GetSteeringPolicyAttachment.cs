@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets information about the specified steering policy attachment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Dns
         /// This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
         /// 
         /// Gets information about the specified steering policy attachment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

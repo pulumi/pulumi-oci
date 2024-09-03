@@ -63,8 +63,7 @@ export class ImportStandardTagsManagement extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The name of standard tag namespace that will be imported in bulk 
-     *
+     * The name of standard tag namespace that will be imported in bulk
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -114,8 +113,7 @@ export interface ImportStandardTagsManagementState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The name of standard tag namespace that will be imported in bulk 
-     *
+     * The name of standard tag namespace that will be imported in bulk
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -133,8 +131,7 @@ export interface ImportStandardTagsManagementArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The name of standard tag namespace that will be imported in bulk 
-     *
+     * The name of standard tag namespace that will be imported in bulk
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

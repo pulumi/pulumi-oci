@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
         /// the name of the ADDM task, description, user, status and creation date time.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
         /// the name of the ADDM task, description, user, status and creation date time.
-        /// 
         /// 
         /// ## Example Usage
         /// 

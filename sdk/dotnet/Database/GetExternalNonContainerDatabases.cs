@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the ExternalNonContainerDatabases in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of External Non Container Databases in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of the ExternalNonContainerDatabases in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

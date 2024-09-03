@@ -11,6 +11,7 @@ namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
     /// This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+    /// 
     /// ## Note
     /// 
     /// Resource Discovery is not supported for this resource.
@@ -125,7 +126,7 @@ namespace Pulumi.Oci.DataFlow
         public Output<Outputs.SqlEndpointNetworkConfiguration> NetworkConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        /// The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         [Output("sparkAdvancedConfigurations")]
         public Output<ImmutableDictionary<string, string>> SparkAdvancedConfigurations { get; private set; } = null!;
@@ -167,8 +168,7 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-        /// 
+        /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here &lt;https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html&gt;
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -316,7 +316,7 @@ namespace Pulumi.Oci.DataFlow
         private InputMap<string>? _sparkAdvancedConfigurations;
 
         /// <summary>
-        /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        /// The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         public InputMap<string> SparkAdvancedConfigurations
         {
@@ -450,7 +450,7 @@ namespace Pulumi.Oci.DataFlow
         private InputMap<string>? _sparkAdvancedConfigurations;
 
         /// <summary>
-        /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        /// The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         public InputMap<string> SparkAdvancedConfigurations
         {
@@ -501,8 +501,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-        /// 
+        /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here &lt;https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html&gt;
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

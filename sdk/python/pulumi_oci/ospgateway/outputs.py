@@ -186,7 +186,6 @@ class AddressActionVerificationAddress(dict):
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -448,7 +447,6 @@ class AddressActionVerificationAddress(dict):
     def street_number(self) -> Optional[str]:
         """
         Street number of the address.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

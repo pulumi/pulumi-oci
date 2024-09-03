@@ -1719,8 +1719,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1740,8 +1739,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2625,7 +2623,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet(dict):
         """
         :param str subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
@@ -2645,7 +2642,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet(dict):
     def subnet_id(self) -> str:
         """
         The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2834,8 +2830,7 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig(dict):
         """
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage.
-        :param float ocpus: The total number of OCPUs available to the instance. 
-               
+        :param float ocpus: The total number of OCPUs available to the instance.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2867,8 +2862,7 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig(dict):
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        The total number of OCPUs available to the instance. 
-
+        The total number of OCPUs available to the instance.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3195,7 +3189,6 @@ class CrossConnectGroupMacsecProperties(dict):
         """
         :param str state: (Updatable) Indicates whether or not MACsec is enabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
@@ -3215,7 +3208,6 @@ class CrossConnectGroupMacsecProperties(dict):
     def state(self) -> str:
         """
         (Updatable) Indicates whether or not MACsec is enabled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4139,7 +4131,7 @@ class DhcpOptionsOption(dict):
                If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN's default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
                
                If you don't want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
-        :param str server_type: (Updatable) 
+        :param str server_type: (Updatable)
                * **VcnLocal:** Reserved for future use.
                * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
                * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
@@ -4184,7 +4176,7 @@ class DhcpOptionsOption(dict):
     @pulumi.getter(name="serverType")
     def server_type(self) -> Optional[str]:
         """
-        (Updatable) 
+        (Updatable)
         * **VcnLocal:** Reserved for future use.
         * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
@@ -5810,17 +5802,39 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
-        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        :param str compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+               
+               Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+               
+               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+               
+               If you do not specify the fault domain, the system selects one for you.
+               
+               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+               
+               Example: `FAULT-DOMAIN-1`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs' instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
-        :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+               
+               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+               
+               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+               
+               The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+               
+               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+               
+               For more information about iPXE, see <http://ipxe.org>.
+        :param bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
@@ -5828,7 +5842,35 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-        :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs' platform_config: The platform configuration requested for the instance.
+               
+               A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+               * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+               * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+               
+               **Providing Cloud-Init Metadata**
+               
+               You can use the following metadata key names to provide information to Cloud-Init:
+               
+               **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+               
+               **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+               
+               **Metadata Example**
+               
+               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+               
+               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+               
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+               
+               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs' platform_config: (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
+               
+               If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
@@ -5931,7 +5973,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -5948,6 +5990,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def dedicated_vm_host_id(self) -> Optional[str]:
         """
         The OCID of the dedicated virtual machine host to place the instance on.
+
+        Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 
@@ -5955,7 +5999,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -5963,7 +6007,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -5972,6 +6016,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def extended_metadata(self) -> Optional[Mapping[str, str]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "extended_metadata")
 
@@ -5980,6 +6028,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def fault_domain(self) -> Optional[str]:
         """
         A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -5987,7 +6041,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -6004,6 +6058,16 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def ipxe_script(self) -> Optional[str]:
         """
         This is an advanced option.
+
+        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+
+        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+
+        The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+
+        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+
+        For more information about iPXE, see <http://ipxe.org>.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -6011,7 +6075,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[bool]:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -6040,6 +6104,30 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def metadata(self) -> Optional[Mapping[str, str]]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+
+        A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+        * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+
+        **Providing Cloud-Init Metadata**
+
+        You can use the following metadata key names to provide information to Cloud-Init:
+
+        **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+
+        **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+
+        **Metadata Example**
+
+        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+
+        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+
+        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "metadata")
 
@@ -6047,7 +6135,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig']:
         """
-        The platform configuration requested for the instance.
+        (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
+
+        If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "platform_config")
 
@@ -6356,12 +6448,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Sequence['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -6395,13 +6489,16 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[bool]:
         """
-        Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -6417,7 +6514,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -6425,7 +6522,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -6433,7 +6530,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -6448,6 +6545,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @property
@@ -6505,6 +6605,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     def __init__(__self__, *,
                  ipv6address: Optional[str] = None,
                  ipv6subnet_cidr: Optional[str] = None):
+        """
+        :param str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -6513,11 +6617,17 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[str]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
         return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[str]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -6752,7 +6862,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        :param bool is_symmetric_multi_threading_enabled: (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+               
+               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
         :param int percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
@@ -6851,7 +6963,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[bool]:
         """
-        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
@@ -10956,7 +11070,6 @@ class InstancePoolLoadBalancer(dict):
         :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
         :param str state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -11024,7 +11137,6 @@ class InstancePoolLoadBalancer(dict):
     def state(self) -> Optional[str]:
         """
         (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -14401,7 +14513,6 @@ class VolumeBackupPolicySchedule(dict):
                - `UTC`
                - `REGIONAL_DATA_CENTER_TIME`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -14518,7 +14629,6 @@ class VolumeBackupPolicySchedule(dict):
         - `UTC`
         - `REGIONAL_DATA_CENTER_TIME`
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -14554,7 +14664,6 @@ class VolumeBackupSourceDetails(dict):
         :param str region: The region of the volume backup source.
         :param str volume_backup_id: The OCID of the source volume backup.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
@@ -14577,7 +14686,6 @@ class VolumeBackupSourceDetails(dict):
     def volume_backup_id(self) -> str:
         """
         The OCID of the source volume backup.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -14685,8 +14793,6 @@ class VolumeGroupBackupSourceDetails(dict):
         :param str region: The region of the volume backup source.
         :param str volume_group_backup_id: The OCID of the source volume group backup.
                
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
@@ -14709,8 +14815,6 @@ class VolumeGroupBackupSourceDetails(dict):
     def volume_group_backup_id(self) -> str:
         """
         The OCID of the source volume group backup.
-
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -41159,9 +41263,9 @@ class GetSecurityListsSecurityListEgressSecurityRuleResult(dict):
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
         :param str protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
-        :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         pulumi.set(__self__, "description", description)
@@ -41227,7 +41331,7 @@ class GetSecurityListsSecurityListEgressSecurityRuleResult(dict):
     @pulumi.getter(name="tcpOptions")
     def tcp_options(self) -> Sequence['outputs.GetSecurityListsSecurityListEgressSecurityRuleTcpOptionResult']:
         """
-        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         return pulumi.get(self, "tcp_options")
@@ -41236,7 +41340,7 @@ class GetSecurityListsSecurityListEgressSecurityRuleResult(dict):
     @pulumi.getter(name="udpOptions")
     def udp_options(self) -> Sequence['outputs.GetSecurityListsSecurityListEgressSecurityRuleUdpOptionResult']:
         """
-        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         return pulumi.get(self, "udp_options")
@@ -41423,9 +41527,9 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
                * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
                * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
-        :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         pulumi.set(__self__, "description", description)
@@ -41493,7 +41597,7 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
     @pulumi.getter(name="tcpOptions")
     def tcp_options(self) -> Sequence['outputs.GetSecurityListsSecurityListIngressSecurityRuleTcpOptionResult']:
         """
-        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         return pulumi.get(self, "tcp_options")
@@ -41502,7 +41606,7 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
     @pulumi.getter(name="udpOptions")
     def udp_options(self) -> Sequence['outputs.GetSecurityListsSecurityListIngressSecurityRuleUdpOptionResult']:
         """
-        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         return pulumi.get(self, "udp_options")

@@ -169,6 +169,15 @@ def get_target_alert_policy_associations(access_level: Optional[str] = None,
                                          time_created_less_than: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetAlertPolicyAssociationsResult:
     """
+    subcategory: "Data Safe"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: data_safe_get_target_alert_policy_associations"
+    sidebar_current: "docs-oci-datasource-data_safe-target_alert_policy_associations"
+    description: |-
+    	Provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: data_safe_get_target_alert_policy_associations
     This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
 
     Gets a list of all target-alert policy associations.
@@ -247,6 +256,15 @@ def get_target_alert_policy_associations_output(access_level: Optional[pulumi.In
                                                 time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationsResult]:
     """
+    subcategory: "Data Safe"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: data_safe_get_target_alert_policy_associations"
+    sidebar_current: "docs-oci-datasource-data_safe-target_alert_policy_associations"
+    description: |-
+    	Provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: data_safe_get_target_alert_policy_associations
     This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
 
     Gets a list of all target-alert policy associations.

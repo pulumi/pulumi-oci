@@ -65,7 +65,7 @@ type GetLogAnalyticsLogGroupsArgs struct {
 
 // A collection of values returned by getLogAnalyticsLogGroups.
 type GetLogAnalyticsLogGroupsResult struct {
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName *string                          `pulumi:"displayName"`
@@ -120,7 +120,7 @@ func (o GetLogAnalyticsLogGroupsResultOutput) ToGetLogAnalyticsLogGroupsResultOu
 	return o
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o GetLogAnalyticsLogGroupsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsLogGroupsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

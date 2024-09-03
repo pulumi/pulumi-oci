@@ -489,7 +489,6 @@ class DatabaseToolsConnectionUserPassword(dict):
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param str value_type: (Updatable) The value type of the user password.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -509,7 +508,6 @@ class DatabaseToolsConnectionUserPassword(dict):
     def value_type(self) -> str:
         """
         (Updatable) The value type of the user password.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

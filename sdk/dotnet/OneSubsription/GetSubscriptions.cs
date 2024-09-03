@@ -14,11 +14,10 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
         /// 
-        /// This list API returns all subscriptions for a given plan number or subscription id or buyer email 
+        /// This list API returns all subscriptions for a given plan number or subscription id or buyer email
         /// and provides additional parameters to include ratecard and commitment details.
         /// This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
         /// a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -48,11 +47,10 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
         /// 
-        /// This list API returns all subscriptions for a given plan number or subscription id or buyer email 
+        /// This list API returns all subscriptions for a given plan number or subscription id or buyer email
         /// and provides additional parameters to include ratecard and commitment details.
         /// This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
         /// a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
-        /// 
         /// 
         /// ## Example Usage
         /// 

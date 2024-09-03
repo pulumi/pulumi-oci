@@ -144,8 +144,7 @@ export class Budget extends pulumi.CustomResource {
      */
     public readonly targetType!: pulumi.Output<string>;
     /**
-     * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-     *
+     * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -317,8 +316,7 @@ export interface BudgetState {
      */
     targetType?: pulumi.Input<string>;
     /**
-     * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-     *
+     * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -401,8 +399,7 @@ export interface BudgetArgs {
      */
     targetType?: pulumi.Input<string>;
     /**
-     * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-     *
+     * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

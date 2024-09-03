@@ -17,12 +17,12 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
      */
     private List<String> computeInstanceIds;
     /**
-     * @return Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+     * @return Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
      * 
      */
     private String query;
     /**
-     * @return Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+     * @return Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
      * 
      */
     private String region;
@@ -41,14 +41,14 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
         return this.computeInstanceIds;
     }
     /**
-     * @return Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+     * @return Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
      * 
      */
     public String query() {
         return this.query;
     }
     /**
-     * @return Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+     * @return Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
      * 
      */
     public String region() {

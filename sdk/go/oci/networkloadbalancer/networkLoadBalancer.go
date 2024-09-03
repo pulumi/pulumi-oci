@@ -64,8 +64,8 @@ type NetworkLoadBalancer struct {
 	// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 	//
 	// The benefits of associating the network load balancer with network security groups include:
-	// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-	// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+	// * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+	// * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 	//
 	// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
@@ -167,8 +167,8 @@ type networkLoadBalancerState struct {
 	// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 	//
 	// The benefits of associating the network load balancer with network security groups include:
-	// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-	// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+	// * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+	// * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 	//
 	// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
@@ -232,8 +232,8 @@ type NetworkLoadBalancerState struct {
 	// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 	//
 	// The benefits of associating the network load balancer with network security groups include:
-	// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-	// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+	// * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+	// * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 	//
 	// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
 	NetworkSecurityGroupIds pulumi.StringArrayInput
@@ -297,8 +297,8 @@ type networkLoadBalancerArgs struct {
 	// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 	//
 	// The benefits of associating the network load balancer with network security groups include:
-	// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-	// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+	// * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+	// * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 	//
 	// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
@@ -351,8 +351,8 @@ type NetworkLoadBalancerArgs struct {
 	// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 	//
 	// The benefits of associating the network load balancer with network security groups include:
-	// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-	// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+	// * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+	// * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 	//
 	// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
 	NetworkSecurityGroupIds pulumi.StringArrayInput
@@ -527,8 +527,8 @@ func (o NetworkLoadBalancerOutput) LifecycleDetails() pulumi.StringOutput {
 // During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
 //
 // The benefits of associating the network load balancer with network security groups include:
-// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
-// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+// * Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+// * The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
 //
 // Example: ["ocid1.nsg.oc1.phx.unique_ID"]
 func (o NetworkLoadBalancerOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {

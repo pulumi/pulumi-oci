@@ -25,7 +25,6 @@ class RepositoryRefArgs:
         :param pulumi.Input[str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] commit_id: (Updatable) Commit ID pointed to by the new branch.
@@ -68,7 +67,6 @@ class RepositoryRefArgs:
     def repository_id(self) -> pulumi.Input[str]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,7 +123,6 @@ class _RepositoryRefState:
         :param pulumi.Input[str] ref_name: A filter to return only resources that match the given reference name.
         :param pulumi.Input[str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
         :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,7 +234,6 @@ class _RepositoryRefState:
         """
         Unique repository identifier.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -293,7 +289,6 @@ class RepositoryRef(pulumi.CustomResource):
         :param pulumi.Input[str] ref_name: A filter to return only resources that match the given reference name.
         :param pulumi.Input[str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
         :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -408,7 +403,6 @@ class RepositoryRef(pulumi.CustomResource):
         :param pulumi.Input[str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -487,7 +481,6 @@ class RepositoryRef(pulumi.CustomResource):
     def repository_id(self) -> pulumi.Output[str]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

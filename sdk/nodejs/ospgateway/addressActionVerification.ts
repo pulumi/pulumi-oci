@@ -204,7 +204,6 @@ export class AddressActionVerification extends pulumi.CustomResource {
     /**
      * Street number of the address.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -426,7 +425,6 @@ export interface AddressActionVerificationState {
     /**
      * Street number of the address.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -551,7 +549,6 @@ export interface AddressActionVerificationArgs {
     streetName?: pulumi.Input<string>;
     /**
      * Street number of the address.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Core
         /// `assetId` query parameter is required, and the returned list will contain at most
         /// one item, since volume can only have one volume backup policy assigned at a time.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// Gets the volume backup policy assignment for the specified volume. The
         /// `assetId` query parameter is required, and the returned list will contain at most
         /// one item, since volume can only have one volume backup policy assigned at a time.
-        /// 
         /// 
         /// ## Example Usage
         /// 

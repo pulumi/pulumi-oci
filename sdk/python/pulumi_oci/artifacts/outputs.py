@@ -44,7 +44,6 @@ class ContainerRepositoryReadme(dict):
         :param str content: (Updatable) Readme content. Avoid entering confidential information.
         :param str format: (Updatable) Readme format. Supported formats are text/plain and text/markdown.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -64,7 +63,6 @@ class ContainerRepositoryReadme(dict):
     def format(self) -> str:
         """
         (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

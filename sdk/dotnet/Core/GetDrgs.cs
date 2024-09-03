@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the DRGs in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the DRGs in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

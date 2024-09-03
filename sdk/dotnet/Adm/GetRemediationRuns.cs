@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Adm
         /// Returns a list of remediation runs contained by a compartment.
         /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Adm
         /// 
         /// Returns a list of remediation runs contained by a compartment.
         /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
-        /// 
         /// 
         /// ## Example Usage
         /// 

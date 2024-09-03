@@ -23,10 +23,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         public readonly string AttributeValue;
         /// <summary>
         /// A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
-        /// *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
-        /// *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
-        /// *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
-        /// *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
+        /// * **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
+        /// * **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
+        /// * **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
+        /// * **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         /// </summary>
         public readonly string Operator;
 

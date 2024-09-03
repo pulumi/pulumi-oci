@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Compares two revisions and lists the differences. Supports comparison between two references or commits.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Compares two revisions and lists the differences. Supports comparison between two references or commits.
-        /// 
         /// 
         /// ## Example Usage
         /// 

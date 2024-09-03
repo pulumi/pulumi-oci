@@ -33,7 +33,6 @@ class TagArgs:
         :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
         :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
@@ -124,7 +123,6 @@ class TagArgs:
         """
         (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -183,7 +181,6 @@ class _TagState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
         :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,7 +268,6 @@ class _TagState:
     def is_retired(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -427,7 +423,6 @@ class Tag(pulumi.CustomResource):
         :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
         :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
@@ -581,7 +576,6 @@ class Tag(pulumi.CustomResource):
         :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
         :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
@@ -647,7 +641,6 @@ class Tag(pulumi.CustomResource):
     def is_retired(self) -> pulumi.Output[bool]:
         """
         (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

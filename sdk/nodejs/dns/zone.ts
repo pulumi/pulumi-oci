@@ -115,7 +115,7 @@ export class Zone extends pulumi.CustomResource {
      */
     public /*out*/ readonly nameservers!: pulumi.Output<outputs.Dns.ZoneNameserver[]>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
+     * Specifies to operate only on resources that have a matching DNS scope.
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      */
     public readonly scope!: pulumi.Output<string>;
@@ -148,8 +148,7 @@ export class Zone extends pulumi.CustomResource {
      */
     public /*out*/ readonly zoneTransferServers!: pulumi.Output<outputs.Dns.ZoneZoneTransferServer[]>;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-     *
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -258,7 +257,7 @@ export interface ZoneState {
      */
     nameservers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneNameserver>[]>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
+     * Specifies to operate only on resources that have a matching DNS scope.
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      */
     scope?: pulumi.Input<string>;
@@ -291,8 +290,7 @@ export interface ZoneState {
      */
     zoneTransferServers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneZoneTransferServer>[]>;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-     *
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -333,7 +331,7 @@ export interface ZoneArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
+     * Specifies to operate only on resources that have a matching DNS scope.
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      */
     scope?: pulumi.Input<string>;
@@ -342,8 +340,7 @@ export interface ZoneArgs {
      */
     viewId?: pulumi.Input<string>;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-     *
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -568,8 +568,7 @@ class DrPlanPlanGroup(dict):
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param bool is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
         :param Sequence['DrPlanPlanGroupStepArgs'] steps: The list of steps in the group.
-        :param str type: The type of DR plan to be created. 
-               
+        :param str type: The type of DR plan to be created.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -621,8 +620,7 @@ class DrPlanPlanGroup(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        The type of DR plan to be created. 
-
+        The type of DR plan to be created.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -677,8 +675,7 @@ class DrPlanPlanGroupStep(dict):
         :param bool is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
         :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         :param int timeout: The timeout in seconds for executing this step.  Example: `600`
-        :param str type: The type of DR plan to be created. 
-               
+        :param str type: The type of DR plan to be created.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -763,8 +760,7 @@ class DrPlanPlanGroupStep(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        The type of DR plan to be created. 
-
+        The type of DR plan to be created.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1156,11 +1152,11 @@ class DrProtectionGroupMember(dict):
         """
         :param str member_id: (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         :param str member_type: (Updatable) The type of the member.
-        :param str autonomous_database_standby_type_for_dr_drills: (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        :param str autonomous_database_standby_type_for_dr_drills: (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
         :param Sequence['DrProtectionGroupMemberBackendSetMappingArgs'] backend_set_mappings: (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
         :param Sequence['DrProtectionGroupMemberBlockVolumeOperationArgs'] block_volume_operations: (Updatable) A list of operations performed on block volumes used by the compute instance.
         :param str bucket: (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
-        :param str connection_string_type: (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        :param str connection_string_type: (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
         :param str destination_availability_domain: (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
         :param str destination_capacity_reservation_id: (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param str destination_compartment_id: (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -1240,7 +1236,7 @@ class DrProtectionGroupMember(dict):
     @pulumi.getter(name="autonomousDatabaseStandbyTypeForDrDrills")
     def autonomous_database_standby_type_for_dr_drills(self) -> Optional[str]:
         """
-        (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
         """
         return pulumi.get(self, "autonomous_database_standby_type_for_dr_drills")
 
@@ -1272,7 +1268,7 @@ class DrProtectionGroupMember(dict):
     @pulumi.getter(name="connectionStringType")
     def connection_string_type(self) -> Optional[str]:
         """
-        (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
         """
         return pulumi.get(self, "connection_string_type")
 
@@ -3811,11 +3807,11 @@ class GetDrProtectionGroupMemberResult(dict):
                  vnic_mapping: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult'],
                  vnic_mappings: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult']):
         """
-        :param str autonomous_database_standby_type_for_dr_drills: This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        :param str autonomous_database_standby_type_for_dr_drills: This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
         :param Sequence['GetDrProtectionGroupMemberBackendSetMappingArgs'] backend_set_mappings: A list of backend set mappings that are used to transfer or update backends during DR.
         :param Sequence['GetDrProtectionGroupMemberBlockVolumeOperationArgs'] block_volume_operations: Operations performed on a list of block volumes used on the non-movable compute instance.
         :param str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
-        :param str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        :param str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
         :param str destination_availability_domain: The availability domain of the destination mount target. Example: `BBTh:region-AD`
         :param str destination_capacity_reservation_id: The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param str destination_compartment_id: The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -3861,7 +3857,7 @@ class GetDrProtectionGroupMemberResult(dict):
     @pulumi.getter(name="autonomousDatabaseStandbyTypeForDrDrills")
     def autonomous_database_standby_type_for_dr_drills(self) -> str:
         """
-        This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
         """
         return pulumi.get(self, "autonomous_database_standby_type_for_dr_drills")
 
@@ -3893,7 +3889,7 @@ class GetDrProtectionGroupMemberResult(dict):
     @pulumi.getter(name="connectionStringType")
     def connection_string_type(self) -> str:
         """
-        The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
         """
         return pulumi.get(self, "connection_string_type")
 
@@ -4654,11 +4650,11 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
                  vnic_mapping: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult'],
                  vnic_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult']):
         """
-        :param str autonomous_database_standby_type_for_dr_drills: This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        :param str autonomous_database_standby_type_for_dr_drills: This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs'] backend_set_mappings: A list of backend set mappings that are used to transfer or update backends during DR.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs'] block_volume_operations: Operations performed on a list of block volumes used on the non-movable compute instance.
         :param str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
-        :param str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        :param str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
         :param str destination_availability_domain: The availability domain of the destination mount target. Example: `BBTh:region-AD`
         :param str destination_capacity_reservation_id: The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param str destination_compartment_id: The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -4704,7 +4700,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
     @pulumi.getter(name="autonomousDatabaseStandbyTypeForDrDrills")
     def autonomous_database_standby_type_for_dr_drills(self) -> str:
         """
-        This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
         """
         return pulumi.get(self, "autonomous_database_standby_type_for_dr_drills")
 
@@ -4736,7 +4732,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
     @pulumi.getter(name="connectionStringType")
     def connection_string_type(self) -> str:
         """
-        The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
         """
         return pulumi.get(self, "connection_string_type")
 

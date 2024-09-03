@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// A SQL tuning task may suggest a new execution plan for a SQL,
         /// and this API retrieves the comparison report of the statistics of the two plans.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves a comparison of the existing SQL execution plan and a new plan.
         /// A SQL tuning task may suggest a new execution plan for a SQL,
         /// and this API retrieves the comparison report of the statistics of the two plans.
-        /// 
         /// 
         /// ## Example Usage
         /// 

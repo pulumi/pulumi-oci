@@ -26,7 +26,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly double? LearningRate;
         /// <summary>
-        /// Determines how frequently to log model metrics. 
+        /// Determines how frequently to log model metrics.
         /// 
         /// Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
         /// </summary>

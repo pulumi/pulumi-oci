@@ -48,8 +48,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         public readonly ImmutableArray<Outputs.GetRuleSetsRuleSetItemIpMaxConnectionResult> IpMaxConnections;
         /// <summary>
         /// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-        /// *  value cannot contain `$`
-        /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// * value cannot contain `$`
+        /// * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// </summary>
         public readonly string Prefix;
         /// <summary>
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         public readonly int StatusCode;
         /// <summary>
         /// A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-        /// *  value cannot contain `$`
-        /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// * value cannot contain `$`
+        /// * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// </summary>
         public readonly string Suffix;
         /// <summary>
         /// A header value that conforms to RFC 7230. With the following exceptions:
-        /// *  value cannot contain `$`
-        /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// * value cannot contain `$`
+        /// * value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// </summary>
         public readonly string Value;
 

@@ -734,6 +734,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", TypeShape.of(GetAlertAnalyticResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getAlertPolicies&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-alert_policies&#34;
+     * description: |-
+     * 	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getAlertPolicies
      * This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all alert policies.
@@ -787,6 +796,15 @@ public final class DataSafeFunctions {
         return getAlertPolicies(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getAlertPolicies&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-alert_policies&#34;
+     * description: |-
+     * 	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getAlertPolicies
      * This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all alert policies.
@@ -840,6 +858,15 @@ public final class DataSafeFunctions {
         return getAlertPoliciesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getAlertPolicies&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-alert_policies&#34;
+     * description: |-
+     * 	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getAlertPolicies
      * This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all alert policies.
@@ -893,6 +920,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invoke("oci:DataSafe/getAlertPolicies:getAlertPolicies", TypeShape.of(GetAlertPoliciesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getAlertPolicies&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-alert_policies&#34;
+     * description: |-
+     * 	Provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getAlertPolicies
      * This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all alert policies.
@@ -1482,6 +1518,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getAlertPolicyRules:getAlertPolicyRules", TypeShape.of(GetAlertPolicyRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getAlerts&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-alerts&#34;
+     * description: |-
+     * 	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getAlerts
      * This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all alerts.
@@ -1531,6 +1576,15 @@ public final class DataSafeFunctions {
         return getAlerts(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getAlerts&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-alerts&#34;
+     * description: |-
+     * 	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getAlerts
      * This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all alerts.
@@ -1580,6 +1634,15 @@ public final class DataSafeFunctions {
         return getAlertsPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getAlerts&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-alerts&#34;
+     * description: |-
+     * 	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getAlerts
      * This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all alerts.
@@ -1629,6 +1692,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invoke("oci:DataSafe/getAlerts:getAlerts", TypeShape.of(GetAlertsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getAlerts&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-alerts&#34;
+     * description: |-
+     * 	Provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getAlerts
      * This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all alerts.
@@ -2300,8 +2372,8 @@ public final class DataSafeFunctions {
      * it in the `summaryOf` query parameter.
      * 
      * **Example:** /ListAuditEventAnalytics?summaryField=targetName&amp;summaryField=userName&amp;summaryField=clientHostName&amp;summaryField
-     *              &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
-     *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
+     * &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
+     * &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
      * 
@@ -2357,8 +2429,8 @@ public final class DataSafeFunctions {
      * it in the `summaryOf` query parameter.
      * 
      * **Example:** /ListAuditEventAnalytics?summaryField=targetName&amp;summaryField=userName&amp;summaryField=clientHostName&amp;summaryField
-     *              &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
-     *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
+     * &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
+     * &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
      * 
@@ -2414,8 +2486,8 @@ public final class DataSafeFunctions {
      * it in the `summaryOf` query parameter.
      * 
      * **Example:** /ListAuditEventAnalytics?summaryField=targetName&amp;summaryField=userName&amp;summaryField=clientHostName&amp;summaryField
-     *              &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
-     *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
+     * &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
+     * &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
      * 
@@ -2471,8 +2543,8 @@ public final class DataSafeFunctions {
      * it in the `summaryOf` query parameter.
      * 
      * **Example:** /ListAuditEventAnalytics?summaryField=targetName&amp;summaryField=userName&amp;summaryField=clientHostName&amp;summaryField
-     *              &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
-     *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
+     * &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
+     * &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
      * 
@@ -13044,6 +13116,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", TypeShape.of(GetSecurityAssessmentResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentComparison&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-security_assessment_comparison&#34;
+     * description: |-
+     * 	Provides details about a specific Security Assessment Comparison in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getSecurityAssessmentComparison
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the comparison report for the security assessments submitted for comparison.
@@ -13089,6 +13170,15 @@ public final class DataSafeFunctions {
         return getSecurityAssessmentComparison(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentComparison&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-security_assessment_comparison&#34;
+     * description: |-
+     * 	Provides details about a specific Security Assessment Comparison in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getSecurityAssessmentComparison
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the comparison report for the security assessments submitted for comparison.
@@ -13134,6 +13224,15 @@ public final class DataSafeFunctions {
         return getSecurityAssessmentComparisonPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentComparison&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-security_assessment_comparison&#34;
+     * description: |-
+     * 	Provides details about a specific Security Assessment Comparison in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getSecurityAssessmentComparison
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the comparison report for the security assessments submitted for comparison.
@@ -13179,6 +13278,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", TypeShape.of(GetSecurityAssessmentComparisonResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentComparison&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-security_assessment_comparison&#34;
+     * description: |-
+     * 	Provides details about a specific Security Assessment Comparison in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getSecurityAssessmentComparison
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the comparison report for the security assessments submitted for comparison.
@@ -13476,6 +13584,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", TypeShape.of(GetSecurityAssessmentFindingAnalyticsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentFindings&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-security_assessment_findings&#34;
+     * description: |-
+     * 	Provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getSecurityAssessmentFindings
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
      * List all the findings from all the targets in the specified compartment.
@@ -13485,6 +13602,15 @@ public final class DataSafeFunctions {
         return getSecurityAssessmentFindings(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentFindings&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-security_assessment_findings&#34;
+     * description: |-
+     * 	Provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getSecurityAssessmentFindings
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
      * List all the findings from all the targets in the specified compartment.
@@ -13494,6 +13620,15 @@ public final class DataSafeFunctions {
         return getSecurityAssessmentFindingsPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentFindings&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-security_assessment_findings&#34;
+     * description: |-
+     * 	Provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getSecurityAssessmentFindings
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
      * List all the findings from all the targets in the specified compartment.
@@ -13503,6 +13638,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", TypeShape.of(GetSecurityAssessmentFindingsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getSecurityAssessmentFindings&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-security_assessment_findings&#34;
+     * description: |-
+     * 	Provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getSecurityAssessmentFindings
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
      * List all the findings from all the targets in the specified compartment.
@@ -18968,6 +19112,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation", TypeShape.of(GetTargetAlertPolicyAssociationResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getTargetAlertPolicyAssociations&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-target_alert_policy_associations&#34;
+     * description: |-
+     * 	Provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getTargetAlertPolicyAssociations
      * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all target-alert policy associations.
@@ -19020,6 +19173,15 @@ public final class DataSafeFunctions {
         return getTargetAlertPolicyAssociations(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getTargetAlertPolicyAssociations&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-target_alert_policy_associations&#34;
+     * description: |-
+     * 	Provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getTargetAlertPolicyAssociations
      * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all target-alert policy associations.
@@ -19072,6 +19234,15 @@ public final class DataSafeFunctions {
         return getTargetAlertPolicyAssociationsPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getTargetAlertPolicyAssociations&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-target_alert_policy_associations&#34;
+     * description: |-
+     * 	Provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getTargetAlertPolicyAssociations
      * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all target-alert policy associations.
@@ -19124,6 +19295,15 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invoke("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", TypeShape.of(GetTargetAlertPolicyAssociationsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Data Safe&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.getTargetAlertPolicyAssociations&#34;
+     * sidebar_current: &#34;docs-oci-datasource-data_safe-target_alert_policy_associations&#34;
+     * description: |-
+     * 	Provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.DataSafe.getTargetAlertPolicyAssociations
      * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all target-alert policy associations.

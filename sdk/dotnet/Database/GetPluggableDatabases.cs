@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
-        /// 
         /// 
         /// ## Example Usage
         /// 

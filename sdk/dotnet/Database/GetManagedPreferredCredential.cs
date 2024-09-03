@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the preferred credential details for a Managed Database based on credentialName.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the preferred credential details for a Managed Database based on credentialName.
-        /// 
         /// 
         /// ## Example Usage
         /// 

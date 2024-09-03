@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Waf.Inputs
         public Input<string>? ActionName { get; set; }
 
         /// <summary>
-        /// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        /// (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         /// </summary>
         [Input("collaborativeActionThreshold")]
         public Input<int>? CollaborativeActionThreshold { get; set; }

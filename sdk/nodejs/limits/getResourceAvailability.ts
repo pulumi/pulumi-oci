@@ -8,10 +8,10 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
  *
  * For a given compartmentId, resource limit name, and scope, returns the following:
- *   * The number of available resources associated with the given limit.
- *   * The usage in the selected compartment for the given limit.
- *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
- *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+ * * The number of available resources associated with the given limit.
+ * * The usage in the selected compartment for the given limit.
+ *   If Subscription Id is provided, then usage for resource created in that subscription will be returned
+ *   Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
  *
  * ## Example Usage
  *
@@ -104,10 +104,10 @@ export interface GetResourceAvailabilityResult {
  * This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
  *
  * For a given compartmentId, resource limit name, and scope, returns the following:
- *   * The number of available resources associated with the given limit.
- *   * The usage in the selected compartment for the given limit.
- *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
- *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+ * * The number of available resources associated with the given limit.
+ * * The usage in the selected compartment for the given limit.
+ *   If Subscription Id is provided, then usage for resource created in that subscription will be returned
+ *   Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
  *
  * ## Example Usage
  *

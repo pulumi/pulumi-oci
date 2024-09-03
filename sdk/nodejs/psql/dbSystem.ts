@@ -217,7 +217,6 @@ export class DbSystem extends pulumi.CustomResource {
     /**
      * Type of the database system.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -427,7 +426,6 @@ export interface DbSystemState {
     /**
      * Type of the database system.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -524,7 +522,6 @@ export interface DbSystemArgs {
     storageDetails: pulumi.Input<inputs.Psql.DbSystemStorageDetails>;
     /**
      * Type of the database system.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

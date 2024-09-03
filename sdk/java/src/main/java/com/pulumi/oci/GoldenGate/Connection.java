@@ -497,14 +497,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
      * 
      */
     @Export(name="endpoint", refs={String.class}, tree="[0]")
     private Output<String> endpoint;
 
     /**
-     * @return (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return (Updatable) Azure Storage service endpoint. e.g: &lt;https://test.blob.core.windows.net&gt;
      * 
      */
     public Output<String> endpoint() {
@@ -773,14 +773,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.privateIp;
     }
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
      * 
      */
     @Export(name="privateKeyFile", refs={String.class}, tree="[0]")
     private Output<String> privateKeyFile;
 
     /**
-     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
      * 
      */
     public Output<String> privateKeyFile() {
@@ -815,14 +815,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.producerProperties;
     }
     /**
-     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
      * 
      */
     @Export(name="publicKeyFingerprint", refs={String.class}, tree="[0]")
     private Output<String> publicKeyFingerprint;
 
     /**
-     * @return (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * @return (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: &lt;https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm&gt;
      * 
      */
     public Output<String> publicKeyFingerprint() {

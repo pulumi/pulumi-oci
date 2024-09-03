@@ -17,9 +17,9 @@ import (
 // Updates the recommendation that corresponds to the specified OCID.
 // Use this operation to implement the following actions:
 //
-//   - Postpone recommendation
-//   - Dismiss recommendation
-//   - Reactivate recommendation
+// * Postpone recommendation
+// * Dismiss recommendation
+// * Reactivate recommendation
 //
 // ## Import
 //

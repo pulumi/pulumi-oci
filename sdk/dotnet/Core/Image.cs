@@ -201,7 +201,6 @@ namespace Pulumi.Oci.Core
         /// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -352,7 +351,6 @@ namespace Pulumi.Oci.Core
         /// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -452,7 +450,6 @@ namespace Pulumi.Oci.Core
         /// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         /// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

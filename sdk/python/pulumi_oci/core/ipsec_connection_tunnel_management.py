@@ -45,7 +45,7 @@ class IpsecConnectionTunnelManagementArgs:
                
                The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
         :param pulumi.Input[str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
-        :param pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs'] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        :param pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs'] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters.
                
                See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         :param pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs'] phase_two_details: Configuration details for IPSec phase two configuration parameters.
@@ -194,7 +194,7 @@ class IpsecConnectionTunnelManagementArgs:
     @pulumi.getter(name="phaseOneDetails")
     def phase_one_details(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]:
         """
-        Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        Configuration details for IKE phase one (ISAKMP) configuration parameters.
 
         See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         """
@@ -289,7 +289,7 @@ class _IpsecConnectionTunnelManagementState:
                
                The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
         :param pulumi.Input[str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
-        :param pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs'] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        :param pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs'] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters.
                
                See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         :param pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs'] phase_two_details: Configuration details for IPSec phase two configuration parameters.
@@ -514,7 +514,7 @@ class _IpsecConnectionTunnelManagementState:
     @pulumi.getter(name="phaseOneDetails")
     def phase_one_details(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]:
         """
-        Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        Configuration details for IKE phase one (ISAKMP) configuration parameters.
 
         See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         """
@@ -712,7 +712,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                
                The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
         :param pulumi.Input[str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters.
                
                See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']] phase_two_details: Configuration details for IPSec phase two configuration parameters.
@@ -895,7 +895,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                
                The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
         :param pulumi.Input[str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters.
                
                See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']] phase_two_details: Configuration details for IPSec phase two configuration parameters.
@@ -1050,7 +1050,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     @pulumi.getter(name="phaseOneDetails")
     def phase_one_details(self) -> pulumi.Output['outputs.IpsecConnectionTunnelManagementPhaseOneDetails']:
         """
-        Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        Configuration details for IKE phase one (ISAKMP) configuration parameters.
 
         See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         """

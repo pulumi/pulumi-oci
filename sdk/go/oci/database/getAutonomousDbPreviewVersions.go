@@ -14,7 +14,7 @@ import (
 // This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
 //
 // Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-// Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+// Autonomous Database Serverless (<https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html>) databases.
 //
 // ## Example Usage
 //

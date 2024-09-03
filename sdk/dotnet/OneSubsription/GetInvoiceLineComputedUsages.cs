@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.OneSubsription
         /// This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
         /// 
         /// This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -14,7 +14,6 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
-        /// 
         /// 
         /// ## Example Usage
         /// 

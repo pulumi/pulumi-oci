@@ -593,7 +593,6 @@ class MediaWorkflowTaskArgs:
         :param pulumi.Input[str] type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         :param pulumi.Input[str] version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] enable_parameter_reference: (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
@@ -652,7 +651,6 @@ class MediaWorkflowTaskArgs:
     def version(self) -> pulumi.Input[str]:
         """
         (Updatable) The version of the MediaWorkflowTaskDeclaration.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -910,7 +908,6 @@ class StreamCdnConfigLockArgs:
         :param pulumi.Input[str] compartment_id: The compartment ID of the lock.
         :param pulumi.Input[str] type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -943,7 +940,6 @@ class StreamCdnConfigLockArgs:
     def type(self) -> pulumi.Input[str]:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1003,7 +999,6 @@ class StreamDistributionChannelLockArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[str] type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1036,7 +1031,6 @@ class StreamDistributionChannelLockArgs:
     def type(self) -> pulumi.Input[str]:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1373,9 +1367,6 @@ class GetMediaWorkflowJobFactsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique name. It is read-only and generated for the fact.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1384,9 +1375,6 @@ class GetMediaWorkflowJobFactsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique name. It is read-only and generated for the fact.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

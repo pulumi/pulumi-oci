@@ -106,7 +106,6 @@ export class FusionEnvironmentFamily extends pulumi.CustomResource {
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -214,7 +213,6 @@ export interface FusionEnvironmentFamilyState {
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -256,7 +254,6 @@ export interface FusionEnvironmentFamilyArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

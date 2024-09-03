@@ -138,7 +138,6 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
      * * LARGE_GENERIC
      * * LARGE_COHERE_V2_2
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -278,7 +277,6 @@ export interface DedicatedAiClusterState {
      * * LARGE_GENERIC
      * * LARGE_COHERE_V2_2
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -333,7 +331,6 @@ export interface DedicatedAiClusterArgs {
      * * LLAMA2_70
      * * LARGE_GENERIC
      * * LARGE_COHERE_V2_2
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

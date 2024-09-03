@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MigrationDataTransferMediumDetails {
     /**
-     * @return (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * @return (Updatable) AWS access key credentials identifier Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
      * 
      */
     private @Nullable String accessKeyId;
@@ -31,12 +31,12 @@ public final class MigrationDataTransferMediumDetails {
      */
     private @Nullable MigrationDataTransferMediumDetailsObjectStorageBucket objectStorageBucket;
     /**
-     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: &lt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions&gt;
      * 
      */
     private @Nullable String region;
     /**
-     * @return (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * @return (Updatable) AWS secret access key credentials Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
      * 
      */
     private @Nullable String secretAccessKey;
@@ -63,7 +63,7 @@ public final class MigrationDataTransferMediumDetails {
 
     private MigrationDataTransferMediumDetails() {}
     /**
-     * @return (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * @return (Updatable) AWS access key credentials identifier Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
      * 
      */
     public Optional<String> accessKeyId() {
@@ -84,14 +84,14 @@ public final class MigrationDataTransferMediumDetails {
         return Optional.ofNullable(this.objectStorageBucket);
     }
     /**
-     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: &lt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions&gt;
      * 
      */
     public Optional<String> region() {
         return Optional.ofNullable(this.region);
     }
     /**
-     * @return (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * @return (Updatable) AWS secret access key credentials Details: &lt;https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys&gt;
      * 
      */
     public Optional<String> secretAccessKey() {

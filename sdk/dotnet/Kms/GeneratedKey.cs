@@ -86,8 +86,7 @@ namespace Pulumi.Oci.Kms
         public Output<Outputs.GeneratedKeyKeyShape> KeyShape { get; private set; } = null!;
 
         /// <summary>
-        /// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-        /// 
+        /// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,8 +192,7 @@ namespace Pulumi.Oci.Kms
         private InputMap<string>? _loggingContext;
 
         /// <summary>
-        /// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-        /// 
+        /// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -259,8 +257,7 @@ namespace Pulumi.Oci.Kms
         private InputMap<string>? _loggingContext;
 
         /// <summary>
-        /// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-        /// 
+        /// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

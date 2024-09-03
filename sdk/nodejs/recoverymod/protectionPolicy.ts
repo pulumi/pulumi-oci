@@ -107,7 +107,6 @@ export class ProtectionPolicy extends pulumi.CustomResource {
      * * However, you are only allowed to increase the retention period on or after the retention lock date.
      * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -230,7 +229,6 @@ export interface ProtectionPolicyState {
      * * However, you are only allowed to increase the retention period on or after the retention lock date.
      * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -289,7 +287,6 @@ export interface ProtectionPolicyArgs {
      * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
      * * However, you are only allowed to increase the retention period on or after the retention lock date.
      * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

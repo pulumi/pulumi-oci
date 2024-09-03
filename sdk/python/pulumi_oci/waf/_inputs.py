@@ -50,7 +50,7 @@ class AppFirewallPolicyActionArgs:
                  headers: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]] = None):
         """
         :param pulumi.Input[str] name: (Updatable) Action name. Can be used to reference the action.
-        :param pulumi.Input[str] type: (Updatable) 
+        :param pulumi.Input[str] type: (Updatable)
                * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
                * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
                * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
@@ -109,7 +109,7 @@ class AppFirewallPolicyActionArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) 
+        (Updatable)
         * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
         * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
         * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
@@ -619,7 +619,7 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs:
         :param pulumi.Input[str] key: (Updatable) Unique key of referenced protection capability.
         :param pulumi.Input[int] version: (Updatable) Version of referenced protection capability.
         :param pulumi.Input[str] action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param pulumi.Input[int] collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        :param pulumi.Input[int] collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]] collaborative_weights: (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
         :param pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs'] exclusions: (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         """
@@ -674,7 +674,7 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs:
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
@@ -1341,7 +1341,7 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs:
         :param pulumi.Input[str] key: (Updatable) Unique key of referenced protection capability.
         :param pulumi.Input[int] version: (Updatable) Version of referenced protection capability.
         :param pulumi.Input[str] action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param pulumi.Input[int] collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        :param pulumi.Input[int] collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]] collaborative_weights: (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
         :param pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs'] exclusions: (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         """
@@ -1396,7 +1396,7 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs:
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
@@ -1617,7 +1617,6 @@ class NetworkAddressListVcnAddressArgs:
         :param pulumi.Input[str] addresses: (Updatable) A private IP address or CIDR IP address range.
         :param pulumi.Input[str] vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1643,7 +1642,6 @@ class NetworkAddressListVcnAddressArgs:
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

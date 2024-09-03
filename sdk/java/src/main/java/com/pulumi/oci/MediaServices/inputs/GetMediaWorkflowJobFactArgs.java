@@ -14,32 +14,16 @@ public final class GetMediaWorkflowJobFactArgs extends com.pulumi.resources.Invo
 
     public static final GetMediaWorkflowJobFactArgs Empty = new GetMediaWorkflowJobFactArgs();
 
-    /**
-     * Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-     * 
-     */
     @Import(name="key", required=true)
     private Output<String> key;
 
-    /**
-     * @return Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-     * 
-     */
     public Output<String> key() {
         return this.key;
     }
 
-    /**
-     * Unique MediaWorkflowJob identifier.
-     * 
-     */
     @Import(name="mediaWorkflowJobId", required=true)
     private Output<String> mediaWorkflowJobId;
 
-    /**
-     * @return Unique MediaWorkflowJob identifier.
-     * 
-     */
     public Output<String> mediaWorkflowJobId() {
         return this.mediaWorkflowJobId;
     }
@@ -69,44 +53,20 @@ public final class GetMediaWorkflowJobFactArgs extends com.pulumi.resources.Invo
             $ = new GetMediaWorkflowJobFactArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param key Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(Output<String> key) {
             $.key = key;
             return this;
         }
 
-        /**
-         * @param key Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(String key) {
             return key(Output.of(key));
         }
 
-        /**
-         * @param mediaWorkflowJobId Unique MediaWorkflowJob identifier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder mediaWorkflowJobId(Output<String> mediaWorkflowJobId) {
             $.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
 
-        /**
-         * @param mediaWorkflowJobId Unique MediaWorkflowJob identifier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
             return mediaWorkflowJobId(Output.of(mediaWorkflowJobId));
         }

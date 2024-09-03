@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// Returns a history of all status associated with the accessRequestId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
         /// 
         /// Returns a history of all status associated with the accessRequestId.
-        /// 
         /// 
         /// ## Example Usage
         /// 

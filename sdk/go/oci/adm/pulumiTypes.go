@@ -395,7 +395,7 @@ type RemediationRecipeScmConfiguration struct {
 	OciCodeRepositoryId *string `pulumi:"ociCodeRepositoryId"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
 	PatSecretId *string `pulumi:"patSecretId"`
-	// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+	// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
 	RepositoryUrl *string `pulumi:"repositoryUrl"`
 	// (Updatable) The type of Source Code Management.
 	ScmType string `pulumi:"scmType"`
@@ -427,7 +427,7 @@ type RemediationRecipeScmConfigurationArgs struct {
 	OciCodeRepositoryId pulumi.StringPtrInput `pulumi:"ociCodeRepositoryId"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
 	PatSecretId pulumi.StringPtrInput `pulumi:"patSecretId"`
-	// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+	// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
 	RepositoryUrl pulumi.StringPtrInput `pulumi:"repositoryUrl"`
 	// (Updatable) The type of Source Code Management.
 	ScmType pulumi.StringInput `pulumi:"scmType"`
@@ -542,7 +542,7 @@ func (o RemediationRecipeScmConfigurationOutput) PatSecretId() pulumi.StringPtrO
 	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.PatSecretId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
 func (o RemediationRecipeScmConfigurationOutput) RepositoryUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.RepositoryUrl }).(pulumi.StringPtrOutput)
 }
@@ -641,7 +641,7 @@ func (o RemediationRecipeScmConfigurationPtrOutput) PatSecretId() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
 func (o RemediationRecipeScmConfigurationPtrOutput) RepositoryUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
 		if v == nil {
@@ -684,7 +684,7 @@ type RemediationRecipeVerifyConfiguration struct {
 	PatSecretId *string `pulumi:"patSecretId"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
 	PipelineId *string `pulumi:"pipelineId"`
-	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl *string `pulumi:"repositoryUrl"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
 	TriggerSecretId *string `pulumi:"triggerSecretId"`
@@ -718,7 +718,7 @@ type RemediationRecipeVerifyConfigurationArgs struct {
 	PatSecretId pulumi.StringPtrInput `pulumi:"patSecretId"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
 	PipelineId pulumi.StringPtrInput `pulumi:"pipelineId"`
-	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl pulumi.StringPtrInput `pulumi:"repositoryUrl"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
 	TriggerSecretId pulumi.StringPtrInput `pulumi:"triggerSecretId"`
@@ -835,7 +835,7 @@ func (o RemediationRecipeVerifyConfigurationOutput) PipelineId() pulumi.StringPt
 	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.PipelineId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 func (o RemediationRecipeVerifyConfigurationOutput) RepositoryUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.RepositoryUrl }).(pulumi.StringPtrOutput)
 }
@@ -939,7 +939,7 @@ func (o RemediationRecipeVerifyConfigurationPtrOutput) PipelineId() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 func (o RemediationRecipeVerifyConfigurationPtrOutput) RepositoryUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
 		if v == nil {
@@ -1119,7 +1119,7 @@ type VulnerabilityAuditApplicationDependency struct {
 	Gav *string `pulumi:"gav"`
 	// Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
 	NodeId string `pulumi:"nodeId"`
-	// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+	// Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 	Purl *string `pulumi:"purl"`
 }
 
@@ -1141,7 +1141,7 @@ type VulnerabilityAuditApplicationDependencyArgs struct {
 	Gav pulumi.StringPtrInput `pulumi:"gav"`
 	// Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+	// Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 	Purl pulumi.StringPtrInput `pulumi:"purl"`
 }
 
@@ -1211,7 +1211,7 @@ func (o VulnerabilityAuditApplicationDependencyOutput) NodeId() pulumi.StringOut
 	return o.ApplyT(func(v VulnerabilityAuditApplicationDependency) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+// Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 func (o VulnerabilityAuditApplicationDependencyOutput) Purl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditApplicationDependency) *string { return v.Purl }).(pulumi.StringPtrOutput)
 }
@@ -2585,7 +2585,7 @@ type GetRemediationRecipeScmConfiguration struct {
 	OciCodeRepositoryId string `pulumi:"ociCodeRepositoryId"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
 	PatSecretId string `pulumi:"patSecretId"`
-	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl string `pulumi:"repositoryUrl"`
 	// The type of Source Code Management.
 	ScmType string `pulumi:"scmType"`
@@ -2617,7 +2617,7 @@ type GetRemediationRecipeScmConfigurationArgs struct {
 	OciCodeRepositoryId pulumi.StringInput `pulumi:"ociCodeRepositoryId"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
 	PatSecretId pulumi.StringInput `pulumi:"patSecretId"`
-	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
 	// The type of Source Code Management.
 	ScmType pulumi.StringInput `pulumi:"scmType"`
@@ -2706,7 +2706,7 @@ func (o GetRemediationRecipeScmConfigurationOutput) PatSecretId() pulumi.StringO
 	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.PatSecretId }).(pulumi.StringOutput)
 }
 
-// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 func (o GetRemediationRecipeScmConfigurationOutput) RepositoryUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.RepositoryUrl }).(pulumi.StringOutput)
 }
@@ -2754,7 +2754,7 @@ type GetRemediationRecipeVerifyConfiguration struct {
 	PatSecretId string `pulumi:"patSecretId"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
 	PipelineId string `pulumi:"pipelineId"`
-	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl string `pulumi:"repositoryUrl"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
 	TriggerSecretId string `pulumi:"triggerSecretId"`
@@ -2788,7 +2788,7 @@ type GetRemediationRecipeVerifyConfigurationArgs struct {
 	PatSecretId pulumi.StringInput `pulumi:"patSecretId"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
 	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
-	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
 	TriggerSecretId pulumi.StringInput `pulumi:"triggerSecretId"`
@@ -2879,7 +2879,7 @@ func (o GetRemediationRecipeVerifyConfigurationOutput) PipelineId() pulumi.Strin
 	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.PipelineId }).(pulumi.StringOutput)
 }
 
-// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 func (o GetRemediationRecipeVerifyConfigurationOutput) RepositoryUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.RepositoryUrl }).(pulumi.StringOutput)
 }
@@ -3618,7 +3618,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration struct
 	OciCodeRepositoryId string `pulumi:"ociCodeRepositoryId"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
 	PatSecretId string `pulumi:"patSecretId"`
-	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl string `pulumi:"repositoryUrl"`
 	// The type of Source Code Management.
 	ScmType string `pulumi:"scmType"`
@@ -3650,7 +3650,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs st
 	OciCodeRepositoryId pulumi.StringInput `pulumi:"ociCodeRepositoryId"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
 	PatSecretId pulumi.StringInput `pulumi:"patSecretId"`
-	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
 	// The type of Source Code Management.
 	ScmType pulumi.StringInput `pulumi:"scmType"`
@@ -3749,7 +3749,7 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutp
 	}).(pulumi.StringOutput)
 }
 
-// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) RepositoryUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string {
 		return v.RepositoryUrl
@@ -3799,7 +3799,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration str
 	PatSecretId string `pulumi:"patSecretId"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
 	PipelineId string `pulumi:"pipelineId"`
-	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl string `pulumi:"repositoryUrl"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
 	TriggerSecretId string `pulumi:"triggerSecretId"`
@@ -3833,7 +3833,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs
 	PatSecretId pulumi.StringInput `pulumi:"patSecretId"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
 	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
-	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
 	TriggerSecretId pulumi.StringInput `pulumi:"triggerSecretId"`
@@ -3936,7 +3936,7 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationO
 	}).(pulumi.StringOutput)
 }
 
-// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
 func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) RepositoryUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
 		return v.RepositoryUrl
@@ -4090,7 +4090,7 @@ type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyR
 	Gav string `pulumi:"gav"`
 	// Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
 	NodeId string `pulumi:"nodeId"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
 	Purl string `pulumi:"purl"`
 	// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
 	RecommendedGav string `pulumi:"recommendedGav"`
@@ -4116,7 +4116,7 @@ type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyR
 	Gav pulumi.StringInput `pulumi:"gav"`
 	// Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
 	Purl pulumi.StringInput `pulumi:"purl"`
 	// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
 	RecommendedGav pulumi.StringInput `pulumi:"recommendedGav"`
@@ -4196,7 +4196,7 @@ func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+// A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
 func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) Purl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem) string {
 		return v.Purl
@@ -6099,7 +6099,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 	IsFoundInKnowledgeBase bool `pulumi:"isFoundInKnowledgeBase"`
 	// Unique identifier of an application dependency, for example nodeId1.
 	NodeId string `pulumi:"nodeId"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
 	Purl string `pulumi:"purl"`
 	// List of vulnerabilities for the application dependency.
 	Vulnerabilities []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability `pulumi:"vulnerabilities"`
@@ -6125,7 +6125,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 	IsFoundInKnowledgeBase pulumi.BoolInput `pulumi:"isFoundInKnowledgeBase"`
 	// Unique identifier of an application dependency, for example nodeId1.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
 	Purl pulumi.StringInput `pulumi:"purl"`
 	// List of vulnerabilities for the application dependency.
 	Vulnerabilities GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayInput `pulumi:"vulnerabilities"`
@@ -6210,7 +6210,7 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+// A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) Purl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem) string {
 		return v.Purl

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// [ListIpv6s](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/ListIpv6s)
         /// with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// Alternatively, you can get the object by using
         /// [ListIpv6s](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/ListIpv6s)
         /// with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

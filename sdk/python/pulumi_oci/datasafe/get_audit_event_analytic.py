@@ -161,8 +161,8 @@ def get_audit_event_analytic(access_level: Optional[str] = None,
     it in the `summaryOf` query parameter.
 
     **Example:** /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
-                 &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
-                 &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
+    &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
+    &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
 
     ## Example Usage
 
@@ -239,8 +239,8 @@ def get_audit_event_analytic_output(access_level: Optional[pulumi.Input[Optional
     it in the `summaryOf` query parameter.
 
     **Example:** /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
-                 &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
-                 &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
+    &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
+    &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
 
     ## Example Usage
 

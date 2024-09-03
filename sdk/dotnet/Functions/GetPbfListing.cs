@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Functions
         /// This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
         /// 
         /// Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
-        /// 
         /// 
         /// ## Example Usage
         /// 

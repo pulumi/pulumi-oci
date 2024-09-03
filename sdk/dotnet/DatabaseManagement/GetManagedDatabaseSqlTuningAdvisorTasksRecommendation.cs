@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the findings and possible actions for a given object in a SQL tuning task.
         /// The task ID and object ID are used to retrieve the findings and recommendations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the findings and possible actions for a given object in a SQL tuning task.
         /// The task ID and object ID are used to retrieve the findings and recommendations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

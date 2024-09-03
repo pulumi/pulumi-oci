@@ -27,7 +27,6 @@ class CalculateAuditVolumeAvailableArgs:
         :param pulumi.Input[str] database_unique_name: Unique name of the database associated to the peer target database.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] trail_locations: The trail locations for which the audit data volume has to be calculated.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -81,7 +80,6 @@ class CalculateAuditVolumeAvailableArgs:
         """
         The trail locations for which the audit data volume has to be calculated.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -107,7 +105,6 @@ class _CalculateAuditVolumeAvailableState:
         :param pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs']]] available_audit_volumes: List of available audit volumes.
         :param pulumi.Input[str] database_unique_name: Unique name of the database associated to the peer target database.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] trail_locations: The trail locations for which the audit data volume has to be calculated.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -177,7 +174,6 @@ class _CalculateAuditVolumeAvailableState:
         """
         The trail locations for which the audit data volume has to be calculated.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -230,7 +226,6 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[str] database_unique_name: Unique name of the database associated to the peer target database.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] trail_locations: The trail locations for which the audit data volume has to be calculated.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -330,7 +325,6 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
         :param pulumi.Input[str] database_unique_name: Unique name of the database associated to the peer target database.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] trail_locations: The trail locations for which the audit data volume has to be calculated.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -382,7 +376,6 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
     def trail_locations(self) -> pulumi.Output[Sequence[str]]:
         """
         The trail locations for which the audit data volume has to be calculated.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

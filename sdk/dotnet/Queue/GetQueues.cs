@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Queue
         /// 
         /// Returns a list of queues.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Queue
         /// This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
         /// 
         /// Returns a list of queues.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -21,7 +21,6 @@ namespace Pulumi.Oci.Core
         /// **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
         /// operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -57,7 +56,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
         /// operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// Returns a list of container instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.ContainerInstances
         /// This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
         /// 
         /// Returns a list of container instances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

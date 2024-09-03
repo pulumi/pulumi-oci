@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the specified Compute Image Capability Schema
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets the specified Compute Image Capability Schema
-        /// 
         /// 
         /// ## Example Usage
         /// 

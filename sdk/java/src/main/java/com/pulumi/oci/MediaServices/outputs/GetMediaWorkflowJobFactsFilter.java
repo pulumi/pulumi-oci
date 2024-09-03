@@ -14,19 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowJobFactsFilter {
-    /**
-     * @return Unique name. It is read-only and generated for the fact.
-     * 
-     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetMediaWorkflowJobFactsFilter() {}
-    /**
-     * @return Unique name. It is read-only and generated for the fact.
-     * 
-     */
     public String name() {
         return this.name;
     }

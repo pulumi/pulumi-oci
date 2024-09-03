@@ -75,7 +75,6 @@ class DataGuardAssociationArgs:
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
@@ -262,7 +261,6 @@ class DataGuardAssociationArgs:
         For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 
         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -741,7 +739,6 @@ class _DataGuardAssociationState:
                For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1368,7 +1365,6 @@ class _DataGuardAssociationState:
 
         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1546,7 +1542,6 @@ class DataGuardAssociation(pulumi.CustomResource):
                For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1866,7 +1861,6 @@ class DataGuardAssociation(pulumi.CustomResource):
                For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2286,7 +2280,6 @@ class DataGuardAssociation(pulumi.CustomResource):
         For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 
         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

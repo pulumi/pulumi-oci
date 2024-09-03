@@ -474,7 +474,7 @@ class GetConnectionResult:
     @pulumi.getter
     def endpoint(self) -> str:
         """
-        Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         """
         return pulumi.get(self, "endpoint")
 

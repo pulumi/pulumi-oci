@@ -31,8 +31,7 @@ namespace Pulumi.Oci.Streaming.Inputs
         public Input<string>? PrivateEndpointIp { get; set; }
 
         /// <summary>
-        /// If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
-        /// 
+        /// If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

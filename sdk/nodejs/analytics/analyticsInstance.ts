@@ -156,8 +156,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     public /*out*/ readonly serviceUrl!: pulumi.Output<string>;
     /**
-     * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -320,8 +319,7 @@ export interface AnalyticsInstanceState {
      */
     serviceUrl?: pulumi.Input<string>;
     /**
-     * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -406,8 +404,7 @@ export interface AnalyticsInstanceArgs {
      */
     networkEndpointDetails?: pulumi.Input<inputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
     /**
-     * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

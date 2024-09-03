@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
-        /// 
         /// 
         /// ## Example Usage
         /// 

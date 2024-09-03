@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the console history metadata for the specified compartment or instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the console history metadata for the specified compartment or instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

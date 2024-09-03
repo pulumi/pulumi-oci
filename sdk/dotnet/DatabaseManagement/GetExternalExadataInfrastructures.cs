@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the Exadata infrastructure resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the Exadata infrastructure resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

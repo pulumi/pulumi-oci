@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the details for the external cluster specified by `externalClusterId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the details for the external cluster specified by `externalClusterId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

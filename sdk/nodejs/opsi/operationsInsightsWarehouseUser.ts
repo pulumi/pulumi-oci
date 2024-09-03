@@ -108,7 +108,6 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
     /**
      * OPSI Warehouse OCID
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -236,7 +235,6 @@ export interface OperationsInsightsWarehouseUserState {
     /**
      * OPSI Warehouse OCID
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -297,7 +295,6 @@ export interface OperationsInsightsWarehouseUserArgs {
     name?: pulumi.Input<string>;
     /**
      * OPSI Warehouse OCID
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

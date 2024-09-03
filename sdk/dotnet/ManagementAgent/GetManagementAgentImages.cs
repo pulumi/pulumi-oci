@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Get supported agent image information
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
         /// 
         /// Get supported agent image information
-        /// 
         /// 
         /// ## Example Usage
         /// 

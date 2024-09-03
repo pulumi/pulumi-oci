@@ -17,7 +17,6 @@ namespace Pulumi.Oci.GoldenGate
         /// Note: Deprecated. Use the /connections API instead.
         /// Lists the DatabaseRegistrations in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Note: Deprecated. Use the /connections API instead.
         /// Lists the DatabaseRegistrations in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

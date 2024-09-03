@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the TrailFiles for a deployment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Lists the TrailFiles for a deployment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -12,6 +12,17 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Data Safe"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: DataSafe.AlertPolicy"
+// sidebar_current: "docs-oci-resource-data_safe-alert_policy"
+// description: |-
+//
+//	Provides the Alert Policy resource in Oracle Cloud Infrastructure Data Safe service
+//
+// <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+//
+// # DataSafe.AlertPolicy
 // This resource provides the Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
 //
 // Creates a new user-defined alert policy.

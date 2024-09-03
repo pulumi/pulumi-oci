@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the wallet details for the specified Autonomous Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the wallet details for the specified Autonomous Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

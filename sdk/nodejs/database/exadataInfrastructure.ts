@@ -122,7 +122,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public /*out*/ readonly additionalComputeCount!: pulumi.Output<number>;
     /**
-     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
      */
     public /*out*/ readonly additionalComputeSystemModel!: pulumi.Output<string>;
     /**
@@ -472,7 +472,7 @@ export interface ExadataInfrastructureState {
      */
     additionalComputeCount?: pulumi.Input<number>;
     /**
-     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
      */
     additionalComputeSystemModel?: pulumi.Input<string>;
     /**

@@ -119,7 +119,6 @@ export class Connection extends pulumi.CustomResource {
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -265,7 +264,6 @@ export interface ConnectionState {
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -311,7 +309,6 @@ export interface ConnectionArgs {
     properties: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

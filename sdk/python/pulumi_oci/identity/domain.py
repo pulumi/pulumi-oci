@@ -39,7 +39,6 @@ class DomainArgs:
         :param pulumi.Input[str] home_region: The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
         :param pulumi.Input[str] license_type: The License type of Domain
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] admin_email: The admin email address
@@ -132,7 +131,6 @@ class DomainArgs:
     def license_type(self) -> pulumi.Input[str]:
         """
         The License type of Domain
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -305,7 +303,6 @@ class _DomainState:
         :param pulumi.Input[bool] is_notification_bypassed: Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
         :param pulumi.Input[bool] is_primary_email_required: Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
         :param pulumi.Input[str] license_type: The License type of Domain
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -533,7 +530,6 @@ class _DomainState:
         """
         The License type of Domain
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -708,7 +704,6 @@ class Domain(pulumi.CustomResource):
         :param pulumi.Input[bool] is_notification_bypassed: Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
         :param pulumi.Input[bool] is_primary_email_required: Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
         :param pulumi.Input[str] license_type: The License type of Domain
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -899,7 +894,6 @@ class Domain(pulumi.CustomResource):
         :param pulumi.Input[bool] is_primary_email_required: Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
         :param pulumi.Input[str] license_type: The License type of Domain
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: Any additional details about the current state of the Domain.
@@ -1053,7 +1047,6 @@ class Domain(pulumi.CustomResource):
     def license_type(self) -> pulumi.Output[str]:
         """
         The License type of Domain
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

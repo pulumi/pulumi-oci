@@ -93,7 +93,6 @@ namespace Pulumi.Oci.OsManagement
         /// <summary>
         /// The list of managed instance OCIDs to be added to the managed instance group.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -212,7 +211,6 @@ namespace Pulumi.Oci.OsManagement
         /// <summary>
         /// The list of managed instance OCIDs to be added to the managed instance group.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -286,7 +284,6 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// The list of managed instance OCIDs to be added to the managed instance group.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

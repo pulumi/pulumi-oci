@@ -42,7 +42,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemScmConfig
      */
     private String patSecretId;
     /**
-     * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
     private String repositoryUrl;
@@ -101,7 +101,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemScmConfig
         return this.patSecretId;
     }
     /**
-     * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
     public String repositoryUrl() {

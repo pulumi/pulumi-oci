@@ -16,7 +16,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// Returns a list of ApplicationGroups for the policy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Returns a list of ApplicationGroups for the policy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

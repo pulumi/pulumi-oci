@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the specified `PublicIpPool` object. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets the specified `PublicIpPool` object. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

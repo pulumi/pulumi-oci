@@ -483,7 +483,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
         :param pulumi.Input[str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         :param pulumi.Input[int] additional_compute_count: The requested number of additional compute servers for the Exadata infrastructure.
-        :param pulumi.Input[str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        :param pulumi.Input[str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
                
                ** IMPORTANT **
@@ -668,7 +668,7 @@ class _ExadataInfrastructureState:
     @pulumi.getter(name="additionalComputeSystemModel")
     def additional_compute_system_model(self) -> Optional[pulumi.Input[str]]:
         """
-        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
         """
         return pulumi.get(self, "additional_compute_system_model")
 
@@ -1612,7 +1612,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
         :param pulumi.Input[str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         :param pulumi.Input[int] additional_compute_count: The requested number of additional compute servers for the Exadata infrastructure.
-        :param pulumi.Input[str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        :param pulumi.Input[str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
                
                ** IMPORTANT **
@@ -1742,7 +1742,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
     @pulumi.getter(name="additionalComputeSystemModel")
     def additional_compute_system_model(self) -> pulumi.Output[str]:
         """
-        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (<https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B>)
         """
         return pulumi.get(self, "additional_compute_system_model")
 

@@ -24,7 +24,6 @@ class AutonomousDatabaseWalletArgs:
         :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
@@ -62,7 +61,6 @@ class AutonomousDatabaseWalletArgs:
     def password(self) -> pulumi.Input[str]:
         """
         The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -135,7 +133,6 @@ class _AutonomousDatabaseWalletState:
                **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -222,7 +219,6 @@ class _AutonomousDatabaseWalletState:
         """
         The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -284,7 +280,6 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
                **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -399,7 +394,6 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -463,7 +457,6 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
     def password(self) -> pulumi.Output[str]:
         """
         The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

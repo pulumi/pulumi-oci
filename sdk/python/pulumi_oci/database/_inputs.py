@@ -4312,7 +4312,7 @@ class CloudVmClusterDataCollectionOptionsArgs:
         """
         :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
         :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
@@ -4349,7 +4349,7 @@ class CloudVmClusterDataCollectionOptionsArgs:
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         return pulumi.get(self, "is_incident_logs_enabled")
 
@@ -5518,7 +5518,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
                * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
                * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5576,7 +5575,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
         The source of the Oracle Database software to be used for the upgrade.
         * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
         * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10293,7 +10291,6 @@ class KeyStoreTypeDetailsArgs:
         :param pulumi.Input[str] type: (Updatable) The type of key store.
         :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -10356,7 +10353,6 @@ class KeyStoreTypeDetailsArgs:
     def vault_id(self) -> pulumi.Input[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10504,7 +10500,6 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
         """
         :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: All connection strings to use to connect to the pluggable database.
@@ -10524,7 +10519,6 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
     def enable_pluggabledatabasemanagement(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10617,7 +10611,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArg
         """
         :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
@@ -10631,7 +10624,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArg
     def enable_pluggabledatabasemanagement(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -11517,12 +11509,15 @@ class VmClusterNetworkVmNetworkArgs:
                  netmask: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] network_type: The network type.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]] nodes: The list of node details.
-        :param pulumi.Input[str] domain_name: The network domain name.
-        :param pulumi.Input[str] gateway: The network gateway.
-        :param pulumi.Input[str] netmask: The network netmask.
-        :param pulumi.Input[str] vlan_id: The network VLAN ID.
+        :param pulumi.Input[str] network_type: (Updatable) The network type.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]] nodes: (Updatable) The list of node details.
+        :param pulumi.Input[str] domain_name: (Updatable) The network domain name.
+        :param pulumi.Input[str] gateway: (Updatable) The network gateway.
+        :param pulumi.Input[str] netmask: (Updatable) The network netmask.
+        :param pulumi.Input[str] vlan_id: (Updatable) The network VLAN ID.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "nodes", nodes)
@@ -11539,7 +11534,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter(name="networkType")
     def network_type(self) -> pulumi.Input[str]:
         """
-        The network type.
+        (Updatable) The network type.
         """
         return pulumi.get(self, "network_type")
 
@@ -11551,7 +11546,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter
     def nodes(self) -> pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]]:
         """
-        The list of node details.
+        (Updatable) The list of node details.
         """
         return pulumi.get(self, "nodes")
 
@@ -11563,7 +11558,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter(name="domainName")
     def domain_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The network domain name.
+        (Updatable) The network domain name.
         """
         return pulumi.get(self, "domain_name")
 
@@ -11575,7 +11570,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter
     def gateway(self) -> Optional[pulumi.Input[str]]:
         """
-        The network gateway.
+        (Updatable) The network gateway.
         """
         return pulumi.get(self, "gateway")
 
@@ -11587,7 +11582,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter
     def netmask(self) -> Optional[pulumi.Input[str]]:
         """
-        The network netmask.
+        (Updatable) The network netmask.
         """
         return pulumi.get(self, "netmask")
 
@@ -11599,7 +11594,10 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The network VLAN ID.
+        (Updatable) The network VLAN ID.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vlan_id")
 
@@ -11618,12 +11616,12 @@ class VmClusterNetworkVmNetworkNodeArgs:
                  vip: Optional[pulumi.Input[str]] = None,
                  vip_hostname: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] hostname: The node host name.
-        :param pulumi.Input[str] ip: The node IP address.
-        :param pulumi.Input[str] db_server_id: The Db server associated with the node.
-        :param pulumi.Input[str] state: The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        :param pulumi.Input[str] vip: The node virtual IP (VIP) address.
-        :param pulumi.Input[str] vip_hostname: The node virtual IP (VIP) host name.
+        :param pulumi.Input[str] hostname: (Updatable) The node host name.
+        :param pulumi.Input[str] ip: (Updatable) The node IP address.
+        :param pulumi.Input[str] db_server_id: (Updatable) The Db server associated with the node.
+        :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        :param pulumi.Input[str] vip: (Updatable) The node virtual IP (VIP) address.
+        :param pulumi.Input[str] vip_hostname: (Updatable) The node virtual IP (VIP) host name.
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
@@ -11640,7 +11638,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
         """
-        The node host name.
+        (Updatable) The node host name.
         """
         return pulumi.get(self, "hostname")
 
@@ -11652,7 +11650,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter
     def ip(self) -> pulumi.Input[str]:
         """
-        The node IP address.
+        (Updatable) The node IP address.
         """
         return pulumi.get(self, "ip")
 
@@ -11664,7 +11662,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter(name="dbServerId")
     def db_server_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The Db server associated with the node.
+        (Updatable) The Db server associated with the node.
         """
         return pulumi.get(self, "db_server_id")
 
@@ -11676,7 +11674,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -11688,7 +11686,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter
     def vip(self) -> Optional[pulumi.Input[str]]:
         """
-        The node virtual IP (VIP) address.
+        (Updatable) The node virtual IP (VIP) address.
         """
         return pulumi.get(self, "vip")
 
@@ -11700,7 +11698,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter(name="vipHostname")
     def vip_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        The node virtual IP (VIP) host name.
+        (Updatable) The node virtual IP (VIP) host name.
         """
         return pulumi.get(self, "vip_hostname")
 

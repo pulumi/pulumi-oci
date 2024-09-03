@@ -124,7 +124,6 @@ export class Model extends pulumi.CustomResource {
     /**
      * (Updatable) The version of the model.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -277,7 +276,6 @@ export interface ModelState {
     /**
      * (Updatable) The version of the model.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -322,7 +320,6 @@ export interface ModelArgs {
     vendor?: pulumi.Input<string>;
     /**
      * (Updatable) The version of the model.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

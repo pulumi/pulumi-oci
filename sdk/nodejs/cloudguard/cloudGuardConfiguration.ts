@@ -53,7 +53,6 @@ export class CloudGuardConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) Status of Cloud Guard tenant
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -116,7 +115,6 @@ export interface CloudGuardConfigurationState {
     /**
      * (Updatable) Status of Cloud Guard tenant
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -141,7 +139,6 @@ export interface CloudGuardConfigurationArgs {
     selfManageResources?: pulumi.Input<boolean>;
     /**
      * (Updatable) Status of Cloud Guard tenant
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

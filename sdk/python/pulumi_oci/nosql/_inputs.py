@@ -434,7 +434,6 @@ class TableTableLimitsArgs:
         :param pulumi.Input[int] max_storage_in_gbs: (Updatable) Maximum size of storage used by the table.
         :param pulumi.Input[int] max_write_units: (Updatable) Maximum sustained write throughput limit for the table.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
@@ -474,7 +473,6 @@ class TableTableLimitsArgs:
     def max_write_units(self) -> pulumi.Input[int]:
         """
         (Updatable) Maximum sustained write throughput limit for the table.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

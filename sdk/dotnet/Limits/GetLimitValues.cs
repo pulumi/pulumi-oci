@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Limits
         /// 
         /// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Limits
         /// This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
         /// 
         /// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

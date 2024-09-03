@@ -19,12 +19,12 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItem {
      */
     private @Nullable List<String> computeInstanceIds;
     /**
-     * @return (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+     * @return (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
      * 
      */
     private @Nullable String query;
     /**
-     * @return (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+     * @return (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
      * 
      */
     private @Nullable String region;
@@ -43,14 +43,14 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItem {
         return this.computeInstanceIds == null ? List.of() : this.computeInstanceIds;
     }
     /**
-     * @return (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+     * @return (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
      * 
      */
     public Optional<String> query() {
         return Optional.ofNullable(this.query);
     }
     /**
-     * @return (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+     * @return (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
      * 
      */
     public Optional<String> region() {

@@ -54,7 +54,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<string> BdsInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        /// The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
         /// </summary>
         [Output("defaultRegion")]
         public Output<string> DefaultRegion { get; private set; } = null!;
@@ -103,7 +103,6 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// The OCID of the user for whom this new generated API key pair will be created.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -168,7 +167,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<string> BdsInstanceId { get; set; } = null!;
 
         /// <summary>
-        /// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        /// The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
         /// </summary>
         [Input("defaultRegion")]
         public Input<string>? DefaultRegion { get; set; }
@@ -198,7 +197,6 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// The OCID of the user for whom this new generated API key pair will be created.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -220,7 +218,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? BdsInstanceId { get; set; }
 
         /// <summary>
-        /// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        /// The name of the region to establish the Object Storage endpoint. See &lt;https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/&gt; for additional information.
         /// </summary>
         [Input("defaultRegion")]
         public Input<string>? DefaultRegion { get; set; }
@@ -279,7 +277,6 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// The OCID of the user for whom this new generated API key pair will be created.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

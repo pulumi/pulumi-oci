@@ -76,7 +76,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+        /// most recent Work Request Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) for the asynchronous request.
         /// </summary>
         public readonly string WorkRequestId;
 

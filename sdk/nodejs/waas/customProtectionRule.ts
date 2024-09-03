@@ -104,7 +104,7 @@ export class CustomProtectionRule extends pulumi.CustomResource {
      *
      * `ctl:ruleEngine={{mode}}` - The action to be taken when the criteria of the `SecRule` are met, either `OFF`, `DETECT` or `BLOCK`. This field is automatically populated with the corresponding value of the `action` field of the `CustomProtectionRuleSetting` schema when the `WafConfig` is updated.
      *
-     * *Example:* ``` SecRule REQUEST_COOKIES "regex matching SQL injection - part 1/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 1/2.',        \ id: {{id_1}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" SecRule REQUEST_COOKIES "regex matching SQL injection - part 2/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 2/2.',        \ id: {{id_2}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" ```
+     * *Example:* `SecRule REQUEST_COOKIES "regex matching SQL injection - part 1/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 1/2.',        \ id: {{id_1}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" SecRule REQUEST_COOKIES "regex matching SQL injection - part 2/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 2/2.',        \ id: {{id_2}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny"`
      *
      * The example contains two `SecRules` each having distinct regex expression to match the `Cookie` header value during the second input analysis phase.
      *
@@ -113,7 +113,6 @@ export class CustomProtectionRule extends pulumi.CustomResource {
      * For more information about ModSecurity syntax, see [Making Rules: The Basic Syntax](https://www.modsecurity.org/CRS/Documentation/making.html).
      *
      * For more information about ModSecurity's open source WAF rules, see [Mod Security's OWASP Core Rule Set documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,7 +212,7 @@ export interface CustomProtectionRuleState {
      *
      * `ctl:ruleEngine={{mode}}` - The action to be taken when the criteria of the `SecRule` are met, either `OFF`, `DETECT` or `BLOCK`. This field is automatically populated with the corresponding value of the `action` field of the `CustomProtectionRuleSetting` schema when the `WafConfig` is updated.
      *
-     * *Example:* ``` SecRule REQUEST_COOKIES "regex matching SQL injection - part 1/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 1/2.',        \ id: {{id_1}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" SecRule REQUEST_COOKIES "regex matching SQL injection - part 2/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 2/2.',        \ id: {{id_2}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" ```
+     * *Example:* `SecRule REQUEST_COOKIES "regex matching SQL injection - part 1/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 1/2.',        \ id: {{id_1}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" SecRule REQUEST_COOKIES "regex matching SQL injection - part 2/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 2/2.',        \ id: {{id_2}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny"`
      *
      * The example contains two `SecRules` each having distinct regex expression to match the `Cookie` header value during the second input analysis phase.
      *
@@ -222,7 +221,6 @@ export interface CustomProtectionRuleState {
      * For more information about ModSecurity syntax, see [Making Rules: The Basic Syntax](https://www.modsecurity.org/CRS/Documentation/making.html).
      *
      * For more information about ModSecurity's open source WAF rules, see [Mod Security's OWASP Core Rule Set documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -267,7 +265,7 @@ export interface CustomProtectionRuleArgs {
      *
      * `ctl:ruleEngine={{mode}}` - The action to be taken when the criteria of the `SecRule` are met, either `OFF`, `DETECT` or `BLOCK`. This field is automatically populated with the corresponding value of the `action` field of the `CustomProtectionRuleSetting` schema when the `WafConfig` is updated.
      *
-     * *Example:* ``` SecRule REQUEST_COOKIES "regex matching SQL injection - part 1/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 1/2.',        \ id: {{id_1}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" SecRule REQUEST_COOKIES "regex matching SQL injection - part 2/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 2/2.',        \ id: {{id_2}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" ```
+     * *Example:* `SecRule REQUEST_COOKIES "regex matching SQL injection - part 1/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 1/2.',        \ id: {{id_1}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny" SecRule REQUEST_COOKIES "regex matching SQL injection - part 2/2" \ "phase:2,                                                 \ msg:'Detects chained SQL injection attempts 2/2.',        \ id: {{id_2}},                                             \ ctl:ruleEngine={{mode}},                                  \ deny"`
      *
      * The example contains two `SecRules` each having distinct regex expression to match the `Cookie` header value during the second input analysis phase.
      *
@@ -276,7 +274,6 @@ export interface CustomProtectionRuleArgs {
      * For more information about ModSecurity syntax, see [Making Rules: The Basic Syntax](https://www.modsecurity.org/CRS/Documentation/making.html).
      *
      * For more information about ModSecurity's open source WAF rules, see [Mod Security's OWASP Core Rule Set documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

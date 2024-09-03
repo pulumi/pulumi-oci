@@ -803,7 +803,6 @@ class AuditPolicyManagementAuditCondition(dict):
         :param bool is_enabled: Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
         :param bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -855,7 +854,6 @@ class AuditPolicyManagementAuditCondition(dict):
     def is_priv_users_managed_by_data_safe(self) -> Optional[bool]:
         """
         Indicates whether the privileged user list is managed by Data Safe.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1891,7 +1889,6 @@ class DiscoveryModTablesForDiscovery(dict):
         :param str schema_name: This contains the name of the schema.
         :param Sequence[str] table_names: This contains an optional list of the table names.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1912,7 +1909,6 @@ class DiscoveryModTablesForDiscovery(dict):
     def table_names(self) -> Optional[Sequence[str]]:
         """
         This contains an optional list of the table names.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3030,7 +3026,6 @@ class ReportDefinitionSummary(dict):
         :param bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str scim_filter: (Updatable) Additional scim filters used to get the specific summary.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3090,7 +3085,6 @@ class ReportDefinitionSummary(dict):
     def scim_filter(self) -> Optional[str]:
         """
         (Updatable) Additional scim filters used to get the specific summary.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5294,7 +5288,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfig(dict):
         :param str store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param str trust_store_content: (Updatable) Base64 encoded string of trust store file content.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5345,7 +5338,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfig(dict):
     def trust_store_content(self) -> Optional[str]:
         """
         (Updatable) Base64 encoded string of trust store file content.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5391,7 +5383,6 @@ class TargetDatabaseTlsConfig(dict):
         :param str store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param str trust_store_content: (Updatable) Base64 encoded string of trust store file content.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5443,7 +5434,6 @@ class TargetDatabaseTlsConfig(dict):
         """
         (Updatable) Base64 encoded string of trust store file content.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5480,7 +5470,6 @@ class UserAssessmentIgnoredTarget(dict):
         """
         :param str target_id: The OCID of the target database on which the user assessment is to be run.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5501,7 +5490,6 @@ class UserAssessmentIgnoredTarget(dict):
     def target_id(self) -> Optional[str]:
         """
         The OCID of the target database on which the user assessment is to be run.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

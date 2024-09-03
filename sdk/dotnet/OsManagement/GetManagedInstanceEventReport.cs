@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// Get summary information about events on this instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OsManagement
         /// This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
         /// 
         /// Get summary information about events on this instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -18,7 +18,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
     /**
-     * @return This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     * @return This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html&gt; for information about these clone types. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html&gt; for information about snapshot standby.
      * 
      */
     private String autonomousDatabaseStandbyTypeForDrDrills;
@@ -38,7 +38,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
      */
     private String bucket;
     /**
-     * @return The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+     * @return The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html&gt; for information about these service types.
      * 
      */
     private String connectionStringType;
@@ -130,7 +130,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
 
     private GetDrProtectionGroupsDrProtectionGroupCollectionItemMember() {}
     /**
-     * @return This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     * @return This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html&gt; for information about these clone types. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html&gt; for information about snapshot standby.
      * 
      */
     public String autonomousDatabaseStandbyTypeForDrDrills() {
@@ -158,7 +158,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
         return this.bucket;
     }
     /**
-     * @return The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+     * @return The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See &lt;https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html&gt; for information about these service types.
      * 
      */
     public String connectionStringType() {

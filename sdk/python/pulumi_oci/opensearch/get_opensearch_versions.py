@@ -90,8 +90,7 @@ def get_opensearch_versions(compartment_id: Optional[str] = None,
 
     ##### {Compartment-Name} - Name of  your compartment
 
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+    For latest documentation on OpenSearch use please refer to <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm>Required permissions: <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm>
 
     ## Example Usage
 
@@ -133,8 +132,7 @@ def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ##### {Compartment-Name} - Name of  your compartment
 
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+    For latest documentation on OpenSearch use please refer to <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm>Required permissions: <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm>
 
     ## Example Usage
 

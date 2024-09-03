@@ -164,7 +164,6 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -362,7 +361,6 @@ export interface VmClusterRemoveVirtualMachineState {
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -383,7 +381,6 @@ export interface VmClusterRemoveVirtualMachineArgs {
     dbServers: pulumi.Input<pulumi.Input<inputs.Database.VmClusterRemoveVirtualMachineDbServer>[]>;
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

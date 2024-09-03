@@ -73,7 +73,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The version of the vault secret. If no version is specified, the latest version will be used.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -176,7 +175,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The version of the vault secret. If no version is specified, the latest version will be used.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -236,7 +234,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The version of the vault secret. If no version is specified, the latest version will be used.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         /// 
         /// Gets a list of all cluster placement groups in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         /// This data source provides the list of Cluster Placement Groups in Oracle Cloud Infrastructure Cluster Placement Groups service.
         /// 
         /// Gets a list of all cluster placement groups in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

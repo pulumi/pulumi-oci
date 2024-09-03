@@ -45,7 +45,6 @@ class DedicatedAiClusterArgs:
                * LARGE_GENERIC
                * LARGE_COHERE_V2_2
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -121,7 +120,6 @@ class DedicatedAiClusterArgs:
         * LLAMA2_70
         * LARGE_GENERIC
         * LARGE_COHERE_V2_2
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,7 +226,6 @@ class _DedicatedAiClusterState:
                * LLAMA2_70
                * LARGE_GENERIC
                * LARGE_COHERE_V2_2
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -438,7 +435,6 @@ class _DedicatedAiClusterState:
         * LARGE_GENERIC
         * LARGE_COHERE_V2_2
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -521,7 +517,6 @@ class DedicatedAiCluster(pulumi.CustomResource):
                * LLAMA2_70
                * LARGE_GENERIC
                * LARGE_COHERE_V2_2
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -680,7 +675,6 @@ class DedicatedAiCluster(pulumi.CustomResource):
                * LARGE_GENERIC
                * LARGE_COHERE_V2_2
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -827,7 +821,6 @@ class DedicatedAiCluster(pulumi.CustomResource):
         * LLAMA2_70
         * LARGE_GENERIC
         * LARGE_COHERE_V2_2
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

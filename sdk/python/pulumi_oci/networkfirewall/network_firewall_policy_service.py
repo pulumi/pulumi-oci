@@ -24,8 +24,7 @@ class NetworkFirewallPolicyServiceArgs:
         The set of arguments for constructing a NetworkFirewallPolicyService resource.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]] port_ranges: (Updatable) List of port-ranges to be used.
-        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
-               
+        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -65,8 +64,7 @@ class NetworkFirewallPolicyServiceArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        Describes the type of Service. The accepted values are 
-
+        Describes the type of Service. The accepted values are
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -104,8 +102,7 @@ class _NetworkFirewallPolicyServiceState:
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]] port_ranges: (Updatable) List of port-ranges to be used.
-        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
-               
+        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -173,8 +170,7 @@ class _NetworkFirewallPolicyServiceState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Describes the type of Service. The accepted values are 
-
+        Describes the type of Service. The accepted values are
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,8 +226,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         :param pulumi.Input[str] name: Name of the service
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]] port_ranges: (Updatable) List of port-ranges to be used.
-        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
-               
+        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -336,8 +331,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]] port_ranges: (Updatable) List of port-ranges to be used.
-        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
-               
+        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -389,8 +383,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        Describes the type of Service. The accepted values are 
-
+        Describes the type of Service. The accepted values are
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

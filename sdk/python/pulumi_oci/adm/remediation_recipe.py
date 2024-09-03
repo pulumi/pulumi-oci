@@ -39,8 +39,7 @@ class RemediationRecipeArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the remediation recipe.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,8 +184,7 @@ class RemediationRecipeArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,8 +224,7 @@ class _RemediationRecipeState:
         :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         :param pulumi.Input['RemediationRecipeNetworkConfigurationArgs'] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
         :param pulumi.Input['RemediationRecipeScmConfigurationArgs'] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -377,8 +374,7 @@ class _RemediationRecipeState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -532,8 +528,7 @@ class RemediationRecipe(pulumi.CustomResource):
         :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         :param pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
         :param pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -714,8 +709,7 @@ class RemediationRecipe(pulumi.CustomResource):
         :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         :param pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
         :param pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -820,8 +814,7 @@ class RemediationRecipe(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

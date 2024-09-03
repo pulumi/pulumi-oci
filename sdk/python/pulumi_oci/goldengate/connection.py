@@ -120,7 +120,7 @@ class ConnectionArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         :param pulumi.Input[str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -139,10 +139,10 @@ class ConnectionArgs:
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
-        :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -172,7 +172,7 @@ class ConnectionArgs:
         :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -632,7 +632,7 @@ class ConnectionArgs:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         """
         return pulumi.get(self, "endpoint")
 
@@ -847,7 +847,7 @@ class ConnectionArgs:
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         """
         return pulumi.get(self, "private_key_file")
 
@@ -883,7 +883,7 @@ class ConnectionArgs:
     @pulumi.getter(name="publicKeyFingerprint")
     def public_key_fingerprint(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         """
         return pulumi.get(self, "public_key_fingerprint")
 
@@ -1243,7 +1243,7 @@ class ConnectionArgs:
     @pulumi.getter
     def wallet(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1367,7 +1367,7 @@ class _ConnectionState:
         :param pulumi.Input[str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         :param pulumi.Input[str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -1388,10 +1388,10 @@ class _ConnectionState:
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
-        :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -1426,7 +1426,7 @@ class _ConnectionState:
         :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1890,7 +1890,7 @@ class _ConnectionState:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         """
         return pulumi.get(self, "endpoint")
 
@@ -2129,7 +2129,7 @@ class _ConnectionState:
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         """
         return pulumi.get(self, "private_key_file")
 
@@ -2165,7 +2165,7 @@ class _ConnectionState:
     @pulumi.getter(name="publicKeyFingerprint")
     def public_key_fingerprint(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         """
         return pulumi.get(self, "public_key_fingerprint")
 
@@ -2585,7 +2585,7 @@ class _ConnectionState:
     @pulumi.getter
     def wallet(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2818,7 +2818,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         :param pulumi.Input[str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -2837,10 +2837,10 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
-        :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -2871,7 +2871,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3312,7 +3312,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         :param pulumi.Input[str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -3333,10 +3333,10 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
-        :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -3371,7 +3371,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3661,7 +3661,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def endpoint(self) -> pulumi.Output[str]:
         """
-        (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         """
         return pulumi.get(self, "endpoint")
 
@@ -3820,7 +3820,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> pulumi.Output[str]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         """
         return pulumi.get(self, "private_key_file")
 
@@ -3844,7 +3844,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="publicKeyFingerprint")
     def public_key_fingerprint(self) -> pulumi.Output[str]:
         """
-        (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
         """
         return pulumi.get(self, "public_key_fingerprint")
 
@@ -4124,7 +4124,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def wallet(self) -> pulumi.Output[str]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

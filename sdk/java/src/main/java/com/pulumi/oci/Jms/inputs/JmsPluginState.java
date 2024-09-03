@@ -233,14 +233,14 @@ public final class JmsPluginState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
     @Import(name="timeLastSeen")
     private @Nullable Output<String> timeLastSeen;
 
     /**
-     * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * @return The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
     public Optional<Output<String>> timeLastSeen() {
@@ -602,7 +602,7 @@ public final class JmsPluginState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeLastSeen The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+         * @param timeLastSeen The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class JmsPluginState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeLastSeen The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+         * @param timeLastSeen The date and time the resource was *last* reported to JMS. This is potentially *after* the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
          * 
          * @return builder
          * 

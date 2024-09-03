@@ -79,7 +79,6 @@ class DomainsIdentityPropagationTrustArgs:
                * multiValued: false
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] account_id: (Updatable) The Identity cloud provider service identifier, for example, the Azure Tenancy ID, AWS Account ID, or GCP Project ID.
@@ -400,7 +399,6 @@ class DomainsIdentityPropagationTrustArgs:
         * type: string
         * multiValued: false
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1217,7 +1215,6 @@ class _DomainsIdentityPropagationTrustState:
                * multiValued: false
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1996,7 +1993,6 @@ class _DomainsIdentityPropagationTrustState:
         * multiValued: false
         * uniqueness: none
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2330,7 +2326,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * type: string
                * multiValued: false
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2869,7 +2864,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * type: string
                * multiValued: false
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3482,7 +3476,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         * type: string
         * multiValued: false
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

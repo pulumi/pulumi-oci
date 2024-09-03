@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<string> SearchDomainNames;
         /// <summary>
-        /// (Updatable) 
+        /// (Updatable)
         /// * **VcnLocal:** Reserved for future use.
         /// * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).

@@ -163,7 +163,6 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -352,7 +351,6 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -520,7 +518,6 @@ namespace Pulumi.Oci.Ocvp
 
         /// <summary>
         /// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -12,10 +12,10 @@ import * as utilities from "../utilities";
  * Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
  * the rules in the following order:
  *
- * *  Access control rules
- * *  Allow method rules
- * *  Request header rules
- * *  Response header rules
+ * * Access control rules
+ * * Allow method rules
+ * * Request header rules
+ * * Response header rules
  *
  * ## Example Usage
  *
@@ -76,10 +76,10 @@ export interface GetListenerRulesResult {
  * Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
  * the rules in the following order:
  *
- * *  Access control rules
- * *  Allow method rules
- * *  Request header rules
- * *  Response header rules
+ * * Access control rules
+ * * Allow method rules
+ * * Request header rules
+ * * Response header rules
  *
  * ## Example Usage
  *

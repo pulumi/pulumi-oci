@@ -147,8 +147,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
+        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -326,8 +325,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<string>? _systemTags;
 
         /// <summary>
-        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
+        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -470,8 +468,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<string>? _systemTags;
 
         /// <summary>
-        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
+        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

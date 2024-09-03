@@ -21,7 +21,6 @@ class ExternalExadataInfrastructureExadataManagementArgs:
         The set of arguments for constructing a ExternalExadataInfrastructureExadataManagement resource.
         :param pulumi.Input[bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -37,7 +36,6 @@ class ExternalExadataInfrastructureExadataManagementArgs:
     def enable_exadata(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -83,7 +81,6 @@ class _ExternalExadataInfrastructureExadataManagementState:
         Input properties used for looking up and filtering ExternalExadataInfrastructureExadataManagement resources.
         :param pulumi.Input[bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -101,7 +98,6 @@ class _ExternalExadataInfrastructureExadataManagementState:
     def enable_exadata(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,7 +167,6 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,7 +257,6 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -282,7 +276,6 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
     def enable_exadata(self) -> pulumi.Output[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

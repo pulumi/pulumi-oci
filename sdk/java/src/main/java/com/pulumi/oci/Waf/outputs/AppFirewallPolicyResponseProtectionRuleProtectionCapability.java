@@ -22,7 +22,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapability {
      */
     private @Nullable String actionName;
     /**
-     * @return (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+     * @return (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
     private @Nullable Integer collaborativeActionThreshold;
@@ -56,7 +56,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapability {
         return Optional.ofNullable(this.actionName);
     }
     /**
-     * @return (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+     * @return (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for *this* capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
     public Optional<Integer> collaborativeActionThreshold() {

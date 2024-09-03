@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * subcategory: "Core"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Core.InstanceConfiguration"
+ * sidebar_current: "docs-oci-resource-core-instance_configuration"
+ * description: |-
+ * Provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service
+ * <!-- yaml: line 7: could not find expected ':' -->
+ *
+ * # oci.Core.InstanceConfiguration
  * This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
  *
  * Creates an instance configuration. An instance configuration is a template that defines the
@@ -446,7 +455,6 @@ export class InstanceConfiguration extends pulumi.CustomResource {
      * * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -540,7 +548,6 @@ export interface InstanceConfigurationState {
      * * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -588,7 +595,6 @@ export interface InstanceConfigurationArgs {
      * The following values are supported:
      * * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

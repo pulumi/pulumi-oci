@@ -11,6 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Database Management"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: DatabaseManagement.getExternalDbNodes"
+// sidebar_current: "docs-oci-datasource-database_management-external_db_nodes"
+// description: |-
+// Provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service
+// <!-- yaml: line 7: could not find expected ':' -->
+//
+// # Data Source: DatabaseManagement.getExternalDbNodes
 // This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
 //
 // Lists the external DB nodes in the specified external DB system.

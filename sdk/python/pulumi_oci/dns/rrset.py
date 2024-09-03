@@ -29,13 +29,12 @@ class RrsetArgs:
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable)
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
+        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
                This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
         """
@@ -81,7 +80,6 @@ class RrsetArgs:
         """
         The name or OCID of the target zone.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -107,7 +105,7 @@ class RrsetArgs:
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]]:
         """
-        (Updatable) 
+        (Updatable)
         **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         """
         return pulumi.get(self, "items")
@@ -120,7 +118,7 @@ class RrsetArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
+        Specifies to operate only on resources that have a matching DNS scope.
         This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         """
         return pulumi.get(self, "scope")
@@ -156,14 +154,13 @@ class _RrsetState:
         Input properties used for looking up and filtering Rrset resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable)
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
+        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
                This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,7 +208,7 @@ class _RrsetState:
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]]:
         """
-        (Updatable) 
+        (Updatable)
         **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         """
         return pulumi.get(self, "items")
@@ -236,7 +233,7 @@ class _RrsetState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
+        Specifies to operate only on resources that have a matching DNS scope.
         This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         """
         return pulumi.get(self, "scope")
@@ -262,7 +259,6 @@ class _RrsetState:
     def zone_name_or_id(self) -> Optional[pulumi.Input[str]]:
         """
         The name or OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -332,14 +328,13 @@ class Rrset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable)
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
+        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
                This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -461,14 +456,13 @@ class Rrset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable)
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
+        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
                This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -506,7 +500,7 @@ class Rrset(pulumi.CustomResource):
     @pulumi.getter
     def items(self) -> pulumi.Output[Sequence['outputs.RrsetItem']]:
         """
-        (Updatable) 
+        (Updatable)
         **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         """
         return pulumi.get(self, "items")
@@ -523,7 +517,7 @@ class Rrset(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
+        Specifies to operate only on resources that have a matching DNS scope.
         This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         """
         return pulumi.get(self, "scope")
@@ -541,7 +535,6 @@ class Rrset(pulumi.CustomResource):
     def zone_name_or_id(self) -> pulumi.Output[str]:
         """
         The name or OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

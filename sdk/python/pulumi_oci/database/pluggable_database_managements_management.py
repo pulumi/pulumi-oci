@@ -30,7 +30,6 @@ class PluggableDatabaseManagementsManagementArgs:
         :param pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs'] credential_details: Data for the credential used to connect to the database.
         :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -72,7 +71,6 @@ class PluggableDatabaseManagementsManagementArgs:
     def enable_pluggabledatabasemanagement(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -201,7 +199,6 @@ class _PluggableDatabaseManagementsManagementState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -328,7 +325,6 @@ class _PluggableDatabaseManagementsManagementState:
     def enable_pluggabledatabasemanagement(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -566,7 +562,6 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         :param pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']] credential_details: Data for the credential used to connect to the database.
         :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -718,7 +713,6 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -809,7 +803,6 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
     def enable_pluggabledatabasemanagement(self) -> pulumi.Output[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

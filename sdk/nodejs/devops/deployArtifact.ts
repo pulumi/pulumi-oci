@@ -124,7 +124,6 @@ export class DeployArtifact extends pulumi.CustomResource {
     /**
      * The OCID of a project.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -250,7 +249,6 @@ export interface DeployArtifactState {
     /**
      * The OCID of a project.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -307,7 +305,6 @@ export interface DeployArtifactArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The OCID of a project.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

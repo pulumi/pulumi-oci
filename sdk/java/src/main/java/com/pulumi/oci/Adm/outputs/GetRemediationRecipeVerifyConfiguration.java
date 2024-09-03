@@ -42,7 +42,7 @@ public final class GetRemediationRecipeVerifyConfiguration {
      */
     private String pipelineId;
     /**
-     * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
     private String repositoryUrl;
@@ -106,7 +106,7 @@ public final class GetRemediationRecipeVerifyConfiguration {
         return this.pipelineId;
     }
     /**
-     * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is &lt;https://github.com/[owner]/[repoName]&gt; For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
     public String repositoryUrl() {

@@ -14,6 +14,15 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * subcategory: &#34;Data Safe&#34;
+ * layout: &#34;oci&#34;
+ * page_title: &#34;Oracle Cloud Infrastructure: oci.DataSafe.AlertPolicyRule&#34;
+ * sidebar_current: &#34;docs-oci-resource-data_safe-alert_policy_rule&#34;
+ * description: |-
+ * 	Provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service
+ * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+ * 
+ * # oci.DataSafe.AlertPolicyRule
  * This resource provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
  * 
  * Creates a new rule for the alert policy.

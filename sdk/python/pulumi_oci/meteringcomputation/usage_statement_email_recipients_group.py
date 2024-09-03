@@ -26,7 +26,6 @@ class UsageStatementEmailRecipientsGroupArgs:
         :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
         :param pulumi.Input[str] subscription_id: The UsageStatement Subscription unique OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -66,7 +65,6 @@ class UsageStatementEmailRecipientsGroupArgs:
         """
         The UsageStatement Subscription unique OCID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -100,7 +98,6 @@ class _UsageStatementEmailRecipientsGroupState:
         :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
         :param pulumi.Input[str] state: The email recipient group lifecycle state.
         :param pulumi.Input[str] subscription_id: The UsageStatement Subscription unique OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -167,7 +164,6 @@ class _UsageStatementEmailRecipientsGroupState:
         """
         The UsageStatement Subscription unique OCID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -223,7 +219,6 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The customer tenancy.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
         :param pulumi.Input[str] subscription_id: The UsageStatement Subscription unique OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -330,7 +325,6 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         :param pulumi.Input[str] state: The email recipient group lifecycle state.
         :param pulumi.Input[str] subscription_id: The UsageStatement Subscription unique OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -379,7 +373,6 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
     def subscription_id(self) -> pulumi.Output[str]:
         """
         The UsageStatement Subscription unique OCID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

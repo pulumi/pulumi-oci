@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of metastore configurations ssociated with this Big Data Service cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides the list of Bds Instance Metastore Configs in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// Returns a list of metastore configurations ssociated with this Big Data Service cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

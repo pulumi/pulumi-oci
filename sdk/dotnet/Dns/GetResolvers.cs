@@ -21,7 +21,6 @@ namespace Pulumi.Oci.Dns
         /// does not include resolvers in the DELETED lifecycleState to be consistent
         /// with other operations of the API. Requires a `PRIVATE` scope query parameter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -56,7 +55,6 @@ namespace Pulumi.Oci.Dns
         /// when no lifecycleState query parameter is provided, the collection
         /// does not include resolvers in the DELETED lifecycleState to be consistent
         /// with other operations of the API. Requires a `PRIVATE` scope query parameter.
-        /// 
         /// 
         /// ## Example Usage
         /// 

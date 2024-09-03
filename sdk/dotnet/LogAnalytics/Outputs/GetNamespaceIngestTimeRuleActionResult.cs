@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
     public sealed class GetNamespaceIngestTimeRuleActionResult
     {
         /// <summary>
-        /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

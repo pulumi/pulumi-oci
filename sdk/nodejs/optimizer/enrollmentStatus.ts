@@ -60,7 +60,6 @@ export class EnrollmentStatus extends pulumi.CustomResource {
     /**
      * (Updatable) The Cloud Advisor enrollment status.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -138,7 +137,6 @@ export interface EnrollmentStatusState {
     /**
      * (Updatable) The Cloud Advisor enrollment status.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -167,7 +165,6 @@ export interface EnrollmentStatusArgs {
     enrollmentStatusId: pulumi.Input<string>;
     /**
      * (Updatable) The Cloud Advisor enrollment status.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

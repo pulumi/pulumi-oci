@@ -115,7 +115,6 @@ export class Backup extends pulumi.CustomResource {
     /**
      * (Updatable) Backup retention period in days.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -256,7 +255,6 @@ export interface BackupState {
     /**
      * (Updatable) Backup retention period in days.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -313,7 +311,6 @@ export interface BackupArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Backup retention period in days.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -830,7 +830,6 @@ class _DomainsRuleState:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1418,7 +1417,6 @@ class _DomainsRuleState:
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2075,7 +2073,6 @@ class DomainsRule(pulumi.CustomResource):
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2537,7 +2534,6 @@ class DomainsRule(pulumi.CustomResource):
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

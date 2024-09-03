@@ -137,8 +137,7 @@ namespace Pulumi.Oci.LicenseManager
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-        /// 
+        /// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,8 +276,7 @@ namespace Pulumi.Oci.LicenseManager
         public Input<string> ProductLicenseId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-        /// 
+        /// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -385,8 +383,7 @@ namespace Pulumi.Oci.LicenseManager
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-        /// 
+        /// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

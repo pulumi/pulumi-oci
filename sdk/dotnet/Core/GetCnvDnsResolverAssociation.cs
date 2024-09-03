@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetCnvDnsResolverAssociationResult
     {
         /// <summary>
-        /// The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn 
+        /// The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn
         /// is created, we will create it asynchronously. It would be null until it is actually created.
         /// </summary>
         public readonly string DnsResolverId;

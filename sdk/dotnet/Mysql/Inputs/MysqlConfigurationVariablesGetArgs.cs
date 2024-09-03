@@ -167,13 +167,13 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? InnodbBufferPoolSize { get; set; }
 
         /// <summary>
-        /// innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        /// innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size&gt;)
         /// </summary>
         [Input("innodbDdlBufferSize")]
         public Input<string>? InnodbDdlBufferSize { get; set; }
 
         /// <summary>
-        /// innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        /// innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads&gt;)
         /// </summary>
         [Input("innodbDdlThreads")]
         public Input<int>? InnodbDdlThreads { get; set; }
@@ -497,7 +497,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? QueryPreallocSize { get; set; }
 
         /// <summary>
-        /// regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        /// regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit&gt;)
         /// </summary>
         [Input("regexpTimeLimit")]
         public Input<int>? RegexpTimeLimit { get; set; }
@@ -570,7 +570,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// The number of seconds the server waits for activity on a noninteractive connection before closing it.
         /// 
         /// waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

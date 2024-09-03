@@ -3655,7 +3655,7 @@ class GetZonesZoneResult(dict):
         :param bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
         :param Sequence['GetZonesZoneNameserverArgs'] nameservers: The authoritative nameservers for the zone.
-        :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+        :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null
                for zones in the global DNS and `PRIVATE` when listing private zones.
         :param str self: The canonical absolute URL of the resource.
         :param int serial: The current serial of the zone. As seen in the zone's SOA record.
@@ -3761,7 +3761,7 @@ class GetZonesZoneResult(dict):
     @pulumi.getter
     def scope(self) -> str:
         """
-        Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+        Specifies to operate only on resources that have a matching DNS scope. This value will be null
         for zones in the global DNS and `PRIVATE` when listing private zones.
         """
         return pulumi.get(self, "scope")

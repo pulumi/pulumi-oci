@@ -218,7 +218,6 @@ namespace Pulumi.Oci.Oce
         /// <summary>
         /// (Updatable) Web Application Firewall(WAF) primary domain
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -401,7 +400,6 @@ namespace Pulumi.Oci.Oce
 
         /// <summary>
         /// (Updatable) Web Application Firewall(WAF) primary domain
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -609,7 +607,6 @@ namespace Pulumi.Oci.Oce
 
         /// <summary>
         /// (Updatable) Web Application Firewall(WAF) primary domain
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

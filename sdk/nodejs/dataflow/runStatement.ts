@@ -72,8 +72,7 @@ export class RunStatement extends pulumi.CustomResource {
      */
     public /*out*/ readonly progress!: pulumi.Output<number>;
     /**
-     * The unique ID for the run 
-     *
+     * The unique ID for the run
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -150,8 +149,7 @@ export interface RunStatementState {
      */
     progress?: pulumi.Input<number>;
     /**
-     * The unique ID for the run 
-     *
+     * The unique ID for the run
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -180,8 +178,7 @@ export interface RunStatementArgs {
      */
     code: pulumi.Input<string>;
     /**
-     * The unique ID for the run 
-     *
+     * The unique ID for the run
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -82,7 +82,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult> NetworkConfigurations;
         /// <summary>
-        /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        /// The Spark configuration passed to the running process. See &lt;https://spark.apache.org/docs/latest/configuration.html#available-properties&gt;. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         public readonly ImmutableDictionary<string, string> SparkAdvancedConfigurations;
         /// <summary>
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+        /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here &lt;https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html&gt;
         /// </summary>
         public readonly string WarehouseBucketUri;
 

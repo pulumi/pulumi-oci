@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneNameserverResult> Nameservers;
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null 
+        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null
         /// for zones in the global DNS and `PRIVATE` when listing private zones.
         /// </summary>
         public readonly string Scope;

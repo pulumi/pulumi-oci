@@ -185,7 +185,7 @@ class GetInvokeRunResult:
     @pulumi.getter(name="archiveUri")
     def archive_uri(self) -> str:
         """
-        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
         """
         return pulumi.get(self, "archive_uri")
 
@@ -222,7 +222,7 @@ class GetInvokeRunResult:
     @pulumi.getter
     def configuration(self) -> Mapping[str, str]:
         """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "configuration")
 
@@ -278,7 +278,7 @@ class GetInvokeRunResult:
     @pulumi.getter
     def execute(self) -> str:
         """
-        The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+        The input used for spark-submit command. For more details see <https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit>. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         """
         return pulumi.get(self, "execute")
 
@@ -302,7 +302,7 @@ class GetInvokeRunResult:
     @pulumi.getter(name="fileUri")
     def file_uri(self) -> str:
         """
-        An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        An Oracle Cloud Infrastructure URI of the file containing the application to execute. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
         """
         return pulumi.get(self, "file_uri")
 
@@ -350,7 +350,7 @@ class GetInvokeRunResult:
     @pulumi.getter(name="logsBucketUri")
     def logs_bucket_uri(self) -> str:
         """
-        An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
         """
         return pulumi.get(self, "logs_bucket_uri")
 
@@ -528,7 +528,7 @@ class GetInvokeRunResult:
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> str:
         """
-        An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
         """
         return pulumi.get(self, "warehouse_bucket_uri")
 

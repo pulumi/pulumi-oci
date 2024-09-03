@@ -102,7 +102,7 @@ type ProtectedDatabase struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics ProtectedDatabaseMetricArrayOutput `pulumi:"metrics"`
-	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
 	Password pulumi.StringOutput `pulumi:"password"`
 	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
 	PolicyLockedDateTime pulumi.StringOutput `pulumi:"policyLockedDateTime"`
@@ -212,7 +212,7 @@ type protectedDatabaseState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics []ProtectedDatabaseMetric `pulumi:"metrics"`
-	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
 	Password *string `pulumi:"password"`
 	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
 	PolicyLockedDateTime *string `pulumi:"policyLockedDateTime"`
@@ -268,7 +268,7 @@ type ProtectedDatabaseState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics ProtectedDatabaseMetricArrayInput
-	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
 	Password pulumi.StringPtrInput
 	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
 	PolicyLockedDateTime pulumi.StringPtrInput
@@ -318,7 +318,7 @@ type protectedDatabaseArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsShipped *bool `pulumi:"isRedoLogsShipped"`
-	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
 	Password string `pulumi:"password"`
 	// (Updatable) The OCID of the protection policy associated with the protected database.
 	ProtectionPolicyId string `pulumi:"protectionPolicyId"`
@@ -353,7 +353,7 @@ type ProtectedDatabaseArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsShipped pulumi.BoolPtrInput
-	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
 	Password pulumi.StringInput
 	// (Updatable) The OCID of the protection policy associated with the protected database.
 	ProtectionPolicyId pulumi.StringInput
@@ -525,7 +525,7 @@ func (o ProtectedDatabaseOutput) Metrics() ProtectedDatabaseMetricArrayOutput {
 	return o.ApplyT(func(v *ProtectedDatabase) ProtectedDatabaseMetricArrayOutput { return v.Metrics }).(ProtectedDatabaseMetricArrayOutput)
 }
 
-// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (<https://docs.cloud.oracle.com/iaas/api/#>) or hyphen (-). The password must not contain the username "admin", regardless of casing.
 func (o ProtectedDatabaseOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
 }

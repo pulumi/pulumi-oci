@@ -25,7 +25,6 @@ class AnnouncementSubscriptionsFilterGroupArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
         :param pulumi.Input[str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -64,7 +63,6 @@ class AnnouncementSubscriptionsFilterGroupArgs:
         """
         The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -86,7 +84,6 @@ class _AnnouncementSubscriptionsFilterGroupState:
         :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
         :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
         :param pulumi.Input[str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -127,7 +124,6 @@ class _AnnouncementSubscriptionsFilterGroupState:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,7 +179,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict']]]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
         :param pulumi.Input[str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -282,7 +277,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict']]]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
         :param pulumi.Input[str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -316,7 +310,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
     def name(self) -> pulumi.Output[str]:
         """
         The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

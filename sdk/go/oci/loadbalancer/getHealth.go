@@ -64,14 +64,14 @@ type GetHealthResult struct {
 	Id             string `pulumi:"id"`
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The overall health status of the load balancer.
-	// *  **OK:** All backend sets associated with the load balancer return a status of `OK`.
-	// *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of `WARNING`, no backend sets return a status of `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
-	// *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of `CRITICAL`.
-	// *  **UNKNOWN:** If any one of the following conditions is true:
-	// *  The load balancer life cycle state is not `ACTIVE`.
-	// *  No backend sets are defined for the load balancer.
-	// *  More than half of the backend sets associated with the load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
-	// *  The system could not retrieve metrics for any reason.
+	// * **OK:** All backend sets associated with the load balancer return a status of `OK`.
+	// * **WARNING:** At least one of the backend sets associated with the load balancer returns a status of `WARNING`, no backend sets return a status of `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
+	// * **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of `CRITICAL`.
+	// * **UNKNOWN:** If any one of the following conditions is true:
+	// * The load balancer life cycle state is not `ACTIVE`.
+	// * No backend sets are defined for the load balancer.
+	// * More than half of the backend sets associated with the load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
+	// * The system could not retrieve metrics for any reason.
 	Status string `pulumi:"status"`
 	// The total number of backend sets associated with this load balancer.  Example: `4`
 	TotalBackendSetCount int `pulumi:"totalBackendSetCount"`
@@ -134,14 +134,14 @@ func (o GetHealthResultOutput) LoadBalancerId() pulumi.StringOutput {
 }
 
 // The overall health status of the load balancer.
-// *  **OK:** All backend sets associated with the load balancer return a status of `OK`.
-// *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of `WARNING`, no backend sets return a status of `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
-// *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of `CRITICAL`.
-// *  **UNKNOWN:** If any one of the following conditions is true:
-// *  The load balancer life cycle state is not `ACTIVE`.
-// *  No backend sets are defined for the load balancer.
-// *  More than half of the backend sets associated with the load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
-// *  The system could not retrieve metrics for any reason.
+// * **OK:** All backend sets associated with the load balancer return a status of `OK`.
+// * **WARNING:** At least one of the backend sets associated with the load balancer returns a status of `WARNING`, no backend sets return a status of `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
+// * **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of `CRITICAL`.
+// * **UNKNOWN:** If any one of the following conditions is true:
+// * The load balancer life cycle state is not `ACTIVE`.
+// * No backend sets are defined for the load balancer.
+// * More than half of the backend sets associated with the load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
+// * The system could not retrieve metrics for any reason.
 func (o GetHealthResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHealthResult) string { return v.Status }).(pulumi.StringOutput)
 }

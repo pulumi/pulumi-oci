@@ -32,7 +32,7 @@ class LogAnalyticsEntityArgs:
                  timezone_region: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsEntity resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
@@ -45,8 +45,7 @@ class LogAnalyticsEntityArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
-               
+        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -81,7 +80,7 @@ class LogAnalyticsEntityArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -237,8 +236,7 @@ class LogAnalyticsEntityArgs:
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The timezone region of the log analytics entity. 
-
+        (Updatable) The timezone region of the log analytics entity.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -279,7 +277,7 @@ class _LogAnalyticsEntityState:
         Input properties used for looking up and filtering LogAnalyticsEntity resources.
         :param pulumi.Input[bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] entity_type_internal_name: Internal name for the log analytics entity type.
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
@@ -298,8 +296,7 @@ class _LogAnalyticsEntityState:
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
-               
+        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -377,7 +374,7 @@ class _LogAnalyticsEntityState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -605,8 +602,7 @@ class _LogAnalyticsEntityState:
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The timezone region of the log analytics entity. 
-
+        (Updatable) The timezone region of the log analytics entity.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -687,7 +683,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -699,8 +695,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
-               
+        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -864,7 +859,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] entity_type_internal_name: Internal name for the log analytics entity type.
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
@@ -883,8 +878,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
-               
+        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -937,7 +931,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1089,8 +1083,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> pulumi.Output[str]:
         """
-        (Updatable) The timezone region of the log analytics entity. 
-
+        (Updatable) The timezone region of the log analytics entity.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

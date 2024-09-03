@@ -88,11 +88,11 @@ export interface GetListJreUsageResult {
      */
     readonly items: outputs.Jms.GetListJreUsageItem[];
     /**
-     * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * Upper bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
      */
     readonly timeEnd?: string;
     /**
-     * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * Lower bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
      */
     readonly timeStart?: string;
 }

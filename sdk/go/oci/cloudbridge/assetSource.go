@@ -112,7 +112,7 @@ type AssetSource struct {
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) Asset source type.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -206,7 +206,7 @@ type assetSourceState struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) Asset source type.
 	Type *string `pulumi:"type"`
-	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -250,7 +250,7 @@ type AssetSourceState struct {
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) Asset source type.
 	Type pulumi.StringPtrInput
-	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -290,7 +290,7 @@ type assetSourceArgs struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Asset source type.
 	Type string `pulumi:"type"`
-	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -327,7 +327,7 @@ type AssetSourceArgs struct {
 	SystemTags pulumi.StringMapInput
 	// (Updatable) Asset source type.
 	Type pulumi.StringInput
-	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -511,7 +511,7 @@ func (o AssetSourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+// (Updatable) Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

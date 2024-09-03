@@ -14,9 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Managed Instance Group Installed Packages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists installed packages on the specified managed instances group. Filter the list against a variety 
+        /// Lists installed packages on the specified managed instances group. Filter the list against a variety
         /// of criteria including but not limited to the package name.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -47,9 +46,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Managed Instance Group Installed Packages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists installed packages on the specified managed instances group. Filter the list against a variety 
+        /// Lists installed packages on the specified managed instances group. Filter the list against a variety
         /// of criteria including but not limited to the package name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of saved queries run in a tenancy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.CloudGuard
         /// This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
         /// Returns a list of saved queries run in a tenancy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

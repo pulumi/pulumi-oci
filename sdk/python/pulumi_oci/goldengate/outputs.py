@@ -1268,7 +1268,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param str description: Metadata about this specific object.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str endpoint: Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param str endpoint: Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str host: The name or address of a host.
                In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
@@ -1587,7 +1587,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def endpoint(self) -> str:
         """
-        Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
         """
         return pulumi.get(self, "endpoint")
 

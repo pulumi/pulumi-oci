@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns the list of registered target databases in Data Safe.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Returns the list of registered target databases in Data Safe.
-        /// 
         /// 
         /// ## Example Usage
         /// 

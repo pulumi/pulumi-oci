@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  * After creating the IPSec connection, you need to configure your on-premises router
  * with tunnel-specific information. For tunnel status and the required configuration information, see:
  *
- *   * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
- *   * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
+ * * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
+ * * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
  *
  * To configure tunnel-specific information, use `oci.Core.IpsecConnectionTunnelManagement` to update the tunnels. If
  * you configure at least one tunnel to use static routing, then in the oci.Core.Ipsec request you must provide
@@ -146,7 +146,6 @@ export class Ipsec extends pulumi.CustomResource {
      * Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
      *
      * Example: `10.0.1.0/24`
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -273,7 +272,6 @@ export interface IpsecState {
      *
      * Example: `10.0.1.0/24`
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -338,7 +336,6 @@ export interface IpsecArgs {
      * Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
      *
      * Example: `10.0.1.0/24`
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

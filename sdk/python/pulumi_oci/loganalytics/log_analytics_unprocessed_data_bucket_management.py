@@ -20,8 +20,7 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
         """
         The set of arguments for constructing a LogAnalyticsUnprocessedDataBucketManagement resource.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -48,8 +47,7 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        The Logging Analytics namespace used for the request. 
-
+        The Logging Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -85,8 +83,7 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
         Input properties used for looking up and filtering LogAnalyticsUnprocessedDataBucketManagement resources.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket.
         :param pulumi.Input[bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,8 +129,7 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The Logging Analytics namespace used for the request. 
-
+        The Logging Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -204,8 +200,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket.
         :param pulumi.Input[bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -298,8 +293,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket.
         :param pulumi.Input[bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -337,8 +331,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
         """
-        The Logging Analytics namespace used for the request. 
-
+        The Logging Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

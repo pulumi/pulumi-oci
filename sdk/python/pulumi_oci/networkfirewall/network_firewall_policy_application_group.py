@@ -22,7 +22,6 @@ class NetworkFirewallPolicyApplicationGroupArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: Name of the application group.
@@ -49,7 +48,6 @@ class NetworkFirewallPolicyApplicationGroupArgs:
     def network_firewall_policy_id(self) -> pulumi.Input[str]:
         """
         Unique Network Firewall Policy identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -86,7 +84,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
         :param pulumi.Input[str] name: Name of the application group.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -133,7 +130,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         Unique Network Firewall Policy identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -208,7 +204,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
         :param pulumi.Input[str] name: Name of the application group.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -306,7 +301,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         :param pulumi.Input[str] name: Name of the application group.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this application group belongs to.
@@ -344,7 +338,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
     def network_firewall_policy_id(self) -> pulumi.Output[str]:
         """
         Unique Network Firewall Policy identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

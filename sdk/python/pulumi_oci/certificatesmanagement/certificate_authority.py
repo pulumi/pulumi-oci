@@ -37,7 +37,6 @@ class CertificateAuthorityArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -159,7 +158,6 @@ class CertificateAuthorityArgs:
         """
         A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -206,7 +204,6 @@ class _CertificateAuthorityState:
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current CA lifecycle state.
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -403,7 +400,6 @@ class _CertificateAuthorityState:
         """
         A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -513,7 +509,6 @@ class CertificateAuthority(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -642,7 +637,6 @@ class CertificateAuthority(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current CA lifecycle state.
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -777,7 +771,6 @@ class CertificateAuthority(pulumi.CustomResource):
     def name(self) -> pulumi.Output[str]:
         """
         A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

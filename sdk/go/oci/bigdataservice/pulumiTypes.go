@@ -4678,6 +4678,9 @@ type BdsInstanceKafkaBrokerNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 }
 
@@ -4698,6 +4701,9 @@ type BdsInstanceKafkaBrokerNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
 
@@ -4789,6 +4795,9 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput
 }
 
 // The total number of OCPUs available to the node.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceKafkaBrokerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -4838,6 +4847,9 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOut
 }
 
 // The total number of OCPUs available to the node.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNodeShapeConfig) *int {
 		if v == nil {

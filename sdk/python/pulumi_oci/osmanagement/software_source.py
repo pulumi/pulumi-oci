@@ -41,7 +41,6 @@ class SoftwareSourceArgs:
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
         :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -191,7 +190,6 @@ class SoftwareSourceArgs:
         """
         OCID for the parent software source, if there is one
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -244,7 +242,6 @@ class _SoftwareSourceState:
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
         :param pulumi.Input[int] packages: Number of packages
         :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -483,7 +480,6 @@ class _SoftwareSourceState:
         """
         OCID for the parent software source, if there is one
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -623,7 +619,6 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
         :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -790,7 +785,6 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[int] packages: Number of packages
         :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] parent_name: Display name the parent software source, if there is one
@@ -951,7 +945,6 @@ class SoftwareSource(pulumi.CustomResource):
     def parent_id(self) -> pulumi.Output[str]:
         """
         OCID for the parent software source, if there is one
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

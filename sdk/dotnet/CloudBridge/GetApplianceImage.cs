@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// Returns a list of Appliance Images.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.CloudBridge
         /// This data source provides details about a specific Appliance Image resource in Oracle Cloud Infrastructure Cloud Bridge service.
         /// 
         /// Returns a list of Appliance Images.
-        /// 
         /// 
         /// ## Example Usage
         /// 

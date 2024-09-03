@@ -17,7 +17,6 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
         /// Information includes the service instance endpoints and service definition details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
         /// Information includes the service instance endpoints and service definition details.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -98,7 +96,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         }
 
         /// <summary>
-        /// The unique identifier associated with the service environment. 
+        /// The unique identifier associated with the service environment.
         /// 
         /// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -140,7 +138,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         }
 
         /// <summary>
-        /// The unique identifier associated with the service environment. 
+        /// The unique identifier associated with the service environment.
         /// 
         /// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>

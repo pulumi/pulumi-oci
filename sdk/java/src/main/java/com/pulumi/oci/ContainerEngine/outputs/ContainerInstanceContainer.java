@@ -95,7 +95,7 @@ public final class ContainerInstanceContainer {
     /**
      * @return Determines if the container will have access to the container instance resource principal.
      * 
-     * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+     * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see &lt;https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal&gt;.
      * 
      */
     private @Nullable Boolean isResourcePrincipalDisabled;
@@ -253,7 +253,7 @@ public final class ContainerInstanceContainer {
     /**
      * @return Determines if the container will have access to the container instance resource principal.
      * 
-     * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+     * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see &lt;https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal&gt;.
      * 
      */
     public Optional<Boolean> isResourcePrincipalDisabled() {

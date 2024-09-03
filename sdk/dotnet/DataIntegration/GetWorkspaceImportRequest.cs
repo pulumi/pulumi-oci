@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// This endpoint can be used to get the summary/details of object being imported.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataIntegration
         /// This data source provides details about a specific Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
         /// 
         /// This endpoint can be used to get the summary/details of object being imported.
-        /// 
         /// 
         /// ## Example Usage
         /// 

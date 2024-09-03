@@ -21,7 +21,6 @@ class ExternalDbSystemDatabaseManagementsManagementArgs:
         The set of arguments for constructing a ExternalDbSystemDatabaseManagementsManagement resource.
         :param pulumi.Input[bool] enable_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -37,7 +36,6 @@ class ExternalDbSystemDatabaseManagementsManagementArgs:
     def enable_database_management(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -83,7 +81,6 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
         Input properties used for looking up and filtering ExternalDbSystemDatabaseManagementsManagement resources.
         :param pulumi.Input[bool] enable_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -101,7 +98,6 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
     def enable_database_management(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -167,7 +163,6 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -254,7 +249,6 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -274,7 +268,6 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
     def enable_database_management(self) -> pulumi.Output[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

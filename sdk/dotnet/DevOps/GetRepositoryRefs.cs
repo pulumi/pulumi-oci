@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of references.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns a list of references.
-        /// 
         /// 
         /// ## Example Usage
         /// 

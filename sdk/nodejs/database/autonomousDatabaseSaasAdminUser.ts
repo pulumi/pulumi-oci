@@ -76,7 +76,6 @@ export class AutonomousDatabaseSaasAdminUser extends pulumi.CustomResource {
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -150,7 +149,6 @@ export interface AutonomousDatabaseSaasAdminUserState {
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -184,7 +182,6 @@ export interface AutonomousDatabaseSaasAdminUserArgs {
     secretId?: pulumi.Input<string>;
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

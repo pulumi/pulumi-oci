@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -64,7 +63,6 @@ namespace Pulumi.Oci.Monitoring
         /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
         /// 
         /// Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
-        /// 
         /// 
         /// ## Example Usage
         /// 

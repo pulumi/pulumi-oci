@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Gets the specified profile's information. Uses the profile's OCID to determine which profile to retrieve.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Optimizer
         /// This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Optimizer service.
         /// 
         /// Gets the specified profile's information. Uses the profile's OCID to determine which profile to retrieve.
-        /// 
         /// 
         /// ## Example Usage
         /// 

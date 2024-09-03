@@ -47,7 +47,7 @@ class SqlEndpointArgs:
         :param pulumi.Input['SqlEndpointDriverShapeConfigArgs'] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input['SqlEndpointExecutorShapeConfigArgs'] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] spark_advanced_configurations: The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -243,7 +243,7 @@ class SqlEndpointArgs:
     @pulumi.getter(name="sparkAdvancedConfigurations")
     def spark_advanced_configurations(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "spark_advanced_configurations")
 
@@ -297,15 +297,14 @@ class _SqlEndpointState:
         :param pulumi.Input[str] metastore_id: Metastore OCID
         :param pulumi.Input[int] min_executor_count: The minimum number of executors.
         :param pulumi.Input['SqlEndpointNetworkConfigurationArgs'] network_configuration: The network configuration of a SQL Endpoint.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] spark_advanced_configurations: The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[str] sql_endpoint_version: The version of the SQL Endpoint.
         :param pulumi.Input[str] state: The current state of the Sql Endpoint.
         :param pulumi.Input[str] state_message: A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-               
+        :param pulumi.Input[str] warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -555,7 +554,7 @@ class _SqlEndpointState:
     @pulumi.getter(name="sparkAdvancedConfigurations")
     def spark_advanced_configurations(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "spark_advanced_configurations")
 
@@ -639,8 +638,7 @@ class _SqlEndpointState:
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> Optional[pulumi.Input[str]]:
         """
-        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-
+        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -675,6 +673,7 @@ class SqlEndpoint(pulumi.CustomResource):
                  __props__=None):
         """
         This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+
         ## Note
 
         Resource Discovery is not supported for this resource.
@@ -704,7 +703,7 @@ class SqlEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] metastore_id: Metastore OCID
         :param pulumi.Input[int] min_executor_count: The minimum number of executors.
         :param pulumi.Input[Union['SqlEndpointNetworkConfigurationArgs', 'SqlEndpointNetworkConfigurationArgsDict']] network_configuration: The network configuration of a SQL Endpoint.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] spark_advanced_configurations: The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[str] sql_endpoint_version: The version of the SQL Endpoint.
         """
         ...
@@ -715,6 +714,7 @@ class SqlEndpoint(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+
         ## Note
 
         Resource Discovery is not supported for this resource.
@@ -867,15 +867,14 @@ class SqlEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] metastore_id: Metastore OCID
         :param pulumi.Input[int] min_executor_count: The minimum number of executors.
         :param pulumi.Input[Union['SqlEndpointNetworkConfigurationArgs', 'SqlEndpointNetworkConfigurationArgsDict']] network_configuration: The network configuration of a SQL Endpoint.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] spark_advanced_configurations: The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[str] sql_endpoint_version: The version of the SQL Endpoint.
         :param pulumi.Input[str] state: The current state of the Sql Endpoint.
         :param pulumi.Input[str] state_message: A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-               
+        :param pulumi.Input[str] warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1042,7 +1041,7 @@ class SqlEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="sparkAdvancedConfigurations")
     def spark_advanced_configurations(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "spark_advanced_configurations")
 
@@ -1098,8 +1097,7 @@ class SqlEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> pulumi.Output[str]:
         """
-        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-
+        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here <https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html>
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

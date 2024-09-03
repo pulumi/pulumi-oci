@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Identity
         /// - If the domain doesn't exists, returns 404 NOT FOUND.
         /// - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// - If the domain doesn't exists, returns 404 NOT FOUND.
         /// - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
-        /// 
         /// 
         /// ## Example Usage
         /// 

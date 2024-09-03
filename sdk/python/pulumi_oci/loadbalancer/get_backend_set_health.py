@@ -78,10 +78,10 @@ class GetBackendSetHealthResult:
     def status(self) -> str:
         """
         Overall health status of the backend set.
-        *  **OK:** All backend servers in the backend set return a status of `OK`.
-        *  **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
-        *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
-        *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
+        * **OK:** All backend servers in the backend set return a status of `OK`.
+        * **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
+        * **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
+        * **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
         """
         return pulumi.get(self, "status")
 

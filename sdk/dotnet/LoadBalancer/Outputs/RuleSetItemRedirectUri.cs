@@ -23,9 +23,9 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// Curly braces are valid in this property only to surround tokens, such as `{host}`
         /// 
         /// Examples:
-        /// *  **example.com** appears as `example.com` in the redirect URI.
-        /// *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
-        /// *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
+        /// * **example.com** appears as `example.com` in the redirect URI.
+        /// * **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+        /// * **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
         /// </summary>
         public readonly string? Host;
         /// <summary>
@@ -38,13 +38,13 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// The path string must begin with `/` if it does not begin with the `{path}` token.
         /// 
         /// Examples:
-        /// *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
-        /// *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
-        /// *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
-        /// *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
-        /// *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
-        /// *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
-        /// *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
+        /// * **/example/video/123** appears as `/example/video/123` in the redirect URI.
+        /// * **/example{path}** appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
+        /// * **{path}/123** appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+        /// * **{path}123** appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+        /// * **/{host}/123** appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+        /// * **/{host}/{port}** appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
+        /// * **/{query}** appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
         /// </summary>
         public readonly string? Path;
         /// <summary>
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// (Updatable) The HTTP protocol to use in the redirect URI.
         /// 
         /// When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
-        /// *  HTTP
-        /// *  HTTPS
-        /// *  {protocol}
+        /// * HTTP
+        /// * HTTPS
+        /// * {protocol}
         /// 
         /// `{protocol}` is the only valid token for this property. It can appear only once in the value string.
         /// 
@@ -87,8 +87,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// * **lang=en&amp;time_zone=PST** appears as `lang=en&amp;time_zone=PST` in the redirect URI.
         /// * **{query}** appears as `lang=en&amp;time_zone=PST` in the redirect URI if `lang=en&amp;time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
         /// * **lang=en&amp;{query}&amp;time_zone=PST** appears as `lang=en&amp;country=us&amp;time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&amp;time_zone=PST`.
-        /// *  **protocol={protocol}&amp;hostname={host}** appears as `protocol=http&amp;hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
-        /// *  **port={port}&amp;hostname={host}** appears as `port=8080&amp;hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
+        /// * **protocol={protocol}&amp;hostname={host}** appears as `protocol=http&amp;hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
+        /// * **port={port}&amp;hostname={host}** appears as `port=8080&amp;hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
         /// </summary>
         public readonly string? Query;
 

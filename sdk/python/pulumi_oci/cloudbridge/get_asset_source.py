@@ -248,7 +248,7 @@ class GetAssetSourceResult:
     @pulumi.getter(name="vcenterEndpoint")
     def vcenter_endpoint(self) -> str:
         """
-        Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+        Endpoint for VMware asset discovery and replication in the form of `https://<host>:<port>/sdk`
         """
         return pulumi.get(self, "vcenter_endpoint")
 

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
         /// variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -57,7 +56,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
         /// variety of criteria including but not limited to its name, status, architecture, and OS family.
-        /// 
         /// 
         /// ## Example Usage
         /// 

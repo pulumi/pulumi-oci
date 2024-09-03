@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Returns a list of FusionEnvironments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Functions
         /// This data source provides the list of Fusion Environments in Oracle Cloud Infrastructure Fusion Apps service.
         /// 
         /// Returns a list of FusionEnvironments.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -22,7 +22,6 @@ namespace Pulumi.Oci.DataSafe
         /// LOB - Includes BLOB, CLOB, and NCLOB
         /// All - Includes all the supported data types
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// Date - Includes DATE and TIMESTAMP
         /// LOB - Includes BLOB, CLOB, and NCLOB
         /// All - Includes all the supported data types
-        /// 
         /// 
         /// ## Example Usage
         /// 

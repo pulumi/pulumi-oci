@@ -850,7 +850,6 @@ class MigrationPlanTargetEnvironment(dict):
         :param str target_environment_type: (Updatable) The type of target environment.
         :param str vcn: (Updatable) OCID of the VM configuration VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str availability_domain: (Updatable) Availability Domain of the VM configuration.
@@ -897,7 +896,6 @@ class MigrationPlanTargetEnvironment(dict):
     def vcn(self) -> str:
         """
         (Updatable) OCID of the VM configuration VCN.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3607,7 +3605,7 @@ class TargetAssetUserSpec(dict):
                
                For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
                
-               For more information about iPXE, see http://ipxe.org.
+               For more information about iPXE, see <http://ipxe.org>.
         :param bool is_pv_encryption_in_transit_enabled: (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
         :param 'TargetAssetUserSpecPreemptibleInstanceConfigArgs' preemptible_instance_config: (Updatable) Configuration options for preemptible instances.
         :param str shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -3775,7 +3773,7 @@ class TargetAssetUserSpec(dict):
 
         For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
 
-        For more information about iPXE, see http://ipxe.org.
+        For more information about iPXE, see <http://ipxe.org>.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -4449,8 +4447,7 @@ class TargetAssetUserSpecSourceDetails(dict):
                  image_id: Optional[str] = None,
                  kms_key_id: Optional[str] = None):
         """
-        :param str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-               
+        :param str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4478,8 +4475,7 @@ class TargetAssetUserSpecSourceDetails(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-
+        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -152,9 +152,9 @@ def get_mysql_configurations(compartment_id: Optional[str] = None,
     This may include DEFAULT configurations per Shape and CUSTOM configurations.
 
     The default sort order is a multi-part sort by:
-      - shapeName, ascending
-      - DEFAULT-before-CUSTOM
-      - displayName ascending
+    - shapeName, ascending
+    - DEFAULT-before-CUSTOM
+    - displayName ascending
 
     ## Example Usage
 
@@ -218,9 +218,9 @@ def get_mysql_configurations_output(compartment_id: Optional[pulumi.Input[str]] 
     This may include DEFAULT configurations per Shape and CUSTOM configurations.
 
     The default sort order is a multi-part sort by:
-      - shapeName, ascending
-      - DEFAULT-before-CUSTOM
-      - displayName ascending
+    - shapeName, ascending
+    - DEFAULT-before-CUSTOM
+    - displayName ascending
 
     ## Example Usage
 

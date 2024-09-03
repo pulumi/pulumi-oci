@@ -37,8 +37,7 @@ class MonitoredResourceArgs:
         """
         The set of arguments for constructing a MonitoredResource resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
+        :param pulumi.Input[str] type: Monitored Resource Type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -110,8 +109,7 @@ class MonitoredResourceArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        Monitored Resource Type. 
-
+        Monitored Resource Type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -369,8 +367,7 @@ class _MonitoredResourceState:
         :param pulumi.Input[str] tenant_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] time_created: The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[str] time_updated: The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
+        :param pulumi.Input[str] type: Monitored Resource Type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -718,8 +715,7 @@ class _MonitoredResourceState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Monitored Resource Type. 
-
+        Monitored Resource Type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -869,8 +865,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[str] name: Monitored Resource Name.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
+        :param pulumi.Input[str] type: Monitored Resource Type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1113,8 +1108,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[str] tenant_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] time_created: The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[str] time_updated: The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
+        :param pulumi.Input[str] type: Monitored Resource Type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1346,8 +1340,7 @@ class MonitoredResource(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        Monitored Resource Type. 
-
+        Monitored Resource Type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

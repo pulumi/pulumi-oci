@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// The response includes the default set of options that automatically comes with each VCN,
         /// plus any other sets you've created.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Core
         /// If the VCN ID is not provided, then the list includes the sets of DHCP options from all VCNs in the specified compartment.
         /// The response includes the default set of options that automatically comes with each VCN,
         /// plus any other sets you've created.
-        /// 
         /// 
         /// ## Example Usage
         /// 

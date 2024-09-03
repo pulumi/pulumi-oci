@@ -125,7 +125,6 @@ export class MaskingPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -269,7 +268,6 @@ export interface MaskingPolicyState {
     /**
      * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -350,7 +348,6 @@ export interface MaskingPolicyArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

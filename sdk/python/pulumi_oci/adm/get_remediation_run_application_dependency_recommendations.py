@@ -60,7 +60,7 @@ class GetRemediationRunApplicationDependencyRecommendationsResult:
     @pulumi.getter
     def gav(self) -> Optional[str]:
         """
-        Unique Group Artifact Version (GAV) identifier in the format _Group:Artifact:Version_, e.g. org.graalvm.nativeimage:svm:21.1.0.
+        Unique Group Artifact Version (GAV) identifier in the format *Group:Artifact:Version*, e.g. org.graalvm.nativeimage:svm:21.1.0.
         """
         return pulumi.get(self, "gav")
 
@@ -76,7 +76,7 @@ class GetRemediationRunApplicationDependencyRecommendationsResult:
     @pulumi.getter
     def purl(self) -> Optional[str]:
         """
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
         return pulumi.get(self, "purl")
 
@@ -123,7 +123,7 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
 
 
     :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
-    :param str purl: A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+    :param str purl: A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
     :param str remediation_run_id: Unique Remediation Run identifier path parameter.
     """
     __args__ = dict()
@@ -167,7 +167,7 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
 
 
     :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
-    :param str purl: A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+    :param str purl: A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
     :param str remediation_run_id: Unique Remediation Run identifier path parameter.
     """
     ...

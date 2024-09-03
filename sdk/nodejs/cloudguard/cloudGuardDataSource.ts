@@ -134,7 +134,6 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
     /**
      * (Updatable) Enablement status of data source.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -253,7 +252,6 @@ export interface CloudGuardDataSourceState {
     /**
      * (Updatable) Enablement status of data source.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -304,7 +302,6 @@ export interface CloudGuardDataSourceArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Enablement status of data source.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

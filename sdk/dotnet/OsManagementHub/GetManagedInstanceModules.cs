@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Retrieves a list of modules, along with streams of the modules, from a managed instance. Filters may be applied to select a subset of modules based on the filter criteria.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instance Modules in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Retrieves a list of modules, along with streams of the modules, from a managed instance. Filters may be applied to select a subset of modules based on the filter criteria.
-        /// 
         /// 
         /// ## Example Usage
         /// 

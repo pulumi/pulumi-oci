@@ -95,10 +95,10 @@ def get_listener_rules(filters: Optional[Sequence[Union['GetListenerRulesFilterA
     Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
     the rules in the following order:
 
-    *  Access control rules
-    *  Allow method rules
-    *  Request header rules
-    *  Response header rules
+    * Access control rules
+    * Allow method rules
+    * Request header rules
+    * Response header rules
 
     ## Example Usage
 
@@ -140,10 +140,10 @@ def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
     the rules in the following order:
 
-    *  Access control rules
-    *  Allow method rules
-    *  Request header rules
-    *  Response header rules
+    * Access control rules
+    * Allow method rules
+    * Request header rules
+    * Response header rules
 
     ## Example Usage
 

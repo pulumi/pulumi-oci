@@ -195,7 +195,7 @@ type Connection struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	// (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
@@ -236,13 +236,13 @@ type Connection struct {
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
-	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PrivateKeyFile pulumi.StringOutput `pulumi:"privateKeyFile"`
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase pulumi.StringOutput `pulumi:"privateKeyPassphrase"`
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties pulumi.StringOutput `pulumi:"producerProperties"`
-	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PublicKeyFingerprint pulumi.StringOutput `pulumi:"publicKeyFingerprint"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId pulumi.StringOutput `pulumi:"redisClusterId"`
@@ -436,7 +436,7 @@ type connectionState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	// (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 	Endpoint *string `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint *string `pulumi:"fingerprint"`
@@ -477,13 +477,13 @@ type connectionState struct {
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp *string `pulumi:"privateIp"`
-	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PrivateKeyFile *string `pulumi:"privateKeyFile"`
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase *string `pulumi:"privateKeyPassphrase"`
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties *string `pulumi:"producerProperties"`
-	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PublicKeyFingerprint *string `pulumi:"publicKeyFingerprint"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId *string `pulumi:"redisClusterId"`
@@ -609,7 +609,7 @@ type ConnectionState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	// (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 	Endpoint pulumi.StringPtrInput
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringPtrInput
@@ -650,13 +650,13 @@ type ConnectionState struct {
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringPtrInput
-	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PrivateKeyFile pulumi.StringPtrInput
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties pulumi.StringPtrInput
-	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PublicKeyFingerprint pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId pulumi.StringPtrInput
@@ -786,7 +786,7 @@ type connectionArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	// (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 	Endpoint *string `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint *string `pulumi:"fingerprint"`
@@ -823,13 +823,13 @@ type connectionArgs struct {
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp *string `pulumi:"privateIp"`
-	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PrivateKeyFile *string `pulumi:"privateKeyFile"`
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase *string `pulumi:"privateKeyPassphrase"`
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties *string `pulumi:"producerProperties"`
-	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PublicKeyFingerprint *string `pulumi:"publicKeyFingerprint"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId *string `pulumi:"redisClusterId"`
@@ -948,7 +948,7 @@ type ConnectionArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringInput
-	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	// (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 	Endpoint pulumi.StringPtrInput
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringPtrInput
@@ -985,13 +985,13 @@ type ConnectionArgs struct {
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringPtrInput
-	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PrivateKeyFile pulumi.StringPtrInput
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties pulumi.StringPtrInput
-	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 	PublicKeyFingerprint pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId pulumi.StringPtrInput
@@ -1267,7 +1267,7 @@ func (o ConnectionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+// (Updatable) Azure Storage service endpoint. e.g: <https://test.blob.core.windows.net>
 func (o ConnectionOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -1368,7 +1368,7 @@ func (o ConnectionOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
-// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 func (o ConnectionOutput) PrivateKeyFile() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PrivateKeyFile }).(pulumi.StringOutput)
 }
@@ -1383,7 +1383,7 @@ func (o ConnectionOutput) ProducerProperties() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ProducerProperties }).(pulumi.StringOutput)
 }
 
-// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: <https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm>
 func (o ConnectionOutput) PublicKeyFingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PublicKeyFingerprint }).(pulumi.StringOutput)
 }

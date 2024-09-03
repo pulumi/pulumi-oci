@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Marketplace
         /// Lists the terms of use agreements that have been accepted in the specified compartment.
         /// You can filter results by specifying query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Lists the terms of use agreements that have been accepted in the specified compartment.
         /// You can filter results by specifying query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

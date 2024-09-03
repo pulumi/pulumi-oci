@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.MediaServices
         /// This data source provides details about a specific System Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
         /// 
         /// Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists ASM disk groups for the external ASM specified by `externalAsmId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists ASM disk groups for the external ASM specified by `externalAsmId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

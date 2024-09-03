@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Core
         /// resides in the same compartment as the attached instance. The list can be
         /// filtered by instance, VNIC, or availability domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Core
         /// Lists the VNIC attachments in the specified compartment. A VNIC attachment
         /// resides in the same compartment as the attached instance. The list can be
         /// filtered by instance, VNIC, or availability domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

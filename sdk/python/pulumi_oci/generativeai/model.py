@@ -37,7 +37,6 @@ class ModelArgs:
         :param pulumi.Input[str] vendor: (Updatable) The provider of the model.
         :param pulumi.Input[str] version: (Updatable) The version of the model.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -159,7 +158,6 @@ class ModelArgs:
         """
         (Updatable) The version of the model.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -213,7 +211,6 @@ class _ModelState:
         :param pulumi.Input[str] type: The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
         :param pulumi.Input[str] vendor: (Updatable) The provider of the model.
         :param pulumi.Input[str] version: (Updatable) The version of the model.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -479,7 +476,6 @@ class _ModelState:
         """
         (Updatable) The version of the model.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -531,7 +527,6 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] vendor: (Updatable) The provider of the model.
         :param pulumi.Input[str] version: (Updatable) The version of the model.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -670,7 +665,6 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] type: The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
         :param pulumi.Input[str] vendor: (Updatable) The provider of the model.
         :param pulumi.Input[str] version: (Updatable) The version of the model.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -849,7 +843,6 @@ class Model(pulumi.CustomResource):
     def version(self) -> pulumi.Output[str]:
         """
         (Updatable) The version of the model.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

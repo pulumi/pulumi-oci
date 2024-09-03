@@ -139,8 +139,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// A filter to return resources that match resource type. 
-        /// 
+        /// A filter to return resources that match resource type.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

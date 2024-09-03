@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        /// The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
         /// </summary>
         public readonly ImmutableArray<string> DatabaseCompartments;
         /// <summary>

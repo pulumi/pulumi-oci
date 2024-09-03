@@ -111,8 +111,7 @@ export class Cpe extends pulumi.CustomResource {
      */
     public readonly ipAddress!: pulumi.Output<string>;
     /**
-     * Indicates whether this CPE is of type `private` or not. 
-     *
+     * Indicates whether this CPE is of type `private` or not.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -201,8 +200,7 @@ export interface CpeState {
      */
     ipAddress?: pulumi.Input<string>;
     /**
-     * Indicates whether this CPE is of type `private` or not. 
-     *
+     * Indicates whether this CPE is of type `private` or not.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -249,8 +247,7 @@ export interface CpeArgs {
      */
     ipAddress: pulumi.Input<string>;
     /**
-     * Indicates whether this CPE is of type `private` or not. 
-     *
+     * Indicates whether this CPE is of type `private` or not.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

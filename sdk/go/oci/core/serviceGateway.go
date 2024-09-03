@@ -76,7 +76,7 @@ type ServiceGateway struct {
 
 	// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
 	BlockTraffic pulumi.BoolOutput `pulumi:"blockTraffic"`
-	// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+	// (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -146,7 +146,7 @@ func GetServiceGateway(ctx *pulumi.Context,
 type serviceGatewayState struct {
 	// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
 	BlockTraffic *bool `pulumi:"blockTraffic"`
-	// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+	// (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -178,7 +178,7 @@ type serviceGatewayState struct {
 type ServiceGatewayState struct {
 	// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
 	BlockTraffic pulumi.BoolPtrInput
-	// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+	// (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -212,7 +212,7 @@ func (ServiceGatewayState) ElementType() reflect.Type {
 }
 
 type serviceGatewayArgs struct {
-	// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+	// (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -239,7 +239,7 @@ type serviceGatewayArgs struct {
 
 // The set of arguments for constructing a ServiceGateway resource.
 type ServiceGatewayArgs struct {
-	// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+	// (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -356,7 +356,7 @@ func (o ServiceGatewayOutput) BlockTraffic() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ServiceGateway) pulumi.BoolOutput { return v.BlockTraffic }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+// (Updatable) The [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm>) of the compartment to contain the service gateway.
 func (o ServiceGatewayOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServiceGateway) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

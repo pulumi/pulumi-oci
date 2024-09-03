@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataLabellingService
         /// 
         /// Returns a list of Datasets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DataLabellingService
         /// This data source provides the list of Datasets in Oracle Cloud Infrastructure Data Labeling Service service.
         /// 
         /// Returns a list of Datasets.
-        /// 
         /// 
         /// ## Example Usage
         /// 

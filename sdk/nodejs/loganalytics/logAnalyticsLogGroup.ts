@@ -66,7 +66,7 @@ export class LogAnalyticsLogGroup extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -86,8 +86,7 @@ export class LogAnalyticsLogGroup extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -153,7 +152,7 @@ export class LogAnalyticsLogGroup extends pulumi.CustomResource {
  */
 export interface LogAnalyticsLogGroupState {
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -173,8 +172,7 @@ export interface LogAnalyticsLogGroupState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -195,7 +193,7 @@ export interface LogAnalyticsLogGroupState {
  */
 export interface LogAnalyticsLogGroupArgs {
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -215,8 +213,7 @@ export interface LogAnalyticsLogGroupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The Logging Analytics namespace used for the request. 
-     *
+     * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

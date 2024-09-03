@@ -141,8 +141,7 @@ export class SensitiveDataModel extends pulumi.CustomResource {
      */
     public readonly tablesForDiscoveries!: pulumi.Output<outputs.DataSafe.SensitiveDataModelTablesForDiscovery[]>;
     /**
-     * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-     *
+     * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -285,8 +284,7 @@ export interface SensitiveDataModelState {
      */
     tablesForDiscoveries?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveDataModelTablesForDiscovery>[]>;
     /**
-     * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-     *
+     * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -359,8 +357,7 @@ export interface SensitiveDataModelArgs {
      */
     tablesForDiscoveries?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveDataModelTablesForDiscovery>[]>;
     /**
-     * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
-     *
+     * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

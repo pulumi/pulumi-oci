@@ -231,7 +231,6 @@ class AccessPolicyRuleSourceArgs:
         :param pulumi.Input[str] protocol: (Updatable) Protocol of the external service
         :param pulumi.Input[str] virtual_service_id: (Updatable) The OCID of the virtual service resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -326,7 +325,6 @@ class AccessPolicyRuleSourceArgs:
     def virtual_service_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The OCID of the virtual service resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -723,7 +721,6 @@ class IngressGatewayRouteTableRouteRuleArgs:
         :param pulumi.Input[Sequence[pulumi.Input['IngressGatewayRouteTableRouteRuleDestinationArgs']]] destinations: (Updatable) The destination of the request.
         :param pulumi.Input[str] type: (Updatable) Type of protocol.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs'] ingress_gateway_host: (Updatable) The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
@@ -768,7 +765,6 @@ class IngressGatewayRouteTableRouteRuleArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of protocol.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -983,8 +979,7 @@ class MeshMtlsArgs:
     def __init__(__self__, *,
                  minimum: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] minimum: (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
-               
+        :param pulumi.Input[str] minimum: (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -995,8 +990,7 @@ class MeshMtlsArgs:
     @pulumi.getter
     def minimum(self) -> pulumi.Input[str]:
         """
-        (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
-
+        (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

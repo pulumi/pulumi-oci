@@ -8728,9 +8728,9 @@ public final class CoreFunctions {
      * The service merges the answers with a template of other information for the CPE device type. The following
      * operations return the merged content:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -8780,9 +8780,9 @@ public final class CoreFunctions {
      * The service merges the answers with a template of other information for the CPE device type. The following
      * operations return the merged content:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -8832,9 +8832,9 @@ public final class CoreFunctions {
      * The service merges the answers with a template of other information for the CPE device type. The following
      * operations return the merged content:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -8884,9 +8884,9 @@ public final class CoreFunctions {
      * The service merges the answers with a template of other information for the CPE device type. The following
      * operations return the merged content:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -8940,9 +8940,9 @@ public final class CoreFunctions {
      * 
      * For information about generating CPE configuration content, see these operations:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -8994,9 +8994,9 @@ public final class CoreFunctions {
      * 
      * For information about generating CPE configuration content, see these operations:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -9048,9 +9048,9 @@ public final class CoreFunctions {
      * 
      * For information about generating CPE configuration content, see these operations:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -9102,9 +9102,9 @@ public final class CoreFunctions {
      * 
      * For information about generating CPE configuration content, see these operations:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -9156,9 +9156,9 @@ public final class CoreFunctions {
      * 
      * For information about generating CPE configuration content, see these operations:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -9210,9 +9210,9 @@ public final class CoreFunctions {
      * 
      * For information about generating CPE configuration content, see these operations:
      * 
-     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
      * 
@@ -19887,11 +19887,11 @@ public final class CoreFunctions {
      * Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
      * on one of these filters:
      * 
-     *   * Subnet OCID.
-     *   * VNIC OCID.
-     *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-     *       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-     *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+     * * Subnet OCID.
+     * * VNIC OCID.
+     * * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+     *   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
      * 
@@ -19940,11 +19940,11 @@ public final class CoreFunctions {
      * Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
      * on one of these filters:
      * 
-     *   * Subnet OCID.
-     *   * VNIC OCID.
-     *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-     *       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-     *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+     * * Subnet OCID.
+     * * VNIC OCID.
+     * * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+     *   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
      * 
@@ -19993,11 +19993,11 @@ public final class CoreFunctions {
      * Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
      * on one of these filters:
      * 
-     *   * Subnet OCID.
-     *   * VNIC OCID.
-     *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-     *       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-     *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+     * * Subnet OCID.
+     * * VNIC OCID.
+     * * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+     *   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
      * 
@@ -20046,11 +20046,11 @@ public final class CoreFunctions {
      * Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
      * on one of these filters:
      * 
-     *   * Subnet OCID.
-     *   * VNIC OCID.
-     *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-     *       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-     *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+     * * Subnet OCID.
+     * * VNIC OCID.
+     * * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+     *   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
      * 
@@ -20099,11 +20099,11 @@ public final class CoreFunctions {
      * Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
      * on one of these filters:
      * 
-     *   * Subnet OCID.
-     *   * VNIC OCID.
-     *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-     *       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-     *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+     * * Subnet OCID.
+     * * VNIC OCID.
+     * * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+     *   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
      * 
@@ -20152,11 +20152,11 @@ public final class CoreFunctions {
      * Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
      * on one of these filters:
      * 
-     *   * Subnet OCID.
-     *   * VNIC OCID.
-     *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-     *       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-     *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+     * * Subnet OCID.
+     * * VNIC OCID.
+     * * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+     *   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
      * 
@@ -22253,13 +22253,13 @@ public final class CoreFunctions {
      * Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
      * on one of these filters:
      * 
-     *   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - Both private IP address and subnet OCID: This lets
-     *       you get a `privateIP` object based on its private IP
-     *       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-     *       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-     *       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Both private IP address and subnet OCID: This lets
+     *   you get a `privateIP` object based on its private IP
+     *   address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *   [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+     *   requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * If you&#39;re listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
@@ -22382,13 +22382,13 @@ public final class CoreFunctions {
      * Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
      * on one of these filters:
      * 
-     *   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - Both private IP address and subnet OCID: This lets
-     *       you get a `privateIP` object based on its private IP
-     *       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-     *       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-     *       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Both private IP address and subnet OCID: This lets
+     *   you get a `privateIP` object based on its private IP
+     *   address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *   [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+     *   requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * If you&#39;re listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
@@ -22511,13 +22511,13 @@ public final class CoreFunctions {
      * Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
      * on one of these filters:
      * 
-     *   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - Both private IP address and subnet OCID: This lets
-     *       you get a `privateIP` object based on its private IP
-     *       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-     *       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-     *       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Both private IP address and subnet OCID: This lets
+     *   you get a `privateIP` object based on its private IP
+     *   address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *   [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+     *   requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * If you&#39;re listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
@@ -22640,13 +22640,13 @@ public final class CoreFunctions {
      * Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
      * on one of these filters:
      * 
-     *   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - Both private IP address and subnet OCID: This lets
-     *       you get a `privateIP` object based on its private IP
-     *       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-     *       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-     *       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Both private IP address and subnet OCID: This lets
+     *   you get a `privateIP` object based on its private IP
+     *   address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *   [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+     *   requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * If you&#39;re listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
@@ -22769,13 +22769,13 @@ public final class CoreFunctions {
      * Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
      * on one of these filters:
      * 
-     *   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - Both private IP address and subnet OCID: This lets
-     *       you get a `privateIP` object based on its private IP
-     *       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-     *       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-     *       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Both private IP address and subnet OCID: This lets
+     *   you get a `privateIP` object based on its private IP
+     *   address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *   [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+     *   requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * If you&#39;re listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
@@ -22898,13 +22898,13 @@ public final class CoreFunctions {
      * Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
      * on one of these filters:
      * 
-     *   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - Both private IP address and subnet OCID: This lets
-     *       you get a `privateIP` object based on its private IP
-     *       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-     *       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-     *       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Both private IP address and subnet OCID: This lets
+     *   you get a `privateIP` object based on its private IP
+     *   address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *   [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+     *   requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * If you&#39;re listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
@@ -24130,19 +24130,19 @@ public final class CoreFunctions {
      * in the specified compartment. You can filter the list by using query parameters.
      * 
      * To list your reserved public IPs:
-     *   * Set `scope` = `REGION`  (required)
-     *   * Leave the `availabilityDomain` parameter empty
-     *   * Set `lifetime` = `RESERVED`
+     * * Set `scope` = `REGION`  (required)
+     * * Leave the `availabilityDomain` parameter empty
+     * * Set `lifetime` = `RESERVED`
      * 
      * To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
-     *   * Set `scope` = `REGION`  (required)
-     *   * Leave the `availabilityDomain` parameter empty
-     *   * Set `lifetime` = `EPHEMERAL`
+     * * Set `scope` = `REGION`  (required)
+     * * Leave the `availabilityDomain` parameter empty
+     * * Set `lifetime` = `EPHEMERAL`
      * 
      * To list the ephemeral public IPs assigned to private IPs:
-     *   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
-     *   * Set the `availabilityDomain` parameter to the desired availability domain (required)
-     *   * Set `lifetime` = `EPHEMERAL`
+     * * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+     * * Set the `availabilityDomain` parameter to the desired availability domain (required)
+     * * Set `lifetime` = `EPHEMERAL`
      * 
      * **Note:** An ephemeral public IP assigned to a private IP
      * is always in the same availability domain and compartment as the private IP.
@@ -24197,19 +24197,19 @@ public final class CoreFunctions {
      * in the specified compartment. You can filter the list by using query parameters.
      * 
      * To list your reserved public IPs:
-     *   * Set `scope` = `REGION`  (required)
-     *   * Leave the `availabilityDomain` parameter empty
-     *   * Set `lifetime` = `RESERVED`
+     * * Set `scope` = `REGION`  (required)
+     * * Leave the `availabilityDomain` parameter empty
+     * * Set `lifetime` = `RESERVED`
      * 
      * To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
-     *   * Set `scope` = `REGION`  (required)
-     *   * Leave the `availabilityDomain` parameter empty
-     *   * Set `lifetime` = `EPHEMERAL`
+     * * Set `scope` = `REGION`  (required)
+     * * Leave the `availabilityDomain` parameter empty
+     * * Set `lifetime` = `EPHEMERAL`
      * 
      * To list the ephemeral public IPs assigned to private IPs:
-     *   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
-     *   * Set the `availabilityDomain` parameter to the desired availability domain (required)
-     *   * Set `lifetime` = `EPHEMERAL`
+     * * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+     * * Set the `availabilityDomain` parameter to the desired availability domain (required)
+     * * Set `lifetime` = `EPHEMERAL`
      * 
      * **Note:** An ephemeral public IP assigned to a private IP
      * is always in the same availability domain and compartment as the private IP.
@@ -24264,19 +24264,19 @@ public final class CoreFunctions {
      * in the specified compartment. You can filter the list by using query parameters.
      * 
      * To list your reserved public IPs:
-     *   * Set `scope` = `REGION`  (required)
-     *   * Leave the `availabilityDomain` parameter empty
-     *   * Set `lifetime` = `RESERVED`
+     * * Set `scope` = `REGION`  (required)
+     * * Leave the `availabilityDomain` parameter empty
+     * * Set `lifetime` = `RESERVED`
      * 
      * To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
-     *   * Set `scope` = `REGION`  (required)
-     *   * Leave the `availabilityDomain` parameter empty
-     *   * Set `lifetime` = `EPHEMERAL`
+     * * Set `scope` = `REGION`  (required)
+     * * Leave the `availabilityDomain` parameter empty
+     * * Set `lifetime` = `EPHEMERAL`
      * 
      * To list the ephemeral public IPs assigned to private IPs:
-     *   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
-     *   * Set the `availabilityDomain` parameter to the desired availability domain (required)
-     *   * Set `lifetime` = `EPHEMERAL`
+     * * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+     * * Set the `availabilityDomain` parameter to the desired availability domain (required)
+     * * Set `lifetime` = `EPHEMERAL`
      * 
      * **Note:** An ephemeral public IP assigned to a private IP
      * is always in the same availability domain and compartment as the private IP.
@@ -24331,19 +24331,19 @@ public final class CoreFunctions {
      * in the specified compartment. You can filter the list by using query parameters.
      * 
      * To list your reserved public IPs:
-     *   * Set `scope` = `REGION`  (required)
-     *   * Leave the `availabilityDomain` parameter empty
-     *   * Set `lifetime` = `RESERVED`
+     * * Set `scope` = `REGION`  (required)
+     * * Leave the `availabilityDomain` parameter empty
+     * * Set `lifetime` = `RESERVED`
      * 
      * To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
-     *   * Set `scope` = `REGION`  (required)
-     *   * Leave the `availabilityDomain` parameter empty
-     *   * Set `lifetime` = `EPHEMERAL`
+     * * Set `scope` = `REGION`  (required)
+     * * Leave the `availabilityDomain` parameter empty
+     * * Set `lifetime` = `EPHEMERAL`
      * 
      * To list the ephemeral public IPs assigned to private IPs:
-     *   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
-     *   * Set the `availabilityDomain` parameter to the desired availability domain (required)
-     *   * Set `lifetime` = `EPHEMERAL`
+     * * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+     * * Set the `availabilityDomain` parameter to the desired availability domain (required)
+     * * Set `lifetime` = `EPHEMERAL`
      * 
      * **Note:** An ephemeral public IP assigned to a private IP
      * is always in the same availability domain and compartment as the private IP.

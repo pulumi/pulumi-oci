@@ -23,7 +23,6 @@ class AlertPolicyRuleArgs:
         :param pulumi.Input[str] alert_policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) Describes the alert policy rule.
@@ -53,7 +52,6 @@ class AlertPolicyRuleArgs:
     def expression(self) -> pulumi.Input[str]:
         """
         (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -105,7 +103,6 @@ class _AlertPolicyRuleState:
         :param pulumi.Input[str] description: (Updatable) Describes the alert policy rule.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the alert policy rule.
         :param pulumi.Input[str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -170,7 +167,6 @@ class _AlertPolicyRuleState:
         """
         (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -228,6 +224,15 @@ class AlertPolicyRule(pulumi.CustomResource):
                  expression: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        subcategory: "Data Safe"
+        layout: "oci"
+        page_title: "Oracle Cloud Infrastructure: DataSafe.AlertPolicyRule"
+        sidebar_current: "docs-oci-resource-data_safe-alert_policy_rule"
+        description: |-
+        	Provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service
+        <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+        # DataSafe.AlertPolicyRule
         This resource provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
 
         Creates a new rule for the alert policy.
@@ -260,7 +265,6 @@ class AlertPolicyRule(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the alert policy rule.
         :param pulumi.Input[str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -271,6 +275,15 @@ class AlertPolicyRule(pulumi.CustomResource):
                  args: AlertPolicyRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        subcategory: "Data Safe"
+        layout: "oci"
+        page_title: "Oracle Cloud Infrastructure: DataSafe.AlertPolicyRule"
+        sidebar_current: "docs-oci-resource-data_safe-alert_policy_rule"
+        description: |-
+        	Provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service
+        <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+        # DataSafe.AlertPolicyRule
         This resource provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
 
         Creates a new rule for the alert policy.
@@ -364,7 +377,6 @@ class AlertPolicyRule(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the alert policy rule.
         :param pulumi.Input[str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] key: The unique key of the alert policy rule.
@@ -413,7 +425,6 @@ class AlertPolicyRule(pulumi.CustomResource):
     def expression(self) -> pulumi.Output[str]:
         """
         (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

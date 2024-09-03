@@ -18,7 +18,6 @@ namespace Pulumi.Oci.CloudGuard
         /// (DataSourceEventCollection  resource) from the data source
         /// (DataSource resource) identified by dataSourceId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns a list of data source events
         /// (DataSourceEventCollection  resource) from the data source
         /// (DataSource resource) identified by dataSourceId.
-        /// 
         /// 
         /// ## Example Usage
         /// 

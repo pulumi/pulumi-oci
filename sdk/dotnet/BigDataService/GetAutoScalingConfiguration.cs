@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns details of the autoscale configuration identified by the given ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// Returns details of the autoscale configuration identified by the given ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

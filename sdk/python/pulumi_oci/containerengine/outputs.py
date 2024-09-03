@@ -1089,12 +1089,11 @@ class ContainerInstanceContainer(dict):
         :param Sequence['ContainerInstanceContainerHealthCheckArgs'] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
         :param bool is_resource_principal_disabled: Determines if the container will have access to the container instance resource principal.
                
-               This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+               This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see <https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal>.
         :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param 'ContainerInstanceContainerResourceConfigArgs' resource_config: The size and amount of resources available to the container.
         :param 'ContainerInstanceContainerSecurityContextArgs' security_context: Security context for container.
-        :param str state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param str state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1276,7 +1275,7 @@ class ContainerInstanceContainer(dict):
         """
         Determines if the container will have access to the container instance resource principal.
 
-        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see <https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal>.
         """
         return pulumi.get(self, "is_resource_principal_disabled")
 
@@ -1308,8 +1307,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1906,7 +1904,7 @@ class ContainerInstanceDnsConfig(dict):
                  searches: Optional[Sequence[str]] = None):
         """
         :param Sequence[str] nameservers: IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
-        :param Sequence[str] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+        :param Sequence[str] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
         :param Sequence[str] searches: Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
         """
         if nameservers is not None:
@@ -1928,7 +1926,7 @@ class ContainerInstanceDnsConfig(dict):
     @pulumi.getter
     def options(self) -> Optional[Sequence[str]]:
         """
-        Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+        Options allows certain internal resolver variables to be modified. Options are a list of objects in <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>. Examples: ["ndots:n", "edns0"].
         """
         return pulumi.get(self, "options")
 
@@ -3573,7 +3571,6 @@ class VirtualNodePoolVirtualNodeTags(dict):
         :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3595,7 +3592,6 @@ class VirtualNodePoolVirtualNodeTags(dict):
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

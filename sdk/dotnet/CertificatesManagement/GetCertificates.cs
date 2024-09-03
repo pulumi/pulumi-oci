@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Lists all certificates that match the query parameters.
         /// Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all certificates that match the query parameters.
         /// Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
-        /// 
         /// 
         /// ## Example Usage
         /// 

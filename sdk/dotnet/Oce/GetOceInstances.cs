@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oce
         /// 
         /// Returns a list of OceInstances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Oce
         /// This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
         /// 
         /// Returns a list of OceInstances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

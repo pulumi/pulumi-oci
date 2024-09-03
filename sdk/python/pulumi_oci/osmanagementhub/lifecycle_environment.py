@@ -35,7 +35,6 @@ class LifecycleEnvironmentArgs:
         :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]] stages: (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
         :param pulumi.Input[str] vendor_name: The vendor of the operating system used by the managed instances in the lifecycle environment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -123,7 +122,6 @@ class LifecycleEnvironmentArgs:
     def vendor_name(self) -> pulumi.Input[str]:
         """
         The vendor of the operating system used by the managed instances in the lifecycle environment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -218,7 +216,6 @@ class _LifecycleEnvironmentState:
         :param pulumi.Input[str] time_created: The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_modified: The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] vendor_name: The vendor of the operating system used by the managed instances in the lifecycle environment.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -428,7 +425,6 @@ class _LifecycleEnvironmentState:
         """
         The vendor of the operating system used by the managed instances in the lifecycle environment.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -524,7 +520,6 @@ class LifecycleEnvironment(pulumi.CustomResource):
         :param pulumi.Input[str] os_family: The operating system of the managed instances in the lifecycle environment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LifecycleEnvironmentStageArgs', 'LifecycleEnvironmentStageArgsDict']]]] stages: (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
         :param pulumi.Input[str] vendor_name: The vendor of the operating system used by the managed instances in the lifecycle environment.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -701,7 +696,6 @@ class LifecycleEnvironment(pulumi.CustomResource):
         :param pulumi.Input[str] time_modified: The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] vendor_name: The vendor of the operating system used by the managed instances in the lifecycle environment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -843,7 +837,6 @@ class LifecycleEnvironment(pulumi.CustomResource):
     def vendor_name(self) -> pulumi.Output[str]:
         """
         The vendor of the operating system used by the managed instances in the lifecycle environment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -32,7 +32,6 @@ class NamedCredentialArgs:
         :param pulumi.Input[str] scope: (Updatable) The scope of the named credential.
         :param pulumi.Input[str] type: The type of resource associated with the named credential.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
@@ -97,7 +96,6 @@ class NamedCredentialArgs:
     def type(self) -> pulumi.Input[str]:
         """
         The type of resource associated with the named credential.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -202,7 +200,6 @@ class _NamedCredentialState:
         :param pulumi.Input[str] time_created: The date and time the named credential was created.
         :param pulumi.Input[str] time_updated: The date and time the named credential was last updated.
         :param pulumi.Input[str] type: The type of resource associated with the named credential.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -398,7 +395,6 @@ class _NamedCredentialState:
         """
         The type of resource associated with the named credential.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -476,7 +472,6 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         :param pulumi.Input[str] scope: (Updatable) The scope of the named credential.
         :param pulumi.Input[str] type: The type of resource associated with the named credential.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -629,7 +624,6 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The date and time the named credential was last updated.
         :param pulumi.Input[str] type: The type of resource associated with the named credential.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -762,7 +756,6 @@ class NamedCredential(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         The type of resource associated with the named credential.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

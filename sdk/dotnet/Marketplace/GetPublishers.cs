@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Marketplace
         /// This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
         /// 
         /// Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
-        /// 
         /// 
         /// ## Example Usage
         /// 

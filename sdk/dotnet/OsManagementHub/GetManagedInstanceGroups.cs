@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
-        /// 
         /// 
         /// ## Example Usage
         /// 

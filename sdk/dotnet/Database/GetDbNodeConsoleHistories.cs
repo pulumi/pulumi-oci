@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the console histories for the specified database node.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db Node Console Histories in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the console histories for the specified database node.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -29,7 +29,6 @@ class AppFirewallArgs:
         :param pulumi.Input[str] load_balancer_id: LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
         :param pulumi.Input[str] web_app_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -91,7 +90,6 @@ class AppFirewallArgs:
     def web_app_firewall_policy_id(self) -> pulumi.Input[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -180,7 +178,6 @@ class _AppFirewallState:
         :param pulumi.Input[str] time_created: The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] web_app_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -348,7 +345,6 @@ class _AppFirewallState:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -417,7 +413,6 @@ class AppFirewall(pulumi.CustomResource):
         :param pulumi.Input[str] load_balancer_id: LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] web_app_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -556,7 +551,6 @@ class AppFirewall(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] web_app_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -671,7 +665,6 @@ class AppFirewall(pulumi.CustomResource):
     def web_app_firewall_policy_id(self) -> pulumi.Output[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

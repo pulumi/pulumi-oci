@@ -18,11 +18,11 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly ImmutableArray<string> ComputeInstanceIds;
         /// <summary>
-        /// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+        /// (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
         /// </summary>
         public readonly string? Query;
         /// <summary>
-        /// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        /// (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
         /// </summary>
         public readonly string? Region;
         /// <summary>

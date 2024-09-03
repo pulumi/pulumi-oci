@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists management stations in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists management stations in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

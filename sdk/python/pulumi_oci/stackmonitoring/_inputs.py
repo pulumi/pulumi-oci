@@ -1586,7 +1586,6 @@ class MonitoredResourceTaskTaskDetailsArgs:
                * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
         :param pulumi.Input[str] type: Task type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] availability_proxy_metric_collection_interval: Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
@@ -1661,7 +1660,6 @@ class MonitoredResourceTaskTaskDetailsArgs:
     def type(self) -> pulumi.Input[str]:
         """
         Task type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2568,8 +2566,7 @@ class MonitoredResourcesSearchItemArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: A filter to return resources that match resource type. 
-               
+        :param pulumi.Input[str] type: A filter to return resources that match resource type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2819,8 +2816,7 @@ class MonitoredResourcesSearchItemArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources that match resource type. 
-
+        A filter to return resources that match resource type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2906,7 +2902,6 @@ class ProcessSetSpecificationItemArgs:
         :param pulumi.Input[str] process_line_regex_pattern: (Updatable) Regex pattern matching on process arguments.
         :param pulumi.Input[str] process_user: (Updatable) String literal used for exact matching on process user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2960,7 +2955,6 @@ class ProcessSetSpecificationItemArgs:
     def process_user(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) String literal used for exact matching on process user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

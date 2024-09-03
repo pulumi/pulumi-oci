@@ -23,7 +23,6 @@ class IdpGroupMappingArgs:
         :param pulumi.Input[str] identity_provider_id: The OCID of the identity provider.
         :param pulumi.Input[str] idp_group_name: (Updatable) The name of the IdP group you want to map.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -61,7 +60,6 @@ class IdpGroupMappingArgs:
         """
         (Updatable) The name of the IdP group you want to map.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -88,7 +86,6 @@ class _IdpGroupMappingState:
         :param pulumi.Input[str] group_id: (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
         :param pulumi.Input[str] identity_provider_id: The OCID of the identity provider.
         :param pulumi.Input[str] idp_group_name: (Updatable) The name of the IdP group you want to map.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -152,7 +149,6 @@ class _IdpGroupMappingState:
     def idp_group_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The name of the IdP group you want to map.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -242,7 +238,6 @@ class IdpGroupMapping(pulumi.CustomResource):
         :param pulumi.Input[str] group_id: (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
         :param pulumi.Input[str] identity_provider_id: The OCID of the identity provider.
         :param pulumi.Input[str] idp_group_name: (Updatable) The name of the IdP group you want to map.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -350,7 +345,6 @@ class IdpGroupMapping(pulumi.CustomResource):
         :param pulumi.Input[str] identity_provider_id: The OCID of the identity provider.
         :param pulumi.Input[str] idp_group_name: (Updatable) The name of the IdP group you want to map.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
@@ -399,7 +393,6 @@ class IdpGroupMapping(pulumi.CustomResource):
     def idp_group_name(self) -> pulumi.Output[str]:
         """
         (Updatable) The name of the IdP group you want to map.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

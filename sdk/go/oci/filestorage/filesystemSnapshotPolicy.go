@@ -92,7 +92,7 @@ type FilesystemSnapshotPolicy struct {
 	PolicyPrefix pulumi.StringOutput `pulumi:"policyPrefix"`
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	//
-	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
+	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
 	Schedules FilesystemSnapshotPolicyScheduleArrayOutput `pulumi:"schedules"`
 	// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
 	//
@@ -153,7 +153,7 @@ type filesystemSnapshotPolicyState struct {
 	PolicyPrefix *string `pulumi:"policyPrefix"`
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	//
-	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
+	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
 	Schedules []FilesystemSnapshotPolicySchedule `pulumi:"schedules"`
 	// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
 	//
@@ -179,7 +179,7 @@ type FilesystemSnapshotPolicyState struct {
 	PolicyPrefix pulumi.StringPtrInput
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	//
-	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
+	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
 	Schedules FilesystemSnapshotPolicyScheduleArrayInput
 	// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
 	//
@@ -209,7 +209,7 @@ type filesystemSnapshotPolicyArgs struct {
 	PolicyPrefix *string `pulumi:"policyPrefix"`
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	//
-	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
+	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
 	Schedules []FilesystemSnapshotPolicySchedule `pulumi:"schedules"`
 	// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
 	//
@@ -234,7 +234,7 @@ type FilesystemSnapshotPolicyArgs struct {
 	PolicyPrefix pulumi.StringPtrInput
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	//
-	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
+	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
 	Schedules FilesystemSnapshotPolicyScheduleArrayInput
 	// (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
 	//
@@ -362,7 +362,7 @@ func (o FilesystemSnapshotPolicyOutput) PolicyPrefix() pulumi.StringOutput {
 
 // (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 //
-// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
+// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. `--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'`
 func (o FilesystemSnapshotPolicyOutput) Schedules() FilesystemSnapshotPolicyScheduleArrayOutput {
 	return o.ApplyT(func(v *FilesystemSnapshotPolicy) FilesystemSnapshotPolicyScheduleArrayOutput { return v.Schedules }).(FilesystemSnapshotPolicyScheduleArrayOutput)
 }

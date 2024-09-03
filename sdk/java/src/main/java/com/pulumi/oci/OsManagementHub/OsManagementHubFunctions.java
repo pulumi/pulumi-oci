@@ -347,6 +347,15 @@ public final class OsManagementHubFunctions {
         return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getEntitlements:getEntitlements", TypeShape.of(GetEntitlementsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Os Management Hub&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.OsManagementHub.getErrata&#34;
+     * sidebar_current: &#34;docs-oci-datasource-os_management_hub-errata&#34;
+     * description: |-
+     * 	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.OsManagementHub.getErrata
      * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
@@ -400,6 +409,15 @@ public final class OsManagementHubFunctions {
         return getErrata(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Os Management Hub&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.OsManagementHub.getErrata&#34;
+     * sidebar_current: &#34;docs-oci-datasource-os_management_hub-errata&#34;
+     * description: |-
+     * 	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.OsManagementHub.getErrata
      * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
@@ -453,6 +471,15 @@ public final class OsManagementHubFunctions {
         return getErrataPlain(args, InvokeOptions.Empty);
     }
     /**
+     * subcategory: &#34;Os Management Hub&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.OsManagementHub.getErrata&#34;
+     * sidebar_current: &#34;docs-oci-datasource-os_management_hub-errata&#34;
+     * description: |-
+     * 	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.OsManagementHub.getErrata
      * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
@@ -506,6 +533,15 @@ public final class OsManagementHubFunctions {
         return Deployment.getInstance().invoke("oci:OsManagementHub/getErrata:getErrata", TypeShape.of(GetErrataResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * subcategory: &#34;Os Management Hub&#34;
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.OsManagementHub.getErrata&#34;
+     * sidebar_current: &#34;docs-oci-datasource-os_management_hub-errata&#34;
+     * description: |-
+     * 	Provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service
+     * &lt;!-- yaml: line 6: found a tab character where an indentation space is expected --&gt;
+     * 
+     * # Data Source: oci.OsManagementHub.getErrata
      * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists all of the currently available errata. Filter the list against a variety of criteria including but not

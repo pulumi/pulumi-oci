@@ -115,6 +115,15 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
                                        security_assessment_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentComparisonResult:
     """
+    subcategory: "Data Safe"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: data_safe_get_security_assessment_comparison"
+    sidebar_current: "docs-oci-datasource-data_safe-security_assessment_comparison"
+    description: |-
+    	Provides details about a specific Security Assessment Comparison in Oracle Cloud Infrastructure Data Safe service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: data_safe_get_security_assessment_comparison
     This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 
     Gets the details of the comparison report for the security assessments submitted for comparison.
@@ -154,6 +163,15 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
                                               security_assessment_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentComparisonResult]:
     """
+    subcategory: "Data Safe"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: data_safe_get_security_assessment_comparison"
+    sidebar_current: "docs-oci-datasource-data_safe-security_assessment_comparison"
+    description: |-
+    	Provides details about a specific Security Assessment Comparison in Oracle Cloud Infrastructure Data Safe service
+    <!-- yaml: line 6: found a tab character where an indentation space is expected -->
+
+    # Data Source: data_safe_get_security_assessment_comparison
     This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 
     Gets the details of the comparison report for the security assessments submitted for comparison.

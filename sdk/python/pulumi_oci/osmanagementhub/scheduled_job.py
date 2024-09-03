@@ -48,7 +48,6 @@ class ScheduledJobArgs:
         :param pulumi.Input[str] schedule_type: (Updatable) The type of scheduling frequency for the scheduled job.
         :param pulumi.Input[str] time_next_execution: (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -145,7 +144,6 @@ class ScheduledJobArgs:
     def time_next_execution(self) -> pulumi.Input[str]:
         """
         (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -372,7 +370,6 @@ class _ScheduledJobState:
         :param pulumi.Input[str] time_created: The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_last_execution: The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_next_execution: (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -694,7 +691,6 @@ class _ScheduledJobState:
         """
         (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -856,7 +852,6 @@ class ScheduledJob(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[int]]] retry_intervals: (Updatable) The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically  retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service  waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
         :param pulumi.Input[str] schedule_type: (Updatable) The type of scheduling frequency for the scheduled job.
         :param pulumi.Input[str] time_next_execution: (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1089,7 +1084,6 @@ class ScheduledJob(pulumi.CustomResource):
         :param pulumi.Input[str] time_last_execution: The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_next_execution: (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
@@ -1306,7 +1300,6 @@ class ScheduledJob(pulumi.CustomResource):
     def time_next_execution(self) -> pulumi.Output[str]:
         """
         (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

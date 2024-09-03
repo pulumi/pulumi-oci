@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly string NodeId;
         /// <summary>
-        /// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        /// A filter to return only resources that match the entire PURL given (&lt;https://github.com/package-url/purl-spec/)&gt;.
         /// </summary>
         public readonly string Purl;
         /// <summary>

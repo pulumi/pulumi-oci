@@ -48,8 +48,7 @@ class ContainerInstanceArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -256,8 +255,7 @@ class ContainerInstanceArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -325,8 +323,7 @@ class _ContainerInstanceState:
         :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
         :param pulumi.Input['ContainerInstanceShapeConfigArgs'] shape_config: The size and amount of resources available to the container instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -568,8 +565,7 @@ class _ContainerInstanceState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -814,8 +810,7 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
         :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']] shape_config: The size and amount of resources available to the container instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1080,8 +1075,7 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
         :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']] shape_config: The size and amount of resources available to the container instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1246,8 +1240,7 @@ class ContainerInstance(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

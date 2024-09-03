@@ -29,8 +29,7 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
         The set of arguments for constructing a NetworkLoadBalancersBackendSetsUnified resource.
         :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-               
+        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -89,8 +88,7 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
     @pulumi.getter
     def policy(self) -> pulumi.Input[str]:
         """
-        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-
+        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -204,8 +202,7 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
                
                Example: `example_backend_set`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-               
+        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -333,8 +330,7 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
     @pulumi.getter
     def policy(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-
+        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -433,8 +429,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
                
                Example: `example_backend_set`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-               
+        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -589,8 +584,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
                
                Example: `example_backend_set`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-               
+        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -682,8 +676,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     @pulumi.getter
     def policy(self) -> pulumi.Output[str]:
         """
-        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-
+        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -31,7 +31,6 @@ class OneoffPatchArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[int] download_oneoff_patch_trigger: (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -116,7 +115,6 @@ class OneoffPatchArgs:
         """
         (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -176,7 +174,6 @@ class _OneoffPatchState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: One-off patch name.
         :param pulumi.Input[int] download_oneoff_patch_trigger: (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -275,7 +272,6 @@ class _OneoffPatchState:
     def download_oneoff_patch_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -460,7 +456,6 @@ class OneoffPatch(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: One-off patch name.
         :param pulumi.Input[int] download_oneoff_patch_trigger: (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -597,7 +592,6 @@ class OneoffPatch(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: One-off patch name.
         :param pulumi.Input[int] download_oneoff_patch_trigger: (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -669,7 +663,6 @@ class OneoffPatch(pulumi.CustomResource):
     def download_oneoff_patch_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

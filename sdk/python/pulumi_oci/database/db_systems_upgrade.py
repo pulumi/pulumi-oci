@@ -30,7 +30,6 @@ class DbSystemsUpgradeArgs:
         :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -107,7 +106,6 @@ class DbSystemsUpgradeArgs:
     def snapshot_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,7 +214,6 @@ class _DbSystemsUpgradeState:
                * For virtual machine shapes, the number of CPU cores and memory
                * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
         :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -806,7 +803,6 @@ class _DbSystemsUpgradeState:
         """
         The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -979,7 +975,6 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         :param pulumi.Input[bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
         :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1206,7 +1201,6 @@ class DbSystemsUpgrade(pulumi.CustomResource):
                * For virtual machine shapes, the number of CPU cores and memory
                * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
         :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1594,7 +1588,6 @@ class DbSystemsUpgrade(pulumi.CustomResource):
     def snapshot_retention_period_in_days(self) -> pulumi.Output[int]:
         """
         The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

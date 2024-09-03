@@ -111,7 +111,7 @@ public final class GetAssetSourcesAssetSourceCollectionItem {
      */
     private String type;
     /**
-     * @return Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
+     * @return Endpoint for VMware asset discovery and replication in the form of `https://&lt;host&gt;:&lt;port&gt;/sdk`
      * 
      */
     private String vcenterEndpoint;
@@ -251,7 +251,7 @@ public final class GetAssetSourcesAssetSourceCollectionItem {
         return this.type;
     }
     /**
-     * @return Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
+     * @return Endpoint for VMware asset discovery and replication in the form of `https://&lt;host&gt;:&lt;port&gt;/sdk`
      * 
      */
     public String vcenterEndpoint() {

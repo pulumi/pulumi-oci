@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// Returns a list of default configurations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Psql
         /// This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
         /// 
         /// Returns a list of default configurations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Budget
         /// 
         /// Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -57,7 +56,6 @@ namespace Pulumi.Oci.Budget
         /// To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
         /// 
         /// Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
-        /// 
         /// 
         /// ## Example Usage
         /// 

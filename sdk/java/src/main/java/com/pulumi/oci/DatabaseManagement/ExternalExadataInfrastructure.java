@@ -23,10 +23,10 @@ import javax.annotation.Nullable;
  * 
  * Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
  * The following resource/subresources are created:
- *   Infrastructure
- *   Storage server connectors
- *   Storage servers
- *   Storage grids
+ * Infrastructure
+ * Storage server connectors
+ * Storage servers
+ * Storage grids
  * 
  * ## Example Usage
  * 
@@ -110,14 +110,14 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
         return this.compartmentId;
     }
     /**
-     * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
      * 
      */
     @Export(name="databaseCompartments", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> databaseCompartments;
 
     /**
-     * @return The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * @return The list of [OCIDs] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm&gt;) of the compartments.
      * 
      */
     public Output<List<String>> databaseCompartments() {

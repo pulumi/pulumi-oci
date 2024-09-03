@@ -112,7 +112,7 @@ namespace Pulumi.Oci.Limits
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An array of quota statements written in the declarative quota statement language. 
+        /// (Updatable) An array of quota statements written in the declarative quota statement language.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +230,7 @@ namespace Pulumi.Oci.Limits
         private InputList<string>? _statements;
 
         /// <summary>
-        /// (Updatable) An array of quota statements written in the declarative quota statement language. 
+        /// (Updatable) An array of quota statements written in the declarative quota statement language.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -319,7 +319,7 @@ namespace Pulumi.Oci.Limits
         private InputList<string>? _statements;
 
         /// <summary>
-        /// (Updatable) An array of quota statements written in the declarative quota statement language. 
+        /// (Updatable) An array of quota statements written in the declarative quota statement language.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

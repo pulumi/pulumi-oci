@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Mysql
         /// configuration parameters (passwords are omitted), as well as information about
         /// the state of the Channel, its sources and targets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Mysql
         /// Gets the full details of the specified Channel, including the user-specified
         /// configuration parameters (passwords are omitted), as well as information about
         /// the state of the Channel, its sources and targets.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -33,14 +33,14 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs extend
     }
 
     /**
-     * (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+     * (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
      * 
      */
     @Import(name="query")
     private @Nullable Output<String> query;
 
     /**
-     * @return (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+     * @return (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
      * 
      */
     public Optional<Output<String>> query() {
@@ -48,14 +48,14 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs extend
     }
 
     /**
-     * (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+     * (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+     * @return (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
      * 
      */
     public Optional<Output<String>> region() {
@@ -136,7 +136,7 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs extend
         }
 
         /**
-         * @param query (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+         * @param query (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs extend
         }
 
         /**
-         * @param query (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+         * @param query (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at &lt;https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm&gt;
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs extend
         }
 
         /**
-         * @param region (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+         * @param region (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs extend
         }
 
         /**
-         * @param region (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+         * @param region (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at &lt;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm&gt;
          * 
          * @return builder
          * 

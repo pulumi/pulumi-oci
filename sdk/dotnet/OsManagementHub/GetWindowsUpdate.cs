@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns a Windows Update object.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides details about a specific Windows Update resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns a Windows Update object.
-        /// 
         /// 
         /// ## Example Usage
         /// 

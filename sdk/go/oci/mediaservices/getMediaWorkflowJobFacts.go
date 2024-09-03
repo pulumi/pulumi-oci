@@ -11,38 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// > **_NOTE:_** This data source has been deprecated and is no longer supported.
-// This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
-//
-// Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MediaServices"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.GetMediaWorkflowJobFacts(ctx, &mediaservices.GetMediaWorkflowJobFactsArgs{
-//				MediaWorkflowJobId: testMediaWorkflowJob.Id,
-//				Key:                pulumi.StringRef(mediaWorkflowJobFactKey),
-//				Type:               pulumi.StringRef(mediaWorkflowJobFactType),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetMediaWorkflowJobFacts(ctx *pulumi.Context, args *GetMediaWorkflowJobFactsArgs, opts ...pulumi.InvokeOption) (*GetMediaWorkflowJobFactsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMediaWorkflowJobFactsResult
@@ -55,28 +23,21 @@ func GetMediaWorkflowJobFacts(ctx *pulumi.Context, args *GetMediaWorkflowJobFact
 
 // A collection of arguments for invoking getMediaWorkflowJobFacts.
 type GetMediaWorkflowJobFactsArgs struct {
-	Filters []GetMediaWorkflowJobFactsFilter `pulumi:"filters"`
-	// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-	Key *string `pulumi:"key"`
-	// Unique MediaWorkflowJob identifier.
-	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
-	// Types of details to include.
-	Type *string `pulumi:"type"`
+	Filters            []GetMediaWorkflowJobFactsFilter `pulumi:"filters"`
+	Key                *string                          `pulumi:"key"`
+	MediaWorkflowJobId string                           `pulumi:"mediaWorkflowJobId"`
+	Type               *string                          `pulumi:"type"`
 }
 
 // A collection of values returned by getMediaWorkflowJobFacts.
 type GetMediaWorkflowJobFactsResult struct {
 	Filters []GetMediaWorkflowJobFactsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
-	Key *string `pulumi:"key"`
-	// The list of media_workflow_job_fact_collection.
+	Id                              string                                                   `pulumi:"id"`
+	Key                             *string                                                  `pulumi:"key"`
 	MediaWorkflowJobFactCollections []GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection `pulumi:"mediaWorkflowJobFactCollections"`
-	// Reference to the parent job.
-	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
-	// The type of information contained in this detail.
-	Type *string `pulumi:"type"`
+	MediaWorkflowJobId              string                                                   `pulumi:"mediaWorkflowJobId"`
+	Type                            *string                                                  `pulumi:"type"`
 }
 
 func GetMediaWorkflowJobFactsOutput(ctx *pulumi.Context, args GetMediaWorkflowJobFactsOutputArgs, opts ...pulumi.InvokeOption) GetMediaWorkflowJobFactsResultOutput {
@@ -94,13 +55,10 @@ func GetMediaWorkflowJobFactsOutput(ctx *pulumi.Context, args GetMediaWorkflowJo
 
 // A collection of arguments for invoking getMediaWorkflowJobFacts.
 type GetMediaWorkflowJobFactsOutputArgs struct {
-	Filters GetMediaWorkflowJobFactsFilterArrayInput `pulumi:"filters"`
-	// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Unique MediaWorkflowJob identifier.
-	MediaWorkflowJobId pulumi.StringInput `pulumi:"mediaWorkflowJobId"`
-	// Types of details to include.
-	Type pulumi.StringPtrInput `pulumi:"type"`
+	Filters            GetMediaWorkflowJobFactsFilterArrayInput `pulumi:"filters"`
+	Key                pulumi.StringPtrInput                    `pulumi:"key"`
+	MediaWorkflowJobId pulumi.StringInput                       `pulumi:"mediaWorkflowJobId"`
+	Type               pulumi.StringPtrInput                    `pulumi:"type"`
 }
 
 func (GetMediaWorkflowJobFactsOutputArgs) ElementType() reflect.Type {
@@ -131,24 +89,20 @@ func (o GetMediaWorkflowJobFactsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
 func (o GetMediaWorkflowJobFactsResultOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// The list of media_workflow_job_fact_collection.
 func (o GetMediaWorkflowJobFactsResultOutput) MediaWorkflowJobFactCollections() GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsResult) []GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection {
 		return v.MediaWorkflowJobFactCollections
 	}).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput)
 }
 
-// Reference to the parent job.
 func (o GetMediaWorkflowJobFactsResultOutput) MediaWorkflowJobId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsResult) string { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
 }
 
-// The type of information contained in this detail.
 func (o GetMediaWorkflowJobFactsResultOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

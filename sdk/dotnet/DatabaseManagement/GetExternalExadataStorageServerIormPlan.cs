@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Get the IORM plan from the specific Exadata storage server.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Get the IORM plan from the specific Exadata storage server.
-        /// 
         /// 
         /// ## Example Usage
         /// 

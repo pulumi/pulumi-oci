@@ -17,7 +17,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
         /// variety of criteria including but not limited to its name, and package group type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
         /// variety of criteria including but not limited to its name, and package group type.
-        /// 
         /// 
         /// ## Example Usage
         /// 

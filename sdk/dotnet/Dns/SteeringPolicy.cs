@@ -181,8 +181,7 @@ namespace Pulumi.Oci.Dns
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-        /// 
+        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -327,8 +326,7 @@ namespace Pulumi.Oci.Dns
         public Input<string> Template { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-        /// 
+        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -453,8 +451,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-        /// 
+        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

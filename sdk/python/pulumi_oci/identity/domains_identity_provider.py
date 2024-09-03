@@ -618,7 +618,6 @@ class DomainsIdentityProviderArgs:
                * uniqueness: none
                * idcsValuePersistedInOtherAttribute: true
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1836,7 +1835,6 @@ class DomainsIdentityProviderArgs:
         * uniqueness: none
         * idcsValuePersistedInOtherAttribute: true
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2582,7 +2580,6 @@ class _DomainsIdentityProviderState:
                * type: string
                * uniqueness: none
                * idcsValuePersistedInOtherAttribute: true
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4068,7 +4065,6 @@ class _DomainsIdentityProviderState:
         * uniqueness: none
         * idcsValuePersistedInOtherAttribute: true
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -4699,7 +4695,6 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * type: string
                * uniqueness: none
                * idcsValuePersistedInOtherAttribute: true
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5617,7 +5612,6 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * type: string
                * uniqueness: none
                * idcsValuePersistedInOtherAttribute: true
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6796,7 +6790,6 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         * type: string
         * uniqueness: none
         * idcsValuePersistedInOtherAttribute: true
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

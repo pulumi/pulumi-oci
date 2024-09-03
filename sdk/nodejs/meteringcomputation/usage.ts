@@ -119,7 +119,6 @@ export class Usage extends pulumi.CustomResource {
     /**
      * The usage start time.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -233,7 +232,6 @@ export interface UsageState {
     /**
      * The usage start time.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -286,7 +284,6 @@ export interface UsageArgs {
     timeUsageEnded: pulumi.Input<string>;
     /**
      * The usage start time.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

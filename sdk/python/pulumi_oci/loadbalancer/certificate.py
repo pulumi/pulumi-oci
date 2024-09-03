@@ -59,8 +59,6 @@ class CertificateArgs:
                ...
                -----END CERTIFICATE-----
                
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -171,8 +169,6 @@ class CertificateArgs:
         ...
         -----END CERTIFICATE-----
 
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -231,8 +227,6 @@ class _CertificateState:
                YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
                ...
                -----END CERTIFICATE-----
-               
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -348,8 +342,6 @@ class _CertificateState:
         ...
         -----END CERTIFICATE-----
 
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -430,8 +422,6 @@ class Certificate(pulumi.CustomResource):
                YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
                ...
                -----END CERTIFICATE-----
-               
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -557,8 +547,6 @@ class Certificate(pulumi.CustomResource):
                ...
                -----END CERTIFICATE-----
                
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -650,8 +638,6 @@ class Certificate(pulumi.CustomResource):
         YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
         ...
         -----END CERTIFICATE-----
-
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

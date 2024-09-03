@@ -391,14 +391,14 @@ public class Database extends com.pulumi.resources.CustomResource {
         return this.kmsKeyId;
     }
     /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
      * 
      */
     @Export(name="kmsKeyMigration", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> kmsKeyMigration;
 
     /**
-     * @return The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+     * @return The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(&lt;https://www.oracle.com/security/cloud-security/key-management/faq/&gt;)
      * 
      */
     public Output<Optional<Boolean>> kmsKeyMigration() {

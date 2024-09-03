@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        /// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
         /// 
         /// **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         /// </summary>
@@ -236,8 +236,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<ImmutableArray<Outputs.ClusterVsphereUpgradeObject>> VsphereUpgradeObjects { get; private set; } = null!;
 
         /// <summary>
-        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-        /// 
+        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -334,7 +333,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        /// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
         /// 
         /// **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         /// </summary>
@@ -410,8 +409,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? VmwareSoftwareVersion { get; set; }
 
         /// <summary>
-        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-        /// 
+        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -479,7 +477,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        /// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
         /// 
         /// **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         /// </summary>
@@ -603,8 +601,7 @@ namespace Pulumi.Oci.Ocvp
         }
 
         /// <summary>
-        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-        /// 
+        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

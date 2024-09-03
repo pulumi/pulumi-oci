@@ -19,7 +19,6 @@ namespace Pulumi.Oci.HealthChecks
         /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
         /// a URL for fetching the next page.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
         /// a URL for fetching the next page.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -118,7 +116,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNamespaceIngestTimeRuleActionResult> Actions;
         /// <summary>
-        /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// Compartment Identifier [OCID] (&lt;https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&gt;.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

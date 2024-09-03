@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Gets the current representation of the given bucket in the given Object Storage namespace.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
         /// 
         /// Gets the current representation of the given bucket in the given Object Storage namespace.
-        /// 
         /// 
         /// ## Example Usage
         /// 

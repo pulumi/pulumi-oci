@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
-        /// 
         /// 
         /// ## Example Usage
         /// 

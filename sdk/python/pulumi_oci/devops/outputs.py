@@ -823,7 +823,6 @@ class BuildPipelineStageWaitCriteria(dict):
         :param str wait_duration: (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
         :param str wait_type: (Updatable) Wait criteria type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -843,7 +842,6 @@ class BuildPipelineStageWaitCriteria(dict):
     def wait_type(self) -> str:
         """
         (Updatable) Wait criteria type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2310,8 +2308,8 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItem(dict):
         """
         :param str selector_type: (Updatable) Defines the type of the instance selector for the group.
         :param Sequence[str] compute_instance_ids: (Updatable) Compute instance OCID identifiers that are members of this group.
-        :param str query: (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
-        :param str region: (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        :param str query: (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
+        :param str region: (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
         """
         pulumi.set(__self__, "selector_type", selector_type)
         if compute_instance_ids is not None:
@@ -2341,7 +2339,7 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItem(dict):
     @pulumi.getter
     def query(self) -> Optional[str]:
         """
-        (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+        (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
         """
         return pulumi.get(self, "query")
 
@@ -2349,7 +2347,7 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItem(dict):
     @pulumi.getter
     def region(self) -> Optional[str]:
         """
-        (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
         """
         return pulumi.get(self, "region")
 
@@ -3810,7 +3808,6 @@ class DeployStageWaitCriteria(dict):
         :param str wait_duration: (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
         :param str wait_type: (Updatable) Wait criteria type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3830,7 +3827,6 @@ class DeployStageWaitCriteria(dict):
     def wait_type(self) -> str:
         """
         (Updatable) Wait criteria type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4327,7 +4323,7 @@ class DeploymentDeploymentArgumentsItem(dict):
         """
         :param str name: Name of the parameter (case-sensitive).
         :param str value: value of the argument.
-               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+               * To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -4347,7 +4343,7 @@ class DeploymentDeploymentArgumentsItem(dict):
     def value(self) -> Optional[str]:
         """
         value of the argument.
-        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+        * To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         return pulumi.get(self, "value")
 
@@ -4440,7 +4436,6 @@ class ProjectNotificationConfig(dict):
         """
         :param str topic_id: (Updatable) The topic ID for notifications.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -4451,7 +4446,6 @@ class ProjectNotificationConfig(dict):
     def topic_id(self) -> str:
         """
         (Updatable) The topic ID for notifications.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5118,7 +5112,6 @@ class TriggerActionFilter(dict):
         """
         :param str trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence[str] events: The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
@@ -5138,7 +5131,6 @@ class TriggerActionFilter(dict):
     def trigger_source(self) -> str:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8818,8 +8810,8 @@ class GetDeployEnvironmentComputeInstanceGroupSelectorItemResult(dict):
                  selector_type: str):
         """
         :param Sequence[str] compute_instance_ids: Compute instance OCID identifiers that are members of this group.
-        :param str query: Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
-        :param str region: Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        :param str query: Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
+        :param str region: Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
         :param str selector_type: Defines the type of the instance selector for the group.
         """
         pulumi.set(__self__, "compute_instance_ids", compute_instance_ids)
@@ -8839,7 +8831,7 @@ class GetDeployEnvironmentComputeInstanceGroupSelectorItemResult(dict):
     @pulumi.getter
     def query(self) -> str:
         """
-        Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+        Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
         """
         return pulumi.get(self, "query")
 
@@ -8847,7 +8839,7 @@ class GetDeployEnvironmentComputeInstanceGroupSelectorItemResult(dict):
     @pulumi.getter
     def region(self) -> str:
         """
-        Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
         """
         return pulumi.get(self, "region")
 
@@ -9139,8 +9131,8 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSe
                  selector_type: str):
         """
         :param Sequence[str] compute_instance_ids: Compute instance OCID identifiers that are members of this group.
-        :param str query: Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
-        :param str region: Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        :param str query: Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
+        :param str region: Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
         :param str selector_type: Defines the type of the instance selector for the group.
         """
         pulumi.set(__self__, "compute_instance_ids", compute_instance_ids)
@@ -9160,7 +9152,7 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSe
     @pulumi.getter
     def query(self) -> str:
         """
-        Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+        Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at <https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm>
         """
         return pulumi.get(self, "query")
 
@@ -9168,7 +9160,7 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSe
     @pulumi.getter
     def region(self) -> str:
         """
-        Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        Region identifier referred by the deployment environment. Region identifiers are listed at <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm>
         """
         return pulumi.get(self, "region")
 

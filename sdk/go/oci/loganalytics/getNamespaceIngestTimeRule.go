@@ -63,7 +63,7 @@ type LookupNamespaceIngestTimeRuleArgs struct {
 type LookupNamespaceIngestTimeRuleResult struct {
 	// The action(s) to be performed if the ingest time rule condition(s) are satisfied.
 	Actions []GetNamespaceIngestTimeRuleAction `pulumi:"actions"`
-	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The condition(s) to evaluate for an ingest time rule.
 	Conditions []GetNamespaceIngestTimeRuleCondition `pulumi:"conditions"`
@@ -135,7 +135,7 @@ func (o LookupNamespaceIngestTimeRuleResultOutput) Actions() GetNamespaceIngestT
 	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) []GetNamespaceIngestTimeRuleAction { return v.Actions }).(GetNamespaceIngestTimeRuleActionArrayOutput)
 }
 
-// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Compartment Identifier [OCID] (<https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)>.
 func (o LookupNamespaceIngestTimeRuleResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

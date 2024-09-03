@@ -11,6 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// subcategory: "Database"
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: Database.getAutonomousDatabasesClones"
+// sidebar_current: "docs-oci-datasource-database-autonomous_databases_clones"
+// description: |-
+// Provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service
+// <!-- yaml: line 7: could not find expected ':' -->
+//
+// # Data Source: Database.getAutonomousDatabasesClones
 // This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
 //
 // Lists the Autonomous Database clones for the specified Autonomous Database.

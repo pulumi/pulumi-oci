@@ -50,7 +50,7 @@ export interface GetApplicationResult {
      */
     readonly applicationLogConfigs: outputs.DataFlow.GetApplicationApplicationLogConfig[];
     /**
-     * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, `oci://path/to/a.zip,oci://path/to/b.zip`. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
      */
     readonly archiveUri: string;
     /**
@@ -66,7 +66,7 @@ export interface GetApplicationResult {
      */
     readonly compartmentId: string;
     /**
-     * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * The Spark configuration passed to the running process. See <https://spark.apache.org/docs/latest/configuration.html#available-properties>. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
     readonly configuration: {[key: string]: string};
     /**
@@ -90,7 +90,7 @@ export interface GetApplicationResult {
      */
     readonly driverShapeConfigs: outputs.DataFlow.GetApplicationDriverShapeConfig[];
     /**
-     * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+     * The input used for spark-submit command. For more details see <https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit>. Supported options include `--class`, `--file`, `--jars`, `--conf`, `--py-files`, and main application file with arguments. Example: `--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      */
     readonly execute: string;
     /**
@@ -102,7 +102,7 @@ export interface GetApplicationResult {
      */
     readonly executorShapeConfigs: outputs.DataFlow.GetApplicationExecutorShapeConfig[];
     /**
-     * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
      */
     readonly fileUri: string;
     /**
@@ -122,7 +122,7 @@ export interface GetApplicationResult {
      */
     readonly language: string;
     /**
-     * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
      */
     readonly logsBucketUri: string;
     /**
@@ -178,7 +178,7 @@ export interface GetApplicationResult {
      */
     readonly type: string;
     /**
-     * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat>.
      */
     readonly warehouseBucketUri: string;
 }

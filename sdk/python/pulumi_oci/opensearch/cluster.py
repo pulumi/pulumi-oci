@@ -63,7 +63,6 @@ class ClusterArgs:
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
@@ -333,7 +332,6 @@ class ClusterArgs:
         """
         The OCID of the cluster's VCN.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -523,7 +521,6 @@ class _ClusterState:
         :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1069,7 +1066,6 @@ class _ClusterState:
         """
         The OCID of the cluster's VCN.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1114,6 +1110,15 @@ class Cluster(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        subcategory: "Opensearch"
+        layout: "oci"
+        page_title: "Oracle Cloud Infrastructure: Opensearch.Cluster"
+        sidebar_current: "docs-oci-resource-opensearch-opensearch_cluster"
+        description: |-
+        Provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service
+        <!-- yaml: line 7: could not find expected ':' -->
+
+        # Opensearch.Cluster
         This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
 
         Creates a new OpensearchCluster.
@@ -1124,8 +1129,7 @@ class Cluster(pulumi.CustomResource):
 
         ##### {Compartment-Name} - Name of  your compartment
 
-        For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-        Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+        For latest documentation on OpenSearch use please refer to <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm>Required permissions: <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm>
 
         ## Example Usage
 
@@ -1205,7 +1209,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1216,6 +1219,15 @@ class Cluster(pulumi.CustomResource):
                  args: ClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        subcategory: "Opensearch"
+        layout: "oci"
+        page_title: "Oracle Cloud Infrastructure: Opensearch.Cluster"
+        sidebar_current: "docs-oci-resource-opensearch-opensearch_cluster"
+        description: |-
+        Provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service
+        <!-- yaml: line 7: could not find expected ':' -->
+
+        # Opensearch.Cluster
         This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
 
         Creates a new OpensearchCluster.
@@ -1226,8 +1238,7 @@ class Cluster(pulumi.CustomResource):
 
         ##### {Compartment-Name} - Name of  your compartment
 
-        For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-        Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+        For latest documentation on OpenSearch use please refer to <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm>Required permissions: <https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm>
 
         ## Example Usage
 
@@ -1502,7 +1513,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1861,7 +1871,6 @@ class Cluster(pulumi.CustomResource):
     def vcn_id(self) -> pulumi.Output[str]:
         """
         The OCID of the cluster's VCN.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

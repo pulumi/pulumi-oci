@@ -259,7 +259,7 @@ class RemediationRecipeScmConfiguration(dict):
         :param str external_scm_type: (Updatable) The type of External Source Code Management.
         :param str oci_code_repository_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
         :param str pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
-        :param str repository_url: (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+        :param str repository_url: (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
         :param str username: (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
         """
         pulumi.set(__self__, "branch", branch)
@@ -338,7 +338,7 @@ class RemediationRecipeScmConfiguration(dict):
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> Optional[str]:
         """
-        (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+        (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is <https://gitlab.com/[groupName]/[repoName]>
         """
         return pulumi.get(self, "repository_url")
 
@@ -404,7 +404,7 @@ class RemediationRecipeVerifyConfiguration(dict):
         :param str job_name: (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
         :param str pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
         :param str pipeline_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
-        :param str repository_url: (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str repository_url: (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         :param str trigger_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
         :param str username: (Updatable) The username that will be used to authenticate with Jenkins.
         :param str workflow_name: (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
@@ -481,7 +481,7 @@ class RemediationRecipeVerifyConfiguration(dict):
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> Optional[str]:
         """
-        (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         """
         return pulumi.get(self, "repository_url")
 
@@ -628,7 +628,7 @@ class VulnerabilityAuditApplicationDependency(dict):
         :param str node_id: Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
         :param Sequence[str] application_dependency_node_ids: List of application dependencies on which this application dependency depends, each identified by its nodeId.
         :param str gav: Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example: org.graalvm.nativeimage:svm:21.1.0. "N/A" for non-maven artifacts.
-        :param str purl: Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        :param str purl: Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
         pulumi.set(__self__, "node_id", node_id)
         if application_dependency_node_ids is not None:
@@ -666,7 +666,7 @@ class VulnerabilityAuditApplicationDependency(dict):
     @pulumi.getter
     def purl(self) -> Optional[str]:
         """
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL defined in <https://github.com/package-url/purl-spec>, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
         return pulumi.get(self, "purl")
 
@@ -834,8 +834,7 @@ class VulnerabilityAuditUsageData(dict):
         :param str bucket: The Object Storage bucket to read the usage data from.
         :param str namespace: The Object Storage namespace to read the usage data from.
         :param str object: The Object Storage object name to read the usage data from.
-        :param str source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-               
+        :param str source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -873,8 +872,7 @@ class VulnerabilityAuditUsageData(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1251,7 +1249,7 @@ class GetRemediationRecipeScmConfigurationResult(dict):
         :param bool is_automerge_enabled: If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
         :param str oci_code_repository_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
         :param str pat_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
-        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         :param str scm_type: The type of Source Code Management.
         :param str username: The username that will be used to authenticate with Jenkins.
         """
@@ -1317,7 +1315,7 @@ class GetRemediationRecipeScmConfigurationResult(dict):
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> str:
         """
-        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         """
         return pulumi.get(self, "repository_url")
 
@@ -1358,7 +1356,7 @@ class GetRemediationRecipeVerifyConfigurationResult(dict):
         :param str job_name: The name of the Jenkins pipeline job that identifies the build pipeline.
         :param str pat_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
         :param str pipeline_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
-        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         :param str trigger_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
         :param str username: The username that will be used to authenticate with Jenkins.
         :param str workflow_name: The name of the GitHub Actions workflow that defines the build pipeline.
@@ -1426,7 +1424,7 @@ class GetRemediationRecipeVerifyConfigurationResult(dict):
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> str:
         """
-        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         """
         return pulumi.get(self, "repository_url")
 
@@ -1776,7 +1774,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult
         :param bool is_automerge_enabled: If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
         :param str oci_code_repository_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
         :param str pat_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
-        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         :param str scm_type: The type of Source Code Management.
         :param str username: The username that will be used to authenticate with Jenkins.
         """
@@ -1842,7 +1840,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> str:
         """
-        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         """
         return pulumi.get(self, "repository_url")
 
@@ -1883,7 +1881,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationRes
         :param str job_name: The name of the Jenkins pipeline job that identifies the build pipeline.
         :param str pat_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
         :param str pipeline_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
-        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         :param str trigger_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
         :param str username: The username that will be used to authenticate with Jenkins.
         :param str workflow_name: The name of the GitHub Actions workflow that defines the build pipeline.
@@ -1951,7 +1949,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationRes
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> str:
         """
-        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is <https://github.com/[owner]/[repoName]> For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         """
         return pulumi.get(self, "repository_url")
 
@@ -2011,7 +2009,7 @@ class GetRemediationRunApplicationDependencyRecommendationsApplicationDependency
         :param Sequence[str] application_dependency_node_ids: List of (application dependencies) node identifiers from which this node depends.
         :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
         :param str node_id: Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
-        :param str purl: A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        :param str purl: A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
         :param str recommended_gav: Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
         :param str recommended_purl: Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
         """
@@ -2050,7 +2048,7 @@ class GetRemediationRunApplicationDependencyRecommendationsApplicationDependency
     @pulumi.getter
     def purl(self) -> str:
         """
-        A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
         """
         return pulumi.get(self, "purl")
 
@@ -2803,7 +2801,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
         :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
         :param bool is_found_in_knowledge_base: Indicates if the artifact is found in the knowledge base.
         :param str node_id: Unique identifier of an application dependency, for example nodeId1.
-        :param str purl: A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        :param str purl: A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
         :param Sequence['GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArgs'] vulnerabilities: List of vulnerabilities for the application dependency.
         """
         pulumi.set(__self__, "application_dependency_node_ids", application_dependency_node_ids)
@@ -2849,7 +2847,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     @pulumi.getter
     def purl(self) -> str:
         """
-        A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        A filter to return only resources that match the entire PURL given (<https://github.com/package-url/purl-spec/)>.
         """
         return pulumi.get(self, "purl")
 

@@ -102,11 +102,11 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string InnodbBufferPoolSize;
         /// <summary>
-        /// innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        /// innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size&gt;)
         /// </summary>
         public readonly string InnodbDdlBufferSize;
         /// <summary>
-        /// innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        /// innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (&lt;https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads&gt;)
         /// </summary>
         public readonly int InnodbDdlThreads;
         /// <summary>
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string QueryPreallocSize;
         /// <summary>
-        /// regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        /// regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (&lt;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit&gt;)
         /// </summary>
         public readonly int RegexpTimeLimit;
         /// <summary>

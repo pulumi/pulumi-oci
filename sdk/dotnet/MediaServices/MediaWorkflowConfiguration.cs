@@ -104,8 +104,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableArray<Outputs.MediaWorkflowConfigurationLock>> Locks { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue 
-        /// 
+        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -235,8 +234,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue 
-        /// 
+        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -310,8 +308,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue 
-        /// 
+        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

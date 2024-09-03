@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
         /// For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
         /// For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

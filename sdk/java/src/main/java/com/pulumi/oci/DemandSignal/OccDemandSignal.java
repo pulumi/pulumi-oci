@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
  * 
  * Creates a OccDemandSignal.
  * 
- *   Updates the data of an OccDemandSignal.
+ * Updates the data of an OccDemandSignal.
  * 
  * ## Example Usage
  * 

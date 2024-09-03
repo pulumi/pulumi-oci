@@ -30,7 +30,6 @@ class VirtualDeploymentArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['VirtualDeploymentAccessLoggingArgs'] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -75,7 +74,6 @@ class VirtualDeploymentArgs:
     def virtual_service_id(self) -> pulumi.Input[str]:
         """
         The OCID of the service mesh in which this access policy is created.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -204,7 +202,6 @@ class _VirtualDeploymentState:
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -400,7 +397,6 @@ class _VirtualDeploymentState:
         """
         The OCID of the service mesh in which this access policy is created.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -482,7 +478,6 @@ class VirtualDeployment(pulumi.CustomResource):
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[Union['VirtualDeploymentServiceDiscoveryArgs', 'VirtualDeploymentServiceDiscoveryArgsDict']] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -635,7 +630,6 @@ class VirtualDeployment(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -768,7 +762,6 @@ class VirtualDeployment(pulumi.CustomResource):
     def virtual_service_id(self) -> pulumi.Output[str]:
         """
         The OCID of the service mesh in which this access policy is created.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

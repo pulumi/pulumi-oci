@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataCatalog
         /// 
         /// Returns a list of all metastores in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DataCatalog
         /// This data source provides the list of Metastores in Oracle Cloud Infrastructure Data Catalog service.
         /// 
         /// Returns a list of all metastores in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

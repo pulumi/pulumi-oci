@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// 
         /// Lists all Delegated Resource Access Requests in the compartment. Note that only one of lifecycleState or requestStatus query parameter can be used.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// This data source provides the list of Delegated Resource Access Requests in Oracle Cloud Infrastructure Delegate Access Control service.
         /// 
         /// Lists all Delegated Resource Access Requests in the compartment. Note that only one of lifecycleState or requestStatus query parameter can be used.
-        /// 
         /// 
         /// ## Example Usage
         /// 

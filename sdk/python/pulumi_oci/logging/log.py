@@ -35,7 +35,6 @@ class LogArgs:
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
         :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -143,7 +142,6 @@ class LogArgs:
         """
         (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -181,7 +179,6 @@ class _LogState:
         :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
         :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -319,7 +316,6 @@ class _LogState:
         """
         (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -446,7 +442,6 @@ class Log(pulumi.CustomResource):
         :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
         :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -592,7 +587,6 @@ class Log(pulumi.CustomResource):
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
         :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The pipeline state.
@@ -688,7 +682,6 @@ class Log(pulumi.CustomResource):
     def retention_duration(self) -> pulumi.Output[int]:
         """
         (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

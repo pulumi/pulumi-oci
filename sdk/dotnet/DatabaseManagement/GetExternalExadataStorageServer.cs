@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the summary for the Exadata storage server specified by exadataStorageServerId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the summary for the Exadata storage server specified by exadataStorageServerId.
-        /// 
         /// 
         /// ## Example Usage
         /// 

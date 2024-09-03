@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Masking Policy Masking Objects in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

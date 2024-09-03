@@ -21,7 +21,6 @@ class VolumeBackupPolicyAssignmentArgs:
         :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -46,7 +45,6 @@ class VolumeBackupPolicyAssignmentArgs:
         """
         The OCID of the volume backup policy to assign to the volume.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -67,7 +65,6 @@ class _VolumeBackupPolicyAssignmentState:
         Input properties used for looking up and filtering VolumeBackupPolicyAssignment resources.
         :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -97,7 +94,6 @@ class _VolumeBackupPolicyAssignmentState:
     def policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the volume backup policy to assign to the volume.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -159,7 +155,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -252,7 +247,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -279,7 +273,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     def policy_id(self) -> pulumi.Output[str]:
         """
         The OCID of the volume backup policy to assign to the volume.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

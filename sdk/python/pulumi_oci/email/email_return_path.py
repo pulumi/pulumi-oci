@@ -21,8 +21,7 @@ class EmailReturnPathArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EmailReturnPath resource.
-        :param pulumi.Input[str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path. 
-               
+        :param pulumi.Input[str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -45,8 +44,7 @@ class EmailReturnPathArgs:
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> pulumi.Input[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path. 
-
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,8 +130,7 @@ class _EmailReturnPathState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param pulumi.Input[str] name: The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
-        :param pulumi.Input[str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path. 
-               
+        :param pulumi.Input[str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -269,8 +266,7 @@ class _EmailReturnPathState:
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path. 
-
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -378,8 +374,7 @@ class EmailReturnPath(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A string that describes the details about the email return path. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
-        :param pulumi.Input[str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path. 
-               
+        :param pulumi.Input[str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -503,8 +498,7 @@ class EmailReturnPath(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param pulumi.Input[str] name: The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
-        :param pulumi.Input[str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path. 
-               
+        :param pulumi.Input[str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -600,8 +594,7 @@ class EmailReturnPath(pulumi.CustomResource):
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path. 
-
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

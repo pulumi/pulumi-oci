@@ -76,7 +76,6 @@ export class AnnouncementSubscriptionsFilterGroup extends pulumi.CustomResource 
     /**
      * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -130,7 +129,6 @@ export interface AnnouncementSubscriptionsFilterGroupState {
     /**
      * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -151,7 +149,6 @@ export interface AnnouncementSubscriptionsFilterGroupArgs {
     filters: pulumi.Input<pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionsFilterGroupFilter>[]>;
     /**
      * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

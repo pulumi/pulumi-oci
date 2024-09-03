@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of resources and their category assignments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns a list of resources and their category assignments.
-        /// 
         /// 
         /// ## Example Usage
         /// 

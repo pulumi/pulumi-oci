@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Returns a list of MediaWorkflowTaskDeclarations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.MediaServices
         /// This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
         /// 
         /// Returns a list of MediaWorkflowTaskDeclarations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

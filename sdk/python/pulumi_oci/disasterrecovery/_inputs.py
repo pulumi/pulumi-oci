@@ -531,8 +531,7 @@ class DrPlanPlanGroupArgs:
         :param pulumi.Input[str] id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param pulumi.Input[bool] is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]] steps: The list of steps in the group.
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
-               
+        :param pulumi.Input[str] type: The type of DR plan to be created.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -600,8 +599,7 @@ class DrPlanPlanGroupArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR plan to be created. 
-
+        The type of DR plan to be created.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -633,8 +631,7 @@ class DrPlanPlanGroupStepArgs:
         :param pulumi.Input[bool] is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
         :param pulumi.Input[str] member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         :param pulumi.Input[int] timeout: The timeout in seconds for executing this step.  Example: `600`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
-               
+        :param pulumi.Input[str] type: The type of DR plan to be created.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -747,8 +744,7 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR plan to be created. 
-
+        The type of DR plan to be created.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1113,11 +1109,11 @@ class DrProtectionGroupMemberArgs:
         """
         :param pulumi.Input[str] member_id: (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         :param pulumi.Input[str] member_type: (Updatable) The type of the member.
-        :param pulumi.Input[str] autonomous_database_standby_type_for_dr_drills: (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        :param pulumi.Input[str] autonomous_database_standby_type_for_dr_drills: (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]] backend_set_mappings: (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]] block_volume_operations: (Updatable) A list of operations performed on block volumes used by the compute instance.
         :param pulumi.Input[str] bucket: (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
-        :param pulumi.Input[str] connection_string_type: (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        :param pulumi.Input[str] connection_string_type: (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
         :param pulumi.Input[str] destination_availability_domain: (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
         :param pulumi.Input[str] destination_capacity_reservation_id: (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param pulumi.Input[str] destination_compartment_id: (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -1205,7 +1201,7 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="autonomousDatabaseStandbyTypeForDrDrills")
     def autonomous_database_standby_type_for_dr_drills(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html> for information about these clone types. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html> for information about snapshot standby.
         """
         return pulumi.get(self, "autonomous_database_standby_type_for_dr_drills")
 
@@ -1253,7 +1249,7 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="connectionStringType")
     def connection_string_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See <https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html> for information about these service types.
         """
         return pulumi.get(self, "connection_string_type")
 

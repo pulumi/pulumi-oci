@@ -33,8 +33,7 @@ class ListenerArgs:
         :param pulumi.Input[bool] is_ppv2enabled: (Updatable) Property to enable/disable PPv2 feature for this listener.
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param pulumi.Input[int] tcp_idle_timeout: (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
-        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-               
+        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -154,8 +153,7 @@ class ListenerArgs:
     @pulumi.getter(name="udpIdleTimeout")
     def udp_idle_timeout(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-
+        (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,8 +187,7 @@ class _ListenerState:
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
         :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         :param pulumi.Input[int] tcp_idle_timeout: (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
-        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-               
+        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -314,8 +311,7 @@ class _ListenerState:
     @pulumi.getter(name="udpIdleTimeout")
     def udp_idle_timeout(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-
+        (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -383,8 +379,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
         :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         :param pulumi.Input[int] tcp_idle_timeout: (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
-        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-               
+        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -510,8 +505,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
         :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         :param pulumi.Input[int] tcp_idle_timeout: (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
-        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-               
+        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -599,8 +593,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="udpIdleTimeout")
     def udp_idle_timeout(self) -> pulumi.Output[int]:
         """
-        (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
-
+        (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

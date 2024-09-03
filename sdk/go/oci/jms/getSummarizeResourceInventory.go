@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
 //
-// Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
+// Retrieve the inventory of JMS resources in the specified compartment: a list of the number of *active* fleets, managed instances, Java Runtimes, Java installations, and applications.
 //
 // ## Example Usage
 //
@@ -64,7 +64,7 @@ type GetSummarizeResourceInventoryArgs struct {
 
 // A collection of values returned by getSummarizeResourceInventory.
 type GetSummarizeResourceInventoryResult struct {
-	// The number of _active_ fleets.
+	// The number of *active* fleets.
 	ActiveFleetCount int `pulumi:"activeFleetCount"`
 	// The number of applications.
 	ApplicationCount int     `pulumi:"applicationCount"`
@@ -123,7 +123,7 @@ func (o GetSummarizeResourceInventoryResultOutput) ToGetSummarizeResourceInvento
 	return o
 }
 
-// The number of _active_ fleets.
+// The number of *active* fleets.
 func (o GetSummarizeResourceInventoryResultOutput) ActiveFleetCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) int { return v.ActiveFleetCount }).(pulumi.IntOutput)
 }

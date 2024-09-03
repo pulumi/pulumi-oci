@@ -137,7 +137,6 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * OCID for the parent software source, if there is one
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -302,7 +301,6 @@ export interface SoftwareSourceState {
     /**
      * OCID for the parent software source, if there is one
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -375,7 +373,6 @@ export interface SoftwareSourceArgs {
     maintainerPhone?: pulumi.Input<string>;
     /**
      * OCID for the parent software source, if there is one
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

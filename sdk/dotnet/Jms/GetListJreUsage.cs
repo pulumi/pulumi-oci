@@ -180,11 +180,11 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly ImmutableArray<Outputs.GetListJreUsageItemResult> Items;
         /// <summary>
-        /// Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+        /// Upper bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
         /// </summary>
         public readonly string? TimeEnd;
         /// <summary>
-        /// Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+        /// Lower bound of the specified time period filter. JMS provides a view of the data that is *per day*. The query uses only the date element of the parameter.
         /// </summary>
         public readonly string? TimeStart;
 

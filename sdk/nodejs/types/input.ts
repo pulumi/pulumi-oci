@@ -27343,54 +27343,58 @@ export namespace Database {
 
     export interface VmClusterNetworkVmNetwork {
         /**
-         * The network domain name.
+         * (Updatable) The network domain name.
          */
         domainName?: pulumi.Input<string>;
         /**
-         * The network gateway.
+         * (Updatable) The network gateway.
          */
         gateway?: pulumi.Input<string>;
         /**
-         * The network netmask.
+         * (Updatable) The network netmask.
          */
         netmask?: pulumi.Input<string>;
         /**
-         * The network type.
+         * (Updatable) The network type.
          */
         networkType: pulumi.Input<string>;
         /**
-         * The list of node details.
+         * (Updatable) The list of node details.
          */
         nodes: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkVmNetworkNode>[]>;
         /**
-         * The network VLAN ID.
+         * (Updatable) The network VLAN ID.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vlanId?: pulumi.Input<string>;
     }
 
     export interface VmClusterNetworkVmNetworkNode {
         /**
-         * The Db server associated with the node.
+         * (Updatable) The Db server associated with the node.
          */
         dbServerId?: pulumi.Input<string>;
         /**
-         * The node host name.
+         * (Updatable) The node host name.
          */
         hostname: pulumi.Input<string>;
         /**
-         * The node IP address.
+         * (Updatable) The node IP address.
          */
         ip: pulumi.Input<string>;
         /**
-         * The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+         * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
          */
         state?: pulumi.Input<string>;
         /**
-         * The node virtual IP (VIP) address.
+         * (Updatable) The node virtual IP (VIP) address.
          */
         vip?: pulumi.Input<string>;
         /**
-         * The node virtual IP (VIP) host name.
+         * (Updatable) The node virtual IP (VIP) host name.
          */
         vipHostname?: pulumi.Input<string>;
     }
@@ -66652,17 +66656,41 @@ export namespace ManagementAgent {
     }
 
     export interface ManagementAgentDataSourceList {
+        /**
+         * Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+         */
         allowMetrics?: pulumi.Input<string>;
+        /**
+         * Compartment owning this DataSource.
+         */
         compartmentId?: pulumi.Input<string>;
+        /**
+         * Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+         */
         connectionTimeout?: pulumi.Input<number>;
+        /**
+         * If the Kubernetes cluster type is Daemon set then this will be set to true.
+         */
         isDaemonSet?: pulumi.Input<boolean>;
+        /**
+         * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+         */
         key?: pulumi.Input<string>;
+        /**
+         * The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+         */
         metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceListMetricDimension>[]>;
         /**
          * Name of the property
          */
         name?: pulumi.Input<string>;
+        /**
+         * The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+         */
         namespace?: pulumi.Input<string>;
+        /**
+         * The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+         */
         proxyUrl?: pulumi.Input<string>;
         /**
          * Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
@@ -66707,6 +66735,9 @@ export namespace ManagementAgent {
          * Name of the property
          */
         name?: pulumi.Input<string>;
+        /**
+         * Value of the metric dimension
+         */
         value?: pulumi.Input<string>;
     }
 
@@ -66722,7 +66753,13 @@ export namespace ManagementAgent {
     }
 
     export interface ManagementAgentDataSourceSummaryList {
+        /**
+         * If the Kubernetes cluster type is Daemon set then this will be set to true.
+         */
         isDaemonSet?: pulumi.Input<boolean>;
+        /**
+         * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+         */
         key?: pulumi.Input<string>;
         /**
          * Name of the property

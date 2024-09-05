@@ -16,6 +16,10 @@ public final class ManagementAgentDataSourceListMetricDimension {
      * 
      */
     private @Nullable String name;
+    /**
+     * @return Value of the metric dimension
+     * 
+     */
     private @Nullable String value;
 
     private ManagementAgentDataSourceListMetricDimension() {}
@@ -26,6 +30,10 @@ public final class ManagementAgentDataSourceListMetricDimension {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return Value of the metric dimension
+     * 
+     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }

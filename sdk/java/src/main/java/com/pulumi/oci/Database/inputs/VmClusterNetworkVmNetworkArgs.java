@@ -19,14 +19,14 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
     public static final VmClusterNetworkVmNetworkArgs Empty = new VmClusterNetworkVmNetworkArgs();
 
     /**
-     * The network domain name.
+     * (Updatable) The network domain name.
      * 
      */
     @Import(name="domainName")
     private @Nullable Output<String> domainName;
 
     /**
-     * @return The network domain name.
+     * @return (Updatable) The network domain name.
      * 
      */
     public Optional<Output<String>> domainName() {
@@ -34,14 +34,14 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The network gateway.
+     * (Updatable) The network gateway.
      * 
      */
     @Import(name="gateway")
     private @Nullable Output<String> gateway;
 
     /**
-     * @return The network gateway.
+     * @return (Updatable) The network gateway.
      * 
      */
     public Optional<Output<String>> gateway() {
@@ -49,14 +49,14 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The network netmask.
+     * (Updatable) The network netmask.
      * 
      */
     @Import(name="netmask")
     private @Nullable Output<String> netmask;
 
     /**
-     * @return The network netmask.
+     * @return (Updatable) The network netmask.
      * 
      */
     public Optional<Output<String>> netmask() {
@@ -64,14 +64,14 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The network type.
+     * (Updatable) The network type.
      * 
      */
     @Import(name="networkType", required=true)
     private Output<String> networkType;
 
     /**
-     * @return The network type.
+     * @return (Updatable) The network type.
      * 
      */
     public Output<String> networkType() {
@@ -79,14 +79,14 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The list of node details.
+     * (Updatable) The list of node details.
      * 
      */
     @Import(name="nodes", required=true)
     private Output<List<VmClusterNetworkVmNetworkNodeArgs>> nodes;
 
     /**
-     * @return The list of node details.
+     * @return (Updatable) The list of node details.
      * 
      */
     public Output<List<VmClusterNetworkVmNetworkNodeArgs>> nodes() {
@@ -94,14 +94,20 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The network VLAN ID.
+     * (Updatable) The network VLAN ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="vlanId")
     private @Nullable Output<String> vlanId;
 
     /**
-     * @return The network VLAN ID.
+     * @return (Updatable) The network VLAN ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vlanId() {
@@ -138,7 +144,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param domainName The network domain name.
+         * @param domainName (Updatable) The network domain name.
          * 
          * @return builder
          * 
@@ -149,7 +155,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param domainName The network domain name.
+         * @param domainName (Updatable) The network domain name.
          * 
          * @return builder
          * 
@@ -159,7 +165,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param gateway The network gateway.
+         * @param gateway (Updatable) The network gateway.
          * 
          * @return builder
          * 
@@ -170,7 +176,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param gateway The network gateway.
+         * @param gateway (Updatable) The network gateway.
          * 
          * @return builder
          * 
@@ -180,7 +186,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param netmask The network netmask.
+         * @param netmask (Updatable) The network netmask.
          * 
          * @return builder
          * 
@@ -191,7 +197,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param netmask The network netmask.
+         * @param netmask (Updatable) The network netmask.
          * 
          * @return builder
          * 
@@ -201,7 +207,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param networkType The network type.
+         * @param networkType (Updatable) The network type.
          * 
          * @return builder
          * 
@@ -212,7 +218,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param networkType The network type.
+         * @param networkType (Updatable) The network type.
          * 
          * @return builder
          * 
@@ -222,7 +228,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodes The list of node details.
+         * @param nodes (Updatable) The list of node details.
          * 
          * @return builder
          * 
@@ -233,7 +239,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodes The list of node details.
+         * @param nodes (Updatable) The list of node details.
          * 
          * @return builder
          * 
@@ -243,7 +249,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodes The list of node details.
+         * @param nodes (Updatable) The list of node details.
          * 
          * @return builder
          * 
@@ -253,7 +259,10 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param vlanId The network VLAN ID.
+         * @param vlanId (Updatable) The network VLAN ID.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -264,7 +273,10 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param vlanId The network VLAN ID.
+         * @param vlanId (Updatable) The network VLAN ID.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

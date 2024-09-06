@@ -17,6 +17,9 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// Name of the property
         /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// Value of the metric dimension
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

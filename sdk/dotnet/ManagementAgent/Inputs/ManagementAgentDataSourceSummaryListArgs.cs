@@ -12,9 +12,15 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
 
     public sealed class ManagementAgentDataSourceSummaryListArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// If the Kubernetes cluster type is Daemon set then this will be set to true.
+        /// </summary>
         [Input("isDaemonSet")]
         public Input<bool>? IsDaemonSet { get; set; }
 
+        /// <summary>
+        /// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 

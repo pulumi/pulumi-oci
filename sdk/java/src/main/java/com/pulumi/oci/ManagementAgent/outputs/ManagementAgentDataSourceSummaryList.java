@@ -12,7 +12,15 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ManagementAgentDataSourceSummaryList {
+    /**
+     * @return If the Kubernetes cluster type is Daemon set then this will be set to true.
+     * 
+     */
     private @Nullable Boolean isDaemonSet;
+    /**
+     * @return Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+     * 
+     */
     private @Nullable String key;
     /**
      * @return Name of the property
@@ -26,9 +34,17 @@ public final class ManagementAgentDataSourceSummaryList {
     private @Nullable String type;
 
     private ManagementAgentDataSourceSummaryList() {}
+    /**
+     * @return If the Kubernetes cluster type is Daemon set then this will be set to true.
+     * 
+     */
     public Optional<Boolean> isDaemonSet() {
         return Optional.ofNullable(this.isDaemonSet);
     }
+    /**
+     * @return Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+     * 
+     */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }

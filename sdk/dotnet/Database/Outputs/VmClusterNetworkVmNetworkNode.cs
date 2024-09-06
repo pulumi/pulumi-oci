@@ -14,27 +14,27 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class VmClusterNetworkVmNetworkNode
     {
         /// <summary>
-        /// The Db server associated with the node.
+        /// (Updatable) The Db server associated with the node.
         /// </summary>
         public readonly string? DbServerId;
         /// <summary>
-        /// The node host name.
+        /// (Updatable) The node host name.
         /// </summary>
         public readonly string Hostname;
         /// <summary>
-        /// The node IP address.
+        /// (Updatable) The node IP address.
         /// </summary>
         public readonly string Ip;
         /// <summary>
-        /// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        /// (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// The node virtual IP (VIP) address.
+        /// (Updatable) The node virtual IP (VIP) address.
         /// </summary>
         public readonly string? Vip;
         /// <summary>
-        /// The node virtual IP (VIP) host name.
+        /// (Updatable) The node virtual IP (VIP) host name.
         /// </summary>
         public readonly string? VipHostname;
 

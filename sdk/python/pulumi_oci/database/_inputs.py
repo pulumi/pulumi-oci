@@ -11517,12 +11517,16 @@ class VmClusterNetworkVmNetworkArgs:
                  netmask: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] network_type: The network type.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]] nodes: The list of node details.
-        :param pulumi.Input[str] domain_name: The network domain name.
-        :param pulumi.Input[str] gateway: The network gateway.
-        :param pulumi.Input[str] netmask: The network netmask.
-        :param pulumi.Input[str] vlan_id: The network VLAN ID.
+        :param pulumi.Input[str] network_type: (Updatable) The network type.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]] nodes: (Updatable) The list of node details.
+        :param pulumi.Input[str] domain_name: (Updatable) The network domain name.
+        :param pulumi.Input[str] gateway: (Updatable) The network gateway.
+        :param pulumi.Input[str] netmask: (Updatable) The network netmask.
+        :param pulumi.Input[str] vlan_id: (Updatable) The network VLAN ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "nodes", nodes)
@@ -11539,7 +11543,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter(name="networkType")
     def network_type(self) -> pulumi.Input[str]:
         """
-        The network type.
+        (Updatable) The network type.
         """
         return pulumi.get(self, "network_type")
 
@@ -11551,7 +11555,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter
     def nodes(self) -> pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]]:
         """
-        The list of node details.
+        (Updatable) The list of node details.
         """
         return pulumi.get(self, "nodes")
 
@@ -11563,7 +11567,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter(name="domainName")
     def domain_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The network domain name.
+        (Updatable) The network domain name.
         """
         return pulumi.get(self, "domain_name")
 
@@ -11575,7 +11579,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter
     def gateway(self) -> Optional[pulumi.Input[str]]:
         """
-        The network gateway.
+        (Updatable) The network gateway.
         """
         return pulumi.get(self, "gateway")
 
@@ -11587,7 +11591,7 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter
     def netmask(self) -> Optional[pulumi.Input[str]]:
         """
-        The network netmask.
+        (Updatable) The network netmask.
         """
         return pulumi.get(self, "netmask")
 
@@ -11599,7 +11603,11 @@ class VmClusterNetworkVmNetworkArgs:
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The network VLAN ID.
+        (Updatable) The network VLAN ID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vlan_id")
 
@@ -11618,12 +11626,12 @@ class VmClusterNetworkVmNetworkNodeArgs:
                  vip: Optional[pulumi.Input[str]] = None,
                  vip_hostname: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] hostname: The node host name.
-        :param pulumi.Input[str] ip: The node IP address.
-        :param pulumi.Input[str] db_server_id: The Db server associated with the node.
-        :param pulumi.Input[str] state: The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        :param pulumi.Input[str] vip: The node virtual IP (VIP) address.
-        :param pulumi.Input[str] vip_hostname: The node virtual IP (VIP) host name.
+        :param pulumi.Input[str] hostname: (Updatable) The node host name.
+        :param pulumi.Input[str] ip: (Updatable) The node IP address.
+        :param pulumi.Input[str] db_server_id: (Updatable) The Db server associated with the node.
+        :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        :param pulumi.Input[str] vip: (Updatable) The node virtual IP (VIP) address.
+        :param pulumi.Input[str] vip_hostname: (Updatable) The node virtual IP (VIP) host name.
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
@@ -11640,7 +11648,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
         """
-        The node host name.
+        (Updatable) The node host name.
         """
         return pulumi.get(self, "hostname")
 
@@ -11652,7 +11660,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter
     def ip(self) -> pulumi.Input[str]:
         """
-        The node IP address.
+        (Updatable) The node IP address.
         """
         return pulumi.get(self, "ip")
 
@@ -11664,7 +11672,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter(name="dbServerId")
     def db_server_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The Db server associated with the node.
+        (Updatable) The Db server associated with the node.
         """
         return pulumi.get(self, "db_server_id")
 
@@ -11676,7 +11684,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -11688,7 +11696,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter
     def vip(self) -> Optional[pulumi.Input[str]]:
         """
-        The node virtual IP (VIP) address.
+        (Updatable) The node virtual IP (VIP) address.
         """
         return pulumi.get(self, "vip")
 
@@ -11700,7 +11708,7 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @pulumi.getter(name="vipHostname")
     def vip_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        The node virtual IP (VIP) host name.
+        (Updatable) The node virtual IP (VIP) host name.
         """
         return pulumi.get(self, "vip_hostname")
 

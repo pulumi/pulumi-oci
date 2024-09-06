@@ -172,9 +172,6 @@ namespace Pulumi.Oci.Database
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
-        /// <summary>
-        /// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
-        /// </summary>
         [Output("validateVmClusterNetwork")]
         public Output<bool?> ValidateVmClusterNetwork { get; private set; } = null!;
 
@@ -185,7 +182,7 @@ namespace Pulumi.Oci.Database
         public Output<string> VmClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// Details of the client and backup networks.
+        /// (Updatable) Details of the client and backup networks.
         /// </summary>
         [Output("vmNetworks")]
         public Output<ImmutableArray<Outputs.VmClusterNetworkVmNetwork>> VmNetworks { get; private set; } = null!;
@@ -329,9 +326,6 @@ namespace Pulumi.Oci.Database
             set => _scans = value;
         }
 
-        /// <summary>
-        /// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
-        /// </summary>
         [Input("validateVmClusterNetwork")]
         public Input<bool>? ValidateVmClusterNetwork { get; set; }
 
@@ -339,7 +333,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.VmClusterNetworkVmNetworkArgs>? _vmNetworks;
 
         /// <summary>
-        /// Details of the client and backup networks.
+        /// (Updatable) Details of the client and backup networks.
         /// </summary>
         public InputList<Inputs.VmClusterNetworkVmNetworkArgs> VmNetworks
         {
@@ -466,9 +460,6 @@ namespace Pulumi.Oci.Database
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
-        /// <summary>
-        /// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
-        /// </summary>
         [Input("validateVmClusterNetwork")]
         public Input<bool>? ValidateVmClusterNetwork { get; set; }
 
@@ -482,7 +473,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.VmClusterNetworkVmNetworkGetArgs>? _vmNetworks;
 
         /// <summary>
-        /// Details of the client and backup networks.
+        /// (Updatable) Details of the client and backup networks.
         /// </summary>
         public InputList<Inputs.VmClusterNetworkVmNetworkGetArgs> VmNetworks
         {

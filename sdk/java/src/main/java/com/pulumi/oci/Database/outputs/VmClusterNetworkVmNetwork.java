@@ -15,74 +15,80 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VmClusterNetworkVmNetwork {
     /**
-     * @return The network domain name.
+     * @return (Updatable) The network domain name.
      * 
      */
     private @Nullable String domainName;
     /**
-     * @return The network gateway.
+     * @return (Updatable) The network gateway.
      * 
      */
     private @Nullable String gateway;
     /**
-     * @return The network netmask.
+     * @return (Updatable) The network netmask.
      * 
      */
     private @Nullable String netmask;
     /**
-     * @return The network type.
+     * @return (Updatable) The network type.
      * 
      */
     private String networkType;
     /**
-     * @return The list of node details.
+     * @return (Updatable) The list of node details.
      * 
      */
     private List<VmClusterNetworkVmNetworkNode> nodes;
     /**
-     * @return The network VLAN ID.
+     * @return (Updatable) The network VLAN ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String vlanId;
 
     private VmClusterNetworkVmNetwork() {}
     /**
-     * @return The network domain name.
+     * @return (Updatable) The network domain name.
      * 
      */
     public Optional<String> domainName() {
         return Optional.ofNullable(this.domainName);
     }
     /**
-     * @return The network gateway.
+     * @return (Updatable) The network gateway.
      * 
      */
     public Optional<String> gateway() {
         return Optional.ofNullable(this.gateway);
     }
     /**
-     * @return The network netmask.
+     * @return (Updatable) The network netmask.
      * 
      */
     public Optional<String> netmask() {
         return Optional.ofNullable(this.netmask);
     }
     /**
-     * @return The network type.
+     * @return (Updatable) The network type.
      * 
      */
     public String networkType() {
         return this.networkType;
     }
     /**
-     * @return The list of node details.
+     * @return (Updatable) The list of node details.
      * 
      */
     public List<VmClusterNetworkVmNetworkNode> nodes() {
         return this.nodes;
     }
     /**
-     * @return The network VLAN ID.
+     * @return (Updatable) The network VLAN ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> vlanId() {

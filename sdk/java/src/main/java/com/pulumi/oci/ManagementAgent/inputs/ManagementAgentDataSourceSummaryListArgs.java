@@ -16,16 +16,32 @@ public final class ManagementAgentDataSourceSummaryListArgs extends com.pulumi.r
 
     public static final ManagementAgentDataSourceSummaryListArgs Empty = new ManagementAgentDataSourceSummaryListArgs();
 
+    /**
+     * If the Kubernetes cluster type is Daemon set then this will be set to true.
+     * 
+     */
     @Import(name="isDaemonSet")
     private @Nullable Output<Boolean> isDaemonSet;
 
+    /**
+     * @return If the Kubernetes cluster type is Daemon set then this will be set to true.
+     * 
+     */
     public Optional<Output<Boolean>> isDaemonSet() {
         return Optional.ofNullable(this.isDaemonSet);
     }
 
+    /**
+     * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+     * 
+     */
     @Import(name="key")
     private @Nullable Output<String> key;
 
+    /**
+     * @return Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+     * 
+     */
     public Optional<Output<String>> key() {
         return Optional.ofNullable(this.key);
     }
@@ -87,20 +103,44 @@ public final class ManagementAgentDataSourceSummaryListArgs extends com.pulumi.r
             $ = new ManagementAgentDataSourceSummaryListArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param isDaemonSet If the Kubernetes cluster type is Daemon set then this will be set to true.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isDaemonSet(@Nullable Output<Boolean> isDaemonSet) {
             $.isDaemonSet = isDaemonSet;
             return this;
         }
 
+        /**
+         * @param isDaemonSet If the Kubernetes cluster type is Daemon set then this will be set to true.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isDaemonSet(Boolean isDaemonSet) {
             return isDaemonSet(Output.of(isDaemonSet));
         }
 
+        /**
+         * @param key Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+         * 
+         * @return builder
+         * 
+         */
         public Builder key(@Nullable Output<String> key) {
             $.key = key;
             return this;
         }
 
+        /**
+         * @param key Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+         * 
+         * @return builder
+         * 
+         */
         public Builder key(String key) {
             return key(Output.of(key));
         }

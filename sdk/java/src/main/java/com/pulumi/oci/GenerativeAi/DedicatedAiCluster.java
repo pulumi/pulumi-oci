@@ -277,6 +277,7 @@ public class DedicatedAiCluster extends com.pulumi.resources.CustomResource {
      * * LLAMA2_70
      * * LARGE_GENERIC
      * * LARGE_COHERE_V2_2
+     * * LARGE_GENERIC_4
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -297,6 +298,7 @@ public class DedicatedAiCluster extends com.pulumi.resources.CustomResource {
      * * LLAMA2_70
      * * LARGE_GENERIC
      * * LARGE_COHERE_V2_2
+     * * LARGE_GENERIC_4
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

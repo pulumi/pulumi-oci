@@ -13,12 +13,20 @@ __all__ = [
     'OccAvailabilityCatalogDetailArgs',
     'OccAvailabilityCatalogMetadataDetailsArgs',
     'OccCapacityRequestDetailArgs',
+    'OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs',
     'OccCapacityRequestPatchOperationArgs',
+    'OccCustomerGroupCustomersListArgs',
+    'GetInternalNamespaceOccOverviewsFilterArgs',
     'GetInternalOccAvailabilityCatalogsFilterArgs',
+    'GetInternalOccHandoverResourceBlockDetailsFilterArgs',
+    'GetInternalOccHandoverResourceBlocksFilterArgs',
+    'GetNamespaceOccOverviewsFilterArgs',
     'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs',
     'GetOccAvailabilityCatalogsFilterArgs',
     'GetOccCapacityRequestsFilterArgs',
     'GetOccCustomerGroupsFilterArgs',
+    'GetOccHandoverResourceBlockDetailsFilterArgs',
+    'GetOccHandoverResourceBlocksFilterArgs',
 ]
 
 @pulumi.input_type
@@ -28,19 +36,25 @@ class OccAvailabilityCatalogDetailArgs:
                  catalog_id: Optional[pulumi.Input[str]] = None,
                  date_expected_capacity_handover: Optional[pulumi.Input[str]] = None,
                  date_final_customer_order: Optional[pulumi.Input[str]] = None,
+                 demanded_quantity: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_name: Optional[pulumi.Input[str]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 total_available_quantity: Optional[pulumi.Input[str]] = None,
                  unit: Optional[pulumi.Input[str]] = None,
                  workload_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] available_quantity: The quantity of available resource that the customer can request.
+        :param pulumi.Input[str] available_quantity: The quantity of resource currently available that the customer can request.
         :param pulumi.Input[str] catalog_id: The OCID of the availability catalog.
         :param pulumi.Input[str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param pulumi.Input[str] date_final_customer_order: The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+        :param pulumi.Input[str] demanded_quantity: The quantity of resource currently demanded by the customer.
         :param pulumi.Input[str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[str] resource_name: The name of the resource that the customer can request.
         :param pulumi.Input[str] resource_type: The different types of resources against which customers can place capacity requests.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[str] total_available_quantity: The total quantity of resource that the customer can request.
         :param pulumi.Input[str] unit: The unit in which the resource available is measured.
         :param pulumi.Input[str] workload_type: The type of workload (Generic/ROW).
         """
@@ -52,12 +66,18 @@ class OccAvailabilityCatalogDetailArgs:
             pulumi.set(__self__, "date_expected_capacity_handover", date_expected_capacity_handover)
         if date_final_customer_order is not None:
             pulumi.set(__self__, "date_final_customer_order", date_final_customer_order)
+        if demanded_quantity is not None:
+            pulumi.set(__self__, "demanded_quantity", demanded_quantity)
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
         if resource_name is not None:
             pulumi.set(__self__, "resource_name", resource_name)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if total_available_quantity is not None:
+            pulumi.set(__self__, "total_available_quantity", total_available_quantity)
         if unit is not None:
             pulumi.set(__self__, "unit", unit)
         if workload_type is not None:
@@ -67,7 +87,7 @@ class OccAvailabilityCatalogDetailArgs:
     @pulumi.getter(name="availableQuantity")
     def available_quantity(self) -> Optional[pulumi.Input[str]]:
         """
-        The quantity of available resource that the customer can request.
+        The quantity of resource currently available that the customer can request.
         """
         return pulumi.get(self, "available_quantity")
 
@@ -112,6 +132,18 @@ class OccAvailabilityCatalogDetailArgs:
         pulumi.set(self, "date_final_customer_order", value)
 
     @property
+    @pulumi.getter(name="demandedQuantity")
+    def demanded_quantity(self) -> Optional[pulumi.Input[str]]:
+        """
+        The quantity of resource currently demanded by the customer.
+        """
+        return pulumi.get(self, "demanded_quantity")
+
+    @demanded_quantity.setter
+    def demanded_quantity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "demanded_quantity", value)
+
+    @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
@@ -146,6 +178,30 @@ class OccAvailabilityCatalogDetailArgs:
     @resource_type.setter
     def resource_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
+    @pulumi.getter(name="totalAvailableQuantity")
+    def total_available_quantity(self) -> Optional[pulumi.Input[str]]:
+        """
+        The total quantity of resource that the customer can request.
+        """
+        return pulumi.get(self, "total_available_quantity")
+
+    @total_available_quantity.setter
+    def total_available_quantity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "total_available_quantity", value)
 
     @property
     @pulumi.getter
@@ -202,18 +258,24 @@ class OccCapacityRequestDetailArgs:
                  resource_type: pulumi.Input[str],
                  workload_type: pulumi.Input[str],
                  actual_handover_quantity: Optional[pulumi.Input[str]] = None,
+                 associated_occ_handover_resource_block_lists: Optional[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]] = None,
+                 availability_domain: Optional[pulumi.Input[str]] = None,
                  date_actual_handover: Optional[pulumi.Input[str]] = None,
                  date_expected_handover: Optional[pulumi.Input[str]] = None,
-                 expected_handover_quantity: Optional[pulumi.Input[str]] = None):
+                 expected_handover_quantity: Optional[pulumi.Input[str]] = None,
+                 source_workload_type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] demand_quantity: The number of compute server's with name <resourceName> required by the user.
         :param pulumi.Input[str] resource_name: The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
         :param pulumi.Input[str] resource_type: The type of the resource against which the user wants to place a capacity request.
         :param pulumi.Input[str] workload_type: The type of the workload (Generic/ROW).
         :param pulumi.Input[str] actual_handover_quantity: The actual handed over quantity of resources at the time of request resolution.
+        :param pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]] associated_occ_handover_resource_block_lists: A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        :param pulumi.Input[str] availability_domain: The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         :param pulumi.Input[str] date_actual_handover: The date on which the actual handover quantity of resources is delivered.
         :param pulumi.Input[str] date_expected_handover: The date on which the latest increment to supplied quantity of resources was delivered.
         :param pulumi.Input[str] expected_handover_quantity: The incremental quantity of resources supplied as the provisioning is underway.
+        :param pulumi.Input[str] source_workload_type: The WorkloadType from where capacity request are to be transferred.
         """
         pulumi.set(__self__, "demand_quantity", demand_quantity)
         pulumi.set(__self__, "resource_name", resource_name)
@@ -221,12 +283,18 @@ class OccCapacityRequestDetailArgs:
         pulumi.set(__self__, "workload_type", workload_type)
         if actual_handover_quantity is not None:
             pulumi.set(__self__, "actual_handover_quantity", actual_handover_quantity)
+        if associated_occ_handover_resource_block_lists is not None:
+            pulumi.set(__self__, "associated_occ_handover_resource_block_lists", associated_occ_handover_resource_block_lists)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if date_actual_handover is not None:
             pulumi.set(__self__, "date_actual_handover", date_actual_handover)
         if date_expected_handover is not None:
             pulumi.set(__self__, "date_expected_handover", date_expected_handover)
         if expected_handover_quantity is not None:
             pulumi.set(__self__, "expected_handover_quantity", expected_handover_quantity)
+        if source_workload_type is not None:
+            pulumi.set(__self__, "source_workload_type", source_workload_type)
 
     @property
     @pulumi.getter(name="demandQuantity")
@@ -289,6 +357,30 @@ class OccCapacityRequestDetailArgs:
         pulumi.set(self, "actual_handover_quantity", value)
 
     @property
+    @pulumi.getter(name="associatedOccHandoverResourceBlockLists")
+    def associated_occ_handover_resource_block_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]]:
+        """
+        A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        """
+        return pulumi.get(self, "associated_occ_handover_resource_block_lists")
+
+    @associated_occ_handover_resource_block_lists.setter
+    def associated_occ_handover_resource_block_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]]):
+        pulumi.set(self, "associated_occ_handover_resource_block_lists", value)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
     @pulumi.getter(name="dateActualHandover")
     def date_actual_handover(self) -> Optional[pulumi.Input[str]]:
         """
@@ -323,6 +415,57 @@ class OccCapacityRequestDetailArgs:
     @expected_handover_quantity.setter
     def expected_handover_quantity(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "expected_handover_quantity", value)
+
+    @property
+    @pulumi.getter(name="sourceWorkloadType")
+    def source_workload_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The WorkloadType from where capacity request are to be transferred.
+        """
+        return pulumi.get(self, "source_workload_type")
+
+    @source_workload_type.setter
+    def source_workload_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_workload_type", value)
+
+
+@pulumi.input_type
+class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs:
+    def __init__(__self__, *,
+                 handover_quantity: Optional[pulumi.Input[str]] = None,
+                 occ_handover_resource_block_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] handover_quantity: The total quantity of the resource that was made available to the customer as part of this resource block
+        :param pulumi.Input[str] occ_handover_resource_block_id: The OCID of the handed over resource block.
+        """
+        if handover_quantity is not None:
+            pulumi.set(__self__, "handover_quantity", handover_quantity)
+        if occ_handover_resource_block_id is not None:
+            pulumi.set(__self__, "occ_handover_resource_block_id", occ_handover_resource_block_id)
+
+    @property
+    @pulumi.getter(name="handoverQuantity")
+    def handover_quantity(self) -> Optional[pulumi.Input[str]]:
+        """
+        The total quantity of the resource that was made available to the customer as part of this resource block
+        """
+        return pulumi.get(self, "handover_quantity")
+
+    @handover_quantity.setter
+    def handover_quantity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "handover_quantity", value)
+
+    @property
+    @pulumi.getter(name="occHandoverResourceBlockId")
+    def occ_handover_resource_block_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the handed over resource block.
+        """
+        return pulumi.get(self, "occ_handover_resource_block_id")
+
+    @occ_handover_resource_block_id.setter
+    def occ_handover_resource_block_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "occ_handover_resource_block_id", value)
 
 
 @pulumi.input_type
@@ -425,7 +568,248 @@ class OccCapacityRequestPatchOperationArgs:
 
 
 @pulumi.input_type
+class OccCustomerGroupCustomersListArgs:
+    def __init__(__self__, *,
+                 display_name: pulumi.Input[str],
+                 tenancy_id: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 occ_customer_group_id: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: The display name for the customer.
+        :param pulumi.Input[str] tenancy_id: The OCID of the tenancy belonging to the customer.
+        :param pulumi.Input[str] description: The description about the customer group.
+        :param pulumi.Input[str] occ_customer_group_id: The OCID of the customer group.
+        :param pulumi.Input[str] status: To determine whether the customer is enabled/disabled.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if occ_customer_group_id is not None:
+            pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[str]:
+        """
+        The display name for the customer.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> pulumi.Input[str]:
+        """
+        The OCID of the tenancy belonging to the customer.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @tenancy_id.setter
+    def tenancy_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "tenancy_id", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The description about the customer group.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the customer group.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @occ_customer_group_id.setter
+    def occ_customer_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "occ_customer_group_id", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        To determine whether the customer is enabled/disabled.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+
+@pulumi.input_type
+class GetInternalNamespaceOccOverviewsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetInternalOccAvailabilityCatalogsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetInternalOccHandoverResourceBlockDetailsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetInternalOccHandoverResourceBlocksFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetNamespaceOccOverviewsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -582,6 +966,84 @@ class GetOccCapacityRequestsFilterArgs:
 
 @pulumi.input_type
 class GetOccCustomerGroupsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOccHandoverResourceBlockDetailsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOccHandoverResourceBlocksFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

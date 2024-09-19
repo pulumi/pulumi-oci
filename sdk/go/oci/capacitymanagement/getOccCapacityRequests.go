@@ -35,6 +35,7 @@ import (
 //				Id:                       pulumi.StringRef(occCapacityRequestId),
 //				Namespace:                pulumi.StringRef(occCapacityRequestNamespace),
 //				OccAvailabilityCatalogId: pulumi.StringRef(testOccAvailabilityCatalog.Id),
+//				RequestType:              pulumi.StringRef(occCapacityRequestRequestType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -67,6 +68,8 @@ type GetOccCapacityRequestsArgs struct {
 	Namespace *string `pulumi:"namespace"`
 	// A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
 	OccAvailabilityCatalogId *string `pulumi:"occAvailabilityCatalogId"`
+	// A filter to return only the resources that match the request type. The match is not case sensitive.
+	RequestType *string `pulumi:"requestType"`
 }
 
 // A collection of values returned by getOccCapacityRequests.
@@ -84,6 +87,8 @@ type GetOccCapacityRequestsResult struct {
 	OccAvailabilityCatalogId *string `pulumi:"occAvailabilityCatalogId"`
 	// The list of occ_capacity_request_collection.
 	OccCapacityRequestCollections []GetOccCapacityRequestsOccCapacityRequestCollection `pulumi:"occCapacityRequestCollections"`
+	// Type of Capacity Request(New or Transfer)
+	RequestType *string `pulumi:"requestType"`
 }
 
 func GetOccCapacityRequestsOutput(ctx *pulumi.Context, args GetOccCapacityRequestsOutputArgs, opts ...pulumi.InvokeOption) GetOccCapacityRequestsResultOutput {
@@ -112,6 +117,8 @@ type GetOccCapacityRequestsOutputArgs struct {
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
 	OccAvailabilityCatalogId pulumi.StringPtrInput `pulumi:"occAvailabilityCatalogId"`
+	// A filter to return only the resources that match the request type. The match is not case sensitive.
+	RequestType pulumi.StringPtrInput `pulumi:"requestType"`
 }
 
 func (GetOccCapacityRequestsOutputArgs) ElementType() reflect.Type {
@@ -167,6 +174,11 @@ func (o GetOccCapacityRequestsResultOutput) OccCapacityRequestCollections() GetO
 	return o.ApplyT(func(v GetOccCapacityRequestsResult) []GetOccCapacityRequestsOccCapacityRequestCollection {
 		return v.OccCapacityRequestCollections
 	}).(GetOccCapacityRequestsOccCapacityRequestCollectionArrayOutput)
+}
+
+// Type of Capacity Request(New or Transfer)
+func (o GetOccCapacityRequestsResultOutput) RequestType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsResult) *string { return v.RequestType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

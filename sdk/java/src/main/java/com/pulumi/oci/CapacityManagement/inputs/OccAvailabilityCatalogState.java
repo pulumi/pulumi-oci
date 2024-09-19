@@ -95,14 +95,14 @@ public final class OccAvailabilityCatalogState extends com.pulumi.resources.Reso
     }
 
     /**
-     * Details about capacity available for  different resources in catalog.
+     * Details about capacity available for different resources in catalog.
      * 
      */
     @Import(name="details")
     private @Nullable Output<List<OccAvailabilityCatalogDetailArgs>> details;
 
     /**
-     * @return Details about capacity available for  different resources in catalog.
+     * @return Details about capacity available for different resources in catalog.
      * 
      */
     public Optional<Output<List<OccAvailabilityCatalogDetailArgs>>> details() {
@@ -410,7 +410,7 @@ public final class OccAvailabilityCatalogState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param details Details about capacity available for  different resources in catalog.
+         * @param details Details about capacity available for different resources in catalog.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class OccAvailabilityCatalogState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param details Details about capacity available for  different resources in catalog.
+         * @param details Details about capacity available for different resources in catalog.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class OccAvailabilityCatalogState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param details Details about capacity available for  different resources in catalog.
+         * @param details Details about capacity available for different resources in catalog.
          * 
          * @return builder
          * 

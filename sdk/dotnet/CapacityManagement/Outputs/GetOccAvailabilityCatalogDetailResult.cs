@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
     public sealed class GetOccAvailabilityCatalogDetailResult
     {
         /// <summary>
-        /// The quantity of available resource that the customer can request.
+        /// The quantity of resource currently available that the customer can request.
         /// </summary>
         public readonly string AvailableQuantity;
         /// <summary>
@@ -30,6 +30,10 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
         /// </summary>
         public readonly string DateFinalCustomerOrder;
         /// <summary>
+        /// The quantity of resource currently demanded by the customer.
+        /// </summary>
+        public readonly string DemandedQuantity;
+        /// <summary>
         /// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         /// </summary>
         public readonly string Namespace;
@@ -41,6 +45,14 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
         /// The different types of resources against which customers can place capacity requests.
         /// </summary>
         public readonly string ResourceType;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The total quantity of resource that the customer can request.
+        /// </summary>
+        public readonly string TotalAvailableQuantity;
         /// <summary>
         /// The unit in which the resource available is measured.
         /// </summary>
@@ -60,11 +72,17 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
 
             string dateFinalCustomerOrder,
 
+            string demandedQuantity,
+
             string @namespace,
 
             string resourceName,
 
             string resourceType,
+
+            ImmutableDictionary<string, string> systemTags,
+
+            string totalAvailableQuantity,
 
             string unit,
 
@@ -74,9 +92,12 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
             CatalogId = catalogId;
             DateExpectedCapacityHandover = dateExpectedCapacityHandover;
             DateFinalCustomerOrder = dateFinalCustomerOrder;
+            DemandedQuantity = demandedQuantity;
             Namespace = @namespace;
             ResourceName = resourceName;
             ResourceType = resourceType;
+            SystemTags = systemTags;
+            TotalAvailableQuantity = totalAvailableQuantity;
             Unit = unit;
             WorkloadType = workloadType;
         }

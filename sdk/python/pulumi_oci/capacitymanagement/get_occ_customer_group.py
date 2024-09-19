@@ -118,7 +118,7 @@ class GetOccCustomerGroupResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The OCID of the customer group.
         """
         return pulumi.get(self, "id")
 

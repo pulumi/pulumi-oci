@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testInternalOccAvailabilityCatalogs = oci.CapacityManagement.getInternalOccAvailabilityCatalogs({
  *     compartmentId: compartmentId,
+ *     occCustomerGroupId: testOccCustomerGroup.id,
  *     catalogState: internalOccAvailabilityCatalogCatalogState,
  *     displayName: internalOccAvailabilityCatalogDisplayName,
  *     id: internalOccAvailabilityCatalogId,
  *     namespace: internalOccAvailabilityCatalogNamespace,
- *     occCustomerGroupId: testOccCustomerGroup.id,
  * });
  * ```
  */
@@ -69,7 +69,7 @@ export interface GetInternalOccAvailabilityCatalogsArgs {
     /**
      * The customer group ocid by which we would filter the list.
      */
-    occCustomerGroupId?: string;
+    occCustomerGroupId: string;
 }
 
 /**
@@ -85,7 +85,7 @@ export interface GetInternalOccAvailabilityCatalogsResult {
      */
     readonly compartmentId: string;
     /**
-     * An user-friendly name for the availability catalog. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * An user-friendly name for the availability catalog. Does not have to be unique, and is changeable. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.CapacityManagement.GetInternalOccAvailabilityCatalogsFilter[];
@@ -104,7 +104,7 @@ export interface GetInternalOccAvailabilityCatalogsResult {
     /**
      * The Customer Group OCID to which the availability catalog belongs.
      */
-    readonly occCustomerGroupId?: string;
+    readonly occCustomerGroupId: string;
 }
 /**
  * This data source provides the list of Internal Occ Availability Catalogs in Oracle Cloud Infrastructure Capacity Management service.
@@ -119,11 +119,11 @@ export interface GetInternalOccAvailabilityCatalogsResult {
  *
  * const testInternalOccAvailabilityCatalogs = oci.CapacityManagement.getInternalOccAvailabilityCatalogs({
  *     compartmentId: compartmentId,
+ *     occCustomerGroupId: testOccCustomerGroup.id,
  *     catalogState: internalOccAvailabilityCatalogCatalogState,
  *     displayName: internalOccAvailabilityCatalogDisplayName,
  *     id: internalOccAvailabilityCatalogId,
  *     namespace: internalOccAvailabilityCatalogNamespace,
- *     occCustomerGroupId: testOccCustomerGroup.id,
  * });
  * ```
  */
@@ -159,5 +159,5 @@ export interface GetInternalOccAvailabilityCatalogsOutputArgs {
     /**
      * The customer group ocid by which we would filter the list.
      */
-    occCustomerGroupId?: pulumi.Input<string>;
+    occCustomerGroupId: pulumi.Input<string>;
 }

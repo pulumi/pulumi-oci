@@ -67,7 +67,19 @@ __all__ = [
     'GetAddonsAddonAddonErrorResult',
     'GetAddonsAddonConfigurationResult',
     'GetAddonsFilterResult',
+    'GetClusterClusterPodNetworkOptionResult',
+    'GetClusterEndpointResult',
+    'GetClusterEndpointConfigResult',
+    'GetClusterImagePolicyConfigResult',
+    'GetClusterImagePolicyConfigKeyDetailResult',
+    'GetClusterMetadataResult',
+    'GetClusterOptionResult',
+    'GetClusterOptionAddOnResult',
+    'GetClusterOptionAdmissionControllerOptionResult',
     'GetClusterOptionClusterPodNetworkOptionResult',
+    'GetClusterOptionKubernetesNetworkConfigResult',
+    'GetClusterOptionPersistentVolumeConfigResult',
+    'GetClusterOptionServiceLbConfigResult',
     'GetClusterWorkloadMappingsFilterResult',
     'GetClusterWorkloadMappingsWorkloadMappingResult',
     'GetClustersClusterResult',
@@ -4196,6 +4208,399 @@ class GetAddonsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetClusterClusterPodNetworkOptionResult(dict):
+    def __init__(__self__, *,
+                 cni_type: str):
+        """
+        :param str cni_type: The CNI used by the node pools of this cluster
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> str:
+        """
+        The CNI used by the node pools of this cluster
+        """
+        return pulumi.get(self, "cni_type")
+
+
+@pulumi.output_type
+class GetClusterEndpointResult(dict):
+    def __init__(__self__, *,
+                 kubernetes: str,
+                 private_endpoint: str,
+                 public_endpoint: str,
+                 vcn_hostname_endpoint: str):
+        """
+        :param str kubernetes: The non-native networking Kubernetes API server endpoint.
+        :param str private_endpoint: The private native networking Kubernetes API server endpoint.
+        :param str public_endpoint: The public native networking Kubernetes API server endpoint, if one was requested.
+        :param str vcn_hostname_endpoint: The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
+        """
+        pulumi.set(__self__, "kubernetes", kubernetes)
+        pulumi.set(__self__, "private_endpoint", private_endpoint)
+        pulumi.set(__self__, "public_endpoint", public_endpoint)
+        pulumi.set(__self__, "vcn_hostname_endpoint", vcn_hostname_endpoint)
+
+    @property
+    @pulumi.getter
+    def kubernetes(self) -> str:
+        """
+        The non-native networking Kubernetes API server endpoint.
+        """
+        return pulumi.get(self, "kubernetes")
+
+    @property
+    @pulumi.getter(name="privateEndpoint")
+    def private_endpoint(self) -> str:
+        """
+        The private native networking Kubernetes API server endpoint.
+        """
+        return pulumi.get(self, "private_endpoint")
+
+    @property
+    @pulumi.getter(name="publicEndpoint")
+    def public_endpoint(self) -> str:
+        """
+        The public native networking Kubernetes API server endpoint, if one was requested.
+        """
+        return pulumi.get(self, "public_endpoint")
+
+    @property
+    @pulumi.getter(name="vcnHostnameEndpoint")
+    def vcn_hostname_endpoint(self) -> str:
+        """
+        The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
+        """
+        return pulumi.get(self, "vcn_hostname_endpoint")
+
+
+@pulumi.output_type
+class GetClusterEndpointConfigResult(dict):
+    def __init__(__self__, *,
+                 is_public_ip_enabled: bool,
+                 nsg_ids: Sequence[str],
+                 subnet_id: str):
+        """
+        :param bool is_public_ip_enabled: Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+        :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        :param str subnet_id: The OCID of the regional subnet in which to place the Cluster endpoint.
+        """
+        pulumi.set(__self__, "is_public_ip_enabled", is_public_ip_enabled)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="isPublicIpEnabled")
+    def is_public_ip_enabled(self) -> bool:
+        """
+        Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+        """
+        return pulumi.get(self, "is_public_ip_enabled")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the regional subnet in which to place the Cluster endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetClusterImagePolicyConfigResult(dict):
+    def __init__(__self__, *,
+                 is_policy_enabled: bool,
+                 key_details: Sequence['outputs.GetClusterImagePolicyConfigKeyDetailResult']):
+        """
+        :param bool is_policy_enabled: Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+        :param Sequence['GetClusterImagePolicyConfigKeyDetailArgs'] key_details: A list of KMS key details.
+        """
+        pulumi.set(__self__, "is_policy_enabled", is_policy_enabled)
+        pulumi.set(__self__, "key_details", key_details)
+
+    @property
+    @pulumi.getter(name="isPolicyEnabled")
+    def is_policy_enabled(self) -> bool:
+        """
+        Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+        """
+        return pulumi.get(self, "is_policy_enabled")
+
+    @property
+    @pulumi.getter(name="keyDetails")
+    def key_details(self) -> Sequence['outputs.GetClusterImagePolicyConfigKeyDetailResult']:
+        """
+        A list of KMS key details.
+        """
+        return pulumi.get(self, "key_details")
+
+
+@pulumi.output_type
+class GetClusterImagePolicyConfigKeyDetailResult(dict):
+    def __init__(__self__, *,
+                 kms_key_id: str):
+        """
+        :param str kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+        """
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+
+@pulumi.output_type
+class GetClusterMetadataResult(dict):
+    def __init__(__self__, *,
+                 created_by_user_id: str,
+                 created_by_work_request_id: str,
+                 deleted_by_user_id: str,
+                 deleted_by_work_request_id: str,
+                 time_created: str,
+                 time_credential_expiration: str,
+                 time_deleted: str,
+                 time_updated: str,
+                 updated_by_user_id: str,
+                 updated_by_work_request_id: str):
+        """
+        :param str created_by_user_id: The user who created the cluster.
+        :param str created_by_work_request_id: The OCID of the work request which created the cluster.
+        :param str deleted_by_user_id: The user who deleted the cluster.
+        :param str deleted_by_work_request_id: The OCID of the work request which deleted the cluster.
+        :param str time_created: The time the cluster was created.
+        :param str time_credential_expiration: The time until which the cluster credential is valid.
+        :param str time_deleted: The time the cluster was deleted.
+        :param str time_updated: The time the cluster was updated.
+        :param str updated_by_user_id: The user who updated the cluster.
+        :param str updated_by_work_request_id: The OCID of the work request which updated the cluster.
+        """
+        pulumi.set(__self__, "created_by_user_id", created_by_user_id)
+        pulumi.set(__self__, "created_by_work_request_id", created_by_work_request_id)
+        pulumi.set(__self__, "deleted_by_user_id", deleted_by_user_id)
+        pulumi.set(__self__, "deleted_by_work_request_id", deleted_by_work_request_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_credential_expiration", time_credential_expiration)
+        pulumi.set(__self__, "time_deleted", time_deleted)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by_user_id", updated_by_user_id)
+        pulumi.set(__self__, "updated_by_work_request_id", updated_by_work_request_id)
+
+    @property
+    @pulumi.getter(name="createdByUserId")
+    def created_by_user_id(self) -> str:
+        """
+        The user who created the cluster.
+        """
+        return pulumi.get(self, "created_by_user_id")
+
+    @property
+    @pulumi.getter(name="createdByWorkRequestId")
+    def created_by_work_request_id(self) -> str:
+        """
+        The OCID of the work request which created the cluster.
+        """
+        return pulumi.get(self, "created_by_work_request_id")
+
+    @property
+    @pulumi.getter(name="deletedByUserId")
+    def deleted_by_user_id(self) -> str:
+        """
+        The user who deleted the cluster.
+        """
+        return pulumi.get(self, "deleted_by_user_id")
+
+    @property
+    @pulumi.getter(name="deletedByWorkRequestId")
+    def deleted_by_work_request_id(self) -> str:
+        """
+        The OCID of the work request which deleted the cluster.
+        """
+        return pulumi.get(self, "deleted_by_work_request_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the cluster was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeCredentialExpiration")
+    def time_credential_expiration(self) -> str:
+        """
+        The time until which the cluster credential is valid.
+        """
+        return pulumi.get(self, "time_credential_expiration")
+
+    @property
+    @pulumi.getter(name="timeDeleted")
+    def time_deleted(self) -> str:
+        """
+        The time the cluster was deleted.
+        """
+        return pulumi.get(self, "time_deleted")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the cluster was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedByUserId")
+    def updated_by_user_id(self) -> str:
+        """
+        The user who updated the cluster.
+        """
+        return pulumi.get(self, "updated_by_user_id")
+
+    @property
+    @pulumi.getter(name="updatedByWorkRequestId")
+    def updated_by_work_request_id(self) -> str:
+        """
+        The OCID of the work request which updated the cluster.
+        """
+        return pulumi.get(self, "updated_by_work_request_id")
+
+
+@pulumi.output_type
+class GetClusterOptionResult(dict):
+    def __init__(__self__, *,
+                 add_ons: Sequence['outputs.GetClusterOptionAddOnResult'],
+                 admission_controller_options: Sequence['outputs.GetClusterOptionAdmissionControllerOptionResult'],
+                 kubernetes_network_configs: Sequence['outputs.GetClusterOptionKubernetesNetworkConfigResult'],
+                 persistent_volume_configs: Sequence['outputs.GetClusterOptionPersistentVolumeConfigResult'],
+                 service_lb_configs: Sequence['outputs.GetClusterOptionServiceLbConfigResult'],
+                 service_lb_subnet_ids: Sequence[str]):
+        """
+        :param Sequence['GetClusterOptionAddOnArgs'] add_ons: Configurable cluster add-ons
+        :param Sequence['GetClusterOptionAdmissionControllerOptionArgs'] admission_controller_options: Configurable cluster admission controllers
+        :param Sequence['GetClusterOptionKubernetesNetworkConfigArgs'] kubernetes_network_configs: Network configuration for Kubernetes.
+        :param Sequence['GetClusterOptionPersistentVolumeConfigArgs'] persistent_volume_configs: Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
+        :param Sequence['GetClusterOptionServiceLbConfigArgs'] service_lb_configs: Configuration to be applied to load balancers created by Kubernetes services
+        :param Sequence[str] service_lb_subnet_ids: The OCIDs of the subnets used for Kubernetes services load balancers.
+        """
+        pulumi.set(__self__, "add_ons", add_ons)
+        pulumi.set(__self__, "admission_controller_options", admission_controller_options)
+        pulumi.set(__self__, "kubernetes_network_configs", kubernetes_network_configs)
+        pulumi.set(__self__, "persistent_volume_configs", persistent_volume_configs)
+        pulumi.set(__self__, "service_lb_configs", service_lb_configs)
+        pulumi.set(__self__, "service_lb_subnet_ids", service_lb_subnet_ids)
+
+    @property
+    @pulumi.getter(name="addOns")
+    def add_ons(self) -> Sequence['outputs.GetClusterOptionAddOnResult']:
+        """
+        Configurable cluster add-ons
+        """
+        return pulumi.get(self, "add_ons")
+
+    @property
+    @pulumi.getter(name="admissionControllerOptions")
+    def admission_controller_options(self) -> Sequence['outputs.GetClusterOptionAdmissionControllerOptionResult']:
+        """
+        Configurable cluster admission controllers
+        """
+        return pulumi.get(self, "admission_controller_options")
+
+    @property
+    @pulumi.getter(name="kubernetesNetworkConfigs")
+    def kubernetes_network_configs(self) -> Sequence['outputs.GetClusterOptionKubernetesNetworkConfigResult']:
+        """
+        Network configuration for Kubernetes.
+        """
+        return pulumi.get(self, "kubernetes_network_configs")
+
+    @property
+    @pulumi.getter(name="persistentVolumeConfigs")
+    def persistent_volume_configs(self) -> Sequence['outputs.GetClusterOptionPersistentVolumeConfigResult']:
+        """
+        Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
+        """
+        return pulumi.get(self, "persistent_volume_configs")
+
+    @property
+    @pulumi.getter(name="serviceLbConfigs")
+    def service_lb_configs(self) -> Sequence['outputs.GetClusterOptionServiceLbConfigResult']:
+        """
+        Configuration to be applied to load balancers created by Kubernetes services
+        """
+        return pulumi.get(self, "service_lb_configs")
+
+    @property
+    @pulumi.getter(name="serviceLbSubnetIds")
+    def service_lb_subnet_ids(self) -> Sequence[str]:
+        """
+        The OCIDs of the subnets used for Kubernetes services load balancers.
+        """
+        return pulumi.get(self, "service_lb_subnet_ids")
+
+
+@pulumi.output_type
+class GetClusterOptionAddOnResult(dict):
+    def __init__(__self__, *,
+                 is_kubernetes_dashboard_enabled: bool,
+                 is_tiller_enabled: bool):
+        """
+        :param bool is_kubernetes_dashboard_enabled: Whether or not to enable the Kubernetes Dashboard add-on.
+        :param bool is_tiller_enabled: Whether or not to enable the Tiller add-on.
+        """
+        pulumi.set(__self__, "is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
+        pulumi.set(__self__, "is_tiller_enabled", is_tiller_enabled)
+
+    @property
+    @pulumi.getter(name="isKubernetesDashboardEnabled")
+    def is_kubernetes_dashboard_enabled(self) -> bool:
+        """
+        Whether or not to enable the Kubernetes Dashboard add-on.
+        """
+        return pulumi.get(self, "is_kubernetes_dashboard_enabled")
+
+    @property
+    @pulumi.getter(name="isTillerEnabled")
+    def is_tiller_enabled(self) -> bool:
+        """
+        Whether or not to enable the Tiller add-on.
+        """
+        return pulumi.get(self, "is_tiller_enabled")
+
+
+@pulumi.output_type
+class GetClusterOptionAdmissionControllerOptionResult(dict):
+    def __init__(__self__, *,
+                 is_pod_security_policy_enabled: bool):
+        """
+        :param bool is_pod_security_policy_enabled: Whether or not to enable the Pod Security Policy admission controller.
+        """
+        pulumi.set(__self__, "is_pod_security_policy_enabled", is_pod_security_policy_enabled)
+
+    @property
+    @pulumi.getter(name="isPodSecurityPolicyEnabled")
+    def is_pod_security_policy_enabled(self) -> bool:
+        """
+        Whether or not to enable the Pod Security Policy admission controller.
+        """
+        return pulumi.get(self, "is_pod_security_policy_enabled")
+
+
+@pulumi.output_type
 class GetClusterOptionClusterPodNetworkOptionResult(dict):
     def __init__(__self__, *,
                  cni_type: str):
@@ -4211,6 +4616,93 @@ class GetClusterOptionClusterPodNetworkOptionResult(dict):
         The CNI used by the node pools of this cluster
         """
         return pulumi.get(self, "cni_type")
+
+
+@pulumi.output_type
+class GetClusterOptionKubernetesNetworkConfigResult(dict):
+    def __init__(__self__, *,
+                 pods_cidr: str,
+                 services_cidr: str):
+        """
+        :param str pods_cidr: The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+        :param str services_cidr: The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+        """
+        pulumi.set(__self__, "pods_cidr", pods_cidr)
+        pulumi.set(__self__, "services_cidr", services_cidr)
+
+    @property
+    @pulumi.getter(name="podsCidr")
+    def pods_cidr(self) -> str:
+        """
+        The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+        """
+        return pulumi.get(self, "pods_cidr")
+
+    @property
+    @pulumi.getter(name="servicesCidr")
+    def services_cidr(self) -> str:
+        """
+        The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+        """
+        return pulumi.get(self, "services_cidr")
+
+
+@pulumi.output_type
+class GetClusterOptionPersistentVolumeConfigResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str]):
+        """
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+
+@pulumi.output_type
+class GetClusterOptionServiceLbConfigResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str]):
+        """
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
 
 @pulumi.output_type

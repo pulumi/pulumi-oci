@@ -97,6 +97,10 @@ public final class GetModelResult {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+     * 
+     */
     private String type;
     /**
      * @return The provider of the base model.
@@ -228,6 +232,10 @@ public final class GetModelResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+     * 
+     */
     public String type() {
         return this.type;
     }

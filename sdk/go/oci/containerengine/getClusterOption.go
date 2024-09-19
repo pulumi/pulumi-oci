@@ -41,9 +41,9 @@ import (
 //	}
 //
 // ```
-func GetClusterOption(ctx *pulumi.Context, args *GetClusterOptionArgs, opts ...pulumi.InvokeOption) (*GetClusterOptionResult, error) {
+func LookupClusterOption(ctx *pulumi.Context, args *LookupClusterOptionArgs, opts ...pulumi.InvokeOption) (*LookupClusterOptionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetClusterOptionResult
+	var rv LookupClusterOptionResult
 	err := ctx.Invoke("oci:ContainerEngine/getClusterOption:getClusterOption", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -52,7 +52,7 @@ func GetClusterOption(ctx *pulumi.Context, args *GetClusterOptionArgs, opts ...p
 }
 
 // A collection of arguments for invoking getClusterOption.
-type GetClusterOptionArgs struct {
+type LookupClusterOptionArgs struct {
 	// The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
 	ClusterOptionId string `pulumi:"clusterOptionId"`
 	// The OCID of the compartment.
@@ -60,7 +60,7 @@ type GetClusterOptionArgs struct {
 }
 
 // A collection of values returned by getClusterOption.
-type GetClusterOptionResult struct {
+type LookupClusterOptionResult struct {
 	ClusterOptionId string `pulumi:"clusterOptionId"`
 	// Available CNIs and network options for existing and new node pools of the cluster
 	ClusterPodNetworkOptions []GetClusterOptionClusterPodNetworkOption `pulumi:"clusterPodNetworkOptions"`
@@ -71,71 +71,71 @@ type GetClusterOptionResult struct {
 	KubernetesVersions []string `pulumi:"kubernetesVersions"`
 }
 
-func GetClusterOptionOutput(ctx *pulumi.Context, args GetClusterOptionOutputArgs, opts ...pulumi.InvokeOption) GetClusterOptionResultOutput {
+func LookupClusterOptionOutput(ctx *pulumi.Context, args LookupClusterOptionOutputArgs, opts ...pulumi.InvokeOption) LookupClusterOptionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetClusterOptionResult, error) {
-			args := v.(GetClusterOptionArgs)
-			r, err := GetClusterOption(ctx, &args, opts...)
-			var s GetClusterOptionResult
+		ApplyT(func(v interface{}) (LookupClusterOptionResult, error) {
+			args := v.(LookupClusterOptionArgs)
+			r, err := LookupClusterOption(ctx, &args, opts...)
+			var s LookupClusterOptionResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetClusterOptionResultOutput)
+		}).(LookupClusterOptionResultOutput)
 }
 
 // A collection of arguments for invoking getClusterOption.
-type GetClusterOptionOutputArgs struct {
+type LookupClusterOptionOutputArgs struct {
 	// The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
 	ClusterOptionId pulumi.StringInput `pulumi:"clusterOptionId"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 }
 
-func (GetClusterOptionOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetClusterOptionArgs)(nil)).Elem()
+func (LookupClusterOptionOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupClusterOptionArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getClusterOption.
-type GetClusterOptionResultOutput struct{ *pulumi.OutputState }
+type LookupClusterOptionResultOutput struct{ *pulumi.OutputState }
 
-func (GetClusterOptionResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetClusterOptionResult)(nil)).Elem()
+func (LookupClusterOptionResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupClusterOptionResult)(nil)).Elem()
 }
 
-func (o GetClusterOptionResultOutput) ToGetClusterOptionResultOutput() GetClusterOptionResultOutput {
+func (o LookupClusterOptionResultOutput) ToLookupClusterOptionResultOutput() LookupClusterOptionResultOutput {
 	return o
 }
 
-func (o GetClusterOptionResultOutput) ToGetClusterOptionResultOutputWithContext(ctx context.Context) GetClusterOptionResultOutput {
+func (o LookupClusterOptionResultOutput) ToLookupClusterOptionResultOutputWithContext(ctx context.Context) LookupClusterOptionResultOutput {
 	return o
 }
 
-func (o GetClusterOptionResultOutput) ClusterOptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterOptionResult) string { return v.ClusterOptionId }).(pulumi.StringOutput)
+func (o LookupClusterOptionResultOutput) ClusterOptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupClusterOptionResult) string { return v.ClusterOptionId }).(pulumi.StringOutput)
 }
 
 // Available CNIs and network options for existing and new node pools of the cluster
-func (o GetClusterOptionResultOutput) ClusterPodNetworkOptions() GetClusterOptionClusterPodNetworkOptionArrayOutput {
-	return o.ApplyT(func(v GetClusterOptionResult) []GetClusterOptionClusterPodNetworkOption {
+func (o LookupClusterOptionResultOutput) ClusterPodNetworkOptions() GetClusterOptionClusterPodNetworkOptionArrayOutput {
+	return o.ApplyT(func(v LookupClusterOptionResult) []GetClusterOptionClusterPodNetworkOption {
 		return v.ClusterPodNetworkOptions
 	}).(GetClusterOptionClusterPodNetworkOptionArrayOutput)
 }
 
-func (o GetClusterOptionResultOutput) CompartmentId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetClusterOptionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+func (o LookupClusterOptionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterOptionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetClusterOptionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterOptionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupClusterOptionResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupClusterOptionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // Available Kubernetes versions.
-func (o GetClusterOptionResultOutput) KubernetesVersions() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetClusterOptionResult) []string { return v.KubernetesVersions }).(pulumi.StringArrayOutput)
+func (o LookupClusterOptionResultOutput) KubernetesVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupClusterOptionResult) []string { return v.KubernetesVersions }).(pulumi.StringArrayOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetClusterOptionResultOutput{})
+	pulumi.RegisterOutputType(LookupClusterOptionResultOutput{})
 }

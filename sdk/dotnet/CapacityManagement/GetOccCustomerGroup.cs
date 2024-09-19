@@ -124,7 +124,7 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// The OCID of the customer group.
         /// </summary>
         public readonly string Id;
         /// <summary>

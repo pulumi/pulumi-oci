@@ -91,7 +91,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Details about capacity available for  different resources in catalog.
+        /// Details about capacity available for different resources in catalog.
         /// </summary>
         [Output("details")]
         public Output<ImmutableArray<Outputs.OccAvailabilityCatalogDetail>> Details { get; private set; } = null!;
@@ -324,7 +324,7 @@ namespace Pulumi.Oci.CapacityManagement
         private InputList<Inputs.OccAvailabilityCatalogDetailGetArgs>? _details;
 
         /// <summary>
-        /// Details about capacity available for  different resources in catalog.
+        /// Details about capacity available for different resources in catalog.
         /// </summary>
         public InputList<Inputs.OccAvailabilityCatalogDetailGetArgs> Details
         {

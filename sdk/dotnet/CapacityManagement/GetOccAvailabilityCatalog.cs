@@ -115,7 +115,7 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Details about capacity available for  different resources in catalog.
+        /// Details about capacity available for different resources in catalog.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOccAvailabilityCatalogDetailResult> Details;
         /// <summary>

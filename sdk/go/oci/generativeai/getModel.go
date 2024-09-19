@@ -92,7 +92,8 @@ type LookupModelResult struct {
 	TimeDeprecated string `pulumi:"timeDeprecated"`
 	// The date and time that the model was updated in the format of an RFC3339 datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	Type        string `pulumi:"type"`
+	// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+	Type string `pulumi:"type"`
 	// The provider of the base model.
 	Vendor string `pulumi:"vendor"`
 	// The version of the model.
@@ -225,6 +226,7 @@ func (o LookupModelResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
 func (o LookupModelResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Type }).(pulumi.StringOutput)
 }

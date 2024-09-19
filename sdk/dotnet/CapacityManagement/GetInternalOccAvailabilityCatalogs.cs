@@ -29,11 +29,11 @@ namespace Pulumi.Oci.CapacityManagement
         ///     var testInternalOccAvailabilityCatalogs = Oci.CapacityManagement.GetInternalOccAvailabilityCatalogs.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
         ///         CatalogState = internalOccAvailabilityCatalogCatalogState,
         ///         DisplayName = internalOccAvailabilityCatalogDisplayName,
         ///         Id = internalOccAvailabilityCatalogId,
         ///         Namespace = internalOccAvailabilityCatalogNamespace,
-        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
         ///     });
         /// 
         /// });
@@ -60,11 +60,11 @@ namespace Pulumi.Oci.CapacityManagement
         ///     var testInternalOccAvailabilityCatalogs = Oci.CapacityManagement.GetInternalOccAvailabilityCatalogs.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
         ///         CatalogState = internalOccAvailabilityCatalogCatalogState,
         ///         DisplayName = internalOccAvailabilityCatalogDisplayName,
         ///         Id = internalOccAvailabilityCatalogId,
         ///         Namespace = internalOccAvailabilityCatalogNamespace,
-        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
         ///     });
         /// 
         /// });
@@ -118,8 +118,8 @@ namespace Pulumi.Oci.CapacityManagement
         /// <summary>
         /// The customer group ocid by which we would filter the list.
         /// </summary>
-        [Input("occCustomerGroupId")]
-        public string? OccCustomerGroupId { get; set; }
+        [Input("occCustomerGroupId", required: true)]
+        public string OccCustomerGroupId { get; set; } = null!;
 
         public GetInternalOccAvailabilityCatalogsArgs()
         {
@@ -170,8 +170,8 @@ namespace Pulumi.Oci.CapacityManagement
         /// <summary>
         /// The customer group ocid by which we would filter the list.
         /// </summary>
-        [Input("occCustomerGroupId")]
-        public Input<string>? OccCustomerGroupId { get; set; }
+        [Input("occCustomerGroupId", required: true)]
+        public Input<string> OccCustomerGroupId { get; set; } = null!;
 
         public GetInternalOccAvailabilityCatalogsInvokeArgs()
         {
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// An user-friendly name for the availability catalog. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// An user-friendly name for the availability catalog. Does not have to be unique, and is changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetInternalOccAvailabilityCatalogsFilterResult> Filters;
@@ -211,7 +211,7 @@ namespace Pulumi.Oci.CapacityManagement
         /// <summary>
         /// The Customer Group OCID to which the availability catalog belongs.
         /// </summary>
-        public readonly string? OccCustomerGroupId;
+        public readonly string OccCustomerGroupId;
 
         [OutputConstructor]
         private GetInternalOccAvailabilityCatalogsResult(
@@ -229,7 +229,7 @@ namespace Pulumi.Oci.CapacityManagement
 
             ImmutableArray<Outputs.GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionResult> occAvailabilityCatalogCollections,
 
-            string? occCustomerGroupId)
+            string occCustomerGroupId)
         {
             CatalogState = catalogState;
             CompartmentId = compartmentId;

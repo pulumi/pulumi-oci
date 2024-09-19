@@ -18,30 +18,68 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
 
     public static final BdsInstanceOsPatchActionArgs Empty = new BdsInstanceOsPatchActionArgs();
 
+    /**
+     * The OCID of the cluster.
+     * 
+     */
     @Import(name="bdsInstanceId", required=true)
     private Output<String> bdsInstanceId;
 
+    /**
+     * @return The OCID of the cluster.
+     * 
+     */
     public Output<String> bdsInstanceId() {
         return this.bdsInstanceId;
     }
 
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     * 
+     */
     @Import(name="clusterAdminPassword", required=true)
     private Output<String> clusterAdminPassword;
 
+    /**
+     * @return Base-64 encoded password for the cluster admin user.
+     * 
+     */
     public Output<String> clusterAdminPassword() {
         return this.clusterAdminPassword;
     }
 
+    /**
+     * The version of the OS patch to be installed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Import(name="osPatchVersion", required=true)
     private Output<String> osPatchVersion;
 
+    /**
+     * @return The version of the OS patch to be installed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Output<String> osPatchVersion() {
         return this.osPatchVersion;
     }
 
+    /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     * 
+     */
     @Import(name="patchingConfigs")
     private @Nullable Output<List<BdsInstanceOsPatchActionPatchingConfigArgs>> patchingConfigs;
 
+    /**
+     * @return Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     * 
+     */
     public Optional<Output<List<BdsInstanceOsPatchActionPatchingConfigArgs>>> patchingConfigs() {
         return Optional.ofNullable(this.patchingConfigs);
     }
@@ -73,42 +111,102 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
             $ = new BdsInstanceOsPatchActionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param bdsInstanceId The OCID of the cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bdsInstanceId(Output<String> bdsInstanceId) {
             $.bdsInstanceId = bdsInstanceId;
             return this;
         }
 
+        /**
+         * @param bdsInstanceId The OCID of the cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bdsInstanceId(String bdsInstanceId) {
             return bdsInstanceId(Output.of(bdsInstanceId));
         }
 
+        /**
+         * @param clusterAdminPassword Base-64 encoded password for the cluster admin user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clusterAdminPassword(Output<String> clusterAdminPassword) {
             $.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
 
+        /**
+         * @param clusterAdminPassword Base-64 encoded password for the cluster admin user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             return clusterAdminPassword(Output.of(clusterAdminPassword));
         }
 
+        /**
+         * @param osPatchVersion The version of the OS patch to be installed.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder osPatchVersion(Output<String> osPatchVersion) {
             $.osPatchVersion = osPatchVersion;
             return this;
         }
 
+        /**
+         * @param osPatchVersion The version of the OS patch to be installed.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder osPatchVersion(String osPatchVersion) {
             return osPatchVersion(Output.of(osPatchVersion));
         }
 
+        /**
+         * @param patchingConfigs Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingConfigs(@Nullable Output<List<BdsInstanceOsPatchActionPatchingConfigArgs>> patchingConfigs) {
             $.patchingConfigs = patchingConfigs;
             return this;
         }
 
+        /**
+         * @param patchingConfigs Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingConfigs(List<BdsInstanceOsPatchActionPatchingConfigArgs> patchingConfigs) {
             return patchingConfigs(Output.of(patchingConfigs));
         }
 
+        /**
+         * @param patchingConfigs Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingConfigs(BdsInstanceOsPatchActionPatchingConfigArgs... patchingConfigs) {
             return patchingConfigs(List.of(patchingConfigs));
         }

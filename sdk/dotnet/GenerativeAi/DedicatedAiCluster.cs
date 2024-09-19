@@ -150,6 +150,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// * LLAMA2_70
         /// * LARGE_GENERIC
         /// * LARGE_COHERE_V2_2
+        /// * LARGE_GENERIC_4
         /// 
         /// 
         /// ** IMPORTANT **
@@ -274,6 +275,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// * LLAMA2_70
         /// * LARGE_GENERIC
         /// * LARGE_COHERE_V2_2
+        /// * LARGE_GENERIC_4
         /// 
         /// 
         /// ** IMPORTANT **
@@ -408,6 +410,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// * LLAMA2_70
         /// * LARGE_GENERIC
         /// * LARGE_COHERE_V2_2
+        /// * LARGE_GENERIC_4
         /// 
         /// 
         /// ** IMPORTANT **

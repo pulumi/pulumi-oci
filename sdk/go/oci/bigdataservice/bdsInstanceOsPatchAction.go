@@ -12,13 +12,65 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
+//
+// Install the specified OS patch to this cluster nodes.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.NewBdsInstanceOsPatchAction(ctx, "test_bds_instance_os_patch_action", &BigDataService.BdsInstanceOsPatchActionArgs{
+//				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
+//				ClusterAdminPassword: pulumi.Any(bdsInstanceOsPatchActionClusterAdminPassword),
+//				OsPatchVersion:       pulumi.Any(bdsInstanceOsPatchActionOsPatchVersion),
+//				PatchingConfigs: bigdataservice.BdsInstanceOsPatchActionPatchingConfigArray{
+//					&bigdataservice.BdsInstanceOsPatchActionPatchingConfigArgs{
+//						PatchingConfigStrategy:         pulumi.Any(bdsInstanceOsPatchActionPatchingConfigStrategy),
+//						BatchSize:                      pulumi.Any(bdsInstanceOsPatchActionBatchSize),
+//						WaitTimeBetweenBatchInSeconds:  pulumi.Any(bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds),
+//						ToleranceThresholdPerBatch:     pulumi.Any(bdsInstanceOsPatchActionToleranceThresholdPerBatch),
+//						WaitTimeBetweenDomainInSeconds: pulumi.Any(bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds),
+//						ToleranceThresholdPerDomain:    pulumi.Any(bdsInstanceOsPatchActionToleranceThresholdPerDomain),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type BdsInstanceOsPatchAction struct {
 	pulumi.CustomResourceState
 
-	BdsInstanceId        pulumi.StringOutput                               `pulumi:"bdsInstanceId"`
-	ClusterAdminPassword pulumi.StringOutput                               `pulumi:"clusterAdminPassword"`
-	OsPatchVersion       pulumi.StringOutput                               `pulumi:"osPatchVersion"`
-	PatchingConfigs      BdsInstanceOsPatchActionPatchingConfigArrayOutput `pulumi:"patchingConfigs"`
+	// The OCID of the cluster.
+	BdsInstanceId pulumi.StringOutput `pulumi:"bdsInstanceId"`
+	// Base-64 encoded password for the cluster admin user.
+	ClusterAdminPassword pulumi.StringOutput `pulumi:"clusterAdminPassword"`
+	// The version of the OS patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchVersion pulumi.StringOutput `pulumi:"osPatchVersion"`
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfigs BdsInstanceOsPatchActionPatchingConfigArrayOutput `pulumi:"patchingConfigs"`
 }
 
 // NewBdsInstanceOsPatchAction registers a new resource with the given unique name, arguments, and options.
@@ -67,17 +119,31 @@ func GetBdsInstanceOsPatchAction(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BdsInstanceOsPatchAction resources.
 type bdsInstanceOsPatchActionState struct {
-	BdsInstanceId        *string                                  `pulumi:"bdsInstanceId"`
-	ClusterAdminPassword *string                                  `pulumi:"clusterAdminPassword"`
-	OsPatchVersion       *string                                  `pulumi:"osPatchVersion"`
-	PatchingConfigs      []BdsInstanceOsPatchActionPatchingConfig `pulumi:"patchingConfigs"`
+	// The OCID of the cluster.
+	BdsInstanceId *string `pulumi:"bdsInstanceId"`
+	// Base-64 encoded password for the cluster admin user.
+	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
+	// The version of the OS patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchVersion *string `pulumi:"osPatchVersion"`
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfigs []BdsInstanceOsPatchActionPatchingConfig `pulumi:"patchingConfigs"`
 }
 
 type BdsInstanceOsPatchActionState struct {
-	BdsInstanceId        pulumi.StringPtrInput
+	// The OCID of the cluster.
+	BdsInstanceId pulumi.StringPtrInput
+	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword pulumi.StringPtrInput
-	OsPatchVersion       pulumi.StringPtrInput
-	PatchingConfigs      BdsInstanceOsPatchActionPatchingConfigArrayInput
+	// The version of the OS patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchVersion pulumi.StringPtrInput
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfigs BdsInstanceOsPatchActionPatchingConfigArrayInput
 }
 
 func (BdsInstanceOsPatchActionState) ElementType() reflect.Type {
@@ -85,18 +151,32 @@ func (BdsInstanceOsPatchActionState) ElementType() reflect.Type {
 }
 
 type bdsInstanceOsPatchActionArgs struct {
-	BdsInstanceId        string                                   `pulumi:"bdsInstanceId"`
-	ClusterAdminPassword string                                   `pulumi:"clusterAdminPassword"`
-	OsPatchVersion       string                                   `pulumi:"osPatchVersion"`
-	PatchingConfigs      []BdsInstanceOsPatchActionPatchingConfig `pulumi:"patchingConfigs"`
+	// The OCID of the cluster.
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// Base-64 encoded password for the cluster admin user.
+	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	// The version of the OS patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchVersion string `pulumi:"osPatchVersion"`
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfigs []BdsInstanceOsPatchActionPatchingConfig `pulumi:"patchingConfigs"`
 }
 
 // The set of arguments for constructing a BdsInstanceOsPatchAction resource.
 type BdsInstanceOsPatchActionArgs struct {
-	BdsInstanceId        pulumi.StringInput
+	// The OCID of the cluster.
+	BdsInstanceId pulumi.StringInput
+	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword pulumi.StringInput
-	OsPatchVersion       pulumi.StringInput
-	PatchingConfigs      BdsInstanceOsPatchActionPatchingConfigArrayInput
+	// The version of the OS patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchVersion pulumi.StringInput
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfigs BdsInstanceOsPatchActionPatchingConfigArrayInput
 }
 
 func (BdsInstanceOsPatchActionArgs) ElementType() reflect.Type {
@@ -186,18 +266,25 @@ func (o BdsInstanceOsPatchActionOutput) ToBdsInstanceOsPatchActionOutputWithCont
 	return o
 }
 
+// The OCID of the cluster.
 func (o BdsInstanceOsPatchActionOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceOsPatchAction) pulumi.StringOutput { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
 
+// Base-64 encoded password for the cluster admin user.
 func (o BdsInstanceOsPatchActionOutput) ClusterAdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceOsPatchAction) pulumi.StringOutput { return v.ClusterAdminPassword }).(pulumi.StringOutput)
 }
 
+// The version of the OS patch to be installed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceOsPatchActionOutput) OsPatchVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceOsPatchAction) pulumi.StringOutput { return v.OsPatchVersion }).(pulumi.StringOutput)
 }
 
+// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
 func (o BdsInstanceOsPatchActionOutput) PatchingConfigs() BdsInstanceOsPatchActionPatchingConfigArrayOutput {
 	return o.ApplyT(func(v *BdsInstanceOsPatchAction) BdsInstanceOsPatchActionPatchingConfigArrayOutput {
 		return v.PatchingConfigs

@@ -67,7 +67,7 @@ type LookupOccAvailabilityCatalogResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Text information about the availability catalog.
 	Description string `pulumi:"description"`
-	// Details about capacity available for  different resources in catalog.
+	// Details about capacity available for different resources in catalog.
 	Details []GetOccAvailabilityCatalogDetail `pulumi:"details"`
 	// A user-friendly name for the availability catalog.
 	DisplayName string `pulumi:"displayName"`
@@ -156,7 +156,7 @@ func (o LookupOccAvailabilityCatalogResultOutput) Description() pulumi.StringOut
 	return o.ApplyT(func(v LookupOccAvailabilityCatalogResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Details about capacity available for  different resources in catalog.
+// Details about capacity available for different resources in catalog.
 func (o LookupOccAvailabilityCatalogResultOutput) Details() GetOccAvailabilityCatalogDetailArrayOutput {
 	return o.ApplyT(func(v LookupOccAvailabilityCatalogResult) []GetOccAvailabilityCatalogDetail { return v.Details }).(GetOccAvailabilityCatalogDetailArrayOutput)
 }

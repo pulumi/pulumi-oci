@@ -25,6 +25,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OccAvailabilityCatalog{}
 	case "oci:CapacityManagement/occCapacityRequest:OccCapacityRequest":
 		r = &OccCapacityRequest{}
+	case "oci:CapacityManagement/occCustomerGroup:OccCustomerGroup":
+		r = &OccCustomerGroup{}
+	case "oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer":
+		r = &OccCustomerGroupOccCustomer{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +50,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"CapacityManagement/occCapacityRequest",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CapacityManagement/occCustomerGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CapacityManagement/occCustomerGroupOccCustomer",
 		&module{version},
 	)
 }

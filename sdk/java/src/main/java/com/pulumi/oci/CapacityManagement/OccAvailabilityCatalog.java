@@ -150,14 +150,14 @@ public class OccAvailabilityCatalog extends com.pulumi.resources.CustomResource 
         return this.description;
     }
     /**
-     * Details about capacity available for  different resources in catalog.
+     * Details about capacity available for different resources in catalog.
      * 
      */
     @Export(name="details", refs={List.class,OccAvailabilityCatalogDetail.class}, tree="[0,1]")
     private Output<List<OccAvailabilityCatalogDetail>> details;
 
     /**
-     * @return Details about capacity available for  different resources in catalog.
+     * @return Details about capacity available for different resources in catalog.
      * 
      */
     public Output<List<OccAvailabilityCatalogDetail>> details() {

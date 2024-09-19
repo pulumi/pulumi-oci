@@ -78,6 +78,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// The date and time that the model was updated in the format of an RFC3339 datetime string.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+        /// </summary>
         public readonly string Type;
         /// <summary>
         /// A filter to return only resources that match the entire vendor given.

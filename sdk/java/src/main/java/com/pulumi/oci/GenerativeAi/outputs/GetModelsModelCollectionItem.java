@@ -96,6 +96,10 @@ public final class GetModelsModelCollectionItem {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+     * 
+     */
     private String type;
     /**
      * @return A filter to return only resources that match the entire vendor given.
@@ -224,6 +228,10 @@ public final class GetModelsModelCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+     * 
+     */
     public String type() {
         return this.type;
     }

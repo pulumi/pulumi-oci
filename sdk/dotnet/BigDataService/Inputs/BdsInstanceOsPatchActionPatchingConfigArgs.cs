@@ -12,21 +12,39 @@ namespace Pulumi.Oci.BigDataService.Inputs
 
     public sealed class BdsInstanceOsPatchActionPatchingConfigArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// How many nodes to be patched in each iteration.
+        /// </summary>
         [Input("batchSize")]
         public Input<int>? BatchSize { get; set; }
 
+        /// <summary>
+        /// Type of strategy used for detailed patching configuration
+        /// </summary>
         [Input("patchingConfigStrategy", required: true)]
         public Input<string> PatchingConfigStrategy { get; set; } = null!;
 
+        /// <summary>
+        /// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        /// </summary>
         [Input("toleranceThresholdPerBatch")]
         public Input<int>? ToleranceThresholdPerBatch { get; set; }
 
+        /// <summary>
+        /// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        /// </summary>
         [Input("toleranceThresholdPerDomain")]
         public Input<int>? ToleranceThresholdPerDomain { get; set; }
 
+        /// <summary>
+        /// The wait time between batches in seconds.
+        /// </summary>
         [Input("waitTimeBetweenBatchInSeconds")]
         public Input<int>? WaitTimeBetweenBatchInSeconds { get; set; }
 
+        /// <summary>
+        /// The wait time between AD/FD in seconds.
+        /// </summary>
         [Input("waitTimeBetweenDomainInSeconds")]
         public Input<int>? WaitTimeBetweenDomainInSeconds { get; set; }
 

@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type OccAvailabilityCatalogDetail struct {
-	// The quantity of available resource that the customer can request.
+	// The quantity of resource currently available that the customer can request.
 	AvailableQuantity *string `pulumi:"availableQuantity"`
 	// The OCID of the availability catalog.
 	CatalogId *string `pulumi:"catalogId"`
@@ -22,12 +22,18 @@ type OccAvailabilityCatalogDetail struct {
 	DateExpectedCapacityHandover *string `pulumi:"dateExpectedCapacityHandover"`
 	// The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
 	DateFinalCustomerOrder *string `pulumi:"dateFinalCustomerOrder"`
+	// The quantity of resource currently demanded by the customer.
+	DemandedQuantity *string `pulumi:"demandedQuantity"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 	Namespace *string `pulumi:"namespace"`
 	// The name of the resource that the customer can request.
 	ResourceName *string `pulumi:"resourceName"`
 	// The different types of resources against which customers can place capacity requests.
 	ResourceType *string `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The total quantity of resource that the customer can request.
+	TotalAvailableQuantity *string `pulumi:"totalAvailableQuantity"`
 	// The unit in which the resource available is measured.
 	Unit *string `pulumi:"unit"`
 	// The type of workload (Generic/ROW).
@@ -46,7 +52,7 @@ type OccAvailabilityCatalogDetailInput interface {
 }
 
 type OccAvailabilityCatalogDetailArgs struct {
-	// The quantity of available resource that the customer can request.
+	// The quantity of resource currently available that the customer can request.
 	AvailableQuantity pulumi.StringPtrInput `pulumi:"availableQuantity"`
 	// The OCID of the availability catalog.
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
@@ -54,12 +60,18 @@ type OccAvailabilityCatalogDetailArgs struct {
 	DateExpectedCapacityHandover pulumi.StringPtrInput `pulumi:"dateExpectedCapacityHandover"`
 	// The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
 	DateFinalCustomerOrder pulumi.StringPtrInput `pulumi:"dateFinalCustomerOrder"`
+	// The quantity of resource currently demanded by the customer.
+	DemandedQuantity pulumi.StringPtrInput `pulumi:"demandedQuantity"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The name of the resource that the customer can request.
 	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// The different types of resources against which customers can place capacity requests.
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The total quantity of resource that the customer can request.
+	TotalAvailableQuantity pulumi.StringPtrInput `pulumi:"totalAvailableQuantity"`
 	// The unit in which the resource available is measured.
 	Unit pulumi.StringPtrInput `pulumi:"unit"`
 	// The type of workload (Generic/ROW).
@@ -117,7 +129,7 @@ func (o OccAvailabilityCatalogDetailOutput) ToOccAvailabilityCatalogDetailOutput
 	return o
 }
 
-// The quantity of available resource that the customer can request.
+// The quantity of resource currently available that the customer can request.
 func (o OccAvailabilityCatalogDetailOutput) AvailableQuantity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OccAvailabilityCatalogDetail) *string { return v.AvailableQuantity }).(pulumi.StringPtrOutput)
 }
@@ -137,6 +149,11 @@ func (o OccAvailabilityCatalogDetailOutput) DateFinalCustomerOrder() pulumi.Stri
 	return o.ApplyT(func(v OccAvailabilityCatalogDetail) *string { return v.DateFinalCustomerOrder }).(pulumi.StringPtrOutput)
 }
 
+// The quantity of resource currently demanded by the customer.
+func (o OccAvailabilityCatalogDetailOutput) DemandedQuantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccAvailabilityCatalogDetail) *string { return v.DemandedQuantity }).(pulumi.StringPtrOutput)
+}
+
 // The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 func (o OccAvailabilityCatalogDetailOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OccAvailabilityCatalogDetail) *string { return v.Namespace }).(pulumi.StringPtrOutput)
@@ -150,6 +167,16 @@ func (o OccAvailabilityCatalogDetailOutput) ResourceName() pulumi.StringPtrOutpu
 // The different types of resources against which customers can place capacity requests.
 func (o OccAvailabilityCatalogDetailOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OccAvailabilityCatalogDetail) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o OccAvailabilityCatalogDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v OccAvailabilityCatalogDetail) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The total quantity of resource that the customer can request.
+func (o OccAvailabilityCatalogDetailOutput) TotalAvailableQuantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccAvailabilityCatalogDetail) *string { return v.TotalAvailableQuantity }).(pulumi.StringPtrOutput)
 }
 
 // The unit in which the resource available is measured.
@@ -322,6 +349,10 @@ func (o OccAvailabilityCatalogMetadataDetailsPtrOutput) FormatVersion() pulumi.S
 type OccCapacityRequestDetail struct {
 	// The actual handed over quantity of resources at the time of request resolution.
 	ActualHandoverQuantity *string `pulumi:"actualHandoverQuantity"`
+	// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+	AssociatedOccHandoverResourceBlockLists []OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList `pulumi:"associatedOccHandoverResourceBlockLists"`
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The date on which the actual handover quantity of resources is delivered.
 	DateActualHandover *string `pulumi:"dateActualHandover"`
 	// The date on which the latest increment to supplied quantity of resources was delivered.
@@ -334,6 +365,8 @@ type OccCapacityRequestDetail struct {
 	ResourceName string `pulumi:"resourceName"`
 	// The type of the resource against which the user wants to place a capacity request.
 	ResourceType string `pulumi:"resourceType"`
+	// The WorkloadType from where capacity request are to be transferred.
+	SourceWorkloadType *string `pulumi:"sourceWorkloadType"`
 	// The type of the workload (Generic/ROW).
 	WorkloadType string `pulumi:"workloadType"`
 }
@@ -352,6 +385,10 @@ type OccCapacityRequestDetailInput interface {
 type OccCapacityRequestDetailArgs struct {
 	// The actual handed over quantity of resources at the time of request resolution.
 	ActualHandoverQuantity pulumi.StringPtrInput `pulumi:"actualHandoverQuantity"`
+	// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+	AssociatedOccHandoverResourceBlockLists OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput `pulumi:"associatedOccHandoverResourceBlockLists"`
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The date on which the actual handover quantity of resources is delivered.
 	DateActualHandover pulumi.StringPtrInput `pulumi:"dateActualHandover"`
 	// The date on which the latest increment to supplied quantity of resources was delivered.
@@ -364,6 +401,8 @@ type OccCapacityRequestDetailArgs struct {
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
 	// The type of the resource against which the user wants to place a capacity request.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The WorkloadType from where capacity request are to be transferred.
+	SourceWorkloadType pulumi.StringPtrInput `pulumi:"sourceWorkloadType"`
 	// The type of the workload (Generic/ROW).
 	WorkloadType pulumi.StringInput `pulumi:"workloadType"`
 }
@@ -424,6 +463,18 @@ func (o OccCapacityRequestDetailOutput) ActualHandoverQuantity() pulumi.StringPt
 	return o.ApplyT(func(v OccCapacityRequestDetail) *string { return v.ActualHandoverQuantity }).(pulumi.StringPtrOutput)
 }
 
+// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+func (o OccCapacityRequestDetailOutput) AssociatedOccHandoverResourceBlockLists() OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o.ApplyT(func(v OccCapacityRequestDetail) []OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList {
+		return v.AssociatedOccHandoverResourceBlockLists
+	}).(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput)
+}
+
+// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+func (o OccCapacityRequestDetailOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccCapacityRequestDetail) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
 // The date on which the actual handover quantity of resources is delivered.
 func (o OccCapacityRequestDetailOutput) DateActualHandover() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OccCapacityRequestDetail) *string { return v.DateActualHandover }).(pulumi.StringPtrOutput)
@@ -454,6 +505,11 @@ func (o OccCapacityRequestDetailOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v OccCapacityRequestDetail) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
+// The WorkloadType from where capacity request are to be transferred.
+func (o OccCapacityRequestDetailOutput) SourceWorkloadType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccCapacityRequestDetail) *string { return v.SourceWorkloadType }).(pulumi.StringPtrOutput)
+}
+
 // The type of the workload (Generic/ROW).
 func (o OccCapacityRequestDetailOutput) WorkloadType() pulumi.StringOutput {
 	return o.ApplyT(func(v OccCapacityRequestDetail) string { return v.WorkloadType }).(pulumi.StringOutput)
@@ -477,6 +533,116 @@ func (o OccCapacityRequestDetailArrayOutput) Index(i pulumi.IntInput) OccCapacit
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OccCapacityRequestDetail {
 		return vs[0].([]OccCapacityRequestDetail)[vs[1].(int)]
 	}).(OccCapacityRequestDetailOutput)
+}
+
+type OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList struct {
+	// The total quantity of the resource that was made available to the customer as part of this resource block
+	HandoverQuantity *string `pulumi:"handoverQuantity"`
+	// The OCID of the handed over resource block.
+	OccHandoverResourceBlockId *string `pulumi:"occHandoverResourceBlockId"`
+}
+
+// OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput is an input type that accepts OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs and OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput values.
+// You can construct a concrete instance of `OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput` via:
+//
+//	OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs{...}
+type OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput interface {
+	pulumi.Input
+
+	ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput() OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput
+	ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutputWithContext(context.Context) OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput
+}
+
+type OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs struct {
+	// The total quantity of the resource that was made available to the customer as part of this resource block
+	HandoverQuantity pulumi.StringPtrInput `pulumi:"handoverQuantity"`
+	// The OCID of the handed over resource block.
+	OccHandoverResourceBlockId pulumi.StringPtrInput `pulumi:"occHandoverResourceBlockId"`
+}
+
+func (OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (i OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs) ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput() OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return i.ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutputWithContext(context.Background())
+}
+
+func (i OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs) ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutputWithContext(ctx context.Context) OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput)
+}
+
+// OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput is an input type that accepts OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray and OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput values.
+// You can construct a concrete instance of `OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput` via:
+//
+//	OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray{ OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs{...} }
+type OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput interface {
+	pulumi.Input
+
+	ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput() OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput
+	ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(context.Context) OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput
+}
+
+type OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray []OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput
+
+func (OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (i OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray) ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput() OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return i.ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(context.Background())
+}
+
+func (i OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray) ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(ctx context.Context) OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput)
+}
+
+type OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput struct{ *pulumi.OutputState }
+
+func (OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (o OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput() OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return o
+}
+
+func (o OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutputWithContext(ctx context.Context) OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return o
+}
+
+// The total quantity of the resource that was made available to the customer as part of this resource block
+func (o OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) HandoverQuantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList) *string {
+		return v.HandoverQuantity
+	}).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the handed over resource block.
+func (o OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) OccHandoverResourceBlockId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList) *string {
+		return v.OccHandoverResourceBlockId
+	}).(pulumi.StringPtrOutput)
+}
+
+type OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput struct{ *pulumi.OutputState }
+
+func (OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (o OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput) ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput() OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o
+}
+
+func (o OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput) ToOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(ctx context.Context) OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o
+}
+
+func (o OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput) Index(i pulumi.IntInput) OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList {
+		return vs[0].([]OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)[vs[1].(int)]
+	}).(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput)
 }
 
 type OccCapacityRequestPatchOperation struct {
@@ -619,6 +785,544 @@ func (o OccCapacityRequestPatchOperationArrayOutput) Index(i pulumi.IntInput) Oc
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OccCapacityRequestPatchOperation {
 		return vs[0].([]OccCapacityRequestPatchOperation)[vs[1].(int)]
 	}).(OccCapacityRequestPatchOperationOutput)
+}
+
+type OccCustomerGroupCustomersList struct {
+	// The description about the customer group.
+	Description *string `pulumi:"description"`
+	// The display name for the customer.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the customer group.
+	OccCustomerGroupId *string `pulumi:"occCustomerGroupId"`
+	// To determine whether the customer is enabled/disabled.
+	Status *string `pulumi:"status"`
+	// The OCID of the tenancy belonging to the customer.
+	TenancyId string `pulumi:"tenancyId"`
+}
+
+// OccCustomerGroupCustomersListInput is an input type that accepts OccCustomerGroupCustomersListArgs and OccCustomerGroupCustomersListOutput values.
+// You can construct a concrete instance of `OccCustomerGroupCustomersListInput` via:
+//
+//	OccCustomerGroupCustomersListArgs{...}
+type OccCustomerGroupCustomersListInput interface {
+	pulumi.Input
+
+	ToOccCustomerGroupCustomersListOutput() OccCustomerGroupCustomersListOutput
+	ToOccCustomerGroupCustomersListOutputWithContext(context.Context) OccCustomerGroupCustomersListOutput
+}
+
+type OccCustomerGroupCustomersListArgs struct {
+	// The description about the customer group.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// The display name for the customer.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the customer group.
+	OccCustomerGroupId pulumi.StringPtrInput `pulumi:"occCustomerGroupId"`
+	// To determine whether the customer is enabled/disabled.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The OCID of the tenancy belonging to the customer.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+}
+
+func (OccCustomerGroupCustomersListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OccCustomerGroupCustomersList)(nil)).Elem()
+}
+
+func (i OccCustomerGroupCustomersListArgs) ToOccCustomerGroupCustomersListOutput() OccCustomerGroupCustomersListOutput {
+	return i.ToOccCustomerGroupCustomersListOutputWithContext(context.Background())
+}
+
+func (i OccCustomerGroupCustomersListArgs) ToOccCustomerGroupCustomersListOutputWithContext(ctx context.Context) OccCustomerGroupCustomersListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OccCustomerGroupCustomersListOutput)
+}
+
+// OccCustomerGroupCustomersListArrayInput is an input type that accepts OccCustomerGroupCustomersListArray and OccCustomerGroupCustomersListArrayOutput values.
+// You can construct a concrete instance of `OccCustomerGroupCustomersListArrayInput` via:
+//
+//	OccCustomerGroupCustomersListArray{ OccCustomerGroupCustomersListArgs{...} }
+type OccCustomerGroupCustomersListArrayInput interface {
+	pulumi.Input
+
+	ToOccCustomerGroupCustomersListArrayOutput() OccCustomerGroupCustomersListArrayOutput
+	ToOccCustomerGroupCustomersListArrayOutputWithContext(context.Context) OccCustomerGroupCustomersListArrayOutput
+}
+
+type OccCustomerGroupCustomersListArray []OccCustomerGroupCustomersListInput
+
+func (OccCustomerGroupCustomersListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OccCustomerGroupCustomersList)(nil)).Elem()
+}
+
+func (i OccCustomerGroupCustomersListArray) ToOccCustomerGroupCustomersListArrayOutput() OccCustomerGroupCustomersListArrayOutput {
+	return i.ToOccCustomerGroupCustomersListArrayOutputWithContext(context.Background())
+}
+
+func (i OccCustomerGroupCustomersListArray) ToOccCustomerGroupCustomersListArrayOutputWithContext(ctx context.Context) OccCustomerGroupCustomersListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OccCustomerGroupCustomersListArrayOutput)
+}
+
+type OccCustomerGroupCustomersListOutput struct{ *pulumi.OutputState }
+
+func (OccCustomerGroupCustomersListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OccCustomerGroupCustomersList)(nil)).Elem()
+}
+
+func (o OccCustomerGroupCustomersListOutput) ToOccCustomerGroupCustomersListOutput() OccCustomerGroupCustomersListOutput {
+	return o
+}
+
+func (o OccCustomerGroupCustomersListOutput) ToOccCustomerGroupCustomersListOutputWithContext(ctx context.Context) OccCustomerGroupCustomersListOutput {
+	return o
+}
+
+// The description about the customer group.
+func (o OccCustomerGroupCustomersListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccCustomerGroupCustomersList) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The display name for the customer.
+func (o OccCustomerGroupCustomersListOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v OccCustomerGroupCustomersList) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the customer group.
+func (o OccCustomerGroupCustomersListOutput) OccCustomerGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccCustomerGroupCustomersList) *string { return v.OccCustomerGroupId }).(pulumi.StringPtrOutput)
+}
+
+// To determine whether the customer is enabled/disabled.
+func (o OccCustomerGroupCustomersListOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccCustomerGroupCustomersList) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the tenancy belonging to the customer.
+func (o OccCustomerGroupCustomersListOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v OccCustomerGroupCustomersList) string { return v.TenancyId }).(pulumi.StringOutput)
+}
+
+type OccCustomerGroupCustomersListArrayOutput struct{ *pulumi.OutputState }
+
+func (OccCustomerGroupCustomersListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OccCustomerGroupCustomersList)(nil)).Elem()
+}
+
+func (o OccCustomerGroupCustomersListArrayOutput) ToOccCustomerGroupCustomersListArrayOutput() OccCustomerGroupCustomersListArrayOutput {
+	return o
+}
+
+func (o OccCustomerGroupCustomersListArrayOutput) ToOccCustomerGroupCustomersListArrayOutputWithContext(ctx context.Context) OccCustomerGroupCustomersListArrayOutput {
+	return o
+}
+
+func (o OccCustomerGroupCustomersListArrayOutput) Index(i pulumi.IntInput) OccCustomerGroupCustomersListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OccCustomerGroupCustomersList {
+		return vs[0].([]OccCustomerGroupCustomersList)[vs[1].(int)]
+	}).(OccCustomerGroupCustomersListOutput)
+}
+
+type GetInternalNamespaceOccOverviewsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInternalNamespaceOccOverviewsFilterInput is an input type that accepts GetInternalNamespaceOccOverviewsFilterArgs and GetInternalNamespaceOccOverviewsFilterOutput values.
+// You can construct a concrete instance of `GetInternalNamespaceOccOverviewsFilterInput` via:
+//
+//	GetInternalNamespaceOccOverviewsFilterArgs{...}
+type GetInternalNamespaceOccOverviewsFilterInput interface {
+	pulumi.Input
+
+	ToGetInternalNamespaceOccOverviewsFilterOutput() GetInternalNamespaceOccOverviewsFilterOutput
+	ToGetInternalNamespaceOccOverviewsFilterOutputWithContext(context.Context) GetInternalNamespaceOccOverviewsFilterOutput
+}
+
+type GetInternalNamespaceOccOverviewsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInternalNamespaceOccOverviewsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalNamespaceOccOverviewsFilter)(nil)).Elem()
+}
+
+func (i GetInternalNamespaceOccOverviewsFilterArgs) ToGetInternalNamespaceOccOverviewsFilterOutput() GetInternalNamespaceOccOverviewsFilterOutput {
+	return i.ToGetInternalNamespaceOccOverviewsFilterOutputWithContext(context.Background())
+}
+
+func (i GetInternalNamespaceOccOverviewsFilterArgs) ToGetInternalNamespaceOccOverviewsFilterOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalNamespaceOccOverviewsFilterOutput)
+}
+
+// GetInternalNamespaceOccOverviewsFilterArrayInput is an input type that accepts GetInternalNamespaceOccOverviewsFilterArray and GetInternalNamespaceOccOverviewsFilterArrayOutput values.
+// You can construct a concrete instance of `GetInternalNamespaceOccOverviewsFilterArrayInput` via:
+//
+//	GetInternalNamespaceOccOverviewsFilterArray{ GetInternalNamespaceOccOverviewsFilterArgs{...} }
+type GetInternalNamespaceOccOverviewsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalNamespaceOccOverviewsFilterArrayOutput() GetInternalNamespaceOccOverviewsFilterArrayOutput
+	ToGetInternalNamespaceOccOverviewsFilterArrayOutputWithContext(context.Context) GetInternalNamespaceOccOverviewsFilterArrayOutput
+}
+
+type GetInternalNamespaceOccOverviewsFilterArray []GetInternalNamespaceOccOverviewsFilterInput
+
+func (GetInternalNamespaceOccOverviewsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalNamespaceOccOverviewsFilter)(nil)).Elem()
+}
+
+func (i GetInternalNamespaceOccOverviewsFilterArray) ToGetInternalNamespaceOccOverviewsFilterArrayOutput() GetInternalNamespaceOccOverviewsFilterArrayOutput {
+	return i.ToGetInternalNamespaceOccOverviewsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalNamespaceOccOverviewsFilterArray) ToGetInternalNamespaceOccOverviewsFilterArrayOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalNamespaceOccOverviewsFilterArrayOutput)
+}
+
+type GetInternalNamespaceOccOverviewsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInternalNamespaceOccOverviewsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalNamespaceOccOverviewsFilter)(nil)).Elem()
+}
+
+func (o GetInternalNamespaceOccOverviewsFilterOutput) ToGetInternalNamespaceOccOverviewsFilterOutput() GetInternalNamespaceOccOverviewsFilterOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsFilterOutput) ToGetInternalNamespaceOccOverviewsFilterOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsFilterOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInternalNamespaceOccOverviewsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInternalNamespaceOccOverviewsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInternalNamespaceOccOverviewsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalNamespaceOccOverviewsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalNamespaceOccOverviewsFilter)(nil)).Elem()
+}
+
+func (o GetInternalNamespaceOccOverviewsFilterArrayOutput) ToGetInternalNamespaceOccOverviewsFilterArrayOutput() GetInternalNamespaceOccOverviewsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsFilterArrayOutput) ToGetInternalNamespaceOccOverviewsFilterArrayOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsFilterArrayOutput) Index(i pulumi.IntInput) GetInternalNamespaceOccOverviewsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalNamespaceOccOverviewsFilter {
+		return vs[0].([]GetInternalNamespaceOccOverviewsFilter)[vs[1].(int)]
+	}).(GetInternalNamespaceOccOverviewsFilterOutput)
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollection struct {
+	// An array of overview summary.
+	Items []GetInternalNamespaceOccOverviewsOccOverviewCollectionItem `pulumi:"items"`
+}
+
+// GetInternalNamespaceOccOverviewsOccOverviewCollectionInput is an input type that accepts GetInternalNamespaceOccOverviewsOccOverviewCollectionArgs and GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput values.
+// You can construct a concrete instance of `GetInternalNamespaceOccOverviewsOccOverviewCollectionInput` via:
+//
+//	GetInternalNamespaceOccOverviewsOccOverviewCollectionArgs{...}
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionInput interface {
+	pulumi.Input
+
+	ToGetInternalNamespaceOccOverviewsOccOverviewCollectionOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput
+	ToGetInternalNamespaceOccOverviewsOccOverviewCollectionOutputWithContext(context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionArgs struct {
+	// An array of overview summary.
+	Items GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalNamespaceOccOverviewsOccOverviewCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalNamespaceOccOverviewsOccOverviewCollection)(nil)).Elem()
+}
+
+func (i GetInternalNamespaceOccOverviewsOccOverviewCollectionArgs) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return i.ToGetInternalNamespaceOccOverviewsOccOverviewCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInternalNamespaceOccOverviewsOccOverviewCollectionArgs) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput)
+}
+
+// GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayInput is an input type that accepts GetInternalNamespaceOccOverviewsOccOverviewCollectionArray and GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayInput` via:
+//
+//	GetInternalNamespaceOccOverviewsOccOverviewCollectionArray{ GetInternalNamespaceOccOverviewsOccOverviewCollectionArgs{...} }
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput
+	ToGetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutputWithContext(context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionArray []GetInternalNamespaceOccOverviewsOccOverviewCollectionInput
+
+func (GetInternalNamespaceOccOverviewsOccOverviewCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalNamespaceOccOverviewsOccOverviewCollection)(nil)).Elem()
+}
+
+func (i GetInternalNamespaceOccOverviewsOccOverviewCollectionArray) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput {
+	return i.ToGetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalNamespaceOccOverviewsOccOverviewCollectionArray) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput)
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalNamespaceOccOverviewsOccOverviewCollection)(nil)).Elem()
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return o
+}
+
+// An array of overview summary.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput) Items() GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollection) []GetInternalNamespaceOccOverviewsOccOverviewCollectionItem {
+		return v.Items
+	}).(GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput)
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalNamespaceOccOverviewsOccOverviewCollection)(nil)).Elem()
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput) Index(i pulumi.IntInput) GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalNamespaceOccOverviewsOccOverviewCollection {
+		return vs[0].([]GetInternalNamespaceOccOverviewsOccOverviewCollection)[vs[1].(int)]
+	}).(GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput)
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionItem struct {
+	// A raw json blob containing all the capacity requests corresponding to the resource name
+	CapacityRequestsBlob string `pulumi:"capacityRequestsBlob"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name of the month along with year for which this summary corresponds to.
+	PeriodValue string `pulumi:"periodValue"`
+	// The name of the resource for which we have aggregated the value.
+	ResourceName string `pulumi:"resourceName"`
+	// The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+	TotalAvailable string `pulumi:"totalAvailable"`
+	// The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+	TotalCancelled string `pulumi:"totalCancelled"`
+	// The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+	TotalDemanded string `pulumi:"totalDemanded"`
+	// The quantity of the resource which is rejected by Oracle.
+	TotalRejected string `pulumi:"totalRejected"`
+	// The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+	TotalSupplied string `pulumi:"totalSupplied"`
+	// The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+	TotalUnfulfilled string `pulumi:"totalUnfulfilled"`
+	// The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+	Unit string `pulumi:"unit"`
+	// A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+	WorkloadTypeBreakdownBlob string `pulumi:"workloadTypeBreakdownBlob"`
+}
+
+// GetInternalNamespaceOccOverviewsOccOverviewCollectionItemInput is an input type that accepts GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs and GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput values.
+// You can construct a concrete instance of `GetInternalNamespaceOccOverviewsOccOverviewCollectionItemInput` via:
+//
+//	GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs{...}
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput
+	ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutputWithContext(context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs struct {
+	// A raw json blob containing all the capacity requests corresponding to the resource name
+	CapacityRequestsBlob pulumi.StringInput `pulumi:"capacityRequestsBlob"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name of the month along with year for which this summary corresponds to.
+	PeriodValue pulumi.StringInput `pulumi:"periodValue"`
+	// The name of the resource for which we have aggregated the value.
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	// The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+	TotalAvailable pulumi.StringInput `pulumi:"totalAvailable"`
+	// The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+	TotalCancelled pulumi.StringInput `pulumi:"totalCancelled"`
+	// The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+	TotalDemanded pulumi.StringInput `pulumi:"totalDemanded"`
+	// The quantity of the resource which is rejected by Oracle.
+	TotalRejected pulumi.StringInput `pulumi:"totalRejected"`
+	// The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+	TotalSupplied pulumi.StringInput `pulumi:"totalSupplied"`
+	// The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+	TotalUnfulfilled pulumi.StringInput `pulumi:"totalUnfulfilled"`
+	// The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+	Unit pulumi.StringInput `pulumi:"unit"`
+	// A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+	WorkloadTypeBreakdownBlob pulumi.StringInput `pulumi:"workloadTypeBreakdownBlob"`
+}
+
+func (GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalNamespaceOccOverviewsOccOverviewCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return i.ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput)
+}
+
+// GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayInput is an input type that accepts GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArray and GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayInput` via:
+//
+//	GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArray{ GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs{...} }
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput
+	ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutputWithContext(context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArray []GetInternalNamespaceOccOverviewsOccOverviewCollectionItemInput
+
+func (GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalNamespaceOccOverviewsOccOverviewCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArray) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return i.ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArray) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput)
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalNamespaceOccOverviewsOccOverviewCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return o
+}
+
+// A raw json blob containing all the capacity requests corresponding to the resource name
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) CapacityRequestsBlob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string {
+		return v.CapacityRequestsBlob
+	}).(pulumi.StringOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name of the month along with year for which this summary corresponds to.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) PeriodValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.PeriodValue }).(pulumi.StringOutput)
+}
+
+// The name of the resource for which we have aggregated the value.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.ResourceName }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalAvailable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalAvailable }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalCancelled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalCancelled }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalDemanded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalDemanded }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is rejected by Oracle.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalRejected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalRejected }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalSupplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalSupplied }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalUnfulfilled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalUnfulfilled }).(pulumi.StringOutput)
+}
+
+// The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+// A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput) WorkloadTypeBreakdownBlob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalNamespaceOccOverviewsOccOverviewCollectionItem) string {
+		return v.WorkloadTypeBreakdownBlob
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalNamespaceOccOverviewsOccOverviewCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput() GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput) ToGetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalNamespaceOccOverviewsOccOverviewCollectionItem {
+		return vs[0].([]GetInternalNamespaceOccOverviewsOccOverviewCollectionItem)[vs[1].(int)]
+	}).(GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput)
 }
 
 type GetInternalOccAvailabilityCatalogsFilter struct {
@@ -1174,8 +1878,1378 @@ func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMe
 	}).(GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailOutput)
 }
 
+type GetInternalOccHandoverResourceBlockDetailsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInternalOccHandoverResourceBlockDetailsFilterInput is an input type that accepts GetInternalOccHandoverResourceBlockDetailsFilterArgs and GetInternalOccHandoverResourceBlockDetailsFilterOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlockDetailsFilterInput` via:
+//
+//	GetInternalOccHandoverResourceBlockDetailsFilterArgs{...}
+type GetInternalOccHandoverResourceBlockDetailsFilterInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlockDetailsFilterOutput() GetInternalOccHandoverResourceBlockDetailsFilterOutput
+	ToGetInternalOccHandoverResourceBlockDetailsFilterOutputWithContext(context.Context) GetInternalOccHandoverResourceBlockDetailsFilterOutput
+}
+
+type GetInternalOccHandoverResourceBlockDetailsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInternalOccHandoverResourceBlockDetailsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsFilterArgs) ToGetInternalOccHandoverResourceBlockDetailsFilterOutput() GetInternalOccHandoverResourceBlockDetailsFilterOutput {
+	return i.ToGetInternalOccHandoverResourceBlockDetailsFilterOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsFilterArgs) ToGetInternalOccHandoverResourceBlockDetailsFilterOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlockDetailsFilterOutput)
+}
+
+// GetInternalOccHandoverResourceBlockDetailsFilterArrayInput is an input type that accepts GetInternalOccHandoverResourceBlockDetailsFilterArray and GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlockDetailsFilterArrayInput` via:
+//
+//	GetInternalOccHandoverResourceBlockDetailsFilterArray{ GetInternalOccHandoverResourceBlockDetailsFilterArgs{...} }
+type GetInternalOccHandoverResourceBlockDetailsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlockDetailsFilterArrayOutput() GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput
+	ToGetInternalOccHandoverResourceBlockDetailsFilterArrayOutputWithContext(context.Context) GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput
+}
+
+type GetInternalOccHandoverResourceBlockDetailsFilterArray []GetInternalOccHandoverResourceBlockDetailsFilterInput
+
+func (GetInternalOccHandoverResourceBlockDetailsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlockDetailsFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsFilterArray) ToGetInternalOccHandoverResourceBlockDetailsFilterArrayOutput() GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput {
+	return i.ToGetInternalOccHandoverResourceBlockDetailsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsFilterArray) ToGetInternalOccHandoverResourceBlockDetailsFilterArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlockDetailsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlockDetailsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsFilterOutput) ToGetInternalOccHandoverResourceBlockDetailsFilterOutput() GetInternalOccHandoverResourceBlockDetailsFilterOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsFilterOutput) ToGetInternalOccHandoverResourceBlockDetailsFilterOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsFilterOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlockDetailsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlockDetailsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlockDetailsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlockDetailsFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput) ToGetInternalOccHandoverResourceBlockDetailsFilterArrayOutput() GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput) ToGetInternalOccHandoverResourceBlockDetailsFilterArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput) Index(i pulumi.IntInput) GetInternalOccHandoverResourceBlockDetailsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccHandoverResourceBlockDetailsFilter {
+		return vs[0].([]GetInternalOccHandoverResourceBlockDetailsFilter)[vs[1].(int)]
+	}).(GetInternalOccHandoverResourceBlockDetailsFilterOutput)
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection struct {
+	// An array of details about an occ handover resource block.
+	Items []GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem `pulumi:"items"`
+}
+
+// GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput is an input type that accepts GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs and GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput` via:
+//
+//	GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs{...}
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput
+	ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutputWithContext(context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs struct {
+	// An array of details about an occ handover resource block.
+	Items GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return i.ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput)
+}
+
+// GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayInput is an input type that accepts GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray and GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayInput` via:
+//
+//	GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray{ GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs{...} }
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput
+	ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutputWithContext(context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray []GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput
+
+func (GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput {
+	return i.ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return o
+}
+
+// An array of details about an occ handover resource block.
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput) Items() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection) []GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem {
+		return v.Items
+	}).(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput) Index(i pulumi.IntInput) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection {
+		return vs[0].([]GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)[vs[1].(int)]
+	}).(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput)
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem struct {
+	// A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+	Details map[string]string `pulumi:"details"`
+	// The OCID of the occResourceHandoverBlock.
+	OccResourceHandoverBlockId string `pulumi:"occResourceHandoverBlockId"`
+}
+
+// GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput is an input type that accepts GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs and GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput` via:
+//
+//	GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs{...}
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput
+	ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutputWithContext(context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs struct {
+	// A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+	Details pulumi.StringMapInput `pulumi:"details"`
+	// The OCID of the occResourceHandoverBlock.
+	OccResourceHandoverBlockId pulumi.StringInput `pulumi:"occResourceHandoverBlockId"`
+}
+
+func (GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return i.ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput)
+}
+
+// GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput is an input type that accepts GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray and GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput` via:
+//
+//	GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray{ GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs{...} }
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput
+	ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutputWithContext(context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray []GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput
+
+func (GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return i.ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return o
+}
+
+// A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) Details() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem) map[string]string {
+		return v.Details
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the occResourceHandoverBlock.
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) OccResourceHandoverBlockId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem) string {
+		return v.OccResourceHandoverBlockId
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput() GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput) ToGetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem {
+		return vs[0].([]GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)[vs[1].(int)]
+	}).(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInternalOccHandoverResourceBlocksFilterInput is an input type that accepts GetInternalOccHandoverResourceBlocksFilterArgs and GetInternalOccHandoverResourceBlocksFilterOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksFilterInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksFilterArgs{...}
+type GetInternalOccHandoverResourceBlocksFilterInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksFilterOutput() GetInternalOccHandoverResourceBlocksFilterOutput
+	ToGetInternalOccHandoverResourceBlocksFilterOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksFilterOutput
+}
+
+type GetInternalOccHandoverResourceBlocksFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInternalOccHandoverResourceBlocksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksFilterArgs) ToGetInternalOccHandoverResourceBlocksFilterOutput() GetInternalOccHandoverResourceBlocksFilterOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksFilterOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksFilterArgs) ToGetInternalOccHandoverResourceBlocksFilterOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksFilterOutput)
+}
+
+// GetInternalOccHandoverResourceBlocksFilterArrayInput is an input type that accepts GetInternalOccHandoverResourceBlocksFilterArray and GetInternalOccHandoverResourceBlocksFilterArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksFilterArrayInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksFilterArray{ GetInternalOccHandoverResourceBlocksFilterArgs{...} }
+type GetInternalOccHandoverResourceBlocksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksFilterArrayOutput() GetInternalOccHandoverResourceBlocksFilterArrayOutput
+	ToGetInternalOccHandoverResourceBlocksFilterArrayOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksFilterArrayOutput
+}
+
+type GetInternalOccHandoverResourceBlocksFilterArray []GetInternalOccHandoverResourceBlocksFilterInput
+
+func (GetInternalOccHandoverResourceBlocksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksFilterArray) ToGetInternalOccHandoverResourceBlocksFilterArrayOutput() GetInternalOccHandoverResourceBlocksFilterArrayOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksFilterArray) ToGetInternalOccHandoverResourceBlocksFilterArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksFilterArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksFilterOutput) ToGetInternalOccHandoverResourceBlocksFilterOutput() GetInternalOccHandoverResourceBlocksFilterOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksFilterOutput) ToGetInternalOccHandoverResourceBlocksFilterOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksFilterOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInternalOccHandoverResourceBlocksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInternalOccHandoverResourceBlocksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksFilterArrayOutput) ToGetInternalOccHandoverResourceBlocksFilterArrayOutput() GetInternalOccHandoverResourceBlocksFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksFilterArrayOutput) ToGetInternalOccHandoverResourceBlocksFilterArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksFilterArrayOutput) Index(i pulumi.IntInput) GetInternalOccHandoverResourceBlocksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccHandoverResourceBlocksFilter {
+		return vs[0].([]GetInternalOccHandoverResourceBlocksFilter)[vs[1].(int)]
+	}).(GetInternalOccHandoverResourceBlocksFilterOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollection struct {
+	// An array of occ handover resource blocks.
+	Items []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem `pulumi:"items"`
+}
+
+// GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput is an input type that accepts GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs and GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs{...}
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs struct {
+	// An array of occ handover resource blocks.
+	Items GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput)
+}
+
+// GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayInput is an input type that accepts GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray and GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray{ GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs{...} }
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return o
+}
+
+// An array of occ handover resource blocks.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput) Items() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollection) []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem {
+		return v.Items
+	}).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput) Index(i pulumi.IntInput) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollection {
+		return vs[0].([]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollection)[vs[1].(int)]
+	}).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem struct {
+	// A list containing details about the capacity requests against which the resources were provisioned by oracle.
+	AssociatedCapacityRequests []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest `pulumi:"associatedCapacityRequests"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The date on which the resource was handed over to the customer.
+	HandoverDate string `pulumi:"handoverDate"`
+	// A filter to return only the list of resources that match the name provided in this filter.
+	HandoverResourceName string `pulumi:"handoverResourceName"`
+	// The OCID of the resource block.
+	Id string `pulumi:"id"`
+	// The namespace enum value that needs to be passed as a required query parameter.
+	Namespace string `pulumi:"namespace"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
+	// Details like building, room and block where the resource was placed after provisioning in the datacenter.
+	PlacementDetails []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail `pulumi:"placementDetails"`
+	// The total quantity of the resource that was made available to the customer by Oracle.
+	TotalHandoverQuantity string `pulumi:"totalHandoverQuantity"`
+}
+
+// GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput is an input type that accepts GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs and GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs{...}
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs struct {
+	// A list containing details about the capacity requests against which the resources were provisioned by oracle.
+	AssociatedCapacityRequests GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput `pulumi:"associatedCapacityRequests"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The date on which the resource was handed over to the customer.
+	HandoverDate pulumi.StringInput `pulumi:"handoverDate"`
+	// A filter to return only the list of resources that match the name provided in this filter.
+	HandoverResourceName pulumi.StringInput `pulumi:"handoverResourceName"`
+	// The OCID of the resource block.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The namespace enum value that needs to be passed as a required query parameter.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
+	// Details like building, room and block where the resource was placed after provisioning in the datacenter.
+	PlacementDetails GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput `pulumi:"placementDetails"`
+	// The total quantity of the resource that was made available to the customer by Oracle.
+	TotalHandoverQuantity pulumi.StringInput `pulumi:"totalHandoverQuantity"`
+}
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput)
+}
+
+// GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput is an input type that accepts GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray and GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray{ GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs{...} }
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return o
+}
+
+// A list containing details about the capacity requests against which the resources were provisioned by oracle.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) AssociatedCapacityRequests() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest {
+		return v.AssociatedCapacityRequests
+	}).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The date on which the resource was handed over to the customer.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) HandoverDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.HandoverDate
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the list of resources that match the name provided in this filter.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) HandoverResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.HandoverResourceName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the resource block.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The namespace enum value that needs to be passed as a required query parameter.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The customer group ocid by which we would filter the list.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.OccCustomerGroupId
+	}).(pulumi.StringOutput)
+}
+
+// Details like building, room and block where the resource was placed after provisioning in the datacenter.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) PlacementDetails() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail {
+		return v.PlacementDetails
+	}).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput)
+}
+
+// The total quantity of the resource that was made available to the customer by Oracle.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) TotalHandoverQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.TotalHandoverQuantity
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem {
+		return vs[0].([]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)[vs[1].(int)]
+	}).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest struct {
+	// The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+	HandoverQuantity string `pulumi:"handoverQuantity"`
+	// The OCID of the capacity request against which the resources were provisioned.
+	OccCapacityRequestId string `pulumi:"occCapacityRequestId"`
+}
+
+// GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput is an input type that accepts GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs and GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs{...}
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs struct {
+	// The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+	HandoverQuantity pulumi.StringInput `pulumi:"handoverQuantity"`
+	// The OCID of the capacity request against which the resources were provisioned.
+	OccCapacityRequestId pulumi.StringInput `pulumi:"occCapacityRequestId"`
+}
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput)
+}
+
+// GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput is an input type that accepts GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray and GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray{ GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs{...} }
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return o
+}
+
+// The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) HandoverQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest) string {
+		return v.HandoverQuantity
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the capacity request against which the resources were provisioned.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) OccCapacityRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest) string {
+		return v.OccCapacityRequestId
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput) Index(i pulumi.IntInput) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest {
+		return vs[0].([]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)[vs[1].(int)]
+	}).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail struct {
+	// The availability domain (AD) for which the resources were provisioned.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The block in the datacenter room where the resource was placed.
+	Block string `pulumi:"block"`
+	// The datacenter building where the resource was placed.
+	Building string `pulumi:"building"`
+	// The name of the region for which the resources were provisioned.
+	Region string `pulumi:"region"`
+	// The name of the room in the dataacenter building where the resource was placed.
+	Room string `pulumi:"room"`
+	// The type of workload to which these resources were provisioned.
+	WorkloadType string `pulumi:"workloadType"`
+}
+
+// GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput is an input type that accepts GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs and GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs{...}
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs struct {
+	// The availability domain (AD) for which the resources were provisioned.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The block in the datacenter room where the resource was placed.
+	Block pulumi.StringInput `pulumi:"block"`
+	// The datacenter building where the resource was placed.
+	Building pulumi.StringInput `pulumi:"building"`
+	// The name of the region for which the resources were provisioned.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The name of the room in the dataacenter building where the resource was placed.
+	Room pulumi.StringInput `pulumi:"room"`
+	// The type of workload to which these resources were provisioned.
+	WorkloadType pulumi.StringInput `pulumi:"workloadType"`
+}
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput)
+}
+
+// GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput is an input type that accepts GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray and GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput` via:
+//
+//	GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray{ GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs{...} }
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput
+	ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutputWithContext(context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray []GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)(nil)).Elem()
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return i.ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return o
+}
+
+// The availability domain (AD) for which the resources were provisioned.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The block in the datacenter room where the resource was placed.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) Block() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.Block
+	}).(pulumi.StringOutput)
+}
+
+// The datacenter building where the resource was placed.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) Building() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.Building
+	}).(pulumi.StringOutput)
+}
+
+// The name of the region for which the resources were provisioned.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+// The name of the room in the dataacenter building where the resource was placed.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) Room() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.Room
+	}).(pulumi.StringOutput)
+}
+
+// The type of workload to which these resources were provisioned.
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) WorkloadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.WorkloadType
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)(nil)).Elem()
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput() GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput) ToGetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutputWithContext(ctx context.Context) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return o
+}
+
+func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput) Index(i pulumi.IntInput) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail {
+		return vs[0].([]GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)[vs[1].(int)]
+	}).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput)
+}
+
+type GetNamespaceOccOverviewsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamespaceOccOverviewsFilterInput is an input type that accepts GetNamespaceOccOverviewsFilterArgs and GetNamespaceOccOverviewsFilterOutput values.
+// You can construct a concrete instance of `GetNamespaceOccOverviewsFilterInput` via:
+//
+//	GetNamespaceOccOverviewsFilterArgs{...}
+type GetNamespaceOccOverviewsFilterInput interface {
+	pulumi.Input
+
+	ToGetNamespaceOccOverviewsFilterOutput() GetNamespaceOccOverviewsFilterOutput
+	ToGetNamespaceOccOverviewsFilterOutputWithContext(context.Context) GetNamespaceOccOverviewsFilterOutput
+}
+
+type GetNamespaceOccOverviewsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamespaceOccOverviewsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceOccOverviewsFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceOccOverviewsFilterArgs) ToGetNamespaceOccOverviewsFilterOutput() GetNamespaceOccOverviewsFilterOutput {
+	return i.ToGetNamespaceOccOverviewsFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceOccOverviewsFilterArgs) ToGetNamespaceOccOverviewsFilterOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceOccOverviewsFilterOutput)
+}
+
+// GetNamespaceOccOverviewsFilterArrayInput is an input type that accepts GetNamespaceOccOverviewsFilterArray and GetNamespaceOccOverviewsFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceOccOverviewsFilterArrayInput` via:
+//
+//	GetNamespaceOccOverviewsFilterArray{ GetNamespaceOccOverviewsFilterArgs{...} }
+type GetNamespaceOccOverviewsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceOccOverviewsFilterArrayOutput() GetNamespaceOccOverviewsFilterArrayOutput
+	ToGetNamespaceOccOverviewsFilterArrayOutputWithContext(context.Context) GetNamespaceOccOverviewsFilterArrayOutput
+}
+
+type GetNamespaceOccOverviewsFilterArray []GetNamespaceOccOverviewsFilterInput
+
+func (GetNamespaceOccOverviewsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceOccOverviewsFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceOccOverviewsFilterArray) ToGetNamespaceOccOverviewsFilterArrayOutput() GetNamespaceOccOverviewsFilterArrayOutput {
+	return i.ToGetNamespaceOccOverviewsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceOccOverviewsFilterArray) ToGetNamespaceOccOverviewsFilterArrayOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceOccOverviewsFilterArrayOutput)
+}
+
+type GetNamespaceOccOverviewsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceOccOverviewsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceOccOverviewsFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceOccOverviewsFilterOutput) ToGetNamespaceOccOverviewsFilterOutput() GetNamespaceOccOverviewsFilterOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsFilterOutput) ToGetNamespaceOccOverviewsFilterOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsFilterOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceOccOverviewsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamespaceOccOverviewsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamespaceOccOverviewsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceOccOverviewsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceOccOverviewsFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceOccOverviewsFilterArrayOutput) ToGetNamespaceOccOverviewsFilterArrayOutput() GetNamespaceOccOverviewsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsFilterArrayOutput) ToGetNamespaceOccOverviewsFilterArrayOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceOccOverviewsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceOccOverviewsFilter {
+		return vs[0].([]GetNamespaceOccOverviewsFilter)[vs[1].(int)]
+	}).(GetNamespaceOccOverviewsFilterOutput)
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollection struct {
+	// An array of overview summary.
+	Items []GetNamespaceOccOverviewsOccOverviewCollectionItem `pulumi:"items"`
+}
+
+// GetNamespaceOccOverviewsOccOverviewCollectionInput is an input type that accepts GetNamespaceOccOverviewsOccOverviewCollectionArgs and GetNamespaceOccOverviewsOccOverviewCollectionOutput values.
+// You can construct a concrete instance of `GetNamespaceOccOverviewsOccOverviewCollectionInput` via:
+//
+//	GetNamespaceOccOverviewsOccOverviewCollectionArgs{...}
+type GetNamespaceOccOverviewsOccOverviewCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceOccOverviewsOccOverviewCollectionOutput() GetNamespaceOccOverviewsOccOverviewCollectionOutput
+	ToGetNamespaceOccOverviewsOccOverviewCollectionOutputWithContext(context.Context) GetNamespaceOccOverviewsOccOverviewCollectionOutput
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionArgs struct {
+	// An array of overview summary.
+	Items GetNamespaceOccOverviewsOccOverviewCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamespaceOccOverviewsOccOverviewCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceOccOverviewsOccOverviewCollectionArgs) ToGetNamespaceOccOverviewsOccOverviewCollectionOutput() GetNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return i.ToGetNamespaceOccOverviewsOccOverviewCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceOccOverviewsOccOverviewCollectionArgs) ToGetNamespaceOccOverviewsOccOverviewCollectionOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceOccOverviewsOccOverviewCollectionOutput)
+}
+
+// GetNamespaceOccOverviewsOccOverviewCollectionArrayInput is an input type that accepts GetNamespaceOccOverviewsOccOverviewCollectionArray and GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceOccOverviewsOccOverviewCollectionArrayInput` via:
+//
+//	GetNamespaceOccOverviewsOccOverviewCollectionArray{ GetNamespaceOccOverviewsOccOverviewCollectionArgs{...} }
+type GetNamespaceOccOverviewsOccOverviewCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceOccOverviewsOccOverviewCollectionArrayOutput() GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput
+	ToGetNamespaceOccOverviewsOccOverviewCollectionArrayOutputWithContext(context.Context) GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionArray []GetNamespaceOccOverviewsOccOverviewCollectionInput
+
+func (GetNamespaceOccOverviewsOccOverviewCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceOccOverviewsOccOverviewCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceOccOverviewsOccOverviewCollectionArray) ToGetNamespaceOccOverviewsOccOverviewCollectionArrayOutput() GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput {
+	return i.ToGetNamespaceOccOverviewsOccOverviewCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceOccOverviewsOccOverviewCollectionArray) ToGetNamespaceOccOverviewsOccOverviewCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput)
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceOccOverviewsOccOverviewCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionOutput) ToGetNamespaceOccOverviewsOccOverviewCollectionOutput() GetNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionOutput) ToGetNamespaceOccOverviewsOccOverviewCollectionOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return o
+}
+
+// An array of overview summary.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionOutput) Items() GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollection) []GetNamespaceOccOverviewsOccOverviewCollectionItem {
+		return v.Items
+	}).(GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput)
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceOccOverviewsOccOverviewCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput) ToGetNamespaceOccOverviewsOccOverviewCollectionArrayOutput() GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput) ToGetNamespaceOccOverviewsOccOverviewCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceOccOverviewsOccOverviewCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceOccOverviewsOccOverviewCollection {
+		return vs[0].([]GetNamespaceOccOverviewsOccOverviewCollection)[vs[1].(int)]
+	}).(GetNamespaceOccOverviewsOccOverviewCollectionOutput)
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionItem struct {
+	// A raw json blob containing all the capacity requests corresponding to the resource name
+	CapacityRequestsBlob string `pulumi:"capacityRequestsBlob"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name of the month along with year for which this summary corresponds to.
+	PeriodValue string `pulumi:"periodValue"`
+	// The name of the resource for which we have aggregated the value.
+	ResourceName string `pulumi:"resourceName"`
+	// The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+	TotalAvailable string `pulumi:"totalAvailable"`
+	// The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+	TotalCancelled string `pulumi:"totalCancelled"`
+	// The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+	TotalDemanded string `pulumi:"totalDemanded"`
+	// The quantity of the resource which is rejected by Oracle.
+	TotalRejected string `pulumi:"totalRejected"`
+	// The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+	TotalSupplied string `pulumi:"totalSupplied"`
+	// The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+	TotalUnfulfilled string `pulumi:"totalUnfulfilled"`
+	// The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+	Unit string `pulumi:"unit"`
+	// A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+	WorkloadTypeBreakdownBlob string `pulumi:"workloadTypeBreakdownBlob"`
+}
+
+// GetNamespaceOccOverviewsOccOverviewCollectionItemInput is an input type that accepts GetNamespaceOccOverviewsOccOverviewCollectionItemArgs and GetNamespaceOccOverviewsOccOverviewCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamespaceOccOverviewsOccOverviewCollectionItemInput` via:
+//
+//	GetNamespaceOccOverviewsOccOverviewCollectionItemArgs{...}
+type GetNamespaceOccOverviewsOccOverviewCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamespaceOccOverviewsOccOverviewCollectionItemOutput() GetNamespaceOccOverviewsOccOverviewCollectionItemOutput
+	ToGetNamespaceOccOverviewsOccOverviewCollectionItemOutputWithContext(context.Context) GetNamespaceOccOverviewsOccOverviewCollectionItemOutput
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionItemArgs struct {
+	// A raw json blob containing all the capacity requests corresponding to the resource name
+	CapacityRequestsBlob pulumi.StringInput `pulumi:"capacityRequestsBlob"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name of the month along with year for which this summary corresponds to.
+	PeriodValue pulumi.StringInput `pulumi:"periodValue"`
+	// The name of the resource for which we have aggregated the value.
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	// The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+	TotalAvailable pulumi.StringInput `pulumi:"totalAvailable"`
+	// The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+	TotalCancelled pulumi.StringInput `pulumi:"totalCancelled"`
+	// The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+	TotalDemanded pulumi.StringInput `pulumi:"totalDemanded"`
+	// The quantity of the resource which is rejected by Oracle.
+	TotalRejected pulumi.StringInput `pulumi:"totalRejected"`
+	// The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+	TotalSupplied pulumi.StringInput `pulumi:"totalSupplied"`
+	// The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+	TotalUnfulfilled pulumi.StringInput `pulumi:"totalUnfulfilled"`
+	// The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+	Unit pulumi.StringInput `pulumi:"unit"`
+	// A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+	WorkloadTypeBreakdownBlob pulumi.StringInput `pulumi:"workloadTypeBreakdownBlob"`
+}
+
+func (GetNamespaceOccOverviewsOccOverviewCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceOccOverviewsOccOverviewCollectionItemArgs) ToGetNamespaceOccOverviewsOccOverviewCollectionItemOutput() GetNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return i.ToGetNamespaceOccOverviewsOccOverviewCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceOccOverviewsOccOverviewCollectionItemArgs) ToGetNamespaceOccOverviewsOccOverviewCollectionItemOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceOccOverviewsOccOverviewCollectionItemOutput)
+}
+
+// GetNamespaceOccOverviewsOccOverviewCollectionItemArrayInput is an input type that accepts GetNamespaceOccOverviewsOccOverviewCollectionItemArray and GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceOccOverviewsOccOverviewCollectionItemArrayInput` via:
+//
+//	GetNamespaceOccOverviewsOccOverviewCollectionItemArray{ GetNamespaceOccOverviewsOccOverviewCollectionItemArgs{...} }
+type GetNamespaceOccOverviewsOccOverviewCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput() GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput
+	ToGetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutputWithContext(context.Context) GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionItemArray []GetNamespaceOccOverviewsOccOverviewCollectionItemInput
+
+func (GetNamespaceOccOverviewsOccOverviewCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceOccOverviewsOccOverviewCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceOccOverviewsOccOverviewCollectionItemArray) ToGetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput() GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return i.ToGetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceOccOverviewsOccOverviewCollectionItemArray) ToGetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput)
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) ToGetNamespaceOccOverviewsOccOverviewCollectionItemOutput() GetNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) ToGetNamespaceOccOverviewsOccOverviewCollectionItemOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return o
+}
+
+// A raw json blob containing all the capacity requests corresponding to the resource name
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) CapacityRequestsBlob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.CapacityRequestsBlob }).(pulumi.StringOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name of the month along with year for which this summary corresponds to.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) PeriodValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.PeriodValue }).(pulumi.StringOutput)
+}
+
+// The name of the resource for which we have aggregated the value.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.ResourceName }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalAvailable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalAvailable }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalCancelled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalCancelled }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalDemanded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalDemanded }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is rejected by Oracle.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalRejected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalRejected }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalSupplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalSupplied }).(pulumi.StringOutput)
+}
+
+// The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) TotalUnfulfilled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.TotalUnfulfilled }).(pulumi.StringOutput)
+}
+
+// The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+// A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemOutput) WorkloadTypeBreakdownBlob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceOccOverviewsOccOverviewCollectionItem) string { return v.WorkloadTypeBreakdownBlob }).(pulumi.StringOutput)
+}
+
+type GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceOccOverviewsOccOverviewCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput) ToGetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput() GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput) ToGetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceOccOverviewsOccOverviewCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceOccOverviewsOccOverviewCollectionItem {
+		return vs[0].([]GetNamespaceOccOverviewsOccOverviewCollectionItem)[vs[1].(int)]
+	}).(GetNamespaceOccOverviewsOccOverviewCollectionItemOutput)
+}
+
 type GetOccAvailabilityCatalogDetail struct {
-	// The quantity of available resource that the customer can request.
+	// The quantity of resource currently available that the customer can request.
 	AvailableQuantity string `pulumi:"availableQuantity"`
 	// The OCID of the availability catalog.
 	CatalogId string `pulumi:"catalogId"`
@@ -1183,12 +3257,18 @@ type GetOccAvailabilityCatalogDetail struct {
 	DateExpectedCapacityHandover string `pulumi:"dateExpectedCapacityHandover"`
 	// The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
 	DateFinalCustomerOrder string `pulumi:"dateFinalCustomerOrder"`
+	// The quantity of resource currently demanded by the customer.
+	DemandedQuantity string `pulumi:"demandedQuantity"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 	Namespace string `pulumi:"namespace"`
 	// The name of the resource that the customer can request.
 	ResourceName string `pulumi:"resourceName"`
 	// The different types of resources against which customers can place capacity requests.
 	ResourceType string `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The total quantity of resource that the customer can request.
+	TotalAvailableQuantity string `pulumi:"totalAvailableQuantity"`
 	// The unit in which the resource available is measured.
 	Unit string `pulumi:"unit"`
 	// The type of workload (Generic/ROW).
@@ -1207,7 +3287,7 @@ type GetOccAvailabilityCatalogDetailInput interface {
 }
 
 type GetOccAvailabilityCatalogDetailArgs struct {
-	// The quantity of available resource that the customer can request.
+	// The quantity of resource currently available that the customer can request.
 	AvailableQuantity pulumi.StringInput `pulumi:"availableQuantity"`
 	// The OCID of the availability catalog.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
@@ -1215,12 +3295,18 @@ type GetOccAvailabilityCatalogDetailArgs struct {
 	DateExpectedCapacityHandover pulumi.StringInput `pulumi:"dateExpectedCapacityHandover"`
 	// The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
 	DateFinalCustomerOrder pulumi.StringInput `pulumi:"dateFinalCustomerOrder"`
+	// The quantity of resource currently demanded by the customer.
+	DemandedQuantity pulumi.StringInput `pulumi:"demandedQuantity"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The name of the resource that the customer can request.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
 	// The different types of resources against which customers can place capacity requests.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The total quantity of resource that the customer can request.
+	TotalAvailableQuantity pulumi.StringInput `pulumi:"totalAvailableQuantity"`
 	// The unit in which the resource available is measured.
 	Unit pulumi.StringInput `pulumi:"unit"`
 	// The type of workload (Generic/ROW).
@@ -1278,7 +3364,7 @@ func (o GetOccAvailabilityCatalogDetailOutput) ToGetOccAvailabilityCatalogDetail
 	return o
 }
 
-// The quantity of available resource that the customer can request.
+// The quantity of resource currently available that the customer can request.
 func (o GetOccAvailabilityCatalogDetailOutput) AvailableQuantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogDetail) string { return v.AvailableQuantity }).(pulumi.StringOutput)
 }
@@ -1298,6 +3384,11 @@ func (o GetOccAvailabilityCatalogDetailOutput) DateFinalCustomerOrder() pulumi.S
 	return o.ApplyT(func(v GetOccAvailabilityCatalogDetail) string { return v.DateFinalCustomerOrder }).(pulumi.StringOutput)
 }
 
+// The quantity of resource currently demanded by the customer.
+func (o GetOccAvailabilityCatalogDetailOutput) DemandedQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogDetail) string { return v.DemandedQuantity }).(pulumi.StringOutput)
+}
+
 // The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 func (o GetOccAvailabilityCatalogDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogDetail) string { return v.Namespace }).(pulumi.StringOutput)
@@ -1311,6 +3402,16 @@ func (o GetOccAvailabilityCatalogDetailOutput) ResourceName() pulumi.StringOutpu
 // The different types of resources against which customers can place capacity requests.
 func (o GetOccAvailabilityCatalogDetailOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogDetail) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOccAvailabilityCatalogDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogDetail) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The total quantity of resource that the customer can request.
+func (o GetOccAvailabilityCatalogDetailOutput) TotalAvailableQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogDetail) string { return v.TotalAvailableQuantity }).(pulumi.StringOutput)
 }
 
 // The unit in which the resource available is measured.
@@ -1646,7 +3747,7 @@ func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionArray
 }
 
 type GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItem struct {
-	// The quantity of available resource that the customer can request.
+	// The quantity of resource currently available that the customer can request.
 	AvailableQuantity string `pulumi:"availableQuantity"`
 	// The OCID of the availability catalog.
 	CatalogId string `pulumi:"catalogId"`
@@ -1654,12 +3755,18 @@ type GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItem str
 	DateExpectedCapacityHandover string `pulumi:"dateExpectedCapacityHandover"`
 	// The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
 	DateFinalCustomerOrder string `pulumi:"dateFinalCustomerOrder"`
+	// The quantity of resource currently demanded by the customer.
+	DemandedQuantity string `pulumi:"demandedQuantity"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 	Namespace string `pulumi:"namespace"`
 	// The name of the resource to filter the list of capacity constraints.
 	ResourceName string `pulumi:"resourceName"`
 	// Resource type using which the capacity constraints of an availability catalog can be filtered.
 	ResourceType string `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The total quantity of resource that the customer can request.
+	TotalAvailableQuantity string `pulumi:"totalAvailableQuantity"`
 	// The unit in which the resource available is measured.
 	Unit string `pulumi:"unit"`
 	// Workload type using the resources in an availability catalog can be filtered.
@@ -1678,7 +3785,7 @@ type GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemInpu
 }
 
 type GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemArgs struct {
-	// The quantity of available resource that the customer can request.
+	// The quantity of resource currently available that the customer can request.
 	AvailableQuantity pulumi.StringInput `pulumi:"availableQuantity"`
 	// The OCID of the availability catalog.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
@@ -1686,12 +3793,18 @@ type GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemArgs
 	DateExpectedCapacityHandover pulumi.StringInput `pulumi:"dateExpectedCapacityHandover"`
 	// The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
 	DateFinalCustomerOrder pulumi.StringInput `pulumi:"dateFinalCustomerOrder"`
+	// The quantity of resource currently demanded by the customer.
+	DemandedQuantity pulumi.StringInput `pulumi:"demandedQuantity"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The name of the resource to filter the list of capacity constraints.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
 	// Resource type using which the capacity constraints of an availability catalog can be filtered.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The total quantity of resource that the customer can request.
+	TotalAvailableQuantity pulumi.StringInput `pulumi:"totalAvailableQuantity"`
 	// The unit in which the resource available is measured.
 	Unit pulumi.StringInput `pulumi:"unit"`
 	// Workload type using the resources in an availability catalog can be filtered.
@@ -1749,7 +3862,7 @@ func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemO
 	return o
 }
 
-// The quantity of available resource that the customer can request.
+// The quantity of resource currently available that the customer can request.
 func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemOutput) AvailableQuantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItem) string {
 		return v.AvailableQuantity
@@ -1777,6 +3890,13 @@ func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemO
 	}).(pulumi.StringOutput)
 }
 
+// The quantity of resource currently demanded by the customer.
+func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemOutput) DemandedQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItem) string {
+		return v.DemandedQuantity
+	}).(pulumi.StringOutput)
+}
+
 // The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
 func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItem) string {
@@ -1795,6 +3915,20 @@ func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemO
 func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItem) string {
 		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The total quantity of resource that the customer can request.
+func (o GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemOutput) TotalAvailableQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItem) string {
+		return v.TotalAvailableQuantity
 	}).(pulumi.StringOutput)
 }
 
@@ -2042,7 +4176,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Text information about the availability catalog.
 	Description string `pulumi:"description"`
-	// Details about capacity available for  different resources in catalog.
+	// Details about capacity available for different resources in catalog.
 	Details []GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail `pulumi:"details"`
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
@@ -2089,7 +4223,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Text information about the availability catalog.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Details about capacity available for  different resources in catalog.
+	// Details about capacity available for different resources in catalog.
 	Details GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailArrayInput `pulumi:"details"`
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -2194,7 +4328,7 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) De
 	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Details about capacity available for  different resources in catalog.
+// Details about capacity available for different resources in catalog.
 func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) Details() GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailArrayOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) []GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail {
 		return v.Details
@@ -2287,7 +4421,7 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArrayOutpu
 }
 
 type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail struct {
-	// The quantity of available resource that the customer can request.
+	// The quantity of resource currently available that the customer can request.
 	AvailableQuantity string `pulumi:"availableQuantity"`
 	// The OCID of the availability catalog.
 	CatalogId string `pulumi:"catalogId"`
@@ -2295,12 +4429,18 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail struct
 	DateExpectedCapacityHandover string `pulumi:"dateExpectedCapacityHandover"`
 	// The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
 	DateFinalCustomerOrder string `pulumi:"dateFinalCustomerOrder"`
+	// The quantity of resource currently demanded by the customer.
+	DemandedQuantity string `pulumi:"demandedQuantity"`
 	// The namespace by which we would filter the list.
 	Namespace string `pulumi:"namespace"`
 	// The name of the resource that the customer can request.
 	ResourceName string `pulumi:"resourceName"`
 	// The different types of resources against which customers can place capacity requests.
 	ResourceType string `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The total quantity of resource that the customer can request.
+	TotalAvailableQuantity string `pulumi:"totalAvailableQuantity"`
 	// The unit in which the resource available is measured.
 	Unit string `pulumi:"unit"`
 	// The type of workload (Generic/ROW).
@@ -2319,7 +4459,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailInput i
 }
 
 type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailArgs struct {
-	// The quantity of available resource that the customer can request.
+	// The quantity of resource currently available that the customer can request.
 	AvailableQuantity pulumi.StringInput `pulumi:"availableQuantity"`
 	// The OCID of the availability catalog.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
@@ -2327,12 +4467,18 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailArgs st
 	DateExpectedCapacityHandover pulumi.StringInput `pulumi:"dateExpectedCapacityHandover"`
 	// The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
 	DateFinalCustomerOrder pulumi.StringInput `pulumi:"dateFinalCustomerOrder"`
+	// The quantity of resource currently demanded by the customer.
+	DemandedQuantity pulumi.StringInput `pulumi:"demandedQuantity"`
 	// The namespace by which we would filter the list.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The name of the resource that the customer can request.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
 	// The different types of resources against which customers can place capacity requests.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The total quantity of resource that the customer can request.
+	TotalAvailableQuantity pulumi.StringInput `pulumi:"totalAvailableQuantity"`
 	// The unit in which the resource available is measured.
 	Unit pulumi.StringInput `pulumi:"unit"`
 	// The type of workload (Generic/ROW).
@@ -2390,7 +4536,7 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutp
 	return o
 }
 
-// The quantity of available resource that the customer can request.
+// The quantity of resource currently available that the customer can request.
 func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutput) AvailableQuantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail) string {
 		return v.AvailableQuantity
@@ -2418,6 +4564,13 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutp
 	}).(pulumi.StringOutput)
 }
 
+// The quantity of resource currently demanded by the customer.
+func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutput) DemandedQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail) string {
+		return v.DemandedQuantity
+	}).(pulumi.StringOutput)
+}
+
 // The namespace by which we would filter the list.
 func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail) string {
@@ -2436,6 +4589,20 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutp
 func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail) string {
 		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The total quantity of resource that the customer can request.
+func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailOutput) TotalAvailableQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail) string {
+		return v.TotalAvailableQuantity
 	}).(pulumi.StringOutput)
 }
 
@@ -2573,6 +4740,10 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDe
 type GetOccCapacityRequestDetail struct {
 	// The actual handed over quantity of resources at the time of request resolution.
 	ActualHandoverQuantity string `pulumi:"actualHandoverQuantity"`
+	// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+	AssociatedOccHandoverResourceBlockLists []GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList `pulumi:"associatedOccHandoverResourceBlockLists"`
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The date on which the actual handover quantity of resources is delivered.
 	DateActualHandover string `pulumi:"dateActualHandover"`
 	// The date on which the latest increment to supplied quantity of resources was delivered.
@@ -2585,6 +4756,8 @@ type GetOccCapacityRequestDetail struct {
 	ResourceName string `pulumi:"resourceName"`
 	// The type of the resource against which the user wants to place a capacity request.
 	ResourceType string `pulumi:"resourceType"`
+	// The WorkloadType from where capacity request are to be transferred.
+	SourceWorkloadType string `pulumi:"sourceWorkloadType"`
 	// The type of the workload (Generic/ROW).
 	WorkloadType string `pulumi:"workloadType"`
 }
@@ -2603,6 +4776,10 @@ type GetOccCapacityRequestDetailInput interface {
 type GetOccCapacityRequestDetailArgs struct {
 	// The actual handed over quantity of resources at the time of request resolution.
 	ActualHandoverQuantity pulumi.StringInput `pulumi:"actualHandoverQuantity"`
+	// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+	AssociatedOccHandoverResourceBlockLists GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput `pulumi:"associatedOccHandoverResourceBlockLists"`
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The date on which the actual handover quantity of resources is delivered.
 	DateActualHandover pulumi.StringInput `pulumi:"dateActualHandover"`
 	// The date on which the latest increment to supplied quantity of resources was delivered.
@@ -2615,6 +4792,8 @@ type GetOccCapacityRequestDetailArgs struct {
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
 	// The type of the resource against which the user wants to place a capacity request.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The WorkloadType from where capacity request are to be transferred.
+	SourceWorkloadType pulumi.StringInput `pulumi:"sourceWorkloadType"`
 	// The type of the workload (Generic/ROW).
 	WorkloadType pulumi.StringInput `pulumi:"workloadType"`
 }
@@ -2675,6 +4854,18 @@ func (o GetOccCapacityRequestDetailOutput) ActualHandoverQuantity() pulumi.Strin
 	return o.ApplyT(func(v GetOccCapacityRequestDetail) string { return v.ActualHandoverQuantity }).(pulumi.StringOutput)
 }
 
+// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+func (o GetOccCapacityRequestDetailOutput) AssociatedOccHandoverResourceBlockLists() GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestDetail) []GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList {
+		return v.AssociatedOccHandoverResourceBlockLists
+	}).(GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput)
+}
+
+// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+func (o GetOccCapacityRequestDetailOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestDetail) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
 // The date on which the actual handover quantity of resources is delivered.
 func (o GetOccCapacityRequestDetailOutput) DateActualHandover() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccCapacityRequestDetail) string { return v.DateActualHandover }).(pulumi.StringOutput)
@@ -2705,6 +4896,11 @@ func (o GetOccCapacityRequestDetailOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccCapacityRequestDetail) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
+// The WorkloadType from where capacity request are to be transferred.
+func (o GetOccCapacityRequestDetailOutput) SourceWorkloadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestDetail) string { return v.SourceWorkloadType }).(pulumi.StringOutput)
+}
+
 // The type of the workload (Generic/ROW).
 func (o GetOccCapacityRequestDetailOutput) WorkloadType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccCapacityRequestDetail) string { return v.WorkloadType }).(pulumi.StringOutput)
@@ -2728,6 +4924,116 @@ func (o GetOccCapacityRequestDetailArrayOutput) Index(i pulumi.IntInput) GetOccC
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccCapacityRequestDetail {
 		return vs[0].([]GetOccCapacityRequestDetail)[vs[1].(int)]
 	}).(GetOccCapacityRequestDetailOutput)
+}
+
+type GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList struct {
+	// The total quantity of the resource that was made available to the customer as part of this resource block
+	HandoverQuantity string `pulumi:"handoverQuantity"`
+	// The OCID of the handed over resource block.
+	OccHandoverResourceBlockId string `pulumi:"occHandoverResourceBlockId"`
+}
+
+// GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput is an input type that accepts GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs and GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput values.
+// You can construct a concrete instance of `GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput` via:
+//
+//	GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs{...}
+type GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput interface {
+	pulumi.Input
+
+	ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput() GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput
+	ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutputWithContext(context.Context) GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput
+}
+
+type GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs struct {
+	// The total quantity of the resource that was made available to the customer as part of this resource block
+	HandoverQuantity pulumi.StringInput `pulumi:"handoverQuantity"`
+	// The OCID of the handed over resource block.
+	OccHandoverResourceBlockId pulumi.StringInput `pulumi:"occHandoverResourceBlockId"`
+}
+
+func (GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (i GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs) ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput() GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return i.ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutputWithContext(context.Background())
+}
+
+func (i GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs) ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutputWithContext(ctx context.Context) GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput)
+}
+
+// GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput is an input type that accepts GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray and GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput values.
+// You can construct a concrete instance of `GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput` via:
+//
+//	GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray{ GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs{...} }
+type GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput interface {
+	pulumi.Input
+
+	ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput() GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput
+	ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(context.Context) GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput
+}
+
+type GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray []GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput
+
+func (GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (i GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray) ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput() GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return i.ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray) ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(ctx context.Context) GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput)
+}
+
+type GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput struct{ *pulumi.OutputState }
+
+func (GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (o GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput() GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return o
+}
+
+func (o GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutputWithContext(ctx context.Context) GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return o
+}
+
+// The total quantity of the resource that was made available to the customer as part of this resource block
+func (o GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) HandoverQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList) string {
+		return v.HandoverQuantity
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the handed over resource block.
+func (o GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput) OccHandoverResourceBlockId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList) string {
+		return v.OccHandoverResourceBlockId
+	}).(pulumi.StringOutput)
+}
+
+type GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (o GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput) ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput() GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o
+}
+
+func (o GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput) ToGetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(ctx context.Context) GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o
+}
+
+func (o GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput) Index(i pulumi.IntInput) GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList {
+		return vs[0].([]GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockList)[vs[1].(int)]
+	}).(GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput)
 }
 
 type GetOccCapacityRequestPatchOperation struct {
@@ -3057,7 +5363,7 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionArrayOutput) Index(i p
 }
 
 type GetOccCapacityRequestsOccCapacityRequestCollectionItem struct {
-	// The availability domain (AD) for which the capacity request was made.
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -3088,6 +5394,8 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItem struct {
 	Region string `pulumi:"region"`
 	// The different states the capacity request goes through.
 	RequestState string `pulumi:"requestState"`
+	// A filter to return only the resources that match the request type. The match is not case sensitive.
+	RequestType string `pulumi:"requestType"`
 	// The current lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3110,7 +5418,7 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemInput interface {
 }
 
 type GetOccCapacityRequestsOccCapacityRequestCollectionItemArgs struct {
-	// The availability domain (AD) for which the capacity request was made.
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -3141,6 +5449,8 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemArgs struct {
 	Region pulumi.StringInput `pulumi:"region"`
 	// The different states the capacity request goes through.
 	RequestState pulumi.StringInput `pulumi:"requestState"`
+	// A filter to return only the resources that match the request type. The match is not case sensitive.
+	RequestType pulumi.StringInput `pulumi:"requestType"`
 	// The current lifecycle state of the resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3202,7 +5512,7 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) ToGetOccCa
 	return o
 }
 
-// The availability domain (AD) for which the capacity request was made.
+// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
 func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -3291,6 +5601,11 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) RequestSta
 	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) string { return v.RequestState }).(pulumi.StringOutput)
 }
 
+// A filter to return only the resources that match the request type. The match is not case sensitive.
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) RequestType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) string { return v.RequestType }).(pulumi.StringOutput)
+}
+
 // The current lifecycle state of the resource.
 func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) string { return v.State }).(pulumi.StringOutput)
@@ -3334,6 +5649,10 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemArrayOutput) Index
 type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail struct {
 	// The actual handed over quantity of resources at the time of request resolution.
 	ActualHandoverQuantity string `pulumi:"actualHandoverQuantity"`
+	// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+	AssociatedOccHandoverResourceBlockLists []GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList `pulumi:"associatedOccHandoverResourceBlockLists"`
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The date on which the actual handover quantity of resources is delivered.
 	DateActualHandover string `pulumi:"dateActualHandover"`
 	// The date on which the latest increment to supplied quantity of resources was delivered.
@@ -3346,6 +5665,8 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail struct {
 	ResourceName string `pulumi:"resourceName"`
 	// The type of the resource against which the user wants to place a capacity request.
 	ResourceType string `pulumi:"resourceType"`
+	// The WorkloadType from where capacity request are to be transferred.
+	SourceWorkloadType string `pulumi:"sourceWorkloadType"`
 	// The type of the workload (Generic/ROW).
 	WorkloadType string `pulumi:"workloadType"`
 }
@@ -3364,6 +5685,10 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailInput interface
 type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArgs struct {
 	// The actual handed over quantity of resources at the time of request resolution.
 	ActualHandoverQuantity pulumi.StringInput `pulumi:"actualHandoverQuantity"`
+	// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+	AssociatedOccHandoverResourceBlockLists GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayInput `pulumi:"associatedOccHandoverResourceBlockLists"`
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The date on which the actual handover quantity of resources is delivered.
 	DateActualHandover pulumi.StringInput `pulumi:"dateActualHandover"`
 	// The date on which the latest increment to supplied quantity of resources was delivered.
@@ -3376,6 +5701,8 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArgs struct {
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
 	// The type of the resource against which the user wants to place a capacity request.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The WorkloadType from where capacity request are to be transferred.
+	SourceWorkloadType pulumi.StringInput `pulumi:"sourceWorkloadType"`
 	// The type of the workload (Generic/ROW).
 	WorkloadType pulumi.StringInput `pulumi:"workloadType"`
 }
@@ -3438,6 +5765,20 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput) Actu
 	}).(pulumi.StringOutput)
 }
 
+// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput) AssociatedOccHandoverResourceBlockLists() GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail) []GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList {
+		return v.AssociatedOccHandoverResourceBlockLists
+	}).(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput)
+}
+
+// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
 // The date on which the actual handover quantity of resources is delivered.
 func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput) DateActualHandover() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail) string {
@@ -3474,6 +5815,13 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput) Reso
 	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
+// The WorkloadType from where capacity request are to be transferred.
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput) SourceWorkloadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail) string {
+		return v.SourceWorkloadType
+	}).(pulumi.StringOutput)
+}
+
 // The type of the workload (Generic/ROW).
 func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput) WorkloadType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail) string { return v.WorkloadType }).(pulumi.StringOutput)
@@ -3497,6 +5845,116 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArrayOutput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail {
 		return vs[0].([]GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail)[vs[1].(int)]
 	}).(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput)
+}
+
+type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList struct {
+	// The total quantity of the resource that was made available to the customer as part of this resource block
+	HandoverQuantity string `pulumi:"handoverQuantity"`
+	// The OCID of the handed over resource block.
+	OccHandoverResourceBlockId string `pulumi:"occHandoverResourceBlockId"`
+}
+
+// GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListInput is an input type that accepts GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs and GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput values.
+// You can construct a concrete instance of `GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListInput` via:
+//
+//	GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs{...}
+type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListInput interface {
+	pulumi.Input
+
+	ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput() GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput
+	ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutputWithContext(context.Context) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput
+}
+
+type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs struct {
+	// The total quantity of the resource that was made available to the customer as part of this resource block
+	HandoverQuantity pulumi.StringInput `pulumi:"handoverQuantity"`
+	// The OCID of the handed over resource block.
+	OccHandoverResourceBlockId pulumi.StringInput `pulumi:"occHandoverResourceBlockId"`
+}
+
+func (GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (i GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs) ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput() GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput {
+	return i.ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutputWithContext(context.Background())
+}
+
+func (i GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs) ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutputWithContext(ctx context.Context) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput)
+}
+
+// GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayInput is an input type that accepts GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArray and GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput values.
+// You can construct a concrete instance of `GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayInput` via:
+//
+//	GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArray{ GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs{...} }
+type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayInput interface {
+	pulumi.Input
+
+	ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput() GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput
+	ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(context.Context) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput
+}
+
+type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArray []GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListInput
+
+func (GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (i GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArray) ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput() GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return i.ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArray) ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(ctx context.Context) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput)
+}
+
+type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput struct{ *pulumi.OutputState }
+
+func (GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput) ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput() GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput {
+	return o
+}
+
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput) ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutputWithContext(ctx context.Context) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput {
+	return o
+}
+
+// The total quantity of the resource that was made available to the customer as part of this resource block
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput) HandoverQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList) string {
+		return v.HandoverQuantity
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the handed over resource block.
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput) OccHandoverResourceBlockId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList) string {
+		return v.OccHandoverResourceBlockId
+	}).(pulumi.StringOutput)
+}
+
+type GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList)(nil)).Elem()
+}
+
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput) ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput() GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o
+}
+
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput) ToGetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutputWithContext(ctx context.Context) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput {
+	return o
+}
+
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput) Index(i pulumi.IntInput) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList {
+		return vs[0].([]GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList)[vs[1].(int)]
+	}).(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput)
 }
 
 type GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation struct {
@@ -4308,6 +6766,973 @@ func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListArrayOutp
 	}).(GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListOutput)
 }
 
+type GetOccHandoverResourceBlockDetailsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOccHandoverResourceBlockDetailsFilterInput is an input type that accepts GetOccHandoverResourceBlockDetailsFilterArgs and GetOccHandoverResourceBlockDetailsFilterOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlockDetailsFilterInput` via:
+//
+//	GetOccHandoverResourceBlockDetailsFilterArgs{...}
+type GetOccHandoverResourceBlockDetailsFilterInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlockDetailsFilterOutput() GetOccHandoverResourceBlockDetailsFilterOutput
+	ToGetOccHandoverResourceBlockDetailsFilterOutputWithContext(context.Context) GetOccHandoverResourceBlockDetailsFilterOutput
+}
+
+type GetOccHandoverResourceBlockDetailsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOccHandoverResourceBlockDetailsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlockDetailsFilter)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlockDetailsFilterArgs) ToGetOccHandoverResourceBlockDetailsFilterOutput() GetOccHandoverResourceBlockDetailsFilterOutput {
+	return i.ToGetOccHandoverResourceBlockDetailsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlockDetailsFilterArgs) ToGetOccHandoverResourceBlockDetailsFilterOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlockDetailsFilterOutput)
+}
+
+// GetOccHandoverResourceBlockDetailsFilterArrayInput is an input type that accepts GetOccHandoverResourceBlockDetailsFilterArray and GetOccHandoverResourceBlockDetailsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlockDetailsFilterArrayInput` via:
+//
+//	GetOccHandoverResourceBlockDetailsFilterArray{ GetOccHandoverResourceBlockDetailsFilterArgs{...} }
+type GetOccHandoverResourceBlockDetailsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlockDetailsFilterArrayOutput() GetOccHandoverResourceBlockDetailsFilterArrayOutput
+	ToGetOccHandoverResourceBlockDetailsFilterArrayOutputWithContext(context.Context) GetOccHandoverResourceBlockDetailsFilterArrayOutput
+}
+
+type GetOccHandoverResourceBlockDetailsFilterArray []GetOccHandoverResourceBlockDetailsFilterInput
+
+func (GetOccHandoverResourceBlockDetailsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlockDetailsFilter)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlockDetailsFilterArray) ToGetOccHandoverResourceBlockDetailsFilterArrayOutput() GetOccHandoverResourceBlockDetailsFilterArrayOutput {
+	return i.ToGetOccHandoverResourceBlockDetailsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlockDetailsFilterArray) ToGetOccHandoverResourceBlockDetailsFilterArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlockDetailsFilterArrayOutput)
+}
+
+type GetOccHandoverResourceBlockDetailsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlockDetailsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlockDetailsFilter)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlockDetailsFilterOutput) ToGetOccHandoverResourceBlockDetailsFilterOutput() GetOccHandoverResourceBlockDetailsFilterOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsFilterOutput) ToGetOccHandoverResourceBlockDetailsFilterOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsFilterOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlockDetailsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOccHandoverResourceBlockDetailsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlockDetailsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOccHandoverResourceBlockDetailsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlockDetailsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOccHandoverResourceBlockDetailsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlockDetailsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlockDetailsFilter)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlockDetailsFilterArrayOutput) ToGetOccHandoverResourceBlockDetailsFilterArrayOutput() GetOccHandoverResourceBlockDetailsFilterArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsFilterArrayOutput) ToGetOccHandoverResourceBlockDetailsFilterArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsFilterArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsFilterArrayOutput) Index(i pulumi.IntInput) GetOccHandoverResourceBlockDetailsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccHandoverResourceBlockDetailsFilter {
+		return vs[0].([]GetOccHandoverResourceBlockDetailsFilter)[vs[1].(int)]
+	}).(GetOccHandoverResourceBlockDetailsFilterOutput)
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection struct {
+	// An array of details about an occ handover resource block.
+	Items []GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem `pulumi:"items"`
+}
+
+// GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput is an input type that accepts GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs and GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput` via:
+//
+//	GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs{...}
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput
+	ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutputWithContext(context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs struct {
+	// An array of details about an occ handover resource block.
+	Items GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return i.ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput)
+}
+
+// GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayInput is an input type that accepts GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray and GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayInput` via:
+//
+//	GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray{ GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs{...} }
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput
+	ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutputWithContext(context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray []GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput
+
+func (GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput {
+	return i.ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput)
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return o
+}
+
+// An array of details about an occ handover resource block.
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput) Items() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection) []GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem {
+		return v.Items
+	}).(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput)
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput) Index(i pulumi.IntInput) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection {
+		return vs[0].([]GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollection)[vs[1].(int)]
+	}).(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput)
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem struct {
+	// A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+	Details map[string]string `pulumi:"details"`
+	// The OCID of the occResourceHandoverBlock.
+	OccResourceHandoverBlockId string `pulumi:"occResourceHandoverBlockId"`
+}
+
+// GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput is an input type that accepts GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs and GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput` via:
+//
+//	GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs{...}
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput
+	ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutputWithContext(context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs struct {
+	// A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+	Details pulumi.StringMapInput `pulumi:"details"`
+	// The OCID of the occResourceHandoverBlock.
+	OccResourceHandoverBlockId pulumi.StringInput `pulumi:"occResourceHandoverBlockId"`
+}
+
+func (GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return i.ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput)
+}
+
+// GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput is an input type that accepts GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray and GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput` via:
+//
+//	GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray{ GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs{...} }
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput
+	ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutputWithContext(context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray []GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput
+
+func (GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return i.ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput)
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return o
+}
+
+// A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) Details() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem) map[string]string {
+		return v.Details
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the occResourceHandoverBlock.
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput) OccResourceHandoverBlockId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem) string {
+		return v.OccResourceHandoverBlockId
+	}).(pulumi.StringOutput)
+}
+
+type GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput() GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput) ToGetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem {
+		return vs[0].([]GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItem)[vs[1].(int)]
+	}).(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput)
+}
+
+type GetOccHandoverResourceBlocksFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOccHandoverResourceBlocksFilterInput is an input type that accepts GetOccHandoverResourceBlocksFilterArgs and GetOccHandoverResourceBlocksFilterOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksFilterInput` via:
+//
+//	GetOccHandoverResourceBlocksFilterArgs{...}
+type GetOccHandoverResourceBlocksFilterInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksFilterOutput() GetOccHandoverResourceBlocksFilterOutput
+	ToGetOccHandoverResourceBlocksFilterOutputWithContext(context.Context) GetOccHandoverResourceBlocksFilterOutput
+}
+
+type GetOccHandoverResourceBlocksFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOccHandoverResourceBlocksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksFilter)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksFilterArgs) ToGetOccHandoverResourceBlocksFilterOutput() GetOccHandoverResourceBlocksFilterOutput {
+	return i.ToGetOccHandoverResourceBlocksFilterOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksFilterArgs) ToGetOccHandoverResourceBlocksFilterOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksFilterOutput)
+}
+
+// GetOccHandoverResourceBlocksFilterArrayInput is an input type that accepts GetOccHandoverResourceBlocksFilterArray and GetOccHandoverResourceBlocksFilterArrayOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksFilterArrayInput` via:
+//
+//	GetOccHandoverResourceBlocksFilterArray{ GetOccHandoverResourceBlocksFilterArgs{...} }
+type GetOccHandoverResourceBlocksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksFilterArrayOutput() GetOccHandoverResourceBlocksFilterArrayOutput
+	ToGetOccHandoverResourceBlocksFilterArrayOutputWithContext(context.Context) GetOccHandoverResourceBlocksFilterArrayOutput
+}
+
+type GetOccHandoverResourceBlocksFilterArray []GetOccHandoverResourceBlocksFilterInput
+
+func (GetOccHandoverResourceBlocksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksFilter)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksFilterArray) ToGetOccHandoverResourceBlocksFilterArrayOutput() GetOccHandoverResourceBlocksFilterArrayOutput {
+	return i.ToGetOccHandoverResourceBlocksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksFilterArray) ToGetOccHandoverResourceBlocksFilterArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksFilterArrayOutput)
+}
+
+type GetOccHandoverResourceBlocksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksFilter)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksFilterOutput) ToGetOccHandoverResourceBlocksFilterOutput() GetOccHandoverResourceBlocksFilterOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksFilterOutput) ToGetOccHandoverResourceBlocksFilterOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksFilterOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOccHandoverResourceBlocksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOccHandoverResourceBlocksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOccHandoverResourceBlocksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksFilter)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksFilterArrayOutput) ToGetOccHandoverResourceBlocksFilterArrayOutput() GetOccHandoverResourceBlocksFilterArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksFilterArrayOutput) ToGetOccHandoverResourceBlocksFilterArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksFilterArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksFilterArrayOutput) Index(i pulumi.IntInput) GetOccHandoverResourceBlocksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccHandoverResourceBlocksFilter {
+		return vs[0].([]GetOccHandoverResourceBlocksFilter)[vs[1].(int)]
+	}).(GetOccHandoverResourceBlocksFilterOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollection struct {
+	// An array of occ handover resource blocks.
+	Items []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem `pulumi:"items"`
+}
+
+// GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput is an input type that accepts GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs and GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput` via:
+//
+//	GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs{...}
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutputWithContext(context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs struct {
+	// An array of occ handover resource blocks.
+	Items GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollection)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return i.ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput)
+}
+
+// GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayInput is an input type that accepts GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray and GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayInput` via:
+//
+//	GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray{ GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs{...} }
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutputWithContext(context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollection)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput {
+	return i.ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollection)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return o
+}
+
+// An array of occ handover resource blocks.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput) Items() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollection) []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem {
+		return v.Items
+	}).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollection)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput) Index(i pulumi.IntInput) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollection {
+		return vs[0].([]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollection)[vs[1].(int)]
+	}).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem struct {
+	// A list containing details about the capacity requests against which the resources were provisioned by oracle.
+	AssociatedCapacityRequests []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest `pulumi:"associatedCapacityRequests"`
+	// The OCID of the compartment or tenancy in which resources are to be listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The date on which the resource was handed over to the customer.
+	HandoverDate string `pulumi:"handoverDate"`
+	// A filter to return only the list of resources that match the name provided in this filter.
+	HandoverResourceName string `pulumi:"handoverResourceName"`
+	// The OCID of the resource block.
+	Id string `pulumi:"id"`
+	// The namespace by which we would filter the list.
+	Namespace string `pulumi:"namespace"`
+	// The OCID of the customer group for which the resources were provisioned.
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
+	// Details like building, room and block where the resource was placed after provisioning in the datacenter.
+	PlacementDetails []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail `pulumi:"placementDetails"`
+	// The total quantity of the resource that was made available to the customer by Oracle.
+	TotalHandoverQuantity string `pulumi:"totalHandoverQuantity"`
+}
+
+// GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput is an input type that accepts GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs and GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput` via:
+//
+//	GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs{...}
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutputWithContext(context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs struct {
+	// A list containing details about the capacity requests against which the resources were provisioned by oracle.
+	AssociatedCapacityRequests GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput `pulumi:"associatedCapacityRequests"`
+	// The OCID of the compartment or tenancy in which resources are to be listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The date on which the resource was handed over to the customer.
+	HandoverDate pulumi.StringInput `pulumi:"handoverDate"`
+	// A filter to return only the list of resources that match the name provided in this filter.
+	HandoverResourceName pulumi.StringInput `pulumi:"handoverResourceName"`
+	// The OCID of the resource block.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The namespace by which we would filter the list.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The OCID of the customer group for which the resources were provisioned.
+	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
+	// Details like building, room and block where the resource was placed after provisioning in the datacenter.
+	PlacementDetails GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput `pulumi:"placementDetails"`
+	// The total quantity of the resource that was made available to the customer by Oracle.
+	TotalHandoverQuantity pulumi.StringInput `pulumi:"totalHandoverQuantity"`
+}
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return i.ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput)
+}
+
+// GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput is an input type that accepts GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray and GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput` via:
+//
+//	GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray{ GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs{...} }
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutputWithContext(context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return i.ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return o
+}
+
+// A list containing details about the capacity requests against which the resources were provisioned by oracle.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) AssociatedCapacityRequests() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest {
+		return v.AssociatedCapacityRequests
+	}).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput)
+}
+
+// The OCID of the compartment or tenancy in which resources are to be listed.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The date on which the resource was handed over to the customer.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) HandoverDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.HandoverDate
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the list of resources that match the name provided in this filter.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) HandoverResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.HandoverResourceName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the resource block.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The namespace by which we would filter the list.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The OCID of the customer group for which the resources were provisioned.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.OccCustomerGroupId
+	}).(pulumi.StringOutput)
+}
+
+// Details like building, room and block where the resource was placed after provisioning in the datacenter.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) PlacementDetails() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail {
+		return v.PlacementDetails
+	}).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput)
+}
+
+// The total quantity of the resource that was made available to the customer by Oracle.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput) TotalHandoverQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem) string {
+		return v.TotalHandoverQuantity
+	}).(pulumi.StringOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem {
+		return vs[0].([]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem)[vs[1].(int)]
+	}).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest struct {
+	// The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+	HandoverQuantity string `pulumi:"handoverQuantity"`
+	// The OCID of the capacity request against which the resources were provisioned.
+	OccCapacityRequestId string `pulumi:"occCapacityRequestId"`
+}
+
+// GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput is an input type that accepts GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs and GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput` via:
+//
+//	GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs{...}
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutputWithContext(context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs struct {
+	// The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+	HandoverQuantity pulumi.StringInput `pulumi:"handoverQuantity"`
+	// The OCID of the capacity request against which the resources were provisioned.
+	OccCapacityRequestId pulumi.StringInput `pulumi:"occCapacityRequestId"`
+}
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return i.ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput)
+}
+
+// GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput is an input type that accepts GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray and GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput` via:
+//
+//	GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray{ GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs{...} }
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutputWithContext(context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return i.ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return o
+}
+
+// The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) HandoverQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest) string {
+		return v.HandoverQuantity
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the capacity request against which the resources were provisioned.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput) OccCapacityRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest) string {
+		return v.OccCapacityRequestId
+	}).(pulumi.StringOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput) Index(i pulumi.IntInput) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest {
+		return vs[0].([]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequest)[vs[1].(int)]
+	}).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail struct {
+	// The availability domain (AD) for which the resources were provisioned.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The block in the datacenter room where the resource was placed.
+	Block string `pulumi:"block"`
+	// The datacenter building where the resource was placed.
+	Building string `pulumi:"building"`
+	// The name of the region for which the resources were provisioned.
+	Region string `pulumi:"region"`
+	// The name of the room in the dataacenter building where the resource was placed.
+	Room string `pulumi:"room"`
+	// The type of workload to which these resources were provisioned.
+	WorkloadType string `pulumi:"workloadType"`
+}
+
+// GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput is an input type that accepts GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs and GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput` via:
+//
+//	GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs{...}
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutputWithContext(context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs struct {
+	// The availability domain (AD) for which the resources were provisioned.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The block in the datacenter room where the resource was placed.
+	Block pulumi.StringInput `pulumi:"block"`
+	// The datacenter building where the resource was placed.
+	Building pulumi.StringInput `pulumi:"building"`
+	// The name of the region for which the resources were provisioned.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The name of the room in the dataacenter building where the resource was placed.
+	Room pulumi.StringInput `pulumi:"room"`
+	// The type of workload to which these resources were provisioned.
+	WorkloadType pulumi.StringInput `pulumi:"workloadType"`
+}
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return i.ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput)
+}
+
+// GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput is an input type that accepts GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray and GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput values.
+// You can construct a concrete instance of `GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput` via:
+//
+//	GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray{ GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs{...} }
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput
+	ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutputWithContext(context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray []GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)(nil)).Elem()
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return i.ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return o
+}
+
+// The availability domain (AD) for which the resources were provisioned.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The block in the datacenter room where the resource was placed.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) Block() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.Block
+	}).(pulumi.StringOutput)
+}
+
+// The datacenter building where the resource was placed.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) Building() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.Building
+	}).(pulumi.StringOutput)
+}
+
+// The name of the region for which the resources were provisioned.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+// The name of the room in the dataacenter building where the resource was placed.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) Room() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.Room
+	}).(pulumi.StringOutput)
+}
+
+// The type of workload to which these resources were provisioned.
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput) WorkloadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail) string {
+		return v.WorkloadType
+	}).(pulumi.StringOutput)
+}
+
+type GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)(nil)).Elem()
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput() GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput) ToGetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutputWithContext(ctx context.Context) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput {
+	return o
+}
+
+func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput) Index(i pulumi.IntInput) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail {
+		return vs[0].([]GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetail)[vs[1].(int)]
+	}).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OccAvailabilityCatalogDetailInput)(nil)).Elem(), OccAvailabilityCatalogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccAvailabilityCatalogDetailArrayInput)(nil)).Elem(), OccAvailabilityCatalogDetailArray{})
@@ -4315,8 +7740,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OccAvailabilityCatalogMetadataDetailsPtrInput)(nil)).Elem(), OccAvailabilityCatalogMetadataDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccCapacityRequestDetailInput)(nil)).Elem(), OccCapacityRequestDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccCapacityRequestDetailArrayInput)(nil)).Elem(), OccCapacityRequestDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput)(nil)).Elem(), OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput)(nil)).Elem(), OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccCapacityRequestPatchOperationInput)(nil)).Elem(), OccCapacityRequestPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccCapacityRequestPatchOperationArrayInput)(nil)).Elem(), OccCapacityRequestPatchOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OccCustomerGroupCustomersListInput)(nil)).Elem(), OccCustomerGroupCustomersListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OccCustomerGroupCustomersListArrayInput)(nil)).Elem(), OccCustomerGroupCustomersListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalNamespaceOccOverviewsFilterInput)(nil)).Elem(), GetInternalNamespaceOccOverviewsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalNamespaceOccOverviewsFilterArrayInput)(nil)).Elem(), GetInternalNamespaceOccOverviewsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalNamespaceOccOverviewsOccOverviewCollectionInput)(nil)).Elem(), GetInternalNamespaceOccOverviewsOccOverviewCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayInput)(nil)).Elem(), GetInternalNamespaceOccOverviewsOccOverviewCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalNamespaceOccOverviewsOccOverviewCollectionItemInput)(nil)).Elem(), GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayInput)(nil)).Elem(), GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccAvailabilityCatalogsFilterInput)(nil)).Elem(), GetInternalOccAvailabilityCatalogsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccAvailabilityCatalogsFilterArrayInput)(nil)).Elem(), GetInternalOccAvailabilityCatalogsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionInput)(nil)).Elem(), GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionArgs{})
@@ -4325,6 +7760,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArrayInput)(nil)).Elem(), GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailInput)(nil)).Elem(), GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArrayInput)(nil)).Elem(), GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsFilterInput)(nil)).Elem(), GetInternalOccHandoverResourceBlockDetailsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsFilterArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlockDetailsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput)(nil)).Elem(), GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput)(nil)).Elem(), GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksFilterInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksFilterArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsFilterInput)(nil)).Elem(), GetNamespaceOccOverviewsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsFilterArrayInput)(nil)).Elem(), GetNamespaceOccOverviewsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollectionInput)(nil)).Elem(), GetNamespaceOccOverviewsOccOverviewCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollectionArrayInput)(nil)).Elem(), GetNamespaceOccOverviewsOccOverviewCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollectionItemInput)(nil)).Elem(), GetNamespaceOccOverviewsOccOverviewCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollectionItemArrayInput)(nil)).Elem(), GetNamespaceOccOverviewsOccOverviewCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccAvailabilityCatalogDetailInput)(nil)).Elem(), GetOccAvailabilityCatalogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccAvailabilityCatalogDetailArrayInput)(nil)).Elem(), GetOccAvailabilityCatalogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccAvailabilityCatalogMetadataDetailInput)(nil)).Elem(), GetOccAvailabilityCatalogMetadataDetailArgs{})
@@ -4347,6 +7804,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArrayInput)(nil)).Elem(), GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestDetailInput)(nil)).Elem(), GetOccCapacityRequestDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestDetailArrayInput)(nil)).Elem(), GetOccCapacityRequestDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListInput)(nil)).Elem(), GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayInput)(nil)).Elem(), GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestPatchOperationInput)(nil)).Elem(), GetOccCapacityRequestPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestPatchOperationArrayInput)(nil)).Elem(), GetOccCapacityRequestPatchOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestsFilterInput)(nil)).Elem(), GetOccCapacityRequestsFilterArgs{})
@@ -4357,6 +7816,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemArrayInput)(nil)).Elem(), GetOccCapacityRequestsOccCapacityRequestCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailInput)(nil)).Elem(), GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArrayInput)(nil)).Elem(), GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListInput)(nil)).Elem(), GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayInput)(nil)).Elem(), GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationInput)(nil)).Elem(), GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationArrayInput)(nil)).Elem(), GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCustomerGroupCustomersListInput)(nil)).Elem(), GetOccCustomerGroupCustomersListArgs{})
@@ -4369,14 +7830,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCustomerGroupsOccCustomerGroupCollectionItemArrayInput)(nil)).Elem(), GetOccCustomerGroupsOccCustomerGroupCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListInput)(nil)).Elem(), GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListArrayInput)(nil)).Elem(), GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlockDetailsFilterInput)(nil)).Elem(), GetOccHandoverResourceBlockDetailsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlockDetailsFilterArrayInput)(nil)).Elem(), GetOccHandoverResourceBlockDetailsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionInput)(nil)).Elem(), GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayInput)(nil)).Elem(), GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemInput)(nil)).Elem(), GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayInput)(nil)).Elem(), GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksFilterInput)(nil)).Elem(), GetOccHandoverResourceBlocksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksFilterArrayInput)(nil)).Elem(), GetOccHandoverResourceBlocksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray{})
 	pulumi.RegisterOutputType(OccAvailabilityCatalogDetailOutput{})
 	pulumi.RegisterOutputType(OccAvailabilityCatalogDetailArrayOutput{})
 	pulumi.RegisterOutputType(OccAvailabilityCatalogMetadataDetailsOutput{})
 	pulumi.RegisterOutputType(OccAvailabilityCatalogMetadataDetailsPtrOutput{})
 	pulumi.RegisterOutputType(OccCapacityRequestDetailOutput{})
 	pulumi.RegisterOutputType(OccCapacityRequestDetailArrayOutput{})
+	pulumi.RegisterOutputType(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput{})
+	pulumi.RegisterOutputType(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput{})
 	pulumi.RegisterOutputType(OccCapacityRequestPatchOperationOutput{})
 	pulumi.RegisterOutputType(OccCapacityRequestPatchOperationArrayOutput{})
+	pulumi.RegisterOutputType(OccCustomerGroupCustomersListOutput{})
+	pulumi.RegisterOutputType(OccCustomerGroupCustomersListArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalNamespaceOccOverviewsFilterOutput{})
+	pulumi.RegisterOutputType(GetInternalNamespaceOccOverviewsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalNamespaceOccOverviewsOccOverviewCollectionOutput{})
+	pulumi.RegisterOutputType(GetInternalNamespaceOccOverviewsOccOverviewCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalNamespaceOccOverviewsOccOverviewCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetInternalOccAvailabilityCatalogsFilterOutput{})
 	pulumi.RegisterOutputType(GetInternalOccAvailabilityCatalogsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionOutput{})
@@ -4385,6 +7872,28 @@ func init() {
 	pulumi.RegisterOutputType(GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailOutput{})
 	pulumi.RegisterOutputType(GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlockDetailsFilterOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlockDetailsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksFilterOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput{})
+	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceOccOverviewsFilterOutput{})
+	pulumi.RegisterOutputType(GetNamespaceOccOverviewsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceOccOverviewsOccOverviewCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceOccOverviewsOccOverviewCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceOccOverviewsOccOverviewCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamespaceOccOverviewsOccOverviewCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOccAvailabilityCatalogDetailOutput{})
 	pulumi.RegisterOutputType(GetOccAvailabilityCatalogDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOccAvailabilityCatalogMetadataDetailOutput{})
@@ -4407,6 +7916,8 @@ func init() {
 	pulumi.RegisterOutputType(GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestDetailOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListOutput{})
+	pulumi.RegisterOutputType(GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArrayOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestPatchOperationOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestPatchOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestsFilterOutput{})
@@ -4417,6 +7928,8 @@ func init() {
 	pulumi.RegisterOutputType(GetOccCapacityRequestsOccCapacityRequestCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListOutput{})
+	pulumi.RegisterOutputType(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArrayOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationOutput{})
 	pulumi.RegisterOutputType(GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetOccCustomerGroupCustomersListOutput{})
@@ -4429,4 +7942,20 @@ func init() {
 	pulumi.RegisterOutputType(GetOccCustomerGroupsOccCustomerGroupCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListOutput{})
 	pulumi.RegisterOutputType(GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListArrayOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlockDetailsFilterOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlockDetailsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksFilterOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput{})
+	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput{})
 }

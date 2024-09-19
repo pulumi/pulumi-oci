@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetOccCapacityRequestResult {
     /**
-     * @return The availability domain (AD) for which the capacity request was made.
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
      * 
      */
     private String availabilityDomain;
@@ -92,6 +92,11 @@ public final class GetOccCapacityRequestResult {
      */
     private String requestState;
     /**
+     * @return Type of Capacity Request(New or Transfer)
+     * 
+     */
+    private String requestType;
+    /**
      * @return The current lifecycle state of the resource.
      * 
      */
@@ -114,7 +119,7 @@ public final class GetOccCapacityRequestResult {
 
     private GetOccCapacityRequestResult() {}
     /**
-     * @return The availability domain (AD) for which the capacity request was made.
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
      * 
      */
     public String availabilityDomain() {
@@ -225,6 +230,13 @@ public final class GetOccCapacityRequestResult {
         return this.requestState;
     }
     /**
+     * @return Type of Capacity Request(New or Transfer)
+     * 
+     */
+    public String requestType() {
+        return this.requestType;
+    }
+    /**
      * @return The current lifecycle state of the resource.
      * 
      */
@@ -279,6 +291,7 @@ public final class GetOccCapacityRequestResult {
         private List<GetOccCapacityRequestPatchOperation> patchOperations;
         private String region;
         private String requestState;
+        private String requestType;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -303,6 +316,7 @@ public final class GetOccCapacityRequestResult {
     	      this.patchOperations = defaults.patchOperations;
     	      this.region = defaults.region;
     	      this.requestState = defaults.requestState;
+    	      this.requestType = defaults.requestType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -452,6 +466,14 @@ public final class GetOccCapacityRequestResult {
             return this;
         }
         @CustomType.Setter
+        public Builder requestType(String requestType) {
+            if (requestType == null) {
+              throw new MissingRequiredPropertyException("GetOccCapacityRequestResult", "requestType");
+            }
+            this.requestType = requestType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetOccCapacityRequestResult", "state");
@@ -502,6 +524,7 @@ public final class GetOccCapacityRequestResult {
             _resultValue.patchOperations = patchOperations;
             _resultValue.region = region;
             _resultValue.requestState = requestState;
+            _resultValue.requestType = requestType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

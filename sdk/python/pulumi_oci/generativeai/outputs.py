@@ -1269,6 +1269,7 @@ class GetModelsModelCollectionItemResult(dict):
         :param str time_created: The date and time that the model was created in the format of an RFC3339 datetime string.
         :param str time_deprecated: Corresponds to the time when the custom model and its associated foundation model will be deprecated.
         :param str time_updated: The date and time that the model was updated in the format of an RFC3339 datetime string.
+        :param str type: The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
         :param str vendor: A filter to return only resources that match the entire vendor given.
         :param str version: The version of the model.
         """
@@ -1429,6 +1430,9 @@ class GetModelsModelCollectionItemResult(dict):
     @property
     @pulumi.getter
     def type(self) -> str:
+        """
+        The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+        """
         return pulumi.get(self, "type")
 
     @property

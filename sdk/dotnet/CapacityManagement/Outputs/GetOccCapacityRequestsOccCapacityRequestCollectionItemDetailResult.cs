@@ -18,6 +18,14 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
         /// </summary>
         public readonly string ActualHandoverQuantity;
         /// <summary>
+        /// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListResult> AssociatedOccHandoverResourceBlockLists;
+        /// <summary>
+        /// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+        /// </summary>
+        public readonly string AvailabilityDomain;
+        /// <summary>
         /// The date on which the actual handover quantity of resources is delivered.
         /// </summary>
         public readonly string DateActualHandover;
@@ -42,6 +50,10 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
         /// </summary>
         public readonly string ResourceType;
         /// <summary>
+        /// The WorkloadType from where capacity request are to be transferred.
+        /// </summary>
+        public readonly string SourceWorkloadType;
+        /// <summary>
         /// The type of the workload (Generic/ROW).
         /// </summary>
         public readonly string WorkloadType;
@@ -49,6 +61,10 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
         [OutputConstructor]
         private GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailResult(
             string actualHandoverQuantity,
+
+            ImmutableArray<Outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListResult> associatedOccHandoverResourceBlockLists,
+
+            string availabilityDomain,
 
             string dateActualHandover,
 
@@ -62,15 +78,20 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
 
             string resourceType,
 
+            string sourceWorkloadType,
+
             string workloadType)
         {
             ActualHandoverQuantity = actualHandoverQuantity;
+            AssociatedOccHandoverResourceBlockLists = associatedOccHandoverResourceBlockLists;
+            AvailabilityDomain = availabilityDomain;
             DateActualHandover = dateActualHandover;
             DateExpectedHandover = dateExpectedHandover;
             DemandQuantity = demandQuantity;
             ExpectedHandoverQuantity = expectedHandoverQuantity;
             ResourceName = resourceName;
             ResourceType = resourceType;
+            SourceWorkloadType = sourceWorkloadType;
             WorkloadType = workloadType;
         }
     }

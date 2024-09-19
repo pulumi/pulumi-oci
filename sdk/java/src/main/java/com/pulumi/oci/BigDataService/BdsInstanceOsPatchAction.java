@@ -15,29 +15,123 @@ import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
+/**
+ * This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
+ * 
+ * Install the specified OS patch to this cluster nodes.
+ * 
+ * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.BigDataService.BdsInstanceOsPatchAction;
+ * import com.pulumi.oci.BigDataService.BdsInstanceOsPatchActionArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceOsPatchActionPatchingConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBdsInstanceOsPatchAction = new BdsInstanceOsPatchAction("testBdsInstanceOsPatchAction", BdsInstanceOsPatchActionArgs.builder()
+ *             .bdsInstanceId(testBdsInstance.id())
+ *             .clusterAdminPassword(bdsInstanceOsPatchActionClusterAdminPassword)
+ *             .osPatchVersion(bdsInstanceOsPatchActionOsPatchVersion)
+ *             .patchingConfigs(BdsInstanceOsPatchActionPatchingConfigArgs.builder()
+ *                 .patchingConfigStrategy(bdsInstanceOsPatchActionPatchingConfigStrategy)
+ *                 .batchSize(bdsInstanceOsPatchActionBatchSize)
+ *                 .waitTimeBetweenBatchInSeconds(bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds)
+ *                 .toleranceThresholdPerBatch(bdsInstanceOsPatchActionToleranceThresholdPerBatch)
+ *                 .waitTimeBetweenDomainInSeconds(bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds)
+ *                 .toleranceThresholdPerDomain(bdsInstanceOsPatchActionToleranceThresholdPerDomain)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
+ * ## Import
+ * 
+ * Import is not supported for this resource.
+ * 
+ */
 @ResourceType(type="oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction")
 public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResource {
+    /**
+     * The OCID of the cluster.
+     * 
+     */
     @Export(name="bdsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> bdsInstanceId;
 
+    /**
+     * @return The OCID of the cluster.
+     * 
+     */
     public Output<String> bdsInstanceId() {
         return this.bdsInstanceId;
     }
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     * 
+     */
     @Export(name="clusterAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> clusterAdminPassword;
 
+    /**
+     * @return Base-64 encoded password for the cluster admin user.
+     * 
+     */
     public Output<String> clusterAdminPassword() {
         return this.clusterAdminPassword;
     }
+    /**
+     * The version of the OS patch to be installed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Export(name="osPatchVersion", refs={String.class}, tree="[0]")
     private Output<String> osPatchVersion;
 
+    /**
+     * @return The version of the OS patch to be installed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Output<String> osPatchVersion() {
         return this.osPatchVersion;
     }
+    /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     * 
+     */
     @Export(name="patchingConfigs", refs={List.class,BdsInstanceOsPatchActionPatchingConfig.class}, tree="[0,1]")
     private Output<List<BdsInstanceOsPatchActionPatchingConfig>> patchingConfigs;
 
+    /**
+     * @return Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     * 
+     */
     public Output<List<BdsInstanceOsPatchActionPatchingConfig>> patchingConfigs() {
         return this.patchingConfigs;
     }

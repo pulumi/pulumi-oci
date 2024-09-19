@@ -16,7 +16,6 @@ __all__ = ['OccCapacityRequestArgs', 'OccCapacityRequest']
 @pulumi.input_type
 class OccCapacityRequestArgs:
     def __init__(__self__, *,
-                 availability_domain: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
                  date_expected_capacity_handover: pulumi.Input[str],
                  details: pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailArgs']]],
@@ -24,15 +23,16 @@ class OccCapacityRequestArgs:
                  namespace: pulumi.Input[str],
                  occ_availability_catalog_id: pulumi.Input[str],
                  region: pulumi.Input[str],
+                 availability_domain: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestPatchOperationArgs']]]] = None,
-                 request_state: Optional[pulumi.Input[str]] = None):
+                 request_state: Optional[pulumi.Input[str]] = None,
+                 request_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a OccCapacityRequest resource.
-        :param pulumi.Input[str] availability_domain: The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
         :param pulumi.Input[str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailArgs']]] details: A list of different resources requested by the user.
@@ -40,18 +40,19 @@ class OccCapacityRequestArgs:
         :param pulumi.Input[str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[str] occ_availability_catalog_id: The OCID of the availability catalog against which capacity request is made.
         :param pulumi.Input[str] region: The name of the region for which the capacity request is made.
+        :param pulumi.Input[str] availability_domain: The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: Meaningful text about the capacity request.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
         :param pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestPatchOperationArgs']]] patch_operations: (Updatable)
         :param pulumi.Input[str] request_state: (Updatable) The subset of request states available for creating the capacity request.
+        :param pulumi.Input[str] request_type: Type of Capacity Request(New or Transfer)
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "date_expected_capacity_handover", date_expected_capacity_handover)
         pulumi.set(__self__, "details", details)
@@ -59,6 +60,8 @@ class OccCapacityRequestArgs:
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "occ_availability_catalog_id", occ_availability_catalog_id)
         pulumi.set(__self__, "region", region)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -71,18 +74,8 @@ class OccCapacityRequestArgs:
             pulumi.set(__self__, "patch_operations", patch_operations)
         if request_state is not None:
             pulumi.set(__self__, "request_state", request_state)
-
-    @property
-    @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
-        """
-        return pulumi.get(self, "availability_domain")
-
-    @availability_domain.setter
-    def availability_domain(self, value: pulumi.Input[str]):
-        pulumi.set(self, "availability_domain", value)
+        if request_type is not None:
+            pulumi.set(__self__, "request_type", request_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -169,6 +162,18 @@ class OccCapacityRequestArgs:
         pulumi.set(self, "region", value)
 
     @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -233,16 +238,28 @@ class OccCapacityRequestArgs:
     def request_state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The subset of request states available for creating the capacity request.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "request_state")
 
     @request_state.setter
     def request_state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "request_state", value)
+
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of Capacity Request(New or Transfer)
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "request_type")
+
+    @request_type.setter
+    def request_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "request_type", value)
 
 
 @pulumi.input_type
@@ -263,13 +280,14 @@ class _OccCapacityRequestState:
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestPatchOperationArgs']]]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  request_state: Optional[pulumi.Input[str]] = None,
+                 request_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OccCapacityRequest resources.
-        :param pulumi.Input[str] availability_domain: The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        :param pulumi.Input[str] availability_domain: The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         :param pulumi.Input[str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -284,6 +302,7 @@ class _OccCapacityRequestState:
         :param pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestPatchOperationArgs']]] patch_operations: (Updatable)
         :param pulumi.Input[str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[str] request_state: (Updatable) The subset of request states available for creating the capacity request.
+        :param pulumi.Input[str] request_type: Type of Capacity Request(New or Transfer)
                
                
                ** IMPORTANT **
@@ -323,6 +342,8 @@ class _OccCapacityRequestState:
             pulumi.set(__self__, "region", region)
         if request_state is not None:
             pulumi.set(__self__, "request_state", request_state)
+        if request_type is not None:
+            pulumi.set(__self__, "request_type", request_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -336,7 +357,7 @@ class _OccCapacityRequestState:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
         """
-        The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -505,16 +526,28 @@ class _OccCapacityRequestState:
     def request_state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The subset of request states available for creating the capacity request.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "request_state")
 
     @request_state.setter
     def request_state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "request_state", value)
+
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of Capacity Request(New or Transfer)
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "request_type")
+
+    @request_type.setter
+    def request_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "request_type", value)
 
     @property
     @pulumi.getter
@@ -584,6 +617,7 @@ class OccCapacityRequest(pulumi.CustomResource):
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  request_state: Optional[pulumi.Input[str]] = None,
+                 request_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
@@ -601,7 +635,7 @@ class OccCapacityRequest(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        :param pulumi.Input[str] availability_domain: The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         :param pulumi.Input[str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -615,6 +649,7 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]] patch_operations: (Updatable)
         :param pulumi.Input[str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[str] request_state: (Updatable) The subset of request states available for creating the capacity request.
+        :param pulumi.Input[str] request_type: Type of Capacity Request(New or Transfer)
                
                
                ** IMPORTANT **
@@ -669,6 +704,7 @@ class OccCapacityRequest(pulumi.CustomResource):
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  request_state: Optional[pulumi.Input[str]] = None,
+                 request_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -678,8 +714,6 @@ class OccCapacityRequest(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OccCapacityRequestArgs.__new__(OccCapacityRequestArgs)
 
-            if availability_domain is None and not opts.urn:
-                raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -708,6 +742,7 @@ class OccCapacityRequest(pulumi.CustomResource):
                 raise TypeError("Missing required property 'region'")
             __props__.__dict__["region"] = region
             __props__.__dict__["request_state"] = request_state
+            __props__.__dict__["request_type"] = request_type
             __props__.__dict__["occ_customer_group_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -738,6 +773,7 @@ class OccCapacityRequest(pulumi.CustomResource):
             patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]]] = None,
             region: Optional[pulumi.Input[str]] = None,
             request_state: Optional[pulumi.Input[str]] = None,
+            request_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -749,7 +785,7 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        :param pulumi.Input[str] availability_domain: The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         :param pulumi.Input[str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -764,6 +800,7 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]] patch_operations: (Updatable)
         :param pulumi.Input[str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[str] request_state: (Updatable) The subset of request states available for creating the capacity request.
+        :param pulumi.Input[str] request_type: Type of Capacity Request(New or Transfer)
                
                
                ** IMPORTANT **
@@ -792,6 +829,7 @@ class OccCapacityRequest(pulumi.CustomResource):
         __props__.__dict__["patch_operations"] = patch_operations
         __props__.__dict__["region"] = region
         __props__.__dict__["request_state"] = request_state
+        __props__.__dict__["request_type"] = request_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -802,7 +840,7 @@ class OccCapacityRequest(pulumi.CustomResource):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
         """
-        The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -915,12 +953,20 @@ class OccCapacityRequest(pulumi.CustomResource):
     def request_state(self) -> pulumi.Output[str]:
         """
         (Updatable) The subset of request states available for creating the capacity request.
+        """
+        return pulumi.get(self, "request_state")
+
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> pulumi.Output[str]:
+        """
+        Type of Capacity Request(New or Transfer)
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "request_state")
+        return pulumi.get(self, "request_type")
 
     @property
     @pulumi.getter

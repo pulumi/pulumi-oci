@@ -14,6 +14,7 @@ from .container_instance import *
 from .get_addon import *
 from .get_addon_options import *
 from .get_addons import *
+from .get_cluster import *
 from .get_cluster_credential_rotation_status import *
 from .get_cluster_kube_config import *
 from .get_cluster_option import *

@@ -49,7 +49,7 @@ export class OccCapacityRequest extends pulumi.CustomResource {
     }
 
     /**
-     * The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
@@ -106,12 +106,16 @@ export class OccCapacityRequest extends pulumi.CustomResource {
     public readonly region!: pulumi.Output<string>;
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
+     */
+    public readonly requestState!: pulumi.Output<string>;
+    /**
+     * Type of Capacity Request(New or Transfer)
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly requestState!: pulumi.Output<string>;
+    public readonly requestType!: pulumi.Output<string>;
     /**
      * The current lifecycle state of the resource.
      */
@@ -157,15 +161,13 @@ export class OccCapacityRequest extends pulumi.CustomResource {
             resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
             resourceInputs["region"] = state ? state.region : undefined;
             resourceInputs["requestState"] = state ? state.requestState : undefined;
+            resourceInputs["requestType"] = state ? state.requestType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
             const args = argsOrState as OccCapacityRequestArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'availabilityDomain'");
-            }
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
@@ -201,6 +203,7 @@ export class OccCapacityRequest extends pulumi.CustomResource {
             resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
             resourceInputs["region"] = args ? args.region : undefined;
             resourceInputs["requestState"] = args ? args.requestState : undefined;
+            resourceInputs["requestType"] = args ? args.requestType : undefined;
             resourceInputs["occCustomerGroupId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -217,7 +220,7 @@ export class OccCapacityRequest extends pulumi.CustomResource {
  */
 export interface OccCapacityRequestState {
     /**
-     * The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
@@ -274,12 +277,16 @@ export interface OccCapacityRequestState {
     region?: pulumi.Input<string>;
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
+     */
+    requestState?: pulumi.Input<string>;
+    /**
+     * Type of Capacity Request(New or Transfer)
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    requestState?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string>;
     /**
      * The current lifecycle state of the resource.
      */
@@ -303,9 +310,9 @@ export interface OccCapacityRequestState {
  */
 export interface OccCapacityRequestArgs {
     /**
-     * The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      */
-    availabilityDomain: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
      */
@@ -356,10 +363,14 @@ export interface OccCapacityRequestArgs {
     region: pulumi.Input<string>;
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
+     */
+    requestState?: pulumi.Input<string>;
+    /**
+     * Type of Capacity Request(New or Transfer)
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    requestState?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string>;
 }

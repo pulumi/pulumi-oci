@@ -58,6 +58,7 @@ __all__ = [
     'GetBdsInstanceMetastoreConfigsFilterArgs',
     'GetBdsInstancePatchHistoriesFilterArgs',
     'GetBdsInstancePatchesFilterArgs',
+    'GetBdsInstanceResourcePrincipalConfigurationsFilterArgs',
     'GetBdsInstancesFilterArgs',
 ]
 
@@ -2656,6 +2657,14 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
                  tolerance_threshold_per_domain: Optional[pulumi.Input[int]] = None,
                  wait_time_between_batch_in_seconds: Optional[pulumi.Input[int]] = None,
                  wait_time_between_domain_in_seconds: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] patching_config_strategy: Type of strategy used for detailed patching configuration
+        :param pulumi.Input[int] batch_size: How many nodes to be patched in each iteration.
+        :param pulumi.Input[int] tolerance_threshold_per_batch: Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        :param pulumi.Input[int] tolerance_threshold_per_domain: Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        :param pulumi.Input[int] wait_time_between_batch_in_seconds: The wait time between batches in seconds.
+        :param pulumi.Input[int] wait_time_between_domain_in_seconds: The wait time between AD/FD in seconds.
+        """
         pulumi.set(__self__, "patching_config_strategy", patching_config_strategy)
         if batch_size is not None:
             pulumi.set(__self__, "batch_size", batch_size)
@@ -2671,6 +2680,9 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
     @property
     @pulumi.getter(name="patchingConfigStrategy")
     def patching_config_strategy(self) -> pulumi.Input[str]:
+        """
+        Type of strategy used for detailed patching configuration
+        """
         return pulumi.get(self, "patching_config_strategy")
 
     @patching_config_strategy.setter
@@ -2680,6 +2692,9 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
     @property
     @pulumi.getter(name="batchSize")
     def batch_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        How many nodes to be patched in each iteration.
+        """
         return pulumi.get(self, "batch_size")
 
     @batch_size.setter
@@ -2689,6 +2704,9 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
     @property
     @pulumi.getter(name="toleranceThresholdPerBatch")
     def tolerance_threshold_per_batch(self) -> Optional[pulumi.Input[int]]:
+        """
+        Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        """
         return pulumi.get(self, "tolerance_threshold_per_batch")
 
     @tolerance_threshold_per_batch.setter
@@ -2698,6 +2716,9 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
     @property
     @pulumi.getter(name="toleranceThresholdPerDomain")
     def tolerance_threshold_per_domain(self) -> Optional[pulumi.Input[int]]:
+        """
+        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        """
         return pulumi.get(self, "tolerance_threshold_per_domain")
 
     @tolerance_threshold_per_domain.setter
@@ -2707,6 +2728,9 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
     @property
     @pulumi.getter(name="waitTimeBetweenBatchInSeconds")
     def wait_time_between_batch_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        The wait time between batches in seconds.
+        """
         return pulumi.get(self, "wait_time_between_batch_in_seconds")
 
     @wait_time_between_batch_in_seconds.setter
@@ -2716,6 +2740,9 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
     @property
     @pulumi.getter(name="waitTimeBetweenDomainInSeconds")
     def wait_time_between_domain_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        The wait time between AD/FD in seconds.
+        """
         return pulumi.get(self, "wait_time_between_domain_in_seconds")
 
     @wait_time_between_domain_in_seconds.setter
@@ -3303,6 +3330,45 @@ class GetBdsInstancePatchHistoriesFilterArgs:
 
 @pulumi.input_type
 class GetBdsInstancePatchesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetBdsInstanceResourcePrincipalConfigurationsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

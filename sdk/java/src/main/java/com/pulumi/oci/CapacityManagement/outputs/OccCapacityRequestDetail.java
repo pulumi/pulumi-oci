@@ -5,7 +5,9 @@ package com.pulumi.oci.CapacityManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CapacityManagement.outputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -17,6 +19,16 @@ public final class OccCapacityRequestDetail {
      * 
      */
     private @Nullable String actualHandoverQuantity;
+    /**
+     * @return A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     * 
+     */
+    private @Nullable List<OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList> associatedOccHandoverResourceBlockLists;
+    /**
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     * 
+     */
+    private @Nullable String availabilityDomain;
     /**
      * @return The date on which the actual handover quantity of resources is delivered.
      * 
@@ -48,6 +60,11 @@ public final class OccCapacityRequestDetail {
      */
     private String resourceType;
     /**
+     * @return The WorkloadType from where capacity request are to be transferred.
+     * 
+     */
+    private @Nullable String sourceWorkloadType;
+    /**
      * @return The type of the workload (Generic/ROW).
      * 
      */
@@ -60,6 +77,20 @@ public final class OccCapacityRequestDetail {
      */
     public Optional<String> actualHandoverQuantity() {
         return Optional.ofNullable(this.actualHandoverQuantity);
+    }
+    /**
+     * @return A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     * 
+     */
+    public List<OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList> associatedOccHandoverResourceBlockLists() {
+        return this.associatedOccHandoverResourceBlockLists == null ? List.of() : this.associatedOccHandoverResourceBlockLists;
+    }
+    /**
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     * 
+     */
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The date on which the actual handover quantity of resources is delivered.
@@ -104,6 +135,13 @@ public final class OccCapacityRequestDetail {
         return this.resourceType;
     }
     /**
+     * @return The WorkloadType from where capacity request are to be transferred.
+     * 
+     */
+    public Optional<String> sourceWorkloadType() {
+        return Optional.ofNullable(this.sourceWorkloadType);
+    }
+    /**
      * @return The type of the workload (Generic/ROW).
      * 
      */
@@ -121,23 +159,29 @@ public final class OccCapacityRequestDetail {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String actualHandoverQuantity;
+        private @Nullable List<OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList> associatedOccHandoverResourceBlockLists;
+        private @Nullable String availabilityDomain;
         private @Nullable String dateActualHandover;
         private @Nullable String dateExpectedHandover;
         private String demandQuantity;
         private @Nullable String expectedHandoverQuantity;
         private String resourceName;
         private String resourceType;
+        private @Nullable String sourceWorkloadType;
         private String workloadType;
         public Builder() {}
         public Builder(OccCapacityRequestDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualHandoverQuantity = defaults.actualHandoverQuantity;
+    	      this.associatedOccHandoverResourceBlockLists = defaults.associatedOccHandoverResourceBlockLists;
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.dateActualHandover = defaults.dateActualHandover;
     	      this.dateExpectedHandover = defaults.dateExpectedHandover;
     	      this.demandQuantity = defaults.demandQuantity;
     	      this.expectedHandoverQuantity = defaults.expectedHandoverQuantity;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceType = defaults.resourceType;
+    	      this.sourceWorkloadType = defaults.sourceWorkloadType;
     	      this.workloadType = defaults.workloadType;
         }
 
@@ -145,6 +189,21 @@ public final class OccCapacityRequestDetail {
         public Builder actualHandoverQuantity(@Nullable String actualHandoverQuantity) {
 
             this.actualHandoverQuantity = actualHandoverQuantity;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder associatedOccHandoverResourceBlockLists(@Nullable List<OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList> associatedOccHandoverResourceBlockLists) {
+
+            this.associatedOccHandoverResourceBlockLists = associatedOccHandoverResourceBlockLists;
+            return this;
+        }
+        public Builder associatedOccHandoverResourceBlockLists(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList... associatedOccHandoverResourceBlockLists) {
+            return associatedOccHandoverResourceBlockLists(List.of(associatedOccHandoverResourceBlockLists));
+        }
+        @CustomType.Setter
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
@@ -190,6 +249,12 @@ public final class OccCapacityRequestDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceWorkloadType(@Nullable String sourceWorkloadType) {
+
+            this.sourceWorkloadType = sourceWorkloadType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workloadType(String workloadType) {
             if (workloadType == null) {
               throw new MissingRequiredPropertyException("OccCapacityRequestDetail", "workloadType");
@@ -200,12 +265,15 @@ public final class OccCapacityRequestDetail {
         public OccCapacityRequestDetail build() {
             final var _resultValue = new OccCapacityRequestDetail();
             _resultValue.actualHandoverQuantity = actualHandoverQuantity;
+            _resultValue.associatedOccHandoverResourceBlockLists = associatedOccHandoverResourceBlockLists;
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.dateActualHandover = dateActualHandover;
             _resultValue.dateExpectedHandover = dateExpectedHandover;
             _resultValue.demandQuantity = demandQuantity;
             _resultValue.expectedHandoverQuantity = expectedHandoverQuantity;
             _resultValue.resourceName = resourceName;
             _resultValue.resourceType = resourceType;
+            _resultValue.sourceWorkloadType = sourceWorkloadType;
             _resultValue.workloadType = workloadType;
             return _resultValue;
         }

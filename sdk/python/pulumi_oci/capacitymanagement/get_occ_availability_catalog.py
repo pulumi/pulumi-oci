@@ -119,7 +119,7 @@ class GetOccAvailabilityCatalogResult:
     @pulumi.getter
     def details(self) -> Sequence['outputs.GetOccAvailabilityCatalogDetailResult']:
         """
-        Details about capacity available for  different resources in catalog.
+        Details about capacity available for different resources in catalog.
         """
         return pulumi.get(self, "details")
 

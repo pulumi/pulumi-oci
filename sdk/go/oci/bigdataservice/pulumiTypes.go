@@ -5894,12 +5894,18 @@ func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayO
 }
 
 type BdsInstanceOsPatchActionPatchingConfig struct {
-	BatchSize                      *int   `pulumi:"batchSize"`
-	PatchingConfigStrategy         string `pulumi:"patchingConfigStrategy"`
-	ToleranceThresholdPerBatch     *int   `pulumi:"toleranceThresholdPerBatch"`
-	ToleranceThresholdPerDomain    *int   `pulumi:"toleranceThresholdPerDomain"`
-	WaitTimeBetweenBatchInSeconds  *int   `pulumi:"waitTimeBetweenBatchInSeconds"`
-	WaitTimeBetweenDomainInSeconds *int   `pulumi:"waitTimeBetweenDomainInSeconds"`
+	// How many nodes to be patched in each iteration.
+	BatchSize *int `pulumi:"batchSize"`
+	// Type of strategy used for detailed patching configuration
+	PatchingConfigStrategy string `pulumi:"patchingConfigStrategy"`
+	// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+	ToleranceThresholdPerBatch *int `pulumi:"toleranceThresholdPerBatch"`
+	// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+	ToleranceThresholdPerDomain *int `pulumi:"toleranceThresholdPerDomain"`
+	// The wait time between batches in seconds.
+	WaitTimeBetweenBatchInSeconds *int `pulumi:"waitTimeBetweenBatchInSeconds"`
+	// The wait time between AD/FD in seconds.
+	WaitTimeBetweenDomainInSeconds *int `pulumi:"waitTimeBetweenDomainInSeconds"`
 }
 
 // BdsInstanceOsPatchActionPatchingConfigInput is an input type that accepts BdsInstanceOsPatchActionPatchingConfigArgs and BdsInstanceOsPatchActionPatchingConfigOutput values.
@@ -5914,11 +5920,17 @@ type BdsInstanceOsPatchActionPatchingConfigInput interface {
 }
 
 type BdsInstanceOsPatchActionPatchingConfigArgs struct {
-	BatchSize                      pulumi.IntPtrInput `pulumi:"batchSize"`
-	PatchingConfigStrategy         pulumi.StringInput `pulumi:"patchingConfigStrategy"`
-	ToleranceThresholdPerBatch     pulumi.IntPtrInput `pulumi:"toleranceThresholdPerBatch"`
-	ToleranceThresholdPerDomain    pulumi.IntPtrInput `pulumi:"toleranceThresholdPerDomain"`
-	WaitTimeBetweenBatchInSeconds  pulumi.IntPtrInput `pulumi:"waitTimeBetweenBatchInSeconds"`
+	// How many nodes to be patched in each iteration.
+	BatchSize pulumi.IntPtrInput `pulumi:"batchSize"`
+	// Type of strategy used for detailed patching configuration
+	PatchingConfigStrategy pulumi.StringInput `pulumi:"patchingConfigStrategy"`
+	// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+	ToleranceThresholdPerBatch pulumi.IntPtrInput `pulumi:"toleranceThresholdPerBatch"`
+	// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+	ToleranceThresholdPerDomain pulumi.IntPtrInput `pulumi:"toleranceThresholdPerDomain"`
+	// The wait time between batches in seconds.
+	WaitTimeBetweenBatchInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenBatchInSeconds"`
+	// The wait time between AD/FD in seconds.
 	WaitTimeBetweenDomainInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenDomainInSeconds"`
 }
 
@@ -5973,26 +5985,32 @@ func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToBdsInstanceOsPatchAction
 	return o
 }
 
+// How many nodes to be patched in each iteration.
 func (o BdsInstanceOsPatchActionPatchingConfigOutput) BatchSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.BatchSize }).(pulumi.IntPtrOutput)
 }
 
+// Type of strategy used for detailed patching configuration
 func (o BdsInstanceOsPatchActionPatchingConfigOutput) PatchingConfigStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) string { return v.PatchingConfigStrategy }).(pulumi.StringOutput)
 }
 
+// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
 func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToleranceThresholdPerBatch() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.ToleranceThresholdPerBatch }).(pulumi.IntPtrOutput)
 }
 
+// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
 func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToleranceThresholdPerDomain() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.ToleranceThresholdPerDomain }).(pulumi.IntPtrOutput)
 }
 
+// The wait time between batches in seconds.
 func (o BdsInstanceOsPatchActionPatchingConfigOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.WaitTimeBetweenBatchInSeconds }).(pulumi.IntPtrOutput)
 }
 
+// The wait time between AD/FD in seconds.
 func (o BdsInstanceOsPatchActionPatchingConfigOutput) WaitTimeBetweenDomainInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.WaitTimeBetweenDomainInSeconds }).(pulumi.IntPtrOutput)
 }
@@ -15319,6 +15337,315 @@ func (o GetBdsInstancePatchesPatchArrayOutput) Index(i pulumi.IntInput) GetBdsIn
 	}).(GetBdsInstancePatchesPatchOutput)
 }
 
+type GetBdsInstanceResourcePrincipalConfigurationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceResourcePrincipalConfigurationsFilterInput is an input type that accepts GetBdsInstanceResourcePrincipalConfigurationsFilterArgs and GetBdsInstanceResourcePrincipalConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceResourcePrincipalConfigurationsFilterInput` via:
+//
+//	GetBdsInstanceResourcePrincipalConfigurationsFilterArgs{...}
+type GetBdsInstanceResourcePrincipalConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceResourcePrincipalConfigurationsFilterOutput() GetBdsInstanceResourcePrincipalConfigurationsFilterOutput
+	ToGetBdsInstanceResourcePrincipalConfigurationsFilterOutputWithContext(context.Context) GetBdsInstanceResourcePrincipalConfigurationsFilterOutput
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceResourcePrincipalConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceResourcePrincipalConfigurationsFilterArgs) ToGetBdsInstanceResourcePrincipalConfigurationsFilterOutput() GetBdsInstanceResourcePrincipalConfigurationsFilterOutput {
+	return i.ToGetBdsInstanceResourcePrincipalConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceResourcePrincipalConfigurationsFilterArgs) ToGetBdsInstanceResourcePrincipalConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceResourcePrincipalConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceResourcePrincipalConfigurationsFilterOutput)
+}
+
+// GetBdsInstanceResourcePrincipalConfigurationsFilterArrayInput is an input type that accepts GetBdsInstanceResourcePrincipalConfigurationsFilterArray and GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceResourcePrincipalConfigurationsFilterArrayInput` via:
+//
+//	GetBdsInstanceResourcePrincipalConfigurationsFilterArray{ GetBdsInstanceResourcePrincipalConfigurationsFilterArgs{...} }
+type GetBdsInstanceResourcePrincipalConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput() GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput
+	ToGetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutputWithContext(context.Context) GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsFilterArray []GetBdsInstanceResourcePrincipalConfigurationsFilterInput
+
+func (GetBdsInstanceResourcePrincipalConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceResourcePrincipalConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceResourcePrincipalConfigurationsFilterArray) ToGetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput() GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput {
+	return i.ToGetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceResourcePrincipalConfigurationsFilterArray) ToGetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput)
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceResourcePrincipalConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsFilterOutput) ToGetBdsInstanceResourcePrincipalConfigurationsFilterOutput() GetBdsInstanceResourcePrincipalConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsFilterOutput) ToGetBdsInstanceResourcePrincipalConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceResourcePrincipalConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceResourcePrincipalConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput) ToGetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput() GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput) ToGetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceResourcePrincipalConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceResourcePrincipalConfigurationsFilter {
+		return vs[0].([]GetBdsInstanceResourcePrincipalConfigurationsFilter)[vs[1].(int)]
+	}).(GetBdsInstanceResourcePrincipalConfigurationsFilterOutput)
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration struct {
+	// The OCID of the cluster.
+	BdsInstanceId        string `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName                          string `pulumi:"displayName"`
+	ForceRefreshResourcePrincipalTrigger int    `pulumi:"forceRefreshResourcePrincipalTrigger"`
+	// The id of the ResourcePrincipalConfiguration.
+	Id string `pulumi:"id"`
+	// Life span in hours of each resource principal session token.
+	SessionTokenLifeSpanDurationInHours int `pulumi:"sessionTokenLifeSpanDurationInHours"`
+	// The state of the ResourcePrincipalConfiguration.
+	State string `pulumi:"state"`
+	// The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
+	TimeTokenExpiry string `pulumi:"timeTokenExpiry"`
+	// the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
+	TimeTokenRefreshed string `pulumi:"timeTokenRefreshed"`
+	// The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationInput is an input type that accepts GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs and GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationInput` via:
+//
+//	GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs{...}
+type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput() GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput
+	ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutputWithContext(context.Context) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs struct {
+	// The OCID of the cluster.
+	BdsInstanceId        pulumi.StringInput `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword pulumi.StringInput `pulumi:"clusterAdminPassword"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName                          pulumi.StringInput `pulumi:"displayName"`
+	ForceRefreshResourcePrincipalTrigger pulumi.IntInput    `pulumi:"forceRefreshResourcePrincipalTrigger"`
+	// The id of the ResourcePrincipalConfiguration.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Life span in hours of each resource principal session token.
+	SessionTokenLifeSpanDurationInHours pulumi.IntInput `pulumi:"sessionTokenLifeSpanDurationInHours"`
+	// The state of the ResourcePrincipalConfiguration.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
+	TimeTokenExpiry pulumi.StringInput `pulumi:"timeTokenExpiry"`
+	// the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
+	TimeTokenRefreshed pulumi.StringInput `pulumi:"timeTokenRefreshed"`
+	// The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs) ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput() GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput {
+	return i.ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs) ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput)
+}
+
+// GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayInput is an input type that accepts GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray and GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayInput` via:
+//
+//	GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray{ GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs{...} }
+type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput() GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput
+	ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray []GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationInput
+
+func (GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray) ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput() GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput {
+	return i.ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray) ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput)
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput() GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput {
+	return o
+}
+
+// The OCID of the cluster.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.BdsInstanceId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) ClusterAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.ClusterAdminPassword
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) ForceRefreshResourcePrincipalTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) int {
+		return v.ForceRefreshResourcePrincipalTrigger
+	}).(pulumi.IntOutput)
+}
+
+// The id of the ResourcePrincipalConfiguration.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Life span in hours of each resource principal session token.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) SessionTokenLifeSpanDurationInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) int {
+		return v.SessionTokenLifeSpanDurationInHours
+	}).(pulumi.IntOutput)
+}
+
+// The state of the ResourcePrincipalConfiguration.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) TimeTokenExpiry() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.TimeTokenExpiry
+	}).(pulumi.StringOutput)
+}
+
+// the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) TimeTokenRefreshed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.TimeTokenRefreshed
+	}).(pulumi.StringOutput)
+}
+
+// The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput) ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput() GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput) ToGetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration {
+		return vs[0].([]GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput)
+}
+
 type GetBdsInstanceUtilNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
@@ -18966,6 +19293,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancePatchesFilterArrayInput)(nil)).Elem(), GetBdsInstancePatchesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancePatchesPatchInput)(nil)).Elem(), GetBdsInstancePatchesPatchArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancePatchesPatchArrayInput)(nil)).Elem(), GetBdsInstancePatchesPatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsFilterInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeInput)(nil)).Elem(), GetBdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeArrayInput)(nil)).Elem(), GetBdsInstanceUtilNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceUtilNodeShapeConfigArgs{})
@@ -19230,6 +19561,10 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstancePatchesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancePatchesPatchOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancePatchesPatchArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeShapeConfigOutput{})

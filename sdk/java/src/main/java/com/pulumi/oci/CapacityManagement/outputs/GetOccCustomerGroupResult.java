@@ -44,7 +44,7 @@ public final class GetOccCustomerGroupResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The OCID of the customer group.
      * 
      */
     private String id;
@@ -128,7 +128,7 @@ public final class GetOccCustomerGroupResult {
         return this.freeformTags;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The OCID of the customer group.
      * 
      */
     public String id() {

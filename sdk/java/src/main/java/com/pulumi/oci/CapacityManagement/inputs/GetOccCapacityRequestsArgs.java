@@ -100,6 +100,21 @@ public final class GetOccCapacityRequestsArgs extends com.pulumi.resources.Invok
         return Optional.ofNullable(this.occAvailabilityCatalogId);
     }
 
+    /**
+     * A filter to return only the resources that match the request type. The match is not case sensitive.
+     * 
+     */
+    @Import(name="requestType")
+    private @Nullable Output<String> requestType;
+
+    /**
+     * @return A filter to return only the resources that match the request type. The match is not case sensitive.
+     * 
+     */
+    public Optional<Output<String>> requestType() {
+        return Optional.ofNullable(this.requestType);
+    }
+
     private GetOccCapacityRequestsArgs() {}
 
     private GetOccCapacityRequestsArgs(GetOccCapacityRequestsArgs $) {
@@ -109,6 +124,7 @@ public final class GetOccCapacityRequestsArgs extends com.pulumi.resources.Invok
         this.id = $.id;
         this.namespace = $.namespace;
         this.occAvailabilityCatalogId = $.occAvailabilityCatalogId;
+        this.requestType = $.requestType;
     }
 
     public static Builder builder() {
@@ -245,6 +261,27 @@ public final class GetOccCapacityRequestsArgs extends com.pulumi.resources.Invok
          */
         public Builder occAvailabilityCatalogId(String occAvailabilityCatalogId) {
             return occAvailabilityCatalogId(Output.of(occAvailabilityCatalogId));
+        }
+
+        /**
+         * @param requestType A filter to return only the resources that match the request type. The match is not case sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestType(@Nullable Output<String> requestType) {
+            $.requestType = requestType;
+            return this;
+        }
+
+        /**
+         * @param requestType A filter to return only the resources that match the request type. The match is not case sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestType(String requestType) {
+            return requestType(Output.of(requestType));
         }
 
         public GetOccCapacityRequestsArgs build() {

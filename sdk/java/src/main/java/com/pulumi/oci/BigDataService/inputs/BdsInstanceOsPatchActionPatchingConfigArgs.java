@@ -17,44 +17,92 @@ public final class BdsInstanceOsPatchActionPatchingConfigArgs extends com.pulumi
 
     public static final BdsInstanceOsPatchActionPatchingConfigArgs Empty = new BdsInstanceOsPatchActionPatchingConfigArgs();
 
+    /**
+     * How many nodes to be patched in each iteration.
+     * 
+     */
     @Import(name="batchSize")
     private @Nullable Output<Integer> batchSize;
 
+    /**
+     * @return How many nodes to be patched in each iteration.
+     * 
+     */
     public Optional<Output<Integer>> batchSize() {
         return Optional.ofNullable(this.batchSize);
     }
 
+    /**
+     * Type of strategy used for detailed patching configuration
+     * 
+     */
     @Import(name="patchingConfigStrategy", required=true)
     private Output<String> patchingConfigStrategy;
 
+    /**
+     * @return Type of strategy used for detailed patching configuration
+     * 
+     */
     public Output<String> patchingConfigStrategy() {
         return this.patchingConfigStrategy;
     }
 
+    /**
+     * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+     * 
+     */
     @Import(name="toleranceThresholdPerBatch")
     private @Nullable Output<Integer> toleranceThresholdPerBatch;
 
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+     * 
+     */
     public Optional<Output<Integer>> toleranceThresholdPerBatch() {
         return Optional.ofNullable(this.toleranceThresholdPerBatch);
     }
 
+    /**
+     * Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+     * 
+     */
     @Import(name="toleranceThresholdPerDomain")
     private @Nullable Output<Integer> toleranceThresholdPerDomain;
 
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+     * 
+     */
     public Optional<Output<Integer>> toleranceThresholdPerDomain() {
         return Optional.ofNullable(this.toleranceThresholdPerDomain);
     }
 
+    /**
+     * The wait time between batches in seconds.
+     * 
+     */
     @Import(name="waitTimeBetweenBatchInSeconds")
     private @Nullable Output<Integer> waitTimeBetweenBatchInSeconds;
 
+    /**
+     * @return The wait time between batches in seconds.
+     * 
+     */
     public Optional<Output<Integer>> waitTimeBetweenBatchInSeconds() {
         return Optional.ofNullable(this.waitTimeBetweenBatchInSeconds);
     }
 
+    /**
+     * The wait time between AD/FD in seconds.
+     * 
+     */
     @Import(name="waitTimeBetweenDomainInSeconds")
     private @Nullable Output<Integer> waitTimeBetweenDomainInSeconds;
 
+    /**
+     * @return The wait time between AD/FD in seconds.
+     * 
+     */
     public Optional<Output<Integer>> waitTimeBetweenDomainInSeconds() {
         return Optional.ofNullable(this.waitTimeBetweenDomainInSeconds);
     }
@@ -88,56 +136,128 @@ public final class BdsInstanceOsPatchActionPatchingConfigArgs extends com.pulumi
             $ = new BdsInstanceOsPatchActionPatchingConfigArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param batchSize How many nodes to be patched in each iteration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder batchSize(@Nullable Output<Integer> batchSize) {
             $.batchSize = batchSize;
             return this;
         }
 
+        /**
+         * @param batchSize How many nodes to be patched in each iteration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder batchSize(Integer batchSize) {
             return batchSize(Output.of(batchSize));
         }
 
+        /**
+         * @param patchingConfigStrategy Type of strategy used for detailed patching configuration
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingConfigStrategy(Output<String> patchingConfigStrategy) {
             $.patchingConfigStrategy = patchingConfigStrategy;
             return this;
         }
 
+        /**
+         * @param patchingConfigStrategy Type of strategy used for detailed patching configuration
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingConfigStrategy(String patchingConfigStrategy) {
             return patchingConfigStrategy(Output.of(patchingConfigStrategy));
         }
 
+        /**
+         * @param toleranceThresholdPerBatch Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder toleranceThresholdPerBatch(@Nullable Output<Integer> toleranceThresholdPerBatch) {
             $.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
             return this;
         }
 
+        /**
+         * @param toleranceThresholdPerBatch Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder toleranceThresholdPerBatch(Integer toleranceThresholdPerBatch) {
             return toleranceThresholdPerBatch(Output.of(toleranceThresholdPerBatch));
         }
 
+        /**
+         * @param toleranceThresholdPerDomain Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder toleranceThresholdPerDomain(@Nullable Output<Integer> toleranceThresholdPerDomain) {
             $.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
             return this;
         }
 
+        /**
+         * @param toleranceThresholdPerDomain Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder toleranceThresholdPerDomain(Integer toleranceThresholdPerDomain) {
             return toleranceThresholdPerDomain(Output.of(toleranceThresholdPerDomain));
         }
 
+        /**
+         * @param waitTimeBetweenBatchInSeconds The wait time between batches in seconds.
+         * 
+         * @return builder
+         * 
+         */
         public Builder waitTimeBetweenBatchInSeconds(@Nullable Output<Integer> waitTimeBetweenBatchInSeconds) {
             $.waitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
             return this;
         }
 
+        /**
+         * @param waitTimeBetweenBatchInSeconds The wait time between batches in seconds.
+         * 
+         * @return builder
+         * 
+         */
         public Builder waitTimeBetweenBatchInSeconds(Integer waitTimeBetweenBatchInSeconds) {
             return waitTimeBetweenBatchInSeconds(Output.of(waitTimeBetweenBatchInSeconds));
         }
 
+        /**
+         * @param waitTimeBetweenDomainInSeconds The wait time between AD/FD in seconds.
+         * 
+         * @return builder
+         * 
+         */
         public Builder waitTimeBetweenDomainInSeconds(@Nullable Output<Integer> waitTimeBetweenDomainInSeconds) {
             $.waitTimeBetweenDomainInSeconds = waitTimeBetweenDomainInSeconds;
             return this;
         }
 
+        /**
+         * @param waitTimeBetweenDomainInSeconds The wait time between AD/FD in seconds.
+         * 
+         * @return builder
+         * 
+         */
         public Builder waitTimeBetweenDomainInSeconds(Integer waitTimeBetweenDomainInSeconds) {
             return waitTimeBetweenDomainInSeconds(Output.of(waitTimeBetweenDomainInSeconds));
         }

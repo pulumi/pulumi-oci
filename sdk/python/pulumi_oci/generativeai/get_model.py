@@ -228,6 +228,9 @@ class GetModelResult:
     @property
     @pulumi.getter
     def type(self) -> str:
+        """
+        The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+        """
         return pulumi.get(self, "type")
 
     @property

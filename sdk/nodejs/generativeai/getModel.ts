@@ -110,6 +110,9 @@ export interface GetModelResult {
      * The date and time that the model was updated in the format of an RFC3339 datetime string.
      */
     readonly timeUpdated: string;
+    /**
+     * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+     */
     readonly type: string;
     /**
      * The provider of the base model.

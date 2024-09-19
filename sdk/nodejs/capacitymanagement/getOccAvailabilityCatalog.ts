@@ -62,7 +62,7 @@ export interface GetOccAvailabilityCatalogResult {
      */
     readonly description: string;
     /**
-     * Details about capacity available for  different resources in catalog.
+     * Details about capacity available for different resources in catalog.
      */
     readonly details: outputs.CapacityManagement.GetOccAvailabilityCatalogDetail[];
     /**

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CapacityManagement.Inputs
     public sealed class OccAvailabilityCatalogDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The quantity of available resource that the customer can request.
+        /// The quantity of resource currently available that the customer can request.
         /// </summary>
         [Input("availableQuantity")]
         public Input<string>? AvailableQuantity { get; set; }
@@ -37,6 +37,12 @@ namespace Pulumi.Oci.CapacityManagement.Inputs
         public Input<string>? DateFinalCustomerOrder { get; set; }
 
         /// <summary>
+        /// The quantity of resource currently demanded by the customer.
+        /// </summary>
+        [Input("demandedQuantity")]
+        public Input<string>? DemandedQuantity { get; set; }
+
+        /// <summary>
         /// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         /// </summary>
         [Input("namespace")]
@@ -53,6 +59,24 @@ namespace Pulumi.Oci.CapacityManagement.Inputs
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
+
+        /// <summary>
+        /// The total quantity of resource that the customer can request.
+        /// </summary>
+        [Input("totalAvailableQuantity")]
+        public Input<string>? TotalAvailableQuantity { get; set; }
 
         /// <summary>
         /// The unit in which the resource available is measured.

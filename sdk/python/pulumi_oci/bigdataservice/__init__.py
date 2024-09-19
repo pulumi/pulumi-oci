@@ -12,6 +12,7 @@ from .bds_instance_metastore_config import *
 from .bds_instance_operation_certificate_managements_management import *
 from .bds_instance_os_patch_action import *
 from .bds_instance_patch_action import *
+from .bds_instance_resource_principal_configuration import *
 from .get_auto_scaling_configuration import *
 from .get_auto_scaling_configurations import *
 from .get_bds_instance import *
@@ -23,6 +24,8 @@ from .get_bds_instance_metastore_config import *
 from .get_bds_instance_metastore_configs import *
 from .get_bds_instance_patch_histories import *
 from .get_bds_instance_patches import *
+from .get_bds_instance_resource_principal_configuration import *
+from .get_bds_instance_resource_principal_configurations import *
 from .get_bds_instances import *
 from ._inputs import *
 from . import outputs

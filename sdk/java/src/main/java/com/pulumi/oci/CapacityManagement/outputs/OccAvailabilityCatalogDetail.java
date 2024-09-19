@@ -5,6 +5,7 @@ package com.pulumi.oci.CapacityManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -12,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class OccAvailabilityCatalogDetail {
     /**
-     * @return The quantity of available resource that the customer can request.
+     * @return The quantity of resource currently available that the customer can request.
      * 
      */
     private @Nullable String availableQuantity;
@@ -32,6 +33,11 @@ public final class OccAvailabilityCatalogDetail {
      */
     private @Nullable String dateFinalCustomerOrder;
     /**
+     * @return The quantity of resource currently demanded by the customer.
+     * 
+     */
+    private @Nullable String demandedQuantity;
+    /**
      * @return The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      * 
      */
@@ -47,6 +53,16 @@ public final class OccAvailabilityCatalogDetail {
      */
     private @Nullable String resourceType;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private @Nullable Map<String,String> systemTags;
+    /**
+     * @return The total quantity of resource that the customer can request.
+     * 
+     */
+    private @Nullable String totalAvailableQuantity;
+    /**
      * @return The unit in which the resource available is measured.
      * 
      */
@@ -59,7 +75,7 @@ public final class OccAvailabilityCatalogDetail {
 
     private OccAvailabilityCatalogDetail() {}
     /**
-     * @return The quantity of available resource that the customer can request.
+     * @return The quantity of resource currently available that the customer can request.
      * 
      */
     public Optional<String> availableQuantity() {
@@ -87,6 +103,13 @@ public final class OccAvailabilityCatalogDetail {
         return Optional.ofNullable(this.dateFinalCustomerOrder);
     }
     /**
+     * @return The quantity of resource currently demanded by the customer.
+     * 
+     */
+    public Optional<String> demandedQuantity() {
+        return Optional.ofNullable(this.demandedQuantity);
+    }
+    /**
      * @return The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      * 
      */
@@ -106,6 +129,20 @@ public final class OccAvailabilityCatalogDetail {
      */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);
+    }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags == null ? Map.of() : this.systemTags;
+    }
+    /**
+     * @return The total quantity of resource that the customer can request.
+     * 
+     */
+    public Optional<String> totalAvailableQuantity() {
+        return Optional.ofNullable(this.totalAvailableQuantity);
     }
     /**
      * @return The unit in which the resource available is measured.
@@ -135,9 +172,12 @@ public final class OccAvailabilityCatalogDetail {
         private @Nullable String catalogId;
         private @Nullable String dateExpectedCapacityHandover;
         private @Nullable String dateFinalCustomerOrder;
+        private @Nullable String demandedQuantity;
         private @Nullable String namespace;
         private @Nullable String resourceName;
         private @Nullable String resourceType;
+        private @Nullable Map<String,String> systemTags;
+        private @Nullable String totalAvailableQuantity;
         private @Nullable String unit;
         private @Nullable String workloadType;
         public Builder() {}
@@ -147,9 +187,12 @@ public final class OccAvailabilityCatalogDetail {
     	      this.catalogId = defaults.catalogId;
     	      this.dateExpectedCapacityHandover = defaults.dateExpectedCapacityHandover;
     	      this.dateFinalCustomerOrder = defaults.dateFinalCustomerOrder;
+    	      this.demandedQuantity = defaults.demandedQuantity;
     	      this.namespace = defaults.namespace;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceType = defaults.resourceType;
+    	      this.systemTags = defaults.systemTags;
+    	      this.totalAvailableQuantity = defaults.totalAvailableQuantity;
     	      this.unit = defaults.unit;
     	      this.workloadType = defaults.workloadType;
         }
@@ -179,6 +222,12 @@ public final class OccAvailabilityCatalogDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder demandedQuantity(@Nullable String demandedQuantity) {
+
+            this.demandedQuantity = demandedQuantity;
+            return this;
+        }
+        @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
 
             this.namespace = namespace;
@@ -194,6 +243,18 @@ public final class OccAvailabilityCatalogDetail {
         public Builder resourceType(@Nullable String resourceType) {
 
             this.resourceType = resourceType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
+
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder totalAvailableQuantity(@Nullable String totalAvailableQuantity) {
+
+            this.totalAvailableQuantity = totalAvailableQuantity;
             return this;
         }
         @CustomType.Setter
@@ -214,9 +275,12 @@ public final class OccAvailabilityCatalogDetail {
             _resultValue.catalogId = catalogId;
             _resultValue.dateExpectedCapacityHandover = dateExpectedCapacityHandover;
             _resultValue.dateFinalCustomerOrder = dateFinalCustomerOrder;
+            _resultValue.demandedQuantity = demandedQuantity;
             _resultValue.namespace = namespace;
             _resultValue.resourceName = resourceName;
             _resultValue.resourceType = resourceType;
+            _resultValue.systemTags = systemTags;
+            _resultValue.totalAvailableQuantity = totalAvailableQuantity;
             _resultValue.unit = unit;
             _resultValue.workloadType = workloadType;
             return _resultValue;

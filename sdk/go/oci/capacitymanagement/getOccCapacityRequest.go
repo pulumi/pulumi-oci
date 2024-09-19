@@ -58,7 +58,7 @@ type LookupOccCapacityRequestArgs struct {
 
 // A collection of values returned by getOccCapacityRequest.
 type LookupOccCapacityRequestResult struct {
-	// The availability domain (AD) for which the capacity request was made.
+	// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The OCID of the tenancy from which the request was made.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -90,6 +90,8 @@ type LookupOccCapacityRequestResult struct {
 	Region string `pulumi:"region"`
 	// The different states the capacity request goes through.
 	RequestState string `pulumi:"requestState"`
+	// Type of Capacity Request(New or Transfer)
+	RequestType string `pulumi:"requestType"`
 	// The current lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -138,7 +140,7 @@ func (o LookupOccCapacityRequestResultOutput) ToLookupOccCapacityRequestResultOu
 	return o
 }
 
-// The availability domain (AD) for which the capacity request was made.
+// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
 func (o LookupOccCapacityRequestResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOccCapacityRequestResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -219,6 +221,11 @@ func (o LookupOccCapacityRequestResultOutput) Region() pulumi.StringOutput {
 // The different states the capacity request goes through.
 func (o LookupOccCapacityRequestResultOutput) RequestState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOccCapacityRequestResult) string { return v.RequestState }).(pulumi.StringOutput)
+}
+
+// Type of Capacity Request(New or Transfer)
+func (o LookupOccCapacityRequestResultOutput) RequestType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCapacityRequestResult) string { return v.RequestType }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the resource.

@@ -29,6 +29,10 @@ import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesPlainArg
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesPlainArgs;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationResult;
@@ -41,6 +45,8 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigResult
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchHistoriesResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchesResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceResourcePrincipalConfigurationResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceResourcePrincipalConfigurationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesResult;
 import com.pulumi.oci.Utilities;
@@ -1870,6 +1876,370 @@ public final class BigDataServiceFunctions {
      */
     public static CompletableFuture<GetBdsInstancePatchesResult> getBdsInstancePatchesPlain(GetBdsInstancePatchesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", TypeShape.of(GetBdsInstancePatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the resourcePrincipalConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfiguration = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .resourcePrincipalConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceResourcePrincipalConfigurationResult> getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs args) {
+        return getBdsInstanceResourcePrincipalConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the resourcePrincipalConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfiguration = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .resourcePrincipalConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceResourcePrincipalConfigurationResult> getBdsInstanceResourcePrincipalConfigurationPlain(GetBdsInstanceResourcePrincipalConfigurationPlainArgs args) {
+        return getBdsInstanceResourcePrincipalConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the resourcePrincipalConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfiguration = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .resourcePrincipalConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceResourcePrincipalConfigurationResult> getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the resourcePrincipalConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfiguration = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .resourcePrincipalConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceResourcePrincipalConfigurationResult> getBdsInstanceResourcePrincipalConfigurationPlain(GetBdsInstanceResourcePrincipalConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Resource Principal Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the ResourcePrincipalConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfigurations = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfigurations(GetBdsInstanceResourcePrincipalConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceResourcePrincipalConfigurationDisplayName)
+     *             .state(bdsInstanceResourcePrincipalConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceResourcePrincipalConfigurationsResult> getBdsInstanceResourcePrincipalConfigurations(GetBdsInstanceResourcePrincipalConfigurationsArgs args) {
+        return getBdsInstanceResourcePrincipalConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Resource Principal Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the ResourcePrincipalConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfigurations = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfigurations(GetBdsInstanceResourcePrincipalConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceResourcePrincipalConfigurationDisplayName)
+     *             .state(bdsInstanceResourcePrincipalConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceResourcePrincipalConfigurationsResult> getBdsInstanceResourcePrincipalConfigurationsPlain(GetBdsInstanceResourcePrincipalConfigurationsPlainArgs args) {
+        return getBdsInstanceResourcePrincipalConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Resource Principal Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the ResourcePrincipalConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfigurations = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfigurations(GetBdsInstanceResourcePrincipalConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceResourcePrincipalConfigurationDisplayName)
+     *             .state(bdsInstanceResourcePrincipalConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceResourcePrincipalConfigurationsResult> getBdsInstanceResourcePrincipalConfigurations(GetBdsInstanceResourcePrincipalConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Resource Principal Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the ResourcePrincipalConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfigurations = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfigurations(GetBdsInstanceResourcePrincipalConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceResourcePrincipalConfigurationDisplayName)
+     *             .state(bdsInstanceResourcePrincipalConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceResourcePrincipalConfigurationsResult> getBdsInstanceResourcePrincipalConfigurationsPlain(GetBdsInstanceResourcePrincipalConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.

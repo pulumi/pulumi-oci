@@ -104,6 +104,7 @@ type DedicatedAiCluster struct {
 	// * LLAMA2_70
 	// * LARGE_GENERIC
 	// * LARGE_COHERE_V2_2
+	// * LARGE_GENERIC_4
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,6 +194,7 @@ type dedicatedAiClusterState struct {
 	// * LLAMA2_70
 	// * LARGE_GENERIC
 	// * LARGE_COHERE_V2_2
+	// * LARGE_GENERIC_4
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -241,6 +243,7 @@ type DedicatedAiClusterState struct {
 	// * LLAMA2_70
 	// * LARGE_GENERIC
 	// * LARGE_COHERE_V2_2
+	// * LARGE_GENERIC_4
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -281,6 +284,7 @@ type dedicatedAiClusterArgs struct {
 	// * LLAMA2_70
 	// * LARGE_GENERIC
 	// * LARGE_COHERE_V2_2
+	// * LARGE_GENERIC_4
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -318,6 +322,7 @@ type DedicatedAiClusterArgs struct {
 	// * LLAMA2_70
 	// * LARGE_GENERIC
 	// * LARGE_COHERE_V2_2
+	// * LARGE_GENERIC_4
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -491,6 +496,7 @@ func (o DedicatedAiClusterOutput) UnitCount() pulumi.IntOutput {
 // * LLAMA2_70
 // * LARGE_GENERIC
 // * LARGE_COHERE_V2_2
+// * LARGE_GENERIC_4
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -69,7 +69,7 @@ export interface GetOccCustomerGroupResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * The OCID of the customer group.
      */
     readonly id: string;
     /**

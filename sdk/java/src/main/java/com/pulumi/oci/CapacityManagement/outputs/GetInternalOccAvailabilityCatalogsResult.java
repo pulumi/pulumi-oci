@@ -26,7 +26,7 @@ public final class GetInternalOccAvailabilityCatalogsResult {
      */
     private String compartmentId;
     /**
-     * @return An user-friendly name for the availability catalog. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return An user-friendly name for the availability catalog. Does not have to be unique, and is changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -50,7 +50,7 @@ public final class GetInternalOccAvailabilityCatalogsResult {
      * @return The Customer Group OCID to which the availability catalog belongs.
      * 
      */
-    private @Nullable String occCustomerGroupId;
+    private String occCustomerGroupId;
 
     private GetInternalOccAvailabilityCatalogsResult() {}
     /**
@@ -68,7 +68,7 @@ public final class GetInternalOccAvailabilityCatalogsResult {
         return this.compartmentId;
     }
     /**
-     * @return An user-friendly name for the availability catalog. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return An user-friendly name for the availability catalog. Does not have to be unique, and is changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -102,8 +102,8 @@ public final class GetInternalOccAvailabilityCatalogsResult {
      * @return The Customer Group OCID to which the availability catalog belongs.
      * 
      */
-    public Optional<String> occCustomerGroupId() {
-        return Optional.ofNullable(this.occCustomerGroupId);
+    public String occCustomerGroupId() {
+        return this.occCustomerGroupId;
     }
 
     public static Builder builder() {
@@ -122,7 +122,7 @@ public final class GetInternalOccAvailabilityCatalogsResult {
         private @Nullable String id;
         private @Nullable String namespace;
         private List<GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollection> occAvailabilityCatalogCollections;
-        private @Nullable String occCustomerGroupId;
+        private String occCustomerGroupId;
         public Builder() {}
         public Builder(GetInternalOccAvailabilityCatalogsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -189,8 +189,10 @@ public final class GetInternalOccAvailabilityCatalogsResult {
             return occAvailabilityCatalogCollections(List.of(occAvailabilityCatalogCollections));
         }
         @CustomType.Setter
-        public Builder occCustomerGroupId(@Nullable String occCustomerGroupId) {
-
+        public Builder occCustomerGroupId(String occCustomerGroupId) {
+            if (occCustomerGroupId == null) {
+              throw new MissingRequiredPropertyException("GetInternalOccAvailabilityCatalogsResult", "occCustomerGroupId");
+            }
             this.occCustomerGroupId = occCustomerGroupId;
             return this;
         }

@@ -137,6 +137,7 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
      * * LLAMA2_70
      * * LARGE_GENERIC
      * * LARGE_COHERE_V2_2
+     * * LARGE_GENERIC_4
      *
      *
      * ** IMPORTANT **
@@ -277,6 +278,7 @@ export interface DedicatedAiClusterState {
      * * LLAMA2_70
      * * LARGE_GENERIC
      * * LARGE_COHERE_V2_2
+     * * LARGE_GENERIC_4
      *
      *
      * ** IMPORTANT **
@@ -333,6 +335,7 @@ export interface DedicatedAiClusterArgs {
      * * LLAMA2_70
      * * LARGE_GENERIC
      * * LARGE_COHERE_V2_2
+     * * LARGE_GENERIC_4
      *
      *
      * ** IMPORTANT **

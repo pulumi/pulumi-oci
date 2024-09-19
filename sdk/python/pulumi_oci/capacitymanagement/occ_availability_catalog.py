@@ -194,7 +194,7 @@ class _OccAvailabilityCatalogState:
         :param pulumi.Input[str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Additional information about the availability catalog.
-        :param pulumi.Input[Sequence[pulumi.Input['OccAvailabilityCatalogDetailArgs']]] details: Details about capacity available for  different resources in catalog.
+        :param pulumi.Input[Sequence[pulumi.Input['OccAvailabilityCatalogDetailArgs']]] details: Details about capacity available for different resources in catalog.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the availability catalog.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -307,7 +307,7 @@ class _OccAvailabilityCatalogState:
     @pulumi.getter
     def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OccAvailabilityCatalogDetailArgs']]]]:
         """
-        Details about capacity available for  different resources in catalog.
+        Details about capacity available for different resources in catalog.
         """
         return pulumi.get(self, "details")
 
@@ -648,7 +648,7 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Additional information about the availability catalog.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccAvailabilityCatalogDetailArgs', 'OccAvailabilityCatalogDetailArgsDict']]]] details: Details about capacity available for  different resources in catalog.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccAvailabilityCatalogDetailArgs', 'OccAvailabilityCatalogDetailArgsDict']]]] details: Details about capacity available for different resources in catalog.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the availability catalog.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -730,7 +730,7 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
     @pulumi.getter
     def details(self) -> pulumi.Output[Sequence['outputs.OccAvailabilityCatalogDetail']]:
         """
-        Details about capacity available for  different resources in catalog.
+        Details about capacity available for different resources in catalog.
         """
         return pulumi.get(self, "details")
 

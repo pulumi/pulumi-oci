@@ -33,6 +33,7 @@ namespace Pulumi.Oci.CapacityManagement
         ///         Id = occCapacityRequestId,
         ///         Namespace = occCapacityRequestNamespace,
         ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
+        ///         RequestType = occCapacityRequestRequestType,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.CapacityManagement
         ///         Id = occCapacityRequestId,
         ///         Namespace = occCapacityRequestNamespace,
         ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
+        ///         RequestType = occCapacityRequestRequestType,
         ///     });
         /// 
         /// });
@@ -113,6 +115,12 @@ namespace Pulumi.Oci.CapacityManagement
         [Input("occAvailabilityCatalogId")]
         public string? OccAvailabilityCatalogId { get; set; }
 
+        /// <summary>
+        /// A filter to return only the resources that match the request type. The match is not case sensitive.
+        /// </summary>
+        [Input("requestType")]
+        public string? RequestType { get; set; }
+
         public GetOccCapacityRequestsArgs()
         {
         }
@@ -159,6 +167,12 @@ namespace Pulumi.Oci.CapacityManagement
         [Input("occAvailabilityCatalogId")]
         public Input<string>? OccAvailabilityCatalogId { get; set; }
 
+        /// <summary>
+        /// A filter to return only the resources that match the request type. The match is not case sensitive.
+        /// </summary>
+        [Input("requestType")]
+        public Input<string>? RequestType { get; set; }
+
         public GetOccCapacityRequestsInvokeArgs()
         {
         }
@@ -194,6 +208,10 @@ namespace Pulumi.Oci.CapacityManagement
         /// The list of occ_capacity_request_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOccCapacityRequestsOccCapacityRequestCollectionResult> OccCapacityRequestCollections;
+        /// <summary>
+        /// Type of Capacity Request(New or Transfer)
+        /// </summary>
+        public readonly string? RequestType;
 
         [OutputConstructor]
         private GetOccCapacityRequestsResult(
@@ -209,7 +227,9 @@ namespace Pulumi.Oci.CapacityManagement
 
             string? occAvailabilityCatalogId,
 
-            ImmutableArray<Outputs.GetOccCapacityRequestsOccCapacityRequestCollectionResult> occCapacityRequestCollections)
+            ImmutableArray<Outputs.GetOccCapacityRequestsOccCapacityRequestCollectionResult> occCapacityRequestCollections,
+
+            string? requestType)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -218,6 +238,7 @@ namespace Pulumi.Oci.CapacityManagement
             Namespace = @namespace;
             OccAvailabilityCatalogId = occAvailabilityCatalogId;
             OccCapacityRequestCollections = occCapacityRequestCollections;
+            RequestType = requestType;
         }
     }
 }

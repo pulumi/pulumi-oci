@@ -45,7 +45,7 @@ export interface GetOccCapacityRequestArgs {
  */
 export interface GetOccCapacityRequestResult {
     /**
-     * The availability domain (AD) for which the capacity request was made.
+     * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
      */
     readonly availabilityDomain: string;
     /**
@@ -106,6 +106,10 @@ export interface GetOccCapacityRequestResult {
      * The different states the capacity request goes through.
      */
     readonly requestState: string;
+    /**
+     * Type of Capacity Request(New or Transfer)
+     */
+    readonly requestType: string;
     /**
      * The current lifecycle state of the resource.
      */

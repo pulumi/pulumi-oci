@@ -36,7 +36,7 @@ public final class GetOccAvailabilityCatalogResult {
      */
     private String description;
     /**
-     * @return Details about capacity available for  different resources in catalog.
+     * @return Details about capacity available for different resources in catalog.
      * 
      */
     private List<GetOccAvailabilityCatalogDetail> details;
@@ -130,7 +130,7 @@ public final class GetOccAvailabilityCatalogResult {
         return this.description;
     }
     /**
-     * @return Details about capacity available for  different resources in catalog.
+     * @return Details about capacity available for different resources in catalog.
      * 
      */
     public List<GetOccAvailabilityCatalogDetail> details() {

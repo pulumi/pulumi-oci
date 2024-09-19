@@ -41,14 +41,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CapacityManagement/occCapacityRequest:OccCapacityRequest")
 public class OccCapacityRequest extends com.pulumi.resources.CustomResource {
     /**
-     * The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+     * @return The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      * 
      */
     public Output<String> availabilityDomain() {
@@ -239,9 +239,6 @@ public class OccCapacityRequest extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="requestState", refs={String.class}, tree="[0]")
     private Output<String> requestState;
@@ -249,12 +246,29 @@ public class OccCapacityRequest extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) The subset of request states available for creating the capacity request.
      * 
+     */
+    public Output<String> requestState() {
+        return this.requestState;
+    }
+    /**
+     * Type of Capacity Request(New or Transfer)
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> requestState() {
-        return this.requestState;
+    @Export(name="requestType", refs={String.class}, tree="[0]")
+    private Output<String> requestType;
+
+    /**
+     * @return Type of Capacity Request(New or Transfer)
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> requestType() {
+        return this.requestType;
     }
     /**
      * The current lifecycle state of the resource.

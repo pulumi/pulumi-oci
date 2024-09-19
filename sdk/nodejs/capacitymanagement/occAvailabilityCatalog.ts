@@ -93,7 +93,7 @@ export class OccAvailabilityCatalog extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Details about capacity available for  different resources in catalog.
+     * Details about capacity available for different resources in catalog.
      */
     public /*out*/ readonly details!: pulumi.Output<outputs.CapacityManagement.OccAvailabilityCatalogDetail[]>;
     /**
@@ -234,7 +234,7 @@ export interface OccAvailabilityCatalogState {
      */
     description?: pulumi.Input<string>;
     /**
-     * Details about capacity available for  different resources in catalog.
+     * Details about capacity available for different resources in catalog.
      */
     details?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccAvailabilityCatalogDetail>[]>;
     /**

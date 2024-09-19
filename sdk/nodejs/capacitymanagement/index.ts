@@ -5,10 +5,30 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetInternalNamespaceOccOverviewsArgs, GetInternalNamespaceOccOverviewsResult, GetInternalNamespaceOccOverviewsOutputArgs } from "./getInternalNamespaceOccOverviews";
+export const getInternalNamespaceOccOverviews: typeof import("./getInternalNamespaceOccOverviews").getInternalNamespaceOccOverviews = null as any;
+export const getInternalNamespaceOccOverviewsOutput: typeof import("./getInternalNamespaceOccOverviews").getInternalNamespaceOccOverviewsOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalNamespaceOccOverviews","getInternalNamespaceOccOverviewsOutput"], () => require("./getInternalNamespaceOccOverviews"));
+
 export { GetInternalOccAvailabilityCatalogsArgs, GetInternalOccAvailabilityCatalogsResult, GetInternalOccAvailabilityCatalogsOutputArgs } from "./getInternalOccAvailabilityCatalogs";
 export const getInternalOccAvailabilityCatalogs: typeof import("./getInternalOccAvailabilityCatalogs").getInternalOccAvailabilityCatalogs = null as any;
 export const getInternalOccAvailabilityCatalogsOutput: typeof import("./getInternalOccAvailabilityCatalogs").getInternalOccAvailabilityCatalogsOutput = null as any;
 utilities.lazyLoad(exports, ["getInternalOccAvailabilityCatalogs","getInternalOccAvailabilityCatalogsOutput"], () => require("./getInternalOccAvailabilityCatalogs"));
+
+export { GetInternalOccHandoverResourceBlockDetailsArgs, GetInternalOccHandoverResourceBlockDetailsResult, GetInternalOccHandoverResourceBlockDetailsOutputArgs } from "./getInternalOccHandoverResourceBlockDetails";
+export const getInternalOccHandoverResourceBlockDetails: typeof import("./getInternalOccHandoverResourceBlockDetails").getInternalOccHandoverResourceBlockDetails = null as any;
+export const getInternalOccHandoverResourceBlockDetailsOutput: typeof import("./getInternalOccHandoverResourceBlockDetails").getInternalOccHandoverResourceBlockDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccHandoverResourceBlockDetails","getInternalOccHandoverResourceBlockDetailsOutput"], () => require("./getInternalOccHandoverResourceBlockDetails"));
+
+export { GetInternalOccHandoverResourceBlocksArgs, GetInternalOccHandoverResourceBlocksResult, GetInternalOccHandoverResourceBlocksOutputArgs } from "./getInternalOccHandoverResourceBlocks";
+export const getInternalOccHandoverResourceBlocks: typeof import("./getInternalOccHandoverResourceBlocks").getInternalOccHandoverResourceBlocks = null as any;
+export const getInternalOccHandoverResourceBlocksOutput: typeof import("./getInternalOccHandoverResourceBlocks").getInternalOccHandoverResourceBlocksOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccHandoverResourceBlocks","getInternalOccHandoverResourceBlocksOutput"], () => require("./getInternalOccHandoverResourceBlocks"));
+
+export { GetNamespaceOccOverviewsArgs, GetNamespaceOccOverviewsResult, GetNamespaceOccOverviewsOutputArgs } from "./getNamespaceOccOverviews";
+export const getNamespaceOccOverviews: typeof import("./getNamespaceOccOverviews").getNamespaceOccOverviews = null as any;
+export const getNamespaceOccOverviewsOutput: typeof import("./getNamespaceOccOverviews").getNamespaceOccOverviewsOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceOccOverviews","getNamespaceOccOverviewsOutput"], () => require("./getNamespaceOccOverviews"));
 
 export { GetOccAvailabilityCatalogArgs, GetOccAvailabilityCatalogResult, GetOccAvailabilityCatalogOutputArgs } from "./getOccAvailabilityCatalog";
 export const getOccAvailabilityCatalog: typeof import("./getOccAvailabilityCatalog").getOccAvailabilityCatalog = null as any;
@@ -50,6 +70,16 @@ export const getOccCustomerGroups: typeof import("./getOccCustomerGroups").getOc
 export const getOccCustomerGroupsOutput: typeof import("./getOccCustomerGroups").getOccCustomerGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getOccCustomerGroups","getOccCustomerGroupsOutput"], () => require("./getOccCustomerGroups"));
 
+export { GetOccHandoverResourceBlockDetailsArgs, GetOccHandoverResourceBlockDetailsResult, GetOccHandoverResourceBlockDetailsOutputArgs } from "./getOccHandoverResourceBlockDetails";
+export const getOccHandoverResourceBlockDetails: typeof import("./getOccHandoverResourceBlockDetails").getOccHandoverResourceBlockDetails = null as any;
+export const getOccHandoverResourceBlockDetailsOutput: typeof import("./getOccHandoverResourceBlockDetails").getOccHandoverResourceBlockDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getOccHandoverResourceBlockDetails","getOccHandoverResourceBlockDetailsOutput"], () => require("./getOccHandoverResourceBlockDetails"));
+
+export { GetOccHandoverResourceBlocksArgs, GetOccHandoverResourceBlocksResult, GetOccHandoverResourceBlocksOutputArgs } from "./getOccHandoverResourceBlocks";
+export const getOccHandoverResourceBlocks: typeof import("./getOccHandoverResourceBlocks").getOccHandoverResourceBlocks = null as any;
+export const getOccHandoverResourceBlocksOutput: typeof import("./getOccHandoverResourceBlocks").getOccHandoverResourceBlocksOutput = null as any;
+utilities.lazyLoad(exports, ["getOccHandoverResourceBlocks","getOccHandoverResourceBlocksOutput"], () => require("./getOccHandoverResourceBlocks"));
+
 export { OccAvailabilityCatalogArgs, OccAvailabilityCatalogState } from "./occAvailabilityCatalog";
 export type OccAvailabilityCatalog = import("./occAvailabilityCatalog").OccAvailabilityCatalog;
 export const OccAvailabilityCatalog: typeof import("./occAvailabilityCatalog").OccAvailabilityCatalog = null as any;
@@ -60,6 +90,16 @@ export type OccCapacityRequest = import("./occCapacityRequest").OccCapacityReque
 export const OccCapacityRequest: typeof import("./occCapacityRequest").OccCapacityRequest = null as any;
 utilities.lazyLoad(exports, ["OccCapacityRequest"], () => require("./occCapacityRequest"));
 
+export { OccCustomerGroupArgs, OccCustomerGroupState } from "./occCustomerGroup";
+export type OccCustomerGroup = import("./occCustomerGroup").OccCustomerGroup;
+export const OccCustomerGroup: typeof import("./occCustomerGroup").OccCustomerGroup = null as any;
+utilities.lazyLoad(exports, ["OccCustomerGroup"], () => require("./occCustomerGroup"));
+
+export { OccCustomerGroupOccCustomerArgs, OccCustomerGroupOccCustomerState } from "./occCustomerGroupOccCustomer";
+export type OccCustomerGroupOccCustomer = import("./occCustomerGroupOccCustomer").OccCustomerGroupOccCustomer;
+export const OccCustomerGroupOccCustomer: typeof import("./occCustomerGroupOccCustomer").OccCustomerGroupOccCustomer = null as any;
+utilities.lazyLoad(exports, ["OccCustomerGroupOccCustomer"], () => require("./occCustomerGroupOccCustomer"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -69,6 +109,10 @@ const _module = {
                 return new OccAvailabilityCatalog(name, <any>undefined, { urn })
             case "oci:CapacityManagement/occCapacityRequest:OccCapacityRequest":
                 return new OccCapacityRequest(name, <any>undefined, { urn })
+            case "oci:CapacityManagement/occCustomerGroup:OccCustomerGroup":
+                return new OccCustomerGroup(name, <any>undefined, { urn })
+            case "oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer":
+                return new OccCustomerGroupOccCustomer(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -76,3 +120,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occAvailabilityCatalog", _module)
 pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occCapacityRequest", _module)
+pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occCustomerGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occCustomerGroupOccCustomer", _module)

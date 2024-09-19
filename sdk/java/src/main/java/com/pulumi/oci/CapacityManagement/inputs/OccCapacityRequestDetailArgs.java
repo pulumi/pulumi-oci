@@ -6,7 +6,9 @@ package com.pulumi.oci.CapacityManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CapacityManagement.inputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,6 +31,36 @@ public final class OccCapacityRequestDetailArgs extends com.pulumi.resources.Res
      */
     public Optional<Output<String>> actualHandoverQuantity() {
         return Optional.ofNullable(this.actualHandoverQuantity);
+    }
+
+    /**
+     * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     * 
+     */
+    @Import(name="associatedOccHandoverResourceBlockLists")
+    private @Nullable Output<List<OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs>> associatedOccHandoverResourceBlockLists;
+
+    /**
+     * @return A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     * 
+     */
+    public Optional<Output<List<OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs>>> associatedOccHandoverResourceBlockLists() {
+        return Optional.ofNullable(this.associatedOccHandoverResourceBlockLists);
+    }
+
+    /**
+     * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
 
     /**
@@ -122,6 +154,21 @@ public final class OccCapacityRequestDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * The WorkloadType from where capacity request are to be transferred.
+     * 
+     */
+    @Import(name="sourceWorkloadType")
+    private @Nullable Output<String> sourceWorkloadType;
+
+    /**
+     * @return The WorkloadType from where capacity request are to be transferred.
+     * 
+     */
+    public Optional<Output<String>> sourceWorkloadType() {
+        return Optional.ofNullable(this.sourceWorkloadType);
+    }
+
+    /**
      * The type of the workload (Generic/ROW).
      * 
      */
@@ -140,12 +187,15 @@ public final class OccCapacityRequestDetailArgs extends com.pulumi.resources.Res
 
     private OccCapacityRequestDetailArgs(OccCapacityRequestDetailArgs $) {
         this.actualHandoverQuantity = $.actualHandoverQuantity;
+        this.associatedOccHandoverResourceBlockLists = $.associatedOccHandoverResourceBlockLists;
+        this.availabilityDomain = $.availabilityDomain;
         this.dateActualHandover = $.dateActualHandover;
         this.dateExpectedHandover = $.dateExpectedHandover;
         this.demandQuantity = $.demandQuantity;
         this.expectedHandoverQuantity = $.expectedHandoverQuantity;
         this.resourceName = $.resourceName;
         this.resourceType = $.resourceType;
+        this.sourceWorkloadType = $.sourceWorkloadType;
         this.workloadType = $.workloadType;
     }
 
@@ -186,6 +236,58 @@ public final class OccCapacityRequestDetailArgs extends com.pulumi.resources.Res
          */
         public Builder actualHandoverQuantity(String actualHandoverQuantity) {
             return actualHandoverQuantity(Output.of(actualHandoverQuantity));
+        }
+
+        /**
+         * @param associatedOccHandoverResourceBlockLists A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedOccHandoverResourceBlockLists(@Nullable Output<List<OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs>> associatedOccHandoverResourceBlockLists) {
+            $.associatedOccHandoverResourceBlockLists = associatedOccHandoverResourceBlockLists;
+            return this;
+        }
+
+        /**
+         * @param associatedOccHandoverResourceBlockLists A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedOccHandoverResourceBlockLists(List<OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs> associatedOccHandoverResourceBlockLists) {
+            return associatedOccHandoverResourceBlockLists(Output.of(associatedOccHandoverResourceBlockLists));
+        }
+
+        /**
+         * @param associatedOccHandoverResourceBlockLists A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedOccHandoverResourceBlockLists(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs... associatedOccHandoverResourceBlockLists) {
+            return associatedOccHandoverResourceBlockLists(List.of(associatedOccHandoverResourceBlockLists));
+        }
+
+        /**
+         * @param availabilityDomain The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**
@@ -312,6 +414,27 @@ public final class OccCapacityRequestDetailArgs extends com.pulumi.resources.Res
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));
+        }
+
+        /**
+         * @param sourceWorkloadType The WorkloadType from where capacity request are to be transferred.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceWorkloadType(@Nullable Output<String> sourceWorkloadType) {
+            $.sourceWorkloadType = sourceWorkloadType;
+            return this;
+        }
+
+        /**
+         * @param sourceWorkloadType The WorkloadType from where capacity request are to be transferred.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceWorkloadType(String sourceWorkloadType) {
+            return sourceWorkloadType(Output.of(sourceWorkloadType));
         }
 
         /**

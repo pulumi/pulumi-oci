@@ -23,7 +23,7 @@ class GetOccCapacityRequestsResult:
     """
     A collection of values returned by getOccCapacityRequests.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, namespace=None, occ_availability_catalog_id=None, occ_capacity_request_collections=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, namespace=None, occ_availability_catalog_id=None, occ_capacity_request_collections=None, request_type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -45,6 +45,9 @@ class GetOccCapacityRequestsResult:
         if occ_capacity_request_collections and not isinstance(occ_capacity_request_collections, list):
             raise TypeError("Expected argument 'occ_capacity_request_collections' to be a list")
         pulumi.set(__self__, "occ_capacity_request_collections", occ_capacity_request_collections)
+        if request_type and not isinstance(request_type, str):
+            raise TypeError("Expected argument 'request_type' to be a str")
+        pulumi.set(__self__, "request_type", request_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -99,6 +102,14 @@ class GetOccCapacityRequestsResult:
         """
         return pulumi.get(self, "occ_capacity_request_collections")
 
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> Optional[str]:
+        """
+        Type of Capacity Request(New or Transfer)
+        """
+        return pulumi.get(self, "request_type")
+
 
 class AwaitableGetOccCapacityRequestsResult(GetOccCapacityRequestsResult):
     # pylint: disable=using-constant-test
@@ -112,7 +123,8 @@ class AwaitableGetOccCapacityRequestsResult(GetOccCapacityRequestsResult):
             id=self.id,
             namespace=self.namespace,
             occ_availability_catalog_id=self.occ_availability_catalog_id,
-            occ_capacity_request_collections=self.occ_capacity_request_collections)
+            occ_capacity_request_collections=self.occ_capacity_request_collections,
+            request_type=self.request_type)
 
 
 def get_occ_capacity_requests(compartment_id: Optional[str] = None,
@@ -121,6 +133,7 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
                               id: Optional[str] = None,
                               namespace: Optional[str] = None,
                               occ_availability_catalog_id: Optional[str] = None,
+                              request_type: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOccCapacityRequestsResult:
     """
     This data source provides the list of Occ Capacity Requests in Oracle Cloud Infrastructure Capacity Management service.
@@ -137,7 +150,8 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
         display_name=occ_capacity_request_display_name,
         id=occ_capacity_request_id,
         namespace=occ_capacity_request_namespace,
-        occ_availability_catalog_id=test_occ_availability_catalog["id"])
+        occ_availability_catalog_id=test_occ_availability_catalog["id"],
+        request_type=occ_capacity_request_request_type)
     ```
 
 
@@ -146,6 +160,7 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
     :param str id: A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
     :param str namespace: The namespace by which we would filter the list.
     :param str occ_availability_catalog_id: A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
+    :param str request_type: A filter to return only the resources that match the request type. The match is not case sensitive.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -154,6 +169,7 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
     __args__['id'] = id
     __args__['namespace'] = namespace
     __args__['occAvailabilityCatalogId'] = occ_availability_catalog_id
+    __args__['requestType'] = request_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:CapacityManagement/getOccCapacityRequests:getOccCapacityRequests', __args__, opts=opts, typ=GetOccCapacityRequestsResult).value
 
@@ -164,7 +180,8 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'),
         occ_availability_catalog_id=pulumi.get(__ret__, 'occ_availability_catalog_id'),
-        occ_capacity_request_collections=pulumi.get(__ret__, 'occ_capacity_request_collections'))
+        occ_capacity_request_collections=pulumi.get(__ret__, 'occ_capacity_request_collections'),
+        request_type=pulumi.get(__ret__, 'request_type'))
 
 
 @_utilities.lift_output_func(get_occ_capacity_requests)
@@ -174,6 +191,7 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]]
                                      id: Optional[pulumi.Input[Optional[str]]] = None,
                                      namespace: Optional[pulumi.Input[Optional[str]]] = None,
                                      occ_availability_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                     request_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccCapacityRequestsResult]:
     """
     This data source provides the list of Occ Capacity Requests in Oracle Cloud Infrastructure Capacity Management service.
@@ -190,7 +208,8 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]]
         display_name=occ_capacity_request_display_name,
         id=occ_capacity_request_id,
         namespace=occ_capacity_request_namespace,
-        occ_availability_catalog_id=test_occ_availability_catalog["id"])
+        occ_availability_catalog_id=test_occ_availability_catalog["id"],
+        request_type=occ_capacity_request_request_type)
     ```
 
 
@@ -199,5 +218,6 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]]
     :param str id: A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
     :param str namespace: The namespace by which we would filter the list.
     :param str occ_availability_catalog_id: A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
+    :param str request_type: A filter to return only the resources that match the request type. The match is not case sensitive.
     """
     ...

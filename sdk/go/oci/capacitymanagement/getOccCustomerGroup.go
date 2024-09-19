@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetOccCustomerGroup(ctx *pulumi.Context, args *GetOccCustomerGroupArgs, opts ...pulumi.InvokeOption) (*GetOccCustomerGroupResult, error) {
+func LookupOccCustomerGroup(ctx *pulumi.Context, args *LookupOccCustomerGroupArgs, opts ...pulumi.InvokeOption) (*LookupOccCustomerGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetOccCustomerGroupResult
+	var rv LookupOccCustomerGroupResult
 	err := ctx.Invoke("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,13 +51,13 @@ func GetOccCustomerGroup(ctx *pulumi.Context, args *GetOccCustomerGroupArgs, opt
 }
 
 // A collection of arguments for invoking getOccCustomerGroup.
-type GetOccCustomerGroupArgs struct {
+type LookupOccCustomerGroupArgs struct {
 	// The OCID of the customer group.
 	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
 }
 
 // A collection of values returned by getOccCustomerGroup.
-type GetOccCustomerGroupResult struct {
+type LookupOccCustomerGroupResult struct {
 	// The OCID of the tenancy containing the customer group.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A list containing all the customers that belong to this customer group
@@ -70,7 +70,7 @@ type GetOccCustomerGroupResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The provider-assigned unique ID for this managed resource.
+	// The OCID of the customer group.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -88,114 +88,114 @@ type GetOccCustomerGroupResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
-func GetOccCustomerGroupOutput(ctx *pulumi.Context, args GetOccCustomerGroupOutputArgs, opts ...pulumi.InvokeOption) GetOccCustomerGroupResultOutput {
+func LookupOccCustomerGroupOutput(ctx *pulumi.Context, args LookupOccCustomerGroupOutputArgs, opts ...pulumi.InvokeOption) LookupOccCustomerGroupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetOccCustomerGroupResult, error) {
-			args := v.(GetOccCustomerGroupArgs)
-			r, err := GetOccCustomerGroup(ctx, &args, opts...)
-			var s GetOccCustomerGroupResult
+		ApplyT(func(v interface{}) (LookupOccCustomerGroupResult, error) {
+			args := v.(LookupOccCustomerGroupArgs)
+			r, err := LookupOccCustomerGroup(ctx, &args, opts...)
+			var s LookupOccCustomerGroupResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetOccCustomerGroupResultOutput)
+		}).(LookupOccCustomerGroupResultOutput)
 }
 
 // A collection of arguments for invoking getOccCustomerGroup.
-type GetOccCustomerGroupOutputArgs struct {
+type LookupOccCustomerGroupOutputArgs struct {
 	// The OCID of the customer group.
 	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
 }
 
-func (GetOccCustomerGroupOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOccCustomerGroupArgs)(nil)).Elem()
+func (LookupOccCustomerGroupOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupOccCustomerGroupArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getOccCustomerGroup.
-type GetOccCustomerGroupResultOutput struct{ *pulumi.OutputState }
+type LookupOccCustomerGroupResultOutput struct{ *pulumi.OutputState }
 
-func (GetOccCustomerGroupResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOccCustomerGroupResult)(nil)).Elem()
+func (LookupOccCustomerGroupResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupOccCustomerGroupResult)(nil)).Elem()
 }
 
-func (o GetOccCustomerGroupResultOutput) ToGetOccCustomerGroupResultOutput() GetOccCustomerGroupResultOutput {
+func (o LookupOccCustomerGroupResultOutput) ToLookupOccCustomerGroupResultOutput() LookupOccCustomerGroupResultOutput {
 	return o
 }
 
-func (o GetOccCustomerGroupResultOutput) ToGetOccCustomerGroupResultOutputWithContext(ctx context.Context) GetOccCustomerGroupResultOutput {
+func (o LookupOccCustomerGroupResultOutput) ToLookupOccCustomerGroupResultOutputWithContext(ctx context.Context) LookupOccCustomerGroupResultOutput {
 	return o
 }
 
 // The OCID of the tenancy containing the customer group.
-func (o GetOccCustomerGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // A list containing all the customers that belong to this customer group
-func (o GetOccCustomerGroupResultOutput) CustomersLists() GetOccCustomerGroupCustomersListArrayOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) []GetOccCustomerGroupCustomersList { return v.CustomersLists }).(GetOccCustomerGroupCustomersListArrayOutput)
+func (o LookupOccCustomerGroupResultOutput) CustomersLists() GetOccCustomerGroupCustomersListArrayOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) []GetOccCustomerGroupCustomersList { return v.CustomersLists }).(GetOccCustomerGroupCustomersListArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOccCustomerGroupResultOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+func (o LookupOccCustomerGroupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description about the customer group.
-func (o GetOccCustomerGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // The display name of the customer group.
-func (o GetOccCustomerGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOccCustomerGroupResultOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetOccCustomerGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
-func (o GetOccCustomerGroupResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the customer group.
-func (o GetOccCustomerGroupResultOutput) OccCustomerGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.OccCustomerGroupId }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
+func (o LookupOccCustomerGroupResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The OCID of the customer group.
+func (o LookupOccCustomerGroupResultOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.OccCustomerGroupId }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the resource.
-func (o GetOccCustomerGroupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // To determine whether the customer group is enabled/disabled.
-func (o GetOccCustomerGroupResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOccCustomerGroupResultOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+func (o LookupOccCustomerGroupResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the customer group was created.
-func (o GetOccCustomerGroupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The time when the customer group was last updated.
-func (o GetOccCustomerGroupResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupOccCustomerGroupResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOccCustomerGroupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetOccCustomerGroupResultOutput{})
+	pulumi.RegisterOutputType(LookupOccCustomerGroupResultOutput{})
 }

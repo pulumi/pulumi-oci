@@ -120,6 +120,8 @@ __all__ = [
     'GetBdsInstancePatchHistoriesPatchHistoryResult',
     'GetBdsInstancePatchesFilterResult',
     'GetBdsInstancePatchesPatchResult',
+    'GetBdsInstanceResourcePrincipalConfigurationsFilterResult',
+    'GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationResult',
     'GetBdsInstanceUtilNodeResult',
     'GetBdsInstanceUtilNodeShapeConfigResult',
     'GetBdsInstanceWorkerNodeResult',
@@ -2894,6 +2896,14 @@ class BdsInstanceOsPatchActionPatchingConfig(dict):
                  tolerance_threshold_per_domain: Optional[int] = None,
                  wait_time_between_batch_in_seconds: Optional[int] = None,
                  wait_time_between_domain_in_seconds: Optional[int] = None):
+        """
+        :param str patching_config_strategy: Type of strategy used for detailed patching configuration
+        :param int batch_size: How many nodes to be patched in each iteration.
+        :param int tolerance_threshold_per_batch: Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        :param int tolerance_threshold_per_domain: Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        :param int wait_time_between_batch_in_seconds: The wait time between batches in seconds.
+        :param int wait_time_between_domain_in_seconds: The wait time between AD/FD in seconds.
+        """
         pulumi.set(__self__, "patching_config_strategy", patching_config_strategy)
         if batch_size is not None:
             pulumi.set(__self__, "batch_size", batch_size)
@@ -2909,31 +2919,49 @@ class BdsInstanceOsPatchActionPatchingConfig(dict):
     @property
     @pulumi.getter(name="patchingConfigStrategy")
     def patching_config_strategy(self) -> str:
+        """
+        Type of strategy used for detailed patching configuration
+        """
         return pulumi.get(self, "patching_config_strategy")
 
     @property
     @pulumi.getter(name="batchSize")
     def batch_size(self) -> Optional[int]:
+        """
+        How many nodes to be patched in each iteration.
+        """
         return pulumi.get(self, "batch_size")
 
     @property
     @pulumi.getter(name="toleranceThresholdPerBatch")
     def tolerance_threshold_per_batch(self) -> Optional[int]:
+        """
+        Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        """
         return pulumi.get(self, "tolerance_threshold_per_batch")
 
     @property
     @pulumi.getter(name="toleranceThresholdPerDomain")
     def tolerance_threshold_per_domain(self) -> Optional[int]:
+        """
+        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        """
         return pulumi.get(self, "tolerance_threshold_per_domain")
 
     @property
     @pulumi.getter(name="waitTimeBetweenBatchInSeconds")
     def wait_time_between_batch_in_seconds(self) -> Optional[int]:
+        """
+        The wait time between batches in seconds.
+        """
         return pulumi.get(self, "wait_time_between_batch_in_seconds")
 
     @property
     @pulumi.getter(name="waitTimeBetweenDomainInSeconds")
     def wait_time_between_domain_in_seconds(self) -> Optional[int]:
+        """
+        The wait time between AD/FD in seconds.
+        """
         return pulumi.get(self, "wait_time_between_domain_in_seconds")
 
 
@@ -6349,6 +6377,153 @@ class GetBdsInstancePatchesPatchResult(dict):
         The version of the patch.
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetBdsInstanceResourcePrincipalConfigurationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationResult(dict):
+    def __init__(__self__, *,
+                 bds_instance_id: str,
+                 cluster_admin_password: str,
+                 display_name: str,
+                 force_refresh_resource_principal_trigger: int,
+                 id: str,
+                 session_token_life_span_duration_in_hours: int,
+                 state: str,
+                 time_created: str,
+                 time_token_expiry: str,
+                 time_token_refreshed: str,
+                 time_updated: str):
+        """
+        :param str bds_instance_id: The OCID of the cluster.
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: The id of the ResourcePrincipalConfiguration.
+        :param int session_token_life_span_duration_in_hours: Life span in hours of each resource principal session token.
+        :param str state: The state of the ResourcePrincipalConfiguration.
+        :param str time_created: The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_token_expiry: the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
+        :param str time_token_refreshed: the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
+        :param str time_updated: The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "force_refresh_resource_principal_trigger", force_refresh_resource_principal_trigger)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "session_token_life_span_duration_in_hours", session_token_life_span_duration_in_hours)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_token_expiry", time_token_expiry)
+        pulumi.set(__self__, "time_token_refreshed", time_token_refreshed)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> str:
+        return pulumi.get(self, "cluster_admin_password")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="forceRefreshResourcePrincipalTrigger")
+    def force_refresh_resource_principal_trigger(self) -> int:
+        return pulumi.get(self, "force_refresh_resource_principal_trigger")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The id of the ResourcePrincipalConfiguration.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="sessionTokenLifeSpanDurationInHours")
+    def session_token_life_span_duration_in_hours(self) -> int:
+        """
+        Life span in hours of each resource principal session token.
+        """
+        return pulumi.get(self, "session_token_life_span_duration_in_hours")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the ResourcePrincipalConfiguration.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeTokenExpiry")
+    def time_token_expiry(self) -> str:
+        """
+        the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_token_expiry")
+
+    @property
+    @pulumi.getter(name="timeTokenRefreshed")
+    def time_token_refreshed(self) -> str:
+        """
+        the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_token_refreshed")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

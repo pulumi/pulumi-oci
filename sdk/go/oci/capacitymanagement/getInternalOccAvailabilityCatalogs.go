@@ -31,11 +31,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CapacityManagement.GetInternalOccAvailabilityCatalogs(ctx, &capacitymanagement.GetInternalOccAvailabilityCatalogsArgs{
 //				CompartmentId:      compartmentId,
+//				OccCustomerGroupId: testOccCustomerGroup.Id,
 //				CatalogState:       pulumi.StringRef(internalOccAvailabilityCatalogCatalogState),
 //				DisplayName:        pulumi.StringRef(internalOccAvailabilityCatalogDisplayName),
 //				Id:                 pulumi.StringRef(internalOccAvailabilityCatalogId),
 //				Namespace:          pulumi.StringRef(internalOccAvailabilityCatalogNamespace),
-//				OccCustomerGroupId: pulumi.StringRef(testOccCustomerGroup.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -69,7 +69,7 @@ type GetInternalOccAvailabilityCatalogsArgs struct {
 	// The namespace by which we would filter the list.
 	Namespace *string `pulumi:"namespace"`
 	// The customer group ocid by which we would filter the list.
-	OccCustomerGroupId *string `pulumi:"occCustomerGroupId"`
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
 }
 
 // A collection of values returned by getInternalOccAvailabilityCatalogs.
@@ -78,7 +78,7 @@ type GetInternalOccAvailabilityCatalogsResult struct {
 	CatalogState *string `pulumi:"catalogState"`
 	// The OCID of the tenancy where the availability catalog resides.
 	CompartmentId string `pulumi:"compartmentId"`
-	// An user-friendly name for the availability catalog. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// An user-friendly name for the availability catalog. Does not have to be unique, and is changeable. Avoid entering confidential information.
 	DisplayName *string                                    `pulumi:"displayName"`
 	Filters     []GetInternalOccAvailabilityCatalogsFilter `pulumi:"filters"`
 	// The OCID of the availability catalog.
@@ -88,7 +88,7 @@ type GetInternalOccAvailabilityCatalogsResult struct {
 	// The list of occ_availability_catalog_collection.
 	OccAvailabilityCatalogCollections []GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollection `pulumi:"occAvailabilityCatalogCollections"`
 	// The Customer Group OCID to which the availability catalog belongs.
-	OccCustomerGroupId *string `pulumi:"occCustomerGroupId"`
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
 }
 
 func GetInternalOccAvailabilityCatalogsOutput(ctx *pulumi.Context, args GetInternalOccAvailabilityCatalogsOutputArgs, opts ...pulumi.InvokeOption) GetInternalOccAvailabilityCatalogsResultOutput {
@@ -118,7 +118,7 @@ type GetInternalOccAvailabilityCatalogsOutputArgs struct {
 	// The namespace by which we would filter the list.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The customer group ocid by which we would filter the list.
-	OccCustomerGroupId pulumi.StringPtrInput `pulumi:"occCustomerGroupId"`
+	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
 }
 
 func (GetInternalOccAvailabilityCatalogsOutputArgs) ElementType() reflect.Type {
@@ -150,7 +150,7 @@ func (o GetInternalOccAvailabilityCatalogsResultOutput) CompartmentId() pulumi.S
 	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// An user-friendly name for the availability catalog. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// An user-friendly name for the availability catalog. Does not have to be unique, and is changeable. Avoid entering confidential information.
 func (o GetInternalOccAvailabilityCatalogsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -179,8 +179,8 @@ func (o GetInternalOccAvailabilityCatalogsResultOutput) OccAvailabilityCatalogCo
 }
 
 // The Customer Group OCID to which the availability catalog belongs.
-func (o GetInternalOccAvailabilityCatalogsResultOutput) OccCustomerGroupId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsResult) *string { return v.OccCustomerGroupId }).(pulumi.StringPtrOutput)
+func (o GetInternalOccAvailabilityCatalogsResultOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsResult) string { return v.OccCustomerGroupId }).(pulumi.StringOutput)
 }
 
 func init() {

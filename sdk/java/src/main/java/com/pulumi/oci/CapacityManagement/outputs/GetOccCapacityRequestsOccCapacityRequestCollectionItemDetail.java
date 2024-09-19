@@ -5,7 +5,9 @@ package com.pulumi.oci.CapacityManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CapacityManagement.outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -15,6 +17,16 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail 
      * 
      */
     private String actualHandoverQuantity;
+    /**
+     * @return A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     * 
+     */
+    private List<GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList> associatedOccHandoverResourceBlockLists;
+    /**
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     * 
+     */
+    private String availabilityDomain;
     /**
      * @return The date on which the actual handover quantity of resources is delivered.
      * 
@@ -46,6 +58,11 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail 
      */
     private String resourceType;
     /**
+     * @return The WorkloadType from where capacity request are to be transferred.
+     * 
+     */
+    private String sourceWorkloadType;
+    /**
      * @return The type of the workload (Generic/ROW).
      * 
      */
@@ -58,6 +75,20 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail 
      */
     public String actualHandoverQuantity() {
         return this.actualHandoverQuantity;
+    }
+    /**
+     * @return A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     * 
+     */
+    public List<GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList> associatedOccHandoverResourceBlockLists() {
+        return this.associatedOccHandoverResourceBlockLists;
+    }
+    /**
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
     }
     /**
      * @return The date on which the actual handover quantity of resources is delivered.
@@ -102,6 +133,13 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail 
         return this.resourceType;
     }
     /**
+     * @return The WorkloadType from where capacity request are to be transferred.
+     * 
+     */
+    public String sourceWorkloadType() {
+        return this.sourceWorkloadType;
+    }
+    /**
      * @return The type of the workload (Generic/ROW).
      * 
      */
@@ -119,23 +157,29 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail 
     @CustomType.Builder
     public static final class Builder {
         private String actualHandoverQuantity;
+        private List<GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList> associatedOccHandoverResourceBlockLists;
+        private String availabilityDomain;
         private String dateActualHandover;
         private String dateExpectedHandover;
         private String demandQuantity;
         private String expectedHandoverQuantity;
         private String resourceName;
         private String resourceType;
+        private String sourceWorkloadType;
         private String workloadType;
         public Builder() {}
         public Builder(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualHandoverQuantity = defaults.actualHandoverQuantity;
+    	      this.associatedOccHandoverResourceBlockLists = defaults.associatedOccHandoverResourceBlockLists;
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.dateActualHandover = defaults.dateActualHandover;
     	      this.dateExpectedHandover = defaults.dateExpectedHandover;
     	      this.demandQuantity = defaults.demandQuantity;
     	      this.expectedHandoverQuantity = defaults.expectedHandoverQuantity;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceType = defaults.resourceType;
+    	      this.sourceWorkloadType = defaults.sourceWorkloadType;
     	      this.workloadType = defaults.workloadType;
         }
 
@@ -145,6 +189,25 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail 
               throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail", "actualHandoverQuantity");
             }
             this.actualHandoverQuantity = actualHandoverQuantity;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder associatedOccHandoverResourceBlockLists(List<GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList> associatedOccHandoverResourceBlockLists) {
+            if (associatedOccHandoverResourceBlockLists == null) {
+              throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail", "associatedOccHandoverResourceBlockLists");
+            }
+            this.associatedOccHandoverResourceBlockLists = associatedOccHandoverResourceBlockLists;
+            return this;
+        }
+        public Builder associatedOccHandoverResourceBlockLists(GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockList... associatedOccHandoverResourceBlockLists) {
+            return associatedOccHandoverResourceBlockLists(List.of(associatedOccHandoverResourceBlockLists));
+        }
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
@@ -196,6 +259,14 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail 
             return this;
         }
         @CustomType.Setter
+        public Builder sourceWorkloadType(String sourceWorkloadType) {
+            if (sourceWorkloadType == null) {
+              throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail", "sourceWorkloadType");
+            }
+            this.sourceWorkloadType = sourceWorkloadType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workloadType(String workloadType) {
             if (workloadType == null) {
               throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail", "workloadType");
@@ -206,12 +277,15 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail 
         public GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail build() {
             final var _resultValue = new GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail();
             _resultValue.actualHandoverQuantity = actualHandoverQuantity;
+            _resultValue.associatedOccHandoverResourceBlockLists = associatedOccHandoverResourceBlockLists;
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.dateActualHandover = dateActualHandover;
             _resultValue.dateExpectedHandover = dateExpectedHandover;
             _resultValue.demandQuantity = demandQuantity;
             _resultValue.expectedHandoverQuantity = expectedHandoverQuantity;
             _resultValue.resourceName = resourceName;
             _resultValue.resourceType = resourceType;
+            _resultValue.sourceWorkloadType = sourceWorkloadType;
             _resultValue.workloadType = workloadType;
             return _resultValue;
         }

@@ -28,7 +28,7 @@ import (
 type OccCapacityRequest struct {
 	pulumi.CustomResourceState
 
-	// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+	// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -57,10 +57,12 @@ type OccCapacityRequest struct {
 	// The name of the region for which the capacity request is made.
 	Region pulumi.StringOutput `pulumi:"region"`
 	// (Updatable) The subset of request states available for creating the capacity request.
+	RequestState pulumi.StringOutput `pulumi:"requestState"`
+	// Type of Capacity Request(New or Transfer)
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	RequestState pulumi.StringOutput `pulumi:"requestState"`
+	RequestType pulumi.StringOutput `pulumi:"requestType"`
 	// The current lifecycle state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -78,9 +80,6 @@ func NewOccCapacityRequest(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.AvailabilityDomain == nil {
-		return nil, errors.New("invalid value for required argument 'AvailabilityDomain'")
-	}
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
@@ -125,7 +124,7 @@ func GetOccCapacityRequest(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OccCapacityRequest resources.
 type occCapacityRequestState struct {
-	// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+	// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -154,10 +153,12 @@ type occCapacityRequestState struct {
 	// The name of the region for which the capacity request is made.
 	Region *string `pulumi:"region"`
 	// (Updatable) The subset of request states available for creating the capacity request.
+	RequestState *string `pulumi:"requestState"`
+	// Type of Capacity Request(New or Transfer)
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	RequestState *string `pulumi:"requestState"`
+	RequestType *string `pulumi:"requestType"`
 	// The current lifecycle state of the resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -169,7 +170,7 @@ type occCapacityRequestState struct {
 }
 
 type OccCapacityRequestState struct {
-	// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+	// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
 	AvailabilityDomain pulumi.StringPtrInput
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId pulumi.StringPtrInput
@@ -198,10 +199,12 @@ type OccCapacityRequestState struct {
 	// The name of the region for which the capacity request is made.
 	Region pulumi.StringPtrInput
 	// (Updatable) The subset of request states available for creating the capacity request.
+	RequestState pulumi.StringPtrInput
+	// Type of Capacity Request(New or Transfer)
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	RequestState pulumi.StringPtrInput
+	RequestType pulumi.StringPtrInput
 	// The current lifecycle state of the resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -217,8 +220,8 @@ func (OccCapacityRequestState) ElementType() reflect.Type {
 }
 
 type occCapacityRequestArgs struct {
-	// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
@@ -244,16 +247,18 @@ type occCapacityRequestArgs struct {
 	// The name of the region for which the capacity request is made.
 	Region string `pulumi:"region"`
 	// (Updatable) The subset of request states available for creating the capacity request.
+	RequestState *string `pulumi:"requestState"`
+	// Type of Capacity Request(New or Transfer)
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	RequestState *string `pulumi:"requestState"`
+	RequestType *string `pulumi:"requestType"`
 }
 
 // The set of arguments for constructing a OccCapacityRequest resource.
 type OccCapacityRequestArgs struct {
-	// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
-	AvailabilityDomain pulumi.StringInput
+	// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
+	AvailabilityDomain pulumi.StringPtrInput
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId pulumi.StringInput
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
@@ -279,10 +284,12 @@ type OccCapacityRequestArgs struct {
 	// The name of the region for which the capacity request is made.
 	Region pulumi.StringInput
 	// (Updatable) The subset of request states available for creating the capacity request.
+	RequestState pulumi.StringPtrInput
+	// Type of Capacity Request(New or Transfer)
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	RequestState pulumi.StringPtrInput
+	RequestType pulumi.StringPtrInput
 }
 
 func (OccCapacityRequestArgs) ElementType() reflect.Type {
@@ -372,7 +379,7 @@ func (o OccCapacityRequestOutput) ToOccCapacityRequestOutputWithContext(ctx cont
 	return o
 }
 
-// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
 func (o OccCapacityRequestOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *OccCapacityRequest) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -443,11 +450,16 @@ func (o OccCapacityRequestOutput) Region() pulumi.StringOutput {
 }
 
 // (Updatable) The subset of request states available for creating the capacity request.
+func (o OccCapacityRequestOutput) RequestState() pulumi.StringOutput {
+	return o.ApplyT(func(v *OccCapacityRequest) pulumi.StringOutput { return v.RequestState }).(pulumi.StringOutput)
+}
+
+// Type of Capacity Request(New or Transfer)
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o OccCapacityRequestOutput) RequestState() pulumi.StringOutput {
-	return o.ApplyT(func(v *OccCapacityRequest) pulumi.StringOutput { return v.RequestState }).(pulumi.StringOutput)
+func (o OccCapacityRequestOutput) RequestType() pulumi.StringOutput {
+	return o.ApplyT(func(v *OccCapacityRequest) pulumi.StringOutput { return v.RequestType }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the resource.

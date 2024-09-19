@@ -3062,7 +3062,8 @@ type GetModelsModelCollectionItem struct {
 	TimeDeprecated string `pulumi:"timeDeprecated"`
 	// The date and time that the model was updated in the format of an RFC3339 datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	Type        string `pulumi:"type"`
+	// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+	Type string `pulumi:"type"`
 	// A filter to return only resources that match the entire vendor given.
 	Vendor string `pulumi:"vendor"`
 	// The version of the model.
@@ -3114,7 +3115,8 @@ type GetModelsModelCollectionItemArgs struct {
 	TimeDeprecated pulumi.StringInput `pulumi:"timeDeprecated"`
 	// The date and time that the model was updated in the format of an RFC3339 datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	Type        pulumi.StringInput `pulumi:"type"`
+	// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+	Type pulumi.StringInput `pulumi:"type"`
 	// A filter to return only resources that match the entire vendor given.
 	Vendor pulumi.StringInput `pulumi:"vendor"`
 	// The version of the model.
@@ -3258,6 +3260,7 @@ func (o GetModelsModelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
 func (o GetModelsModelCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }

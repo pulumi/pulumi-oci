@@ -6,6 +6,36 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
+/**
+ * This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
+ *
+ * Install the specified OS patch to this cluster nodes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBdsInstanceOsPatchAction = new oci.bigdataservice.BdsInstanceOsPatchAction("test_bds_instance_os_patch_action", {
+ *     bdsInstanceId: testBdsInstance.id,
+ *     clusterAdminPassword: bdsInstanceOsPatchActionClusterAdminPassword,
+ *     osPatchVersion: bdsInstanceOsPatchActionOsPatchVersion,
+ *     patchingConfigs: [{
+ *         patchingConfigStrategy: bdsInstanceOsPatchActionPatchingConfigStrategy,
+ *         batchSize: bdsInstanceOsPatchActionBatchSize,
+ *         waitTimeBetweenBatchInSeconds: bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds,
+ *         toleranceThresholdPerBatch: bdsInstanceOsPatchActionToleranceThresholdPerBatch,
+ *         waitTimeBetweenDomainInSeconds: bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds,
+ *         toleranceThresholdPerDomain: bdsInstanceOsPatchActionToleranceThresholdPerDomain,
+ *     }],
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Import is not supported for this resource.
+ */
 export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
     /**
      * Get an existing BdsInstanceOsPatchAction resource's state with the given name, ID, and optional extra
@@ -34,9 +64,25 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
         return obj['__pulumiType'] === BdsInstanceOsPatchAction.__pulumiType;
     }
 
+    /**
+     * The OCID of the cluster.
+     */
     public readonly bdsInstanceId!: pulumi.Output<string>;
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     */
     public readonly clusterAdminPassword!: pulumi.Output<string>;
+    /**
+     * The version of the OS patch to be installed.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     public readonly osPatchVersion!: pulumi.Output<string>;
+    /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     */
     public readonly patchingConfigs!: pulumi.Output<outputs.BigDataService.BdsInstanceOsPatchActionPatchingConfig[]>;
 
     /**
@@ -83,9 +129,25 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BdsInstanceOsPatchAction resources.
  */
 export interface BdsInstanceOsPatchActionState {
+    /**
+     * The OCID of the cluster.
+     */
     bdsInstanceId?: pulumi.Input<string>;
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     */
     clusterAdminPassword?: pulumi.Input<string>;
+    /**
+     * The version of the OS patch to be installed.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     osPatchVersion?: pulumi.Input<string>;
+    /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     */
     patchingConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfig>[]>;
 }
 
@@ -93,8 +155,24 @@ export interface BdsInstanceOsPatchActionState {
  * The set of arguments for constructing a BdsInstanceOsPatchAction resource.
  */
 export interface BdsInstanceOsPatchActionArgs {
+    /**
+     * The OCID of the cluster.
+     */
     bdsInstanceId: pulumi.Input<string>;
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     */
     clusterAdminPassword: pulumi.Input<string>;
+    /**
+     * The version of the OS patch to be installed.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     osPatchVersion: pulumi.Input<string>;
+    /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     */
     patchingConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfig>[]>;
 }

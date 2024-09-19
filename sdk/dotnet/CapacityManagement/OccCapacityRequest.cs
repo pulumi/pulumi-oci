@@ -27,7 +27,7 @@ namespace Pulumi.Oci.CapacityManagement
     public partial class OccCapacityRequest : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        /// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
@@ -112,13 +112,19 @@ namespace Pulumi.Oci.CapacityManagement
 
         /// <summary>
         /// (Updatable) The subset of request states available for creating the capacity request.
+        /// </summary>
+        [Output("requestState")]
+        public Output<string> RequestState { get; private set; } = null!;
+
+        /// <summary>
+        /// Type of Capacity Request(New or Transfer)
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("requestState")]
-        public Output<string> RequestState { get; private set; } = null!;
+        [Output("requestType")]
+        public Output<string> RequestType { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the resource.
@@ -191,10 +197,10 @@ namespace Pulumi.Oci.CapacityManagement
     public sealed class OccCapacityRequestArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        /// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         /// </summary>
-        [Input("availabilityDomain", required: true)]
-        public Input<string> AvailabilityDomain { get; set; } = null!;
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
@@ -294,13 +300,19 @@ namespace Pulumi.Oci.CapacityManagement
 
         /// <summary>
         /// (Updatable) The subset of request states available for creating the capacity request.
+        /// </summary>
+        [Input("requestState")]
+        public Input<string>? RequestState { get; set; }
+
+        /// <summary>
+        /// Type of Capacity Request(New or Transfer)
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("requestState")]
-        public Input<string>? RequestState { get; set; }
+        [Input("requestType")]
+        public Input<string>? RequestType { get; set; }
 
         public OccCapacityRequestArgs()
         {
@@ -311,7 +323,7 @@ namespace Pulumi.Oci.CapacityManagement
     public sealed class OccCapacityRequestState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        /// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -420,13 +432,19 @@ namespace Pulumi.Oci.CapacityManagement
 
         /// <summary>
         /// (Updatable) The subset of request states available for creating the capacity request.
+        /// </summary>
+        [Input("requestState")]
+        public Input<string>? RequestState { get; set; }
+
+        /// <summary>
+        /// Type of Capacity Request(New or Transfer)
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("requestState")]
-        public Input<string>? RequestState { get; set; }
+        [Input("requestType")]
+        public Input<string>? RequestType { get; set; }
 
         /// <summary>
         /// The current lifecycle state of the resource.

@@ -76,7 +76,7 @@ type OccAvailabilityCatalog struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Additional information about the availability catalog.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// Details about capacity available for  different resources in catalog.
+	// Details about capacity available for different resources in catalog.
 	Details OccAvailabilityCatalogDetailArrayOutput `pulumi:"details"`
 	// (Updatable) The display name of the availability catalog.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -158,7 +158,7 @@ type occAvailabilityCatalogState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Additional information about the availability catalog.
 	Description *string `pulumi:"description"`
-	// Details about capacity available for  different resources in catalog.
+	// Details about capacity available for different resources in catalog.
 	Details []OccAvailabilityCatalogDetail `pulumi:"details"`
 	// (Updatable) The display name of the availability catalog.
 	DisplayName *string `pulumi:"displayName"`
@@ -196,7 +196,7 @@ type OccAvailabilityCatalogState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Additional information about the availability catalog.
 	Description pulumi.StringPtrInput
-	// Details about capacity available for  different resources in catalog.
+	// Details about capacity available for different resources in catalog.
 	Details OccAvailabilityCatalogDetailArrayInput
 	// (Updatable) The display name of the availability catalog.
 	DisplayName pulumi.StringPtrInput
@@ -388,7 +388,7 @@ func (o OccAvailabilityCatalogOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *OccAvailabilityCatalog) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// Details about capacity available for  different resources in catalog.
+// Details about capacity available for different resources in catalog.
 func (o OccAvailabilityCatalogOutput) Details() OccAvailabilityCatalogDetailArrayOutput {
 	return o.ApplyT(func(v *OccAvailabilityCatalog) OccAvailabilityCatalogDetailArrayOutput { return v.Details }).(OccAvailabilityCatalogDetailArrayOutput)
 }

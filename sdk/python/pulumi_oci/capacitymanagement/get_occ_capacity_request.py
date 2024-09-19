@@ -22,7 +22,7 @@ class GetOccCapacityRequestResult:
     """
     A collection of values returned by getOccCapacityRequest.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, date_expected_capacity_handover=None, defined_tags=None, description=None, details=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, namespace=None, occ_availability_catalog_id=None, occ_capacity_request_id=None, occ_customer_group_id=None, patch_operations=None, region=None, request_state=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, date_expected_capacity_handover=None, defined_tags=None, description=None, details=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, namespace=None, occ_availability_catalog_id=None, occ_capacity_request_id=None, occ_customer_group_id=None, patch_operations=None, region=None, request_state=None, request_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -74,6 +74,9 @@ class GetOccCapacityRequestResult:
         if request_state and not isinstance(request_state, str):
             raise TypeError("Expected argument 'request_state' to be a str")
         pulumi.set(__self__, "request_state", request_state)
+        if request_type and not isinstance(request_type, str):
+            raise TypeError("Expected argument 'request_type' to be a str")
+        pulumi.set(__self__, "request_type", request_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -91,7 +94,7 @@ class GetOccCapacityRequestResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        The availability domain (AD) for which the capacity request was made.
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -218,6 +221,14 @@ class GetOccCapacityRequestResult:
         return pulumi.get(self, "request_state")
 
     @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> str:
+        """
+        Type of Capacity Request(New or Transfer)
+        """
+        return pulumi.get(self, "request_type")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -273,6 +284,7 @@ class AwaitableGetOccCapacityRequestResult(GetOccCapacityRequestResult):
             patch_operations=self.patch_operations,
             region=self.region,
             request_state=self.request_state,
+            request_type=self.request_type,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -321,6 +333,7 @@ def get_occ_capacity_request(occ_capacity_request_id: Optional[str] = None,
         patch_operations=pulumi.get(__ret__, 'patch_operations'),
         region=pulumi.get(__ret__, 'region'),
         request_state=pulumi.get(__ret__, 'request_state'),
+        request_type=pulumi.get(__ret__, 'request_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),

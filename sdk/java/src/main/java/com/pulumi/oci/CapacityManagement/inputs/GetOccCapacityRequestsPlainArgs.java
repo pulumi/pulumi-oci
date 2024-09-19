@@ -99,6 +99,21 @@ public final class GetOccCapacityRequestsPlainArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.occAvailabilityCatalogId);
     }
 
+    /**
+     * A filter to return only the resources that match the request type. The match is not case sensitive.
+     * 
+     */
+    @Import(name="requestType")
+    private @Nullable String requestType;
+
+    /**
+     * @return A filter to return only the resources that match the request type. The match is not case sensitive.
+     * 
+     */
+    public Optional<String> requestType() {
+        return Optional.ofNullable(this.requestType);
+    }
+
     private GetOccCapacityRequestsPlainArgs() {}
 
     private GetOccCapacityRequestsPlainArgs(GetOccCapacityRequestsPlainArgs $) {
@@ -108,6 +123,7 @@ public final class GetOccCapacityRequestsPlainArgs extends com.pulumi.resources.
         this.id = $.id;
         this.namespace = $.namespace;
         this.occAvailabilityCatalogId = $.occAvailabilityCatalogId;
+        this.requestType = $.requestType;
     }
 
     public static Builder builder() {
@@ -189,6 +205,17 @@ public final class GetOccCapacityRequestsPlainArgs extends com.pulumi.resources.
          */
         public Builder occAvailabilityCatalogId(@Nullable String occAvailabilityCatalogId) {
             $.occAvailabilityCatalogId = occAvailabilityCatalogId;
+            return this;
+        }
+
+        /**
+         * @param requestType A filter to return only the resources that match the request type. The match is not case sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestType(@Nullable String requestType) {
+            $.requestType = requestType;
             return this;
         }
 

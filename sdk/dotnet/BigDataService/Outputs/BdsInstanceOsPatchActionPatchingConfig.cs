@@ -13,11 +13,29 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class BdsInstanceOsPatchActionPatchingConfig
     {
+        /// <summary>
+        /// How many nodes to be patched in each iteration.
+        /// </summary>
         public readonly int? BatchSize;
+        /// <summary>
+        /// Type of strategy used for detailed patching configuration
+        /// </summary>
         public readonly string PatchingConfigStrategy;
+        /// <summary>
+        /// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        /// </summary>
         public readonly int? ToleranceThresholdPerBatch;
+        /// <summary>
+        /// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+        /// </summary>
         public readonly int? ToleranceThresholdPerDomain;
+        /// <summary>
+        /// The wait time between batches in seconds.
+        /// </summary>
         public readonly int? WaitTimeBetweenBatchInSeconds;
+        /// <summary>
+        /// The wait time between AD/FD in seconds.
+        /// </summary>
         public readonly int? WaitTimeBetweenDomainInSeconds;
 
         [OutputConstructor]

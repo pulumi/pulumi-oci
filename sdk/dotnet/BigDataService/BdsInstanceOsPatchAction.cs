@@ -9,18 +9,75 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Oci.BigDataService
 {
+    /// <summary>
+    /// This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
+    /// 
+    /// Install the specified OS patch to this cluster nodes.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testBdsInstanceOsPatchAction = new Oci.BigDataService.BdsInstanceOsPatchAction("test_bds_instance_os_patch_action", new()
+    ///     {
+    ///         BdsInstanceId = testBdsInstance.Id,
+    ///         ClusterAdminPassword = bdsInstanceOsPatchActionClusterAdminPassword,
+    ///         OsPatchVersion = bdsInstanceOsPatchActionOsPatchVersion,
+    ///         PatchingConfigs = new[]
+    ///         {
+    ///             new Oci.BigDataService.Inputs.BdsInstanceOsPatchActionPatchingConfigArgs
+    ///             {
+    ///                 PatchingConfigStrategy = bdsInstanceOsPatchActionPatchingConfigStrategy,
+    ///                 BatchSize = bdsInstanceOsPatchActionBatchSize,
+    ///                 WaitTimeBetweenBatchInSeconds = bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds,
+    ///                 ToleranceThresholdPerBatch = bdsInstanceOsPatchActionToleranceThresholdPerBatch,
+    ///                 WaitTimeBetweenDomainInSeconds = bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds,
+    ///                 ToleranceThresholdPerDomain = bdsInstanceOsPatchActionToleranceThresholdPerDomain,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Import is not supported for this resource.
+    /// </summary>
     [OciResourceType("oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction")]
     public partial class BdsInstanceOsPatchAction : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The OCID of the cluster.
+        /// </summary>
         [Output("bdsInstanceId")]
         public Output<string> BdsInstanceId { get; private set; } = null!;
 
+        /// <summary>
+        /// Base-64 encoded password for the cluster admin user.
+        /// </summary>
         [Output("clusterAdminPassword")]
         public Output<string> ClusterAdminPassword { get; private set; } = null!;
 
+        /// <summary>
+        /// The version of the OS patch to be installed.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Output("osPatchVersion")]
         public Output<string> OsPatchVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        /// </summary>
         [Output("patchingConfigs")]
         public Output<ImmutableArray<Outputs.BdsInstanceOsPatchActionPatchingConfig>> PatchingConfigs { get; private set; } = null!;
 
@@ -74,11 +131,18 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceOsPatchActionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The OCID of the cluster.
+        /// </summary>
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
 
         [Input("clusterAdminPassword", required: true)]
         private Input<string>? _clusterAdminPassword;
+
+        /// <summary>
+        /// Base-64 encoded password for the cluster admin user.
+        /// </summary>
         public Input<string>? ClusterAdminPassword
         {
             get => _clusterAdminPassword;
@@ -89,11 +153,22 @@ namespace Pulumi.Oci.BigDataService
             }
         }
 
+        /// <summary>
+        /// The version of the OS patch to be installed.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("osPatchVersion", required: true)]
         public Input<string> OsPatchVersion { get; set; } = null!;
 
         [Input("patchingConfigs")]
         private InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigArgs>? _patchingConfigs;
+
+        /// <summary>
+        /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        /// </summary>
         public InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigArgs> PatchingConfigs
         {
             get => _patchingConfigs ?? (_patchingConfigs = new InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigArgs>());
@@ -108,11 +183,18 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceOsPatchActionState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The OCID of the cluster.
+        /// </summary>
         [Input("bdsInstanceId")]
         public Input<string>? BdsInstanceId { get; set; }
 
         [Input("clusterAdminPassword")]
         private Input<string>? _clusterAdminPassword;
+
+        /// <summary>
+        /// Base-64 encoded password for the cluster admin user.
+        /// </summary>
         public Input<string>? ClusterAdminPassword
         {
             get => _clusterAdminPassword;
@@ -123,11 +205,22 @@ namespace Pulumi.Oci.BigDataService
             }
         }
 
+        /// <summary>
+        /// The version of the OS patch to be installed.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("osPatchVersion")]
         public Input<string>? OsPatchVersion { get; set; }
 
         [Input("patchingConfigs")]
         private InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigGetArgs>? _patchingConfigs;
+
+        /// <summary>
+        /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        /// </summary>
         public InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigGetArgs> PatchingConfigs
         {
             get => _patchingConfigs ?? (_patchingConfigs = new InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigGetArgs>());

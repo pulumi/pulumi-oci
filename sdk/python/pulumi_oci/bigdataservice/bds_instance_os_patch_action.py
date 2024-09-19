@@ -22,6 +22,14 @@ class BdsInstanceOsPatchActionArgs:
                  patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigArgs']]]] = None):
         """
         The set of arguments for constructing a BdsInstanceOsPatchAction resource.
+        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
+        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
+        :param pulumi.Input[str] os_patch_version: The version of the OS patch to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigArgs']]] patching_configs: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -32,6 +40,9 @@ class BdsInstanceOsPatchActionArgs:
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Input[str]:
+        """
+        The OCID of the cluster.
+        """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
@@ -41,6 +52,9 @@ class BdsInstanceOsPatchActionArgs:
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Input[str]:
+        """
+        Base-64 encoded password for the cluster admin user.
+        """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
@@ -50,6 +64,13 @@ class BdsInstanceOsPatchActionArgs:
     @property
     @pulumi.getter(name="osPatchVersion")
     def os_patch_version(self) -> pulumi.Input[str]:
+        """
+        The version of the OS patch to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "os_patch_version")
 
     @os_patch_version.setter
@@ -59,6 +80,9 @@ class BdsInstanceOsPatchActionArgs:
     @property
     @pulumi.getter(name="patchingConfigs")
     def patching_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigArgs']]]]:
+        """
+        Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        """
         return pulumi.get(self, "patching_configs")
 
     @patching_configs.setter
@@ -75,6 +99,14 @@ class _BdsInstanceOsPatchActionState:
                  patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigArgs']]]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceOsPatchAction resources.
+        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
+        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
+        :param pulumi.Input[str] os_patch_version: The version of the OS patch to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigArgs']]] patching_configs: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         """
         if bds_instance_id is not None:
             pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -88,6 +120,9 @@ class _BdsInstanceOsPatchActionState:
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the cluster.
+        """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
@@ -97,6 +132,9 @@ class _BdsInstanceOsPatchActionState:
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        Base-64 encoded password for the cluster admin user.
+        """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
@@ -106,6 +144,13 @@ class _BdsInstanceOsPatchActionState:
     @property
     @pulumi.getter(name="osPatchVersion")
     def os_patch_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the OS patch to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "os_patch_version")
 
     @os_patch_version.setter
@@ -115,6 +160,9 @@ class _BdsInstanceOsPatchActionState:
     @property
     @pulumi.getter(name="patchingConfigs")
     def patching_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigArgs']]]]:
+        """
+        Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        """
         return pulumi.get(self, "patching_configs")
 
     @patching_configs.setter
@@ -133,9 +181,44 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
                  patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigArgs', 'BdsInstanceOsPatchActionPatchingConfigArgsDict']]]]] = None,
                  __props__=None):
         """
-        Create a BdsInstanceOsPatchAction resource with the given unique name, props, and options.
+        This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
+
+        Install the specified OS patch to this cluster nodes.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_bds_instance_os_patch_action = oci.big_data_service.BdsInstanceOsPatchAction("test_bds_instance_os_patch_action",
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=bds_instance_os_patch_action_cluster_admin_password,
+            os_patch_version=bds_instance_os_patch_action_os_patch_version,
+            patching_configs=[{
+                "patching_config_strategy": bds_instance_os_patch_action_patching_config_strategy,
+                "batch_size": bds_instance_os_patch_action_batch_size,
+                "wait_time_between_batch_in_seconds": bds_instance_os_patch_action_wait_time_between_batch_in_seconds,
+                "tolerance_threshold_per_batch": bds_instance_os_patch_action_tolerance_threshold_per_batch,
+                "wait_time_between_domain_in_seconds": bds_instance_os_patch_action_wait_time_between_domain_in_seconds,
+                "tolerance_threshold_per_domain": bds_instance_os_patch_action_tolerance_threshold_per_domain,
+            }])
+        ```
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
+        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
+        :param pulumi.Input[str] os_patch_version: The version of the OS patch to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigArgs', 'BdsInstanceOsPatchActionPatchingConfigArgsDict']]]] patching_configs: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         """
         ...
     @overload
@@ -144,7 +227,34 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
                  args: BdsInstanceOsPatchActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BdsInstanceOsPatchAction resource with the given unique name, props, and options.
+        This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
+
+        Install the specified OS patch to this cluster nodes.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_bds_instance_os_patch_action = oci.big_data_service.BdsInstanceOsPatchAction("test_bds_instance_os_patch_action",
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=bds_instance_os_patch_action_cluster_admin_password,
+            os_patch_version=bds_instance_os_patch_action_os_patch_version,
+            patching_configs=[{
+                "patching_config_strategy": bds_instance_os_patch_action_patching_config_strategy,
+                "batch_size": bds_instance_os_patch_action_batch_size,
+                "wait_time_between_batch_in_seconds": bds_instance_os_patch_action_wait_time_between_batch_in_seconds,
+                "tolerance_threshold_per_batch": bds_instance_os_patch_action_tolerance_threshold_per_batch,
+                "wait_time_between_domain_in_seconds": bds_instance_os_patch_action_wait_time_between_domain_in_seconds,
+                "tolerance_threshold_per_domain": bds_instance_os_patch_action_tolerance_threshold_per_domain,
+            }])
+        ```
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param BdsInstanceOsPatchActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -206,6 +316,14 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
+        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
+        :param pulumi.Input[str] os_patch_version: The version of the OS patch to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigArgs', 'BdsInstanceOsPatchActionPatchingConfigArgsDict']]]] patching_configs: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -220,20 +338,36 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the cluster.
+        """
         return pulumi.get(self, "bds_instance_id")
 
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Output[str]:
+        """
+        Base-64 encoded password for the cluster admin user.
+        """
         return pulumi.get(self, "cluster_admin_password")
 
     @property
     @pulumi.getter(name="osPatchVersion")
     def os_patch_version(self) -> pulumi.Output[str]:
+        """
+        The version of the OS patch to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "os_patch_version")
 
     @property
     @pulumi.getter(name="patchingConfigs")
     def patching_configs(self) -> pulumi.Output[Sequence['outputs.BdsInstanceOsPatchActionPatchingConfig']]:
+        """
+        Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        """
         return pulumi.get(self, "patching_configs")
 

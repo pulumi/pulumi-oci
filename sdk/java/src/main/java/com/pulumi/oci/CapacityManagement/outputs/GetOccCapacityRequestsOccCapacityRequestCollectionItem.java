@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
     /**
-     * @return The availability domain (AD) for which the capacity request was made.
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
      * 
      */
     private String availabilityDomain;
@@ -91,6 +91,11 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
      */
     private String requestState;
     /**
+     * @return A filter to return only the resources that match the request type. The match is not case sensitive.
+     * 
+     */
+    private String requestType;
+    /**
      * @return The current lifecycle state of the resource.
      * 
      */
@@ -113,7 +118,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
 
     private GetOccCapacityRequestsOccCapacityRequestCollectionItem() {}
     /**
-     * @return The availability domain (AD) for which the capacity request was made.
+     * @return The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
      * 
      */
     public String availabilityDomain() {
@@ -221,6 +226,13 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
         return this.requestState;
     }
     /**
+     * @return A filter to return only the resources that match the request type. The match is not case sensitive.
+     * 
+     */
+    public String requestType() {
+        return this.requestType;
+    }
+    /**
      * @return The current lifecycle state of the resource.
      * 
      */
@@ -274,6 +286,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
         private List<GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation> patchOperations;
         private String region;
         private String requestState;
+        private String requestType;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -297,6 +310,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
     	      this.patchOperations = defaults.patchOperations;
     	      this.region = defaults.region;
     	      this.requestState = defaults.requestState;
+    	      this.requestType = defaults.requestType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -438,6 +452,14 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder requestType(String requestType) {
+            if (requestType == null) {
+              throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItem", "requestType");
+            }
+            this.requestType = requestType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItem", "state");
@@ -487,6 +509,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
             _resultValue.patchOperations = patchOperations;
             _resultValue.region = region;
             _resultValue.requestState = requestState;
+            _resultValue.requestType = requestType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

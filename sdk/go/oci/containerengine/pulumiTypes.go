@@ -8549,6 +8549,1070 @@ func (o GetAddonsFilterArrayOutput) Index(i pulumi.IntInput) GetAddonsFilterOutp
 	}).(GetAddonsFilterOutput)
 }
 
+type GetClusterClusterPodNetworkOption struct {
+	// The CNI used by the node pools of this cluster
+	CniType string `pulumi:"cniType"`
+}
+
+// GetClusterClusterPodNetworkOptionInput is an input type that accepts GetClusterClusterPodNetworkOptionArgs and GetClusterClusterPodNetworkOptionOutput values.
+// You can construct a concrete instance of `GetClusterClusterPodNetworkOptionInput` via:
+//
+//	GetClusterClusterPodNetworkOptionArgs{...}
+type GetClusterClusterPodNetworkOptionInput interface {
+	pulumi.Input
+
+	ToGetClusterClusterPodNetworkOptionOutput() GetClusterClusterPodNetworkOptionOutput
+	ToGetClusterClusterPodNetworkOptionOutputWithContext(context.Context) GetClusterClusterPodNetworkOptionOutput
+}
+
+type GetClusterClusterPodNetworkOptionArgs struct {
+	// The CNI used by the node pools of this cluster
+	CniType pulumi.StringInput `pulumi:"cniType"`
+}
+
+func (GetClusterClusterPodNetworkOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (i GetClusterClusterPodNetworkOptionArgs) ToGetClusterClusterPodNetworkOptionOutput() GetClusterClusterPodNetworkOptionOutput {
+	return i.ToGetClusterClusterPodNetworkOptionOutputWithContext(context.Background())
+}
+
+func (i GetClusterClusterPodNetworkOptionArgs) ToGetClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClusterClusterPodNetworkOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterClusterPodNetworkOptionOutput)
+}
+
+// GetClusterClusterPodNetworkOptionArrayInput is an input type that accepts GetClusterClusterPodNetworkOptionArray and GetClusterClusterPodNetworkOptionArrayOutput values.
+// You can construct a concrete instance of `GetClusterClusterPodNetworkOptionArrayInput` via:
+//
+//	GetClusterClusterPodNetworkOptionArray{ GetClusterClusterPodNetworkOptionArgs{...} }
+type GetClusterClusterPodNetworkOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterClusterPodNetworkOptionArrayOutput() GetClusterClusterPodNetworkOptionArrayOutput
+	ToGetClusterClusterPodNetworkOptionArrayOutputWithContext(context.Context) GetClusterClusterPodNetworkOptionArrayOutput
+}
+
+type GetClusterClusterPodNetworkOptionArray []GetClusterClusterPodNetworkOptionInput
+
+func (GetClusterClusterPodNetworkOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (i GetClusterClusterPodNetworkOptionArray) ToGetClusterClusterPodNetworkOptionArrayOutput() GetClusterClusterPodNetworkOptionArrayOutput {
+	return i.ToGetClusterClusterPodNetworkOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterClusterPodNetworkOptionArray) ToGetClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClusterClusterPodNetworkOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterClusterPodNetworkOptionArrayOutput)
+}
+
+type GetClusterClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
+
+func (GetClusterClusterPodNetworkOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (o GetClusterClusterPodNetworkOptionOutput) ToGetClusterClusterPodNetworkOptionOutput() GetClusterClusterPodNetworkOptionOutput {
+	return o
+}
+
+func (o GetClusterClusterPodNetworkOptionOutput) ToGetClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClusterClusterPodNetworkOptionOutput {
+	return o
+}
+
+// The CNI used by the node pools of this cluster
+func (o GetClusterClusterPodNetworkOptionOutput) CniType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterClusterPodNetworkOption) string { return v.CniType }).(pulumi.StringOutput)
+}
+
+type GetClusterClusterPodNetworkOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterClusterPodNetworkOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (o GetClusterClusterPodNetworkOptionArrayOutput) ToGetClusterClusterPodNetworkOptionArrayOutput() GetClusterClusterPodNetworkOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterClusterPodNetworkOptionArrayOutput) ToGetClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClusterClusterPodNetworkOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) GetClusterClusterPodNetworkOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterClusterPodNetworkOption {
+		return vs[0].([]GetClusterClusterPodNetworkOption)[vs[1].(int)]
+	}).(GetClusterClusterPodNetworkOptionOutput)
+}
+
+type GetClusterEndpoint struct {
+	// The non-native networking Kubernetes API server endpoint.
+	Kubernetes string `pulumi:"kubernetes"`
+	// The private native networking Kubernetes API server endpoint.
+	PrivateEndpoint string `pulumi:"privateEndpoint"`
+	// The public native networking Kubernetes API server endpoint, if one was requested.
+	PublicEndpoint string `pulumi:"publicEndpoint"`
+	// The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
+	VcnHostnameEndpoint string `pulumi:"vcnHostnameEndpoint"`
+}
+
+// GetClusterEndpointInput is an input type that accepts GetClusterEndpointArgs and GetClusterEndpointOutput values.
+// You can construct a concrete instance of `GetClusterEndpointInput` via:
+//
+//	GetClusterEndpointArgs{...}
+type GetClusterEndpointInput interface {
+	pulumi.Input
+
+	ToGetClusterEndpointOutput() GetClusterEndpointOutput
+	ToGetClusterEndpointOutputWithContext(context.Context) GetClusterEndpointOutput
+}
+
+type GetClusterEndpointArgs struct {
+	// The non-native networking Kubernetes API server endpoint.
+	Kubernetes pulumi.StringInput `pulumi:"kubernetes"`
+	// The private native networking Kubernetes API server endpoint.
+	PrivateEndpoint pulumi.StringInput `pulumi:"privateEndpoint"`
+	// The public native networking Kubernetes API server endpoint, if one was requested.
+	PublicEndpoint pulumi.StringInput `pulumi:"publicEndpoint"`
+	// The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
+	VcnHostnameEndpoint pulumi.StringInput `pulumi:"vcnHostnameEndpoint"`
+}
+
+func (GetClusterEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterEndpoint)(nil)).Elem()
+}
+
+func (i GetClusterEndpointArgs) ToGetClusterEndpointOutput() GetClusterEndpointOutput {
+	return i.ToGetClusterEndpointOutputWithContext(context.Background())
+}
+
+func (i GetClusterEndpointArgs) ToGetClusterEndpointOutputWithContext(ctx context.Context) GetClusterEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterEndpointOutput)
+}
+
+// GetClusterEndpointArrayInput is an input type that accepts GetClusterEndpointArray and GetClusterEndpointArrayOutput values.
+// You can construct a concrete instance of `GetClusterEndpointArrayInput` via:
+//
+//	GetClusterEndpointArray{ GetClusterEndpointArgs{...} }
+type GetClusterEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterEndpointArrayOutput() GetClusterEndpointArrayOutput
+	ToGetClusterEndpointArrayOutputWithContext(context.Context) GetClusterEndpointArrayOutput
+}
+
+type GetClusterEndpointArray []GetClusterEndpointInput
+
+func (GetClusterEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterEndpoint)(nil)).Elem()
+}
+
+func (i GetClusterEndpointArray) ToGetClusterEndpointArrayOutput() GetClusterEndpointArrayOutput {
+	return i.ToGetClusterEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterEndpointArray) ToGetClusterEndpointArrayOutputWithContext(ctx context.Context) GetClusterEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterEndpointArrayOutput)
+}
+
+type GetClusterEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetClusterEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterEndpoint)(nil)).Elem()
+}
+
+func (o GetClusterEndpointOutput) ToGetClusterEndpointOutput() GetClusterEndpointOutput {
+	return o
+}
+
+func (o GetClusterEndpointOutput) ToGetClusterEndpointOutputWithContext(ctx context.Context) GetClusterEndpointOutput {
+	return o
+}
+
+// The non-native networking Kubernetes API server endpoint.
+func (o GetClusterEndpointOutput) Kubernetes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterEndpoint) string { return v.Kubernetes }).(pulumi.StringOutput)
+}
+
+// The private native networking Kubernetes API server endpoint.
+func (o GetClusterEndpointOutput) PrivateEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterEndpoint) string { return v.PrivateEndpoint }).(pulumi.StringOutput)
+}
+
+// The public native networking Kubernetes API server endpoint, if one was requested.
+func (o GetClusterEndpointOutput) PublicEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterEndpoint) string { return v.PublicEndpoint }).(pulumi.StringOutput)
+}
+
+// The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
+func (o GetClusterEndpointOutput) VcnHostnameEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterEndpoint) string { return v.VcnHostnameEndpoint }).(pulumi.StringOutput)
+}
+
+type GetClusterEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterEndpoint)(nil)).Elem()
+}
+
+func (o GetClusterEndpointArrayOutput) ToGetClusterEndpointArrayOutput() GetClusterEndpointArrayOutput {
+	return o
+}
+
+func (o GetClusterEndpointArrayOutput) ToGetClusterEndpointArrayOutputWithContext(ctx context.Context) GetClusterEndpointArrayOutput {
+	return o
+}
+
+func (o GetClusterEndpointArrayOutput) Index(i pulumi.IntInput) GetClusterEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterEndpoint {
+		return vs[0].([]GetClusterEndpoint)[vs[1].(int)]
+	}).(GetClusterEndpointOutput)
+}
+
+type GetClusterEndpointConfig struct {
+	// Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+	IsPublicIpEnabled bool `pulumi:"isPublicIpEnabled"`
+	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	NsgIds []string `pulumi:"nsgIds"`
+	// The OCID of the regional subnet in which to place the Cluster endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetClusterEndpointConfigInput is an input type that accepts GetClusterEndpointConfigArgs and GetClusterEndpointConfigOutput values.
+// You can construct a concrete instance of `GetClusterEndpointConfigInput` via:
+//
+//	GetClusterEndpointConfigArgs{...}
+type GetClusterEndpointConfigInput interface {
+	pulumi.Input
+
+	ToGetClusterEndpointConfigOutput() GetClusterEndpointConfigOutput
+	ToGetClusterEndpointConfigOutputWithContext(context.Context) GetClusterEndpointConfigOutput
+}
+
+type GetClusterEndpointConfigArgs struct {
+	// Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+	IsPublicIpEnabled pulumi.BoolInput `pulumi:"isPublicIpEnabled"`
+	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The OCID of the regional subnet in which to place the Cluster endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetClusterEndpointConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterEndpointConfig)(nil)).Elem()
+}
+
+func (i GetClusterEndpointConfigArgs) ToGetClusterEndpointConfigOutput() GetClusterEndpointConfigOutput {
+	return i.ToGetClusterEndpointConfigOutputWithContext(context.Background())
+}
+
+func (i GetClusterEndpointConfigArgs) ToGetClusterEndpointConfigOutputWithContext(ctx context.Context) GetClusterEndpointConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterEndpointConfigOutput)
+}
+
+// GetClusterEndpointConfigArrayInput is an input type that accepts GetClusterEndpointConfigArray and GetClusterEndpointConfigArrayOutput values.
+// You can construct a concrete instance of `GetClusterEndpointConfigArrayInput` via:
+//
+//	GetClusterEndpointConfigArray{ GetClusterEndpointConfigArgs{...} }
+type GetClusterEndpointConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterEndpointConfigArrayOutput() GetClusterEndpointConfigArrayOutput
+	ToGetClusterEndpointConfigArrayOutputWithContext(context.Context) GetClusterEndpointConfigArrayOutput
+}
+
+type GetClusterEndpointConfigArray []GetClusterEndpointConfigInput
+
+func (GetClusterEndpointConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterEndpointConfig)(nil)).Elem()
+}
+
+func (i GetClusterEndpointConfigArray) ToGetClusterEndpointConfigArrayOutput() GetClusterEndpointConfigArrayOutput {
+	return i.ToGetClusterEndpointConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterEndpointConfigArray) ToGetClusterEndpointConfigArrayOutputWithContext(ctx context.Context) GetClusterEndpointConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterEndpointConfigArrayOutput)
+}
+
+type GetClusterEndpointConfigOutput struct{ *pulumi.OutputState }
+
+func (GetClusterEndpointConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterEndpointConfig)(nil)).Elem()
+}
+
+func (o GetClusterEndpointConfigOutput) ToGetClusterEndpointConfigOutput() GetClusterEndpointConfigOutput {
+	return o
+}
+
+func (o GetClusterEndpointConfigOutput) ToGetClusterEndpointConfigOutputWithContext(ctx context.Context) GetClusterEndpointConfigOutput {
+	return o
+}
+
+// Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+func (o GetClusterEndpointConfigOutput) IsPublicIpEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterEndpointConfig) bool { return v.IsPublicIpEnabled }).(pulumi.BoolOutput)
+}
+
+// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o GetClusterEndpointConfigOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClusterEndpointConfig) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the regional subnet in which to place the Cluster endpoint.
+func (o GetClusterEndpointConfigOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterEndpointConfig) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetClusterEndpointConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterEndpointConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterEndpointConfig)(nil)).Elem()
+}
+
+func (o GetClusterEndpointConfigArrayOutput) ToGetClusterEndpointConfigArrayOutput() GetClusterEndpointConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterEndpointConfigArrayOutput) ToGetClusterEndpointConfigArrayOutputWithContext(ctx context.Context) GetClusterEndpointConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterEndpointConfigArrayOutput) Index(i pulumi.IntInput) GetClusterEndpointConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterEndpointConfig {
+		return vs[0].([]GetClusterEndpointConfig)[vs[1].(int)]
+	}).(GetClusterEndpointConfigOutput)
+}
+
+type GetClusterImagePolicyConfig struct {
+	// Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+	IsPolicyEnabled bool `pulumi:"isPolicyEnabled"`
+	// A list of KMS key details.
+	KeyDetails []GetClusterImagePolicyConfigKeyDetail `pulumi:"keyDetails"`
+}
+
+// GetClusterImagePolicyConfigInput is an input type that accepts GetClusterImagePolicyConfigArgs and GetClusterImagePolicyConfigOutput values.
+// You can construct a concrete instance of `GetClusterImagePolicyConfigInput` via:
+//
+//	GetClusterImagePolicyConfigArgs{...}
+type GetClusterImagePolicyConfigInput interface {
+	pulumi.Input
+
+	ToGetClusterImagePolicyConfigOutput() GetClusterImagePolicyConfigOutput
+	ToGetClusterImagePolicyConfigOutputWithContext(context.Context) GetClusterImagePolicyConfigOutput
+}
+
+type GetClusterImagePolicyConfigArgs struct {
+	// Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+	IsPolicyEnabled pulumi.BoolInput `pulumi:"isPolicyEnabled"`
+	// A list of KMS key details.
+	KeyDetails GetClusterImagePolicyConfigKeyDetailArrayInput `pulumi:"keyDetails"`
+}
+
+func (GetClusterImagePolicyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterImagePolicyConfig)(nil)).Elem()
+}
+
+func (i GetClusterImagePolicyConfigArgs) ToGetClusterImagePolicyConfigOutput() GetClusterImagePolicyConfigOutput {
+	return i.ToGetClusterImagePolicyConfigOutputWithContext(context.Background())
+}
+
+func (i GetClusterImagePolicyConfigArgs) ToGetClusterImagePolicyConfigOutputWithContext(ctx context.Context) GetClusterImagePolicyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterImagePolicyConfigOutput)
+}
+
+// GetClusterImagePolicyConfigArrayInput is an input type that accepts GetClusterImagePolicyConfigArray and GetClusterImagePolicyConfigArrayOutput values.
+// You can construct a concrete instance of `GetClusterImagePolicyConfigArrayInput` via:
+//
+//	GetClusterImagePolicyConfigArray{ GetClusterImagePolicyConfigArgs{...} }
+type GetClusterImagePolicyConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterImagePolicyConfigArrayOutput() GetClusterImagePolicyConfigArrayOutput
+	ToGetClusterImagePolicyConfigArrayOutputWithContext(context.Context) GetClusterImagePolicyConfigArrayOutput
+}
+
+type GetClusterImagePolicyConfigArray []GetClusterImagePolicyConfigInput
+
+func (GetClusterImagePolicyConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterImagePolicyConfig)(nil)).Elem()
+}
+
+func (i GetClusterImagePolicyConfigArray) ToGetClusterImagePolicyConfigArrayOutput() GetClusterImagePolicyConfigArrayOutput {
+	return i.ToGetClusterImagePolicyConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterImagePolicyConfigArray) ToGetClusterImagePolicyConfigArrayOutputWithContext(ctx context.Context) GetClusterImagePolicyConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterImagePolicyConfigArrayOutput)
+}
+
+type GetClusterImagePolicyConfigOutput struct{ *pulumi.OutputState }
+
+func (GetClusterImagePolicyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterImagePolicyConfig)(nil)).Elem()
+}
+
+func (o GetClusterImagePolicyConfigOutput) ToGetClusterImagePolicyConfigOutput() GetClusterImagePolicyConfigOutput {
+	return o
+}
+
+func (o GetClusterImagePolicyConfigOutput) ToGetClusterImagePolicyConfigOutputWithContext(ctx context.Context) GetClusterImagePolicyConfigOutput {
+	return o
+}
+
+// Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+func (o GetClusterImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterImagePolicyConfig) bool { return v.IsPolicyEnabled }).(pulumi.BoolOutput)
+}
+
+// A list of KMS key details.
+func (o GetClusterImagePolicyConfigOutput) KeyDetails() GetClusterImagePolicyConfigKeyDetailArrayOutput {
+	return o.ApplyT(func(v GetClusterImagePolicyConfig) []GetClusterImagePolicyConfigKeyDetail { return v.KeyDetails }).(GetClusterImagePolicyConfigKeyDetailArrayOutput)
+}
+
+type GetClusterImagePolicyConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterImagePolicyConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterImagePolicyConfig)(nil)).Elem()
+}
+
+func (o GetClusterImagePolicyConfigArrayOutput) ToGetClusterImagePolicyConfigArrayOutput() GetClusterImagePolicyConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterImagePolicyConfigArrayOutput) ToGetClusterImagePolicyConfigArrayOutputWithContext(ctx context.Context) GetClusterImagePolicyConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterImagePolicyConfigArrayOutput) Index(i pulumi.IntInput) GetClusterImagePolicyConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterImagePolicyConfig {
+		return vs[0].([]GetClusterImagePolicyConfig)[vs[1].(int)]
+	}).(GetClusterImagePolicyConfigOutput)
+}
+
+type GetClusterImagePolicyConfigKeyDetail struct {
+	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+	KmsKeyId string `pulumi:"kmsKeyId"`
+}
+
+// GetClusterImagePolicyConfigKeyDetailInput is an input type that accepts GetClusterImagePolicyConfigKeyDetailArgs and GetClusterImagePolicyConfigKeyDetailOutput values.
+// You can construct a concrete instance of `GetClusterImagePolicyConfigKeyDetailInput` via:
+//
+//	GetClusterImagePolicyConfigKeyDetailArgs{...}
+type GetClusterImagePolicyConfigKeyDetailInput interface {
+	pulumi.Input
+
+	ToGetClusterImagePolicyConfigKeyDetailOutput() GetClusterImagePolicyConfigKeyDetailOutput
+	ToGetClusterImagePolicyConfigKeyDetailOutputWithContext(context.Context) GetClusterImagePolicyConfigKeyDetailOutput
+}
+
+type GetClusterImagePolicyConfigKeyDetailArgs struct {
+	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+}
+
+func (GetClusterImagePolicyConfigKeyDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterImagePolicyConfigKeyDetail)(nil)).Elem()
+}
+
+func (i GetClusterImagePolicyConfigKeyDetailArgs) ToGetClusterImagePolicyConfigKeyDetailOutput() GetClusterImagePolicyConfigKeyDetailOutput {
+	return i.ToGetClusterImagePolicyConfigKeyDetailOutputWithContext(context.Background())
+}
+
+func (i GetClusterImagePolicyConfigKeyDetailArgs) ToGetClusterImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) GetClusterImagePolicyConfigKeyDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterImagePolicyConfigKeyDetailOutput)
+}
+
+// GetClusterImagePolicyConfigKeyDetailArrayInput is an input type that accepts GetClusterImagePolicyConfigKeyDetailArray and GetClusterImagePolicyConfigKeyDetailArrayOutput values.
+// You can construct a concrete instance of `GetClusterImagePolicyConfigKeyDetailArrayInput` via:
+//
+//	GetClusterImagePolicyConfigKeyDetailArray{ GetClusterImagePolicyConfigKeyDetailArgs{...} }
+type GetClusterImagePolicyConfigKeyDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterImagePolicyConfigKeyDetailArrayOutput() GetClusterImagePolicyConfigKeyDetailArrayOutput
+	ToGetClusterImagePolicyConfigKeyDetailArrayOutputWithContext(context.Context) GetClusterImagePolicyConfigKeyDetailArrayOutput
+}
+
+type GetClusterImagePolicyConfigKeyDetailArray []GetClusterImagePolicyConfigKeyDetailInput
+
+func (GetClusterImagePolicyConfigKeyDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterImagePolicyConfigKeyDetail)(nil)).Elem()
+}
+
+func (i GetClusterImagePolicyConfigKeyDetailArray) ToGetClusterImagePolicyConfigKeyDetailArrayOutput() GetClusterImagePolicyConfigKeyDetailArrayOutput {
+	return i.ToGetClusterImagePolicyConfigKeyDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterImagePolicyConfigKeyDetailArray) ToGetClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx context.Context) GetClusterImagePolicyConfigKeyDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterImagePolicyConfigKeyDetailArrayOutput)
+}
+
+type GetClusterImagePolicyConfigKeyDetailOutput struct{ *pulumi.OutputState }
+
+func (GetClusterImagePolicyConfigKeyDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterImagePolicyConfigKeyDetail)(nil)).Elem()
+}
+
+func (o GetClusterImagePolicyConfigKeyDetailOutput) ToGetClusterImagePolicyConfigKeyDetailOutput() GetClusterImagePolicyConfigKeyDetailOutput {
+	return o
+}
+
+func (o GetClusterImagePolicyConfigKeyDetailOutput) ToGetClusterImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) GetClusterImagePolicyConfigKeyDetailOutput {
+	return o
+}
+
+// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+func (o GetClusterImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterImagePolicyConfigKeyDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+type GetClusterImagePolicyConfigKeyDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterImagePolicyConfigKeyDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterImagePolicyConfigKeyDetail)(nil)).Elem()
+}
+
+func (o GetClusterImagePolicyConfigKeyDetailArrayOutput) ToGetClusterImagePolicyConfigKeyDetailArrayOutput() GetClusterImagePolicyConfigKeyDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterImagePolicyConfigKeyDetailArrayOutput) ToGetClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx context.Context) GetClusterImagePolicyConfigKeyDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInput) GetClusterImagePolicyConfigKeyDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterImagePolicyConfigKeyDetail {
+		return vs[0].([]GetClusterImagePolicyConfigKeyDetail)[vs[1].(int)]
+	}).(GetClusterImagePolicyConfigKeyDetailOutput)
+}
+
+type GetClusterMetadata struct {
+	// The user who created the cluster.
+	CreatedByUserId string `pulumi:"createdByUserId"`
+	// The OCID of the work request which created the cluster.
+	CreatedByWorkRequestId string `pulumi:"createdByWorkRequestId"`
+	// The user who deleted the cluster.
+	DeletedByUserId string `pulumi:"deletedByUserId"`
+	// The OCID of the work request which deleted the cluster.
+	DeletedByWorkRequestId string `pulumi:"deletedByWorkRequestId"`
+	// The time the cluster was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time until which the cluster credential is valid.
+	TimeCredentialExpiration string `pulumi:"timeCredentialExpiration"`
+	// The time the cluster was deleted.
+	TimeDeleted string `pulumi:"timeDeleted"`
+	// The time the cluster was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user who updated the cluster.
+	UpdatedByUserId string `pulumi:"updatedByUserId"`
+	// The OCID of the work request which updated the cluster.
+	UpdatedByWorkRequestId string `pulumi:"updatedByWorkRequestId"`
+}
+
+// GetClusterMetadataInput is an input type that accepts GetClusterMetadataArgs and GetClusterMetadataOutput values.
+// You can construct a concrete instance of `GetClusterMetadataInput` via:
+//
+//	GetClusterMetadataArgs{...}
+type GetClusterMetadataInput interface {
+	pulumi.Input
+
+	ToGetClusterMetadataOutput() GetClusterMetadataOutput
+	ToGetClusterMetadataOutputWithContext(context.Context) GetClusterMetadataOutput
+}
+
+type GetClusterMetadataArgs struct {
+	// The user who created the cluster.
+	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
+	// The OCID of the work request which created the cluster.
+	CreatedByWorkRequestId pulumi.StringInput `pulumi:"createdByWorkRequestId"`
+	// The user who deleted the cluster.
+	DeletedByUserId pulumi.StringInput `pulumi:"deletedByUserId"`
+	// The OCID of the work request which deleted the cluster.
+	DeletedByWorkRequestId pulumi.StringInput `pulumi:"deletedByWorkRequestId"`
+	// The time the cluster was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time until which the cluster credential is valid.
+	TimeCredentialExpiration pulumi.StringInput `pulumi:"timeCredentialExpiration"`
+	// The time the cluster was deleted.
+	TimeDeleted pulumi.StringInput `pulumi:"timeDeleted"`
+	// The time the cluster was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user who updated the cluster.
+	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
+	// The OCID of the work request which updated the cluster.
+	UpdatedByWorkRequestId pulumi.StringInput `pulumi:"updatedByWorkRequestId"`
+}
+
+func (GetClusterMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterMetadata)(nil)).Elem()
+}
+
+func (i GetClusterMetadataArgs) ToGetClusterMetadataOutput() GetClusterMetadataOutput {
+	return i.ToGetClusterMetadataOutputWithContext(context.Background())
+}
+
+func (i GetClusterMetadataArgs) ToGetClusterMetadataOutputWithContext(ctx context.Context) GetClusterMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterMetadataOutput)
+}
+
+// GetClusterMetadataArrayInput is an input type that accepts GetClusterMetadataArray and GetClusterMetadataArrayOutput values.
+// You can construct a concrete instance of `GetClusterMetadataArrayInput` via:
+//
+//	GetClusterMetadataArray{ GetClusterMetadataArgs{...} }
+type GetClusterMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterMetadataArrayOutput() GetClusterMetadataArrayOutput
+	ToGetClusterMetadataArrayOutputWithContext(context.Context) GetClusterMetadataArrayOutput
+}
+
+type GetClusterMetadataArray []GetClusterMetadataInput
+
+func (GetClusterMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterMetadata)(nil)).Elem()
+}
+
+func (i GetClusterMetadataArray) ToGetClusterMetadataArrayOutput() GetClusterMetadataArrayOutput {
+	return i.ToGetClusterMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterMetadataArray) ToGetClusterMetadataArrayOutputWithContext(ctx context.Context) GetClusterMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterMetadataArrayOutput)
+}
+
+type GetClusterMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetClusterMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterMetadata)(nil)).Elem()
+}
+
+func (o GetClusterMetadataOutput) ToGetClusterMetadataOutput() GetClusterMetadataOutput {
+	return o
+}
+
+func (o GetClusterMetadataOutput) ToGetClusterMetadataOutputWithContext(ctx context.Context) GetClusterMetadataOutput {
+	return o
+}
+
+// The user who created the cluster.
+func (o GetClusterMetadataOutput) CreatedByUserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.CreatedByUserId }).(pulumi.StringOutput)
+}
+
+// The OCID of the work request which created the cluster.
+func (o GetClusterMetadataOutput) CreatedByWorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.CreatedByWorkRequestId }).(pulumi.StringOutput)
+}
+
+// The user who deleted the cluster.
+func (o GetClusterMetadataOutput) DeletedByUserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.DeletedByUserId }).(pulumi.StringOutput)
+}
+
+// The OCID of the work request which deleted the cluster.
+func (o GetClusterMetadataOutput) DeletedByWorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.DeletedByWorkRequestId }).(pulumi.StringOutput)
+}
+
+// The time the cluster was created.
+func (o GetClusterMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time until which the cluster credential is valid.
+func (o GetClusterMetadataOutput) TimeCredentialExpiration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.TimeCredentialExpiration }).(pulumi.StringOutput)
+}
+
+// The time the cluster was deleted.
+func (o GetClusterMetadataOutput) TimeDeleted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.TimeDeleted }).(pulumi.StringOutput)
+}
+
+// The time the cluster was updated.
+func (o GetClusterMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The user who updated the cluster.
+func (o GetClusterMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.UpdatedByUserId }).(pulumi.StringOutput)
+}
+
+// The OCID of the work request which updated the cluster.
+func (o GetClusterMetadataOutput) UpdatedByWorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterMetadata) string { return v.UpdatedByWorkRequestId }).(pulumi.StringOutput)
+}
+
+type GetClusterMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterMetadata)(nil)).Elem()
+}
+
+func (o GetClusterMetadataArrayOutput) ToGetClusterMetadataArrayOutput() GetClusterMetadataArrayOutput {
+	return o
+}
+
+func (o GetClusterMetadataArrayOutput) ToGetClusterMetadataArrayOutputWithContext(ctx context.Context) GetClusterMetadataArrayOutput {
+	return o
+}
+
+func (o GetClusterMetadataArrayOutput) Index(i pulumi.IntInput) GetClusterMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterMetadata {
+		return vs[0].([]GetClusterMetadata)[vs[1].(int)]
+	}).(GetClusterMetadataOutput)
+}
+
+type GetClusterOption struct {
+	// Configurable cluster add-ons
+	AddOns []GetClusterOptionAddOn `pulumi:"addOns"`
+	// Configurable cluster admission controllers
+	AdmissionControllerOptions []GetClusterOptionAdmissionControllerOption `pulumi:"admissionControllerOptions"`
+	// Network configuration for Kubernetes.
+	KubernetesNetworkConfigs []GetClusterOptionKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfigs"`
+	// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
+	PersistentVolumeConfigs []GetClusterOptionPersistentVolumeConfig `pulumi:"persistentVolumeConfigs"`
+	// Configuration to be applied to load balancers created by Kubernetes services
+	ServiceLbConfigs []GetClusterOptionServiceLbConfig `pulumi:"serviceLbConfigs"`
+	// The OCIDs of the subnets used for Kubernetes services load balancers.
+	ServiceLbSubnetIds []string `pulumi:"serviceLbSubnetIds"`
+}
+
+// GetClusterOptionInput is an input type that accepts GetClusterOptionArgs and GetClusterOptionOutput values.
+// You can construct a concrete instance of `GetClusterOptionInput` via:
+//
+//	GetClusterOptionArgs{...}
+type GetClusterOptionInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionOutput() GetClusterOptionOutput
+	ToGetClusterOptionOutputWithContext(context.Context) GetClusterOptionOutput
+}
+
+type GetClusterOptionArgs struct {
+	// Configurable cluster add-ons
+	AddOns GetClusterOptionAddOnArrayInput `pulumi:"addOns"`
+	// Configurable cluster admission controllers
+	AdmissionControllerOptions GetClusterOptionAdmissionControllerOptionArrayInput `pulumi:"admissionControllerOptions"`
+	// Network configuration for Kubernetes.
+	KubernetesNetworkConfigs GetClusterOptionKubernetesNetworkConfigArrayInput `pulumi:"kubernetesNetworkConfigs"`
+	// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
+	PersistentVolumeConfigs GetClusterOptionPersistentVolumeConfigArrayInput `pulumi:"persistentVolumeConfigs"`
+	// Configuration to be applied to load balancers created by Kubernetes services
+	ServiceLbConfigs GetClusterOptionServiceLbConfigArrayInput `pulumi:"serviceLbConfigs"`
+	// The OCIDs of the subnets used for Kubernetes services load balancers.
+	ServiceLbSubnetIds pulumi.StringArrayInput `pulumi:"serviceLbSubnetIds"`
+}
+
+func (GetClusterOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOption)(nil)).Elem()
+}
+
+func (i GetClusterOptionArgs) ToGetClusterOptionOutput() GetClusterOptionOutput {
+	return i.ToGetClusterOptionOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionArgs) ToGetClusterOptionOutputWithContext(ctx context.Context) GetClusterOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionOutput)
+}
+
+// GetClusterOptionArrayInput is an input type that accepts GetClusterOptionArray and GetClusterOptionArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionArrayInput` via:
+//
+//	GetClusterOptionArray{ GetClusterOptionArgs{...} }
+type GetClusterOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionArrayOutput() GetClusterOptionArrayOutput
+	ToGetClusterOptionArrayOutputWithContext(context.Context) GetClusterOptionArrayOutput
+}
+
+type GetClusterOptionArray []GetClusterOptionInput
+
+func (GetClusterOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOption)(nil)).Elem()
+}
+
+func (i GetClusterOptionArray) ToGetClusterOptionArrayOutput() GetClusterOptionArrayOutput {
+	return i.ToGetClusterOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionArray) ToGetClusterOptionArrayOutputWithContext(ctx context.Context) GetClusterOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionArrayOutput)
+}
+
+type GetClusterOptionOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOption)(nil)).Elem()
+}
+
+func (o GetClusterOptionOutput) ToGetClusterOptionOutput() GetClusterOptionOutput {
+	return o
+}
+
+func (o GetClusterOptionOutput) ToGetClusterOptionOutputWithContext(ctx context.Context) GetClusterOptionOutput {
+	return o
+}
+
+// Configurable cluster add-ons
+func (o GetClusterOptionOutput) AddOns() GetClusterOptionAddOnArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionAddOn { return v.AddOns }).(GetClusterOptionAddOnArrayOutput)
+}
+
+// Configurable cluster admission controllers
+func (o GetClusterOptionOutput) AdmissionControllerOptions() GetClusterOptionAdmissionControllerOptionArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionAdmissionControllerOption {
+		return v.AdmissionControllerOptions
+	}).(GetClusterOptionAdmissionControllerOptionArrayOutput)
+}
+
+// Network configuration for Kubernetes.
+func (o GetClusterOptionOutput) KubernetesNetworkConfigs() GetClusterOptionKubernetesNetworkConfigArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionKubernetesNetworkConfig { return v.KubernetesNetworkConfigs }).(GetClusterOptionKubernetesNetworkConfigArrayOutput)
+}
+
+// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
+func (o GetClusterOptionOutput) PersistentVolumeConfigs() GetClusterOptionPersistentVolumeConfigArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionPersistentVolumeConfig { return v.PersistentVolumeConfigs }).(GetClusterOptionPersistentVolumeConfigArrayOutput)
+}
+
+// Configuration to be applied to load balancers created by Kubernetes services
+func (o GetClusterOptionOutput) ServiceLbConfigs() GetClusterOptionServiceLbConfigArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionServiceLbConfig { return v.ServiceLbConfigs }).(GetClusterOptionServiceLbConfigArrayOutput)
+}
+
+// The OCIDs of the subnets used for Kubernetes services load balancers.
+func (o GetClusterOptionOutput) ServiceLbSubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []string { return v.ServiceLbSubnetIds }).(pulumi.StringArrayOutput)
+}
+
+type GetClusterOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOption)(nil)).Elem()
+}
+
+func (o GetClusterOptionArrayOutput) ToGetClusterOptionArrayOutput() GetClusterOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionArrayOutput) ToGetClusterOptionArrayOutputWithContext(ctx context.Context) GetClusterOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionArrayOutput) Index(i pulumi.IntInput) GetClusterOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOption {
+		return vs[0].([]GetClusterOption)[vs[1].(int)]
+	}).(GetClusterOptionOutput)
+}
+
+type GetClusterOptionAddOn struct {
+	// Whether or not to enable the Kubernetes Dashboard add-on.
+	IsKubernetesDashboardEnabled bool `pulumi:"isKubernetesDashboardEnabled"`
+	// Whether or not to enable the Tiller add-on.
+	IsTillerEnabled bool `pulumi:"isTillerEnabled"`
+}
+
+// GetClusterOptionAddOnInput is an input type that accepts GetClusterOptionAddOnArgs and GetClusterOptionAddOnOutput values.
+// You can construct a concrete instance of `GetClusterOptionAddOnInput` via:
+//
+//	GetClusterOptionAddOnArgs{...}
+type GetClusterOptionAddOnInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionAddOnOutput() GetClusterOptionAddOnOutput
+	ToGetClusterOptionAddOnOutputWithContext(context.Context) GetClusterOptionAddOnOutput
+}
+
+type GetClusterOptionAddOnArgs struct {
+	// Whether or not to enable the Kubernetes Dashboard add-on.
+	IsKubernetesDashboardEnabled pulumi.BoolInput `pulumi:"isKubernetesDashboardEnabled"`
+	// Whether or not to enable the Tiller add-on.
+	IsTillerEnabled pulumi.BoolInput `pulumi:"isTillerEnabled"`
+}
+
+func (GetClusterOptionAddOnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionAddOn)(nil)).Elem()
+}
+
+func (i GetClusterOptionAddOnArgs) ToGetClusterOptionAddOnOutput() GetClusterOptionAddOnOutput {
+	return i.ToGetClusterOptionAddOnOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionAddOnArgs) ToGetClusterOptionAddOnOutputWithContext(ctx context.Context) GetClusterOptionAddOnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionAddOnOutput)
+}
+
+// GetClusterOptionAddOnArrayInput is an input type that accepts GetClusterOptionAddOnArray and GetClusterOptionAddOnArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionAddOnArrayInput` via:
+//
+//	GetClusterOptionAddOnArray{ GetClusterOptionAddOnArgs{...} }
+type GetClusterOptionAddOnArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionAddOnArrayOutput() GetClusterOptionAddOnArrayOutput
+	ToGetClusterOptionAddOnArrayOutputWithContext(context.Context) GetClusterOptionAddOnArrayOutput
+}
+
+type GetClusterOptionAddOnArray []GetClusterOptionAddOnInput
+
+func (GetClusterOptionAddOnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionAddOn)(nil)).Elem()
+}
+
+func (i GetClusterOptionAddOnArray) ToGetClusterOptionAddOnArrayOutput() GetClusterOptionAddOnArrayOutput {
+	return i.ToGetClusterOptionAddOnArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionAddOnArray) ToGetClusterOptionAddOnArrayOutputWithContext(ctx context.Context) GetClusterOptionAddOnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionAddOnArrayOutput)
+}
+
+type GetClusterOptionAddOnOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionAddOnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionAddOn)(nil)).Elem()
+}
+
+func (o GetClusterOptionAddOnOutput) ToGetClusterOptionAddOnOutput() GetClusterOptionAddOnOutput {
+	return o
+}
+
+func (o GetClusterOptionAddOnOutput) ToGetClusterOptionAddOnOutputWithContext(ctx context.Context) GetClusterOptionAddOnOutput {
+	return o
+}
+
+// Whether or not to enable the Kubernetes Dashboard add-on.
+func (o GetClusterOptionAddOnOutput) IsKubernetesDashboardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterOptionAddOn) bool { return v.IsKubernetesDashboardEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether or not to enable the Tiller add-on.
+func (o GetClusterOptionAddOnOutput) IsTillerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterOptionAddOn) bool { return v.IsTillerEnabled }).(pulumi.BoolOutput)
+}
+
+type GetClusterOptionAddOnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionAddOnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionAddOn)(nil)).Elem()
+}
+
+func (o GetClusterOptionAddOnArrayOutput) ToGetClusterOptionAddOnArrayOutput() GetClusterOptionAddOnArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionAddOnArrayOutput) ToGetClusterOptionAddOnArrayOutputWithContext(ctx context.Context) GetClusterOptionAddOnArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionAddOnArrayOutput) Index(i pulumi.IntInput) GetClusterOptionAddOnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionAddOn {
+		return vs[0].([]GetClusterOptionAddOn)[vs[1].(int)]
+	}).(GetClusterOptionAddOnOutput)
+}
+
+type GetClusterOptionAdmissionControllerOption struct {
+	// Whether or not to enable the Pod Security Policy admission controller.
+	IsPodSecurityPolicyEnabled bool `pulumi:"isPodSecurityPolicyEnabled"`
+}
+
+// GetClusterOptionAdmissionControllerOptionInput is an input type that accepts GetClusterOptionAdmissionControllerOptionArgs and GetClusterOptionAdmissionControllerOptionOutput values.
+// You can construct a concrete instance of `GetClusterOptionAdmissionControllerOptionInput` via:
+//
+//	GetClusterOptionAdmissionControllerOptionArgs{...}
+type GetClusterOptionAdmissionControllerOptionInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionAdmissionControllerOptionOutput() GetClusterOptionAdmissionControllerOptionOutput
+	ToGetClusterOptionAdmissionControllerOptionOutputWithContext(context.Context) GetClusterOptionAdmissionControllerOptionOutput
+}
+
+type GetClusterOptionAdmissionControllerOptionArgs struct {
+	// Whether or not to enable the Pod Security Policy admission controller.
+	IsPodSecurityPolicyEnabled pulumi.BoolInput `pulumi:"isPodSecurityPolicyEnabled"`
+}
+
+func (GetClusterOptionAdmissionControllerOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionAdmissionControllerOption)(nil)).Elem()
+}
+
+func (i GetClusterOptionAdmissionControllerOptionArgs) ToGetClusterOptionAdmissionControllerOptionOutput() GetClusterOptionAdmissionControllerOptionOutput {
+	return i.ToGetClusterOptionAdmissionControllerOptionOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionAdmissionControllerOptionArgs) ToGetClusterOptionAdmissionControllerOptionOutputWithContext(ctx context.Context) GetClusterOptionAdmissionControllerOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionAdmissionControllerOptionOutput)
+}
+
+// GetClusterOptionAdmissionControllerOptionArrayInput is an input type that accepts GetClusterOptionAdmissionControllerOptionArray and GetClusterOptionAdmissionControllerOptionArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionAdmissionControllerOptionArrayInput` via:
+//
+//	GetClusterOptionAdmissionControllerOptionArray{ GetClusterOptionAdmissionControllerOptionArgs{...} }
+type GetClusterOptionAdmissionControllerOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionAdmissionControllerOptionArrayOutput() GetClusterOptionAdmissionControllerOptionArrayOutput
+	ToGetClusterOptionAdmissionControllerOptionArrayOutputWithContext(context.Context) GetClusterOptionAdmissionControllerOptionArrayOutput
+}
+
+type GetClusterOptionAdmissionControllerOptionArray []GetClusterOptionAdmissionControllerOptionInput
+
+func (GetClusterOptionAdmissionControllerOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionAdmissionControllerOption)(nil)).Elem()
+}
+
+func (i GetClusterOptionAdmissionControllerOptionArray) ToGetClusterOptionAdmissionControllerOptionArrayOutput() GetClusterOptionAdmissionControllerOptionArrayOutput {
+	return i.ToGetClusterOptionAdmissionControllerOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionAdmissionControllerOptionArray) ToGetClusterOptionAdmissionControllerOptionArrayOutputWithContext(ctx context.Context) GetClusterOptionAdmissionControllerOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionAdmissionControllerOptionArrayOutput)
+}
+
+type GetClusterOptionAdmissionControllerOptionOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionAdmissionControllerOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionAdmissionControllerOption)(nil)).Elem()
+}
+
+func (o GetClusterOptionAdmissionControllerOptionOutput) ToGetClusterOptionAdmissionControllerOptionOutput() GetClusterOptionAdmissionControllerOptionOutput {
+	return o
+}
+
+func (o GetClusterOptionAdmissionControllerOptionOutput) ToGetClusterOptionAdmissionControllerOptionOutputWithContext(ctx context.Context) GetClusterOptionAdmissionControllerOptionOutput {
+	return o
+}
+
+// Whether or not to enable the Pod Security Policy admission controller.
+func (o GetClusterOptionAdmissionControllerOptionOutput) IsPodSecurityPolicyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterOptionAdmissionControllerOption) bool { return v.IsPodSecurityPolicyEnabled }).(pulumi.BoolOutput)
+}
+
+type GetClusterOptionAdmissionControllerOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionAdmissionControllerOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionAdmissionControllerOption)(nil)).Elem()
+}
+
+func (o GetClusterOptionAdmissionControllerOptionArrayOutput) ToGetClusterOptionAdmissionControllerOptionArrayOutput() GetClusterOptionAdmissionControllerOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionAdmissionControllerOptionArrayOutput) ToGetClusterOptionAdmissionControllerOptionArrayOutputWithContext(ctx context.Context) GetClusterOptionAdmissionControllerOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionAdmissionControllerOptionArrayOutput) Index(i pulumi.IntInput) GetClusterOptionAdmissionControllerOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionAdmissionControllerOption {
+		return vs[0].([]GetClusterOptionAdmissionControllerOption)[vs[1].(int)]
+	}).(GetClusterOptionAdmissionControllerOptionOutput)
+}
+
 type GetClusterOptionClusterPodNetworkOption struct {
 	// The CNI used by the node pools of this cluster
 	CniType string `pulumi:"cniType"`
@@ -8644,6 +9708,324 @@ func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionClusterPodNetworkOption {
 		return vs[0].([]GetClusterOptionClusterPodNetworkOption)[vs[1].(int)]
 	}).(GetClusterOptionClusterPodNetworkOptionOutput)
+}
+
+type GetClusterOptionKubernetesNetworkConfig struct {
+	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+	PodsCidr string `pulumi:"podsCidr"`
+	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+	ServicesCidr string `pulumi:"servicesCidr"`
+}
+
+// GetClusterOptionKubernetesNetworkConfigInput is an input type that accepts GetClusterOptionKubernetesNetworkConfigArgs and GetClusterOptionKubernetesNetworkConfigOutput values.
+// You can construct a concrete instance of `GetClusterOptionKubernetesNetworkConfigInput` via:
+//
+//	GetClusterOptionKubernetesNetworkConfigArgs{...}
+type GetClusterOptionKubernetesNetworkConfigInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionKubernetesNetworkConfigOutput() GetClusterOptionKubernetesNetworkConfigOutput
+	ToGetClusterOptionKubernetesNetworkConfigOutputWithContext(context.Context) GetClusterOptionKubernetesNetworkConfigOutput
+}
+
+type GetClusterOptionKubernetesNetworkConfigArgs struct {
+	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+	PodsCidr pulumi.StringInput `pulumi:"podsCidr"`
+	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+	ServicesCidr pulumi.StringInput `pulumi:"servicesCidr"`
+}
+
+func (GetClusterOptionKubernetesNetworkConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionKubernetesNetworkConfig)(nil)).Elem()
+}
+
+func (i GetClusterOptionKubernetesNetworkConfigArgs) ToGetClusterOptionKubernetesNetworkConfigOutput() GetClusterOptionKubernetesNetworkConfigOutput {
+	return i.ToGetClusterOptionKubernetesNetworkConfigOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionKubernetesNetworkConfigArgs) ToGetClusterOptionKubernetesNetworkConfigOutputWithContext(ctx context.Context) GetClusterOptionKubernetesNetworkConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionKubernetesNetworkConfigOutput)
+}
+
+// GetClusterOptionKubernetesNetworkConfigArrayInput is an input type that accepts GetClusterOptionKubernetesNetworkConfigArray and GetClusterOptionKubernetesNetworkConfigArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionKubernetesNetworkConfigArrayInput` via:
+//
+//	GetClusterOptionKubernetesNetworkConfigArray{ GetClusterOptionKubernetesNetworkConfigArgs{...} }
+type GetClusterOptionKubernetesNetworkConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionKubernetesNetworkConfigArrayOutput() GetClusterOptionKubernetesNetworkConfigArrayOutput
+	ToGetClusterOptionKubernetesNetworkConfigArrayOutputWithContext(context.Context) GetClusterOptionKubernetesNetworkConfigArrayOutput
+}
+
+type GetClusterOptionKubernetesNetworkConfigArray []GetClusterOptionKubernetesNetworkConfigInput
+
+func (GetClusterOptionKubernetesNetworkConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionKubernetesNetworkConfig)(nil)).Elem()
+}
+
+func (i GetClusterOptionKubernetesNetworkConfigArray) ToGetClusterOptionKubernetesNetworkConfigArrayOutput() GetClusterOptionKubernetesNetworkConfigArrayOutput {
+	return i.ToGetClusterOptionKubernetesNetworkConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionKubernetesNetworkConfigArray) ToGetClusterOptionKubernetesNetworkConfigArrayOutputWithContext(ctx context.Context) GetClusterOptionKubernetesNetworkConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionKubernetesNetworkConfigArrayOutput)
+}
+
+type GetClusterOptionKubernetesNetworkConfigOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionKubernetesNetworkConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionKubernetesNetworkConfig)(nil)).Elem()
+}
+
+func (o GetClusterOptionKubernetesNetworkConfigOutput) ToGetClusterOptionKubernetesNetworkConfigOutput() GetClusterOptionKubernetesNetworkConfigOutput {
+	return o
+}
+
+func (o GetClusterOptionKubernetesNetworkConfigOutput) ToGetClusterOptionKubernetesNetworkConfigOutputWithContext(ctx context.Context) GetClusterOptionKubernetesNetworkConfigOutput {
+	return o
+}
+
+// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+func (o GetClusterOptionKubernetesNetworkConfigOutput) PodsCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionKubernetesNetworkConfig) string { return v.PodsCidr }).(pulumi.StringOutput)
+}
+
+// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+func (o GetClusterOptionKubernetesNetworkConfigOutput) ServicesCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionKubernetesNetworkConfig) string { return v.ServicesCidr }).(pulumi.StringOutput)
+}
+
+type GetClusterOptionKubernetesNetworkConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionKubernetesNetworkConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionKubernetesNetworkConfig)(nil)).Elem()
+}
+
+func (o GetClusterOptionKubernetesNetworkConfigArrayOutput) ToGetClusterOptionKubernetesNetworkConfigArrayOutput() GetClusterOptionKubernetesNetworkConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionKubernetesNetworkConfigArrayOutput) ToGetClusterOptionKubernetesNetworkConfigArrayOutputWithContext(ctx context.Context) GetClusterOptionKubernetesNetworkConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionKubernetesNetworkConfigArrayOutput) Index(i pulumi.IntInput) GetClusterOptionKubernetesNetworkConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionKubernetesNetworkConfig {
+		return vs[0].([]GetClusterOptionKubernetesNetworkConfig)[vs[1].(int)]
+	}).(GetClusterOptionKubernetesNetworkConfigOutput)
+}
+
+type GetClusterOptionPersistentVolumeConfig struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+}
+
+// GetClusterOptionPersistentVolumeConfigInput is an input type that accepts GetClusterOptionPersistentVolumeConfigArgs and GetClusterOptionPersistentVolumeConfigOutput values.
+// You can construct a concrete instance of `GetClusterOptionPersistentVolumeConfigInput` via:
+//
+//	GetClusterOptionPersistentVolumeConfigArgs{...}
+type GetClusterOptionPersistentVolumeConfigInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionPersistentVolumeConfigOutput() GetClusterOptionPersistentVolumeConfigOutput
+	ToGetClusterOptionPersistentVolumeConfigOutputWithContext(context.Context) GetClusterOptionPersistentVolumeConfigOutput
+}
+
+type GetClusterOptionPersistentVolumeConfigArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+}
+
+func (GetClusterOptionPersistentVolumeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionPersistentVolumeConfig)(nil)).Elem()
+}
+
+func (i GetClusterOptionPersistentVolumeConfigArgs) ToGetClusterOptionPersistentVolumeConfigOutput() GetClusterOptionPersistentVolumeConfigOutput {
+	return i.ToGetClusterOptionPersistentVolumeConfigOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionPersistentVolumeConfigArgs) ToGetClusterOptionPersistentVolumeConfigOutputWithContext(ctx context.Context) GetClusterOptionPersistentVolumeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionPersistentVolumeConfigOutput)
+}
+
+// GetClusterOptionPersistentVolumeConfigArrayInput is an input type that accepts GetClusterOptionPersistentVolumeConfigArray and GetClusterOptionPersistentVolumeConfigArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionPersistentVolumeConfigArrayInput` via:
+//
+//	GetClusterOptionPersistentVolumeConfigArray{ GetClusterOptionPersistentVolumeConfigArgs{...} }
+type GetClusterOptionPersistentVolumeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionPersistentVolumeConfigArrayOutput() GetClusterOptionPersistentVolumeConfigArrayOutput
+	ToGetClusterOptionPersistentVolumeConfigArrayOutputWithContext(context.Context) GetClusterOptionPersistentVolumeConfigArrayOutput
+}
+
+type GetClusterOptionPersistentVolumeConfigArray []GetClusterOptionPersistentVolumeConfigInput
+
+func (GetClusterOptionPersistentVolumeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionPersistentVolumeConfig)(nil)).Elem()
+}
+
+func (i GetClusterOptionPersistentVolumeConfigArray) ToGetClusterOptionPersistentVolumeConfigArrayOutput() GetClusterOptionPersistentVolumeConfigArrayOutput {
+	return i.ToGetClusterOptionPersistentVolumeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionPersistentVolumeConfigArray) ToGetClusterOptionPersistentVolumeConfigArrayOutputWithContext(ctx context.Context) GetClusterOptionPersistentVolumeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionPersistentVolumeConfigArrayOutput)
+}
+
+type GetClusterOptionPersistentVolumeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionPersistentVolumeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionPersistentVolumeConfig)(nil)).Elem()
+}
+
+func (o GetClusterOptionPersistentVolumeConfigOutput) ToGetClusterOptionPersistentVolumeConfigOutput() GetClusterOptionPersistentVolumeConfigOutput {
+	return o
+}
+
+func (o GetClusterOptionPersistentVolumeConfigOutput) ToGetClusterOptionPersistentVolumeConfigOutputWithContext(ctx context.Context) GetClusterOptionPersistentVolumeConfigOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetClusterOptionPersistentVolumeConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterOptionPersistentVolumeConfig) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetClusterOptionPersistentVolumeConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterOptionPersistentVolumeConfig) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+type GetClusterOptionPersistentVolumeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionPersistentVolumeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionPersistentVolumeConfig)(nil)).Elem()
+}
+
+func (o GetClusterOptionPersistentVolumeConfigArrayOutput) ToGetClusterOptionPersistentVolumeConfigArrayOutput() GetClusterOptionPersistentVolumeConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionPersistentVolumeConfigArrayOutput) ToGetClusterOptionPersistentVolumeConfigArrayOutputWithContext(ctx context.Context) GetClusterOptionPersistentVolumeConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionPersistentVolumeConfigArrayOutput) Index(i pulumi.IntInput) GetClusterOptionPersistentVolumeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionPersistentVolumeConfig {
+		return vs[0].([]GetClusterOptionPersistentVolumeConfig)[vs[1].(int)]
+	}).(GetClusterOptionPersistentVolumeConfigOutput)
+}
+
+type GetClusterOptionServiceLbConfig struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+}
+
+// GetClusterOptionServiceLbConfigInput is an input type that accepts GetClusterOptionServiceLbConfigArgs and GetClusterOptionServiceLbConfigOutput values.
+// You can construct a concrete instance of `GetClusterOptionServiceLbConfigInput` via:
+//
+//	GetClusterOptionServiceLbConfigArgs{...}
+type GetClusterOptionServiceLbConfigInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionServiceLbConfigOutput() GetClusterOptionServiceLbConfigOutput
+	ToGetClusterOptionServiceLbConfigOutputWithContext(context.Context) GetClusterOptionServiceLbConfigOutput
+}
+
+type GetClusterOptionServiceLbConfigArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+}
+
+func (GetClusterOptionServiceLbConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionServiceLbConfig)(nil)).Elem()
+}
+
+func (i GetClusterOptionServiceLbConfigArgs) ToGetClusterOptionServiceLbConfigOutput() GetClusterOptionServiceLbConfigOutput {
+	return i.ToGetClusterOptionServiceLbConfigOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionServiceLbConfigArgs) ToGetClusterOptionServiceLbConfigOutputWithContext(ctx context.Context) GetClusterOptionServiceLbConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionServiceLbConfigOutput)
+}
+
+// GetClusterOptionServiceLbConfigArrayInput is an input type that accepts GetClusterOptionServiceLbConfigArray and GetClusterOptionServiceLbConfigArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionServiceLbConfigArrayInput` via:
+//
+//	GetClusterOptionServiceLbConfigArray{ GetClusterOptionServiceLbConfigArgs{...} }
+type GetClusterOptionServiceLbConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionServiceLbConfigArrayOutput() GetClusterOptionServiceLbConfigArrayOutput
+	ToGetClusterOptionServiceLbConfigArrayOutputWithContext(context.Context) GetClusterOptionServiceLbConfigArrayOutput
+}
+
+type GetClusterOptionServiceLbConfigArray []GetClusterOptionServiceLbConfigInput
+
+func (GetClusterOptionServiceLbConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionServiceLbConfig)(nil)).Elem()
+}
+
+func (i GetClusterOptionServiceLbConfigArray) ToGetClusterOptionServiceLbConfigArrayOutput() GetClusterOptionServiceLbConfigArrayOutput {
+	return i.ToGetClusterOptionServiceLbConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionServiceLbConfigArray) ToGetClusterOptionServiceLbConfigArrayOutputWithContext(ctx context.Context) GetClusterOptionServiceLbConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionServiceLbConfigArrayOutput)
+}
+
+type GetClusterOptionServiceLbConfigOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionServiceLbConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionServiceLbConfig)(nil)).Elem()
+}
+
+func (o GetClusterOptionServiceLbConfigOutput) ToGetClusterOptionServiceLbConfigOutput() GetClusterOptionServiceLbConfigOutput {
+	return o
+}
+
+func (o GetClusterOptionServiceLbConfigOutput) ToGetClusterOptionServiceLbConfigOutputWithContext(ctx context.Context) GetClusterOptionServiceLbConfigOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetClusterOptionServiceLbConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterOptionServiceLbConfig) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetClusterOptionServiceLbConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterOptionServiceLbConfig) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+type GetClusterOptionServiceLbConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionServiceLbConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionServiceLbConfig)(nil)).Elem()
+}
+
+func (o GetClusterOptionServiceLbConfigArrayOutput) ToGetClusterOptionServiceLbConfigArrayOutput() GetClusterOptionServiceLbConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionServiceLbConfigArrayOutput) ToGetClusterOptionServiceLbConfigArrayOutputWithContext(ctx context.Context) GetClusterOptionServiceLbConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionServiceLbConfigArrayOutput) Index(i pulumi.IntInput) GetClusterOptionServiceLbConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionServiceLbConfig {
+		return vs[0].([]GetClusterOptionServiceLbConfig)[vs[1].(int)]
+	}).(GetClusterOptionServiceLbConfigOutput)
 }
 
 type GetClusterWorkloadMappingsFilter struct {
@@ -17477,8 +18859,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsAddonConfigurationArrayInput)(nil)).Elem(), GetAddonsAddonConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsFilterInput)(nil)).Elem(), GetAddonsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsFilterArrayInput)(nil)).Elem(), GetAddonsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterClusterPodNetworkOptionInput)(nil)).Elem(), GetClusterClusterPodNetworkOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterClusterPodNetworkOptionArrayInput)(nil)).Elem(), GetClusterClusterPodNetworkOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterEndpointInput)(nil)).Elem(), GetClusterEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterEndpointArrayInput)(nil)).Elem(), GetClusterEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterEndpointConfigInput)(nil)).Elem(), GetClusterEndpointConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterEndpointConfigArrayInput)(nil)).Elem(), GetClusterEndpointConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterImagePolicyConfigInput)(nil)).Elem(), GetClusterImagePolicyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterImagePolicyConfigArrayInput)(nil)).Elem(), GetClusterImagePolicyConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterImagePolicyConfigKeyDetailInput)(nil)).Elem(), GetClusterImagePolicyConfigKeyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterImagePolicyConfigKeyDetailArrayInput)(nil)).Elem(), GetClusterImagePolicyConfigKeyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterMetadataInput)(nil)).Elem(), GetClusterMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterMetadataArrayInput)(nil)).Elem(), GetClusterMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionInput)(nil)).Elem(), GetClusterOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionArrayInput)(nil)).Elem(), GetClusterOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionAddOnInput)(nil)).Elem(), GetClusterOptionAddOnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionAddOnArrayInput)(nil)).Elem(), GetClusterOptionAddOnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionAdmissionControllerOptionInput)(nil)).Elem(), GetClusterOptionAdmissionControllerOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionAdmissionControllerOptionArrayInput)(nil)).Elem(), GetClusterOptionAdmissionControllerOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionArrayInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionKubernetesNetworkConfigInput)(nil)).Elem(), GetClusterOptionKubernetesNetworkConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionKubernetesNetworkConfigArrayInput)(nil)).Elem(), GetClusterOptionKubernetesNetworkConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionPersistentVolumeConfigInput)(nil)).Elem(), GetClusterOptionPersistentVolumeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionPersistentVolumeConfigArrayInput)(nil)).Elem(), GetClusterOptionPersistentVolumeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionServiceLbConfigInput)(nil)).Elem(), GetClusterOptionServiceLbConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionServiceLbConfigArrayInput)(nil)).Elem(), GetClusterOptionServiceLbConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterWorkloadMappingsFilterInput)(nil)).Elem(), GetClusterWorkloadMappingsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterWorkloadMappingsFilterArrayInput)(nil)).Elem(), GetClusterWorkloadMappingsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterWorkloadMappingsWorkloadMappingInput)(nil)).Elem(), GetClusterWorkloadMappingsWorkloadMappingArgs{})
@@ -17729,8 +19135,32 @@ func init() {
 	pulumi.RegisterOutputType(GetAddonsAddonConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetAddonsFilterOutput{})
 	pulumi.RegisterOutputType(GetAddonsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterClusterPodNetworkOptionOutput{})
+	pulumi.RegisterOutputType(GetClusterClusterPodNetworkOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterEndpointOutput{})
+	pulumi.RegisterOutputType(GetClusterEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterEndpointConfigOutput{})
+	pulumi.RegisterOutputType(GetClusterEndpointConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterImagePolicyConfigOutput{})
+	pulumi.RegisterOutputType(GetClusterImagePolicyConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterImagePolicyConfigKeyDetailOutput{})
+	pulumi.RegisterOutputType(GetClusterImagePolicyConfigKeyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterMetadataOutput{})
+	pulumi.RegisterOutputType(GetClusterMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionAddOnOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionAddOnArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionAdmissionControllerOptionOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionAdmissionControllerOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionKubernetesNetworkConfigOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionKubernetesNetworkConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionPersistentVolumeConfigOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionPersistentVolumeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionServiceLbConfigOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionServiceLbConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterWorkloadMappingsFilterOutput{})
 	pulumi.RegisterOutputType(GetClusterWorkloadMappingsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterWorkloadMappingsWorkloadMappingOutput{})

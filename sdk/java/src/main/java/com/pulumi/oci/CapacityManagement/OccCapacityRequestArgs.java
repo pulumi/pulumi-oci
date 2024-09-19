@@ -21,18 +21,18 @@ public final class OccCapacityRequestArgs extends com.pulumi.resources.ResourceA
     public static final OccCapacityRequestArgs Empty = new OccCapacityRequestArgs();
 
     /**
-     * The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      * 
      */
-    @Import(name="availabilityDomain", required=true)
-    private Output<String> availabilityDomain;
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+     * @return The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
 
     /**
@@ -218,9 +218,6 @@ public final class OccCapacityRequestArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="requestState")
     private @Nullable Output<String> requestState;
@@ -228,12 +225,30 @@ public final class OccCapacityRequestArgs extends com.pulumi.resources.ResourceA
     /**
      * @return (Updatable) The subset of request states available for creating the capacity request.
      * 
+     */
+    public Optional<Output<String>> requestState() {
+        return Optional.ofNullable(this.requestState);
+    }
+
+    /**
+     * Type of Capacity Request(New or Transfer)
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> requestState() {
-        return Optional.ofNullable(this.requestState);
+    @Import(name="requestType")
+    private @Nullable Output<String> requestType;
+
+    /**
+     * @return Type of Capacity Request(New or Transfer)
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> requestType() {
+        return Optional.ofNullable(this.requestType);
     }
 
     private OccCapacityRequestArgs() {}
@@ -253,6 +268,7 @@ public final class OccCapacityRequestArgs extends com.pulumi.resources.ResourceA
         this.patchOperations = $.patchOperations;
         this.region = $.region;
         this.requestState = $.requestState;
+        this.requestType = $.requestType;
     }
 
     public static Builder builder() {
@@ -274,18 +290,18 @@ public final class OccCapacityRequestArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param availabilityDomain The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+         * @param availabilityDomain The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
          * 
          * @return builder
          * 
          */
-        public Builder availabilityDomain(Output<String> availabilityDomain) {
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
             $.availabilityDomain = availabilityDomain;
             return this;
         }
 
         /**
-         * @param availabilityDomain The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+         * @param availabilityDomain The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
          * 
          * @return builder
          * 
@@ -569,9 +585,6 @@ public final class OccCapacityRequestArgs extends com.pulumi.resources.ResourceA
         /**
          * @param requestState (Updatable) The subset of request states available for creating the capacity request.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -583,9 +596,6 @@ public final class OccCapacityRequestArgs extends com.pulumi.resources.ResourceA
         /**
          * @param requestState (Updatable) The subset of request states available for creating the capacity request.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -593,10 +603,34 @@ public final class OccCapacityRequestArgs extends com.pulumi.resources.ResourceA
             return requestState(Output.of(requestState));
         }
 
+        /**
+         * @param requestType Type of Capacity Request(New or Transfer)
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestType(@Nullable Output<String> requestType) {
+            $.requestType = requestType;
+            return this;
+        }
+
+        /**
+         * @param requestType Type of Capacity Request(New or Transfer)
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestType(String requestType) {
+            return requestType(Output.of(requestType));
+        }
+
         public OccCapacityRequestArgs build() {
-            if ($.availabilityDomain == null) {
-                throw new MissingRequiredPropertyException("OccCapacityRequestArgs", "availabilityDomain");
-            }
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("OccCapacityRequestArgs", "compartmentId");
             }

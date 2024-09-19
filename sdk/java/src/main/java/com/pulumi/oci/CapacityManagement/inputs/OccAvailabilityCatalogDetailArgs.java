@@ -6,6 +6,7 @@ package com.pulumi.oci.CapacityManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,14 +17,14 @@ public final class OccAvailabilityCatalogDetailArgs extends com.pulumi.resources
     public static final OccAvailabilityCatalogDetailArgs Empty = new OccAvailabilityCatalogDetailArgs();
 
     /**
-     * The quantity of available resource that the customer can request.
+     * The quantity of resource currently available that the customer can request.
      * 
      */
     @Import(name="availableQuantity")
     private @Nullable Output<String> availableQuantity;
 
     /**
-     * @return The quantity of available resource that the customer can request.
+     * @return The quantity of resource currently available that the customer can request.
      * 
      */
     public Optional<Output<String>> availableQuantity() {
@@ -76,6 +77,21 @@ public final class OccAvailabilityCatalogDetailArgs extends com.pulumi.resources
     }
 
     /**
+     * The quantity of resource currently demanded by the customer.
+     * 
+     */
+    @Import(name="demandedQuantity")
+    private @Nullable Output<String> demandedQuantity;
+
+    /**
+     * @return The quantity of resource currently demanded by the customer.
+     * 
+     */
+    public Optional<Output<String>> demandedQuantity() {
+        return Optional.ofNullable(this.demandedQuantity);
+    }
+
+    /**
      * The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      * 
      */
@@ -121,6 +137,36 @@ public final class OccAvailabilityCatalogDetailArgs extends com.pulumi.resources
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
+     * The total quantity of resource that the customer can request.
+     * 
+     */
+    @Import(name="totalAvailableQuantity")
+    private @Nullable Output<String> totalAvailableQuantity;
+
+    /**
+     * @return The total quantity of resource that the customer can request.
+     * 
+     */
+    public Optional<Output<String>> totalAvailableQuantity() {
+        return Optional.ofNullable(this.totalAvailableQuantity);
+    }
+
+    /**
      * The unit in which the resource available is measured.
      * 
      */
@@ -157,9 +203,12 @@ public final class OccAvailabilityCatalogDetailArgs extends com.pulumi.resources
         this.catalogId = $.catalogId;
         this.dateExpectedCapacityHandover = $.dateExpectedCapacityHandover;
         this.dateFinalCustomerOrder = $.dateFinalCustomerOrder;
+        this.demandedQuantity = $.demandedQuantity;
         this.namespace = $.namespace;
         this.resourceName = $.resourceName;
         this.resourceType = $.resourceType;
+        this.systemTags = $.systemTags;
+        this.totalAvailableQuantity = $.totalAvailableQuantity;
         this.unit = $.unit;
         this.workloadType = $.workloadType;
     }
@@ -183,7 +232,7 @@ public final class OccAvailabilityCatalogDetailArgs extends com.pulumi.resources
         }
 
         /**
-         * @param availableQuantity The quantity of available resource that the customer can request.
+         * @param availableQuantity The quantity of resource currently available that the customer can request.
          * 
          * @return builder
          * 
@@ -194,7 +243,7 @@ public final class OccAvailabilityCatalogDetailArgs extends com.pulumi.resources
         }
 
         /**
-         * @param availableQuantity The quantity of available resource that the customer can request.
+         * @param availableQuantity The quantity of resource currently available that the customer can request.
          * 
          * @return builder
          * 
@@ -267,6 +316,27 @@ public final class OccAvailabilityCatalogDetailArgs extends com.pulumi.resources
         }
 
         /**
+         * @param demandedQuantity The quantity of resource currently demanded by the customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder demandedQuantity(@Nullable Output<String> demandedQuantity) {
+            $.demandedQuantity = demandedQuantity;
+            return this;
+        }
+
+        /**
+         * @param demandedQuantity The quantity of resource currently demanded by the customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder demandedQuantity(String demandedQuantity) {
+            return demandedQuantity(Output.of(demandedQuantity));
+        }
+
+        /**
          * @param namespace The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
          * 
          * @return builder
@@ -327,6 +397,48 @@ public final class OccAvailabilityCatalogDetailArgs extends com.pulumi.resources
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param totalAvailableQuantity The total quantity of resource that the customer can request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalAvailableQuantity(@Nullable Output<String> totalAvailableQuantity) {
+            $.totalAvailableQuantity = totalAvailableQuantity;
+            return this;
+        }
+
+        /**
+         * @param totalAvailableQuantity The total quantity of resource that the customer can request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalAvailableQuantity(String totalAvailableQuantity) {
+            return totalAvailableQuantity(Output.of(totalAvailableQuantity));
         }
 
         /**

@@ -18,6 +18,24 @@ namespace Pulumi.Oci.CapacityManagement.Inputs
         [Input("actualHandoverQuantity")]
         public Input<string>? ActualHandoverQuantity { get; set; }
 
+        [Input("associatedOccHandoverResourceBlockLists")]
+        private InputList<Inputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs>? _associatedOccHandoverResourceBlockLists;
+
+        /// <summary>
+        /// A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        /// </summary>
+        public InputList<Inputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs> AssociatedOccHandoverResourceBlockLists
+        {
+            get => _associatedOccHandoverResourceBlockLists ?? (_associatedOccHandoverResourceBlockLists = new InputList<Inputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs>());
+            set => _associatedOccHandoverResourceBlockLists = value;
+        }
+
+        /// <summary>
+        /// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
         /// <summary>
         /// The date on which the actual handover quantity of resources is delivered.
         /// </summary>
@@ -53,6 +71,12 @@ namespace Pulumi.Oci.CapacityManagement.Inputs
         /// </summary>
         [Input("resourceType", required: true)]
         public Input<string> ResourceType { get; set; } = null!;
+
+        /// <summary>
+        /// The WorkloadType from where capacity request are to be transferred.
+        /// </summary>
+        [Input("sourceWorkloadType")]
+        public Input<string>? SourceWorkloadType { get; set; }
 
         /// <summary>
         /// The type of the workload (Generic/ROW).

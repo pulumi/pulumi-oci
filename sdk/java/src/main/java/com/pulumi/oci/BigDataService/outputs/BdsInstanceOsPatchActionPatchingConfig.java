@@ -13,29 +13,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class BdsInstanceOsPatchActionPatchingConfig {
+    /**
+     * @return How many nodes to be patched in each iteration.
+     * 
+     */
     private @Nullable Integer batchSize;
+    /**
+     * @return Type of strategy used for detailed patching configuration
+     * 
+     */
     private String patchingConfigStrategy;
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+     * 
+     */
     private @Nullable Integer toleranceThresholdPerBatch;
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+     * 
+     */
     private @Nullable Integer toleranceThresholdPerDomain;
+    /**
+     * @return The wait time between batches in seconds.
+     * 
+     */
     private @Nullable Integer waitTimeBetweenBatchInSeconds;
+    /**
+     * @return The wait time between AD/FD in seconds.
+     * 
+     */
     private @Nullable Integer waitTimeBetweenDomainInSeconds;
 
     private BdsInstanceOsPatchActionPatchingConfig() {}
+    /**
+     * @return How many nodes to be patched in each iteration.
+     * 
+     */
     public Optional<Integer> batchSize() {
         return Optional.ofNullable(this.batchSize);
     }
+    /**
+     * @return Type of strategy used for detailed patching configuration
+     * 
+     */
     public String patchingConfigStrategy() {
         return this.patchingConfigStrategy;
     }
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+     * 
+     */
     public Optional<Integer> toleranceThresholdPerBatch() {
         return Optional.ofNullable(this.toleranceThresholdPerBatch);
     }
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+     * 
+     */
     public Optional<Integer> toleranceThresholdPerDomain() {
         return Optional.ofNullable(this.toleranceThresholdPerDomain);
     }
+    /**
+     * @return The wait time between batches in seconds.
+     * 
+     */
     public Optional<Integer> waitTimeBetweenBatchInSeconds() {
         return Optional.ofNullable(this.waitTimeBetweenBatchInSeconds);
     }
+    /**
+     * @return The wait time between AD/FD in seconds.
+     * 
+     */
     public Optional<Integer> waitTimeBetweenDomainInSeconds() {
         return Optional.ofNullable(this.waitTimeBetweenDomainInSeconds);
     }

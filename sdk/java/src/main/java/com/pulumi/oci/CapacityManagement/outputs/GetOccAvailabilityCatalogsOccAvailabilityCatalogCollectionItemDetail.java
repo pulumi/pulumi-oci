@@ -6,12 +6,13 @@ package com.pulumi.oci.CapacityManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail {
     /**
-     * @return The quantity of available resource that the customer can request.
+     * @return The quantity of resource currently available that the customer can request.
      * 
      */
     private String availableQuantity;
@@ -31,6 +32,11 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
      */
     private String dateFinalCustomerOrder;
     /**
+     * @return The quantity of resource currently demanded by the customer.
+     * 
+     */
+    private String demandedQuantity;
+    /**
      * @return The namespace by which we would filter the list.
      * 
      */
@@ -46,6 +52,16 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
      */
     private String resourceType;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
+     * @return The total quantity of resource that the customer can request.
+     * 
+     */
+    private String totalAvailableQuantity;
+    /**
      * @return The unit in which the resource available is measured.
      * 
      */
@@ -58,7 +74,7 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
 
     private GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail() {}
     /**
-     * @return The quantity of available resource that the customer can request.
+     * @return The quantity of resource currently available that the customer can request.
      * 
      */
     public String availableQuantity() {
@@ -86,6 +102,13 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
         return this.dateFinalCustomerOrder;
     }
     /**
+     * @return The quantity of resource currently demanded by the customer.
+     * 
+     */
+    public String demandedQuantity() {
+        return this.demandedQuantity;
+    }
+    /**
      * @return The namespace by which we would filter the list.
      * 
      */
@@ -105,6 +128,20 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
      */
     public String resourceType() {
         return this.resourceType;
+    }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
+     * @return The total quantity of resource that the customer can request.
+     * 
+     */
+    public String totalAvailableQuantity() {
+        return this.totalAvailableQuantity;
     }
     /**
      * @return The unit in which the resource available is measured.
@@ -134,9 +171,12 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
         private String catalogId;
         private String dateExpectedCapacityHandover;
         private String dateFinalCustomerOrder;
+        private String demandedQuantity;
         private String namespace;
         private String resourceName;
         private String resourceType;
+        private Map<String,String> systemTags;
+        private String totalAvailableQuantity;
         private String unit;
         private String workloadType;
         public Builder() {}
@@ -146,9 +186,12 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
     	      this.catalogId = defaults.catalogId;
     	      this.dateExpectedCapacityHandover = defaults.dateExpectedCapacityHandover;
     	      this.dateFinalCustomerOrder = defaults.dateFinalCustomerOrder;
+    	      this.demandedQuantity = defaults.demandedQuantity;
     	      this.namespace = defaults.namespace;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceType = defaults.resourceType;
+    	      this.systemTags = defaults.systemTags;
+    	      this.totalAvailableQuantity = defaults.totalAvailableQuantity;
     	      this.unit = defaults.unit;
     	      this.workloadType = defaults.workloadType;
         }
@@ -186,6 +229,14 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
             return this;
         }
         @CustomType.Setter
+        public Builder demandedQuantity(String demandedQuantity) {
+            if (demandedQuantity == null) {
+              throw new MissingRequiredPropertyException("GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail", "demandedQuantity");
+            }
+            this.demandedQuantity = demandedQuantity;
+            return this;
+        }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             if (namespace == null) {
               throw new MissingRequiredPropertyException("GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail", "namespace");
@@ -210,6 +261,22 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder totalAvailableQuantity(String totalAvailableQuantity) {
+            if (totalAvailableQuantity == null) {
+              throw new MissingRequiredPropertyException("GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail", "totalAvailableQuantity");
+            }
+            this.totalAvailableQuantity = totalAvailableQuantity;
+            return this;
+        }
+        @CustomType.Setter
         public Builder unit(String unit) {
             if (unit == null) {
               throw new MissingRequiredPropertyException("GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetail", "unit");
@@ -231,9 +298,12 @@ public final class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionIte
             _resultValue.catalogId = catalogId;
             _resultValue.dateExpectedCapacityHandover = dateExpectedCapacityHandover;
             _resultValue.dateFinalCustomerOrder = dateFinalCustomerOrder;
+            _resultValue.demandedQuantity = demandedQuantity;
             _resultValue.namespace = namespace;
             _resultValue.resourceName = resourceName;
             _resultValue.resourceType = resourceType;
+            _resultValue.systemTags = systemTags;
+            _resultValue.totalAvailableQuantity = totalAvailableQuantity;
             _resultValue.unit = unit;
             _resultValue.workloadType = workloadType;
             return _resultValue;

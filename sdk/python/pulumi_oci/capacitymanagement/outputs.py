@@ -14,11 +14,27 @@ __all__ = [
     'OccAvailabilityCatalogDetail',
     'OccAvailabilityCatalogMetadataDetails',
     'OccCapacityRequestDetail',
+    'OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList',
     'OccCapacityRequestPatchOperation',
+    'OccCustomerGroupCustomersList',
+    'GetInternalNamespaceOccOverviewsFilterResult',
+    'GetInternalNamespaceOccOverviewsOccOverviewCollectionResult',
+    'GetInternalNamespaceOccOverviewsOccOverviewCollectionItemResult',
     'GetInternalOccAvailabilityCatalogsFilterResult',
     'GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionResult',
     'GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResult',
     'GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailResult',
+    'GetInternalOccHandoverResourceBlockDetailsFilterResult',
+    'GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionResult',
+    'GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemResult',
+    'GetInternalOccHandoverResourceBlocksFilterResult',
+    'GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionResult',
+    'GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult',
+    'GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult',
+    'GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult',
+    'GetNamespaceOccOverviewsFilterResult',
+    'GetNamespaceOccOverviewsOccOverviewCollectionResult',
+    'GetNamespaceOccOverviewsOccOverviewCollectionItemResult',
     'GetOccAvailabilityCatalogDetailResult',
     'GetOccAvailabilityCatalogMetadataDetailResult',
     'GetOccAvailabilityCatalogOccAvailabilitiesFilterResult',
@@ -30,17 +46,27 @@ __all__ = [
     'GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailResult',
     'GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailResult',
     'GetOccCapacityRequestDetailResult',
+    'GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListResult',
     'GetOccCapacityRequestPatchOperationResult',
     'GetOccCapacityRequestsFilterResult',
     'GetOccCapacityRequestsOccCapacityRequestCollectionResult',
     'GetOccCapacityRequestsOccCapacityRequestCollectionItemResult',
     'GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailResult',
+    'GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListResult',
     'GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationResult',
     'GetOccCustomerGroupCustomersListResult',
     'GetOccCustomerGroupsFilterResult',
     'GetOccCustomerGroupsOccCustomerGroupCollectionResult',
     'GetOccCustomerGroupsOccCustomerGroupCollectionItemResult',
     'GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListResult',
+    'GetOccHandoverResourceBlockDetailsFilterResult',
+    'GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionResult',
+    'GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemResult',
+    'GetOccHandoverResourceBlocksFilterResult',
+    'GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionResult',
+    'GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult',
+    'GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult',
+    'GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult',
 ]
 
 @pulumi.output_type
@@ -56,10 +82,16 @@ class OccAvailabilityCatalogDetail(dict):
             suggest = "date_expected_capacity_handover"
         elif key == "dateFinalCustomerOrder":
             suggest = "date_final_customer_order"
+        elif key == "demandedQuantity":
+            suggest = "demanded_quantity"
         elif key == "resourceName":
             suggest = "resource_name"
         elif key == "resourceType":
             suggest = "resource_type"
+        elif key == "systemTags":
+            suggest = "system_tags"
+        elif key == "totalAvailableQuantity":
+            suggest = "total_available_quantity"
         elif key == "workloadType":
             suggest = "workload_type"
 
@@ -79,19 +111,25 @@ class OccAvailabilityCatalogDetail(dict):
                  catalog_id: Optional[str] = None,
                  date_expected_capacity_handover: Optional[str] = None,
                  date_final_customer_order: Optional[str] = None,
+                 demanded_quantity: Optional[str] = None,
                  namespace: Optional[str] = None,
                  resource_name: Optional[str] = None,
                  resource_type: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, str]] = None,
+                 total_available_quantity: Optional[str] = None,
                  unit: Optional[str] = None,
                  workload_type: Optional[str] = None):
         """
-        :param str available_quantity: The quantity of available resource that the customer can request.
+        :param str available_quantity: The quantity of resource currently available that the customer can request.
         :param str catalog_id: The OCID of the availability catalog.
         :param str date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param str date_final_customer_order: The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+        :param str demanded_quantity: The quantity of resource currently demanded by the customer.
         :param str namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param str resource_name: The name of the resource that the customer can request.
         :param str resource_type: The different types of resources against which customers can place capacity requests.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str total_available_quantity: The total quantity of resource that the customer can request.
         :param str unit: The unit in which the resource available is measured.
         :param str workload_type: The type of workload (Generic/ROW).
         """
@@ -103,12 +141,18 @@ class OccAvailabilityCatalogDetail(dict):
             pulumi.set(__self__, "date_expected_capacity_handover", date_expected_capacity_handover)
         if date_final_customer_order is not None:
             pulumi.set(__self__, "date_final_customer_order", date_final_customer_order)
+        if demanded_quantity is not None:
+            pulumi.set(__self__, "demanded_quantity", demanded_quantity)
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
         if resource_name is not None:
             pulumi.set(__self__, "resource_name", resource_name)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if total_available_quantity is not None:
+            pulumi.set(__self__, "total_available_quantity", total_available_quantity)
         if unit is not None:
             pulumi.set(__self__, "unit", unit)
         if workload_type is not None:
@@ -118,7 +162,7 @@ class OccAvailabilityCatalogDetail(dict):
     @pulumi.getter(name="availableQuantity")
     def available_quantity(self) -> Optional[str]:
         """
-        The quantity of available resource that the customer can request.
+        The quantity of resource currently available that the customer can request.
         """
         return pulumi.get(self, "available_quantity")
 
@@ -147,6 +191,14 @@ class OccAvailabilityCatalogDetail(dict):
         return pulumi.get(self, "date_final_customer_order")
 
     @property
+    @pulumi.getter(name="demandedQuantity")
+    def demanded_quantity(self) -> Optional[str]:
+        """
+        The quantity of resource currently demanded by the customer.
+        """
+        return pulumi.get(self, "demanded_quantity")
+
+    @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
         """
@@ -169,6 +221,22 @@ class OccAvailabilityCatalogDetail(dict):
         The different types of resources against which customers can place capacity requests.
         """
         return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="totalAvailableQuantity")
+    def total_available_quantity(self) -> Optional[str]:
+        """
+        The total quantity of resource that the customer can request.
+        """
+        return pulumi.get(self, "total_available_quantity")
 
     @property
     @pulumi.getter
@@ -237,12 +305,18 @@ class OccCapacityRequestDetail(dict):
             suggest = "workload_type"
         elif key == "actualHandoverQuantity":
             suggest = "actual_handover_quantity"
+        elif key == "associatedOccHandoverResourceBlockLists":
+            suggest = "associated_occ_handover_resource_block_lists"
+        elif key == "availabilityDomain":
+            suggest = "availability_domain"
         elif key == "dateActualHandover":
             suggest = "date_actual_handover"
         elif key == "dateExpectedHandover":
             suggest = "date_expected_handover"
         elif key == "expectedHandoverQuantity":
             suggest = "expected_handover_quantity"
+        elif key == "sourceWorkloadType":
+            suggest = "source_workload_type"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in OccCapacityRequestDetail. Access the value via the '{suggest}' property getter instead.")
@@ -261,18 +335,24 @@ class OccCapacityRequestDetail(dict):
                  resource_type: str,
                  workload_type: str,
                  actual_handover_quantity: Optional[str] = None,
+                 associated_occ_handover_resource_block_lists: Optional[Sequence['outputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList']] = None,
+                 availability_domain: Optional[str] = None,
                  date_actual_handover: Optional[str] = None,
                  date_expected_handover: Optional[str] = None,
-                 expected_handover_quantity: Optional[str] = None):
+                 expected_handover_quantity: Optional[str] = None,
+                 source_workload_type: Optional[str] = None):
         """
         :param str demand_quantity: The number of compute server's with name <resourceName> required by the user.
         :param str resource_name: The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
         :param str resource_type: The type of the resource against which the user wants to place a capacity request.
         :param str workload_type: The type of the workload (Generic/ROW).
         :param str actual_handover_quantity: The actual handed over quantity of resources at the time of request resolution.
+        :param Sequence['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs'] associated_occ_handover_resource_block_lists: A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        :param str availability_domain: The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         :param str date_actual_handover: The date on which the actual handover quantity of resources is delivered.
         :param str date_expected_handover: The date on which the latest increment to supplied quantity of resources was delivered.
         :param str expected_handover_quantity: The incremental quantity of resources supplied as the provisioning is underway.
+        :param str source_workload_type: The WorkloadType from where capacity request are to be transferred.
         """
         pulumi.set(__self__, "demand_quantity", demand_quantity)
         pulumi.set(__self__, "resource_name", resource_name)
@@ -280,12 +360,18 @@ class OccCapacityRequestDetail(dict):
         pulumi.set(__self__, "workload_type", workload_type)
         if actual_handover_quantity is not None:
             pulumi.set(__self__, "actual_handover_quantity", actual_handover_quantity)
+        if associated_occ_handover_resource_block_lists is not None:
+            pulumi.set(__self__, "associated_occ_handover_resource_block_lists", associated_occ_handover_resource_block_lists)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if date_actual_handover is not None:
             pulumi.set(__self__, "date_actual_handover", date_actual_handover)
         if date_expected_handover is not None:
             pulumi.set(__self__, "date_expected_handover", date_expected_handover)
         if expected_handover_quantity is not None:
             pulumi.set(__self__, "expected_handover_quantity", expected_handover_quantity)
+        if source_workload_type is not None:
+            pulumi.set(__self__, "source_workload_type", source_workload_type)
 
     @property
     @pulumi.getter(name="demandQuantity")
@@ -328,6 +414,22 @@ class OccCapacityRequestDetail(dict):
         return pulumi.get(self, "actual_handover_quantity")
 
     @property
+    @pulumi.getter(name="associatedOccHandoverResourceBlockLists")
+    def associated_occ_handover_resource_block_lists(self) -> Optional[Sequence['outputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList']]:
+        """
+        A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        """
+        return pulumi.get(self, "associated_occ_handover_resource_block_lists")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        """
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
     @pulumi.getter(name="dateActualHandover")
     def date_actual_handover(self) -> Optional[str]:
         """
@@ -350,6 +452,64 @@ class OccCapacityRequestDetail(dict):
         The incremental quantity of resources supplied as the provisioning is underway.
         """
         return pulumi.get(self, "expected_handover_quantity")
+
+    @property
+    @pulumi.getter(name="sourceWorkloadType")
+    def source_workload_type(self) -> Optional[str]:
+        """
+        The WorkloadType from where capacity request are to be transferred.
+        """
+        return pulumi.get(self, "source_workload_type")
+
+
+@pulumi.output_type
+class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "handoverQuantity":
+            suggest = "handover_quantity"
+        elif key == "occHandoverResourceBlockId":
+            suggest = "occ_handover_resource_block_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OccCapacityRequestDetailAssociatedOccHandoverResourceBlockList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 handover_quantity: Optional[str] = None,
+                 occ_handover_resource_block_id: Optional[str] = None):
+        """
+        :param str handover_quantity: The total quantity of the resource that was made available to the customer as part of this resource block
+        :param str occ_handover_resource_block_id: The OCID of the handed over resource block.
+        """
+        if handover_quantity is not None:
+            pulumi.set(__self__, "handover_quantity", handover_quantity)
+        if occ_handover_resource_block_id is not None:
+            pulumi.set(__self__, "occ_handover_resource_block_id", occ_handover_resource_block_id)
+
+    @property
+    @pulumi.getter(name="handoverQuantity")
+    def handover_quantity(self) -> Optional[str]:
+        """
+        The total quantity of the resource that was made available to the customer as part of this resource block
+        """
+        return pulumi.get(self, "handover_quantity")
+
+    @property
+    @pulumi.getter(name="occHandoverResourceBlockId")
+    def occ_handover_resource_block_id(self) -> Optional[str]:
+        """
+        The OCID of the handed over resource block.
+        """
+        return pulumi.get(self, "occ_handover_resource_block_id")
 
 
 @pulumi.output_type
@@ -444,6 +604,276 @@ class OccCapacityRequestPatchOperation(dict):
         (Updatable)
         """
         return pulumi.get(self, "selected_item")
+
+
+@pulumi.output_type
+class OccCustomerGroupCustomersList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+        elif key == "tenancyId":
+            suggest = "tenancy_id"
+        elif key == "occCustomerGroupId":
+            suggest = "occ_customer_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OccCustomerGroupCustomersList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OccCustomerGroupCustomersList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OccCustomerGroupCustomersList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: str,
+                 tenancy_id: str,
+                 description: Optional[str] = None,
+                 occ_customer_group_id: Optional[str] = None,
+                 status: Optional[str] = None):
+        """
+        :param str display_name: The display name for the customer.
+        :param str tenancy_id: The OCID of the tenancy belonging to the customer.
+        :param str description: The description about the customer group.
+        :param str occ_customer_group_id: The OCID of the customer group.
+        :param str status: To determine whether the customer is enabled/disabled.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if occ_customer_group_id is not None:
+            pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The display name for the customer.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> str:
+        """
+        The OCID of the tenancy belonging to the customer.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        The description about the customer group.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> Optional[str]:
+        """
+        The OCID of the customer group.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        To determine whether the customer is enabled/disabled.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetInternalNamespaceOccOverviewsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInternalNamespaceOccOverviewsOccOverviewCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalNamespaceOccOverviewsOccOverviewCollectionItemResult']):
+        """
+        :param Sequence['GetInternalNamespaceOccOverviewsOccOverviewCollectionItemArgs'] items: An array of overview summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalNamespaceOccOverviewsOccOverviewCollectionItemResult']:
+        """
+        An array of overview summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalNamespaceOccOverviewsOccOverviewCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 capacity_requests_blob: str,
+                 compartment_id: str,
+                 period_value: str,
+                 resource_name: str,
+                 total_available: str,
+                 total_cancelled: str,
+                 total_demanded: str,
+                 total_rejected: str,
+                 total_supplied: str,
+                 total_unfulfilled: str,
+                 unit: str,
+                 workload_type_breakdown_blob: str):
+        """
+        :param str capacity_requests_blob: A raw json blob containing all the capacity requests corresponding to the resource name
+        :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param str period_value: The name of the month along with year for which this summary corresponds to.
+        :param str resource_name: The name of the resource for which we have aggregated the value.
+        :param str total_available: The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+        :param str total_cancelled: The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+        :param str total_demanded: The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+        :param str total_rejected: The quantity of the resource which is rejected by Oracle.
+        :param str total_supplied: The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+        :param str total_unfulfilled: The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+        :param str unit: The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+        :param str workload_type_breakdown_blob: A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+        """
+        pulumi.set(__self__, "capacity_requests_blob", capacity_requests_blob)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "period_value", period_value)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "total_available", total_available)
+        pulumi.set(__self__, "total_cancelled", total_cancelled)
+        pulumi.set(__self__, "total_demanded", total_demanded)
+        pulumi.set(__self__, "total_rejected", total_rejected)
+        pulumi.set(__self__, "total_supplied", total_supplied)
+        pulumi.set(__self__, "total_unfulfilled", total_unfulfilled)
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "workload_type_breakdown_blob", workload_type_breakdown_blob)
+
+    @property
+    @pulumi.getter(name="capacityRequestsBlob")
+    def capacity_requests_blob(self) -> str:
+        """
+        A raw json blob containing all the capacity requests corresponding to the resource name
+        """
+        return pulumi.get(self, "capacity_requests_blob")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="periodValue")
+    def period_value(self) -> str:
+        """
+        The name of the month along with year for which this summary corresponds to.
+        """
+        return pulumi.get(self, "period_value")
+
+    @property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> str:
+        """
+        The name of the resource for which we have aggregated the value.
+        """
+        return pulumi.get(self, "resource_name")
+
+    @property
+    @pulumi.getter(name="totalAvailable")
+    def total_available(self) -> str:
+        """
+        The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+        """
+        return pulumi.get(self, "total_available")
+
+    @property
+    @pulumi.getter(name="totalCancelled")
+    def total_cancelled(self) -> str:
+        """
+        The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+        """
+        return pulumi.get(self, "total_cancelled")
+
+    @property
+    @pulumi.getter(name="totalDemanded")
+    def total_demanded(self) -> str:
+        """
+        The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+        """
+        return pulumi.get(self, "total_demanded")
+
+    @property
+    @pulumi.getter(name="totalRejected")
+    def total_rejected(self) -> str:
+        """
+        The quantity of the resource which is rejected by Oracle.
+        """
+        return pulumi.get(self, "total_rejected")
+
+    @property
+    @pulumi.getter(name="totalSupplied")
+    def total_supplied(self) -> str:
+        """
+        The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+        """
+        return pulumi.get(self, "total_supplied")
+
+    @property
+    @pulumi.getter(name="totalUnfulfilled")
+    def total_unfulfilled(self) -> str:
+        """
+        The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+        """
+        return pulumi.get(self, "total_unfulfilled")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+        """
+        return pulumi.get(self, "unit")
+
+    @property
+    @pulumi.getter(name="workloadTypeBreakdownBlob")
+    def workload_type_breakdown_blob(self) -> str:
+        """
+        A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+        """
+        return pulumi.get(self, "workload_type_breakdown_blob")
 
 
 @pulumi.output_type
@@ -682,25 +1112,542 @@ class GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMeta
 
 
 @pulumi.output_type
+class GetInternalOccHandoverResourceBlockDetailsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemResult']):
+        """
+        :param Sequence['GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs'] items: An array of details about an occ handover resource block.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemResult']:
+        """
+        An array of details about an occ handover resource block.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 details: Mapping[str, str],
+                 occ_resource_handover_block_id: str):
+        """
+        :param Mapping[str, str] details: A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+        :param str occ_resource_handover_block_id: The OCID of the occResourceHandoverBlock.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "occ_resource_handover_block_id", occ_resource_handover_block_id)
+
+    @property
+    @pulumi.getter
+    def details(self) -> Mapping[str, str]:
+        """
+        A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+        """
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter(name="occResourceHandoverBlockId")
+    def occ_resource_handover_block_id(self) -> str:
+        """
+        The OCID of the occResourceHandoverBlock.
+        """
+        return pulumi.get(self, "occ_resource_handover_block_id")
+
+
+@pulumi.output_type
+class GetInternalOccHandoverResourceBlocksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult']):
+        """
+        :param Sequence['GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs'] items: An array of occ handover resource blocks.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult']:
+        """
+        An array of occ handover resource blocks.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 associated_capacity_requests: Sequence['outputs.GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult'],
+                 compartment_id: str,
+                 handover_date: str,
+                 handover_resource_name: str,
+                 id: str,
+                 namespace: str,
+                 occ_customer_group_id: str,
+                 placement_details: Sequence['outputs.GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult'],
+                 total_handover_quantity: str):
+        """
+        :param Sequence['GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs'] associated_capacity_requests: A list containing details about the capacity requests against which the resources were provisioned by oracle.
+        :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param str handover_date: The date on which the resource was handed over to the customer.
+        :param str handover_resource_name: A filter to return only the list of resources that match the name provided in this filter.
+        :param str id: The OCID of the resource block.
+        :param str namespace: The namespace enum value that needs to be passed as a required query parameter.
+        :param str occ_customer_group_id: The customer group ocid by which we would filter the list.
+        :param Sequence['GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs'] placement_details: Details like building, room and block where the resource was placed after provisioning in the datacenter.
+        :param str total_handover_quantity: The total quantity of the resource that was made available to the customer by Oracle.
+        """
+        pulumi.set(__self__, "associated_capacity_requests", associated_capacity_requests)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "handover_date", handover_date)
+        pulumi.set(__self__, "handover_resource_name", handover_resource_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        pulumi.set(__self__, "placement_details", placement_details)
+        pulumi.set(__self__, "total_handover_quantity", total_handover_quantity)
+
+    @property
+    @pulumi.getter(name="associatedCapacityRequests")
+    def associated_capacity_requests(self) -> Sequence['outputs.GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult']:
+        """
+        A list containing details about the capacity requests against which the resources were provisioned by oracle.
+        """
+        return pulumi.get(self, "associated_capacity_requests")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="handoverDate")
+    def handover_date(self) -> str:
+        """
+        The date on which the resource was handed over to the customer.
+        """
+        return pulumi.get(self, "handover_date")
+
+    @property
+    @pulumi.getter(name="handoverResourceName")
+    def handover_resource_name(self) -> str:
+        """
+        A filter to return only the list of resources that match the name provided in this filter.
+        """
+        return pulumi.get(self, "handover_resource_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource block.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace enum value that needs to be passed as a required query parameter.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> str:
+        """
+        The customer group ocid by which we would filter the list.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @property
+    @pulumi.getter(name="placementDetails")
+    def placement_details(self) -> Sequence['outputs.GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult']:
+        """
+        Details like building, room and block where the resource was placed after provisioning in the datacenter.
+        """
+        return pulumi.get(self, "placement_details")
+
+    @property
+    @pulumi.getter(name="totalHandoverQuantity")
+    def total_handover_quantity(self) -> str:
+        """
+        The total quantity of the resource that was made available to the customer by Oracle.
+        """
+        return pulumi.get(self, "total_handover_quantity")
+
+
+@pulumi.output_type
+class GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult(dict):
+    def __init__(__self__, *,
+                 handover_quantity: str,
+                 occ_capacity_request_id: str):
+        """
+        :param str handover_quantity: The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+        :param str occ_capacity_request_id: The OCID of the capacity request against which the resources were provisioned.
+        """
+        pulumi.set(__self__, "handover_quantity", handover_quantity)
+        pulumi.set(__self__, "occ_capacity_request_id", occ_capacity_request_id)
+
+    @property
+    @pulumi.getter(name="handoverQuantity")
+    def handover_quantity(self) -> str:
+        """
+        The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+        """
+        return pulumi.get(self, "handover_quantity")
+
+    @property
+    @pulumi.getter(name="occCapacityRequestId")
+    def occ_capacity_request_id(self) -> str:
+        """
+        The OCID of the capacity request against which the resources were provisioned.
+        """
+        return pulumi.get(self, "occ_capacity_request_id")
+
+
+@pulumi.output_type
+class GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 block: str,
+                 building: str,
+                 region: str,
+                 room: str,
+                 workload_type: str):
+        """
+        :param str availability_domain: The availability domain (AD) for which the resources were provisioned.
+        :param str block: The block in the datacenter room where the resource was placed.
+        :param str building: The datacenter building where the resource was placed.
+        :param str region: The name of the region for which the resources were provisioned.
+        :param str room: The name of the room in the dataacenter building where the resource was placed.
+        :param str workload_type: The type of workload to which these resources were provisioned.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "block", block)
+        pulumi.set(__self__, "building", building)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "room", room)
+        pulumi.set(__self__, "workload_type", workload_type)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain (AD) for which the resources were provisioned.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter
+    def block(self) -> str:
+        """
+        The block in the datacenter room where the resource was placed.
+        """
+        return pulumi.get(self, "block")
+
+    @property
+    @pulumi.getter
+    def building(self) -> str:
+        """
+        The datacenter building where the resource was placed.
+        """
+        return pulumi.get(self, "building")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The name of the region for which the resources were provisioned.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def room(self) -> str:
+        """
+        The name of the room in the dataacenter building where the resource was placed.
+        """
+        return pulumi.get(self, "room")
+
+    @property
+    @pulumi.getter(name="workloadType")
+    def workload_type(self) -> str:
+        """
+        The type of workload to which these resources were provisioned.
+        """
+        return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class GetNamespaceOccOverviewsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamespaceOccOverviewsOccOverviewCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamespaceOccOverviewsOccOverviewCollectionItemResult']):
+        """
+        :param Sequence['GetNamespaceOccOverviewsOccOverviewCollectionItemArgs'] items: An array of overview summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamespaceOccOverviewsOccOverviewCollectionItemResult']:
+        """
+        An array of overview summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamespaceOccOverviewsOccOverviewCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 capacity_requests_blob: str,
+                 compartment_id: str,
+                 period_value: str,
+                 resource_name: str,
+                 total_available: str,
+                 total_cancelled: str,
+                 total_demanded: str,
+                 total_rejected: str,
+                 total_supplied: str,
+                 total_unfulfilled: str,
+                 unit: str,
+                 workload_type_breakdown_blob: str):
+        """
+        :param str capacity_requests_blob: A raw json blob containing all the capacity requests corresponding to the resource name
+        :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param str period_value: The name of the month along with year for which this summary corresponds to.
+        :param str resource_name: The name of the resource for which we have aggregated the value.
+        :param str total_available: The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+        :param str total_cancelled: The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+        :param str total_demanded: The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+        :param str total_rejected: The quantity of the resource which is rejected by Oracle.
+        :param str total_supplied: The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+        :param str total_unfulfilled: The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+        :param str unit: The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+        :param str workload_type_breakdown_blob: A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+        """
+        pulumi.set(__self__, "capacity_requests_blob", capacity_requests_blob)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "period_value", period_value)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "total_available", total_available)
+        pulumi.set(__self__, "total_cancelled", total_cancelled)
+        pulumi.set(__self__, "total_demanded", total_demanded)
+        pulumi.set(__self__, "total_rejected", total_rejected)
+        pulumi.set(__self__, "total_supplied", total_supplied)
+        pulumi.set(__self__, "total_unfulfilled", total_unfulfilled)
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "workload_type_breakdown_blob", workload_type_breakdown_blob)
+
+    @property
+    @pulumi.getter(name="capacityRequestsBlob")
+    def capacity_requests_blob(self) -> str:
+        """
+        A raw json blob containing all the capacity requests corresponding to the resource name
+        """
+        return pulumi.get(self, "capacity_requests_blob")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="periodValue")
+    def period_value(self) -> str:
+        """
+        The name of the month along with year for which this summary corresponds to.
+        """
+        return pulumi.get(self, "period_value")
+
+    @property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> str:
+        """
+        The name of the resource for which we have aggregated the value.
+        """
+        return pulumi.get(self, "resource_name")
+
+    @property
+    @pulumi.getter(name="totalAvailable")
+    def total_available(self) -> str:
+        """
+        The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+        """
+        return pulumi.get(self, "total_available")
+
+    @property
+    @pulumi.getter(name="totalCancelled")
+    def total_cancelled(self) -> str:
+        """
+        The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+        """
+        return pulumi.get(self, "total_cancelled")
+
+    @property
+    @pulumi.getter(name="totalDemanded")
+    def total_demanded(self) -> str:
+        """
+        The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+        """
+        return pulumi.get(self, "total_demanded")
+
+    @property
+    @pulumi.getter(name="totalRejected")
+    def total_rejected(self) -> str:
+        """
+        The quantity of the resource which is rejected by Oracle.
+        """
+        return pulumi.get(self, "total_rejected")
+
+    @property
+    @pulumi.getter(name="totalSupplied")
+    def total_supplied(self) -> str:
+        """
+        The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+        """
+        return pulumi.get(self, "total_supplied")
+
+    @property
+    @pulumi.getter(name="totalUnfulfilled")
+    def total_unfulfilled(self) -> str:
+        """
+        The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+        """
+        return pulumi.get(self, "total_unfulfilled")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+        """
+        return pulumi.get(self, "unit")
+
+    @property
+    @pulumi.getter(name="workloadTypeBreakdownBlob")
+    def workload_type_breakdown_blob(self) -> str:
+        """
+        A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+        """
+        return pulumi.get(self, "workload_type_breakdown_blob")
+
+
+@pulumi.output_type
 class GetOccAvailabilityCatalogDetailResult(dict):
     def __init__(__self__, *,
                  available_quantity: str,
                  catalog_id: str,
                  date_expected_capacity_handover: str,
                  date_final_customer_order: str,
+                 demanded_quantity: str,
                  namespace: str,
                  resource_name: str,
                  resource_type: str,
+                 system_tags: Mapping[str, str],
+                 total_available_quantity: str,
                  unit: str,
                  workload_type: str):
         """
-        :param str available_quantity: The quantity of available resource that the customer can request.
+        :param str available_quantity: The quantity of resource currently available that the customer can request.
         :param str catalog_id: The OCID of the availability catalog.
         :param str date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param str date_final_customer_order: The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+        :param str demanded_quantity: The quantity of resource currently demanded by the customer.
         :param str namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param str resource_name: The name of the resource that the customer can request.
         :param str resource_type: The different types of resources against which customers can place capacity requests.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str total_available_quantity: The total quantity of resource that the customer can request.
         :param str unit: The unit in which the resource available is measured.
         :param str workload_type: The type of workload (Generic/ROW).
         """
@@ -708,9 +1655,12 @@ class GetOccAvailabilityCatalogDetailResult(dict):
         pulumi.set(__self__, "catalog_id", catalog_id)
         pulumi.set(__self__, "date_expected_capacity_handover", date_expected_capacity_handover)
         pulumi.set(__self__, "date_final_customer_order", date_final_customer_order)
+        pulumi.set(__self__, "demanded_quantity", demanded_quantity)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "resource_name", resource_name)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "total_available_quantity", total_available_quantity)
         pulumi.set(__self__, "unit", unit)
         pulumi.set(__self__, "workload_type", workload_type)
 
@@ -718,7 +1668,7 @@ class GetOccAvailabilityCatalogDetailResult(dict):
     @pulumi.getter(name="availableQuantity")
     def available_quantity(self) -> str:
         """
-        The quantity of available resource that the customer can request.
+        The quantity of resource currently available that the customer can request.
         """
         return pulumi.get(self, "available_quantity")
 
@@ -747,6 +1697,14 @@ class GetOccAvailabilityCatalogDetailResult(dict):
         return pulumi.get(self, "date_final_customer_order")
 
     @property
+    @pulumi.getter(name="demandedQuantity")
+    def demanded_quantity(self) -> str:
+        """
+        The quantity of resource currently demanded by the customer.
+        """
+        return pulumi.get(self, "demanded_quantity")
+
+    @property
     @pulumi.getter
     def namespace(self) -> str:
         """
@@ -769,6 +1727,22 @@ class GetOccAvailabilityCatalogDetailResult(dict):
         The different types of resources against which customers can place capacity requests.
         """
         return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="totalAvailableQuantity")
+    def total_available_quantity(self) -> str:
+        """
+        The total quantity of resource that the customer can request.
+        """
+        return pulumi.get(self, "total_available_quantity")
 
     @property
     @pulumi.getter
@@ -857,19 +1831,25 @@ class GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemRes
                  catalog_id: str,
                  date_expected_capacity_handover: str,
                  date_final_customer_order: str,
+                 demanded_quantity: str,
                  namespace: str,
                  resource_name: str,
                  resource_type: str,
+                 system_tags: Mapping[str, str],
+                 total_available_quantity: str,
                  unit: str,
                  workload_type: str):
         """
-        :param str available_quantity: The quantity of available resource that the customer can request.
+        :param str available_quantity: The quantity of resource currently available that the customer can request.
         :param str catalog_id: The OCID of the availability catalog.
         :param str date_expected_capacity_handover: The capacity handover date of the capacity constraint to filter the list of capacity constraints.
         :param str date_final_customer_order: The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+        :param str demanded_quantity: The quantity of resource currently demanded by the customer.
         :param str namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param str resource_name: The name of the resource to filter the list of capacity constraints.
         :param str resource_type: Resource type using which the capacity constraints of an availability catalog can be filtered.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str total_available_quantity: The total quantity of resource that the customer can request.
         :param str unit: The unit in which the resource available is measured.
         :param str workload_type: Workload type using the resources in an availability catalog can be filtered.
         """
@@ -877,9 +1857,12 @@ class GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemRes
         pulumi.set(__self__, "catalog_id", catalog_id)
         pulumi.set(__self__, "date_expected_capacity_handover", date_expected_capacity_handover)
         pulumi.set(__self__, "date_final_customer_order", date_final_customer_order)
+        pulumi.set(__self__, "demanded_quantity", demanded_quantity)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "resource_name", resource_name)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "total_available_quantity", total_available_quantity)
         pulumi.set(__self__, "unit", unit)
         pulumi.set(__self__, "workload_type", workload_type)
 
@@ -887,7 +1870,7 @@ class GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemRes
     @pulumi.getter(name="availableQuantity")
     def available_quantity(self) -> str:
         """
-        The quantity of available resource that the customer can request.
+        The quantity of resource currently available that the customer can request.
         """
         return pulumi.get(self, "available_quantity")
 
@@ -916,6 +1899,14 @@ class GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemRes
         return pulumi.get(self, "date_final_customer_order")
 
     @property
+    @pulumi.getter(name="demandedQuantity")
+    def demanded_quantity(self) -> str:
+        """
+        The quantity of resource currently demanded by the customer.
+        """
+        return pulumi.get(self, "demanded_quantity")
+
+    @property
     @pulumi.getter
     def namespace(self) -> str:
         """
@@ -938,6 +1929,22 @@ class GetOccAvailabilityCatalogOccAvailabilitiesOccAvailabilityCollectionItemRes
         Resource type using which the capacity constraints of an availability catalog can be filtered.
         """
         return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="totalAvailableQuantity")
+    def total_available_quantity(self) -> str:
+        """
+        The total quantity of resource that the customer can request.
+        """
+        return pulumi.get(self, "total_available_quantity")
 
     @property
     @pulumi.getter
@@ -1020,7 +2027,7 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResult(dict)
         :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Text information about the availability catalog.
-        :param Sequence['GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailArgs'] details: Details about capacity available for  different resources in catalog.
+        :param Sequence['GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailArgs'] details: Details about capacity available for different resources in catalog.
         :param str display_name: A filter to return only the resources that match the entire display name. The match is not case sensitive.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the availability catalog to filter the list of availability catalogs.
@@ -1092,7 +2099,7 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResult(dict)
     @pulumi.getter
     def details(self) -> Sequence['outputs.GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailResult']:
         """
-        Details about capacity available for  different resources in catalog.
+        Details about capacity available for different resources in catalog.
         """
         return pulumi.get(self, "details")
 
@@ -1192,19 +2199,25 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailResult
                  catalog_id: str,
                  date_expected_capacity_handover: str,
                  date_final_customer_order: str,
+                 demanded_quantity: str,
                  namespace: str,
                  resource_name: str,
                  resource_type: str,
+                 system_tags: Mapping[str, str],
+                 total_available_quantity: str,
                  unit: str,
                  workload_type: str):
         """
-        :param str available_quantity: The quantity of available resource that the customer can request.
+        :param str available_quantity: The quantity of resource currently available that the customer can request.
         :param str catalog_id: The OCID of the availability catalog.
         :param str date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param str date_final_customer_order: The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+        :param str demanded_quantity: The quantity of resource currently demanded by the customer.
         :param str namespace: The namespace by which we would filter the list.
         :param str resource_name: The name of the resource that the customer can request.
         :param str resource_type: The different types of resources against which customers can place capacity requests.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str total_available_quantity: The total quantity of resource that the customer can request.
         :param str unit: The unit in which the resource available is measured.
         :param str workload_type: The type of workload (Generic/ROW).
         """
@@ -1212,9 +2225,12 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailResult
         pulumi.set(__self__, "catalog_id", catalog_id)
         pulumi.set(__self__, "date_expected_capacity_handover", date_expected_capacity_handover)
         pulumi.set(__self__, "date_final_customer_order", date_final_customer_order)
+        pulumi.set(__self__, "demanded_quantity", demanded_quantity)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "resource_name", resource_name)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "total_available_quantity", total_available_quantity)
         pulumi.set(__self__, "unit", unit)
         pulumi.set(__self__, "workload_type", workload_type)
 
@@ -1222,7 +2238,7 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailResult
     @pulumi.getter(name="availableQuantity")
     def available_quantity(self) -> str:
         """
-        The quantity of available resource that the customer can request.
+        The quantity of resource currently available that the customer can request.
         """
         return pulumi.get(self, "available_quantity")
 
@@ -1251,6 +2267,14 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailResult
         return pulumi.get(self, "date_final_customer_order")
 
     @property
+    @pulumi.getter(name="demandedQuantity")
+    def demanded_quantity(self) -> str:
+        """
+        The quantity of resource currently demanded by the customer.
+        """
+        return pulumi.get(self, "demanded_quantity")
+
+    @property
     @pulumi.getter
     def namespace(self) -> str:
         """
@@ -1273,6 +2297,22 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailResult
         The different types of resources against which customers can place capacity requests.
         """
         return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="totalAvailableQuantity")
+    def total_available_quantity(self) -> str:
+        """
+        The total quantity of resource that the customer can request.
+        """
+        return pulumi.get(self, "total_available_quantity")
 
     @property
     @pulumi.getter
@@ -1313,30 +2353,39 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDeta
 class GetOccCapacityRequestDetailResult(dict):
     def __init__(__self__, *,
                  actual_handover_quantity: str,
+                 associated_occ_handover_resource_block_lists: Sequence['outputs.GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListResult'],
+                 availability_domain: str,
                  date_actual_handover: str,
                  date_expected_handover: str,
                  demand_quantity: str,
                  expected_handover_quantity: str,
                  resource_name: str,
                  resource_type: str,
+                 source_workload_type: str,
                  workload_type: str):
         """
         :param str actual_handover_quantity: The actual handed over quantity of resources at the time of request resolution.
+        :param Sequence['GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs'] associated_occ_handover_resource_block_lists: A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        :param str availability_domain: The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         :param str date_actual_handover: The date on which the actual handover quantity of resources is delivered.
         :param str date_expected_handover: The date on which the latest increment to supplied quantity of resources was delivered.
         :param str demand_quantity: The number of compute server's with name <resourceName> required by the user.
         :param str expected_handover_quantity: The incremental quantity of resources supplied as the provisioning is underway.
         :param str resource_name: The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
         :param str resource_type: The type of the resource against which the user wants to place a capacity request.
+        :param str source_workload_type: The WorkloadType from where capacity request are to be transferred.
         :param str workload_type: The type of the workload (Generic/ROW).
         """
         pulumi.set(__self__, "actual_handover_quantity", actual_handover_quantity)
+        pulumi.set(__self__, "associated_occ_handover_resource_block_lists", associated_occ_handover_resource_block_lists)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "date_actual_handover", date_actual_handover)
         pulumi.set(__self__, "date_expected_handover", date_expected_handover)
         pulumi.set(__self__, "demand_quantity", demand_quantity)
         pulumi.set(__self__, "expected_handover_quantity", expected_handover_quantity)
         pulumi.set(__self__, "resource_name", resource_name)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "source_workload_type", source_workload_type)
         pulumi.set(__self__, "workload_type", workload_type)
 
     @property
@@ -1346,6 +2395,22 @@ class GetOccCapacityRequestDetailResult(dict):
         The actual handed over quantity of resources at the time of request resolution.
         """
         return pulumi.get(self, "actual_handover_quantity")
+
+    @property
+    @pulumi.getter(name="associatedOccHandoverResourceBlockLists")
+    def associated_occ_handover_resource_block_lists(self) -> Sequence['outputs.GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListResult']:
+        """
+        A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        """
+        return pulumi.get(self, "associated_occ_handover_resource_block_lists")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="dateActualHandover")
@@ -1396,12 +2461,49 @@ class GetOccCapacityRequestDetailResult(dict):
         return pulumi.get(self, "resource_type")
 
     @property
+    @pulumi.getter(name="sourceWorkloadType")
+    def source_workload_type(self) -> str:
+        """
+        The WorkloadType from where capacity request are to be transferred.
+        """
+        return pulumi.get(self, "source_workload_type")
+
+    @property
     @pulumi.getter(name="workloadType")
     def workload_type(self) -> str:
         """
         The type of the workload (Generic/ROW).
         """
         return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class GetOccCapacityRequestDetailAssociatedOccHandoverResourceBlockListResult(dict):
+    def __init__(__self__, *,
+                 handover_quantity: str,
+                 occ_handover_resource_block_id: str):
+        """
+        :param str handover_quantity: The total quantity of the resource that was made available to the customer as part of this resource block
+        :param str occ_handover_resource_block_id: The OCID of the handed over resource block.
+        """
+        pulumi.set(__self__, "handover_quantity", handover_quantity)
+        pulumi.set(__self__, "occ_handover_resource_block_id", occ_handover_resource_block_id)
+
+    @property
+    @pulumi.getter(name="handoverQuantity")
+    def handover_quantity(self) -> str:
+        """
+        The total quantity of the resource that was made available to the customer as part of this resource block
+        """
+        return pulumi.get(self, "handover_quantity")
+
+    @property
+    @pulumi.getter(name="occHandoverResourceBlockId")
+    def occ_handover_resource_block_id(self) -> str:
+        """
+        The OCID of the handed over resource block.
+        """
+        return pulumi.get(self, "occ_handover_resource_block_id")
 
 
 @pulumi.output_type
@@ -1509,12 +2611,13 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
                  patch_operations: Sequence['outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationResult'],
                  region: str,
                  request_state: str,
+                 request_type: str,
                  state: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
-        :param str availability_domain: The availability domain (AD) for which the capacity request was made.
+        :param str availability_domain: The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
         :param str date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1529,6 +2632,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
         :param str occ_customer_group_id: The OCID of the customer group to which this customer belongs to.
         :param str region: The name of the region for which the capacity request was made.
         :param str request_state: The different states the capacity request goes through.
+        :param str request_type: A filter to return only the resources that match the request type. The match is not case sensitive.
         :param str state: The current lifecycle state of the resource.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the capacity request was created.
@@ -1550,6 +2654,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
         pulumi.set(__self__, "patch_operations", patch_operations)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "request_state", request_state)
+        pulumi.set(__self__, "request_type", request_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -1559,7 +2664,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        The availability domain (AD) for which the capacity request was made.
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -1681,6 +2786,14 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
         return pulumi.get(self, "request_state")
 
     @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> str:
+        """
+        A filter to return only the resources that match the request type. The match is not case sensitive.
+        """
+        return pulumi.get(self, "request_type")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -1717,30 +2830,39 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
 class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailResult(dict):
     def __init__(__self__, *,
                  actual_handover_quantity: str,
+                 associated_occ_handover_resource_block_lists: Sequence['outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListResult'],
+                 availability_domain: str,
                  date_actual_handover: str,
                  date_expected_handover: str,
                  demand_quantity: str,
                  expected_handover_quantity: str,
                  resource_name: str,
                  resource_type: str,
+                 source_workload_type: str,
                  workload_type: str):
         """
         :param str actual_handover_quantity: The actual handed over quantity of resources at the time of request resolution.
+        :param Sequence['GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListArgs'] associated_occ_handover_resource_block_lists: A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        :param str availability_domain: The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         :param str date_actual_handover: The date on which the actual handover quantity of resources is delivered.
         :param str date_expected_handover: The date on which the latest increment to supplied quantity of resources was delivered.
         :param str demand_quantity: The number of compute server's with name <resourceName> required by the user.
         :param str expected_handover_quantity: The incremental quantity of resources supplied as the provisioning is underway.
         :param str resource_name: The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
         :param str resource_type: The type of the resource against which the user wants to place a capacity request.
+        :param str source_workload_type: The WorkloadType from where capacity request are to be transferred.
         :param str workload_type: The type of the workload (Generic/ROW).
         """
         pulumi.set(__self__, "actual_handover_quantity", actual_handover_quantity)
+        pulumi.set(__self__, "associated_occ_handover_resource_block_lists", associated_occ_handover_resource_block_lists)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "date_actual_handover", date_actual_handover)
         pulumi.set(__self__, "date_expected_handover", date_expected_handover)
         pulumi.set(__self__, "demand_quantity", demand_quantity)
         pulumi.set(__self__, "expected_handover_quantity", expected_handover_quantity)
         pulumi.set(__self__, "resource_name", resource_name)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "source_workload_type", source_workload_type)
         pulumi.set(__self__, "workload_type", workload_type)
 
     @property
@@ -1750,6 +2872,22 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailResult(dict):
         The actual handed over quantity of resources at the time of request resolution.
         """
         return pulumi.get(self, "actual_handover_quantity")
+
+    @property
+    @pulumi.getter(name="associatedOccHandoverResourceBlockLists")
+    def associated_occ_handover_resource_block_lists(self) -> Sequence['outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListResult']:
+        """
+        A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        """
+        return pulumi.get(self, "associated_occ_handover_resource_block_lists")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="dateActualHandover")
@@ -1800,12 +2938,49 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailResult(dict):
         return pulumi.get(self, "resource_type")
 
     @property
+    @pulumi.getter(name="sourceWorkloadType")
+    def source_workload_type(self) -> str:
+        """
+        The WorkloadType from where capacity request are to be transferred.
+        """
+        return pulumi.get(self, "source_workload_type")
+
+    @property
     @pulumi.getter(name="workloadType")
     def workload_type(self) -> str:
         """
         The type of the workload (Generic/ROW).
         """
         return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailAssociatedOccHandoverResourceBlockListResult(dict):
+    def __init__(__self__, *,
+                 handover_quantity: str,
+                 occ_handover_resource_block_id: str):
+        """
+        :param str handover_quantity: The total quantity of the resource that was made available to the customer as part of this resource block
+        :param str occ_handover_resource_block_id: The OCID of the handed over resource block.
+        """
+        pulumi.set(__self__, "handover_quantity", handover_quantity)
+        pulumi.set(__self__, "occ_handover_resource_block_id", occ_handover_resource_block_id)
+
+    @property
+    @pulumi.getter(name="handoverQuantity")
+    def handover_quantity(self) -> str:
+        """
+        The total quantity of the resource that was made available to the customer as part of this resource block
+        """
+        return pulumi.get(self, "handover_quantity")
+
+    @property
+    @pulumi.getter(name="occHandoverResourceBlockId")
+    def occ_handover_resource_block_id(self) -> str:
+        """
+        The OCID of the handed over resource block.
+        """
+        return pulumi.get(self, "occ_handover_resource_block_id")
 
 
 @pulumi.output_type
@@ -2166,5 +3341,332 @@ class GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListResult(dict
         The OCID of the tenancy belonging to the customer.
         """
         return pulumi.get(self, "tenancy_id")
+
+
+@pulumi.output_type
+class GetOccHandoverResourceBlockDetailsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemResult']):
+        """
+        :param Sequence['GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemArgs'] items: An array of details about an occ handover resource block.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemResult']:
+        """
+        An array of details about an occ handover resource block.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccHandoverResourceBlockDetailsOccHandoverResourceBlockDetailCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 details: Mapping[str, str],
+                 occ_resource_handover_block_id: str):
+        """
+        :param Mapping[str, str] details: A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+        :param str occ_resource_handover_block_id: The OCID of the occResourceHandoverBlock.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "occ_resource_handover_block_id", occ_resource_handover_block_id)
+
+    @property
+    @pulumi.getter
+    def details(self) -> Mapping[str, str]:
+        """
+        A map that contains additional details for a given handover resource. For example for compute namespace this includes host ocid, host serial etc.
+        """
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter(name="occResourceHandoverBlockId")
+    def occ_resource_handover_block_id(self) -> str:
+        """
+        The OCID of the occResourceHandoverBlock.
+        """
+        return pulumi.get(self, "occ_resource_handover_block_id")
+
+
+@pulumi.output_type
+class GetOccHandoverResourceBlocksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult']):
+        """
+        :param Sequence['GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemArgs'] items: An array of occ handover resource blocks.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult']:
+        """
+        An array of occ handover resource blocks.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 associated_capacity_requests: Sequence['outputs.GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult'],
+                 compartment_id: str,
+                 handover_date: str,
+                 handover_resource_name: str,
+                 id: str,
+                 namespace: str,
+                 occ_customer_group_id: str,
+                 placement_details: Sequence['outputs.GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult'],
+                 total_handover_quantity: str):
+        """
+        :param Sequence['GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArgs'] associated_capacity_requests: A list containing details about the capacity requests against which the resources were provisioned by oracle.
+        :param str compartment_id: The OCID of the compartment or tenancy in which resources are to be listed.
+        :param str handover_date: The date on which the resource was handed over to the customer.
+        :param str handover_resource_name: A filter to return only the list of resources that match the name provided in this filter.
+        :param str id: The OCID of the resource block.
+        :param str namespace: The namespace by which we would filter the list.
+        :param str occ_customer_group_id: The OCID of the customer group for which the resources were provisioned.
+        :param Sequence['GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs'] placement_details: Details like building, room and block where the resource was placed after provisioning in the datacenter.
+        :param str total_handover_quantity: The total quantity of the resource that was made available to the customer by Oracle.
+        """
+        pulumi.set(__self__, "associated_capacity_requests", associated_capacity_requests)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "handover_date", handover_date)
+        pulumi.set(__self__, "handover_resource_name", handover_resource_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        pulumi.set(__self__, "placement_details", placement_details)
+        pulumi.set(__self__, "total_handover_quantity", total_handover_quantity)
+
+    @property
+    @pulumi.getter(name="associatedCapacityRequests")
+    def associated_capacity_requests(self) -> Sequence['outputs.GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult']:
+        """
+        A list containing details about the capacity requests against which the resources were provisioned by oracle.
+        """
+        return pulumi.get(self, "associated_capacity_requests")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment or tenancy in which resources are to be listed.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="handoverDate")
+    def handover_date(self) -> str:
+        """
+        The date on which the resource was handed over to the customer.
+        """
+        return pulumi.get(self, "handover_date")
+
+    @property
+    @pulumi.getter(name="handoverResourceName")
+    def handover_resource_name(self) -> str:
+        """
+        A filter to return only the list of resources that match the name provided in this filter.
+        """
+        return pulumi.get(self, "handover_resource_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource block.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace by which we would filter the list.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> str:
+        """
+        The OCID of the customer group for which the resources were provisioned.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @property
+    @pulumi.getter(name="placementDetails")
+    def placement_details(self) -> Sequence['outputs.GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult']:
+        """
+        Details like building, room and block where the resource was placed after provisioning in the datacenter.
+        """
+        return pulumi.get(self, "placement_details")
+
+    @property
+    @pulumi.getter(name="totalHandoverQuantity")
+    def total_handover_quantity(self) -> str:
+        """
+        The total quantity of the resource that was made available to the customer by Oracle.
+        """
+        return pulumi.get(self, "total_handover_quantity")
+
+
+@pulumi.output_type
+class GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult(dict):
+    def __init__(__self__, *,
+                 handover_quantity: str,
+                 occ_capacity_request_id: str):
+        """
+        :param str handover_quantity: The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+        :param str occ_capacity_request_id: The OCID of the capacity request against which the resources were provisioned.
+        """
+        pulumi.set(__self__, "handover_quantity", handover_quantity)
+        pulumi.set(__self__, "occ_capacity_request_id", occ_capacity_request_id)
+
+    @property
+    @pulumi.getter(name="handoverQuantity")
+    def handover_quantity(self) -> str:
+        """
+        The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+        """
+        return pulumi.get(self, "handover_quantity")
+
+    @property
+    @pulumi.getter(name="occCapacityRequestId")
+    def occ_capacity_request_id(self) -> str:
+        """
+        The OCID of the capacity request against which the resources were provisioned.
+        """
+        return pulumi.get(self, "occ_capacity_request_id")
+
+
+@pulumi.output_type
+class GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 block: str,
+                 building: str,
+                 region: str,
+                 room: str,
+                 workload_type: str):
+        """
+        :param str availability_domain: The availability domain (AD) for which the resources were provisioned.
+        :param str block: The block in the datacenter room where the resource was placed.
+        :param str building: The datacenter building where the resource was placed.
+        :param str region: The name of the region for which the resources were provisioned.
+        :param str room: The name of the room in the dataacenter building where the resource was placed.
+        :param str workload_type: The type of workload to which these resources were provisioned.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "block", block)
+        pulumi.set(__self__, "building", building)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "room", room)
+        pulumi.set(__self__, "workload_type", workload_type)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain (AD) for which the resources were provisioned.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter
+    def block(self) -> str:
+        """
+        The block in the datacenter room where the resource was placed.
+        """
+        return pulumi.get(self, "block")
+
+    @property
+    @pulumi.getter
+    def building(self) -> str:
+        """
+        The datacenter building where the resource was placed.
+        """
+        return pulumi.get(self, "building")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The name of the region for which the resources were provisioned.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def room(self) -> str:
+        """
+        The name of the room in the dataacenter building where the resource was placed.
+        """
+        return pulumi.get(self, "room")
+
+    @property
+    @pulumi.getter(name="workloadType")
+    def workload_type(self) -> str:
+        """
+        The type of workload to which these resources were provisioned.
+        """
+        return pulumi.get(self, "workload_type")
 
 

@@ -40,6 +40,11 @@ export type BdsInstancePatchAction = import("./bdsInstancePatchAction").BdsInsta
 export const BdsInstancePatchAction: typeof import("./bdsInstancePatchAction").BdsInstancePatchAction = null as any;
 utilities.lazyLoad(exports, ["BdsInstancePatchAction"], () => require("./bdsInstancePatchAction"));
 
+export { BdsInstanceResourcePrincipalConfigurationArgs, BdsInstanceResourcePrincipalConfigurationState } from "./bdsInstanceResourcePrincipalConfiguration";
+export type BdsInstanceResourcePrincipalConfiguration = import("./bdsInstanceResourcePrincipalConfiguration").BdsInstanceResourcePrincipalConfiguration;
+export const BdsInstanceResourcePrincipalConfiguration: typeof import("./bdsInstanceResourcePrincipalConfiguration").BdsInstanceResourcePrincipalConfiguration = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceResourcePrincipalConfiguration"], () => require("./bdsInstanceResourcePrincipalConfiguration"));
+
 export { GetAutoScalingConfigurationArgs, GetAutoScalingConfigurationResult, GetAutoScalingConfigurationOutputArgs } from "./getAutoScalingConfiguration";
 export const getAutoScalingConfiguration: typeof import("./getAutoScalingConfiguration").getAutoScalingConfiguration = null as any;
 export const getAutoScalingConfigurationOutput: typeof import("./getAutoScalingConfiguration").getAutoScalingConfigurationOutput = null as any;
@@ -95,6 +100,16 @@ export const getBdsInstancePatches: typeof import("./getBdsInstancePatches").get
 export const getBdsInstancePatchesOutput: typeof import("./getBdsInstancePatches").getBdsInstancePatchesOutput = null as any;
 utilities.lazyLoad(exports, ["getBdsInstancePatches","getBdsInstancePatchesOutput"], () => require("./getBdsInstancePatches"));
 
+export { GetBdsInstanceResourcePrincipalConfigurationArgs, GetBdsInstanceResourcePrincipalConfigurationResult, GetBdsInstanceResourcePrincipalConfigurationOutputArgs } from "./getBdsInstanceResourcePrincipalConfiguration";
+export const getBdsInstanceResourcePrincipalConfiguration: typeof import("./getBdsInstanceResourcePrincipalConfiguration").getBdsInstanceResourcePrincipalConfiguration = null as any;
+export const getBdsInstanceResourcePrincipalConfigurationOutput: typeof import("./getBdsInstanceResourcePrincipalConfiguration").getBdsInstanceResourcePrincipalConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceResourcePrincipalConfiguration","getBdsInstanceResourcePrincipalConfigurationOutput"], () => require("./getBdsInstanceResourcePrincipalConfiguration"));
+
+export { GetBdsInstanceResourcePrincipalConfigurationsArgs, GetBdsInstanceResourcePrincipalConfigurationsResult, GetBdsInstanceResourcePrincipalConfigurationsOutputArgs } from "./getBdsInstanceResourcePrincipalConfigurations";
+export const getBdsInstanceResourcePrincipalConfigurations: typeof import("./getBdsInstanceResourcePrincipalConfigurations").getBdsInstanceResourcePrincipalConfigurations = null as any;
+export const getBdsInstanceResourcePrincipalConfigurationsOutput: typeof import("./getBdsInstanceResourcePrincipalConfigurations").getBdsInstanceResourcePrincipalConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceResourcePrincipalConfigurations","getBdsInstanceResourcePrincipalConfigurationsOutput"], () => require("./getBdsInstanceResourcePrincipalConfigurations"));
+
 export { GetBdsInstancesArgs, GetBdsInstancesResult, GetBdsInstancesOutputArgs } from "./getBdsInstances";
 export const getBdsInstances: typeof import("./getBdsInstances").getBdsInstances = null as any;
 export const getBdsInstancesOutput: typeof import("./getBdsInstances").getBdsInstancesOutput = null as any;
@@ -119,6 +134,8 @@ const _module = {
                 return new BdsInstanceOsPatchAction(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction":
                 return new BdsInstancePatchAction(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration":
+                return new BdsInstanceResourcePrincipalConfiguration(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -131,3 +148,4 @@ pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceMetastor
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOperationCertificateManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOsPatchAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstancePatchAction", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceResourcePrincipalConfiguration", _module)

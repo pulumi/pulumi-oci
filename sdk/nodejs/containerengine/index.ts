@@ -50,6 +50,11 @@ export const getAddons: typeof import("./getAddons").getAddons = null as any;
 export const getAddonsOutput: typeof import("./getAddons").getAddonsOutput = null as any;
 utilities.lazyLoad(exports, ["getAddons","getAddonsOutput"], () => require("./getAddons"));
 
+export { GetClusterArgs, GetClusterResult, GetClusterOutputArgs } from "./getCluster";
+export const getCluster: typeof import("./getCluster").getCluster = null as any;
+export const getClusterOutput: typeof import("./getCluster").getClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getCluster","getClusterOutput"], () => require("./getCluster"));
+
 export { GetClusterCredentialRotationStatusArgs, GetClusterCredentialRotationStatusResult, GetClusterCredentialRotationStatusOutputArgs } from "./getClusterCredentialRotationStatus";
 export const getClusterCredentialRotationStatus: typeof import("./getClusterCredentialRotationStatus").getClusterCredentialRotationStatus = null as any;
 export const getClusterCredentialRotationStatusOutput: typeof import("./getClusterCredentialRotationStatus").getClusterCredentialRotationStatusOutput = null as any;

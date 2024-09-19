@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
     public sealed class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult
     {
         /// <summary>
-        /// The availability domain (AD) for which the capacity request was made.
+        /// The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
@@ -75,6 +75,10 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
         /// </summary>
         public readonly string RequestState;
         /// <summary>
+        /// A filter to return only the resources that match the request type. The match is not case sensitive.
+        /// </summary>
+        public readonly string RequestType;
+        /// <summary>
         /// The current lifecycle state of the resource.
         /// </summary>
         public readonly string State;
@@ -125,6 +129,8 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
 
             string requestState,
 
+            string requestType,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -149,6 +155,7 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
             PatchOperations = patchOperations;
             Region = region;
             RequestState = requestState;
+            RequestType = requestType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

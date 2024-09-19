@@ -46,6 +46,11 @@ public final class GetOccCapacityRequestsResult {
      * 
      */
     private List<GetOccCapacityRequestsOccCapacityRequestCollection> occCapacityRequestCollections;
+    /**
+     * @return Type of Capacity Request(New or Transfer)
+     * 
+     */
+    private @Nullable String requestType;
 
     private GetOccCapacityRequestsResult() {}
     /**
@@ -93,6 +98,13 @@ public final class GetOccCapacityRequestsResult {
     public List<GetOccCapacityRequestsOccCapacityRequestCollection> occCapacityRequestCollections() {
         return this.occCapacityRequestCollections;
     }
+    /**
+     * @return Type of Capacity Request(New or Transfer)
+     * 
+     */
+    public Optional<String> requestType() {
+        return Optional.ofNullable(this.requestType);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -110,6 +122,7 @@ public final class GetOccCapacityRequestsResult {
         private @Nullable String namespace;
         private @Nullable String occAvailabilityCatalogId;
         private List<GetOccCapacityRequestsOccCapacityRequestCollection> occCapacityRequestCollections;
+        private @Nullable String requestType;
         public Builder() {}
         public Builder(GetOccCapacityRequestsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -120,6 +133,7 @@ public final class GetOccCapacityRequestsResult {
     	      this.namespace = defaults.namespace;
     	      this.occAvailabilityCatalogId = defaults.occAvailabilityCatalogId;
     	      this.occCapacityRequestCollections = defaults.occCapacityRequestCollections;
+    	      this.requestType = defaults.requestType;
         }
 
         @CustomType.Setter
@@ -174,6 +188,12 @@ public final class GetOccCapacityRequestsResult {
         public Builder occCapacityRequestCollections(GetOccCapacityRequestsOccCapacityRequestCollection... occCapacityRequestCollections) {
             return occCapacityRequestCollections(List.of(occCapacityRequestCollections));
         }
+        @CustomType.Setter
+        public Builder requestType(@Nullable String requestType) {
+
+            this.requestType = requestType;
+            return this;
+        }
         public GetOccCapacityRequestsResult build() {
             final var _resultValue = new GetOccCapacityRequestsResult();
             _resultValue.compartmentId = compartmentId;
@@ -183,6 +203,7 @@ public final class GetOccCapacityRequestsResult {
             _resultValue.namespace = namespace;
             _resultValue.occAvailabilityCatalogId = occAvailabilityCatalogId;
             _resultValue.occCapacityRequestCollections = occCapacityRequestCollections;
+            _resultValue.requestType = requestType;
             return _resultValue;
         }
     }

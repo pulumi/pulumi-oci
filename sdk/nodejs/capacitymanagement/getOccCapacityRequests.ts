@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     id: occCapacityRequestId,
  *     namespace: occCapacityRequestNamespace,
  *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
+ *     requestType: occCapacityRequestRequestType,
  * });
  * ```
  */
@@ -36,6 +37,7 @@ export function getOccCapacityRequests(args: GetOccCapacityRequestsArgs, opts?: 
         "id": args.id,
         "namespace": args.namespace,
         "occAvailabilityCatalogId": args.occAvailabilityCatalogId,
+        "requestType": args.requestType,
     }, opts);
 }
 
@@ -64,6 +66,10 @@ export interface GetOccCapacityRequestsArgs {
      * A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
      */
     occAvailabilityCatalogId?: string;
+    /**
+     * A filter to return only the resources that match the request type. The match is not case sensitive.
+     */
+    requestType?: string;
 }
 
 /**
@@ -95,6 +101,10 @@ export interface GetOccCapacityRequestsResult {
      * The list of occ_capacity_request_collection.
      */
     readonly occCapacityRequestCollections: outputs.CapacityManagement.GetOccCapacityRequestsOccCapacityRequestCollection[];
+    /**
+     * Type of Capacity Request(New or Transfer)
+     */
+    readonly requestType?: string;
 }
 /**
  * This data source provides the list of Occ Capacity Requests in Oracle Cloud Infrastructure Capacity Management service.
@@ -113,6 +123,7 @@ export interface GetOccCapacityRequestsResult {
  *     id: occCapacityRequestId,
  *     namespace: occCapacityRequestNamespace,
  *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
+ *     requestType: occCapacityRequestRequestType,
  * });
  * ```
  */
@@ -145,4 +156,8 @@ export interface GetOccCapacityRequestsOutputArgs {
      * A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
      */
     occAvailabilityCatalogId?: pulumi.Input<string>;
+    /**
+     * A filter to return only the resources that match the request type. The match is not case sensitive.
+     */
+    requestType?: pulumi.Input<string>;
 }

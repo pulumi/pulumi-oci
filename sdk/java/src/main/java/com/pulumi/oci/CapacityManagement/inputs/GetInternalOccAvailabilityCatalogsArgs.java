@@ -104,15 +104,15 @@ public final class GetInternalOccAvailabilityCatalogsArgs extends com.pulumi.res
      * The customer group ocid by which we would filter the list.
      * 
      */
-    @Import(name="occCustomerGroupId")
-    private @Nullable Output<String> occCustomerGroupId;
+    @Import(name="occCustomerGroupId", required=true)
+    private Output<String> occCustomerGroupId;
 
     /**
      * @return The customer group ocid by which we would filter the list.
      * 
      */
-    public Optional<Output<String>> occCustomerGroupId() {
-        return Optional.ofNullable(this.occCustomerGroupId);
+    public Output<String> occCustomerGroupId() {
+        return this.occCustomerGroupId;
     }
 
     private GetInternalOccAvailabilityCatalogsArgs() {}
@@ -269,7 +269,7 @@ public final class GetInternalOccAvailabilityCatalogsArgs extends com.pulumi.res
          * @return builder
          * 
          */
-        public Builder occCustomerGroupId(@Nullable Output<String> occCustomerGroupId) {
+        public Builder occCustomerGroupId(Output<String> occCustomerGroupId) {
             $.occCustomerGroupId = occCustomerGroupId;
             return this;
         }
@@ -287,6 +287,9 @@ public final class GetInternalOccAvailabilityCatalogsArgs extends com.pulumi.res
         public GetInternalOccAvailabilityCatalogsArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("GetInternalOccAvailabilityCatalogsArgs", "compartmentId");
+            }
+            if ($.occCustomerGroupId == null) {
+                throw new MissingRequiredPropertyException("GetInternalOccAvailabilityCatalogsArgs", "occCustomerGroupId");
             }
             return $;
         }

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCompatibleFormatsForDataType(opts?: pulumi.InvokeOptions): Promise<GetCompatibleFormatsForDataTypeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", {
     }, opts);
@@ -67,5 +66,7 @@ export interface GetCompatibleFormatsForDataTypeResult {
  * ```
  */
 export function getCompatibleFormatsForDataTypeOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetCompatibleFormatsForDataTypeResult> {
-    return pulumi.output(getCompatibleFormatsForDataType(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", {
+    }, opts);
 }

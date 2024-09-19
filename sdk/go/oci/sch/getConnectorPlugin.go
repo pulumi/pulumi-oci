@@ -81,14 +81,20 @@ type GetConnectorPluginResult struct {
 
 func GetConnectorPluginOutput(ctx *pulumi.Context, args GetConnectorPluginOutputArgs, opts ...pulumi.InvokeOption) GetConnectorPluginResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetConnectorPluginResult, error) {
+		ApplyT(func(v interface{}) (GetConnectorPluginResultOutput, error) {
 			args := v.(GetConnectorPluginArgs)
-			r, err := GetConnectorPlugin(ctx, &args, opts...)
-			var s GetConnectorPluginResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetConnectorPluginResult
+			secret, err := ctx.InvokePackageRaw("oci:Sch/getConnectorPlugin:getConnectorPlugin", args, &rv, "", opts...)
+			if err != nil {
+				return GetConnectorPluginResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetConnectorPluginResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetConnectorPluginResultOutput), nil
+			}
+			return output, nil
 		}).(GetConnectorPluginResultOutput)
 }
 

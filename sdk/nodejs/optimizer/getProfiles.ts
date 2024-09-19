@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProfiles(args: GetProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetProfilesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getProfiles:getProfiles", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetProfilesResult {
  * ```
  */
 export function getProfilesOutput(args: GetProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProfilesResult> {
-    return pulumi.output(args).apply((a: any) => getProfiles(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getProfiles:getProfiles", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

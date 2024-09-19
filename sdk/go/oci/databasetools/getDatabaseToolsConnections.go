@@ -94,14 +94,20 @@ type GetDatabaseToolsConnectionsResult struct {
 
 func GetDatabaseToolsConnectionsOutput(ctx *pulumi.Context, args GetDatabaseToolsConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsConnectionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDatabaseToolsConnectionsResult, error) {
+		ApplyT(func(v interface{}) (GetDatabaseToolsConnectionsResultOutput, error) {
 			args := v.(GetDatabaseToolsConnectionsArgs)
-			r, err := GetDatabaseToolsConnections(ctx, &args, opts...)
-			var s GetDatabaseToolsConnectionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDatabaseToolsConnectionsResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args, &rv, "", opts...)
+			if err != nil {
+				return GetDatabaseToolsConnectionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDatabaseToolsConnectionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDatabaseToolsConnectionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDatabaseToolsConnectionsResultOutput)
 }
 

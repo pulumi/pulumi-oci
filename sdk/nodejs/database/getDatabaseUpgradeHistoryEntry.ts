@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseUpgradeHistoryEntry(args: GetDatabaseUpgradeHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseUpgradeHistoryEntryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", {
         "databaseId": args.databaseId,
@@ -119,7 +118,11 @@ export interface GetDatabaseUpgradeHistoryEntryResult {
  * ```
  */
 export function getDatabaseUpgradeHistoryEntryOutput(args: GetDatabaseUpgradeHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseUpgradeHistoryEntryResult> {
-    return pulumi.output(args).apply((a: any) => getDatabaseUpgradeHistoryEntry(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", {
+        "databaseId": args.databaseId,
+        "upgradeHistoryEntryId": args.upgradeHistoryEntryId,
+    }, opts);
 }
 
 /**

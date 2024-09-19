@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserObjectPrivilege(args: GetManagedDatabaseUserObjectPrivilegeArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserObjectPrivilegeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivilege:getManagedDatabaseUserObjectPrivilege", {
         "managedDatabaseId": args.managedDatabaseId,
@@ -90,7 +89,12 @@ export interface GetManagedDatabaseUserObjectPrivilegeResult {
  * ```
  */
 export function getManagedDatabaseUserObjectPrivilegeOutput(args: GetManagedDatabaseUserObjectPrivilegeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserObjectPrivilegeResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserObjectPrivilege(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivilege:getManagedDatabaseUserObjectPrivilege", {
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "userName": args.userName,
+    }, opts);
 }
 
 /**

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHttpRedirects(args: GetHttpRedirectsArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpRedirectsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getHttpRedirects:getHttpRedirects", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,16 @@ export interface GetHttpRedirectsResult {
  * ```
  */
 export function getHttpRedirectsOutput(args: GetHttpRedirectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpRedirectsResult> {
-    return pulumi.output(args).apply((a: any) => getHttpRedirects(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waas/getHttpRedirects:getHttpRedirects", {
+        "compartmentId": args.compartmentId,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "ids": args.ids,
+        "states": args.states,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

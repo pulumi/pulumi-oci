@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOneoffPatches(args: GetOneoffPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetOneoffPatchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getOneoffPatches:getOneoffPatches", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetOneoffPatchesResult {
  * ```
  */
 export function getOneoffPatchesOutput(args: GetOneoffPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOneoffPatchesResult> {
-    return pulumi.output(args).apply((a: any) => getOneoffPatches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getOneoffPatches:getOneoffPatches", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

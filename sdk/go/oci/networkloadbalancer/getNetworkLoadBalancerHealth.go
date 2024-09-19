@@ -83,14 +83,20 @@ type GetNetworkLoadBalancerHealthResult struct {
 
 func GetNetworkLoadBalancerHealthOutput(ctx *pulumi.Context, args GetNetworkLoadBalancerHealthOutputArgs, opts ...pulumi.InvokeOption) GetNetworkLoadBalancerHealthResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNetworkLoadBalancerHealthResult, error) {
+		ApplyT(func(v interface{}) (GetNetworkLoadBalancerHealthResultOutput, error) {
 			args := v.(GetNetworkLoadBalancerHealthArgs)
-			r, err := GetNetworkLoadBalancerHealth(ctx, &args, opts...)
-			var s GetNetworkLoadBalancerHealthResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNetworkLoadBalancerHealthResult
+			secret, err := ctx.InvokePackageRaw("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", args, &rv, "", opts...)
+			if err != nil {
+				return GetNetworkLoadBalancerHealthResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNetworkLoadBalancerHealthResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNetworkLoadBalancerHealthResultOutput), nil
+			}
+			return output, nil
 		}).(GetNetworkLoadBalancerHealthResultOutput)
 }
 

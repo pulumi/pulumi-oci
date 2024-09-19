@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalDatabaseConnector(args: GetExternalDatabaseConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDatabaseConnectorResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector", {
         "externalDatabaseConnectorId": args.externalDatabaseConnectorId,
@@ -123,7 +122,10 @@ export interface GetExternalDatabaseConnectorResult {
  * ```
  */
 export function getExternalDatabaseConnectorOutput(args: GetExternalDatabaseConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDatabaseConnectorResult> {
-    return pulumi.output(args).apply((a: any) => getExternalDatabaseConnector(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector", {
+        "externalDatabaseConnectorId": args.externalDatabaseConnectorId,
+    }, opts);
 }
 
 /**

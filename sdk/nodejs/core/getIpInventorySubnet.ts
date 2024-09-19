@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpInventorySubnet(args: GetIpInventorySubnetArgs, opts?: pulumi.InvokeOptions): Promise<GetIpInventorySubnetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpInventorySubnet:getIpInventorySubnet", {
         "subnetId": args.subnetId,
@@ -87,7 +86,10 @@ export interface GetIpInventorySubnetResult {
  * ```
  */
 export function getIpInventorySubnetOutput(args: GetIpInventorySubnetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpInventorySubnetResult> {
-    return pulumi.output(args).apply((a: any) => getIpInventorySubnet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpInventorySubnet:getIpInventorySubnet", {
+        "subnetId": args.subnetId,
+    }, opts);
 }
 
 /**

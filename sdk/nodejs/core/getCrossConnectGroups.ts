@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCrossConnectGroups(args: GetCrossConnectGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCrossConnectGroups:getCrossConnectGroups", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetCrossConnectGroupsResult {
  * ```
  */
 export function getCrossConnectGroupsOutput(args: GetCrossConnectGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getCrossConnectGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCrossConnectGroups:getCrossConnectGroups", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentRefreshActivities(args: GetFusionEnvironmentRefreshActivitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentRefreshActivitiesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", {
         "displayName": args.displayName,
@@ -112,7 +111,15 @@ export interface GetFusionEnvironmentRefreshActivitiesResult {
  * ```
  */
 export function getFusionEnvironmentRefreshActivitiesOutput(args: GetFusionEnvironmentRefreshActivitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentRefreshActivitiesResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentRefreshActivities(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", {
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "fusionEnvironmentId": args.fusionEnvironmentId,
+        "state": args.state,
+        "timeExpectedFinishLessThanOrEqualTo": args.timeExpectedFinishLessThanOrEqualTo,
+        "timeScheduledStartGreaterThanOrEqualTo": args.timeScheduledStartGreaterThanOrEqualTo,
+    }, opts);
 }
 
 /**

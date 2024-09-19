@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getMigrationAssets(args?: GetMigrationAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationAssetsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudMigrations/getMigrationAssets:getMigrationAssets", {
         "displayName": args.displayName,
@@ -108,7 +107,15 @@ export interface GetMigrationAssetsResult {
  * ```
  */
 export function getMigrationAssetsOutput(args?: GetMigrationAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationAssetsResult> {
-    return pulumi.output(args).apply((a: any) => getMigrationAssets(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudMigrations/getMigrationAssets:getMigrationAssets", {
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "migrationAssetId": args.migrationAssetId,
+        "migrationId": args.migrationId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

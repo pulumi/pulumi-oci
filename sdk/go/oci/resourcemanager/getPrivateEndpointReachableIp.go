@@ -71,14 +71,20 @@ type GetPrivateEndpointReachableIpResult struct {
 
 func GetPrivateEndpointReachableIpOutput(ctx *pulumi.Context, args GetPrivateEndpointReachableIpOutputArgs, opts ...pulumi.InvokeOption) GetPrivateEndpointReachableIpResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPrivateEndpointReachableIpResult, error) {
+		ApplyT(func(v interface{}) (GetPrivateEndpointReachableIpResultOutput, error) {
 			args := v.(GetPrivateEndpointReachableIpArgs)
-			r, err := GetPrivateEndpointReachableIp(ctx, &args, opts...)
-			var s GetPrivateEndpointReachableIpResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPrivateEndpointReachableIpResult
+			secret, err := ctx.InvokePackageRaw("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args, &rv, "", opts...)
+			if err != nil {
+				return GetPrivateEndpointReachableIpResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPrivateEndpointReachableIpResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPrivateEndpointReachableIpResultOutput), nil
+			}
+			return output, nil
 		}).(GetPrivateEndpointReachableIpResultOutput)
 }
 

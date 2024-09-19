@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProcessSet(args: GetProcessSetArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessSetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getProcessSet:getProcessSet", {
         "processSetId": args.processSetId,
@@ -107,7 +106,10 @@ export interface GetProcessSetResult {
  * ```
  */
 export function getProcessSetOutput(args: GetProcessSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessSetResult> {
-    return pulumi.output(args).apply((a: any) => getProcessSet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:StackMonitoring/getProcessSet:getProcessSet", {
+        "processSetId": args.processSetId,
+    }, opts);
 }
 
 /**

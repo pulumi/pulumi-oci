@@ -123,14 +123,20 @@ type GetEventsResult struct {
 
 func GetEventsOutput(ctx *pulumi.Context, args GetEventsOutputArgs, opts ...pulumi.InvokeOption) GetEventsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetEventsResult, error) {
+		ApplyT(func(v interface{}) (GetEventsResultOutput, error) {
 			args := v.(GetEventsArgs)
-			r, err := GetEvents(ctx, &args, opts...)
-			var s GetEventsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetEventsResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getEvents:getEvents", args, &rv, "", opts...)
+			if err != nil {
+				return GetEventsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetEventsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetEventsResultOutput), nil
+			}
+			return output, nil
 		}).(GetEventsResultOutput)
 }
 

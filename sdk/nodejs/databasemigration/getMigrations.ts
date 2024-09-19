@@ -10,7 +10,6 @@ import * as utilities from "../utilities";
  * ## Example Usage
  */
 export function getMigrations(args: GetMigrationsArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getMigrations:getMigrations", {
         "migrationId": args.migrationId,
@@ -137,7 +136,10 @@ export interface GetMigrationsResult {
  * ## Example Usage
  */
 export function getMigrationsOutput(args: GetMigrationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationsResult> {
-    return pulumi.output(args).apply((a: any) => getMigrations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getMigrations:getMigrations", {
+        "migrationId": args.migrationId,
+    }, opts);
 }
 
 /**

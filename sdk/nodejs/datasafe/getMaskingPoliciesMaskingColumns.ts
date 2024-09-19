@@ -37,7 +37,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPoliciesMaskingColumns(args: GetMaskingPoliciesMaskingColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPoliciesMaskingColumnsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", {
         "columnNames": args.columnNames,
@@ -217,7 +216,25 @@ export interface GetMaskingPoliciesMaskingColumnsResult {
  * ```
  */
 export function getMaskingPoliciesMaskingColumnsOutput(args: GetMaskingPoliciesMaskingColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPoliciesMaskingColumnsResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingPoliciesMaskingColumns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", {
+        "columnNames": args.columnNames,
+        "dataTypes": args.dataTypes,
+        "filters": args.filters,
+        "isMaskingEnabled": args.isMaskingEnabled,
+        "isSeedRequired": args.isSeedRequired,
+        "maskingColumnGroups": args.maskingColumnGroups,
+        "maskingColumnLifecycleState": args.maskingColumnLifecycleState,
+        "maskingPolicyId": args.maskingPolicyId,
+        "objectTypes": args.objectTypes,
+        "objects": args.objects,
+        "schemaNames": args.schemaNames,
+        "sensitiveTypeId": args.sensitiveTypeId,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+        "timeUpdatedGreaterThanOrEqualTo": args.timeUpdatedGreaterThanOrEqualTo,
+        "timeUpdatedLessThan": args.timeUpdatedLessThan,
+    }, opts);
 }
 
 /**

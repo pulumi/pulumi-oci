@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJmsPlugin(args: GetJmsPluginArgs, opts?: pulumi.InvokeOptions): Promise<GetJmsPluginResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJmsPlugin:getJmsPlugin", {
         "jmsPluginId": args.jmsPluginId,
@@ -129,7 +128,10 @@ export interface GetJmsPluginResult {
  * ```
  */
 export function getJmsPluginOutput(args: GetJmsPluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJmsPluginResult> {
-    return pulumi.output(args).apply((a: any) => getJmsPlugin(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJmsPlugin:getJmsPlugin", {
+        "jmsPluginId": args.jmsPluginId,
+    }, opts);
 }
 
 /**

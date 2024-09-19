@@ -137,14 +137,20 @@ type LookupDomainsAppRoleResult struct {
 
 func LookupDomainsAppRoleOutput(ctx *pulumi.Context, args LookupDomainsAppRoleOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAppRoleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsAppRoleResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsAppRoleResultOutput, error) {
 			args := v.(LookupDomainsAppRoleArgs)
-			r, err := LookupDomainsAppRole(ctx, &args, opts...)
-			var s LookupDomainsAppRoleResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsAppRoleResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsAppRole:getDomainsAppRole", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsAppRoleResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsAppRoleResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsAppRoleResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsAppRoleResultOutput)
 }
 

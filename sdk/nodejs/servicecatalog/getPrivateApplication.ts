@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateApplication(args: GetPrivateApplicationArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateApplicationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getPrivateApplication:getPrivateApplication", {
         "privateApplicationId": args.privateApplicationId,
@@ -113,7 +112,10 @@ export interface GetPrivateApplicationResult {
  * ```
  */
 export function getPrivateApplicationOutput(args: GetPrivateApplicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateApplicationResult> {
-    return pulumi.output(args).apply((a: any) => getPrivateApplication(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceCatalog/getPrivateApplication:getPrivateApplication", {
+        "privateApplicationId": args.privateApplicationId,
+    }, opts);
 }
 
 /**

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerDatabaseDataguardAssociation(args: GetAutonomousContainerDatabaseDataguardAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabaseDataguardAssociationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", {
         "autonomousContainerDatabaseDataguardAssociationId": args.autonomousContainerDatabaseDataguardAssociationId,
@@ -149,7 +148,11 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
  * ```
  */
 export function getAutonomousContainerDatabaseDataguardAssociationOutput(args: GetAutonomousContainerDatabaseDataguardAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseDataguardAssociationResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabaseDataguardAssociation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", {
+        "autonomousContainerDatabaseDataguardAssociationId": args.autonomousContainerDatabaseDataguardAssociationId,
+        "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
+    }, opts);
 }
 
 /**

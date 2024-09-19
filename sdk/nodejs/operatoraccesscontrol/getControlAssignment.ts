@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getControlAssignment(args: GetControlAssignmentArgs, opts?: pulumi.InvokeOptions): Promise<GetControlAssignmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", {
         "operatorControlAssignmentId": args.operatorControlAssignmentId,
@@ -182,7 +181,10 @@ export interface GetControlAssignmentResult {
  * ```
  */
 export function getControlAssignmentOutput(args: GetControlAssignmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlAssignmentResult> {
-    return pulumi.output(args).apply((a: any) => getControlAssignment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", {
+        "operatorControlAssignmentId": args.operatorControlAssignmentId,
+    }, opts);
 }
 
 /**

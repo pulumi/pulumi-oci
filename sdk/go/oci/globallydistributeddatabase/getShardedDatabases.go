@@ -80,14 +80,20 @@ type GetShardedDatabasesResult struct {
 
 func GetShardedDatabasesOutput(ctx *pulumi.Context, args GetShardedDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetShardedDatabasesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetShardedDatabasesResult, error) {
+		ApplyT(func(v interface{}) (GetShardedDatabasesResultOutput, error) {
 			args := v.(GetShardedDatabasesArgs)
-			r, err := GetShardedDatabases(ctx, &args, opts...)
-			var s GetShardedDatabasesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetShardedDatabasesResult
+			secret, err := ctx.InvokePackageRaw("oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases", args, &rv, "", opts...)
+			if err != nil {
+				return GetShardedDatabasesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetShardedDatabasesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetShardedDatabasesResultOutput), nil
+			}
+			return output, nil
 		}).(GetShardedDatabasesResultOutput)
 }
 

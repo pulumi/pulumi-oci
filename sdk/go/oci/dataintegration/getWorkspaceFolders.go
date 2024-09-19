@@ -92,14 +92,20 @@ type GetWorkspaceFoldersResult struct {
 
 func GetWorkspaceFoldersOutput(ctx *pulumi.Context, args GetWorkspaceFoldersOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceFoldersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceFoldersResult, error) {
+		ApplyT(func(v interface{}) (GetWorkspaceFoldersResultOutput, error) {
 			args := v.(GetWorkspaceFoldersArgs)
-			r, err := GetWorkspaceFolders(ctx, &args, opts...)
-			var s GetWorkspaceFoldersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetWorkspaceFoldersResult
+			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", args, &rv, "", opts...)
+			if err != nil {
+				return GetWorkspaceFoldersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetWorkspaceFoldersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetWorkspaceFoldersResultOutput), nil
+			}
+			return output, nil
 		}).(GetWorkspaceFoldersResultOutput)
 }
 

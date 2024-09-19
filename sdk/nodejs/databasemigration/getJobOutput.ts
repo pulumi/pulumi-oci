@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobOutput(args: GetJobOutputArgs, opts?: pulumi.InvokeOptions): Promise<GetJobOutputResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getJobOutput:getJobOutput", {
         "jobId": args.jobId,
@@ -71,7 +70,10 @@ export interface GetJobOutputResult {
  * ```
  */
 export function getJobOutputOutput(args: GetJobOutputOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobOutputResult> {
-    return pulumi.output(args).apply((a: any) => getJobOutput(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getJobOutput:getJobOutput", {
+        "jobId": args.jobId,
+    }, opts);
 }
 
 /**

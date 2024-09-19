@@ -112,14 +112,20 @@ type LookupAuditTrailResult struct {
 
 func LookupAuditTrailOutput(ctx *pulumi.Context, args LookupAuditTrailOutputArgs, opts ...pulumi.InvokeOption) LookupAuditTrailResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAuditTrailResult, error) {
+		ApplyT(func(v interface{}) (LookupAuditTrailResultOutput, error) {
 			args := v.(LookupAuditTrailArgs)
-			r, err := LookupAuditTrail(ctx, &args, opts...)
-			var s LookupAuditTrailResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAuditTrailResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditTrail:getAuditTrail", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAuditTrailResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAuditTrailResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAuditTrailResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAuditTrailResultOutput)
 }
 

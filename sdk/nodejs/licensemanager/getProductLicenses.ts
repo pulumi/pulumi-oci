@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProductLicenses(args: GetProductLicensesArgs, opts?: pulumi.InvokeOptions): Promise<GetProductLicensesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getProductLicenses:getProductLicenses", {
         "compartmentId": args.compartmentId,
@@ -85,7 +84,12 @@ export interface GetProductLicensesResult {
  * ```
  */
 export function getProductLicensesOutput(args: GetProductLicensesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicensesResult> {
-    return pulumi.output(args).apply((a: any) => getProductLicenses(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LicenseManager/getProductLicenses:getProductLicenses", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "isCompartmentIdInSubtree": args.isCompartmentIdInSubtree,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGenericArtifact(args: GetGenericArtifactArgs, opts?: pulumi.InvokeOptions): Promise<GetGenericArtifactResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getGenericArtifact:getGenericArtifact", {
         "artifactId": args.artifactId,
@@ -109,7 +108,10 @@ export interface GetGenericArtifactResult {
  * ```
  */
 export function getGenericArtifactOutput(args: GetGenericArtifactOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericArtifactResult> {
-    return pulumi.output(args).apply((a: any) => getGenericArtifact(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Artifacts/getGenericArtifact:getGenericArtifact", {
+        "artifactId": args.artifactId,
+    }, opts);
 }
 
 /**

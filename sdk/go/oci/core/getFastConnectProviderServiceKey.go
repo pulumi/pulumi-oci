@@ -76,14 +76,20 @@ type GetFastConnectProviderServiceKeyResult struct {
 
 func GetFastConnectProviderServiceKeyOutput(ctx *pulumi.Context, args GetFastConnectProviderServiceKeyOutputArgs, opts ...pulumi.InvokeOption) GetFastConnectProviderServiceKeyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFastConnectProviderServiceKeyResult, error) {
+		ApplyT(func(v interface{}) (GetFastConnectProviderServiceKeyResultOutput, error) {
 			args := v.(GetFastConnectProviderServiceKeyArgs)
-			r, err := GetFastConnectProviderServiceKey(ctx, &args, opts...)
-			var s GetFastConnectProviderServiceKeyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFastConnectProviderServiceKeyResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args, &rv, "", opts...)
+			if err != nil {
+				return GetFastConnectProviderServiceKeyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFastConnectProviderServiceKeyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFastConnectProviderServiceKeyResultOutput), nil
+			}
+			return output, nil
 		}).(GetFastConnectProviderServiceKeyResultOutput)
 }
 

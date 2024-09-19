@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLoadBalancers(args: GetLoadBalancersArgs, opts?: pulumi.InvokeOptions): Promise<GetLoadBalancersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getLoadBalancers:getLoadBalancers", {
         "compartmentId": args.compartmentId,
@@ -115,7 +114,14 @@ export interface GetLoadBalancersResult {
  * ```
  */
 export function getLoadBalancersOutput(args: GetLoadBalancersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLoadBalancersResult> {
-    return pulumi.output(args).apply((a: any) => getLoadBalancers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getLoadBalancers:getLoadBalancers", {
+        "compartmentId": args.compartmentId,
+        "detail": args.detail,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

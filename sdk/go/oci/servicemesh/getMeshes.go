@@ -83,14 +83,20 @@ type GetMeshesResult struct {
 
 func GetMeshesOutput(ctx *pulumi.Context, args GetMeshesOutputArgs, opts ...pulumi.InvokeOption) GetMeshesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMeshesResult, error) {
+		ApplyT(func(v interface{}) (GetMeshesResultOutput, error) {
 			args := v.(GetMeshesArgs)
-			r, err := GetMeshes(ctx, &args, opts...)
-			var s GetMeshesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMeshesResult
+			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getMeshes:getMeshes", args, &rv, "", opts...)
+			if err != nil {
+				return GetMeshesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMeshesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMeshesResultOutput), nil
+			}
+			return output, nil
 		}).(GetMeshesResultOutput)
 }
 

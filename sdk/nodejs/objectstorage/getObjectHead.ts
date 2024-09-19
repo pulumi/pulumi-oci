@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getObjectHead(args: GetObjectHeadArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectHeadResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObjectHead:getObjectHead", {
         "bucket": args.bucket,
@@ -103,7 +102,12 @@ export interface GetObjectHeadResult {
  * ```
  */
 export function getObjectHeadOutput(args: GetObjectHeadOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectHeadResult> {
-    return pulumi.output(args).apply((a: any) => getObjectHead(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObjectHead:getObjectHead", {
+        "bucket": args.bucket,
+        "namespace": args.namespace,
+        "object": args.object,
+    }, opts);
 }
 
 /**

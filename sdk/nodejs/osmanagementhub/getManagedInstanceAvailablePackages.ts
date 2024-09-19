@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceAvailablePackages(args: GetManagedInstanceAvailablePackagesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceAvailablePackagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages", {
         "compartmentId": args.compartmentId,
@@ -101,7 +100,14 @@ export interface GetManagedInstanceAvailablePackagesResult {
  * ```
  */
 export function getManagedInstanceAvailablePackagesOutput(args: GetManagedInstanceAvailablePackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceAvailablePackagesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceAvailablePackages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages", {
+        "compartmentId": args.compartmentId,
+        "displayNameContains": args.displayNameContains,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "managedInstanceId": args.managedInstanceId,
+    }, opts);
 }
 
 /**

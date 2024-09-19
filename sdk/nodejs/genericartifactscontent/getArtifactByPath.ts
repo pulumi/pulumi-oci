@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getArtifactByPath(args: GetArtifactByPathArgs, opts?: pulumi.InvokeOptions): Promise<GetArtifactByPathResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", {
         "artifactPath": args.artifactPath,
@@ -89,7 +88,12 @@ export interface GetArtifactByPathResult {
  * ```
  */
 export function getArtifactByPathOutput(args: GetArtifactByPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetArtifactByPathResult> {
-    return pulumi.output(args).apply((a: any) => getArtifactByPath(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", {
+        "artifactPath": args.artifactPath,
+        "repositoryId": args.repositoryId,
+        "version": args.version,
+    }, opts);
 }
 
 /**

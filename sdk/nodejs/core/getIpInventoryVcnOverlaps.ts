@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpInventoryVcnOverlaps(args: GetIpInventoryVcnOverlapsArgs, opts?: pulumi.InvokeOptions): Promise<GetIpInventoryVcnOverlapsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", {
         "compartmentLists": args.compartmentLists,
@@ -102,7 +101,13 @@ export interface GetIpInventoryVcnOverlapsResult {
  * ```
  */
 export function getIpInventoryVcnOverlapsOutput(args: GetIpInventoryVcnOverlapsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpInventoryVcnOverlapsResult> {
-    return pulumi.output(args).apply((a: any) => getIpInventoryVcnOverlaps(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", {
+        "compartmentLists": args.compartmentLists,
+        "filters": args.filters,
+        "regionLists": args.regionLists,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

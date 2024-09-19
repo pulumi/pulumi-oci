@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstVbsInstance(args: GetInstVbsInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetInstVbsInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Vbs/getInstVbsInstance:getInstVbsInstance", {
         "vbsInstanceId": args.vbsInstanceId,
@@ -118,7 +117,10 @@ export interface GetInstVbsInstanceResult {
  * ```
  */
 export function getInstVbsInstanceOutput(args: GetInstVbsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstVbsInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getInstVbsInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Vbs/getInstVbsInstance:getInstVbsInstance", {
+        "vbsInstanceId": args.vbsInstanceId,
+    }, opts);
 }
 
 /**

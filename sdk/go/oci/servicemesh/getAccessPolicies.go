@@ -88,14 +88,20 @@ type GetAccessPoliciesResult struct {
 
 func GetAccessPoliciesOutput(ctx *pulumi.Context, args GetAccessPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetAccessPoliciesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAccessPoliciesResult, error) {
+		ApplyT(func(v interface{}) (GetAccessPoliciesResultOutput, error) {
 			args := v.(GetAccessPoliciesArgs)
-			r, err := GetAccessPolicies(ctx, &args, opts...)
-			var s GetAccessPoliciesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAccessPoliciesResult
+			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args, &rv, "", opts...)
+			if err != nil {
+				return GetAccessPoliciesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAccessPoliciesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAccessPoliciesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAccessPoliciesResultOutput)
 }
 

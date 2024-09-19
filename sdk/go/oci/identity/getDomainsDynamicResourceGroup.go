@@ -121,14 +121,20 @@ type LookupDomainsDynamicResourceGroupResult struct {
 
 func LookupDomainsDynamicResourceGroupOutput(ctx *pulumi.Context, args LookupDomainsDynamicResourceGroupOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsDynamicResourceGroupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsDynamicResourceGroupResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsDynamicResourceGroupResultOutput, error) {
 			args := v.(LookupDomainsDynamicResourceGroupArgs)
-			r, err := LookupDomainsDynamicResourceGroup(ctx, &args, opts...)
-			var s LookupDomainsDynamicResourceGroupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsDynamicResourceGroupResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsDynamicResourceGroupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsDynamicResourceGroupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsDynamicResourceGroupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsDynamicResourceGroupResultOutput)
 }
 

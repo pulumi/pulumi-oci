@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Search User Schema Attribute Settings
  */
 export function getDomainsUserAttributesSettings(args: GetDomainsUserAttributesSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsUserAttributesSettingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", {
         "attributeSets": args.attributeSets,
@@ -83,7 +82,15 @@ export interface GetDomainsUserAttributesSettingsResult {
  * Search User Schema Attribute Settings
  */
 export function getDomainsUserAttributesSettingsOutput(args: GetDomainsUserAttributesSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUserAttributesSettingsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsUserAttributesSettings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

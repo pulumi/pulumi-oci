@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessmentUserAccessAnalytics(args: GetUserAssessmentUserAccessAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentUserAccessAnalyticsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentUserAccessAnalytics:getUserAssessmentUserAccessAnalytics", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetUserAssessmentUserAccessAnalyticsResult {
  * ```
  */
 export function getUserAssessmentUserAccessAnalyticsOutput(args: GetUserAssessmentUserAccessAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentUserAccessAnalyticsResult> {
-    return pulumi.output(args).apply((a: any) => getUserAssessmentUserAccessAnalytics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessmentUserAccessAnalytics:getUserAssessmentUserAccessAnalytics", {
+        "filters": args.filters,
+        "userAssessmentId": args.userAssessmentId,
+    }, opts);
 }
 
 /**

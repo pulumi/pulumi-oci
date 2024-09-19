@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlConfiguration(args: GetMysqlConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", {
         "configurationId": args.configurationId,
@@ -119,7 +118,10 @@ export interface GetMysqlConfigurationResult {
  * ```
  */
 export function getMysqlConfigurationOutput(args: GetMysqlConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getMysqlConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", {
+        "configurationId": args.configurationId,
+    }, opts);
 }
 
 /**

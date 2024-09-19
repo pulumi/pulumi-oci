@@ -85,14 +85,20 @@ type LookupSubscriberResult struct {
 
 func LookupSubscriberOutput(ctx *pulumi.Context, args LookupSubscriberOutputArgs, opts ...pulumi.InvokeOption) LookupSubscriberResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupSubscriberResult, error) {
+		ApplyT(func(v interface{}) (LookupSubscriberResultOutput, error) {
 			args := v.(LookupSubscriberArgs)
-			r, err := LookupSubscriber(ctx, &args, opts...)
-			var s LookupSubscriberResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupSubscriberResult
+			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getSubscriber:getSubscriber", args, &rv, "", opts...)
+			if err != nil {
+				return LookupSubscriberResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupSubscriberResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupSubscriberResultOutput), nil
+			}
+			return output, nil
 		}).(LookupSubscriberResultOutput)
 }
 

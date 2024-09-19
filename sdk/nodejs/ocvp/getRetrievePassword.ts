@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRetrievePassword(args: GetRetrievePasswordArgs, opts?: pulumi.InvokeOptions): Promise<GetRetrievePasswordResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getRetrievePassword:getRetrievePassword", {
         "sddcId": args.sddcId,
@@ -74,7 +73,11 @@ export interface GetRetrievePasswordResult {
  * ```
  */
 export function getRetrievePasswordOutput(args: GetRetrievePasswordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRetrievePasswordResult> {
-    return pulumi.output(args).apply((a: any) => getRetrievePassword(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getRetrievePassword:getRetrievePassword", {
+        "sddcId": args.sddcId,
+        "type": args.type,
+    }, opts);
 }
 
 /**

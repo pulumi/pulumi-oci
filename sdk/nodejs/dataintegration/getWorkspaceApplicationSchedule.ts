@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkspaceApplicationSchedule(args: GetWorkspaceApplicationScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceApplicationScheduleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataIntegration/getWorkspaceApplicationSchedule:getWorkspaceApplicationSchedule", {
         "applicationKey": args.applicationKey,
@@ -133,7 +132,12 @@ export interface GetWorkspaceApplicationScheduleResult {
  * ```
  */
 export function getWorkspaceApplicationScheduleOutput(args: GetWorkspaceApplicationScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceApplicationScheduleResult> {
-    return pulumi.output(args).apply((a: any) => getWorkspaceApplicationSchedule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceApplicationSchedule:getWorkspaceApplicationSchedule", {
+        "applicationKey": args.applicationKey,
+        "scheduleKey": args.scheduleKey,
+        "workspaceId": args.workspaceId,
+    }, opts);
 }
 
 /**

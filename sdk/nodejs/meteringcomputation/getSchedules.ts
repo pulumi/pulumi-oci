@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSchedules(args: GetSchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetSchedulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getSchedules:getSchedules", {
         "compartmentId": args.compartmentId,
@@ -94,7 +93,12 @@ export interface GetSchedulesResult {
  * ```
  */
 export function getSchedulesOutput(args: GetSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSchedulesResult> {
-    return pulumi.output(args).apply((a: any) => getSchedules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getSchedules:getSchedules", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+    }, opts);
 }
 
 /**

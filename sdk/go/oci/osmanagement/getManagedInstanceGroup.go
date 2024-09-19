@@ -83,14 +83,20 @@ type LookupManagedInstanceGroupResult struct {
 
 func LookupManagedInstanceGroupOutput(ctx *pulumi.Context, args LookupManagedInstanceGroupOutputArgs, opts ...pulumi.InvokeOption) LookupManagedInstanceGroupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupManagedInstanceGroupResult, error) {
+		ApplyT(func(v interface{}) (LookupManagedInstanceGroupResultOutput, error) {
 			args := v.(LookupManagedInstanceGroupArgs)
-			r, err := LookupManagedInstanceGroup(ctx, &args, opts...)
-			var s LookupManagedInstanceGroupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupManagedInstanceGroupResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupManagedInstanceGroupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupManagedInstanceGroupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupManagedInstanceGroupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupManagedInstanceGroupResultOutput)
 }
 

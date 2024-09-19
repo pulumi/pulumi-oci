@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterOption(args: GetClusterOptionArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterOptionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getClusterOption:getClusterOption", {
         "clusterOptionId": args.clusterOptionId,
@@ -83,7 +82,11 @@ export interface GetClusterOptionResult {
  * ```
  */
 export function getClusterOptionOutput(args: GetClusterOptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterOptionResult> {
-    return pulumi.output(args).apply((a: any) => getClusterOption(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterOption:getClusterOption", {
+        "clusterOptionId": args.clusterOptionId,
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

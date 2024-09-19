@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getBackups(args?: GetBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetBackupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getBackups:getBackups", {
         "compartmentId": args.compartmentId,
@@ -97,7 +96,14 @@ export interface GetBackupsResult {
  * ```
  */
 export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupsResult> {
-    return pulumi.output(args).apply((a: any) => getBackups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getBackups:getBackups", {
+        "compartmentId": args.compartmentId,
+        "databaseId": args.databaseId,
+        "filters": args.filters,
+        "shapeFamily": args.shapeFamily,
+    }, opts);
 }
 
 /**

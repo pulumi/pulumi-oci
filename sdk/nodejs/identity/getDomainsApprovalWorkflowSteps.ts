@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsApprovalWorkflowSteps(args: GetDomainsApprovalWorkflowStepsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsApprovalWorkflowStepsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsApprovalWorkflowSteps:getDomainsApprovalWorkflowSteps", {
         "approvalWorkflowStepCount": args.approvalWorkflowStepCount,
@@ -142,7 +141,20 @@ export interface GetDomainsApprovalWorkflowStepsResult {
  * ```
  */
 export function getDomainsApprovalWorkflowStepsOutput(args: GetDomainsApprovalWorkflowStepsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsApprovalWorkflowStepsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsApprovalWorkflowSteps(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApprovalWorkflowSteps:getDomainsApprovalWorkflowSteps", {
+        "approvalWorkflowStepCount": args.approvalWorkflowStepCount,
+        "approvalWorkflowStepFilter": args.approvalWorkflowStepFilter,
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

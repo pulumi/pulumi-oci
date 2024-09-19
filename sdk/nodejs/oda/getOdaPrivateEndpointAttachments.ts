@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOdaPrivateEndpointAttachments(args: GetOdaPrivateEndpointAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetOdaPrivateEndpointAttachmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,13 @@ export interface GetOdaPrivateEndpointAttachmentsResult {
  * ```
  */
 export function getOdaPrivateEndpointAttachmentsOutput(args: GetOdaPrivateEndpointAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaPrivateEndpointAttachmentsResult> {
-    return pulumi.output(args).apply((a: any) => getOdaPrivateEndpointAttachments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "odaPrivateEndpointId": args.odaPrivateEndpointId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

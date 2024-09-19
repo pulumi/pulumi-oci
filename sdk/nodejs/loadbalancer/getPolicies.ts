@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPolicies(args: GetPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getPolicies:getPolicies", {
         "compartmentId": args.compartmentId,
@@ -74,7 +73,11 @@ export interface GetPoliciesResult {
  * ```
  */
 export function getPoliciesOutput(args: GetPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getPolicies:getPolicies", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

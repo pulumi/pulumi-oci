@@ -78,14 +78,20 @@ type GetProtectionCapabilityGroupTagsResult struct {
 
 func GetProtectionCapabilityGroupTagsOutput(ctx *pulumi.Context, args GetProtectionCapabilityGroupTagsOutputArgs, opts ...pulumi.InvokeOption) GetProtectionCapabilityGroupTagsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetProtectionCapabilityGroupTagsResult, error) {
+		ApplyT(func(v interface{}) (GetProtectionCapabilityGroupTagsResultOutput, error) {
 			args := v.(GetProtectionCapabilityGroupTagsArgs)
-			r, err := GetProtectionCapabilityGroupTags(ctx, &args, opts...)
-			var s GetProtectionCapabilityGroupTagsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetProtectionCapabilityGroupTagsResult
+			secret, err := ctx.InvokePackageRaw("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args, &rv, "", opts...)
+			if err != nil {
+				return GetProtectionCapabilityGroupTagsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetProtectionCapabilityGroupTagsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetProtectionCapabilityGroupTagsResultOutput), nil
+			}
+			return output, nil
 		}).(GetProtectionCapabilityGroupTagsResultOutput)
 }
 

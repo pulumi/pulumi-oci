@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResolver(args: GetResolverArgs, opts?: pulumi.InvokeOptions): Promise<GetResolverResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getResolver:getResolver", {
         "resolverId": args.resolverId,
@@ -135,7 +134,11 @@ export interface GetResolverResult {
  * ```
  */
 export function getResolverOutput(args: GetResolverOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolverResult> {
-    return pulumi.output(args).apply((a: any) => getResolver(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getResolver:getResolver", {
+        "resolverId": args.resolverId,
+        "scope": args.scope,
+    }, opts);
 }
 
 /**

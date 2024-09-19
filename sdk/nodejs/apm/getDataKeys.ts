@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataKeys(args: GetDataKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetDataKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Apm/getDataKeys:getDataKeys", {
         "apmDomainId": args.apmDomainId,
@@ -84,7 +83,12 @@ export interface GetDataKeysResult {
  * ```
  */
 export function getDataKeysOutput(args: GetDataKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataKeysResult> {
-    return pulumi.output(args).apply((a: any) => getDataKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Apm/getDataKeys:getDataKeys", {
+        "apmDomainId": args.apmDomainId,
+        "dataKeyType": args.dataKeyType,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

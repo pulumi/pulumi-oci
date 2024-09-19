@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlDbSystems(args: GetMysqlDbSystemsArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlDbSystemsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", {
         "compartmentId": args.compartmentId,
@@ -153,7 +152,18 @@ export interface GetMysqlDbSystemsResult {
  * ```
  */
 export function getMysqlDbSystemsOutput(args: GetMysqlDbSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlDbSystemsResult> {
-    return pulumi.output(args).apply((a: any) => getMysqlDbSystems(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", {
+        "compartmentId": args.compartmentId,
+        "configurationId": args.configurationId,
+        "databaseManagements": args.databaseManagements,
+        "dbSystemId": args.dbSystemId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isHeatWaveClusterAttached": args.isHeatWaveClusterAttached,
+        "isUpToDate": args.isUpToDate,
+        "state": args.state,
+    }, opts);
 }
 
 /**

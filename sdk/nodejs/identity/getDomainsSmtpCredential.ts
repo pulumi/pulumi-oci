@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsSmtpCredential(args: GetDomainsSmtpCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSmtpCredentialResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsSmtpCredential:getDomainsSmtpCredential", {
         "attributeSets": args.attributeSets,
@@ -179,7 +178,15 @@ export interface GetDomainsSmtpCredentialResult {
  * ```
  */
 export function getDomainsSmtpCredentialOutput(args: GetDomainsSmtpCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSmtpCredentialResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsSmtpCredential(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSmtpCredential:getDomainsSmtpCredential", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "smtpCredentialId": args.smtpCredentialId,
+    }, opts);
 }
 
 /**

@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceAgentPlugin(args: GetInstanceAgentPluginArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceAgentPluginResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", {
         "compartmentId": args.compartmentId,
@@ -92,7 +91,12 @@ export interface GetInstanceAgentPluginResult {
  * ```
  */
 export function getInstanceAgentPluginOutput(args: GetInstanceAgentPluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceAgentPluginResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceAgentPlugin(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", {
+        "compartmentId": args.compartmentId,
+        "instanceagentId": args.instanceagentId,
+        "pluginName": args.pluginName,
+    }, opts);
 }
 
 /**

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTags(args: GetTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetTagsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTags:getTags", {
         "filters": args.filters,
@@ -88,7 +87,12 @@ export interface GetTagsResult {
  * ```
  */
 export function getTagsOutput(args: GetTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagsResult> {
-    return pulumi.output(args).apply((a: any) => getTags(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getTags:getTags", {
+        "filters": args.filters,
+        "state": args.state,
+        "tagNamespaceId": args.tagNamespaceId,
+    }, opts);
 }
 
 /**

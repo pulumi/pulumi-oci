@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsCollectionOperations(args: GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", {
         "endTimeLessThanOrEqualTo": args.endTimeLessThanOrEqualTo,
@@ -121,7 +120,16 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsCollectionOperationsOutput(args: GetManagedDatabaseOptimizerStatisticsCollectionOperationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsCollectionOperations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", {
+        "endTimeLessThanOrEqualTo": args.endTimeLessThanOrEqualTo,
+        "filterBy": args.filterBy,
+        "filters": args.filters,
+        "limit": args.limit,
+        "managedDatabaseId": args.managedDatabaseId,
+        "startTimeGreaterThanOrEqualTo": args.startTimeGreaterThanOrEqualTo,
+        "taskType": args.taskType,
+    }, opts);
 }
 
 /**

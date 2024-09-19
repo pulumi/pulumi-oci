@@ -93,14 +93,20 @@ type GetFusionEnvironmentScheduledActivitiesResult struct {
 
 func GetFusionEnvironmentScheduledActivitiesOutput(ctx *pulumi.Context, args GetFusionEnvironmentScheduledActivitiesOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentScheduledActivitiesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentScheduledActivitiesResult, error) {
+		ApplyT(func(v interface{}) (GetFusionEnvironmentScheduledActivitiesResultOutput, error) {
 			args := v.(GetFusionEnvironmentScheduledActivitiesArgs)
-			r, err := GetFusionEnvironmentScheduledActivities(ctx, &args, opts...)
-			var s GetFusionEnvironmentScheduledActivitiesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFusionEnvironmentScheduledActivitiesResult
+			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", args, &rv, "", opts...)
+			if err != nil {
+				return GetFusionEnvironmentScheduledActivitiesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFusionEnvironmentScheduledActivitiesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFusionEnvironmentScheduledActivitiesResultOutput), nil
+			}
+			return output, nil
 		}).(GetFusionEnvironmentScheduledActivitiesResultOutput)
 }
 

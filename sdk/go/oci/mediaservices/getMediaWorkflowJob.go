@@ -104,14 +104,20 @@ type LookupMediaWorkflowJobResult struct {
 
 func LookupMediaWorkflowJobOutput(ctx *pulumi.Context, args LookupMediaWorkflowJobOutputArgs, opts ...pulumi.InvokeOption) LookupMediaWorkflowJobResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupMediaWorkflowJobResult, error) {
+		ApplyT(func(v interface{}) (LookupMediaWorkflowJobResultOutput, error) {
 			args := v.(LookupMediaWorkflowJobArgs)
-			r, err := LookupMediaWorkflowJob(ctx, &args, opts...)
-			var s LookupMediaWorkflowJobResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupMediaWorkflowJobResult
+			secret, err := ctx.InvokePackageRaw("oci:MediaServices/getMediaWorkflowJob:getMediaWorkflowJob", args, &rv, "", opts...)
+			if err != nil {
+				return LookupMediaWorkflowJobResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupMediaWorkflowJobResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupMediaWorkflowJobResultOutput), nil
+			}
+			return output, nil
 		}).(LookupMediaWorkflowJobResultOutput)
 }
 

@@ -110,14 +110,20 @@ type GetManagedListsResult struct {
 
 func GetManagedListsOutput(ctx *pulumi.Context, args GetManagedListsOutputArgs, opts ...pulumi.InvokeOption) GetManagedListsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedListsResult, error) {
+		ApplyT(func(v interface{}) (GetManagedListsResultOutput, error) {
 			args := v.(GetManagedListsArgs)
-			r, err := GetManagedLists(ctx, &args, opts...)
-			var s GetManagedListsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedListsResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getManagedLists:getManagedLists", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedListsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedListsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedListsResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedListsResultOutput)
 }
 

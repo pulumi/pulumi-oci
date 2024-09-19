@@ -84,14 +84,20 @@ type GetFusionEnvironmentServiceAttachmentsResult struct {
 
 func GetFusionEnvironmentServiceAttachmentsOutput(ctx *pulumi.Context, args GetFusionEnvironmentServiceAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentServiceAttachmentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentServiceAttachmentsResult, error) {
+		ApplyT(func(v interface{}) (GetFusionEnvironmentServiceAttachmentsResultOutput, error) {
 			args := v.(GetFusionEnvironmentServiceAttachmentsArgs)
-			r, err := GetFusionEnvironmentServiceAttachments(ctx, &args, opts...)
-			var s GetFusionEnvironmentServiceAttachmentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFusionEnvironmentServiceAttachmentsResult
+			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments", args, &rv, "", opts...)
+			if err != nil {
+				return GetFusionEnvironmentServiceAttachmentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFusionEnvironmentServiceAttachmentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFusionEnvironmentServiceAttachmentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetFusionEnvironmentServiceAttachmentsResultOutput)
 }
 

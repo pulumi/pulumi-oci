@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNodePool(args: GetNodePoolArgs, opts?: pulumi.InvokeOptions): Promise<GetNodePoolResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getNodePool:getNodePool", {
         "nodePoolId": args.nodePoolId,
@@ -166,7 +165,10 @@ export interface GetNodePoolResult {
  * ```
  */
 export function getNodePoolOutput(args: GetNodePoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolResult> {
-    return pulumi.output(args).apply((a: any) => getNodePool(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getNodePool:getNodePool", {
+        "nodePoolId": args.nodePoolId,
+    }, opts);
 }
 
 /**

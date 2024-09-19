@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceCatalog(args: GetServiceCatalogArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceCatalogResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", {
         "serviceCatalogId": args.serviceCatalogId,
@@ -93,7 +92,10 @@ export interface GetServiceCatalogResult {
  * ```
  */
 export function getServiceCatalogOutput(args: GetServiceCatalogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogResult> {
-    return pulumi.output(args).apply((a: any) => getServiceCatalog(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", {
+        "serviceCatalogId": args.serviceCatalogId,
+    }, opts);
 }
 
 /**

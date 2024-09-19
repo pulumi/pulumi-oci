@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsSelfRegistrationProfile(args: GetDomainsSelfRegistrationProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSelfRegistrationProfileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile", {
         "attributeSets": args.attributeSets,
@@ -251,7 +250,15 @@ export interface GetDomainsSelfRegistrationProfileResult {
  * ```
  */
 export function getDomainsSelfRegistrationProfileOutput(args: GetDomainsSelfRegistrationProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSelfRegistrationProfileResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsSelfRegistrationProfile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "selfRegistrationProfileId": args.selfRegistrationProfileId,
+    }, opts);
 }
 
 /**

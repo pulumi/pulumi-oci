@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLimitValues(args: GetLimitValuesArgs, opts?: pulumi.InvokeOptions): Promise<GetLimitValuesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getLimitValues:getLimitValues", {
         "availabilityDomain": args.availabilityDomain,
@@ -123,7 +122,16 @@ export interface GetLimitValuesResult {
  * ```
  */
 export function getLimitValuesOutput(args: GetLimitValuesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLimitValuesResult> {
-    return pulumi.output(args).apply((a: any) => getLimitValues(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Limits/getLimitValues:getLimitValues", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "scopeType": args.scopeType,
+        "serviceName": args.serviceName,
+        "subscriptionId": args.subscriptionId,
+    }, opts);
 }
 
 /**

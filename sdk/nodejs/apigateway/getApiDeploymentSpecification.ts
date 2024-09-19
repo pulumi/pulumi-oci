@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApiDeploymentSpecification(args: GetApiDeploymentSpecificationArgs, opts?: pulumi.InvokeOptions): Promise<GetApiDeploymentSpecificationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", {
         "apiId": args.apiId,
@@ -79,7 +78,10 @@ export interface GetApiDeploymentSpecificationResult {
  * ```
  */
 export function getApiDeploymentSpecificationOutput(args: GetApiDeploymentSpecificationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiDeploymentSpecificationResult> {
-    return pulumi.output(args).apply((a: any) => getApiDeploymentSpecification(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", {
+        "apiId": args.apiId,
+    }, opts);
 }
 
 /**

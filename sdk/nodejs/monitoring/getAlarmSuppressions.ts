@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlarmSuppressions(args: GetAlarmSuppressionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmSuppressionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", {
         "alarmId": args.alarmId,
@@ -115,7 +114,13 @@ export interface GetAlarmSuppressionsResult {
  * ```
  */
 export function getAlarmSuppressionsOutput(args: GetAlarmSuppressionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmSuppressionsResult> {
-    return pulumi.output(args).apply((a: any) => getAlarmSuppressions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", {
+        "alarmId": args.alarmId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

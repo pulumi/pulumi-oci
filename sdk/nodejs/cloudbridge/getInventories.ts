@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInventories(args: GetInventoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetInventoriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudBridge/getInventories:getInventories", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,12 @@ export interface GetInventoriesResult {
  * ```
  */
 export function getInventoriesOutput(args: GetInventoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInventoriesResult> {
-    return pulumi.output(args).apply((a: any) => getInventories(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudBridge/getInventories:getInventories", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

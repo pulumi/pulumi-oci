@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBootVolumeReplica(args: GetBootVolumeReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeReplicaResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeReplica:getBootVolumeReplica", {
         "bootVolumeReplicaId": args.bootVolumeReplicaId,
@@ -110,7 +109,10 @@ export interface GetBootVolumeReplicaResult {
  * ```
  */
 export function getBootVolumeReplicaOutput(args: GetBootVolumeReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeReplicaResult> {
-    return pulumi.output(args).apply((a: any) => getBootVolumeReplica(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getBootVolumeReplica:getBootVolumeReplica", {
+        "bootVolumeReplicaId": args.bootVolumeReplicaId,
+    }, opts);
 }
 
 /**

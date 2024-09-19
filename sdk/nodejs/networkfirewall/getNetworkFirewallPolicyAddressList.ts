@@ -10,7 +10,6 @@ import * as utilities from "../utilities";
  * Get Address List by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyAddressList(args: GetNetworkFirewallPolicyAddressListArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyAddressListResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", {
         "name": args.name,
@@ -65,7 +64,11 @@ export interface GetNetworkFirewallPolicyAddressListResult {
  * Get Address List by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyAddressListOutput(args: GetNetworkFirewallPolicyAddressListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyAddressListResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyAddressList(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", {
+        "name": args.name,
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+    }, opts);
 }
 
 /**

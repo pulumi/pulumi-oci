@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerDatabases(args: GetAutonomousContainerDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabasesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases", {
         "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,
@@ -165,7 +164,19 @@ export interface GetAutonomousContainerDatabasesResult {
  * ```
  */
 export function getAutonomousContainerDatabasesOutput(args: GetAutonomousContainerDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabases(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases", {
+        "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,
+        "autonomousVmClusterId": args.autonomousVmClusterId,
+        "availabilityDomain": args.availabilityDomain,
+        "cloudAutonomousVmClusterId": args.cloudAutonomousVmClusterId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "infrastructureType": args.infrastructureType,
+        "serviceLevelAgreementType": args.serviceLevelAgreementType,
+        "state": args.state,
+    }, opts);
 }
 
 /**

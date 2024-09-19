@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSourceVendors(args: GetSoftwareSourceVendorsArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourceVendorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwareSourceVendors:getSoftwareSourceVendors", {
         "compartmentId": args.compartmentId,
@@ -87,7 +86,12 @@ export interface GetSoftwareSourceVendorsResult {
  * ```
  */
 export function getSoftwareSourceVendorsOutput(args: GetSoftwareSourceVendorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceVendorsResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwareSourceVendors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwareSourceVendors:getSoftwareSourceVendors", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+    }, opts);
 }
 
 /**

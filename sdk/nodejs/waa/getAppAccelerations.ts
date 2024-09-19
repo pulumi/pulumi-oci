@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppAccelerations(args: GetAppAccelerationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppAccelerationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waa/getAppAccelerations:getAppAccelerations", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,15 @@ export interface GetAppAccelerationsResult {
  * ```
  */
 export function getAppAccelerationsOutput(args: GetAppAccelerationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationsResult> {
-    return pulumi.output(args).apply((a: any) => getAppAccelerations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waa/getAppAccelerations:getAppAccelerations", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "states": args.states,
+        "webAppAccelerationPolicyId": args.webAppAccelerationPolicyId,
+    }, opts);
 }
 
 /**

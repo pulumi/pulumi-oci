@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKnowledgebase(args: GetKnowledgebaseArgs, opts?: pulumi.InvokeOptions): Promise<GetKnowledgebaseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Adm/getKnowledgebase:getKnowledgebase", {
         "knowledgeBaseId": args.knowledgeBaseId,
@@ -97,7 +96,10 @@ export interface GetKnowledgebaseResult {
  * ```
  */
 export function getKnowledgebaseOutput(args: GetKnowledgebaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKnowledgebaseResult> {
-    return pulumi.output(args).apply((a: any) => getKnowledgebase(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Adm/getKnowledgebase:getKnowledgebase", {
+        "knowledgeBaseId": args.knowledgeBaseId,
+    }, opts);
 }
 
 /**

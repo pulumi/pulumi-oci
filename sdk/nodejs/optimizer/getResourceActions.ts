@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResourceActions(args: GetResourceActionsArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceActionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getResourceActions:getResourceActions", {
         "childTenancyIds": args.childTenancyIds,
@@ -184,7 +183,21 @@ export interface GetResourceActionsResult {
  * ```
  */
 export function getResourceActionsOutput(args: GetResourceActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceActionsResult> {
-    return pulumi.output(args).apply((a: any) => getResourceActions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getResourceActions:getResourceActions", {
+        "childTenancyIds": args.childTenancyIds,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "includeOrganization": args.includeOrganization,
+        "includeResourceMetadata": args.includeResourceMetadata,
+        "name": args.name,
+        "recommendationId": args.recommendationId,
+        "recommendationName": args.recommendationName,
+        "resourceType": args.resourceType,
+        "state": args.state,
+        "status": args.status,
+    }, opts);
 }
 
 /**

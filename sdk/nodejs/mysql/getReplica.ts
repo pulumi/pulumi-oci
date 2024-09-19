@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplica(args: GetReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicaResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getReplica:getReplica", {
         "replicaId": args.replicaId,
@@ -151,7 +150,10 @@ export interface GetReplicaResult {
  * ```
  */
 export function getReplicaOutput(args: GetReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicaResult> {
-    return pulumi.output(args).apply((a: any) => getReplica(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getReplica:getReplica", {
+        "replicaId": args.replicaId,
+    }, opts);
 }
 
 /**

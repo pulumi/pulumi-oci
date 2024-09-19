@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAction(args: GetActionArgs, opts?: pulumi.InvokeOptions): Promise<GetActionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAction:getAction", {
         "operatorActionId": args.operatorActionId,
@@ -91,7 +90,10 @@ export interface GetActionResult {
  * ```
  */
 export function getActionOutput(args: GetActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetActionResult> {
-    return pulumi.output(args).apply((a: any) => getAction(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAction:getAction", {
+        "operatorActionId": args.operatorActionId,
+    }, opts);
 }
 
 /**

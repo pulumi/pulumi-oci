@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployPipeline(args: GetDeployPipelineArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployPipelineResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployPipeline:getDeployPipeline", {
         "deployPipelineId": args.deployPipelineId,
@@ -123,7 +122,10 @@ export interface GetDeployPipelineResult {
  * ```
  */
 export function getDeployPipelineOutput(args: GetDeployPipelineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployPipelineResult> {
-    return pulumi.output(args).apply((a: any) => getDeployPipeline(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getDeployPipeline:getDeployPipeline", {
+        "deployPipelineId": args.deployPipelineId,
+    }, opts);
 }
 
 /**

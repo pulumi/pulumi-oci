@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudVmClusters(args: GetCloudVmClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudVmClustersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudVmClusters:getCloudVmClusters", {
         "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,
@@ -110,7 +109,14 @@ export interface GetCloudVmClustersResult {
  * ```
  */
 export function getCloudVmClustersOutput(args: GetCloudVmClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudVmClustersResult> {
-    return pulumi.output(args).apply((a: any) => getCloudVmClusters(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getCloudVmClusters:getCloudVmClusters", {
+        "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

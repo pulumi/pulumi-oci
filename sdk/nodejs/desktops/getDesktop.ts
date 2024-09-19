@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDesktop(args: GetDesktopArgs, opts?: pulumi.InvokeOptions): Promise<GetDesktopResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Desktops/getDesktop:getDesktop", {
         "desktopId": args.desktopId,
@@ -103,7 +102,10 @@ export interface GetDesktopResult {
  * ```
  */
 export function getDesktopOutput(args: GetDesktopOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDesktopResult> {
-    return pulumi.output(args).apply((a: any) => getDesktop(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Desktops/getDesktop:getDesktop", {
+        "desktopId": args.desktopId,
+    }, opts);
 }
 
 /**

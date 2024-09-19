@@ -39,7 +39,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditTrailAnalytic(args: GetAuditTrailAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditTrailAnalyticResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", {
         "accessLevel": args.accessLevel,
@@ -130,7 +129,14 @@ export interface GetAuditTrailAnalyticResult {
  * ```
  */
 export function getAuditTrailAnalyticOutput(args: GetAuditTrailAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditTrailAnalyticResult> {
-    return pulumi.output(args).apply((a: any) => getAuditTrailAnalytic(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "groupBies": args.groupBies,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

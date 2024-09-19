@@ -320,14 +320,20 @@ type LookupDomainsAppResult struct {
 
 func LookupDomainsAppOutput(ctx *pulumi.Context, args LookupDomainsAppOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAppResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsAppResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsAppResultOutput, error) {
 			args := v.(LookupDomainsAppArgs)
-			r, err := LookupDomainsApp(ctx, &args, opts...)
-			var s LookupDomainsAppResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsAppResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsApp:getDomainsApp", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsAppResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsAppResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsAppResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsAppResultOutput)
 }
 

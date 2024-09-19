@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSuppression(args: GetSuppressionArgs, opts?: pulumi.InvokeOptions): Promise<GetSuppressionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getSuppression:getSuppression", {
         "suppressionId": args.suppressionId,
@@ -99,7 +98,10 @@ export interface GetSuppressionResult {
  * ```
  */
 export function getSuppressionOutput(args: GetSuppressionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSuppressionResult> {
-    return pulumi.output(args).apply((a: any) => getSuppression(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Email/getSuppression:getSuppression", {
+        "suppressionId": args.suppressionId,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterCredentialRotationStatus(args: GetClusterCredentialRotationStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterCredentialRotationStatusResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", {
         "clusterId": args.clusterId,
@@ -77,7 +76,10 @@ export interface GetClusterCredentialRotationStatusResult {
  * ```
  */
 export function getClusterCredentialRotationStatusOutput(args: GetClusterCredentialRotationStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterCredentialRotationStatusResult> {
-    return pulumi.output(args).apply((a: any) => getClusterCredentialRotationStatus(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", {
+        "clusterId": args.clusterId,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsNotificationSettings(args: GetDomainsNotificationSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsNotificationSettingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", {
         "attributeSets": args.attributeSets,
@@ -113,7 +112,15 @@ export interface GetDomainsNotificationSettingsResult {
  * ```
  */
 export function getDomainsNotificationSettingsOutput(args: GetDomainsNotificationSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsNotificationSettingsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsNotificationSettings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

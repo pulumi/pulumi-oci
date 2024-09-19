@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadataIormConfig(args: GetExadataIormConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataIormConfigResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadataIormConfig:getExadataIormConfig", {
         "dbSystemId": args.dbSystemId,
@@ -96,7 +95,10 @@ export interface GetExadataIormConfigResult {
  * ```
  */
 export function getExadataIormConfigOutput(args: GetExadataIormConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataIormConfigResult> {
-    return pulumi.output(args).apply((a: any) => getExadataIormConfig(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExadataIormConfig:getExadataIormConfig", {
+        "dbSystemId": args.dbSystemId,
+    }, opts);
 }
 
 /**

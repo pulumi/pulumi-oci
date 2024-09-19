@@ -93,14 +93,20 @@ type GetPipelineRunsResult struct {
 
 func GetPipelineRunsOutput(ctx *pulumi.Context, args GetPipelineRunsOutputArgs, opts ...pulumi.InvokeOption) GetPipelineRunsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPipelineRunsResult, error) {
+		ApplyT(func(v interface{}) (GetPipelineRunsResultOutput, error) {
 			args := v.(GetPipelineRunsArgs)
-			r, err := GetPipelineRuns(ctx, &args, opts...)
-			var s GetPipelineRunsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPipelineRunsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataScience/getPipelineRuns:getPipelineRuns", args, &rv, "", opts...)
+			if err != nil {
+				return GetPipelineRunsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPipelineRunsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPipelineRunsResultOutput), nil
+			}
+			return output, nil
 		}).(GetPipelineRunsResultOutput)
 }
 

@@ -97,14 +97,20 @@ type GetMaskingReportsMaskedColumnResult struct {
 
 func GetMaskingReportsMaskedColumnOutput(ctx *pulumi.Context, args GetMaskingReportsMaskedColumnOutputArgs, opts ...pulumi.InvokeOption) GetMaskingReportsMaskedColumnResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMaskingReportsMaskedColumnResult, error) {
+		ApplyT(func(v interface{}) (GetMaskingReportsMaskedColumnResultOutput, error) {
 			args := v.(GetMaskingReportsMaskedColumnArgs)
-			r, err := GetMaskingReportsMaskedColumn(ctx, &args, opts...)
-			var s GetMaskingReportsMaskedColumnResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMaskingReportsMaskedColumnResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getMaskingReportsMaskedColumn:getMaskingReportsMaskedColumn", args, &rv, "", opts...)
+			if err != nil {
+				return GetMaskingReportsMaskedColumnResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMaskingReportsMaskedColumnResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMaskingReportsMaskedColumnResultOutput), nil
+			}
+			return output, nil
 		}).(GetMaskingReportsMaskedColumnResultOutput)
 }
 

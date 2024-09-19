@@ -74,14 +74,20 @@ type GetProtectedDatabaseFetchConfigurationResult struct {
 
 func GetProtectedDatabaseFetchConfigurationOutput(ctx *pulumi.Context, args GetProtectedDatabaseFetchConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetProtectedDatabaseFetchConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetProtectedDatabaseFetchConfigurationResult, error) {
+		ApplyT(func(v interface{}) (GetProtectedDatabaseFetchConfigurationResultOutput, error) {
 			args := v.(GetProtectedDatabaseFetchConfigurationArgs)
-			r, err := GetProtectedDatabaseFetchConfiguration(ctx, &args, opts...)
-			var s GetProtectedDatabaseFetchConfigurationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetProtectedDatabaseFetchConfigurationResult
+			secret, err := ctx.InvokePackageRaw("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", args, &rv, "", opts...)
+			if err != nil {
+				return GetProtectedDatabaseFetchConfigurationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetProtectedDatabaseFetchConfigurationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetProtectedDatabaseFetchConfigurationResultOutput), nil
+			}
+			return output, nil
 		}).(GetProtectedDatabaseFetchConfigurationResultOutput)
 }
 

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAtCustomerCccInfrastructure(args: GetAtCustomerCccInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetAtCustomerCccInfrastructureResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", {
         "cccInfrastructureId": args.cccInfrastructureId,
@@ -149,7 +148,10 @@ export interface GetAtCustomerCccInfrastructureResult {
  * ```
  */
 export function getAtCustomerCccInfrastructureOutput(args: GetAtCustomerCccInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccInfrastructureResult> {
-    return pulumi.output(args).apply((a: any) => getAtCustomerCccInfrastructure(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", {
+        "cccInfrastructureId": args.cccInfrastructureId,
+    }, opts);
 }
 
 /**

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobExecutionsStatuses(args: GetJobExecutionsStatusesArgs, opts?: pulumi.InvokeOptions): Promise<GetJobExecutionsStatusesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getJobExecutionsStatuses:getJobExecutionsStatuses", {
         "compartmentId": args.compartmentId,
@@ -118,7 +117,17 @@ export interface GetJobExecutionsStatusesResult {
  * ```
  */
 export function getJobExecutionsStatusesOutput(args: GetJobExecutionsStatusesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobExecutionsStatusesResult> {
-    return pulumi.output(args).apply((a: any) => getJobExecutionsStatuses(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getJobExecutionsStatuses:getJobExecutionsStatuses", {
+        "compartmentId": args.compartmentId,
+        "endTime": args.endTime,
+        "filters": args.filters,
+        "id": args.id,
+        "managedDatabaseGroupId": args.managedDatabaseGroupId,
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "startTime": args.startTime,
+    }, opts);
 }
 
 /**

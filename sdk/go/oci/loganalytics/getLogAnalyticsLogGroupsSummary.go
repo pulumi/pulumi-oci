@@ -70,14 +70,20 @@ type GetLogAnalyticsLogGroupsSummaryResult struct {
 
 func GetLogAnalyticsLogGroupsSummaryOutput(ctx *pulumi.Context, args GetLogAnalyticsLogGroupsSummaryOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsLogGroupsSummaryResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsLogGroupsSummaryResult, error) {
+		ApplyT(func(v interface{}) (GetLogAnalyticsLogGroupsSummaryResultOutput, error) {
 			args := v.(GetLogAnalyticsLogGroupsSummaryArgs)
-			r, err := GetLogAnalyticsLogGroupsSummary(ctx, &args, opts...)
-			var s GetLogAnalyticsLogGroupsSummaryResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetLogAnalyticsLogGroupsSummaryResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args, &rv, "", opts...)
+			if err != nil {
+				return GetLogAnalyticsLogGroupsSummaryResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetLogAnalyticsLogGroupsSummaryResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetLogAnalyticsLogGroupsSummaryResultOutput), nil
+			}
+			return output, nil
 		}).(GetLogAnalyticsLogGroupsSummaryResultOutput)
 }
 

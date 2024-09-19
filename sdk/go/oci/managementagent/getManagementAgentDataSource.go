@@ -103,14 +103,20 @@ type LookupManagementAgentDataSourceResult struct {
 
 func LookupManagementAgentDataSourceOutput(ctx *pulumi.Context, args LookupManagementAgentDataSourceOutputArgs, opts ...pulumi.InvokeOption) LookupManagementAgentDataSourceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupManagementAgentDataSourceResult, error) {
+		ApplyT(func(v interface{}) (LookupManagementAgentDataSourceResultOutput, error) {
 			args := v.(LookupManagementAgentDataSourceArgs)
-			r, err := LookupManagementAgentDataSource(ctx, &args, opts...)
-			var s LookupManagementAgentDataSourceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupManagementAgentDataSourceResult
+			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource", args, &rv, "", opts...)
+			if err != nil {
+				return LookupManagementAgentDataSourceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupManagementAgentDataSourceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupManagementAgentDataSourceResultOutput), nil
+			}
+			return output, nil
 		}).(LookupManagementAgentDataSourceResultOutput)
 }
 

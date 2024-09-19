@@ -108,14 +108,20 @@ type LookupDeploymentCertificateResult struct {
 
 func LookupDeploymentCertificateOutput(ctx *pulumi.Context, args LookupDeploymentCertificateOutputArgs, opts ...pulumi.InvokeOption) LookupDeploymentCertificateResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDeploymentCertificateResult, error) {
+		ApplyT(func(v interface{}) (LookupDeploymentCertificateResultOutput, error) {
 			args := v.(LookupDeploymentCertificateArgs)
-			r, err := LookupDeploymentCertificate(ctx, &args, opts...)
-			var s LookupDeploymentCertificateResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDeploymentCertificateResult
+			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDeploymentCertificateResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDeploymentCertificateResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDeploymentCertificateResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDeploymentCertificateResultOutput)
 }
 

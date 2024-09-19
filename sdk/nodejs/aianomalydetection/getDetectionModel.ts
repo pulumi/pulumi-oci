@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectionModel(args: GetDetectionModelArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionModelResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectionModel:getDetectionModel", {
         "modelId": args.modelId,
@@ -119,7 +118,10 @@ export interface GetDetectionModelResult {
  * ```
  */
 export function getDetectionModelOutput(args: GetDetectionModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionModelResult> {
-    return pulumi.output(args).apply((a: any) => getDetectionModel(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectionModel:getDetectionModel", {
+        "modelId": args.modelId,
+    }, opts);
 }
 
 /**

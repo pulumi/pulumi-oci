@@ -79,14 +79,20 @@ type GetListenerRulesResult struct {
 
 func GetListenerRulesOutput(ctx *pulumi.Context, args GetListenerRulesOutputArgs, opts ...pulumi.InvokeOption) GetListenerRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetListenerRulesResult, error) {
+		ApplyT(func(v interface{}) (GetListenerRulesResultOutput, error) {
 			args := v.(GetListenerRulesArgs)
-			r, err := GetListenerRules(ctx, &args, opts...)
-			var s GetListenerRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetListenerRulesResult
+			secret, err := ctx.InvokePackageRaw("oci:LoadBalancer/getListenerRules:getListenerRules", args, &rv, "", opts...)
+			if err != nil {
+				return GetListenerRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetListenerRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetListenerRulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetListenerRulesResultOutput)
 }
 

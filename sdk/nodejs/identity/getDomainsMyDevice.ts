@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyDevice(args: GetDomainsMyDeviceArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyDeviceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyDevice:getDomainsMyDevice", {
         "attributeSets": args.attributeSets,
@@ -259,7 +258,15 @@ export interface GetDomainsMyDeviceResult {
  * ```
  */
 export function getDomainsMyDeviceOutput(args: GetDomainsMyDeviceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyDeviceResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyDevice(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyDevice:getDomainsMyDevice", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myDeviceId": args.myDeviceId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

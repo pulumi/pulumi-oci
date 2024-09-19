@@ -113,14 +113,20 @@ type GetManagedInstanceModuleStreamsResult struct {
 
 func GetManagedInstanceModuleStreamsOutput(ctx *pulumi.Context, args GetManagedInstanceModuleStreamsOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceModuleStreamsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceModuleStreamsResult, error) {
+		ApplyT(func(v interface{}) (GetManagedInstanceModuleStreamsResultOutput, error) {
 			args := v.(GetManagedInstanceModuleStreamsArgs)
-			r, err := GetManagedInstanceModuleStreams(ctx, &args, opts...)
-			var s GetManagedInstanceModuleStreamsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedInstanceModuleStreamsResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedInstanceModuleStreamsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedInstanceModuleStreamsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedInstanceModuleStreamsResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedInstanceModuleStreamsResultOutput)
 }
 

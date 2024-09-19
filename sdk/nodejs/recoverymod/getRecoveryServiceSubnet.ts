@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRecoveryServiceSubnet(args: GetRecoveryServiceSubnetArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryServiceSubnetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", {
         "recoveryServiceSubnetId": args.recoveryServiceSubnetId,
@@ -119,7 +118,10 @@ export interface GetRecoveryServiceSubnetResult {
  * ```
  */
 export function getRecoveryServiceSubnetOutput(args: GetRecoveryServiceSubnetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryServiceSubnetResult> {
-    return pulumi.output(args).apply((a: any) => getRecoveryServiceSubnet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", {
+        "recoveryServiceSubnetId": args.recoveryServiceSubnetId,
+    }, opts);
 }
 
 /**

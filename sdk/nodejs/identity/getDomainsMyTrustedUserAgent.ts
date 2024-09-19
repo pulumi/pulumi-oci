@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyTrustedUserAgent(args: GetDomainsMyTrustedUserAgentArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyTrustedUserAgentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyTrustedUserAgent:getDomainsMyTrustedUserAgent", {
         "attributeSets": args.attributeSets,
@@ -191,7 +190,15 @@ export interface GetDomainsMyTrustedUserAgentResult {
  * ```
  */
 export function getDomainsMyTrustedUserAgentOutput(args: GetDomainsMyTrustedUserAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyTrustedUserAgentResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyTrustedUserAgent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyTrustedUserAgent:getDomainsMyTrustedUserAgent", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myTrustedUserAgentId": args.myTrustedUserAgentId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

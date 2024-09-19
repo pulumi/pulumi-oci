@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecConnections(args: GetIpsecConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecConnections:getIpsecConnections", {
         "compartmentId": args.compartmentId,
@@ -101,7 +100,13 @@ export interface GetIpsecConnectionsResult {
  * ```
  */
 export function getIpsecConnectionsOutput(args: GetIpsecConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionsResult> {
-    return pulumi.output(args).apply((a: any) => getIpsecConnections(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpsecConnections:getIpsecConnections", {
+        "compartmentId": args.compartmentId,
+        "cpeId": args.cpeId,
+        "drgId": args.drgId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

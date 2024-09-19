@@ -85,14 +85,20 @@ type LookupReplicationScheduleResult struct {
 
 func LookupReplicationScheduleOutput(ctx *pulumi.Context, args LookupReplicationScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupReplicationScheduleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupReplicationScheduleResult, error) {
+		ApplyT(func(v interface{}) (LookupReplicationScheduleResultOutput, error) {
 			args := v.(LookupReplicationScheduleArgs)
-			r, err := LookupReplicationSchedule(ctx, &args, opts...)
-			var s LookupReplicationScheduleResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupReplicationScheduleResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudMigrations/getReplicationSchedule:getReplicationSchedule", args, &rv, "", opts...)
+			if err != nil {
+				return LookupReplicationScheduleResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupReplicationScheduleResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupReplicationScheduleResultOutput), nil
+			}
+			return output, nil
 		}).(LookupReplicationScheduleResultOutput)
 }
 

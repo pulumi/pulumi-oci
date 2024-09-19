@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceCredentials(args: GetInstanceCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceCredentials:getInstanceCredentials", {
         "instanceId": args.instanceId,
@@ -75,7 +74,10 @@ export interface GetInstanceCredentialsResult {
  * ```
  */
 export function getInstanceCredentialsOutput(args: GetInstanceCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstanceCredentials:getInstanceCredentials", {
+        "instanceId": args.instanceId,
+    }, opts);
 }
 
 /**

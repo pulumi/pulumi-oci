@@ -125,14 +125,20 @@ type LookupDomainsKmsiSettingResult struct {
 
 func LookupDomainsKmsiSettingOutput(ctx *pulumi.Context, args LookupDomainsKmsiSettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsKmsiSettingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsKmsiSettingResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsKmsiSettingResultOutput, error) {
 			args := v.(LookupDomainsKmsiSettingArgs)
-			r, err := LookupDomainsKmsiSetting(ctx, &args, opts...)
-			var s LookupDomainsKmsiSettingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsKmsiSettingResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsKmsiSettingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsKmsiSettingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsKmsiSettingResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsKmsiSettingResultOutput)
 }
 

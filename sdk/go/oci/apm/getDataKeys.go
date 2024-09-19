@@ -74,14 +74,20 @@ type GetDataKeysResult struct {
 
 func GetDataKeysOutput(ctx *pulumi.Context, args GetDataKeysOutputArgs, opts ...pulumi.InvokeOption) GetDataKeysResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDataKeysResult, error) {
+		ApplyT(func(v interface{}) (GetDataKeysResultOutput, error) {
 			args := v.(GetDataKeysArgs)
-			r, err := GetDataKeys(ctx, &args, opts...)
-			var s GetDataKeysResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDataKeysResult
+			secret, err := ctx.InvokePackageRaw("oci:Apm/getDataKeys:getDataKeys", args, &rv, "", opts...)
+			if err != nil {
+				return GetDataKeysResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDataKeysResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDataKeysResultOutput), nil
+			}
+			return output, nil
 		}).(GetDataKeysResultOutput)
 }
 

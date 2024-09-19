@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTraceAggregatedSnapshotData(args: GetTraceAggregatedSnapshotDataArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceAggregatedSnapshotDataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", {
         "apmDomainId": args.apmDomainId,
@@ -111,7 +110,15 @@ export interface GetTraceAggregatedSnapshotDataResult {
  * ```
  */
 export function getTraceAggregatedSnapshotDataOutput(args: GetTraceAggregatedSnapshotDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceAggregatedSnapshotDataResult> {
-    return pulumi.output(args).apply((a: any) => getTraceAggregatedSnapshotData(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", {
+        "apmDomainId": args.apmDomainId,
+        "serverName": args.serverName,
+        "serviceName": args.serviceName,
+        "spanKey": args.spanKey,
+        "spanName": args.spanName,
+        "traceKey": args.traceKey,
+    }, opts);
 }
 
 /**

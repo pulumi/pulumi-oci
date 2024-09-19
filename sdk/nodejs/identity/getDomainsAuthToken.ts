@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsAuthToken(args: GetDomainsAuthTokenArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAuthTokenResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsAuthToken:getDomainsAuthToken", {
         "attributeSets": args.attributeSets,
@@ -175,7 +174,15 @@ export interface GetDomainsAuthTokenResult {
  * ```
  */
 export function getDomainsAuthTokenOutput(args: GetDomainsAuthTokenOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAuthTokenResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsAuthToken(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAuthToken:getDomainsAuthToken", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authTokenId": args.authTokenId,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

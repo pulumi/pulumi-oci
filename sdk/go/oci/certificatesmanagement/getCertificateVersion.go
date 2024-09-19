@@ -90,14 +90,20 @@ type GetCertificateVersionResult struct {
 
 func GetCertificateVersionOutput(ctx *pulumi.Context, args GetCertificateVersionOutputArgs, opts ...pulumi.InvokeOption) GetCertificateVersionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCertificateVersionResult, error) {
+		ApplyT(func(v interface{}) (GetCertificateVersionResultOutput, error) {
 			args := v.(GetCertificateVersionArgs)
-			r, err := GetCertificateVersion(ctx, &args, opts...)
-			var s GetCertificateVersionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCertificateVersionResult
+			secret, err := ctx.InvokePackageRaw("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args, &rv, "", opts...)
+			if err != nil {
+				return GetCertificateVersionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCertificateVersionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCertificateVersionResultOutput), nil
+			}
+			return output, nil
 		}).(GetCertificateVersionResultOutput)
 }
 

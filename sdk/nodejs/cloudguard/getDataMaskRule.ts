@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataMaskRule(args: GetDataMaskRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetDataMaskRuleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDataMaskRule:getDataMaskRule", {
         "dataMaskRuleId": args.dataMaskRuleId,
@@ -123,7 +122,10 @@ export interface GetDataMaskRuleResult {
  * ```
  */
 export function getDataMaskRuleOutput(args: GetDataMaskRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataMaskRuleResult> {
-    return pulumi.output(args).apply((a: any) => getDataMaskRule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getDataMaskRule:getDataMaskRule", {
+        "dataMaskRuleId": args.dataMaskRuleId,
+    }, opts);
 }
 
 /**

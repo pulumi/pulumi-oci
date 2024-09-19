@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTunnelSecurityAssociations(args: GetTunnelSecurityAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTunnelSecurityAssociationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", {
         "filters": args.filters,
@@ -82,7 +81,12 @@ export interface GetTunnelSecurityAssociationsResult {
  * ```
  */
 export function getTunnelSecurityAssociationsOutput(args: GetTunnelSecurityAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTunnelSecurityAssociationsResult> {
-    return pulumi.output(args).apply((a: any) => getTunnelSecurityAssociations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", {
+        "filters": args.filters,
+        "ipsecId": args.ipsecId,
+        "tunnelId": args.tunnelId,
+    }, opts);
 }
 
 /**

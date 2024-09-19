@@ -69,14 +69,20 @@ type GetTargetDatabasePeerTargetDatabasesResult struct {
 
 func GetTargetDatabasePeerTargetDatabasesOutput(ctx *pulumi.Context, args GetTargetDatabasePeerTargetDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabasePeerTargetDatabasesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabasePeerTargetDatabasesResult, error) {
+		ApplyT(func(v interface{}) (GetTargetDatabasePeerTargetDatabasesResultOutput, error) {
 			args := v.(GetTargetDatabasePeerTargetDatabasesArgs)
-			r, err := GetTargetDatabasePeerTargetDatabases(ctx, &args, opts...)
-			var s GetTargetDatabasePeerTargetDatabasesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTargetDatabasePeerTargetDatabasesResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", args, &rv, "", opts...)
+			if err != nil {
+				return GetTargetDatabasePeerTargetDatabasesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTargetDatabasePeerTargetDatabasesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTargetDatabasePeerTargetDatabasesResultOutput), nil
+			}
+			return output, nil
 		}).(GetTargetDatabasePeerTargetDatabasesResultOutput)
 }
 

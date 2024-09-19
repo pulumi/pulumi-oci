@@ -82,14 +82,20 @@ type LookupRunStatementResult struct {
 
 func LookupRunStatementOutput(ctx *pulumi.Context, args LookupRunStatementOutputArgs, opts ...pulumi.InvokeOption) LookupRunStatementResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupRunStatementResult, error) {
+		ApplyT(func(v interface{}) (LookupRunStatementResultOutput, error) {
 			args := v.(LookupRunStatementArgs)
-			r, err := LookupRunStatement(ctx, &args, opts...)
-			var s LookupRunStatementResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupRunStatementResult
+			secret, err := ctx.InvokePackageRaw("oci:DataFlow/getRunStatement:getRunStatement", args, &rv, "", opts...)
+			if err != nil {
+				return LookupRunStatementResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupRunStatementResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupRunStatementResultOutput), nil
+			}
+			return output, nil
 		}).(LookupRunStatementResultOutput)
 }
 

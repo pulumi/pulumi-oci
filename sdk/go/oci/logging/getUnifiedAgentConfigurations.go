@@ -92,14 +92,20 @@ type GetUnifiedAgentConfigurationsResult struct {
 
 func GetUnifiedAgentConfigurationsOutput(ctx *pulumi.Context, args GetUnifiedAgentConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetUnifiedAgentConfigurationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetUnifiedAgentConfigurationsResult, error) {
+		ApplyT(func(v interface{}) (GetUnifiedAgentConfigurationsResultOutput, error) {
 			args := v.(GetUnifiedAgentConfigurationsArgs)
-			r, err := GetUnifiedAgentConfigurations(ctx, &args, opts...)
-			var s GetUnifiedAgentConfigurationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetUnifiedAgentConfigurationsResult
+			secret, err := ctx.InvokePackageRaw("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", args, &rv, "", opts...)
+			if err != nil {
+				return GetUnifiedAgentConfigurationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetUnifiedAgentConfigurationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetUnifiedAgentConfigurationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetUnifiedAgentConfigurationsResultOutput)
 }
 

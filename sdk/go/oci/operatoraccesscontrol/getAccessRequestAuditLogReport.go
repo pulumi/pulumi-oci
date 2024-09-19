@@ -77,14 +77,20 @@ type GetAccessRequestAuditLogReportResult struct {
 
 func GetAccessRequestAuditLogReportOutput(ctx *pulumi.Context, args GetAccessRequestAuditLogReportOutputArgs, opts ...pulumi.InvokeOption) GetAccessRequestAuditLogReportResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAccessRequestAuditLogReportResult, error) {
+		ApplyT(func(v interface{}) (GetAccessRequestAuditLogReportResultOutput, error) {
 			args := v.(GetAccessRequestAuditLogReportArgs)
-			r, err := GetAccessRequestAuditLogReport(ctx, &args, opts...)
-			var s GetAccessRequestAuditLogReportResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAccessRequestAuditLogReportResult
+			secret, err := ctx.InvokePackageRaw("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args, &rv, "", opts...)
+			if err != nil {
+				return GetAccessRequestAuditLogReportResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAccessRequestAuditLogReportResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAccessRequestAuditLogReportResultOutput), nil
+			}
+			return output, nil
 		}).(GetAccessRequestAuditLogReportResultOutput)
 }
 

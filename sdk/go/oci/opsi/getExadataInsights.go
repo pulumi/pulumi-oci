@@ -98,14 +98,20 @@ type GetExadataInsightsResult struct {
 
 func GetExadataInsightsOutput(ctx *pulumi.Context, args GetExadataInsightsOutputArgs, opts ...pulumi.InvokeOption) GetExadataInsightsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExadataInsightsResult, error) {
+		ApplyT(func(v interface{}) (GetExadataInsightsResultOutput, error) {
 			args := v.(GetExadataInsightsArgs)
-			r, err := GetExadataInsights(ctx, &args, opts...)
-			var s GetExadataInsightsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExadataInsightsResult
+			secret, err := ctx.InvokePackageRaw("oci:Opsi/getExadataInsights:getExadataInsights", args, &rv, "", opts...)
+			if err != nil {
+				return GetExadataInsightsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExadataInsightsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExadataInsightsResultOutput), nil
+			}
+			return output, nil
 		}).(GetExadataInsightsResultOutput)
 }
 

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterUpdates(args: GetVmClusterUpdatesArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterUpdatesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterUpdates:getVmClusterUpdates", {
         "filters": args.filters,
@@ -96,7 +95,13 @@ export interface GetVmClusterUpdatesResult {
  * ```
  */
 export function getVmClusterUpdatesOutput(args: GetVmClusterUpdatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterUpdatesResult> {
-    return pulumi.output(args).apply((a: any) => getVmClusterUpdates(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getVmClusterUpdates:getVmClusterUpdates", {
+        "filters": args.filters,
+        "state": args.state,
+        "updateType": args.updateType,
+        "vmClusterId": args.vmClusterId,
+    }, opts);
 }
 
 /**

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptionRedemptions(args: GetSubscriptionRedemptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionRedemptionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", {
         "filters": args.filters,
@@ -98,7 +97,14 @@ export interface GetSubscriptionRedemptionsResult {
  * ```
  */
 export function getSubscriptionRedemptionsOutput(args: GetSubscriptionRedemptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRedemptionsResult> {
-    return pulumi.output(args).apply((a: any) => getSubscriptionRedemptions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", {
+        "filters": args.filters,
+        "subscriptionId": args.subscriptionId,
+        "tenancyId": args.tenancyId,
+        "timeRedeemedGreaterThanOrEqualTo": args.timeRedeemedGreaterThanOrEqualTo,
+        "timeRedeemedLessThan": args.timeRedeemedLessThan,
+    }, opts);
 }
 
 /**

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterUpdateHistoryEntries(args: GetVmClusterUpdateHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterUpdateHistoryEntriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", {
         "filters": args.filters,
@@ -96,7 +95,13 @@ export interface GetVmClusterUpdateHistoryEntriesResult {
  * ```
  */
 export function getVmClusterUpdateHistoryEntriesOutput(args: GetVmClusterUpdateHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterUpdateHistoryEntriesResult> {
-    return pulumi.output(args).apply((a: any) => getVmClusterUpdateHistoryEntries(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", {
+        "filters": args.filters,
+        "state": args.state,
+        "updateType": args.updateType,
+        "vmClusterId": args.vmClusterId,
+    }, opts);
 }
 
 /**

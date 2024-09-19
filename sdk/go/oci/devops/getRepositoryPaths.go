@@ -85,14 +85,20 @@ type GetRepositoryPathsResult struct {
 
 func GetRepositoryPathsOutput(ctx *pulumi.Context, args GetRepositoryPathsOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryPathsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRepositoryPathsResult, error) {
+		ApplyT(func(v interface{}) (GetRepositoryPathsResultOutput, error) {
 			args := v.(GetRepositoryPathsArgs)
-			r, err := GetRepositoryPaths(ctx, &args, opts...)
-			var s GetRepositoryPathsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRepositoryPathsResult
+			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositoryPaths:getRepositoryPaths", args, &rv, "", opts...)
+			if err != nil {
+				return GetRepositoryPathsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRepositoryPathsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRepositoryPathsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRepositoryPathsResultOutput)
 }
 

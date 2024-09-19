@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPolicyMaskingObjects(args: GetMaskingPolicyMaskingObjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPolicyMaskingObjectsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPolicyMaskingObjects:getMaskingPolicyMaskingObjects", {
         "filters": args.filters,
@@ -107,7 +106,14 @@ export interface GetMaskingPolicyMaskingObjectsResult {
  * ```
  */
 export function getMaskingPolicyMaskingObjectsOutput(args: GetMaskingPolicyMaskingObjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPolicyMaskingObjectsResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingPolicyMaskingObjects(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPolicyMaskingObjects:getMaskingPolicyMaskingObjects", {
+        "filters": args.filters,
+        "maskingPolicyId": args.maskingPolicyId,
+        "objectTypes": args.objectTypes,
+        "objects": args.objects,
+        "schemaNames": args.schemaNames,
+    }, opts);
 }
 
 /**

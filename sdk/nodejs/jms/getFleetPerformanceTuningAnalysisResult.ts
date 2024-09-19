@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetPerformanceTuningAnalysisResult(args: GetFleetPerformanceTuningAnalysisResultArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetPerformanceTuningAnalysisResultResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", {
         "fleetId": args.fleetId,
@@ -136,7 +135,11 @@ export interface GetFleetPerformanceTuningAnalysisResultResult {
  * ```
  */
 export function getFleetPerformanceTuningAnalysisResultOutput(args: GetFleetPerformanceTuningAnalysisResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetPerformanceTuningAnalysisResultResult> {
-    return pulumi.output(args).apply((a: any) => getFleetPerformanceTuningAnalysisResult(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", {
+        "fleetId": args.fleetId,
+        "performanceTuningAnalysisResultId": args.performanceTuningAnalysisResultId,
+    }, opts);
 }
 
 /**

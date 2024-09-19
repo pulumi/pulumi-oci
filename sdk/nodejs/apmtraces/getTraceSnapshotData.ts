@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTraceSnapshotData(args: GetTraceSnapshotDataArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceSnapshotDataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", {
         "apmDomainId": args.apmDomainId,
@@ -115,7 +114,14 @@ export interface GetTraceSnapshotDataResult {
  * ```
  */
 export function getTraceSnapshotDataOutput(args: GetTraceSnapshotDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceSnapshotDataResult> {
-    return pulumi.output(args).apply((a: any) => getTraceSnapshotData(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", {
+        "apmDomainId": args.apmDomainId,
+        "isSummarized": args.isSummarized,
+        "snapshotTime": args.snapshotTime,
+        "threadId": args.threadId,
+        "traceKey": args.traceKey,
+    }, opts);
 }
 
 /**

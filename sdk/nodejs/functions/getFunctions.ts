@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFunctions(args: GetFunctionsArgs, opts?: pulumi.InvokeOptions): Promise<GetFunctionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFunctions:getFunctions", {
         "applicationId": args.applicationId,
@@ -106,7 +105,14 @@ export interface GetFunctionsResult {
  * ```
  */
 export function getFunctionsOutput(args: GetFunctionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFunctionsResult> {
-    return pulumi.output(args).apply((a: any) => getFunctions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFunctions:getFunctions", {
+        "applicationId": args.applicationId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

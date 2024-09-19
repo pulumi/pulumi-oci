@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertPolicy(args: GetAlertPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlertPolicy:getAlertPolicy", {
         "alertPolicyId": args.alertPolicyId,
@@ -120,7 +119,10 @@ export interface GetAlertPolicyResult {
  * ```
  */
 export function getAlertPolicyOutput(args: GetAlertPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getAlertPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAlertPolicy:getAlertPolicy", {
+        "alertPolicyId": args.alertPolicyId,
+    }, opts);
 }
 
 /**

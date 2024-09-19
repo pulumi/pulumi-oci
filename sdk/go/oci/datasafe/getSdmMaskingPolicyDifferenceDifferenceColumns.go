@@ -99,14 +99,20 @@ type GetSdmMaskingPolicyDifferenceDifferenceColumnsResult struct {
 
 func GetSdmMaskingPolicyDifferenceDifferenceColumnsOutput(ctx *pulumi.Context, args GetSdmMaskingPolicyDifferenceDifferenceColumnsOutputArgs, opts ...pulumi.InvokeOption) GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSdmMaskingPolicyDifferenceDifferenceColumnsResult, error) {
+		ApplyT(func(v interface{}) (GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput, error) {
 			args := v.(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs)
-			r, err := GetSdmMaskingPolicyDifferenceDifferenceColumns(ctx, &args, opts...)
-			var s GetSdmMaskingPolicyDifferenceDifferenceColumnsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSdmMaskingPolicyDifferenceDifferenceColumnsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", args, &rv, "", opts...)
+			if err != nil {
+				return GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput), nil
+			}
+			return output, nil
 		}).(GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput)
 }
 

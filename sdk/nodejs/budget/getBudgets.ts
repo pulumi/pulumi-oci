@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBudgets(args: GetBudgetsArgs, opts?: pulumi.InvokeOptions): Promise<GetBudgetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Budget/getBudgets:getBudgets", {
         "compartmentId": args.compartmentId,
@@ -125,7 +124,14 @@ export interface GetBudgetsResult {
  * ```
  */
 export function getBudgetsOutput(args: GetBudgetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBudgetsResult> {
-    return pulumi.output(args).apply((a: any) => getBudgets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Budget/getBudgets:getBudgets", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "targetType": args.targetType,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConnectionAssignments(args: GetConnectionAssignmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionAssignmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", {
         "compartmentId": args.compartmentId,
@@ -118,7 +117,15 @@ export interface GetConnectionAssignmentsResult {
  * ```
  */
 export function getConnectionAssignmentsOutput(args: GetConnectionAssignmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionAssignmentsResult> {
-    return pulumi.output(args).apply((a: any) => getConnectionAssignments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", {
+        "compartmentId": args.compartmentId,
+        "connectionId": args.connectionId,
+        "deploymentId": args.deploymentId,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

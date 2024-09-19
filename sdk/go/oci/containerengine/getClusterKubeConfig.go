@@ -79,14 +79,20 @@ type GetClusterKubeConfigResult struct {
 
 func GetClusterKubeConfigOutput(ctx *pulumi.Context, args GetClusterKubeConfigOutputArgs, opts ...pulumi.InvokeOption) GetClusterKubeConfigResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetClusterKubeConfigResult, error) {
+		ApplyT(func(v interface{}) (GetClusterKubeConfigResultOutput, error) {
 			args := v.(GetClusterKubeConfigArgs)
-			r, err := GetClusterKubeConfig(ctx, &args, opts...)
-			var s GetClusterKubeConfigResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetClusterKubeConfigResult
+			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args, &rv, "", opts...)
+			if err != nil {
+				return GetClusterKubeConfigResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetClusterKubeConfigResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetClusterKubeConfigResultOutput), nil
+			}
+			return output, nil
 		}).(GetClusterKubeConfigResultOutput)
 }
 

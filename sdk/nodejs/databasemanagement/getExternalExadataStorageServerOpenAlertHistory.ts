@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalExadataStorageServerOpenAlertHistory(args: GetExternalExadataStorageServerOpenAlertHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageServerOpenAlertHistoryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", {
         "externalExadataStorageServerId": args.externalExadataStorageServerId,
@@ -71,7 +70,10 @@ export interface GetExternalExadataStorageServerOpenAlertHistoryResult {
  * ```
  */
 export function getExternalExadataStorageServerOpenAlertHistoryOutput(args: GetExternalExadataStorageServerOpenAlertHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerOpenAlertHistoryResult> {
-    return pulumi.output(args).apply((a: any) => getExternalExadataStorageServerOpenAlertHistory(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", {
+        "externalExadataStorageServerId": args.externalExadataStorageServerId,
+    }, opts);
 }
 
 /**

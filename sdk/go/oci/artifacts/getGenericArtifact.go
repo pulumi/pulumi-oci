@@ -87,14 +87,20 @@ type LookupGenericArtifactResult struct {
 
 func LookupGenericArtifactOutput(ctx *pulumi.Context, args LookupGenericArtifactOutputArgs, opts ...pulumi.InvokeOption) LookupGenericArtifactResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupGenericArtifactResult, error) {
+		ApplyT(func(v interface{}) (LookupGenericArtifactResultOutput, error) {
 			args := v.(LookupGenericArtifactArgs)
-			r, err := LookupGenericArtifact(ctx, &args, opts...)
-			var s LookupGenericArtifactResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupGenericArtifactResult
+			secret, err := ctx.InvokePackageRaw("oci:Artifacts/getGenericArtifact:getGenericArtifact", args, &rv, "", opts...)
+			if err != nil {
+				return LookupGenericArtifactResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupGenericArtifactResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupGenericArtifactResultOutput), nil
+			}
+			return output, nil
 		}).(LookupGenericArtifactResultOutput)
 }
 

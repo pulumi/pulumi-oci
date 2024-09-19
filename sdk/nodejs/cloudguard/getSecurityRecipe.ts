@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityRecipe(args: GetSecurityRecipeArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityRecipeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", {
         "securityRecipeId": args.securityRecipeId,
@@ -109,7 +108,10 @@ export interface GetSecurityRecipeResult {
  * ```
  */
 export function getSecurityRecipeOutput(args: GetSecurityRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityRecipeResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityRecipe(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", {
+        "securityRecipeId": args.securityRecipeId,
+    }, opts);
 }
 
 /**

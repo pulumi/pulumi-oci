@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsSocialIdentityProvider(args: GetDomainsSocialIdentityProviderArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSocialIdentityProviderResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsSocialIdentityProvider:getDomainsSocialIdentityProvider", {
         "authorization": args.authorization,
@@ -247,7 +246,13 @@ export interface GetDomainsSocialIdentityProviderResult {
  * ```
  */
 export function getDomainsSocialIdentityProviderOutput(args: GetDomainsSocialIdentityProviderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSocialIdentityProviderResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsSocialIdentityProvider(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSocialIdentityProvider:getDomainsSocialIdentityProvider", {
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "socialIdentityProviderId": args.socialIdentityProviderId,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamedCredentials(args: GetNamedCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetNamedCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", {
         "associatedResource": args.associatedResource,
@@ -121,7 +120,15 @@ export interface GetNamedCredentialsResult {
  * ```
  */
 export function getNamedCredentialsOutput(args: GetNamedCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamedCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getNamedCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", {
+        "associatedResource": args.associatedResource,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "scope": args.scope,
+        "type": args.type,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalDbHome(args: GetExternalDbHomeArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbHomeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", {
         "externalDbHomeId": args.externalDbHomeId,
@@ -117,7 +116,10 @@ export interface GetExternalDbHomeResult {
  * ```
  */
 export function getExternalDbHomeOutput(args: GetExternalDbHomeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbHomeResult> {
-    return pulumi.output(args).apply((a: any) => getExternalDbHome(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", {
+        "externalDbHomeId": args.externalDbHomeId,
+    }, opts);
 }
 
 /**

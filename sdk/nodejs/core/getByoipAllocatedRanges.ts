@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getByoipAllocatedRanges(args: GetByoipAllocatedRangesArgs, opts?: pulumi.InvokeOptions): Promise<GetByoipAllocatedRangesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", {
         "byoipRangeId": args.byoipRangeId,
@@ -76,7 +75,11 @@ export interface GetByoipAllocatedRangesResult {
  * ```
  */
 export function getByoipAllocatedRangesOutput(args: GetByoipAllocatedRangesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipAllocatedRangesResult> {
-    return pulumi.output(args).apply((a: any) => getByoipAllocatedRanges(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", {
+        "byoipRangeId": args.byoipRangeId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterNetworks(args: GetVmClusterNetworksArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterNetworksResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterNetworks:getVmClusterNetworks", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetVmClusterNetworksResult {
  * ```
  */
 export function getVmClusterNetworksOutput(args: GetVmClusterNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworksResult> {
-    return pulumi.output(args).apply((a: any) => getVmClusterNetworks(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getVmClusterNetworks:getVmClusterNetworks", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditProfileCollectedAuditVolumes(args: GetAuditProfileCollectedAuditVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfileCollectedAuditVolumesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditProfileCollectedAuditVolumes:getAuditProfileCollectedAuditVolumes", {
         "auditProfileId": args.auditProfileId,
@@ -105,7 +104,14 @@ export interface GetAuditProfileCollectedAuditVolumesResult {
  * ```
  */
 export function getAuditProfileCollectedAuditVolumesOutput(args: GetAuditProfileCollectedAuditVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileCollectedAuditVolumesResult> {
-    return pulumi.output(args).apply((a: any) => getAuditProfileCollectedAuditVolumes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditProfileCollectedAuditVolumes:getAuditProfileCollectedAuditVolumes", {
+        "auditProfileId": args.auditProfileId,
+        "filters": args.filters,
+        "monthInConsiderationGreaterThan": args.monthInConsiderationGreaterThan,
+        "monthInConsiderationLessThan": args.monthInConsiderationLessThan,
+        "workRequestId": args.workRequestId,
+    }, opts);
 }
 
 /**

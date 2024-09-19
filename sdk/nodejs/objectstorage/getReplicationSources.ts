@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplicationSources(args: GetReplicationSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationSourcesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getReplicationSources:getReplicationSources", {
         "bucket": args.bucket,
@@ -82,7 +81,12 @@ export interface GetReplicationSourcesResult {
  * ```
  */
 export function getReplicationSourcesOutput(args: GetReplicationSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationSourcesResult> {
-    return pulumi.output(args).apply((a: any) => getReplicationSources(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getReplicationSources:getReplicationSources", {
+        "bucket": args.bucket,
+        "filters": args.filters,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

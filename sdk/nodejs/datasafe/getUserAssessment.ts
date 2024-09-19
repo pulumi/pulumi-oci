@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessment(args: GetUserAssessmentArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessment:getUserAssessment", {
         "userAssessmentId": args.userAssessmentId,
@@ -160,7 +159,10 @@ export interface GetUserAssessmentResult {
  * ```
  */
 export function getUserAssessmentOutput(args: GetUserAssessmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentResult> {
-    return pulumi.output(args).apply((a: any) => getUserAssessment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessment:getUserAssessment", {
+        "userAssessmentId": args.userAssessmentId,
+    }, opts);
 }
 
 /**

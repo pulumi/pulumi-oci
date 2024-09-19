@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsAuthenticationFactorSettings(args: GetDomainsAuthenticationFactorSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAuthenticationFactorSettingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", {
         "attributeSets": args.attributeSets,
@@ -113,7 +112,15 @@ export interface GetDomainsAuthenticationFactorSettingsResult {
  * ```
  */
 export function getDomainsAuthenticationFactorSettingsOutput(args: GetDomainsAuthenticationFactorSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAuthenticationFactorSettingsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsAuthenticationFactorSettings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

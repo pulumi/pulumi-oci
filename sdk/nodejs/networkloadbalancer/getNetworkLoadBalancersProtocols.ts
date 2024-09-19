@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  */
 export function getNetworkLoadBalancersProtocols(args?: GetNetworkLoadBalancersProtocolsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkLoadBalancersProtocolsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", {
         "filters": args.filters,
@@ -67,7 +66,11 @@ export interface GetNetworkLoadBalancersProtocolsResult {
  * ```
  */
 export function getNetworkLoadBalancersProtocolsOutput(args?: GetNetworkLoadBalancersProtocolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancersProtocolsResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkLoadBalancersProtocols(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", {
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

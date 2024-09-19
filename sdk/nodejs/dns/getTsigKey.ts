@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTsigKey(args: GetTsigKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetTsigKeyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getTsigKey:getTsigKey", {
         "tsigKeyId": args.tsigKeyId,
@@ -105,7 +104,10 @@ export interface GetTsigKeyResult {
  * ```
  */
 export function getTsigKeyOutput(args: GetTsigKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTsigKeyResult> {
-    return pulumi.output(args).apply((a: any) => getTsigKey(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getTsigKey:getTsigKey", {
+        "tsigKeyId": args.tsigKeyId,
+    }, opts);
 }
 
 /**

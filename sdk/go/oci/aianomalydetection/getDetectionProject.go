@@ -83,14 +83,20 @@ type GetDetectionProjectResult struct {
 
 func GetDetectionProjectOutput(ctx *pulumi.Context, args GetDetectionProjectOutputArgs, opts ...pulumi.InvokeOption) GetDetectionProjectResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDetectionProjectResult, error) {
+		ApplyT(func(v interface{}) (GetDetectionProjectResultOutput, error) {
 			args := v.(GetDetectionProjectArgs)
-			r, err := GetDetectionProject(ctx, &args, opts...)
-			var s GetDetectionProjectResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDetectionProjectResult
+			secret, err := ctx.InvokePackageRaw("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", args, &rv, "", opts...)
+			if err != nil {
+				return GetDetectionProjectResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDetectionProjectResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDetectionProjectResultOutput), nil
+			}
+			return output, nil
 		}).(GetDetectionProjectResultOutput)
 }
 

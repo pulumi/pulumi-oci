@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getJavaReleases(args?: GetJavaReleasesArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaReleasesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaReleases:getJavaReleases", {
         "familyVersion": args.familyVersion,
@@ -119,7 +118,16 @@ export interface GetJavaReleasesResult {
  * ```
  */
 export function getJavaReleasesOutput(args?: GetJavaReleasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaReleasesResult> {
-    return pulumi.output(args).apply((a: any) => getJavaReleases(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJavaReleases:getJavaReleases", {
+        "familyVersion": args.familyVersion,
+        "filters": args.filters,
+        "jreSecurityStatus": args.jreSecurityStatus,
+        "licenseType": args.licenseType,
+        "releaseType": args.releaseType,
+        "releaseVersion": args.releaseVersion,
+    }, opts);
 }
 
 /**

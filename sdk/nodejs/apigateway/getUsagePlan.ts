@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUsagePlan(args: GetUsagePlanArgs, opts?: pulumi.InvokeOptions): Promise<GetUsagePlanResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getUsagePlan:getUsagePlan", {
         "usagePlanId": args.usagePlanId,
@@ -103,7 +102,10 @@ export interface GetUsagePlanResult {
  * ```
  */
 export function getUsagePlanOutput(args: GetUsagePlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsagePlanResult> {
-    return pulumi.output(args).apply((a: any) => getUsagePlan(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApiGateway/getUsagePlan:getUsagePlan", {
+        "usagePlanId": args.usagePlanId,
+    }, opts);
 }
 
 /**

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectionCapabilityGroupTags(args: GetProtectionCapabilityGroupTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionCapabilityGroupTagsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", {
         "compartmentId": args.compartmentId,
@@ -93,7 +92,13 @@ export interface GetProtectionCapabilityGroupTagsResult {
  * ```
  */
 export function getProtectionCapabilityGroupTagsOutput(args: GetProtectionCapabilityGroupTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionCapabilityGroupTagsResult> {
-    return pulumi.output(args).apply((a: any) => getProtectionCapabilityGroupTags(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "type": args.type,
+    }, opts);
 }
 
 /**

@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * This is a collection API which returns a list of Computed Usages for given filters.
  */
 export function getComputedUsages(args: GetComputedUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetComputedUsagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getComputedUsages:getComputedUsages", {
         "compartmentId": args.compartmentId,
@@ -85,7 +84,16 @@ export interface GetComputedUsagesResult {
  * This is a collection API which returns a list of Computed Usages for given filters.
  */
 export function getComputedUsagesOutput(args: GetComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputedUsagesResult> {
-    return pulumi.output(args).apply((a: any) => getComputedUsages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OneSubsription/getComputedUsages:getComputedUsages", {
+        "compartmentId": args.compartmentId,
+        "computedProduct": args.computedProduct,
+        "filters": args.filters,
+        "parentProduct": args.parentProduct,
+        "subscriptionId": args.subscriptionId,
+        "timeFrom": args.timeFrom,
+        "timeTo": args.timeTo,
+    }, opts);
 }
 
 /**

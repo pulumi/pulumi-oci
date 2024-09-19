@@ -40,7 +40,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlarmStatuses(args: GetAlarmStatusesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmStatusesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", {
         "compartmentId": args.compartmentId,
@@ -150,7 +149,17 @@ export interface GetAlarmStatusesResult {
  * ```
  */
 export function getAlarmStatusesOutput(args: GetAlarmStatusesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmStatusesResult> {
-    return pulumi.output(args).apply((a: any) => getAlarmStatuses(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "entityId": args.entityId,
+        "filters": args.filters,
+        "resourceId": args.resourceId,
+        "serviceName": args.serviceName,
+        "status": args.status,
+    }, opts);
 }
 
 /**

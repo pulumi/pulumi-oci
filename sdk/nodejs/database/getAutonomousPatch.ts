@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousPatch(args: GetAutonomousPatchArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousPatchResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousPatch:getAutonomousPatch", {
         "autonomousPatchId": args.autonomousPatchId,
@@ -105,7 +104,10 @@ export interface GetAutonomousPatchResult {
  * ```
  */
 export function getAutonomousPatchOutput(args: GetAutonomousPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousPatchResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousPatch(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousPatch:getAutonomousPatch", {
+        "autonomousPatchId": args.autonomousPatchId,
+    }, opts);
 }
 
 /**

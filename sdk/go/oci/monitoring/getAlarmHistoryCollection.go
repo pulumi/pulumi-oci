@@ -90,14 +90,20 @@ type GetAlarmHistoryCollectionResult struct {
 
 func GetAlarmHistoryCollectionOutput(ctx *pulumi.Context, args GetAlarmHistoryCollectionOutputArgs, opts ...pulumi.InvokeOption) GetAlarmHistoryCollectionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAlarmHistoryCollectionResult, error) {
+		ApplyT(func(v interface{}) (GetAlarmHistoryCollectionResultOutput, error) {
 			args := v.(GetAlarmHistoryCollectionArgs)
-			r, err := GetAlarmHistoryCollection(ctx, &args, opts...)
-			var s GetAlarmHistoryCollectionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAlarmHistoryCollectionResult
+			secret, err := ctx.InvokePackageRaw("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", args, &rv, "", opts...)
+			if err != nil {
+				return GetAlarmHistoryCollectionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAlarmHistoryCollectionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAlarmHistoryCollectionResultOutput), nil
+			}
+			return output, nil
 		}).(GetAlarmHistoryCollectionResultOutput)
 }
 

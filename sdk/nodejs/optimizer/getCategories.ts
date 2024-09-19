@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCategories(args: GetCategoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getCategories:getCategories", {
         "childTenancyIds": args.childTenancyIds,
@@ -135,7 +134,16 @@ export interface GetCategoriesResult {
  * ```
  */
 export function getCategoriesOutput(args: GetCategoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoriesResult> {
-    return pulumi.output(args).apply((a: any) => getCategories(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getCategories:getCategories", {
+        "childTenancyIds": args.childTenancyIds,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "includeOrganization": args.includeOrganization,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

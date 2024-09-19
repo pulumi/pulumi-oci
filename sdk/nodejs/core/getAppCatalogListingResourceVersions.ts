@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppCatalogListingResourceVersions(args: GetAppCatalogListingResourceVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingResourceVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", {
         "filters": args.filters,
@@ -77,7 +76,11 @@ export interface GetAppCatalogListingResourceVersionsResult {
  * ```
  */
 export function getAppCatalogListingResourceVersionsOutput(args: GetAppCatalogListingResourceVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResourceVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getAppCatalogListingResourceVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", {
+        "filters": args.filters,
+        "listingId": args.listingId,
+    }, opts);
 }
 
 /**

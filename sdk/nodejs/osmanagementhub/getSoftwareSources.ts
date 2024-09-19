@@ -38,7 +38,6 @@ import * as utilities from "../utilities";
  */
 export function getSoftwareSources(args?: GetSoftwareSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourcesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwareSources:getSoftwareSources", {
         "archTypes": args.archTypes,
@@ -211,7 +210,25 @@ export interface GetSoftwareSourcesResult {
  * ```
  */
 export function getSoftwareSourcesOutput(args?: GetSoftwareSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourcesResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwareSources(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwareSources:getSoftwareSources", {
+        "archTypes": args.archTypes,
+        "availabilities": args.availabilities,
+        "availabilityAnywheres": args.availabilityAnywheres,
+        "availabilityAtOcis": args.availabilityAtOcis,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "displayNameNotEqualTos": args.displayNameNotEqualTos,
+        "filters": args.filters,
+        "isMandatoryForAutonomousLinux": args.isMandatoryForAutonomousLinux,
+        "osFamilies": args.osFamilies,
+        "softwareSourceId": args.softwareSourceId,
+        "softwareSourceTypes": args.softwareSourceTypes,
+        "states": args.states,
+        "vendorName": args.vendorName,
+    }, opts);
 }
 
 /**

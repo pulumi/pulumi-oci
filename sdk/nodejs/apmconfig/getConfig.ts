@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConfig(args: GetConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmConfig/getConfig:getConfig", {
         "apmDomainId": args.apmDomainId,
@@ -149,7 +148,11 @@ export interface GetConfigResult {
  * ```
  */
 export function getConfigOutput(args: GetConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigResult> {
-    return pulumi.output(args).apply((a: any) => getConfig(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmConfig/getConfig:getConfig", {
+        "apmDomainId": args.apmDomainId,
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

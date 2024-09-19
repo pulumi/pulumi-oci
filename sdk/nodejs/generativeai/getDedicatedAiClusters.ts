@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedAiClusters(args: GetDedicatedAiClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedAiClustersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", {
         "compartmentId": args.compartmentId,
@@ -97,7 +96,14 @@ export interface GetDedicatedAiClustersResult {
  * ```
  */
 export function getDedicatedAiClustersOutput(args: GetDedicatedAiClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedAiClustersResult> {
-    return pulumi.output(args).apply((a: any) => getDedicatedAiClusters(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

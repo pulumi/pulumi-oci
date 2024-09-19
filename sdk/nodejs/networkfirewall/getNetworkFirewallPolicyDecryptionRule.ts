@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Get Decryption Rule by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyDecryptionRule(args: GetNetworkFirewallPolicyDecryptionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyDecryptionRuleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", {
         "name": args.name,
@@ -78,7 +77,11 @@ export interface GetNetworkFirewallPolicyDecryptionRuleResult {
  * Get Decryption Rule by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyDecryptionRuleOutput(args: GetNetworkFirewallPolicyDecryptionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionRuleResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyDecryptionRule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", {
+        "name": args.name,
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+    }, opts);
 }
 
 /**

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsApprovalWorkflowStep(args: GetDomainsApprovalWorkflowStepArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsApprovalWorkflowStepResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsApprovalWorkflowStep:getDomainsApprovalWorkflowStep", {
         "approvalWorkflowStepId": args.approvalWorkflowStepId,
@@ -175,7 +174,15 @@ export interface GetDomainsApprovalWorkflowStepResult {
  * ```
  */
 export function getDomainsApprovalWorkflowStepOutput(args: GetDomainsApprovalWorkflowStepOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsApprovalWorkflowStepResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsApprovalWorkflowStep(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApprovalWorkflowStep:getDomainsApprovalWorkflowStep", {
+        "approvalWorkflowStepId": args.approvalWorkflowStepId,
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

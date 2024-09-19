@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProblemEntity(args: GetProblemEntityArgs, opts?: pulumi.InvokeOptions): Promise<GetProblemEntityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getProblemEntity:getProblemEntity", {
         "problemId": args.problemId,
@@ -74,7 +73,10 @@ export interface GetProblemEntityResult {
  * ```
  */
 export function getProblemEntityOutput(args: GetProblemEntityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProblemEntityResult> {
-    return pulumi.output(args).apply((a: any) => getProblemEntity(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getProblemEntity:getProblemEntity", {
+        "problemId": args.problemId,
+    }, opts);
 }
 
 /**

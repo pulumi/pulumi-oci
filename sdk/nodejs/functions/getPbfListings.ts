@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  */
 export function getPbfListings(args?: GetPbfListingsArgs, opts?: pulumi.InvokeOptions): Promise<GetPbfListingsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getPbfListings:getPbfListings", {
         "filters": args.filters,
@@ -123,7 +122,17 @@ export interface GetPbfListingsResult {
  * ```
  */
 export function getPbfListingsOutput(args?: GetPbfListingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbfListingsResult> {
-    return pulumi.output(args).apply((a: any) => getPbfListings(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getPbfListings:getPbfListings", {
+        "filters": args.filters,
+        "name": args.name,
+        "nameContains": args.nameContains,
+        "nameStartsWith": args.nameStartsWith,
+        "pbfListingId": args.pbfListingId,
+        "state": args.state,
+        "triggers": args.triggers,
+    }, opts);
 }
 
 /**

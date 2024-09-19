@@ -105,14 +105,20 @@ type GetDomainsUsersResult struct {
 
 func GetDomainsUsersOutput(ctx *pulumi.Context, args GetDomainsUsersOutputArgs, opts ...pulumi.InvokeOption) GetDomainsUsersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsUsersResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsUsersResultOutput, error) {
 			args := v.(GetDomainsUsersArgs)
-			r, err := GetDomainsUsers(ctx, &args, opts...)
-			var s GetDomainsUsersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsUsersResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsUsers:getDomainsUsers", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsUsersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsUsersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsUsersResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsUsersResultOutput)
 }
 

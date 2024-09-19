@@ -91,14 +91,20 @@ type LookupIngressGatewayRouteTableResult struct {
 
 func LookupIngressGatewayRouteTableOutput(ctx *pulumi.Context, args LookupIngressGatewayRouteTableOutputArgs, opts ...pulumi.InvokeOption) LookupIngressGatewayRouteTableResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupIngressGatewayRouteTableResult, error) {
+		ApplyT(func(v interface{}) (LookupIngressGatewayRouteTableResultOutput, error) {
 			args := v.(LookupIngressGatewayRouteTableArgs)
-			r, err := LookupIngressGatewayRouteTable(ctx, &args, opts...)
-			var s LookupIngressGatewayRouteTableResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupIngressGatewayRouteTableResult
+			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable", args, &rv, "", opts...)
+			if err != nil {
+				return LookupIngressGatewayRouteTableResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupIngressGatewayRouteTableResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupIngressGatewayRouteTableResultOutput), nil
+			}
+			return output, nil
 		}).(LookupIngressGatewayRouteTableResultOutput)
 }
 

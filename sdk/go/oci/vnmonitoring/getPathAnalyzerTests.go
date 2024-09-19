@@ -80,14 +80,20 @@ type GetPathAnalyzerTestsResult struct {
 
 func GetPathAnalyzerTestsOutput(ctx *pulumi.Context, args GetPathAnalyzerTestsOutputArgs, opts ...pulumi.InvokeOption) GetPathAnalyzerTestsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPathAnalyzerTestsResult, error) {
+		ApplyT(func(v interface{}) (GetPathAnalyzerTestsResultOutput, error) {
 			args := v.(GetPathAnalyzerTestsArgs)
-			r, err := GetPathAnalyzerTests(ctx, &args, opts...)
-			var s GetPathAnalyzerTestsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPathAnalyzerTestsResult
+			secret, err := ctx.InvokePackageRaw("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args, &rv, "", opts...)
+			if err != nil {
+				return GetPathAnalyzerTestsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPathAnalyzerTestsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPathAnalyzerTestsResultOutput), nil
+			}
+			return output, nil
 		}).(GetPathAnalyzerTestsResultOutput)
 }
 

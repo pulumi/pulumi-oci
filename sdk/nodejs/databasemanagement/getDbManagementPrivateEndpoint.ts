@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbManagementPrivateEndpoint(args: GetDbManagementPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetDbManagementPrivateEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", {
         "dbManagementPrivateEndpointId": args.dbManagementPrivateEndpointId,
@@ -121,7 +120,10 @@ export interface GetDbManagementPrivateEndpointResult {
  * ```
  */
 export function getDbManagementPrivateEndpointOutput(args: GetDbManagementPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbManagementPrivateEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getDbManagementPrivateEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", {
+        "dbManagementPrivateEndpointId": args.dbManagementPrivateEndpointId,
+    }, opts);
 }
 
 /**

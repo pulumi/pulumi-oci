@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHttpProbeResults(args: GetHttpProbeResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpProbeResultsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", {
         "filters": args.filters,
@@ -108,7 +107,14 @@ export interface GetHttpProbeResultsResult {
  * ```
  */
 export function getHttpProbeResultsOutput(args: GetHttpProbeResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpProbeResultsResult> {
-    return pulumi.output(args).apply((a: any) => getHttpProbeResults(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", {
+        "filters": args.filters,
+        "probeConfigurationId": args.probeConfigurationId,
+        "startTimeGreaterThanOrEqualTo": args.startTimeGreaterThanOrEqualTo,
+        "startTimeLessThanOrEqualTo": args.startTimeLessThanOrEqualTo,
+        "target": args.target,
+    }, opts);
 }
 
 /**

@@ -131,14 +131,20 @@ type GetDelegatedResourceAccessRequestResult struct {
 
 func GetDelegatedResourceAccessRequestOutput(ctx *pulumi.Context, args GetDelegatedResourceAccessRequestOutputArgs, opts ...pulumi.InvokeOption) GetDelegatedResourceAccessRequestResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDelegatedResourceAccessRequestResult, error) {
+		ApplyT(func(v interface{}) (GetDelegatedResourceAccessRequestResultOutput, error) {
 			args := v.(GetDelegatedResourceAccessRequestArgs)
-			r, err := GetDelegatedResourceAccessRequest(ctx, &args, opts...)
-			var s GetDelegatedResourceAccessRequestResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDelegatedResourceAccessRequestResult
+			secret, err := ctx.InvokePackageRaw("oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest", args, &rv, "", opts...)
+			if err != nil {
+				return GetDelegatedResourceAccessRequestResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDelegatedResourceAccessRequestResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDelegatedResourceAccessRequestResultOutput), nil
+			}
+			return output, nil
 		}).(GetDelegatedResourceAccessRequestResultOutput)
 }
 

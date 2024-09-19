@@ -78,14 +78,20 @@ type GetComputeCapacityReservationInstanceShapesResult struct {
 
 func GetComputeCapacityReservationInstanceShapesOutput(ctx *pulumi.Context, args GetComputeCapacityReservationInstanceShapesOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityReservationInstanceShapesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetComputeCapacityReservationInstanceShapesResult, error) {
+		ApplyT(func(v interface{}) (GetComputeCapacityReservationInstanceShapesResultOutput, error) {
 			args := v.(GetComputeCapacityReservationInstanceShapesArgs)
-			r, err := GetComputeCapacityReservationInstanceShapes(ctx, &args, opts...)
-			var s GetComputeCapacityReservationInstanceShapesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetComputeCapacityReservationInstanceShapesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeCapacityReservationInstanceShapes:getComputeCapacityReservationInstanceShapes", args, &rv, "", opts...)
+			if err != nil {
+				return GetComputeCapacityReservationInstanceShapesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetComputeCapacityReservationInstanceShapesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetComputeCapacityReservationInstanceShapesResultOutput), nil
+			}
+			return output, nil
 		}).(GetComputeCapacityReservationInstanceShapesResultOutput)
 }
 

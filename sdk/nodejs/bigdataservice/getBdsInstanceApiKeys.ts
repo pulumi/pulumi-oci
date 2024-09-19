@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstanceApiKeys(args: GetBdsInstanceApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceApiKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", {
         "bdsInstanceId": args.bdsInstanceId,
@@ -94,7 +93,14 @@ export interface GetBdsInstanceApiKeysResult {
  * ```
  */
 export function getBdsInstanceApiKeysOutput(args: GetBdsInstanceApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceApiKeysResult> {
-    return pulumi.output(args).apply((a: any) => getBdsInstanceApiKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", {
+        "bdsInstanceId": args.bdsInstanceId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

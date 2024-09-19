@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Returns a list of Endpoints.
  */
 export function getEndpoints(args: GetEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetEndpointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiLanguage/getEndpoints:getEndpoints", {
         "compartmentId": args.compartmentId,
@@ -96,7 +95,16 @@ export interface GetEndpointsResult {
  * Returns a list of Endpoints.
  */
 export function getEndpointsOutput(args: GetEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getEndpoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiLanguage/getEndpoints:getEndpoints", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "modelId": args.modelId,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

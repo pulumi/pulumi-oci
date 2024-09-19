@@ -100,14 +100,20 @@ type LookupBootVolumeBackupResult struct {
 
 func LookupBootVolumeBackupOutput(ctx *pulumi.Context, args LookupBootVolumeBackupOutputArgs, opts ...pulumi.InvokeOption) LookupBootVolumeBackupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBootVolumeBackupResult, error) {
+		ApplyT(func(v interface{}) (LookupBootVolumeBackupResultOutput, error) {
 			args := v.(LookupBootVolumeBackupArgs)
-			r, err := LookupBootVolumeBackup(ctx, &args, opts...)
-			var s LookupBootVolumeBackupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBootVolumeBackupResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getBootVolumeBackup:getBootVolumeBackup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBootVolumeBackupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBootVolumeBackupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBootVolumeBackupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBootVolumeBackupResultOutput)
 }
 

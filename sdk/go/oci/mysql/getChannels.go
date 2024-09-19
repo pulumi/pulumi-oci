@@ -94,14 +94,20 @@ type GetChannelsResult struct {
 
 func GetChannelsOutput(ctx *pulumi.Context, args GetChannelsOutputArgs, opts ...pulumi.InvokeOption) GetChannelsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetChannelsResult, error) {
+		ApplyT(func(v interface{}) (GetChannelsResultOutput, error) {
 			args := v.(GetChannelsArgs)
-			r, err := GetChannels(ctx, &args, opts...)
-			var s GetChannelsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetChannelsResult
+			secret, err := ctx.InvokePackageRaw("oci:Mysql/getChannels:getChannels", args, &rv, "", opts...)
+			if err != nil {
+				return GetChannelsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetChannelsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetChannelsResultOutput), nil
+			}
+			return output, nil
 		}).(GetChannelsResultOutput)
 }
 

@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getErrata(args: GetErrataArgs, opts?: pulumi.InvokeOptions): Promise<GetErrataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getErrata:getErrata", {
         "advisorySeverities": args.advisorySeverities,
@@ -152,7 +151,19 @@ export interface GetErrataResult {
  * ```
  */
 export function getErrataOutput(args: GetErrataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetErrataResult> {
-    return pulumi.output(args).apply((a: any) => getErrata(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getErrata:getErrata", {
+        "advisorySeverities": args.advisorySeverities,
+        "advisoryTypes": args.advisoryTypes,
+        "classificationTypes": args.classificationTypes,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "nameContains": args.nameContains,
+        "names": args.names,
+        "osFamily": args.osFamily,
+        "timeIssueDateEnd": args.timeIssueDateEnd,
+        "timeIssueDateStart": args.timeIssueDateStart,
+    }, opts);
 }
 
 /**

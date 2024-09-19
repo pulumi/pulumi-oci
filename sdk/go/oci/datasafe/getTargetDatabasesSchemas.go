@@ -83,14 +83,20 @@ type GetTargetDatabasesSchemasResult struct {
 
 func GetTargetDatabasesSchemasOutput(ctx *pulumi.Context, args GetTargetDatabasesSchemasOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabasesSchemasResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabasesSchemasResult, error) {
+		ApplyT(func(v interface{}) (GetTargetDatabasesSchemasResultOutput, error) {
 			args := v.(GetTargetDatabasesSchemasArgs)
-			r, err := GetTargetDatabasesSchemas(ctx, &args, opts...)
-			var s GetTargetDatabasesSchemasResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTargetDatabasesSchemasResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", args, &rv, "", opts...)
+			if err != nil {
+				return GetTargetDatabasesSchemasResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTargetDatabasesSchemasResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTargetDatabasesSchemasResultOutput), nil
+			}
+			return output, nil
 		}).(GetTargetDatabasesSchemasResultOutput)
 }
 

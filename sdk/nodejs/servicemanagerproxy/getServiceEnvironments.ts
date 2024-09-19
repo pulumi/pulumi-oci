@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceEnvironments(args: GetServiceEnvironmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceEnvironmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", {
         "compartmentId": args.compartmentId,
@@ -108,7 +107,14 @@ export interface GetServiceEnvironmentsResult {
  * ```
  */
 export function getServiceEnvironmentsOutput(args: GetServiceEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceEnvironmentsResult> {
-    return pulumi.output(args).apply((a: any) => getServiceEnvironments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "serviceEnvironmentId": args.serviceEnvironmentId,
+        "serviceEnvironmentType": args.serviceEnvironmentType,
+    }, opts);
 }
 
 /**

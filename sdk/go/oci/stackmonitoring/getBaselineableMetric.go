@@ -97,14 +97,20 @@ type LookupBaselineableMetricResult struct {
 
 func LookupBaselineableMetricOutput(ctx *pulumi.Context, args LookupBaselineableMetricOutputArgs, opts ...pulumi.InvokeOption) LookupBaselineableMetricResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBaselineableMetricResult, error) {
+		ApplyT(func(v interface{}) (LookupBaselineableMetricResultOutput, error) {
 			args := v.(LookupBaselineableMetricArgs)
-			r, err := LookupBaselineableMetric(ctx, &args, opts...)
-			var s LookupBaselineableMetricResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBaselineableMetricResult
+			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBaselineableMetricResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBaselineableMetricResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBaselineableMetricResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBaselineableMetricResultOutput)
 }
 

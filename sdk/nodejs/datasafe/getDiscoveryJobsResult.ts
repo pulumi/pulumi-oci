@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryJobsResult(args: GetDiscoveryJobsResultArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobsResultResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", {
         "discoveryJobId": args.discoveryJobId,
@@ -155,7 +154,11 @@ export interface GetDiscoveryJobsResultResult {
  * ```
  */
 export function getDiscoveryJobsResultOutput(args: GetDiscoveryJobsResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobsResultResult> {
-    return pulumi.output(args).apply((a: any) => getDiscoveryJobsResult(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", {
+        "discoveryJobId": args.discoveryJobId,
+        "resultKey": args.resultKey,
+    }, opts);
 }
 
 /**

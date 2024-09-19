@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryRef(args: GetRepositoryRefArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryRefResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryRef:getRepositoryRef", {
         "refName": args.refName,
@@ -100,7 +99,11 @@ export interface GetRepositoryRefResult {
  * ```
  */
 export function getRepositoryRefOutput(args: GetRepositoryRefOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryRefResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryRef(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryRef:getRepositoryRef", {
+        "refName": args.refName,
+        "repositoryId": args.repositoryId,
+    }, opts);
 }
 
 /**

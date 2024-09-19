@@ -84,14 +84,20 @@ type GetDrPlanExecutionsResult struct {
 
 func GetDrPlanExecutionsOutput(ctx *pulumi.Context, args GetDrPlanExecutionsOutputArgs, opts ...pulumi.InvokeOption) GetDrPlanExecutionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDrPlanExecutionsResult, error) {
+		ApplyT(func(v interface{}) (GetDrPlanExecutionsResultOutput, error) {
 			args := v.(GetDrPlanExecutionsArgs)
-			r, err := GetDrPlanExecutions(ctx, &args, opts...)
-			var s GetDrPlanExecutionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDrPlanExecutionsResult
+			secret, err := ctx.InvokePackageRaw("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", args, &rv, "", opts...)
+			if err != nil {
+				return GetDrPlanExecutionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDrPlanExecutionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDrPlanExecutionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDrPlanExecutionsResultOutput)
 }
 

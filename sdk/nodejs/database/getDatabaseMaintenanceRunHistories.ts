@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseMaintenanceRunHistories(args: GetDatabaseMaintenanceRunHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseMaintenanceRunHistoriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", {
         "availabilityDomain": args.availabilityDomain,
@@ -129,7 +128,16 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
  * ```
  */
 export function getDatabaseMaintenanceRunHistoriesOutput(args: GetDatabaseMaintenanceRunHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseMaintenanceRunHistoriesResult> {
-    return pulumi.output(args).apply((a: any) => getDatabaseMaintenanceRunHistories(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "maintenanceType": args.maintenanceType,
+        "state": args.state,
+        "targetResourceId": args.targetResourceId,
+        "targetResourceType": args.targetResourceType,
+    }, opts);
 }
 
 /**

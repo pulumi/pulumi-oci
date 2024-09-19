@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscribedService(args: GetSubscribedServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscribedServiceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getSubscribedService:getSubscribedService", {
         "fields": args.fields,
@@ -518,7 +517,11 @@ export interface GetSubscribedServiceResult {
  * ```
  */
 export function getSubscribedServiceOutput(args: GetSubscribedServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscribedServiceResult> {
-    return pulumi.output(args).apply((a: any) => getSubscribedService(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OneSubsription/getSubscribedService:getSubscribedService", {
+        "fields": args.fields,
+        "subscribedServiceId": args.subscribedServiceId,
+    }, opts);
 }
 
 /**

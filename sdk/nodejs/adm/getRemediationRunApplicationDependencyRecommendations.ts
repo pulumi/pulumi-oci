@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRemediationRunApplicationDependencyRecommendations(args: GetRemediationRunApplicationDependencyRecommendationsArgs, opts?: pulumi.InvokeOptions): Promise<GetRemediationRunApplicationDependencyRecommendationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", {
         "filters": args.filters,
@@ -96,7 +95,13 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
  * ```
  */
 export function getRemediationRunApplicationDependencyRecommendationsOutput(args: GetRemediationRunApplicationDependencyRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRunApplicationDependencyRecommendationsResult> {
-    return pulumi.output(args).apply((a: any) => getRemediationRunApplicationDependencyRecommendations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", {
+        "filters": args.filters,
+        "gav": args.gav,
+        "purl": args.purl,
+        "remediationRunId": args.remediationRunId,
+    }, opts);
 }
 
 /**

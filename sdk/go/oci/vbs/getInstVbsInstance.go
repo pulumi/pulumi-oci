@@ -92,14 +92,20 @@ type LookupInstVbsInstanceResult struct {
 
 func LookupInstVbsInstanceOutput(ctx *pulumi.Context, args LookupInstVbsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupInstVbsInstanceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupInstVbsInstanceResult, error) {
+		ApplyT(func(v interface{}) (LookupInstVbsInstanceResultOutput, error) {
 			args := v.(LookupInstVbsInstanceArgs)
-			r, err := LookupInstVbsInstance(ctx, &args, opts...)
-			var s LookupInstVbsInstanceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupInstVbsInstanceResult
+			secret, err := ctx.InvokePackageRaw("oci:Vbs/getInstVbsInstance:getInstVbsInstance", args, &rv, "", opts...)
+			if err != nil {
+				return LookupInstVbsInstanceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupInstVbsInstanceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupInstVbsInstanceResultOutput), nil
+			}
+			return output, nil
 		}).(LookupInstVbsInstanceResultOutput)
 }
 

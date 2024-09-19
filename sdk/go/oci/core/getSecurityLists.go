@@ -86,14 +86,20 @@ type GetSecurityListsResult struct {
 
 func GetSecurityListsOutput(ctx *pulumi.Context, args GetSecurityListsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityListsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSecurityListsResult, error) {
+		ApplyT(func(v interface{}) (GetSecurityListsResultOutput, error) {
 			args := v.(GetSecurityListsArgs)
-			r, err := GetSecurityLists(ctx, &args, opts...)
-			var s GetSecurityListsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSecurityListsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getSecurityLists:getSecurityLists", args, &rv, "", opts...)
+			if err != nil {
+				return GetSecurityListsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSecurityListsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSecurityListsResultOutput), nil
+			}
+			return output, nil
 		}).(GetSecurityListsResultOutput)
 }
 

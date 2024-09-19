@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentScheduledActivity(args: GetFusionEnvironmentScheduledActivityArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentScheduledActivityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", {
         "fusionEnvironmentId": args.fusionEnvironmentId,
@@ -126,7 +125,11 @@ export interface GetFusionEnvironmentScheduledActivityResult {
  * ```
  */
 export function getFusionEnvironmentScheduledActivityOutput(args: GetFusionEnvironmentScheduledActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentScheduledActivityResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentScheduledActivity(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", {
+        "fusionEnvironmentId": args.fusionEnvironmentId,
+        "scheduledActivityId": args.scheduledActivityId,
+    }, opts);
 }
 
 /**

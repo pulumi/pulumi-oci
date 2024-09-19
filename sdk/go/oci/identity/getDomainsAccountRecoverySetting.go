@@ -119,14 +119,20 @@ type LookupDomainsAccountRecoverySettingResult struct {
 
 func LookupDomainsAccountRecoverySettingOutput(ctx *pulumi.Context, args LookupDomainsAccountRecoverySettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAccountRecoverySettingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsAccountRecoverySettingResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsAccountRecoverySettingResultOutput, error) {
 			args := v.(LookupDomainsAccountRecoverySettingArgs)
-			r, err := LookupDomainsAccountRecoverySetting(ctx, &args, opts...)
-			var s LookupDomainsAccountRecoverySettingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsAccountRecoverySettingResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsAccountRecoverySetting:getDomainsAccountRecoverySetting", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsAccountRecoverySettingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsAccountRecoverySettingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsAccountRecoverySettingResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsAccountRecoverySettingResultOutput)
 }
 

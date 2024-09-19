@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceCatalogAssociation(args: GetServiceCatalogAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceCatalogAssociationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", {
         "serviceCatalogAssociationId": args.serviceCatalogAssociationId,
@@ -81,7 +80,10 @@ export interface GetServiceCatalogAssociationResult {
  * ```
  */
 export function getServiceCatalogAssociationOutput(args: GetServiceCatalogAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogAssociationResult> {
-    return pulumi.output(args).apply((a: any) => getServiceCatalogAssociation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", {
+        "serviceCatalogAssociationId": args.serviceCatalogAssociationId,
+    }, opts);
 }
 
 /**

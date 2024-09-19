@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentAdminUsers(args: GetFusionEnvironmentAdminUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentAdminUsersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentAdminUsers:getFusionEnvironmentAdminUsers", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetFusionEnvironmentAdminUsersResult {
  * ```
  */
 export function getFusionEnvironmentAdminUsersOutput(args: GetFusionEnvironmentAdminUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentAdminUsersResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentAdminUsers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentAdminUsers:getFusionEnvironmentAdminUsers", {
+        "filters": args.filters,
+        "fusionEnvironmentId": args.fusionEnvironmentId,
+    }, opts);
 }
 
 /**

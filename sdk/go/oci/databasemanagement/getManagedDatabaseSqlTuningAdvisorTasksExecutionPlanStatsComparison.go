@@ -87,14 +87,20 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult s
 
 func GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput, error) {
 			args := v.(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs)
-			r, err := GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(ctx, &args, opts...)
-			var s GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput)
 }
 

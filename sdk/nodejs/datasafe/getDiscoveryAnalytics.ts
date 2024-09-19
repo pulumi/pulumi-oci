@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryAnalytics(args: GetDiscoveryAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryAnalyticsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", {
         "compartmentId": args.compartmentId,
@@ -135,7 +134,17 @@ export interface GetDiscoveryAnalyticsResult {
  * ```
  */
 export function getDiscoveryAnalyticsOutput(args: GetDiscoveryAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryAnalyticsResult> {
-    return pulumi.output(args).apply((a: any) => getDiscoveryAnalytics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "groupBy": args.groupBy,
+        "isCommon": args.isCommon,
+        "sensitiveDataModelId": args.sensitiveDataModelId,
+        "sensitiveTypeId": args.sensitiveTypeId,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

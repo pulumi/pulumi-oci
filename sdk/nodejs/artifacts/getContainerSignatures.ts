@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerSignatures(args: GetContainerSignaturesArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerSignaturesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerSignatures:getContainerSignatures", {
         "compartmentId": args.compartmentId,
@@ -164,7 +163,20 @@ export interface GetContainerSignaturesResult {
  * ```
  */
 export function getContainerSignaturesOutput(args: GetContainerSignaturesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerSignaturesResult> {
-    return pulumi.output(args).apply((a: any) => getContainerSignatures(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerSignatures:getContainerSignatures", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "imageDigest": args.imageDigest,
+        "imageId": args.imageId,
+        "kmsKeyId": args.kmsKeyId,
+        "kmsKeyVersionId": args.kmsKeyVersionId,
+        "repositoryId": args.repositoryId,
+        "repositoryName": args.repositoryName,
+        "signingAlgorithm": args.signingAlgorithm,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedMySqlDatabaseConfigurationData(args: GetManagedMySqlDatabaseConfigurationDataArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedMySqlDatabaseConfigurationDataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetManagedMySqlDatabaseConfigurationDataResult {
  * ```
  */
 export function getManagedMySqlDatabaseConfigurationDataOutput(args: GetManagedMySqlDatabaseConfigurationDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedMySqlDatabaseConfigurationDataResult> {
-    return pulumi.output(args).apply((a: any) => getManagedMySqlDatabaseConfigurationData(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", {
+        "filters": args.filters,
+        "managedMySqlDatabaseId": args.managedMySqlDatabaseId,
+    }, opts);
 }
 
 /**

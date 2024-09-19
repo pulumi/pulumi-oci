@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecretbundleVersions(args: GetSecretbundleVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretbundleVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", {
         "filters": args.filters,
@@ -77,7 +76,11 @@ export interface GetSecretbundleVersionsResult {
  * ```
  */
 export function getSecretbundleVersionsOutput(args: GetSecretbundleVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretbundleVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getSecretbundleVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", {
+        "filters": args.filters,
+        "secretId": args.secretId,
+    }, opts);
 }
 
 /**

@@ -77,14 +77,20 @@ type GetNetworkFirewallPolicyTunnelInspectionRulesResult struct {
 
 func GetNetworkFirewallPolicyTunnelInspectionRulesOutput(ctx *pulumi.Context, args GetNetworkFirewallPolicyTunnelInspectionRulesOutputArgs, opts ...pulumi.InvokeOption) GetNetworkFirewallPolicyTunnelInspectionRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNetworkFirewallPolicyTunnelInspectionRulesResult, error) {
+		ApplyT(func(v interface{}) (GetNetworkFirewallPolicyTunnelInspectionRulesResultOutput, error) {
 			args := v.(GetNetworkFirewallPolicyTunnelInspectionRulesArgs)
-			r, err := GetNetworkFirewallPolicyTunnelInspectionRules(ctx, &args, opts...)
-			var s GetNetworkFirewallPolicyTunnelInspectionRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNetworkFirewallPolicyTunnelInspectionRulesResult
+			secret, err := ctx.InvokePackageRaw("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRules:getNetworkFirewallPolicyTunnelInspectionRules", args, &rv, "", opts...)
+			if err != nil {
+				return GetNetworkFirewallPolicyTunnelInspectionRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNetworkFirewallPolicyTunnelInspectionRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNetworkFirewallPolicyTunnelInspectionRulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetNetworkFirewallPolicyTunnelInspectionRulesResultOutput)
 }
 

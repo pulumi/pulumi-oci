@@ -110,14 +110,20 @@ type GetAutonomousContainerDatabasesResult struct {
 
 func GetAutonomousContainerDatabasesOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabasesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousContainerDatabasesResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousContainerDatabasesResultOutput, error) {
 			args := v.(GetAutonomousContainerDatabasesArgs)
-			r, err := GetAutonomousContainerDatabases(ctx, &args, opts...)
-			var s GetAutonomousContainerDatabasesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousContainerDatabasesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousContainerDatabasesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousContainerDatabasesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousContainerDatabasesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousContainerDatabasesResultOutput)
 }
 

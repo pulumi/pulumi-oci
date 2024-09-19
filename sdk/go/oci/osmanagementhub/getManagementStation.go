@@ -104,14 +104,20 @@ type LookupManagementStationResult struct {
 
 func LookupManagementStationOutput(ctx *pulumi.Context, args LookupManagementStationOutputArgs, opts ...pulumi.InvokeOption) LookupManagementStationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupManagementStationResult, error) {
+		ApplyT(func(v interface{}) (LookupManagementStationResultOutput, error) {
 			args := v.(LookupManagementStationArgs)
-			r, err := LookupManagementStation(ctx, &args, opts...)
-			var s LookupManagementStationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupManagementStationResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getManagementStation:getManagementStation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupManagementStationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupManagementStationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupManagementStationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupManagementStationResultOutput)
 }
 

@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReportDefinitions(args: GetReportDefinitionsArgs, opts?: pulumi.InvokeOptions): Promise<GetReportDefinitionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getReportDefinitions:getReportDefinitions", {
         "accessLevel": args.accessLevel,
@@ -152,7 +151,18 @@ export interface GetReportDefinitionsResult {
  * ```
  */
 export function getReportDefinitionsOutput(args: GetReportDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportDefinitionsResult> {
-    return pulumi.output(args).apply((a: any) => getReportDefinitions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getReportDefinitions:getReportDefinitions", {
+        "accessLevel": args.accessLevel,
+        "category": args.category,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "dataSource": args.dataSource,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isSeeded": args.isSeeded,
+        "state": args.state,
+    }, opts);
 }
 
 /**

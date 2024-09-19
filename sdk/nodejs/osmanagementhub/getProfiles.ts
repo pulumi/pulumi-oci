@@ -36,7 +36,6 @@ import * as utilities from "../utilities";
  */
 export function getProfiles(args?: GetProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetProfilesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getProfiles:getProfiles", {
         "archType": args.archType,
@@ -195,7 +194,23 @@ export interface GetProfilesResult {
  * ```
  */
 export function getProfilesOutput(args?: GetProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProfilesResult> {
-    return pulumi.output(args).apply((a: any) => getProfiles(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getProfiles:getProfiles", {
+        "archType": args.archType,
+        "compartmentId": args.compartmentId,
+        "displayNameContains": args.displayNameContains,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "isDefaultProfile": args.isDefaultProfile,
+        "isServiceProvidedProfile": args.isServiceProvidedProfile,
+        "osFamily": args.osFamily,
+        "profileId": args.profileId,
+        "profileTypes": args.profileTypes,
+        "registrationTypes": args.registrationTypes,
+        "state": args.state,
+        "vendorName": args.vendorName,
+    }, opts);
 }
 
 /**

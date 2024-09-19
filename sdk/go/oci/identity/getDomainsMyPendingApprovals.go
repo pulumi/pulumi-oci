@@ -97,14 +97,20 @@ type GetDomainsMyPendingApprovalsResult struct {
 
 func GetDomainsMyPendingApprovalsOutput(ctx *pulumi.Context, args GetDomainsMyPendingApprovalsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyPendingApprovalsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsMyPendingApprovalsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsMyPendingApprovalsResultOutput, error) {
 			args := v.(GetDomainsMyPendingApprovalsArgs)
-			r, err := GetDomainsMyPendingApprovals(ctx, &args, opts...)
-			var s GetDomainsMyPendingApprovalsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsMyPendingApprovalsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyPendingApprovals:getDomainsMyPendingApprovals", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsMyPendingApprovalsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsMyPendingApprovalsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsMyPendingApprovalsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsMyPendingApprovalsResultOutput)
 }
 

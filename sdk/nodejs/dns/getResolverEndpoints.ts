@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResolverEndpoints(args: GetResolverEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetResolverEndpointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getResolverEndpoints:getResolverEndpoints", {
         "filters": args.filters,
@@ -110,7 +109,14 @@ export interface GetResolverEndpointsResult {
  * ```
  */
 export function getResolverEndpointsOutput(args: GetResolverEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolverEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getResolverEndpoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getResolverEndpoints:getResolverEndpoints", {
+        "filters": args.filters,
+        "name": args.name,
+        "resolverId": args.resolverId,
+        "scope": args.scope,
+        "state": args.state,
+    }, opts);
 }
 
 /**

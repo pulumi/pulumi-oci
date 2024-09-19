@@ -82,14 +82,20 @@ type GetRecommendationStrategyResult struct {
 
 func GetRecommendationStrategyOutput(ctx *pulumi.Context, args GetRecommendationStrategyOutputArgs, opts ...pulumi.InvokeOption) GetRecommendationStrategyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRecommendationStrategyResult, error) {
+		ApplyT(func(v interface{}) (GetRecommendationStrategyResultOutput, error) {
 			args := v.(GetRecommendationStrategyArgs)
-			r, err := GetRecommendationStrategy(ctx, &args, opts...)
-			var s GetRecommendationStrategyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRecommendationStrategyResult
+			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", args, &rv, "", opts...)
+			if err != nil {
+				return GetRecommendationStrategyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRecommendationStrategyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRecommendationStrategyResultOutput), nil
+			}
+			return output, nil
 		}).(GetRecommendationStrategyResultOutput)
 }
 

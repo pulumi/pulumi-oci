@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentInstallKey(args: GetManagementAgentInstallKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentInstallKeyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", {
         "managementAgentInstallKeyId": args.managementAgentInstallKeyId,
@@ -113,7 +112,10 @@ export interface GetManagementAgentInstallKeyResult {
  * ```
  */
 export function getManagementAgentInstallKeyOutput(args: GetManagementAgentInstallKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentInstallKeyResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgentInstallKey(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", {
+        "managementAgentInstallKeyId": args.managementAgentInstallKeyId,
+    }, opts);
 }
 
 /**

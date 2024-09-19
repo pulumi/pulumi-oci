@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDelegatedResourceAccessRequestHistories(args: GetDelegatedResourceAccessRequestHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDelegatedResourceAccessRequestHistoriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories", {
         "delegatedResourceAccessRequestId": args.delegatedResourceAccessRequestId,
@@ -74,7 +73,11 @@ export interface GetDelegatedResourceAccessRequestHistoriesResult {
  * ```
  */
 export function getDelegatedResourceAccessRequestHistoriesOutput(args: GetDelegatedResourceAccessRequestHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegatedResourceAccessRequestHistoriesResult> {
-    return pulumi.output(args).apply((a: any) => getDelegatedResourceAccessRequestHistories(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories", {
+        "delegatedResourceAccessRequestId": args.delegatedResourceAccessRequestId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

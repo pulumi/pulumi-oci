@@ -51,7 +51,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessmentUserAnalytics(args: GetUserAssessmentUserAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentUserAnalyticsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", {
         "accessLevel": args.accessLevel,
@@ -220,7 +219,25 @@ export interface GetUserAssessmentUserAnalyticsResult {
  * ```
  */
 export function getUserAssessmentUserAnalyticsOutput(args: GetUserAssessmentUserAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentUserAnalyticsResult> {
-    return pulumi.output(args).apply((a: any) => getUserAssessmentUserAnalytics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", {
+        "accessLevel": args.accessLevel,
+        "accountStatus": args.accountStatus,
+        "authenticationType": args.authenticationType,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "targetId": args.targetId,
+        "timeLastLoginGreaterThanOrEqualTo": args.timeLastLoginGreaterThanOrEqualTo,
+        "timeLastLoginLessThan": args.timeLastLoginLessThan,
+        "timePasswordLastChangedGreaterThanOrEqualTo": args.timePasswordLastChangedGreaterThanOrEqualTo,
+        "timePasswordLastChangedLessThan": args.timePasswordLastChangedLessThan,
+        "timeUserCreatedGreaterThanOrEqualTo": args.timeUserCreatedGreaterThanOrEqualTo,
+        "timeUserCreatedLessThan": args.timeUserCreatedLessThan,
+        "userAssessmentId": args.userAssessmentId,
+        "userCategory": args.userCategory,
+        "userKey": args.userKey,
+        "userName": args.userName,
+    }, opts);
 }
 
 /**

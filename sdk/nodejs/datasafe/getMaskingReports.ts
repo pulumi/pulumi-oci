@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingReports(args: GetMaskingReportsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingReportsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingReports:getMaskingReports", {
         "accessLevel": args.accessLevel,
@@ -115,7 +114,15 @@ export interface GetMaskingReportsResult {
  * ```
  */
 export function getMaskingReportsOutput(args: GetMaskingReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingReportsResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingReports(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingReports:getMaskingReports", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "maskingPolicyId": args.maskingPolicyId,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

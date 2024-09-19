@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerImageSignature(args: GetContainerImageSignatureArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerImageSignatureResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", {
         "imageSignatureId": args.imageSignatureId,
@@ -121,7 +120,10 @@ export interface GetContainerImageSignatureResult {
  * ```
  */
 export function getContainerImageSignatureOutput(args: GetContainerImageSignatureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImageSignatureResult> {
-    return pulumi.output(args).apply((a: any) => getContainerImageSignature(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", {
+        "imageSignatureId": args.imageSignatureId,
+    }, opts);
 }
 
 /**

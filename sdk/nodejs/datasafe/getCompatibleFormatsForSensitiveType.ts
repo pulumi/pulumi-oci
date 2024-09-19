@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCompatibleFormatsForSensitiveType(args: GetCompatibleFormatsForSensitiveTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetCompatibleFormatsForSensitiveTypeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", {
         "accessLevel": args.accessLevel,
@@ -93,7 +92,12 @@ export interface GetCompatibleFormatsForSensitiveTypeResult {
  * ```
  */
 export function getCompatibleFormatsForSensitiveTypeOutput(args: GetCompatibleFormatsForSensitiveTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompatibleFormatsForSensitiveTypeResult> {
-    return pulumi.output(args).apply((a: any) => getCompatibleFormatsForSensitiveType(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+    }, opts);
 }
 
 /**

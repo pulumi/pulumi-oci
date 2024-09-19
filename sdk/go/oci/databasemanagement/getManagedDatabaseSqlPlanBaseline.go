@@ -104,14 +104,20 @@ type GetManagedDatabaseSqlPlanBaselineResult struct {
 
 func GetManagedDatabaseSqlPlanBaselineOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlPlanBaselineOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlPlanBaselineResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseSqlPlanBaselineResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseSqlPlanBaselineResultOutput, error) {
 			args := v.(GetManagedDatabaseSqlPlanBaselineArgs)
-			r, err := GetManagedDatabaseSqlPlanBaseline(ctx, &args, opts...)
-			var s GetManagedDatabaseSqlPlanBaselineResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseSqlPlanBaselineResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseSqlPlanBaselineResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseSqlPlanBaselineResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseSqlPlanBaselineResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseSqlPlanBaselineResultOutput)
 }
 

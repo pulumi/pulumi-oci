@@ -75,14 +75,20 @@ type GetAutoScalingConfigurationsResult struct {
 
 func GetAutoScalingConfigurationsOutput(ctx *pulumi.Context, args GetAutoScalingConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetAutoScalingConfigurationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutoScalingConfigurationsResult, error) {
+		ApplyT(func(v interface{}) (GetAutoScalingConfigurationsResultOutput, error) {
 			args := v.(GetAutoScalingConfigurationsArgs)
-			r, err := GetAutoScalingConfigurations(ctx, &args, opts...)
-			var s GetAutoScalingConfigurationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutoScalingConfigurationsResult
+			secret, err := ctx.InvokePackageRaw("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutoScalingConfigurationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutoScalingConfigurationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutoScalingConfigurationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutoScalingConfigurationsResultOutput)
 }
 

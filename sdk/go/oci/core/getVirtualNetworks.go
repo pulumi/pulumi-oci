@@ -42,14 +42,20 @@ type GetVirtualNetworksResult struct {
 
 func GetVirtualNetworksOutput(ctx *pulumi.Context, args GetVirtualNetworksOutputArgs, opts ...pulumi.InvokeOption) GetVirtualNetworksResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVirtualNetworksResult, error) {
+		ApplyT(func(v interface{}) (GetVirtualNetworksResultOutput, error) {
 			args := v.(GetVirtualNetworksArgs)
-			r, err := GetVirtualNetworks(ctx, &args, opts...)
-			var s GetVirtualNetworksResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVirtualNetworksResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVirtualNetworks:getVirtualNetworks", args, &rv, "", opts...)
+			if err != nil {
+				return GetVirtualNetworksResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVirtualNetworksResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVirtualNetworksResultOutput), nil
+			}
+			return output, nil
 		}).(GetVirtualNetworksResultOutput)
 }
 

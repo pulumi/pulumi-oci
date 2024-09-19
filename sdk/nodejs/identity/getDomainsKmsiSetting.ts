@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsKmsiSetting(args: GetDomainsKmsiSettingArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsKmsiSettingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting", {
         "attributeSets": args.attributeSets,
@@ -187,7 +186,15 @@ export interface GetDomainsKmsiSettingResult {
  * ```
  */
 export function getDomainsKmsiSettingOutput(args: GetDomainsKmsiSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsKmsiSettingResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsKmsiSetting(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "kmsiSettingId": args.kmsiSettingId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

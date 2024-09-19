@@ -79,14 +79,20 @@ type GetNamespaceStorageOverlappingRecallsResult struct {
 
 func GetNamespaceStorageOverlappingRecallsOutput(ctx *pulumi.Context, args GetNamespaceStorageOverlappingRecallsOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceStorageOverlappingRecallsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNamespaceStorageOverlappingRecallsResult, error) {
+		ApplyT(func(v interface{}) (GetNamespaceStorageOverlappingRecallsResultOutput, error) {
 			args := v.(GetNamespaceStorageOverlappingRecallsArgs)
-			r, err := GetNamespaceStorageOverlappingRecalls(ctx, &args, opts...)
-			var s GetNamespaceStorageOverlappingRecallsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNamespaceStorageOverlappingRecallsResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", args, &rv, "", opts...)
+			if err != nil {
+				return GetNamespaceStorageOverlappingRecallsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNamespaceStorageOverlappingRecallsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNamespaceStorageOverlappingRecallsResultOutput), nil
+			}
+			return output, nil
 		}).(GetNamespaceStorageOverlappingRecallsResultOutput)
 }
 

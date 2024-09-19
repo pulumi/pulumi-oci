@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSource(args: GetSoftwareSourceArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getSoftwareSource:getSoftwareSource", {
         "softwareSourceId": args.softwareSourceId,
@@ -151,7 +150,10 @@ export interface GetSoftwareSourceResult {
  * ```
  */
 export function getSoftwareSourceOutput(args: GetSoftwareSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwareSource(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagement/getSoftwareSource:getSoftwareSource", {
+        "softwareSourceId": args.softwareSourceId,
+    }, opts);
 }
 
 /**

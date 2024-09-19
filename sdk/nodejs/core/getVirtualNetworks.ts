@@ -7,7 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getVirtualNetworks(args: GetVirtualNetworksArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualNetworksResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVirtualNetworks:getVirtualNetworks", {
         "compartmentId": args.compartmentId,
@@ -42,7 +41,13 @@ export interface GetVirtualNetworksResult {
     readonly virtualNetworks: outputs.Core.GetVirtualNetworksVirtualNetwork[];
 }
 export function getVirtualNetworksOutput(args: GetVirtualNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualNetworksResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualNetworks(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVirtualNetworks:getVirtualNetworks", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

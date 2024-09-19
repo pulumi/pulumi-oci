@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplicationPolicy(args: GetReplicationPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getReplicationPolicy:getReplicationPolicy", {
         "bucket": args.bucket,
@@ -113,7 +112,12 @@ export interface GetReplicationPolicyResult {
  * ```
  */
 export function getReplicationPolicyOutput(args: GetReplicationPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getReplicationPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getReplicationPolicy:getReplicationPolicy", {
+        "bucket": args.bucket,
+        "namespace": args.namespace,
+        "replicationId": args.replicationId,
+    }, opts);
 }
 
 /**

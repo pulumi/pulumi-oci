@@ -46,7 +46,6 @@ import * as utilities from "../utilities";
  */
 export function getManagedInstances(args?: GetManagedInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstancesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstances:getManagedInstances", {
         "advisoryNames": args.advisoryNames,
@@ -281,7 +280,34 @@ export interface GetManagedInstancesResult {
  * ```
  */
 export function getManagedInstancesOutput(args?: GetManagedInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstances(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstances:getManagedInstances", {
+        "advisoryNames": args.advisoryNames,
+        "archTypes": args.archTypes,
+        "compartmentId": args.compartmentId,
+        "displayNameContains": args.displayNameContains,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "group": args.group,
+        "groupNotEqualTo": args.groupNotEqualTo,
+        "isAttachedToGroupOrLifecycleStage": args.isAttachedToGroupOrLifecycleStage,
+        "isManagedByAutonomousLinux": args.isManagedByAutonomousLinux,
+        "isManagementStation": args.isManagementStation,
+        "isProfileAttached": args.isProfileAttached,
+        "lifecycleEnvironment": args.lifecycleEnvironment,
+        "lifecycleEnvironmentNotEqualTo": args.lifecycleEnvironmentNotEqualTo,
+        "lifecycleStage": args.lifecycleStage,
+        "lifecycleStageNotEqualTo": args.lifecycleStageNotEqualTo,
+        "locationNotEqualTos": args.locationNotEqualTos,
+        "locations": args.locations,
+        "managedInstanceId": args.managedInstanceId,
+        "osFamilies": args.osFamilies,
+        "profileNotEqualTos": args.profileNotEqualTos,
+        "profiles": args.profiles,
+        "softwareSourceId": args.softwareSourceId,
+        "statuses": args.statuses,
+    }, opts);
 }
 
 /**

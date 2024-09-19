@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLifecycleStage(args: GetLifecycleStageArgs, opts?: pulumi.InvokeOptions): Promise<GetLifecycleStageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getLifecycleStage:getLifecycleStage", {
         "lifecycleStageId": args.lifecycleStageId,
@@ -131,7 +130,10 @@ export interface GetLifecycleStageResult {
  * ```
  */
 export function getLifecycleStageOutput(args: GetLifecycleStageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleStageResult> {
-    return pulumi.output(args).apply((a: any) => getLifecycleStage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getLifecycleStage:getLifecycleStage", {
+        "lifecycleStageId": args.lifecycleStageId,
+    }, opts);
 }
 
 /**

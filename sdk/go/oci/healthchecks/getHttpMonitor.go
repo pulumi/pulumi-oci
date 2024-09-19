@@ -99,14 +99,20 @@ type LookupHttpMonitorResult struct {
 
 func LookupHttpMonitorOutput(ctx *pulumi.Context, args LookupHttpMonitorOutputArgs, opts ...pulumi.InvokeOption) LookupHttpMonitorResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupHttpMonitorResult, error) {
+		ApplyT(func(v interface{}) (LookupHttpMonitorResultOutput, error) {
 			args := v.(LookupHttpMonitorArgs)
-			r, err := LookupHttpMonitor(ctx, &args, opts...)
-			var s LookupHttpMonitorResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupHttpMonitorResult
+			secret, err := ctx.InvokePackageRaw("oci:HealthChecks/getHttpMonitor:getHttpMonitor", args, &rv, "", opts...)
+			if err != nil {
+				return LookupHttpMonitorResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupHttpMonitorResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupHttpMonitorResultOutput), nil
+			}
+			return output, nil
 		}).(LookupHttpMonitorResultOutput)
 }
 

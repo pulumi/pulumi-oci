@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployments(args: GetDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeployments:getDeployments", {
         "assignableConnectionId": args.assignableConnectionId,
@@ -145,7 +144,18 @@ export interface GetDeploymentsResult {
  * ```
  */
 export function getDeploymentsOutput(args: GetDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentsResult> {
-    return pulumi.output(args).apply((a: any) => getDeployments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeployments:getDeployments", {
+        "assignableConnectionId": args.assignableConnectionId,
+        "assignedConnectionId": args.assignedConnectionId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "fqdn": args.fqdn,
+        "lifecycleSubState": args.lifecycleSubState,
+        "state": args.state,
+        "supportedConnectionType": args.supportedConnectionType,
+    }, opts);
 }
 
 /**

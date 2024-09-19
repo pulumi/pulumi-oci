@@ -93,14 +93,20 @@ type GetJobRunsResult struct {
 
 func GetJobRunsOutput(ctx *pulumi.Context, args GetJobRunsOutputArgs, opts ...pulumi.InvokeOption) GetJobRunsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetJobRunsResult, error) {
+		ApplyT(func(v interface{}) (GetJobRunsResultOutput, error) {
 			args := v.(GetJobRunsArgs)
-			r, err := GetJobRuns(ctx, &args, opts...)
-			var s GetJobRunsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetJobRunsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataScience/getJobRuns:getJobRuns", args, &rv, "", opts...)
+			if err != nil {
+				return GetJobRunsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetJobRunsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetJobRunsResultOutput), nil
+			}
+			return output, nil
 		}).(GetJobRunsResultOutput)
 }
 

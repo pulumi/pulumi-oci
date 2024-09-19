@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutions(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", {
         "endTimeLessThanOrEqualTo": args.endTimeLessThanOrEqualTo,
@@ -94,7 +93,13 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult {
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsAdvisorExecutions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", {
+        "endTimeLessThanOrEqualTo": args.endTimeLessThanOrEqualTo,
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+        "startTimeGreaterThanOrEqualTo": args.startTimeGreaterThanOrEqualTo,
+    }, opts);
 }
 
 /**

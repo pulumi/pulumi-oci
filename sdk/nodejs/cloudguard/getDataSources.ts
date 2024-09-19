@@ -45,7 +45,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSources(args: GetDataSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSourcesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDataSources:getDataSources", {
         "accessLevel": args.accessLevel,
@@ -169,7 +168,17 @@ export interface GetDataSourcesResult {
  * ```
  */
 export function getDataSourcesOutput(args: GetDataSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourcesResult> {
-    return pulumi.output(args).apply((a: any) => getDataSources(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getDataSources:getDataSources", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "dataSourceFeedProvider": args.dataSourceFeedProvider,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "loggingQueryType": args.loggingQueryType,
+        "state": args.state,
+    }, opts);
 }
 
 /**

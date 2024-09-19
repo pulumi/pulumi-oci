@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getScript(args: GetScriptArgs, opts?: pulumi.InvokeOptions): Promise<GetScriptResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getScript:getScript", {
         "apmDomainId": args.apmDomainId,
@@ -123,7 +122,11 @@ export interface GetScriptResult {
  * ```
  */
 export function getScriptOutput(args: GetScriptOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScriptResult> {
-    return pulumi.output(args).apply((a: any) => getScript(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getScript:getScript", {
+        "apmDomainId": args.apmDomainId,
+        "scriptId": args.scriptId,
+    }, opts);
 }
 
 /**

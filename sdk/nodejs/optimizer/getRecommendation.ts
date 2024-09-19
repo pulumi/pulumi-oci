@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRecommendation(args: GetRecommendationArgs, opts?: pulumi.InvokeOptions): Promise<GetRecommendationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getRecommendation:getRecommendation", {
         "recommendationId": args.recommendationId,
@@ -127,7 +126,10 @@ export interface GetRecommendationResult {
  * ```
  */
 export function getRecommendationOutput(args: GetRecommendationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationResult> {
-    return pulumi.output(args).apply((a: any) => getRecommendation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getRecommendation:getRecommendation", {
+        "recommendationId": args.recommendationId,
+    }, opts);
 }
 
 /**

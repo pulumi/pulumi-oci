@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReportContent(args: GetReportContentArgs, opts?: pulumi.InvokeOptions): Promise<GetReportContentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getReportContent:getReportContent", {
         "reportId": args.reportId,
@@ -65,7 +64,10 @@ export interface GetReportContentResult {
  * ```
  */
 export function getReportContentOutput(args: GetReportContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportContentResult> {
-    return pulumi.output(args).apply((a: any) => getReportContent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getReportContent:getReportContent", {
+        "reportId": args.reportId,
+    }, opts);
 }
 
 /**

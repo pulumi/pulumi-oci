@@ -70,14 +70,20 @@ type GetUsageCarbonEmissionsQueriesResult struct {
 
 func GetUsageCarbonEmissionsQueriesOutput(ctx *pulumi.Context, args GetUsageCarbonEmissionsQueriesOutputArgs, opts ...pulumi.InvokeOption) GetUsageCarbonEmissionsQueriesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetUsageCarbonEmissionsQueriesResult, error) {
+		ApplyT(func(v interface{}) (GetUsageCarbonEmissionsQueriesResultOutput, error) {
 			args := v.(GetUsageCarbonEmissionsQueriesArgs)
-			r, err := GetUsageCarbonEmissionsQueries(ctx, &args, opts...)
-			var s GetUsageCarbonEmissionsQueriesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetUsageCarbonEmissionsQueriesResult
+			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries", args, &rv, "", opts...)
+			if err != nil {
+				return GetUsageCarbonEmissionsQueriesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetUsageCarbonEmissionsQueriesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetUsageCarbonEmissionsQueriesResultOutput), nil
+			}
+			return output, nil
 		}).(GetUsageCarbonEmissionsQueriesResultOutput)
 }
 

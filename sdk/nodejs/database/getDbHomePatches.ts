@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbHomePatches(args: GetDbHomePatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbHomePatchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbHomePatches:getDbHomePatches", {
         "dbHomeId": args.dbHomeId,
@@ -74,7 +73,11 @@ export interface GetDbHomePatchesResult {
  * ```
  */
 export function getDbHomePatchesOutput(args: GetDbHomePatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomePatchesResult> {
-    return pulumi.output(args).apply((a: any) => getDbHomePatches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbHomePatches:getDbHomePatches", {
+        "dbHomeId": args.dbHomeId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

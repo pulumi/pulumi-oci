@@ -128,14 +128,20 @@ type GetSensitiveTypesResult struct {
 
 func GetSensitiveTypesOutput(ctx *pulumi.Context, args GetSensitiveTypesOutputArgs, opts ...pulumi.InvokeOption) GetSensitiveTypesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSensitiveTypesResult, error) {
+		ApplyT(func(v interface{}) (GetSensitiveTypesResultOutput, error) {
 			args := v.(GetSensitiveTypesArgs)
-			r, err := GetSensitiveTypes(ctx, &args, opts...)
-			var s GetSensitiveTypesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSensitiveTypesResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args, &rv, "", opts...)
+			if err != nil {
+				return GetSensitiveTypesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSensitiveTypesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSensitiveTypesResultOutput), nil
+			}
+			return output, nil
 		}).(GetSensitiveTypesResultOutput)
 }
 

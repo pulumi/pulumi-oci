@@ -102,14 +102,20 @@ type LookupPluggableDatabaseResult struct {
 
 func LookupPluggableDatabaseOutput(ctx *pulumi.Context, args LookupPluggableDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupPluggableDatabaseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPluggableDatabaseResult, error) {
+		ApplyT(func(v interface{}) (LookupPluggableDatabaseResultOutput, error) {
 			args := v.(LookupPluggableDatabaseArgs)
-			r, err := LookupPluggableDatabase(ctx, &args, opts...)
-			var s LookupPluggableDatabaseResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupPluggableDatabaseResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getPluggableDatabase:getPluggableDatabase", args, &rv, "", opts...)
+			if err != nil {
+				return LookupPluggableDatabaseResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupPluggableDatabaseResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupPluggableDatabaseResultOutput), nil
+			}
+			return output, nil
 		}).(LookupPluggableDatabaseResultOutput)
 }
 

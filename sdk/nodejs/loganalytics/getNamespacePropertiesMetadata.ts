@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespacePropertiesMetadata(args: GetNamespacePropertiesMetadataArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespacePropertiesMetadataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", {
         "constraints": args.constraints,
@@ -112,7 +111,15 @@ export interface GetNamespacePropertiesMetadataResult {
  * ```
  */
 export function getNamespacePropertiesMetadataOutput(args: GetNamespacePropertiesMetadataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespacePropertiesMetadataResult> {
-    return pulumi.output(args).apply((a: any) => getNamespacePropertiesMetadata(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", {
+        "constraints": args.constraints,
+        "displayText": args.displayText,
+        "filters": args.filters,
+        "level": args.level,
+        "name": args.name,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

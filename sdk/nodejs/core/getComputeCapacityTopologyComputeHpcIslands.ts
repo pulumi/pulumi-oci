@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeCapacityTopologyComputeHpcIslands(args: GetComputeCapacityTopologyComputeHpcIslandsArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityTopologyComputeHpcIslandsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", {
         "availabilityDomain": args.availabilityDomain,
@@ -93,7 +92,13 @@ export interface GetComputeCapacityTopologyComputeHpcIslandsResult {
  * ```
  */
 export function getComputeCapacityTopologyComputeHpcIslandsOutput(args: GetComputeCapacityTopologyComputeHpcIslandsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologyComputeHpcIslandsResult> {
-    return pulumi.output(args).apply((a: any) => getComputeCapacityTopologyComputeHpcIslands(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "computeCapacityTopologyId": args.computeCapacityTopologyId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

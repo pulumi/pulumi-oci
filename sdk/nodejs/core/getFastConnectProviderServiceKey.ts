@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFastConnectProviderServiceKey(args: GetFastConnectProviderServiceKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetFastConnectProviderServiceKeyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", {
         "providerServiceId": args.providerServiceId,
@@ -87,7 +86,11 @@ export interface GetFastConnectProviderServiceKeyResult {
  * ```
  */
 export function getFastConnectProviderServiceKeyOutput(args: GetFastConnectProviderServiceKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastConnectProviderServiceKeyResult> {
-    return pulumi.output(args).apply((a: any) => getFastConnectProviderServiceKey(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", {
+        "providerServiceId": args.providerServiceId,
+        "providerServiceKeyName": args.providerServiceKeyName,
+    }, opts);
 }
 
 /**

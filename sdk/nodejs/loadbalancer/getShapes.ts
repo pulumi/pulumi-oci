@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getShapes(args: GetShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getShapes:getShapes", {
         "compartmentId": args.compartmentId,
@@ -74,7 +73,11 @@ export interface GetShapesResult {
  * ```
  */
 export function getShapesOutput(args: GetShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapesResult> {
-    return pulumi.output(args).apply((a: any) => getShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getShapes:getShapes", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

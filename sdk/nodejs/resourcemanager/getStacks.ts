@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStacks(args: GetStacksArgs, opts?: pulumi.InvokeOptions): Promise<GetStacksResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ResourceManager/getStacks:getStacks", {
         "compartmentId": args.compartmentId,
@@ -116,7 +115,14 @@ export interface GetStacksResult {
  * ```
  */
 export function getStacksOutput(args: GetStacksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStacksResult> {
-    return pulumi.output(args).apply((a: any) => getStacks(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ResourceManager/getStacks:getStacks", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

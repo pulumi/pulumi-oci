@@ -107,14 +107,20 @@ type GetDomainsAppRolesResult struct {
 
 func GetDomainsAppRolesOutput(ctx *pulumi.Context, args GetDomainsAppRolesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAppRolesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsAppRolesResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsAppRolesResultOutput, error) {
 			args := v.(GetDomainsAppRolesArgs)
-			r, err := GetDomainsAppRoles(ctx, &args, opts...)
-			var s GetDomainsAppRolesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsAppRolesResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsAppRolesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsAppRolesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsAppRolesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsAppRolesResultOutput)
 }
 

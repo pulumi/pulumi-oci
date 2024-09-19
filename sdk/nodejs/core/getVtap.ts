@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVtap(args: GetVtapArgs, opts?: pulumi.InvokeOptions): Promise<GetVtapResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVtap:getVtap", {
         "vtapId": args.vtapId,
@@ -151,7 +150,10 @@ export interface GetVtapResult {
  * ```
  */
 export function getVtapOutput(args: GetVtapOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVtapResult> {
-    return pulumi.output(args).apply((a: any) => getVtap(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVtap:getVtap", {
+        "vtapId": args.vtapId,
+    }, opts);
 }
 
 /**

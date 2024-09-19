@@ -91,14 +91,20 @@ type GetWaasPolicyResult struct {
 
 func GetWaasPolicyOutput(ctx *pulumi.Context, args GetWaasPolicyOutputArgs, opts ...pulumi.InvokeOption) GetWaasPolicyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetWaasPolicyResult, error) {
+		ApplyT(func(v interface{}) (GetWaasPolicyResultOutput, error) {
 			args := v.(GetWaasPolicyArgs)
-			r, err := GetWaasPolicy(ctx, &args, opts...)
-			var s GetWaasPolicyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetWaasPolicyResult
+			secret, err := ctx.InvokePackageRaw("oci:Waas/getWaasPolicy:getWaasPolicy", args, &rv, "", opts...)
+			if err != nil {
+				return GetWaasPolicyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetWaasPolicyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetWaasPolicyResultOutput), nil
+			}
+			return output, nil
 		}).(GetWaasPolicyResultOutput)
 }
 

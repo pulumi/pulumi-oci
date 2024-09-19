@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getDeployPipelines(args?: GetDeployPipelinesArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployPipelinesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployPipelines:getDeployPipelines", {
         "compartmentId": args.compartmentId,
@@ -118,7 +117,16 @@ export interface GetDeployPipelinesResult {
  * ```
  */
 export function getDeployPipelinesOutput(args?: GetDeployPipelinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployPipelinesResult> {
-    return pulumi.output(args).apply((a: any) => getDeployPipelines(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getDeployPipelines:getDeployPipelines", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -85,14 +85,20 @@ type GetRepositoryDiffsResult struct {
 
 func GetRepositoryDiffsOutput(ctx *pulumi.Context, args GetRepositoryDiffsOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryDiffsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRepositoryDiffsResult, error) {
+		ApplyT(func(v interface{}) (GetRepositoryDiffsResultOutput, error) {
 			args := v.(GetRepositoryDiffsArgs)
-			r, err := GetRepositoryDiffs(ctx, &args, opts...)
-			var s GetRepositoryDiffsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRepositoryDiffsResult
+			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", args, &rv, "", opts...)
+			if err != nil {
+				return GetRepositoryDiffsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRepositoryDiffsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRepositoryDiffsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRepositoryDiffsResultOutput)
 }
 

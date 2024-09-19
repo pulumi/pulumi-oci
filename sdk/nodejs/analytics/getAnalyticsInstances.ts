@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnalyticsInstances(args: GetAnalyticsInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetAnalyticsInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", {
         "capacityType": args.capacityType,
@@ -121,7 +120,15 @@ export interface GetAnalyticsInstancesResult {
  * ```
  */
 export function getAnalyticsInstancesOutput(args: GetAnalyticsInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getAnalyticsInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", {
+        "capacityType": args.capacityType,
+        "compartmentId": args.compartmentId,
+        "featureSet": args.featureSet,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

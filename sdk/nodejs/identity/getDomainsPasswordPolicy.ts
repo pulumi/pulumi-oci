@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsPasswordPolicy(args: GetDomainsPasswordPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsPasswordPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy", {
         "attributeSets": args.attributeSets,
@@ -307,7 +306,15 @@ export interface GetDomainsPasswordPolicyResult {
  * ```
  */
 export function getDomainsPasswordPolicyOutput(args: GetDomainsPasswordPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsPasswordPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsPasswordPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "passwordPolicyId": args.passwordPolicyId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

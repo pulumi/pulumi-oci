@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFaultDomains(args: GetFaultDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetFaultDomainsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getFaultDomains:getFaultDomains", {
         "availabilityDomain": args.availabilityDomain,
@@ -92,7 +91,12 @@ export interface GetFaultDomainsResult {
  * ```
  */
 export function getFaultDomainsOutput(args: GetFaultDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFaultDomainsResult> {
-    return pulumi.output(args).apply((a: any) => getFaultDomains(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getFaultDomains:getFaultDomains", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

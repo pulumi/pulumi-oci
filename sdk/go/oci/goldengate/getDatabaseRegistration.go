@@ -114,14 +114,20 @@ type LookupDatabaseRegistrationResult struct {
 
 func LookupDatabaseRegistrationOutput(ctx *pulumi.Context, args LookupDatabaseRegistrationOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseRegistrationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDatabaseRegistrationResult, error) {
+		ApplyT(func(v interface{}) (LookupDatabaseRegistrationResultOutput, error) {
 			args := v.(LookupDatabaseRegistrationArgs)
-			r, err := LookupDatabaseRegistration(ctx, &args, opts...)
-			var s LookupDatabaseRegistrationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDatabaseRegistrationResult
+			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDatabaseRegistrationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDatabaseRegistrationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDatabaseRegistrationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDatabaseRegistrationResultOutput)
 }
 

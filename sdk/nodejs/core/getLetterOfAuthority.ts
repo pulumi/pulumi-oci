@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLetterOfAuthority(args: GetLetterOfAuthorityArgs, opts?: pulumi.InvokeOptions): Promise<GetLetterOfAuthorityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getLetterOfAuthority:getLetterOfAuthority", {
         "crossConnectId": args.crossConnectId,
@@ -92,7 +91,10 @@ export interface GetLetterOfAuthorityResult {
  * ```
  */
 export function getLetterOfAuthorityOutput(args: GetLetterOfAuthorityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLetterOfAuthorityResult> {
-    return pulumi.output(args).apply((a: any) => getLetterOfAuthority(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getLetterOfAuthority:getLetterOfAuthority", {
+        "crossConnectId": args.crossConnectId,
+    }, opts);
 }
 
 /**

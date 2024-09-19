@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceGroup(args: GetManagedInstanceGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", {
         "managedInstanceGroupId": args.managedInstanceGroupId,
@@ -101,7 +100,10 @@ export interface GetManagedInstanceGroupResult {
  * ```
  */
 export function getManagedInstanceGroupOutput(args: GetManagedInstanceGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", {
+        "managedInstanceGroupId": args.managedInstanceGroupId,
+    }, opts);
 }
 
 /**

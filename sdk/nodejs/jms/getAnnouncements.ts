@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getAnnouncements(args?: GetAnnouncementsArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnouncementsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getAnnouncements:getAnnouncements", {
         "filters": args.filters,
@@ -91,7 +90,14 @@ export interface GetAnnouncementsResult {
  * ```
  */
 export function getAnnouncementsOutput(args?: GetAnnouncementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnouncementsResult> {
-    return pulumi.output(args).apply((a: any) => getAnnouncements(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getAnnouncements:getAnnouncements", {
+        "filters": args.filters,
+        "summaryContains": args.summaryContains,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

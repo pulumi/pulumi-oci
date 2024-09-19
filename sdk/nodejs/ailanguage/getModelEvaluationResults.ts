@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelEvaluationResults(args: GetModelEvaluationResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelEvaluationResultsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetModelEvaluationResultsResult {
  * ```
  */
 export function getModelEvaluationResultsOutput(args: GetModelEvaluationResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelEvaluationResultsResult> {
-    return pulumi.output(args).apply((a: any) => getModelEvaluationResults(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", {
+        "filters": args.filters,
+        "modelId": args.modelId,
+    }, opts);
 }
 
 /**

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyCompletedApprovals(args: GetDomainsMyCompletedApprovalsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyCompletedApprovalsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", {
         "authorization": args.authorization,
@@ -126,7 +125,18 @@ export interface GetDomainsMyCompletedApprovalsResult {
  * ```
  */
 export function getDomainsMyCompletedApprovalsOutput(args: GetDomainsMyCompletedApprovalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyCompletedApprovalsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyCompletedApprovals(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myCompletedApprovalCount": args.myCompletedApprovalCount,
+        "myCompletedApprovalFilter": args.myCompletedApprovalFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSafePrivateEndpoints(args: GetDataSafePrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSafePrivateEndpointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", {
         "accessLevel": args.accessLevel,
@@ -126,7 +125,16 @@ export interface GetDataSafePrivateEndpointsResult {
  * ```
  */
 export function getDataSafePrivateEndpointsOutput(args: GetDataSafePrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafePrivateEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getDataSafePrivateEndpoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

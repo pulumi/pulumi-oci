@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetJavaMigrationAnalysisResults(args: GetFleetJavaMigrationAnalysisResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetJavaMigrationAnalysisResultsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", {
         "applicationName": args.applicationName,
@@ -126,7 +125,16 @@ export interface GetFleetJavaMigrationAnalysisResultsResult {
  * ```
  */
 export function getFleetJavaMigrationAnalysisResultsOutput(args: GetFleetJavaMigrationAnalysisResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetJavaMigrationAnalysisResultsResult> {
-    return pulumi.output(args).apply((a: any) => getFleetJavaMigrationAnalysisResults(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", {
+        "applicationName": args.applicationName,
+        "filters": args.filters,
+        "fleetId": args.fleetId,
+        "hostName": args.hostName,
+        "managedInstanceId": args.managedInstanceId,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

@@ -70,14 +70,20 @@ type GetKeyStoresResult struct {
 
 func GetKeyStoresOutput(ctx *pulumi.Context, args GetKeyStoresOutputArgs, opts ...pulumi.InvokeOption) GetKeyStoresResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetKeyStoresResult, error) {
+		ApplyT(func(v interface{}) (GetKeyStoresResultOutput, error) {
 			args := v.(GetKeyStoresArgs)
-			r, err := GetKeyStores(ctx, &args, opts...)
-			var s GetKeyStoresResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetKeyStoresResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getKeyStores:getKeyStores", args, &rv, "", opts...)
+			if err != nil {
+				return GetKeyStoresResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetKeyStoresResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetKeyStoresResultOutput), nil
+			}
+			return output, nil
 		}).(GetKeyStoresResultOutput)
 }
 

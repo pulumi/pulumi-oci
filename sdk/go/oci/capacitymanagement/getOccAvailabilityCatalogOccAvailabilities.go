@@ -89,14 +89,20 @@ type GetOccAvailabilityCatalogOccAvailabilitiesResult struct {
 
 func GetOccAvailabilityCatalogOccAvailabilitiesOutput(ctx *pulumi.Context, args GetOccAvailabilityCatalogOccAvailabilitiesOutputArgs, opts ...pulumi.InvokeOption) GetOccAvailabilityCatalogOccAvailabilitiesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetOccAvailabilityCatalogOccAvailabilitiesResult, error) {
+		ApplyT(func(v interface{}) (GetOccAvailabilityCatalogOccAvailabilitiesResultOutput, error) {
 			args := v.(GetOccAvailabilityCatalogOccAvailabilitiesArgs)
-			r, err := GetOccAvailabilityCatalogOccAvailabilities(ctx, &args, opts...)
-			var s GetOccAvailabilityCatalogOccAvailabilitiesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetOccAvailabilityCatalogOccAvailabilitiesResult
+			secret, err := ctx.InvokePackageRaw("oci:CapacityManagement/getOccAvailabilityCatalogOccAvailabilities:getOccAvailabilityCatalogOccAvailabilities", args, &rv, "", opts...)
+			if err != nil {
+				return GetOccAvailabilityCatalogOccAvailabilitiesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetOccAvailabilityCatalogOccAvailabilitiesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetOccAvailabilityCatalogOccAvailabilitiesResultOutput), nil
+			}
+			return output, nil
 		}).(GetOccAvailabilityCatalogOccAvailabilitiesResultOutput)
 }
 

@@ -37,7 +37,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getObjectVersions(args: GetObjectVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObjectVersions:getObjectVersions", {
         "bucket": args.bucket,
@@ -148,7 +147,18 @@ export interface GetObjectVersionsResult {
  * ```
  */
 export function getObjectVersionsOutput(args: GetObjectVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getObjectVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObjectVersions:getObjectVersions", {
+        "bucket": args.bucket,
+        "delimiter": args.delimiter,
+        "end": args.end,
+        "fields": args.fields,
+        "filters": args.filters,
+        "namespace": args.namespace,
+        "prefix": args.prefix,
+        "start": args.start,
+        "startAfter": args.startAfter,
+    }, opts);
 }
 
 /**

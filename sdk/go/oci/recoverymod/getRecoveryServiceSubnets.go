@@ -88,14 +88,20 @@ type GetRecoveryServiceSubnetsResult struct {
 
 func GetRecoveryServiceSubnetsOutput(ctx *pulumi.Context, args GetRecoveryServiceSubnetsOutputArgs, opts ...pulumi.InvokeOption) GetRecoveryServiceSubnetsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRecoveryServiceSubnetsResult, error) {
+		ApplyT(func(v interface{}) (GetRecoveryServiceSubnetsResultOutput, error) {
 			args := v.(GetRecoveryServiceSubnetsArgs)
-			r, err := GetRecoveryServiceSubnets(ctx, &args, opts...)
-			var s GetRecoveryServiceSubnetsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRecoveryServiceSubnetsResult
+			secret, err := ctx.InvokePackageRaw("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", args, &rv, "", opts...)
+			if err != nil {
+				return GetRecoveryServiceSubnetsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRecoveryServiceSubnetsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRecoveryServiceSubnetsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRecoveryServiceSubnetsResultOutput)
 }
 

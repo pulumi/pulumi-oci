@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkSource(args: GetNetworkSourceArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSourceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getNetworkSource:getNetworkSource", {
         "networkSourceId": args.networkSourceId,
@@ -111,7 +110,10 @@ export interface GetNetworkSourceResult {
  * ```
  */
 export function getNetworkSourceOutput(args: GetNetworkSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSourceResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkSource(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getNetworkSource:getNetworkSource", {
+        "networkSourceId": args.networkSourceId,
+    }, opts);
 }
 
 /**

@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAccessRequestAuditLogReport(args: GetAccessRequestAuditLogReportArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestAuditLogReportResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", {
         "accessRequestId": args.accessRequestId,
@@ -89,7 +88,11 @@ export interface GetAccessRequestAuditLogReportResult {
  * ```
  */
 export function getAccessRequestAuditLogReportOutput(args: GetAccessRequestAuditLogReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestAuditLogReportResult> {
-    return pulumi.output(args).apply((a: any) => getAccessRequestAuditLogReport(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", {
+        "accessRequestId": args.accessRequestId,
+        "enableProcessTree": args.enableProcessTree,
+    }, opts);
 }
 
 /**

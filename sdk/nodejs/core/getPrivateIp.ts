@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateIp(args: GetPrivateIpArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateIpResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPrivateIp:getPrivateIp", {
         "privateIpId": args.privateIpId,
@@ -123,7 +122,10 @@ export interface GetPrivateIpResult {
  * ```
  */
 export function getPrivateIpOutput(args: GetPrivateIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateIpResult> {
-    return pulumi.output(args).apply((a: any) => getPrivateIp(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getPrivateIp:getPrivateIp", {
+        "privateIpId": args.privateIpId,
+    }, opts);
 }
 
 /**

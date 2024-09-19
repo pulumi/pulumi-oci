@@ -205,14 +205,20 @@ type LookupDeployStageResult struct {
 
 func LookupDeployStageOutput(ctx *pulumi.Context, args LookupDeployStageOutputArgs, opts ...pulumi.InvokeOption) LookupDeployStageResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDeployStageResult, error) {
+		ApplyT(func(v interface{}) (LookupDeployStageResultOutput, error) {
 			args := v.(LookupDeployStageArgs)
-			r, err := LookupDeployStage(ctx, &args, opts...)
-			var s LookupDeployStageResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDeployStageResult
+			secret, err := ctx.InvokePackageRaw("oci:DevOps/getDeployStage:getDeployStage", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDeployStageResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDeployStageResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDeployStageResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDeployStageResultOutput)
 }
 

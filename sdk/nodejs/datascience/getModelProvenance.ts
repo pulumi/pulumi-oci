@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelProvenance(args: GetModelProvenanceArgs, opts?: pulumi.InvokeOptions): Promise<GetModelProvenanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelProvenance:getModelProvenance", {
         "modelId": args.modelId,
@@ -86,7 +85,10 @@ export interface GetModelProvenanceResult {
  * ```
  */
 export function getModelProvenanceOutput(args: GetModelProvenanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelProvenanceResult> {
-    return pulumi.output(args).apply((a: any) => getModelProvenance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getModelProvenance:getModelProvenance", {
+        "modelId": args.modelId,
+    }, opts);
 }
 
 /**

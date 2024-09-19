@@ -93,14 +93,20 @@ type LookupWorkspaceFolderResult struct {
 
 func LookupWorkspaceFolderOutput(ctx *pulumi.Context, args LookupWorkspaceFolderOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceFolderResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupWorkspaceFolderResult, error) {
+		ApplyT(func(v interface{}) (LookupWorkspaceFolderResultOutput, error) {
 			args := v.(LookupWorkspaceFolderArgs)
-			r, err := LookupWorkspaceFolder(ctx, &args, opts...)
-			var s LookupWorkspaceFolderResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupWorkspaceFolderResult
+			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", args, &rv, "", opts...)
+			if err != nil {
+				return LookupWorkspaceFolderResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupWorkspaceFolderResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupWorkspaceFolderResultOutput), nil
+			}
+			return output, nil
 		}).(LookupWorkspaceFolderResultOutput)
 }
 

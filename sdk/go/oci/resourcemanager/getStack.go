@@ -81,14 +81,20 @@ type GetStackResult struct {
 
 func GetStackOutput(ctx *pulumi.Context, args GetStackOutputArgs, opts ...pulumi.InvokeOption) GetStackResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetStackResult, error) {
+		ApplyT(func(v interface{}) (GetStackResultOutput, error) {
 			args := v.(GetStackArgs)
-			r, err := GetStack(ctx, &args, opts...)
-			var s GetStackResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetStackResult
+			secret, err := ctx.InvokePackageRaw("oci:ResourceManager/getStack:getStack", args, &rv, "", opts...)
+			if err != nil {
+				return GetStackResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetStackResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetStackResultOutput), nil
+			}
+			return output, nil
 		}).(GetStackResultOutput)
 }
 

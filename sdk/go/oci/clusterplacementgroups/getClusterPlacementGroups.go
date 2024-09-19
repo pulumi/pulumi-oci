@@ -91,14 +91,20 @@ type GetClusterPlacementGroupsResult struct {
 
 func GetClusterPlacementGroupsOutput(ctx *pulumi.Context, args GetClusterPlacementGroupsOutputArgs, opts ...pulumi.InvokeOption) GetClusterPlacementGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetClusterPlacementGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetClusterPlacementGroupsResultOutput, error) {
 			args := v.(GetClusterPlacementGroupsArgs)
-			r, err := GetClusterPlacementGroups(ctx, &args, opts...)
-			var s GetClusterPlacementGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetClusterPlacementGroupsResult
+			secret, err := ctx.InvokePackageRaw("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetClusterPlacementGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetClusterPlacementGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetClusterPlacementGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetClusterPlacementGroupsResultOutput)
 }
 

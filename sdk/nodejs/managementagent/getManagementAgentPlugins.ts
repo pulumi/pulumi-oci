@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentPlugins(args: GetManagementAgentPluginsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentPluginsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", {
         "agentId": args.agentId,
@@ -112,7 +111,15 @@ export interface GetManagementAgentPluginsResult {
  * ```
  */
 export function getManagementAgentPluginsOutput(args: GetManagementAgentPluginsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentPluginsResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgentPlugins(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", {
+        "agentId": args.agentId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "platformTypes": args.platformTypes,
+        "state": args.state,
+    }, opts);
 }
 
 /**

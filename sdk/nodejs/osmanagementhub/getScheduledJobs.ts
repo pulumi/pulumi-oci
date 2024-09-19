@@ -41,7 +41,6 @@ import * as utilities from "../utilities";
  */
 export function getScheduledJobs(args?: GetScheduledJobsArgs, opts?: pulumi.InvokeOptions): Promise<GetScheduledJobsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getScheduledJobs:getScheduledJobs", {
         "compartmentId": args.compartmentId,
@@ -231,7 +230,29 @@ export interface GetScheduledJobsResult {
  * ```
  */
 export function getScheduledJobsOutput(args?: GetScheduledJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduledJobsResult> {
-    return pulumi.output(args).apply((a: any) => getScheduledJobs(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getScheduledJobs:getScheduledJobs", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "id": args.id,
+        "isManagedByAutonomousLinux": args.isManagedByAutonomousLinux,
+        "isRestricted": args.isRestricted,
+        "lifecycleStageId": args.lifecycleStageId,
+        "locationNotEqualTos": args.locationNotEqualTos,
+        "locations": args.locations,
+        "managedCompartmentId": args.managedCompartmentId,
+        "managedInstanceGroupId": args.managedInstanceGroupId,
+        "managedInstanceId": args.managedInstanceId,
+        "operationType": args.operationType,
+        "scheduleType": args.scheduleType,
+        "state": args.state,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

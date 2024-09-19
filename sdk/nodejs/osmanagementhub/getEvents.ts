@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  */
 export function getEvents(args?: GetEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetEventsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getEvents:getEvents", {
         "compartmentId": args.compartmentId,
@@ -183,7 +182,22 @@ export interface GetEventsResult {
  * ```
  */
 export function getEventsOutput(args?: GetEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventsResult> {
-    return pulumi.output(args).apply((a: any) => getEvents(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getEvents:getEvents", {
+        "compartmentId": args.compartmentId,
+        "eventFingerprint": args.eventFingerprint,
+        "eventSummary": args.eventSummary,
+        "eventSummaryContains": args.eventSummaryContains,
+        "filters": args.filters,
+        "id": args.id,
+        "isManagedByAutonomousLinux": args.isManagedByAutonomousLinux,
+        "resourceId": args.resourceId,
+        "state": args.state,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+        "types": args.types,
+    }, opts);
 }
 
 /**

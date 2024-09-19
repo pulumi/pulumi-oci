@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogSetsCount(args: GetLogSetsCountArgs, opts?: pulumi.InvokeOptions): Promise<GetLogSetsCountResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", {
         "namespace": args.namespace,
@@ -69,7 +68,10 @@ export interface GetLogSetsCountResult {
  * ```
  */
 export function getLogSetsCountOutput(args: GetLogSetsCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSetsCountResult> {
-    return pulumi.output(args).apply((a: any) => getLogSetsCount(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", {
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

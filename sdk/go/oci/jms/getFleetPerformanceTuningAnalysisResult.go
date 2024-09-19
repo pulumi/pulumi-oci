@@ -100,14 +100,20 @@ type GetFleetPerformanceTuningAnalysisResultResult struct {
 
 func GetFleetPerformanceTuningAnalysisResultOutput(ctx *pulumi.Context, args GetFleetPerformanceTuningAnalysisResultOutputArgs, opts ...pulumi.InvokeOption) GetFleetPerformanceTuningAnalysisResultResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFleetPerformanceTuningAnalysisResultResult, error) {
+		ApplyT(func(v interface{}) (GetFleetPerformanceTuningAnalysisResultResultOutput, error) {
 			args := v.(GetFleetPerformanceTuningAnalysisResultArgs)
-			r, err := GetFleetPerformanceTuningAnalysisResult(ctx, &args, opts...)
-			var s GetFleetPerformanceTuningAnalysisResultResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFleetPerformanceTuningAnalysisResultResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", args, &rv, "", opts...)
+			if err != nil {
+				return GetFleetPerformanceTuningAnalysisResultResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFleetPerformanceTuningAnalysisResultResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFleetPerformanceTuningAnalysisResultResultOutput), nil
+			}
+			return output, nil
 		}).(GetFleetPerformanceTuningAnalysisResultResultOutput)
 }
 

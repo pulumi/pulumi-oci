@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTable(args: GetTableArgs, opts?: pulumi.InvokeOptions): Promise<GetTableResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Nosql/getTable:getTable", {
         "compartmentId": args.compartmentId,
@@ -146,7 +145,11 @@ export interface GetTableResult {
  * ```
  */
 export function getTableOutput(args: GetTableOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTableResult> {
-    return pulumi.output(args).apply((a: any) => getTable(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Nosql/getTable:getTable", {
+        "compartmentId": args.compartmentId,
+        "tableNameOrId": args.tableNameOrId,
+    }, opts);
 }
 
 /**

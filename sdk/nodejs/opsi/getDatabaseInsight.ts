@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseInsight(args: GetDatabaseInsightArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseInsightResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getDatabaseInsight:getDatabaseInsight", {
         "databaseInsightId": args.databaseInsightId,
@@ -205,7 +204,10 @@ export interface GetDatabaseInsightResult {
  * ```
  */
 export function getDatabaseInsightOutput(args: GetDatabaseInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseInsightResult> {
-    return pulumi.output(args).apply((a: any) => getDatabaseInsight(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getDatabaseInsight:getDatabaseInsight", {
+        "databaseInsightId": args.databaseInsightId,
+    }, opts);
 }
 
 /**

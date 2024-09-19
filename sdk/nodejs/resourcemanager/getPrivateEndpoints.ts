@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getPrivateEndpoints(args?: GetPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", {
         "compartmentId": args.compartmentId,
@@ -112,7 +111,15 @@ export interface GetPrivateEndpointsResult {
  * ```
  */
 export function getPrivateEndpointsOutput(args?: GetPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getPrivateEndpoints(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "privateEndpointId": args.privateEndpointId,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

@@ -87,14 +87,20 @@ type GetWorkspaceProjectsResult struct {
 
 func GetWorkspaceProjectsOutput(ctx *pulumi.Context, args GetWorkspaceProjectsOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceProjectsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceProjectsResult, error) {
+		ApplyT(func(v interface{}) (GetWorkspaceProjectsResultOutput, error) {
 			args := v.(GetWorkspaceProjectsArgs)
-			r, err := GetWorkspaceProjects(ctx, &args, opts...)
-			var s GetWorkspaceProjectsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetWorkspaceProjectsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects", args, &rv, "", opts...)
+			if err != nil {
+				return GetWorkspaceProjectsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetWorkspaceProjectsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetWorkspaceProjectsResultOutput), nil
+			}
+			return output, nil
 		}).(GetWorkspaceProjectsResultOutput)
 }
 

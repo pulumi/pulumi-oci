@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRatecards(args: GetRatecardsArgs, opts?: pulumi.InvokeOptions): Promise<GetRatecardsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getRatecards:getRatecards", {
         "compartmentId": args.compartmentId,
@@ -111,7 +110,15 @@ export interface GetRatecardsResult {
  * ```
  */
 export function getRatecardsOutput(args: GetRatecardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRatecardsResult> {
-    return pulumi.output(args).apply((a: any) => getRatecards(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OneSubsription/getRatecards:getRatecards", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "partNumber": args.partNumber,
+        "subscriptionId": args.subscriptionId,
+        "timeFrom": args.timeFrom,
+        "timeTo": args.timeTo,
+    }, opts);
 }
 
 /**

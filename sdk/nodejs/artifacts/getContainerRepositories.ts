@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerRepositories(args: GetContainerRepositoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerRepositoriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerRepositories:getContainerRepositories", {
         "compartmentId": args.compartmentId,
@@ -126,7 +125,16 @@ export interface GetContainerRepositoriesResult {
  * ```
  */
 export function getContainerRepositoriesOutput(args: GetContainerRepositoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerRepositoriesResult> {
-    return pulumi.output(args).apply((a: any) => getContainerRepositories(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerRepositories:getContainerRepositories", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isPublic": args.isPublic,
+        "repositoryId": args.repositoryId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

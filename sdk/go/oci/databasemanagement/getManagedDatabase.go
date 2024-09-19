@@ -109,14 +109,20 @@ type LookupManagedDatabaseResult struct {
 
 func LookupManagedDatabaseOutput(ctx *pulumi.Context, args LookupManagedDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupManagedDatabaseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupManagedDatabaseResult, error) {
+		ApplyT(func(v interface{}) (LookupManagedDatabaseResultOutput, error) {
 			args := v.(LookupManagedDatabaseArgs)
-			r, err := LookupManagedDatabase(ctx, &args, opts...)
-			var s LookupManagedDatabaseResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupManagedDatabaseResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", args, &rv, "", opts...)
+			if err != nil {
+				return LookupManagedDatabaseResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupManagedDatabaseResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupManagedDatabaseResultOutput), nil
+			}
+			return output, nil
 		}).(LookupManagedDatabaseResultOutput)
 }
 

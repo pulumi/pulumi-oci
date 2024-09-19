@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIntegrationInstances(args: GetIntegrationInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetIntegrationInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Integration/getIntegrationInstances:getIntegrationInstances", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetIntegrationInstancesResult {
  * ```
  */
 export function getIntegrationInstancesOutput(args: GetIntegrationInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIntegrationInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getIntegrationInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Integration/getIntegrationInstances:getIntegrationInstances", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

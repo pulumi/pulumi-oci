@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  */
 export function getCategories(args?: GetCategoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoriesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getCategories:getCategories", {
         "compartmentId": args.compartmentId,
@@ -77,7 +76,12 @@ export interface GetCategoriesResult {
  * ```
  */
 export function getCategoriesOutput(args?: GetCategoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoriesResult> {
-    return pulumi.output(args).apply((a: any) => getCategories(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Marketplace/getCategories:getCategories", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -69,14 +69,20 @@ type GetDbNodeConsoleHistoryContentResult struct {
 
 func GetDbNodeConsoleHistoryContentOutput(ctx *pulumi.Context, args GetDbNodeConsoleHistoryContentOutputArgs, opts ...pulumi.InvokeOption) GetDbNodeConsoleHistoryContentResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbNodeConsoleHistoryContentResult, error) {
+		ApplyT(func(v interface{}) (GetDbNodeConsoleHistoryContentResultOutput, error) {
 			args := v.(GetDbNodeConsoleHistoryContentArgs)
-			r, err := GetDbNodeConsoleHistoryContent(ctx, &args, opts...)
-			var s GetDbNodeConsoleHistoryContentResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbNodeConsoleHistoryContentResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbNodeConsoleHistoryContentResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbNodeConsoleHistoryContentResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbNodeConsoleHistoryContentResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbNodeConsoleHistoryContentResultOutput)
 }
 

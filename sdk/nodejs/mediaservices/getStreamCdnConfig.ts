@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStreamCdnConfig(args: GetStreamCdnConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamCdnConfigResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig", {
         "streamCdnConfigId": args.streamCdnConfigId,
@@ -120,7 +119,10 @@ export interface GetStreamCdnConfigResult {
  * ```
  */
 export function getStreamCdnConfigOutput(args: GetStreamCdnConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamCdnConfigResult> {
-    return pulumi.output(args).apply((a: any) => getStreamCdnConfig(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig", {
+        "streamCdnConfigId": args.streamCdnConfigId,
+    }, opts);
 }
 
 /**

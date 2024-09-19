@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployArtifact(args: GetDeployArtifactArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployArtifactResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployArtifact:getDeployArtifact", {
         "deployArtifactId": args.deployArtifactId,
@@ -123,7 +122,10 @@ export interface GetDeployArtifactResult {
  * ```
  */
 export function getDeployArtifactOutput(args: GetDeployArtifactOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployArtifactResult> {
-    return pulumi.output(args).apply((a: any) => getDeployArtifact(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getDeployArtifact:getDeployArtifact", {
+        "deployArtifactId": args.deployArtifactId,
+    }, opts);
 }
 
 /**

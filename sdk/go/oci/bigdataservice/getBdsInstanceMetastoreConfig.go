@@ -86,14 +86,20 @@ type LookupBdsInstanceMetastoreConfigResult struct {
 
 func LookupBdsInstanceMetastoreConfigOutput(ctx *pulumi.Context, args LookupBdsInstanceMetastoreConfigOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceMetastoreConfigResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBdsInstanceMetastoreConfigResult, error) {
+		ApplyT(func(v interface{}) (LookupBdsInstanceMetastoreConfigResultOutput, error) {
 			args := v.(LookupBdsInstanceMetastoreConfigArgs)
-			r, err := LookupBdsInstanceMetastoreConfig(ctx, &args, opts...)
-			var s LookupBdsInstanceMetastoreConfigResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBdsInstanceMetastoreConfigResult
+			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBdsInstanceMetastoreConfigResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBdsInstanceMetastoreConfigResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBdsInstanceMetastoreConfigResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBdsInstanceMetastoreConfigResultOutput)
 }
 

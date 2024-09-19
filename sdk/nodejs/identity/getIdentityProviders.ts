@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIdentityProviders(args: GetIdentityProvidersArgs, opts?: pulumi.InvokeOptions): Promise<GetIdentityProvidersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIdentityProviders:getIdentityProviders", {
         "compartmentId": args.compartmentId,
@@ -120,7 +119,14 @@ export interface GetIdentityProvidersResult {
  * ```
  */
 export function getIdentityProvidersOutput(args: GetIdentityProvidersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdentityProvidersResult> {
-    return pulumi.output(args).apply((a: any) => getIdentityProviders(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getIdentityProviders:getIdentityProviders", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "protocol": args.protocol,
+        "state": args.state,
+    }, opts);
 }
 
 /**

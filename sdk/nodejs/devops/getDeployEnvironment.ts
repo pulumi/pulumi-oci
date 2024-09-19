@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployEnvironment(args: GetDeployEnvironmentArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployEnvironmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployEnvironment:getDeployEnvironment", {
         "deployEnvironmentId": args.deployEnvironmentId,
@@ -131,7 +130,10 @@ export interface GetDeployEnvironmentResult {
  * ```
  */
 export function getDeployEnvironmentOutput(args: GetDeployEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployEnvironmentResult> {
-    return pulumi.output(args).apply((a: any) => getDeployEnvironment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getDeployEnvironment:getDeployEnvironment", {
+        "deployEnvironmentId": args.deployEnvironmentId,
+    }, opts);
 }
 
 /**

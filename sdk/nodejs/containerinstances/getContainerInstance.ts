@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerInstance(args: GetContainerInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerInstances/getContainerInstance:getContainerInstance", {
         "containerInstanceId": args.containerInstanceId,
@@ -155,7 +154,10 @@ export interface GetContainerInstanceResult {
  * ```
  */
 export function getContainerInstanceOutput(args: GetContainerInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getContainerInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerInstances/getContainerInstance:getContainerInstance", {
+        "containerInstanceId": args.containerInstanceId,
+    }, opts);
 }
 
 /**

@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListenerRules(args: GetListenerRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetListenerRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getListenerRules:getListenerRules", {
         "filters": args.filters,
@@ -94,7 +93,12 @@ export interface GetListenerRulesResult {
  * ```
  */
 export function getListenerRulesOutput(args: GetListenerRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListenerRulesResult> {
-    return pulumi.output(args).apply((a: any) => getListenerRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getListenerRules:getListenerRules", {
+        "filters": args.filters,
+        "listenerName": args.listenerName,
+        "loadBalancerId": args.loadBalancerId,
+    }, opts);
 }
 
 /**

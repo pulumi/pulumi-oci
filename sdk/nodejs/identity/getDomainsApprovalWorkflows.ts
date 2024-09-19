@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsApprovalWorkflows(args: GetDomainsApprovalWorkflowsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsApprovalWorkflowsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", {
         "approvalWorkflowCount": args.approvalWorkflowCount,
@@ -136,7 +135,18 @@ export interface GetDomainsApprovalWorkflowsResult {
  * ```
  */
 export function getDomainsApprovalWorkflowsOutput(args: GetDomainsApprovalWorkflowsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsApprovalWorkflowsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsApprovalWorkflows(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", {
+        "approvalWorkflowCount": args.approvalWorkflowCount,
+        "approvalWorkflowFilter": args.approvalWorkflowFilter,
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

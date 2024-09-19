@@ -70,14 +70,20 @@ type GetPbfListingTriggersResult struct {
 
 func GetPbfListingTriggersOutput(ctx *pulumi.Context, args GetPbfListingTriggersOutputArgs, opts ...pulumi.InvokeOption) GetPbfListingTriggersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPbfListingTriggersResult, error) {
+		ApplyT(func(v interface{}) (GetPbfListingTriggersResultOutput, error) {
 			args := v.(GetPbfListingTriggersArgs)
-			r, err := GetPbfListingTriggers(ctx, &args, opts...)
-			var s GetPbfListingTriggersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPbfListingTriggersResult
+			secret, err := ctx.InvokePackageRaw("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", args, &rv, "", opts...)
+			if err != nil {
+				return GetPbfListingTriggersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPbfListingTriggersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPbfListingTriggersResultOutput), nil
+			}
+			return output, nil
 		}).(GetPbfListingTriggersResultOutput)
 }
 

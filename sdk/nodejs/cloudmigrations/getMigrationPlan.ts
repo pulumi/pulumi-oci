@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMigrationPlan(args: GetMigrationPlanArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationPlanResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", {
         "migrationPlanId": args.migrationPlanId,
@@ -131,7 +130,10 @@ export interface GetMigrationPlanResult {
  * ```
  */
 export function getMigrationPlanOutput(args: GetMigrationPlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationPlanResult> {
-    return pulumi.output(args).apply((a: any) => getMigrationPlan(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", {
+        "migrationPlanId": args.migrationPlanId,
+    }, opts);
 }
 
 /**

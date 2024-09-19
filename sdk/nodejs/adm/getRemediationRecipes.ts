@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getRemediationRecipes(args?: GetRemediationRecipesArgs, opts?: pulumi.InvokeOptions): Promise<GetRemediationRecipesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Adm/getRemediationRecipes:getRemediationRecipes", {
         "compartmentId": args.compartmentId,
@@ -109,7 +108,15 @@ export interface GetRemediationRecipesResult {
  * ```
  */
 export function getRemediationRecipesOutput(args?: GetRemediationRecipesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRecipesResult> {
-    return pulumi.output(args).apply((a: any) => getRemediationRecipes(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Adm/getRemediationRecipes:getRemediationRecipes", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

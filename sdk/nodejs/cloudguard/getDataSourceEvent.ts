@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSourceEvent(args: GetDataSourceEventArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSourceEventResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", {
         "dataSourceId": args.dataSourceId,
@@ -85,7 +84,11 @@ export interface GetDataSourceEventResult {
  * ```
  */
 export function getDataSourceEventOutput(args: GetDataSourceEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourceEventResult> {
-    return pulumi.output(args).apply((a: any) => getDataSourceEvent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", {
+        "dataSourceId": args.dataSourceId,
+        "region": args.region,
+    }, opts);
 }
 
 /**

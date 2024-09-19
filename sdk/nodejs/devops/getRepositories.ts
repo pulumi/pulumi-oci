@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getRepositories(args?: GetRepositoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoriesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositories:getRepositories", {
         "compartmentId": args.compartmentId,
@@ -119,7 +118,16 @@ export interface GetRepositoriesResult {
  * ```
  */
 export function getRepositoriesOutput(args?: GetRepositoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoriesResult> {
-    return pulumi.output(args).apply((a: any) => getRepositories(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositories:getRepositories", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "projectId": args.projectId,
+        "repositoryId": args.repositoryId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

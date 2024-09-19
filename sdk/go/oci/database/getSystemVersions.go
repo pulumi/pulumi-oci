@@ -79,14 +79,20 @@ type GetSystemVersionsResult struct {
 
 func GetSystemVersionsOutput(ctx *pulumi.Context, args GetSystemVersionsOutputArgs, opts ...pulumi.InvokeOption) GetSystemVersionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSystemVersionsResult, error) {
+		ApplyT(func(v interface{}) (GetSystemVersionsResultOutput, error) {
 			args := v.(GetSystemVersionsArgs)
-			r, err := GetSystemVersions(ctx, &args, opts...)
-			var s GetSystemVersionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSystemVersionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getSystemVersions:getSystemVersions", args, &rv, "", opts...)
+			if err != nil {
+				return GetSystemVersionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSystemVersionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSystemVersionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetSystemVersionsResultOutput)
 }
 

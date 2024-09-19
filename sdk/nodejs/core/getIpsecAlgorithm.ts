@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecAlgorithm(opts?: pulumi.InvokeOptions): Promise<GetIpsecAlgorithmResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", {
     }, opts);
@@ -67,5 +66,7 @@ export interface GetIpsecAlgorithmResult {
  * ```
  */
 export function getIpsecAlgorithmOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecAlgorithmResult> {
-    return pulumi.output(getIpsecAlgorithm(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", {
+    }, opts);
 }

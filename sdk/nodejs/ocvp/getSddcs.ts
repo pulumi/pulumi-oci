@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSddcs(args: GetSddcsArgs, opts?: pulumi.InvokeOptions): Promise<GetSddcsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSddcs:getSddcs", {
         "compartmentId": args.compartmentId,
@@ -112,7 +111,14 @@ export interface GetSddcsResult {
  * ```
  */
 export function getSddcsOutput(args: GetSddcsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSddcsResult> {
-    return pulumi.output(args).apply((a: any) => getSddcs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getSddcs:getSddcs", {
+        "compartmentId": args.compartmentId,
+        "computeAvailabilityDomain": args.computeAvailabilityDomain,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConfigs(args: GetConfigsArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmConfig/getConfigs:getConfigs", {
         "apmDomainId": args.apmDomainId,
@@ -139,7 +138,18 @@ export interface GetConfigsResult {
  * ```
  */
 export function getConfigsOutput(args: GetConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigsResult> {
-    return pulumi.output(args).apply((a: any) => getConfigs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmConfig/getConfigs:getConfigs", {
+        "apmDomainId": args.apmDomainId,
+        "configType": args.configType,
+        "definedTagEquals": args.definedTagEquals,
+        "definedTagExists": args.definedTagExists,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "freeformTagEquals": args.freeformTagEquals,
+        "freeformTagExists": args.freeformTagExists,
+        "optionsGroup": args.optionsGroup,
+    }, opts);
 }
 
 /**

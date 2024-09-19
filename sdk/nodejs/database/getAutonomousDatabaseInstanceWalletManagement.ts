@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabaseInstanceWalletManagement(args: GetAutonomousDatabaseInstanceWalletManagementArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseInstanceWalletManagementResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
@@ -78,7 +77,10 @@ export interface GetAutonomousDatabaseInstanceWalletManagementResult {
  * ```
  */
 export function getAutonomousDatabaseInstanceWalletManagementOutput(args: GetAutonomousDatabaseInstanceWalletManagementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseInstanceWalletManagementResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseInstanceWalletManagement(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", {
+        "autonomousDatabaseId": args.autonomousDatabaseId,
+    }, opts);
 }
 
 /**

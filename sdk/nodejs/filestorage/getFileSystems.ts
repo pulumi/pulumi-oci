@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFileSystems(args: GetFileSystemsArgs, opts?: pulumi.InvokeOptions): Promise<GetFileSystemsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getFileSystems:getFileSystems", {
         "availabilityDomain": args.availabilityDomain,
@@ -152,7 +151,18 @@ export interface GetFileSystemsResult {
  * ```
  */
 export function getFileSystemsOutput(args: GetFileSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileSystemsResult> {
-    return pulumi.output(args).apply((a: any) => getFileSystems(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getFileSystems:getFileSystems", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filesystemSnapshotPolicyId": args.filesystemSnapshotPolicyId,
+        "filters": args.filters,
+        "id": args.id,
+        "parentFileSystemId": args.parentFileSystemId,
+        "sourceSnapshotId": args.sourceSnapshotId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

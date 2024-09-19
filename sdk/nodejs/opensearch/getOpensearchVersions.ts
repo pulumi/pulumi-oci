@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOpensearchVersions(args: GetOpensearchVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetOpensearchVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", {
         "compartmentId": args.compartmentId,
@@ -92,7 +91,11 @@ export interface GetOpensearchVersionsResult {
  * ```
  */
 export function getOpensearchVersionsOutput(args: GetOpensearchVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getOpensearchVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -88,14 +88,20 @@ type GetAutonomousDatabasesClonesResult struct {
 
 func GetAutonomousDatabasesClonesOutput(ctx *pulumi.Context, args GetAutonomousDatabasesClonesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabasesClonesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabasesClonesResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousDatabasesClonesResultOutput, error) {
 			args := v.(GetAutonomousDatabasesClonesArgs)
-			r, err := GetAutonomousDatabasesClones(ctx, &args, opts...)
-			var s GetAutonomousDatabasesClonesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousDatabasesClonesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousDatabasesClonesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousDatabasesClonesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousDatabasesClonesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousDatabasesClonesResultOutput)
 }
 

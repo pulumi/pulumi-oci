@@ -79,14 +79,20 @@ type GetBillingSchedulesResult struct {
 
 func GetBillingSchedulesOutput(ctx *pulumi.Context, args GetBillingSchedulesOutputArgs, opts ...pulumi.InvokeOption) GetBillingSchedulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBillingSchedulesResult, error) {
+		ApplyT(func(v interface{}) (GetBillingSchedulesResultOutput, error) {
 			args := v.(GetBillingSchedulesArgs)
-			r, err := GetBillingSchedules(ctx, &args, opts...)
-			var s GetBillingSchedulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBillingSchedulesResult
+			secret, err := ctx.InvokePackageRaw("oci:OneSubsription/getBillingSchedules:getBillingSchedules", args, &rv, "", opts...)
+			if err != nil {
+				return GetBillingSchedulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBillingSchedulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBillingSchedulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetBillingSchedulesResultOutput)
 }
 

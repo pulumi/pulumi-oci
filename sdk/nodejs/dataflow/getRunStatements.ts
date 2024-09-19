@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRunStatements(args: GetRunStatementsArgs, opts?: pulumi.InvokeOptions): Promise<GetRunStatementsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getRunStatements:getRunStatements", {
         "filters": args.filters,
@@ -88,7 +87,12 @@ export interface GetRunStatementsResult {
  * ```
  */
 export function getRunStatementsOutput(args: GetRunStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunStatementsResult> {
-    return pulumi.output(args).apply((a: any) => getRunStatements(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataFlow/getRunStatements:getRunStatements", {
+        "filters": args.filters,
+        "runId": args.runId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

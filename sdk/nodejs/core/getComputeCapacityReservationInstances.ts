@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeCapacityReservationInstances(args: GetComputeCapacityReservationInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityReservationInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", {
         "availabilityDomain": args.availabilityDomain,
@@ -96,7 +95,13 @@ export interface GetComputeCapacityReservationInstancesResult {
  * ```
  */
 export function getComputeCapacityReservationInstancesOutput(args: GetComputeCapacityReservationInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityReservationInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getComputeCapacityReservationInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", {
+        "availabilityDomain": args.availabilityDomain,
+        "capacityReservationId": args.capacityReservationId,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  */
 export function getPublishers(args?: GetPublishersArgs, opts?: pulumi.InvokeOptions): Promise<GetPublishersResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getPublishers:getPublishers", {
         "compartmentId": args.compartmentId,
@@ -83,7 +82,13 @@ export interface GetPublishersResult {
  * ```
  */
 export function getPublishersOutput(args?: GetPublishersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublishersResult> {
-    return pulumi.output(args).apply((a: any) => getPublishers(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Marketplace/getPublishers:getPublishers", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "publisherId": args.publisherId,
+    }, opts);
 }
 
 /**

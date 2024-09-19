@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSourceModuleStreamProfile(args: GetSoftwareSourceModuleStreamProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourceModuleStreamProfileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", {
         "moduleName": args.moduleName,
@@ -111,7 +110,13 @@ export interface GetSoftwareSourceModuleStreamProfileResult {
  * ```
  */
 export function getSoftwareSourceModuleStreamProfileOutput(args: GetSoftwareSourceModuleStreamProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceModuleStreamProfileResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwareSourceModuleStreamProfile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", {
+        "moduleName": args.moduleName,
+        "profileName": args.profileName,
+        "softwareSourceId": args.softwareSourceId,
+        "streamName": args.streamName,
+    }, opts);
 }
 
 /**

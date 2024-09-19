@@ -92,14 +92,20 @@ type LookupExternalDbSystemDiscoveryResult struct {
 
 func LookupExternalDbSystemDiscoveryOutput(ctx *pulumi.Context, args LookupExternalDbSystemDiscoveryOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbSystemDiscoveryResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupExternalDbSystemDiscoveryResult, error) {
+		ApplyT(func(v interface{}) (LookupExternalDbSystemDiscoveryResultOutput, error) {
 			args := v.(LookupExternalDbSystemDiscoveryArgs)
-			r, err := LookupExternalDbSystemDiscovery(ctx, &args, opts...)
-			var s LookupExternalDbSystemDiscoveryResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupExternalDbSystemDiscoveryResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", args, &rv, "", opts...)
+			if err != nil {
+				return LookupExternalDbSystemDiscoveryResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupExternalDbSystemDiscoveryResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupExternalDbSystemDiscoveryResultOutput), nil
+			}
+			return output, nil
 		}).(LookupExternalDbSystemDiscoveryResultOutput)
 }
 

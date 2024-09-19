@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExportSets(args: GetExportSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetExportSetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getExportSets:getExportSets", {
         "availabilityDomain": args.availabilityDomain,
@@ -117,7 +116,15 @@ export interface GetExportSetsResult {
  * ```
  */
 export function getExportSetsOutput(args: GetExportSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExportSetsResult> {
-    return pulumi.output(args).apply((a: any) => getExportSets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getExportSets:getExportSets", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

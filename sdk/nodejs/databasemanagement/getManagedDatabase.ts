@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabase(args: GetManagedDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", {
         "databasePlatformName": args.databasePlatformName,
@@ -156,7 +155,11 @@ export interface GetManagedDatabaseResult {
  * ```
  */
 export function getManagedDatabaseOutput(args: GetManagedDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabase(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", {
+        "databasePlatformName": args.databasePlatformName,
+        "managedDatabaseId": args.managedDatabaseId,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousExadataInfrastructureOcpu(args: GetAutonomousExadataInfrastructureOcpuArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousExadataInfrastructureOcpuResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", {
         "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,
@@ -79,7 +78,10 @@ export interface GetAutonomousExadataInfrastructureOcpuResult {
  * ```
  */
 export function getAutonomousExadataInfrastructureOcpuOutput(args: GetAutonomousExadataInfrastructureOcpuOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructureOcpuResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousExadataInfrastructureOcpu(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", {
+        "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,
+    }, opts);
 }
 
 /**

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModels(args: GetModelsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GenerativeAi/getModels:getModels", {
         "capabilities": args.capabilities,
@@ -125,7 +124,16 @@ export interface GetModelsResult {
  * ```
  */
 export function getModelsOutput(args: GetModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelsResult> {
-    return pulumi.output(args).apply((a: any) => getModels(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GenerativeAi/getModels:getModels", {
+        "capabilities": args.capabilities,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+        "vendor": args.vendor,
+    }, opts);
 }
 
 /**

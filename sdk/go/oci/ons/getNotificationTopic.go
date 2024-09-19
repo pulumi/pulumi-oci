@@ -87,14 +87,20 @@ type LookupNotificationTopicResult struct {
 
 func LookupNotificationTopicOutput(ctx *pulumi.Context, args LookupNotificationTopicOutputArgs, opts ...pulumi.InvokeOption) LookupNotificationTopicResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupNotificationTopicResult, error) {
+		ApplyT(func(v interface{}) (LookupNotificationTopicResultOutput, error) {
 			args := v.(LookupNotificationTopicArgs)
-			r, err := LookupNotificationTopic(ctx, &args, opts...)
-			var s LookupNotificationTopicResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupNotificationTopicResult
+			secret, err := ctx.InvokePackageRaw("oci:Ons/getNotificationTopic:getNotificationTopic", args, &rv, "", opts...)
+			if err != nil {
+				return LookupNotificationTopicResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupNotificationTopicResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupNotificationTopicResultOutput), nil
+			}
+			return output, nil
 		}).(LookupNotificationTopicResultOutput)
 }
 

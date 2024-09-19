@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRecoveryServiceSubnets(args: GetRecoveryServiceSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryServiceSubnetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,15 @@ export interface GetRecoveryServiceSubnetsResult {
  * ```
  */
 export function getRecoveryServiceSubnetsOutput(args: GetRecoveryServiceSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryServiceSubnetsResult> {
-    return pulumi.output(args).apply((a: any) => getRecoveryServiceSubnets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

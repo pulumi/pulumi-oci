@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkFirewallPolicyDecryptionProfiles(args: GetNetworkFirewallPolicyDecryptionProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyDecryptionProfilesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfiles:getNetworkFirewallPolicyDecryptionProfiles", {
         "displayName": args.displayName,
@@ -82,7 +81,12 @@ export interface GetNetworkFirewallPolicyDecryptionProfilesResult {
  * ```
  */
 export function getNetworkFirewallPolicyDecryptionProfilesOutput(args: GetNetworkFirewallPolicyDecryptionProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionProfilesResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyDecryptionProfiles(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfiles:getNetworkFirewallPolicyDecryptionProfiles", {
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+    }, opts);
 }
 
 /**

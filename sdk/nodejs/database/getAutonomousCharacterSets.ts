@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getAutonomousCharacterSets(args?: GetAutonomousCharacterSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousCharacterSetsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", {
         "characterSetType": args.characterSetType,
@@ -93,7 +92,14 @@ export interface GetAutonomousCharacterSetsResult {
  * ```
  */
 export function getAutonomousCharacterSetsOutput(args?: GetAutonomousCharacterSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousCharacterSetsResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousCharacterSets(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", {
+        "characterSetType": args.characterSetType,
+        "filters": args.filters,
+        "isDedicated": args.isDedicated,
+        "isShared": args.isShared,
+    }, opts);
 }
 
 /**

@@ -88,14 +88,20 @@ type GetWorkspaceApplicationsResult struct {
 
 func GetWorkspaceApplicationsOutput(ctx *pulumi.Context, args GetWorkspaceApplicationsOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceApplicationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceApplicationsResult, error) {
+		ApplyT(func(v interface{}) (GetWorkspaceApplicationsResultOutput, error) {
 			args := v.(GetWorkspaceApplicationsArgs)
-			r, err := GetWorkspaceApplications(ctx, &args, opts...)
-			var s GetWorkspaceApplicationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetWorkspaceApplicationsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", args, &rv, "", opts...)
+			if err != nil {
+				return GetWorkspaceApplicationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetWorkspaceApplicationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetWorkspaceApplicationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetWorkspaceApplicationsResultOutput)
 }
 

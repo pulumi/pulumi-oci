@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAccessPolicies(args: GetAccessPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,15 @@ export interface GetAccessPoliciesResult {
  * ```
  */
 export function getAccessPoliciesOutput(args: GetAccessPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getAccessPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "meshId": args.meshId,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

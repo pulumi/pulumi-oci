@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getOccDemandSignals(args?: GetOccDemandSignalsArgs, opts?: pulumi.InvokeOptions): Promise<GetOccDemandSignalsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DemandSignal/getOccDemandSignals:getOccDemandSignals", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,15 @@ export interface GetOccDemandSignalsResult {
  * ```
  */
 export function getOccDemandSignalsOutput(args?: GetOccDemandSignalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccDemandSignalsResult> {
-    return pulumi.output(args).apply((a: any) => getOccDemandSignals(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DemandSignal/getOccDemandSignals:getOccDemandSignals", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -72,14 +72,20 @@ type GetManagementAgentPluginCountResult struct {
 
 func GetManagementAgentPluginCountOutput(ctx *pulumi.Context, args GetManagementAgentPluginCountOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentPluginCountResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagementAgentPluginCountResult, error) {
+		ApplyT(func(v interface{}) (GetManagementAgentPluginCountResultOutput, error) {
 			args := v.(GetManagementAgentPluginCountArgs)
-			r, err := GetManagementAgentPluginCount(ctx, &args, opts...)
-			var s GetManagementAgentPluginCountResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagementAgentPluginCountResult
+			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagementAgentPluginCountResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagementAgentPluginCountResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagementAgentPluginCountResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagementAgentPluginCountResultOutput)
 }
 

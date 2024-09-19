@@ -97,14 +97,20 @@ type GetDomainsSocialIdentityProvidersResult struct {
 
 func GetDomainsSocialIdentityProvidersOutput(ctx *pulumi.Context, args GetDomainsSocialIdentityProvidersOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSocialIdentityProvidersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsSocialIdentityProvidersResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsSocialIdentityProvidersResultOutput, error) {
 			args := v.(GetDomainsSocialIdentityProvidersArgs)
-			r, err := GetDomainsSocialIdentityProviders(ctx, &args, opts...)
-			var s GetDomainsSocialIdentityProvidersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsSocialIdentityProvidersResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsSocialIdentityProvidersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsSocialIdentityProvidersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsSocialIdentityProvidersResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsSocialIdentityProvidersResultOutput)
 }
 

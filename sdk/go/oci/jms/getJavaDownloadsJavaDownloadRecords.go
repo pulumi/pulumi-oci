@@ -104,14 +104,20 @@ type GetJavaDownloadsJavaDownloadRecordsResult struct {
 
 func GetJavaDownloadsJavaDownloadRecordsOutput(ctx *pulumi.Context, args GetJavaDownloadsJavaDownloadRecordsOutputArgs, opts ...pulumi.InvokeOption) GetJavaDownloadsJavaDownloadRecordsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetJavaDownloadsJavaDownloadRecordsResult, error) {
+		ApplyT(func(v interface{}) (GetJavaDownloadsJavaDownloadRecordsResultOutput, error) {
 			args := v.(GetJavaDownloadsJavaDownloadRecordsArgs)
-			r, err := GetJavaDownloadsJavaDownloadRecords(ctx, &args, opts...)
-			var s GetJavaDownloadsJavaDownloadRecordsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetJavaDownloadsJavaDownloadRecordsResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords", args, &rv, "", opts...)
+			if err != nil {
+				return GetJavaDownloadsJavaDownloadRecordsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetJavaDownloadsJavaDownloadRecordsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetJavaDownloadsJavaDownloadRecordsResultOutput), nil
+			}
+			return output, nil
 		}).(GetJavaDownloadsJavaDownloadRecordsResultOutput)
 }
 

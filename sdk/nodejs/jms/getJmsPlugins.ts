@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  */
 export function getJmsPlugins(args?: GetJmsPluginsArgs, opts?: pulumi.InvokeOptions): Promise<GetJmsPluginsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJmsPlugins:getJmsPlugins", {
         "agentId": args.agentId,
@@ -161,7 +160,21 @@ export interface GetJmsPluginsResult {
  * ```
  */
 export function getJmsPluginsOutput(args?: GetJmsPluginsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJmsPluginsResult> {
-    return pulumi.output(args).apply((a: any) => getJmsPlugins(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJmsPlugins:getJmsPlugins", {
+        "agentId": args.agentId,
+        "availabilityStatus": args.availabilityStatus,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "fleetId": args.fleetId,
+        "hostnameContains": args.hostnameContains,
+        "id": args.id,
+        "state": args.state,
+        "timeLastSeenLessThanOrEqualTo": args.timeLastSeenLessThanOrEqualTo,
+        "timeRegisteredLessThanOrEqualTo": args.timeRegisteredLessThanOrEqualTo,
+    }, opts);
 }
 
 /**

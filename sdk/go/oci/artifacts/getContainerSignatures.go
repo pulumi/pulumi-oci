@@ -111,14 +111,20 @@ type GetContainerSignaturesResult struct {
 
 func GetContainerSignaturesOutput(ctx *pulumi.Context, args GetContainerSignaturesOutputArgs, opts ...pulumi.InvokeOption) GetContainerSignaturesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetContainerSignaturesResult, error) {
+		ApplyT(func(v interface{}) (GetContainerSignaturesResultOutput, error) {
 			args := v.(GetContainerSignaturesArgs)
-			r, err := GetContainerSignatures(ctx, &args, opts...)
-			var s GetContainerSignaturesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetContainerSignaturesResult
+			secret, err := ctx.InvokePackageRaw("oci:Artifacts/getContainerSignatures:getContainerSignatures", args, &rv, "", opts...)
+			if err != nil {
+				return GetContainerSignaturesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetContainerSignaturesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetContainerSignaturesResultOutput), nil
+			}
+			return output, nil
 		}).(GetContainerSignaturesResultOutput)
 }
 

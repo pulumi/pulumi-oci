@@ -80,14 +80,20 @@ type GetDedicatedAiClustersResult struct {
 
 func GetDedicatedAiClustersOutput(ctx *pulumi.Context, args GetDedicatedAiClustersOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedAiClustersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDedicatedAiClustersResult, error) {
+		ApplyT(func(v interface{}) (GetDedicatedAiClustersResultOutput, error) {
 			args := v.(GetDedicatedAiClustersArgs)
-			r, err := GetDedicatedAiClusters(ctx, &args, opts...)
-			var s GetDedicatedAiClustersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDedicatedAiClustersResult
+			secret, err := ctx.InvokePackageRaw("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", args, &rv, "", opts...)
+			if err != nil {
+				return GetDedicatedAiClustersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDedicatedAiClustersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDedicatedAiClustersResultOutput), nil
+			}
+			return output, nil
 		}).(GetDedicatedAiClustersResultOutput)
 }
 

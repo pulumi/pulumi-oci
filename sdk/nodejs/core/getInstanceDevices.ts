@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceDevices(args: GetInstanceDevicesArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceDevicesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceDevices:getInstanceDevices", {
         "filters": args.filters,
@@ -96,7 +95,13 @@ export interface GetInstanceDevicesResult {
  * ```
  */
 export function getInstanceDevicesOutput(args: GetInstanceDevicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceDevicesResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceDevices(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstanceDevices:getInstanceDevices", {
+        "filters": args.filters,
+        "instanceId": args.instanceId,
+        "isAvailable": args.isAvailable,
+        "name": args.name,
+    }, opts);
 }
 
 /**

@@ -70,14 +70,20 @@ type GetDrgsResult struct {
 
 func GetDrgsOutput(ctx *pulumi.Context, args GetDrgsOutputArgs, opts ...pulumi.InvokeOption) GetDrgsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDrgsResult, error) {
+		ApplyT(func(v interface{}) (GetDrgsResultOutput, error) {
 			args := v.(GetDrgsArgs)
-			r, err := GetDrgs(ctx, &args, opts...)
-			var s GetDrgsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDrgsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getDrgs:getDrgs", args, &rv, "", opts...)
+			if err != nil {
+				return GetDrgsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDrgsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDrgsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDrgsResultOutput)
 }
 

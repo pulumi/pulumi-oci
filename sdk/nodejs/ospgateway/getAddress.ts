@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAddress(args: GetAddressArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OspGateway/getAddress:getAddress", {
         "addressId": args.addressId,
@@ -185,7 +184,12 @@ export interface GetAddressResult {
  * ```
  */
 export function getAddressOutput(args: GetAddressOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressResult> {
-    return pulumi.output(args).apply((a: any) => getAddress(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OspGateway/getAddress:getAddress", {
+        "addressId": args.addressId,
+        "compartmentId": args.compartmentId,
+        "ospHomeRegion": args.ospHomeRegion,
+    }, opts);
 }
 
 /**

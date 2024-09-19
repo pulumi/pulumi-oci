@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsDynamicResourceGroups(args: GetDomainsDynamicResourceGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsDynamicResourceGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsDynamicResourceGroups:getDomainsDynamicResourceGroups", {
         "attributeSets": args.attributeSets,
@@ -142,7 +141,20 @@ export interface GetDomainsDynamicResourceGroupsResult {
  * ```
  */
 export function getDomainsDynamicResourceGroupsOutput(args: GetDomainsDynamicResourceGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsDynamicResourceGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsDynamicResourceGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsDynamicResourceGroups:getDomainsDynamicResourceGroups", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "dynamicResourceGroupCount": args.dynamicResourceGroupCount,
+        "dynamicResourceGroupFilter": args.dynamicResourceGroupFilter,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

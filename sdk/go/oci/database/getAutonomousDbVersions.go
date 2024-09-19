@@ -78,14 +78,20 @@ type GetAutonomousDbVersionsResult struct {
 
 func GetAutonomousDbVersionsOutput(ctx *pulumi.Context, args GetAutonomousDbVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDbVersionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDbVersionsResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousDbVersionsResultOutput, error) {
 			args := v.(GetAutonomousDbVersionsArgs)
-			r, err := GetAutonomousDbVersions(ctx, &args, opts...)
-			var s GetAutonomousDbVersionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousDbVersionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousDbVersionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousDbVersionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousDbVersionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousDbVersionsResultOutput)
 }
 

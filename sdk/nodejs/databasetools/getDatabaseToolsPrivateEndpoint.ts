@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseToolsPrivateEndpoint(args: GetDatabaseToolsPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsPrivateEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint", {
         "databaseToolsPrivateEndpointId": args.databaseToolsPrivateEndpointId,
@@ -147,7 +146,10 @@ export interface GetDatabaseToolsPrivateEndpointResult {
  * ```
  */
 export function getDatabaseToolsPrivateEndpointOutput(args: GetDatabaseToolsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsPrivateEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getDatabaseToolsPrivateEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint", {
+        "databaseToolsPrivateEndpointId": args.databaseToolsPrivateEndpointId,
+    }, opts);
 }
 
 /**

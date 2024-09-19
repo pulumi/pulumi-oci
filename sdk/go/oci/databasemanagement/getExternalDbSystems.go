@@ -75,14 +75,20 @@ type GetExternalDbSystemsResult struct {
 
 func GetExternalDbSystemsOutput(ctx *pulumi.Context, args GetExternalDbSystemsOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbSystemsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalDbSystemsResult, error) {
+		ApplyT(func(v interface{}) (GetExternalDbSystemsResultOutput, error) {
 			args := v.(GetExternalDbSystemsArgs)
-			r, err := GetExternalDbSystems(ctx, &args, opts...)
-			var s GetExternalDbSystemsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExternalDbSystemsResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", args, &rv, "", opts...)
+			if err != nil {
+				return GetExternalDbSystemsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExternalDbSystemsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExternalDbSystemsResultOutput), nil
+			}
+			return output, nil
 		}).(GetExternalDbSystemsResultOutput)
 }
 

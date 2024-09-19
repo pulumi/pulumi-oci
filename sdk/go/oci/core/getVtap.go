@@ -109,14 +109,20 @@ type LookupVtapResult struct {
 
 func LookupVtapOutput(ctx *pulumi.Context, args LookupVtapOutputArgs, opts ...pulumi.InvokeOption) LookupVtapResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupVtapResult, error) {
+		ApplyT(func(v interface{}) (LookupVtapResultOutput, error) {
 			args := v.(LookupVtapArgs)
-			r, err := LookupVtap(ctx, &args, opts...)
-			var s LookupVtapResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupVtapResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVtap:getVtap", args, &rv, "", opts...)
+			if err != nil {
+				return LookupVtapResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupVtapResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupVtapResultOutput), nil
+			}
+			return output, nil
 		}).(LookupVtapResultOutput)
 }
 

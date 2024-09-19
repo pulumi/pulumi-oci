@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDbPreviewVersions(args: GetAutonomousDbPreviewVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDbPreviewVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", {
         "compartmentId": args.compartmentId,
@@ -76,7 +75,11 @@ export interface GetAutonomousDbPreviewVersionsResult {
  * ```
  */
 export function getAutonomousDbPreviewVersionsOutput(args: GetAutonomousDbPreviewVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDbPreviewVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousDbPreviewVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

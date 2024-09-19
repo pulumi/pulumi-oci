@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnalyticsInstance(args: GetAnalyticsInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetAnalyticsInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", {
         "analyticsInstanceId": args.analyticsInstanceId,
@@ -141,7 +140,10 @@ export interface GetAnalyticsInstanceResult {
  * ```
  */
 export function getAnalyticsInstanceOutput(args: GetAnalyticsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getAnalyticsInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", {
+        "analyticsInstanceId": args.analyticsInstanceId,
+    }, opts);
 }
 
 /**

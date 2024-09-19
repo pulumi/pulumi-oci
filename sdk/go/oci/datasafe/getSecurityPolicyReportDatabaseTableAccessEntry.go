@@ -113,14 +113,20 @@ type GetSecurityPolicyReportDatabaseTableAccessEntryResult struct {
 
 func GetSecurityPolicyReportDatabaseTableAccessEntryOutput(ctx *pulumi.Context, args GetSecurityPolicyReportDatabaseTableAccessEntryOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSecurityPolicyReportDatabaseTableAccessEntryResult, error) {
+		ApplyT(func(v interface{}) (GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput, error) {
 			args := v.(GetSecurityPolicyReportDatabaseTableAccessEntryArgs)
-			r, err := GetSecurityPolicyReportDatabaseTableAccessEntry(ctx, &args, opts...)
-			var s GetSecurityPolicyReportDatabaseTableAccessEntryResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSecurityPolicyReportDatabaseTableAccessEntryResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", args, &rv, "", opts...)
+			if err != nil {
+				return GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput), nil
+			}
+			return output, nil
 		}).(GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput)
 }
 

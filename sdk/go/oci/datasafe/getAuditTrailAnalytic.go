@@ -96,14 +96,20 @@ type GetAuditTrailAnalyticResult struct {
 
 func GetAuditTrailAnalyticOutput(ctx *pulumi.Context, args GetAuditTrailAnalyticOutputArgs, opts ...pulumi.InvokeOption) GetAuditTrailAnalyticResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAuditTrailAnalyticResult, error) {
+		ApplyT(func(v interface{}) (GetAuditTrailAnalyticResultOutput, error) {
 			args := v.(GetAuditTrailAnalyticArgs)
-			r, err := GetAuditTrailAnalytic(ctx, &args, opts...)
-			var s GetAuditTrailAnalyticResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAuditTrailAnalyticResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", args, &rv, "", opts...)
+			if err != nil {
+				return GetAuditTrailAnalyticResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAuditTrailAnalyticResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAuditTrailAnalyticResultOutput), nil
+			}
+			return output, nil
 		}).(GetAuditTrailAnalyticResultOutput)
 }
 

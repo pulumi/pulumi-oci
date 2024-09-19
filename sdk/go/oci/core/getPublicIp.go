@@ -161,14 +161,20 @@ type LookupPublicIpResult struct {
 
 func LookupPublicIpOutput(ctx *pulumi.Context, args LookupPublicIpOutputArgs, opts ...pulumi.InvokeOption) LookupPublicIpResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPublicIpResult, error) {
+		ApplyT(func(v interface{}) (LookupPublicIpResultOutput, error) {
 			args := v.(LookupPublicIpArgs)
-			r, err := LookupPublicIp(ctx, &args, opts...)
-			var s LookupPublicIpResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupPublicIpResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getPublicIp:getPublicIp", args, &rv, "", opts...)
+			if err != nil {
+				return LookupPublicIpResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupPublicIpResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupPublicIpResultOutput), nil
+			}
+			return output, nil
 		}).(LookupPublicIpResultOutput)
 }
 

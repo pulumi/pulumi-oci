@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityPolicyReportDatabaseTableAccessEntry(args: GetSecurityPolicyReportDatabaseTableAccessEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyReportDatabaseTableAccessEntryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", {
         "databaseTableAccessEntryKey": args.databaseTableAccessEntryKey,
@@ -161,7 +160,11 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntryResult {
  * ```
  */
 export function getSecurityPolicyReportDatabaseTableAccessEntryOutput(args: GetSecurityPolicyReportDatabaseTableAccessEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportDatabaseTableAccessEntryResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityPolicyReportDatabaseTableAccessEntry(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", {
+        "databaseTableAccessEntryKey": args.databaseTableAccessEntryKey,
+        "securityPolicyReportId": args.securityPolicyReportId,
+    }, opts);
 }
 
 /**

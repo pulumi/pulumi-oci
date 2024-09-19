@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEvents(args: GetEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetEventsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Audit/getEvents:getEvents", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetEventsResult {
  * ```
  */
 export function getEventsOutput(args: GetEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventsResult> {
-    return pulumi.output(args).apply((a: any) => getEvents(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Audit/getEvents:getEvents", {
+        "compartmentId": args.compartmentId,
+        "endTime": args.endTime,
+        "filters": args.filters,
+        "startTime": args.startTime,
+    }, opts);
 }
 
 /**

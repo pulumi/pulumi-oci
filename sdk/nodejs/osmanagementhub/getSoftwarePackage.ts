@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwarePackage(args: GetSoftwarePackageArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwarePackageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwarePackage:getSoftwarePackage", {
         "softwarePackageName": args.softwarePackageName,
@@ -127,7 +126,10 @@ export interface GetSoftwarePackageResult {
  * ```
  */
 export function getSoftwarePackageOutput(args: GetSoftwarePackageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwarePackageResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwarePackage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwarePackage:getSoftwarePackage", {
+        "softwarePackageName": args.softwarePackageName,
+    }, opts);
 }
 
 /**

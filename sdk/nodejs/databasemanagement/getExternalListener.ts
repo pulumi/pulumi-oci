@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalListener(args: GetExternalListenerArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalListenerResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalListener:getExternalListener", {
         "externalListenerId": args.externalListenerId,
@@ -175,7 +174,10 @@ export interface GetExternalListenerResult {
  * ```
  */
 export function getExternalListenerOutput(args: GetExternalListenerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalListenerResult> {
-    return pulumi.output(args).apply((a: any) => getExternalListener(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalListener:getExternalListener", {
+        "externalListenerId": args.externalListenerId,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCategory(args: GetCategoryArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getCategory:getCategory", {
         "categoryId": args.categoryId,
@@ -111,7 +110,10 @@ export interface GetCategoryResult {
  * ```
  */
 export function getCategoryOutput(args: GetCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoryResult> {
-    return pulumi.output(args).apply((a: any) => getCategory(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getCategory:getCategory", {
+        "categoryId": args.categoryId,
+    }, opts);
 }
 
 /**

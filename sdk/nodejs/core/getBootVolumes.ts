@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getBootVolumes(args?: GetBootVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumes:getBootVolumes", {
         "availabilityDomain": args.availabilityDomain,
@@ -100,7 +99,14 @@ export interface GetBootVolumesResult {
  * ```
  */
 export function getBootVolumesOutput(args?: GetBootVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumesResult> {
-    return pulumi.output(args).apply((a: any) => getBootVolumes(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getBootVolumes:getBootVolumes", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "volumeGroupId": args.volumeGroupId,
+    }, opts);
 }
 
 /**

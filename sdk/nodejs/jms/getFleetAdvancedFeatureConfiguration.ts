@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetAdvancedFeatureConfiguration(args: GetFleetAdvancedFeatureConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetAdvancedFeatureConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", {
         "fleetId": args.fleetId,
@@ -100,7 +99,10 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
  * ```
  */
 export function getFleetAdvancedFeatureConfigurationOutput(args: GetFleetAdvancedFeatureConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetAdvancedFeatureConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getFleetAdvancedFeatureConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", {
+        "fleetId": args.fleetId,
+    }, opts);
 }
 
 /**

@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataMaskRules(args: GetDataMaskRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetDataMaskRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDataMaskRules:getDataMaskRules", {
         "accessLevel": args.accessLevel,
@@ -145,7 +144,18 @@ export interface GetDataMaskRulesResult {
  * ```
  */
 export function getDataMaskRulesOutput(args: GetDataMaskRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataMaskRulesResult> {
-    return pulumi.output(args).apply((a: any) => getDataMaskRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getDataMaskRules:getDataMaskRules", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "dataMaskRuleStatus": args.dataMaskRuleStatus,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "iamGroupId": args.iamGroupId,
+        "state": args.state,
+        "targetId": args.targetId,
+        "targetType": args.targetType,
+    }, opts);
 }
 
 /**

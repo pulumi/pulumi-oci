@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getAllowedDomainLicenseTypes(args?: GetAllowedDomainLicenseTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetAllowedDomainLicenseTypesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", {
         "currentLicenseTypeName": args.currentLicenseTypeName,
@@ -85,7 +84,12 @@ export interface GetAllowedDomainLicenseTypesResult {
  * ```
  */
 export function getAllowedDomainLicenseTypesOutput(args?: GetAllowedDomainLicenseTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAllowedDomainLicenseTypesResult> {
-    return pulumi.output(args).apply((a: any) => getAllowedDomainLicenseTypes(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", {
+        "currentLicenseTypeName": args.currentLicenseTypeName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

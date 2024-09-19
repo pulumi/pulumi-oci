@@ -81,14 +81,20 @@ type GetExadataInfrastructureUnAllocatedResourceResult struct {
 
 func GetExadataInfrastructureUnAllocatedResourceOutput(ctx *pulumi.Context, args GetExadataInfrastructureUnAllocatedResourceOutputArgs, opts ...pulumi.InvokeOption) GetExadataInfrastructureUnAllocatedResourceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExadataInfrastructureUnAllocatedResourceResult, error) {
+		ApplyT(func(v interface{}) (GetExadataInfrastructureUnAllocatedResourceResultOutput, error) {
 			args := v.(GetExadataInfrastructureUnAllocatedResourceArgs)
-			r, err := GetExadataInfrastructureUnAllocatedResource(ctx, &args, opts...)
-			var s GetExadataInfrastructureUnAllocatedResourceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExadataInfrastructureUnAllocatedResourceResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", args, &rv, "", opts...)
+			if err != nil {
+				return GetExadataInfrastructureUnAllocatedResourceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExadataInfrastructureUnAllocatedResourceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExadataInfrastructureUnAllocatedResourceResultOutput), nil
+			}
+			return output, nil
 		}).(GetExadataInfrastructureUnAllocatedResourceResultOutput)
 }
 

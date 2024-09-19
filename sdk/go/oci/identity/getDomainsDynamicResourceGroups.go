@@ -105,14 +105,20 @@ type GetDomainsDynamicResourceGroupsResult struct {
 
 func GetDomainsDynamicResourceGroupsOutput(ctx *pulumi.Context, args GetDomainsDynamicResourceGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsDynamicResourceGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsDynamicResourceGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsDynamicResourceGroupsResultOutput, error) {
 			args := v.(GetDomainsDynamicResourceGroupsArgs)
-			r, err := GetDomainsDynamicResourceGroups(ctx, &args, opts...)
-			var s GetDomainsDynamicResourceGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsDynamicResourceGroupsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsDynamicResourceGroups:getDomainsDynamicResourceGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsDynamicResourceGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsDynamicResourceGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsDynamicResourceGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsDynamicResourceGroupsResultOutput)
 }
 

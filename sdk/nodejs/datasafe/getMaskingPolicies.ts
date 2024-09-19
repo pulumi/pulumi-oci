@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPolicies(args: GetMaskingPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPolicies:getMaskingPolicies", {
         "accessLevel": args.accessLevel,
@@ -165,7 +164,20 @@ export interface GetMaskingPoliciesResult {
  * ```
  */
 export function getMaskingPoliciesOutput(args: GetMaskingPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPolicies:getMaskingPolicies", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "maskingPolicyId": args.maskingPolicyId,
+        "sensitiveDataModelId": args.sensitiveDataModelId,
+        "state": args.state,
+        "targetId": args.targetId,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

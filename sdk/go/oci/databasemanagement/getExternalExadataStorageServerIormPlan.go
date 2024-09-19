@@ -71,14 +71,20 @@ type GetExternalExadataStorageServerIormPlanResult struct {
 
 func GetExternalExadataStorageServerIormPlanOutput(ctx *pulumi.Context, args GetExternalExadataStorageServerIormPlanOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServerIormPlanResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalExadataStorageServerIormPlanResult, error) {
+		ApplyT(func(v interface{}) (GetExternalExadataStorageServerIormPlanResultOutput, error) {
 			args := v.(GetExternalExadataStorageServerIormPlanArgs)
-			r, err := GetExternalExadataStorageServerIormPlan(ctx, &args, opts...)
-			var s GetExternalExadataStorageServerIormPlanResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExternalExadataStorageServerIormPlanResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", args, &rv, "", opts...)
+			if err != nil {
+				return GetExternalExadataStorageServerIormPlanResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExternalExadataStorageServerIormPlanResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExternalExadataStorageServerIormPlanResultOutput), nil
+			}
+			return output, nil
 		}).(GetExternalExadataStorageServerIormPlanResultOutput)
 }
 

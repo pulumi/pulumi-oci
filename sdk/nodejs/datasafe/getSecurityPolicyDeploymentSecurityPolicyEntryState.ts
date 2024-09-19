@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityPolicyDeploymentSecurityPolicyEntryState(args: GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", {
         "securityPolicyDeploymentId": args.securityPolicyDeploymentId,
@@ -90,7 +89,11 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
  * ```
  */
 export function getSecurityPolicyDeploymentSecurityPolicyEntryStateOutput(args: GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityPolicyDeploymentSecurityPolicyEntryState(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", {
+        "securityPolicyDeploymentId": args.securityPolicyDeploymentId,
+        "securityPolicyEntryStateId": args.securityPolicyEntryStateId,
+    }, opts);
 }
 
 /**

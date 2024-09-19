@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLibraryMaskingFormat(args: GetLibraryMaskingFormatArgs, opts?: pulumi.InvokeOptions): Promise<GetLibraryMaskingFormatResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat", {
         "libraryMaskingFormatId": args.libraryMaskingFormatId,
@@ -114,7 +113,10 @@ export interface GetLibraryMaskingFormatResult {
  * ```
  */
 export function getLibraryMaskingFormatOutput(args: GetLibraryMaskingFormatOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLibraryMaskingFormatResult> {
-    return pulumi.output(args).apply((a: any) => getLibraryMaskingFormat(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat", {
+        "libraryMaskingFormatId": args.libraryMaskingFormatId,
+    }, opts);
 }
 
 /**

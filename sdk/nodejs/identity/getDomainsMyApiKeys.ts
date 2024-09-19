@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyApiKeys(args: GetDomainsMyApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyApiKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyApiKeys:getDomainsMyApiKeys", {
         "authorization": args.authorization,
@@ -126,7 +125,18 @@ export interface GetDomainsMyApiKeysResult {
  * ```
  */
 export function getDomainsMyApiKeysOutput(args: GetDomainsMyApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyApiKeysResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyApiKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyApiKeys:getDomainsMyApiKeys", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myApiKeyCount": args.myApiKeyCount,
+        "myApiKeyFilter": args.myApiKeyFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkspaceApplications(args: GetWorkspaceApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceApplicationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", {
         "fields": args.fields,
@@ -115,7 +114,15 @@ export interface GetWorkspaceApplicationsResult {
  * ```
  */
 export function getWorkspaceApplicationsOutput(args: GetWorkspaceApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceApplicationsResult> {
-    return pulumi.output(args).apply((a: any) => getWorkspaceApplications(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", {
+        "fields": args.fields,
+        "filters": args.filters,
+        "identifiers": args.identifiers,
+        "name": args.name,
+        "nameContains": args.nameContains,
+        "workspaceId": args.workspaceId,
+    }, opts);
 }
 
 /**

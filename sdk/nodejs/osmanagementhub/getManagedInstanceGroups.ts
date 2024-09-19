@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  */
 export function getManagedInstanceGroups(args?: GetManagedInstanceGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", {
         "archType": args.archType,
@@ -176,7 +175,22 @@ export interface GetManagedInstanceGroupsResult {
  * ```
  */
 export function getManagedInstanceGroupsOutput(args?: GetManagedInstanceGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceGroups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", {
+        "archType": args.archType,
+        "compartmentId": args.compartmentId,
+        "displayNameContains": args.displayNameContains,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "isManagedByAutonomousLinux": args.isManagedByAutonomousLinux,
+        "locationNotEqualTos": args.locationNotEqualTos,
+        "locations": args.locations,
+        "managedInstanceGroupId": args.managedInstanceGroupId,
+        "osFamily": args.osFamily,
+        "softwareSourceId": args.softwareSourceId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

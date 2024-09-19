@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbHome(args: GetDbHomeArgs, opts?: pulumi.InvokeOptions): Promise<GetDbHomeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbHome:getDbHome", {
         "dbHomeId": args.dbHomeId,
@@ -132,7 +131,10 @@ export interface GetDbHomeResult {
  * ```
  */
 export function getDbHomeOutput(args: GetDbHomeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomeResult> {
-    return pulumi.output(args).apply((a: any) => getDbHome(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbHome:getDbHome", {
+        "dbHomeId": args.dbHomeId,
+    }, opts);
 }
 
 /**

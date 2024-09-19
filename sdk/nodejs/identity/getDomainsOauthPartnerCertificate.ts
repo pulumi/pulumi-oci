@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsOauthPartnerCertificate(args: GetDomainsOauthPartnerCertificateArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsOauthPartnerCertificateResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", {
         "authorization": args.authorization,
@@ -183,7 +182,13 @@ export interface GetDomainsOauthPartnerCertificateResult {
  * ```
  */
 export function getDomainsOauthPartnerCertificateOutput(args: GetDomainsOauthPartnerCertificateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsOauthPartnerCertificateResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsOauthPartnerCertificate(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", {
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "oAuthPartnerCertificateId": args.oAuthPartnerCertificateId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

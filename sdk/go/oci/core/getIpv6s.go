@@ -87,14 +87,20 @@ type GetIpv6sResult struct {
 
 func GetIpv6sOutput(ctx *pulumi.Context, args GetIpv6sOutputArgs, opts ...pulumi.InvokeOption) GetIpv6sResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetIpv6sResult, error) {
+		ApplyT(func(v interface{}) (GetIpv6sResultOutput, error) {
 			args := v.(GetIpv6sArgs)
-			r, err := GetIpv6s(ctx, &args, opts...)
-			var s GetIpv6sResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetIpv6sResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getIpv6s:getIpv6s", args, &rv, "", opts...)
+			if err != nil {
+				return GetIpv6sResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetIpv6sResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetIpv6sResultOutput), nil
+			}
+			return output, nil
 		}).(GetIpv6sResultOutput)
 }
 

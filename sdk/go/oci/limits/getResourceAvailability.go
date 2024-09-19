@@ -95,14 +95,20 @@ type GetResourceAvailabilityResult struct {
 
 func GetResourceAvailabilityOutput(ctx *pulumi.Context, args GetResourceAvailabilityOutputArgs, opts ...pulumi.InvokeOption) GetResourceAvailabilityResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetResourceAvailabilityResult, error) {
+		ApplyT(func(v interface{}) (GetResourceAvailabilityResultOutput, error) {
 			args := v.(GetResourceAvailabilityArgs)
-			r, err := GetResourceAvailability(ctx, &args, opts...)
-			var s GetResourceAvailabilityResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetResourceAvailabilityResult
+			secret, err := ctx.InvokePackageRaw("oci:Limits/getResourceAvailability:getResourceAvailability", args, &rv, "", opts...)
+			if err != nil {
+				return GetResourceAvailabilityResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetResourceAvailabilityResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetResourceAvailabilityResultOutput), nil
+			}
+			return output, nil
 		}).(GetResourceAvailabilityResultOutput)
 }
 

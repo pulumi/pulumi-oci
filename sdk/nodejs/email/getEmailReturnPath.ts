@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEmailReturnPath(args: GetEmailReturnPathArgs, opts?: pulumi.InvokeOptions): Promise<GetEmailReturnPathResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getEmailReturnPath:getEmailReturnPath", {
         "emailReturnPathId": args.emailReturnPathId,
@@ -117,7 +116,10 @@ export interface GetEmailReturnPathResult {
  * ```
  */
 export function getEmailReturnPathOutput(args: GetEmailReturnPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmailReturnPathResult> {
-    return pulumi.output(args).apply((a: any) => getEmailReturnPath(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Email/getEmailReturnPath:getEmailReturnPath", {
+        "emailReturnPathId": args.emailReturnPathId,
+    }, opts);
 }
 
 /**

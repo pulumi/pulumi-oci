@@ -17,7 +17,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStackTfState(args: GetStackTfStateArgs, opts?: pulumi.InvokeOptions): Promise<GetStackTfStateResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ResourceManager/getStackTfState:getStackTfState", {
         "localPath": args.localPath,
@@ -60,7 +59,11 @@ export interface GetStackTfStateResult {
  * ```
  */
 export function getStackTfStateOutput(args: GetStackTfStateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStackTfStateResult> {
-    return pulumi.output(args).apply((a: any) => getStackTfState(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ResourceManager/getStackTfState:getStackTfState", {
+        "localPath": args.localPath,
+        "stackId": args.stackId,
+    }, opts);
 }
 
 /**

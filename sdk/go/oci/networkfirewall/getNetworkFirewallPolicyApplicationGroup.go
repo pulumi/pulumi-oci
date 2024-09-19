@@ -48,14 +48,20 @@ type LookupNetworkFirewallPolicyApplicationGroupResult struct {
 
 func LookupNetworkFirewallPolicyApplicationGroupOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyApplicationGroupOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyApplicationGroupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupNetworkFirewallPolicyApplicationGroupResult, error) {
+		ApplyT(func(v interface{}) (LookupNetworkFirewallPolicyApplicationGroupResultOutput, error) {
 			args := v.(LookupNetworkFirewallPolicyApplicationGroupArgs)
-			r, err := LookupNetworkFirewallPolicyApplicationGroup(ctx, &args, opts...)
-			var s LookupNetworkFirewallPolicyApplicationGroupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupNetworkFirewallPolicyApplicationGroupResult
+			secret, err := ctx.InvokePackageRaw("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupNetworkFirewallPolicyApplicationGroupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupNetworkFirewallPolicyApplicationGroupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupNetworkFirewallPolicyApplicationGroupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupNetworkFirewallPolicyApplicationGroupResultOutput)
 }
 

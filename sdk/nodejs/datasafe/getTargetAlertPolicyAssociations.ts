@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetAlertPolicyAssociations(args: GetTargetAlertPolicyAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAlertPolicyAssociationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", {
         "accessLevel": args.accessLevel,
@@ -151,7 +150,19 @@ export interface GetTargetAlertPolicyAssociationsResult {
  * ```
  */
 export function getTargetAlertPolicyAssociationsOutput(args: GetTargetAlertPolicyAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAlertPolicyAssociationsResult> {
-    return pulumi.output(args).apply((a: any) => getTargetAlertPolicyAssociations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", {
+        "accessLevel": args.accessLevel,
+        "alertPolicyId": args.alertPolicyId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "state": args.state,
+        "targetAlertPolicyAssociationId": args.targetAlertPolicyAssociationId,
+        "targetId": args.targetId,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

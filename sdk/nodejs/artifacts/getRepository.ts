@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepository(args: GetRepositoryArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getRepository:getRepository", {
         "repositoryId": args.repositoryId,
@@ -101,7 +100,10 @@ export interface GetRepositoryResult {
  * ```
  */
 export function getRepositoryOutput(args: GetRepositoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryResult> {
-    return pulumi.output(args).apply((a: any) => getRepository(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Artifacts/getRepository:getRepository", {
+        "repositoryId": args.repositoryId,
+    }, opts);
 }
 
 /**

@@ -103,14 +103,20 @@ type GetDomainsApprovalWorkflowsResult struct {
 
 func GetDomainsApprovalWorkflowsOutput(ctx *pulumi.Context, args GetDomainsApprovalWorkflowsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsApprovalWorkflowsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsApprovalWorkflowsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsApprovalWorkflowsResultOutput, error) {
 			args := v.(GetDomainsApprovalWorkflowsArgs)
-			r, err := GetDomainsApprovalWorkflows(ctx, &args, opts...)
-			var s GetDomainsApprovalWorkflowsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsApprovalWorkflowsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsApprovalWorkflowsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsApprovalWorkflowsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsApprovalWorkflowsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsApprovalWorkflowsResultOutput)
 }
 

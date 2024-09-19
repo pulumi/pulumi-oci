@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamedCredential(args: GetNamedCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetNamedCredentialResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getNamedCredential:getNamedCredential", {
         "namedCredentialId": args.namedCredentialId,
@@ -123,7 +122,10 @@ export interface GetNamedCredentialResult {
  * ```
  */
 export function getNamedCredentialOutput(args: GetNamedCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamedCredentialResult> {
-    return pulumi.output(args).apply((a: any) => getNamedCredential(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getNamedCredential:getNamedCredential", {
+        "namedCredentialId": args.namedCredentialId,
+    }, opts);
 }
 
 /**

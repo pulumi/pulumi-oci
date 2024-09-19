@@ -88,14 +88,20 @@ type GetNamespaceScheduledTasksResult struct {
 
 func GetNamespaceScheduledTasksOutput(ctx *pulumi.Context, args GetNamespaceScheduledTasksOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceScheduledTasksResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNamespaceScheduledTasksResult, error) {
+		ApplyT(func(v interface{}) (GetNamespaceScheduledTasksResultOutput, error) {
 			args := v.(GetNamespaceScheduledTasksArgs)
-			r, err := GetNamespaceScheduledTasks(ctx, &args, opts...)
-			var s GetNamespaceScheduledTasksResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNamespaceScheduledTasksResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", args, &rv, "", opts...)
+			if err != nil {
+				return GetNamespaceScheduledTasksResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNamespaceScheduledTasksResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNamespaceScheduledTasksResultOutput), nil
+			}
+			return output, nil
 		}).(GetNamespaceScheduledTasksResultOutput)
 }
 

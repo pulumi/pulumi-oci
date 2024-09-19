@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCrossConnectLocations(args: GetCrossConnectLocationsArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectLocationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCrossConnectLocations:getCrossConnectLocations", {
         "compartmentId": args.compartmentId,
@@ -76,7 +75,11 @@ export interface GetCrossConnectLocationsResult {
  * ```
  */
 export function getCrossConnectLocationsOutput(args: GetCrossConnectLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectLocationsResult> {
-    return pulumi.output(args).apply((a: any) => getCrossConnectLocations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCrossConnectLocations:getCrossConnectLocations", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

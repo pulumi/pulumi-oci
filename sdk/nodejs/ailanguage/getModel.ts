@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Gets a model by identifier
  */
 export function getModel(args: GetModelArgs, opts?: pulumi.InvokeOptions): Promise<GetModelResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiLanguage/getModel:getModel", {
         "id": args.id,
@@ -108,7 +107,10 @@ export interface GetModelResult {
  * Gets a model by identifier
  */
 export function getModelOutput(args: GetModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelResult> {
-    return pulumi.output(args).apply((a: any) => getModel(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiLanguage/getModel:getModel", {
+        "id": args.id,
+    }, opts);
 }
 
 /**

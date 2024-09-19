@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabasePeerTargetDatabases(args: GetTargetDatabasePeerTargetDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasePeerTargetDatabasesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetTargetDatabasePeerTargetDatabasesResult {
  * ```
  */
 export function getTargetDatabasePeerTargetDatabasesOutput(args: GetTargetDatabasePeerTargetDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasePeerTargetDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getTargetDatabasePeerTargetDatabases(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", {
+        "filters": args.filters,
+        "targetDatabaseId": args.targetDatabaseId,
+    }, opts);
 }
 
 /**

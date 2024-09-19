@@ -93,14 +93,20 @@ type GetServiceConnectorResult struct {
 
 func GetServiceConnectorOutput(ctx *pulumi.Context, args GetServiceConnectorOutputArgs, opts ...pulumi.InvokeOption) GetServiceConnectorResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetServiceConnectorResult, error) {
+		ApplyT(func(v interface{}) (GetServiceConnectorResultOutput, error) {
 			args := v.(GetServiceConnectorArgs)
-			r, err := GetServiceConnector(ctx, &args, opts...)
-			var s GetServiceConnectorResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetServiceConnectorResult
+			secret, err := ctx.InvokePackageRaw("oci:Sch/getServiceConnector:getServiceConnector", args, &rv, "", opts...)
+			if err != nil {
+				return GetServiceConnectorResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetServiceConnectorResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetServiceConnectorResultOutput), nil
+			}
+			return output, nil
 		}).(GetServiceConnectorResultOutput)
 }
 

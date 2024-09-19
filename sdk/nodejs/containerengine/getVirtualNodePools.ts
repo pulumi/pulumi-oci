@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * List all the virtual node pools in a compartment, and optionally filter by cluster.
  */
 export function getVirtualNodePools(args: GetVirtualNodePoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualNodePoolsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", {
         "clusterId": args.clusterId,
@@ -82,7 +81,14 @@ export interface GetVirtualNodePoolsResult {
  * List all the virtual node pools in a compartment, and optionally filter by cluster.
  */
 export function getVirtualNodePoolsOutput(args: GetVirtualNodePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualNodePoolsResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualNodePools(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", {
+        "clusterId": args.clusterId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "states": args.states,
+    }, opts);
 }
 
 /**

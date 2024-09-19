@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeCluster(args: GetComputeClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeClusterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeCluster:getComputeCluster", {
         "computeClusterId": args.computeClusterId,
@@ -95,7 +94,10 @@ export interface GetComputeClusterResult {
  * ```
  */
 export function getComputeClusterOutput(args: GetComputeClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeClusterResult> {
-    return pulumi.output(args).apply((a: any) => getComputeCluster(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeCluster:getComputeCluster", {
+        "computeClusterId": args.computeClusterId,
+    }, opts);
 }
 
 /**

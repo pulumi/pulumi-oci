@@ -82,14 +82,20 @@ type LookupRepositoryRefResult struct {
 
 func LookupRepositoryRefOutput(ctx *pulumi.Context, args LookupRepositoryRefOutputArgs, opts ...pulumi.InvokeOption) LookupRepositoryRefResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupRepositoryRefResult, error) {
+		ApplyT(func(v interface{}) (LookupRepositoryRefResultOutput, error) {
 			args := v.(LookupRepositoryRefArgs)
-			r, err := LookupRepositoryRef(ctx, &args, opts...)
-			var s LookupRepositoryRefResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupRepositoryRefResult
+			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositoryRef:getRepositoryRef", args, &rv, "", opts...)
+			if err != nil {
+				return LookupRepositoryRefResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupRepositoryRefResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupRepositoryRefResultOutput), nil
+			}
+			return output, nil
 		}).(LookupRepositoryRefResultOutput)
 }
 

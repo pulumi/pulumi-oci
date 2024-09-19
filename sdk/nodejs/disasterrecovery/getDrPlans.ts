@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrPlans(args: GetDrPlansArgs, opts?: pulumi.InvokeOptions): Promise<GetDrPlansResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DisasterRecovery/getDrPlans:getDrPlans", {
         "displayName": args.displayName,
@@ -115,7 +114,15 @@ export interface GetDrPlansResult {
  * ```
  */
 export function getDrPlansOutput(args: GetDrPlansOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrPlansResult> {
-    return pulumi.output(args).apply((a: any) => getDrPlans(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DisasterRecovery/getDrPlans:getDrPlans", {
+        "displayName": args.displayName,
+        "drPlanId": args.drPlanId,
+        "drPlanType": args.drPlanType,
+        "drProtectionGroupId": args.drProtectionGroupId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

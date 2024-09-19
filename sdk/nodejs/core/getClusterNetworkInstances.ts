@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterNetworkInstances(args: GetClusterNetworkInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterNetworkInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", {
         "clusterNetworkId": args.clusterNetworkId,
@@ -96,7 +95,13 @@ export interface GetClusterNetworkInstancesResult {
  * ```
  */
 export function getClusterNetworkInstancesOutput(args: GetClusterNetworkInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterNetworkInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getClusterNetworkInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", {
+        "clusterNetworkId": args.clusterNetworkId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

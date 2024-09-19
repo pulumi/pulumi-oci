@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTagStandardTagNamespaceTemplates(args: GetTagStandardTagNamespaceTemplatesArgs, opts?: pulumi.InvokeOptions): Promise<GetTagStandardTagNamespaceTemplatesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates", {
         "compartmentId": args.compartmentId,
@@ -74,7 +73,11 @@ export interface GetTagStandardTagNamespaceTemplatesResult {
  * ```
  */
 export function getTagStandardTagNamespaceTemplatesOutput(args: GetTagStandardTagNamespaceTemplatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagStandardTagNamespaceTemplatesResult> {
-    return pulumi.output(args).apply((a: any) => getTagStandardTagNamespaceTemplates(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

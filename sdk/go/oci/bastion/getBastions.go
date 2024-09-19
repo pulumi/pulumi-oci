@@ -83,14 +83,20 @@ type GetBastionsResult struct {
 
 func GetBastionsOutput(ctx *pulumi.Context, args GetBastionsOutputArgs, opts ...pulumi.InvokeOption) GetBastionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBastionsResult, error) {
+		ApplyT(func(v interface{}) (GetBastionsResultOutput, error) {
 			args := v.(GetBastionsArgs)
-			r, err := GetBastions(ctx, &args, opts...)
-			var s GetBastionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBastionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Bastion/getBastions:getBastions", args, &rv, "", opts...)
+			if err != nil {
+				return GetBastionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBastionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBastionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetBastionsResultOutput)
 }
 

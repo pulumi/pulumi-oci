@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  */
 export function getObjects(args: GetObjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObjects:getObjects", {
         "bucket": args.bucket,
@@ -107,7 +106,17 @@ export interface GetObjectsResult {
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  */
 export function getObjectsOutput(args: GetObjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectsResult> {
-    return pulumi.output(args).apply((a: any) => getObjects(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObjects:getObjects", {
+        "bucket": args.bucket,
+        "delimiter": args.delimiter,
+        "end": args.end,
+        "filters": args.filters,
+        "namespace": args.namespace,
+        "prefix": args.prefix,
+        "start": args.start,
+        "startAfter": args.startAfter,
+    }, opts);
 }
 
 /**

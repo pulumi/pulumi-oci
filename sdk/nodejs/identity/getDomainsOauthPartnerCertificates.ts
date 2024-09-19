@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsOauthPartnerCertificates(args: GetDomainsOauthPartnerCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsOauthPartnerCertificatesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", {
         "authorization": args.authorization,
@@ -126,7 +125,18 @@ export interface GetDomainsOauthPartnerCertificatesResult {
  * ```
  */
 export function getDomainsOauthPartnerCertificatesOutput(args: GetDomainsOauthPartnerCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsOauthPartnerCertificatesResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsOauthPartnerCertificates(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "oauthPartnerCertificateCount": args.oauthPartnerCertificateCount,
+        "oauthPartnerCertificateFilter": args.oauthPartnerCertificateFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

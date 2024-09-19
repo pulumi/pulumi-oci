@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditTrail(args: GetAuditTrailArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditTrailResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditTrail:getAuditTrail", {
         "auditTrailId": args.auditTrailId,
@@ -158,7 +157,10 @@ export interface GetAuditTrailResult {
  * ```
  */
 export function getAuditTrailOutput(args: GetAuditTrailOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditTrailResult> {
-    return pulumi.output(args).apply((a: any) => getAuditTrail(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditTrail:getAuditTrail", {
+        "auditTrailId": args.auditTrailId,
+    }, opts);
 }
 
 /**

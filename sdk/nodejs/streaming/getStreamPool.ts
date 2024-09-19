@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStreamPool(args: GetStreamPoolArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamPoolResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Streaming/getStreamPool:getStreamPool", {
         "streamPoolId": args.streamPoolId,
@@ -115,7 +114,10 @@ export interface GetStreamPoolResult {
  * ```
  */
 export function getStreamPoolOutput(args: GetStreamPoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamPoolResult> {
-    return pulumi.output(args).apply((a: any) => getStreamPool(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Streaming/getStreamPool:getStreamPool", {
+        "streamPoolId": args.streamPoolId,
+    }, opts);
 }
 
 /**

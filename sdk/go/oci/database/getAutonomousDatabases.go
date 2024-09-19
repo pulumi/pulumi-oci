@@ -93,14 +93,20 @@ type GetAutonomousDatabasesResult struct {
 
 func GetAutonomousDatabasesOutput(ctx *pulumi.Context, args GetAutonomousDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabasesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabasesResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousDatabasesResultOutput, error) {
 			args := v.(GetAutonomousDatabasesArgs)
-			r, err := GetAutonomousDatabases(ctx, &args, opts...)
-			var s GetAutonomousDatabasesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousDatabasesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousDatabasesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousDatabasesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousDatabasesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousDatabasesResultOutput)
 }
 

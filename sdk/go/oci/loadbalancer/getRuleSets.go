@@ -69,14 +69,20 @@ type GetRuleSetsResult struct {
 
 func GetRuleSetsOutput(ctx *pulumi.Context, args GetRuleSetsOutputArgs, opts ...pulumi.InvokeOption) GetRuleSetsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRuleSetsResult, error) {
+		ApplyT(func(v interface{}) (GetRuleSetsResultOutput, error) {
 			args := v.(GetRuleSetsArgs)
-			r, err := GetRuleSets(ctx, &args, opts...)
-			var s GetRuleSetsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRuleSetsResult
+			secret, err := ctx.InvokePackageRaw("oci:LoadBalancer/getRuleSets:getRuleSets", args, &rv, "", opts...)
+			if err != nil {
+				return GetRuleSetsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRuleSetsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRuleSetsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRuleSetsResultOutput)
 }
 

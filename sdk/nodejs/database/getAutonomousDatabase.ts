@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabase(args: GetAutonomousDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabase:getAutonomousDatabase", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
@@ -572,7 +571,10 @@ export interface GetAutonomousDatabaseResult {
  * ```
  */
 export function getAutonomousDatabaseOutput(args: GetAutonomousDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousDatabase(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabase:getAutonomousDatabase", {
+        "autonomousDatabaseId": args.autonomousDatabaseId,
+    }, opts);
 }
 
 /**

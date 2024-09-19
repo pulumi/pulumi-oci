@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditProfile(args: GetAuditProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditProfile:getAuditProfile", {
         "auditProfileId": args.auditProfileId,
@@ -139,7 +138,10 @@ export interface GetAuditProfileResult {
  * ```
  */
 export function getAuditProfileOutput(args: GetAuditProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileResult> {
-    return pulumi.output(args).apply((a: any) => getAuditProfile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditProfile:getAuditProfile", {
+        "auditProfileId": args.auditProfileId,
+    }, opts);
 }
 
 /**

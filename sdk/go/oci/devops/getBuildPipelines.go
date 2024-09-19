@@ -88,14 +88,20 @@ type GetBuildPipelinesResult struct {
 
 func GetBuildPipelinesOutput(ctx *pulumi.Context, args GetBuildPipelinesOutputArgs, opts ...pulumi.InvokeOption) GetBuildPipelinesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBuildPipelinesResult, error) {
+		ApplyT(func(v interface{}) (GetBuildPipelinesResultOutput, error) {
 			args := v.(GetBuildPipelinesArgs)
-			r, err := GetBuildPipelines(ctx, &args, opts...)
-			var s GetBuildPipelinesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBuildPipelinesResult
+			secret, err := ctx.InvokePackageRaw("oci:DevOps/getBuildPipelines:getBuildPipelines", args, &rv, "", opts...)
+			if err != nil {
+				return GetBuildPipelinesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBuildPipelinesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBuildPipelinesResultOutput), nil
+			}
+			return output, nil
 		}).(GetBuildPipelinesResultOutput)
 }
 

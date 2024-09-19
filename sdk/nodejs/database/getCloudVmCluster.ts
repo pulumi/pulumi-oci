@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudVmCluster(args: GetCloudVmClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudVmClusterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudVmCluster:getCloudVmCluster", {
         "cloudVmClusterId": args.cloudVmClusterId,
@@ -262,7 +261,10 @@ export interface GetCloudVmClusterResult {
  * ```
  */
 export function getCloudVmClusterOutput(args: GetCloudVmClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudVmClusterResult> {
-    return pulumi.output(args).apply((a: any) => getCloudVmCluster(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getCloudVmCluster:getCloudVmCluster", {
+        "cloudVmClusterId": args.cloudVmClusterId,
+    }, opts);
 }
 
 /**

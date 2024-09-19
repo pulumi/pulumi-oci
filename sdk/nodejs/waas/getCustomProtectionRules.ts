@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCustomProtectionRules(args: GetCustomProtectionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomProtectionRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,16 @@ export interface GetCustomProtectionRulesResult {
  * ```
  */
 export function getCustomProtectionRulesOutput(args: GetCustomProtectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomProtectionRulesResult> {
-    return pulumi.output(args).apply((a: any) => getCustomProtectionRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", {
+        "compartmentId": args.compartmentId,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "ids": args.ids,
+        "states": args.states,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

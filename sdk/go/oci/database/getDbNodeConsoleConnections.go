@@ -70,14 +70,20 @@ type GetDbNodeConsoleConnectionsResult struct {
 
 func GetDbNodeConsoleConnectionsOutput(ctx *pulumi.Context, args GetDbNodeConsoleConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetDbNodeConsoleConnectionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbNodeConsoleConnectionsResult, error) {
+		ApplyT(func(v interface{}) (GetDbNodeConsoleConnectionsResultOutput, error) {
 			args := v.(GetDbNodeConsoleConnectionsArgs)
-			r, err := GetDbNodeConsoleConnections(ctx, &args, opts...)
-			var s GetDbNodeConsoleConnectionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbNodeConsoleConnectionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbNodeConsoleConnectionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbNodeConsoleConnectionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbNodeConsoleConnectionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbNodeConsoleConnectionsResultOutput)
 }
 

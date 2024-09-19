@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAdhocQuery(args: GetAdhocQueryArgs, opts?: pulumi.InvokeOptions): Promise<GetAdhocQueryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getAdhocQuery:getAdhocQuery", {
         "adhocQueryId": args.adhocQueryId,
@@ -111,7 +110,10 @@ export interface GetAdhocQueryResult {
  * ```
  */
 export function getAdhocQueryOutput(args: GetAdhocQueryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAdhocQueryResult> {
-    return pulumi.output(args).apply((a: any) => getAdhocQuery(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getAdhocQuery:getAdhocQuery", {
+        "adhocQueryId": args.adhocQueryId,
+    }, opts);
 }
 
 /**

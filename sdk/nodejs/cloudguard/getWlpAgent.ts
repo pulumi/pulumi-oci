@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWlpAgent(args: GetWlpAgentArgs, opts?: pulumi.InvokeOptions): Promise<GetWlpAgentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getWlpAgent:getWlpAgent", {
         "wlpAgentId": args.wlpAgentId,
@@ -110,7 +109,10 @@ export interface GetWlpAgentResult {
  * ```
  */
 export function getWlpAgentOutput(args: GetWlpAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWlpAgentResult> {
-    return pulumi.output(args).apply((a: any) => getWlpAgent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getWlpAgent:getWlpAgent", {
+        "wlpAgentId": args.wlpAgentId,
+    }, opts);
 }
 
 /**

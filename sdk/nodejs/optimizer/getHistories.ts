@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHistories(args: GetHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetHistoriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getHistories:getHistories", {
         "compartmentId": args.compartmentId,
@@ -163,7 +162,19 @@ export interface GetHistoriesResult {
  * ```
  */
 export function getHistoriesOutput(args: GetHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHistoriesResult> {
-    return pulumi.output(args).apply((a: any) => getHistories(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getHistories:getHistories", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "includeResourceMetadata": args.includeResourceMetadata,
+        "name": args.name,
+        "recommendationId": args.recommendationId,
+        "recommendationName": args.recommendationName,
+        "resourceType": args.resourceType,
+        "state": args.state,
+        "status": args.status,
+    }, opts);
 }
 
 /**

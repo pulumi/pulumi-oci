@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaceEffectiveProperties(args: GetNamespaceEffectivePropertiesArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceEffectivePropertiesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", {
         "agentId": args.agentId,
@@ -125,7 +124,17 @@ export interface GetNamespaceEffectivePropertiesResult {
  * ```
  */
 export function getNamespaceEffectivePropertiesOutput(args: GetNamespaceEffectivePropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceEffectivePropertiesResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaceEffectiveProperties(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", {
+        "agentId": args.agentId,
+        "entityId": args.entityId,
+        "filters": args.filters,
+        "isIncludePatterns": args.isIncludePatterns,
+        "name": args.name,
+        "namespace": args.namespace,
+        "patternId": args.patternId,
+        "sourceName": args.sourceName,
+    }, opts);
 }
 
 /**

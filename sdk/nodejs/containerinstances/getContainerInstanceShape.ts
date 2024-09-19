@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerInstanceShape(args: GetContainerInstanceShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerInstanceShapeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape", {
         "availabilityDomain": args.availabilityDomain,
@@ -79,7 +78,11 @@ export interface GetContainerInstanceShapeResult {
  * ```
  */
 export function getContainerInstanceShapeOutput(args: GetContainerInstanceShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerInstanceShapeResult> {
-    return pulumi.output(args).apply((a: any) => getContainerInstanceShape(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

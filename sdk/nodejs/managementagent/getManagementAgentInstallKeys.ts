@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentInstallKeys(args: GetManagementAgentInstallKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentInstallKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", {
         "accessLevel": args.accessLevel,
@@ -115,7 +114,15 @@ export interface GetManagementAgentInstallKeysResult {
  * ```
  */
 export function getManagementAgentInstallKeysOutput(args: GetManagementAgentInstallKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentInstallKeysResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgentInstallKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

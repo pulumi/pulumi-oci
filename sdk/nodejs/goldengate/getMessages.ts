@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMessages(args: GetMessagesArgs, opts?: pulumi.InvokeOptions): Promise<GetMessagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getMessages:getMessages", {
         "deploymentId": args.deploymentId,
@@ -74,7 +73,11 @@ export interface GetMessagesResult {
  * ```
  */
 export function getMessagesOutput(args: GetMessagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMessagesResult> {
-    return pulumi.output(args).apply((a: any) => getMessages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getMessages:getMessages", {
+        "deploymentId": args.deploymentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

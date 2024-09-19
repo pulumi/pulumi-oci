@@ -85,14 +85,20 @@ type GetAutonomousPatchResult struct {
 
 func GetAutonomousPatchOutput(ctx *pulumi.Context, args GetAutonomousPatchOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousPatchResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousPatchResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousPatchResultOutput, error) {
 			args := v.(GetAutonomousPatchArgs)
-			r, err := GetAutonomousPatch(ctx, &args, opts...)
-			var s GetAutonomousPatchResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousPatchResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousPatch:getAutonomousPatch", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousPatchResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousPatchResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousPatchResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousPatchResultOutput)
 }
 

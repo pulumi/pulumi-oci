@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHeatWaveCluster(args: GetHeatWaveClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetHeatWaveClusterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", {
         "dbSystemId": args.dbSystemId,
@@ -99,7 +98,10 @@ export interface GetHeatWaveClusterResult {
  * ```
  */
 export function getHeatWaveClusterOutput(args: GetHeatWaveClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHeatWaveClusterResult> {
-    return pulumi.output(args).apply((a: any) => getHeatWaveCluster(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", {
+        "dbSystemId": args.dbSystemId,
+    }, opts);
 }
 
 /**

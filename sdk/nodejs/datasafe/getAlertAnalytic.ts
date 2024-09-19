@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertAnalytic(args: GetAlertAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertAnalyticResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", {
         "accessLevel": args.accessLevel,
@@ -146,7 +145,18 @@ export interface GetAlertAnalyticResult {
  * ```
  */
 export function getAlertAnalyticOutput(args: GetAlertAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertAnalyticResult> {
-    return pulumi.output(args).apply((a: any) => getAlertAnalytic(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "groupBies": args.groupBies,
+        "queryTimeZone": args.queryTimeZone,
+        "scimQuery": args.scimQuery,
+        "summaryFields": args.summaryFields,
+        "timeEnded": args.timeEnded,
+        "timeStarted": args.timeStarted,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLicenseRecord(args: GetLicenseRecordArgs, opts?: pulumi.InvokeOptions): Promise<GetLicenseRecordResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getLicenseRecord:getLicenseRecord", {
         "licenseRecordId": args.licenseRecordId,
@@ -133,7 +132,10 @@ export interface GetLicenseRecordResult {
  * ```
  */
 export function getLicenseRecordOutput(args: GetLicenseRecordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseRecordResult> {
-    return pulumi.output(args).apply((a: any) => getLicenseRecord(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LicenseManager/getLicenseRecord:getLicenseRecord", {
+        "licenseRecordId": args.licenseRecordId,
+    }, opts);
 }
 
 /**

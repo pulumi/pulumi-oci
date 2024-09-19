@@ -75,14 +75,20 @@ type GetCustomTablesResult struct {
 
 func GetCustomTablesOutput(ctx *pulumi.Context, args GetCustomTablesOutputArgs, opts ...pulumi.InvokeOption) GetCustomTablesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCustomTablesResult, error) {
+		ApplyT(func(v interface{}) (GetCustomTablesResultOutput, error) {
 			args := v.(GetCustomTablesArgs)
-			r, err := GetCustomTables(ctx, &args, opts...)
-			var s GetCustomTablesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCustomTablesResult
+			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getCustomTables:getCustomTables", args, &rv, "", opts...)
+			if err != nil {
+				return GetCustomTablesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCustomTablesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCustomTablesResultOutput), nil
+			}
+			return output, nil
 		}).(GetCustomTablesResultOutput)
 }
 

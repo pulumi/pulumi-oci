@@ -80,14 +80,20 @@ type GetMetastoresResult struct {
 
 func GetMetastoresOutput(ctx *pulumi.Context, args GetMetastoresOutputArgs, opts ...pulumi.InvokeOption) GetMetastoresResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMetastoresResult, error) {
+		ApplyT(func(v interface{}) (GetMetastoresResultOutput, error) {
 			args := v.(GetMetastoresArgs)
-			r, err := GetMetastores(ctx, &args, opts...)
-			var s GetMetastoresResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMetastoresResult
+			secret, err := ctx.InvokePackageRaw("oci:DataCatalog/getMetastores:getMetastores", args, &rv, "", opts...)
+			if err != nil {
+				return GetMetastoresResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMetastoresResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMetastoresResultOutput), nil
+			}
+			return output, nil
 		}).(GetMetastoresResultOutput)
 }
 

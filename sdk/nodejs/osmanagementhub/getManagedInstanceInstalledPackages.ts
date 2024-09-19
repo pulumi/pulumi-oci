@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceInstalledPackages(args: GetManagedInstanceInstalledPackagesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceInstalledPackagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceInstalledPackages:getManagedInstanceInstalledPackages", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,16 @@ export interface GetManagedInstanceInstalledPackagesResult {
  * ```
  */
 export function getManagedInstanceInstalledPackagesOutput(args: GetManagedInstanceInstalledPackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceInstalledPackagesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceInstalledPackages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceInstalledPackages:getManagedInstanceInstalledPackages", {
+        "compartmentId": args.compartmentId,
+        "displayNameContains": args.displayNameContains,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "managedInstanceId": args.managedInstanceId,
+        "timeInstallDateEnd": args.timeInstallDateEnd,
+        "timeInstallDateStart": args.timeInstallDateStart,
+    }, opts);
 }
 
 /**

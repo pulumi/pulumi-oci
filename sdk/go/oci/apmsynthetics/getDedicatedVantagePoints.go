@@ -84,14 +84,20 @@ type GetDedicatedVantagePointsResult struct {
 
 func GetDedicatedVantagePointsOutput(ctx *pulumi.Context, args GetDedicatedVantagePointsOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVantagePointsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDedicatedVantagePointsResult, error) {
+		ApplyT(func(v interface{}) (GetDedicatedVantagePointsResultOutput, error) {
 			args := v.(GetDedicatedVantagePointsArgs)
-			r, err := GetDedicatedVantagePoints(ctx, &args, opts...)
-			var s GetDedicatedVantagePointsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDedicatedVantagePointsResult
+			secret, err := ctx.InvokePackageRaw("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", args, &rv, "", opts...)
+			if err != nil {
+				return GetDedicatedVantagePointsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDedicatedVantagePointsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDedicatedVantagePointsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDedicatedVantagePointsResultOutput)
 }
 

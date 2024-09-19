@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  */
 export function getJavaDownloadsJavaLicenses(args?: GetJavaDownloadsJavaLicensesArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaDownloadsJavaLicensesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaDownloadsJavaLicenses:getJavaDownloadsJavaLicenses", {
         "displayName": args.displayName,
@@ -89,7 +88,13 @@ export interface GetJavaDownloadsJavaLicensesResult {
  * ```
  */
 export function getJavaDownloadsJavaLicensesOutput(args?: GetJavaDownloadsJavaLicensesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaLicensesResult> {
-    return pulumi.output(args).apply((a: any) => getJavaDownloadsJavaLicenses(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaLicenses:getJavaDownloadsJavaLicenses", {
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "licenseType": args.licenseType,
+    }, opts);
 }
 
 /**

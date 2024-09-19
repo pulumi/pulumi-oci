@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataAsset(args: GetDataAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetDataAssetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getDataAsset:getDataAsset", {
         "catalogId": args.catalogId,
@@ -137,7 +136,12 @@ export interface GetDataAssetResult {
  * ```
  */
 export function getDataAssetOutput(args: GetDataAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataAssetResult> {
-    return pulumi.output(args).apply((a: any) => getDataAsset(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getDataAsset:getDataAsset", {
+        "catalogId": args.catalogId,
+        "dataAssetKey": args.dataAssetKey,
+        "fields": args.fields,
+    }, opts);
 }
 
 /**

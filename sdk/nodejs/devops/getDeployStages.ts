@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getDeployStages(args?: GetDeployStagesArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployStagesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployStages:getDeployStages", {
         "compartmentId": args.compartmentId,
@@ -118,7 +117,16 @@ export interface GetDeployStagesResult {
  * ```
  */
 export function getDeployStagesOutput(args?: GetDeployStagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployStagesResult> {
-    return pulumi.output(args).apply((a: any) => getDeployStages(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getDeployStages:getDeployStages", {
+        "compartmentId": args.compartmentId,
+        "deployPipelineId": args.deployPipelineId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

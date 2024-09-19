@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryRefs(args: GetRepositoryRefsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryRefsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryRefs:getRepositoryRefs", {
         "commitId": args.commitId,
@@ -110,7 +109,14 @@ export interface GetRepositoryRefsResult {
  * ```
  */
 export function getRepositoryRefsOutput(args: GetRepositoryRefsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryRefsResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryRefs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryRefs:getRepositoryRefs", {
+        "commitId": args.commitId,
+        "filters": args.filters,
+        "refName": args.refName,
+        "refType": args.refType,
+        "repositoryId": args.repositoryId,
+    }, opts);
 }
 
 /**

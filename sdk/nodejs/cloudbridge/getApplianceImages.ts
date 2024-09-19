@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApplianceImages(args: GetApplianceImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetApplianceImagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudBridge/getApplianceImages:getApplianceImages", {
         "compartmentId": args.compartmentId,
@@ -85,7 +84,12 @@ export interface GetApplianceImagesResult {
  * ```
  */
 export function getApplianceImagesOutput(args: GetApplianceImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplianceImagesResult> {
-    return pulumi.output(args).apply((a: any) => getApplianceImages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudBridge/getApplianceImages:getApplianceImages", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnnotationFormats(args: GetAnnotationFormatsArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnotationFormatsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataLabellingService/getAnnotationFormats:getAnnotationFormats", {
         "compartmentId": args.compartmentId,
@@ -74,7 +73,11 @@ export interface GetAnnotationFormatsResult {
  * ```
  */
 export function getAnnotationFormatsOutput(args: GetAnnotationFormatsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnotationFormatsResult> {
-    return pulumi.output(args).apply((a: any) => getAnnotationFormats(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataLabellingService/getAnnotationFormats:getAnnotationFormats", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

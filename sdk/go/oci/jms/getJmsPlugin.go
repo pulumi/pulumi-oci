@@ -97,14 +97,20 @@ type LookupJmsPluginResult struct {
 
 func LookupJmsPluginOutput(ctx *pulumi.Context, args LookupJmsPluginOutputArgs, opts ...pulumi.InvokeOption) LookupJmsPluginResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupJmsPluginResult, error) {
+		ApplyT(func(v interface{}) (LookupJmsPluginResultOutput, error) {
 			args := v.(LookupJmsPluginArgs)
-			r, err := LookupJmsPlugin(ctx, &args, opts...)
-			var s LookupJmsPluginResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupJmsPluginResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getJmsPlugin:getJmsPlugin", args, &rv, "", opts...)
+			if err != nil {
+				return LookupJmsPluginResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupJmsPluginResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupJmsPluginResultOutput), nil
+			}
+			return output, nil
 		}).(LookupJmsPluginResultOutput)
 }
 

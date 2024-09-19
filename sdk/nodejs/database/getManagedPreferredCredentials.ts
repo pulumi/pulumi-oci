@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedPreferredCredentials(args: GetManagedPreferredCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedPreferredCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetManagedPreferredCredentialsResult {
  * ```
  */
 export function getManagedPreferredCredentialsOutput(args: GetManagedPreferredCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedPreferredCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedPreferredCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", {
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+    }, opts);
 }
 
 /**

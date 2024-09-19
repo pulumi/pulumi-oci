@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOpsiConfiguration(args: GetOpsiConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetOpsiConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOpsiConfiguration:getOpsiConfiguration", {
         "configItemCustomStatuses": args.configItemCustomStatuses,
@@ -151,7 +150,14 @@ export interface GetOpsiConfigurationResult {
  * ```
  */
 export function getOpsiConfigurationOutput(args: GetOpsiConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpsiConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getOpsiConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getOpsiConfiguration:getOpsiConfiguration", {
+        "configItemCustomStatuses": args.configItemCustomStatuses,
+        "configItemFields": args.configItemFields,
+        "configItemsApplicableContexts": args.configItemsApplicableContexts,
+        "opsiConfigFields": args.opsiConfigFields,
+        "opsiConfigurationId": args.opsiConfigurationId,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIngressGateway(args: GetIngressGatewayArgs, opts?: pulumi.InvokeOptions): Promise<GetIngressGatewayResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getIngressGateway:getIngressGateway", {
         "ingressGatewayId": args.ingressGatewayId,
@@ -123,7 +122,10 @@ export interface GetIngressGatewayResult {
  * ```
  */
 export function getIngressGatewayOutput(args: GetIngressGatewayOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIngressGatewayResult> {
-    return pulumi.output(args).apply((a: any) => getIngressGateway(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getIngressGateway:getIngressGateway", {
+        "ingressGatewayId": args.ingressGatewayId,
+    }, opts);
 }
 
 /**

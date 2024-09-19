@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsCustomerSecretKey(args: GetDomainsCustomerSecretKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsCustomerSecretKeyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsCustomerSecretKey:getDomainsCustomerSecretKey", {
         "attributeSets": args.attributeSets,
@@ -183,7 +182,15 @@ export interface GetDomainsCustomerSecretKeyResult {
  * ```
  */
 export function getDomainsCustomerSecretKeyOutput(args: GetDomainsCustomerSecretKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsCustomerSecretKeyResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsCustomerSecretKey(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsCustomerSecretKey:getDomainsCustomerSecretKey", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "customerSecretKeyId": args.customerSecretKeyId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

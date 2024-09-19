@@ -113,14 +113,20 @@ type LookupDesktopPoolResult struct {
 
 func LookupDesktopPoolOutput(ctx *pulumi.Context, args LookupDesktopPoolOutputArgs, opts ...pulumi.InvokeOption) LookupDesktopPoolResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDesktopPoolResult, error) {
+		ApplyT(func(v interface{}) (LookupDesktopPoolResultOutput, error) {
 			args := v.(LookupDesktopPoolArgs)
-			r, err := LookupDesktopPool(ctx, &args, opts...)
-			var s LookupDesktopPoolResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDesktopPoolResult
+			secret, err := ctx.InvokePackageRaw("oci:Desktops/getDesktopPool:getDesktopPool", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDesktopPoolResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDesktopPoolResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDesktopPoolResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDesktopPoolResultOutput)
 }
 

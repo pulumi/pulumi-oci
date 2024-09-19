@@ -134,14 +134,20 @@ type LookupExadataInfrastructureResult struct {
 
 func LookupExadataInfrastructureOutput(ctx *pulumi.Context, args LookupExadataInfrastructureOutputArgs, opts ...pulumi.InvokeOption) LookupExadataInfrastructureResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupExadataInfrastructureResult, error) {
+		ApplyT(func(v interface{}) (LookupExadataInfrastructureResultOutput, error) {
 			args := v.(LookupExadataInfrastructureArgs)
-			r, err := LookupExadataInfrastructure(ctx, &args, opts...)
-			var s LookupExadataInfrastructureResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupExadataInfrastructureResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args, &rv, "", opts...)
+			if err != nil {
+				return LookupExadataInfrastructureResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupExadataInfrastructureResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupExadataInfrastructureResultOutput), nil
+			}
+			return output, nil
 		}).(LookupExadataInfrastructureResultOutput)
 }
 

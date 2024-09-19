@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReportDefinition(args: GetReportDefinitionArgs, opts?: pulumi.InvokeOptions): Promise<GetReportDefinitionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getReportDefinition:getReportDefinition", {
         "reportDefinitionId": args.reportDefinitionId,
@@ -175,7 +174,10 @@ export interface GetReportDefinitionResult {
  * ```
  */
 export function getReportDefinitionOutput(args: GetReportDefinitionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportDefinitionResult> {
-    return pulumi.output(args).apply((a: any) => getReportDefinition(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getReportDefinition:getReportDefinition", {
+        "reportDefinitionId": args.reportDefinitionId,
+    }, opts);
 }
 
 /**

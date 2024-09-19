@@ -125,14 +125,20 @@ type GetAddressResult struct {
 
 func GetAddressOutput(ctx *pulumi.Context, args GetAddressOutputArgs, opts ...pulumi.InvokeOption) GetAddressResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAddressResult, error) {
+		ApplyT(func(v interface{}) (GetAddressResultOutput, error) {
 			args := v.(GetAddressArgs)
-			r, err := GetAddress(ctx, &args, opts...)
-			var s GetAddressResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAddressResult
+			secret, err := ctx.InvokePackageRaw("oci:OspGateway/getAddress:getAddress", args, &rv, "", opts...)
+			if err != nil {
+				return GetAddressResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAddressResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAddressResultOutput), nil
+			}
+			return output, nil
 		}).(GetAddressResultOutput)
 }
 

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTrailSequence(args: GetTrailSequenceArgs, opts?: pulumi.InvokeOptions): Promise<GetTrailSequenceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getTrailSequence:getTrailSequence", {
         "deploymentId": args.deploymentId,
@@ -102,7 +101,13 @@ export interface GetTrailSequenceResult {
  * ```
  */
 export function getTrailSequenceOutput(args: GetTrailSequenceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTrailSequenceResult> {
-    return pulumi.output(args).apply((a: any) => getTrailSequence(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getTrailSequence:getTrailSequence", {
+        "deploymentId": args.deploymentId,
+        "displayName": args.displayName,
+        "trailFileId": args.trailFileId,
+        "trailSequenceId": args.trailSequenceId,
+    }, opts);
 }
 
 /**

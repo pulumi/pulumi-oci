@@ -69,14 +69,20 @@ type GetRunLogsResult struct {
 
 func GetRunLogsOutput(ctx *pulumi.Context, args GetRunLogsOutputArgs, opts ...pulumi.InvokeOption) GetRunLogsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRunLogsResult, error) {
+		ApplyT(func(v interface{}) (GetRunLogsResultOutput, error) {
 			args := v.(GetRunLogsArgs)
-			r, err := GetRunLogs(ctx, &args, opts...)
-			var s GetRunLogsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRunLogsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataFlow/getRunLogs:getRunLogs", args, &rv, "", opts...)
+			if err != nil {
+				return GetRunLogsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRunLogsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRunLogsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRunLogsResultOutput)
 }
 

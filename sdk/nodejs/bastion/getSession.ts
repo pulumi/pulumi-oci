@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSession(args: GetSessionArgs, opts?: pulumi.InvokeOptions): Promise<GetSessionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Bastion/getSession:getSession", {
         "sessionId": args.sessionId,
@@ -123,7 +122,10 @@ export interface GetSessionResult {
  * ```
  */
 export function getSessionOutput(args: GetSessionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSessionResult> {
-    return pulumi.output(args).apply((a: any) => getSession(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Bastion/getSession:getSession", {
+        "sessionId": args.sessionId,
+    }, opts);
 }
 
 /**

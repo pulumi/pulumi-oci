@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
  */
 export function getExadataInfrastructure(args: GetExadataInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructureResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadataInfrastructure:getExadataInfrastructure", {
         "exadataInfrastructureId": args.exadataInfrastructureId,
@@ -233,7 +232,10 @@ export interface GetExadataInfrastructureResult {
  * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
  */
 export function getExadataInfrastructureOutput(args: GetExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureResult> {
-    return pulumi.output(args).apply((a: any) => getExadataInfrastructure(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExadataInfrastructure:getExadataInfrastructure", {
+        "exadataInfrastructureId": args.exadataInfrastructureId,
+    }, opts);
 }
 
 /**

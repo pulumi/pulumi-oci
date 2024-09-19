@@ -46,7 +46,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditProfiles(args: GetAuditProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfilesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditProfiles:getAuditProfiles", {
         "accessLevel": args.accessLevel,
@@ -195,7 +194,20 @@ export interface GetAuditProfilesResult {
  * ```
  */
 export function getAuditProfilesOutput(args: GetAuditProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfilesResult> {
-    return pulumi.output(args).apply((a: any) => getAuditProfiles(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditProfiles:getAuditProfiles", {
+        "accessLevel": args.accessLevel,
+        "auditCollectedVolumeGreaterThanOrEqualTo": args.auditCollectedVolumeGreaterThanOrEqualTo,
+        "auditProfileId": args.auditProfileId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isOverrideGlobalRetentionSetting": args.isOverrideGlobalRetentionSetting,
+        "isPaidUsageEnabled": args.isPaidUsageEnabled,
+        "state": args.state,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

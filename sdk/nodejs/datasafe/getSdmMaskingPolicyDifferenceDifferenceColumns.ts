@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSdmMaskingPolicyDifferenceDifferenceColumns(args: GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", {
         "columnNames": args.columnNames,
@@ -140,7 +139,17 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
  * ```
  */
 export function getSdmMaskingPolicyDifferenceDifferenceColumnsOutput(args: GetSdmMaskingPolicyDifferenceDifferenceColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> {
-    return pulumi.output(args).apply((a: any) => getSdmMaskingPolicyDifferenceDifferenceColumns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", {
+        "columnNames": args.columnNames,
+        "differenceType": args.differenceType,
+        "filters": args.filters,
+        "objects": args.objects,
+        "plannedAction": args.plannedAction,
+        "schemaNames": args.schemaNames,
+        "sdmMaskingPolicyDifferenceId": args.sdmMaskingPolicyDifferenceId,
+        "syncStatus": args.syncStatus,
+    }, opts);
 }
 
 /**

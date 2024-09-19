@@ -42,7 +42,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResponderRecipes(args: GetResponderRecipesArgs, opts?: pulumi.InvokeOptions): Promise<GetResponderRecipesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getResponderRecipes:getResponderRecipes", {
         "accessLevel": args.accessLevel,
@@ -151,7 +150,16 @@ export interface GetResponderRecipesResult {
  * ```
  */
 export function getResponderRecipesOutput(args: GetResponderRecipesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResponderRecipesResult> {
-    return pulumi.output(args).apply((a: any) => getResponderRecipes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getResponderRecipes:getResponderRecipes", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "resourceMetadataOnly": args.resourceMetadataOnly,
+        "state": args.state,
+    }, opts);
 }
 
 /**

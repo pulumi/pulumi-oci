@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlPlanBaseline(args: GetManagedDatabaseSqlPlanBaselineArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlPlanBaselineResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", {
         "managedDatabaseId": args.managedDatabaseId,
@@ -144,7 +143,12 @@ export interface GetManagedDatabaseSqlPlanBaselineResult {
  * ```
  */
 export function getManagedDatabaseSqlPlanBaselineOutput(args: GetManagedDatabaseSqlPlanBaselineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselineResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlPlanBaseline(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", {
+        "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "planName": args.planName,
+    }, opts);
 }
 
 /**

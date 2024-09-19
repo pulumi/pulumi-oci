@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabasesSchemas(args: GetTargetDatabasesSchemasArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesSchemasResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", {
         "filters": args.filters,
@@ -104,7 +103,14 @@ export interface GetTargetDatabasesSchemasResult {
  * ```
  */
 export function getTargetDatabasesSchemasOutput(args: GetTargetDatabasesSchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesSchemasResult> {
-    return pulumi.output(args).apply((a: any) => getTargetDatabasesSchemas(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", {
+        "filters": args.filters,
+        "isOracleMaintained": args.isOracleMaintained,
+        "schemaNameContains": args.schemaNameContains,
+        "schemaNames": args.schemaNames,
+        "targetDatabaseId": args.targetDatabaseId,
+    }, opts);
 }
 
 /**

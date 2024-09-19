@@ -83,14 +83,20 @@ type GetOccCustomerGroupsResult struct {
 
 func GetOccCustomerGroupsOutput(ctx *pulumi.Context, args GetOccCustomerGroupsOutputArgs, opts ...pulumi.InvokeOption) GetOccCustomerGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetOccCustomerGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetOccCustomerGroupsResultOutput, error) {
 			args := v.(GetOccCustomerGroupsArgs)
-			r, err := GetOccCustomerGroups(ctx, &args, opts...)
-			var s GetOccCustomerGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetOccCustomerGroupsResult
+			secret, err := ctx.InvokePackageRaw("oci:CapacityManagement/getOccCustomerGroups:getOccCustomerGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetOccCustomerGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetOccCustomerGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetOccCustomerGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetOccCustomerGroupsResultOutput)
 }
 

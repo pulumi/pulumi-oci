@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveType(args: GetSensitiveTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveTypeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveType:getSensitiveType", {
         "sensitiveTypeId": args.sensitiveTypeId,
@@ -141,7 +140,10 @@ export interface GetSensitiveTypeResult {
  * ```
  */
 export function getSensitiveTypeOutput(args: GetSensitiveTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveTypeResult> {
-    return pulumi.output(args).apply((a: any) => getSensitiveType(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveType:getSensitiveType", {
+        "sensitiveTypeId": args.sensitiveTypeId,
+    }, opts);
 }
 
 /**

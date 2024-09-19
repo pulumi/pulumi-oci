@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getReplicationSchedules(args?: GetReplicationSchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationSchedulesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudMigrations/getReplicationSchedules:getReplicationSchedules", {
         "compartmentId": args.compartmentId,
@@ -108,7 +107,15 @@ export interface GetReplicationSchedulesResult {
  * ```
  */
 export function getReplicationSchedulesOutput(args?: GetReplicationSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationSchedulesResult> {
-    return pulumi.output(args).apply((a: any) => getReplicationSchedules(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudMigrations/getReplicationSchedules:getReplicationSchedules", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "replicationScheduleId": args.replicationScheduleId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

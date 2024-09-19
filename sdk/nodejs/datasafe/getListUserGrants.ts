@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListUserGrants(args: GetListUserGrantsArgs, opts?: pulumi.InvokeOptions): Promise<GetListUserGrantsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getListUserGrants:getListUserGrants", {
         "depthLevel": args.depthLevel,
@@ -156,7 +155,19 @@ export interface GetListUserGrantsResult {
  * ```
  */
 export function getListUserGrantsOutput(args: GetListUserGrantsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListUserGrantsResult> {
-    return pulumi.output(args).apply((a: any) => getListUserGrants(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getListUserGrants:getListUserGrants", {
+        "depthLevel": args.depthLevel,
+        "depthLevelGreaterThanOrEqualTo": args.depthLevelGreaterThanOrEqualTo,
+        "depthLevelLessThan": args.depthLevelLessThan,
+        "filters": args.filters,
+        "grantKey": args.grantKey,
+        "grantName": args.grantName,
+        "privilegeCategory": args.privilegeCategory,
+        "privilegeType": args.privilegeType,
+        "userAssessmentId": args.userAssessmentId,
+        "userKey": args.userKey,
+    }, opts);
 }
 
 /**

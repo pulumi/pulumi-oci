@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInternetGateways(args: GetInternetGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetInternetGatewaysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInternetGateways:getInternetGateways", {
         "compartmentId": args.compartmentId,
@@ -112,7 +111,14 @@ export interface GetInternetGatewaysResult {
  * ```
  */
 export function getInternetGatewaysOutput(args: GetInternetGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternetGatewaysResult> {
-    return pulumi.output(args).apply((a: any) => getInternetGateways(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInternetGateways:getInternetGateways", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

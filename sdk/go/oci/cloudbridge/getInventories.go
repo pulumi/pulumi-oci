@@ -75,14 +75,20 @@ type GetInventoriesResult struct {
 
 func GetInventoriesOutput(ctx *pulumi.Context, args GetInventoriesOutputArgs, opts ...pulumi.InvokeOption) GetInventoriesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInventoriesResult, error) {
+		ApplyT(func(v interface{}) (GetInventoriesResultOutput, error) {
 			args := v.(GetInventoriesArgs)
-			r, err := GetInventories(ctx, &args, opts...)
-			var s GetInventoriesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInventoriesResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getInventories:getInventories", args, &rv, "", opts...)
+			if err != nil {
+				return GetInventoriesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInventoriesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInventoriesResultOutput), nil
+			}
+			return output, nil
 		}).(GetInventoriesResultOutput)
 }
 

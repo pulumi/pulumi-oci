@@ -67,14 +67,20 @@ type GetJobOutputResult struct {
 
 func GetJobOutputOutput(ctx *pulumi.Context, args GetJobOutputOutputArgs, opts ...pulumi.InvokeOption) GetJobOutputResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetJobOutputResult, error) {
+		ApplyT(func(v interface{}) (GetJobOutputResultOutput, error) {
 			args := v.(GetJobOutputArgs)
-			r, err := GetJobOutput(ctx, &args, opts...)
-			var s GetJobOutputResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetJobOutputResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseMigration/getJobOutput:getJobOutput", args, &rv, "", opts...)
+			if err != nil {
+				return GetJobOutputResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetJobOutputResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetJobOutputResultOutput), nil
+			}
+			return output, nil
 		}).(GetJobOutputResultOutput)
 }
 

@@ -85,14 +85,20 @@ type LookupDiscoveryScheduleResult struct {
 
 func LookupDiscoveryScheduleOutput(ctx *pulumi.Context, args LookupDiscoveryScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupDiscoveryScheduleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDiscoveryScheduleResult, error) {
+		ApplyT(func(v interface{}) (LookupDiscoveryScheduleResultOutput, error) {
 			args := v.(LookupDiscoveryScheduleArgs)
-			r, err := LookupDiscoverySchedule(ctx, &args, opts...)
-			var s LookupDiscoveryScheduleResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDiscoveryScheduleResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getDiscoverySchedule:getDiscoverySchedule", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDiscoveryScheduleResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDiscoveryScheduleResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDiscoveryScheduleResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDiscoveryScheduleResultOutput)
 }
 

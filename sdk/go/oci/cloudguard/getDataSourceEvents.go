@@ -77,14 +77,20 @@ type GetDataSourceEventsResult struct {
 
 func GetDataSourceEventsOutput(ctx *pulumi.Context, args GetDataSourceEventsOutputArgs, opts ...pulumi.InvokeOption) GetDataSourceEventsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDataSourceEventsResult, error) {
+		ApplyT(func(v interface{}) (GetDataSourceEventsResultOutput, error) {
 			args := v.(GetDataSourceEventsArgs)
-			r, err := GetDataSourceEvents(ctx, &args, opts...)
-			var s GetDataSourceEventsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDataSourceEventsResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getDataSourceEvents:getDataSourceEvents", args, &rv, "", opts...)
+			if err != nil {
+				return GetDataSourceEventsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDataSourceEventsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDataSourceEventsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDataSourceEventsResultOutput)
 }
 

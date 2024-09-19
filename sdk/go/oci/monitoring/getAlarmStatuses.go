@@ -106,14 +106,20 @@ type GetAlarmStatusesResult struct {
 
 func GetAlarmStatusesOutput(ctx *pulumi.Context, args GetAlarmStatusesOutputArgs, opts ...pulumi.InvokeOption) GetAlarmStatusesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAlarmStatusesResult, error) {
+		ApplyT(func(v interface{}) (GetAlarmStatusesResultOutput, error) {
 			args := v.(GetAlarmStatusesArgs)
-			r, err := GetAlarmStatuses(ctx, &args, opts...)
-			var s GetAlarmStatusesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAlarmStatusesResult
+			secret, err := ctx.InvokePackageRaw("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", args, &rv, "", opts...)
+			if err != nil {
+				return GetAlarmStatusesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAlarmStatusesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAlarmStatusesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAlarmStatusesResultOutput)
 }
 

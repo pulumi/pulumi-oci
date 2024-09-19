@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadataInfrastructureDownloadConfigFile(args: GetExadataInfrastructureDownloadConfigFileArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructureDownloadConfigFileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", {
         "base64EncodeContent": args.base64EncodeContent,
@@ -74,7 +73,11 @@ export interface GetExadataInfrastructureDownloadConfigFileResult {
  * ```
  */
 export function getExadataInfrastructureDownloadConfigFileOutput(args: GetExadataInfrastructureDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureDownloadConfigFileResult> {
-    return pulumi.output(args).apply((a: any) => getExadataInfrastructureDownloadConfigFile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", {
+        "base64EncodeContent": args.base64EncodeContent,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
+    }, opts);
 }
 
 /**

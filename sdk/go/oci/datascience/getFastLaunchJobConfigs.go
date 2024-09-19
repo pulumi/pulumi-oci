@@ -69,14 +69,20 @@ type GetFastLaunchJobConfigsResult struct {
 
 func GetFastLaunchJobConfigsOutput(ctx *pulumi.Context, args GetFastLaunchJobConfigsOutputArgs, opts ...pulumi.InvokeOption) GetFastLaunchJobConfigsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFastLaunchJobConfigsResult, error) {
+		ApplyT(func(v interface{}) (GetFastLaunchJobConfigsResultOutput, error) {
 			args := v.(GetFastLaunchJobConfigsArgs)
-			r, err := GetFastLaunchJobConfigs(ctx, &args, opts...)
-			var s GetFastLaunchJobConfigsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFastLaunchJobConfigsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args, &rv, "", opts...)
+			if err != nil {
+				return GetFastLaunchJobConfigsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFastLaunchJobConfigsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFastLaunchJobConfigsResultOutput), nil
+			}
+			return output, nil
 		}).(GetFastLaunchJobConfigsResultOutput)
 }
 

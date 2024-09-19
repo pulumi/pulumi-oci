@@ -69,14 +69,20 @@ type GetModelEvaluationResultsResult struct {
 
 func GetModelEvaluationResultsOutput(ctx *pulumi.Context, args GetModelEvaluationResultsOutputArgs, opts ...pulumi.InvokeOption) GetModelEvaluationResultsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetModelEvaluationResultsResult, error) {
+		ApplyT(func(v interface{}) (GetModelEvaluationResultsResultOutput, error) {
 			args := v.(GetModelEvaluationResultsArgs)
-			r, err := GetModelEvaluationResults(ctx, &args, opts...)
-			var s GetModelEvaluationResultsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetModelEvaluationResultsResult
+			secret, err := ctx.InvokePackageRaw("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", args, &rv, "", opts...)
+			if err != nil {
+				return GetModelEvaluationResultsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetModelEvaluationResultsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetModelEvaluationResultsResultOutput), nil
+			}
+			return output, nil
 		}).(GetModelEvaluationResultsResultOutput)
 }
 

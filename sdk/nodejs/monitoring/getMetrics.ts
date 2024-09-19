@@ -37,7 +37,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMetrics(args: GetMetricsArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Monitoring/getMetrics:getMetrics", {
         "compartmentId": args.compartmentId,
@@ -152,7 +151,17 @@ export interface GetMetricsResult {
  * ```
  */
 export function getMetricsOutput(args: GetMetricsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricsResult> {
-    return pulumi.output(args).apply((a: any) => getMetrics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Monitoring/getMetrics:getMetrics", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "dimensionFilters": args.dimensionFilters,
+        "filters": args.filters,
+        "groupBies": args.groupBies,
+        "name": args.name,
+        "namespace": args.namespace,
+        "resourceGroup": args.resourceGroup,
+    }, opts);
 }
 
 /**

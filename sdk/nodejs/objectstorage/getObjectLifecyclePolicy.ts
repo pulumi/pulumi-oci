@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getObjectLifecyclePolicy(args: GetObjectLifecyclePolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectLifecyclePolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", {
         "bucket": args.bucket,
@@ -80,7 +79,11 @@ export interface GetObjectLifecyclePolicyResult {
  * ```
  */
 export function getObjectLifecyclePolicyOutput(args: GetObjectLifecyclePolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectLifecyclePolicyResult> {
-    return pulumi.output(args).apply((a: any) => getObjectLifecyclePolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", {
+        "bucket": args.bucket,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

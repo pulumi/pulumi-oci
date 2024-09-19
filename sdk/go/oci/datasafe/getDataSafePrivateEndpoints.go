@@ -93,14 +93,20 @@ type GetDataSafePrivateEndpointsResult struct {
 
 func GetDataSafePrivateEndpointsOutput(ctx *pulumi.Context, args GetDataSafePrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetDataSafePrivateEndpointsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDataSafePrivateEndpointsResult, error) {
+		ApplyT(func(v interface{}) (GetDataSafePrivateEndpointsResultOutput, error) {
 			args := v.(GetDataSafePrivateEndpointsArgs)
-			r, err := GetDataSafePrivateEndpoints(ctx, &args, opts...)
-			var s GetDataSafePrivateEndpointsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDataSafePrivateEndpointsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", args, &rv, "", opts...)
+			if err != nil {
+				return GetDataSafePrivateEndpointsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDataSafePrivateEndpointsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDataSafePrivateEndpointsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDataSafePrivateEndpointsResultOutput)
 }
 

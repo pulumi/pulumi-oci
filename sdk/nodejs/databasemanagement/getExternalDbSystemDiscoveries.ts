@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalDbSystemDiscoveries(args: GetExternalDbSystemDiscoveriesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbSystemDiscoveriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,12 @@ export interface GetExternalDbSystemDiscoveriesResult {
  * ```
  */
 export function getExternalDbSystemDiscoveriesOutput(args: GetExternalDbSystemDiscoveriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemDiscoveriesResult> {
-    return pulumi.output(args).apply((a: any) => getExternalDbSystemDiscoveries(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

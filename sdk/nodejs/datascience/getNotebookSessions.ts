@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNotebookSessions(args: GetNotebookSessionsArgs, opts?: pulumi.InvokeOptions): Promise<GetNotebookSessionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getNotebookSessions:getNotebookSessions", {
         "compartmentId": args.compartmentId,
@@ -128,7 +127,16 @@ export interface GetNotebookSessionsResult {
  * ```
  */
 export function getNotebookSessionsOutput(args: GetNotebookSessionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionsResult> {
-    return pulumi.output(args).apply((a: any) => getNotebookSessions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getNotebookSessions:getNotebookSessions", {
+        "compartmentId": args.compartmentId,
+        "createdBy": args.createdBy,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

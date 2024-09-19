@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtocols(args: GetProtocolsArgs, opts?: pulumi.InvokeOptions): Promise<GetProtocolsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getProtocols:getProtocols", {
         "compartmentId": args.compartmentId,
@@ -74,7 +73,11 @@ export interface GetProtocolsResult {
  * ```
  */
 export function getProtocolsOutput(args: GetProtocolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtocolsResult> {
-    return pulumi.output(args).apply((a: any) => getProtocols(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getProtocols:getProtocols", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemConnectionDetail(args: GetDbSystemConnectionDetailArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemConnectionDetailResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", {
         "dbSystemId": args.dbSystemId,
@@ -79,7 +78,10 @@ export interface GetDbSystemConnectionDetailResult {
  * ```
  */
 export function getDbSystemConnectionDetailOutput(args: GetDbSystemConnectionDetailOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemConnectionDetailResult> {
-    return pulumi.output(args).apply((a: any) => getDbSystemConnectionDetail(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", {
+        "dbSystemId": args.dbSystemId,
+    }, opts);
 }
 
 /**

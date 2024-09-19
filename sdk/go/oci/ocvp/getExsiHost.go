@@ -137,14 +137,20 @@ type GetExsiHostResult struct {
 
 func GetExsiHostOutput(ctx *pulumi.Context, args GetExsiHostOutputArgs, opts ...pulumi.InvokeOption) GetExsiHostResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExsiHostResult, error) {
+		ApplyT(func(v interface{}) (GetExsiHostResultOutput, error) {
 			args := v.(GetExsiHostArgs)
-			r, err := GetExsiHost(ctx, &args, opts...)
-			var s GetExsiHostResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExsiHostResult
+			secret, err := ctx.InvokePackageRaw("oci:Ocvp/getExsiHost:getExsiHost", args, &rv, "", opts...)
+			if err != nil {
+				return GetExsiHostResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExsiHostResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExsiHostResultOutput), nil
+			}
+			return output, nil
 		}).(GetExsiHostResultOutput)
 }
 

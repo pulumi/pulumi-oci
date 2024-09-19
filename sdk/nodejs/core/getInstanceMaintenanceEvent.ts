@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceMaintenanceEvent(args: GetInstanceMaintenanceEventArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceMaintenanceEventResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", {
         "instanceMaintenanceEventId": args.instanceMaintenanceEventId,
@@ -158,7 +157,10 @@ export interface GetInstanceMaintenanceEventResult {
  * ```
  */
 export function getInstanceMaintenanceEventOutput(args: GetInstanceMaintenanceEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMaintenanceEventResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceMaintenanceEvent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", {
+        "instanceMaintenanceEventId": args.instanceMaintenanceEventId,
+    }, opts);
 }
 
 /**

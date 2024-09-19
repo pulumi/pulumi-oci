@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCrossConnectGroup(args: GetCrossConnectGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCrossConnectGroup:getCrossConnectGroup", {
         "crossConnectGroupId": args.crossConnectGroupId,
@@ -107,7 +106,10 @@ export interface GetCrossConnectGroupResult {
  * ```
  */
 export function getCrossConnectGroupOutput(args: GetCrossConnectGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectGroupResult> {
-    return pulumi.output(args).apply((a: any) => getCrossConnectGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCrossConnectGroup:getCrossConnectGroup", {
+        "crossConnectGroupId": args.crossConnectGroupId,
+    }, opts);
 }
 
 /**

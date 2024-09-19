@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFsuCycles(args: GetFsuCyclesArgs, opts?: pulumi.InvokeOptions): Promise<GetFsuCyclesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", {
         "collectionType": args.collectionType,
@@ -129,7 +128,16 @@ export interface GetFsuCyclesResult {
  * ```
  */
 export function getFsuCyclesOutput(args: GetFsuCyclesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFsuCyclesResult> {
-    return pulumi.output(args).apply((a: any) => getFsuCycles(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", {
+        "collectionType": args.collectionType,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "fsuCollectionId": args.fsuCollectionId,
+        "state": args.state,
+        "targetVersion": args.targetVersion,
+    }, opts);
 }
 
 /**

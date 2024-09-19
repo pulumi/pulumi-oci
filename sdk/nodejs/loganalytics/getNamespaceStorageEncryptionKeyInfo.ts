@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaceStorageEncryptionKeyInfo(args: GetNamespaceStorageEncryptionKeyInfoArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceStorageEncryptionKeyInfoResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", {
         "namespace": args.namespace,
@@ -71,7 +70,10 @@ export interface GetNamespaceStorageEncryptionKeyInfoResult {
  * ```
  */
 export function getNamespaceStorageEncryptionKeyInfoOutput(args: GetNamespaceStorageEncryptionKeyInfoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageEncryptionKeyInfoResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaceStorageEncryptionKeyInfo(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", {
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

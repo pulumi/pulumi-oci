@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProfileLevel(args: GetProfileLevelArgs, opts?: pulumi.InvokeOptions): Promise<GetProfileLevelResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getProfileLevel:getProfileLevel", {
         "compartmentId": args.compartmentId,
@@ -103,7 +102,13 @@ export interface GetProfileLevelResult {
  * ```
  */
 export function getProfileLevelOutput(args: GetProfileLevelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProfileLevelResult> {
-    return pulumi.output(args).apply((a: any) => getProfileLevel(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getProfileLevel:getProfileLevel", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "name": args.name,
+        "recommendationName": args.recommendationName,
+    }, opts);
 }
 
 /**

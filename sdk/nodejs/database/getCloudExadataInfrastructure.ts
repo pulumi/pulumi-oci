@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudExadataInfrastructure(args: GetCloudExadataInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudExadataInfrastructureResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", {
         "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,
@@ -207,7 +206,10 @@ export interface GetCloudExadataInfrastructureResult {
  * ```
  */
 export function getCloudExadataInfrastructureOutput(args: GetCloudExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudExadataInfrastructureResult> {
-    return pulumi.output(args).apply((a: any) => getCloudExadataInfrastructure(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", {
+        "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,
+    }, opts);
 }
 
 /**

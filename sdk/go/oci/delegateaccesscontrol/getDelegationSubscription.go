@@ -89,14 +89,20 @@ type LookupDelegationSubscriptionResult struct {
 
 func LookupDelegationSubscriptionOutput(ctx *pulumi.Context, args LookupDelegationSubscriptionOutputArgs, opts ...pulumi.InvokeOption) LookupDelegationSubscriptionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDelegationSubscriptionResult, error) {
+		ApplyT(func(v interface{}) (LookupDelegationSubscriptionResultOutput, error) {
 			args := v.(LookupDelegationSubscriptionArgs)
-			r, err := LookupDelegationSubscription(ctx, &args, opts...)
-			var s LookupDelegationSubscriptionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDelegationSubscriptionResult
+			secret, err := ctx.InvokePackageRaw("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDelegationSubscriptionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDelegationSubscriptionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDelegationSubscriptionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDelegationSubscriptionResultOutput)
 }
 

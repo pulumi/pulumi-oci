@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVlan(args: GetVlanArgs, opts?: pulumi.InvokeOptions): Promise<GetVlanResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVlan:getVlan", {
         "vlanId": args.vlanId,
@@ -113,7 +112,10 @@ export interface GetVlanResult {
  * ```
  */
 export function getVlanOutput(args: GetVlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVlanResult> {
-    return pulumi.output(args).apply((a: any) => getVlan(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVlan:getVlan", {
+        "vlanId": args.vlanId,
+    }, opts);
 }
 
 /**

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryFileLine(args: GetRepositoryFileLineArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryFileLineResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", {
         "filePath": args.filePath,
@@ -95,7 +94,13 @@ export interface GetRepositoryFileLineResult {
  * ```
  */
 export function getRepositoryFileLineOutput(args: GetRepositoryFileLineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryFileLineResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryFileLine(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", {
+        "filePath": args.filePath,
+        "repositoryId": args.repositoryId,
+        "revision": args.revision,
+        "startLineNumber": args.startLineNumber,
+    }, opts);
 }
 
 /**

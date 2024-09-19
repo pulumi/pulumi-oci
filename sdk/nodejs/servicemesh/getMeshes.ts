@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMeshes(args: GetMeshesArgs, opts?: pulumi.InvokeOptions): Promise<GetMeshesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getMeshes:getMeshes", {
         "compartmentId": args.compartmentId,
@@ -106,7 +105,14 @@ export interface GetMeshesResult {
  * ```
  */
 export function getMeshesOutput(args: GetMeshesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMeshesResult> {
-    return pulumi.output(args).apply((a: any) => getMeshes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getMeshes:getMeshes", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

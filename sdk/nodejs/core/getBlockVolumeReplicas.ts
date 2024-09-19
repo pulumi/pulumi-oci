@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getBlockVolumeReplicas(args?: GetBlockVolumeReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockVolumeReplicasResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", {
         "availabilityDomain": args.availabilityDomain,
@@ -119,7 +118,16 @@ export interface GetBlockVolumeReplicasResult {
  * ```
  */
 export function getBlockVolumeReplicasOutput(args?: GetBlockVolumeReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockVolumeReplicasResult> {
-    return pulumi.output(args).apply((a: any) => getBlockVolumeReplicas(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "volumeGroupReplicaId": args.volumeGroupReplicaId,
+    }, opts);
 }
 
 /**

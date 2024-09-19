@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemStoragePerformances(args: GetDbSystemStoragePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemStoragePerformancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", {
         "filters": args.filters,
@@ -87,7 +86,12 @@ export interface GetDbSystemStoragePerformancesResult {
  * ```
  */
 export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePerformancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemStoragePerformancesResult> {
-    return pulumi.output(args).apply((a: any) => getDbSystemStoragePerformances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", {
+        "filters": args.filters,
+        "shapeType": args.shapeType,
+        "storageManagement": args.storageManagement,
+    }, opts);
 }
 
 /**

@@ -93,14 +93,20 @@ type LookupDataSafePrivateEndpointResult struct {
 
 func LookupDataSafePrivateEndpointOutput(ctx *pulumi.Context, args LookupDataSafePrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupDataSafePrivateEndpointResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDataSafePrivateEndpointResult, error) {
+		ApplyT(func(v interface{}) (LookupDataSafePrivateEndpointResultOutput, error) {
 			args := v.(LookupDataSafePrivateEndpointArgs)
-			r, err := LookupDataSafePrivateEndpoint(ctx, &args, opts...)
-			var s LookupDataSafePrivateEndpointResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDataSafePrivateEndpointResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDataSafePrivateEndpointResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDataSafePrivateEndpointResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDataSafePrivateEndpointResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDataSafePrivateEndpointResultOutput)
 }
 

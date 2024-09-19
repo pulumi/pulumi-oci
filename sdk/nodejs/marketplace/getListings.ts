@@ -48,7 +48,6 @@ import * as utilities from "../utilities";
  */
 export function getListings(args?: GetListingsArgs, opts?: pulumi.InvokeOptions): Promise<GetListingsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getListings:getListings", {
         "categories": args.categories,
@@ -192,7 +191,22 @@ export interface GetListingsResult {
  * ```
  */
 export function getListingsOutput(args?: GetListingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingsResult> {
-    return pulumi.output(args).apply((a: any) => getListings(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Marketplace/getListings:getListings", {
+        "categories": args.categories,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "imageId": args.imageId,
+        "isFeatured": args.isFeatured,
+        "listingId": args.listingId,
+        "listingTypes": args.listingTypes,
+        "names": args.names,
+        "operatingSystems": args.operatingSystems,
+        "packageType": args.packageType,
+        "pricings": args.pricings,
+        "publisherId": args.publisherId,
+    }, opts);
 }
 
 /**

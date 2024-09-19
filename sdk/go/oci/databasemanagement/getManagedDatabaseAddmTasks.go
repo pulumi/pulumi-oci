@@ -79,14 +79,20 @@ type GetManagedDatabaseAddmTasksResult struct {
 
 func GetManagedDatabaseAddmTasksOutput(ctx *pulumi.Context, args GetManagedDatabaseAddmTasksOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseAddmTasksResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseAddmTasksResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseAddmTasksResultOutput, error) {
 			args := v.(GetManagedDatabaseAddmTasksArgs)
-			r, err := GetManagedDatabaseAddmTasks(ctx, &args, opts...)
-			var s GetManagedDatabaseAddmTasksResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseAddmTasksResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseAddmTasksResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseAddmTasksResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseAddmTasksResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseAddmTasksResultOutput)
 }
 

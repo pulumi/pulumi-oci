@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConfiguration(args: GetConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Audit/getConfiguration:getConfiguration", {
         "compartmentId": args.compartmentId,
@@ -66,7 +65,10 @@ export interface GetConfigurationResult {
  * ```
  */
 export function getConfigurationOutput(args: GetConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Audit/getConfiguration:getConfiguration", {
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

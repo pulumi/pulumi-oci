@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobRuns(args: GetJobRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetJobRunsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getJobRuns:getJobRuns", {
         "compartmentId": args.compartmentId,
@@ -128,7 +127,16 @@ export interface GetJobRunsResult {
  * ```
  */
 export function getJobRunsOutput(args: GetJobRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobRunsResult> {
-    return pulumi.output(args).apply((a: any) => getJobRuns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getJobRuns:getJobRuns", {
+        "compartmentId": args.compartmentId,
+        "createdBy": args.createdBy,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "jobId": args.jobId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

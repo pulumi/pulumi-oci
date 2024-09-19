@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOccCustomerGroups(args: GetOccCustomerGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetOccCustomerGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getOccCustomerGroups:getOccCustomerGroups", {
         "compartmentId": args.compartmentId,
@@ -106,7 +105,14 @@ export interface GetOccCustomerGroupsResult {
  * ```
  */
 export function getOccCustomerGroupsOutput(args: GetOccCustomerGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccCustomerGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getOccCustomerGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccCustomerGroups:getOccCustomerGroups", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "status": args.status,
+    }, opts);
 }
 
 /**

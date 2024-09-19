@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeploymentBackup(args: GetDeploymentBackupArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentBackupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", {
         "deploymentBackupId": args.deploymentBackupId,
@@ -152,7 +151,10 @@ export interface GetDeploymentBackupResult {
  * ```
  */
 export function getDeploymentBackupOutput(args: GetDeploymentBackupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentBackupResult> {
-    return pulumi.output(args).apply((a: any) => getDeploymentBackup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", {
+        "deploymentBackupId": args.deploymentBackupId,
+    }, opts);
 }
 
 /**

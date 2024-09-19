@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Lists the SQL plan baselines for the specified Managed Database.
  */
 export function getManagedDatabaseSqlPlanBaselines(args: GetManagedDatabaseSqlPlanBaselinesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlPlanBaselinesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", {
         "filters": args.filters,
@@ -139,7 +138,24 @@ export interface GetManagedDatabaseSqlPlanBaselinesResult {
  * Lists the SQL plan baselines for the specified Managed Database.
  */
 export function getManagedDatabaseSqlPlanBaselinesOutput(args: GetManagedDatabaseSqlPlanBaselinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselinesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlPlanBaselines(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", {
+        "filters": args.filters,
+        "isAccepted": args.isAccepted,
+        "isAdaptive": args.isAdaptive,
+        "isAutoPurged": args.isAutoPurged,
+        "isEnabled": args.isEnabled,
+        "isFixed": args.isFixed,
+        "isNeverExecuted": args.isNeverExecuted,
+        "isReproduced": args.isReproduced,
+        "limit": args.limit,
+        "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "origin": args.origin,
+        "planName": args.planName,
+        "sqlHandle": args.sqlHandle,
+        "sqlText": args.sqlText,
+    }, opts);
 }
 
 /**

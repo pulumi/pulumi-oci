@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterPlacementGroup(args: GetClusterPlacementGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterPlacementGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ClusterPlacementGroups/getClusterPlacementGroup:getClusterPlacementGroup", {
         "clusterPlacementGroupId": args.clusterPlacementGroupId,
@@ -124,7 +123,10 @@ export interface GetClusterPlacementGroupResult {
  * ```
  */
 export function getClusterPlacementGroupOutput(args: GetClusterPlacementGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterPlacementGroupResult> {
-    return pulumi.output(args).apply((a: any) => getClusterPlacementGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ClusterPlacementGroups/getClusterPlacementGroup:getClusterPlacementGroup", {
+        "clusterPlacementGroupId": args.clusterPlacementGroupId,
+    }, opts);
 }
 
 /**

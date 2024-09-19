@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOnPremiseVantagePointWorker(args: GetOnPremiseVantagePointWorkerArgs, opts?: pulumi.InvokeOptions): Promise<GetOnPremiseVantagePointWorkerResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", {
         "apmDomainId": args.apmDomainId,
@@ -160,7 +159,12 @@ export interface GetOnPremiseVantagePointWorkerResult {
  * ```
  */
 export function getOnPremiseVantagePointWorkerOutput(args: GetOnPremiseVantagePointWorkerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnPremiseVantagePointWorkerResult> {
-    return pulumi.output(args).apply((a: any) => getOnPremiseVantagePointWorker(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", {
+        "apmDomainId": args.apmDomainId,
+        "onPremiseVantagePointId": args.onPremiseVantagePointId,
+        "workerId": args.workerId,
+    }, opts);
 }
 
 /**

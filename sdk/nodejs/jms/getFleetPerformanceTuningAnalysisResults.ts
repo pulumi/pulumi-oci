@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetPerformanceTuningAnalysisResults(args: GetFleetPerformanceTuningAnalysisResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetPerformanceTuningAnalysisResultsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", {
         "applicationId": args.applicationId,
@@ -126,7 +125,16 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
  * ```
  */
 export function getFleetPerformanceTuningAnalysisResultsOutput(args: GetFleetPerformanceTuningAnalysisResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetPerformanceTuningAnalysisResultsResult> {
-    return pulumi.output(args).apply((a: any) => getFleetPerformanceTuningAnalysisResults(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", {
+        "applicationId": args.applicationId,
+        "filters": args.filters,
+        "fleetId": args.fleetId,
+        "hostName": args.hostName,
+        "managedInstanceId": args.managedInstanceId,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

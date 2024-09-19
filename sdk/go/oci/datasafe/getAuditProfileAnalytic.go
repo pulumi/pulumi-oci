@@ -91,14 +91,20 @@ type GetAuditProfileAnalyticResult struct {
 
 func GetAuditProfileAnalyticOutput(ctx *pulumi.Context, args GetAuditProfileAnalyticOutputArgs, opts ...pulumi.InvokeOption) GetAuditProfileAnalyticResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAuditProfileAnalyticResult, error) {
+		ApplyT(func(v interface{}) (GetAuditProfileAnalyticResultOutput, error) {
 			args := v.(GetAuditProfileAnalyticArgs)
-			r, err := GetAuditProfileAnalytic(ctx, &args, opts...)
-			var s GetAuditProfileAnalyticResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAuditProfileAnalyticResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args, &rv, "", opts...)
+			if err != nil {
+				return GetAuditProfileAnalyticResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAuditProfileAnalyticResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAuditProfileAnalyticResultOutput), nil
+			}
+			return output, nil
 		}).(GetAuditProfileAnalyticResultOutput)
 }
 

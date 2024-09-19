@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIngressGatewayRouteTables(args: GetIngressGatewayRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetIngressGatewayRouteTablesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,15 @@ export interface GetIngressGatewayRouteTablesResult {
  * ```
  */
 export function getIngressGatewayRouteTablesOutput(args: GetIngressGatewayRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIngressGatewayRouteTablesResult> {
-    return pulumi.output(args).apply((a: any) => getIngressGatewayRouteTables(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "ingressGatewayId": args.ingressGatewayId,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -80,14 +80,20 @@ type LookupConnectionAssignmentResult struct {
 
 func LookupConnectionAssignmentOutput(ctx *pulumi.Context, args LookupConnectionAssignmentOutputArgs, opts ...pulumi.InvokeOption) LookupConnectionAssignmentResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupConnectionAssignmentResult, error) {
+		ApplyT(func(v interface{}) (LookupConnectionAssignmentResultOutput, error) {
 			args := v.(LookupConnectionAssignmentArgs)
-			r, err := LookupConnectionAssignment(ctx, &args, opts...)
-			var s LookupConnectionAssignmentResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupConnectionAssignmentResult
+			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getConnectionAssignment:getConnectionAssignment", args, &rv, "", opts...)
+			if err != nil {
+				return LookupConnectionAssignmentResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupConnectionAssignmentResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupConnectionAssignmentResultOutput), nil
+			}
+			return output, nil
 		}).(LookupConnectionAssignmentResultOutput)
 }
 

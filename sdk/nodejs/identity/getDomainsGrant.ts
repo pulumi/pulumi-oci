@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsGrant(args: GetDomainsGrantArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsGrantResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsGrant:getDomainsGrant", {
         "attributeSets": args.attributeSets,
@@ -194,7 +193,15 @@ export interface GetDomainsGrantResult {
  * ```
  */
 export function getDomainsGrantOutput(args: GetDomainsGrantOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsGrantResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsGrant(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsGrant:getDomainsGrant", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "grantId": args.grantId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

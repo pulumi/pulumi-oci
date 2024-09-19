@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsResourceCategoriesList(args: GetLogAnalyticsResourceCategoriesListArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsResourceCategoriesListResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", {
         "namespace": args.namespace,
@@ -99,7 +98,13 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
  * ```
  */
 export function getLogAnalyticsResourceCategoriesListOutput(args: GetLogAnalyticsResourceCategoriesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsResourceCategoriesListResult> {
-    return pulumi.output(args).apply((a: any) => getLogAnalyticsResourceCategoriesList(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", {
+        "namespace": args.namespace,
+        "resourceCategories": args.resourceCategories,
+        "resourceIds": args.resourceIds,
+        "resourceTypes": args.resourceTypes,
+    }, opts);
 }
 
 /**

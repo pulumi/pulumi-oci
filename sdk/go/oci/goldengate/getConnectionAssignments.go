@@ -89,14 +89,20 @@ type GetConnectionAssignmentsResult struct {
 
 func GetConnectionAssignmentsOutput(ctx *pulumi.Context, args GetConnectionAssignmentsOutputArgs, opts ...pulumi.InvokeOption) GetConnectionAssignmentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetConnectionAssignmentsResult, error) {
+		ApplyT(func(v interface{}) (GetConnectionAssignmentsResultOutput, error) {
 			args := v.(GetConnectionAssignmentsArgs)
-			r, err := GetConnectionAssignments(ctx, &args, opts...)
-			var s GetConnectionAssignmentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetConnectionAssignmentsResult
+			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", args, &rv, "", opts...)
+			if err != nil {
+				return GetConnectionAssignmentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetConnectionAssignmentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetConnectionAssignmentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetConnectionAssignmentsResultOutput)
 }
 

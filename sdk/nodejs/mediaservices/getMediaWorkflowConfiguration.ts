@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMediaWorkflowConfiguration(args: GetMediaWorkflowConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaWorkflowConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getMediaWorkflowConfiguration:getMediaWorkflowConfiguration", {
         "mediaWorkflowConfigurationId": args.mediaWorkflowConfigurationId,
@@ -112,7 +111,10 @@ export interface GetMediaWorkflowConfigurationResult {
  * ```
  */
 export function getMediaWorkflowConfigurationOutput(args: GetMediaWorkflowConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaWorkflowConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getMediaWorkflowConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaWorkflowConfiguration:getMediaWorkflowConfiguration", {
+        "mediaWorkflowConfigurationId": args.mediaWorkflowConfigurationId,
+    }, opts);
 }
 
 /**

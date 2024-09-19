@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResponderRecipe(args: GetResponderRecipeArgs, opts?: pulumi.InvokeOptions): Promise<GetResponderRecipeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getResponderRecipe:getResponderRecipe", {
         "responderRecipeId": args.responderRecipeId,
@@ -123,7 +122,10 @@ export interface GetResponderRecipeResult {
  * ```
  */
 export function getResponderRecipeOutput(args: GetResponderRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResponderRecipeResult> {
-    return pulumi.output(args).apply((a: any) => getResponderRecipe(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getResponderRecipe:getResponderRecipe", {
+        "responderRecipeId": args.responderRecipeId,
+    }, opts);
 }
 
 /**

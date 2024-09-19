@@ -77,14 +77,20 @@ type GetSecurityAssessmentComparisonResult struct {
 
 func GetSecurityAssessmentComparisonOutput(ctx *pulumi.Context, args GetSecurityAssessmentComparisonOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentComparisonResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentComparisonResult, error) {
+		ApplyT(func(v interface{}) (GetSecurityAssessmentComparisonResultOutput, error) {
 			args := v.(GetSecurityAssessmentComparisonArgs)
-			r, err := GetSecurityAssessmentComparison(ctx, &args, opts...)
-			var s GetSecurityAssessmentComparisonResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSecurityAssessmentComparisonResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", args, &rv, "", opts...)
+			if err != nil {
+				return GetSecurityAssessmentComparisonResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSecurityAssessmentComparisonResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSecurityAssessmentComparisonResultOutput), nil
+			}
+			return output, nil
 		}).(GetSecurityAssessmentComparisonResultOutput)
 }
 

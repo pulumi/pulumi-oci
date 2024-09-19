@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEncryptedData(args: GetEncryptedDataArgs, opts?: pulumi.InvokeOptions): Promise<GetEncryptedDataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getEncryptedData:getEncryptedData", {
         "associatedData": args.associatedData,
@@ -97,7 +96,13 @@ export interface GetEncryptedDataResult {
  * ```
  */
 export function getEncryptedDataOutput(args: GetEncryptedDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEncryptedDataResult> {
-    return pulumi.output(args).apply((a: any) => getEncryptedData(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getEncryptedData:getEncryptedData", {
+        "associatedData": args.associatedData,
+        "cryptoEndpoint": args.cryptoEndpoint,
+        "keyId": args.keyId,
+        "plaintext": args.plaintext,
+    }, opts);
 }
 
 /**

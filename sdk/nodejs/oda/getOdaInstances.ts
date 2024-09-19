@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOdaInstances(args: GetOdaInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetOdaInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Oda/getOdaInstances:getOdaInstances", {
         "compartmentId": args.compartmentId,
@@ -109,7 +108,13 @@ export interface GetOdaInstancesResult {
  * ```
  */
 export function getOdaInstancesOutput(args: GetOdaInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getOdaInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Oda/getOdaInstances:getOdaInstances", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

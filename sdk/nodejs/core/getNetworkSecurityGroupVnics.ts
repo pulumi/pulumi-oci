@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkSecurityGroupVnics(args: GetNetworkSecurityGroupVnicsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupVnicsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetNetworkSecurityGroupVnicsResult {
  * ```
  */
 export function getNetworkSecurityGroupVnicsOutput(args: GetNetworkSecurityGroupVnicsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupVnicsResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkSecurityGroupVnics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", {
+        "filters": args.filters,
+        "networkSecurityGroupId": args.networkSecurityGroupId,
+    }, opts);
 }
 
 /**

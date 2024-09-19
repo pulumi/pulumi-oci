@@ -80,14 +80,20 @@ type GetApmDomainsResult struct {
 
 func GetApmDomainsOutput(ctx *pulumi.Context, args GetApmDomainsOutputArgs, opts ...pulumi.InvokeOption) GetApmDomainsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetApmDomainsResult, error) {
+		ApplyT(func(v interface{}) (GetApmDomainsResultOutput, error) {
 			args := v.(GetApmDomainsArgs)
-			r, err := GetApmDomains(ctx, &args, opts...)
-			var s GetApmDomainsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetApmDomainsResult
+			secret, err := ctx.InvokePackageRaw("oci:Apm/getApmDomains:getApmDomains", args, &rv, "", opts...)
+			if err != nil {
+				return GetApmDomainsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetApmDomainsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetApmDomainsResultOutput), nil
+			}
+			return output, nil
 		}).(GetApmDomainsResultOutput)
 }
 

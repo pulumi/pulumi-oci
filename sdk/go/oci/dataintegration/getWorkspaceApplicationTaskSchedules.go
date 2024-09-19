@@ -98,14 +98,20 @@ type GetWorkspaceApplicationTaskSchedulesResult struct {
 
 func GetWorkspaceApplicationTaskSchedulesOutput(ctx *pulumi.Context, args GetWorkspaceApplicationTaskSchedulesOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceApplicationTaskSchedulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceApplicationTaskSchedulesResult, error) {
+		ApplyT(func(v interface{}) (GetWorkspaceApplicationTaskSchedulesResultOutput, error) {
 			args := v.(GetWorkspaceApplicationTaskSchedulesArgs)
-			r, err := GetWorkspaceApplicationTaskSchedules(ctx, &args, opts...)
-			var s GetWorkspaceApplicationTaskSchedulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetWorkspaceApplicationTaskSchedulesResult
+			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", args, &rv, "", opts...)
+			if err != nil {
+				return GetWorkspaceApplicationTaskSchedulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetWorkspaceApplicationTaskSchedulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetWorkspaceApplicationTaskSchedulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetWorkspaceApplicationTaskSchedulesResultOutput)
 }
 

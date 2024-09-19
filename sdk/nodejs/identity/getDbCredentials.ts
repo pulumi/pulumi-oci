@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbCredentials(args: GetDbCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDbCredentials:getDbCredentials", {
         "filters": args.filters,
@@ -96,7 +95,13 @@ export interface GetDbCredentialsResult {
  * ```
  */
 export function getDbCredentialsOutput(args: GetDbCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getDbCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDbCredentials:getDbCredentials", {
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

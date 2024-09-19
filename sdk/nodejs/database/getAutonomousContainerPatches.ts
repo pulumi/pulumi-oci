@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerPatches(args: GetAutonomousContainerPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerPatchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
@@ -93,7 +92,13 @@ export interface GetAutonomousContainerPatchesResult {
  * ```
  */
 export function getAutonomousContainerPatchesOutput(args: GetAutonomousContainerPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerPatchesResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousContainerPatches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", {
+        "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
+        "autonomousPatchType": args.autonomousPatchType,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedAiCluster(args: GetDedicatedAiClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedAiClusterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", {
         "dedicatedAiClusterId": args.dedicatedAiClusterId,
@@ -81,7 +80,10 @@ export interface GetDedicatedAiClusterResult {
  * ```
  */
 export function getDedicatedAiClusterOutput(args: GetDedicatedAiClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedAiClusterResult> {
-    return pulumi.output(args).apply((a: any) => getDedicatedAiCluster(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", {
+        "dedicatedAiClusterId": args.dedicatedAiClusterId,
+    }, opts);
 }
 
 /**

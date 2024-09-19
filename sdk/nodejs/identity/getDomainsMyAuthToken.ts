@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyAuthToken(args: GetDomainsMyAuthTokenArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyAuthTokenResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyAuthToken:getDomainsMyAuthToken", {
         "authorization": args.authorization,
@@ -155,7 +154,13 @@ export interface GetDomainsMyAuthTokenResult {
  * ```
  */
 export function getDomainsMyAuthTokenOutput(args: GetDomainsMyAuthTokenOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyAuthTokenResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyAuthToken(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyAuthToken:getDomainsMyAuthToken", {
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myAuthTokenId": args.myAuthTokenId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

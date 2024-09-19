@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsCustomerSecretKeys(args: GetDomainsCustomerSecretKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsCustomerSecretKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys", {
         "attributeSets": args.attributeSets,
@@ -142,7 +141,20 @@ export interface GetDomainsCustomerSecretKeysResult {
  * ```
  */
 export function getDomainsCustomerSecretKeysOutput(args: GetDomainsCustomerSecretKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsCustomerSecretKeysResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsCustomerSecretKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "customerSecretKeyCount": args.customerSecretKeyCount,
+        "customerSecretKeyFilter": args.customerSecretKeyFilter,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

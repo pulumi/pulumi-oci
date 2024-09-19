@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSteeringPolicies(args: GetSteeringPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getSteeringPolicies:getSteeringPolicies", {
         "compartmentId": args.compartmentId,
@@ -152,7 +151,19 @@ export interface GetSteeringPoliciesResult {
  * ```
  */
 export function getSteeringPoliciesOutput(args: GetSteeringPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getSteeringPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getSteeringPolicies:getSteeringPolicies", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "healthCheckMonitorId": args.healthCheckMonitorId,
+        "id": args.id,
+        "state": args.state,
+        "template": args.template,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

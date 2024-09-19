@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudAutonomousVmClusters(args: GetCloudAutonomousVmClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudAutonomousVmClustersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", {
         "availabilityDomain": args.availabilityDomain,
@@ -121,7 +120,15 @@ export interface GetCloudAutonomousVmClustersResult {
  * ```
  */
 export function getCloudAutonomousVmClustersOutput(args: GetCloudAutonomousVmClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudAutonomousVmClustersResult> {
-    return pulumi.output(args).apply((a: any) => getCloudAutonomousVmClusters(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", {
+        "availabilityDomain": args.availabilityDomain,
+        "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

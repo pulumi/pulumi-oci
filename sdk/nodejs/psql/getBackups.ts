@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  */
 export function getBackups(args?: GetBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetBackupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getBackups:getBackups", {
         "backupId": args.backupId,
@@ -131,7 +130,18 @@ export interface GetBackupsResult {
  * ```
  */
 export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupsResult> {
-    return pulumi.output(args).apply((a: any) => getBackups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Psql/getBackups:getBackups", {
+        "backupId": args.backupId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+        "timeEnded": args.timeEnded,
+        "timeStarted": args.timeStarted,
+    }, opts);
 }
 
 /**

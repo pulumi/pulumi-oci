@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOccHandoverResourceBlockDetails(args: GetOccHandoverResourceBlockDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetOccHandoverResourceBlockDetailsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getOccHandoverResourceBlockDetails:getOccHandoverResourceBlockDetails", {
         "filters": args.filters,
@@ -82,7 +81,12 @@ export interface GetOccHandoverResourceBlockDetailsResult {
  * ```
  */
 export function getOccHandoverResourceBlockDetailsOutput(args: GetOccHandoverResourceBlockDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccHandoverResourceBlockDetailsResult> {
-    return pulumi.output(args).apply((a: any) => getOccHandoverResourceBlockDetails(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccHandoverResourceBlockDetails:getOccHandoverResourceBlockDetails", {
+        "filters": args.filters,
+        "hostId": args.hostId,
+        "occHandoverResourceBlockId": args.occHandoverResourceBlockId,
+    }, opts);
 }
 
 /**

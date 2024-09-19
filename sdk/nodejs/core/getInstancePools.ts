@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstancePools(args: GetInstancePoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstancePoolsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstancePools:getInstancePools", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetInstancePoolsResult {
  * ```
  */
 export function getInstancePoolsOutput(args: GetInstancePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancePoolsResult> {
-    return pulumi.output(args).apply((a: any) => getInstancePools(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstancePools:getInstancePools", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaceRulesSummary(args: GetNamespaceRulesSummaryArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceRulesSummaryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", {
         "compartmentId": args.compartmentId,
@@ -85,7 +84,11 @@ export interface GetNamespaceRulesSummaryResult {
  * ```
  */
 export function getNamespaceRulesSummaryOutput(args: GetNamespaceRulesSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceRulesSummaryResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaceRulesSummary(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", {
+        "compartmentId": args.compartmentId,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

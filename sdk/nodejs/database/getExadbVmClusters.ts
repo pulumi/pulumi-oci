@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadbVmClusters(args: GetExadbVmClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetExadbVmClustersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadbVmClusters:getExadbVmClusters", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetExadbVmClustersResult {
  * ```
  */
 export function getExadbVmClustersOutput(args: GetExadbVmClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadbVmClustersResult> {
-    return pulumi.output(args).apply((a: any) => getExadbVmClusters(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExadbVmClusters:getExadbVmClusters", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "exascaleDbStorageVaultId": args.exascaleDbStorageVaultId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

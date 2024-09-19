@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeGroupReplica(args: GetVolumeGroupReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupReplicaResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeGroupReplica:getVolumeGroupReplica", {
         "volumeGroupReplicaId": args.volumeGroupReplicaId,
@@ -111,7 +110,10 @@ export interface GetVolumeGroupReplicaResult {
  * ```
  */
 export function getVolumeGroupReplicaOutput(args: GetVolumeGroupReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupReplicaResult> {
-    return pulumi.output(args).apply((a: any) => getVolumeGroupReplica(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVolumeGroupReplica:getVolumeGroupReplica", {
+        "volumeGroupReplicaId": args.volumeGroupReplicaId,
+    }, opts);
 }
 
 /**

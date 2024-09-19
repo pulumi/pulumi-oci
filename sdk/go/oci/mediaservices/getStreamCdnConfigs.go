@@ -83,14 +83,20 @@ type GetStreamCdnConfigsResult struct {
 
 func GetStreamCdnConfigsOutput(ctx *pulumi.Context, args GetStreamCdnConfigsOutputArgs, opts ...pulumi.InvokeOption) GetStreamCdnConfigsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetStreamCdnConfigsResult, error) {
+		ApplyT(func(v interface{}) (GetStreamCdnConfigsResultOutput, error) {
 			args := v.(GetStreamCdnConfigsArgs)
-			r, err := GetStreamCdnConfigs(ctx, &args, opts...)
-			var s GetStreamCdnConfigsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetStreamCdnConfigsResult
+			secret, err := ctx.InvokePackageRaw("oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs", args, &rv, "", opts...)
+			if err != nil {
+				return GetStreamCdnConfigsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetStreamCdnConfigsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetStreamCdnConfigsResultOutput), nil
+			}
+			return output, nil
 		}).(GetStreamCdnConfigsResultOutput)
 }
 

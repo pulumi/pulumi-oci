@@ -10,7 +10,6 @@ import * as utilities from "../utilities";
  * Get Mapped Secret by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyMappedSecret(args: GetNetworkFirewallPolicyMappedSecretArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyMappedSecretResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", {
         "name": args.name,
@@ -71,7 +70,11 @@ export interface GetNetworkFirewallPolicyMappedSecretResult {
  * Get Mapped Secret by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyMappedSecretOutput(args: GetNetworkFirewallPolicyMappedSecretOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyMappedSecretResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyMappedSecret(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", {
+        "name": args.name,
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+    }, opts);
 }
 
 /**

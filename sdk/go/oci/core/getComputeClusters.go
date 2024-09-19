@@ -81,14 +81,20 @@ type GetComputeClustersResult struct {
 
 func GetComputeClustersOutput(ctx *pulumi.Context, args GetComputeClustersOutputArgs, opts ...pulumi.InvokeOption) GetComputeClustersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetComputeClustersResult, error) {
+		ApplyT(func(v interface{}) (GetComputeClustersResultOutput, error) {
 			args := v.(GetComputeClustersArgs)
-			r, err := GetComputeClusters(ctx, &args, opts...)
-			var s GetComputeClustersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetComputeClustersResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeClusters:getComputeClusters", args, &rv, "", opts...)
+			if err != nil {
+				return GetComputeClustersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetComputeClustersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetComputeClustersResultOutput), nil
+			}
+			return output, nil
 		}).(GetComputeClustersResultOutput)
 }
 

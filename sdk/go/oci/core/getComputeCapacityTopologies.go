@@ -81,14 +81,20 @@ type GetComputeCapacityTopologiesResult struct {
 
 func GetComputeCapacityTopologiesOutput(ctx *pulumi.Context, args GetComputeCapacityTopologiesOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityTopologiesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetComputeCapacityTopologiesResult, error) {
+		ApplyT(func(v interface{}) (GetComputeCapacityTopologiesResultOutput, error) {
 			args := v.(GetComputeCapacityTopologiesArgs)
-			r, err := GetComputeCapacityTopologies(ctx, &args, opts...)
-			var s GetComputeCapacityTopologiesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetComputeCapacityTopologiesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", args, &rv, "", opts...)
+			if err != nil {
+				return GetComputeCapacityTopologiesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetComputeCapacityTopologiesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetComputeCapacityTopologiesResultOutput), nil
+			}
+			return output, nil
 		}).(GetComputeCapacityTopologiesResultOutput)
 }
 

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudExadataInfrastructures(args: GetCloudExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudExadataInfrastructuresResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", {
         "clusterPlacementGroupId": args.clusterPlacementGroupId,
@@ -110,7 +109,14 @@ export interface GetCloudExadataInfrastructuresResult {
  * ```
  */
 export function getCloudExadataInfrastructuresOutput(args: GetCloudExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudExadataInfrastructuresResult> {
-    return pulumi.output(args).apply((a: any) => getCloudExadataInfrastructures(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", {
+        "clusterPlacementGroupId": args.clusterPlacementGroupId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

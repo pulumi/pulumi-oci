@@ -70,14 +70,20 @@ type GetRetrievePasswordResult struct {
 
 func GetRetrievePasswordOutput(ctx *pulumi.Context, args GetRetrievePasswordOutputArgs, opts ...pulumi.InvokeOption) GetRetrievePasswordResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRetrievePasswordResult, error) {
+		ApplyT(func(v interface{}) (GetRetrievePasswordResultOutput, error) {
 			args := v.(GetRetrievePasswordArgs)
-			r, err := GetRetrievePassword(ctx, &args, opts...)
-			var s GetRetrievePasswordResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRetrievePasswordResult
+			secret, err := ctx.InvokePackageRaw("oci:Ocvp/getRetrievePassword:getRetrievePassword", args, &rv, "", opts...)
+			if err != nil {
+				return GetRetrievePasswordResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRetrievePasswordResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRetrievePasswordResultOutput), nil
+			}
+			return output, nil
 		}).(GetRetrievePasswordResultOutput)
 }
 

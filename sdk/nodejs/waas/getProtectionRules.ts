@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectionRules(args: GetProtectionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getProtectionRules:getProtectionRules", {
         "actions": args.actions,
@@ -95,7 +94,13 @@ export interface GetProtectionRulesResult {
  * ```
  */
 export function getProtectionRulesOutput(args: GetProtectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRulesResult> {
-    return pulumi.output(args).apply((a: any) => getProtectionRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waas/getProtectionRules:getProtectionRules", {
+        "actions": args.actions,
+        "filters": args.filters,
+        "modSecurityRuleIds": args.modSecurityRuleIds,
+        "waasPolicyId": args.waasPolicyId,
+    }, opts);
 }
 
 /**

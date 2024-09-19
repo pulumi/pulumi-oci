@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVmHosts(args: GetDedicatedVmHostsArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", {
         "availabilityDomain": args.availabilityDomain,
@@ -140,7 +139,17 @@ export interface GetDedicatedVmHostsResult {
  * ```
  */
 export function getDedicatedVmHostsOutput(args: GetDedicatedVmHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostsResult> {
-    return pulumi.output(args).apply((a: any) => getDedicatedVmHosts(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "instanceShapeName": args.instanceShapeName,
+        "remainingMemoryInGbsGreaterThanOrEqualTo": args.remainingMemoryInGbsGreaterThanOrEqualTo,
+        "remainingOcpusGreaterThanOrEqualTo": args.remainingOcpusGreaterThanOrEqualTo,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -70,14 +70,20 @@ type GetManagedDatabaseTableStatisticsResult struct {
 
 func GetManagedDatabaseTableStatisticsOutput(ctx *pulumi.Context, args GetManagedDatabaseTableStatisticsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseTableStatisticsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseTableStatisticsResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseTableStatisticsResultOutput, error) {
 			args := v.(GetManagedDatabaseTableStatisticsArgs)
-			r, err := GetManagedDatabaseTableStatistics(ctx, &args, opts...)
-			var s GetManagedDatabaseTableStatisticsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseTableStatisticsResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseTableStatisticsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseTableStatisticsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseTableStatisticsResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseTableStatisticsResultOutput)
 }
 

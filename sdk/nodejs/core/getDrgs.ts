@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgs(args: GetDrgsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgs:getDrgs", {
         "compartmentId": args.compartmentId,
@@ -77,7 +76,11 @@ export interface GetDrgsResult {
  * ```
  */
 export function getDrgsOutput(args: GetDrgsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgsResult> {
-    return pulumi.output(args).apply((a: any) => getDrgs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDrgs:getDrgs", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

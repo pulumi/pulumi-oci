@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppCatalogSubscriptions(args: GetAppCatalogSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogSubscriptionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,12 @@ export interface GetAppCatalogSubscriptionsResult {
  * ```
  */
 export function getAppCatalogSubscriptionsOutput(args: GetAppCatalogSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogSubscriptionsResult> {
-    return pulumi.output(args).apply((a: any) => getAppCatalogSubscriptions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "listingId": args.listingId,
+    }, opts);
 }
 
 /**

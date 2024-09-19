@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsDynamicResourceGroup(args: GetDomainsDynamicResourceGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsDynamicResourceGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", {
         "attributeSets": args.attributeSets,
@@ -179,7 +178,15 @@ export interface GetDomainsDynamicResourceGroupResult {
  * ```
  */
 export function getDomainsDynamicResourceGroupOutput(args: GetDomainsDynamicResourceGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsDynamicResourceGroupResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsDynamicResourceGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "dynamicResourceGroupId": args.dynamicResourceGroupId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

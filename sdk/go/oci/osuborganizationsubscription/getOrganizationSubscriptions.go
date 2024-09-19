@@ -77,14 +77,20 @@ type GetOrganizationSubscriptionsResult struct {
 
 func GetOrganizationSubscriptionsOutput(ctx *pulumi.Context, args GetOrganizationSubscriptionsOutputArgs, opts ...pulumi.InvokeOption) GetOrganizationSubscriptionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetOrganizationSubscriptionsResult, error) {
+		ApplyT(func(v interface{}) (GetOrganizationSubscriptionsResultOutput, error) {
 			args := v.(GetOrganizationSubscriptionsArgs)
-			r, err := GetOrganizationSubscriptions(ctx, &args, opts...)
-			var s GetOrganizationSubscriptionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetOrganizationSubscriptionsResult
+			secret, err := ctx.InvokePackageRaw("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", args, &rv, "", opts...)
+			if err != nil {
+				return GetOrganizationSubscriptionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetOrganizationSubscriptionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetOrganizationSubscriptionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetOrganizationSubscriptionsResultOutput)
 }
 

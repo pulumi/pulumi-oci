@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getControl(args: GetControlArgs, opts?: pulumi.InvokeOptions): Promise<GetControlResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getControl:getControl", {
         "operatorControlId": args.operatorControlId,
@@ -145,7 +144,10 @@ export interface GetControlResult {
  * ```
  */
 export function getControlOutput(args: GetControlOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlResult> {
-    return pulumi.output(args).apply((a: any) => getControl(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getControl:getControl", {
+        "operatorControlId": args.operatorControlId,
+    }, opts);
 }
 
 /**

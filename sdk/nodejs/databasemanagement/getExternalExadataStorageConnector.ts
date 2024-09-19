@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalExadataStorageConnector(args: GetExternalExadataStorageConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageConnectorResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", {
         "externalExadataStorageConnectorId": args.externalExadataStorageConnectorId,
@@ -133,7 +132,10 @@ export interface GetExternalExadataStorageConnectorResult {
  * ```
  */
 export function getExternalExadataStorageConnectorOutput(args: GetExternalExadataStorageConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageConnectorResult> {
-    return pulumi.output(args).apply((a: any) => getExternalExadataStorageConnector(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", {
+        "externalExadataStorageConnectorId": args.externalExadataStorageConnectorId,
+    }, opts);
 }
 
 /**

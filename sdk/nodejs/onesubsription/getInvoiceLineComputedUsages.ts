@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvoiceLineComputedUsages(args: GetInvoiceLineComputedUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoiceLineComputedUsagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", {
         "compartmentId": args.compartmentId,
@@ -90,7 +89,13 @@ export interface GetInvoiceLineComputedUsagesResult {
  * ```
  */
 export function getInvoiceLineComputedUsagesOutput(args: GetInvoiceLineComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoiceLineComputedUsagesResult> {
-    return pulumi.output(args).apply((a: any) => getInvoiceLineComputedUsages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", {
+        "compartmentId": args.compartmentId,
+        "fields": args.fields,
+        "filters": args.filters,
+        "invoiceLineId": args.invoiceLineId,
+    }, opts);
 }
 
 /**

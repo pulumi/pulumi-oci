@@ -84,14 +84,20 @@ type GetKnowledgebasesResult struct {
 
 func GetKnowledgebasesOutput(ctx *pulumi.Context, args GetKnowledgebasesOutputArgs, opts ...pulumi.InvokeOption) GetKnowledgebasesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetKnowledgebasesResult, error) {
+		ApplyT(func(v interface{}) (GetKnowledgebasesResultOutput, error) {
 			args := v.(GetKnowledgebasesArgs)
-			r, err := GetKnowledgebases(ctx, &args, opts...)
-			var s GetKnowledgebasesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetKnowledgebasesResult
+			secret, err := ctx.InvokePackageRaw("oci:Adm/getKnowledgebases:getKnowledgebases", args, &rv, "", opts...)
+			if err != nil {
+				return GetKnowledgebasesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetKnowledgebasesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetKnowledgebasesResultOutput), nil
+			}
+			return output, nil
 		}).(GetKnowledgebasesResultOutput)
 }
 

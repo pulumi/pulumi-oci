@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseTableStatistics(args: GetManagedDatabaseTableStatisticsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseTableStatisticsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", {
         "filters": args.filters,
@@ -76,7 +75,11 @@ export interface GetManagedDatabaseTableStatisticsResult {
  * ```
  */
 export function getManagedDatabaseTableStatisticsOutput(args: GetManagedDatabaseTableStatisticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseTableStatisticsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseTableStatistics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", {
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+    }, opts);
 }
 
 /**

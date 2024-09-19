@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentFamilies(args: GetFusionEnvironmentFamiliesArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentFamiliesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetFusionEnvironmentFamiliesResult {
  * ```
  */
 export function getFusionEnvironmentFamiliesOutput(args: GetFusionEnvironmentFamiliesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamiliesResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentFamilies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

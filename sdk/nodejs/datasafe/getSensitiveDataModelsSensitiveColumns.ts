@@ -39,7 +39,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveDataModelsSensitiveColumns(args: GetSensitiveDataModelsSensitiveColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelsSensitiveColumnsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns", {
         "columnGroup": args.columnGroup,
@@ -233,7 +232,27 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
  * ```
  */
 export function getSensitiveDataModelsSensitiveColumnsOutput(args: GetSensitiveDataModelsSensitiveColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsSensitiveColumnsResult> {
-    return pulumi.output(args).apply((a: any) => getSensitiveDataModelsSensitiveColumns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns", {
+        "columnGroup": args.columnGroup,
+        "columnNames": args.columnNames,
+        "dataTypes": args.dataTypes,
+        "filters": args.filters,
+        "isCaseInSensitive": args.isCaseInSensitive,
+        "objectTypes": args.objectTypes,
+        "objects": args.objects,
+        "parentColumnKeys": args.parentColumnKeys,
+        "relationTypes": args.relationTypes,
+        "schemaNames": args.schemaNames,
+        "sensitiveColumnLifecycleState": args.sensitiveColumnLifecycleState,
+        "sensitiveDataModelId": args.sensitiveDataModelId,
+        "sensitiveTypeIds": args.sensitiveTypeIds,
+        "statuses": args.statuses,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+        "timeUpdatedGreaterThanOrEqualTo": args.timeUpdatedGreaterThanOrEqualTo,
+        "timeUpdatedLessThan": args.timeUpdatedLessThan,
+    }, opts);
 }
 
 /**

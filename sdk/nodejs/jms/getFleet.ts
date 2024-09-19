@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleet(args: GetFleetArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleet:getFleet", {
         "fleetId": args.fleetId,
@@ -135,7 +134,10 @@ export interface GetFleetResult {
  * ```
  */
 export function getFleetOutput(args: GetFleetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetResult> {
-    return pulumi.output(args).apply((a: any) => getFleet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleet:getFleet", {
+        "fleetId": args.fleetId,
+    }, opts);
 }
 
 /**

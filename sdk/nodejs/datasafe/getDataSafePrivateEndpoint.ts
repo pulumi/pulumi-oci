@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSafePrivateEndpoint(args: GetDataSafePrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSafePrivateEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint", {
         "dataSafePrivateEndpointId": args.dataSafePrivateEndpointId,
@@ -121,7 +120,10 @@ export interface GetDataSafePrivateEndpointResult {
  * ```
  */
 export function getDataSafePrivateEndpointOutput(args: GetDataSafePrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafePrivateEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getDataSafePrivateEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint", {
+        "dataSafePrivateEndpointId": args.dataSafePrivateEndpointId,
+    }, opts);
 }
 
 /**

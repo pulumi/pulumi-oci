@@ -91,14 +91,20 @@ type LookupEmailReturnPathResult struct {
 
 func LookupEmailReturnPathOutput(ctx *pulumi.Context, args LookupEmailReturnPathOutputArgs, opts ...pulumi.InvokeOption) LookupEmailReturnPathResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupEmailReturnPathResult, error) {
+		ApplyT(func(v interface{}) (LookupEmailReturnPathResultOutput, error) {
 			args := v.(LookupEmailReturnPathArgs)
-			r, err := LookupEmailReturnPath(ctx, &args, opts...)
-			var s LookupEmailReturnPathResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupEmailReturnPathResult
+			secret, err := ctx.InvokePackageRaw("oci:Email/getEmailReturnPath:getEmailReturnPath", args, &rv, "", opts...)
+			if err != nil {
+				return LookupEmailReturnPathResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupEmailReturnPathResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupEmailReturnPathResultOutput), nil
+			}
+			return output, nil
 		}).(LookupEmailReturnPathResultOutput)
 }
 

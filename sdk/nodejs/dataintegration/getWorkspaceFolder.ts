@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkspaceFolder(args: GetWorkspaceFolderArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceFolderResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", {
         "folderKey": args.folderKey,
@@ -121,7 +120,11 @@ export interface GetWorkspaceFolderResult {
  * ```
  */
 export function getWorkspaceFolderOutput(args: GetWorkspaceFolderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceFolderResult> {
-    return pulumi.output(args).apply((a: any) => getWorkspaceFolder(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", {
+        "folderKey": args.folderKey,
+        "workspaceId": args.workspaceId,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatasets(args: GetDatasetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatasetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataLabellingService/getDatasets:getDatasets", {
         "annotationFormat": args.annotationFormat,
@@ -117,7 +116,15 @@ export interface GetDatasetsResult {
  * ```
  */
 export function getDatasetsOutput(args: GetDatasetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatasetsResult> {
-    return pulumi.output(args).apply((a: any) => getDatasets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataLabellingService/getDatasets:getDatasets", {
+        "annotationFormat": args.annotationFormat,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

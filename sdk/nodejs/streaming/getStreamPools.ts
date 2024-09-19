@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStreamPools(args: GetStreamPoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamPoolsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Streaming/getStreamPools:getStreamPools", {
         "compartmentId": args.compartmentId,
@@ -106,7 +105,14 @@ export interface GetStreamPoolsResult {
  * ```
  */
 export function getStreamPoolsOutput(args: GetStreamPoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamPoolsResult> {
-    return pulumi.output(args).apply((a: any) => getStreamPools(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Streaming/getStreamPools:getStreamPools", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

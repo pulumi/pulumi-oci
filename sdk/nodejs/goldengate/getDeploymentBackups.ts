@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeploymentBackups(args: GetDeploymentBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentBackupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeploymentBackups:getDeploymentBackups", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetDeploymentBackupsResult {
  * ```
  */
 export function getDeploymentBackupsOutput(args: GetDeploymentBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentBackupsResult> {
-    return pulumi.output(args).apply((a: any) => getDeploymentBackups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeploymentBackups:getDeploymentBackups", {
+        "compartmentId": args.compartmentId,
+        "deploymentId": args.deploymentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

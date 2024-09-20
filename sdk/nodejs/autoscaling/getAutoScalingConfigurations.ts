@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutoScalingConfigurations(args: GetAutoScalingConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutoScalingConfigurationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,12 @@ export interface GetAutoScalingConfigurationsResult {
  * ```
  */
 export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {
-    return pulumi.output(args).apply((a: any) => getAutoScalingConfigurations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

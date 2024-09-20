@@ -37,14 +37,20 @@ type GetMigrateToNativeVcnStatusResult struct {
 
 func GetMigrateToNativeVcnStatusOutput(ctx *pulumi.Context, args GetMigrateToNativeVcnStatusOutputArgs, opts ...pulumi.InvokeOption) GetMigrateToNativeVcnStatusResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMigrateToNativeVcnStatusResult, error) {
+		ApplyT(func(v interface{}) (GetMigrateToNativeVcnStatusResultOutput, error) {
 			args := v.(GetMigrateToNativeVcnStatusArgs)
-			r, err := GetMigrateToNativeVcnStatus(ctx, &args, opts...)
-			var s GetMigrateToNativeVcnStatusResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMigrateToNativeVcnStatusResult
+			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args, &rv, "", opts...)
+			if err != nil {
+				return GetMigrateToNativeVcnStatusResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMigrateToNativeVcnStatusResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMigrateToNativeVcnStatusResultOutput), nil
+			}
+			return output, nil
 		}).(GetMigrateToNativeVcnStatusResultOutput)
 }
 

@@ -90,14 +90,20 @@ type GetDomainsAuthenticationFactorSettingsResult struct {
 
 func GetDomainsAuthenticationFactorSettingsOutput(ctx *pulumi.Context, args GetDomainsAuthenticationFactorSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAuthenticationFactorSettingsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsAuthenticationFactorSettingsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsAuthenticationFactorSettingsResultOutput, error) {
 			args := v.(GetDomainsAuthenticationFactorSettingsArgs)
-			r, err := GetDomainsAuthenticationFactorSettings(ctx, &args, opts...)
-			var s GetDomainsAuthenticationFactorSettingsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsAuthenticationFactorSettingsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsAuthenticationFactorSettingsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsAuthenticationFactorSettingsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsAuthenticationFactorSettingsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsAuthenticationFactorSettingsResultOutput)
 }
 

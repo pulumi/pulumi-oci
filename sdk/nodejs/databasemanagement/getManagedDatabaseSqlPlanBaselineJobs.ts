@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlPlanBaselineJobs(args: GetManagedDatabaseSqlPlanBaselineJobsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlPlanBaselineJobsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", {
         "filters": args.filters,
@@ -93,7 +92,13 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
  * ```
  */
 export function getManagedDatabaseSqlPlanBaselineJobsOutput(args: GetManagedDatabaseSqlPlanBaselineJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselineJobsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlPlanBaselineJobs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", {
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+    }, opts);
 }
 
 /**

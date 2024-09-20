@@ -80,14 +80,20 @@ type GetComputeImageCapabilitySchemasResult struct {
 
 func GetComputeImageCapabilitySchemasOutput(ctx *pulumi.Context, args GetComputeImageCapabilitySchemasOutputArgs, opts ...pulumi.InvokeOption) GetComputeImageCapabilitySchemasResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetComputeImageCapabilitySchemasResult, error) {
+		ApplyT(func(v interface{}) (GetComputeImageCapabilitySchemasResultOutput, error) {
 			args := v.(GetComputeImageCapabilitySchemasArgs)
-			r, err := GetComputeImageCapabilitySchemas(ctx, &args, opts...)
-			var s GetComputeImageCapabilitySchemasResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetComputeImageCapabilitySchemasResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeImageCapabilitySchemas:getComputeImageCapabilitySchemas", args, &rv, "", opts...)
+			if err != nil {
+				return GetComputeImageCapabilitySchemasResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetComputeImageCapabilitySchemasResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetComputeImageCapabilitySchemasResultOutput), nil
+			}
+			return output, nil
 		}).(GetComputeImageCapabilitySchemasResultOutput)
 }
 

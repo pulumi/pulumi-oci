@@ -89,14 +89,20 @@ type GetJavaReleasesResult struct {
 
 func GetJavaReleasesOutput(ctx *pulumi.Context, args GetJavaReleasesOutputArgs, opts ...pulumi.InvokeOption) GetJavaReleasesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetJavaReleasesResult, error) {
+		ApplyT(func(v interface{}) (GetJavaReleasesResultOutput, error) {
 			args := v.(GetJavaReleasesArgs)
-			r, err := GetJavaReleases(ctx, &args, opts...)
-			var s GetJavaReleasesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetJavaReleasesResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaReleases:getJavaReleases", args, &rv, "", opts...)
+			if err != nil {
+				return GetJavaReleasesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetJavaReleasesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetJavaReleasesResultOutput), nil
+			}
+			return output, nil
 		}).(GetJavaReleasesResultOutput)
 }
 

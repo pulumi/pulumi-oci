@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInfrastructureTargetVersion(args: GetInfrastructureTargetVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetInfrastructureTargetVersionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", {
         "compartmentId": args.compartmentId,
@@ -97,7 +96,12 @@ export interface GetInfrastructureTargetVersionResult {
  * ```
  */
 export function getInfrastructureTargetVersionOutput(args: GetInfrastructureTargetVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInfrastructureTargetVersionResult> {
-    return pulumi.output(args).apply((a: any) => getInfrastructureTargetVersion(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", {
+        "compartmentId": args.compartmentId,
+        "targetResourceId": args.targetResourceId,
+        "targetResourceType": args.targetResourceType,
+    }, opts);
 }
 
 /**

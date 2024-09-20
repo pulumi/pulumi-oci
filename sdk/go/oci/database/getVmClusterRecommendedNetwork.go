@@ -86,14 +86,20 @@ type GetVmClusterRecommendedNetworkResult struct {
 
 func GetVmClusterRecommendedNetworkOutput(ctx *pulumi.Context, args GetVmClusterRecommendedNetworkOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterRecommendedNetworkResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVmClusterRecommendedNetworkResult, error) {
+		ApplyT(func(v interface{}) (GetVmClusterRecommendedNetworkResultOutput, error) {
 			args := v.(GetVmClusterRecommendedNetworkArgs)
-			r, err := GetVmClusterRecommendedNetwork(ctx, &args, opts...)
-			var s GetVmClusterRecommendedNetworkResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVmClusterRecommendedNetworkResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", args, &rv, "", opts...)
+			if err != nil {
+				return GetVmClusterRecommendedNetworkResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVmClusterRecommendedNetworkResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVmClusterRecommendedNetworkResultOutput), nil
+			}
+			return output, nil
 		}).(GetVmClusterRecommendedNetworkResultOutput)
 }
 

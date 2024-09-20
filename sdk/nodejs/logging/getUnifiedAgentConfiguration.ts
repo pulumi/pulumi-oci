@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUnifiedAgentConfiguration(args: GetUnifiedAgentConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetUnifiedAgentConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", {
         "unifiedAgentConfigurationId": args.unifiedAgentConfigurationId,
@@ -115,7 +114,10 @@ export interface GetUnifiedAgentConfigurationResult {
  * ```
  */
 export function getUnifiedAgentConfigurationOutput(args: GetUnifiedAgentConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUnifiedAgentConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getUnifiedAgentConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", {
+        "unifiedAgentConfigurationId": args.unifiedAgentConfigurationId,
+    }, opts);
 }
 
 /**

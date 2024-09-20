@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  */
 export function getPbfListingTriggers(args?: GetPbfListingTriggersArgs, opts?: pulumi.InvokeOptions): Promise<GetPbfListingTriggersResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", {
         "filters": args.filters,
@@ -78,7 +77,12 @@ export interface GetPbfListingTriggersResult {
  * ```
  */
 export function getPbfListingTriggersOutput(args?: GetPbfListingTriggersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbfListingTriggersResult> {
-    return pulumi.output(args).apply((a: any) => getPbfListingTriggers(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", {
+        "filters": args.filters,
+        "name": args.name,
+    }, opts);
 }
 
 /**

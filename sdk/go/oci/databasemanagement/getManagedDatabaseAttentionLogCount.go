@@ -96,14 +96,20 @@ type GetManagedDatabaseAttentionLogCountResult struct {
 
 func GetManagedDatabaseAttentionLogCountOutput(ctx *pulumi.Context, args GetManagedDatabaseAttentionLogCountOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseAttentionLogCountResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseAttentionLogCountResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseAttentionLogCountResultOutput, error) {
 			args := v.(GetManagedDatabaseAttentionLogCountArgs)
-			r, err := GetManagedDatabaseAttentionLogCount(ctx, &args, opts...)
-			var s GetManagedDatabaseAttentionLogCountResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseAttentionLogCountResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseAttentionLogCountResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseAttentionLogCountResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseAttentionLogCountResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseAttentionLogCountResultOutput)
 }
 

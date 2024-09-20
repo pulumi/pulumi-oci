@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUsageCarbonEmissionsQueries(args: GetUsageCarbonEmissionsQueriesArgs, opts?: pulumi.InvokeOptions): Promise<GetUsageCarbonEmissionsQueriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries", {
         "compartmentId": args.compartmentId,
@@ -77,7 +76,11 @@ export interface GetUsageCarbonEmissionsQueriesResult {
  * ```
  */
 export function getUsageCarbonEmissionsQueriesOutput(args: GetUsageCarbonEmissionsQueriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsageCarbonEmissionsQueriesResult> {
-    return pulumi.output(args).apply((a: any) => getUsageCarbonEmissionsQueries(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

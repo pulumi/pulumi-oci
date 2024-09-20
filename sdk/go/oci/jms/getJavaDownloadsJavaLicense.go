@@ -70,14 +70,20 @@ type GetJavaDownloadsJavaLicenseResult struct {
 
 func GetJavaDownloadsJavaLicenseOutput(ctx *pulumi.Context, args GetJavaDownloadsJavaLicenseOutputArgs, opts ...pulumi.InvokeOption) GetJavaDownloadsJavaLicenseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetJavaDownloadsJavaLicenseResult, error) {
+		ApplyT(func(v interface{}) (GetJavaDownloadsJavaLicenseResultOutput, error) {
 			args := v.(GetJavaDownloadsJavaLicenseArgs)
-			r, err := GetJavaDownloadsJavaLicense(ctx, &args, opts...)
-			var s GetJavaDownloadsJavaLicenseResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetJavaDownloadsJavaLicenseResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", args, &rv, "", opts...)
+			if err != nil {
+				return GetJavaDownloadsJavaLicenseResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetJavaDownloadsJavaLicenseResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetJavaDownloadsJavaLicenseResultOutput), nil
+			}
+			return output, nil
 		}).(GetJavaDownloadsJavaLicenseResultOutput)
 }
 

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalAsmUsers(args: GetExternalAsmUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmUsersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", {
         "externalAsmId": args.externalAsmId,
@@ -82,7 +81,12 @@ export interface GetExternalAsmUsersResult {
  * ```
  */
 export function getExternalAsmUsersOutput(args: GetExternalAsmUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmUsersResult> {
-    return pulumi.output(args).apply((a: any) => getExternalAsmUsers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", {
+        "externalAsmId": args.externalAsmId,
+        "filters": args.filters,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+    }, opts);
 }
 
 /**

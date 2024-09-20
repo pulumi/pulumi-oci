@@ -76,14 +76,20 @@ type GetRemotePeeringConnectionsResult struct {
 
 func GetRemotePeeringConnectionsOutput(ctx *pulumi.Context, args GetRemotePeeringConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetRemotePeeringConnectionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRemotePeeringConnectionsResult, error) {
+		ApplyT(func(v interface{}) (GetRemotePeeringConnectionsResultOutput, error) {
 			args := v.(GetRemotePeeringConnectionsArgs)
-			r, err := GetRemotePeeringConnections(ctx, &args, opts...)
-			var s GetRemotePeeringConnectionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRemotePeeringConnectionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args, &rv, "", opts...)
+			if err != nil {
+				return GetRemotePeeringConnectionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRemotePeeringConnectionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRemotePeeringConnectionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRemotePeeringConnectionsResultOutput)
 }
 

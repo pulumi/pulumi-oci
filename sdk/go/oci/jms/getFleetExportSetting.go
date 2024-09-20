@@ -88,14 +88,20 @@ type GetFleetExportSettingResult struct {
 
 func GetFleetExportSettingOutput(ctx *pulumi.Context, args GetFleetExportSettingOutputArgs, opts ...pulumi.InvokeOption) GetFleetExportSettingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFleetExportSettingResult, error) {
+		ApplyT(func(v interface{}) (GetFleetExportSettingResultOutput, error) {
 			args := v.(GetFleetExportSettingArgs)
-			r, err := GetFleetExportSetting(ctx, &args, opts...)
-			var s GetFleetExportSettingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFleetExportSettingResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleetExportSetting:getFleetExportSetting", args, &rv, "", opts...)
+			if err != nil {
+				return GetFleetExportSettingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFleetExportSettingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFleetExportSettingResultOutput), nil
+			}
+			return output, nil
 		}).(GetFleetExportSettingResultOutput)
 }
 

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrProtectionGroups(args: GetDrProtectionGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrProtectionGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", {
         "compartmentId": args.compartmentId,
@@ -129,7 +128,16 @@ export interface GetDrProtectionGroupsResult {
  * ```
  */
 export function getDrProtectionGroupsOutput(args: GetDrProtectionGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrProtectionGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getDrProtectionGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "drProtectionGroupId": args.drProtectionGroupId,
+        "filters": args.filters,
+        "lifecycleSubState": args.lifecycleSubState,
+        "role": args.role,
+        "state": args.state,
+    }, opts);
 }
 
 /**

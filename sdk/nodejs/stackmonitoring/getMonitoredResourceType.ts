@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitoredResourceType(args: GetMonitoredResourceTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredResourceTypeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType", {
         "monitoredResourceTypeId": args.monitoredResourceTypeId,
@@ -123,7 +122,10 @@ export interface GetMonitoredResourceTypeResult {
  * ```
  */
 export function getMonitoredResourceTypeOutput(args: GetMonitoredResourceTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredResourceTypeResult> {
-    return pulumi.output(args).apply((a: any) => getMonitoredResourceType(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType", {
+        "monitoredResourceTypeId": args.monitoredResourceTypeId,
+    }, opts);
 }
 
 /**

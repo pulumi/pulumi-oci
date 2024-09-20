@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualCircuitPublicPrefixes(args: GetVirtualCircuitPublicPrefixesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitPublicPrefixesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", {
         "filters": args.filters,
@@ -89,7 +88,12 @@ export interface GetVirtualCircuitPublicPrefixesResult {
  * ```
  */
 export function getVirtualCircuitPublicPrefixesOutput(args: GetVirtualCircuitPublicPrefixesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitPublicPrefixesResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualCircuitPublicPrefixes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", {
+        "filters": args.filters,
+        "verificationState": args.verificationState,
+        "virtualCircuitId": args.virtualCircuitId,
+    }, opts);
 }
 
 /**

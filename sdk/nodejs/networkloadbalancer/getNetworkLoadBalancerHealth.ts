@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkLoadBalancerHealth(args: GetNetworkLoadBalancerHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkLoadBalancerHealthResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", {
         "networkLoadBalancerId": args.networkLoadBalancerId,
@@ -93,7 +92,10 @@ export interface GetNetworkLoadBalancerHealthResult {
  * ```
  */
 export function getNetworkLoadBalancerHealthOutput(args: GetNetworkLoadBalancerHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancerHealthResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkLoadBalancerHealth(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", {
+        "networkLoadBalancerId": args.networkLoadBalancerId,
+    }, opts);
 }
 
 /**

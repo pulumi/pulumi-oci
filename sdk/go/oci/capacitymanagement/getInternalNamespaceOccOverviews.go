@@ -90,14 +90,20 @@ type GetInternalNamespaceOccOverviewsResult struct {
 
 func GetInternalNamespaceOccOverviewsOutput(ctx *pulumi.Context, args GetInternalNamespaceOccOverviewsOutputArgs, opts ...pulumi.InvokeOption) GetInternalNamespaceOccOverviewsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInternalNamespaceOccOverviewsResult, error) {
+		ApplyT(func(v interface{}) (GetInternalNamespaceOccOverviewsResultOutput, error) {
 			args := v.(GetInternalNamespaceOccOverviewsArgs)
-			r, err := GetInternalNamespaceOccOverviews(ctx, &args, opts...)
-			var s GetInternalNamespaceOccOverviewsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInternalNamespaceOccOverviewsResult
+			secret, err := ctx.InvokePackageRaw("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", args, &rv, "", opts...)
+			if err != nil {
+				return GetInternalNamespaceOccOverviewsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInternalNamespaceOccOverviewsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInternalNamespaceOccOverviewsResultOutput), nil
+			}
+			return output, nil
 		}).(GetInternalNamespaceOccOverviewsResultOutput)
 }
 

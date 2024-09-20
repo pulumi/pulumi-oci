@@ -69,14 +69,20 @@ type GetSslCipherSuitesResult struct {
 
 func GetSslCipherSuitesOutput(ctx *pulumi.Context, args GetSslCipherSuitesOutputArgs, opts ...pulumi.InvokeOption) GetSslCipherSuitesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSslCipherSuitesResult, error) {
+		ApplyT(func(v interface{}) (GetSslCipherSuitesResultOutput, error) {
 			args := v.(GetSslCipherSuitesArgs)
-			r, err := GetSslCipherSuites(ctx, &args, opts...)
-			var s GetSslCipherSuitesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSslCipherSuitesResult
+			secret, err := ctx.InvokePackageRaw("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args, &rv, "", opts...)
+			if err != nil {
+				return GetSslCipherSuitesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSslCipherSuitesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSslCipherSuitesResultOutput), nil
+			}
+			return output, nil
 		}).(GetSslCipherSuitesResultOutput)
 }
 

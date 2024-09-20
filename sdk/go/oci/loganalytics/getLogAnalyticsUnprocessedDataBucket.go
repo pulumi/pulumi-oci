@@ -74,14 +74,20 @@ type GetLogAnalyticsUnprocessedDataBucketResult struct {
 
 func GetLogAnalyticsUnprocessedDataBucketOutput(ctx *pulumi.Context, args GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsUnprocessedDataBucketResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsUnprocessedDataBucketResult, error) {
+		ApplyT(func(v interface{}) (GetLogAnalyticsUnprocessedDataBucketResultOutput, error) {
 			args := v.(GetLogAnalyticsUnprocessedDataBucketArgs)
-			r, err := GetLogAnalyticsUnprocessedDataBucket(ctx, &args, opts...)
-			var s GetLogAnalyticsUnprocessedDataBucketResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetLogAnalyticsUnprocessedDataBucketResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args, &rv, "", opts...)
+			if err != nil {
+				return GetLogAnalyticsUnprocessedDataBucketResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetLogAnalyticsUnprocessedDataBucketResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetLogAnalyticsUnprocessedDataBucketResultOutput), nil
+			}
+			return output, nil
 		}).(GetLogAnalyticsUnprocessedDataBucketResultOutput)
 }
 

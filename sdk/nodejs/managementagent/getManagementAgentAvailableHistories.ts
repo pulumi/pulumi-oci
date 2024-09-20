@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentAvailableHistories(args: GetManagementAgentAvailableHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentAvailableHistoriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", {
         "filters": args.filters,
@@ -93,7 +92,13 @@ export interface GetManagementAgentAvailableHistoriesResult {
  * ```
  */
 export function getManagementAgentAvailableHistoriesOutput(args: GetManagementAgentAvailableHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentAvailableHistoriesResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgentAvailableHistories(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", {
+        "filters": args.filters,
+        "managementAgentId": args.managementAgentId,
+        "timeAvailabilityStatusEndedGreaterThan": args.timeAvailabilityStatusEndedGreaterThan,
+        "timeAvailabilityStatusStartedLessThan": args.timeAvailabilityStatusStartedLessThan,
+    }, opts);
 }
 
 /**

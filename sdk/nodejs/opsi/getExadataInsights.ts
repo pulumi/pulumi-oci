@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  */
 export function getExadataInsights(args?: GetExadataInsightsArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInsightsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getExadataInsights:getExadataInsights", {
         "compartmentId": args.compartmentId,
@@ -139,7 +138,18 @@ export interface GetExadataInsightsResult {
  * ```
  */
 export function getExadataInsightsOutput(args?: GetExadataInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInsightsResult> {
-    return pulumi.output(args).apply((a: any) => getExadataInsights(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getExadataInsights:getExadataInsights", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "enterpriseManagerBridgeId": args.enterpriseManagerBridgeId,
+        "exadataTypes": args.exadataTypes,
+        "filters": args.filters,
+        "id": args.id,
+        "states": args.states,
+        "statuses": args.statuses,
+    }, opts);
 }
 
 /**

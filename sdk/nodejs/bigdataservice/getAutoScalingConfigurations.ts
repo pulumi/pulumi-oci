@@ -7,7 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getAutoScalingConfigurations(args: GetAutoScalingConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutoScalingConfigurationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", {
         "bdsInstanceId": args.bdsInstanceId,
@@ -45,7 +44,14 @@ export interface GetAutoScalingConfigurationsResult {
     readonly state?: string;
 }
 export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {
-    return pulumi.output(args).apply((a: any) => getAutoScalingConfigurations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", {
+        "bdsInstanceId": args.bdsInstanceId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

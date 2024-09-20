@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMountTargets(args: GetMountTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetMountTargetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getMountTargets:getMountTargets", {
         "availabilityDomain": args.availabilityDomain,
@@ -128,7 +127,16 @@ export interface GetMountTargetsResult {
  * ```
  */
 export function getMountTargetsOutput(args: GetMountTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMountTargetsResult> {
-    return pulumi.output(args).apply((a: any) => getMountTargets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getMountTargets:getMountTargets", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "exportSetId": args.exportSetId,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectionPolicies(args: GetProtectionPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", {
         "compartmentId": args.compartmentId,
@@ -115,7 +114,15 @@ export interface GetProtectionPoliciesResult {
  * ```
  */
 export function getProtectionPoliciesOutput(args: GetProtectionPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getProtectionPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "owner": args.owner,
+        "protectionPolicyId": args.protectionPolicyId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

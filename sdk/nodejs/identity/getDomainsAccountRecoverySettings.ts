@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsAccountRecoverySettings(args: GetDomainsAccountRecoverySettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAccountRecoverySettingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", {
         "attributeSets": args.attributeSets,
@@ -113,7 +112,15 @@ export interface GetDomainsAccountRecoverySettingsResult {
  * ```
  */
 export function getDomainsAccountRecoverySettingsOutput(args: GetDomainsAccountRecoverySettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAccountRecoverySettingsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsAccountRecoverySettings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

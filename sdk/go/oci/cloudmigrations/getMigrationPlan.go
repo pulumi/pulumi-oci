@@ -97,14 +97,20 @@ type LookupMigrationPlanResult struct {
 
 func LookupMigrationPlanOutput(ctx *pulumi.Context, args LookupMigrationPlanOutputArgs, opts ...pulumi.InvokeOption) LookupMigrationPlanResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupMigrationPlanResult, error) {
+		ApplyT(func(v interface{}) (LookupMigrationPlanResultOutput, error) {
 			args := v.(LookupMigrationPlanArgs)
-			r, err := LookupMigrationPlan(ctx, &args, opts...)
-			var s LookupMigrationPlanResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupMigrationPlanResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", args, &rv, "", opts...)
+			if err != nil {
+				return LookupMigrationPlanResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupMigrationPlanResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupMigrationPlanResultOutput), nil
+			}
+			return output, nil
 		}).(LookupMigrationPlanResultOutput)
 }
 

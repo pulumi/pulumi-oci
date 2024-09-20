@@ -54,14 +54,20 @@ type GetSecurityAssessmentFindingResult struct {
 
 func GetSecurityAssessmentFindingOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentFindingResult, error) {
+		ApplyT(func(v interface{}) (GetSecurityAssessmentFindingResultOutput, error) {
 			args := v.(GetSecurityAssessmentFindingArgs)
-			r, err := GetSecurityAssessmentFinding(ctx, &args, opts...)
-			var s GetSecurityAssessmentFindingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSecurityAssessmentFindingResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args, &rv, "", opts...)
+			if err != nil {
+				return GetSecurityAssessmentFindingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSecurityAssessmentFindingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSecurityAssessmentFindingResultOutput), nil
+			}
+			return output, nil
 		}).(GetSecurityAssessmentFindingResultOutput)
 }
 

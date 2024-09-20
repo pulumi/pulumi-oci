@@ -82,14 +82,20 @@ type GetManagedDatabaseUserRolesResult struct {
 
 func GetManagedDatabaseUserRolesOutput(ctx *pulumi.Context, args GetManagedDatabaseUserRolesOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserRolesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseUserRolesResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseUserRolesResultOutput, error) {
 			args := v.(GetManagedDatabaseUserRolesArgs)
-			r, err := GetManagedDatabaseUserRoles(ctx, &args, opts...)
-			var s GetManagedDatabaseUserRolesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseUserRolesResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseUserRolesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseUserRolesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseUserRolesResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseUserRolesResultOutput)
 }
 

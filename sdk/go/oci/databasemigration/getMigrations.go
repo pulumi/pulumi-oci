@@ -87,14 +87,20 @@ type GetMigrationsResult struct {
 
 func GetMigrationsOutput(ctx *pulumi.Context, args GetMigrationsOutputArgs, opts ...pulumi.InvokeOption) GetMigrationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMigrationsResult, error) {
+		ApplyT(func(v interface{}) (GetMigrationsResultOutput, error) {
 			args := v.(GetMigrationsArgs)
-			r, err := GetMigrations(ctx, &args, opts...)
-			var s GetMigrationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMigrationsResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseMigration/getMigrations:getMigrations", args, &rv, "", opts...)
+			if err != nil {
+				return GetMigrationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMigrationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMigrationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetMigrationsResultOutput)
 }
 

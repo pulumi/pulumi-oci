@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeImageCapabilitySchema(args: GetComputeImageCapabilitySchemaArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeImageCapabilitySchemaResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema", {
         "computeImageCapabilitySchemaId": args.computeImageCapabilitySchemaId,
@@ -109,7 +108,11 @@ export interface GetComputeImageCapabilitySchemaResult {
  * ```
  */
 export function getComputeImageCapabilitySchemaOutput(args: GetComputeImageCapabilitySchemaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeImageCapabilitySchemaResult> {
-    return pulumi.output(args).apply((a: any) => getComputeImageCapabilitySchema(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema", {
+        "computeImageCapabilitySchemaId": args.computeImageCapabilitySchemaId,
+        "isMergeEnabled": args.isMergeEnabled,
+    }, opts);
 }
 
 /**

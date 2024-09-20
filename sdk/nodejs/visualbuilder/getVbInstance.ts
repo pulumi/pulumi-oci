@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVbInstance(args: GetVbInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetVbInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:VisualBuilder/getVbInstance:getVbInstance", {
         "vbInstanceId": args.vbInstanceId,
@@ -152,7 +151,10 @@ export interface GetVbInstanceResult {
  * ```
  */
 export function getVbInstanceOutput(args: GetVbInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getVbInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:VisualBuilder/getVbInstance:getVbInstance", {
+        "vbInstanceId": args.vbInstanceId,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVcn(args: GetVcnArgs, opts?: pulumi.InvokeOptions): Promise<GetVcnResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVcn:getVcn", {
         "vcnId": args.vcnId,
@@ -134,7 +133,10 @@ export interface GetVcnResult {
  * ```
  */
 export function getVcnOutput(args: GetVcnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVcnResult> {
-    return pulumi.output(args).apply((a: any) => getVcn(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVcn:getVcn", {
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

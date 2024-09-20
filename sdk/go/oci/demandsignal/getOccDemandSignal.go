@@ -88,14 +88,20 @@ type LookupOccDemandSignalResult struct {
 
 func LookupOccDemandSignalOutput(ctx *pulumi.Context, args LookupOccDemandSignalOutputArgs, opts ...pulumi.InvokeOption) LookupOccDemandSignalResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupOccDemandSignalResult, error) {
+		ApplyT(func(v interface{}) (LookupOccDemandSignalResultOutput, error) {
 			args := v.(LookupOccDemandSignalArgs)
-			r, err := LookupOccDemandSignal(ctx, &args, opts...)
-			var s LookupOccDemandSignalResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupOccDemandSignalResult
+			secret, err := ctx.InvokePackageRaw("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", args, &rv, "", opts...)
+			if err != nil {
+				return LookupOccDemandSignalResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupOccDemandSignalResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupOccDemandSignalResultOutput), nil
+			}
+			return output, nil
 		}).(LookupOccDemandSignalResultOutput)
 }
 

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getListJreUsage(args?: GetListJreUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetListJreUsageResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getListJreUsage:getListJreUsage", {
         "applicationId": args.applicationId,
@@ -118,7 +117,16 @@ export interface GetListJreUsageResult {
  * ```
  */
 export function getListJreUsageOutput(args?: GetListJreUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListJreUsageResult> {
-    return pulumi.output(args).apply((a: any) => getListJreUsage(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getListJreUsage:getListJreUsage", {
+        "applicationId": args.applicationId,
+        "applicationName": args.applicationName,
+        "compartmentId": args.compartmentId,
+        "hostId": args.hostId,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

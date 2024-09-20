@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUnifiedAgentConfigurations(args: GetUnifiedAgentConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetUnifiedAgentConfigurationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", {
         "compartmentId": args.compartmentId,
@@ -123,7 +122,16 @@ export interface GetUnifiedAgentConfigurationsResult {
  * ```
  */
 export function getUnifiedAgentConfigurationsOutput(args: GetUnifiedAgentConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUnifiedAgentConfigurationsResult> {
-    return pulumi.output(args).apply((a: any) => getUnifiedAgentConfigurations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "groupId": args.groupId,
+        "isCompartmentIdInSubtree": args.isCompartmentIdInSubtree,
+        "logId": args.logId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

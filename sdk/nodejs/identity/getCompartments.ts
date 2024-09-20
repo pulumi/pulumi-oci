@@ -44,7 +44,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCompartments(args: GetCompartmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetCompartmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getCompartments:getCompartments", {
         "accessLevel": args.accessLevel,
@@ -151,7 +150,15 @@ export interface GetCompartmentsResult {
  * ```
  */
 export function getCompartmentsOutput(args: GetCompartmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompartmentsResult> {
-    return pulumi.output(args).apply((a: any) => getCompartments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getCompartments:getCompartments", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

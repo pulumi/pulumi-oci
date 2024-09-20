@@ -73,14 +73,20 @@ type GetContainerInstanceShapesResult struct {
 
 func GetContainerInstanceShapesOutput(ctx *pulumi.Context, args GetContainerInstanceShapesOutputArgs, opts ...pulumi.InvokeOption) GetContainerInstanceShapesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetContainerInstanceShapesResult, error) {
+		ApplyT(func(v interface{}) (GetContainerInstanceShapesResultOutput, error) {
 			args := v.(GetContainerInstanceShapesArgs)
-			r, err := GetContainerInstanceShapes(ctx, &args, opts...)
-			var s GetContainerInstanceShapesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetContainerInstanceShapesResult
+			secret, err := ctx.InvokePackageRaw("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", args, &rv, "", opts...)
+			if err != nil {
+				return GetContainerInstanceShapesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetContainerInstanceShapesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetContainerInstanceShapesResultOutput), nil
+			}
+			return output, nil
 		}).(GetContainerInstanceShapesResultOutput)
 }
 

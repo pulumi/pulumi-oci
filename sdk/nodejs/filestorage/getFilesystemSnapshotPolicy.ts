@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFilesystemSnapshotPolicy(args: GetFilesystemSnapshotPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetFilesystemSnapshotPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", {
         "filesystemSnapshotPolicyId": args.filesystemSnapshotPolicyId,
@@ -103,7 +102,10 @@ export interface GetFilesystemSnapshotPolicyResult {
  * ```
  */
 export function getFilesystemSnapshotPolicyOutput(args: GetFilesystemSnapshotPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFilesystemSnapshotPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getFilesystemSnapshotPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", {
+        "filesystemSnapshotPolicyId": args.filesystemSnapshotPolicyId,
+    }, opts);
 }
 
 /**

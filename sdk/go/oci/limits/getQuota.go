@@ -84,14 +84,20 @@ type LookupQuotaResult struct {
 
 func LookupQuotaOutput(ctx *pulumi.Context, args LookupQuotaOutputArgs, opts ...pulumi.InvokeOption) LookupQuotaResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupQuotaResult, error) {
+		ApplyT(func(v interface{}) (LookupQuotaResultOutput, error) {
 			args := v.(LookupQuotaArgs)
-			r, err := LookupQuota(ctx, &args, opts...)
-			var s LookupQuotaResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupQuotaResult
+			secret, err := ctx.InvokePackageRaw("oci:Limits/getQuota:getQuota", args, &rv, "", opts...)
+			if err != nil {
+				return LookupQuotaResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupQuotaResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupQuotaResultOutput), nil
+			}
+			return output, nil
 		}).(LookupQuotaResultOutput)
 }
 

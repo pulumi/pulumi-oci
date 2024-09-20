@@ -122,14 +122,20 @@ type LookupWorkspaceApplicationTaskScheduleResult struct {
 
 func LookupWorkspaceApplicationTaskScheduleOutput(ctx *pulumi.Context, args LookupWorkspaceApplicationTaskScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceApplicationTaskScheduleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupWorkspaceApplicationTaskScheduleResult, error) {
+		ApplyT(func(v interface{}) (LookupWorkspaceApplicationTaskScheduleResultOutput, error) {
 			args := v.(LookupWorkspaceApplicationTaskScheduleArgs)
-			r, err := LookupWorkspaceApplicationTaskSchedule(ctx, &args, opts...)
-			var s LookupWorkspaceApplicationTaskScheduleResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupWorkspaceApplicationTaskScheduleResult
+			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", args, &rv, "", opts...)
+			if err != nil {
+				return LookupWorkspaceApplicationTaskScheduleResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupWorkspaceApplicationTaskScheduleResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupWorkspaceApplicationTaskScheduleResultOutput), nil
+			}
+			return output, nil
 		}).(LookupWorkspaceApplicationTaskScheduleResultOutput)
 }
 

@@ -97,14 +97,20 @@ type LookupAuditArchiveRetrievalResult struct {
 
 func LookupAuditArchiveRetrievalOutput(ctx *pulumi.Context, args LookupAuditArchiveRetrievalOutputArgs, opts ...pulumi.InvokeOption) LookupAuditArchiveRetrievalResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAuditArchiveRetrievalResult, error) {
+		ApplyT(func(v interface{}) (LookupAuditArchiveRetrievalResultOutput, error) {
 			args := v.(LookupAuditArchiveRetrievalArgs)
-			r, err := LookupAuditArchiveRetrieval(ctx, &args, opts...)
-			var s LookupAuditArchiveRetrievalResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAuditArchiveRetrievalResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAuditArchiveRetrievalResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAuditArchiveRetrievalResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAuditArchiveRetrievalResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAuditArchiveRetrievalResultOutput)
 }
 

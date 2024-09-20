@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVnic(args: GetVnicArgs, opts?: pulumi.InvokeOptions): Promise<GetVnicResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVnic:getVnic", {
         "vnicId": args.vnicId,
@@ -139,7 +138,10 @@ export interface GetVnicResult {
  * ```
  */
 export function getVnicOutput(args: GetVnicOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVnicResult> {
-    return pulumi.output(args).apply((a: any) => getVnic(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVnic:getVnic", {
+        "vnicId": args.vnicId,
+    }, opts);
 }
 
 /**

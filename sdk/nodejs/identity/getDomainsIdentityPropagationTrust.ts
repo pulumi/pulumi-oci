@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsIdentityPropagationTrust(args: GetDomainsIdentityPropagationTrustArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsIdentityPropagationTrustResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", {
         "attributeSets": args.attributeSets,
@@ -227,7 +226,15 @@ export interface GetDomainsIdentityPropagationTrustResult {
  * ```
  */
 export function getDomainsIdentityPropagationTrustOutput(args: GetDomainsIdentityPropagationTrustOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsIdentityPropagationTrustResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsIdentityPropagationTrust(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "identityPropagationTrustId": args.identityPropagationTrustId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

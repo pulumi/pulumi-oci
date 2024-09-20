@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSupportedHostShapes(args: GetSupportedHostShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedHostShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", {
         "compartmentId": args.compartmentId,
@@ -115,7 +114,15 @@ export interface GetSupportedHostShapesResult {
  * ```
  */
 export function getSupportedHostShapesOutput(args: GetSupportedHostShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedHostShapesResult> {
-    return pulumi.output(args).apply((a: any) => getSupportedHostShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "initialHostShapeName": args.initialHostShapeName,
+        "isSingleHostSddcSupported": args.isSingleHostSddcSupported,
+        "name": args.name,
+        "sddcType": args.sddcType,
+    }, opts);
 }
 
 /**

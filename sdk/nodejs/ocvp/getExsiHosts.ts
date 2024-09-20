@@ -39,7 +39,6 @@ import * as utilities from "../utilities";
  */
 export function getExsiHosts(args?: GetExsiHostsArgs, opts?: pulumi.InvokeOptions): Promise<GetExsiHostsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getExsiHosts:getExsiHosts", {
         "clusterId": args.clusterId,
@@ -165,7 +164,19 @@ export interface GetExsiHostsResult {
  * ```
  */
 export function getExsiHostsOutput(args?: GetExsiHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExsiHostsResult> {
-    return pulumi.output(args).apply((a: any) => getExsiHosts(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getExsiHosts:getExsiHosts", {
+        "clusterId": args.clusterId,
+        "compartmentId": args.compartmentId,
+        "computeInstanceId": args.computeInstanceId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isBillingDonorsOnly": args.isBillingDonorsOnly,
+        "isSwapBillingOnly": args.isSwapBillingOnly,
+        "sddcId": args.sddcId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -90,14 +90,20 @@ type LookupOccCustomerGroupResult struct {
 
 func LookupOccCustomerGroupOutput(ctx *pulumi.Context, args LookupOccCustomerGroupOutputArgs, opts ...pulumi.InvokeOption) LookupOccCustomerGroupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupOccCustomerGroupResult, error) {
+		ApplyT(func(v interface{}) (LookupOccCustomerGroupResultOutput, error) {
 			args := v.(LookupOccCustomerGroupArgs)
-			r, err := LookupOccCustomerGroup(ctx, &args, opts...)
-			var s LookupOccCustomerGroupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupOccCustomerGroupResult
+			secret, err := ctx.InvokePackageRaw("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupOccCustomerGroupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupOccCustomerGroupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupOccCustomerGroupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupOccCustomerGroupResultOutput)
 }
 

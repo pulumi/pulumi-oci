@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuthenticationPolicy(args: GetAuthenticationPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthenticationPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", {
         "compartmentId": args.compartmentId,
@@ -77,7 +76,10 @@ export interface GetAuthenticationPolicyResult {
  * ```
  */
 export function getAuthenticationPolicyOutput(args: GetAuthenticationPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthenticationPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getAuthenticationPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", {
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

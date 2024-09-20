@@ -79,14 +79,20 @@ type GetClusterNetworkInstancesResult struct {
 
 func GetClusterNetworkInstancesOutput(ctx *pulumi.Context, args GetClusterNetworkInstancesOutputArgs, opts ...pulumi.InvokeOption) GetClusterNetworkInstancesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetClusterNetworkInstancesResult, error) {
+		ApplyT(func(v interface{}) (GetClusterNetworkInstancesResultOutput, error) {
 			args := v.(GetClusterNetworkInstancesArgs)
-			r, err := GetClusterNetworkInstances(ctx, &args, opts...)
-			var s GetClusterNetworkInstancesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetClusterNetworkInstancesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", args, &rv, "", opts...)
+			if err != nil {
+				return GetClusterNetworkInstancesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetClusterNetworkInstancesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetClusterNetworkInstancesResultOutput), nil
+			}
+			return output, nil
 		}).(GetClusterNetworkInstancesResultOutput)
 }
 

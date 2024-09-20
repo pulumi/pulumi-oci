@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", {
         "executionName": args.executionName,
@@ -85,7 +84,12 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResu
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", {
+        "executionName": args.executionName,
+        "managedDatabaseId": args.managedDatabaseId,
+        "taskName": args.taskName,
+    }, opts);
 }
 
 /**

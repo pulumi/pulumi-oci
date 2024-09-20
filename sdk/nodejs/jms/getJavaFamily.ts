@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJavaFamily(args: GetJavaFamilyArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaFamilyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaFamily:getJavaFamily", {
         "familyVersion": args.familyVersion,
@@ -102,7 +101,10 @@ export interface GetJavaFamilyResult {
  * ```
  */
 export function getJavaFamilyOutput(args: GetJavaFamilyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaFamilyResult> {
-    return pulumi.output(args).apply((a: any) => getJavaFamily(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJavaFamily:getJavaFamily", {
+        "familyVersion": args.familyVersion,
+    }, opts);
 }
 
 /**

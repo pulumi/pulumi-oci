@@ -70,14 +70,20 @@ type GetCpesResult struct {
 
 func GetCpesOutput(ctx *pulumi.Context, args GetCpesOutputArgs, opts ...pulumi.InvokeOption) GetCpesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCpesResult, error) {
+		ApplyT(func(v interface{}) (GetCpesResultOutput, error) {
 			args := v.(GetCpesArgs)
-			r, err := GetCpes(ctx, &args, opts...)
-			var s GetCpesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCpesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getCpes:getCpes", args, &rv, "", opts...)
+			if err != nil {
+				return GetCpesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCpesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCpesResultOutput), nil
+			}
+			return output, nil
 		}).(GetCpesResultOutput)
 }
 

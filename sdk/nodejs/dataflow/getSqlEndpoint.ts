@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSqlEndpoint(args: GetSqlEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetSqlEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", {
         "sqlEndpointId": args.sqlEndpointId,
@@ -163,7 +162,10 @@ export interface GetSqlEndpointResult {
  * ```
  */
 export function getSqlEndpointOutput(args: GetSqlEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getSqlEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", {
+        "sqlEndpointId": args.sqlEndpointId,
+    }, opts);
 }
 
 /**

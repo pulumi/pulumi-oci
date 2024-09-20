@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbVersions(args: GetDbVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbVersions:getDbVersions", {
         "compartmentId": args.compartmentId,
@@ -119,7 +118,16 @@ export interface GetDbVersionsResult {
  * ```
  */
 export function getDbVersionsOutput(args: GetDbVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getDbVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbVersions:getDbVersions", {
+        "compartmentId": args.compartmentId,
+        "dbSystemId": args.dbSystemId,
+        "dbSystemShape": args.dbSystemShape,
+        "filters": args.filters,
+        "isDatabaseSoftwareImageSupported": args.isDatabaseSoftwareImageSupported,
+        "isUpgradeSupported": args.isUpgradeSupported,
+        "storageManagement": args.storageManagement,
+    }, opts);
 }
 
 /**

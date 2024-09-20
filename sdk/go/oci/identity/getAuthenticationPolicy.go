@@ -70,14 +70,20 @@ type LookupAuthenticationPolicyResult struct {
 
 func LookupAuthenticationPolicyOutput(ctx *pulumi.Context, args LookupAuthenticationPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAuthenticationPolicyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAuthenticationPolicyResult, error) {
+		ApplyT(func(v interface{}) (LookupAuthenticationPolicyResultOutput, error) {
 			args := v.(LookupAuthenticationPolicyArgs)
-			r, err := LookupAuthenticationPolicy(ctx, &args, opts...)
-			var s LookupAuthenticationPolicyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAuthenticationPolicyResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAuthenticationPolicyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAuthenticationPolicyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAuthenticationPolicyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAuthenticationPolicyResultOutput)
 }
 

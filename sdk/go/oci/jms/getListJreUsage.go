@@ -89,14 +89,20 @@ type GetListJreUsageResult struct {
 
 func GetListJreUsageOutput(ctx *pulumi.Context, args GetListJreUsageOutputArgs, opts ...pulumi.InvokeOption) GetListJreUsageResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetListJreUsageResult, error) {
+		ApplyT(func(v interface{}) (GetListJreUsageResultOutput, error) {
 			args := v.(GetListJreUsageArgs)
-			r, err := GetListJreUsage(ctx, &args, opts...)
-			var s GetListJreUsageResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetListJreUsageResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getListJreUsage:getListJreUsage", args, &rv, "", opts...)
+			if err != nil {
+				return GetListJreUsageResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetListJreUsageResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetListJreUsageResultOutput), nil
+			}
+			return output, nil
 		}).(GetListJreUsageResultOutput)
 }
 

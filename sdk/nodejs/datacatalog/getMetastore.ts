@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMetastore(args: GetMetastoreArgs, opts?: pulumi.InvokeOptions): Promise<GetMetastoreResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getMetastore:getMetastore", {
         "metastoreId": args.metastoreId,
@@ -115,7 +114,10 @@ export interface GetMetastoreResult {
  * ```
  */
 export function getMetastoreOutput(args: GetMetastoreOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetastoreResult> {
-    return pulumi.output(args).apply((a: any) => getMetastore(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getMetastore:getMetastore", {
+        "metastoreId": args.metastoreId,
+    }, opts);
 }
 
 /**

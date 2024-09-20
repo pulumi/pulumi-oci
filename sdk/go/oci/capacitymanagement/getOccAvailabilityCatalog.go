@@ -96,14 +96,20 @@ type LookupOccAvailabilityCatalogResult struct {
 
 func LookupOccAvailabilityCatalogOutput(ctx *pulumi.Context, args LookupOccAvailabilityCatalogOutputArgs, opts ...pulumi.InvokeOption) LookupOccAvailabilityCatalogResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupOccAvailabilityCatalogResult, error) {
+		ApplyT(func(v interface{}) (LookupOccAvailabilityCatalogResultOutput, error) {
 			args := v.(LookupOccAvailabilityCatalogArgs)
-			r, err := LookupOccAvailabilityCatalog(ctx, &args, opts...)
-			var s LookupOccAvailabilityCatalogResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupOccAvailabilityCatalogResult
+			secret, err := ctx.InvokePackageRaw("oci:CapacityManagement/getOccAvailabilityCatalog:getOccAvailabilityCatalog", args, &rv, "", opts...)
+			if err != nil {
+				return LookupOccAvailabilityCatalogResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupOccAvailabilityCatalogResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupOccAvailabilityCatalogResultOutput), nil
+			}
+			return output, nil
 		}).(LookupOccAvailabilityCatalogResultOutput)
 }
 

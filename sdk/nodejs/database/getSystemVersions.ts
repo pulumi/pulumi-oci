@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSystemVersions(args: GetSystemVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSystemVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getSystemVersions:getSystemVersions", {
         "compartmentId": args.compartmentId,
@@ -96,7 +95,13 @@ export interface GetSystemVersionsResult {
  * ```
  */
 export function getSystemVersionsOutput(args: GetSystemVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSystemVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getSystemVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getSystemVersions:getSystemVersions", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "giVersion": args.giVersion,
+        "shape": args.shape,
+    }, opts);
 }
 
 /**

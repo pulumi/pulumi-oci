@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApplicationVips(args: GetApplicationVipsArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationVipsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getApplicationVips:getApplicationVips", {
         "cloudVmClusterId": args.cloudVmClusterId,
@@ -99,7 +98,13 @@ export interface GetApplicationVipsResult {
  * ```
  */
 export function getApplicationVipsOutput(args: GetApplicationVipsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationVipsResult> {
-    return pulumi.output(args).apply((a: any) => getApplicationVips(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getApplicationVips:getApplicationVips", {
+        "cloudVmClusterId": args.cloudVmClusterId,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

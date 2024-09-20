@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLibraryMaskingFormats(args: GetLibraryMaskingFormatsArgs, opts?: pulumi.InvokeOptions): Promise<GetLibraryMaskingFormatsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", {
         "accessLevel": args.accessLevel,
@@ -154,7 +153,19 @@ export interface GetLibraryMaskingFormatsResult {
  * ```
  */
 export function getLibraryMaskingFormatsOutput(args: GetLibraryMaskingFormatsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLibraryMaskingFormatsResult> {
-    return pulumi.output(args).apply((a: any) => getLibraryMaskingFormats(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "libraryMaskingFormatId": args.libraryMaskingFormatId,
+        "libraryMaskingFormatSource": args.libraryMaskingFormatSource,
+        "state": args.state,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

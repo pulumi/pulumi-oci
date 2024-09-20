@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRegionSubscriptions(args: GetRegionSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetRegionSubscriptionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetRegionSubscriptionsResult {
  * ```
  */
 export function getRegionSubscriptionsOutput(args: GetRegionSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegionSubscriptionsResult> {
-    return pulumi.output(args).apply((a: any) => getRegionSubscriptions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", {
+        "filters": args.filters,
+        "tenancyId": args.tenancyId,
+    }, opts);
 }
 
 /**

@@ -98,14 +98,20 @@ type GetDiscoveryAnalyticsResult struct {
 
 func GetDiscoveryAnalyticsOutput(ctx *pulumi.Context, args GetDiscoveryAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetDiscoveryAnalyticsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDiscoveryAnalyticsResult, error) {
+		ApplyT(func(v interface{}) (GetDiscoveryAnalyticsResultOutput, error) {
 			args := v.(GetDiscoveryAnalyticsArgs)
-			r, err := GetDiscoveryAnalytics(ctx, &args, opts...)
-			var s GetDiscoveryAnalyticsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDiscoveryAnalyticsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args, &rv, "", opts...)
+			if err != nil {
+				return GetDiscoveryAnalyticsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDiscoveryAnalyticsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDiscoveryAnalyticsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDiscoveryAnalyticsResultOutput)
 }
 

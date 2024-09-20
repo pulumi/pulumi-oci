@@ -73,14 +73,20 @@ type GetVaultUsageResult struct {
 
 func GetVaultUsageOutput(ctx *pulumi.Context, args GetVaultUsageOutputArgs, opts ...pulumi.InvokeOption) GetVaultUsageResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVaultUsageResult, error) {
+		ApplyT(func(v interface{}) (GetVaultUsageResultOutput, error) {
 			args := v.(GetVaultUsageArgs)
-			r, err := GetVaultUsage(ctx, &args, opts...)
-			var s GetVaultUsageResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVaultUsageResult
+			secret, err := ctx.InvokePackageRaw("oci:Kms/getVaultUsage:getVaultUsage", args, &rv, "", opts...)
+			if err != nil {
+				return GetVaultUsageResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVaultUsageResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVaultUsageResultOutput), nil
+			}
+			return output, nil
 		}).(GetVaultUsageResultOutput)
 }
 

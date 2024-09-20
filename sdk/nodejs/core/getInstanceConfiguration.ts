@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceConfiguration(args: GetInstanceConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceConfiguration:getInstanceConfiguration", {
         "instanceConfigurationId": args.instanceConfigurationId,
@@ -94,7 +93,10 @@ export interface GetInstanceConfigurationResult {
  * ```
  */
 export function getInstanceConfigurationOutput(args: GetInstanceConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstanceConfiguration:getInstanceConfiguration", {
+        "instanceConfigurationId": args.instanceConfigurationId,
+    }, opts);
 }
 
 /**

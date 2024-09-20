@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPools(args: GetPoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetPoolsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getPools:getPools", {
         "compartmentId": args.compartmentId,
@@ -118,7 +117,15 @@ export interface GetPoolsResult {
  * ```
  */
 export function getPoolsOutput(args: GetPoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPoolsResult> {
-    return pulumi.output(args).apply((a: any) => getPools(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataFlow/getPools:getPools", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "displayNameStartsWith": args.displayNameStartsWith,
+        "filters": args.filters,
+        "ownerPrincipalId": args.ownerPrincipalId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

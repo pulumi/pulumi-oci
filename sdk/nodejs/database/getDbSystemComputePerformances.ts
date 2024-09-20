@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  */
 export function getDbSystemComputePerformances(args?: GetDbSystemComputePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemComputePerformancesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", {
         "dbSystemShape": args.dbSystemShape,
@@ -75,7 +74,12 @@ export interface GetDbSystemComputePerformancesResult {
  * ```
  */
 export function getDbSystemComputePerformancesOutput(args?: GetDbSystemComputePerformancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemComputePerformancesResult> {
-    return pulumi.output(args).apply((a: any) => getDbSystemComputePerformances(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", {
+        "dbSystemShape": args.dbSystemShape,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

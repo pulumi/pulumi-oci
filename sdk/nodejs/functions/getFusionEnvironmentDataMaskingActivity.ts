@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentDataMaskingActivity(args: GetFusionEnvironmentDataMaskingActivityArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentDataMaskingActivityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity", {
         "dataMaskingActivityId": args.dataMaskingActivityId,
@@ -89,7 +88,11 @@ export interface GetFusionEnvironmentDataMaskingActivityResult {
  * ```
  */
 export function getFusionEnvironmentDataMaskingActivityOutput(args: GetFusionEnvironmentDataMaskingActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentDataMaskingActivityResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentDataMaskingActivity(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity", {
+        "dataMaskingActivityId": args.dataMaskingActivityId,
+        "fusionEnvironmentId": args.fusionEnvironmentId,
+    }, opts);
 }
 
 /**

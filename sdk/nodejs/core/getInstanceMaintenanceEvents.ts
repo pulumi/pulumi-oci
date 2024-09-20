@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceMaintenanceEvents(args: GetInstanceMaintenanceEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceMaintenanceEventsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", {
         "compartmentId": args.compartmentId,
@@ -137,7 +136,17 @@ export interface GetInstanceMaintenanceEventsResult {
  * ```
  */
 export function getInstanceMaintenanceEventsOutput(args: GetInstanceMaintenanceEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMaintenanceEventsResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceMaintenanceEvents(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", {
+        "compartmentId": args.compartmentId,
+        "correlationToken": args.correlationToken,
+        "filters": args.filters,
+        "instanceAction": args.instanceAction,
+        "instanceId": args.instanceId,
+        "state": args.state,
+        "timeWindowStartGreaterThanOrEqualTo": args.timeWindowStartGreaterThanOrEqualTo,
+        "timeWindowStartLessThanOrEqualTo": args.timeWindowStartLessThanOrEqualTo,
+    }, opts);
 }
 
 /**

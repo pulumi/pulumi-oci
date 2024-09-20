@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateEndpoints(args: GetPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", {
         "compartmentId": args.compartmentId,
@@ -121,7 +120,15 @@ export interface GetPrivateEndpointsResult {
  * ```
  */
 export function getPrivateEndpointsOutput(args: GetPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getPrivateEndpoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", {
+        "compartmentId": args.compartmentId,
+        "createdBy": args.createdBy,
+        "dataScienceResourceType": args.dataScienceResourceType,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProcessSets(args: GetProcessSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessSetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getProcessSets:getProcessSets", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,12 @@ export interface GetProcessSetsResult {
  * ```
  */
 export function getProcessSetsOutput(args: GetProcessSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessSetsResult> {
-    return pulumi.output(args).apply((a: any) => getProcessSets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:StackMonitoring/getProcessSets:getProcessSets", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

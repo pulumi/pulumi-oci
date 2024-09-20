@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTrace(args: GetTraceArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getTrace:getTrace", {
         "apmDomainId": args.apmDomainId,
@@ -178,7 +177,14 @@ export interface GetTraceResult {
  * ```
  */
 export function getTraceOutput(args: GetTraceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceResult> {
-    return pulumi.output(args).apply((a: any) => getTrace(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmTraces/getTrace:getTrace", {
+        "apmDomainId": args.apmDomainId,
+        "timeTraceStartedGreaterThanOrEqualTo": args.timeTraceStartedGreaterThanOrEqualTo,
+        "timeTraceStartedLessThan": args.timeTraceStartedLessThan,
+        "traceKey": args.traceKey,
+        "traceNamespace": args.traceNamespace,
+    }, opts);
 }
 
 /**

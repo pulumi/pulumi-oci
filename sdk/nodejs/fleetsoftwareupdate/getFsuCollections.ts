@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFsuCollections(args: GetFsuCollectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetFsuCollectionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetFsuCollectionsResult {
  * ```
  */
 export function getFsuCollectionsOutput(args: GetFsuCollectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFsuCollectionsResult> {
-    return pulumi.output(args).apply((a: any) => getFsuCollections(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "type": args.type,
+    }, opts);
 }
 
 /**

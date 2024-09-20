@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksRecommendation(args: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendation:getManagedDatabaseSqlTuningAdvisorTasksRecommendation", {
         "executionId": args.executionId,
@@ -100,7 +99,13 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksRecommendationOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksRecommendation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendation:getManagedDatabaseSqlTuningAdvisorTasksRecommendation", {
+        "executionId": args.executionId,
+        "managedDatabaseId": args.managedDatabaseId,
+        "sqlObjectId": args.sqlObjectId,
+        "sqlTuningAdvisorTaskId": args.sqlTuningAdvisorTaskId,
+    }, opts);
 }
 
 /**

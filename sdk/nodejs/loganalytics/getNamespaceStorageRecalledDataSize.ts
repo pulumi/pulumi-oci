@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaceStorageRecalledDataSize(args: GetNamespaceStorageRecalledDataSizeArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceStorageRecalledDataSizeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", {
         "namespace": args.namespace,
@@ -95,7 +94,12 @@ export interface GetNamespaceStorageRecalledDataSizeResult {
  * ```
  */
 export function getNamespaceStorageRecalledDataSizeOutput(args: GetNamespaceStorageRecalledDataSizeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageRecalledDataSizeResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaceStorageRecalledDataSize(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", {
+        "namespace": args.namespace,
+        "timeDataEnded": args.timeDataEnded,
+        "timeDataStarted": args.timeDataStarted,
+    }, opts);
 }
 
 /**

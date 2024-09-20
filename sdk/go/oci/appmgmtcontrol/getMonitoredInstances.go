@@ -75,14 +75,20 @@ type GetMonitoredInstancesResult struct {
 
 func GetMonitoredInstancesOutput(ctx *pulumi.Context, args GetMonitoredInstancesOutputArgs, opts ...pulumi.InvokeOption) GetMonitoredInstancesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMonitoredInstancesResult, error) {
+		ApplyT(func(v interface{}) (GetMonitoredInstancesResultOutput, error) {
 			args := v.(GetMonitoredInstancesArgs)
-			r, err := GetMonitoredInstances(ctx, &args, opts...)
-			var s GetMonitoredInstancesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMonitoredInstancesResult
+			secret, err := ctx.InvokePackageRaw("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", args, &rv, "", opts...)
+			if err != nil {
+				return GetMonitoredInstancesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMonitoredInstancesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMonitoredInstancesResultOutput), nil
+			}
+			return output, nil
 		}).(GetMonitoredInstancesResultOutput)
 }
 

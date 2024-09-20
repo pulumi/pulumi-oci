@@ -85,14 +85,20 @@ type GetInvoicesResult struct {
 
 func GetInvoicesOutput(ctx *pulumi.Context, args GetInvoicesOutputArgs, opts ...pulumi.InvokeOption) GetInvoicesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInvoicesResult, error) {
+		ApplyT(func(v interface{}) (GetInvoicesResultOutput, error) {
 			args := v.(GetInvoicesArgs)
-			r, err := GetInvoices(ctx, &args, opts...)
-			var s GetInvoicesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInvoicesResult
+			secret, err := ctx.InvokePackageRaw("oci:OneSubsription/getInvoices:getInvoices", args, &rv, "", opts...)
+			if err != nil {
+				return GetInvoicesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInvoicesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInvoicesResultOutput), nil
+			}
+			return output, nil
 		}).(GetInvoicesResultOutput)
 }
 

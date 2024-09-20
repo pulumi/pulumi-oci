@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlarm(args: GetAlarmArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Monitoring/getAlarm:getAlarm", {
         "alarmId": args.alarmId,
@@ -198,7 +197,10 @@ export interface GetAlarmResult {
  * ```
  */
 export function getAlarmOutput(args: GetAlarmOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmResult> {
-    return pulumi.output(args).apply((a: any) => getAlarm(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Monitoring/getAlarm:getAlarm", {
+        "alarmId": args.alarmId,
+    }, opts);
 }
 
 /**

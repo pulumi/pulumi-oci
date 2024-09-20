@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBootVolumeBackups(args: GetBootVolumeBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeBackupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeBackups:getBootVolumeBackups", {
         "bootVolumeId": args.bootVolumeId,
@@ -121,7 +120,15 @@ export interface GetBootVolumeBackupsResult {
  * ```
  */
 export function getBootVolumeBackupsOutput(args: GetBootVolumeBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeBackupsResult> {
-    return pulumi.output(args).apply((a: any) => getBootVolumeBackups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getBootVolumeBackups:getBootVolumeBackups", {
+        "bootVolumeId": args.bootVolumeId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "sourceBootVolumeBackupId": args.sourceBootVolumeBackupId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

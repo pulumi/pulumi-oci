@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDkims(args: GetDkimsArgs, opts?: pulumi.InvokeOptions): Promise<GetDkimsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getDkims:getDkims", {
         "emailDomainId": args.emailDomainId,
@@ -106,7 +105,14 @@ export interface GetDkimsResult {
  * ```
  */
 export function getDkimsOutput(args: GetDkimsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDkimsResult> {
-    return pulumi.output(args).apply((a: any) => getDkims(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Email/getDkims:getDkims", {
+        "emailDomainId": args.emailDomainId,
+        "filters": args.filters,
+        "id": args.id,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

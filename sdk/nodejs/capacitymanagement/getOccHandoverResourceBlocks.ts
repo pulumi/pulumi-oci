@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getOccHandoverResourceBlocks(args?: GetOccHandoverResourceBlocksArgs, opts?: pulumi.InvokeOptions): Promise<GetOccHandoverResourceBlocksResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", {
         "compartmentId": args.compartmentId,
@@ -124,7 +123,17 @@ export interface GetOccHandoverResourceBlocksResult {
  * ```
  */
 export function getOccHandoverResourceBlocksOutput(args?: GetOccHandoverResourceBlocksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccHandoverResourceBlocksResult> {
-    return pulumi.output(args).apply((a: any) => getOccHandoverResourceBlocks(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "handoverDateGreaterThanOrEqualTo": args.handoverDateGreaterThanOrEqualTo,
+        "handoverDateLessThanOrEqualTo": args.handoverDateLessThanOrEqualTo,
+        "handoverResourceName": args.handoverResourceName,
+        "namespace": args.namespace,
+        "occHandoverResourceBlockId": args.occHandoverResourceBlockId,
+    }, opts);
 }
 
 /**

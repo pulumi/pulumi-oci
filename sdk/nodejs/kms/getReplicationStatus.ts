@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplicationStatus(args: GetReplicationStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationStatusResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getReplicationStatus:getReplicationStatus", {
         "managementEndpoint": args.managementEndpoint,
@@ -85,7 +84,11 @@ export interface GetReplicationStatusResult {
  * ```
  */
 export function getReplicationStatusOutput(args: GetReplicationStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationStatusResult> {
-    return pulumi.output(args).apply((a: any) => getReplicationStatus(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getReplicationStatus:getReplicationStatus", {
+        "managementEndpoint": args.managementEndpoint,
+        "replicationId": args.replicationId,
+    }, opts);
 }
 
 /**

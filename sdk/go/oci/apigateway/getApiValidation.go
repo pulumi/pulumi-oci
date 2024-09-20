@@ -67,14 +67,20 @@ type LookupApiValidationResult struct {
 
 func LookupApiValidationOutput(ctx *pulumi.Context, args LookupApiValidationOutputArgs, opts ...pulumi.InvokeOption) LookupApiValidationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupApiValidationResult, error) {
+		ApplyT(func(v interface{}) (LookupApiValidationResultOutput, error) {
 			args := v.(LookupApiValidationArgs)
-			r, err := LookupApiValidation(ctx, &args, opts...)
-			var s LookupApiValidationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupApiValidationResult
+			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getApiValidation:getApiValidation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupApiValidationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupApiValidationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupApiValidationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupApiValidationResultOutput)
 }
 

@@ -80,14 +80,20 @@ type GetManagedDatabaseCursorCacheStatementsResult struct {
 
 func GetManagedDatabaseCursorCacheStatementsOutput(ctx *pulumi.Context, args GetManagedDatabaseCursorCacheStatementsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseCursorCacheStatementsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseCursorCacheStatementsResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseCursorCacheStatementsResultOutput, error) {
 			args := v.(GetManagedDatabaseCursorCacheStatementsArgs)
-			r, err := GetManagedDatabaseCursorCacheStatements(ctx, &args, opts...)
-			var s GetManagedDatabaseCursorCacheStatementsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseCursorCacheStatementsResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseCursorCacheStatementsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseCursorCacheStatementsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseCursorCacheStatementsResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseCursorCacheStatementsResultOutput)
 }
 

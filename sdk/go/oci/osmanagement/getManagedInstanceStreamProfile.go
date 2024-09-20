@@ -119,14 +119,20 @@ type GetManagedInstanceStreamProfileResult struct {
 
 func GetManagedInstanceStreamProfileOutput(ctx *pulumi.Context, args GetManagedInstanceStreamProfileOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceStreamProfileResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceStreamProfileResult, error) {
+		ApplyT(func(v interface{}) (GetManagedInstanceStreamProfileResultOutput, error) {
 			args := v.(GetManagedInstanceStreamProfileArgs)
-			r, err := GetManagedInstanceStreamProfile(ctx, &args, opts...)
-			var s GetManagedInstanceStreamProfileResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedInstanceStreamProfileResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedInstanceStreamProfileResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedInstanceStreamProfileResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedInstanceStreamProfileResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedInstanceStreamProfileResultOutput)
 }
 

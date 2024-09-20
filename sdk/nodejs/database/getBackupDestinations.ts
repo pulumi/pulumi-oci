@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBackupDestinations(args: GetBackupDestinationsArgs, opts?: pulumi.InvokeOptions): Promise<GetBackupDestinationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getBackupDestinations:getBackupDestinations", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,12 @@ export interface GetBackupDestinationsResult {
  * ```
  */
 export function getBackupDestinationsOutput(args: GetBackupDestinationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupDestinationsResult> {
-    return pulumi.output(args).apply((a: any) => getBackupDestinations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getBackupDestinations:getBackupDestinations", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "type": args.type,
+    }, opts);
 }
 
 /**

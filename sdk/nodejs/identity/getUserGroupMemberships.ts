@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserGroupMemberships(args: GetUserGroupMembershipsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupMembershipsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,13 @@ export interface GetUserGroupMembershipsResult {
  * ```
  */
 export function getUserGroupMembershipsOutput(args: GetUserGroupMembershipsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupMembershipsResult> {
-    return pulumi.output(args).apply((a: any) => getUserGroupMemberships(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "groupId": args.groupId,
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

@@ -89,14 +89,20 @@ type LookupStreamPoolResult struct {
 
 func LookupStreamPoolOutput(ctx *pulumi.Context, args LookupStreamPoolOutputArgs, opts ...pulumi.InvokeOption) LookupStreamPoolResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupStreamPoolResult, error) {
+		ApplyT(func(v interface{}) (LookupStreamPoolResultOutput, error) {
 			args := v.(LookupStreamPoolArgs)
-			r, err := LookupStreamPool(ctx, &args, opts...)
-			var s LookupStreamPoolResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupStreamPoolResult
+			secret, err := ctx.InvokePackageRaw("oci:Streaming/getStreamPool:getStreamPool", args, &rv, "", opts...)
+			if err != nil {
+				return LookupStreamPoolResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupStreamPoolResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupStreamPoolResultOutput), nil
+			}
+			return output, nil
 		}).(LookupStreamPoolResultOutput)
 }
 

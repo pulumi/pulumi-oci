@@ -100,14 +100,20 @@ type LookupVcnResult struct {
 
 func LookupVcnOutput(ctx *pulumi.Context, args LookupVcnOutputArgs, opts ...pulumi.InvokeOption) LookupVcnResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupVcnResult, error) {
+		ApplyT(func(v interface{}) (LookupVcnResultOutput, error) {
 			args := v.(LookupVcnArgs)
-			r, err := LookupVcn(ctx, &args, opts...)
-			var s LookupVcnResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupVcnResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVcn:getVcn", args, &rv, "", opts...)
+			if err != nil {
+				return LookupVcnResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupVcnResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupVcnResultOutput), nil
+			}
+			return output, nil
 		}).(LookupVcnResultOutput)
 }
 

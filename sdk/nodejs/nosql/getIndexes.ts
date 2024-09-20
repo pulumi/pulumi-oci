@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIndexes(args: GetIndexesArgs, opts?: pulumi.InvokeOptions): Promise<GetIndexesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Nosql/getIndexes:getIndexes", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetIndexesResult {
  * ```
  */
 export function getIndexesOutput(args: GetIndexesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIndexesResult> {
-    return pulumi.output(args).apply((a: any) => getIndexes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Nosql/getIndexes:getIndexes", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+        "tableNameOrId": args.tableNameOrId,
+    }, opts);
 }
 
 /**

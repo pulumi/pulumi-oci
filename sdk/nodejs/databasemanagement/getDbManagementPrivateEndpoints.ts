@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbManagementPrivateEndpoints(args: GetDbManagementPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbManagementPrivateEndpointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", {
         "compartmentId": args.compartmentId,
@@ -132,7 +131,16 @@ export interface GetDbManagementPrivateEndpointsResult {
  * ```
  */
 export function getDbManagementPrivateEndpointsOutput(args: GetDbManagementPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbManagementPrivateEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getDbManagementPrivateEndpoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "isCluster": args.isCluster,
+        "isDnsResolutionEnabled": args.isDnsResolutionEnabled,
+        "name": args.name,
+        "state": args.state,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

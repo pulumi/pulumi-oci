@@ -88,14 +88,20 @@ type GetDbNodesResult struct {
 
 func GetDbNodesOutput(ctx *pulumi.Context, args GetDbNodesOutputArgs, opts ...pulumi.InvokeOption) GetDbNodesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbNodesResult, error) {
+		ApplyT(func(v interface{}) (GetDbNodesResultOutput, error) {
 			args := v.(GetDbNodesArgs)
-			r, err := GetDbNodes(ctx, &args, opts...)
-			var s GetDbNodesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbNodesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbNodes:getDbNodes", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbNodesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbNodesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbNodesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbNodesResultOutput)
 }
 

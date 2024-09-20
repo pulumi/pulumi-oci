@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConnections(args: GetConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getConnections:getConnections", {
         "catalogId": args.catalogId,
@@ -200,7 +199,23 @@ export interface GetConnectionsResult {
  * ```
  */
 export function getConnectionsOutput(args: GetConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionsResult> {
-    return pulumi.output(args).apply((a: any) => getConnections(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getConnections:getConnections", {
+        "catalogId": args.catalogId,
+        "createdById": args.createdById,
+        "dataAssetKey": args.dataAssetKey,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "externalKey": args.externalKey,
+        "fields": args.fields,
+        "filters": args.filters,
+        "isDefault": args.isDefault,
+        "state": args.state,
+        "timeCreated": args.timeCreated,
+        "timeStatusUpdated": args.timeStatusUpdated,
+        "timeUpdated": args.timeUpdated,
+        "updatedById": args.updatedById,
+    }, opts);
 }
 
 /**

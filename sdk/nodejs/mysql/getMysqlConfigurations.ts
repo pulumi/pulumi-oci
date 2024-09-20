@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlConfigurations(args: GetMysqlConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlConfigurationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", {
         "compartmentId": args.compartmentId,
@@ -143,7 +142,16 @@ export interface GetMysqlConfigurationsResult {
  * ```
  */
 export function getMysqlConfigurationsOutput(args: GetMysqlConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlConfigurationsResult> {
-    return pulumi.output(args).apply((a: any) => getMysqlConfigurations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", {
+        "compartmentId": args.compartmentId,
+        "configurationId": args.configurationId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "shapeName": args.shapeName,
+        "state": args.state,
+        "types": args.types,
+    }, opts);
 }
 
 /**

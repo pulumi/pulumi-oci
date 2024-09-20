@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  */
 export function getMediaAssets(args?: GetMediaAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaAssetsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getMediaAssets:getMediaAssets", {
         "bucket": args.bucket,
@@ -196,7 +195,23 @@ export interface GetMediaAssetsResult {
  * ```
  */
 export function getMediaAssetsOutput(args?: GetMediaAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaAssetsResult> {
-    return pulumi.output(args).apply((a: any) => getMediaAssets(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaAssets:getMediaAssets", {
+        "bucket": args.bucket,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "distributionChannelId": args.distributionChannelId,
+        "filters": args.filters,
+        "masterMediaAssetId": args.masterMediaAssetId,
+        "mediaWorkflowJobId": args.mediaWorkflowJobId,
+        "object": args.object,
+        "parentMediaAssetId": args.parentMediaAssetId,
+        "sourceMediaWorkflowId": args.sourceMediaWorkflowId,
+        "sourceMediaWorkflowVersion": args.sourceMediaWorkflowVersion,
+        "state": args.state,
+        "type": args.type,
+    }, opts);
 }
 
 /**

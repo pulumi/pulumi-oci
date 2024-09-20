@@ -79,14 +79,20 @@ type GetScriptsResult struct {
 
 func GetScriptsOutput(ctx *pulumi.Context, args GetScriptsOutputArgs, opts ...pulumi.InvokeOption) GetScriptsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetScriptsResult, error) {
+		ApplyT(func(v interface{}) (GetScriptsResultOutput, error) {
 			args := v.(GetScriptsArgs)
-			r, err := GetScripts(ctx, &args, opts...)
-			var s GetScriptsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetScriptsResult
+			secret, err := ctx.InvokePackageRaw("oci:ApmSynthetics/getScripts:getScripts", args, &rv, "", opts...)
+			if err != nil {
+				return GetScriptsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetScriptsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetScriptsResultOutput), nil
+			}
+			return output, nil
 		}).(GetScriptsResultOutput)
 }
 

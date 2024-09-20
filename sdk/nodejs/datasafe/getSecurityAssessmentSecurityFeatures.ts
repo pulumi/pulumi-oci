@@ -37,7 +37,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityAssessmentSecurityFeatures(args: GetSecurityAssessmentSecurityFeaturesArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentSecurityFeaturesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", {
         "accessLevel": args.accessLevel,
@@ -192,7 +191,25 @@ export interface GetSecurityAssessmentSecurityFeaturesResult {
  * ```
  */
 export function getSecurityAssessmentSecurityFeaturesOutput(args: GetSecurityAssessmentSecurityFeaturesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentSecurityFeaturesResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityAssessmentSecurityFeatures(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "targetId": args.targetId,
+        "targetsWithColumnEncryption": args.targetsWithColumnEncryption,
+        "targetsWithDatabaseVault": args.targetsWithDatabaseVault,
+        "targetsWithExternalAuthentication": args.targetsWithExternalAuthentication,
+        "targetsWithFineGrainedAudit": args.targetsWithFineGrainedAudit,
+        "targetsWithGlobalAuthentication": args.targetsWithGlobalAuthentication,
+        "targetsWithNetworkEncryption": args.targetsWithNetworkEncryption,
+        "targetsWithPasswordAuthentication": args.targetsWithPasswordAuthentication,
+        "targetsWithPrivilegeAnalysis": args.targetsWithPrivilegeAnalysis,
+        "targetsWithTablespaceEncryption": args.targetsWithTablespaceEncryption,
+        "targetsWithTraditionalAudit": args.targetsWithTraditionalAudit,
+        "targetsWithUnifiedAudit": args.targetsWithUnifiedAudit,
+    }, opts);
 }
 
 /**

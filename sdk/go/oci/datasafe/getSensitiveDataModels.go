@@ -109,14 +109,20 @@ type GetSensitiveDataModelsResult struct {
 
 func GetSensitiveDataModelsOutput(ctx *pulumi.Context, args GetSensitiveDataModelsOutputArgs, opts ...pulumi.InvokeOption) GetSensitiveDataModelsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSensitiveDataModelsResult, error) {
+		ApplyT(func(v interface{}) (GetSensitiveDataModelsResultOutput, error) {
 			args := v.(GetSensitiveDataModelsArgs)
-			r, err := GetSensitiveDataModels(ctx, &args, opts...)
-			var s GetSensitiveDataModelsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSensitiveDataModelsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", args, &rv, "", opts...)
+			if err != nil {
+				return GetSensitiveDataModelsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSensitiveDataModelsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSensitiveDataModelsResultOutput), nil
+			}
+			return output, nil
 		}).(GetSensitiveDataModelsResultOutput)
 }
 

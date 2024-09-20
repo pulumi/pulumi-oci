@@ -38,7 +38,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditEvents(args: GetAuditEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditEventsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditEvents:getAuditEvents", {
         "accessLevel": args.accessLevel,
@@ -127,7 +126,14 @@ export interface GetAuditEventsResult {
  * ```
  */
 export function getAuditEventsOutput(args: GetAuditEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditEventsResult> {
-    return pulumi.output(args).apply((a: any) => getAuditEvents(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditEvents:getAuditEvents", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "scimQuery": args.scimQuery,
+    }, opts);
 }
 
 /**

@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabasePdbConversionHistoryEntry(args: GetDatabasePdbConversionHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabasePdbConversionHistoryEntryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", {
         "databaseId": args.databaseId,
@@ -118,7 +117,11 @@ export interface GetDatabasePdbConversionHistoryEntryResult {
  * ```
  */
 export function getDatabasePdbConversionHistoryEntryOutput(args: GetDatabasePdbConversionHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabasePdbConversionHistoryEntryResult> {
-    return pulumi.output(args).apply((a: any) => getDatabasePdbConversionHistoryEntry(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", {
+        "databaseId": args.databaseId,
+        "pdbConversionHistoryEntryId": args.pdbConversionHistoryEntryId,
+    }, opts);
 }
 
 /**

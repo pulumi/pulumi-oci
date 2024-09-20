@@ -82,14 +82,20 @@ type GetBdsInstanceGetOsPatchResult struct {
 
 func GetBdsInstanceGetOsPatchOutput(ctx *pulumi.Context, args GetBdsInstanceGetOsPatchOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceGetOsPatchResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceGetOsPatchResult, error) {
+		ApplyT(func(v interface{}) (GetBdsInstanceGetOsPatchResultOutput, error) {
 			args := v.(GetBdsInstanceGetOsPatchArgs)
-			r, err := GetBdsInstanceGetOsPatch(ctx, &args, opts...)
-			var s GetBdsInstanceGetOsPatchResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBdsInstanceGetOsPatchResult
+			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstanceGetOsPatch:getBdsInstanceGetOsPatch", args, &rv, "", opts...)
+			if err != nil {
+				return GetBdsInstanceGetOsPatchResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBdsInstanceGetOsPatchResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBdsInstanceGetOsPatchResultOutput), nil
+			}
+			return output, nil
 		}).(GetBdsInstanceGetOsPatchResultOutput)
 }
 

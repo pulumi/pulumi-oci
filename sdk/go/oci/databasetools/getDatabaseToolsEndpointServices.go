@@ -85,14 +85,20 @@ type GetDatabaseToolsEndpointServicesResult struct {
 
 func GetDatabaseToolsEndpointServicesOutput(ctx *pulumi.Context, args GetDatabaseToolsEndpointServicesOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsEndpointServicesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDatabaseToolsEndpointServicesResult, error) {
+		ApplyT(func(v interface{}) (GetDatabaseToolsEndpointServicesResultOutput, error) {
 			args := v.(GetDatabaseToolsEndpointServicesArgs)
-			r, err := GetDatabaseToolsEndpointServices(ctx, &args, opts...)
-			var s GetDatabaseToolsEndpointServicesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDatabaseToolsEndpointServicesResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices", args, &rv, "", opts...)
+			if err != nil {
+				return GetDatabaseToolsEndpointServicesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDatabaseToolsEndpointServicesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDatabaseToolsEndpointServicesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDatabaseToolsEndpointServicesResultOutput)
 }
 

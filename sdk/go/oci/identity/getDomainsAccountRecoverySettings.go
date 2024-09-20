@@ -92,14 +92,20 @@ type GetDomainsAccountRecoverySettingsResult struct {
 
 func GetDomainsAccountRecoverySettingsOutput(ctx *pulumi.Context, args GetDomainsAccountRecoverySettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAccountRecoverySettingsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsAccountRecoverySettingsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsAccountRecoverySettingsResultOutput, error) {
 			args := v.(GetDomainsAccountRecoverySettingsArgs)
-			r, err := GetDomainsAccountRecoverySettings(ctx, &args, opts...)
-			var s GetDomainsAccountRecoverySettingsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsAccountRecoverySettingsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsAccountRecoverySettingsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsAccountRecoverySettingsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsAccountRecoverySettingsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsAccountRecoverySettingsResultOutput)
 }
 

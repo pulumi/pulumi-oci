@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsUnprocessedDataBucket(args: GetLogAnalyticsUnprocessedDataBucketArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsUnprocessedDataBucketResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", {
         "namespace": args.namespace,
@@ -84,7 +83,10 @@ export interface GetLogAnalyticsUnprocessedDataBucketResult {
  * ```
  */
 export function getLogAnalyticsUnprocessedDataBucketOutput(args: GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsUnprocessedDataBucketResult> {
-    return pulumi.output(args).apply((a: any) => getLogAnalyticsUnprocessedDataBucket(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", {
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

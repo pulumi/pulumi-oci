@@ -92,14 +92,20 @@ type LookupDiscoveryJobResult struct {
 
 func LookupDiscoveryJobOutput(ctx *pulumi.Context, args LookupDiscoveryJobOutputArgs, opts ...pulumi.InvokeOption) LookupDiscoveryJobResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDiscoveryJobResult, error) {
+		ApplyT(func(v interface{}) (LookupDiscoveryJobResultOutput, error) {
 			args := v.(LookupDiscoveryJobArgs)
-			r, err := LookupDiscoveryJob(ctx, &args, opts...)
-			var s LookupDiscoveryJobResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDiscoveryJobResult
+			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getDiscoveryJob:getDiscoveryJob", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDiscoveryJobResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDiscoveryJobResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDiscoveryJobResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDiscoveryJobResultOutput)
 }
 

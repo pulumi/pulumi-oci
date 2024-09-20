@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseRegistration(args: GetDatabaseRegistrationArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseRegistrationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", {
         "databaseRegistrationId": args.databaseRegistrationId,
@@ -161,7 +160,10 @@ export interface GetDatabaseRegistrationResult {
  * ```
  */
 export function getDatabaseRegistrationOutput(args: GetDatabaseRegistrationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseRegistrationResult> {
-    return pulumi.output(args).apply((a: any) => getDatabaseRegistration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", {
+        "databaseRegistrationId": args.databaseRegistrationId,
+    }, opts);
 }
 
 /**

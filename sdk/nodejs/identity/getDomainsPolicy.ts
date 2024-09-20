@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsPolicy(args: GetDomainsPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsPolicy:getDomainsPolicy", {
         "attributeSets": args.attributeSets,
@@ -183,7 +182,15 @@ export interface GetDomainsPolicyResult {
  * ```
  */
 export function getDomainsPolicyOutput(args: GetDomainsPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsPolicy:getDomainsPolicy", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "policyId": args.policyId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

@@ -99,14 +99,20 @@ type LookupLicenseRecordResult struct {
 
 func LookupLicenseRecordOutput(ctx *pulumi.Context, args LookupLicenseRecordOutputArgs, opts ...pulumi.InvokeOption) LookupLicenseRecordResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupLicenseRecordResult, error) {
+		ApplyT(func(v interface{}) (LookupLicenseRecordResultOutput, error) {
 			args := v.(LookupLicenseRecordArgs)
-			r, err := LookupLicenseRecord(ctx, &args, opts...)
-			var s LookupLicenseRecordResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupLicenseRecordResult
+			secret, err := ctx.InvokePackageRaw("oci:LicenseManager/getLicenseRecord:getLicenseRecord", args, &rv, "", opts...)
+			if err != nil {
+				return LookupLicenseRecordResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupLicenseRecordResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupLicenseRecordResultOutput), nil
+			}
+			return output, nil
 		}).(LookupLicenseRecordResultOutput)
 }
 

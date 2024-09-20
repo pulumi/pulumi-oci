@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getByoipRanges(args: GetByoipRangesArgs, opts?: pulumi.InvokeOptions): Promise<GetByoipRangesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getByoipRanges:getByoipRanges", {
         "compartmentId": args.compartmentId,
@@ -101,7 +100,13 @@ export interface GetByoipRangesResult {
  * ```
  */
 export function getByoipRangesOutput(args: GetByoipRangesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipRangesResult> {
-    return pulumi.output(args).apply((a: any) => getByoipRanges(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getByoipRanges:getByoipRanges", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

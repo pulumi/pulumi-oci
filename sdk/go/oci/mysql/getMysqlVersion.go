@@ -71,14 +71,20 @@ type GetMysqlVersionResult struct {
 
 func GetMysqlVersionOutput(ctx *pulumi.Context, args GetMysqlVersionOutputArgs, opts ...pulumi.InvokeOption) GetMysqlVersionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMysqlVersionResult, error) {
+		ApplyT(func(v interface{}) (GetMysqlVersionResultOutput, error) {
 			args := v.(GetMysqlVersionArgs)
-			r, err := GetMysqlVersion(ctx, &args, opts...)
-			var s GetMysqlVersionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMysqlVersionResult
+			secret, err := ctx.InvokePackageRaw("oci:Mysql/getMysqlVersion:getMysqlVersion", args, &rv, "", opts...)
+			if err != nil {
+				return GetMysqlVersionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMysqlVersionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMysqlVersionResultOutput), nil
+			}
+			return output, nil
 		}).(GetMysqlVersionResultOutput)
 }
 

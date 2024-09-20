@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
  */
 export function getMediaAssetDistributionChannelAttachment(args: GetMediaAssetDistributionChannelAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaAssetDistributionChannelAttachmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", {
         "distributionChannelId": args.distributionChannelId,
@@ -86,7 +85,13 @@ export interface GetMediaAssetDistributionChannelAttachmentResult {
  * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
  */
 export function getMediaAssetDistributionChannelAttachmentOutput(args: GetMediaAssetDistributionChannelAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaAssetDistributionChannelAttachmentResult> {
-    return pulumi.output(args).apply((a: any) => getMediaAssetDistributionChannelAttachment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", {
+        "distributionChannelId": args.distributionChannelId,
+        "isLockOverride": args.isLockOverride,
+        "locks": args.locks,
+        "mediaAssetId": args.mediaAssetId,
+    }, opts);
 }
 
 /**

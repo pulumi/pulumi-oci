@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getQuery(args: GetQueryArgs, opts?: pulumi.InvokeOptions): Promise<GetQueryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getQuery:getQuery", {
         "queryId": args.queryId,
@@ -75,7 +74,10 @@ export interface GetQueryResult {
  * ```
  */
 export function getQueryOutput(args: GetQueryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueryResult> {
-    return pulumi.output(args).apply((a: any) => getQuery(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getQuery:getQuery", {
+        "queryId": args.queryId,
+    }, opts);
 }
 
 /**

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApiKeys(args: GetApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetApiKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getApiKeys:getApiKeys", {
         "filters": args.filters,
@@ -83,7 +82,11 @@ export interface GetApiKeysResult {
  * ```
  */
 export function getApiKeysOutput(args: GetApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiKeysResult> {
-    return pulumi.output(args).apply((a: any) => getApiKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getApiKeys:getApiKeys", {
+        "filters": args.filters,
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

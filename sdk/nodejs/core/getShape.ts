@@ -7,7 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getShape(args: GetShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetShapeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getShape:getShape", {
         "availabilityDomain": args.availabilityDomain,
@@ -42,7 +41,13 @@ export interface GetShapeResult {
     readonly shapes: outputs.Core.GetShapeShape[];
 }
 export function getShapeOutput(args: GetShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapeResult> {
-    return pulumi.output(args).apply((a: any) => getShape(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getShape:getShape", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "imageId": args.imageId,
+    }, opts);
 }
 
 /**

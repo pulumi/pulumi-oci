@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserProxiedForUsers(args: GetManagedDatabaseUserProxiedForUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserProxiedForUsersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", {
         "filters": args.filters,
@@ -101,7 +100,14 @@ export interface GetManagedDatabaseUserProxiedForUsersResult {
  * ```
  */
 export function getManagedDatabaseUserProxiedForUsersOutput(args: GetManagedDatabaseUserProxiedForUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserProxiedForUsersResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserProxiedForUsers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", {
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "userName": args.userName,
+    }, opts);
 }
 
 /**

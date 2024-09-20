@@ -93,14 +93,20 @@ type GetNotebookSessionsResult struct {
 
 func GetNotebookSessionsOutput(ctx *pulumi.Context, args GetNotebookSessionsOutputArgs, opts ...pulumi.InvokeOption) GetNotebookSessionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNotebookSessionsResult, error) {
+		ApplyT(func(v interface{}) (GetNotebookSessionsResultOutput, error) {
 			args := v.(GetNotebookSessionsArgs)
-			r, err := GetNotebookSessions(ctx, &args, opts...)
-			var s GetNotebookSessionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNotebookSessionsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataScience/getNotebookSessions:getNotebookSessions", args, &rv, "", opts...)
+			if err != nil {
+				return GetNotebookSessionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNotebookSessionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNotebookSessionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetNotebookSessionsResultOutput)
 }
 

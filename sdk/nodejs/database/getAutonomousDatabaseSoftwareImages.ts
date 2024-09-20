@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabaseSoftwareImages(args: GetAutonomousDatabaseSoftwareImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseSoftwareImagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetAutonomousDatabaseSoftwareImagesResult {
  * ```
  */
 export function getAutonomousDatabaseSoftwareImagesOutput(args: GetAutonomousDatabaseSoftwareImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseSoftwareImagesResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseSoftwareImages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "imageShapeFamily": args.imageShapeFamily,
+        "state": args.state,
+    }, opts);
 }
 
 /**

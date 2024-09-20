@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsUserDbCredential(args: GetDomainsUserDbCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsUserDbCredentialResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsUserDbCredential:getDomainsUserDbCredential", {
         "attributeSets": args.attributeSets,
@@ -203,7 +202,15 @@ export interface GetDomainsUserDbCredentialResult {
  * ```
  */
 export function getDomainsUserDbCredentialOutput(args: GetDomainsUserDbCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUserDbCredentialResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsUserDbCredential(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsUserDbCredential:getDomainsUserDbCredential", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "userDbCredentialId": args.userDbCredentialId,
+    }, opts);
 }
 
 /**

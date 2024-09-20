@@ -69,14 +69,20 @@ type GetFusionEnvironmentAdminUsersResult struct {
 
 func GetFusionEnvironmentAdminUsersOutput(ctx *pulumi.Context, args GetFusionEnvironmentAdminUsersOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentAdminUsersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentAdminUsersResult, error) {
+		ApplyT(func(v interface{}) (GetFusionEnvironmentAdminUsersResultOutput, error) {
 			args := v.(GetFusionEnvironmentAdminUsersArgs)
-			r, err := GetFusionEnvironmentAdminUsers(ctx, &args, opts...)
-			var s GetFusionEnvironmentAdminUsersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFusionEnvironmentAdminUsersResult
+			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentAdminUsers:getFusionEnvironmentAdminUsers", args, &rv, "", opts...)
+			if err != nil {
+				return GetFusionEnvironmentAdminUsersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFusionEnvironmentAdminUsersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFusionEnvironmentAdminUsersResultOutput), nil
+			}
+			return output, nil
 		}).(GetFusionEnvironmentAdminUsersResultOutput)
 }
 

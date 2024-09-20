@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
  */
 export function getDbHomes(args: GetDbHomesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbHomesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbHomes:getDbHomes", {
         "backupId": args.backupId,
@@ -106,7 +105,17 @@ export interface GetDbHomesResult {
  * Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
  */
 export function getDbHomesOutput(args: GetDbHomesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomesResult> {
-    return pulumi.output(args).apply((a: any) => getDbHomes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbHomes:getDbHomes", {
+        "backupId": args.backupId,
+        "compartmentId": args.compartmentId,
+        "dbSystemId": args.dbSystemId,
+        "dbVersion": args.dbVersion,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "vmClusterId": args.vmClusterId,
+    }, opts);
 }
 
 /**

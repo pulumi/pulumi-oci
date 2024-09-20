@@ -82,14 +82,20 @@ type LookupFleetAdvancedFeatureConfigurationResult struct {
 
 func LookupFleetAdvancedFeatureConfigurationOutput(ctx *pulumi.Context, args LookupFleetAdvancedFeatureConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupFleetAdvancedFeatureConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupFleetAdvancedFeatureConfigurationResult, error) {
+		ApplyT(func(v interface{}) (LookupFleetAdvancedFeatureConfigurationResultOutput, error) {
 			args := v.(LookupFleetAdvancedFeatureConfigurationArgs)
-			r, err := LookupFleetAdvancedFeatureConfiguration(ctx, &args, opts...)
-			var s LookupFleetAdvancedFeatureConfigurationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupFleetAdvancedFeatureConfigurationResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", args, &rv, "", opts...)
+			if err != nil {
+				return LookupFleetAdvancedFeatureConfigurationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupFleetAdvancedFeatureConfigurationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupFleetAdvancedFeatureConfigurationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupFleetAdvancedFeatureConfigurationResultOutput)
 }
 

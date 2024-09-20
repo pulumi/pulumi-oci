@@ -87,14 +87,20 @@ type GetNamespacePropertiesMetadataResult struct {
 
 func GetNamespacePropertiesMetadataOutput(ctx *pulumi.Context, args GetNamespacePropertiesMetadataOutputArgs, opts ...pulumi.InvokeOption) GetNamespacePropertiesMetadataResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNamespacePropertiesMetadataResult, error) {
+		ApplyT(func(v interface{}) (GetNamespacePropertiesMetadataResultOutput, error) {
 			args := v.(GetNamespacePropertiesMetadataArgs)
-			r, err := GetNamespacePropertiesMetadata(ctx, &args, opts...)
-			var s GetNamespacePropertiesMetadataResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNamespacePropertiesMetadataResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", args, &rv, "", opts...)
+			if err != nil {
+				return GetNamespacePropertiesMetadataResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNamespacePropertiesMetadataResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNamespacePropertiesMetadataResultOutput), nil
+			}
+			return output, nil
 		}).(GetNamespacePropertiesMetadataResultOutput)
 }
 

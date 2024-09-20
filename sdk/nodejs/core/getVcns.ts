@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVcns(args: GetVcnsArgs, opts?: pulumi.InvokeOptions): Promise<GetVcnsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVcns:getVcns", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,13 @@ export interface GetVcnsResult {
  * ```
  */
 export function getVcnsOutput(args: GetVcnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVcnsResult> {
-    return pulumi.output(args).apply((a: any) => getVcns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVcns:getVcns", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

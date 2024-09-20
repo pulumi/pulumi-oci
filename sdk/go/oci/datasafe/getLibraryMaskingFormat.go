@@ -88,14 +88,20 @@ type GetLibraryMaskingFormatResult struct {
 
 func GetLibraryMaskingFormatOutput(ctx *pulumi.Context, args GetLibraryMaskingFormatOutputArgs, opts ...pulumi.InvokeOption) GetLibraryMaskingFormatResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetLibraryMaskingFormatResult, error) {
+		ApplyT(func(v interface{}) (GetLibraryMaskingFormatResultOutput, error) {
 			args := v.(GetLibraryMaskingFormatArgs)
-			r, err := GetLibraryMaskingFormat(ctx, &args, opts...)
-			var s GetLibraryMaskingFormatResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetLibraryMaskingFormatResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat", args, &rv, "", opts...)
+			if err != nil {
+				return GetLibraryMaskingFormatResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetLibraryMaskingFormatResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetLibraryMaskingFormatResultOutput), nil
+			}
+			return output, nil
 		}).(GetLibraryMaskingFormatResultOutput)
 }
 

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousVirtualMachines(args: GetAutonomousVirtualMachinesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousVirtualMachinesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", {
         "autonomousVmClusterId": args.autonomousVmClusterId,
@@ -99,7 +98,13 @@ export interface GetAutonomousVirtualMachinesResult {
  * ```
  */
 export function getAutonomousVirtualMachinesOutput(args: GetAutonomousVirtualMachinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousVirtualMachinesResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousVirtualMachines(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", {
+        "autonomousVmClusterId": args.autonomousVmClusterId,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

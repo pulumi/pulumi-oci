@@ -60,14 +60,20 @@ type GetAggregatedComputedUsagesResult struct {
 
 func GetAggregatedComputedUsagesOutput(ctx *pulumi.Context, args GetAggregatedComputedUsagesOutputArgs, opts ...pulumi.InvokeOption) GetAggregatedComputedUsagesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAggregatedComputedUsagesResult, error) {
+		ApplyT(func(v interface{}) (GetAggregatedComputedUsagesResultOutput, error) {
 			args := v.(GetAggregatedComputedUsagesArgs)
-			r, err := GetAggregatedComputedUsages(ctx, &args, opts...)
-			var s GetAggregatedComputedUsagesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAggregatedComputedUsagesResult
+			secret, err := ctx.InvokePackageRaw("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args, &rv, "", opts...)
+			if err != nil {
+				return GetAggregatedComputedUsagesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAggregatedComputedUsagesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAggregatedComputedUsagesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAggregatedComputedUsagesResultOutput)
 }
 

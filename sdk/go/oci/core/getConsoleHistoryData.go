@@ -77,14 +77,20 @@ type GetConsoleHistoryDataResult struct {
 
 func GetConsoleHistoryDataOutput(ctx *pulumi.Context, args GetConsoleHistoryDataOutputArgs, opts ...pulumi.InvokeOption) GetConsoleHistoryDataResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetConsoleHistoryDataResult, error) {
+		ApplyT(func(v interface{}) (GetConsoleHistoryDataResultOutput, error) {
 			args := v.(GetConsoleHistoryDataArgs)
-			r, err := GetConsoleHistoryData(ctx, &args, opts...)
-			var s GetConsoleHistoryDataResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetConsoleHistoryDataResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getConsoleHistoryData:getConsoleHistoryData", args, &rv, "", opts...)
+			if err != nil {
+				return GetConsoleHistoryDataResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetConsoleHistoryDataResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetConsoleHistoryDataResultOutput), nil
+			}
+			return output, nil
 		}).(GetConsoleHistoryDataResultOutput)
 }
 

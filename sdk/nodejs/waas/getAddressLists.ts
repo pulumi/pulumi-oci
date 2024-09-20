@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAddressLists(args: GetAddressListsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressListsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getAddressLists:getAddressLists", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,16 @@ export interface GetAddressListsResult {
  * ```
  */
 export function getAddressListsOutput(args: GetAddressListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressListsResult> {
-    return pulumi.output(args).apply((a: any) => getAddressLists(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waas/getAddressLists:getAddressLists", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "ids": args.ids,
+        "names": args.names,
+        "states": args.states,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

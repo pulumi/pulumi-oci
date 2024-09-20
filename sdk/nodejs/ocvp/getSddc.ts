@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSddc(args: GetSddcArgs, opts?: pulumi.InvokeOptions): Promise<GetSddcResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSddc:getSddc", {
         "sddcId": args.sddcId,
@@ -368,7 +367,10 @@ export interface GetSddcResult {
  * ```
  */
 export function getSddcOutput(args: GetSddcOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSddcResult> {
-    return pulumi.output(args).apply((a: any) => getSddc(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getSddc:getSddc", {
+        "sddcId": args.sddcId,
+    }, opts);
 }
 
 /**

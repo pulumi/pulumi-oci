@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemPatches(args: GetDbSystemPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemPatchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemPatches:getDbSystemPatches", {
         "dbSystemId": args.dbSystemId,
@@ -74,7 +73,11 @@ export interface GetDbSystemPatchesResult {
  * ```
  */
 export function getDbSystemPatchesOutput(args: GetDbSystemPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemPatchesResult> {
-    return pulumi.output(args).apply((a: any) => getDbSystemPatches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbSystemPatches:getDbSystemPatches", {
+        "dbSystemId": args.dbSystemId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

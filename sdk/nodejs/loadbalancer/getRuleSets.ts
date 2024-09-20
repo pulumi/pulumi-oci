@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRuleSets(args: GetRuleSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetRuleSetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getRuleSets:getRuleSets", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetRuleSetsResult {
  * ```
  */
 export function getRuleSetsOutput(args: GetRuleSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRuleSetsResult> {
-    return pulumi.output(args).apply((a: any) => getRuleSets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getRuleSets:getRuleSets", {
+        "filters": args.filters,
+        "loadBalancerId": args.loadBalancerId,
+    }, opts);
 }
 
 /**

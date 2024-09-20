@@ -80,14 +80,20 @@ type GetPublicIpPoolsResult struct {
 
 func GetPublicIpPoolsOutput(ctx *pulumi.Context, args GetPublicIpPoolsOutputArgs, opts ...pulumi.InvokeOption) GetPublicIpPoolsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPublicIpPoolsResult, error) {
+		ApplyT(func(v interface{}) (GetPublicIpPoolsResultOutput, error) {
 			args := v.(GetPublicIpPoolsArgs)
-			r, err := GetPublicIpPools(ctx, &args, opts...)
-			var s GetPublicIpPoolsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPublicIpPoolsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getPublicIpPools:getPublicIpPools", args, &rv, "", opts...)
+			if err != nil {
+				return GetPublicIpPoolsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPublicIpPoolsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPublicIpPoolsResultOutput), nil
+			}
+			return output, nil
 		}).(GetPublicIpPoolsResultOutput)
 }
 

@@ -80,14 +80,20 @@ type GetExternalDbSystemConnectorsResult struct {
 
 func GetExternalDbSystemConnectorsOutput(ctx *pulumi.Context, args GetExternalDbSystemConnectorsOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbSystemConnectorsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalDbSystemConnectorsResult, error) {
+		ApplyT(func(v interface{}) (GetExternalDbSystemConnectorsResultOutput, error) {
 			args := v.(GetExternalDbSystemConnectorsArgs)
-			r, err := GetExternalDbSystemConnectors(ctx, &args, opts...)
-			var s GetExternalDbSystemConnectorsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExternalDbSystemConnectorsResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors", args, &rv, "", opts...)
+			if err != nil {
+				return GetExternalDbSystemConnectorsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExternalDbSystemConnectorsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExternalDbSystemConnectorsResultOutput), nil
+			}
+			return output, nil
 		}).(GetExternalDbSystemConnectorsResultOutput)
 }
 

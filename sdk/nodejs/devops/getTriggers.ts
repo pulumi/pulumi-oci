@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getTriggers(args?: GetTriggersArgs, opts?: pulumi.InvokeOptions): Promise<GetTriggersResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getTriggers:getTriggers", {
         "compartmentId": args.compartmentId,
@@ -118,7 +117,16 @@ export interface GetTriggersResult {
  * ```
  */
 export function getTriggersOutput(args?: GetTriggersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTriggersResult> {
-    return pulumi.output(args).apply((a: any) => getTriggers(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getTriggers:getTriggers", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

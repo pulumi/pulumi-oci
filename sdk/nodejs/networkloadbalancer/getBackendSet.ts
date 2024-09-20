@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Retrieves the configuration information for the specified backend set.
  */
 export function getBackendSet(args: GetBackendSetArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", {
         "backendSetName": args.backendSetName,
@@ -80,7 +79,11 @@ export interface GetBackendSetResult {
  * Retrieves the configuration information for the specified backend set.
  */
 export function getBackendSetOutput(args: GetBackendSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetResult> {
-    return pulumi.output(args).apply((a: any) => getBackendSet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", {
+        "backendSetName": args.backendSetName,
+        "networkLoadBalancerId": args.networkLoadBalancerId,
+    }, opts);
 }
 
 /**

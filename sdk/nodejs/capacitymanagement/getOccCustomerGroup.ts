@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOccCustomerGroup(args: GetOccCustomerGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetOccCustomerGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", {
         "occCustomerGroupId": args.occCustomerGroupId,
@@ -118,7 +117,10 @@ export interface GetOccCustomerGroupResult {
  * ```
  */
 export function getOccCustomerGroupOutput(args: GetOccCustomerGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccCustomerGroupResult> {
-    return pulumi.output(args).apply((a: any) => getOccCustomerGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", {
+        "occCustomerGroupId": args.occCustomerGroupId,
+    }, opts);
 }
 
 /**

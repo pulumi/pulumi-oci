@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getQuotas(args: GetQuotasArgs, opts?: pulumi.InvokeOptions): Promise<GetQuotasResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getQuotas:getQuotas", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetQuotasResult {
  * ```
  */
 export function getQuotasOutput(args: GetQuotasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQuotasResult> {
-    return pulumi.output(args).apply((a: any) => getQuotas(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Limits/getQuotas:getQuotas", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

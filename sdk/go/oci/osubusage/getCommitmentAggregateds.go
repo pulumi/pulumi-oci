@@ -63,14 +63,20 @@ type GetCommitmentAggregatedsResult struct {
 
 func GetCommitmentAggregatedsOutput(ctx *pulumi.Context, args GetCommitmentAggregatedsOutputArgs, opts ...pulumi.InvokeOption) GetCommitmentAggregatedsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCommitmentAggregatedsResult, error) {
+		ApplyT(func(v interface{}) (GetCommitmentAggregatedsResultOutput, error) {
 			args := v.(GetCommitmentAggregatedsArgs)
-			r, err := GetCommitmentAggregateds(ctx, &args, opts...)
-			var s GetCommitmentAggregatedsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCommitmentAggregatedsResult
+			secret, err := ctx.InvokePackageRaw("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", args, &rv, "", opts...)
+			if err != nil {
+				return GetCommitmentAggregatedsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCommitmentAggregatedsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCommitmentAggregatedsResultOutput), nil
+			}
+			return output, nil
 		}).(GetCommitmentAggregatedsResultOutput)
 }
 

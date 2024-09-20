@@ -92,14 +92,20 @@ type GetDomainsIdentitySettingsResult struct {
 
 func GetDomainsIdentitySettingsOutput(ctx *pulumi.Context, args GetDomainsIdentitySettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsIdentitySettingsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsIdentitySettingsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsIdentitySettingsResultOutput, error) {
 			args := v.(GetDomainsIdentitySettingsArgs)
-			r, err := GetDomainsIdentitySettings(ctx, &args, opts...)
-			var s GetDomainsIdentitySettingsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsIdentitySettingsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsIdentitySettings:getDomainsIdentitySettings", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsIdentitySettingsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsIdentitySettingsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsIdentitySettingsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsIdentitySettingsResultOutput)
 }
 

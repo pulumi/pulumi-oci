@@ -91,14 +91,20 @@ type LookupEnterpriseManagerBridgeResult struct {
 
 func LookupEnterpriseManagerBridgeOutput(ctx *pulumi.Context, args LookupEnterpriseManagerBridgeOutputArgs, opts ...pulumi.InvokeOption) LookupEnterpriseManagerBridgeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupEnterpriseManagerBridgeResult, error) {
+		ApplyT(func(v interface{}) (LookupEnterpriseManagerBridgeResultOutput, error) {
 			args := v.(LookupEnterpriseManagerBridgeArgs)
-			r, err := LookupEnterpriseManagerBridge(ctx, &args, opts...)
-			var s LookupEnterpriseManagerBridgeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupEnterpriseManagerBridgeResult
+			secret, err := ctx.InvokePackageRaw("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", args, &rv, "", opts...)
+			if err != nil {
+				return LookupEnterpriseManagerBridgeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupEnterpriseManagerBridgeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupEnterpriseManagerBridgeResultOutput), nil
+			}
+			return output, nil
 		}).(LookupEnterpriseManagerBridgeResultOutput)
 }
 

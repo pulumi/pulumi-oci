@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWlpAgents(args: GetWlpAgentsArgs, opts?: pulumi.InvokeOptions): Promise<GetWlpAgentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getWlpAgents:getWlpAgents", {
         "compartmentId": args.compartmentId,
@@ -77,7 +76,11 @@ export interface GetWlpAgentsResult {
  * ```
  */
 export function getWlpAgentsOutput(args: GetWlpAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWlpAgentsResult> {
-    return pulumi.output(args).apply((a: any) => getWlpAgents(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getWlpAgents:getWlpAgents", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

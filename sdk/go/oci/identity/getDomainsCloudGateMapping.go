@@ -131,14 +131,20 @@ type LookupDomainsCloudGateMappingResult struct {
 
 func LookupDomainsCloudGateMappingOutput(ctx *pulumi.Context, args LookupDomainsCloudGateMappingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsCloudGateMappingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsCloudGateMappingResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsCloudGateMappingResultOutput, error) {
 			args := v.(LookupDomainsCloudGateMappingArgs)
-			r, err := LookupDomainsCloudGateMapping(ctx, &args, opts...)
-			var s LookupDomainsCloudGateMappingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsCloudGateMappingResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsCloudGateMapping:getDomainsCloudGateMapping", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsCloudGateMappingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsCloudGateMappingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsCloudGateMappingResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsCloudGateMappingResultOutput)
 }
 

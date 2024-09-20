@@ -88,14 +88,20 @@ type LookupClusterNetworkResult struct {
 
 func LookupClusterNetworkOutput(ctx *pulumi.Context, args LookupClusterNetworkOutputArgs, opts ...pulumi.InvokeOption) LookupClusterNetworkResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupClusterNetworkResult, error) {
+		ApplyT(func(v interface{}) (LookupClusterNetworkResultOutput, error) {
 			args := v.(LookupClusterNetworkArgs)
-			r, err := LookupClusterNetwork(ctx, &args, opts...)
-			var s LookupClusterNetworkResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupClusterNetworkResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getClusterNetwork:getClusterNetwork", args, &rv, "", opts...)
+			if err != nil {
+				return LookupClusterNetworkResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupClusterNetworkResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupClusterNetworkResultOutput), nil
+			}
+			return output, nil
 		}).(LookupClusterNetworkResultOutput)
 }
 

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCustomTable(args: GetCustomTableArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomTableResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getCustomTable:getCustomTable", {
         "customTableId": args.customTableId,
@@ -79,7 +78,10 @@ export interface GetCustomTableResult {
  * ```
  */
 export function getCustomTableOutput(args: GetCustomTableOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomTableResult> {
-    return pulumi.output(args).apply((a: any) => getCustomTable(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getCustomTable:getCustomTable", {
+        "customTableId": args.customTableId,
+    }, opts);
 }
 
 /**

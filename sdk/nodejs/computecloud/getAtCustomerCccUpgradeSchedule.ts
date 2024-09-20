@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAtCustomerCccUpgradeSchedule(args: GetAtCustomerCccUpgradeScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetAtCustomerCccUpgradeScheduleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", {
         "cccUpgradeScheduleId": args.cccUpgradeScheduleId,
@@ -117,7 +116,10 @@ export interface GetAtCustomerCccUpgradeScheduleResult {
  * ```
  */
 export function getAtCustomerCccUpgradeScheduleOutput(args: GetAtCustomerCccUpgradeScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccUpgradeScheduleResult> {
-    return pulumi.output(args).apply((a: any) => getAtCustomerCccUpgradeSchedule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", {
+        "cccUpgradeScheduleId": args.cccUpgradeScheduleId,
+    }, opts);
 }
 
 /**

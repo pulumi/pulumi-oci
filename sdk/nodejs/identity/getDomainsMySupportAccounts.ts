@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMySupportAccounts(args: GetDomainsMySupportAccountsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMySupportAccountsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMySupportAccounts:getDomainsMySupportAccounts", {
         "authorization": args.authorization,
@@ -126,7 +125,18 @@ export interface GetDomainsMySupportAccountsResult {
  * ```
  */
 export function getDomainsMySupportAccountsOutput(args: GetDomainsMySupportAccountsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMySupportAccountsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMySupportAccounts(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMySupportAccounts:getDomainsMySupportAccounts", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "mySupportAccountCount": args.mySupportAccountCount,
+        "mySupportAccountFilter": args.mySupportAccountFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTrailFile(args: GetTrailFileArgs, opts?: pulumi.InvokeOptions): Promise<GetTrailFileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getTrailFile:getTrailFile", {
         "deploymentId": args.deploymentId,
@@ -97,7 +96,12 @@ export interface GetTrailFileResult {
  * ```
  */
 export function getTrailFileOutput(args: GetTrailFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTrailFileResult> {
-    return pulumi.output(args).apply((a: any) => getTrailFile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getTrailFile:getTrailFile", {
+        "deploymentId": args.deploymentId,
+        "displayName": args.displayName,
+        "trailFileId": args.trailFileId,
+    }, opts);
 }
 
 /**

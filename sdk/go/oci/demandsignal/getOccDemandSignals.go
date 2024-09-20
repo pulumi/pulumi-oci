@@ -83,14 +83,20 @@ type GetOccDemandSignalsResult struct {
 
 func GetOccDemandSignalsOutput(ctx *pulumi.Context, args GetOccDemandSignalsOutputArgs, opts ...pulumi.InvokeOption) GetOccDemandSignalsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetOccDemandSignalsResult, error) {
+		ApplyT(func(v interface{}) (GetOccDemandSignalsResultOutput, error) {
 			args := v.(GetOccDemandSignalsArgs)
-			r, err := GetOccDemandSignals(ctx, &args, opts...)
-			var s GetOccDemandSignalsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetOccDemandSignalsResult
+			secret, err := ctx.InvokePackageRaw("oci:DemandSignal/getOccDemandSignals:getOccDemandSignals", args, &rv, "", opts...)
+			if err != nil {
+				return GetOccDemandSignalsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetOccDemandSignalsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetOccDemandSignalsResultOutput), nil
+			}
+			return output, nil
 		}).(GetOccDemandSignalsResultOutput)
 }
 

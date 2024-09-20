@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMigrationPlanAvailableShapes(args: GetMigrationPlanAvailableShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationPlanAvailableShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", {
         "availabilityDomain": args.availabilityDomain,
@@ -109,7 +108,15 @@ export interface GetMigrationPlanAvailableShapesResult {
  * ```
  */
 export function getMigrationPlanAvailableShapesOutput(args: GetMigrationPlanAvailableShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationPlanAvailableShapesResult> {
-    return pulumi.output(args).apply((a: any) => getMigrationPlanAvailableShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "dvhHostId": args.dvhHostId,
+        "filters": args.filters,
+        "migrationPlanId": args.migrationPlanId,
+        "reservedCapacityId": args.reservedCapacityId,
+    }, opts);
 }
 
 /**

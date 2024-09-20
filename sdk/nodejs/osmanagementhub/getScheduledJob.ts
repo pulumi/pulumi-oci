@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getScheduledJob(args: GetScheduledJobArgs, opts?: pulumi.InvokeOptions): Promise<GetScheduledJobResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getScheduledJob:getScheduledJob", {
         "scheduledJobId": args.scheduledJobId,
@@ -171,7 +170,10 @@ export interface GetScheduledJobResult {
  * ```
  */
 export function getScheduledJobOutput(args: GetScheduledJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduledJobResult> {
-    return pulumi.output(args).apply((a: any) => getScheduledJob(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getScheduledJob:getScheduledJob", {
+        "scheduledJobId": args.scheduledJobId,
+    }, opts);
 }
 
 /**

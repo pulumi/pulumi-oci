@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualCircuits(args: GetVirtualCircuitsArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVirtualCircuits:getVirtualCircuits", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetVirtualCircuitsResult {
  * ```
  */
 export function getVirtualCircuitsOutput(args: GetVirtualCircuitsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitsResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualCircuits(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVirtualCircuits:getVirtualCircuits", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

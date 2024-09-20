@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyGroups(args: GetDomainsMyGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyGroups:getDomainsMyGroups", {
         "attributeSets": args.attributeSets,
@@ -151,7 +150,20 @@ export interface GetDomainsMyGroupsResult {
  * ```
  */
 export function getDomainsMyGroupsOutput(args: GetDomainsMyGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyGroups:getDomainsMyGroups", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myGroupCount": args.myGroupCount,
+        "myGroupFilter": args.myGroupFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

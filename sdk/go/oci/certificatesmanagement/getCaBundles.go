@@ -85,14 +85,20 @@ type GetCaBundlesResult struct {
 
 func GetCaBundlesOutput(ctx *pulumi.Context, args GetCaBundlesOutputArgs, opts ...pulumi.InvokeOption) GetCaBundlesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCaBundlesResult, error) {
+		ApplyT(func(v interface{}) (GetCaBundlesResultOutput, error) {
 			args := v.(GetCaBundlesArgs)
-			r, err := GetCaBundles(ctx, &args, opts...)
-			var s GetCaBundlesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCaBundlesResult
+			secret, err := ctx.InvokePackageRaw("oci:CertificatesManagement/getCaBundles:getCaBundles", args, &rv, "", opts...)
+			if err != nil {
+				return GetCaBundlesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCaBundlesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCaBundlesResultOutput), nil
+			}
+			return output, nil
 		}).(GetCaBundlesResultOutput)
 }
 

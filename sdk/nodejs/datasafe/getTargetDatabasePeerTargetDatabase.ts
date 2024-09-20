@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabasePeerTargetDatabase(args: GetTargetDatabasePeerTargetDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasePeerTargetDatabaseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabasePeerTargetDatabase:getTargetDatabasePeerTargetDatabase", {
         "peerTargetDatabaseId": args.peerTargetDatabaseId,
@@ -116,7 +115,11 @@ export interface GetTargetDatabasePeerTargetDatabaseResult {
  * ```
  */
 export function getTargetDatabasePeerTargetDatabaseOutput(args: GetTargetDatabasePeerTargetDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasePeerTargetDatabaseResult> {
-    return pulumi.output(args).apply((a: any) => getTargetDatabasePeerTargetDatabase(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasePeerTargetDatabase:getTargetDatabasePeerTargetDatabase", {
+        "peerTargetDatabaseId": args.peerTargetDatabaseId,
+        "targetDatabaseId": args.targetDatabaseId,
+    }, opts);
 }
 
 /**

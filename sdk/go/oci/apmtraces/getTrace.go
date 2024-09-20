@@ -120,14 +120,20 @@ type GetTraceResult struct {
 
 func GetTraceOutput(ctx *pulumi.Context, args GetTraceOutputArgs, opts ...pulumi.InvokeOption) GetTraceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTraceResult, error) {
+		ApplyT(func(v interface{}) (GetTraceResultOutput, error) {
 			args := v.(GetTraceArgs)
-			r, err := GetTrace(ctx, &args, opts...)
-			var s GetTraceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTraceResult
+			secret, err := ctx.InvokePackageRaw("oci:ApmTraces/getTrace:getTrace", args, &rv, "", opts...)
+			if err != nil {
+				return GetTraceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTraceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTraceResultOutput), nil
+			}
+			return output, nil
 		}).(GetTraceResultOutput)
 }
 

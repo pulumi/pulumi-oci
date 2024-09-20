@@ -100,14 +100,20 @@ type LookupDbHomeResult struct {
 
 func LookupDbHomeOutput(ctx *pulumi.Context, args LookupDbHomeOutputArgs, opts ...pulumi.InvokeOption) LookupDbHomeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDbHomeResult, error) {
+		ApplyT(func(v interface{}) (LookupDbHomeResultOutput, error) {
 			args := v.(LookupDbHomeArgs)
-			r, err := LookupDbHome(ctx, &args, opts...)
-			var s LookupDbHomeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDbHomeResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbHome:getDbHome", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDbHomeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDbHomeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDbHomeResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDbHomeResultOutput)
 }
 

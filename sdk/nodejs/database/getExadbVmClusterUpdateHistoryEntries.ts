@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadbVmClusterUpdateHistoryEntries(args: GetExadbVmClusterUpdateHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetExadbVmClusterUpdateHistoryEntriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", {
         "exadbVmClusterId": args.exadbVmClusterId,
@@ -85,7 +84,12 @@ export interface GetExadbVmClusterUpdateHistoryEntriesResult {
  * ```
  */
 export function getExadbVmClusterUpdateHistoryEntriesOutput(args: GetExadbVmClusterUpdateHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadbVmClusterUpdateHistoryEntriesResult> {
-    return pulumi.output(args).apply((a: any) => getExadbVmClusterUpdateHistoryEntries(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", {
+        "exadbVmClusterId": args.exadbVmClusterId,
+        "filters": args.filters,
+        "updateType": args.updateType,
+    }, opts);
 }
 
 /**

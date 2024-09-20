@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKeyVersions(args: GetKeyVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetKeyVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getKeyVersions:getKeyVersions", {
         "filters": args.filters,
@@ -97,7 +96,12 @@ export interface GetKeyVersionsResult {
  * ```
  */
 export function getKeyVersionsOutput(args: GetKeyVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getKeyVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getKeyVersions:getKeyVersions", {
+        "filters": args.filters,
+        "keyId": args.keyId,
+        "managementEndpoint": args.managementEndpoint,
+    }, opts);
 }
 
 /**

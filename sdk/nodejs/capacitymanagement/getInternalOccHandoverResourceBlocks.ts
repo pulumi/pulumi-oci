@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInternalOccHandoverResourceBlocks(args: GetInternalOccHandoverResourceBlocksArgs, opts?: pulumi.InvokeOptions): Promise<GetInternalOccHandoverResourceBlocksResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", {
         "compartmentId": args.compartmentId,
@@ -134,7 +133,17 @@ export interface GetInternalOccHandoverResourceBlocksResult {
  * ```
  */
 export function getInternalOccHandoverResourceBlocksOutput(args: GetInternalOccHandoverResourceBlocksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternalOccHandoverResourceBlocksResult> {
-    return pulumi.output(args).apply((a: any) => getInternalOccHandoverResourceBlocks(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "handoverDateGreaterThanOrEqualTo": args.handoverDateGreaterThanOrEqualTo,
+        "handoverDateLessThanOrEqualTo": args.handoverDateLessThanOrEqualTo,
+        "handoverResourceName": args.handoverResourceName,
+        "namespace": args.namespace,
+        "occCustomerGroupId": args.occCustomerGroupId,
+        "occHandoverResourceBlockId": args.occHandoverResourceBlockId,
+    }, opts);
 }
 
 /**

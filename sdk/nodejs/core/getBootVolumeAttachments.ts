@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * For more detailed implementation refer the instance example
  */
 export function getBootVolumeAttachments(args: GetBootVolumeAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeAttachmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", {
         "availabilityDomain": args.availabilityDomain,
@@ -114,7 +113,14 @@ export interface GetBootVolumeAttachmentsResult {
  * For more detailed implementation refer the instance example
  */
 export function getBootVolumeAttachmentsOutput(args: GetBootVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeAttachmentsResult> {
-    return pulumi.output(args).apply((a: any) => getBootVolumeAttachments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", {
+        "availabilityDomain": args.availabilityDomain,
+        "bootVolumeId": args.bootVolumeId,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "instanceId": args.instanceId,
+    }, opts);
 }
 
 /**

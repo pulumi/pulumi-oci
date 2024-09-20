@@ -103,14 +103,20 @@ type GetInvokeRunsResult struct {
 
 func GetInvokeRunsOutput(ctx *pulumi.Context, args GetInvokeRunsOutputArgs, opts ...pulumi.InvokeOption) GetInvokeRunsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInvokeRunsResult, error) {
+		ApplyT(func(v interface{}) (GetInvokeRunsResultOutput, error) {
 			args := v.(GetInvokeRunsArgs)
-			r, err := GetInvokeRuns(ctx, &args, opts...)
-			var s GetInvokeRunsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInvokeRunsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataFlow/getInvokeRuns:getInvokeRuns", args, &rv, "", opts...)
+			if err != nil {
+				return GetInvokeRunsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInvokeRunsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInvokeRunsResultOutput), nil
+			}
+			return output, nil
 		}).(GetInvokeRunsResultOutput)
 }
 

@@ -89,14 +89,20 @@ type GetDetectionDataAssetResult struct {
 
 func GetDetectionDataAssetOutput(ctx *pulumi.Context, args GetDetectionDataAssetOutputArgs, opts ...pulumi.InvokeOption) GetDetectionDataAssetResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDetectionDataAssetResult, error) {
+		ApplyT(func(v interface{}) (GetDetectionDataAssetResultOutput, error) {
 			args := v.(GetDetectionDataAssetArgs)
-			r, err := GetDetectionDataAsset(ctx, &args, opts...)
-			var s GetDetectionDataAssetResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDetectionDataAssetResult
+			secret, err := ctx.InvokePackageRaw("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", args, &rv, "", opts...)
+			if err != nil {
+				return GetDetectionDataAssetResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDetectionDataAssetResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDetectionDataAssetResultOutput), nil
+			}
+			return output, nil
 		}).(GetDetectionDataAssetResultOutput)
 }
 

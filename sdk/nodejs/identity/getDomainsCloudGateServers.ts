@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsCloudGateServers(args: GetDomainsCloudGateServersArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsCloudGateServersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsCloudGateServers:getDomainsCloudGateServers", {
         "attributeSets": args.attributeSets,
@@ -139,7 +138,20 @@ export interface GetDomainsCloudGateServersResult {
  * ```
  */
 export function getDomainsCloudGateServersOutput(args: GetDomainsCloudGateServersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsCloudGateServersResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsCloudGateServers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsCloudGateServers:getDomainsCloudGateServers", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "cloudGateServerCount": args.cloudGateServerCount,
+        "cloudGateServerFilter": args.cloudGateServerFilter,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

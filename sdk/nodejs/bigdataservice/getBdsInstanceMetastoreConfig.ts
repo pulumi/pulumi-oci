@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstanceMetastoreConfig(args: GetBdsInstanceMetastoreConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceMetastoreConfigResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", {
         "bdsInstanceId": args.bdsInstanceId,
@@ -104,7 +103,11 @@ export interface GetBdsInstanceMetastoreConfigResult {
  * ```
  */
 export function getBdsInstanceMetastoreConfigOutput(args: GetBdsInstanceMetastoreConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceMetastoreConfigResult> {
-    return pulumi.output(args).apply((a: any) => getBdsInstanceMetastoreConfig(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", {
+        "bdsInstanceId": args.bdsInstanceId,
+        "metastoreConfigId": args.metastoreConfigId,
+    }, opts);
 }
 
 /**

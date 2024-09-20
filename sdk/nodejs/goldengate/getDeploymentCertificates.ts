@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeploymentCertificates(args: GetDeploymentCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentCertificatesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", {
         "deploymentId": args.deploymentId,
@@ -88,7 +87,12 @@ export interface GetDeploymentCertificatesResult {
  * ```
  */
 export function getDeploymentCertificatesOutput(args: GetDeploymentCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentCertificatesResult> {
-    return pulumi.output(args).apply((a: any) => getDeploymentCertificates(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", {
+        "deploymentId": args.deploymentId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

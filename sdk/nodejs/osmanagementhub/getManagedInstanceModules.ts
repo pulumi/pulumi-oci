@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceModules(args: GetManagedInstanceModulesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceModulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceModules:getManagedInstanceModules", {
         "compartmentId": args.compartmentId,
@@ -101,7 +100,14 @@ export interface GetManagedInstanceModulesResult {
  * ```
  */
 export function getManagedInstanceModulesOutput(args: GetManagedInstanceModulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceModulesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceModules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceModules:getManagedInstanceModules", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "managedInstanceId": args.managedInstanceId,
+        "name": args.name,
+        "nameContains": args.nameContains,
+    }, opts);
 }
 
 /**

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUsageStatementEmailRecipientsGroups(args: GetUsageStatementEmailRecipientsGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetUsageStatementEmailRecipientsGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", {
         "compartmentId": args.compartmentId,
@@ -85,7 +84,12 @@ export interface GetUsageStatementEmailRecipientsGroupsResult {
  * ```
  */
 export function getUsageStatementEmailRecipientsGroupsOutput(args: GetUsageStatementEmailRecipientsGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsageStatementEmailRecipientsGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getUsageStatementEmailRecipientsGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "subscriptionId": args.subscriptionId,
+    }, opts);
 }
 
 /**

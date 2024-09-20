@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstancePatches(args: GetBdsInstancePatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstancePatchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", {
         "bdsInstanceId": args.bdsInstanceId,
@@ -74,7 +73,11 @@ export interface GetBdsInstancePatchesResult {
  * ```
  */
 export function getBdsInstancePatchesOutput(args: GetBdsInstancePatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstancePatchesResult> {
-    return pulumi.output(args).apply((a: any) => getBdsInstancePatches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", {
+        "bdsInstanceId": args.bdsInstanceId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

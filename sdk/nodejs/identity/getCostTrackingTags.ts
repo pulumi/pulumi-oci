@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCostTrackingTags(args: GetCostTrackingTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetCostTrackingTagsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getCostTrackingTags:getCostTrackingTags", {
         "compartmentId": args.compartmentId,
@@ -79,7 +78,11 @@ export interface GetCostTrackingTagsResult {
  * ```
  */
 export function getCostTrackingTagsOutput(args: GetCostTrackingTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCostTrackingTagsResult> {
-    return pulumi.output(args).apply((a: any) => getCostTrackingTags(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getCostTrackingTags:getCostTrackingTags", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

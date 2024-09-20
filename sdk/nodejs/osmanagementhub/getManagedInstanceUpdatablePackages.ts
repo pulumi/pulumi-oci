@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceUpdatablePackages(args: GetManagedInstanceUpdatablePackagesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceUpdatablePackagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", {
         "advisoryNames": args.advisoryNames,
@@ -117,7 +116,16 @@ export interface GetManagedInstanceUpdatablePackagesResult {
  * ```
  */
 export function getManagedInstanceUpdatablePackagesOutput(args: GetManagedInstanceUpdatablePackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceUpdatablePackagesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceUpdatablePackages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", {
+        "advisoryNames": args.advisoryNames,
+        "classificationTypes": args.classificationTypes,
+        "compartmentId": args.compartmentId,
+        "displayNameContains": args.displayNameContains,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "managedInstanceId": args.managedInstanceId,
+    }, opts);
 }
 
 /**

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConnections(args: GetConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getConnections:getConnections", {
         "compartmentId": args.compartmentId,
@@ -121,7 +120,16 @@ export interface GetConnectionsResult {
  * ```
  */
 export function getConnectionsOutput(args: GetConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionsResult> {
-    return pulumi.output(args).apply((a: any) => getConnections(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getConnections:getConnections", {
+        "compartmentId": args.compartmentId,
+        "connectionTypes": args.connectionTypes,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "sourceConnectionId": args.sourceConnectionId,
+        "state": args.state,
+        "technologyTypes": args.technologyTypes,
+    }, opts);
 }
 
 /**

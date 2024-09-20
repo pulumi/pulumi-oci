@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalClusterInstance(args: GetExternalClusterInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalClusterInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", {
         "externalClusterInstanceId": args.externalClusterInstanceId,
@@ -137,7 +136,10 @@ export interface GetExternalClusterInstanceResult {
  * ```
  */
 export function getExternalClusterInstanceOutput(args: GetExternalClusterInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalClusterInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getExternalClusterInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", {
+        "externalClusterInstanceId": args.externalClusterInstanceId,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentFamilyLimitsAndUsage(args: GetFusionEnvironmentFamilyLimitsAndUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentFamilyLimitsAndUsageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", {
         "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,
@@ -79,7 +78,10 @@ export interface GetFusionEnvironmentFamilyLimitsAndUsageResult {
  * ```
  */
 export function getFusionEnvironmentFamilyLimitsAndUsageOutput(args: GetFusionEnvironmentFamilyLimitsAndUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentFamilyLimitsAndUsage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", {
+        "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,
+    }, opts);
 }
 
 /**

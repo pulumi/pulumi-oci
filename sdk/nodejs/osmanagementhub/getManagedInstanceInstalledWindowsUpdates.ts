@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceInstalledWindowsUpdates(args: GetManagedInstanceInstalledWindowsUpdatesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceInstalledWindowsUpdatesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceInstalledWindowsUpdates:getManagedInstanceInstalledWindowsUpdates", {
         "compartmentId": args.compartmentId,
@@ -109,7 +108,15 @@ export interface GetManagedInstanceInstalledWindowsUpdatesResult {
  * ```
  */
 export function getManagedInstanceInstalledWindowsUpdatesOutput(args: GetManagedInstanceInstalledWindowsUpdatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceInstalledWindowsUpdatesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceInstalledWindowsUpdates(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceInstalledWindowsUpdates:getManagedInstanceInstalledWindowsUpdates", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "managedInstanceId": args.managedInstanceId,
+        "names": args.names,
+    }, opts);
 }
 
 /**

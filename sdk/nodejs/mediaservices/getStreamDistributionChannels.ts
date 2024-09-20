@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getStreamDistributionChannels(args?: GetStreamDistributionChannelsArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamDistributionChannelsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,15 @@ export interface GetStreamDistributionChannelsResult {
  * ```
  */
 export function getStreamDistributionChannelsOutput(args?: GetStreamDistributionChannelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamDistributionChannelsResult> {
-    return pulumi.output(args).apply((a: any) => getStreamDistributionChannels(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

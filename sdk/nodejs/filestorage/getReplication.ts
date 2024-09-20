@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplication(args: GetReplicationArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getReplication:getReplication", {
         "replicationId": args.replicationId,
@@ -129,7 +128,10 @@ export interface GetReplicationResult {
  * ```
  */
 export function getReplicationOutput(args: GetReplicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationResult> {
-    return pulumi.output(args).apply((a: any) => getReplication(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getReplication:getReplication", {
+        "replicationId": args.replicationId,
+    }, opts);
 }
 
 /**

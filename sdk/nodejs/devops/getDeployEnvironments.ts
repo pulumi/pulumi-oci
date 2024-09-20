@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getDeployEnvironments(args?: GetDeployEnvironmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployEnvironmentsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployEnvironments:getDeployEnvironments", {
         "compartmentId": args.compartmentId,
@@ -118,7 +117,16 @@ export interface GetDeployEnvironmentsResult {
  * ```
  */
 export function getDeployEnvironmentsOutput(args?: GetDeployEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployEnvironmentsResult> {
-    return pulumi.output(args).apply((a: any) => getDeployEnvironments(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getDeployEnvironments:getDeployEnvironments", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

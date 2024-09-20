@@ -78,14 +78,20 @@ type GetManagementAgentAvailableHistoriesResult struct {
 
 func GetManagementAgentAvailableHistoriesOutput(ctx *pulumi.Context, args GetManagementAgentAvailableHistoriesOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentAvailableHistoriesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagementAgentAvailableHistoriesResult, error) {
+		ApplyT(func(v interface{}) (GetManagementAgentAvailableHistoriesResultOutput, error) {
 			args := v.(GetManagementAgentAvailableHistoriesArgs)
-			r, err := GetManagementAgentAvailableHistories(ctx, &args, opts...)
-			var s GetManagementAgentAvailableHistoriesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagementAgentAvailableHistoriesResult
+			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagementAgentAvailableHistoriesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagementAgentAvailableHistoriesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagementAgentAvailableHistoriesResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagementAgentAvailableHistoriesResultOutput)
 }
 

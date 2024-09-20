@@ -89,14 +89,20 @@ type LookupSecurityZoneResult struct {
 
 func LookupSecurityZoneOutput(ctx *pulumi.Context, args LookupSecurityZoneOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityZoneResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupSecurityZoneResult, error) {
+		ApplyT(func(v interface{}) (LookupSecurityZoneResultOutput, error) {
 			args := v.(LookupSecurityZoneArgs)
-			r, err := LookupSecurityZone(ctx, &args, opts...)
-			var s LookupSecurityZoneResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupSecurityZoneResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getSecurityZone:getSecurityZone", args, &rv, "", opts...)
+			if err != nil {
+				return LookupSecurityZoneResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupSecurityZoneResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupSecurityZoneResultOutput), nil
+			}
+			return output, nil
 		}).(LookupSecurityZoneResultOutput)
 }
 

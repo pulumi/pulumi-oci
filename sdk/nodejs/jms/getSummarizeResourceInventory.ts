@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  */
 export function getSummarizeResourceInventory(args?: GetSummarizeResourceInventoryArgs, opts?: pulumi.InvokeOptions): Promise<GetSummarizeResourceInventoryResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", {
         "compartmentId": args.compartmentId,
@@ -102,7 +101,13 @@ export interface GetSummarizeResourceInventoryResult {
  * ```
  */
 export function getSummarizeResourceInventoryOutput(args?: GetSummarizeResourceInventoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSummarizeResourceInventoryResult> {
-    return pulumi.output(args).apply((a: any) => getSummarizeResourceInventory(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", {
+        "compartmentId": args.compartmentId,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

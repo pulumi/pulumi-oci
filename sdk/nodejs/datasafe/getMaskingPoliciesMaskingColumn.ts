@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPoliciesMaskingColumn(args: GetMaskingPoliciesMaskingColumnArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPoliciesMaskingColumnResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn", {
         "maskingColumnKey": args.maskingColumnKey,
@@ -135,7 +134,11 @@ export interface GetMaskingPoliciesMaskingColumnResult {
  * ```
  */
 export function getMaskingPoliciesMaskingColumnOutput(args: GetMaskingPoliciesMaskingColumnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPoliciesMaskingColumnResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingPoliciesMaskingColumn(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn", {
+        "maskingColumnKey": args.maskingColumnKey,
+        "maskingPolicyId": args.maskingPolicyId,
+    }, opts);
 }
 
 /**

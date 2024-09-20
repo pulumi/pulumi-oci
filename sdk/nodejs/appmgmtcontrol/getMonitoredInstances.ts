@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitoredInstances(args: GetMonitoredInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,12 @@ export interface GetMonitoredInstancesResult {
  * ```
  */
 export function getMonitoredInstancesOutput(args: GetMonitoredInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getMonitoredInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

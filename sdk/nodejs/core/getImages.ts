@@ -40,7 +40,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImages(args: GetImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetImagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getImages:getImages", {
         "compartmentId": args.compartmentId,
@@ -165,7 +164,18 @@ export interface GetImagesResult {
  * ```
  */
 export function getImagesOutput(args: GetImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImagesResult> {
-    return pulumi.output(args).apply((a: any) => getImages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getImages:getImages", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "operatingSystem": args.operatingSystem,
+        "operatingSystemVersion": args.operatingSystemVersion,
+        "shape": args.shape,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "state": args.state,
+    }, opts);
 }
 
 /**

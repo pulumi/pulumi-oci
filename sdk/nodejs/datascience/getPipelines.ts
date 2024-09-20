@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPipelines(args: GetPipelinesArgs, opts?: pulumi.InvokeOptions): Promise<GetPipelinesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getPipelines:getPipelines", {
         "compartmentId": args.compartmentId,
@@ -128,7 +127,16 @@ export interface GetPipelinesResult {
  * ```
  */
 export function getPipelinesOutput(args: GetPipelinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPipelinesResult> {
-    return pulumi.output(args).apply((a: any) => getPipelines(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getPipelines:getPipelines", {
+        "compartmentId": args.compartmentId,
+        "createdBy": args.createdBy,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

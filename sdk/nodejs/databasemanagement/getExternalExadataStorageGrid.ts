@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalExadataStorageGrid(args: GetExternalExadataStorageGridArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageGridResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", {
         "externalExadataStorageGridId": args.externalExadataStorageGridId,
@@ -131,7 +130,10 @@ export interface GetExternalExadataStorageGridResult {
  * ```
  */
 export function getExternalExadataStorageGridOutput(args: GetExternalExadataStorageGridOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageGridResult> {
-    return pulumi.output(args).apply((a: any) => getExternalExadataStorageGrid(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", {
+        "externalExadataStorageGridId": args.externalExadataStorageGridId,
+    }, opts);
 }
 
 /**

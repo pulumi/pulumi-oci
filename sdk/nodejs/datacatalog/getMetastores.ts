@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMetastores(args: GetMetastoresArgs, opts?: pulumi.InvokeOptions): Promise<GetMetastoresResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getMetastores:getMetastores", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetMetastoresResult {
  * ```
  */
 export function getMetastoresOutput(args: GetMetastoresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetastoresResult> {
-    return pulumi.output(args).apply((a: any) => getMetastores(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getMetastores:getMetastores", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlDbSystem(args: GetMysqlDbSystemArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlDbSystemResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", {
         "dbSystemId": args.dbSystemId,
@@ -217,7 +216,10 @@ export interface GetMysqlDbSystemResult {
  * ```
  */
 export function getMysqlDbSystemOutput(args: GetMysqlDbSystemOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlDbSystemResult> {
-    return pulumi.output(args).apply((a: any) => getMysqlDbSystem(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", {
+        "dbSystemId": args.dbSystemId,
+    }, opts);
 }
 
 /**

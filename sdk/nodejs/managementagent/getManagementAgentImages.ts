@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentImages(args: GetManagementAgentImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentImagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", {
         "compartmentId": args.compartmentId,
@@ -101,7 +100,14 @@ export interface GetManagementAgentImagesResult {
  * ```
  */
 export function getManagementAgentImagesOutput(args: GetManagementAgentImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentImagesResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgentImages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "installType": args.installType,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

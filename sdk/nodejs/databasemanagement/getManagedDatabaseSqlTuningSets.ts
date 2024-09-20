@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningSets(args: GetManagedDatabaseSqlTuningSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningSetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", {
         "filters": args.filters,
@@ -104,7 +103,14 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
  * ```
  */
 export function getManagedDatabaseSqlTuningSetsOutput(args: GetManagedDatabaseSqlTuningSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningSetsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningSets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", {
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+        "nameContains": args.nameContains,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "owner": args.owner,
+    }, opts);
 }
 
 /**

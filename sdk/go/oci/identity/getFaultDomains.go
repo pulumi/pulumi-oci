@@ -77,14 +77,20 @@ type GetFaultDomainsResult struct {
 
 func GetFaultDomainsOutput(ctx *pulumi.Context, args GetFaultDomainsOutputArgs, opts ...pulumi.InvokeOption) GetFaultDomainsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFaultDomainsResult, error) {
+		ApplyT(func(v interface{}) (GetFaultDomainsResultOutput, error) {
 			args := v.(GetFaultDomainsArgs)
-			r, err := GetFaultDomains(ctx, &args, opts...)
-			var s GetFaultDomainsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFaultDomainsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getFaultDomains:getFaultDomains", args, &rv, "", opts...)
+			if err != nil {
+				return GetFaultDomainsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFaultDomainsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFaultDomainsResultOutput), nil
+			}
+			return output, nil
 		}).(GetFaultDomainsResultOutput)
 }
 

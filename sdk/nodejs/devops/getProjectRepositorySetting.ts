@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProjectRepositorySetting(args: GetProjectRepositorySettingArgs, opts?: pulumi.InvokeOptions): Promise<GetProjectRepositorySettingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", {
         "projectId": args.projectId,
@@ -72,7 +71,10 @@ export interface GetProjectRepositorySettingResult {
  * ```
  */
 export function getProjectRepositorySettingOutput(args: GetProjectRepositorySettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProjectRepositorySettingResult> {
-    return pulumi.output(args).apply((a: any) => getProjectRepositorySetting(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", {
+        "projectId": args.projectId,
+    }, opts);
 }
 
 /**

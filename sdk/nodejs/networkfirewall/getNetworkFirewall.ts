@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkFirewall(args: GetNetworkFirewallArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewall:getNetworkFirewall", {
         "networkFirewallId": args.networkFirewallId,
@@ -125,7 +124,10 @@ export interface GetNetworkFirewallResult {
  * ```
  */
 export function getNetworkFirewallOutput(args: GetNetworkFirewallOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewall(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewall:getNetworkFirewall", {
+        "networkFirewallId": args.networkFirewallId,
+    }, opts);
 }
 
 /**

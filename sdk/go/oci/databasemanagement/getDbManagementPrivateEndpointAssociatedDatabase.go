@@ -72,14 +72,20 @@ type GetDbManagementPrivateEndpointAssociatedDatabaseResult struct {
 
 func GetDbManagementPrivateEndpointAssociatedDatabaseOutput(ctx *pulumi.Context, args GetDbManagementPrivateEndpointAssociatedDatabaseOutputArgs, opts ...pulumi.InvokeOption) GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbManagementPrivateEndpointAssociatedDatabaseResult, error) {
+		ApplyT(func(v interface{}) (GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput, error) {
 			args := v.(GetDbManagementPrivateEndpointAssociatedDatabaseArgs)
-			r, err := GetDbManagementPrivateEndpointAssociatedDatabase(ctx, &args, opts...)
-			var s GetDbManagementPrivateEndpointAssociatedDatabaseResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbManagementPrivateEndpointAssociatedDatabaseResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput)
 }
 

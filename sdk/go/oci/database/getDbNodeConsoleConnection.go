@@ -86,14 +86,20 @@ type LookupDbNodeConsoleConnectionResult struct {
 
 func LookupDbNodeConsoleConnectionOutput(ctx *pulumi.Context, args LookupDbNodeConsoleConnectionOutputArgs, opts ...pulumi.InvokeOption) LookupDbNodeConsoleConnectionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDbNodeConsoleConnectionResult, error) {
+		ApplyT(func(v interface{}) (LookupDbNodeConsoleConnectionResultOutput, error) {
 			args := v.(LookupDbNodeConsoleConnectionArgs)
-			r, err := LookupDbNodeConsoleConnection(ctx, &args, opts...)
-			var s LookupDbNodeConsoleConnectionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDbNodeConsoleConnectionResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbNodeConsoleConnection:getDbNodeConsoleConnection", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDbNodeConsoleConnectionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDbNodeConsoleConnectionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDbNodeConsoleConnectionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDbNodeConsoleConnectionResultOutput)
 }
 

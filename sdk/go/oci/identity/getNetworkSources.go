@@ -82,14 +82,20 @@ type GetNetworkSourcesResult struct {
 
 func GetNetworkSourcesOutput(ctx *pulumi.Context, args GetNetworkSourcesOutputArgs, opts ...pulumi.InvokeOption) GetNetworkSourcesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNetworkSourcesResult, error) {
+		ApplyT(func(v interface{}) (GetNetworkSourcesResultOutput, error) {
 			args := v.(GetNetworkSourcesArgs)
-			r, err := GetNetworkSources(ctx, &args, opts...)
-			var s GetNetworkSourcesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNetworkSourcesResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getNetworkSources:getNetworkSources", args, &rv, "", opts...)
+			if err != nil {
+				return GetNetworkSourcesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNetworkSourcesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNetworkSourcesResultOutput), nil
+			}
+			return output, nil
 		}).(GetNetworkSourcesResultOutput)
 }
 

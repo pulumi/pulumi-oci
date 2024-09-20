@@ -59,14 +59,20 @@ type GetMediaAssetDistributionChannelAttachmentResult struct {
 
 func GetMediaAssetDistributionChannelAttachmentOutput(ctx *pulumi.Context, args GetMediaAssetDistributionChannelAttachmentOutputArgs, opts ...pulumi.InvokeOption) GetMediaAssetDistributionChannelAttachmentResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMediaAssetDistributionChannelAttachmentResult, error) {
+		ApplyT(func(v interface{}) (GetMediaAssetDistributionChannelAttachmentResultOutput, error) {
 			args := v.(GetMediaAssetDistributionChannelAttachmentArgs)
-			r, err := GetMediaAssetDistributionChannelAttachment(ctx, &args, opts...)
-			var s GetMediaAssetDistributionChannelAttachmentResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMediaAssetDistributionChannelAttachmentResult
+			secret, err := ctx.InvokePackageRaw("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args, &rv, "", opts...)
+			if err != nil {
+				return GetMediaAssetDistributionChannelAttachmentResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMediaAssetDistributionChannelAttachmentResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMediaAssetDistributionChannelAttachmentResultOutput), nil
+			}
+			return output, nil
 		}).(GetMediaAssetDistributionChannelAttachmentResultOutput)
 }
 

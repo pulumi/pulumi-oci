@@ -86,14 +86,20 @@ type GetRepositoryCommitResult struct {
 
 func GetRepositoryCommitOutput(ctx *pulumi.Context, args GetRepositoryCommitOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryCommitResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRepositoryCommitResult, error) {
+		ApplyT(func(v interface{}) (GetRepositoryCommitResultOutput, error) {
 			args := v.(GetRepositoryCommitArgs)
-			r, err := GetRepositoryCommit(ctx, &args, opts...)
-			var s GetRepositoryCommitResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRepositoryCommitResult
+			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositoryCommit:getRepositoryCommit", args, &rv, "", opts...)
+			if err != nil {
+				return GetRepositoryCommitResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRepositoryCommitResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRepositoryCommitResultOutput), nil
+			}
+			return output, nil
 		}).(GetRepositoryCommitResultOutput)
 }
 

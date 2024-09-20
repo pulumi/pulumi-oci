@@ -72,14 +72,20 @@ type GetQueriesResult struct {
 
 func GetQueriesOutput(ctx *pulumi.Context, args GetQueriesOutputArgs, opts ...pulumi.InvokeOption) GetQueriesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetQueriesResult, error) {
+		ApplyT(func(v interface{}) (GetQueriesResultOutput, error) {
 			args := v.(GetQueriesArgs)
-			r, err := GetQueries(ctx, &args, opts...)
-			var s GetQueriesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetQueriesResult
+			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getQueries:getQueries", args, &rv, "", opts...)
+			if err != nil {
+				return GetQueriesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetQueriesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetQueriesResultOutput), nil
+			}
+			return output, nil
 		}).(GetQueriesResultOutput)
 }
 

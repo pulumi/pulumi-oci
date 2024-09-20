@@ -91,14 +91,20 @@ type LookupTargetAlertPolicyAssociationResult struct {
 
 func LookupTargetAlertPolicyAssociationOutput(ctx *pulumi.Context, args LookupTargetAlertPolicyAssociationOutputArgs, opts ...pulumi.InvokeOption) LookupTargetAlertPolicyAssociationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupTargetAlertPolicyAssociationResult, error) {
+		ApplyT(func(v interface{}) (LookupTargetAlertPolicyAssociationResultOutput, error) {
 			args := v.(LookupTargetAlertPolicyAssociationArgs)
-			r, err := LookupTargetAlertPolicyAssociation(ctx, &args, opts...)
-			var s LookupTargetAlertPolicyAssociationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupTargetAlertPolicyAssociationResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupTargetAlertPolicyAssociationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupTargetAlertPolicyAssociationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupTargetAlertPolicyAssociationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupTargetAlertPolicyAssociationResultOutput)
 }
 

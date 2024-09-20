@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitoredResourceTasks(args: GetMonitoredResourceTasksArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredResourceTasksResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", {
         "compartmentId": args.compartmentId,
@@ -85,7 +84,12 @@ export interface GetMonitoredResourceTasksResult {
  * ```
  */
 export function getMonitoredResourceTasksOutput(args: GetMonitoredResourceTasksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredResourceTasksResult> {
-    return pulumi.output(args).apply((a: any) => getMonitoredResourceTasks(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "status": args.status,
+    }, opts);
 }
 
 /**

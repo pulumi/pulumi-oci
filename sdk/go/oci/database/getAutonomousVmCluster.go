@@ -162,14 +162,20 @@ type LookupAutonomousVmClusterResult struct {
 
 func LookupAutonomousVmClusterOutput(ctx *pulumi.Context, args LookupAutonomousVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousVmClusterResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAutonomousVmClusterResult, error) {
+		ApplyT(func(v interface{}) (LookupAutonomousVmClusterResultOutput, error) {
 			args := v.(LookupAutonomousVmClusterArgs)
-			r, err := LookupAutonomousVmCluster(ctx, &args, opts...)
-			var s LookupAutonomousVmClusterResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAutonomousVmClusterResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAutonomousVmClusterResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAutonomousVmClusterResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAutonomousVmClusterResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAutonomousVmClusterResultOutput)
 }
 

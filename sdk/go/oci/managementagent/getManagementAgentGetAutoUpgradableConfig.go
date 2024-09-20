@@ -68,14 +68,20 @@ type GetManagementAgentGetAutoUpgradableConfigResult struct {
 
 func GetManagementAgentGetAutoUpgradableConfigOutput(ctx *pulumi.Context, args GetManagementAgentGetAutoUpgradableConfigOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentGetAutoUpgradableConfigResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagementAgentGetAutoUpgradableConfigResult, error) {
+		ApplyT(func(v interface{}) (GetManagementAgentGetAutoUpgradableConfigResultOutput, error) {
 			args := v.(GetManagementAgentGetAutoUpgradableConfigArgs)
-			r, err := GetManagementAgentGetAutoUpgradableConfig(ctx, &args, opts...)
-			var s GetManagementAgentGetAutoUpgradableConfigResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagementAgentGetAutoUpgradableConfigResult
+			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagementAgentGetAutoUpgradableConfigResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagementAgentGetAutoUpgradableConfigResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagementAgentGetAutoUpgradableConfigResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagementAgentGetAutoUpgradableConfigResultOutput)
 }
 

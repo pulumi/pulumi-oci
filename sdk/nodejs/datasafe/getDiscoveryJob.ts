@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryJob(args: GetDiscoveryJobArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", {
         "discoveryJobId": args.discoveryJobId,
@@ -163,7 +162,10 @@ export interface GetDiscoveryJobResult {
  * ```
  */
 export function getDiscoveryJobOutput(args: GetDiscoveryJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobResult> {
-    return pulumi.output(args).apply((a: any) => getDiscoveryJob(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", {
+        "discoveryJobId": args.discoveryJobId,
+    }, opts);
 }
 
 /**

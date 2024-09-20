@@ -77,14 +77,20 @@ type GetVirtualCircuitPublicPrefixesResult struct {
 
 func GetVirtualCircuitPublicPrefixesOutput(ctx *pulumi.Context, args GetVirtualCircuitPublicPrefixesOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitPublicPrefixesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVirtualCircuitPublicPrefixesResult, error) {
+		ApplyT(func(v interface{}) (GetVirtualCircuitPublicPrefixesResultOutput, error) {
 			args := v.(GetVirtualCircuitPublicPrefixesArgs)
-			r, err := GetVirtualCircuitPublicPrefixes(ctx, &args, opts...)
-			var s GetVirtualCircuitPublicPrefixesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVirtualCircuitPublicPrefixesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args, &rv, "", opts...)
+			if err != nil {
+				return GetVirtualCircuitPublicPrefixesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVirtualCircuitPublicPrefixesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVirtualCircuitPublicPrefixesResultOutput), nil
+			}
+			return output, nil
 		}).(GetVirtualCircuitPublicPrefixesResultOutput)
 }
 

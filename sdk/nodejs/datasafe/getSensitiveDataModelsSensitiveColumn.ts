@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveDataModelsSensitiveColumn(args: GetSensitiveDataModelsSensitiveColumnArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelsSensitiveColumnResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", {
         "sensitiveColumnKey": args.sensitiveColumnKey,
@@ -157,7 +156,11 @@ export interface GetSensitiveDataModelsSensitiveColumnResult {
  * ```
  */
 export function getSensitiveDataModelsSensitiveColumnOutput(args: GetSensitiveDataModelsSensitiveColumnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsSensitiveColumnResult> {
-    return pulumi.output(args).apply((a: any) => getSensitiveDataModelsSensitiveColumn(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", {
+        "sensitiveColumnKey": args.sensitiveColumnKey,
+        "sensitiveDataModelId": args.sensitiveDataModelId,
+    }, opts);
 }
 
 /**

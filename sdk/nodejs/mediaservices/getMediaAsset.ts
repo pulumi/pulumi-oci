@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMediaAsset(args: GetMediaAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaAssetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getMediaAsset:getMediaAsset", {
         "mediaAssetId": args.mediaAssetId,
@@ -160,7 +159,10 @@ export interface GetMediaAssetResult {
  * ```
  */
 export function getMediaAssetOutput(args: GetMediaAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaAssetResult> {
-    return pulumi.output(args).apply((a: any) => getMediaAsset(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaAsset:getMediaAsset", {
+        "mediaAssetId": args.mediaAssetId,
+    }, opts);
 }
 
 /**

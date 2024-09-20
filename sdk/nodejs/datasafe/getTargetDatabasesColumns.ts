@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabasesColumns(args: GetTargetDatabasesColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesColumnsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", {
         "columnNameContains": args.columnNameContains,
@@ -139,7 +138,18 @@ export interface GetTargetDatabasesColumnsResult {
  * ```
  */
 export function getTargetDatabasesColumnsOutput(args: GetTargetDatabasesColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesColumnsResult> {
-    return pulumi.output(args).apply((a: any) => getTargetDatabasesColumns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", {
+        "columnNameContains": args.columnNameContains,
+        "columnNames": args.columnNames,
+        "datatypes": args.datatypes,
+        "filters": args.filters,
+        "schemaNameContains": args.schemaNameContains,
+        "schemaNames": args.schemaNames,
+        "tableNameContains": args.tableNameContains,
+        "tableNames": args.tableNames,
+        "targetDatabaseId": args.targetDatabaseId,
+    }, opts);
 }
 
 /**

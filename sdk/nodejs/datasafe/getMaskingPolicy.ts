@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPolicy(args: GetMaskingPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", {
         "maskingPolicyId": args.maskingPolicyId,
@@ -133,7 +132,10 @@ export interface GetMaskingPolicyResult {
  * ```
  */
 export function getMaskingPolicyOutput(args: GetMaskingPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", {
+        "maskingPolicyId": args.maskingPolicyId,
+    }, opts);
 }
 
 /**

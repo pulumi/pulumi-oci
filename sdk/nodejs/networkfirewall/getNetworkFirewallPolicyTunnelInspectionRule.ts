@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkFirewallPolicyTunnelInspectionRule(args: GetNetworkFirewallPolicyTunnelInspectionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyTunnelInspectionRuleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule", {
         "networkFirewallPolicyId": args.networkFirewallPolicyId,
@@ -107,7 +106,11 @@ export interface GetNetworkFirewallPolicyTunnelInspectionRuleResult {
  * ```
  */
 export function getNetworkFirewallPolicyTunnelInspectionRuleOutput(args: GetNetworkFirewallPolicyTunnelInspectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyTunnelInspectionRuleResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyTunnelInspectionRule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule", {
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+        "tunnelInspectionRuleName": args.tunnelInspectionRuleName,
+    }, opts);
 }
 
 /**

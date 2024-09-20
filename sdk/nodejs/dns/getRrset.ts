@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRrset(args: GetRrsetArgs, opts?: pulumi.InvokeOptions): Promise<GetRrsetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getRrset:getRrset", {
         "compartmentId": args.compartmentId,
@@ -124,7 +123,16 @@ export interface GetRrsetResult {
  * ```
  */
 export function getRrsetOutput(args: GetRrsetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRrsetResult> {
-    return pulumi.output(args).apply((a: any) => getRrset(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getRrset:getRrset", {
+        "compartmentId": args.compartmentId,
+        "domain": args.domain,
+        "rtype": args.rtype,
+        "scope": args.scope,
+        "viewId": args.viewId,
+        "zoneNameOrId": args.zoneNameOrId,
+        "zoneVersion": args.zoneVersion,
+    }, opts);
 }
 
 /**

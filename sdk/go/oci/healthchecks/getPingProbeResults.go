@@ -89,14 +89,20 @@ type GetPingProbeResultsResult struct {
 
 func GetPingProbeResultsOutput(ctx *pulumi.Context, args GetPingProbeResultsOutputArgs, opts ...pulumi.InvokeOption) GetPingProbeResultsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPingProbeResultsResult, error) {
+		ApplyT(func(v interface{}) (GetPingProbeResultsResultOutput, error) {
 			args := v.(GetPingProbeResultsArgs)
-			r, err := GetPingProbeResults(ctx, &args, opts...)
-			var s GetPingProbeResultsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPingProbeResultsResult
+			secret, err := ctx.InvokePackageRaw("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args, &rv, "", opts...)
+			if err != nil {
+				return GetPingProbeResultsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPingProbeResultsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPingProbeResultsResultOutput), nil
+			}
+			return output, nil
 		}).(GetPingProbeResultsResultOutput)
 }
 

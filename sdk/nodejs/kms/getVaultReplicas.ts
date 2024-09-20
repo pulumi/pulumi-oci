@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVaultReplicas(args: GetVaultReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetVaultReplicasResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getVaultReplicas:getVaultReplicas", {
         "filters": args.filters,
@@ -84,7 +83,11 @@ export interface GetVaultReplicasResult {
  * ```
  */
 export function getVaultReplicasOutput(args: GetVaultReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVaultReplicasResult> {
-    return pulumi.output(args).apply((a: any) => getVaultReplicas(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getVaultReplicas:getVaultReplicas", {
+        "filters": args.filters,
+        "vaultId": args.vaultId,
+    }, opts);
 }
 
 /**

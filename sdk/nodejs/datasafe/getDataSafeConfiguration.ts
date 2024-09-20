@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSafeConfiguration(args: GetDataSafeConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSafeConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,10 @@ export interface GetDataSafeConfigurationResult {
  * ```
  */
 export function getDataSafeConfigurationOutput(args: GetDataSafeConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafeConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getDataSafeConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration", {
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

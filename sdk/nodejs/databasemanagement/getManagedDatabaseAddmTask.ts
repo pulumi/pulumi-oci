@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseAddmTask(args: GetManagedDatabaseAddmTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAddmTaskResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", {
         "managedDatabaseId": args.managedDatabaseId,
@@ -92,7 +91,12 @@ export interface GetManagedDatabaseAddmTaskResult {
  * ```
  */
 export function getManagedDatabaseAddmTaskOutput(args: GetManagedDatabaseAddmTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAddmTaskResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseAddmTask(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", {
+        "managedDatabaseId": args.managedDatabaseId,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

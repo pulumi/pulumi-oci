@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalDbSystemDiscovery(args: GetExternalDbSystemDiscoveryArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbSystemDiscoveryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", {
         "externalDbSystemDiscoveryId": args.externalDbSystemDiscoveryId,
@@ -120,7 +119,10 @@ export interface GetExternalDbSystemDiscoveryResult {
  * ```
  */
 export function getExternalDbSystemDiscoveryOutput(args: GetExternalDbSystemDiscoveryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemDiscoveryResult> {
-    return pulumi.output(args).apply((a: any) => getExternalDbSystemDiscovery(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", {
+        "externalDbSystemDiscoveryId": args.externalDbSystemDiscoveryId,
+    }, opts);
 }
 
 /**

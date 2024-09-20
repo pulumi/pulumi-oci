@@ -69,14 +69,20 @@ type GetBackendSetsResult struct {
 
 func GetBackendSetsOutput(ctx *pulumi.Context, args GetBackendSetsOutputArgs, opts ...pulumi.InvokeOption) GetBackendSetsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBackendSetsResult, error) {
+		ApplyT(func(v interface{}) (GetBackendSetsResultOutput, error) {
 			args := v.(GetBackendSetsArgs)
-			r, err := GetBackendSets(ctx, &args, opts...)
-			var s GetBackendSetsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBackendSetsResult
+			secret, err := ctx.InvokePackageRaw("oci:NetworkLoadBalancer/getBackendSets:getBackendSets", args, &rv, "", opts...)
+			if err != nil {
+				return GetBackendSetsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBackendSetsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBackendSetsResultOutput), nil
+			}
+			return output, nil
 		}).(GetBackendSetsResultOutput)
 }
 

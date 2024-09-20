@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApmDomains(args: GetApmDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetApmDomainsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Apm/getApmDomains:getApmDomains", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetApmDomainsResult {
  * ```
  */
 export function getApmDomainsOutput(args: GetApmDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApmDomainsResult> {
-    return pulumi.output(args).apply((a: any) => getApmDomains(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Apm/getApmDomains:getApmDomains", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

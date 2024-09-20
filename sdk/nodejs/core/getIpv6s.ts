@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  */
 export function getIpv6s(args?: GetIpv6sArgs, opts?: pulumi.InvokeOptions): Promise<GetIpv6sResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpv6s:getIpv6s", {
         "filters": args.filters,
@@ -114,7 +113,14 @@ export interface GetIpv6sResult {
  * ```
  */
 export function getIpv6sOutput(args?: GetIpv6sOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpv6sResult> {
-    return pulumi.output(args).apply((a: any) => getIpv6s(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpv6s:getIpv6s", {
+        "filters": args.filters,
+        "ipAddress": args.ipAddress,
+        "subnetId": args.subnetId,
+        "vnicId": args.vnicId,
+    }, opts);
 }
 
 /**

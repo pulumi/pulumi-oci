@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDesktopPools(args: GetDesktopPoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetDesktopPoolsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Desktops/getDesktopPools:getDesktopPools", {
         "availabilityDomain": args.availabilityDomain,
@@ -117,7 +116,15 @@ export interface GetDesktopPoolsResult {
  * ```
  */
 export function getDesktopPoolsOutput(args: GetDesktopPoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDesktopPoolsResult> {
-    return pulumi.output(args).apply((a: any) => getDesktopPools(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Desktops/getDesktopPools:getDesktopPools", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

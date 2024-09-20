@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeCapacityTopologyComputeBareMetalHosts(args: GetComputeCapacityTopologyComputeBareMetalHostsArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityTopologyComputeBareMetalHostsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", {
         "availabilityDomain": args.availabilityDomain,
@@ -126,7 +125,16 @@ export interface GetComputeCapacityTopologyComputeBareMetalHostsResult {
  * ```
  */
 export function getComputeCapacityTopologyComputeBareMetalHostsOutput(args: GetComputeCapacityTopologyComputeBareMetalHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> {
-    return pulumi.output(args).apply((a: any) => getComputeCapacityTopologyComputeBareMetalHosts(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "computeCapacityTopologyId": args.computeCapacityTopologyId,
+        "computeHpcIslandId": args.computeHpcIslandId,
+        "computeLocalBlockId": args.computeLocalBlockId,
+        "computeNetworkBlockId": args.computeNetworkBlockId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

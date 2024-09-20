@@ -77,14 +77,20 @@ type GetNodePoolOptionResult struct {
 
 func GetNodePoolOptionOutput(ctx *pulumi.Context, args GetNodePoolOptionOutputArgs, opts ...pulumi.InvokeOption) GetNodePoolOptionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNodePoolOptionResult, error) {
+		ApplyT(func(v interface{}) (GetNodePoolOptionResultOutput, error) {
 			args := v.(GetNodePoolOptionArgs)
-			r, err := GetNodePoolOption(ctx, &args, opts...)
-			var s GetNodePoolOptionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNodePoolOptionResult
+			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", args, &rv, "", opts...)
+			if err != nil {
+				return GetNodePoolOptionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNodePoolOptionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNodePoolOptionResultOutput), nil
+			}
+			return output, nil
 		}).(GetNodePoolOptionResultOutput)
 }
 

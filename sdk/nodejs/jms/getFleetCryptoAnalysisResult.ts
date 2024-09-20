@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetCryptoAnalysisResult(args: GetFleetCryptoAnalysisResultArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetCryptoAnalysisResultResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", {
         "cryptoAnalysisResultId": args.cryptoAnalysisResultId,
@@ -144,7 +143,11 @@ export interface GetFleetCryptoAnalysisResultResult {
  * ```
  */
 export function getFleetCryptoAnalysisResultOutput(args: GetFleetCryptoAnalysisResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetCryptoAnalysisResultResult> {
-    return pulumi.output(args).apply((a: any) => getFleetCryptoAnalysisResult(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", {
+        "cryptoAnalysisResultId": args.cryptoAnalysisResultId,
+        "fleetId": args.fleetId,
+    }, opts);
 }
 
 /**

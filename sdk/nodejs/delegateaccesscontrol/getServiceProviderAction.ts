@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceProviderAction(args: GetServiceProviderActionArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceProviderActionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction", {
         "serviceProviderActionId": args.serviceProviderActionId,
@@ -99,7 +98,10 @@ export interface GetServiceProviderActionResult {
  * ```
  */
 export function getServiceProviderActionOutput(args: GetServiceProviderActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceProviderActionResult> {
-    return pulumi.output(args).apply((a: any) => getServiceProviderAction(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction", {
+        "serviceProviderActionId": args.serviceProviderActionId,
+    }, opts);
 }
 
 /**

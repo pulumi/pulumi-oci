@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApiContent(args: GetApiContentArgs, opts?: pulumi.InvokeOptions): Promise<GetApiContentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getApiContent:getApiContent", {
         "apiId": args.apiId,
@@ -66,7 +65,10 @@ export interface GetApiContentResult {
  * ```
  */
 export function getApiContentOutput(args: GetApiContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiContentResult> {
-    return pulumi.output(args).apply((a: any) => getApiContent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApiGateway/getApiContent:getApiContent", {
+        "apiId": args.apiId,
+    }, opts);
 }
 
 /**

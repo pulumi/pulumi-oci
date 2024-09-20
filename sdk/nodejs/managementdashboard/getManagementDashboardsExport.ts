@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementDashboardsExport(args: GetManagementDashboardsExportArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementDashboardsExportResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", {
         "exportDashboardId": args.exportDashboardId,
@@ -73,7 +72,10 @@ export interface GetManagementDashboardsExportResult {
  * ```
  */
 export function getManagementDashboardsExportOutput(args: GetManagementDashboardsExportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementDashboardsExportResult> {
-    return pulumi.output(args).apply((a: any) => getManagementDashboardsExport(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", {
+        "exportDashboardId": args.exportDashboardId,
+    }, opts);
 }
 
 /**

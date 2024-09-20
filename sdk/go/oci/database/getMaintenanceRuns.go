@@ -99,14 +99,20 @@ type GetMaintenanceRunsResult struct {
 
 func GetMaintenanceRunsOutput(ctx *pulumi.Context, args GetMaintenanceRunsOutputArgs, opts ...pulumi.InvokeOption) GetMaintenanceRunsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMaintenanceRunsResult, error) {
+		ApplyT(func(v interface{}) (GetMaintenanceRunsResultOutput, error) {
 			args := v.(GetMaintenanceRunsArgs)
-			r, err := GetMaintenanceRuns(ctx, &args, opts...)
-			var s GetMaintenanceRunsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMaintenanceRunsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getMaintenanceRuns:getMaintenanceRuns", args, &rv, "", opts...)
+			if err != nil {
+				return GetMaintenanceRunsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMaintenanceRunsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMaintenanceRunsResultOutput), nil
+			}
+			return output, nil
 		}).(GetMaintenanceRunsResultOutput)
 }
 

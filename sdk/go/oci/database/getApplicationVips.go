@@ -80,14 +80,20 @@ type GetApplicationVipsResult struct {
 
 func GetApplicationVipsOutput(ctx *pulumi.Context, args GetApplicationVipsOutputArgs, opts ...pulumi.InvokeOption) GetApplicationVipsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetApplicationVipsResult, error) {
+		ApplyT(func(v interface{}) (GetApplicationVipsResultOutput, error) {
 			args := v.(GetApplicationVipsArgs)
-			r, err := GetApplicationVips(ctx, &args, opts...)
-			var s GetApplicationVipsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetApplicationVipsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getApplicationVips:getApplicationVips", args, &rv, "", opts...)
+			if err != nil {
+				return GetApplicationVipsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetApplicationVipsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetApplicationVipsResultOutput), nil
+			}
+			return output, nil
 		}).(GetApplicationVipsResultOutput)
 }
 

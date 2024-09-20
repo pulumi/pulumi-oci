@@ -109,14 +109,20 @@ type GetDomainsSecurityQuestionsResult struct {
 
 func GetDomainsSecurityQuestionsOutput(ctx *pulumi.Context, args GetDomainsSecurityQuestionsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSecurityQuestionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsSecurityQuestionsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsSecurityQuestionsResultOutput, error) {
 			args := v.(GetDomainsSecurityQuestionsArgs)
-			r, err := GetDomainsSecurityQuestions(ctx, &args, opts...)
-			var s GetDomainsSecurityQuestionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsSecurityQuestionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSecurityQuestions:getDomainsSecurityQuestions", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsSecurityQuestionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsSecurityQuestionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsSecurityQuestionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsSecurityQuestionsResultOutput)
 }
 

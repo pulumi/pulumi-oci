@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInternalNamespaceOccOverviews(args: GetInternalNamespaceOccOverviewsArgs, opts?: pulumi.InvokeOptions): Promise<GetInternalNamespaceOccOverviewsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,16 @@ export interface GetInternalNamespaceOccOverviewsResult {
  * ```
  */
 export function getInternalNamespaceOccOverviewsOutput(args: GetInternalNamespaceOccOverviewsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternalNamespaceOccOverviewsResult> {
-    return pulumi.output(args).apply((a: any) => getInternalNamespaceOccOverviews(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "from": args.from,
+        "namespace": args.namespace,
+        "occCustomerGroupId": args.occCustomerGroupId,
+        "to": args.to,
+        "workloadType": args.workloadType,
+    }, opts);
 }
 
 /**

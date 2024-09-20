@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEkmsPrivateEndpoints(args: GetEkmsPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetEkmsPrivateEndpointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", {
         "compartmentId": args.compartmentId,
@@ -77,7 +76,11 @@ export interface GetEkmsPrivateEndpointsResult {
  * ```
  */
 export function getEkmsPrivateEndpointsOutput(args: GetEkmsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEkmsPrivateEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getEkmsPrivateEndpoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

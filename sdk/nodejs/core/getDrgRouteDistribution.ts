@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgRouteDistribution(args: GetDrgRouteDistributionArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteDistributionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgRouteDistribution:getDrgRouteDistribution", {
         "drgRouteDistributionId": args.drgRouteDistributionId,
@@ -97,7 +96,10 @@ export interface GetDrgRouteDistributionResult {
  * ```
  */
 export function getDrgRouteDistributionOutput(args: GetDrgRouteDistributionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteDistributionResult> {
-    return pulumi.output(args).apply((a: any) => getDrgRouteDistribution(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteDistribution:getDrgRouteDistribution", {
+        "drgRouteDistributionId": args.drgRouteDistributionId,
+    }, opts);
 }
 
 /**

@@ -54,7 +54,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessmentProfiles(args: GetUserAssessmentProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentProfilesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentProfiles:getUserAssessmentProfiles", {
         "accessLevel": args.accessLevel,
@@ -256,7 +255,28 @@ export interface GetUserAssessmentProfilesResult {
  * ```
  */
 export function getUserAssessmentProfilesOutput(args: GetUserAssessmentProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentProfilesResult> {
-    return pulumi.output(args).apply((a: any) => getUserAssessmentProfiles(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessmentProfiles:getUserAssessmentProfiles", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "failedLoginAttemptsGreaterThanOrEqual": args.failedLoginAttemptsGreaterThanOrEqual,
+        "failedLoginAttemptsLessThan": args.failedLoginAttemptsLessThan,
+        "filters": args.filters,
+        "inactiveAccountTimeGreaterThanOrEqual": args.inactiveAccountTimeGreaterThanOrEqual,
+        "inactiveAccountTimeLessThan": args.inactiveAccountTimeLessThan,
+        "isUserCreated": args.isUserCreated,
+        "passwordLockTimeGreaterThanOrEqual": args.passwordLockTimeGreaterThanOrEqual,
+        "passwordLockTimeLessThan": args.passwordLockTimeLessThan,
+        "passwordVerificationFunction": args.passwordVerificationFunction,
+        "profileName": args.profileName,
+        "sessionsPerUserGreaterThanOrEqual": args.sessionsPerUserGreaterThanOrEqual,
+        "sessionsPerUserLessThan": args.sessionsPerUserLessThan,
+        "targetId": args.targetId,
+        "userAssessmentId": args.userAssessmentId,
+        "userCountGreaterThanOrEqual": args.userCountGreaterThanOrEqual,
+        "userCountLessThan": args.userCountLessThan,
+    }, opts);
 }
 
 /**

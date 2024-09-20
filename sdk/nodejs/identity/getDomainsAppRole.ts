@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsAppRole(args: GetDomainsAppRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAppRoleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsAppRole:getDomainsAppRole", {
         "appRoleId": args.appRoleId,
@@ -207,7 +206,15 @@ export interface GetDomainsAppRoleResult {
  * ```
  */
 export function getDomainsAppRoleOutput(args: GetDomainsAppRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAppRoleResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsAppRole(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAppRole:getDomainsAppRole", {
+        "appRoleId": args.appRoleId,
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

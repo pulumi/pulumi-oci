@@ -43,7 +43,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityPolicyDeployments(args: GetSecurityPolicyDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyDeploymentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments", {
         "accessLevel": args.accessLevel,
@@ -171,7 +170,18 @@ export interface GetSecurityPolicyDeploymentsResult {
  * ```
  */
 export function getSecurityPolicyDeploymentsOutput(args: GetSecurityPolicyDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyDeploymentsResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityPolicyDeployments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "securityPolicyDeploymentId": args.securityPolicyDeploymentId,
+        "securityPolicyId": args.securityPolicyId,
+        "state": args.state,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

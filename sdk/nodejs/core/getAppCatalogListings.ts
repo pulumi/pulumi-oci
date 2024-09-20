@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getAppCatalogListings(args?: GetAppCatalogListingsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getAppCatalogListings:getAppCatalogListings", {
         "displayName": args.displayName,
@@ -97,7 +96,14 @@ export interface GetAppCatalogListingsResult {
  * ```
  */
 export function getAppCatalogListingsOutput(args?: GetAppCatalogListingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingsResult> {
-    return pulumi.output(args).apply((a: any) => getAppCatalogListings(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getAppCatalogListings:getAppCatalogListings", {
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "publisherName": args.publisherName,
+        "publisherType": args.publisherType,
+    }, opts);
 }
 
 /**

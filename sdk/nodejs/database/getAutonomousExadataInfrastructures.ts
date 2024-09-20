@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousExadataInfrastructures(args: GetAutonomousExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousExadataInfrastructuresResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures", {
         "availabilityDomain": args.availabilityDomain,
@@ -110,7 +109,14 @@ export interface GetAutonomousExadataInfrastructuresResult {
  * ```
  */
 export function getAutonomousExadataInfrastructuresOutput(args: GetAutonomousExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructuresResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousExadataInfrastructures(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

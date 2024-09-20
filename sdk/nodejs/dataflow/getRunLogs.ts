@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRunLogs(args: GetRunLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetRunLogsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getRunLogs:getRunLogs", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetRunLogsResult {
  * ```
  */
 export function getRunLogsOutput(args: GetRunLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunLogsResult> {
-    return pulumi.output(args).apply((a: any) => getRunLogs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataFlow/getRunLogs:getRunLogs", {
+        "filters": args.filters,
+        "runId": args.runId,
+    }, opts);
 }
 
 /**

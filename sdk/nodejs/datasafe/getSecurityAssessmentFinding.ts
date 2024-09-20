@@ -7,7 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
         "accessLevel": args.accessLevel,
@@ -60,7 +59,19 @@ export interface GetSecurityAssessmentFindingResult {
     readonly targetId?: string;
 }
 export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFindingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityAssessmentFinding(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
+        "accessLevel": args.accessLevel,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "findingKey": args.findingKey,
+        "isTopFinding": args.isTopFinding,
+        "references": args.references,
+        "securityAssessmentId": args.securityAssessmentId,
+        "severity": args.severity,
+        "state": args.state,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

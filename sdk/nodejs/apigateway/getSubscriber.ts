@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriber(args: GetSubscriberArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriberResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getSubscriber:getSubscriber", {
         "subscriberId": args.subscriberId,
@@ -107,7 +106,10 @@ export interface GetSubscriberResult {
  * ```
  */
 export function getSubscriberOutput(args: GetSubscriberOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriberResult> {
-    return pulumi.output(args).apply((a: any) => getSubscriber(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApiGateway/getSubscriber:getSubscriber", {
+        "subscriberId": args.subscriberId,
+    }, opts);
 }
 
 /**

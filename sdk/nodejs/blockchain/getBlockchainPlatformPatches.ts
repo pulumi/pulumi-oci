@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBlockchainPlatformPatches(args: GetBlockchainPlatformPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockchainPlatformPatchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches", {
         "blockchainPlatformId": args.blockchainPlatformId,
@@ -74,7 +73,11 @@ export interface GetBlockchainPlatformPatchesResult {
  * ```
  */
 export function getBlockchainPlatformPatchesOutput(args: GetBlockchainPlatformPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformPatchesResult> {
-    return pulumi.output(args).apply((a: any) => getBlockchainPlatformPatches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches", {
+        "blockchainPlatformId": args.blockchainPlatformId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

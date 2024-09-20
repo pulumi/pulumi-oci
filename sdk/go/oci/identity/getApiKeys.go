@@ -73,14 +73,20 @@ type GetApiKeysResult struct {
 
 func GetApiKeysOutput(ctx *pulumi.Context, args GetApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetApiKeysResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetApiKeysResult, error) {
+		ApplyT(func(v interface{}) (GetApiKeysResultOutput, error) {
 			args := v.(GetApiKeysArgs)
-			r, err := GetApiKeys(ctx, &args, opts...)
-			var s GetApiKeysResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetApiKeysResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getApiKeys:getApiKeys", args, &rv, "", opts...)
+			if err != nil {
+				return GetApiKeysResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetApiKeysResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetApiKeysResultOutput), nil
+			}
+			return output, nil
 		}).(GetApiKeysResultOutput)
 }
 

@@ -83,14 +83,20 @@ type GetSupportedVmwareSoftwareVersionsResult struct {
 
 func GetSupportedVmwareSoftwareVersionsOutput(ctx *pulumi.Context, args GetSupportedVmwareSoftwareVersionsOutputArgs, opts ...pulumi.InvokeOption) GetSupportedVmwareSoftwareVersionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSupportedVmwareSoftwareVersionsResult, error) {
+		ApplyT(func(v interface{}) (GetSupportedVmwareSoftwareVersionsResultOutput, error) {
 			args := v.(GetSupportedVmwareSoftwareVersionsArgs)
-			r, err := GetSupportedVmwareSoftwareVersions(ctx, &args, opts...)
-			var s GetSupportedVmwareSoftwareVersionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSupportedVmwareSoftwareVersionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args, &rv, "", opts...)
+			if err != nil {
+				return GetSupportedVmwareSoftwareVersionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSupportedVmwareSoftwareVersionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSupportedVmwareSoftwareVersionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetSupportedVmwareSoftwareVersionsResultOutput)
 }
 

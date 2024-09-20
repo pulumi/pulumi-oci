@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVbInstances(args: GetVbInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetVbInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:VisualBuilder/getVbInstances:getVbInstances", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetVbInstancesResult {
  * ```
  */
 export function getVbInstancesOutput(args: GetVbInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getVbInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:VisualBuilder/getVbInstances:getVbInstances", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOdaPrivateEndpoint(args: GetOdaPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetOdaPrivateEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", {
         "odaPrivateEndpointId": args.odaPrivateEndpointId,
@@ -105,7 +104,10 @@ export interface GetOdaPrivateEndpointResult {
  * ```
  */
 export function getOdaPrivateEndpointOutput(args: GetOdaPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaPrivateEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getOdaPrivateEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", {
+        "odaPrivateEndpointId": args.odaPrivateEndpointId,
+    }, opts);
 }
 
 /**

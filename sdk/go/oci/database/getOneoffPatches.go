@@ -80,14 +80,20 @@ type GetOneoffPatchesResult struct {
 
 func GetOneoffPatchesOutput(ctx *pulumi.Context, args GetOneoffPatchesOutputArgs, opts ...pulumi.InvokeOption) GetOneoffPatchesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetOneoffPatchesResult, error) {
+		ApplyT(func(v interface{}) (GetOneoffPatchesResultOutput, error) {
 			args := v.(GetOneoffPatchesArgs)
-			r, err := GetOneoffPatches(ctx, &args, opts...)
-			var s GetOneoffPatchesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetOneoffPatchesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getOneoffPatches:getOneoffPatches", args, &rv, "", opts...)
+			if err != nil {
+				return GetOneoffPatchesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetOneoffPatchesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetOneoffPatchesResultOutput), nil
+			}
+			return output, nil
 		}).(GetOneoffPatchesResultOutput)
 }
 

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getErratum(args: GetErratumArgs, opts?: pulumi.InvokeOptions): Promise<GetErratumResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getErratum:getErratum", {
         "compartmentId": args.compartmentId,
@@ -134,7 +133,11 @@ export interface GetErratumResult {
  * ```
  */
 export function getErratumOutput(args: GetErratumOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetErratumResult> {
-    return pulumi.output(args).apply((a: any) => getErratum(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getErratum:getErratum", {
+        "compartmentId": args.compartmentId,
+        "name": args.name,
+    }, opts);
 }
 
 /**

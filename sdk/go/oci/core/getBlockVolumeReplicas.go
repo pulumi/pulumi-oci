@@ -89,14 +89,20 @@ type GetBlockVolumeReplicasResult struct {
 
 func GetBlockVolumeReplicasOutput(ctx *pulumi.Context, args GetBlockVolumeReplicasOutputArgs, opts ...pulumi.InvokeOption) GetBlockVolumeReplicasResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBlockVolumeReplicasResult, error) {
+		ApplyT(func(v interface{}) (GetBlockVolumeReplicasResultOutput, error) {
 			args := v.(GetBlockVolumeReplicasArgs)
-			r, err := GetBlockVolumeReplicas(ctx, &args, opts...)
-			var s GetBlockVolumeReplicasResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBlockVolumeReplicasResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", args, &rv, "", opts...)
+			if err != nil {
+				return GetBlockVolumeReplicasResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBlockVolumeReplicasResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBlockVolumeReplicasResultOutput), nil
+			}
+			return output, nil
 		}).(GetBlockVolumeReplicasResultOutput)
 }
 

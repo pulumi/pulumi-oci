@@ -86,14 +86,20 @@ type LookupAnalyticsInstancePrivateAccessChannelResult struct {
 
 func LookupAnalyticsInstancePrivateAccessChannelOutput(ctx *pulumi.Context, args LookupAnalyticsInstancePrivateAccessChannelOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstancePrivateAccessChannelResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAnalyticsInstancePrivateAccessChannelResult, error) {
+		ApplyT(func(v interface{}) (LookupAnalyticsInstancePrivateAccessChannelResultOutput, error) {
 			args := v.(LookupAnalyticsInstancePrivateAccessChannelArgs)
-			r, err := LookupAnalyticsInstancePrivateAccessChannel(ctx, &args, opts...)
-			var s LookupAnalyticsInstancePrivateAccessChannelResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAnalyticsInstancePrivateAccessChannelResult
+			secret, err := ctx.InvokePackageRaw("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAnalyticsInstancePrivateAccessChannelResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAnalyticsInstancePrivateAccessChannelResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAnalyticsInstancePrivateAccessChannelResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAnalyticsInstancePrivateAccessChannelResultOutput)
 }
 

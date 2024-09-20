@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEnvironments(args: GetEnvironmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetEnvironmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudBridge/getEnvironments:getEnvironments", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetEnvironmentsResult {
  * ```
  */
 export function getEnvironmentsOutput(args: GetEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnvironmentsResult> {
-    return pulumi.output(args).apply((a: any) => getEnvironments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudBridge/getEnvironments:getEnvironments", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "environmentId": args.environmentId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

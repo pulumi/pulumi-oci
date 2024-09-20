@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetBlocklists(args: GetFleetBlocklistsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetBlocklistsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetBlocklists:getFleetBlocklists", {
         "filters": args.filters,
@@ -99,7 +98,13 @@ export interface GetFleetBlocklistsResult {
  * ```
  */
 export function getFleetBlocklistsOutput(args: GetFleetBlocklistsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetBlocklistsResult> {
-    return pulumi.output(args).apply((a: any) => getFleetBlocklists(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetBlocklists:getFleetBlocklists", {
+        "filters": args.filters,
+        "fleetId": args.fleetId,
+        "managedInstanceId": args.managedInstanceId,
+        "operation": args.operation,
+    }, opts);
 }
 
 /**

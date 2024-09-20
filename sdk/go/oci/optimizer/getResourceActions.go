@@ -127,14 +127,20 @@ type GetResourceActionsResult struct {
 
 func GetResourceActionsOutput(ctx *pulumi.Context, args GetResourceActionsOutputArgs, opts ...pulumi.InvokeOption) GetResourceActionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetResourceActionsResult, error) {
+		ApplyT(func(v interface{}) (GetResourceActionsResultOutput, error) {
 			args := v.(GetResourceActionsArgs)
-			r, err := GetResourceActions(ctx, &args, opts...)
-			var s GetResourceActionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetResourceActionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getResourceActions:getResourceActions", args, &rv, "", opts...)
+			if err != nil {
+				return GetResourceActionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetResourceActionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetResourceActionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetResourceActionsResultOutput)
 }
 

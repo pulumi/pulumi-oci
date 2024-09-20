@@ -94,14 +94,20 @@ type GetDatabasePdbConversionHistoryEntryResult struct {
 
 func GetDatabasePdbConversionHistoryEntryOutput(ctx *pulumi.Context, args GetDatabasePdbConversionHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetDatabasePdbConversionHistoryEntryResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDatabasePdbConversionHistoryEntryResult, error) {
+		ApplyT(func(v interface{}) (GetDatabasePdbConversionHistoryEntryResultOutput, error) {
 			args := v.(GetDatabasePdbConversionHistoryEntryArgs)
-			r, err := GetDatabasePdbConversionHistoryEntry(ctx, &args, opts...)
-			var s GetDatabasePdbConversionHistoryEntryResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDatabasePdbConversionHistoryEntryResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args, &rv, "", opts...)
+			if err != nil {
+				return GetDatabasePdbConversionHistoryEntryResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDatabasePdbConversionHistoryEntryResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDatabasePdbConversionHistoryEntryResultOutput), nil
+			}
+			return output, nil
 		}).(GetDatabasePdbConversionHistoryEntryResultOutput)
 }
 

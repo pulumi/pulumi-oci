@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbNodeConsoleConnections(args: GetDbNodeConsoleConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodeConsoleConnectionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", {
         "dbNodeId": args.dbNodeId,
@@ -77,7 +76,11 @@ export interface GetDbNodeConsoleConnectionsResult {
  * ```
  */
 export function getDbNodeConsoleConnectionsOutput(args: GetDbNodeConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeConsoleConnectionsResult> {
-    return pulumi.output(args).apply((a: any) => getDbNodeConsoleConnections(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", {
+        "dbNodeId": args.dbNodeId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

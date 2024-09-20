@@ -46,7 +46,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPublicIps(args: GetPublicIpsArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicIpsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPublicIps:getPublicIps", {
         "availabilityDomain": args.availabilityDomain,
@@ -165,7 +164,15 @@ export interface GetPublicIpsResult {
  * ```
  */
 export function getPublicIpsOutput(args: GetPublicIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpsResult> {
-    return pulumi.output(args).apply((a: any) => getPublicIps(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getPublicIps:getPublicIps", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "lifetime": args.lifetime,
+        "publicIpPoolId": args.publicIpPoolId,
+        "scope": args.scope,
+    }, opts);
 }
 
 /**

@@ -87,14 +87,20 @@ type GetVnicAttachmentsResult struct {
 
 func GetVnicAttachmentsOutput(ctx *pulumi.Context, args GetVnicAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetVnicAttachmentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVnicAttachmentsResult, error) {
+		ApplyT(func(v interface{}) (GetVnicAttachmentsResultOutput, error) {
 			args := v.(GetVnicAttachmentsArgs)
-			r, err := GetVnicAttachments(ctx, &args, opts...)
-			var s GetVnicAttachmentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVnicAttachmentsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVnicAttachments:getVnicAttachments", args, &rv, "", opts...)
+			if err != nil {
+				return GetVnicAttachmentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVnicAttachmentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVnicAttachmentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetVnicAttachmentsResultOutput)
 }
 

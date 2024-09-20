@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedPreferredCredential(args: GetManagedPreferredCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedPreferredCredentialResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", {
         "credentialName": args.credentialName,
@@ -109,7 +108,12 @@ export interface GetManagedPreferredCredentialResult {
  * ```
  */
 export function getManagedPreferredCredentialOutput(args: GetManagedPreferredCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedPreferredCredentialResult> {
-    return pulumi.output(args).apply((a: any) => getManagedPreferredCredential(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", {
+        "credentialName": args.credentialName,
+        "managedDatabaseId": args.managedDatabaseId,
+        "namedCredentialId": args.namedCredentialId,
+    }, opts);
 }
 
 /**

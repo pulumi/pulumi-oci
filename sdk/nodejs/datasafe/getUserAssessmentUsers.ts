@@ -45,7 +45,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessmentUsers(args: GetUserAssessmentUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentUsersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", {
         "accessLevel": args.accessLevel,
@@ -267,7 +266,30 @@ export interface GetUserAssessmentUsersResult {
  * ```
  */
 export function getUserAssessmentUsersOutput(args: GetUserAssessmentUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentUsersResult> {
-    return pulumi.output(args).apply((a: any) => getUserAssessmentUsers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", {
+        "accessLevel": args.accessLevel,
+        "accountStatus": args.accountStatus,
+        "areAllSchemasAccessible": args.areAllSchemasAccessible,
+        "authenticationType": args.authenticationType,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "schemaLists": args.schemaLists,
+        "targetId": args.targetId,
+        "timeLastLoginGreaterThanOrEqualTo": args.timeLastLoginGreaterThanOrEqualTo,
+        "timeLastLoginLessThan": args.timeLastLoginLessThan,
+        "timePasswordLastChangedGreaterThanOrEqualTo": args.timePasswordLastChangedGreaterThanOrEqualTo,
+        "timePasswordLastChangedLessThan": args.timePasswordLastChangedLessThan,
+        "timeUserCreatedGreaterThanOrEqualTo": args.timeUserCreatedGreaterThanOrEqualTo,
+        "timeUserCreatedLessThan": args.timeUserCreatedLessThan,
+        "userAssessmentId": args.userAssessmentId,
+        "userCategory": args.userCategory,
+        "userKey": args.userKey,
+        "userName": args.userName,
+        "userProfile": args.userProfile,
+        "userRole": args.userRole,
+        "userType": args.userType,
+    }, opts);
 }
 
 /**

@@ -80,14 +80,20 @@ type GetExternalClustersResult struct {
 
 func GetExternalClustersOutput(ctx *pulumi.Context, args GetExternalClustersOutputArgs, opts ...pulumi.InvokeOption) GetExternalClustersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalClustersResult, error) {
+		ApplyT(func(v interface{}) (GetExternalClustersResultOutput, error) {
 			args := v.(GetExternalClustersArgs)
-			r, err := GetExternalClusters(ctx, &args, opts...)
-			var s GetExternalClustersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExternalClustersResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalClusters:getExternalClusters", args, &rv, "", opts...)
+			if err != nil {
+				return GetExternalClustersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExternalClustersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExternalClustersResultOutput), nil
+			}
+			return output, nil
 		}).(GetExternalClustersResultOutput)
 }
 

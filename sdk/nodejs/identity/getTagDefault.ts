@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTagDefault(args: GetTagDefaultArgs, opts?: pulumi.InvokeOptions): Promise<GetTagDefaultResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagDefault:getTagDefault", {
         "tagDefaultId": args.tagDefaultId,
@@ -99,7 +98,10 @@ export interface GetTagDefaultResult {
  * ```
  */
 export function getTagDefaultOutput(args: GetTagDefaultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagDefaultResult> {
-    return pulumi.output(args).apply((a: any) => getTagDefault(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getTagDefault:getTagDefault", {
+        "tagDefaultId": args.tagDefaultId,
+    }, opts);
 }
 
 /**

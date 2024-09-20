@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAddressRule(args: GetAddressRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressRuleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OspGateway/getAddressRule:getAddressRule", {
         "compartmentId": args.compartmentId,
@@ -98,7 +97,12 @@ export interface GetAddressRuleResult {
  * ```
  */
 export function getAddressRuleOutput(args: GetAddressRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressRuleResult> {
-    return pulumi.output(args).apply((a: any) => getAddressRule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OspGateway/getAddressRule:getAddressRule", {
+        "compartmentId": args.compartmentId,
+        "countryCode": args.countryCode,
+        "ospHomeRegion": args.ospHomeRegion,
+    }, opts);
 }
 
 /**

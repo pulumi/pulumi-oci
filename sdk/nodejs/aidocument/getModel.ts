@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModel(args: GetModelArgs, opts?: pulumi.InvokeOptions): Promise<GetModelResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiDocument/getModel:getModel", {
         "modelId": args.modelId,
@@ -166,7 +165,10 @@ export interface GetModelResult {
  * ```
  */
 export function getModelOutput(args: GetModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelResult> {
-    return pulumi.output(args).apply((a: any) => getModel(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiDocument/getModel:getModel", {
+        "modelId": args.modelId,
+    }, opts);
 }
 
 /**

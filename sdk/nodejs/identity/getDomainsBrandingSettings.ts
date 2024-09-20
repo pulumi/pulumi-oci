@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsBrandingSettings(args: GetDomainsBrandingSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsBrandingSettingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsBrandingSettings:getDomainsBrandingSettings", {
         "attributeSets": args.attributeSets,
@@ -113,7 +112,15 @@ export interface GetDomainsBrandingSettingsResult {
  * ```
  */
 export function getDomainsBrandingSettingsOutput(args: GetDomainsBrandingSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsBrandingSettingsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsBrandingSettings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsBrandingSettings:getDomainsBrandingSettings", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

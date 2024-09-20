@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentServiceAttachment(args: GetFusionEnvironmentServiceAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentServiceAttachmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", {
         "fusionEnvironmentId": args.fusionEnvironmentId,
@@ -117,7 +116,11 @@ export interface GetFusionEnvironmentServiceAttachmentResult {
  * ```
  */
 export function getFusionEnvironmentServiceAttachmentOutput(args: GetFusionEnvironmentServiceAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentServiceAttachmentResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentServiceAttachment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", {
+        "fusionEnvironmentId": args.fusionEnvironmentId,
+        "serviceAttachmentId": args.serviceAttachmentId,
+    }, opts);
 }
 
 /**

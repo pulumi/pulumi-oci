@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPingProbeResults(args: GetPingProbeResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetPingProbeResultsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getPingProbeResults:getPingProbeResults", {
         "filters": args.filters,
@@ -116,7 +115,14 @@ export interface GetPingProbeResultsResult {
  * ```
  */
 export function getPingProbeResultsOutput(args: GetPingProbeResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingProbeResultsResult> {
-    return pulumi.output(args).apply((a: any) => getPingProbeResults(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:HealthChecks/getPingProbeResults:getPingProbeResults", {
+        "filters": args.filters,
+        "probeConfigurationId": args.probeConfigurationId,
+        "startTimeGreaterThanOrEqualTo": args.startTimeGreaterThanOrEqualTo,
+        "startTimeLessThanOrEqualTo": args.startTimeLessThanOrEqualTo,
+        "target": args.target,
+    }, opts);
 }
 
 /**

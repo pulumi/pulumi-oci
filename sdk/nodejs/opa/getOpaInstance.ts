@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOpaInstance(args: GetOpaInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetOpaInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opa/getOpaInstance:getOpaInstance", {
         "opaInstanceId": args.opaInstanceId,
@@ -144,7 +143,10 @@ export interface GetOpaInstanceResult {
  * ```
  */
 export function getOpaInstanceOutput(args: GetOpaInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpaInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getOpaInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opa/getOpaInstance:getOpaInstance", {
+        "opaInstanceId": args.opaInstanceId,
+    }, opts);
 }
 
 /**

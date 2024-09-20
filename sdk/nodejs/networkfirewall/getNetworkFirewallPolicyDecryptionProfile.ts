@@ -10,7 +10,6 @@ import * as utilities from "../utilities";
  * Get Decryption Profile by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyDecryptionProfile(args: GetNetworkFirewallPolicyDecryptionProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyDecryptionProfileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", {
         "name": args.name,
@@ -93,7 +92,11 @@ export interface GetNetworkFirewallPolicyDecryptionProfileResult {
  * Get Decryption Profile by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyDecryptionProfileOutput(args: GetNetworkFirewallPolicyDecryptionProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionProfileResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyDecryptionProfile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", {
+        "name": args.name,
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+    }, opts);
 }
 
 /**

@@ -69,14 +69,20 @@ type GetManagementDashboardsExportResult struct {
 
 func GetManagementDashboardsExportOutput(ctx *pulumi.Context, args GetManagementDashboardsExportOutputArgs, opts ...pulumi.InvokeOption) GetManagementDashboardsExportResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagementDashboardsExportResult, error) {
+		ApplyT(func(v interface{}) (GetManagementDashboardsExportResultOutput, error) {
 			args := v.(GetManagementDashboardsExportArgs)
-			r, err := GetManagementDashboardsExport(ctx, &args, opts...)
-			var s GetManagementDashboardsExportResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagementDashboardsExportResult
+			secret, err := ctx.InvokePackageRaw("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagementDashboardsExportResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagementDashboardsExportResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagementDashboardsExportResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagementDashboardsExportResultOutput)
 }
 

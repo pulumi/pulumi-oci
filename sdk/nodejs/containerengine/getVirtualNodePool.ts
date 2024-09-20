@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualNodePool(args: GetVirtualNodePoolArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualNodePoolResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", {
         "virtualNodePoolId": args.virtualNodePoolId,
@@ -139,7 +138,10 @@ export interface GetVirtualNodePoolResult {
  * ```
  */
 export function getVirtualNodePoolOutput(args: GetVirtualNodePoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualNodePoolResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualNodePool(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", {
+        "virtualNodePoolId": args.virtualNodePoolId,
+    }, opts);
 }
 
 /**

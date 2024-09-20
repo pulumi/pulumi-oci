@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeploymentType(args: GetDeploymentTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentTypeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeploymentType:getDeploymentType", {
         "compartmentId": args.compartmentId,
@@ -82,7 +81,11 @@ export interface GetDeploymentTypeResult {
  * ```
  */
 export function getDeploymentTypeOutput(args: GetDeploymentTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentTypeResult> {
-    return pulumi.output(args).apply((a: any) => getDeploymentType(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeploymentType:getDeploymentType", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+    }, opts);
 }
 
 /**

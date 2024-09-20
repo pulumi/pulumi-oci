@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNotificationTopics(args: GetNotificationTopicsArgs, opts?: pulumi.InvokeOptions): Promise<GetNotificationTopicsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ons/getNotificationTopics:getNotificationTopics", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetNotificationTopicsResult {
  * ```
  */
 export function getNotificationTopicsOutput(args: GetNotificationTopicsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotificationTopicsResult> {
-    return pulumi.output(args).apply((a: any) => getNotificationTopics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ons/getNotificationTopics:getNotificationTopics", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

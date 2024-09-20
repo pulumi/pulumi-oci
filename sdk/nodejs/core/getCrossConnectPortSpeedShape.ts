@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCrossConnectPortSpeedShape(args: GetCrossConnectPortSpeedShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectPortSpeedShapeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", {
         "compartmentId": args.compartmentId,
@@ -78,7 +77,11 @@ export interface GetCrossConnectPortSpeedShapeResult {
  * ```
  */
 export function getCrossConnectPortSpeedShapeOutput(args: GetCrossConnectPortSpeedShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectPortSpeedShapeResult> {
-    return pulumi.output(args).apply((a: any) => getCrossConnectPortSpeedShape(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -80,14 +80,20 @@ type LookupInstanceConfigurationResult struct {
 
 func LookupInstanceConfigurationOutput(ctx *pulumi.Context, args LookupInstanceConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupInstanceConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupInstanceConfigurationResult, error) {
+		ApplyT(func(v interface{}) (LookupInstanceConfigurationResultOutput, error) {
 			args := v.(LookupInstanceConfigurationArgs)
-			r, err := LookupInstanceConfiguration(ctx, &args, opts...)
-			var s LookupInstanceConfigurationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupInstanceConfigurationResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getInstanceConfiguration:getInstanceConfiguration", args, &rv, "", opts...)
+			if err != nil {
+				return LookupInstanceConfigurationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupInstanceConfigurationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupInstanceConfigurationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupInstanceConfigurationResultOutput)
 }
 

@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobAdvisorReport(args: GetJobAdvisorReportArgs, opts?: pulumi.InvokeOptions): Promise<GetJobAdvisorReportResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", {
         "jobId": args.jobId,
@@ -83,7 +82,10 @@ export interface GetJobAdvisorReportResult {
  * ```
  */
 export function getJobAdvisorReportOutput(args: GetJobAdvisorReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobAdvisorReportResult> {
-    return pulumi.output(args).apply((a: any) => getJobAdvisorReport(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", {
+        "jobId": args.jobId,
+    }, opts);
 }
 
 /**

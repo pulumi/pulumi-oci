@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Gets the details of the specified Autonomous Database.
  */
 export function getAutonomousDatabases(args: GetAutonomousDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabasesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
@@ -153,7 +152,22 @@ export interface GetAutonomousDatabasesResult {
  * Gets the details of the specified Autonomous Database.
  */
 export function getAutonomousDatabasesOutput(args: GetAutonomousDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousDatabases(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabases:getAutonomousDatabases", {
+        "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
+        "compartmentId": args.compartmentId,
+        "dbVersion": args.dbVersion,
+        "dbWorkload": args.dbWorkload,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "infrastructureType": args.infrastructureType,
+        "isDataGuardEnabled": args.isDataGuardEnabled,
+        "isFreeTier": args.isFreeTier,
+        "isRefreshableClone": args.isRefreshableClone,
+        "isResourcePoolLeader": args.isResourcePoolLeader,
+        "resourcePoolLeaderId": args.resourcePoolLeaderId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

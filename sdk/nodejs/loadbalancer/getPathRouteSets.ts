@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPathRouteSets(args: GetPathRouteSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetPathRouteSetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetPathRouteSetsResult {
  * ```
  */
 export function getPathRouteSetsOutput(args: GetPathRouteSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathRouteSetsResult> {
-    return pulumi.output(args).apply((a: any) => getPathRouteSets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", {
+        "filters": args.filters,
+        "loadBalancerId": args.loadBalancerId,
+    }, opts);
 }
 
 /**

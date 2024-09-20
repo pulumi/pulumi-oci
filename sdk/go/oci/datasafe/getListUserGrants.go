@@ -108,14 +108,20 @@ type GetListUserGrantsResult struct {
 
 func GetListUserGrantsOutput(ctx *pulumi.Context, args GetListUserGrantsOutputArgs, opts ...pulumi.InvokeOption) GetListUserGrantsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetListUserGrantsResult, error) {
+		ApplyT(func(v interface{}) (GetListUserGrantsResultOutput, error) {
 			args := v.(GetListUserGrantsArgs)
-			r, err := GetListUserGrants(ctx, &args, opts...)
-			var s GetListUserGrantsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetListUserGrantsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getListUserGrants:getListUserGrants", args, &rv, "", opts...)
+			if err != nil {
+				return GetListUserGrantsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetListUserGrantsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetListUserGrantsResultOutput), nil
+			}
+			return output, nil
 		}).(GetListUserGrantsResultOutput)
 }
 

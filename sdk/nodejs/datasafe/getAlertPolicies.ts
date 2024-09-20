@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertPolicies(args: GetAlertPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlertPolicies:getAlertPolicies", {
         "accessLevel": args.accessLevel,
@@ -162,7 +161,20 @@ export interface GetAlertPoliciesResult {
  * ```
  */
 export function getAlertPoliciesOutput(args: GetAlertPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getAlertPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAlertPolicies:getAlertPolicies", {
+        "accessLevel": args.accessLevel,
+        "alertPolicyId": args.alertPolicyId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isUserDefined": args.isUserDefined,
+        "state": args.state,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+        "type": args.type,
+    }, opts);
 }
 
 /**

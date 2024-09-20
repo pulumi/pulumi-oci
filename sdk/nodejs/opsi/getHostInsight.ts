@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHostInsight(args: GetHostInsightArgs, opts?: pulumi.InvokeOptions): Promise<GetHostInsightResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getHostInsight:getHostInsight", {
         "hostInsightId": args.hostInsightId,
@@ -166,7 +165,10 @@ export interface GetHostInsightResult {
  * ```
  */
 export function getHostInsightOutput(args: GetHostInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostInsightResult> {
-    return pulumi.output(args).apply((a: any) => getHostInsight(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getHostInsight:getHostInsight", {
+        "hostInsightId": args.hostInsightId,
+    }, opts);
 }
 
 /**

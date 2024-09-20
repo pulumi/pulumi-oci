@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEmailDomain(args: GetEmailDomainArgs, opts?: pulumi.InvokeOptions): Promise<GetEmailDomainResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getEmailDomain:getEmailDomain", {
         "emailDomainId": args.emailDomainId,
@@ -113,7 +112,10 @@ export interface GetEmailDomainResult {
  * ```
  */
 export function getEmailDomainOutput(args: GetEmailDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmailDomainResult> {
-    return pulumi.output(args).apply((a: any) => getEmailDomain(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Email/getEmailDomain:getEmailDomain", {
+        "emailDomainId": args.emailDomainId,
+    }, opts);
 }
 
 /**

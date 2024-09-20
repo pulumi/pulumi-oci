@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentDataSources(args: GetManagementAgentDataSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentDataSourcesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", {
         "filters": args.filters,
@@ -85,7 +84,12 @@ export interface GetManagementAgentDataSourcesResult {
  * ```
  */
 export function getManagementAgentDataSourcesOutput(args: GetManagementAgentDataSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentDataSourcesResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgentDataSources(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", {
+        "filters": args.filters,
+        "managementAgentId": args.managementAgentId,
+        "name": args.name,
+    }, opts);
 }
 
 /**

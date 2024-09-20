@@ -91,14 +91,20 @@ type GetRatecardsResult struct {
 
 func GetRatecardsOutput(ctx *pulumi.Context, args GetRatecardsOutputArgs, opts ...pulumi.InvokeOption) GetRatecardsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRatecardsResult, error) {
+		ApplyT(func(v interface{}) (GetRatecardsResultOutput, error) {
 			args := v.(GetRatecardsArgs)
-			r, err := GetRatecards(ctx, &args, opts...)
-			var s GetRatecardsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRatecardsResult
+			secret, err := ctx.InvokePackageRaw("oci:OsubSubscription/getRatecards:getRatecards", args, &rv, "", opts...)
+			if err != nil {
+				return GetRatecardsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRatecardsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRatecardsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRatecardsResultOutput)
 }
 

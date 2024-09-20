@@ -85,14 +85,20 @@ type GetManagedInstanceGroupsResult struct {
 
 func GetManagedInstanceGroupsOutput(ctx *pulumi.Context, args GetManagedInstanceGroupsOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetManagedInstanceGroupsResultOutput, error) {
 			args := v.(GetManagedInstanceGroupsArgs)
-			r, err := GetManagedInstanceGroups(ctx, &args, opts...)
-			var s GetManagedInstanceGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedInstanceGroupsResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedInstanceGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedInstanceGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedInstanceGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedInstanceGroupsResultOutput)
 }
 

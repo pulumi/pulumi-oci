@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBlockchainPlatforms(args: GetBlockchainPlatformsArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockchainPlatformsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getBlockchainPlatforms:getBlockchainPlatforms", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetBlockchainPlatformsResult {
  * ```
  */
 export function getBlockchainPlatformsOutput(args: GetBlockchainPlatformsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformsResult> {
-    return pulumi.output(args).apply((a: any) => getBlockchainPlatforms(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Blockchain/getBlockchainPlatforms:getBlockchainPlatforms", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

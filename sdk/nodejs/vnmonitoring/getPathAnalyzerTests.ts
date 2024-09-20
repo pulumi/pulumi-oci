@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPathAnalyzerTests(args: GetPathAnalyzerTestsArgs, opts?: pulumi.InvokeOptions): Promise<GetPathAnalyzerTestsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetPathAnalyzerTestsResult {
  * ```
  */
 export function getPathAnalyzerTestsOutput(args: GetPathAnalyzerTestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathAnalyzerTestsResult> {
-    return pulumi.output(args).apply((a: any) => getPathAnalyzerTests(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -94,14 +94,20 @@ type LookupOneoffPatchResult struct {
 
 func LookupOneoffPatchOutput(ctx *pulumi.Context, args LookupOneoffPatchOutputArgs, opts ...pulumi.InvokeOption) LookupOneoffPatchResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupOneoffPatchResult, error) {
+		ApplyT(func(v interface{}) (LookupOneoffPatchResultOutput, error) {
 			args := v.(LookupOneoffPatchArgs)
-			r, err := LookupOneoffPatch(ctx, &args, opts...)
-			var s LookupOneoffPatchResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupOneoffPatchResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getOneoffPatch:getOneoffPatch", args, &rv, "", opts...)
+			if err != nil {
+				return LookupOneoffPatchResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupOneoffPatchResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupOneoffPatchResultOutput), nil
+			}
+			return output, nil
 		}).(LookupOneoffPatchResultOutput)
 }
 

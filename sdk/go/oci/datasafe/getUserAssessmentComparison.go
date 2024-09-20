@@ -75,14 +75,20 @@ type GetUserAssessmentComparisonResult struct {
 
 func GetUserAssessmentComparisonOutput(ctx *pulumi.Context, args GetUserAssessmentComparisonOutputArgs, opts ...pulumi.InvokeOption) GetUserAssessmentComparisonResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetUserAssessmentComparisonResult, error) {
+		ApplyT(func(v interface{}) (GetUserAssessmentComparisonResultOutput, error) {
 			args := v.(GetUserAssessmentComparisonArgs)
-			r, err := GetUserAssessmentComparison(ctx, &args, opts...)
-			var s GetUserAssessmentComparisonResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetUserAssessmentComparisonResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getUserAssessmentComparison:getUserAssessmentComparison", args, &rv, "", opts...)
+			if err != nil {
+				return GetUserAssessmentComparisonResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetUserAssessmentComparisonResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetUserAssessmentComparisonResultOutput), nil
+			}
+			return output, nil
 		}).(GetUserAssessmentComparisonResultOutput)
 }
 

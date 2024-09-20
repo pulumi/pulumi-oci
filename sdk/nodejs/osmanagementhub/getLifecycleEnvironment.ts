@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLifecycleEnvironment(args: GetLifecycleEnvironmentArgs, opts?: pulumi.InvokeOptions): Promise<GetLifecycleEnvironmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", {
         "lifecycleEnvironmentId": args.lifecycleEnvironmentId,
@@ -130,7 +129,10 @@ export interface GetLifecycleEnvironmentResult {
  * ```
  */
 export function getLifecycleEnvironmentOutput(args: GetLifecycleEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleEnvironmentResult> {
-    return pulumi.output(args).apply((a: any) => getLifecycleEnvironment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", {
+        "lifecycleEnvironmentId": args.lifecycleEnvironmentId,
+    }, opts);
 }
 
 /**

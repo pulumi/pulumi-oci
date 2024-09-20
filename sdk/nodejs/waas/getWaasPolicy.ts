@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWaasPolicy(args: GetWaasPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetWaasPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getWaasPolicy:getWaasPolicy", {
         "waasPolicyId": args.waasPolicyId,
@@ -119,7 +118,10 @@ export interface GetWaasPolicyResult {
  * ```
  */
 export function getWaasPolicyOutput(args: GetWaasPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWaasPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getWaasPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waas/getWaasPolicy:getWaasPolicy", {
+        "waasPolicyId": args.waasPolicyId,
+    }, opts);
 }
 
 /**

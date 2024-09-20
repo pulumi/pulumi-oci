@@ -95,14 +95,20 @@ type GetDbManagementPrivateEndpointsResult struct {
 
 func GetDbManagementPrivateEndpointsOutput(ctx *pulumi.Context, args GetDbManagementPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetDbManagementPrivateEndpointsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbManagementPrivateEndpointsResult, error) {
+		ApplyT(func(v interface{}) (GetDbManagementPrivateEndpointsResultOutput, error) {
 			args := v.(GetDbManagementPrivateEndpointsArgs)
-			r, err := GetDbManagementPrivateEndpoints(ctx, &args, opts...)
-			var s GetDbManagementPrivateEndpointsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbManagementPrivateEndpointsResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbManagementPrivateEndpointsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbManagementPrivateEndpointsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbManagementPrivateEndpointsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbManagementPrivateEndpointsResultOutput)
 }
 

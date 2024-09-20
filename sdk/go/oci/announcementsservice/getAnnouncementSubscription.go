@@ -95,14 +95,20 @@ type LookupAnnouncementSubscriptionResult struct {
 
 func LookupAnnouncementSubscriptionOutput(ctx *pulumi.Context, args LookupAnnouncementSubscriptionOutputArgs, opts ...pulumi.InvokeOption) LookupAnnouncementSubscriptionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAnnouncementSubscriptionResult, error) {
+		ApplyT(func(v interface{}) (LookupAnnouncementSubscriptionResultOutput, error) {
 			args := v.(LookupAnnouncementSubscriptionArgs)
-			r, err := LookupAnnouncementSubscription(ctx, &args, opts...)
-			var s LookupAnnouncementSubscriptionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAnnouncementSubscriptionResult
+			secret, err := ctx.InvokePackageRaw("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAnnouncementSubscriptionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAnnouncementSubscriptionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAnnouncementSubscriptionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAnnouncementSubscriptionResultOutput)
 }
 

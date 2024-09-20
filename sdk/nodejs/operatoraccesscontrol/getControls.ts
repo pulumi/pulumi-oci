@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getControls(args: GetControlsArgs, opts?: pulumi.InvokeOptions): Promise<GetControlsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getControls:getControls", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetControlsResult {
  * ```
  */
 export function getControlsOutput(args: GetControlsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlsResult> {
-    return pulumi.output(args).apply((a: any) => getControls(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getControls:getControls", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "resourceType": args.resourceType,
+        "state": args.state,
+    }, opts);
 }
 
 /**

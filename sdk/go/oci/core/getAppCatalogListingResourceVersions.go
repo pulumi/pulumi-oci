@@ -70,14 +70,20 @@ type GetAppCatalogListingResourceVersionsResult struct {
 
 func GetAppCatalogListingResourceVersionsOutput(ctx *pulumi.Context, args GetAppCatalogListingResourceVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAppCatalogListingResourceVersionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppCatalogListingResourceVersionsResult, error) {
+		ApplyT(func(v interface{}) (GetAppCatalogListingResourceVersionsResultOutput, error) {
 			args := v.(GetAppCatalogListingResourceVersionsArgs)
-			r, err := GetAppCatalogListingResourceVersions(ctx, &args, opts...)
-			var s GetAppCatalogListingResourceVersionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppCatalogListingResourceVersionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppCatalogListingResourceVersionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppCatalogListingResourceVersionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppCatalogListingResourceVersionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppCatalogListingResourceVersionsResultOutput)
 }
 

@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSteeringPolicyAttachments(args: GetSteeringPolicyAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPolicyAttachmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments", {
         "compartmentId": args.compartmentId,
@@ -160,7 +159,20 @@ export interface GetSteeringPolicyAttachmentsResult {
  * ```
  */
 export function getSteeringPolicyAttachmentsOutput(args: GetSteeringPolicyAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPolicyAttachmentsResult> {
-    return pulumi.output(args).apply((a: any) => getSteeringPolicyAttachments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "domain": args.domain,
+        "domainContains": args.domainContains,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+        "steeringPolicyId": args.steeringPolicyId,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+        "zoneId": args.zoneId,
+    }, opts);
 }
 
 /**

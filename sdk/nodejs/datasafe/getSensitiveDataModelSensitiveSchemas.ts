@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveDataModelSensitiveSchemas(args: GetSensitiveDataModelSensitiveSchemasArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelSensitiveSchemasResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", {
         "filters": args.filters,
@@ -85,7 +84,12 @@ export interface GetSensitiveDataModelSensitiveSchemasResult {
  * ```
  */
 export function getSensitiveDataModelSensitiveSchemasOutput(args: GetSensitiveDataModelSensitiveSchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelSensitiveSchemasResult> {
-    return pulumi.output(args).apply((a: any) => getSensitiveDataModelSensitiveSchemas(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", {
+        "filters": args.filters,
+        "schemaNames": args.schemaNames,
+        "sensitiveDataModelId": args.sensitiveDataModelId,
+    }, opts);
 }
 
 /**

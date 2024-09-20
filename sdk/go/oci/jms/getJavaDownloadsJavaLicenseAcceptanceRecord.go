@@ -87,14 +87,20 @@ type LookupJavaDownloadsJavaLicenseAcceptanceRecordResult struct {
 
 func LookupJavaDownloadsJavaLicenseAcceptanceRecordOutput(ctx *pulumi.Context, args LookupJavaDownloadsJavaLicenseAcceptanceRecordOutputArgs, opts ...pulumi.InvokeOption) LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupJavaDownloadsJavaLicenseAcceptanceRecordResult, error) {
+		ApplyT(func(v interface{}) (LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput, error) {
 			args := v.(LookupJavaDownloadsJavaLicenseAcceptanceRecordArgs)
-			r, err := LookupJavaDownloadsJavaLicenseAcceptanceRecord(ctx, &args, opts...)
-			var s LookupJavaDownloadsJavaLicenseAcceptanceRecordResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupJavaDownloadsJavaLicenseAcceptanceRecordResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", args, &rv, "", opts...)
+			if err != nil {
+				return LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput), nil
+			}
+			return output, nil
 		}).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput)
 }
 

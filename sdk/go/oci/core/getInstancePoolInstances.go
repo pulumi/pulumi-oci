@@ -79,14 +79,20 @@ type GetInstancePoolInstancesResult struct {
 
 func GetInstancePoolInstancesOutput(ctx *pulumi.Context, args GetInstancePoolInstancesOutputArgs, opts ...pulumi.InvokeOption) GetInstancePoolInstancesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInstancePoolInstancesResult, error) {
+		ApplyT(func(v interface{}) (GetInstancePoolInstancesResultOutput, error) {
 			args := v.(GetInstancePoolInstancesArgs)
-			r, err := GetInstancePoolInstances(ctx, &args, opts...)
-			var s GetInstancePoolInstancesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInstancePoolInstancesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getInstancePoolInstances:getInstancePoolInstances", args, &rv, "", opts...)
+			if err != nil {
+				return GetInstancePoolInstancesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInstancePoolInstancesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInstancePoolInstancesResultOutput), nil
+			}
+			return output, nil
 		}).(GetInstancePoolInstancesResultOutput)
 }
 

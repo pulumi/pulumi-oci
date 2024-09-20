@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPipelineRun(args: GetPipelineRunArgs, opts?: pulumi.InvokeOptions): Promise<GetPipelineRunResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getPipelineRun:getPipelineRun", {
         "pipelineRunId": args.pipelineRunId,
@@ -152,7 +151,10 @@ export interface GetPipelineRunResult {
  * ```
  */
 export function getPipelineRunOutput(args: GetPipelineRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPipelineRunResult> {
-    return pulumi.output(args).apply((a: any) => getPipelineRun(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getPipelineRun:getPipelineRun", {
+        "pipelineRunId": args.pipelineRunId,
+    }, opts);
 }
 
 /**

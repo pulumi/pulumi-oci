@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApplicationVip(args: GetApplicationVipArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationVipResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getApplicationVip:getApplicationVip", {
         "applicationVipId": args.applicationVipId,
@@ -106,7 +105,10 @@ export interface GetApplicationVipResult {
  * ```
  */
 export function getApplicationVipOutput(args: GetApplicationVipOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationVipResult> {
-    return pulumi.output(args).apply((a: any) => getApplicationVip(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getApplicationVip:getApplicationVip", {
+        "applicationVipId": args.applicationVipId,
+    }, opts);
 }
 
 /**

@@ -67,14 +67,20 @@ type GetNamespaceStorageEncryptionKeyInfoResult struct {
 
 func GetNamespaceStorageEncryptionKeyInfoOutput(ctx *pulumi.Context, args GetNamespaceStorageEncryptionKeyInfoOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceStorageEncryptionKeyInfoResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNamespaceStorageEncryptionKeyInfoResult, error) {
+		ApplyT(func(v interface{}) (GetNamespaceStorageEncryptionKeyInfoResultOutput, error) {
 			args := v.(GetNamespaceStorageEncryptionKeyInfoArgs)
-			r, err := GetNamespaceStorageEncryptionKeyInfo(ctx, &args, opts...)
-			var s GetNamespaceStorageEncryptionKeyInfoResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNamespaceStorageEncryptionKeyInfoResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", args, &rv, "", opts...)
+			if err != nil {
+				return GetNamespaceStorageEncryptionKeyInfoResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNamespaceStorageEncryptionKeyInfoResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNamespaceStorageEncryptionKeyInfoResultOutput), nil
+			}
+			return output, nil
 		}).(GetNamespaceStorageEncryptionKeyInfoResultOutput)
 }
 

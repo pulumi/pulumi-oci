@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgent(args: GetManagementAgentArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgent:getManagementAgent", {
         "managementAgentId": args.managementAgentId,
@@ -170,7 +169,10 @@ export interface GetManagementAgentResult {
  * ```
  */
 export function getManagementAgentOutput(args: GetManagementAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgent:getManagementAgent", {
+        "managementAgentId": args.managementAgentId,
+    }, opts);
 }
 
 /**

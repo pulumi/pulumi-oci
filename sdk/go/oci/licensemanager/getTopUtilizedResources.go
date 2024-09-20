@@ -75,14 +75,20 @@ type GetTopUtilizedResourcesResult struct {
 
 func GetTopUtilizedResourcesOutput(ctx *pulumi.Context, args GetTopUtilizedResourcesOutputArgs, opts ...pulumi.InvokeOption) GetTopUtilizedResourcesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTopUtilizedResourcesResult, error) {
+		ApplyT(func(v interface{}) (GetTopUtilizedResourcesResultOutput, error) {
 			args := v.(GetTopUtilizedResourcesArgs)
-			r, err := GetTopUtilizedResources(ctx, &args, opts...)
-			var s GetTopUtilizedResourcesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTopUtilizedResourcesResult
+			secret, err := ctx.InvokePackageRaw("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args, &rv, "", opts...)
+			if err != nil {
+				return GetTopUtilizedResourcesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTopUtilizedResourcesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTopUtilizedResourcesResultOutput), nil
+			}
+			return output, nil
 		}).(GetTopUtilizedResourcesResultOutput)
 }
 

@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCpeDeviceShape(args: GetCpeDeviceShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetCpeDeviceShapeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCpeDeviceShape:getCpeDeviceShape", {
         "cpeDeviceShapeId": args.cpeDeviceShapeId,
@@ -101,7 +100,10 @@ export interface GetCpeDeviceShapeResult {
  * ```
  */
 export function getCpeDeviceShapeOutput(args: GetCpeDeviceShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpeDeviceShapeResult> {
-    return pulumi.output(args).apply((a: any) => getCpeDeviceShape(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCpeDeviceShape:getCpeDeviceShape", {
+        "cpeDeviceShapeId": args.cpeDeviceShapeId,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceMeasuredBootReport(args: GetInstanceMeasuredBootReportArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceMeasuredBootReportResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", {
         "instanceId": args.instanceId,
@@ -75,7 +74,10 @@ export interface GetInstanceMeasuredBootReportResult {
  * ```
  */
 export function getInstanceMeasuredBootReportOutput(args: GetInstanceMeasuredBootReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMeasuredBootReportResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceMeasuredBootReport(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", {
+        "instanceId": args.instanceId,
+    }, opts);
 }
 
 /**

@@ -81,14 +81,20 @@ type LookupHeatWaveClusterResult struct {
 
 func LookupHeatWaveClusterOutput(ctx *pulumi.Context, args LookupHeatWaveClusterOutputArgs, opts ...pulumi.InvokeOption) LookupHeatWaveClusterResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupHeatWaveClusterResult, error) {
+		ApplyT(func(v interface{}) (LookupHeatWaveClusterResultOutput, error) {
 			args := v.(LookupHeatWaveClusterArgs)
-			r, err := LookupHeatWaveCluster(ctx, &args, opts...)
-			var s LookupHeatWaveClusterResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupHeatWaveClusterResult
+			secret, err := ctx.InvokePackageRaw("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", args, &rv, "", opts...)
+			if err != nil {
+				return LookupHeatWaveClusterResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupHeatWaveClusterResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupHeatWaveClusterResultOutput), nil
+			}
+			return output, nil
 		}).(LookupHeatWaveClusterResultOutput)
 }
 

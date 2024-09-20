@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseSoftwareImages(args: GetDatabaseSoftwareImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseSoftwareImagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", {
         "compartmentId": args.compartmentId,
@@ -132,7 +131,16 @@ export interface GetDatabaseSoftwareImagesResult {
  * ```
  */
 export function getDatabaseSoftwareImagesOutput(args: GetDatabaseSoftwareImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseSoftwareImagesResult> {
-    return pulumi.output(args).apply((a: any) => getDatabaseSoftwareImages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "imageShapeFamily": args.imageShapeFamily,
+        "imageType": args.imageType,
+        "isUpgradeSupported": args.isUpgradeSupported,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCaptureFilter(args: GetCaptureFilterArgs, opts?: pulumi.InvokeOptions): Promise<GetCaptureFilterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCaptureFilter:getCaptureFilter", {
         "captureFilterId": args.captureFilterId,
@@ -103,7 +102,10 @@ export interface GetCaptureFilterResult {
  * ```
  */
 export function getCaptureFilterOutput(args: GetCaptureFilterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaptureFilterResult> {
-    return pulumi.output(args).apply((a: any) => getCaptureFilter(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCaptureFilter:getCaptureFilter", {
+        "captureFilterId": args.captureFilterId,
+    }, opts);
 }
 
 /**

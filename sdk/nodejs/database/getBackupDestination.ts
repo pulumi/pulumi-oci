@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBackupDestination(args: GetBackupDestinationArgs, opts?: pulumi.InvokeOptions): Promise<GetBackupDestinationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getBackupDestination:getBackupDestination", {
         "backupDestinationId": args.backupDestinationId,
@@ -130,7 +129,10 @@ export interface GetBackupDestinationResult {
  * ```
  */
 export function getBackupDestinationOutput(args: GetBackupDestinationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupDestinationResult> {
-    return pulumi.output(args).apply((a: any) => getBackupDestination(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getBackupDestination:getBackupDestination", {
+        "backupDestinationId": args.backupDestinationId,
+    }, opts);
 }
 
 /**

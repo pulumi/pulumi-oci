@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerImage(args: GetContainerImageArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerImageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerImage:getContainerImage", {
         "imageId": args.imageId,
@@ -139,7 +138,10 @@ export interface GetContainerImageResult {
  * ```
  */
 export function getContainerImageOutput(args: GetContainerImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImageResult> {
-    return pulumi.output(args).apply((a: any) => getContainerImage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerImage:getContainerImage", {
+        "imageId": args.imageId,
+    }, opts);
 }
 
 /**

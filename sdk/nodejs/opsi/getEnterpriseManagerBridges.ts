@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getEnterpriseManagerBridges(args?: GetEnterpriseManagerBridgesArgs, opts?: pulumi.InvokeOptions): Promise<GetEnterpriseManagerBridgesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,16 @@ export interface GetEnterpriseManagerBridgesResult {
  * ```
  */
 export function getEnterpriseManagerBridgesOutput(args?: GetEnterpriseManagerBridgesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnterpriseManagerBridgesResult> {
-    return pulumi.output(args).apply((a: any) => getEnterpriseManagerBridges(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "states": args.states,
+    }, opts);
 }
 
 /**

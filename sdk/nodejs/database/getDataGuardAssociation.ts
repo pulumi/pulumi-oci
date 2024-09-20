@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataGuardAssociation(args: GetDataGuardAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetDataGuardAssociationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDataGuardAssociation:getDataGuardAssociation", {
         "dataGuardAssociationId": args.dataGuardAssociationId,
@@ -162,7 +161,11 @@ export interface GetDataGuardAssociationResult {
  * ```
  */
 export function getDataGuardAssociationOutput(args: GetDataGuardAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataGuardAssociationResult> {
-    return pulumi.output(args).apply((a: any) => getDataGuardAssociation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDataGuardAssociation:getDataGuardAssociation", {
+        "dataGuardAssociationId": args.dataGuardAssociationId,
+        "databaseId": args.databaseId,
+    }, opts);
 }
 
 /**

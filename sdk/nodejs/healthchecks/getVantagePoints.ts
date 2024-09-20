@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  */
 export function getVantagePoints(args?: GetVantagePointsArgs, opts?: pulumi.InvokeOptions): Promise<GetVantagePointsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getVantagePoints:getVantagePoints", {
         "displayName": args.displayName,
@@ -89,7 +88,13 @@ export interface GetVantagePointsResult {
  * ```
  */
 export function getVantagePointsOutput(args?: GetVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVantagePointsResult> {
-    return pulumi.output(args).apply((a: any) => getVantagePoints(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:HealthChecks/getVantagePoints:getVantagePoints", {
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "name": args.name,
+    }, opts);
 }
 
 /**

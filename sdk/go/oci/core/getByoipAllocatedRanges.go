@@ -70,14 +70,20 @@ type GetByoipAllocatedRangesResult struct {
 
 func GetByoipAllocatedRangesOutput(ctx *pulumi.Context, args GetByoipAllocatedRangesOutputArgs, opts ...pulumi.InvokeOption) GetByoipAllocatedRangesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetByoipAllocatedRangesResult, error) {
+		ApplyT(func(v interface{}) (GetByoipAllocatedRangesResultOutput, error) {
 			args := v.(GetByoipAllocatedRangesArgs)
-			r, err := GetByoipAllocatedRanges(ctx, &args, opts...)
-			var s GetByoipAllocatedRangesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetByoipAllocatedRangesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", args, &rv, "", opts...)
+			if err != nil {
+				return GetByoipAllocatedRangesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetByoipAllocatedRangesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetByoipAllocatedRangesResultOutput), nil
+			}
+			return output, nil
 		}).(GetByoipAllocatedRangesResultOutput)
 }
 

@@ -43,7 +43,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditTrails(args: GetAuditTrailsArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditTrailsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditTrails:getAuditTrails", {
         "accessLevel": args.accessLevel,
@@ -171,7 +170,18 @@ export interface GetAuditTrailsResult {
  * ```
  */
 export function getAuditTrailsOutput(args: GetAuditTrailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditTrailsResult> {
-    return pulumi.output(args).apply((a: any) => getAuditTrails(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditTrails:getAuditTrails", {
+        "accessLevel": args.accessLevel,
+        "auditTrailId": args.auditTrailId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "status": args.status,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

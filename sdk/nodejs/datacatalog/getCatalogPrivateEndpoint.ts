@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogPrivateEndpoint(args: GetCatalogPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogPrivateEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", {
         "catalogPrivateEndpointId": args.catalogPrivateEndpointId,
@@ -119,7 +118,10 @@ export interface GetCatalogPrivateEndpointResult {
  * ```
  */
 export function getCatalogPrivateEndpointOutput(args: GetCatalogPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogPrivateEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getCatalogPrivateEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", {
+        "catalogPrivateEndpointId": args.catalogPrivateEndpointId,
+    }, opts);
 }
 
 /**

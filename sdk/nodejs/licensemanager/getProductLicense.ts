@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProductLicense(args: GetProductLicenseArgs, opts?: pulumi.InvokeOptions): Promise<GetProductLicenseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getProductLicense:getProductLicense", {
         "productLicenseId": args.productLicenseId,
@@ -147,7 +146,10 @@ export interface GetProductLicenseResult {
  * ```
  */
 export function getProductLicenseOutput(args: GetProductLicenseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicenseResult> {
-    return pulumi.output(args).apply((a: any) => getProductLicense(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LicenseManager/getProductLicense:getProductLicense", {
+        "productLicenseId": args.productLicenseId,
+    }, opts);
 }
 
 /**

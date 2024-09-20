@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsApps(args: GetDomainsAppsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAppsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsApps:getDomainsApps", {
         "appCount": args.appCount,
@@ -142,7 +141,20 @@ export interface GetDomainsAppsResult {
  * ```
  */
 export function getDomainsAppsOutput(args: GetDomainsAppsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAppsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsApps(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApps:getDomainsApps", {
+        "appCount": args.appCount,
+        "appFilter": args.appFilter,
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

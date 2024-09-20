@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVmHostInstanceShapes(args: GetDedicatedVmHostInstanceShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostInstanceShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", {
         "availabilityDomain": args.availabilityDomain,
@@ -95,7 +94,13 @@ export interface GetDedicatedVmHostInstanceShapesResult {
  * ```
  */
 export function getDedicatedVmHostInstanceShapesOutput(args: GetDedicatedVmHostInstanceShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostInstanceShapesResult> {
-    return pulumi.output(args).apply((a: any) => getDedicatedVmHostInstanceShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "dedicatedVmHostShape": args.dedicatedVmHostShape,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

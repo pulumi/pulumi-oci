@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRecommendations(args: GetRecommendationsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecommendationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getRecommendations:getRecommendations", {
         "categoryId": args.categoryId,
@@ -165,7 +164,19 @@ export interface GetRecommendationsResult {
  * ```
  */
 export function getRecommendationsOutput(args: GetRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationsResult> {
-    return pulumi.output(args).apply((a: any) => getRecommendations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getRecommendations:getRecommendations", {
+        "categoryId": args.categoryId,
+        "categoryName": args.categoryName,
+        "childTenancyIds": args.childTenancyIds,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "includeOrganization": args.includeOrganization,
+        "name": args.name,
+        "state": args.state,
+        "status": args.status,
+    }, opts);
 }
 
 /**

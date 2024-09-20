@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsUser(args: GetDomainsUserArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsUserResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsUser:getDomainsUser", {
         "attributeSets": args.attributeSets,
@@ -331,7 +330,15 @@ export interface GetDomainsUserResult {
  * ```
  */
 export function getDomainsUserOutput(args: GetDomainsUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUserResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsUser(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsUser:getDomainsUser", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

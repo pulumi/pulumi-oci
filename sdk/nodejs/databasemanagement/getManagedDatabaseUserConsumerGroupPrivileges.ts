@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserConsumerGroupPrivileges(args: GetManagedDatabaseUserConsumerGroupPrivilegesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserConsumerGroupPrivilegesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivileges:getManagedDatabaseUserConsumerGroupPrivileges", {
         "filters": args.filters,
@@ -101,7 +100,14 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegesResult {
  * ```
  */
 export function getManagedDatabaseUserConsumerGroupPrivilegesOutput(args: GetManagedDatabaseUserConsumerGroupPrivilegesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserConsumerGroupPrivileges(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivileges:getManagedDatabaseUserConsumerGroupPrivileges", {
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "userName": args.userName,
+    }, opts);
 }
 
 /**

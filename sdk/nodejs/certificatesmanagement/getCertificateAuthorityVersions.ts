@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificateAuthorityVersions(args: GetCertificateAuthorityVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", {
         "certificateAuthorityId": args.certificateAuthorityId,
@@ -90,7 +89,12 @@ export interface GetCertificateAuthorityVersionsResult {
  * ```
  */
 export function getCertificateAuthorityVersionsOutput(args: GetCertificateAuthorityVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getCertificateAuthorityVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", {
+        "certificateAuthorityId": args.certificateAuthorityId,
+        "filters": args.filters,
+        "versionNumber": args.versionNumber,
+    }, opts);
 }
 
 /**

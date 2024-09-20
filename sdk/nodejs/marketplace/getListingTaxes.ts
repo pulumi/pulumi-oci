@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListingTaxes(args: GetListingTaxesArgs, opts?: pulumi.InvokeOptions): Promise<GetListingTaxesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getListingTaxes:getListingTaxes", {
         "compartmentId": args.compartmentId,
@@ -82,7 +81,12 @@ export interface GetListingTaxesResult {
  * ```
  */
 export function getListingTaxesOutput(args: GetListingTaxesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingTaxesResult> {
-    return pulumi.output(args).apply((a: any) => getListingTaxes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Marketplace/getListingTaxes:getListingTaxes", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "listingId": args.listingId,
+    }, opts);
 }
 
 /**

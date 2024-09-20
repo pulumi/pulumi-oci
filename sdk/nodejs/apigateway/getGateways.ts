@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGateways(args: GetGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetGatewaysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getGateways:getGateways", {
         "certificateId": args.certificateId,
@@ -110,7 +109,14 @@ export interface GetGatewaysResult {
  * ```
  */
 export function getGatewaysOutput(args: GetGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGatewaysResult> {
-    return pulumi.output(args).apply((a: any) => getGateways(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApiGateway/getGateways:getGateways", {
+        "certificateId": args.certificateId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

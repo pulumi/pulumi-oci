@@ -79,14 +79,20 @@ type GetRepositoryFileLineResult struct {
 
 func GetRepositoryFileLineOutput(ctx *pulumi.Context, args GetRepositoryFileLineOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryFileLineResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRepositoryFileLineResult, error) {
+		ApplyT(func(v interface{}) (GetRepositoryFileLineResultOutput, error) {
 			args := v.(GetRepositoryFileLineArgs)
-			r, err := GetRepositoryFileLine(ctx, &args, opts...)
-			var s GetRepositoryFileLineResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRepositoryFileLineResult
+			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", args, &rv, "", opts...)
+			if err != nil {
+				return GetRepositoryFileLineResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRepositoryFileLineResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRepositoryFileLineResultOutput), nil
+			}
+			return output, nil
 		}).(GetRepositoryFileLineResultOutput)
 }
 

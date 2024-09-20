@@ -71,14 +71,20 @@ type LookupCloudGuardConfigurationResult struct {
 
 func LookupCloudGuardConfigurationOutput(ctx *pulumi.Context, args LookupCloudGuardConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupCloudGuardConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCloudGuardConfigurationResult, error) {
+		ApplyT(func(v interface{}) (LookupCloudGuardConfigurationResultOutput, error) {
 			args := v.(LookupCloudGuardConfigurationArgs)
-			r, err := LookupCloudGuardConfiguration(ctx, &args, opts...)
-			var s LookupCloudGuardConfigurationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupCloudGuardConfigurationResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", args, &rv, "", opts...)
+			if err != nil {
+				return LookupCloudGuardConfigurationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupCloudGuardConfigurationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupCloudGuardConfigurationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupCloudGuardConfigurationResultOutput)
 }
 

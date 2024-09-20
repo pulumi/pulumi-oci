@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFastConnectProviderService(args: GetFastConnectProviderServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetFastConnectProviderServiceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getFastConnectProviderService:getFastConnectProviderService", {
         "providerServiceId": args.providerServiceId,
@@ -111,7 +110,10 @@ export interface GetFastConnectProviderServiceResult {
  * ```
  */
 export function getFastConnectProviderServiceOutput(args: GetFastConnectProviderServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastConnectProviderServiceResult> {
-    return pulumi.output(args).apply((a: any) => getFastConnectProviderService(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getFastConnectProviderService:getFastConnectProviderService", {
+        "providerServiceId": args.providerServiceId,
+    }, opts);
 }
 
 /**

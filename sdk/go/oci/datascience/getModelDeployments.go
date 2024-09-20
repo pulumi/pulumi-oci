@@ -93,14 +93,20 @@ type GetModelDeploymentsResult struct {
 
 func GetModelDeploymentsOutput(ctx *pulumi.Context, args GetModelDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetModelDeploymentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetModelDeploymentsResult, error) {
+		ApplyT(func(v interface{}) (GetModelDeploymentsResultOutput, error) {
 			args := v.(GetModelDeploymentsArgs)
-			r, err := GetModelDeployments(ctx, &args, opts...)
-			var s GetModelDeploymentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetModelDeploymentsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataScience/getModelDeployments:getModelDeployments", args, &rv, "", opts...)
+			if err != nil {
+				return GetModelDeploymentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetModelDeploymentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetModelDeploymentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetModelDeploymentsResultOutput)
 }
 

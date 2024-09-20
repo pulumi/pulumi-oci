@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getKnowledgebases(args?: GetKnowledgebasesArgs, opts?: pulumi.InvokeOptions): Promise<GetKnowledgebasesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Adm/getKnowledgebases:getKnowledgebases", {
         "compartmentId": args.compartmentId,
@@ -109,7 +108,15 @@ export interface GetKnowledgebasesResult {
  * ```
  */
 export function getKnowledgebasesOutput(args?: GetKnowledgebasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKnowledgebasesResult> {
-    return pulumi.output(args).apply((a: any) => getKnowledgebases(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Adm/getKnowledgebases:getKnowledgebases", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -153,14 +153,20 @@ type LookupInvokeRunResult struct {
 
 func LookupInvokeRunOutput(ctx *pulumi.Context, args LookupInvokeRunOutputArgs, opts ...pulumi.InvokeOption) LookupInvokeRunResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupInvokeRunResult, error) {
+		ApplyT(func(v interface{}) (LookupInvokeRunResultOutput, error) {
 			args := v.(LookupInvokeRunArgs)
-			r, err := LookupInvokeRun(ctx, &args, opts...)
-			var s LookupInvokeRunResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupInvokeRunResult
+			secret, err := ctx.InvokePackageRaw("oci:DataFlow/getInvokeRun:getInvokeRun", args, &rv, "", opts...)
+			if err != nil {
+				return LookupInvokeRunResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupInvokeRunResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupInvokeRunResultOutput), nil
+			}
+			return output, nil
 		}).(LookupInvokeRunResultOutput)
 }
 

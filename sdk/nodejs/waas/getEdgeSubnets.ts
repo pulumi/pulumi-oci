@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  */
 export function getEdgeSubnets(args?: GetEdgeSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeSubnetsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getEdgeSubnets:getEdgeSubnets", {
         "filters": args.filters,
@@ -65,7 +64,11 @@ export interface GetEdgeSubnetsResult {
  * ```
  */
 export function getEdgeSubnetsOutput(args?: GetEdgeSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeSubnetsResult> {
-    return pulumi.output(args).apply((a: any) => getEdgeSubnets(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waas/getEdgeSubnets:getEdgeSubnets", {
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

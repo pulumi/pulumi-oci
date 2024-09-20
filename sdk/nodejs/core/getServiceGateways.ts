@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceGateways(args: GetServiceGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceGatewaysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getServiceGateways:getServiceGateways", {
         "compartmentId": args.compartmentId,
@@ -101,7 +100,13 @@ export interface GetServiceGatewaysResult {
  * ```
  */
 export function getServiceGatewaysOutput(args: GetServiceGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceGatewaysResult> {
-    return pulumi.output(args).apply((a: any) => getServiceGateways(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getServiceGateways:getServiceGateways", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "state": args.state,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

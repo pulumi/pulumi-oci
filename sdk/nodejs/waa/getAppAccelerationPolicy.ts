@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppAccelerationPolicy(args: GetAppAccelerationPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAppAccelerationPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy", {
         "webAppAccelerationPolicyId": args.webAppAccelerationPolicyId,
@@ -111,7 +110,10 @@ export interface GetAppAccelerationPolicyResult {
  * ```
  */
 export function getAppAccelerationPolicyOutput(args: GetAppAccelerationPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getAppAccelerationPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy", {
+        "webAppAccelerationPolicyId": args.webAppAccelerationPolicyId,
+    }, opts);
 }
 
 /**

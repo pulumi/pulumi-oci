@@ -83,14 +83,20 @@ type GetComputeCapacityTopologyComputeNetworkBlocksResult struct {
 
 func GetComputeCapacityTopologyComputeNetworkBlocksOutput(ctx *pulumi.Context, args GetComputeCapacityTopologyComputeNetworkBlocksOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityTopologyComputeNetworkBlocksResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetComputeCapacityTopologyComputeNetworkBlocksResult, error) {
+		ApplyT(func(v interface{}) (GetComputeCapacityTopologyComputeNetworkBlocksResultOutput, error) {
 			args := v.(GetComputeCapacityTopologyComputeNetworkBlocksArgs)
-			r, err := GetComputeCapacityTopologyComputeNetworkBlocks(ctx, &args, opts...)
-			var s GetComputeCapacityTopologyComputeNetworkBlocksResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetComputeCapacityTopologyComputeNetworkBlocksResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", args, &rv, "", opts...)
+			if err != nil {
+				return GetComputeCapacityTopologyComputeNetworkBlocksResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetComputeCapacityTopologyComputeNetworkBlocksResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetComputeCapacityTopologyComputeNetworkBlocksResultOutput), nil
+			}
+			return output, nil
 		}).(GetComputeCapacityTopologyComputeNetworkBlocksResultOutput)
 }
 

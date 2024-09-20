@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaces(args: GetNamespacesArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespacesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaces:getNamespaces", {
         "compartmentId": args.compartmentId,
@@ -79,7 +78,11 @@ export interface GetNamespacesResult {
  * ```
  */
 export function getNamespacesOutput(args: GetNamespacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespacesResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaces(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaces:getNamespaces", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

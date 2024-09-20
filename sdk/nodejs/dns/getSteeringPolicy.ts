@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSteeringPolicy(args: GetSteeringPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getSteeringPolicy:getSteeringPolicy", {
         "steeringPolicyId": args.steeringPolicyId,
@@ -115,7 +114,10 @@ export interface GetSteeringPolicyResult {
  * ```
  */
 export function getSteeringPolicyOutput(args: GetSteeringPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getSteeringPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getSteeringPolicy:getSteeringPolicy", {
+        "steeringPolicyId": args.steeringPolicyId,
+    }, opts);
 }
 
 /**

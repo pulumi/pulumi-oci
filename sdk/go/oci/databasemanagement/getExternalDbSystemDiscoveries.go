@@ -75,14 +75,20 @@ type GetExternalDbSystemDiscoveriesResult struct {
 
 func GetExternalDbSystemDiscoveriesOutput(ctx *pulumi.Context, args GetExternalDbSystemDiscoveriesOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbSystemDiscoveriesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalDbSystemDiscoveriesResult, error) {
+		ApplyT(func(v interface{}) (GetExternalDbSystemDiscoveriesResultOutput, error) {
 			args := v.(GetExternalDbSystemDiscoveriesArgs)
-			r, err := GetExternalDbSystemDiscoveries(ctx, &args, opts...)
-			var s GetExternalDbSystemDiscoveriesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExternalDbSystemDiscoveriesResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", args, &rv, "", opts...)
+			if err != nil {
+				return GetExternalDbSystemDiscoveriesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExternalDbSystemDiscoveriesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExternalDbSystemDiscoveriesResultOutput), nil
+			}
+			return output, nil
 		}).(GetExternalDbSystemDiscoveriesResultOutput)
 }
 

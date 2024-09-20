@@ -112,14 +112,20 @@ type LookupOnPremiseVantagePointWorkerResult struct {
 
 func LookupOnPremiseVantagePointWorkerOutput(ctx *pulumi.Context, args LookupOnPremiseVantagePointWorkerOutputArgs, opts ...pulumi.InvokeOption) LookupOnPremiseVantagePointWorkerResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupOnPremiseVantagePointWorkerResult, error) {
+		ApplyT(func(v interface{}) (LookupOnPremiseVantagePointWorkerResultOutput, error) {
 			args := v.(LookupOnPremiseVantagePointWorkerArgs)
-			r, err := LookupOnPremiseVantagePointWorker(ctx, &args, opts...)
-			var s LookupOnPremiseVantagePointWorkerResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupOnPremiseVantagePointWorkerResult
+			secret, err := ctx.InvokePackageRaw("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", args, &rv, "", opts...)
+			if err != nil {
+				return LookupOnPremiseVantagePointWorkerResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupOnPremiseVantagePointWorkerResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupOnPremiseVantagePointWorkerResultOutput), nil
+			}
+			return output, nil
 		}).(LookupOnPremiseVantagePointWorkerResultOutput)
 }
 

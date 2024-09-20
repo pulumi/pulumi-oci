@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRuleSet(args: GetRuleSetArgs, opts?: pulumi.InvokeOptions): Promise<GetRuleSetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getRuleSet:getRuleSet", {
         "loadBalancerId": args.loadBalancerId,
@@ -80,7 +79,11 @@ export interface GetRuleSetResult {
  * ```
  */
 export function getRuleSetOutput(args: GetRuleSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRuleSetResult> {
-    return pulumi.output(args).apply((a: any) => getRuleSet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getRuleSet:getRuleSet", {
+        "loadBalancerId": args.loadBalancerId,
+        "name": args.name,
+    }, opts);
 }
 
 /**

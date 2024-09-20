@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSdmMaskingPolicyDifferenceDifferenceColumn(args: GetSdmMaskingPolicyDifferenceDifferenceColumnArgs, opts?: pulumi.InvokeOptions): Promise<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumn:getSdmMaskingPolicyDifferenceDifferenceColumn", {
         "differenceColumnKey": args.differenceColumnKey,
@@ -117,7 +116,11 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnResult {
  * ```
  */
 export function getSdmMaskingPolicyDifferenceDifferenceColumnOutput(args: GetSdmMaskingPolicyDifferenceDifferenceColumnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> {
-    return pulumi.output(args).apply((a: any) => getSdmMaskingPolicyDifferenceDifferenceColumn(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumn:getSdmMaskingPolicyDifferenceDifferenceColumn", {
+        "differenceColumnKey": args.differenceColumnKey,
+        "sdmMaskingPolicyDifferenceId": args.sdmMaskingPolicyDifferenceId,
+    }, opts);
 }
 
 /**

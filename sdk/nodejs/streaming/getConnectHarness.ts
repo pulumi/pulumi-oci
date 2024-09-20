@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConnectHarness(args: GetConnectHarnessArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectHarnessResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Streaming/getConnectHarness:getConnectHarness", {
         "connectHarnessId": args.connectHarnessId,
@@ -93,7 +92,10 @@ export interface GetConnectHarnessResult {
  * ```
  */
 export function getConnectHarnessOutput(args: GetConnectHarnessOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectHarnessResult> {
-    return pulumi.output(args).apply((a: any) => getConnectHarness(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Streaming/getConnectHarness:getConnectHarness", {
+        "connectHarnessId": args.connectHarnessId,
+    }, opts);
 }
 
 /**

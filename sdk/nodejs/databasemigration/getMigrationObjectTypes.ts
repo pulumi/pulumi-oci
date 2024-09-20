@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMigrationObjectTypes(args: GetMigrationObjectTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationObjectTypesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", {
         "connectionType": args.connectionType,
@@ -66,7 +65,11 @@ export interface GetMigrationObjectTypesResult {
  * ```
  */
 export function getMigrationObjectTypesOutput(args: GetMigrationObjectTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationObjectTypesResult> {
-    return pulumi.output(args).apply((a: any) => getMigrationObjectTypes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", {
+        "connectionType": args.connectionType,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getRemediationRuns(args?: GetRemediationRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetRemediationRunsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Adm/getRemediationRuns:getRemediationRuns", {
         "compartmentId": args.compartmentId,
@@ -120,7 +119,16 @@ export interface GetRemediationRunsResult {
  * ```
  */
 export function getRemediationRunsOutput(args?: GetRemediationRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRunsResult> {
-    return pulumi.output(args).apply((a: any) => getRemediationRuns(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Adm/getRemediationRuns:getRemediationRuns", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "remediationRecipeId": args.remediationRecipeId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImageShapes(args: GetImageShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetImageShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getImageShapes:getImageShapes", {
         "filters": args.filters,
@@ -77,7 +76,11 @@ export interface GetImageShapesResult {
  * ```
  */
 export function getImageShapesOutput(args: GetImageShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImageShapesResult> {
-    return pulumi.output(args).apply((a: any) => getImageShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getImageShapes:getImageShapes", {
+        "filters": args.filters,
+        "imageId": args.imageId,
+    }, opts);
 }
 
 /**

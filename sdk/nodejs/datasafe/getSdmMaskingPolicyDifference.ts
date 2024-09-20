@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSdmMaskingPolicyDifference(args: GetSdmMaskingPolicyDifferenceArgs, opts?: pulumi.InvokeOptions): Promise<GetSdmMaskingPolicyDifferenceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", {
         "sdmMaskingPolicyDifferenceId": args.sdmMaskingPolicyDifferenceId,
@@ -109,7 +108,10 @@ export interface GetSdmMaskingPolicyDifferenceResult {
  * ```
  */
 export function getSdmMaskingPolicyDifferenceOutput(args: GetSdmMaskingPolicyDifferenceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSdmMaskingPolicyDifferenceResult> {
-    return pulumi.output(args).apply((a: any) => getSdmMaskingPolicyDifference(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", {
+        "sdmMaskingPolicyDifferenceId": args.sdmMaskingPolicyDifferenceId,
+    }, opts);
 }
 
 /**

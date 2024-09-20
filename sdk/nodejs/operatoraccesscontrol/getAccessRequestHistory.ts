@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAccessRequestHistory(args: GetAccessRequestHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestHistoryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", {
         "accessRequestId": args.accessRequestId,
@@ -71,7 +70,10 @@ export interface GetAccessRequestHistoryResult {
  * ```
  */
 export function getAccessRequestHistoryOutput(args: GetAccessRequestHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestHistoryResult> {
-    return pulumi.output(args).apply((a: any) => getAccessRequestHistory(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", {
+        "accessRequestId": args.accessRequestId,
+    }, opts);
 }
 
 /**

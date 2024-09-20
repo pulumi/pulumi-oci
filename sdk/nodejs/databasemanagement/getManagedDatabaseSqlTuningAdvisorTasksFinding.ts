@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksFinding(args: GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", {
         "beginExecId": args.beginExecId,
@@ -130,7 +129,17 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksFindingOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksFindingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksFinding(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", {
+        "beginExecId": args.beginExecId,
+        "endExecId": args.endExecId,
+        "findingFilter": args.findingFilter,
+        "indexHashFilter": args.indexHashFilter,
+        "managedDatabaseId": args.managedDatabaseId,
+        "searchPeriod": args.searchPeriod,
+        "sqlTuningAdvisorTaskId": args.sqlTuningAdvisorTaskId,
+        "statsHashFilter": args.statsHashFilter,
+    }, opts);
 }
 
 /**

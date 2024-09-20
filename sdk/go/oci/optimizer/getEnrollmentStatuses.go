@@ -80,14 +80,20 @@ type GetEnrollmentStatusesResult struct {
 
 func GetEnrollmentStatusesOutput(ctx *pulumi.Context, args GetEnrollmentStatusesOutputArgs, opts ...pulumi.InvokeOption) GetEnrollmentStatusesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetEnrollmentStatusesResult, error) {
+		ApplyT(func(v interface{}) (GetEnrollmentStatusesResultOutput, error) {
 			args := v.(GetEnrollmentStatusesArgs)
-			r, err := GetEnrollmentStatuses(ctx, &args, opts...)
-			var s GetEnrollmentStatusesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetEnrollmentStatusesResult
+			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", args, &rv, "", opts...)
+			if err != nil {
+				return GetEnrollmentStatusesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetEnrollmentStatusesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetEnrollmentStatusesResultOutput), nil
+			}
+			return output, nil
 		}).(GetEnrollmentStatusesResultOutput)
 }
 

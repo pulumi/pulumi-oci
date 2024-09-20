@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMigration(args: GetMigrationArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudMigrations/getMigration:getMigration", {
         "migrationId": args.migrationId,
@@ -109,7 +108,10 @@ export interface GetMigrationResult {
  * ```
  */
 export function getMigrationOutput(args: GetMigrationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationResult> {
-    return pulumi.output(args).apply((a: any) => getMigration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudMigrations/getMigration:getMigration", {
+        "migrationId": args.migrationId,
+    }, opts);
 }
 
 /**

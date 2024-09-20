@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPolicyHealthReports(args: GetMaskingPolicyHealthReportsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPolicyHealthReportsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports", {
         "accessLevel": args.accessLevel,
@@ -145,7 +144,18 @@ export interface GetMaskingPolicyHealthReportsResult {
  * ```
  */
 export function getMaskingPolicyHealthReportsOutput(args: GetMaskingPolicyHealthReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPolicyHealthReportsResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingPolicyHealthReports(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "maskingPolicyHealthReportId": args.maskingPolicyHealthReportId,
+        "maskingPolicyId": args.maskingPolicyId,
+        "state": args.state,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

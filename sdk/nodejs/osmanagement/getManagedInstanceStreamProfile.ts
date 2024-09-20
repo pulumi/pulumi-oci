@@ -51,7 +51,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceStreamProfile(args: GetManagedInstanceStreamProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceStreamProfileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", {
         "compartmentId": args.compartmentId,
@@ -173,7 +172,16 @@ export interface GetManagedInstanceStreamProfileResult {
  * ```
  */
 export function getManagedInstanceStreamProfileOutput(args: GetManagedInstanceStreamProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceStreamProfileResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceStreamProfile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "managedInstanceId": args.managedInstanceId,
+        "moduleName": args.moduleName,
+        "profileName": args.profileName,
+        "profileStatus": args.profileStatus,
+        "streamName": args.streamName,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOccAvailabilityCatalog(args: GetOccAvailabilityCatalogArgs, opts?: pulumi.InvokeOptions): Promise<GetOccAvailabilityCatalogResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getOccAvailabilityCatalog:getOccAvailabilityCatalog", {
         "occAvailabilityCatalogId": args.occAvailabilityCatalogId,
@@ -128,7 +127,10 @@ export interface GetOccAvailabilityCatalogResult {
  * ```
  */
 export function getOccAvailabilityCatalogOutput(args: GetOccAvailabilityCatalogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccAvailabilityCatalogResult> {
-    return pulumi.output(args).apply((a: any) => getOccAvailabilityCatalog(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccAvailabilityCatalog:getOccAvailabilityCatalog", {
+        "occAvailabilityCatalogId": args.occAvailabilityCatalogId,
+    }, opts);
 }
 
 /**

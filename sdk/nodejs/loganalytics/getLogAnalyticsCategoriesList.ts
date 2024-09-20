@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsCategoriesList(args: GetLogAnalyticsCategoriesListArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsCategoriesListResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", {
         "categoryDisplayText": args.categoryDisplayText,
@@ -98,7 +97,13 @@ export interface GetLogAnalyticsCategoriesListResult {
  * ```
  */
 export function getLogAnalyticsCategoriesListOutput(args: GetLogAnalyticsCategoriesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsCategoriesListResult> {
-    return pulumi.output(args).apply((a: any) => getLogAnalyticsCategoriesList(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", {
+        "categoryDisplayText": args.categoryDisplayText,
+        "categoryType": args.categoryType,
+        "name": args.name,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

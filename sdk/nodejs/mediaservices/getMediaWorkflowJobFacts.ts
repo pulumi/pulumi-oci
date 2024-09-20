@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMediaWorkflowJobFacts(args: GetMediaWorkflowJobFactsArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaWorkflowJobFactsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", {
         "filters": args.filters,
@@ -101,7 +100,13 @@ export interface GetMediaWorkflowJobFactsResult {
  * ```
  */
 export function getMediaWorkflowJobFactsOutput(args: GetMediaWorkflowJobFactsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaWorkflowJobFactsResult> {
-    return pulumi.output(args).apply((a: any) => getMediaWorkflowJobFacts(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", {
+        "filters": args.filters,
+        "key": args.key,
+        "mediaWorkflowJobId": args.mediaWorkflowJobId,
+        "type": args.type,
+    }, opts);
 }
 
 /**

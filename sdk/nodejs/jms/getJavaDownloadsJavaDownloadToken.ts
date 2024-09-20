@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJavaDownloadsJavaDownloadToken(args: GetJavaDownloadsJavaDownloadTokenArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaDownloadsJavaDownloadTokenResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", {
         "javaDownloadTokenId": args.javaDownloadTokenId,
@@ -139,7 +138,10 @@ export interface GetJavaDownloadsJavaDownloadTokenResult {
  * ```
  */
 export function getJavaDownloadsJavaDownloadTokenOutput(args: GetJavaDownloadsJavaDownloadTokenOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadTokenResult> {
-    return pulumi.output(args).apply((a: any) => getJavaDownloadsJavaDownloadToken(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", {
+        "javaDownloadTokenId": args.javaDownloadTokenId,
+    }, opts);
 }
 
 /**

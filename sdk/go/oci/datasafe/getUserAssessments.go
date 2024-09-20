@@ -143,14 +143,20 @@ type GetUserAssessmentsResult struct {
 
 func GetUserAssessmentsOutput(ctx *pulumi.Context, args GetUserAssessmentsOutputArgs, opts ...pulumi.InvokeOption) GetUserAssessmentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetUserAssessmentsResult, error) {
+		ApplyT(func(v interface{}) (GetUserAssessmentsResultOutput, error) {
 			args := v.(GetUserAssessmentsArgs)
-			r, err := GetUserAssessments(ctx, &args, opts...)
-			var s GetUserAssessmentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetUserAssessmentsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getUserAssessments:getUserAssessments", args, &rv, "", opts...)
+			if err != nil {
+				return GetUserAssessmentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetUserAssessmentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetUserAssessmentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetUserAssessmentsResultOutput)
 }
 

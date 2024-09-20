@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelDeploymentShapes(args: GetModelDeploymentShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetModelDeploymentShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", {
         "compartmentId": args.compartmentId,
@@ -74,7 +73,11 @@ export interface GetModelDeploymentShapesResult {
  * ```
  */
 export function getModelDeploymentShapesOutput(args: GetModelDeploymentShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentShapesResult> {
-    return pulumi.output(args).apply((a: any) => getModelDeploymentShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

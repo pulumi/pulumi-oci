@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplicas(args: GetReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicasResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getReplicas:getReplicas", {
         "compartmentId": args.compartmentId,
@@ -137,7 +136,17 @@ export interface GetReplicasResult {
  * ```
  */
 export function getReplicasOutput(args: GetReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicasResult> {
-    return pulumi.output(args).apply((a: any) => getReplicas(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getReplicas:getReplicas", {
+        "compartmentId": args.compartmentId,
+        "configurationId": args.configurationId,
+        "dbSystemId": args.dbSystemId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isUpToDate": args.isUpToDate,
+        "replicaId": args.replicaId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

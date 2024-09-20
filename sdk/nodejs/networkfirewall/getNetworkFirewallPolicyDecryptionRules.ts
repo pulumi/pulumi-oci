@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkFirewallPolicyDecryptionRules(args: GetNetworkFirewallPolicyDecryptionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyDecryptionRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRules:getNetworkFirewallPolicyDecryptionRules", {
         "decryptionRulePriorityOrder": args.decryptionRulePriorityOrder,
@@ -90,7 +89,13 @@ export interface GetNetworkFirewallPolicyDecryptionRulesResult {
  * ```
  */
 export function getNetworkFirewallPolicyDecryptionRulesOutput(args: GetNetworkFirewallPolicyDecryptionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionRulesResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyDecryptionRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRules:getNetworkFirewallPolicyDecryptionRules", {
+        "decryptionRulePriorityOrder": args.decryptionRulePriorityOrder,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+    }, opts);
 }
 
 /**

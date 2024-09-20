@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRule(args: GetRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetRuleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Events/getRule:getRule", {
         "ruleId": args.ruleId,
@@ -112,7 +111,10 @@ export interface GetRuleResult {
  * ```
  */
 export function getRuleOutput(args: GetRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRuleResult> {
-    return pulumi.output(args).apply((a: any) => getRule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Events/getRule:getRule", {
+        "ruleId": args.ruleId,
+    }, opts);
 }
 
 /**

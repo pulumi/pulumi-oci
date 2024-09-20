@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApplication(args: GetApplicationArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getApplication:getApplication", {
         "applicationId": args.applicationId,
@@ -123,7 +122,10 @@ export interface GetApplicationResult {
  * ```
  */
 export function getApplicationOutput(args: GetApplicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationResult> {
-    return pulumi.output(args).apply((a: any) => getApplication(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getApplication:getApplication", {
+        "applicationId": args.applicationId,
+    }, opts);
 }
 
 /**

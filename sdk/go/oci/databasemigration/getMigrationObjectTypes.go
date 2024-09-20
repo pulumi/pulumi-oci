@@ -65,14 +65,20 @@ type GetMigrationObjectTypesResult struct {
 
 func GetMigrationObjectTypesOutput(ctx *pulumi.Context, args GetMigrationObjectTypesOutputArgs, opts ...pulumi.InvokeOption) GetMigrationObjectTypesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMigrationObjectTypesResult, error) {
+		ApplyT(func(v interface{}) (GetMigrationObjectTypesResultOutput, error) {
 			args := v.(GetMigrationObjectTypesArgs)
-			r, err := GetMigrationObjectTypes(ctx, &args, opts...)
-			var s GetMigrationObjectTypesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMigrationObjectTypesResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args, &rv, "", opts...)
+			if err != nil {
+				return GetMigrationObjectTypesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMigrationObjectTypesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMigrationObjectTypesResultOutput), nil
+			}
+			return output, nil
 		}).(GetMigrationObjectTypesResultOutput)
 }
 

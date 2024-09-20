@@ -77,14 +77,20 @@ type LookupEnrollmentStatusResult struct {
 
 func LookupEnrollmentStatusOutput(ctx *pulumi.Context, args LookupEnrollmentStatusOutputArgs, opts ...pulumi.InvokeOption) LookupEnrollmentStatusResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupEnrollmentStatusResult, error) {
+		ApplyT(func(v interface{}) (LookupEnrollmentStatusResultOutput, error) {
 			args := v.(LookupEnrollmentStatusArgs)
-			r, err := LookupEnrollmentStatus(ctx, &args, opts...)
-			var s LookupEnrollmentStatusResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupEnrollmentStatusResult
+			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", args, &rv, "", opts...)
+			if err != nil {
+				return LookupEnrollmentStatusResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupEnrollmentStatusResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupEnrollmentStatusResultOutput), nil
+			}
+			return output, nil
 		}).(LookupEnrollmentStatusResultOutput)
 }
 

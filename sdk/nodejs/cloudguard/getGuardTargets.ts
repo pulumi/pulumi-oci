@@ -42,7 +42,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGuardTargets(args: GetGuardTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetGuardTargetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getGuardTargets:getGuardTargets", {
         "accessLevel": args.accessLevel,
@@ -151,7 +150,16 @@ export interface GetGuardTargetsResult {
  * ```
  */
 export function getGuardTargetsOutput(args: GetGuardTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGuardTargetsResult> {
-    return pulumi.output(args).apply((a: any) => getGuardTargets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getGuardTargets:getGuardTargets", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isNonSecurityZoneTargetsOnlyQuery": args.isNonSecurityZoneTargetsOnlyQuery,
+        "state": args.state,
+    }, opts);
 }
 
 /**

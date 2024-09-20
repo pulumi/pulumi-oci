@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSender(args: GetSenderArgs, opts?: pulumi.InvokeOptions): Promise<GetSenderResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getSender:getSender", {
         "senderId": args.senderId,
@@ -101,7 +100,10 @@ export interface GetSenderResult {
  * ```
  */
 export function getSenderOutput(args: GetSenderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSenderResult> {
-    return pulumi.output(args).apply((a: any) => getSender(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Email/getSender:getSender", {
+        "senderId": args.senderId,
+    }, opts);
 }
 
 /**

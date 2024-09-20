@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCaBundle(args: GetCaBundleArgs, opts?: pulumi.InvokeOptions): Promise<GetCaBundleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCaBundle:getCaBundle", {
         "caBundleId": args.caBundleId,
@@ -98,7 +97,10 @@ export interface GetCaBundleResult {
  * ```
  */
 export function getCaBundleOutput(args: GetCaBundleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaBundleResult> {
-    return pulumi.output(args).apply((a: any) => getCaBundle(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCaBundle:getCaBundle", {
+        "caBundleId": args.caBundleId,
+    }, opts);
 }
 
 /**

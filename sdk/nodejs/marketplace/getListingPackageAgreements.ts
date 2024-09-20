@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListingPackageAgreements(args: GetListingPackageAgreementsArgs, opts?: pulumi.InvokeOptions): Promise<GetListingPackageAgreementsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", {
         "compartmentId": args.compartmentId,
@@ -93,7 +92,13 @@ export interface GetListingPackageAgreementsResult {
  * ```
  */
 export function getListingPackageAgreementsOutput(args: GetListingPackageAgreementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingPackageAgreementsResult> {
-    return pulumi.output(args).apply((a: any) => getListingPackageAgreements(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "listingId": args.listingId,
+        "packageVersion": args.packageVersion,
+    }, opts);
 }
 
 /**

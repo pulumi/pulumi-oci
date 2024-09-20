@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGenericArtifacts(args: GetGenericArtifactsArgs, opts?: pulumi.InvokeOptions): Promise<GetGenericArtifactsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getGenericArtifacts:getGenericArtifacts", {
         "artifactPath": args.artifactPath,
@@ -150,7 +149,18 @@ export interface GetGenericArtifactsResult {
  * ```
  */
 export function getGenericArtifactsOutput(args: GetGenericArtifactsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericArtifactsResult> {
-    return pulumi.output(args).apply((a: any) => getGenericArtifacts(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Artifacts/getGenericArtifacts:getGenericArtifacts", {
+        "artifactPath": args.artifactPath,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "repositoryId": args.repositoryId,
+        "sha256": args.sha256,
+        "state": args.state,
+        "version": args.version,
+    }, opts);
 }
 
 /**

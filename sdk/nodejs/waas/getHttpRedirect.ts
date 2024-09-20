@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHttpRedirect(args: GetHttpRedirectArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpRedirectResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getHttpRedirect:getHttpRedirect", {
         "httpRedirectId": args.httpRedirectId,
@@ -103,7 +102,10 @@ export interface GetHttpRedirectResult {
  * ```
  */
 export function getHttpRedirectOutput(args: GetHttpRedirectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpRedirectResult> {
-    return pulumi.output(args).apply((a: any) => getHttpRedirect(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waas/getHttpRedirect:getHttpRedirect", {
+        "httpRedirectId": args.httpRedirectId,
+    }, opts);
 }
 
 /**

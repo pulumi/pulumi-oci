@@ -69,14 +69,20 @@ type GetDbHomePatchHistoryEntriesResult struct {
 
 func GetDbHomePatchHistoryEntriesOutput(ctx *pulumi.Context, args GetDbHomePatchHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetDbHomePatchHistoryEntriesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbHomePatchHistoryEntriesResult, error) {
+		ApplyT(func(v interface{}) (GetDbHomePatchHistoryEntriesResultOutput, error) {
 			args := v.(GetDbHomePatchHistoryEntriesArgs)
-			r, err := GetDbHomePatchHistoryEntries(ctx, &args, opts...)
-			var s GetDbHomePatchHistoryEntriesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbHomePatchHistoryEntriesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbHomePatchHistoryEntriesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbHomePatchHistoryEntriesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbHomePatchHistoryEntriesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbHomePatchHistoryEntriesResultOutput)
 }
 

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedMySqlDatabaseSqlData(args: GetManagedMySqlDatabaseSqlDataArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedMySqlDatabaseSqlDataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", {
         "endTime": args.endTime,
@@ -112,7 +111,14 @@ export interface GetManagedMySqlDatabaseSqlDataResult {
  * ```
  */
 export function getManagedMySqlDatabaseSqlDataOutput(args: GetManagedMySqlDatabaseSqlDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedMySqlDatabaseSqlDataResult> {
-    return pulumi.output(args).apply((a: any) => getManagedMySqlDatabaseSqlData(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", {
+        "endTime": args.endTime,
+        "filterColumn": args.filterColumn,
+        "filters": args.filters,
+        "managedMySqlDatabaseId": args.managedMySqlDatabaseId,
+        "startTime": args.startTime,
+    }, opts);
 }
 
 /**

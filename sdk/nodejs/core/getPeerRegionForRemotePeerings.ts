@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  */
 export function getPeerRegionForRemotePeerings(args?: GetPeerRegionForRemotePeeringsArgs, opts?: pulumi.InvokeOptions): Promise<GetPeerRegionForRemotePeeringsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", {
         "filters": args.filters,
@@ -67,7 +66,11 @@ export interface GetPeerRegionForRemotePeeringsResult {
  * ```
  */
 export function getPeerRegionForRemotePeeringsOutput(args?: GetPeerRegionForRemotePeeringsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPeerRegionForRemotePeeringsResult> {
-    return pulumi.output(args).apply((a: any) => getPeerRegionForRemotePeerings(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", {
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

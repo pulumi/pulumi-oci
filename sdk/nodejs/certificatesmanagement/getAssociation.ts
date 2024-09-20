@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAssociation(args: GetAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetAssociationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getAssociation:getAssociation", {
         "associationId": args.associationId,
@@ -93,7 +92,10 @@ export interface GetAssociationResult {
  * ```
  */
 export function getAssociationOutput(args: GetAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssociationResult> {
-    return pulumi.output(args).apply((a: any) => getAssociation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getAssociation:getAssociation", {
+        "associationId": args.associationId,
+    }, opts);
 }
 
 /**

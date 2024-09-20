@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvoicesInvoiceLines(args: GetInvoicesInvoiceLinesArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoicesInvoiceLinesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OspGateway/getInvoicesInvoiceLines:getInvoicesInvoiceLines", {
         "compartmentId": args.compartmentId,
@@ -90,7 +89,13 @@ export interface GetInvoicesInvoiceLinesResult {
  * ```
  */
 export function getInvoicesInvoiceLinesOutput(args: GetInvoicesInvoiceLinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoicesInvoiceLinesResult> {
-    return pulumi.output(args).apply((a: any) => getInvoicesInvoiceLines(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OspGateway/getInvoicesInvoiceLines:getInvoicesInvoiceLines", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "internalInvoiceId": args.internalInvoiceId,
+        "ospHomeRegion": args.ospHomeRegion,
+    }, opts);
 }
 
 /**

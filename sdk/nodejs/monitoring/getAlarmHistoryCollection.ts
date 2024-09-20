@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlarmHistoryCollection(args: GetAlarmHistoryCollectionArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmHistoryCollectionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", {
         "alarmHistorytype": args.alarmHistorytype,
@@ -118,7 +117,13 @@ export interface GetAlarmHistoryCollectionResult {
  * ```
  */
 export function getAlarmHistoryCollectionOutput(args: GetAlarmHistoryCollectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmHistoryCollectionResult> {
-    return pulumi.output(args).apply((a: any) => getAlarmHistoryCollection(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", {
+        "alarmHistorytype": args.alarmHistorytype,
+        "alarmId": args.alarmId,
+        "timestampGreaterThanOrEqualTo": args.timestampGreaterThanOrEqualTo,
+        "timestampLessThan": args.timestampLessThan,
+    }, opts);
 }
 
 /**

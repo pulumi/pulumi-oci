@@ -77,14 +77,20 @@ type GetInvoiceLineComputedUsagesResult struct {
 
 func GetInvoiceLineComputedUsagesOutput(ctx *pulumi.Context, args GetInvoiceLineComputedUsagesOutputArgs, opts ...pulumi.InvokeOption) GetInvoiceLineComputedUsagesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInvoiceLineComputedUsagesResult, error) {
+		ApplyT(func(v interface{}) (GetInvoiceLineComputedUsagesResultOutput, error) {
 			args := v.(GetInvoiceLineComputedUsagesArgs)
-			r, err := GetInvoiceLineComputedUsages(ctx, &args, opts...)
-			var s GetInvoiceLineComputedUsagesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInvoiceLineComputedUsagesResult
+			secret, err := ctx.InvokePackageRaw("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args, &rv, "", opts...)
+			if err != nil {
+				return GetInvoiceLineComputedUsagesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInvoiceLineComputedUsagesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInvoiceLineComputedUsagesResultOutput), nil
+			}
+			return output, nil
 		}).(GetInvoiceLineComputedUsagesResultOutput)
 }
 

@@ -89,14 +89,20 @@ type LookupSecurityPolicyDeploymentResult struct {
 
 func LookupSecurityPolicyDeploymentOutput(ctx *pulumi.Context, args LookupSecurityPolicyDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityPolicyDeploymentResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupSecurityPolicyDeploymentResult, error) {
+		ApplyT(func(v interface{}) (LookupSecurityPolicyDeploymentResultOutput, error) {
 			args := v.(LookupSecurityPolicyDeploymentArgs)
-			r, err := LookupSecurityPolicyDeployment(ctx, &args, opts...)
-			var s LookupSecurityPolicyDeploymentResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupSecurityPolicyDeploymentResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", args, &rv, "", opts...)
+			if err != nil {
+				return LookupSecurityPolicyDeploymentResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupSecurityPolicyDeploymentResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupSecurityPolicyDeploymentResultOutput), nil
+			}
+			return output, nil
 		}).(LookupSecurityPolicyDeploymentResultOutput)
 }
 

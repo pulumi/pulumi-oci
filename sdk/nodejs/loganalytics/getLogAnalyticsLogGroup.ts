@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsLogGroup(args: GetLogAnalyticsLogGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsLogGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup", {
         "logAnalyticsLogGroupId": args.logAnalyticsLogGroupId,
@@ -101,7 +100,11 @@ export interface GetLogAnalyticsLogGroupResult {
  * ```
  */
 export function getLogAnalyticsLogGroupOutput(args: GetLogAnalyticsLogGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsLogGroupResult> {
-    return pulumi.output(args).apply((a: any) => getLogAnalyticsLogGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup", {
+        "logAnalyticsLogGroupId": args.logAnalyticsLogGroupId,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

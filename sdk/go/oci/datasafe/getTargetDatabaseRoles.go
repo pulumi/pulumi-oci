@@ -88,14 +88,20 @@ type GetTargetDatabaseRolesResult struct {
 
 func GetTargetDatabaseRolesOutput(ctx *pulumi.Context, args GetTargetDatabaseRolesOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabaseRolesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabaseRolesResult, error) {
+		ApplyT(func(v interface{}) (GetTargetDatabaseRolesResultOutput, error) {
 			args := v.(GetTargetDatabaseRolesArgs)
-			r, err := GetTargetDatabaseRoles(ctx, &args, opts...)
-			var s GetTargetDatabaseRolesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTargetDatabaseRolesResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getTargetDatabaseRoles:getTargetDatabaseRoles", args, &rv, "", opts...)
+			if err != nil {
+				return GetTargetDatabaseRolesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTargetDatabaseRolesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTargetDatabaseRolesResultOutput), nil
+			}
+			return output, nil
 		}).(GetTargetDatabaseRolesResultOutput)
 }
 

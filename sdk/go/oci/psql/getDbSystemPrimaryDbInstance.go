@@ -67,14 +67,20 @@ type GetDbSystemPrimaryDbInstanceResult struct {
 
 func GetDbSystemPrimaryDbInstanceOutput(ctx *pulumi.Context, args GetDbSystemPrimaryDbInstanceOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemPrimaryDbInstanceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbSystemPrimaryDbInstanceResult, error) {
+		ApplyT(func(v interface{}) (GetDbSystemPrimaryDbInstanceResultOutput, error) {
 			args := v.(GetDbSystemPrimaryDbInstanceArgs)
-			r, err := GetDbSystemPrimaryDbInstance(ctx, &args, opts...)
-			var s GetDbSystemPrimaryDbInstanceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbSystemPrimaryDbInstanceResult
+			secret, err := ctx.InvokePackageRaw("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbSystemPrimaryDbInstanceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbSystemPrimaryDbInstanceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbSystemPrimaryDbInstanceResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbSystemPrimaryDbInstanceResultOutput)
 }
 

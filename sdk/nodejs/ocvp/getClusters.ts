@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getClusters(args?: GetClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetClustersResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getClusters:getClusters", {
         "compartmentId": args.compartmentId,
@@ -111,7 +110,15 @@ export interface GetClustersResult {
  * ```
  */
 export function getClustersOutput(args?: GetClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClustersResult> {
-    return pulumi.output(args).apply((a: any) => getClusters(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getClusters:getClusters", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "sddcId": args.sddcId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProcessorJob(args: GetProcessorJobArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessorJobResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiDocument/getProcessorJob:getProcessorJob", {
         "processorJobId": args.processorJobId,
@@ -111,7 +110,10 @@ export interface GetProcessorJobResult {
  * ```
  */
 export function getProcessorJobOutput(args: GetProcessorJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessorJobResult> {
-    return pulumi.output(args).apply((a: any) => getProcessorJob(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiDocument/getProcessorJob:getProcessorJob", {
+        "processorJobId": args.processorJobId,
+    }, opts);
 }
 
 /**

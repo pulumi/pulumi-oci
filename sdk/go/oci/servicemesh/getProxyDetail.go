@@ -57,13 +57,19 @@ type GetProxyDetailResult struct {
 }
 
 func GetProxyDetailOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetProxyDetailResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetProxyDetailResult, error) {
-		r, err := GetProxyDetail(ctx, opts...)
-		var s GetProxyDetailResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetProxyDetailResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetProxyDetailResult
+		secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getProxyDetail:getProxyDetail", nil, &rv, "", opts...)
+		if err != nil {
+			return GetProxyDetailResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetProxyDetailResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetProxyDetailResultOutput), nil
+		}
+		return output, nil
 	}).(GetProxyDetailResultOutput)
 }
 

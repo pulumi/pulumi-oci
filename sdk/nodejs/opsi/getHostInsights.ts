@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  */
 export function getHostInsights(args?: GetHostInsightsArgs, opts?: pulumi.InvokeOptions): Promise<GetHostInsightsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getHostInsights:getHostInsights", {
         "compartmentId": args.compartmentId,
@@ -150,7 +149,19 @@ export interface GetHostInsightsResult {
  * ```
  */
 export function getHostInsightsOutput(args?: GetHostInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostInsightsResult> {
-    return pulumi.output(args).apply((a: any) => getHostInsights(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getHostInsights:getHostInsights", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "enterpriseManagerBridgeId": args.enterpriseManagerBridgeId,
+        "exadataInsightId": args.exadataInsightId,
+        "filters": args.filters,
+        "hostTypes": args.hostTypes,
+        "id": args.id,
+        "states": args.states,
+        "statuses": args.statuses,
+    }, opts);
 }
 
 /**

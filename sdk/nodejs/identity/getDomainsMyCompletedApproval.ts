@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyCompletedApproval(args: GetDomainsMyCompletedApprovalArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyCompletedApprovalResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval", {
         "authorization": args.authorization,
@@ -179,7 +178,13 @@ export interface GetDomainsMyCompletedApprovalResult {
  * ```
  */
 export function getDomainsMyCompletedApprovalOutput(args: GetDomainsMyCompletedApprovalOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyCompletedApprovalResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyCompletedApproval(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval", {
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myCompletedApprovalId": args.myCompletedApprovalId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

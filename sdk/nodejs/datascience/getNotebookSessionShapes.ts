@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNotebookSessionShapes(args: GetNotebookSessionShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetNotebookSessionShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", {
         "compartmentId": args.compartmentId,
@@ -74,7 +73,11 @@ export interface GetNotebookSessionShapesResult {
  * ```
  */
 export function getNotebookSessionShapesOutput(args: GetNotebookSessionShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionShapesResult> {
-    return pulumi.output(args).apply((a: any) => getNotebookSessionShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -81,14 +81,20 @@ type LookupEncryptedDataResult struct {
 
 func LookupEncryptedDataOutput(ctx *pulumi.Context, args LookupEncryptedDataOutputArgs, opts ...pulumi.InvokeOption) LookupEncryptedDataResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupEncryptedDataResult, error) {
+		ApplyT(func(v interface{}) (LookupEncryptedDataResultOutput, error) {
 			args := v.(LookupEncryptedDataArgs)
-			r, err := LookupEncryptedData(ctx, &args, opts...)
-			var s LookupEncryptedDataResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupEncryptedDataResult
+			secret, err := ctx.InvokePackageRaw("oci:Kms/getEncryptedData:getEncryptedData", args, &rv, "", opts...)
+			if err != nil {
+				return LookupEncryptedDataResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupEncryptedDataResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupEncryptedDataResultOutput), nil
+			}
+			return output, nil
 		}).(LookupEncryptedDataResultOutput)
 }
 

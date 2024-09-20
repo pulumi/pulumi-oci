@@ -64,14 +64,20 @@ type GetEdgeSubnetsResult struct {
 
 func GetEdgeSubnetsOutput(ctx *pulumi.Context, args GetEdgeSubnetsOutputArgs, opts ...pulumi.InvokeOption) GetEdgeSubnetsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetEdgeSubnetsResult, error) {
+		ApplyT(func(v interface{}) (GetEdgeSubnetsResultOutput, error) {
 			args := v.(GetEdgeSubnetsArgs)
-			r, err := GetEdgeSubnets(ctx, &args, opts...)
-			var s GetEdgeSubnetsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetEdgeSubnetsResult
+			secret, err := ctx.InvokePackageRaw("oci:Waas/getEdgeSubnets:getEdgeSubnets", args, &rv, "", opts...)
+			if err != nil {
+				return GetEdgeSubnetsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetEdgeSubnetsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetEdgeSubnetsResultOutput), nil
+			}
+			return output, nil
 		}).(GetEdgeSubnetsResultOutput)
 }
 

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBackendSets(args: GetBackendSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getBackendSets:getBackendSets", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetBackendSetsResult {
  * ```
  */
 export function getBackendSetsOutput(args: GetBackendSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetsResult> {
-    return pulumi.output(args).apply((a: any) => getBackendSets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getBackendSets:getBackendSets", {
+        "filters": args.filters,
+        "networkLoadBalancerId": args.networkLoadBalancerId,
+    }, opts);
 }
 
 /**

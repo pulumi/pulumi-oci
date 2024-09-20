@@ -88,14 +88,20 @@ type GetComputeCapacityReservationsResult struct {
 
 func GetComputeCapacityReservationsOutput(ctx *pulumi.Context, args GetComputeCapacityReservationsOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityReservationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetComputeCapacityReservationsResult, error) {
+		ApplyT(func(v interface{}) (GetComputeCapacityReservationsResultOutput, error) {
 			args := v.(GetComputeCapacityReservationsArgs)
-			r, err := GetComputeCapacityReservations(ctx, &args, opts...)
-			var s GetComputeCapacityReservationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetComputeCapacityReservationsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args, &rv, "", opts...)
+			if err != nil {
+				return GetComputeCapacityReservationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetComputeCapacityReservationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetComputeCapacityReservationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetComputeCapacityReservationsResultOutput)
 }
 

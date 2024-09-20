@@ -108,14 +108,20 @@ type GetDbServerResult struct {
 
 func GetDbServerOutput(ctx *pulumi.Context, args GetDbServerOutputArgs, opts ...pulumi.InvokeOption) GetDbServerResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbServerResult, error) {
+		ApplyT(func(v interface{}) (GetDbServerResultOutput, error) {
 			args := v.(GetDbServerArgs)
-			r, err := GetDbServer(ctx, &args, opts...)
-			var s GetDbServerResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbServerResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbServer:getDbServer", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbServerResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbServerResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbServerResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbServerResultOutput)
 }
 

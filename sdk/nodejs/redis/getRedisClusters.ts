@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getRedisClusters(args?: GetRedisClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetRedisClustersResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Redis/getRedisClusters:getRedisClusters", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,15 @@ export interface GetRedisClustersResult {
  * ```
  */
 export function getRedisClustersOutput(args?: GetRedisClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRedisClustersResult> {
-    return pulumi.output(args).apply((a: any) => getRedisClusters(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Redis/getRedisClusters:getRedisClusters", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getConfigurations(args?: GetConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigurationsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getConfigurations:getConfigurations", {
         "compartmentId": args.compartmentId,
@@ -130,7 +129,17 @@ export interface GetConfigurationsResult {
  * ```
  */
 export function getConfigurationsOutput(args?: GetConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigurationsResult> {
-    return pulumi.output(args).apply((a: any) => getConfigurations(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Psql/getConfigurations:getConfigurations", {
+        "compartmentId": args.compartmentId,
+        "configurationId": args.configurationId,
+        "dbVersion": args.dbVersion,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "shape": args.shape,
+        "state": args.state,
+    }, opts);
 }
 
 /**

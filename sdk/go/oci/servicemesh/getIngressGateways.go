@@ -88,14 +88,20 @@ type GetIngressGatewaysResult struct {
 
 func GetIngressGatewaysOutput(ctx *pulumi.Context, args GetIngressGatewaysOutputArgs, opts ...pulumi.InvokeOption) GetIngressGatewaysResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetIngressGatewaysResult, error) {
+		ApplyT(func(v interface{}) (GetIngressGatewaysResultOutput, error) {
 			args := v.(GetIngressGatewaysArgs)
-			r, err := GetIngressGateways(ctx, &args, opts...)
-			var s GetIngressGatewaysResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetIngressGatewaysResult
+			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getIngressGateways:getIngressGateways", args, &rv, "", opts...)
+			if err != nil {
+				return GetIngressGatewaysResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetIngressGatewaysResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetIngressGatewaysResultOutput), nil
+			}
+			return output, nil
 		}).(GetIngressGatewaysResultOutput)
 }
 

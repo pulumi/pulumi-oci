@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPublicIpPool(args: GetPublicIpPoolArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicIpPoolResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPublicIpPool:getPublicIpPool", {
         "publicIpPoolId": args.publicIpPoolId,
@@ -93,7 +92,10 @@ export interface GetPublicIpPoolResult {
  * ```
  */
 export function getPublicIpPoolOutput(args: GetPublicIpPoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpPoolResult> {
-    return pulumi.output(args).apply((a: any) => getPublicIpPool(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getPublicIpPool:getPublicIpPool", {
+        "publicIpPoolId": args.publicIpPoolId,
+    }, opts);
 }
 
 /**

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRemotePeeringConnections(args: GetRemotePeeringConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetRemotePeeringConnectionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", {
         "compartmentId": args.compartmentId,
@@ -90,7 +89,12 @@ export interface GetRemotePeeringConnectionsResult {
  * ```
  */
 export function getRemotePeeringConnectionsOutput(args: GetRemotePeeringConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemotePeeringConnectionsResult> {
-    return pulumi.output(args).apply((a: any) => getRemotePeeringConnections(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", {
+        "compartmentId": args.compartmentId,
+        "drgId": args.drgId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

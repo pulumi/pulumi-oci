@@ -108,14 +108,20 @@ type LookupPipelineRunResult struct {
 
 func LookupPipelineRunOutput(ctx *pulumi.Context, args LookupPipelineRunOutputArgs, opts ...pulumi.InvokeOption) LookupPipelineRunResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPipelineRunResult, error) {
+		ApplyT(func(v interface{}) (LookupPipelineRunResultOutput, error) {
 			args := v.(LookupPipelineRunArgs)
-			r, err := LookupPipelineRun(ctx, &args, opts...)
-			var s LookupPipelineRunResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupPipelineRunResult
+			secret, err := ctx.InvokePackageRaw("oci:DataScience/getPipelineRun:getPipelineRun", args, &rv, "", opts...)
+			if err != nil {
+				return LookupPipelineRunResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupPipelineRunResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupPipelineRunResultOutput), nil
+			}
+			return output, nil
 		}).(LookupPipelineRunResultOutput)
 }
 

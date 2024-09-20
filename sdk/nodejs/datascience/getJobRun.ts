@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobRun(args: GetJobRunArgs, opts?: pulumi.InvokeOptions): Promise<GetJobRunResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getJobRun:getJobRun", {
         "jobRunId": args.jobRunId,
@@ -141,7 +140,10 @@ export interface GetJobRunResult {
  * ```
  */
 export function getJobRunOutput(args: GetJobRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobRunResult> {
-    return pulumi.output(args).apply((a: any) => getJobRun(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getJobRun:getJobRun", {
+        "jobRunId": args.jobRunId,
+    }, opts);
 }
 
 /**

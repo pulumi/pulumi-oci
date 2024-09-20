@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLoadBalancerRoutingPolicies(args: GetLoadBalancerRoutingPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetLoadBalancerRoutingPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetLoadBalancerRoutingPoliciesResult {
  * ```
  */
 export function getLoadBalancerRoutingPoliciesOutput(args: GetLoadBalancerRoutingPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLoadBalancerRoutingPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getLoadBalancerRoutingPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", {
+        "filters": args.filters,
+        "loadBalancerId": args.loadBalancerId,
+    }, opts);
 }
 
 /**

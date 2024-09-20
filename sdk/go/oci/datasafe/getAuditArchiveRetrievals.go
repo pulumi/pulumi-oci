@@ -102,14 +102,20 @@ type GetAuditArchiveRetrievalsResult struct {
 
 func GetAuditArchiveRetrievalsOutput(ctx *pulumi.Context, args GetAuditArchiveRetrievalsOutputArgs, opts ...pulumi.InvokeOption) GetAuditArchiveRetrievalsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAuditArchiveRetrievalsResult, error) {
+		ApplyT(func(v interface{}) (GetAuditArchiveRetrievalsResultOutput, error) {
 			args := v.(GetAuditArchiveRetrievalsArgs)
-			r, err := GetAuditArchiveRetrievals(ctx, &args, opts...)
-			var s GetAuditArchiveRetrievalsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAuditArchiveRetrievalsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", args, &rv, "", opts...)
+			if err != nil {
+				return GetAuditArchiveRetrievalsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAuditArchiveRetrievalsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAuditArchiveRetrievalsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAuditArchiveRetrievalsResultOutput)
 }
 

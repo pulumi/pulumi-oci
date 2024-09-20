@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlBackups(args: GetMysqlBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlBackupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlBackups:getMysqlBackups", {
         "backupId": args.backupId,
@@ -129,7 +128,16 @@ export interface GetMysqlBackupsResult {
  * ```
  */
 export function getMysqlBackupsOutput(args: GetMysqlBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlBackupsResult> {
-    return pulumi.output(args).apply((a: any) => getMysqlBackups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlBackups:getMysqlBackups", {
+        "backupId": args.backupId,
+        "compartmentId": args.compartmentId,
+        "creationType": args.creationType,
+        "dbSystemId": args.dbSystemId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

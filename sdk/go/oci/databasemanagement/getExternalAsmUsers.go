@@ -73,14 +73,20 @@ type GetExternalAsmUsersResult struct {
 
 func GetExternalAsmUsersOutput(ctx *pulumi.Context, args GetExternalAsmUsersOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmUsersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalAsmUsersResult, error) {
+		ApplyT(func(v interface{}) (GetExternalAsmUsersResultOutput, error) {
 			args := v.(GetExternalAsmUsersArgs)
-			r, err := GetExternalAsmUsers(ctx, &args, opts...)
-			var s GetExternalAsmUsersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExternalAsmUsersResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", args, &rv, "", opts...)
+			if err != nil {
+				return GetExternalAsmUsersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExternalAsmUsersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExternalAsmUsersResultOutput), nil
+			}
+			return output, nil
 		}).(GetExternalAsmUsersResultOutput)
 }
 

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificateVersion(args: GetCertificateVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateVersionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", {
         "certificateId": args.certificateId,
@@ -118,7 +117,11 @@ export interface GetCertificateVersionResult {
  * ```
  */
 export function getCertificateVersionOutput(args: GetCertificateVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateVersionResult> {
-    return pulumi.output(args).apply((a: any) => getCertificateVersion(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", {
+        "certificateId": args.certificateId,
+        "certificateVersionNumber": args.certificateVersionNumber,
+    }, opts);
 }
 
 /**

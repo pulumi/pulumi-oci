@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuthTokens(args: GetAuthTokensArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthTokensResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getAuthTokens:getAuthTokens", {
         "filters": args.filters,
@@ -79,7 +78,11 @@ export interface GetAuthTokensResult {
  * ```
  */
 export function getAuthTokensOutput(args: GetAuthTokensOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthTokensResult> {
-    return pulumi.output(args).apply((a: any) => getAuthTokens(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getAuthTokens:getAuthTokens", {
+        "filters": args.filters,
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

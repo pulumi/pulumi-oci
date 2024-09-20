@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkspaceProject(args: GetWorkspaceProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceProjectResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataIntegration/getWorkspaceProject:getWorkspaceProject", {
         "projectKey": args.projectKey,
@@ -117,7 +116,11 @@ export interface GetWorkspaceProjectResult {
  * ```
  */
 export function getWorkspaceProjectOutput(args: GetWorkspaceProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceProjectResult> {
-    return pulumi.output(args).apply((a: any) => getWorkspaceProject(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceProject:getWorkspaceProject", {
+        "projectKey": args.projectKey,
+        "workspaceId": args.workspaceId,
+    }, opts);
 }
 
 /**

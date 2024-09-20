@@ -76,14 +76,20 @@ type LookupOsnResult struct {
 
 func LookupOsnOutput(ctx *pulumi.Context, args LookupOsnOutputArgs, opts ...pulumi.InvokeOption) LookupOsnResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupOsnResult, error) {
+		ApplyT(func(v interface{}) (LookupOsnResultOutput, error) {
 			args := v.(LookupOsnArgs)
-			r, err := LookupOsn(ctx, &args, opts...)
-			var s LookupOsnResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupOsnResult
+			secret, err := ctx.InvokePackageRaw("oci:Blockchain/getOsn:getOsn", args, &rv, "", opts...)
+			if err != nil {
+				return LookupOsnResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupOsnResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupOsnResultOutput), nil
+			}
+			return output, nil
 		}).(LookupOsnResultOutput)
 }
 

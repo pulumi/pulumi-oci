@@ -328,14 +328,20 @@ type LookupAutonomousDatabaseResult struct {
 
 func LookupAutonomousDatabaseOutput(ctx *pulumi.Context, args LookupAutonomousDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAutonomousDatabaseResult, error) {
+		ApplyT(func(v interface{}) (LookupAutonomousDatabaseResultOutput, error) {
 			args := v.(LookupAutonomousDatabaseArgs)
-			r, err := LookupAutonomousDatabase(ctx, &args, opts...)
-			var s LookupAutonomousDatabaseResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAutonomousDatabaseResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAutonomousDatabaseResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAutonomousDatabaseResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAutonomousDatabaseResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAutonomousDatabaseResultOutput)
 }
 

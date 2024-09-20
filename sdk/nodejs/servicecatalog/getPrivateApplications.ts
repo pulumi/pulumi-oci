@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateApplications(args: GetPrivateApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateApplicationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", {
         "compartmentId": args.compartmentId,
@@ -96,7 +95,13 @@ export interface GetPrivateApplicationsResult {
  * ```
  */
 export function getPrivateApplicationsOutput(args: GetPrivateApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateApplicationsResult> {
-    return pulumi.output(args).apply((a: any) => getPrivateApplications(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "privateApplicationId": args.privateApplicationId,
+    }, opts);
 }
 
 /**

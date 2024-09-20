@@ -101,14 +101,20 @@ type LookupExternalContainerDatabaseResult struct {
 
 func LookupExternalContainerDatabaseOutput(ctx *pulumi.Context, args LookupExternalContainerDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupExternalContainerDatabaseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupExternalContainerDatabaseResult, error) {
+		ApplyT(func(v interface{}) (LookupExternalContainerDatabaseResultOutput, error) {
 			args := v.(LookupExternalContainerDatabaseArgs)
-			r, err := LookupExternalContainerDatabase(ctx, &args, opts...)
-			var s LookupExternalContainerDatabaseResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupExternalContainerDatabaseResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getExternalContainerDatabase:getExternalContainerDatabase", args, &rv, "", opts...)
+			if err != nil {
+				return LookupExternalContainerDatabaseResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupExternalContainerDatabaseResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupExternalContainerDatabaseResultOutput), nil
+			}
+			return output, nil
 		}).(LookupExternalContainerDatabaseResultOutput)
 }
 

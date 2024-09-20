@@ -77,14 +77,20 @@ type GetTenancyResult struct {
 
 func GetTenancyOutput(ctx *pulumi.Context, args GetTenancyOutputArgs, opts ...pulumi.InvokeOption) GetTenancyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTenancyResult, error) {
+		ApplyT(func(v interface{}) (GetTenancyResultOutput, error) {
 			args := v.(GetTenancyArgs)
-			r, err := GetTenancy(ctx, &args, opts...)
-			var s GetTenancyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTenancyResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getTenancy:getTenancy", args, &rv, "", opts...)
+			if err != nil {
+				return GetTenancyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTenancyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTenancyResultOutput), nil
+			}
+			return output, nil
 		}).(GetTenancyResultOutput)
 }
 

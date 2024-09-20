@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAiPrivateEndpoints(args: GetAiPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetAiPrivateEndpointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", {
         "compartmentId": args.compartmentId,
@@ -106,7 +105,14 @@ export interface GetAiPrivateEndpointsResult {
  * ```
  */
 export function getAiPrivateEndpointsOutput(args: GetAiPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAiPrivateEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getAiPrivateEndpoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

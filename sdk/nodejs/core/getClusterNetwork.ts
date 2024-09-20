@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterNetwork(args: GetClusterNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterNetworkResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getClusterNetwork:getClusterNetwork", {
         "clusterNetworkId": args.clusterNetworkId,
@@ -112,7 +111,10 @@ export interface GetClusterNetworkResult {
  * ```
  */
 export function getClusterNetworkOutput(args: GetClusterNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterNetworkResult> {
-    return pulumi.output(args).apply((a: any) => getClusterNetwork(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getClusterNetwork:getClusterNetwork", {
+        "clusterNetworkId": args.clusterNetworkId,
+    }, opts);
 }
 
 /**

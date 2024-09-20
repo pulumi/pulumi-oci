@@ -87,14 +87,20 @@ type GetSecurityPolicyReportResult struct {
 
 func GetSecurityPolicyReportOutput(ctx *pulumi.Context, args GetSecurityPolicyReportOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyReportResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSecurityPolicyReportResult, error) {
+		ApplyT(func(v interface{}) (GetSecurityPolicyReportResultOutput, error) {
 			args := v.(GetSecurityPolicyReportArgs)
-			r, err := GetSecurityPolicyReport(ctx, &args, opts...)
-			var s GetSecurityPolicyReportResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSecurityPolicyReportResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", args, &rv, "", opts...)
+			if err != nil {
+				return GetSecurityPolicyReportResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSecurityPolicyReportResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSecurityPolicyReportResultOutput), nil
+			}
+			return output, nil
 		}).(GetSecurityPolicyReportResultOutput)
 }
 

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeClusters(args: GetComputeClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeClustersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeClusters:getComputeClusters", {
         "availabilityDomain": args.availabilityDomain,
@@ -101,7 +100,13 @@ export interface GetComputeClustersResult {
  * ```
  */
 export function getComputeClustersOutput(args: GetComputeClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeClustersResult> {
-    return pulumi.output(args).apply((a: any) => getComputeClusters(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeClusters:getComputeClusters", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

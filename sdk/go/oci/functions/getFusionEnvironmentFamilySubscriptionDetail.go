@@ -67,14 +67,20 @@ type GetFusionEnvironmentFamilySubscriptionDetailResult struct {
 
 func GetFusionEnvironmentFamilySubscriptionDetailOutput(ctx *pulumi.Context, args GetFusionEnvironmentFamilySubscriptionDetailOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentFamilySubscriptionDetailResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentFamilySubscriptionDetailResult, error) {
+		ApplyT(func(v interface{}) (GetFusionEnvironmentFamilySubscriptionDetailResultOutput, error) {
 			args := v.(GetFusionEnvironmentFamilySubscriptionDetailArgs)
-			r, err := GetFusionEnvironmentFamilySubscriptionDetail(ctx, &args, opts...)
-			var s GetFusionEnvironmentFamilySubscriptionDetailResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFusionEnvironmentFamilySubscriptionDetailResult
+			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", args, &rv, "", opts...)
+			if err != nil {
+				return GetFusionEnvironmentFamilySubscriptionDetailResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFusionEnvironmentFamilySubscriptionDetailResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFusionEnvironmentFamilySubscriptionDetailResultOutput), nil
+			}
+			return output, nil
 		}).(GetFusionEnvironmentFamilySubscriptionDetailResultOutput)
 }
 

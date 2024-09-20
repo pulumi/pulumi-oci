@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyUserDbCredentials(args: GetDomainsMyUserDbCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyUserDbCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyUserDbCredentials:getDomainsMyUserDbCredentials", {
         "authorization": args.authorization,
@@ -126,7 +125,18 @@ export interface GetDomainsMyUserDbCredentialsResult {
  * ```
  */
 export function getDomainsMyUserDbCredentialsOutput(args: GetDomainsMyUserDbCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyUserDbCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyUserDbCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyUserDbCredentials:getDomainsMyUserDbCredentials", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myUserDbCredentialCount": args.myUserDbCredentialCount,
+        "myUserDbCredentialFilter": args.myUserDbCredentialFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

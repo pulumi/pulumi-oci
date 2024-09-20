@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBuildRun(args: GetBuildRunArgs, opts?: pulumi.InvokeOptions): Promise<GetBuildRunResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getBuildRun:getBuildRun", {
         "buildRunId": args.buildRunId,
@@ -131,7 +130,10 @@ export interface GetBuildRunResult {
  * ```
  */
 export function getBuildRunOutput(args: GetBuildRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildRunResult> {
-    return pulumi.output(args).apply((a: any) => getBuildRun(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getBuildRun:getBuildRun", {
+        "buildRunId": args.buildRunId,
+    }, opts);
 }
 
 /**

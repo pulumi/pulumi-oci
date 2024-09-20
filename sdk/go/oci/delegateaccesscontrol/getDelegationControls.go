@@ -89,14 +89,20 @@ type GetDelegationControlsResult struct {
 
 func GetDelegationControlsOutput(ctx *pulumi.Context, args GetDelegationControlsOutputArgs, opts ...pulumi.InvokeOption) GetDelegationControlsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDelegationControlsResult, error) {
+		ApplyT(func(v interface{}) (GetDelegationControlsResultOutput, error) {
 			args := v.(GetDelegationControlsArgs)
-			r, err := GetDelegationControls(ctx, &args, opts...)
-			var s GetDelegationControlsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDelegationControlsResult
+			secret, err := ctx.InvokePackageRaw("oci:DelegateAccessControl/getDelegationControls:getDelegationControls", args, &rv, "", opts...)
+			if err != nil {
+				return GetDelegationControlsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDelegationControlsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDelegationControlsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDelegationControlsResultOutput)
 }
 

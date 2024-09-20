@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceGroupAvailablePackages(args: GetManagedInstanceGroupAvailablePackagesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupAvailablePackagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceGroupAvailablePackages:getManagedInstanceGroupAvailablePackages", {
         "compartmentId": args.compartmentId,
@@ -114,7 +113,15 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
  * ```
  */
 export function getManagedInstanceGroupAvailablePackagesOutput(args: GetManagedInstanceGroupAvailablePackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupAvailablePackagesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceGroupAvailablePackages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceGroupAvailablePackages:getManagedInstanceGroupAvailablePackages", {
+        "compartmentId": args.compartmentId,
+        "displayNameContains": args.displayNameContains,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "isLatest": args.isLatest,
+        "managedInstanceGroupId": args.managedInstanceGroupId,
+    }, opts);
 }
 
 /**

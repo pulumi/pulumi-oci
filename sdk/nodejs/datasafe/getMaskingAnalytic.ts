@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingAnalytic(args: GetMaskingAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingAnalyticResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingAnalytic:getMaskingAnalytic", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetMaskingAnalyticResult {
  * ```
  */
 export function getMaskingAnalyticOutput(args: GetMaskingAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingAnalyticResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingAnalytic(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingAnalytic:getMaskingAnalytic", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "groupBy": args.groupBy,
+        "maskingPolicyId": args.maskingPolicyId,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

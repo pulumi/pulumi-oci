@@ -164,14 +164,20 @@ type LookupCloudVmClusterResult struct {
 
 func LookupCloudVmClusterOutput(ctx *pulumi.Context, args LookupCloudVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupCloudVmClusterResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCloudVmClusterResult, error) {
+		ApplyT(func(v interface{}) (LookupCloudVmClusterResultOutput, error) {
 			args := v.(LookupCloudVmClusterArgs)
-			r, err := LookupCloudVmCluster(ctx, &args, opts...)
-			var s LookupCloudVmClusterResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupCloudVmClusterResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getCloudVmCluster:getCloudVmCluster", args, &rv, "", opts...)
+			if err != nil {
+				return LookupCloudVmClusterResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupCloudVmClusterResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupCloudVmClusterResultOutput), nil
+			}
+			return output, nil
 		}).(LookupCloudVmClusterResultOutput)
 }
 

@@ -106,14 +106,20 @@ type GetGuardTargetsResult struct {
 
 func GetGuardTargetsOutput(ctx *pulumi.Context, args GetGuardTargetsOutputArgs, opts ...pulumi.InvokeOption) GetGuardTargetsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetGuardTargetsResult, error) {
+		ApplyT(func(v interface{}) (GetGuardTargetsResultOutput, error) {
 			args := v.(GetGuardTargetsArgs)
-			r, err := GetGuardTargets(ctx, &args, opts...)
-			var s GetGuardTargetsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetGuardTargetsResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getGuardTargets:getGuardTargets", args, &rv, "", opts...)
+			if err != nil {
+				return GetGuardTargetsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetGuardTargetsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetGuardTargetsResultOutput), nil
+			}
+			return output, nil
 		}).(GetGuardTargetsResultOutput)
 }
 

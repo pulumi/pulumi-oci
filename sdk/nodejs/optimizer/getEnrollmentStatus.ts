@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEnrollmentStatus(args: GetEnrollmentStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetEnrollmentStatusResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", {
         "enrollmentStatusId": args.enrollmentStatusId,
@@ -89,7 +88,10 @@ export interface GetEnrollmentStatusResult {
  * ```
  */
 export function getEnrollmentStatusOutput(args: GetEnrollmentStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnrollmentStatusResult> {
-    return pulumi.output(args).apply((a: any) => getEnrollmentStatus(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", {
+        "enrollmentStatusId": args.enrollmentStatusId,
+    }, opts);
 }
 
 /**

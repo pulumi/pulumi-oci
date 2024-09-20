@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryPath(args: GetRepositoryPathArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryPathResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryPath:getRepositoryPath", {
         "displayName": args.displayName,
@@ -103,7 +102,14 @@ export interface GetRepositoryPathResult {
  * ```
  */
 export function getRepositoryPathOutput(args: GetRepositoryPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryPathResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryPath(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryPath:getRepositoryPath", {
+        "displayName": args.displayName,
+        "folderPath": args.folderPath,
+        "pathsInSubtree": args.pathsInSubtree,
+        "ref": args.ref,
+        "repositoryId": args.repositoryId,
+    }, opts);
 }
 
 /**

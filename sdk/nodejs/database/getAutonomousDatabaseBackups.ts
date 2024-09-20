@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getAutonomousDatabaseBackups(args?: GetAutonomousDatabaseBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseBackupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
@@ -122,7 +121,16 @@ export interface GetAutonomousDatabaseBackupsResult {
  * ```
  */
 export function getAutonomousDatabaseBackupsOutput(args?: GetAutonomousDatabaseBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseBackupsResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseBackups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", {
+        "autonomousDatabaseId": args.autonomousDatabaseId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "type": args.type,
+    }, opts);
 }
 
 /**

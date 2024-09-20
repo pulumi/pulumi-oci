@@ -44,7 +44,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAdhocQueries(args: GetAdhocQueriesArgs, opts?: pulumi.InvokeOptions): Promise<GetAdhocQueriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getAdhocQueries:getAdhocQueries", {
         "accessLevel": args.accessLevel,
@@ -149,7 +148,16 @@ export interface GetAdhocQueriesResult {
  * ```
  */
 export function getAdhocQueriesOutput(args: GetAdhocQueriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAdhocQueriesResult> {
-    return pulumi.output(args).apply((a: any) => getAdhocQueries(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getAdhocQueries:getAdhocQueries", {
+        "accessLevel": args.accessLevel,
+        "adhocQueryStatus": args.adhocQueryStatus,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "timeEndedFilterQueryParam": args.timeEndedFilterQueryParam,
+        "timeStartedFilterQueryParam": args.timeStartedFilterQueryParam,
+    }, opts);
 }
 
 /**

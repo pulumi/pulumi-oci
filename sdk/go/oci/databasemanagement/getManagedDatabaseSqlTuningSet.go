@@ -77,14 +77,20 @@ type GetManagedDatabaseSqlTuningSetResult struct {
 
 func GetManagedDatabaseSqlTuningSetOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlTuningSetOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlTuningSetResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseSqlTuningSetResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseSqlTuningSetResultOutput, error) {
 			args := v.(GetManagedDatabaseSqlTuningSetArgs)
-			r, err := GetManagedDatabaseSqlTuningSet(ctx, &args, opts...)
-			var s GetManagedDatabaseSqlTuningSetResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseSqlTuningSetResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseSqlTuningSetResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseSqlTuningSetResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseSqlTuningSetResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseSqlTuningSetResultOutput)
 }
 

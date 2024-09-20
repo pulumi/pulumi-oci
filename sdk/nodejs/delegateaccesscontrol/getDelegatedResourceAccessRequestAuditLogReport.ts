@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDelegatedResourceAccessRequestAuditLogReport(args: GetDelegatedResourceAccessRequestAuditLogReportArgs, opts?: pulumi.InvokeOptions): Promise<GetDelegatedResourceAccessRequestAuditLogReportResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", {
         "delegatedResourceAccessRequestId": args.delegatedResourceAccessRequestId,
@@ -89,7 +88,11 @@ export interface GetDelegatedResourceAccessRequestAuditLogReportResult {
  * ```
  */
 export function getDelegatedResourceAccessRequestAuditLogReportOutput(args: GetDelegatedResourceAccessRequestAuditLogReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegatedResourceAccessRequestAuditLogReportResult> {
-    return pulumi.output(args).apply((a: any) => getDelegatedResourceAccessRequestAuditLogReport(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", {
+        "delegatedResourceAccessRequestId": args.delegatedResourceAccessRequestId,
+        "isProcessTreeEnabled": args.isProcessTreeEnabled,
+    }, opts);
 }
 
 /**

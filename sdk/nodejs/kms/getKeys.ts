@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKeys(args: GetKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getKeys:getKeys", {
         "algorithm": args.algorithm,
@@ -142,7 +141,16 @@ export interface GetKeysResult {
  * ```
  */
 export function getKeysOutput(args: GetKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeysResult> {
-    return pulumi.output(args).apply((a: any) => getKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getKeys:getKeys", {
+        "algorithm": args.algorithm,
+        "compartmentId": args.compartmentId,
+        "curveId": args.curveId,
+        "filters": args.filters,
+        "length": args.length,
+        "managementEndpoint": args.managementEndpoint,
+        "protectionMode": args.protectionMode,
+    }, opts);
 }
 
 /**

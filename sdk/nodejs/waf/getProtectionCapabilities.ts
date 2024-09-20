@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectionCapabilities(args: GetProtectionCapabilitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionCapabilitiesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", {
         "compartmentId": args.compartmentId,
@@ -128,7 +127,16 @@ export interface GetProtectionCapabilitiesResult {
  * ```
  */
 export function getProtectionCapabilitiesOutput(args: GetProtectionCapabilitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionCapabilitiesResult> {
-    return pulumi.output(args).apply((a: any) => getProtectionCapabilities(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "groupTags": args.groupTags,
+        "isLatestVersions": args.isLatestVersions,
+        "key": args.key,
+        "type": args.type,
+    }, opts);
 }
 
 /**

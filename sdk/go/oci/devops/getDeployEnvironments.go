@@ -88,14 +88,20 @@ type GetDeployEnvironmentsResult struct {
 
 func GetDeployEnvironmentsOutput(ctx *pulumi.Context, args GetDeployEnvironmentsOutputArgs, opts ...pulumi.InvokeOption) GetDeployEnvironmentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDeployEnvironmentsResult, error) {
+		ApplyT(func(v interface{}) (GetDeployEnvironmentsResultOutput, error) {
 			args := v.(GetDeployEnvironmentsArgs)
-			r, err := GetDeployEnvironments(ctx, &args, opts...)
-			var s GetDeployEnvironmentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDeployEnvironmentsResult
+			secret, err := ctx.InvokePackageRaw("oci:DevOps/getDeployEnvironments:getDeployEnvironments", args, &rv, "", opts...)
+			if err != nil {
+				return GetDeployEnvironmentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDeployEnvironmentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDeployEnvironmentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDeployEnvironmentsResultOutput)
 }
 

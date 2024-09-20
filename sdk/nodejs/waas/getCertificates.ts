@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificates(args: GetCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificatesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getCertificates:getCertificates", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,16 @@ export interface GetCertificatesResult {
  * ```
  */
 export function getCertificatesOutput(args: GetCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificatesResult> {
-    return pulumi.output(args).apply((a: any) => getCertificates(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waas/getCertificates:getCertificates", {
+        "compartmentId": args.compartmentId,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "ids": args.ids,
+        "states": args.states,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

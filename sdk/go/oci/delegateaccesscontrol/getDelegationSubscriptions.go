@@ -80,14 +80,20 @@ type GetDelegationSubscriptionsResult struct {
 
 func GetDelegationSubscriptionsOutput(ctx *pulumi.Context, args GetDelegationSubscriptionsOutputArgs, opts ...pulumi.InvokeOption) GetDelegationSubscriptionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDelegationSubscriptionsResult, error) {
+		ApplyT(func(v interface{}) (GetDelegationSubscriptionsResultOutput, error) {
 			args := v.(GetDelegationSubscriptionsArgs)
-			r, err := GetDelegationSubscriptions(ctx, &args, opts...)
-			var s GetDelegationSubscriptionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDelegationSubscriptionsResult
+			secret, err := ctx.InvokePackageRaw("oci:DelegateAccessControl/getDelegationSubscriptions:getDelegationSubscriptions", args, &rv, "", opts...)
+			if err != nil {
+				return GetDelegationSubscriptionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDelegationSubscriptionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDelegationSubscriptionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDelegationSubscriptionsResultOutput)
 }
 

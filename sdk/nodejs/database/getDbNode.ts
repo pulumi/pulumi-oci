@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbNode(args: GetDbNodeArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbNode:getDbNode", {
         "dbNodeId": args.dbNodeId,
@@ -162,7 +161,10 @@ export interface GetDbNodeResult {
  * ```
  */
 export function getDbNodeOutput(args: GetDbNodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeResult> {
-    return pulumi.output(args).apply((a: any) => getDbNode(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbNode:getDbNode", {
+        "dbNodeId": args.dbNodeId,
+    }, opts);
 }
 
 /**

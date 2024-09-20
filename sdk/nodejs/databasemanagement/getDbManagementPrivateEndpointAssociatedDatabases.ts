@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbManagementPrivateEndpointAssociatedDatabases(args: GetDbManagementPrivateEndpointAssociatedDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbManagementPrivateEndpointAssociatedDatabasesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", {
         "compartmentId": args.compartmentId,
@@ -85,7 +84,12 @@ export interface GetDbManagementPrivateEndpointAssociatedDatabasesResult {
  * ```
  */
 export function getDbManagementPrivateEndpointAssociatedDatabasesOutput(args: GetDbManagementPrivateEndpointAssociatedDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getDbManagementPrivateEndpointAssociatedDatabases(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", {
+        "compartmentId": args.compartmentId,
+        "dbManagementPrivateEndpointId": args.dbManagementPrivateEndpointId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

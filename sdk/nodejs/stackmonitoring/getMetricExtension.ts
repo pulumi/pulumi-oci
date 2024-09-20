@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMetricExtension(args: GetMetricExtensionArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricExtensionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getMetricExtension:getMetricExtension", {
         "metricExtensionId": args.metricExtensionId,
@@ -144,7 +143,10 @@ export interface GetMetricExtensionResult {
  * ```
  */
 export function getMetricExtensionOutput(args: GetMetricExtensionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricExtensionResult> {
-    return pulumi.output(args).apply((a: any) => getMetricExtension(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMetricExtension:getMetricExtension", {
+        "metricExtensionId": args.metricExtensionId,
+    }, opts);
 }
 
 /**

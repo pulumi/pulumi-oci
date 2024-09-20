@@ -49,7 +49,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessments(args: GetUserAssessmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessments:getUserAssessments", {
         "accessLevel": args.accessLevel,
@@ -224,7 +223,23 @@ export interface GetUserAssessmentsResult {
  * ```
  */
 export function getUserAssessmentsOutput(args: GetUserAssessmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentsResult> {
-    return pulumi.output(args).apply((a: any) => getUserAssessments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessments:getUserAssessments", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isBaseline": args.isBaseline,
+        "isScheduleAssessment": args.isScheduleAssessment,
+        "scheduleUserAssessmentId": args.scheduleUserAssessmentId,
+        "state": args.state,
+        "targetId": args.targetId,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+        "triggeredBy": args.triggeredBy,
+        "type": args.type,
+    }, opts);
 }
 
 /**

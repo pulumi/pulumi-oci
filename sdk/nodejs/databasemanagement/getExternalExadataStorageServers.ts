@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalExadataStorageServers(args: GetExternalExadataStorageServersArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageServersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalExadataStorageServers:getExternalExadataStorageServers", {
         "compartmentId": args.compartmentId,
@@ -93,7 +92,13 @@ export interface GetExternalExadataStorageServersResult {
  * ```
  */
 export function getExternalExadataStorageServersOutput(args: GetExternalExadataStorageServersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServersResult> {
-    return pulumi.output(args).apply((a: any) => getExternalExadataStorageServers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageServers:getExternalExadataStorageServers", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "externalExadataInfrastructureId": args.externalExadataInfrastructureId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

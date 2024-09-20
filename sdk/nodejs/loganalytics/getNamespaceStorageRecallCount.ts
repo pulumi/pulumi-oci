@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaceStorageRecallCount(args: GetNamespaceStorageRecallCountArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceStorageRecallCountResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", {
         "namespace": args.namespace,
@@ -85,7 +84,10 @@ export interface GetNamespaceStorageRecallCountResult {
  * ```
  */
 export function getNamespaceStorageRecallCountOutput(args: GetNamespaceStorageRecallCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageRecallCountResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaceStorageRecallCount(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", {
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

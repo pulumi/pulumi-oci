@@ -84,14 +84,20 @@ type LookupClusterWorkloadMappingResult struct {
 
 func LookupClusterWorkloadMappingOutput(ctx *pulumi.Context, args LookupClusterWorkloadMappingOutputArgs, opts ...pulumi.InvokeOption) LookupClusterWorkloadMappingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupClusterWorkloadMappingResult, error) {
+		ApplyT(func(v interface{}) (LookupClusterWorkloadMappingResultOutput, error) {
 			args := v.(LookupClusterWorkloadMappingArgs)
-			r, err := LookupClusterWorkloadMapping(ctx, &args, opts...)
-			var s LookupClusterWorkloadMappingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupClusterWorkloadMappingResult
+			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", args, &rv, "", opts...)
+			if err != nil {
+				return LookupClusterWorkloadMappingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupClusterWorkloadMappingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupClusterWorkloadMappingResultOutput), nil
+			}
+			return output, nil
 		}).(LookupClusterWorkloadMappingResultOutput)
 }
 

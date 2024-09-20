@@ -83,14 +83,20 @@ type GetSessionsResult struct {
 
 func GetSessionsOutput(ctx *pulumi.Context, args GetSessionsOutputArgs, opts ...pulumi.InvokeOption) GetSessionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSessionsResult, error) {
+		ApplyT(func(v interface{}) (GetSessionsResultOutput, error) {
 			args := v.(GetSessionsArgs)
-			r, err := GetSessions(ctx, &args, opts...)
-			var s GetSessionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSessionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Bastion/getSessions:getSessions", args, &rv, "", opts...)
+			if err != nil {
+				return GetSessionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSessionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSessionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetSessionsResultOutput)
 }
 

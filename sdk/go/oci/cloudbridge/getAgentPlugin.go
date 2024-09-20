@@ -89,14 +89,20 @@ type LookupAgentPluginResult struct {
 
 func LookupAgentPluginOutput(ctx *pulumi.Context, args LookupAgentPluginOutputArgs, opts ...pulumi.InvokeOption) LookupAgentPluginResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAgentPluginResult, error) {
+		ApplyT(func(v interface{}) (LookupAgentPluginResultOutput, error) {
 			args := v.(LookupAgentPluginArgs)
-			r, err := LookupAgentPlugin(ctx, &args, opts...)
-			var s LookupAgentPluginResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAgentPluginResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getAgentPlugin:getAgentPlugin", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAgentPluginResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAgentPluginResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAgentPluginResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAgentPluginResultOutput)
 }
 

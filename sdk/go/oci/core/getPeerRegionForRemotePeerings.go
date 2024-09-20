@@ -65,14 +65,20 @@ type GetPeerRegionForRemotePeeringsResult struct {
 
 func GetPeerRegionForRemotePeeringsOutput(ctx *pulumi.Context, args GetPeerRegionForRemotePeeringsOutputArgs, opts ...pulumi.InvokeOption) GetPeerRegionForRemotePeeringsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPeerRegionForRemotePeeringsResult, error) {
+		ApplyT(func(v interface{}) (GetPeerRegionForRemotePeeringsResultOutput, error) {
 			args := v.(GetPeerRegionForRemotePeeringsArgs)
-			r, err := GetPeerRegionForRemotePeerings(ctx, &args, opts...)
-			var s GetPeerRegionForRemotePeeringsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPeerRegionForRemotePeeringsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args, &rv, "", opts...)
+			if err != nil {
+				return GetPeerRegionForRemotePeeringsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPeerRegionForRemotePeeringsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPeerRegionForRemotePeeringsResultOutput), nil
+			}
+			return output, nil
 		}).(GetPeerRegionForRemotePeeringsResultOutput)
 }
 

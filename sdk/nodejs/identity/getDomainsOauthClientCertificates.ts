@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsOauthClientCertificates(args: GetDomainsOauthClientCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsOauthClientCertificatesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", {
         "authorization": args.authorization,
@@ -126,7 +125,18 @@ export interface GetDomainsOauthClientCertificatesResult {
  * ```
  */
 export function getDomainsOauthClientCertificatesOutput(args: GetDomainsOauthClientCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsOauthClientCertificatesResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsOauthClientCertificates(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "oauthClientCertificateCount": args.oauthClientCertificateCount,
+        "oauthClientCertificateFilter": args.oauthClientCertificateFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

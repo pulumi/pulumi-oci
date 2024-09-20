@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplicationTargets(args: GetReplicationTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationTargetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getReplicationTargets:getReplicationTargets", {
         "availabilityDomain": args.availabilityDomain,
@@ -117,7 +116,15 @@ export interface GetReplicationTargetsResult {
  * ```
  */
 export function getReplicationTargetsOutput(args: GetReplicationTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationTargetsResult> {
-    return pulumi.output(args).apply((a: any) => getReplicationTargets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getReplicationTargets:getReplicationTargets", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

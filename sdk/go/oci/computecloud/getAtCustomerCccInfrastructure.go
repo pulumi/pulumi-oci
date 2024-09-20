@@ -106,14 +106,20 @@ type LookupAtCustomerCccInfrastructureResult struct {
 
 func LookupAtCustomerCccInfrastructureOutput(ctx *pulumi.Context, args LookupAtCustomerCccInfrastructureOutputArgs, opts ...pulumi.InvokeOption) LookupAtCustomerCccInfrastructureResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAtCustomerCccInfrastructureResult, error) {
+		ApplyT(func(v interface{}) (LookupAtCustomerCccInfrastructureResultOutput, error) {
 			args := v.(LookupAtCustomerCccInfrastructureArgs)
-			r, err := LookupAtCustomerCccInfrastructure(ctx, &args, opts...)
-			var s LookupAtCustomerCccInfrastructureResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAtCustomerCccInfrastructureResult
+			secret, err := ctx.InvokePackageRaw("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAtCustomerCccInfrastructureResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAtCustomerCccInfrastructureResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAtCustomerCccInfrastructureResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAtCustomerCccInfrastructureResultOutput)
 }
 

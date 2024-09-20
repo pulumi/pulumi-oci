@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBastion(args: GetBastionArgs, opts?: pulumi.InvokeOptions): Promise<GetBastionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Bastion/getBastion:getBastion", {
         "bastionId": args.bastionId,
@@ -141,7 +140,10 @@ export interface GetBastionResult {
  * ```
  */
 export function getBastionOutput(args: GetBastionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBastionResult> {
-    return pulumi.output(args).apply((a: any) => getBastion(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Bastion/getBastion:getBastion", {
+        "bastionId": args.bastionId,
+    }, opts);
 }
 
 /**

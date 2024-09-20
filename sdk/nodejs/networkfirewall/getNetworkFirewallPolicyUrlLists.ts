@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkFirewallPolicyUrlLists(args: GetNetworkFirewallPolicyUrlListsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyUrlListsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyUrlLists:getNetworkFirewallPolicyUrlLists", {
         "displayName": args.displayName,
@@ -82,7 +81,12 @@ export interface GetNetworkFirewallPolicyUrlListsResult {
  * ```
  */
 export function getNetworkFirewallPolicyUrlListsOutput(args: GetNetworkFirewallPolicyUrlListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyUrlListsResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyUrlLists(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyUrlLists:getNetworkFirewallPolicyUrlLists", {
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+    }, opts);
 }
 
 /**

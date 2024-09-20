@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsCondition(args: GetDomainsConditionArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsConditionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsCondition:getDomainsCondition", {
         "attributeSets": args.attributeSets,
@@ -191,7 +190,15 @@ export interface GetDomainsConditionResult {
  * ```
  */
 export function getDomainsConditionOutput(args: GetDomainsConditionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsConditionResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsCondition(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsCondition:getDomainsCondition", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "conditionId": args.conditionId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

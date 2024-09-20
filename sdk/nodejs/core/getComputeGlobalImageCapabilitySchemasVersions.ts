@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeGlobalImageCapabilitySchemasVersions(args: GetComputeGlobalImageCapabilitySchemasVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeGlobalImageCapabilitySchemasVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions", {
         "computeGlobalImageCapabilitySchemaId": args.computeGlobalImageCapabilitySchemaId,
@@ -88,7 +87,12 @@ export interface GetComputeGlobalImageCapabilitySchemasVersionsResult {
  * ```
  */
 export function getComputeGlobalImageCapabilitySchemasVersionsOutput(args: GetComputeGlobalImageCapabilitySchemasVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemasVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getComputeGlobalImageCapabilitySchemasVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions", {
+        "computeGlobalImageCapabilitySchemaId": args.computeGlobalImageCapabilitySchemaId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSavedQuery(args: GetSavedQueryArgs, opts?: pulumi.InvokeOptions): Promise<GetSavedQueryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getSavedQuery:getSavedQuery", {
         "savedQueryId": args.savedQueryId,
@@ -105,7 +104,10 @@ export interface GetSavedQueryResult {
  * ```
  */
 export function getSavedQueryOutput(args: GetSavedQueryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSavedQueryResult> {
-    return pulumi.output(args).apply((a: any) => getSavedQuery(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getSavedQuery:getSavedQuery", {
+        "savedQueryId": args.savedQueryId,
+    }, opts);
 }
 
 /**

@@ -99,14 +99,20 @@ type LookupAuditPolicyResult struct {
 
 func LookupAuditPolicyOutput(ctx *pulumi.Context, args LookupAuditPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAuditPolicyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAuditPolicyResult, error) {
+		ApplyT(func(v interface{}) (LookupAuditPolicyResultOutput, error) {
 			args := v.(LookupAuditPolicyArgs)
-			r, err := LookupAuditPolicy(ctx, &args, opts...)
-			var s LookupAuditPolicyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAuditPolicyResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditPolicy:getAuditPolicy", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAuditPolicyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAuditPolicyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAuditPolicyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAuditPolicyResultOutput)
 }
 

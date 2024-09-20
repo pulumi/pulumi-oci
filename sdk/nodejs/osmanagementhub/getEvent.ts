@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEvent(args: GetEventArgs, opts?: pulumi.InvokeOptions): Promise<GetEventResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getEvent:getEvent", {
         "eventId": args.eventId,
@@ -139,7 +138,10 @@ export interface GetEventResult {
  * ```
  */
 export function getEventOutput(args: GetEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventResult> {
-    return pulumi.output(args).apply((a: any) => getEvent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getEvent:getEvent", {
+        "eventId": args.eventId,
+    }, opts);
 }
 
 /**

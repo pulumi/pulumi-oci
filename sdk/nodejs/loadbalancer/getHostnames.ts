@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHostnames(args: GetHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetHostnamesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getHostnames:getHostnames", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetHostnamesResult {
  * ```
  */
 export function getHostnamesOutput(args: GetHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostnamesResult> {
-    return pulumi.output(args).apply((a: any) => getHostnames(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getHostnames:getHostnames", {
+        "filters": args.filters,
+        "loadBalancerId": args.loadBalancerId,
+    }, opts);
 }
 
 /**

@@ -69,14 +69,20 @@ type GetAutonomousDatabaseRefreshableClonesResult struct {
 
 func GetAutonomousDatabaseRefreshableClonesOutput(ctx *pulumi.Context, args GetAutonomousDatabaseRefreshableClonesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabaseRefreshableClonesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabaseRefreshableClonesResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousDatabaseRefreshableClonesResultOutput, error) {
 			args := v.(GetAutonomousDatabaseRefreshableClonesArgs)
-			r, err := GetAutonomousDatabaseRefreshableClones(ctx, &args, opts...)
-			var s GetAutonomousDatabaseRefreshableClonesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousDatabaseRefreshableClonesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousDatabaseRefreshableClonesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousDatabaseRefreshableClonesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousDatabaseRefreshableClonesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousDatabaseRefreshableClonesResultOutput)
 }
 

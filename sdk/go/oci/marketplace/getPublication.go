@@ -95,14 +95,20 @@ type LookupPublicationResult struct {
 
 func LookupPublicationOutput(ctx *pulumi.Context, args LookupPublicationOutputArgs, opts ...pulumi.InvokeOption) LookupPublicationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPublicationResult, error) {
+		ApplyT(func(v interface{}) (LookupPublicationResultOutput, error) {
 			args := v.(LookupPublicationArgs)
-			r, err := LookupPublication(ctx, &args, opts...)
-			var s LookupPublicationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupPublicationResult
+			secret, err := ctx.InvokePackageRaw("oci:Marketplace/getPublication:getPublication", args, &rv, "", opts...)
+			if err != nil {
+				return LookupPublicationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupPublicationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupPublicationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupPublicationResultOutput)
 }
 

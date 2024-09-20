@@ -88,14 +88,20 @@ type GetEmailReturnPathsResult struct {
 
 func GetEmailReturnPathsOutput(ctx *pulumi.Context, args GetEmailReturnPathsOutputArgs, opts ...pulumi.InvokeOption) GetEmailReturnPathsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetEmailReturnPathsResult, error) {
+		ApplyT(func(v interface{}) (GetEmailReturnPathsResultOutput, error) {
 			args := v.(GetEmailReturnPathsArgs)
-			r, err := GetEmailReturnPaths(ctx, &args, opts...)
-			var s GetEmailReturnPathsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetEmailReturnPathsResult
+			secret, err := ctx.InvokePackageRaw("oci:Email/getEmailReturnPaths:getEmailReturnPaths", args, &rv, "", opts...)
+			if err != nil {
+				return GetEmailReturnPathsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetEmailReturnPathsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetEmailReturnPathsResultOutput), nil
+			}
+			return output, nil
 		}).(GetEmailReturnPathsResultOutput)
 }
 

@@ -114,14 +114,20 @@ type LookupDbNodeResult struct {
 
 func LookupDbNodeOutput(ctx *pulumi.Context, args LookupDbNodeOutputArgs, opts ...pulumi.InvokeOption) LookupDbNodeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDbNodeResult, error) {
+		ApplyT(func(v interface{}) (LookupDbNodeResultOutput, error) {
 			args := v.(LookupDbNodeArgs)
-			r, err := LookupDbNode(ctx, &args, opts...)
-			var s LookupDbNodeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDbNodeResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbNode:getDbNode", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDbNodeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDbNodeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDbNodeResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDbNodeResultOutput)
 }
 

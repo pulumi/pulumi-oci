@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSteeringPolicyAttachment(args: GetSteeringPolicyAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPolicyAttachmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", {
         "steeringPolicyAttachmentId": args.steeringPolicyAttachmentId,
@@ -101,7 +100,10 @@ export interface GetSteeringPolicyAttachmentResult {
  * ```
  */
 export function getSteeringPolicyAttachmentOutput(args: GetSteeringPolicyAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPolicyAttachmentResult> {
-    return pulumi.output(args).apply((a: any) => getSteeringPolicyAttachment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", {
+        "steeringPolicyAttachmentId": args.steeringPolicyAttachmentId,
+    }, opts);
 }
 
 /**

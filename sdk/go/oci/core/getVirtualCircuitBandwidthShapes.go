@@ -72,14 +72,20 @@ type GetVirtualCircuitBandwidthShapesResult struct {
 
 func GetVirtualCircuitBandwidthShapesOutput(ctx *pulumi.Context, args GetVirtualCircuitBandwidthShapesOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitBandwidthShapesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVirtualCircuitBandwidthShapesResult, error) {
+		ApplyT(func(v interface{}) (GetVirtualCircuitBandwidthShapesResultOutput, error) {
 			args := v.(GetVirtualCircuitBandwidthShapesArgs)
-			r, err := GetVirtualCircuitBandwidthShapes(ctx, &args, opts...)
-			var s GetVirtualCircuitBandwidthShapesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVirtualCircuitBandwidthShapesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args, &rv, "", opts...)
+			if err != nil {
+				return GetVirtualCircuitBandwidthShapesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVirtualCircuitBandwidthShapesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVirtualCircuitBandwidthShapesResultOutput), nil
+			}
+			return output, nil
 		}).(GetVirtualCircuitBandwidthShapesResultOutput)
 }
 

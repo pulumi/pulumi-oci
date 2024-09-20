@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLicenseMetric(args: GetLicenseMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetLicenseMetricResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getLicenseMetric:getLicenseMetric", {
         "compartmentId": args.compartmentId,
@@ -89,7 +88,11 @@ export interface GetLicenseMetricResult {
  * ```
  */
 export function getLicenseMetricOutput(args: GetLicenseMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseMetricResult> {
-    return pulumi.output(args).apply((a: any) => getLicenseMetric(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LicenseManager/getLicenseMetric:getLicenseMetric", {
+        "compartmentId": args.compartmentId,
+        "isCompartmentIdInSubtree": args.isCompartmentIdInSubtree,
+    }, opts);
 }
 
 /**

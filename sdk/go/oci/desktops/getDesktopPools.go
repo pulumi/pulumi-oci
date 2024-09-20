@@ -88,14 +88,20 @@ type GetDesktopPoolsResult struct {
 
 func GetDesktopPoolsOutput(ctx *pulumi.Context, args GetDesktopPoolsOutputArgs, opts ...pulumi.InvokeOption) GetDesktopPoolsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDesktopPoolsResult, error) {
+		ApplyT(func(v interface{}) (GetDesktopPoolsResultOutput, error) {
 			args := v.(GetDesktopPoolsArgs)
-			r, err := GetDesktopPools(ctx, &args, opts...)
-			var s GetDesktopPoolsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDesktopPoolsResult
+			secret, err := ctx.InvokePackageRaw("oci:Desktops/getDesktopPools:getDesktopPools", args, &rv, "", opts...)
+			if err != nil {
+				return GetDesktopPoolsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDesktopPoolsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDesktopPoolsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDesktopPoolsResultOutput)
 }
 

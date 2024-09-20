@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterKubeConfig(args: GetClusterKubeConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterKubeConfigResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", {
         "clusterId": args.clusterId,
@@ -93,7 +92,13 @@ export interface GetClusterKubeConfigResult {
  * ```
  */
 export function getClusterKubeConfigOutput(args: GetClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterKubeConfigResult> {
-    return pulumi.output(args).apply((a: any) => getClusterKubeConfig(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", {
+        "clusterId": args.clusterId,
+        "endpoint": args.endpoint,
+        "expiration": args.expiration,
+        "tokenVersion": args.tokenVersion,
+    }, opts);
 }
 
 /**

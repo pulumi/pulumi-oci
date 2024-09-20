@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAcceptedAgreement(args: GetAcceptedAgreementArgs, opts?: pulumi.InvokeOptions): Promise<GetAcceptedAgreementResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", {
         "acceptedAgreementId": args.acceptedAgreementId,
@@ -98,7 +97,10 @@ export interface GetAcceptedAgreementResult {
  * ```
  */
 export function getAcceptedAgreementOutput(args: GetAcceptedAgreementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAcceptedAgreementResult> {
-    return pulumi.output(args).apply((a: any) => getAcceptedAgreement(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", {
+        "acceptedAgreementId": args.acceptedAgreementId,
+    }, opts);
 }
 
 /**

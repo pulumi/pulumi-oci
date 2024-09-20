@@ -138,14 +138,20 @@ type LookupShardedDatabaseResult struct {
 
 func LookupShardedDatabaseOutput(ctx *pulumi.Context, args LookupShardedDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupShardedDatabaseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupShardedDatabaseResult, error) {
+		ApplyT(func(v interface{}) (LookupShardedDatabaseResultOutput, error) {
 			args := v.(LookupShardedDatabaseArgs)
-			r, err := LookupShardedDatabase(ctx, &args, opts...)
-			var s LookupShardedDatabaseResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupShardedDatabaseResult
+			secret, err := ctx.InvokePackageRaw("oci:GloballyDistributedDatabase/getShardedDatabase:getShardedDatabase", args, &rv, "", opts...)
+			if err != nil {
+				return LookupShardedDatabaseResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupShardedDatabaseResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupShardedDatabaseResultOutput), nil
+			}
+			return output, nil
 		}).(LookupShardedDatabaseResultOutput)
 }
 

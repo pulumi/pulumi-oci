@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  */
 export function getAtCustomerCccInfrastructures(args?: GetAtCustomerCccInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetAtCustomerCccInfrastructuresResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", {
         "accessLevel": args.accessLevel,
@@ -132,7 +131,18 @@ export interface GetAtCustomerCccInfrastructuresResult {
  * ```
  */
 export function getAtCustomerCccInfrastructuresOutput(args?: GetAtCustomerCccInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccInfrastructuresResult> {
-    return pulumi.output(args).apply((a: any) => getAtCustomerCccInfrastructures(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", {
+        "accessLevel": args.accessLevel,
+        "cccInfrastructureId": args.cccInfrastructureId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

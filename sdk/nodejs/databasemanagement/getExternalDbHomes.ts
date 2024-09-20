@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getExternalDbHomes(args?: GetExternalDbHomesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbHomesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", {
         "compartmentId": args.compartmentId,
@@ -100,7 +99,14 @@ export interface GetExternalDbHomesResult {
  * ```
  */
 export function getExternalDbHomesOutput(args?: GetExternalDbHomesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbHomesResult> {
-    return pulumi.output(args).apply((a: any) => getExternalDbHomes(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "externalDbSystemId": args.externalDbSystemId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

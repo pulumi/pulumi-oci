@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryProtectedBranches(args: GetRepositoryProtectedBranchesArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryProtectedBranchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", {
         "filters": args.filters,
@@ -82,7 +81,12 @@ export interface GetRepositoryProtectedBranchesResult {
  * ```
  */
 export function getRepositoryProtectedBranchesOutput(args: GetRepositoryProtectedBranchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryProtectedBranchesResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryProtectedBranches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", {
+        "filters": args.filters,
+        "name": args.name,
+        "repositoryId": args.repositoryId,
+    }, opts);
 }
 
 /**

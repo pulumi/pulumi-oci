@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFastLaunchJobConfigs(args: GetFastLaunchJobConfigsArgs, opts?: pulumi.InvokeOptions): Promise<GetFastLaunchJobConfigsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", {
         "compartmentId": args.compartmentId,
@@ -74,7 +73,11 @@ export interface GetFastLaunchJobConfigsResult {
  * ```
  */
 export function getFastLaunchJobConfigsOutput(args: GetFastLaunchJobConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastLaunchJobConfigsResult> {
-    return pulumi.output(args).apply((a: any) => getFastLaunchJobConfigs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

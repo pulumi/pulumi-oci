@@ -95,14 +95,20 @@ type GetReplicationTargetResult struct {
 
 func GetReplicationTargetOutput(ctx *pulumi.Context, args GetReplicationTargetOutputArgs, opts ...pulumi.InvokeOption) GetReplicationTargetResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetReplicationTargetResult, error) {
+		ApplyT(func(v interface{}) (GetReplicationTargetResultOutput, error) {
 			args := v.(GetReplicationTargetArgs)
-			r, err := GetReplicationTarget(ctx, &args, opts...)
-			var s GetReplicationTargetResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetReplicationTargetResult
+			secret, err := ctx.InvokePackageRaw("oci:FileStorage/getReplicationTarget:getReplicationTarget", args, &rv, "", opts...)
+			if err != nil {
+				return GetReplicationTargetResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetReplicationTargetResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetReplicationTargetResultOutput), nil
+			}
+			return output, nil
 		}).(GetReplicationTargetResultOutput)
 }
 

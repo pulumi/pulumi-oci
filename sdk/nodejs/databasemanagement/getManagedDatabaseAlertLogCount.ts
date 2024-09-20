@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseAlertLogCount(args: GetManagedDatabaseAlertLogCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAlertLogCountResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", {
         "groupBy": args.groupBy,
@@ -130,7 +129,17 @@ export interface GetManagedDatabaseAlertLogCountResult {
  * ```
  */
 export function getManagedDatabaseAlertLogCountOutput(args: GetManagedDatabaseAlertLogCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAlertLogCountResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseAlertLogCount(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", {
+        "groupBy": args.groupBy,
+        "isRegularExpression": args.isRegularExpression,
+        "levelFilter": args.levelFilter,
+        "logSearchText": args.logSearchText,
+        "managedDatabaseId": args.managedDatabaseId,
+        "timeGreaterThanOrEqualTo": args.timeGreaterThanOrEqualTo,
+        "timeLessThanOrEqualTo": args.timeLessThanOrEqualTo,
+        "typeFilter": args.typeFilter,
+    }, opts);
 }
 
 /**

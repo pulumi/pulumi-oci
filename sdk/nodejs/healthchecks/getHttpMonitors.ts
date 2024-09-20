@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHttpMonitors(args: GetHttpMonitorsArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpMonitorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getHttpMonitors:getHttpMonitors", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetHttpMonitorsResult {
  * ```
  */
 export function getHttpMonitorsOutput(args: GetHttpMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpMonitorsResult> {
-    return pulumi.output(args).apply((a: any) => getHttpMonitors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:HealthChecks/getHttpMonitors:getHttpMonitors", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "homeRegion": args.homeRegion,
+    }, opts);
 }
 
 /**

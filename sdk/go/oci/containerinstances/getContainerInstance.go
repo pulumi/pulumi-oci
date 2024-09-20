@@ -109,14 +109,20 @@ type GetContainerInstanceResult struct {
 
 func GetContainerInstanceOutput(ctx *pulumi.Context, args GetContainerInstanceOutputArgs, opts ...pulumi.InvokeOption) GetContainerInstanceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetContainerInstanceResult, error) {
+		ApplyT(func(v interface{}) (GetContainerInstanceResultOutput, error) {
 			args := v.(GetContainerInstanceArgs)
-			r, err := GetContainerInstance(ctx, &args, opts...)
-			var s GetContainerInstanceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetContainerInstanceResult
+			secret, err := ctx.InvokePackageRaw("oci:ContainerInstances/getContainerInstance:getContainerInstance", args, &rv, "", opts...)
+			if err != nil {
+				return GetContainerInstanceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetContainerInstanceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetContainerInstanceResultOutput), nil
+			}
+			return output, nil
 		}).(GetContainerInstanceResultOutput)
 }
 

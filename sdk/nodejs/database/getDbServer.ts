@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbServer(args: GetDbServerArgs, opts?: pulumi.InvokeOptions): Promise<GetDbServerResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbServer:getDbServer", {
         "dbServerId": args.dbServerId,
@@ -154,7 +153,11 @@ export interface GetDbServerResult {
  * ```
  */
 export function getDbServerOutput(args: GetDbServerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbServerResult> {
-    return pulumi.output(args).apply((a: any) => getDbServer(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbServer:getDbServer", {
+        "dbServerId": args.dbServerId,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
+    }, opts);
 }
 
 /**

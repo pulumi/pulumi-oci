@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNatGateway(args: GetNatGatewayArgs, opts?: pulumi.InvokeOptions): Promise<GetNatGatewayResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNatGateway:getNatGateway", {
         "natGatewayId": args.natGatewayId,
@@ -109,7 +108,10 @@ export interface GetNatGatewayResult {
  * ```
  */
 export function getNatGatewayOutput(args: GetNatGatewayOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNatGatewayResult> {
-    return pulumi.output(args).apply((a: any) => getNatGateway(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getNatGateway:getNatGateway", {
+        "natGatewayId": args.natGatewayId,
+    }, opts);
 }
 
 /**

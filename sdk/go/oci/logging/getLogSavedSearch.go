@@ -83,14 +83,20 @@ type LookupLogSavedSearchResult struct {
 
 func LookupLogSavedSearchOutput(ctx *pulumi.Context, args LookupLogSavedSearchOutputArgs, opts ...pulumi.InvokeOption) LookupLogSavedSearchResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupLogSavedSearchResult, error) {
+		ApplyT(func(v interface{}) (LookupLogSavedSearchResultOutput, error) {
 			args := v.(LookupLogSavedSearchArgs)
-			r, err := LookupLogSavedSearch(ctx, &args, opts...)
-			var s LookupLogSavedSearchResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupLogSavedSearchResult
+			secret, err := ctx.InvokePackageRaw("oci:Logging/getLogSavedSearch:getLogSavedSearch", args, &rv, "", opts...)
+			if err != nil {
+				return LookupLogSavedSearchResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupLogSavedSearchResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupLogSavedSearchResultOutput), nil
+			}
+			return output, nil
 		}).(LookupLogSavedSearchResultOutput)
 }
 

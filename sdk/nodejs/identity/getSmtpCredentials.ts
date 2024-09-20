@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSmtpCredentials(args: GetSmtpCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetSmtpCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getSmtpCredentials:getSmtpCredentials", {
         "filters": args.filters,
@@ -79,7 +78,11 @@ export interface GetSmtpCredentialsResult {
  * ```
  */
 export function getSmtpCredentialsOutput(args: GetSmtpCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSmtpCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getSmtpCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getSmtpCredentials:getSmtpCredentials", {
+        "filters": args.filters,
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

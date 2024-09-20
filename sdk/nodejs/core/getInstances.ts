@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstances(args: GetInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstances:getInstances", {
         "availabilityDomain": args.availabilityDomain,
@@ -139,7 +138,16 @@ export interface GetInstancesResult {
  * ```
  */
 export function getInstancesOutput(args: GetInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstances:getInstances", {
+        "availabilityDomain": args.availabilityDomain,
+        "capacityReservationId": args.capacityReservationId,
+        "compartmentId": args.compartmentId,
+        "computeClusterId": args.computeClusterId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

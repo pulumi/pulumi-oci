@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterNetworkDownloadConfigFile(args: GetVmClusterNetworkDownloadConfigFileArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterNetworkDownloadConfigFileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", {
         "base64EncodeContent": args.base64EncodeContent,
@@ -82,7 +81,12 @@ export interface GetVmClusterNetworkDownloadConfigFileResult {
  * ```
  */
 export function getVmClusterNetworkDownloadConfigFileOutput(args: GetVmClusterNetworkDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworkDownloadConfigFileResult> {
-    return pulumi.output(args).apply((a: any) => getVmClusterNetworkDownloadConfigFile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", {
+        "base64EncodeContent": args.base64EncodeContent,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
+        "vmClusterNetworkId": args.vmClusterNetworkId,
+    }, opts);
 }
 
 /**

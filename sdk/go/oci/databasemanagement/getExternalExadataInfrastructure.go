@@ -105,14 +105,20 @@ type LookupExternalExadataInfrastructureResult struct {
 
 func LookupExternalExadataInfrastructureOutput(ctx *pulumi.Context, args LookupExternalExadataInfrastructureOutputArgs, opts ...pulumi.InvokeOption) LookupExternalExadataInfrastructureResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupExternalExadataInfrastructureResult, error) {
+		ApplyT(func(v interface{}) (LookupExternalExadataInfrastructureResultOutput, error) {
 			args := v.(LookupExternalExadataInfrastructureArgs)
-			r, err := LookupExternalExadataInfrastructure(ctx, &args, opts...)
-			var s LookupExternalExadataInfrastructureResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupExternalExadataInfrastructureResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", args, &rv, "", opts...)
+			if err != nil {
+				return LookupExternalExadataInfrastructureResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupExternalExadataInfrastructureResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupExternalExadataInfrastructureResultOutput), nil
+			}
+			return output, nil
 		}).(LookupExternalExadataInfrastructureResultOutput)
 }
 

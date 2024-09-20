@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPathAnalyzerTest(args: GetPathAnalyzerTestArgs, opts?: pulumi.InvokeOptions): Promise<GetPathAnalyzerTestResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", {
         "pathAnalyzerTestId": args.pathAnalyzerTestId,
@@ -119,7 +118,10 @@ export interface GetPathAnalyzerTestResult {
  * ```
  */
 export function getPathAnalyzerTestOutput(args: GetPathAnalyzerTestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathAnalyzerTestResult> {
-    return pulumi.output(args).apply((a: any) => getPathAnalyzerTest(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", {
+        "pathAnalyzerTestId": args.pathAnalyzerTestId,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDynamicGroups(args: GetDynamicGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDynamicGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDynamicGroups:getDynamicGroups", {
         "compartmentId": args.compartmentId,
@@ -103,7 +102,13 @@ export interface GetDynamicGroupsResult {
  * ```
  */
 export function getDynamicGroupsOutput(args: GetDynamicGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDynamicGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getDynamicGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDynamicGroups:getDynamicGroups", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

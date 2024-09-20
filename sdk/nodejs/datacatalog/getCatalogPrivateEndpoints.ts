@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogPrivateEndpoints(args: GetCatalogPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogPrivateEndpointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetCatalogPrivateEndpointsResult {
  * ```
  */
 export function getCatalogPrivateEndpointsOutput(args: GetCatalogPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogPrivateEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getCatalogPrivateEndpoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

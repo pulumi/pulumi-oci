@@ -83,14 +83,20 @@ type GetAiPrivateEndpointsResult struct {
 
 func GetAiPrivateEndpointsOutput(ctx *pulumi.Context, args GetAiPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetAiPrivateEndpointsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAiPrivateEndpointsResult, error) {
+		ApplyT(func(v interface{}) (GetAiPrivateEndpointsResultOutput, error) {
 			args := v.(GetAiPrivateEndpointsArgs)
-			r, err := GetAiPrivateEndpoints(ctx, &args, opts...)
-			var s GetAiPrivateEndpointsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAiPrivateEndpointsResult
+			secret, err := ctx.InvokePackageRaw("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", args, &rv, "", opts...)
+			if err != nil {
+				return GetAiPrivateEndpointsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAiPrivateEndpointsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAiPrivateEndpointsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAiPrivateEndpointsResultOutput)
 }
 

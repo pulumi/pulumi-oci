@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectionDataAsset(args: GetDetectionDataAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionDataAssetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", {
         "dataAssetId": args.dataAssetId,
@@ -115,7 +114,10 @@ export interface GetDetectionDataAssetResult {
  * ```
  */
 export function getDetectionDataAssetOutput(args: GetDetectionDataAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionDataAssetResult> {
-    return pulumi.output(args).apply((a: any) => getDetectionDataAsset(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", {
+        "dataAssetId": args.dataAssetId,
+    }, opts);
 }
 
 /**

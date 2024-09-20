@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgRouteTables(args: GetDrgRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteTablesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgRouteTables:getDrgRouteTables", {
         "displayName": args.displayName,
@@ -114,7 +113,14 @@ export interface GetDrgRouteTablesResult {
  * ```
  */
 export function getDrgRouteTablesOutput(args: GetDrgRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteTablesResult> {
-    return pulumi.output(args).apply((a: any) => getDrgRouteTables(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteTables:getDrgRouteTables", {
+        "displayName": args.displayName,
+        "drgId": args.drgId,
+        "filters": args.filters,
+        "importDrgRouteDistributionId": args.importDrgRouteDistributionId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

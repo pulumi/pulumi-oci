@@ -139,14 +139,20 @@ type GetAccessRequestResult struct {
 
 func GetAccessRequestOutput(ctx *pulumi.Context, args GetAccessRequestOutputArgs, opts ...pulumi.InvokeOption) GetAccessRequestResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAccessRequestResult, error) {
+		ApplyT(func(v interface{}) (GetAccessRequestResultOutput, error) {
 			args := v.(GetAccessRequestArgs)
-			r, err := GetAccessRequest(ctx, &args, opts...)
-			var s GetAccessRequestResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAccessRequestResult
+			secret, err := ctx.InvokePackageRaw("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args, &rv, "", opts...)
+			if err != nil {
+				return GetAccessRequestResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAccessRequestResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAccessRequestResultOutput), nil
+			}
+			return output, nil
 		}).(GetAccessRequestResultOutput)
 }
 

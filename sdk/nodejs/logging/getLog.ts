@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLog(args: GetLogArgs, opts?: pulumi.InvokeOptions): Promise<GetLogResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getLog:getLog", {
         "logGroupId": args.logGroupId,
@@ -126,7 +125,11 @@ export interface GetLogResult {
  * ```
  */
 export function getLogOutput(args: GetLogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogResult> {
-    return pulumi.output(args).apply((a: any) => getLog(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Logging/getLog:getLog", {
+        "logGroupId": args.logGroupId,
+        "logId": args.logId,
+    }, opts);
 }
 
 /**

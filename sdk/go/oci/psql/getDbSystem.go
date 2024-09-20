@@ -119,14 +119,20 @@ type LookupDbSystemResult struct {
 
 func LookupDbSystemOutput(ctx *pulumi.Context, args LookupDbSystemOutputArgs, opts ...pulumi.InvokeOption) LookupDbSystemResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDbSystemResult, error) {
+		ApplyT(func(v interface{}) (LookupDbSystemResultOutput, error) {
 			args := v.(LookupDbSystemArgs)
-			r, err := LookupDbSystem(ctx, &args, opts...)
-			var s LookupDbSystemResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDbSystemResult
+			secret, err := ctx.InvokePackageRaw("oci:Psql/getDbSystem:getDbSystem", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDbSystemResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDbSystemResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDbSystemResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDbSystemResultOutput)
 }
 

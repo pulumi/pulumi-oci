@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAssets(args: GetAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAssetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudBridge/getAssets:getAssets", {
         "assetId": args.assetId,
@@ -151,7 +150,18 @@ export interface GetAssetsResult {
  * ```
  */
 export function getAssetsOutput(args: GetAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssetsResult> {
-    return pulumi.output(args).apply((a: any) => getAssets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudBridge/getAssets:getAssets", {
+        "assetId": args.assetId,
+        "assetType": args.assetType,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "externalAssetKey": args.externalAssetKey,
+        "filters": args.filters,
+        "inventoryId": args.inventoryId,
+        "sourceKey": args.sourceKey,
+        "state": args.state,
+    }, opts);
 }
 
 /**

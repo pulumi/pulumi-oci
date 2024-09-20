@@ -69,14 +69,20 @@ type GetInstanceMeasuredBootReportResult struct {
 
 func GetInstanceMeasuredBootReportOutput(ctx *pulumi.Context, args GetInstanceMeasuredBootReportOutputArgs, opts ...pulumi.InvokeOption) GetInstanceMeasuredBootReportResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInstanceMeasuredBootReportResult, error) {
+		ApplyT(func(v interface{}) (GetInstanceMeasuredBootReportResultOutput, error) {
 			args := v.(GetInstanceMeasuredBootReportArgs)
-			r, err := GetInstanceMeasuredBootReport(ctx, &args, opts...)
-			var s GetInstanceMeasuredBootReportResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInstanceMeasuredBootReportResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", args, &rv, "", opts...)
+			if err != nil {
+				return GetInstanceMeasuredBootReportResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInstanceMeasuredBootReportResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInstanceMeasuredBootReportResultOutput), nil
+			}
+			return output, nil
 		}).(GetInstanceMeasuredBootReportResultOutput)
 }
 

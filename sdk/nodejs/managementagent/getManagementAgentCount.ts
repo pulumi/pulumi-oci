@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentCount(args: GetManagementAgentCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentCountResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", {
         "compartmentId": args.compartmentId,
@@ -103,7 +102,13 @@ export interface GetManagementAgentCountResult {
  * ```
  */
 export function getManagementAgentCountOutput(args: GetManagementAgentCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentCountResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgentCount(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", {
+        "compartmentId": args.compartmentId,
+        "groupBies": args.groupBies,
+        "hasPlugins": args.hasPlugins,
+        "installType": args.installType,
+    }, opts);
 }
 
 /**

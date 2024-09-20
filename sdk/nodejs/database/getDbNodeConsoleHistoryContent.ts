@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbNodeConsoleHistoryContent(args: GetDbNodeConsoleHistoryContentArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodeConsoleHistoryContentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", {
         "consoleHistoryId": args.consoleHistoryId,
@@ -73,7 +72,11 @@ export interface GetDbNodeConsoleHistoryContentResult {
  * ```
  */
 export function getDbNodeConsoleHistoryContentOutput(args: GetDbNodeConsoleHistoryContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeConsoleHistoryContentResult> {
-    return pulumi.output(args).apply((a: any) => getDbNodeConsoleHistoryContent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", {
+        "consoleHistoryId": args.consoleHistoryId,
+        "dbNodeId": args.dbNodeId,
+    }, opts);
 }
 
 /**

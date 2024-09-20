@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSupportedVmwareSoftwareVersions(args: GetSupportedVmwareSoftwareVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedVmwareSoftwareVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", {
         "compartmentId": args.compartmentId,
@@ -103,7 +102,14 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
  * ```
  */
 export function getSupportedVmwareSoftwareVersionsOutput(args: GetSupportedVmwareSoftwareVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedVmwareSoftwareVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getSupportedVmwareSoftwareVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "hostShapeName": args.hostShapeName,
+        "version": args.version,
+        "versionToUpgrade": args.versionToUpgrade,
+    }, opts);
 }
 
 /**

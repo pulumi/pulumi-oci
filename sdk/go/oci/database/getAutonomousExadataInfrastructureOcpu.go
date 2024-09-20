@@ -71,14 +71,20 @@ type GetAutonomousExadataInfrastructureOcpuResult struct {
 
 func GetAutonomousExadataInfrastructureOcpuOutput(ctx *pulumi.Context, args GetAutonomousExadataInfrastructureOcpuOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousExadataInfrastructureOcpuResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousExadataInfrastructureOcpuResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousExadataInfrastructureOcpuResultOutput, error) {
 			args := v.(GetAutonomousExadataInfrastructureOcpuArgs)
-			r, err := GetAutonomousExadataInfrastructureOcpu(ctx, &args, opts...)
-			var s GetAutonomousExadataInfrastructureOcpuResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousExadataInfrastructureOcpuResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousExadataInfrastructureOcpuResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousExadataInfrastructureOcpuResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousExadataInfrastructureOcpuResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousExadataInfrastructureOcpuResultOutput)
 }
 

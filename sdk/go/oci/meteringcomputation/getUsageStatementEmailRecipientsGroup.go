@@ -78,14 +78,20 @@ type LookupUsageStatementEmailRecipientsGroupResult struct {
 
 func LookupUsageStatementEmailRecipientsGroupOutput(ctx *pulumi.Context, args LookupUsageStatementEmailRecipientsGroupOutputArgs, opts ...pulumi.InvokeOption) LookupUsageStatementEmailRecipientsGroupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupUsageStatementEmailRecipientsGroupResult, error) {
+		ApplyT(func(v interface{}) (LookupUsageStatementEmailRecipientsGroupResultOutput, error) {
 			args := v.(LookupUsageStatementEmailRecipientsGroupArgs)
-			r, err := LookupUsageStatementEmailRecipientsGroup(ctx, &args, opts...)
-			var s LookupUsageStatementEmailRecipientsGroupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupUsageStatementEmailRecipientsGroupResult
+			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getUsageStatementEmailRecipientsGroup:getUsageStatementEmailRecipientsGroup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupUsageStatementEmailRecipientsGroupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupUsageStatementEmailRecipientsGroupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupUsageStatementEmailRecipientsGroupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupUsageStatementEmailRecipientsGroupResultOutput)
 }
 

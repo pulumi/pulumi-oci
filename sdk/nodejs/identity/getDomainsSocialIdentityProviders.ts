@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsSocialIdentityProviders(args: GetDomainsSocialIdentityProvidersArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSocialIdentityProvidersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", {
         "authorization": args.authorization,
@@ -126,7 +125,18 @@ export interface GetDomainsSocialIdentityProvidersResult {
  * ```
  */
 export function getDomainsSocialIdentityProvidersOutput(args: GetDomainsSocialIdentityProvidersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSocialIdentityProvidersResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsSocialIdentityProviders(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "socialIdentityProviderCount": args.socialIdentityProviderCount,
+        "socialIdentityProviderFilter": args.socialIdentityProviderFilter,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

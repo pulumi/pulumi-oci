@@ -83,14 +83,20 @@ type LookupUsagePlanResult struct {
 
 func LookupUsagePlanOutput(ctx *pulumi.Context, args LookupUsagePlanOutputArgs, opts ...pulumi.InvokeOption) LookupUsagePlanResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupUsagePlanResult, error) {
+		ApplyT(func(v interface{}) (LookupUsagePlanResultOutput, error) {
 			args := v.(LookupUsagePlanArgs)
-			r, err := LookupUsagePlan(ctx, &args, opts...)
-			var s LookupUsagePlanResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupUsagePlanResult
+			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getUsagePlan:getUsagePlan", args, &rv, "", opts...)
+			if err != nil {
+				return LookupUsagePlanResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupUsagePlanResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupUsagePlanResultOutput), nil
+			}
+			return output, nil
 		}).(LookupUsagePlanResultOutput)
 }
 

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVantagePoints(args: GetVantagePointsArgs, opts?: pulumi.InvokeOptions): Promise<GetVantagePointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getVantagePoints:getVantagePoints", {
         "apmDomainId": args.apmDomainId,
@@ -96,7 +95,13 @@ export interface GetVantagePointsResult {
  * ```
  */
 export function getVantagePointsOutput(args: GetVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVantagePointsResult> {
-    return pulumi.output(args).apply((a: any) => getVantagePoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getVantagePoints:getVantagePoints", {
+        "apmDomainId": args.apmDomainId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "name": args.name,
+    }, opts);
 }
 
 /**

@@ -86,14 +86,20 @@ type GetVolumeGroupsResult struct {
 
 func GetVolumeGroupsOutput(ctx *pulumi.Context, args GetVolumeGroupsOutputArgs, opts ...pulumi.InvokeOption) GetVolumeGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVolumeGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetVolumeGroupsResultOutput, error) {
 			args := v.(GetVolumeGroupsArgs)
-			r, err := GetVolumeGroups(ctx, &args, opts...)
-			var s GetVolumeGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVolumeGroupsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVolumeGroups:getVolumeGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetVolumeGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVolumeGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVolumeGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetVolumeGroupsResultOutput)
 }
 

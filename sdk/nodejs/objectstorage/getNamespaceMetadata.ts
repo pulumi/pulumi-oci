@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 export function getNamespaceMetadata(args: GetNamespaceMetadataArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceMetadataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", {
         "namespace": args.namespace,
@@ -32,7 +31,10 @@ export interface GetNamespaceMetadataResult {
     readonly namespace: string;
 }
 export function getNamespaceMetadataOutput(args: GetNamespaceMetadataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceMetadataResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaceMetadata(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", {
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

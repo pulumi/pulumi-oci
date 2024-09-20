@@ -47,7 +47,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceGroupModules(args: GetManagedInstanceGroupModulesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupModulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceGroupModules:getManagedInstanceGroupModules", {
         "compartmentId": args.compartmentId,
@@ -149,7 +148,15 @@ export interface GetManagedInstanceGroupModulesResult {
  * ```
  */
 export function getManagedInstanceGroupModulesOutput(args: GetManagedInstanceGroupModulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupModulesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceGroupModules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceGroupModules:getManagedInstanceGroupModules", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "managedInstanceGroupId": args.managedInstanceGroupId,
+        "name": args.name,
+        "nameContains": args.nameContains,
+        "streamName": args.streamName,
+    }, opts);
 }
 
 /**

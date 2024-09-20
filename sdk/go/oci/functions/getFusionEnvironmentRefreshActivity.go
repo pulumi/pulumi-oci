@@ -91,14 +91,20 @@ type GetFusionEnvironmentRefreshActivityResult struct {
 
 func GetFusionEnvironmentRefreshActivityOutput(ctx *pulumi.Context, args GetFusionEnvironmentRefreshActivityOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentRefreshActivityResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentRefreshActivityResult, error) {
+		ApplyT(func(v interface{}) (GetFusionEnvironmentRefreshActivityResultOutput, error) {
 			args := v.(GetFusionEnvironmentRefreshActivityArgs)
-			r, err := GetFusionEnvironmentRefreshActivity(ctx, &args, opts...)
-			var s GetFusionEnvironmentRefreshActivityResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFusionEnvironmentRefreshActivityResult
+			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args, &rv, "", opts...)
+			if err != nil {
+				return GetFusionEnvironmentRefreshActivityResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFusionEnvironmentRefreshActivityResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFusionEnvironmentRefreshActivityResultOutput), nil
+			}
+			return output, nil
 		}).(GetFusionEnvironmentRefreshActivityResultOutput)
 }
 

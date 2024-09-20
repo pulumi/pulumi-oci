@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkspaceImportRequests(args: GetWorkspaceImportRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceImportRequestsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", {
         "filters": args.filters,
@@ -123,7 +122,16 @@ export interface GetWorkspaceImportRequestsResult {
  * ```
  */
 export function getWorkspaceImportRequestsOutput(args: GetWorkspaceImportRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceImportRequestsResult> {
-    return pulumi.output(args).apply((a: any) => getWorkspaceImportRequests(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", {
+        "filters": args.filters,
+        "importStatus": args.importStatus,
+        "name": args.name,
+        "projection": args.projection,
+        "timeEndedInMillis": args.timeEndedInMillis,
+        "timeStartedInMillis": args.timeStartedInMillis,
+        "workspaceId": args.workspaceId,
+    }, opts);
 }
 
 /**

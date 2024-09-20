@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkSources(args: GetNetworkSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSourcesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getNetworkSources:getNetworkSources", {
         "compartmentId": args.compartmentId,
@@ -103,7 +102,13 @@ export interface GetNetworkSourcesResult {
  * ```
  */
 export function getNetworkSourcesOutput(args: GetNetworkSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSourcesResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkSources(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getNetworkSources:getNetworkSources", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

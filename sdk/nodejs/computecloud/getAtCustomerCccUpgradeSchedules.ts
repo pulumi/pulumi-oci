@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  */
 export function getAtCustomerCccUpgradeSchedules(args?: GetAtCustomerCccUpgradeSchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetAtCustomerCccUpgradeSchedulesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", {
         "accessLevel": args.accessLevel,
@@ -132,7 +131,18 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
  * ```
  */
 export function getAtCustomerCccUpgradeSchedulesOutput(args?: GetAtCustomerCccUpgradeSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccUpgradeSchedulesResult> {
-    return pulumi.output(args).apply((a: any) => getAtCustomerCccUpgradeSchedules(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", {
+        "accessLevel": args.accessLevel,
+        "cccUpgradeScheduleId": args.cccUpgradeScheduleId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

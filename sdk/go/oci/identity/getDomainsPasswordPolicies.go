@@ -105,14 +105,20 @@ type GetDomainsPasswordPoliciesResult struct {
 
 func GetDomainsPasswordPoliciesOutput(ctx *pulumi.Context, args GetDomainsPasswordPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsPasswordPoliciesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsPasswordPoliciesResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsPasswordPoliciesResultOutput, error) {
 			args := v.(GetDomainsPasswordPoliciesArgs)
-			r, err := GetDomainsPasswordPolicies(ctx, &args, opts...)
-			var s GetDomainsPasswordPoliciesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsPasswordPoliciesResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsPasswordPolicies:getDomainsPasswordPolicies", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsPasswordPoliciesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsPasswordPoliciesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsPasswordPoliciesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsPasswordPoliciesResultOutput)
 }
 

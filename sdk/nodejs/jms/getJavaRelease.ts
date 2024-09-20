@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJavaRelease(args: GetJavaReleaseArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaReleaseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaRelease:getJavaRelease", {
         "releaseVersion": args.releaseVersion,
@@ -122,7 +121,10 @@ export interface GetJavaReleaseResult {
  * ```
  */
 export function getJavaReleaseOutput(args: GetJavaReleaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaReleaseResult> {
-    return pulumi.output(args).apply((a: any) => getJavaRelease(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJavaRelease:getJavaRelease", {
+        "releaseVersion": args.releaseVersion,
+    }, opts);
 }
 
 /**

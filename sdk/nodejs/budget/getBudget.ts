@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBudget(args: GetBudgetArgs, opts?: pulumi.InvokeOptions): Promise<GetBudgetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Budget/getBudget:getBudget", {
         "budgetId": args.budgetId,
@@ -155,7 +154,10 @@ export interface GetBudgetResult {
  * ```
  */
 export function getBudgetOutput(args: GetBudgetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBudgetResult> {
-    return pulumi.output(args).apply((a: any) => getBudget(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Budget/getBudget:getBudget", {
+        "budgetId": args.budgetId,
+    }, opts);
 }
 
 /**

@@ -67,14 +67,20 @@ type GetLogAnalyticsPreferenceResult struct {
 
 func GetLogAnalyticsPreferenceOutput(ctx *pulumi.Context, args GetLogAnalyticsPreferenceOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsPreferenceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsPreferenceResult, error) {
+		ApplyT(func(v interface{}) (GetLogAnalyticsPreferenceResultOutput, error) {
 			args := v.(GetLogAnalyticsPreferenceArgs)
-			r, err := GetLogAnalyticsPreference(ctx, &args, opts...)
-			var s GetLogAnalyticsPreferenceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetLogAnalyticsPreferenceResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args, &rv, "", opts...)
+			if err != nil {
+				return GetLogAnalyticsPreferenceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetLogAnalyticsPreferenceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetLogAnalyticsPreferenceResultOutput), nil
+			}
+			return output, nil
 		}).(GetLogAnalyticsPreferenceResultOutput)
 }
 

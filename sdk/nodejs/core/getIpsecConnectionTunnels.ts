@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecConnectionTunnels(args: GetIpsecConnectionTunnelsArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionTunnelsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetIpsecConnectionTunnelsResult {
  * ```
  */
 export function getIpsecConnectionTunnelsOutput(args: GetIpsecConnectionTunnelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelsResult> {
-    return pulumi.output(args).apply((a: any) => getIpsecConnectionTunnels(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels", {
+        "filters": args.filters,
+        "ipsecId": args.ipsecId,
+    }, opts);
 }
 
 /**

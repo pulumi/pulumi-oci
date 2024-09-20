@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemPrimaryDbInstance(args: GetDbSystemPrimaryDbInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemPrimaryDbInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", {
         "dbSystemId": args.dbSystemId,
@@ -69,7 +68,10 @@ export interface GetDbSystemPrimaryDbInstanceResult {
  * ```
  */
 export function getDbSystemPrimaryDbInstanceOutput(args: GetDbSystemPrimaryDbInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemPrimaryDbInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getDbSystemPrimaryDbInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", {
+        "dbSystemId": args.dbSystemId,
+    }, opts);
 }
 
 /**

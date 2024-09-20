@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOperationsInsightsWarehouseResourceUsageSummary(args: GetOperationsInsightsWarehouseResourceUsageSummaryArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsWarehouseResourceUsageSummaryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", {
         "operationsInsightsWarehouseId": args.operationsInsightsWarehouseId,
@@ -79,7 +78,10 @@ export interface GetOperationsInsightsWarehouseResourceUsageSummaryResult {
  * ```
  */
 export function getOperationsInsightsWarehouseResourceUsageSummaryOutput(args: GetOperationsInsightsWarehouseResourceUsageSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> {
-    return pulumi.output(args).apply((a: any) => getOperationsInsightsWarehouseResourceUsageSummary(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", {
+        "operationsInsightsWarehouseId": args.operationsInsightsWarehouseId,
+    }, opts);
 }
 
 /**

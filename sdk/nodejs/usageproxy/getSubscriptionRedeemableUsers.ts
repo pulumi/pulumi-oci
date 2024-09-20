@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptionRedeemableUsers(args: GetSubscriptionRedeemableUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionRedeemableUsersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", {
         "filters": args.filters,
@@ -82,7 +81,12 @@ export interface GetSubscriptionRedeemableUsersResult {
  * ```
  */
 export function getSubscriptionRedeemableUsersOutput(args: GetSubscriptionRedeemableUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRedeemableUsersResult> {
-    return pulumi.output(args).apply((a: any) => getSubscriptionRedeemableUsers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", {
+        "filters": args.filters,
+        "subscriptionId": args.subscriptionId,
+        "tenancyId": args.tenancyId,
+    }, opts);
 }
 
 /**

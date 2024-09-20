@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalListenerServices(args: GetExternalListenerServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalListenerServicesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", {
         "externalListenerId": args.externalListenerId,
@@ -95,7 +94,13 @@ export interface GetExternalListenerServicesResult {
  * ```
  */
 export function getExternalListenerServicesOutput(args: GetExternalListenerServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalListenerServicesResult> {
-    return pulumi.output(args).apply((a: any) => getExternalListenerServices(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", {
+        "externalListenerId": args.externalListenerId,
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+    }, opts);
 }
 
 /**

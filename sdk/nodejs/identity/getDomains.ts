@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomains(args: GetDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomains:getDomains", {
         "compartmentId": args.compartmentId,
@@ -164,7 +163,19 @@ export interface GetDomainsResult {
  * ```
  */
 export function getDomainsOutput(args: GetDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsResult> {
-    return pulumi.output(args).apply((a: any) => getDomains(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomains:getDomains", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "homeRegionUrl": args.homeRegionUrl,
+        "isHiddenOnLogin": args.isHiddenOnLogin,
+        "licenseType": args.licenseType,
+        "name": args.name,
+        "state": args.state,
+        "type": args.type,
+        "url": args.url,
+    }, opts);
 }
 
 /**

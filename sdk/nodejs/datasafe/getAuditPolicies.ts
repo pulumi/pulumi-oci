@@ -43,7 +43,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditPolicies(args: GetAuditPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditPolicies:getAuditPolicies", {
         "accessLevel": args.accessLevel,
@@ -162,7 +161,17 @@ export interface GetAuditPoliciesResult {
  * ```
  */
 export function getAuditPoliciesOutput(args: GetAuditPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getAuditPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditPolicies:getAuditPolicies", {
+        "accessLevel": args.accessLevel,
+        "auditPolicyId": args.auditPolicyId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

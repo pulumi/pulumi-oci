@@ -73,14 +73,20 @@ type GetNetworkFirewallPolicyUrlListsResult struct {
 
 func GetNetworkFirewallPolicyUrlListsOutput(ctx *pulumi.Context, args GetNetworkFirewallPolicyUrlListsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkFirewallPolicyUrlListsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNetworkFirewallPolicyUrlListsResult, error) {
+		ApplyT(func(v interface{}) (GetNetworkFirewallPolicyUrlListsResultOutput, error) {
 			args := v.(GetNetworkFirewallPolicyUrlListsArgs)
-			r, err := GetNetworkFirewallPolicyUrlLists(ctx, &args, opts...)
-			var s GetNetworkFirewallPolicyUrlListsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNetworkFirewallPolicyUrlListsResult
+			secret, err := ctx.InvokePackageRaw("oci:NetworkFirewall/getNetworkFirewallPolicyUrlLists:getNetworkFirewallPolicyUrlLists", args, &rv, "", opts...)
+			if err != nil {
+				return GetNetworkFirewallPolicyUrlListsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNetworkFirewallPolicyUrlListsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNetworkFirewallPolicyUrlListsResultOutput), nil
+			}
+			return output, nil
 		}).(GetNetworkFirewallPolicyUrlListsResultOutput)
 }
 

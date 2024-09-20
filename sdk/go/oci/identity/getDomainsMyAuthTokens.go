@@ -97,14 +97,20 @@ type GetDomainsMyAuthTokensResult struct {
 
 func GetDomainsMyAuthTokensOutput(ctx *pulumi.Context, args GetDomainsMyAuthTokensOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyAuthTokensResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsMyAuthTokensResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsMyAuthTokensResultOutput, error) {
 			args := v.(GetDomainsMyAuthTokensArgs)
-			r, err := GetDomainsMyAuthTokens(ctx, &args, opts...)
-			var s GetDomainsMyAuthTokensResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsMyAuthTokensResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyAuthTokens:getDomainsMyAuthTokens", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsMyAuthTokensResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsMyAuthTokensResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsMyAuthTokensResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsMyAuthTokensResultOutput)
 }
 

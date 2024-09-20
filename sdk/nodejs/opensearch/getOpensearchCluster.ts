@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOpensearchCluster(args: GetOpensearchClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetOpensearchClusterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", {
         "opensearchClusterId": args.opensearchClusterId,
@@ -239,7 +238,10 @@ export interface GetOpensearchClusterResult {
  * ```
  */
 export function getOpensearchClusterOutput(args: GetOpensearchClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchClusterResult> {
-    return pulumi.output(args).apply((a: any) => getOpensearchCluster(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", {
+        "opensearchClusterId": args.opensearchClusterId,
+    }, opts);
 }
 
 /**

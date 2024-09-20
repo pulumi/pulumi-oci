@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemHistoryEntries(args: GetDbSystemHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemHistoryEntriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", {
         "dbSystemId": args.dbSystemId,
@@ -74,7 +73,11 @@ export interface GetDbSystemHistoryEntriesResult {
  * ```
  */
 export function getDbSystemHistoryEntriesOutput(args: GetDbSystemHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemHistoryEntriesResult> {
-    return pulumi.output(args).apply((a: any) => getDbSystemHistoryEntries(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", {
+        "dbSystemId": args.dbSystemId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

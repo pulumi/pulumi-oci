@@ -107,14 +107,20 @@ type LookupSoftwareSourceResult struct {
 
 func LookupSoftwareSourceOutput(ctx *pulumi.Context, args LookupSoftwareSourceOutputArgs, opts ...pulumi.InvokeOption) LookupSoftwareSourceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupSoftwareSourceResult, error) {
+		ApplyT(func(v interface{}) (LookupSoftwareSourceResultOutput, error) {
 			args := v.(LookupSoftwareSourceArgs)
-			r, err := LookupSoftwareSource(ctx, &args, opts...)
-			var s LookupSoftwareSourceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupSoftwareSourceResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagement/getSoftwareSource:getSoftwareSource", args, &rv, "", opts...)
+			if err != nil {
+				return LookupSoftwareSourceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupSoftwareSourceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupSoftwareSourceResultOutput), nil
+			}
+			return output, nil
 		}).(LookupSoftwareSourceResultOutput)
 }
 

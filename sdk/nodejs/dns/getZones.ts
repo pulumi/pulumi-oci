@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getZones(args: GetZonesArgs, opts?: pulumi.InvokeOptions): Promise<GetZonesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getZones:getZones", {
         "compartmentId": args.compartmentId,
@@ -186,7 +185,22 @@ export interface GetZonesResult {
  * ```
  */
 export function getZonesOutput(args: GetZonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetZonesResult> {
-    return pulumi.output(args).apply((a: any) => getZones(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getZones:getZones", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "nameContains": args.nameContains,
+        "scope": args.scope,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "state": args.state,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+        "tsigKeyId": args.tsigKeyId,
+        "viewId": args.viewId,
+        "zoneType": args.zoneType,
+    }, opts);
 }
 
 /**

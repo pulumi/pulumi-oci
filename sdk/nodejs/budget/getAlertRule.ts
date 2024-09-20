@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertRule(args: GetAlertRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertRuleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Budget/getAlertRule:getAlertRule", {
         "alertRuleId": args.alertRuleId,
@@ -128,7 +127,11 @@ export interface GetAlertRuleResult {
  * ```
  */
 export function getAlertRuleOutput(args: GetAlertRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertRuleResult> {
-    return pulumi.output(args).apply((a: any) => getAlertRule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Budget/getAlertRule:getAlertRule", {
+        "alertRuleId": args.alertRuleId,
+        "budgetId": args.budgetId,
+    }, opts);
 }
 
 /**

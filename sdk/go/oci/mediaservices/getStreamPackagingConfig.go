@@ -92,14 +92,20 @@ type LookupStreamPackagingConfigResult struct {
 
 func LookupStreamPackagingConfigOutput(ctx *pulumi.Context, args LookupStreamPackagingConfigOutputArgs, opts ...pulumi.InvokeOption) LookupStreamPackagingConfigResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupStreamPackagingConfigResult, error) {
+		ApplyT(func(v interface{}) (LookupStreamPackagingConfigResultOutput, error) {
 			args := v.(LookupStreamPackagingConfigArgs)
-			r, err := LookupStreamPackagingConfig(ctx, &args, opts...)
-			var s LookupStreamPackagingConfigResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupStreamPackagingConfigResult
+			secret, err := ctx.InvokePackageRaw("oci:MediaServices/getStreamPackagingConfig:getStreamPackagingConfig", args, &rv, "", opts...)
+			if err != nil {
+				return LookupStreamPackagingConfigResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupStreamPackagingConfigResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupStreamPackagingConfigResultOutput), nil
+			}
+			return output, nil
 		}).(LookupStreamPackagingConfigResultOutput)
 }
 

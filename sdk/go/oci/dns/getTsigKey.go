@@ -85,14 +85,20 @@ type LookupTsigKeyResult struct {
 
 func LookupTsigKeyOutput(ctx *pulumi.Context, args LookupTsigKeyOutputArgs, opts ...pulumi.InvokeOption) LookupTsigKeyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupTsigKeyResult, error) {
+		ApplyT(func(v interface{}) (LookupTsigKeyResultOutput, error) {
 			args := v.(LookupTsigKeyArgs)
-			r, err := LookupTsigKey(ctx, &args, opts...)
-			var s LookupTsigKeyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupTsigKeyResult
+			secret, err := ctx.InvokePackageRaw("oci:Dns/getTsigKey:getTsigKey", args, &rv, "", opts...)
+			if err != nil {
+				return LookupTsigKeyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupTsigKeyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupTsigKeyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupTsigKeyResultOutput)
 }
 

@@ -75,14 +75,20 @@ type GetSubscriptionRewardResult struct {
 
 func GetSubscriptionRewardOutput(ctx *pulumi.Context, args GetSubscriptionRewardOutputArgs, opts ...pulumi.InvokeOption) GetSubscriptionRewardResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSubscriptionRewardResult, error) {
+		ApplyT(func(v interface{}) (GetSubscriptionRewardResultOutput, error) {
 			args := v.(GetSubscriptionRewardArgs)
-			r, err := GetSubscriptionReward(ctx, &args, opts...)
-			var s GetSubscriptionRewardResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSubscriptionRewardResult
+			secret, err := ctx.InvokePackageRaw("oci:UsageProxy/getSubscriptionReward:getSubscriptionReward", args, &rv, "", opts...)
+			if err != nil {
+				return GetSubscriptionRewardResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSubscriptionRewardResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSubscriptionRewardResultOutput), nil
+			}
+			return output, nil
 		}).(GetSubscriptionRewardResultOutput)
 }
 

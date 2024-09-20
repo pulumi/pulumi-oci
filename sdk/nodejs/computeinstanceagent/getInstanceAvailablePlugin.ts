@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceAvailablePlugin(args: GetInstanceAvailablePluginArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceAvailablePluginResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", {
         "compartmentId": args.compartmentId,
@@ -96,7 +95,14 @@ export interface GetInstanceAvailablePluginResult {
  * ```
  */
 export function getInstanceAvailablePluginOutput(args: GetInstanceAvailablePluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceAvailablePluginResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceAvailablePlugin(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "osName": args.osName,
+        "osVersion": args.osVersion,
+    }, opts);
 }
 
 /**

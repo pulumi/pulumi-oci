@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  */
 export function getOperationsInsightsPrivateEndpoints(args?: GetOperationsInsightsPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsPrivateEndpointsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", {
         "compartmentId": args.compartmentId,
@@ -138,7 +137,18 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
  * ```
  */
 export function getOperationsInsightsPrivateEndpointsOutput(args?: GetOperationsInsightsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getOperationsInsightsPrivateEndpoints(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isUsedForRacDbs": args.isUsedForRacDbs,
+        "opsiPrivateEndpointId": args.opsiPrivateEndpointId,
+        "states": args.states,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

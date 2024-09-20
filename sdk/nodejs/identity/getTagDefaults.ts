@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getTagDefaults(args?: GetTagDefaultsArgs, opts?: pulumi.InvokeOptions): Promise<GetTagDefaultsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagDefaults:getTagDefaults", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,15 @@ export interface GetTagDefaultsResult {
  * ```
  */
 export function getTagDefaultsOutput(args?: GetTagDefaultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagDefaultsResult> {
-    return pulumi.output(args).apply((a: any) => getTagDefaults(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getTagDefaults:getTagDefaults", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+        "tagDefinitionId": args.tagDefinitionId,
+    }, opts);
 }
 
 /**

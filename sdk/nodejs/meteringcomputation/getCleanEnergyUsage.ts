@@ -10,7 +10,6 @@ import * as utilities from "../utilities";
  * Returns the clean energy usage summary by region.
  */
 export function getCleanEnergyUsage(args: GetCleanEnergyUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetCleanEnergyUsageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", {
         "region": args.region,
@@ -54,7 +53,10 @@ export interface GetCleanEnergyUsageResult {
  * Returns the clean energy usage summary by region.
  */
 export function getCleanEnergyUsageOutput(args: GetCleanEnergyUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCleanEnergyUsageResult> {
-    return pulumi.output(args).apply((a: any) => getCleanEnergyUsage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", {
+        "region": args.region,
+    }, opts);
 }
 
 /**

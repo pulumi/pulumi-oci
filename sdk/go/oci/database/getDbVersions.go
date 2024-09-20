@@ -92,14 +92,20 @@ type GetDbVersionsResult struct {
 
 func GetDbVersionsOutput(ctx *pulumi.Context, args GetDbVersionsOutputArgs, opts ...pulumi.InvokeOption) GetDbVersionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbVersionsResult, error) {
+		ApplyT(func(v interface{}) (GetDbVersionsResultOutput, error) {
 			args := v.(GetDbVersionsArgs)
-			r, err := GetDbVersions(ctx, &args, opts...)
-			var s GetDbVersionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbVersionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbVersions:getDbVersions", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbVersionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbVersionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbVersionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbVersionsResultOutput)
 }
 

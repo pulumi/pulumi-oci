@@ -69,14 +69,20 @@ type GetDbSystemHistoryEntriesResult struct {
 
 func GetDbSystemHistoryEntriesOutput(ctx *pulumi.Context, args GetDbSystemHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemHistoryEntriesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbSystemHistoryEntriesResult, error) {
+		ApplyT(func(v interface{}) (GetDbSystemHistoryEntriesResultOutput, error) {
 			args := v.(GetDbSystemHistoryEntriesArgs)
-			r, err := GetDbSystemHistoryEntries(ctx, &args, opts...)
-			var s GetDbSystemHistoryEntriesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbSystemHistoryEntriesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbSystemHistoryEntriesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbSystemHistoryEntriesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbSystemHistoryEntriesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbSystemHistoryEntriesResultOutput)
 }
 

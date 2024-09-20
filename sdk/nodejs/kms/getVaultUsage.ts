@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVaultUsage(args: GetVaultUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetVaultUsageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getVaultUsage:getVaultUsage", {
         "vaultId": args.vaultId,
@@ -81,7 +80,10 @@ export interface GetVaultUsageResult {
  * ```
  */
 export function getVaultUsageOutput(args: GetVaultUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVaultUsageResult> {
-    return pulumi.output(args).apply((a: any) => getVaultUsage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getVaultUsage:getVaultUsage", {
+        "vaultId": args.vaultId,
+    }, opts);
 }
 
 /**

@@ -94,14 +94,20 @@ type GetNamespaceRulesResult struct {
 
 func GetNamespaceRulesOutput(ctx *pulumi.Context, args GetNamespaceRulesOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNamespaceRulesResult, error) {
+		ApplyT(func(v interface{}) (GetNamespaceRulesResultOutput, error) {
 			args := v.(GetNamespaceRulesArgs)
-			r, err := GetNamespaceRules(ctx, &args, opts...)
-			var s GetNamespaceRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNamespaceRulesResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespaceRules:getNamespaceRules", args, &rv, "", opts...)
+			if err != nil {
+				return GetNamespaceRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNamespaceRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNamespaceRulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetNamespaceRulesResultOutput)
 }
 

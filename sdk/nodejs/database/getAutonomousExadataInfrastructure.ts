@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousExadataInfrastructure(args: GetAutonomousExadataInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousExadataInfrastructureResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", {
         "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,
@@ -148,7 +147,10 @@ export interface GetAutonomousExadataInfrastructureResult {
  * ```
  */
 export function getAutonomousExadataInfrastructureOutput(args: GetAutonomousExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructureResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousExadataInfrastructure(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", {
+        "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,
+    }, opts);
 }
 
 /**

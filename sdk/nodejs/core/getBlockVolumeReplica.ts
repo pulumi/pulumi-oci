@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBlockVolumeReplica(args: GetBlockVolumeReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockVolumeReplicaResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", {
         "blockVolumeReplicaId": args.blockVolumeReplicaId,
@@ -106,7 +105,10 @@ export interface GetBlockVolumeReplicaResult {
  * ```
  */
 export function getBlockVolumeReplicaOutput(args: GetBlockVolumeReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockVolumeReplicaResult> {
-    return pulumi.output(args).apply((a: any) => getBlockVolumeReplica(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", {
+        "blockVolumeReplicaId": args.blockVolumeReplicaId,
+    }, opts);
 }
 
 /**

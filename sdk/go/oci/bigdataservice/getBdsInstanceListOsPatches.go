@@ -69,14 +69,20 @@ type GetBdsInstanceListOsPatchesResult struct {
 
 func GetBdsInstanceListOsPatchesOutput(ctx *pulumi.Context, args GetBdsInstanceListOsPatchesOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceListOsPatchesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceListOsPatchesResult, error) {
+		ApplyT(func(v interface{}) (GetBdsInstanceListOsPatchesResultOutput, error) {
 			args := v.(GetBdsInstanceListOsPatchesArgs)
-			r, err := GetBdsInstanceListOsPatches(ctx, &args, opts...)
-			var s GetBdsInstanceListOsPatchesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBdsInstanceListOsPatchesResult
+			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", args, &rv, "", opts...)
+			if err != nil {
+				return GetBdsInstanceListOsPatchesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBdsInstanceListOsPatchesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBdsInstanceListOsPatchesResultOutput), nil
+			}
+			return output, nil
 		}).(GetBdsInstanceListOsPatchesResultOutput)
 }
 

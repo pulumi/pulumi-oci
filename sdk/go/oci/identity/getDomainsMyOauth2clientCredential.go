@@ -115,14 +115,20 @@ type LookupDomainsMyOauth2clientCredentialResult struct {
 
 func LookupDomainsMyOauth2clientCredentialOutput(ctx *pulumi.Context, args LookupDomainsMyOauth2clientCredentialOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsMyOauth2clientCredentialResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsMyOauth2clientCredentialResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsMyOauth2clientCredentialResultOutput, error) {
 			args := v.(LookupDomainsMyOauth2clientCredentialArgs)
-			r, err := LookupDomainsMyOauth2clientCredential(ctx, &args, opts...)
-			var s LookupDomainsMyOauth2clientCredentialResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsMyOauth2clientCredentialResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyOauth2clientCredential:getDomainsMyOauth2clientCredential", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsMyOauth2clientCredentialResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsMyOauth2clientCredentialResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsMyOauth2clientCredentialResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsMyOauth2clientCredentialResultOutput)
 }
 

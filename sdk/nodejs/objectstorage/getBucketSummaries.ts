@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBucketSummaries(args: GetBucketSummariesArgs, opts?: pulumi.InvokeOptions): Promise<GetBucketSummariesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", {
         "compartmentId": args.compartmentId,
@@ -104,7 +103,12 @@ export interface GetBucketSummariesResult {
  * ```
  */
 export function getBucketSummariesOutput(args: GetBucketSummariesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBucketSummariesResult> {
-    return pulumi.output(args).apply((a: any) => getBucketSummaries(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

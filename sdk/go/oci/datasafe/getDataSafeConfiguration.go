@@ -81,14 +81,20 @@ type LookupDataSafeConfigurationResult struct {
 
 func LookupDataSafeConfigurationOutput(ctx *pulumi.Context, args LookupDataSafeConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupDataSafeConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDataSafeConfigurationResult, error) {
+		ApplyT(func(v interface{}) (LookupDataSafeConfigurationResultOutput, error) {
 			args := v.(LookupDataSafeConfigurationArgs)
-			r, err := LookupDataSafeConfiguration(ctx, &args, opts...)
-			var s LookupDataSafeConfigurationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDataSafeConfigurationResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDataSafeConfigurationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDataSafeConfigurationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDataSafeConfigurationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDataSafeConfigurationResultOutput)
 }
 

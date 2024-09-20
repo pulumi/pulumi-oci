@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGiVersions(args: GetGiVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetGiVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getGiVersions:getGiVersions", {
         "availabilityDomain": args.availabilityDomain,
@@ -90,7 +89,13 @@ export interface GetGiVersionsResult {
  * ```
  */
 export function getGiVersionsOutput(args: GetGiVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGiVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getGiVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getGiVersions:getGiVersions", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "shape": args.shape,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getMediaWorkflowTaskDeclaration(args?: GetMediaWorkflowTaskDeclarationArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaWorkflowTaskDeclarationResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", {
         "compartmentId": args.compartmentId,
@@ -102,7 +101,14 @@ export interface GetMediaWorkflowTaskDeclarationResult {
  * ```
  */
 export function getMediaWorkflowTaskDeclarationOutput(args?: GetMediaWorkflowTaskDeclarationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaWorkflowTaskDeclarationResult> {
-    return pulumi.output(args).apply((a: any) => getMediaWorkflowTaskDeclaration(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", {
+        "compartmentId": args.compartmentId,
+        "isCurrent": args.isCurrent,
+        "name": args.name,
+        "version": args.version,
+    }, opts);
 }
 
 /**

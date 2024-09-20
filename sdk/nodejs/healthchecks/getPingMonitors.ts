@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPingMonitors(args: GetPingMonitorsArgs, opts?: pulumi.InvokeOptions): Promise<GetPingMonitorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getPingMonitors:getPingMonitors", {
         "compartmentId": args.compartmentId,
@@ -105,7 +104,13 @@ export interface GetPingMonitorsResult {
  * ```
  */
 export function getPingMonitorsOutput(args: GetPingMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingMonitorsResult> {
-    return pulumi.output(args).apply((a: any) => getPingMonitors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:HealthChecks/getPingMonitors:getPingMonitors", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "homeRegion": args.homeRegion,
+    }, opts);
 }
 
 /**

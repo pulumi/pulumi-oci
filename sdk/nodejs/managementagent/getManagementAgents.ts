@@ -40,7 +40,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgents(args: GetManagementAgentsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgents:getManagementAgents", {
         "accessLevel": args.accessLevel,
@@ -228,7 +227,26 @@ export interface GetManagementAgentsResult {
  * ```
  */
 export function getManagementAgentsOutput(args: GetManagementAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentsResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgents(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgents:getManagementAgents", {
+        "accessLevel": args.accessLevel,
+        "availabilityStatus": args.availabilityStatus,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "dataSourceNames": args.dataSourceNames,
+        "dataSourceType": args.dataSourceType,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "gatewayIds": args.gatewayIds,
+        "hostId": args.hostId,
+        "installType": args.installType,
+        "isCustomerDeployed": args.isCustomerDeployed,
+        "platformTypes": args.platformTypes,
+        "pluginNames": args.pluginNames,
+        "state": args.state,
+        "versions": args.versions,
+        "waitForHostId": args.waitForHostId,
+    }, opts);
 }
 
 /**

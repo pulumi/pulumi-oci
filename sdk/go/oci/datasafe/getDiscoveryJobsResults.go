@@ -100,14 +100,20 @@ type GetDiscoveryJobsResultsResult struct {
 
 func GetDiscoveryJobsResultsOutput(ctx *pulumi.Context, args GetDiscoveryJobsResultsOutputArgs, opts ...pulumi.InvokeOption) GetDiscoveryJobsResultsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDiscoveryJobsResultsResult, error) {
+		ApplyT(func(v interface{}) (GetDiscoveryJobsResultsResultOutput, error) {
 			args := v.(GetDiscoveryJobsResultsArgs)
-			r, err := GetDiscoveryJobsResults(ctx, &args, opts...)
-			var s GetDiscoveryJobsResultsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDiscoveryJobsResultsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", args, &rv, "", opts...)
+			if err != nil {
+				return GetDiscoveryJobsResultsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDiscoveryJobsResultsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDiscoveryJobsResultsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDiscoveryJobsResultsResultOutput)
 }
 

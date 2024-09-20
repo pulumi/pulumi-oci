@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptions(args: GetSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ons/getSubscriptions:getSubscriptions", {
         "compartmentId": args.compartmentId,
@@ -92,7 +91,12 @@ export interface GetSubscriptionsResult {
  * ```
  */
 export function getSubscriptionsOutput(args: GetSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionsResult> {
-    return pulumi.output(args).apply((a: any) => getSubscriptions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ons/getSubscriptions:getSubscriptions", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "topicId": args.topicId,
+    }, opts);
 }
 
 /**

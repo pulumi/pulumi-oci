@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasks(args: GetManagedDatabaseSqlTuningAdvisorTasksArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks", {
         "filters": args.filters,
@@ -117,7 +116,16 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksResult {
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasks(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks", {
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "status": args.status,
+        "timeGreaterThanOrEqualTo": args.timeGreaterThanOrEqualTo,
+        "timeLessThanOrEqualTo": args.timeLessThanOrEqualTo,
+    }, opts);
 }
 
 /**

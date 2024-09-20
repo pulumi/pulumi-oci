@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptions(args: GetSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubSubscription/getSubscriptions:getSubscriptions", {
         "buyerEmail": args.buyerEmail,
@@ -128,7 +127,17 @@ export interface GetSubscriptionsResult {
  * ```
  */
 export function getSubscriptionsOutput(args: GetSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionsResult> {
-    return pulumi.output(args).apply((a: any) => getSubscriptions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsubSubscription/getSubscriptions:getSubscriptions", {
+        "buyerEmail": args.buyerEmail,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "isCommitInfoRequired": args.isCommitInfoRequired,
+        "planNumber": args.planNumber,
+        "subscriptionId": args.subscriptionId,
+        "xOneGatewaySubscriptionId": args.xOneGatewaySubscriptionId,
+        "xOneOriginRegion": args.xOneOriginRegion,
+    }, opts);
 }
 
 /**

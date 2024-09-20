@@ -80,14 +80,20 @@ type LookupExadataIormConfigResult struct {
 
 func LookupExadataIormConfigOutput(ctx *pulumi.Context, args LookupExadataIormConfigOutputArgs, opts ...pulumi.InvokeOption) LookupExadataIormConfigResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupExadataIormConfigResult, error) {
+		ApplyT(func(v interface{}) (LookupExadataIormConfigResultOutput, error) {
 			args := v.(LookupExadataIormConfigArgs)
-			r, err := LookupExadataIormConfig(ctx, &args, opts...)
-			var s LookupExadataIormConfigResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupExadataIormConfigResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getExadataIormConfig:getExadataIormConfig", args, &rv, "", opts...)
+			if err != nil {
+				return LookupExadataIormConfigResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupExadataIormConfigResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupExadataIormConfigResultOutput), nil
+			}
+			return output, nil
 		}).(LookupExadataIormConfigResultOutput)
 }
 

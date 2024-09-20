@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProxyDetail(opts?: pulumi.InvokeOptions): Promise<GetProxyDetailResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getProxyDetail:getProxyDetail", {
     }, opts);
@@ -53,5 +52,7 @@ export interface GetProxyDetailResult {
  * ```
  */
 export function getProxyDetailOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProxyDetailResult> {
-    return pulumi.output(getProxyDetail(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getProxyDetail:getProxyDetail", {
+    }, opts);
 }

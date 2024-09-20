@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getClusterPlacementGroups(args?: GetClusterPlacementGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterPlacementGroupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", {
         "ad": args.ad,
@@ -123,7 +122,17 @@ export interface GetClusterPlacementGroupsResult {
  * ```
  */
 export function getClusterPlacementGroupsOutput(args?: GetClusterPlacementGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterPlacementGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getClusterPlacementGroups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", {
+        "ad": args.ad,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "id": args.id,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

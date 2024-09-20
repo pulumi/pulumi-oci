@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Generates a recommended Cloud@Customer VM cluster network configuration.
  */
 export function getVmClusterRecommendedNetwork(args: GetVmClusterRecommendedNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterRecommendedNetworkResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", {
         "compartmentId": args.compartmentId,
@@ -147,7 +146,21 @@ export interface GetVmClusterRecommendedNetworkResult {
  * Generates a recommended Cloud@Customer VM cluster network configuration.
  */
 export function getVmClusterRecommendedNetworkOutput(args: GetVmClusterRecommendedNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterRecommendedNetworkResult> {
-    return pulumi.output(args).apply((a: any) => getVmClusterRecommendedNetwork(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", {
+        "compartmentId": args.compartmentId,
+        "dbServers": args.dbServers,
+        "definedTags": args.definedTags,
+        "displayName": args.displayName,
+        "dns": args.dns,
+        "drScanListenerPortTcp": args.drScanListenerPortTcp,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
+        "freeformTags": args.freeformTags,
+        "networks": args.networks,
+        "ntps": args.ntps,
+        "scanListenerPortTcp": args.scanListenerPortTcp,
+        "scanListenerPortTcpSsl": args.scanListenerPortTcpSsl,
+    }, opts);
 }
 
 /**

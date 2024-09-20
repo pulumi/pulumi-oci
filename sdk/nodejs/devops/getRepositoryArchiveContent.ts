@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryArchiveContent(args: GetRepositoryArchiveContentArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryArchiveContentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", {
         "format": args.format,
@@ -81,7 +80,12 @@ export interface GetRepositoryArchiveContentResult {
  * ```
  */
 export function getRepositoryArchiveContentOutput(args: GetRepositoryArchiveContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryArchiveContentResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryArchiveContent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", {
+        "format": args.format,
+        "refName": args.refName,
+        "repositoryId": args.repositoryId,
+    }, opts);
 }
 
 /**

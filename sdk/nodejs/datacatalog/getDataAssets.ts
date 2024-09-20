@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Returns a list of data assets within a data catalog.
  */
 export function getDataAssets(args: GetDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDataAssetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getDataAssets:getDataAssets", {
         "catalogId": args.catalogId,
@@ -112,7 +111,18 @@ export interface GetDataAssetsResult {
  * Returns a list of data assets within a data catalog.
  */
 export function getDataAssetsOutput(args: GetDataAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataAssetsResult> {
-    return pulumi.output(args).apply((a: any) => getDataAssets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getDataAssets:getDataAssets", {
+        "catalogId": args.catalogId,
+        "createdById": args.createdById,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "externalKey": args.externalKey,
+        "fields": args.fields,
+        "filters": args.filters,
+        "state": args.state,
+        "typeKey": args.typeKey,
+    }, opts);
 }
 
 /**

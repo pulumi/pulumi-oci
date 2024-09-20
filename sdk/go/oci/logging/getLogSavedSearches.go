@@ -79,14 +79,20 @@ type GetLogSavedSearchesResult struct {
 
 func GetLogSavedSearchesOutput(ctx *pulumi.Context, args GetLogSavedSearchesOutputArgs, opts ...pulumi.InvokeOption) GetLogSavedSearchesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetLogSavedSearchesResult, error) {
+		ApplyT(func(v interface{}) (GetLogSavedSearchesResultOutput, error) {
 			args := v.(GetLogSavedSearchesArgs)
-			r, err := GetLogSavedSearches(ctx, &args, opts...)
-			var s GetLogSavedSearchesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetLogSavedSearchesResult
+			secret, err := ctx.InvokePackageRaw("oci:Logging/getLogSavedSearches:getLogSavedSearches", args, &rv, "", opts...)
+			if err != nil {
+				return GetLogSavedSearchesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetLogSavedSearchesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetLogSavedSearchesResultOutput), nil
+			}
+			return output, nil
 		}).(GetLogSavedSearchesResultOutput)
 }
 

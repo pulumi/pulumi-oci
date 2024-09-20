@@ -84,14 +84,20 @@ type GetSendersResult struct {
 
 func GetSendersOutput(ctx *pulumi.Context, args GetSendersOutputArgs, opts ...pulumi.InvokeOption) GetSendersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSendersResult, error) {
+		ApplyT(func(v interface{}) (GetSendersResultOutput, error) {
 			args := v.(GetSendersArgs)
-			r, err := GetSenders(ctx, &args, opts...)
-			var s GetSendersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSendersResult
+			secret, err := ctx.InvokePackageRaw("oci:Email/getSenders:getSenders", args, &rv, "", opts...)
+			if err != nil {
+				return GetSendersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSendersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSendersResultOutput), nil
+			}
+			return output, nil
 		}).(GetSendersResultOutput)
 }
 

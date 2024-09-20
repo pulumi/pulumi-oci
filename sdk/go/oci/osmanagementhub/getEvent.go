@@ -105,14 +105,20 @@ type LookupEventResult struct {
 
 func LookupEventOutput(ctx *pulumi.Context, args LookupEventOutputArgs, opts ...pulumi.InvokeOption) LookupEventResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupEventResult, error) {
+		ApplyT(func(v interface{}) (LookupEventResultOutput, error) {
 			args := v.(LookupEventArgs)
-			r, err := LookupEvent(ctx, &args, opts...)
-			var s LookupEventResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupEventResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getEvent:getEvent", args, &rv, "", opts...)
+			if err != nil {
+				return LookupEventResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupEventResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupEventResultOutput), nil
+			}
+			return output, nil
 		}).(LookupEventResultOutput)
 }
 

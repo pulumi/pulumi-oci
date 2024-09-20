@@ -75,14 +75,20 @@ type GetScheduledRunResult struct {
 
 func GetScheduledRunOutput(ctx *pulumi.Context, args GetScheduledRunOutputArgs, opts ...pulumi.InvokeOption) GetScheduledRunResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetScheduledRunResult, error) {
+		ApplyT(func(v interface{}) (GetScheduledRunResultOutput, error) {
 			args := v.(GetScheduledRunArgs)
-			r, err := GetScheduledRun(ctx, &args, opts...)
-			var s GetScheduledRunResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetScheduledRunResult
+			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getScheduledRun:getScheduledRun", args, &rv, "", opts...)
+			if err != nil {
+				return GetScheduledRunResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetScheduledRunResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetScheduledRunResultOutput), nil
+			}
+			return output, nil
 		}).(GetScheduledRunResultOutput)
 }
 

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAccessRequests(args: GetAccessRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", {
         "compartmentId": args.compartmentId,
@@ -126,7 +125,16 @@ export interface GetAccessRequestsResult {
  * ```
  */
 export function getAccessRequestsOutput(args: GetAccessRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestsResult> {
-    return pulumi.output(args).apply((a: any) => getAccessRequests(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "resourceName": args.resourceName,
+        "resourceType": args.resourceType,
+        "state": args.state,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

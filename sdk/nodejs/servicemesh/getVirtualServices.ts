@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualServices(args: GetVirtualServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServicesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualServices:getVirtualServices", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,15 @@ export interface GetVirtualServicesResult {
  * ```
  */
 export function getVirtualServicesOutput(args: GetVirtualServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServicesResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualServices(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getVirtualServices:getVirtualServices", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "meshId": args.meshId,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

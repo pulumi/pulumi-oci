@@ -83,14 +83,20 @@ type GetNetworkFirewallPoliciesResult struct {
 
 func GetNetworkFirewallPoliciesOutput(ctx *pulumi.Context, args GetNetworkFirewallPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetNetworkFirewallPoliciesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNetworkFirewallPoliciesResult, error) {
+		ApplyT(func(v interface{}) (GetNetworkFirewallPoliciesResultOutput, error) {
 			args := v.(GetNetworkFirewallPoliciesArgs)
-			r, err := GetNetworkFirewallPolicies(ctx, &args, opts...)
-			var s GetNetworkFirewallPoliciesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNetworkFirewallPoliciesResult
+			secret, err := ctx.InvokePackageRaw("oci:NetworkFirewall/getNetworkFirewallPolicies:getNetworkFirewallPolicies", args, &rv, "", opts...)
+			if err != nil {
+				return GetNetworkFirewallPoliciesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNetworkFirewallPoliciesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNetworkFirewallPoliciesResultOutput), nil
+			}
+			return output, nil
 		}).(GetNetworkFirewallPoliciesResultOutput)
 }
 

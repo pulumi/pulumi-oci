@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getNewsReports(args?: GetNewsReportsArgs, opts?: pulumi.InvokeOptions): Promise<GetNewsReportsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getNewsReports:getNewsReports", {
         "compartmentId": args.compartmentId,
@@ -116,7 +115,16 @@ export interface GetNewsReportsResult {
  * ```
  */
 export function getNewsReportsOutput(args?: GetNewsReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNewsReportsResult> {
-    return pulumi.output(args).apply((a: any) => getNewsReports(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getNewsReports:getNewsReports", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "newsReportId": args.newsReportId,
+        "states": args.states,
+        "statuses": args.statuses,
+    }, opts);
 }
 
 /**

@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceMaintenanceReboot(args: GetInstanceMaintenanceRebootArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceMaintenanceRebootResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", {
         "instanceId": args.instanceId,
@@ -71,7 +70,10 @@ export interface GetInstanceMaintenanceRebootResult {
  * ```
  */
 export function getInstanceMaintenanceRebootOutput(args: GetInstanceMaintenanceRebootOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMaintenanceRebootResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceMaintenanceReboot(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", {
+        "instanceId": args.instanceId,
+    }, opts);
 }
 
 /**

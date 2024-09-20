@@ -85,14 +85,20 @@ type LookupProcessSetResult struct {
 
 func LookupProcessSetOutput(ctx *pulumi.Context, args LookupProcessSetOutputArgs, opts ...pulumi.InvokeOption) LookupProcessSetResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupProcessSetResult, error) {
+		ApplyT(func(v interface{}) (LookupProcessSetResultOutput, error) {
 			args := v.(LookupProcessSetArgs)
-			r, err := LookupProcessSet(ctx, &args, opts...)
-			var s LookupProcessSetResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupProcessSetResult
+			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getProcessSet:getProcessSet", args, &rv, "", opts...)
+			if err != nil {
+				return LookupProcessSetResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupProcessSetResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupProcessSetResultOutput), nil
+			}
+			return output, nil
 		}).(LookupProcessSetResultOutput)
 }
 

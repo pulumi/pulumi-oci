@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgAttachments(args: GetDrgAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgAttachmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgAttachments:getDrgAttachments", {
         "attachmentType": args.attachmentType,
@@ -158,7 +157,18 @@ export interface GetDrgAttachmentsResult {
  * ```
  */
 export function getDrgAttachmentsOutput(args: GetDrgAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgAttachmentsResult> {
-    return pulumi.output(args).apply((a: any) => getDrgAttachments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDrgAttachments:getDrgAttachments", {
+        "attachmentType": args.attachmentType,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "drgId": args.drgId,
+        "drgRouteTableId": args.drgRouteTableId,
+        "filters": args.filters,
+        "networkId": args.networkId,
+        "state": args.state,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

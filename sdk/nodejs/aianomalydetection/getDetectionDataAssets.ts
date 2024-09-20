@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectionDataAssets(args: GetDetectionDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionDataAssetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectionDataAssets:getDetectionDataAssets", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetDetectionDataAssetsResult {
  * ```
  */
 export function getDetectionDataAssetsOutput(args: GetDetectionDataAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionDataAssetsResult> {
-    return pulumi.output(args).apply((a: any) => getDetectionDataAssets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectionDataAssets:getDetectionDataAssets", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

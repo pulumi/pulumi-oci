@@ -69,14 +69,20 @@ type GetDbHomePatchesResult struct {
 
 func GetDbHomePatchesOutput(ctx *pulumi.Context, args GetDbHomePatchesOutputArgs, opts ...pulumi.InvokeOption) GetDbHomePatchesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbHomePatchesResult, error) {
+		ApplyT(func(v interface{}) (GetDbHomePatchesResultOutput, error) {
 			args := v.(GetDbHomePatchesArgs)
-			r, err := GetDbHomePatches(ctx, &args, opts...)
-			var s GetDbHomePatchesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbHomePatchesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbHomePatches:getDbHomePatches", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbHomePatchesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbHomePatchesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbHomePatchesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbHomePatchesResultOutput)
 }
 

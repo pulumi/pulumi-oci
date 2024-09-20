@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAgentDependencies(args: GetAgentDependenciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentDependenciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudBridge/getAgentDependencies:getAgentDependencies", {
         "agentId": args.agentId,
@@ -115,7 +114,15 @@ export interface GetAgentDependenciesResult {
  * ```
  */
 export function getAgentDependenciesOutput(args: GetAgentDependenciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentDependenciesResult> {
-    return pulumi.output(args).apply((a: any) => getAgentDependencies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudBridge/getAgentDependencies:getAgentDependencies", {
+        "agentId": args.agentId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "environmentId": args.environmentId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

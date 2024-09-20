@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOceInstances(args: GetOceInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetOceInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Oce/getOceInstances:getOceInstances", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetOceInstancesResult {
  * ```
  */
 export function getOceInstancesOutput(args: GetOceInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOceInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getOceInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Oce/getOceInstances:getOceInstances", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "tenancyId": args.tenancyId,
+    }, opts);
 }
 
 /**

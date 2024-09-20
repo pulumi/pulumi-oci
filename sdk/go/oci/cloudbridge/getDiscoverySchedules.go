@@ -84,14 +84,20 @@ type GetDiscoverySchedulesResult struct {
 
 func GetDiscoverySchedulesOutput(ctx *pulumi.Context, args GetDiscoverySchedulesOutputArgs, opts ...pulumi.InvokeOption) GetDiscoverySchedulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDiscoverySchedulesResult, error) {
+		ApplyT(func(v interface{}) (GetDiscoverySchedulesResultOutput, error) {
 			args := v.(GetDiscoverySchedulesArgs)
-			r, err := GetDiscoverySchedules(ctx, &args, opts...)
-			var s GetDiscoverySchedulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDiscoverySchedulesResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", args, &rv, "", opts...)
+			if err != nil {
+				return GetDiscoverySchedulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDiscoverySchedulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDiscoverySchedulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDiscoverySchedulesResultOutput)
 }
 

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJavaDownloadsJavaLicenseAcceptanceRecords(args: GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords", {
         "compartmentId": args.compartmentId,
@@ -111,7 +110,15 @@ export interface GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
  * ```
  */
 export function getJavaDownloadsJavaLicenseAcceptanceRecordsOutput(args: GetJavaDownloadsJavaLicenseAcceptanceRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> {
-    return pulumi.output(args).apply((a: any) => getJavaDownloadsJavaLicenseAcceptanceRecords(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "licenseType": args.licenseType,
+        "searchByUser": args.searchByUser,
+        "status": args.status,
+    }, opts);
 }
 
 /**

@@ -69,14 +69,20 @@ type GetDrgRouteDistributionStatementsResult struct {
 
 func GetDrgRouteDistributionStatementsOutput(ctx *pulumi.Context, args GetDrgRouteDistributionStatementsOutputArgs, opts ...pulumi.InvokeOption) GetDrgRouteDistributionStatementsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDrgRouteDistributionStatementsResult, error) {
+		ApplyT(func(v interface{}) (GetDrgRouteDistributionStatementsResultOutput, error) {
 			args := v.(GetDrgRouteDistributionStatementsArgs)
-			r, err := GetDrgRouteDistributionStatements(ctx, &args, opts...)
-			var s GetDrgRouteDistributionStatementsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDrgRouteDistributionStatementsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", args, &rv, "", opts...)
+			if err != nil {
+				return GetDrgRouteDistributionStatementsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDrgRouteDistributionStatementsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDrgRouteDistributionStatementsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDrgRouteDistributionStatementsResultOutput)
 }
 

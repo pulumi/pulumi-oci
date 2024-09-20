@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDecryptedData(args: GetDecryptedDataArgs, opts?: pulumi.InvokeOptions): Promise<GetDecryptedDataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getDecryptedData:getDecryptedData", {
         "associatedData": args.associatedData,
@@ -97,7 +96,13 @@ export interface GetDecryptedDataResult {
  * ```
  */
 export function getDecryptedDataOutput(args: GetDecryptedDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDecryptedDataResult> {
-    return pulumi.output(args).apply((a: any) => getDecryptedData(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getDecryptedData:getDecryptedData", {
+        "associatedData": args.associatedData,
+        "ciphertext": args.ciphertext,
+        "cryptoEndpoint": args.cryptoEndpoint,
+        "keyId": args.keyId,
+    }, opts);
 }
 
 /**

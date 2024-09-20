@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseCursorCacheStatements(args: GetManagedDatabaseCursorCacheStatementsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseCursorCacheStatementsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", {
         "filters": args.filters,
@@ -96,7 +95,14 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  * ```
  */
 export function getManagedDatabaseCursorCacheStatementsOutput(args: GetManagedDatabaseCursorCacheStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseCursorCacheStatementsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseCursorCacheStatements(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", {
+        "filters": args.filters,
+        "limit": args.limit,
+        "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "sqlText": args.sqlText,
+    }, opts);
 }
 
 /**

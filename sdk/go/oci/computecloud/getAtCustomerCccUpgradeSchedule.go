@@ -90,14 +90,20 @@ type LookupAtCustomerCccUpgradeScheduleResult struct {
 
 func LookupAtCustomerCccUpgradeScheduleOutput(ctx *pulumi.Context, args LookupAtCustomerCccUpgradeScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupAtCustomerCccUpgradeScheduleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAtCustomerCccUpgradeScheduleResult, error) {
+		ApplyT(func(v interface{}) (LookupAtCustomerCccUpgradeScheduleResultOutput, error) {
 			args := v.(LookupAtCustomerCccUpgradeScheduleArgs)
-			r, err := LookupAtCustomerCccUpgradeSchedule(ctx, &args, opts...)
-			var s LookupAtCustomerCccUpgradeScheduleResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAtCustomerCccUpgradeScheduleResult
+			secret, err := ctx.InvokePackageRaw("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAtCustomerCccUpgradeScheduleResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAtCustomerCccUpgradeScheduleResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAtCustomerCccUpgradeScheduleResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAtCustomerCccUpgradeScheduleResultOutput)
 }
 

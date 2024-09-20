@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentTimeAvailableForRefresh(args: GetFusionEnvironmentTimeAvailableForRefreshArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentTimeAvailableForRefreshResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentTimeAvailableForRefresh:getFusionEnvironmentTimeAvailableForRefresh", {
         "fusionEnvironmentId": args.fusionEnvironmentId,
@@ -71,7 +70,10 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshResult {
  * ```
  */
 export function getFusionEnvironmentTimeAvailableForRefreshOutput(args: GetFusionEnvironmentTimeAvailableForRefreshOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentTimeAvailableForRefreshResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentTimeAvailableForRefresh(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentTimeAvailableForRefresh:getFusionEnvironmentTimeAvailableForRefresh", {
+        "fusionEnvironmentId": args.fusionEnvironmentId,
+    }, opts);
 }
 
 /**

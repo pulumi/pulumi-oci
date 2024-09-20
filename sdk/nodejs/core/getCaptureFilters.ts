@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCaptureFilters(args: GetCaptureFiltersArgs, opts?: pulumi.InvokeOptions): Promise<GetCaptureFiltersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCaptureFilters:getCaptureFilters", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetCaptureFiltersResult {
  * ```
  */
 export function getCaptureFiltersOutput(args: GetCaptureFiltersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaptureFiltersResult> {
-    return pulumi.output(args).apply((a: any) => getCaptureFilters(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCaptureFilters:getCaptureFilters", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filterType": args.filterType,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -78,14 +78,20 @@ type GetDbSystemsUpgradeHistoryEntriesResult struct {
 
 func GetDbSystemsUpgradeHistoryEntriesOutput(ctx *pulumi.Context, args GetDbSystemsUpgradeHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemsUpgradeHistoryEntriesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbSystemsUpgradeHistoryEntriesResult, error) {
+		ApplyT(func(v interface{}) (GetDbSystemsUpgradeHistoryEntriesResultOutput, error) {
 			args := v.(GetDbSystemsUpgradeHistoryEntriesArgs)
-			r, err := GetDbSystemsUpgradeHistoryEntries(ctx, &args, opts...)
-			var s GetDbSystemsUpgradeHistoryEntriesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbSystemsUpgradeHistoryEntriesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbSystemsUpgradeHistoryEntriesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbSystemsUpgradeHistoryEntriesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbSystemsUpgradeHistoryEntriesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbSystemsUpgradeHistoryEntriesResultOutput)
 }
 

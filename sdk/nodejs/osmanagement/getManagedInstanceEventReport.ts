@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceEventReport(args: GetManagedInstanceEventReportArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceEventReportResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", {
         "compartmentId": args.compartmentId,
@@ -90,7 +89,13 @@ export interface GetManagedInstanceEventReportResult {
  * ```
  */
 export function getManagedInstanceEventReportOutput(args: GetManagedInstanceEventReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceEventReportResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceEventReport(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", {
+        "compartmentId": args.compartmentId,
+        "latestTimestampGreaterThanOrEqualTo": args.latestTimestampGreaterThanOrEqualTo,
+        "latestTimestampLessThan": args.latestTimestampLessThan,
+        "managedInstanceId": args.managedInstanceId,
+    }, opts);
 }
 
 /**

@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  */
 export function getLifecycleEnvironments(args?: GetLifecycleEnvironmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetLifecycleEnvironmentsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments", {
         "archType": args.archType,
@@ -162,7 +161,20 @@ export interface GetLifecycleEnvironmentsResult {
  * ```
  */
 export function getLifecycleEnvironmentsOutput(args?: GetLifecycleEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleEnvironmentsResult> {
-    return pulumi.output(args).apply((a: any) => getLifecycleEnvironments(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments", {
+        "archType": args.archType,
+        "compartmentId": args.compartmentId,
+        "displayNameContains": args.displayNameContains,
+        "displayNames": args.displayNames,
+        "filters": args.filters,
+        "lifecycleEnvironmentId": args.lifecycleEnvironmentId,
+        "locationNotEqualTos": args.locationNotEqualTos,
+        "locations": args.locations,
+        "osFamily": args.osFamily,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCustomerSecretKeys(args: GetCustomerSecretKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomerSecretKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", {
         "filters": args.filters,
@@ -79,7 +78,11 @@ export interface GetCustomerSecretKeysResult {
  * ```
  */
 export function getCustomerSecretKeysOutput(args: GetCustomerSecretKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomerSecretKeysResult> {
-    return pulumi.output(args).apply((a: any) => getCustomerSecretKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", {
+        "filters": args.filters,
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerDatabaseVersions(args: GetAutonomousContainerDatabaseVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabaseVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", {
         "compartmentId": args.compartmentId,
@@ -82,7 +81,12 @@ export interface GetAutonomousContainerDatabaseVersionsResult {
  * ```
  */
 export function getAutonomousContainerDatabaseVersionsOutput(args: GetAutonomousContainerDatabaseVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabaseVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "serviceComponent": args.serviceComponent,
+    }, opts);
 }
 
 /**

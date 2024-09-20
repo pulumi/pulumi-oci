@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRemediationRun(args: GetRemediationRunArgs, opts?: pulumi.InvokeOptions): Promise<GetRemediationRunResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Adm/getRemediationRun:getRemediationRun", {
         "remediationRunId": args.remediationRunId,
@@ -123,7 +122,10 @@ export interface GetRemediationRunResult {
  * ```
  */
 export function getRemediationRunOutput(args: GetRemediationRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRunResult> {
-    return pulumi.output(args).apply((a: any) => getRemediationRun(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Adm/getRemediationRun:getRemediationRun", {
+        "remediationRunId": args.remediationRunId,
+    }, opts);
 }
 
 /**

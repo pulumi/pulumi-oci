@@ -90,14 +90,20 @@ type GetIdentityProvidersResult struct {
 
 func GetIdentityProvidersOutput(ctx *pulumi.Context, args GetIdentityProvidersOutputArgs, opts ...pulumi.InvokeOption) GetIdentityProvidersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetIdentityProvidersResult, error) {
+		ApplyT(func(v interface{}) (GetIdentityProvidersResultOutput, error) {
 			args := v.(GetIdentityProvidersArgs)
-			r, err := GetIdentityProviders(ctx, &args, opts...)
-			var s GetIdentityProvidersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetIdentityProvidersResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getIdentityProviders:getIdentityProviders", args, &rv, "", opts...)
+			if err != nil {
+				return GetIdentityProvidersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetIdentityProvidersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetIdentityProvidersResultOutput), nil
+			}
+			return output, nil
 		}).(GetIdentityProvidersResultOutput)
 }
 

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadataInfrastructureUnAllocatedResource(args: GetExadataInfrastructureUnAllocatedResourceArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructureUnAllocatedResourceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", {
         "dbServers": args.dbServers,
@@ -99,7 +98,11 @@ export interface GetExadataInfrastructureUnAllocatedResourceResult {
  * ```
  */
 export function getExadataInfrastructureUnAllocatedResourceOutput(args: GetExadataInfrastructureUnAllocatedResourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureUnAllocatedResourceResult> {
-    return pulumi.output(args).apply((a: any) => getExadataInfrastructureUnAllocatedResource(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", {
+        "dbServers": args.dbServers,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
+    }, opts);
 }
 
 /**

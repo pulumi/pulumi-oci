@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalDbSystem(args: GetExternalDbSystemArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbSystemResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", {
         "externalDbSystemId": args.externalDbSystemId,
@@ -127,7 +126,10 @@ export interface GetExternalDbSystemResult {
  * ```
  */
 export function getExternalDbSystemOutput(args: GetExternalDbSystemOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemResult> {
-    return pulumi.output(args).apply((a: any) => getExternalDbSystem(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", {
+        "externalDbSystemId": args.externalDbSystemId,
+    }, opts);
 }
 
 /**

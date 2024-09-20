@@ -127,14 +127,20 @@ type GetSecurityAssessmentSecurityFeaturesResult struct {
 
 func GetSecurityAssessmentSecurityFeaturesOutput(ctx *pulumi.Context, args GetSecurityAssessmentSecurityFeaturesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentSecurityFeaturesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentSecurityFeaturesResult, error) {
+		ApplyT(func(v interface{}) (GetSecurityAssessmentSecurityFeaturesResultOutput, error) {
 			args := v.(GetSecurityAssessmentSecurityFeaturesArgs)
-			r, err := GetSecurityAssessmentSecurityFeatures(ctx, &args, opts...)
-			var s GetSecurityAssessmentSecurityFeaturesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSecurityAssessmentSecurityFeaturesResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", args, &rv, "", opts...)
+			if err != nil {
+				return GetSecurityAssessmentSecurityFeaturesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSecurityAssessmentSecurityFeaturesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSecurityAssessmentSecurityFeaturesResultOutput), nil
+			}
+			return output, nil
 		}).(GetSecurityAssessmentSecurityFeaturesResultOutput)
 }
 

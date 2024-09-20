@@ -75,14 +75,20 @@ type GetBackupDestinationsResult struct {
 
 func GetBackupDestinationsOutput(ctx *pulumi.Context, args GetBackupDestinationsOutputArgs, opts ...pulumi.InvokeOption) GetBackupDestinationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBackupDestinationsResult, error) {
+		ApplyT(func(v interface{}) (GetBackupDestinationsResultOutput, error) {
 			args := v.(GetBackupDestinationsArgs)
-			r, err := GetBackupDestinations(ctx, &args, opts...)
-			var s GetBackupDestinationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBackupDestinationsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getBackupDestinations:getBackupDestinations", args, &rv, "", opts...)
+			if err != nil {
+				return GetBackupDestinationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBackupDestinationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBackupDestinationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetBackupDestinationsResultOutput)
 }
 

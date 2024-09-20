@@ -132,14 +132,20 @@ type LookupDomainsGrantResult struct {
 
 func LookupDomainsGrantOutput(ctx *pulumi.Context, args LookupDomainsGrantOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsGrantResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsGrantResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsGrantResultOutput, error) {
 			args := v.(LookupDomainsGrantArgs)
-			r, err := LookupDomainsGrant(ctx, &args, opts...)
-			var s LookupDomainsGrantResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsGrantResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsGrant:getDomainsGrant", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsGrantResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsGrantResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsGrantResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsGrantResultOutput)
 }
 

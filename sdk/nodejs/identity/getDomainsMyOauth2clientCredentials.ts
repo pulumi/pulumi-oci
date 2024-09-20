@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyOauth2clientCredentials(args: GetDomainsMyOauth2clientCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyOauth2clientCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyOauth2clientCredentials:getDomainsMyOauth2clientCredentials", {
         "authorization": args.authorization,
@@ -126,7 +125,18 @@ export interface GetDomainsMyOauth2clientCredentialsResult {
  * ```
  */
 export function getDomainsMyOauth2clientCredentialsOutput(args: GetDomainsMyOauth2clientCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyOauth2clientCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyOauth2clientCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyOauth2clientCredentials:getDomainsMyOauth2clientCredentials", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myOauth2clientCredentialCount": args.myOauth2clientCredentialCount,
+        "myOauth2clientCredentialFilter": args.myOauth2clientCredentialFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

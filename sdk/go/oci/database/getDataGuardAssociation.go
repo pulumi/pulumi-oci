@@ -126,14 +126,20 @@ type LookupDataGuardAssociationResult struct {
 
 func LookupDataGuardAssociationOutput(ctx *pulumi.Context, args LookupDataGuardAssociationOutputArgs, opts ...pulumi.InvokeOption) LookupDataGuardAssociationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDataGuardAssociationResult, error) {
+		ApplyT(func(v interface{}) (LookupDataGuardAssociationResultOutput, error) {
 			args := v.(LookupDataGuardAssociationArgs)
-			r, err := LookupDataGuardAssociation(ctx, &args, opts...)
-			var s LookupDataGuardAssociationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDataGuardAssociationResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDataGuardAssociation:getDataGuardAssociation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDataGuardAssociationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDataGuardAssociationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDataGuardAssociationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDataGuardAssociationResultOutput)
 }
 

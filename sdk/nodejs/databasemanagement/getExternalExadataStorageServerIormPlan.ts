@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalExadataStorageServerIormPlan(args: GetExternalExadataStorageServerIormPlanArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageServerIormPlanResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", {
         "externalExadataStorageServerId": args.externalExadataStorageServerId,
@@ -79,7 +78,10 @@ export interface GetExternalExadataStorageServerIormPlanResult {
  * ```
  */
 export function getExternalExadataStorageServerIormPlanOutput(args: GetExternalExadataStorageServerIormPlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerIormPlanResult> {
-    return pulumi.output(args).apply((a: any) => getExternalExadataStorageServerIormPlan(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", {
+        "externalExadataStorageServerId": args.externalExadataStorageServerId,
+    }, opts);
 }
 
 /**

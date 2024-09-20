@@ -80,14 +80,20 @@ type GetProfilesResult struct {
 
 func GetProfilesOutput(ctx *pulumi.Context, args GetProfilesOutputArgs, opts ...pulumi.InvokeOption) GetProfilesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetProfilesResult, error) {
+		ApplyT(func(v interface{}) (GetProfilesResultOutput, error) {
 			args := v.(GetProfilesArgs)
-			r, err := GetProfiles(ctx, &args, opts...)
-			var s GetProfilesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetProfilesResult
+			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getProfiles:getProfiles", args, &rv, "", opts...)
+			if err != nil {
+				return GetProfilesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetProfilesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetProfilesResultOutput), nil
+			}
+			return output, nil
 		}).(GetProfilesResultOutput)
 }
 

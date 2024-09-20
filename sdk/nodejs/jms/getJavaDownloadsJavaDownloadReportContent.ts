@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJavaDownloadsJavaDownloadReportContent(args: GetJavaDownloadsJavaDownloadReportContentArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaDownloadsJavaDownloadReportContentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", {
         "javaDownloadReportId": args.javaDownloadReportId,
@@ -65,7 +64,10 @@ export interface GetJavaDownloadsJavaDownloadReportContentResult {
  * ```
  */
 export function getJavaDownloadsJavaDownloadReportContentOutput(args: GetJavaDownloadsJavaDownloadReportContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadReportContentResult> {
-    return pulumi.output(args).apply((a: any) => getJavaDownloadsJavaDownloadReportContent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", {
+        "javaDownloadReportId": args.javaDownloadReportId,
+    }, opts);
 }
 
 /**

@@ -87,14 +87,20 @@ type GetCategoryResult struct {
 
 func GetCategoryOutput(ctx *pulumi.Context, args GetCategoryOutputArgs, opts ...pulumi.InvokeOption) GetCategoryResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCategoryResult, error) {
+		ApplyT(func(v interface{}) (GetCategoryResultOutput, error) {
 			args := v.(GetCategoryArgs)
-			r, err := GetCategory(ctx, &args, opts...)
-			var s GetCategoryResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCategoryResult
+			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getCategory:getCategory", args, &rv, "", opts...)
+			if err != nil {
+				return GetCategoryResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCategoryResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCategoryResultOutput), nil
+			}
+			return output, nil
 		}).(GetCategoryResultOutput)
 }
 

@@ -69,14 +69,20 @@ type GetFleetDiagnosesResult struct {
 
 func GetFleetDiagnosesOutput(ctx *pulumi.Context, args GetFleetDiagnosesOutputArgs, opts ...pulumi.InvokeOption) GetFleetDiagnosesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFleetDiagnosesResult, error) {
+		ApplyT(func(v interface{}) (GetFleetDiagnosesResultOutput, error) {
 			args := v.(GetFleetDiagnosesArgs)
-			r, err := GetFleetDiagnoses(ctx, &args, opts...)
-			var s GetFleetDiagnosesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFleetDiagnosesResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", args, &rv, "", opts...)
+			if err != nil {
+				return GetFleetDiagnosesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFleetDiagnosesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFleetDiagnosesResultOutput), nil
+			}
+			return output, nil
 		}).(GetFleetDiagnosesResultOutput)
 }
 

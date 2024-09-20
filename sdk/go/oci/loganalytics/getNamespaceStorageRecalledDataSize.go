@@ -79,14 +79,20 @@ type GetNamespaceStorageRecalledDataSizeResult struct {
 
 func GetNamespaceStorageRecalledDataSizeOutput(ctx *pulumi.Context, args GetNamespaceStorageRecalledDataSizeOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceStorageRecalledDataSizeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNamespaceStorageRecalledDataSizeResult, error) {
+		ApplyT(func(v interface{}) (GetNamespaceStorageRecalledDataSizeResultOutput, error) {
 			args := v.(GetNamespaceStorageRecalledDataSizeArgs)
-			r, err := GetNamespaceStorageRecalledDataSize(ctx, &args, opts...)
-			var s GetNamespaceStorageRecalledDataSizeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNamespaceStorageRecalledDataSizeResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", args, &rv, "", opts...)
+			if err != nil {
+				return GetNamespaceStorageRecalledDataSizeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNamespaceStorageRecalledDataSizeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNamespaceStorageRecalledDataSizeResultOutput), nil
+			}
+			return output, nil
 		}).(GetNamespaceStorageRecalledDataSizeResultOutput)
 }
 

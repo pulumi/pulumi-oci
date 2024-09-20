@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExsiHost(args: GetExsiHostArgs, opts?: pulumi.InvokeOptions): Promise<GetExsiHostResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getExsiHost:getExsiHost", {
         "esxiHostId": args.esxiHostId,
@@ -197,7 +196,10 @@ export interface GetExsiHostResult {
  * ```
  */
 export function getExsiHostOutput(args: GetExsiHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExsiHostResult> {
-    return pulumi.output(args).apply((a: any) => getExsiHost(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getExsiHost:getExsiHost", {
+        "esxiHostId": args.esxiHostId,
+    }, opts);
 }
 
 /**

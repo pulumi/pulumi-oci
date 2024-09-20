@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getExternalAsmInstances(args?: GetExternalAsmInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmInstancesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsmInstances:getExternalAsmInstances", {
         "compartmentId": args.compartmentId,
@@ -100,7 +99,14 @@ export interface GetExternalAsmInstancesResult {
  * ```
  */
 export function getExternalAsmInstancesOutput(args?: GetExternalAsmInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getExternalAsmInstances(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmInstances:getExternalAsmInstances", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "externalAsmId": args.externalAsmId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOpsiConfigurationConfigurationItem(args: GetOpsiConfigurationConfigurationItemArgs, opts?: pulumi.InvokeOptions): Promise<GetOpsiConfigurationConfigurationItemResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", {
         "compartmentId": args.compartmentId,
@@ -111,7 +110,14 @@ export interface GetOpsiConfigurationConfigurationItemResult {
  * ```
  */
 export function getOpsiConfigurationConfigurationItemOutput(args: GetOpsiConfigurationConfigurationItemOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpsiConfigurationConfigurationItemResult> {
-    return pulumi.output(args).apply((a: any) => getOpsiConfigurationConfigurationItem(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", {
+        "compartmentId": args.compartmentId,
+        "configItemFields": args.configItemFields,
+        "configItemsApplicableContexts": args.configItemsApplicableContexts,
+        "name": args.name,
+        "opsiConfigType": args.opsiConfigType,
+    }, opts);
 }
 
 /**

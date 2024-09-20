@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemShapes(args: GetDbSystemShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemShapes:getDbSystemShapes", {
         "availabilityDomain": args.availabilityDomain,
@@ -82,7 +81,12 @@ export interface GetDbSystemShapesResult {
  * ```
  */
 export function getDbSystemShapesOutput(args: GetDbSystemShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemShapesResult> {
-    return pulumi.output(args).apply((a: any) => getDbSystemShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbSystemShapes:getDbSystemShapes", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

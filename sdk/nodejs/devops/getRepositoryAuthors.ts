@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryAuthors(args: GetRepositoryAuthorsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryAuthorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", {
         "filters": args.filters,
@@ -82,7 +81,12 @@ export interface GetRepositoryAuthorsResult {
  * ```
  */
 export function getRepositoryAuthorsOutput(args: GetRepositoryAuthorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryAuthorsResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryAuthors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", {
+        "filters": args.filters,
+        "refName": args.refName,
+        "repositoryId": args.repositoryId,
+    }, opts);
 }
 
 /**

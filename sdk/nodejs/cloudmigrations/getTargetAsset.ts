@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetAsset(args: GetTargetAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAssetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudMigrations/getTargetAsset:getTargetAsset", {
         "targetAssetId": args.targetAssetId,
@@ -147,7 +146,10 @@ export interface GetTargetAssetResult {
  * ```
  */
 export function getTargetAssetOutput(args: GetTargetAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAssetResult> {
-    return pulumi.output(args).apply((a: any) => getTargetAsset(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudMigrations/getTargetAsset:getTargetAsset", {
+        "targetAssetId": args.targetAssetId,
+    }, opts);
 }
 
 /**

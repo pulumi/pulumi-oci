@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogs(args: GetLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetLogsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getLogs:getLogs", {
         "displayName": args.displayName,
@@ -126,7 +125,16 @@ export interface GetLogsResult {
  * ```
  */
 export function getLogsOutput(args: GetLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogsResult> {
-    return pulumi.output(args).apply((a: any) => getLogs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Logging/getLogs:getLogs", {
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "logGroupId": args.logGroupId,
+        "logType": args.logType,
+        "sourceResource": args.sourceResource,
+        "sourceService": args.sourceService,
+        "state": args.state,
+    }, opts);
 }
 
 /**

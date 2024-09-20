@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserDataAccessContainer(args: GetManagedDatabaseUserDataAccessContainerArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserDataAccessContainerResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", {
         "managedDatabaseId": args.managedDatabaseId,
@@ -90,7 +89,12 @@ export interface GetManagedDatabaseUserDataAccessContainerResult {
  * ```
  */
 export function getManagedDatabaseUserDataAccessContainerOutput(args: GetManagedDatabaseUserDataAccessContainerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserDataAccessContainerResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserDataAccessContainer(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", {
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "userName": args.userName,
+    }, opts);
 }
 
 /**

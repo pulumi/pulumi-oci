@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWebAppFirewallPolicy(args: GetWebAppFirewallPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetWebAppFirewallPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getWebAppFirewallPolicy:getWebAppFirewallPolicy", {
         "webAppFirewallPolicyId": args.webAppFirewallPolicyId,
@@ -127,7 +126,10 @@ export interface GetWebAppFirewallPolicyResult {
  * ```
  */
 export function getWebAppFirewallPolicyOutput(args: GetWebAppFirewallPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWebAppFirewallPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getWebAppFirewallPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waf/getWebAppFirewallPolicy:getWebAppFirewallPolicy", {
+        "webAppFirewallPolicyId": args.webAppFirewallPolicyId,
+    }, opts);
 }
 
 /**

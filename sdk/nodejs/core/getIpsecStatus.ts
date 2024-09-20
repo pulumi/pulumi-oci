@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecStatus(args: GetIpsecStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecStatusResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecStatus:getIpsecStatus", {
         "filters": args.filters,
@@ -84,7 +83,11 @@ export interface GetIpsecStatusResult {
  * ```
  */
 export function getIpsecStatusOutput(args: GetIpsecStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecStatusResult> {
-    return pulumi.output(args).apply((a: any) => getIpsecStatus(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpsecStatus:getIpsecStatus", {
+        "filters": args.filters,
+        "ipsecId": args.ipsecId,
+    }, opts);
 }
 
 /**

@@ -71,14 +71,20 @@ type GetImportableAgentEntitiesResult struct {
 
 func GetImportableAgentEntitiesOutput(ctx *pulumi.Context, args GetImportableAgentEntitiesOutputArgs, opts ...pulumi.InvokeOption) GetImportableAgentEntitiesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetImportableAgentEntitiesResult, error) {
+		ApplyT(func(v interface{}) (GetImportableAgentEntitiesResultOutput, error) {
 			args := v.(GetImportableAgentEntitiesArgs)
-			r, err := GetImportableAgentEntities(ctx, &args, opts...)
-			var s GetImportableAgentEntitiesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetImportableAgentEntitiesResult
+			secret, err := ctx.InvokePackageRaw("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", args, &rv, "", opts...)
+			if err != nil {
+				return GetImportableAgentEntitiesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetImportableAgentEntitiesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetImportableAgentEntitiesResultOutput), nil
+			}
+			return output, nil
 		}).(GetImportableAgentEntitiesResultOutput)
 }
 

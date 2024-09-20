@@ -98,14 +98,20 @@ type GetOperationsInsightsPrivateEndpointsResult struct {
 
 func GetOperationsInsightsPrivateEndpointsOutput(ctx *pulumi.Context, args GetOperationsInsightsPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetOperationsInsightsPrivateEndpointsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetOperationsInsightsPrivateEndpointsResult, error) {
+		ApplyT(func(v interface{}) (GetOperationsInsightsPrivateEndpointsResultOutput, error) {
 			args := v.(GetOperationsInsightsPrivateEndpointsArgs)
-			r, err := GetOperationsInsightsPrivateEndpoints(ctx, &args, opts...)
-			var s GetOperationsInsightsPrivateEndpointsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetOperationsInsightsPrivateEndpointsResult
+			secret, err := ctx.InvokePackageRaw("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", args, &rv, "", opts...)
+			if err != nil {
+				return GetOperationsInsightsPrivateEndpointsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetOperationsInsightsPrivateEndpointsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetOperationsInsightsPrivateEndpointsResultOutput), nil
+			}
+			return output, nil
 		}).(GetOperationsInsightsPrivateEndpointsResultOutput)
 }
 

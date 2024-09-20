@@ -84,14 +84,20 @@ type GetSecurityRecipesResult struct {
 
 func GetSecurityRecipesOutput(ctx *pulumi.Context, args GetSecurityRecipesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityRecipesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSecurityRecipesResult, error) {
+		ApplyT(func(v interface{}) (GetSecurityRecipesResultOutput, error) {
 			args := v.(GetSecurityRecipesArgs)
-			r, err := GetSecurityRecipes(ctx, &args, opts...)
-			var s GetSecurityRecipesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSecurityRecipesResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", args, &rv, "", opts...)
+			if err != nil {
+				return GetSecurityRecipesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSecurityRecipesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSecurityRecipesResultOutput), nil
+			}
+			return output, nil
 		}).(GetSecurityRecipesResultOutput)
 }
 

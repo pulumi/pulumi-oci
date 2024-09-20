@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementStation(args: GetManagementStationArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementStationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagementStation:getManagementStation", {
         "managementStationId": args.managementStationId,
@@ -144,7 +143,10 @@ export interface GetManagementStationResult {
  * ```
  */
 export function getManagementStationOutput(args: GetManagementStationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementStationResult> {
-    return pulumi.output(args).apply((a: any) => getManagementStation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagementStation:getManagementStation", {
+        "managementStationId": args.managementStationId,
+    }, opts);
 }
 
 /**

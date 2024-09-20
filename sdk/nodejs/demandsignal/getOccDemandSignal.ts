@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOccDemandSignal(args: GetOccDemandSignalArgs, opts?: pulumi.InvokeOptions): Promise<GetOccDemandSignalResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", {
         "occDemandSignalId": args.occDemandSignalId,
@@ -112,7 +111,10 @@ export interface GetOccDemandSignalResult {
  * ```
  */
 export function getOccDemandSignalOutput(args: GetOccDemandSignalOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccDemandSignalResult> {
-    return pulumi.output(args).apply((a: any) => getOccDemandSignal(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", {
+        "occDemandSignalId": args.occDemandSignalId,
+    }, opts);
 }
 
 /**

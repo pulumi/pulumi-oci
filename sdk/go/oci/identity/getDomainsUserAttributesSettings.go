@@ -60,14 +60,20 @@ type GetDomainsUserAttributesSettingsResult struct {
 
 func GetDomainsUserAttributesSettingsOutput(ctx *pulumi.Context, args GetDomainsUserAttributesSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsUserAttributesSettingsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsUserAttributesSettingsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsUserAttributesSettingsResultOutput, error) {
 			args := v.(GetDomainsUserAttributesSettingsArgs)
-			r, err := GetDomainsUserAttributesSettings(ctx, &args, opts...)
-			var s GetDomainsUserAttributesSettingsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsUserAttributesSettingsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsUserAttributesSettingsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsUserAttributesSettingsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsUserAttributesSettingsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsUserAttributesSettingsResultOutput)
 }
 

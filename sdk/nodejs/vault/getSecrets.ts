@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecrets(args: GetSecretsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Vault/getSecrets:getSecrets", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetSecretsResult {
  * ```
  */
 export function getSecretsOutput(args: GetSecretsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretsResult> {
-    return pulumi.output(args).apply((a: any) => getSecrets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Vault/getSecrets:getSecrets", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "state": args.state,
+        "vaultId": args.vaultId,
+    }, opts);
 }
 
 /**

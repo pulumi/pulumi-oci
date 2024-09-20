@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystem(args: GetDbSystemArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getDbSystem:getDbSystem", {
         "dbSystemId": args.dbSystemId,
@@ -171,7 +170,11 @@ export interface GetDbSystemResult {
  * ```
  */
 export function getDbSystemOutput(args: GetDbSystemOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemResult> {
-    return pulumi.output(args).apply((a: any) => getDbSystem(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Psql/getDbSystem:getDbSystem", {
+        "dbSystemId": args.dbSystemId,
+        "excludedFields": args.excludedFields,
+    }, opts);
 }
 
 /**

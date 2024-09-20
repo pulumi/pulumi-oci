@@ -93,14 +93,20 @@ type GetDbSystemsResult struct {
 
 func GetDbSystemsOutput(ctx *pulumi.Context, args GetDbSystemsOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbSystemsResult, error) {
+		ApplyT(func(v interface{}) (GetDbSystemsResultOutput, error) {
 			args := v.(GetDbSystemsArgs)
-			r, err := GetDbSystems(ctx, &args, opts...)
-			var s GetDbSystemsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbSystemsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbSystems:getDbSystems", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbSystemsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbSystemsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbSystemsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbSystemsResultOutput)
 }
 

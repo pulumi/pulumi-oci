@@ -111,14 +111,20 @@ type LookupLogAnalyticsEntityResult struct {
 
 func LookupLogAnalyticsEntityOutput(ctx *pulumi.Context, args LookupLogAnalyticsEntityOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsEntityResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupLogAnalyticsEntityResult, error) {
+		ApplyT(func(v interface{}) (LookupLogAnalyticsEntityResultOutput, error) {
 			args := v.(LookupLogAnalyticsEntityArgs)
-			r, err := LookupLogAnalyticsEntity(ctx, &args, opts...)
-			var s LookupLogAnalyticsEntityResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupLogAnalyticsEntityResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", args, &rv, "", opts...)
+			if err != nil {
+				return LookupLogAnalyticsEntityResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupLogAnalyticsEntityResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupLogAnalyticsEntityResultOutput), nil
+			}
+			return output, nil
 		}).(LookupLogAnalyticsEntityResultOutput)
 }
 

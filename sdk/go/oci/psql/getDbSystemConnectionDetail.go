@@ -71,14 +71,20 @@ type GetDbSystemConnectionDetailResult struct {
 
 func GetDbSystemConnectionDetailOutput(ctx *pulumi.Context, args GetDbSystemConnectionDetailOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemConnectionDetailResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbSystemConnectionDetailResult, error) {
+		ApplyT(func(v interface{}) (GetDbSystemConnectionDetailResultOutput, error) {
 			args := v.(GetDbSystemConnectionDetailArgs)
-			r, err := GetDbSystemConnectionDetail(ctx, &args, opts...)
-			var s GetDbSystemConnectionDetailResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbSystemConnectionDetailResult
+			secret, err := ctx.InvokePackageRaw("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbSystemConnectionDetailResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbSystemConnectionDetailResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbSystemConnectionDetailResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbSystemConnectionDetailResultOutput)
 }
 

@@ -109,14 +109,20 @@ type LookupAwrHubSourceResult struct {
 
 func LookupAwrHubSourceOutput(ctx *pulumi.Context, args LookupAwrHubSourceOutputArgs, opts ...pulumi.InvokeOption) LookupAwrHubSourceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAwrHubSourceResult, error) {
+		ApplyT(func(v interface{}) (LookupAwrHubSourceResultOutput, error) {
 			args := v.(LookupAwrHubSourceArgs)
-			r, err := LookupAwrHubSource(ctx, &args, opts...)
-			var s LookupAwrHubSourceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAwrHubSourceResult
+			secret, err := ctx.InvokePackageRaw("oci:Opsi/getAwrHubSource:getAwrHubSource", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAwrHubSourceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAwrHubSourceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAwrHubSourceResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAwrHubSourceResultOutput)
 }
 

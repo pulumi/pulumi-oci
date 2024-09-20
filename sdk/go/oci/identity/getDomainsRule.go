@@ -131,14 +131,20 @@ type LookupDomainsRuleResult struct {
 
 func LookupDomainsRuleOutput(ctx *pulumi.Context, args LookupDomainsRuleOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsRuleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsRuleResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsRuleResultOutput, error) {
 			args := v.(LookupDomainsRuleArgs)
-			r, err := LookupDomainsRule(ctx, &args, opts...)
-			var s LookupDomainsRuleResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsRuleResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsRule:getDomainsRule", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsRuleResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsRuleResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsRuleResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsRuleResultOutput)
 }
 

@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstanceResourcePrincipalConfigurations(args: GetBdsInstanceResourcePrincipalConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceResourcePrincipalConfigurationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", {
         "bdsInstanceId": args.bdsInstanceId,
@@ -99,7 +98,13 @@ export interface GetBdsInstanceResourcePrincipalConfigurationsResult {
  * ```
  */
 export function getBdsInstanceResourcePrincipalConfigurationsOutput(args: GetBdsInstanceResourcePrincipalConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceResourcePrincipalConfigurationsResult> {
-    return pulumi.output(args).apply((a: any) => getBdsInstanceResourcePrincipalConfigurations(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", {
+        "bdsInstanceId": args.bdsInstanceId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

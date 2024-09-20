@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetAlertPolicyAssociation(args: GetTargetAlertPolicyAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAlertPolicyAssociationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation", {
         "targetAlertPolicyAssociationId": args.targetAlertPolicyAssociationId,
@@ -117,7 +116,10 @@ export interface GetTargetAlertPolicyAssociationResult {
  * ```
  */
 export function getTargetAlertPolicyAssociationOutput(args: GetTargetAlertPolicyAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAlertPolicyAssociationResult> {
-    return pulumi.output(args).apply((a: any) => getTargetAlertPolicyAssociation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation", {
+        "targetAlertPolicyAssociationId": args.targetAlertPolicyAssociationId,
+    }, opts);
 }
 
 /**

@@ -89,14 +89,20 @@ type LookupComputeCapacityReservationResult struct {
 
 func LookupComputeCapacityReservationOutput(ctx *pulumi.Context, args LookupComputeCapacityReservationOutputArgs, opts ...pulumi.InvokeOption) LookupComputeCapacityReservationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupComputeCapacityReservationResult, error) {
+		ApplyT(func(v interface{}) (LookupComputeCapacityReservationResultOutput, error) {
 			args := v.(LookupComputeCapacityReservationArgs)
-			r, err := LookupComputeCapacityReservation(ctx, &args, opts...)
-			var s LookupComputeCapacityReservationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupComputeCapacityReservationResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeCapacityReservation:getComputeCapacityReservation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupComputeCapacityReservationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupComputeCapacityReservationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupComputeCapacityReservationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupComputeCapacityReservationResultOutput)
 }
 

@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUiPassword(args: GetUiPasswordArgs, opts?: pulumi.InvokeOptions): Promise<GetUiPasswordResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getUiPassword:getUiPassword", {
         "userId": args.userId,
@@ -77,7 +76,10 @@ export interface GetUiPasswordResult {
  * ```
  */
 export function getUiPasswordOutput(args: GetUiPasswordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUiPasswordResult> {
-    return pulumi.output(args).apply((a: any) => getUiPassword(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getUiPassword:getUiPassword", {
+        "userId": args.userId,
+    }, opts);
 }
 
 /**

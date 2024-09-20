@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTopUtilizedResources(args: GetTopUtilizedResourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetTopUtilizedResourcesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", {
         "compartmentId": args.compartmentId,
@@ -87,7 +86,12 @@ export interface GetTopUtilizedResourcesResult {
  * ```
  */
 export function getTopUtilizedResourcesOutput(args: GetTopUtilizedResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTopUtilizedResourcesResult> {
-    return pulumi.output(args).apply((a: any) => getTopUtilizedResources(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", {
+        "compartmentId": args.compartmentId,
+        "isCompartmentIdInSubtree": args.isCompartmentIdInSubtree,
+        "resourceUnitType": args.resourceUnitType,
+    }, opts);
 }
 
 /**

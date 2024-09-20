@@ -290,14 +290,20 @@ type GetSubscribedServiceResult struct {
 
 func GetSubscribedServiceOutput(ctx *pulumi.Context, args GetSubscribedServiceOutputArgs, opts ...pulumi.InvokeOption) GetSubscribedServiceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSubscribedServiceResult, error) {
+		ApplyT(func(v interface{}) (GetSubscribedServiceResultOutput, error) {
 			args := v.(GetSubscribedServiceArgs)
-			r, err := GetSubscribedService(ctx, &args, opts...)
-			var s GetSubscribedServiceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSubscribedServiceResult
+			secret, err := ctx.InvokePackageRaw("oci:OneSubsription/getSubscribedService:getSubscribedService", args, &rv, "", opts...)
+			if err != nil {
+				return GetSubscribedServiceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSubscribedServiceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSubscribedServiceResultOutput), nil
+			}
+			return output, nil
 		}).(GetSubscribedServiceResultOutput)
 }
 

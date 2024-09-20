@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApiValidation(args: GetApiValidationArgs, opts?: pulumi.InvokeOptions): Promise<GetApiValidationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getApiValidation:getApiValidation", {
         "apiId": args.apiId,
@@ -71,7 +70,10 @@ export interface GetApiValidationResult {
  * ```
  */
 export function getApiValidationOutput(args: GetApiValidationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiValidationResult> {
-    return pulumi.output(args).apply((a: any) => getApiValidation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApiGateway/getApiValidation:getApiValidation", {
+        "apiId": args.apiId,
+    }, opts);
 }
 
 /**

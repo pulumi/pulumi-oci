@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOperationsInsightsWarehouse(args: GetOperationsInsightsWarehouseArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsWarehouseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", {
         "operationsInsightsWarehouseId": args.operationsInsightsWarehouseId,
@@ -131,7 +130,10 @@ export interface GetOperationsInsightsWarehouseResult {
  * ```
  */
 export function getOperationsInsightsWarehouseOutput(args: GetOperationsInsightsWarehouseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehouseResult> {
-    return pulumi.output(args).apply((a: any) => getOperationsInsightsWarehouse(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", {
+        "operationsInsightsWarehouseId": args.operationsInsightsWarehouseId,
+    }, opts);
 }
 
 /**

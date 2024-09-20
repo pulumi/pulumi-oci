@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityZone(args: GetSecurityZoneArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityZoneResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getSecurityZone:getSecurityZone", {
         "securityZoneId": args.securityZoneId,
@@ -113,7 +112,10 @@ export interface GetSecurityZoneResult {
  * ```
  */
 export function getSecurityZoneOutput(args: GetSecurityZoneOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityZoneResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityZone(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getSecurityZone:getSecurityZone", {
+        "securityZoneId": args.securityZoneId,
+    }, opts);
 }
 
 /**

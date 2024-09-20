@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbServers(args: GetDbServersArgs, opts?: pulumi.InvokeOptions): Promise<GetDbServersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbServers:getDbServers", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetDbServersResult {
  * ```
  */
 export function getDbServersOutput(args: GetDbServersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbServersResult> {
-    return pulumi.output(args).apply((a: any) => getDbServers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getDbServers:getDbServers", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

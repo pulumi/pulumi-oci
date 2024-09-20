@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalContainerDatabases(args: GetExternalContainerDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalContainerDatabasesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExternalContainerDatabases:getExternalContainerDatabases", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetExternalContainerDatabasesResult {
  * ```
  */
 export function getExternalContainerDatabasesOutput(args: GetExternalContainerDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalContainerDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getExternalContainerDatabases(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExternalContainerDatabases:getExternalContainerDatabases", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

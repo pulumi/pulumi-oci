@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsGrants(args: GetDomainsGrantsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsGrantsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsGrants:getDomainsGrants", {
         "attributeSets": args.attributeSets,
@@ -142,7 +141,20 @@ export interface GetDomainsGrantsResult {
  * ```
  */
 export function getDomainsGrantsOutput(args: GetDomainsGrantsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsGrantsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsGrants(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsGrants:getDomainsGrants", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "grantCount": args.grantCount,
+        "grantFilter": args.grantFilter,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

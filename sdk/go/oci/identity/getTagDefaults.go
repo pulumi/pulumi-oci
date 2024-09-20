@@ -83,14 +83,20 @@ type GetTagDefaultsResult struct {
 
 func GetTagDefaultsOutput(ctx *pulumi.Context, args GetTagDefaultsOutputArgs, opts ...pulumi.InvokeOption) GetTagDefaultsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTagDefaultsResult, error) {
+		ApplyT(func(v interface{}) (GetTagDefaultsResultOutput, error) {
 			args := v.(GetTagDefaultsArgs)
-			r, err := GetTagDefaults(ctx, &args, opts...)
-			var s GetTagDefaultsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTagDefaultsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getTagDefaults:getTagDefaults", args, &rv, "", opts...)
+			if err != nil {
+				return GetTagDefaultsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTagDefaultsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTagDefaultsResultOutput), nil
+			}
+			return output, nil
 		}).(GetTagDefaultsResultOutput)
 }
 

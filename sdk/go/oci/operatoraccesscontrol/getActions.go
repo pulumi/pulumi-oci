@@ -83,14 +83,20 @@ type GetActionsResult struct {
 
 func GetActionsOutput(ctx *pulumi.Context, args GetActionsOutputArgs, opts ...pulumi.InvokeOption) GetActionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetActionsResult, error) {
+		ApplyT(func(v interface{}) (GetActionsResultOutput, error) {
 			args := v.(GetActionsArgs)
-			r, err := GetActions(ctx, &args, opts...)
-			var s GetActionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetActionsResult
+			secret, err := ctx.InvokePackageRaw("oci:OperatorAccessControl/getActions:getActions", args, &rv, "", opts...)
+			if err != nil {
+				return GetActionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetActionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetActionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetActionsResultOutput)
 }
 

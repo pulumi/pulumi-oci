@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlerts(args: GetAlertsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlerts:getAlerts", {
         "accessLevel": args.accessLevel,
@@ -118,7 +117,16 @@ export interface GetAlertsResult {
  * ```
  */
 export function getAlertsOutput(args: GetAlertsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertsResult> {
-    return pulumi.output(args).apply((a: any) => getAlerts(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAlerts:getAlerts", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "fields": args.fields,
+        "filters": args.filters,
+        "id": args.id,
+        "scimQuery": args.scimQuery,
+    }, opts);
 }
 
 /**

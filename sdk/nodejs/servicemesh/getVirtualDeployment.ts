@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualDeployment(args: GetVirtualDeploymentArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualDeploymentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", {
         "virtualDeploymentId": args.virtualDeploymentId,
@@ -123,7 +122,10 @@ export interface GetVirtualDeploymentResult {
  * ```
  */
 export function getVirtualDeploymentOutput(args: GetVirtualDeploymentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualDeploymentResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualDeployment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", {
+        "virtualDeploymentId": args.virtualDeploymentId,
+    }, opts);
 }
 
 /**

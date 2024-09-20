@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudAutonomousVmClusterResourceUsage(args: GetCloudAutonomousVmClusterResourceUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudAutonomousVmClusterResourceUsageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", {
         "cloudAutonomousVmClusterId": args.cloudAutonomousVmClusterId,
@@ -143,7 +142,10 @@ export interface GetCloudAutonomousVmClusterResourceUsageResult {
  * ```
  */
 export function getCloudAutonomousVmClusterResourceUsageOutput(args: GetCloudAutonomousVmClusterResourceUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudAutonomousVmClusterResourceUsageResult> {
-    return pulumi.output(args).apply((a: any) => getCloudAutonomousVmClusterResourceUsage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", {
+        "cloudAutonomousVmClusterId": args.cloudAutonomousVmClusterId,
+    }, opts);
 }
 
 /**

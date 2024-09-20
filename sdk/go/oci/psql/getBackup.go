@@ -99,14 +99,20 @@ type LookupBackupResult struct {
 
 func LookupBackupOutput(ctx *pulumi.Context, args LookupBackupOutputArgs, opts ...pulumi.InvokeOption) LookupBackupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBackupResult, error) {
+		ApplyT(func(v interface{}) (LookupBackupResultOutput, error) {
 			args := v.(LookupBackupArgs)
-			r, err := LookupBackup(ctx, &args, opts...)
-			var s LookupBackupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBackupResult
+			secret, err := ctx.InvokePackageRaw("oci:Psql/getBackup:getBackup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBackupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBackupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBackupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBackupResultOutput)
 }
 

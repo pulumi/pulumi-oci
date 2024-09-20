@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getSqlEndpoints(args?: GetSqlEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetSqlEndpointsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getSqlEndpoints:getSqlEndpoints", {
         "compartmentId": args.compartmentId,
@@ -112,7 +111,15 @@ export interface GetSqlEndpointsResult {
  * ```
  */
 export function getSqlEndpointsOutput(args?: GetSqlEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlEndpointsResult> {
-    return pulumi.output(args).apply((a: any) => getSqlEndpoints(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataFlow/getSqlEndpoints:getSqlEndpoints", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "sqlEndpointId": args.sqlEndpointId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

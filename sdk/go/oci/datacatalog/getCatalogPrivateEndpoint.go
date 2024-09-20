@@ -91,14 +91,20 @@ type LookupCatalogPrivateEndpointResult struct {
 
 func LookupCatalogPrivateEndpointOutput(ctx *pulumi.Context, args LookupCatalogPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupCatalogPrivateEndpointResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCatalogPrivateEndpointResult, error) {
+		ApplyT(func(v interface{}) (LookupCatalogPrivateEndpointResultOutput, error) {
 			args := v.(LookupCatalogPrivateEndpointArgs)
-			r, err := LookupCatalogPrivateEndpoint(ctx, &args, opts...)
-			var s LookupCatalogPrivateEndpointResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupCatalogPrivateEndpointResult
+			secret, err := ctx.InvokePackageRaw("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args, &rv, "", opts...)
+			if err != nil {
+				return LookupCatalogPrivateEndpointResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupCatalogPrivateEndpointResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupCatalogPrivateEndpointResultOutput), nil
+			}
+			return output, nil
 		}).(LookupCatalogPrivateEndpointResultOutput)
 }
 

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOccAvailabilityCatalogs(args: GetOccAvailabilityCatalogsArgs, opts?: pulumi.InvokeOptions): Promise<GetOccAvailabilityCatalogsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getOccAvailabilityCatalogs:getOccAvailabilityCatalogs", {
         "catalogState": args.catalogState,
@@ -117,7 +116,15 @@ export interface GetOccAvailabilityCatalogsResult {
  * ```
  */
 export function getOccAvailabilityCatalogsOutput(args: GetOccAvailabilityCatalogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccAvailabilityCatalogsResult> {
-    return pulumi.output(args).apply((a: any) => getOccAvailabilityCatalogs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccAvailabilityCatalogs:getOccAvailabilityCatalogs", {
+        "catalogState": args.catalogState,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

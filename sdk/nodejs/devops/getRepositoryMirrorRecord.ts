@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryMirrorRecord(args: GetRepositoryMirrorRecordArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryMirrorRecordResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", {
         "mirrorRecordType": args.mirrorRecordType,
@@ -93,7 +92,11 @@ export interface GetRepositoryMirrorRecordResult {
  * ```
  */
 export function getRepositoryMirrorRecordOutput(args: GetRepositoryMirrorRecordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryMirrorRecordResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryMirrorRecord(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", {
+        "mirrorRecordType": args.mirrorRecordType,
+        "repositoryId": args.repositoryId,
+    }, opts);
 }
 
 /**

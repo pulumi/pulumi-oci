@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Retrieves a task using the specified identifier.
  */
 export function getWorkspaceTask(args: GetWorkspaceTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceTaskResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", {
         "expandReferences": args.expandReferences,
@@ -157,7 +156,12 @@ export interface GetWorkspaceTaskResult {
  * Retrieves a task using the specified identifier.
  */
 export function getWorkspaceTaskOutput(args: GetWorkspaceTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceTaskResult> {
-    return pulumi.output(args).apply((a: any) => getWorkspaceTask(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", {
+        "expandReferences": args.expandReferences,
+        "key": args.key,
+        "workspaceId": args.workspaceId,
+    }, opts);
 }
 
 /**

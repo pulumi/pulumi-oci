@@ -109,14 +109,20 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 
 func LookupAutonomousContainerDatabaseDataguardAssociationOutput(ctx *pulumi.Context, args LookupAutonomousContainerDatabaseDataguardAssociationOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousContainerDatabaseDataguardAssociationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAutonomousContainerDatabaseDataguardAssociationResult, error) {
+		ApplyT(func(v interface{}) (LookupAutonomousContainerDatabaseDataguardAssociationResultOutput, error) {
 			args := v.(LookupAutonomousContainerDatabaseDataguardAssociationArgs)
-			r, err := LookupAutonomousContainerDatabaseDataguardAssociation(ctx, &args, opts...)
-			var s LookupAutonomousContainerDatabaseDataguardAssociationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAutonomousContainerDatabaseDataguardAssociationResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAutonomousContainerDatabaseDataguardAssociationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAutonomousContainerDatabaseDataguardAssociationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAutonomousContainerDatabaseDataguardAssociationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAutonomousContainerDatabaseDataguardAssociationResultOutput)
 }
 

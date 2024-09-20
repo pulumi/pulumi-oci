@@ -93,14 +93,20 @@ type LookupPingMonitorResult struct {
 
 func LookupPingMonitorOutput(ctx *pulumi.Context, args LookupPingMonitorOutputArgs, opts ...pulumi.InvokeOption) LookupPingMonitorResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPingMonitorResult, error) {
+		ApplyT(func(v interface{}) (LookupPingMonitorResultOutput, error) {
 			args := v.(LookupPingMonitorArgs)
-			r, err := LookupPingMonitor(ctx, &args, opts...)
-			var s LookupPingMonitorResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupPingMonitorResult
+			secret, err := ctx.InvokePackageRaw("oci:HealthChecks/getPingMonitor:getPingMonitor", args, &rv, "", opts...)
+			if err != nil {
+				return LookupPingMonitorResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupPingMonitorResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupPingMonitorResultOutput), nil
+			}
+			return output, nil
 		}).(LookupPingMonitorResultOutput)
 }
 

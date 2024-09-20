@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAddonOptions(args: GetAddonOptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddonOptionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getAddonOptions:getAddonOptions", {
         "addonName": args.addonName,
@@ -82,7 +81,12 @@ export interface GetAddonOptionsResult {
  * ```
  */
 export function getAddonOptionsOutput(args: GetAddonOptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddonOptionsResult> {
-    return pulumi.output(args).apply((a: any) => getAddonOptions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getAddonOptions:getAddonOptions", {
+        "addonName": args.addonName,
+        "filters": args.filters,
+        "kubernetesVersion": args.kubernetesVersion,
+    }, opts);
 }
 
 /**

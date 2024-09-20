@@ -70,14 +70,20 @@ type GetCnvDnsResolverAssociationResult struct {
 
 func GetCnvDnsResolverAssociationOutput(ctx *pulumi.Context, args GetCnvDnsResolverAssociationOutputArgs, opts ...pulumi.InvokeOption) GetCnvDnsResolverAssociationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCnvDnsResolverAssociationResult, error) {
+		ApplyT(func(v interface{}) (GetCnvDnsResolverAssociationResultOutput, error) {
 			args := v.(GetCnvDnsResolverAssociationArgs)
-			r, err := GetCnvDnsResolverAssociation(ctx, &args, opts...)
-			var s GetCnvDnsResolverAssociationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCnvDnsResolverAssociationResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", args, &rv, "", opts...)
+			if err != nil {
+				return GetCnvDnsResolverAssociationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCnvDnsResolverAssociationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCnvDnsResolverAssociationResultOutput), nil
+			}
+			return output, nil
 		}).(GetCnvDnsResolverAssociationResultOutput)
 }
 

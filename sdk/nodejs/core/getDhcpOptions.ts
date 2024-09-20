@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDhcpOptions(args: GetDhcpOptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDhcpOptionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDhcpOptions:getDhcpOptions", {
         "compartmentId": args.compartmentId,
@@ -116,7 +115,14 @@ export interface GetDhcpOptionsResult {
  * ```
  */
 export function getDhcpOptionsOutput(args: GetDhcpOptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDhcpOptionsResult> {
-    return pulumi.output(args).apply((a: any) => getDhcpOptions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDhcpOptions:getDhcpOptions", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

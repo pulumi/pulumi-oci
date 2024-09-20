@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOnpremConnectors(args: GetOnpremConnectorsArgs, opts?: pulumi.InvokeOptions): Promise<GetOnpremConnectorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", {
         "accessLevel": args.accessLevel,
@@ -120,7 +119,16 @@ export interface GetOnpremConnectorsResult {
  * ```
  */
 export function getOnpremConnectorsOutput(args: GetOnpremConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnpremConnectorsResult> {
-    return pulumi.output(args).apply((a: any) => getOnpremConnectors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "onPremConnectorId": args.onPremConnectorId,
+        "onPremConnectorLifecycleState": args.onPremConnectorLifecycleState,
+    }, opts);
 }
 
 /**

@@ -72,14 +72,20 @@ type GetShapesResult struct {
 
 func GetShapesOutput(ctx *pulumi.Context, args GetShapesOutputArgs, opts ...pulumi.InvokeOption) GetShapesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetShapesResult, error) {
+		ApplyT(func(v interface{}) (GetShapesResultOutput, error) {
 			args := v.(GetShapesArgs)
-			r, err := GetShapes(ctx, &args, opts...)
-			var s GetShapesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetShapesResult
+			secret, err := ctx.InvokePackageRaw("oci:Psql/getShapes:getShapes", args, &rv, "", opts...)
+			if err != nil {
+				return GetShapesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetShapesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetShapesResultOutput), nil
+			}
+			return output, nil
 		}).(GetShapesResultOutput)
 }
 

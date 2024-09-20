@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsEntityTopology(args: GetLogAnalyticsEntityTopologyArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntityTopologyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", {
         "logAnalyticsEntityId": args.logAnalyticsEntityId,
@@ -98,7 +97,13 @@ export interface GetLogAnalyticsEntityTopologyResult {
  * ```
  */
 export function getLogAnalyticsEntityTopologyOutput(args: GetLogAnalyticsEntityTopologyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntityTopologyResult> {
-    return pulumi.output(args).apply((a: any) => getLogAnalyticsEntityTopology(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", {
+        "logAnalyticsEntityId": args.logAnalyticsEntityId,
+        "metadataEquals": args.metadataEquals,
+        "namespace": args.namespace,
+        "state": args.state,
+    }, opts);
 }
 
 /**

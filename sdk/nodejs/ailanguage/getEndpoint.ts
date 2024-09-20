@@ -10,7 +10,6 @@ import * as utilities from "../utilities";
  * Gets an endpoint by identifier
  */
 export function getEndpoint(args: GetEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiLanguage/getEndpoint:getEndpoint", {
         "id": args.id,
@@ -94,7 +93,10 @@ export interface GetEndpointResult {
  * Gets an endpoint by identifier
  */
 export function getEndpointOutput(args: GetEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiLanguage/getEndpoint:getEndpoint", {
+        "id": args.id,
+    }, opts);
 }
 
 /**

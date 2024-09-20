@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstancePatchHistories(args: GetBdsInstancePatchHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstancePatchHistoriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", {
         "bdsInstanceId": args.bdsInstanceId,
@@ -104,7 +103,14 @@ export interface GetBdsInstancePatchHistoriesResult {
  * ```
  */
 export function getBdsInstancePatchHistoriesOutput(args: GetBdsInstancePatchHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstancePatchHistoriesResult> {
-    return pulumi.output(args).apply((a: any) => getBdsInstancePatchHistories(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", {
+        "bdsInstanceId": args.bdsInstanceId,
+        "filters": args.filters,
+        "patchType": args.patchType,
+        "patchVersion": args.patchVersion,
+        "state": args.state,
+    }, opts);
 }
 
 /**

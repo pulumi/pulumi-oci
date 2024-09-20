@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  * parameter is required.
  */
 export function getRecords(args: GetRecordsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecordsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getRecords:getRecords", {
         "compartmentId": args.compartmentId,
@@ -119,7 +118,18 @@ export interface GetRecordsResult {
  * parameter is required.
  */
 export function getRecordsOutput(args: GetRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecordsResult> {
-    return pulumi.output(args).apply((a: any) => getRecords(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getRecords:getRecords", {
+        "compartmentId": args.compartmentId,
+        "domain": args.domain,
+        "domainContains": args.domainContains,
+        "filters": args.filters,
+        "rtype": args.rtype,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "zoneNameOrId": args.zoneNameOrId,
+        "zoneVersion": args.zoneVersion,
+    }, opts);
 }
 
 /**

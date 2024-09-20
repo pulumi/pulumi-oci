@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWindowsUpdate(args: GetWindowsUpdateArgs, opts?: pulumi.InvokeOptions): Promise<GetWindowsUpdateResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getWindowsUpdate:getWindowsUpdate", {
         "windowsUpdateId": args.windowsUpdateId,
@@ -101,7 +100,10 @@ export interface GetWindowsUpdateResult {
  * ```
  */
 export function getWindowsUpdateOutput(args: GetWindowsUpdateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWindowsUpdateResult> {
-    return pulumi.output(args).apply((a: any) => getWindowsUpdate(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getWindowsUpdate:getWindowsUpdate", {
+        "windowsUpdateId": args.windowsUpdateId,
+    }, opts);
 }
 
 /**

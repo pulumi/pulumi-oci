@@ -100,14 +100,20 @@ type GetTargetDatabasesColumnsResult struct {
 
 func GetTargetDatabasesColumnsOutput(ctx *pulumi.Context, args GetTargetDatabasesColumnsOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabasesColumnsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabasesColumnsResult, error) {
+		ApplyT(func(v interface{}) (GetTargetDatabasesColumnsResultOutput, error) {
 			args := v.(GetTargetDatabasesColumnsArgs)
-			r, err := GetTargetDatabasesColumns(ctx, &args, opts...)
-			var s GetTargetDatabasesColumnsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTargetDatabasesColumnsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args, &rv, "", opts...)
+			if err != nil {
+				return GetTargetDatabasesColumnsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTargetDatabasesColumnsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTargetDatabasesColumnsResultOutput), nil
+			}
+			return output, nil
 		}).(GetTargetDatabasesColumnsResultOutput)
 }
 

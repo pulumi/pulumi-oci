@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsPreference(args: GetLogAnalyticsPreferenceArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsPreferenceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", {
         "namespace": args.namespace,
@@ -71,7 +70,10 @@ export interface GetLogAnalyticsPreferenceResult {
  * ```
  */
 export function getLogAnalyticsPreferenceOutput(args: GetLogAnalyticsPreferenceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsPreferenceResult> {
-    return pulumi.output(args).apply((a: any) => getLogAnalyticsPreference(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", {
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

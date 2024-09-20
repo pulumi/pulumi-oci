@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectedDatabase(args: GetProtectedDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectedDatabaseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase", {
         "protectedDatabaseId": args.protectedDatabaseId,
@@ -157,7 +156,10 @@ export interface GetProtectedDatabaseResult {
  * ```
  */
 export function getProtectedDatabaseOutput(args: GetProtectedDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectedDatabaseResult> {
-    return pulumi.output(args).apply((a: any) => getProtectedDatabase(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase", {
+        "protectedDatabaseId": args.protectedDatabaseId,
+    }, opts);
 }
 
 /**

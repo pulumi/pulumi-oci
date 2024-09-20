@@ -84,14 +84,20 @@ type GetIndexesResult struct {
 
 func GetIndexesOutput(ctx *pulumi.Context, args GetIndexesOutputArgs, opts ...pulumi.InvokeOption) GetIndexesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetIndexesResult, error) {
+		ApplyT(func(v interface{}) (GetIndexesResultOutput, error) {
 			args := v.(GetIndexesArgs)
-			r, err := GetIndexes(ctx, &args, opts...)
-			var s GetIndexesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetIndexesResult
+			secret, err := ctx.InvokePackageRaw("oci:Nosql/getIndexes:getIndexes", args, &rv, "", opts...)
+			if err != nil {
+				return GetIndexesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetIndexesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetIndexesResultOutput), nil
+			}
+			return output, nil
 		}).(GetIndexesResultOutput)
 }
 

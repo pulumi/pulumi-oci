@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  */
 export function getSnapshots(args?: GetSnapshotsArgs, opts?: pulumi.InvokeOptions): Promise<GetSnapshotsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getSnapshots:getSnapshots", {
         "compartmentId": args.compartmentId,
@@ -127,7 +126,16 @@ export interface GetSnapshotsResult {
  * ```
  */
 export function getSnapshotsOutput(args?: GetSnapshotsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSnapshotsResult> {
-    return pulumi.output(args).apply((a: any) => getSnapshots(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getSnapshots:getSnapshots", {
+        "compartmentId": args.compartmentId,
+        "fileSystemId": args.fileSystemId,
+        "filesystemSnapshotPolicyId": args.filesystemSnapshotPolicyId,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

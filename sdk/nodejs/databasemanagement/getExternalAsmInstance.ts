@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalAsmInstance(args: GetExternalAsmInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", {
         "externalAsmInstanceId": args.externalAsmInstanceId,
@@ -125,7 +124,10 @@ export interface GetExternalAsmInstanceResult {
  * ```
  */
 export function getExternalAsmInstanceOutput(args: GetExternalAsmInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getExternalAsmInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", {
+        "externalAsmInstanceId": args.externalAsmInstanceId,
+    }, opts);
 }
 
 /**

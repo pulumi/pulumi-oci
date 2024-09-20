@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityAssessmentSecurityFeatureAnalytics(args: GetSecurityAssessmentSecurityFeatureAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentSecurityFeatureAnalyticsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics", {
         "accessLevel": args.accessLevel,
@@ -112,7 +111,14 @@ export interface GetSecurityAssessmentSecurityFeatureAnalyticsResult {
  * ```
  */
 export function getSecurityAssessmentSecurityFeatureAnalyticsOutput(args: GetSecurityAssessmentSecurityFeatureAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentSecurityFeatureAnalyticsResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityAssessmentSecurityFeatureAnalytics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

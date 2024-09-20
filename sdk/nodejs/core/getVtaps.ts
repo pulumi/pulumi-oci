@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVtaps(args: GetVtapsArgs, opts?: pulumi.InvokeOptions): Promise<GetVtapsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVtaps:getVtaps", {
         "compartmentId": args.compartmentId,
@@ -155,7 +154,18 @@ export interface GetVtapsResult {
  * ```
  */
 export function getVtapsOutput(args: GetVtapsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVtapsResult> {
-    return pulumi.output(args).apply((a: any) => getVtaps(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVtaps:getVtaps", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isVtapEnabled": args.isVtapEnabled,
+        "source": args.source,
+        "state": args.state,
+        "targetId": args.targetId,
+        "targetIp": args.targetIp,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

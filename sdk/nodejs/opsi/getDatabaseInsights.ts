@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  */
 export function getDatabaseInsights(args?: GetDatabaseInsightsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseInsightsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getDatabaseInsights:getDatabaseInsights", {
         "compartmentId": args.compartmentId,
@@ -180,7 +179,22 @@ export interface GetDatabaseInsightsResult {
  * ```
  */
 export function getDatabaseInsightsOutput(args?: GetDatabaseInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseInsightsResult> {
-    return pulumi.output(args).apply((a: any) => getDatabaseInsights(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getDatabaseInsights:getDatabaseInsights", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "databaseIds": args.databaseIds,
+        "databaseTypes": args.databaseTypes,
+        "enterpriseManagerBridgeId": args.enterpriseManagerBridgeId,
+        "exadataInsightId": args.exadataInsightId,
+        "fields": args.fields,
+        "filters": args.filters,
+        "id": args.id,
+        "opsiPrivateEndpointId": args.opsiPrivateEndpointId,
+        "states": args.states,
+        "statuses": args.statuses,
+    }, opts);
 }
 
 /**

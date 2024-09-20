@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputedUsage(args: GetComputedUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetComputedUsageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getComputedUsage:getComputedUsage", {
         "compartmentId": args.compartmentId,
@@ -179,7 +178,12 @@ export interface GetComputedUsageResult {
  * ```
  */
 export function getComputedUsageOutput(args: GetComputedUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputedUsageResult> {
-    return pulumi.output(args).apply((a: any) => getComputedUsage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OneSubsription/getComputedUsage:getComputedUsage", {
+        "compartmentId": args.compartmentId,
+        "computedUsageId": args.computedUsageId,
+        "fields": args.fields,
+    }, opts);
 }
 
 /**

@@ -88,14 +88,20 @@ type GetVirtualServicesResult struct {
 
 func GetVirtualServicesOutput(ctx *pulumi.Context, args GetVirtualServicesOutputArgs, opts ...pulumi.InvokeOption) GetVirtualServicesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVirtualServicesResult, error) {
+		ApplyT(func(v interface{}) (GetVirtualServicesResultOutput, error) {
 			args := v.(GetVirtualServicesArgs)
-			r, err := GetVirtualServices(ctx, &args, opts...)
-			var s GetVirtualServicesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVirtualServicesResult
+			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getVirtualServices:getVirtualServices", args, &rv, "", opts...)
+			if err != nil {
+				return GetVirtualServicesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVirtualServicesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVirtualServicesResultOutput), nil
+			}
+			return output, nil
 		}).(GetVirtualServicesResultOutput)
 }
 

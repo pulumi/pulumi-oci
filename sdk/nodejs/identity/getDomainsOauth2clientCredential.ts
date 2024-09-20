@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsOauth2clientCredential(args: GetDomainsOauth2clientCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsOauth2clientCredentialResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsOauth2clientCredential:getDomainsOauth2clientCredential", {
         "attributeSets": args.attributeSets,
@@ -187,7 +186,15 @@ export interface GetDomainsOauth2clientCredentialResult {
  * ```
  */
 export function getDomainsOauth2clientCredentialOutput(args: GetDomainsOauth2clientCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsOauth2clientCredentialResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsOauth2clientCredential(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsOauth2clientCredential:getDomainsOauth2clientCredential", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "oAuth2clientCredentialId": args.oAuth2clientCredentialId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getOpaInstances(args?: GetOpaInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetOpaInstancesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opa/getOpaInstances:getOpaInstances", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,15 @@ export interface GetOpaInstancesResult {
  * ```
  */
 export function getOpaInstancesOutput(args?: GetOpaInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpaInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getOpaInstances(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opa/getOpaInstances:getOpaInstances", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

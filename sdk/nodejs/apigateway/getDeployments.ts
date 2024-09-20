@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployments(args: GetDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getDeployments:getDeployments", {
         "compartmentId": args.compartmentId,
@@ -110,7 +109,14 @@ export interface GetDeploymentsResult {
  * ```
  */
 export function getDeploymentsOutput(args: GetDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentsResult> {
-    return pulumi.output(args).apply((a: any) => getDeployments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApiGateway/getDeployments:getDeployments", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "gatewayId": args.gatewayId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

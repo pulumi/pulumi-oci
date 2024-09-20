@@ -80,14 +80,20 @@ type GetInfrastructureTargetVersionResult struct {
 
 func GetInfrastructureTargetVersionOutput(ctx *pulumi.Context, args GetInfrastructureTargetVersionOutputArgs, opts ...pulumi.InvokeOption) GetInfrastructureTargetVersionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInfrastructureTargetVersionResult, error) {
+		ApplyT(func(v interface{}) (GetInfrastructureTargetVersionResultOutput, error) {
 			args := v.(GetInfrastructureTargetVersionArgs)
-			r, err := GetInfrastructureTargetVersion(ctx, &args, opts...)
-			var s GetInfrastructureTargetVersionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInfrastructureTargetVersionResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args, &rv, "", opts...)
+			if err != nil {
+				return GetInfrastructureTargetVersionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInfrastructureTargetVersionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInfrastructureTargetVersionResultOutput), nil
+			}
+			return output, nil
 		}).(GetInfrastructureTargetVersionResultOutput)
 }
 

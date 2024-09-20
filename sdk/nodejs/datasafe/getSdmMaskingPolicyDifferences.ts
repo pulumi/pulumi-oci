@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSdmMaskingPolicyDifferences(args: GetSdmMaskingPolicyDifferencesArgs, opts?: pulumi.InvokeOptions): Promise<GetSdmMaskingPolicyDifferencesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSdmMaskingPolicyDifferences:getSdmMaskingPolicyDifferences", {
         "compartmentId": args.compartmentId,
@@ -137,7 +136,17 @@ export interface GetSdmMaskingPolicyDifferencesResult {
  * ```
  */
 export function getSdmMaskingPolicyDifferencesOutput(args: GetSdmMaskingPolicyDifferencesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSdmMaskingPolicyDifferencesResult> {
-    return pulumi.output(args).apply((a: any) => getSdmMaskingPolicyDifferences(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSdmMaskingPolicyDifferences:getSdmMaskingPolicyDifferences", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "differenceAccessLevel": args.differenceAccessLevel,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "maskingPolicyId": args.maskingPolicyId,
+        "sensitiveDataModelId": args.sensitiveDataModelId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

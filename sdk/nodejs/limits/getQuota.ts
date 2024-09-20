@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getQuota(args: GetQuotaArgs, opts?: pulumi.InvokeOptions): Promise<GetQuotaResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getQuota:getQuota", {
         "quotaId": args.quotaId,
@@ -104,7 +103,10 @@ export interface GetQuotaResult {
  * ```
  */
 export function getQuotaOutput(args: GetQuotaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQuotaResult> {
-    return pulumi.output(args).apply((a: any) => getQuota(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Limits/getQuota:getQuota", {
+        "quotaId": args.quotaId,
+    }, opts);
 }
 
 /**

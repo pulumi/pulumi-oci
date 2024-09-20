@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOdaPrivateEndpointScanProxies(args: GetOdaPrivateEndpointScanProxiesArgs, opts?: pulumi.InvokeOptions): Promise<GetOdaPrivateEndpointScanProxiesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", {
         "filters": args.filters,
@@ -95,7 +94,12 @@ export interface GetOdaPrivateEndpointScanProxiesResult {
  * ```
  */
 export function getOdaPrivateEndpointScanProxiesOutput(args: GetOdaPrivateEndpointScanProxiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaPrivateEndpointScanProxiesResult> {
-    return pulumi.output(args).apply((a: any) => getOdaPrivateEndpointScanProxies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", {
+        "filters": args.filters,
+        "odaPrivateEndpointId": args.odaPrivateEndpointId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

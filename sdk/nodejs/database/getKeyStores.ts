@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKeyStores(args: GetKeyStoresArgs, opts?: pulumi.InvokeOptions): Promise<GetKeyStoresResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getKeyStores:getKeyStores", {
         "compartmentId": args.compartmentId,
@@ -77,7 +76,11 @@ export interface GetKeyStoresResult {
  * ```
  */
 export function getKeyStoresOutput(args: GetKeyStoresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyStoresResult> {
-    return pulumi.output(args).apply((a: any) => getKeyStores(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getKeyStores:getKeyStores", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

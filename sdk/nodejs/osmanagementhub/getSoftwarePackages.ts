@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  */
 export function getSoftwarePackages(args?: GetSoftwarePackagesArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwarePackagesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwarePackages:getSoftwarePackages", {
         "architecture": args.architecture,
@@ -129,7 +128,17 @@ export interface GetSoftwarePackagesResult {
  * ```
  */
 export function getSoftwarePackagesOutput(args?: GetSoftwarePackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwarePackagesResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwarePackages(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwarePackages:getSoftwarePackages", {
+        "architecture": args.architecture,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "isLatest": args.isLatest,
+        "osFamily": args.osFamily,
+        "version": args.version,
+    }, opts);
 }
 
 /**

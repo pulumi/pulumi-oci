@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * Creates and downloads a wallet for the specified Autonomous Database.
  */
 export function getAutonomousDatabaseWallet(args: GetAutonomousDatabaseWalletArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseWalletResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
@@ -77,7 +76,13 @@ export interface GetAutonomousDatabaseWalletResult {
  * Creates and downloads a wallet for the specified Autonomous Database.
  */
 export function getAutonomousDatabaseWalletOutput(args: GetAutonomousDatabaseWalletOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseWalletResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseWallet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", {
+        "autonomousDatabaseId": args.autonomousDatabaseId,
+        "base64EncodeContent": args.base64EncodeContent,
+        "generateType": args.generateType,
+        "password": args.password,
+    }, opts);
 }
 
 /**

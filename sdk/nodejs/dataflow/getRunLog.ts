@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRunLog(args: GetRunLogArgs, opts?: pulumi.InvokeOptions): Promise<GetRunLogResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getRunLog:getRunLog", {
         "base64EncodeContent": args.base64EncodeContent,
@@ -84,7 +83,12 @@ export interface GetRunLogResult {
  * ```
  */
 export function getRunLogOutput(args: GetRunLogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunLogResult> {
-    return pulumi.output(args).apply((a: any) => getRunLog(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataFlow/getRunLog:getRunLog", {
+        "base64EncodeContent": args.base64EncodeContent,
+        "name": args.name,
+        "runId": args.runId,
+    }, opts);
 }
 
 /**

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseGroups(args: GetManagedDatabaseGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", {
         "compartmentId": args.compartmentId,
@@ -112,7 +111,14 @@ export interface GetManagedDatabaseGroupsResult {
  * ```
  */
 export function getManagedDatabaseGroupsOutput(args: GetManagedDatabaseGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

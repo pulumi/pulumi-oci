@@ -90,14 +90,20 @@ type GetVolumeBackupsResult struct {
 
 func GetVolumeBackupsOutput(ctx *pulumi.Context, args GetVolumeBackupsOutputArgs, opts ...pulumi.InvokeOption) GetVolumeBackupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVolumeBackupsResult, error) {
+		ApplyT(func(v interface{}) (GetVolumeBackupsResultOutput, error) {
 			args := v.(GetVolumeBackupsArgs)
-			r, err := GetVolumeBackups(ctx, &args, opts...)
-			var s GetVolumeBackupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVolumeBackupsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVolumeBackups:getVolumeBackups", args, &rv, "", opts...)
+			if err != nil {
+				return GetVolumeBackupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVolumeBackupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVolumeBackupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetVolumeBackupsResultOutput)
 }
 

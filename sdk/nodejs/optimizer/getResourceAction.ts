@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResourceAction(args: GetResourceActionArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceActionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getResourceAction:getResourceAction", {
         "includeResourceMetadata": args.includeResourceMetadata,
@@ -143,7 +142,11 @@ export interface GetResourceActionResult {
  * ```
  */
 export function getResourceActionOutput(args: GetResourceActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceActionResult> {
-    return pulumi.output(args).apply((a: any) => getResourceAction(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getResourceAction:getResourceAction", {
+        "includeResourceMetadata": args.includeResourceMetadata,
+        "resourceActionId": args.resourceActionId,
+    }, opts);
 }
 
 /**

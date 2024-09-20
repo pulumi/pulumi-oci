@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSupportedSkus(args: GetSupportedSkusArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedSkusResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedSkus:getSupportedSkus", {
         "compartmentId": args.compartmentId,
@@ -84,7 +83,12 @@ export interface GetSupportedSkusResult {
  * ```
  */
 export function getSupportedSkusOutput(args: GetSupportedSkusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedSkusResult> {
-    return pulumi.output(args).apply((a: any) => getSupportedSkus(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Ocvp/getSupportedSkus:getSupportedSkus", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "hostShapeName": args.hostShapeName,
+    }, opts);
 }
 
 /**

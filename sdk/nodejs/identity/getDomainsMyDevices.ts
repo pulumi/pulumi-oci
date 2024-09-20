@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyDevices(args: GetDomainsMyDevicesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyDevicesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyDevices:getDomainsMyDevices", {
         "attributeSets": args.attributeSets,
@@ -142,7 +141,20 @@ export interface GetDomainsMyDevicesResult {
  * ```
  */
 export function getDomainsMyDevicesOutput(args: GetDomainsMyDevicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyDevicesResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyDevices(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyDevices:getDomainsMyDevices", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myDeviceCount": args.myDeviceCount,
+        "myDeviceFilter": args.myDeviceFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

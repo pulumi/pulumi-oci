@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseAttentionLogCount(args: GetManagedDatabaseAttentionLogCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAttentionLogCountResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", {
         "groupBy": args.groupBy,
@@ -130,7 +129,17 @@ export interface GetManagedDatabaseAttentionLogCountResult {
  * ```
  */
 export function getManagedDatabaseAttentionLogCountOutput(args: GetManagedDatabaseAttentionLogCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAttentionLogCountResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseAttentionLogCount(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", {
+        "groupBy": args.groupBy,
+        "isRegularExpression": args.isRegularExpression,
+        "logSearchText": args.logSearchText,
+        "managedDatabaseId": args.managedDatabaseId,
+        "timeGreaterThanOrEqualTo": args.timeGreaterThanOrEqualTo,
+        "timeLessThanOrEqualTo": args.timeLessThanOrEqualTo,
+        "typeFilter": args.typeFilter,
+        "urgencyFilter": args.urgencyFilter,
+    }, opts);
 }
 
 /**

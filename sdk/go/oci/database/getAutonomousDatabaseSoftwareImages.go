@@ -85,14 +85,20 @@ type GetAutonomousDatabaseSoftwareImagesResult struct {
 
 func GetAutonomousDatabaseSoftwareImagesOutput(ctx *pulumi.Context, args GetAutonomousDatabaseSoftwareImagesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabaseSoftwareImagesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabaseSoftwareImagesResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousDatabaseSoftwareImagesResultOutput, error) {
 			args := v.(GetAutonomousDatabaseSoftwareImagesArgs)
-			r, err := GetAutonomousDatabaseSoftwareImages(ctx, &args, opts...)
-			var s GetAutonomousDatabaseSoftwareImagesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousDatabaseSoftwareImagesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousDatabaseSoftwareImagesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousDatabaseSoftwareImagesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousDatabaseSoftwareImagesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousDatabaseSoftwareImagesResultOutput)
 }
 

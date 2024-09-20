@@ -95,14 +95,20 @@ type GetProtectionCapabilitiesResult struct {
 
 func GetProtectionCapabilitiesOutput(ctx *pulumi.Context, args GetProtectionCapabilitiesOutputArgs, opts ...pulumi.InvokeOption) GetProtectionCapabilitiesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetProtectionCapabilitiesResult, error) {
+		ApplyT(func(v interface{}) (GetProtectionCapabilitiesResultOutput, error) {
 			args := v.(GetProtectionCapabilitiesArgs)
-			r, err := GetProtectionCapabilities(ctx, &args, opts...)
-			var s GetProtectionCapabilitiesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetProtectionCapabilitiesResult
+			secret, err := ctx.InvokePackageRaw("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args, &rv, "", opts...)
+			if err != nil {
+				return GetProtectionCapabilitiesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetProtectionCapabilitiesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetProtectionCapabilitiesResultOutput), nil
+			}
+			return output, nil
 		}).(GetProtectionCapabilitiesResultOutput)
 }
 

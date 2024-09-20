@@ -79,14 +79,20 @@ type GetRemediationRunApplicationDependencyRecommendationsResult struct {
 
 func GetRemediationRunApplicationDependencyRecommendationsOutput(ctx *pulumi.Context, args GetRemediationRunApplicationDependencyRecommendationsOutputArgs, opts ...pulumi.InvokeOption) GetRemediationRunApplicationDependencyRecommendationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRemediationRunApplicationDependencyRecommendationsResult, error) {
+		ApplyT(func(v interface{}) (GetRemediationRunApplicationDependencyRecommendationsResultOutput, error) {
 			args := v.(GetRemediationRunApplicationDependencyRecommendationsArgs)
-			r, err := GetRemediationRunApplicationDependencyRecommendations(ctx, &args, opts...)
-			var s GetRemediationRunApplicationDependencyRecommendationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRemediationRunApplicationDependencyRecommendationsResult
+			secret, err := ctx.InvokePackageRaw("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", args, &rv, "", opts...)
+			if err != nil {
+				return GetRemediationRunApplicationDependencyRecommendationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRemediationRunApplicationDependencyRecommendationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRemediationRunApplicationDependencyRecommendationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRemediationRunApplicationDependencyRecommendationsResultOutput)
 }
 

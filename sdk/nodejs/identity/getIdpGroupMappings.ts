@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIdpGroupMappings(args: GetIdpGroupMappingsArgs, opts?: pulumi.InvokeOptions): Promise<GetIdpGroupMappingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", {
         "filters": args.filters,
@@ -81,7 +80,11 @@ export interface GetIdpGroupMappingsResult {
  * ```
  */
 export function getIdpGroupMappingsOutput(args: GetIdpGroupMappingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdpGroupMappingsResult> {
-    return pulumi.output(args).apply((a: any) => getIdpGroupMappings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", {
+        "filters": args.filters,
+        "identityProviderId": args.identityProviderId,
+    }, opts);
 }
 
 /**

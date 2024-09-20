@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveDataModels(args: GetSensitiveDataModelsArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", {
         "accessLevel": args.accessLevel,
@@ -154,7 +153,19 @@ export interface GetSensitiveDataModelsResult {
  * ```
  */
 export function getSensitiveDataModelsOutput(args: GetSensitiveDataModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsResult> {
-    return pulumi.output(args).apply((a: any) => getSensitiveDataModels(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "sensitiveDataModelId": args.sensitiveDataModelId,
+        "state": args.state,
+        "targetId": args.targetId,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

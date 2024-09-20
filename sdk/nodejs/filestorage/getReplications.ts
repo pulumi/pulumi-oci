@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplications(args: GetReplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getReplications:getReplications", {
         "availabilityDomain": args.availabilityDomain,
@@ -125,7 +124,16 @@ export interface GetReplicationsResult {
  * ```
  */
 export function getReplicationsOutput(args: GetReplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationsResult> {
-    return pulumi.output(args).apply((a: any) => getReplications(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getReplications:getReplications", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "fileSystemId": args.fileSystemId,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

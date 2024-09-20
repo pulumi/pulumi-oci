@@ -83,14 +83,20 @@ type GetNetworkAddressListsResult struct {
 
 func GetNetworkAddressListsOutput(ctx *pulumi.Context, args GetNetworkAddressListsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkAddressListsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNetworkAddressListsResult, error) {
+		ApplyT(func(v interface{}) (GetNetworkAddressListsResultOutput, error) {
 			args := v.(GetNetworkAddressListsArgs)
-			r, err := GetNetworkAddressLists(ctx, &args, opts...)
-			var s GetNetworkAddressListsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNetworkAddressListsResult
+			secret, err := ctx.InvokePackageRaw("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args, &rv, "", opts...)
+			if err != nil {
+				return GetNetworkAddressListsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNetworkAddressListsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNetworkAddressListsResultOutput), nil
+			}
+			return output, nil
 		}).(GetNetworkAddressListsResultOutput)
 }
 

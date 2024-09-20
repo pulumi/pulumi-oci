@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  */
 export function getView(args?: GetViewArgs, opts?: pulumi.InvokeOptions): Promise<GetViewResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getView:getView", {
         "scope": args.scope,
@@ -114,7 +113,12 @@ export interface GetViewResult {
  * ```
  */
 export function getViewOutput(args?: GetViewOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetViewResult> {
-    return pulumi.output(args).apply((a: any) => getView(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Dns/getView:getView", {
+        "scope": args.scope,
+        "viewId": args.viewId,
+    }, opts);
 }
 
 /**

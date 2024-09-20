@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsSecurityQuestions(args: GetDomainsSecurityQuestionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSecurityQuestionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsSecurityQuestions:getDomainsSecurityQuestions", {
         "attributeSets": args.attributeSets,
@@ -146,7 +145,20 @@ export interface GetDomainsSecurityQuestionsResult {
  * ```
  */
 export function getDomainsSecurityQuestionsOutput(args: GetDomainsSecurityQuestionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSecurityQuestionsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsSecurityQuestions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSecurityQuestions:getDomainsSecurityQuestions", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "securityQuestionCount": args.securityQuestionCount,
+        "securityQuestionFilter": args.securityQuestionFilter,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

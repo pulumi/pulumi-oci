@@ -114,14 +114,20 @@ type GetDataSourcesResult struct {
 
 func GetDataSourcesOutput(ctx *pulumi.Context, args GetDataSourcesOutputArgs, opts ...pulumi.InvokeOption) GetDataSourcesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDataSourcesResult, error) {
+		ApplyT(func(v interface{}) (GetDataSourcesResultOutput, error) {
 			args := v.(GetDataSourcesArgs)
-			r, err := GetDataSources(ctx, &args, opts...)
-			var s GetDataSourcesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDataSourcesResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getDataSources:getDataSources", args, &rv, "", opts...)
+			if err != nil {
+				return GetDataSourcesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDataSourcesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDataSourcesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDataSourcesResultOutput)
 }
 

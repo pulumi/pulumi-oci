@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOperationsInsightsPrivateEndpoint(args: GetOperationsInsightsPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsPrivateEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", {
         "operationsInsightsPrivateEndpointId": args.operationsInsightsPrivateEndpointId,
@@ -125,7 +124,10 @@ export interface GetOperationsInsightsPrivateEndpointResult {
  * ```
  */
 export function getOperationsInsightsPrivateEndpointOutput(args: GetOperationsInsightsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getOperationsInsightsPrivateEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", {
+        "operationsInsightsPrivateEndpointId": args.operationsInsightsPrivateEndpointId,
+    }, opts);
 }
 
 /**

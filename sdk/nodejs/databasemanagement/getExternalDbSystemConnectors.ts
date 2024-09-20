@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getExternalDbSystemConnectors(args?: GetExternalDbSystemConnectorsArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbSystemConnectorsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors", {
         "compartmentId": args.compartmentId,
@@ -100,7 +99,14 @@ export interface GetExternalDbSystemConnectorsResult {
  * ```
  */
 export function getExternalDbSystemConnectorsOutput(args?: GetExternalDbSystemConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemConnectorsResult> {
-    return pulumi.output(args).apply((a: any) => getExternalDbSystemConnectors(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "externalDbSystemId": args.externalDbSystemId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

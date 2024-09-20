@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsSelfRegistrationProfiles(args: GetDomainsSelfRegistrationProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSelfRegistrationProfilesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", {
         "attributeSets": args.attributeSets,
@@ -142,7 +141,20 @@ export interface GetDomainsSelfRegistrationProfilesResult {
  * ```
  */
 export function getDomainsSelfRegistrationProfilesOutput(args: GetDomainsSelfRegistrationProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSelfRegistrationProfilesResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsSelfRegistrationProfiles(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "selfRegistrationProfileCount": args.selfRegistrationProfileCount,
+        "selfRegistrationProfileFilter": args.selfRegistrationProfileFilter,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

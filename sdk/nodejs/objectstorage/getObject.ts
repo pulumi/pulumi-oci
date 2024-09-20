@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getObject(args: GetObjectArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObject:getObject", {
         "base64EncodeContent": args.base64EncodeContent,
@@ -189,7 +188,21 @@ export interface GetObjectResult {
  * ```
  */
 export function getObjectOutput(args: GetObjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectResult> {
-    return pulumi.output(args).apply((a: any) => getObject(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObject:getObject", {
+        "base64EncodeContent": args.base64EncodeContent,
+        "bucket": args.bucket,
+        "contentLengthLimit": args.contentLengthLimit,
+        "httpResponseCacheControl": args.httpResponseCacheControl,
+        "httpResponseContentDisposition": args.httpResponseContentDisposition,
+        "httpResponseContentEncoding": args.httpResponseContentEncoding,
+        "httpResponseContentLanguage": args.httpResponseContentLanguage,
+        "httpResponseContentType": args.httpResponseContentType,
+        "httpResponseExpires": args.httpResponseExpires,
+        "namespace": args.namespace,
+        "object": args.object,
+        "versionId": args.versionId,
+    }, opts);
 }
 
 /**

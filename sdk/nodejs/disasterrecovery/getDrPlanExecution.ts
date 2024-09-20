@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrPlanExecution(args: GetDrPlanExecutionArgs, opts?: pulumi.InvokeOptions): Promise<GetDrPlanExecutionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution", {
         "drPlanExecutionId": args.drPlanExecutionId,
@@ -147,7 +146,10 @@ export interface GetDrPlanExecutionResult {
  * ```
  */
 export function getDrPlanExecutionOutput(args: GetDrPlanExecutionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrPlanExecutionResult> {
-    return pulumi.output(args).apply((a: any) => getDrPlanExecution(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution", {
+        "drPlanExecutionId": args.drPlanExecutionId,
+    }, opts);
 }
 
 /**

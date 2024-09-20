@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCpes(args: GetCpesArgs, opts?: pulumi.InvokeOptions): Promise<GetCpesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCpes:getCpes", {
         "compartmentId": args.compartmentId,
@@ -77,7 +76,11 @@ export interface GetCpesResult {
  * ```
  */
 export function getCpesOutput(args: GetCpesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpesResult> {
-    return pulumi.output(args).apply((a: any) => getCpes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCpes:getCpes", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

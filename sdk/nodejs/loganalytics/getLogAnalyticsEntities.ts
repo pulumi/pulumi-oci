@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsEntities(args: GetLogAnalyticsEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntitiesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", {
         "cloudResourceId": args.cloudResourceId,
@@ -191,7 +190,23 @@ export interface GetLogAnalyticsEntitiesResult {
  * ```
  */
 export function getLogAnalyticsEntitiesOutput(args: GetLogAnalyticsEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntitiesResult> {
-    return pulumi.output(args).apply((a: any) => getLogAnalyticsEntities(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", {
+        "cloudResourceId": args.cloudResourceId,
+        "compartmentId": args.compartmentId,
+        "entityTypeNames": args.entityTypeNames,
+        "filters": args.filters,
+        "hostname": args.hostname,
+        "hostnameContains": args.hostnameContains,
+        "isManagementAgentIdNull": args.isManagementAgentIdNull,
+        "lifecycleDetailsContains": args.lifecycleDetailsContains,
+        "metadataEquals": args.metadataEquals,
+        "name": args.name,
+        "nameContains": args.nameContains,
+        "namespace": args.namespace,
+        "sourceId": args.sourceId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

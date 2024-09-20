@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMySupportAccount(args: GetDomainsMySupportAccountArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMySupportAccountResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMySupportAccount:getDomainsMySupportAccount", {
         "authorization": args.authorization,
@@ -155,7 +154,13 @@ export interface GetDomainsMySupportAccountResult {
  * ```
  */
 export function getDomainsMySupportAccountOutput(args: GetDomainsMySupportAccountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMySupportAccountResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMySupportAccount(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMySupportAccount:getDomainsMySupportAccount", {
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "mySupportAccountId": args.mySupportAccountId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

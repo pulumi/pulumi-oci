@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListener(args: GetListenerArgs, opts?: pulumi.InvokeOptions): Promise<GetListenerResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getListener:getListener", {
         "listenerName": args.listenerName,
@@ -102,7 +101,11 @@ export interface GetListenerResult {
  * ```
  */
 export function getListenerOutput(args: GetListenerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListenerResult> {
-    return pulumi.output(args).apply((a: any) => getListener(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getListener:getListener", {
+        "listenerName": args.listenerName,
+        "networkLoadBalancerId": args.networkLoadBalancerId,
+    }, opts);
 }
 
 /**

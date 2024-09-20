@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOsns(args: GetOsnsArgs, opts?: pulumi.InvokeOptions): Promise<GetOsnsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getOsns:getOsns", {
         "blockchainPlatformId": args.blockchainPlatformId,
@@ -82,7 +81,12 @@ export interface GetOsnsResult {
  * ```
  */
 export function getOsnsOutput(args: GetOsnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOsnsResult> {
-    return pulumi.output(args).apply((a: any) => getOsns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Blockchain/getOsns:getOsns", {
+        "blockchainPlatformId": args.blockchainPlatformId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

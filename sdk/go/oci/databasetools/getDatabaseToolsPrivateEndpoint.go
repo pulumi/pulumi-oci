@@ -105,14 +105,20 @@ type LookupDatabaseToolsPrivateEndpointResult struct {
 
 func LookupDatabaseToolsPrivateEndpointOutput(ctx *pulumi.Context, args LookupDatabaseToolsPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseToolsPrivateEndpointResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDatabaseToolsPrivateEndpointResult, error) {
+		ApplyT(func(v interface{}) (LookupDatabaseToolsPrivateEndpointResultOutput, error) {
 			args := v.(LookupDatabaseToolsPrivateEndpointArgs)
-			r, err := LookupDatabaseToolsPrivateEndpoint(ctx, &args, opts...)
-			var s LookupDatabaseToolsPrivateEndpointResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDatabaseToolsPrivateEndpointResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDatabaseToolsPrivateEndpointResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDatabaseToolsPrivateEndpointResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDatabaseToolsPrivateEndpointResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDatabaseToolsPrivateEndpointResultOutput)
 }
 

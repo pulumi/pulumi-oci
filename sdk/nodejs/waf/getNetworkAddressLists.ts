@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkAddressLists(args: GetNetworkAddressListsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkAddressListsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", {
         "compartmentId": args.compartmentId,
@@ -106,7 +105,14 @@ export interface GetNetworkAddressListsResult {
  * ```
  */
 export function getNetworkAddressListsOutput(args: GetNetworkAddressListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkAddressListsResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkAddressLists(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "states": args.states,
+    }, opts);
 }
 
 /**

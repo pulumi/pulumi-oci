@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  */
 export function getShapes(args?: GetShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetShapesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getShapes:getShapes", {
         "compartmentId": args.compartmentId,
@@ -82,7 +81,13 @@ export interface GetShapesResult {
  * ```
  */
 export function getShapesOutput(args?: GetShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapesResult> {
-    return pulumi.output(args).apply((a: any) => getShapes(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Psql/getShapes:getShapes", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+    }, opts);
 }
 
 /**

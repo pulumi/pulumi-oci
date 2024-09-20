@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyTrustedUserAgents(args: GetDomainsMyTrustedUserAgentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyTrustedUserAgentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyTrustedUserAgents:getDomainsMyTrustedUserAgents", {
         "attributeSets": args.attributeSets,
@@ -142,7 +141,20 @@ export interface GetDomainsMyTrustedUserAgentsResult {
  * ```
  */
 export function getDomainsMyTrustedUserAgentsOutput(args: GetDomainsMyTrustedUserAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyTrustedUserAgentsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyTrustedUserAgents(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyTrustedUserAgents:getDomainsMyTrustedUserAgents", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myTrustedUserAgentCount": args.myTrustedUserAgentCount,
+        "myTrustedUserAgentFilter": args.myTrustedUserAgentFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

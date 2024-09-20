@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPolicyHealthReportLogs(args: GetMaskingPolicyHealthReportLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPolicyHealthReportLogsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPolicyHealthReportLogs:getMaskingPolicyHealthReportLogs", {
         "filters": args.filters,
@@ -85,7 +84,12 @@ export interface GetMaskingPolicyHealthReportLogsResult {
  * ```
  */
 export function getMaskingPolicyHealthReportLogsOutput(args: GetMaskingPolicyHealthReportLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPolicyHealthReportLogsResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingPolicyHealthReportLogs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPolicyHealthReportLogs:getMaskingPolicyHealthReportLogs", {
+        "filters": args.filters,
+        "maskingPolicyHealthReportId": args.maskingPolicyHealthReportId,
+        "messageType": args.messageType,
+    }, opts);
 }
 
 /**

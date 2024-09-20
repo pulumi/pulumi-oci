@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDesktopPoolDesktops(args: GetDesktopPoolDesktopsArgs, opts?: pulumi.InvokeOptions): Promise<GetDesktopPoolDesktopsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Desktops/getDesktopPoolDesktops:getDesktopPoolDesktops", {
         "availabilityDomain": args.availabilityDomain,
@@ -113,7 +112,16 @@ export interface GetDesktopPoolDesktopsResult {
  * ```
  */
 export function getDesktopPoolDesktopsOutput(args: GetDesktopPoolDesktopsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDesktopPoolDesktopsResult> {
-    return pulumi.output(args).apply((a: any) => getDesktopPoolDesktops(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Desktops/getDesktopPoolDesktops:getDesktopPoolDesktops", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "desktopPoolId": args.desktopPoolId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInternalOccAvailabilityCatalogs(args: GetInternalOccAvailabilityCatalogsArgs, opts?: pulumi.InvokeOptions): Promise<GetInternalOccAvailabilityCatalogsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getInternalOccAvailabilityCatalogs:getInternalOccAvailabilityCatalogs", {
         "catalogState": args.catalogState,
@@ -128,7 +127,16 @@ export interface GetInternalOccAvailabilityCatalogsResult {
  * ```
  */
 export function getInternalOccAvailabilityCatalogsOutput(args: GetInternalOccAvailabilityCatalogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternalOccAvailabilityCatalogsResult> {
-    return pulumi.output(args).apply((a: any) => getInternalOccAvailabilityCatalogs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getInternalOccAvailabilityCatalogs:getInternalOccAvailabilityCatalogs", {
+        "catalogState": args.catalogState,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "namespace": args.namespace,
+        "occCustomerGroupId": args.occCustomerGroupId,
+    }, opts);
 }
 
 /**

@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentGetAutoUpgradableConfig(args: GetManagementAgentGetAutoUpgradableConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentGetAutoUpgradableConfigResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", {
         "compartmentId": args.compartmentId,
@@ -71,7 +70,10 @@ export interface GetManagementAgentGetAutoUpgradableConfigResult {
  * ```
  */
 export function getManagementAgentGetAutoUpgradableConfigOutput(args: GetManagementAgentGetAutoUpgradableConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentGetAutoUpgradableConfigResult> {
-    return pulumi.output(args).apply((a: any) => getManagementAgentGetAutoUpgradableConfig(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", {
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

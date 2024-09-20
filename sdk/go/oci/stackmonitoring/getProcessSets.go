@@ -75,14 +75,20 @@ type GetProcessSetsResult struct {
 
 func GetProcessSetsOutput(ctx *pulumi.Context, args GetProcessSetsOutputArgs, opts ...pulumi.InvokeOption) GetProcessSetsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetProcessSetsResult, error) {
+		ApplyT(func(v interface{}) (GetProcessSetsResultOutput, error) {
 			args := v.(GetProcessSetsArgs)
-			r, err := GetProcessSets(ctx, &args, opts...)
-			var s GetProcessSetsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetProcessSetsResult
+			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getProcessSets:getProcessSets", args, &rv, "", opts...)
+			if err != nil {
+				return GetProcessSetsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetProcessSetsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetProcessSetsResultOutput), nil
+			}
+			return output, nil
 		}).(GetProcessSetsResultOutput)
 }
 

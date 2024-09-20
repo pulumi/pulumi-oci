@@ -110,14 +110,20 @@ type LookupWorkspaceApplicationPatchResult struct {
 
 func LookupWorkspaceApplicationPatchOutput(ctx *pulumi.Context, args LookupWorkspaceApplicationPatchOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceApplicationPatchResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupWorkspaceApplicationPatchResult, error) {
+		ApplyT(func(v interface{}) (LookupWorkspaceApplicationPatchResultOutput, error) {
 			args := v.(LookupWorkspaceApplicationPatchArgs)
-			r, err := LookupWorkspaceApplicationPatch(ctx, &args, opts...)
-			var s LookupWorkspaceApplicationPatchResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupWorkspaceApplicationPatchResult
+			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceApplicationPatch:getWorkspaceApplicationPatch", args, &rv, "", opts...)
+			if err != nil {
+				return LookupWorkspaceApplicationPatchResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupWorkspaceApplicationPatchResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupWorkspaceApplicationPatchResultOutput), nil
+			}
+			return output, nil
 		}).(LookupWorkspaceApplicationPatchResultOutput)
 }
 

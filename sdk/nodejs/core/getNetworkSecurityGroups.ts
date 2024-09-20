@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getNetworkSecurityGroups(args?: GetNetworkSecurityGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", {
         "compartmentId": args.compartmentId,
@@ -121,7 +120,16 @@ export interface GetNetworkSecurityGroupsResult {
  * ```
  */
 export function getNetworkSecurityGroupsOutput(args?: GetNetworkSecurityGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkSecurityGroups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "vcnId": args.vcnId,
+        "vlanId": args.vlanId,
+    }, opts);
 }
 
 /**

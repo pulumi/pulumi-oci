@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBackendHealth(args: GetBackendHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendHealthResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getBackendHealth:getBackendHealth", {
         "backendName": args.backendName,
@@ -95,7 +94,12 @@ export interface GetBackendHealthResult {
  * ```
  */
 export function getBackendHealthOutput(args: GetBackendHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendHealthResult> {
-    return pulumi.output(args).apply((a: any) => getBackendHealth(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getBackendHealth:getBackendHealth", {
+        "backendName": args.backendName,
+        "backendSetName": args.backendSetName,
+        "loadBalancerId": args.loadBalancerId,
+    }, opts);
 }
 
 /**

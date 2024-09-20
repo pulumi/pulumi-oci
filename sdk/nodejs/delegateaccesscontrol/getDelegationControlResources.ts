@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDelegationControlResources(args: GetDelegationControlResourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetDelegationControlResourcesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DelegateAccessControl/getDelegationControlResources:getDelegationControlResources", {
         "delegationControlId": args.delegationControlId,
@@ -74,7 +73,11 @@ export interface GetDelegationControlResourcesResult {
  * ```
  */
 export function getDelegationControlResourcesOutput(args: GetDelegationControlResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegationControlResourcesResult> {
-    return pulumi.output(args).apply((a: any) => getDelegationControlResources(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegationControlResources:getDelegationControlResources", {
+        "delegationControlId": args.delegationControlId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

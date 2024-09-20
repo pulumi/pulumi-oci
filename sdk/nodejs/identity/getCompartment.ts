@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCompartment(args: GetCompartmentArgs, opts?: pulumi.InvokeOptions): Promise<GetCompartmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getCompartment:getCompartment", {
         "id": args.id,
@@ -114,7 +113,10 @@ export interface GetCompartmentResult {
  * ```
  */
 export function getCompartmentOutput(args: GetCompartmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompartmentResult> {
-    return pulumi.output(args).apply((a: any) => getCompartment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getCompartment:getCompartment", {
+        "id": args.id,
+    }, opts);
 }
 
 /**

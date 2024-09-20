@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsObjectCollectionRule(args: GetLogAnalyticsObjectCollectionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsObjectCollectionRuleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", {
         "logAnalyticsObjectCollectionRuleId": args.logAnalyticsObjectCollectionRuleId,
@@ -183,7 +182,11 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
  * ```
  */
 export function getLogAnalyticsObjectCollectionRuleOutput(args: GetLogAnalyticsObjectCollectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsObjectCollectionRuleResult> {
-    return pulumi.output(args).apply((a: any) => getLogAnalyticsObjectCollectionRule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", {
+        "logAnalyticsObjectCollectionRuleId": args.logAnalyticsObjectCollectionRuleId,
+        "namespace": args.namespace,
+    }, opts);
 }
 
 /**

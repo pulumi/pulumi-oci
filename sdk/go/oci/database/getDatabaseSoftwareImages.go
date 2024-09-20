@@ -95,14 +95,20 @@ type GetDatabaseSoftwareImagesResult struct {
 
 func GetDatabaseSoftwareImagesOutput(ctx *pulumi.Context, args GetDatabaseSoftwareImagesOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseSoftwareImagesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDatabaseSoftwareImagesResult, error) {
+		ApplyT(func(v interface{}) (GetDatabaseSoftwareImagesResultOutput, error) {
 			args := v.(GetDatabaseSoftwareImagesArgs)
-			r, err := GetDatabaseSoftwareImages(ctx, &args, opts...)
-			var s GetDatabaseSoftwareImagesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDatabaseSoftwareImagesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", args, &rv, "", opts...)
+			if err != nil {
+				return GetDatabaseSoftwareImagesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDatabaseSoftwareImagesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDatabaseSoftwareImagesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDatabaseSoftwareImagesResultOutput)
 }
 

@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityAssessmentFindingsChangeAuditLogs(args: GetSecurityAssessmentFindingsChangeAuditLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingsChangeAuditLogsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", {
         "filters": args.filters,
@@ -165,7 +164,20 @@ export interface GetSecurityAssessmentFindingsChangeAuditLogsResult {
  * ```
  */
 export function getSecurityAssessmentFindingsChangeAuditLogsOutput(args: GetSecurityAssessmentFindingsChangeAuditLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityAssessmentFindingsChangeAuditLogs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", {
+        "filters": args.filters,
+        "findingKey": args.findingKey,
+        "findingTitle": args.findingTitle,
+        "isRiskDeferred": args.isRiskDeferred,
+        "modifiedBy": args.modifiedBy,
+        "securityAssessmentId": args.securityAssessmentId,
+        "severity": args.severity,
+        "timeUpdatedGreaterThanOrEqualTo": args.timeUpdatedGreaterThanOrEqualTo,
+        "timeUpdatedLessThan": args.timeUpdatedLessThan,
+        "timeValidUntilGreaterThanOrEqualTo": args.timeValidUntilGreaterThanOrEqualTo,
+        "timeValidUntilLessThan": args.timeValidUntilLessThan,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOnpremConnector(args: GetOnpremConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetOnpremConnectorResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getOnpremConnector:getOnpremConnector", {
         "onPremConnectorId": args.onPremConnectorId,
@@ -109,7 +108,10 @@ export interface GetOnpremConnectorResult {
  * ```
  */
 export function getOnpremConnectorOutput(args: GetOnpremConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnpremConnectorResult> {
-    return pulumi.output(args).apply((a: any) => getOnpremConnector(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getOnpremConnector:getOnpremConnector", {
+        "onPremConnectorId": args.onPremConnectorId,
+    }, opts);
 }
 
 /**

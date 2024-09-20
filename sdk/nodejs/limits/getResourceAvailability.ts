@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResourceAvailability(args: GetResourceAvailabilityArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceAvailabilityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getResourceAvailability:getResourceAvailability", {
         "availabilityDomain": args.availabilityDomain,
@@ -125,7 +124,14 @@ export interface GetResourceAvailabilityResult {
  * ```
  */
 export function getResourceAvailabilityOutput(args: GetResourceAvailabilityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceAvailabilityResult> {
-    return pulumi.output(args).apply((a: any) => getResourceAvailability(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Limits/getResourceAvailability:getResourceAvailability", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "limitName": args.limitName,
+        "serviceName": args.serviceName,
+        "subscriptionId": args.subscriptionId,
+    }, opts);
 }
 
 /**

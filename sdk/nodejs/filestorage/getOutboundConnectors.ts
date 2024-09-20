@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOutboundConnectors(args: GetOutboundConnectorsArgs, opts?: pulumi.InvokeOptions): Promise<GetOutboundConnectorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", {
         "availabilityDomain": args.availabilityDomain,
@@ -117,7 +116,15 @@ export interface GetOutboundConnectorsResult {
  * ```
  */
 export function getOutboundConnectorsOutput(args: GetOutboundConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOutboundConnectorsResult> {
-    return pulumi.output(args).apply((a: any) => getOutboundConnectors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHealth(args: GetHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetHealthResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getHealth:getHealth", {
         "loadBalancerId": args.loadBalancerId,
@@ -93,7 +92,10 @@ export interface GetHealthResult {
  * ```
  */
 export function getHealthOutput(args: GetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHealthResult> {
-    return pulumi.output(args).apply((a: any) => getHealth(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getHealth:getHealth", {
+        "loadBalancerId": args.loadBalancerId,
+    }, opts);
 }
 
 /**

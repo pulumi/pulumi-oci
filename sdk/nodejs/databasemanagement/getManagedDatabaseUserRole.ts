@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserRole(args: GetManagedDatabaseUserRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserRoleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserRole:getManagedDatabaseUserRole", {
         "managedDatabaseId": args.managedDatabaseId,
@@ -90,7 +89,12 @@ export interface GetManagedDatabaseUserRoleResult {
  * ```
  */
 export function getManagedDatabaseUserRoleOutput(args: GetManagedDatabaseUserRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserRoleResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserRole(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserRole:getManagedDatabaseUserRole", {
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "userName": args.userName,
+    }, opts);
 }
 
 /**

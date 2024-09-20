@@ -82,14 +82,20 @@ type GetManagedDatabaseUserObjectPrivilegesResult struct {
 
 func GetManagedDatabaseUserObjectPrivilegesOutput(ctx *pulumi.Context, args GetManagedDatabaseUserObjectPrivilegesOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserObjectPrivilegesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseUserObjectPrivilegesResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseUserObjectPrivilegesResultOutput, error) {
 			args := v.(GetManagedDatabaseUserObjectPrivilegesArgs)
-			r, err := GetManagedDatabaseUserObjectPrivileges(ctx, &args, opts...)
-			var s GetManagedDatabaseUserObjectPrivilegesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseUserObjectPrivilegesResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseUserObjectPrivilegesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseUserObjectPrivilegesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseUserObjectPrivilegesResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseUserObjectPrivilegesResultOutput)
 }
 

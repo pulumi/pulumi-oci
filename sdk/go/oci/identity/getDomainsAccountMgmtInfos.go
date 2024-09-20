@@ -107,14 +107,20 @@ type GetDomainsAccountMgmtInfosResult struct {
 
 func GetDomainsAccountMgmtInfosOutput(ctx *pulumi.Context, args GetDomainsAccountMgmtInfosOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAccountMgmtInfosResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsAccountMgmtInfosResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsAccountMgmtInfosResultOutput, error) {
 			args := v.(GetDomainsAccountMgmtInfosArgs)
-			r, err := GetDomainsAccountMgmtInfos(ctx, &args, opts...)
-			var s GetDomainsAccountMgmtInfosResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsAccountMgmtInfosResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsAccountMgmtInfos:getDomainsAccountMgmtInfos", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsAccountMgmtInfosResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsAccountMgmtInfosResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsAccountMgmtInfosResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsAccountMgmtInfosResultOutput)
 }
 

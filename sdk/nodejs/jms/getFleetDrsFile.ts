@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetDrsFile(args: GetFleetDrsFileArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetDrsFileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetDrsFile:getFleetDrsFile", {
         "drsFileKey": args.drsFileKey,
@@ -100,7 +99,11 @@ export interface GetFleetDrsFileResult {
  * ```
  */
 export function getFleetDrsFileOutput(args: GetFleetDrsFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetDrsFileResult> {
-    return pulumi.output(args).apply((a: any) => getFleetDrsFile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetDrsFile:getFleetDrsFile", {
+        "drsFileKey": args.drsFileKey,
+        "fleetId": args.fleetId,
+    }, opts);
 }
 
 /**

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoverySchedules(args: GetDiscoverySchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoverySchedulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetDiscoverySchedulesResult {
  * ```
  */
 export function getDiscoverySchedulesOutput(args: GetDiscoverySchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoverySchedulesResult> {
-    return pulumi.output(args).apply((a: any) => getDiscoverySchedules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", {
+        "compartmentId": args.compartmentId,
+        "discoveryScheduleId": args.discoveryScheduleId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

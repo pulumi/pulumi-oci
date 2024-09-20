@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEntitlements(args: GetEntitlementsArgs, opts?: pulumi.InvokeOptions): Promise<GetEntitlementsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getEntitlements:getEntitlements", {
         "compartmentId": args.compartmentId,
@@ -101,7 +100,13 @@ export interface GetEntitlementsResult {
  * ```
  */
 export function getEntitlementsOutput(args: GetEntitlementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEntitlementsResult> {
-    return pulumi.output(args).apply((a: any) => getEntitlements(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getEntitlements:getEntitlements", {
+        "compartmentId": args.compartmentId,
+        "csi": args.csi,
+        "filters": args.filters,
+        "vendorName": args.vendorName,
+    }, opts);
 }
 
 /**

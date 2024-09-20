@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsAppRoles(args: GetDomainsAppRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAppRolesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", {
         "appRoleCount": args.appRoleCount,
@@ -142,7 +141,20 @@ export interface GetDomainsAppRolesResult {
  * ```
  */
 export function getDomainsAppRolesOutput(args: GetDomainsAppRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAppRolesResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsAppRoles(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", {
+        "appRoleCount": args.appRoleCount,
+        "appRoleFilter": args.appRoleFilter,
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

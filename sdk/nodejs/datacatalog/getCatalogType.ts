@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogType(args: GetCatalogTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogTypeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogType:getCatalogType", {
         "catalogId": args.catalogId,
@@ -128,7 +127,12 @@ export interface GetCatalogTypeResult {
  * ```
  */
 export function getCatalogTypeOutput(args: GetCatalogTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogTypeResult> {
-    return pulumi.output(args).apply((a: any) => getCatalogType(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getCatalogType:getCatalogType", {
+        "catalogId": args.catalogId,
+        "fields": args.fields,
+        "typeKey": args.typeKey,
+    }, opts);
 }
 
 /**

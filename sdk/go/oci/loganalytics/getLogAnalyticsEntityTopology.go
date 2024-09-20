@@ -80,14 +80,20 @@ type GetLogAnalyticsEntityTopologyResult struct {
 
 func GetLogAnalyticsEntityTopologyOutput(ctx *pulumi.Context, args GetLogAnalyticsEntityTopologyOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsEntityTopologyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsEntityTopologyResult, error) {
+		ApplyT(func(v interface{}) (GetLogAnalyticsEntityTopologyResultOutput, error) {
 			args := v.(GetLogAnalyticsEntityTopologyArgs)
-			r, err := GetLogAnalyticsEntityTopology(ctx, &args, opts...)
-			var s GetLogAnalyticsEntityTopologyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetLogAnalyticsEntityTopologyResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args, &rv, "", opts...)
+			if err != nil {
+				return GetLogAnalyticsEntityTopologyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetLogAnalyticsEntityTopologyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetLogAnalyticsEntityTopologyResultOutput), nil
+			}
+			return output, nil
 		}).(GetLogAnalyticsEntityTopologyResultOutput)
 }
 

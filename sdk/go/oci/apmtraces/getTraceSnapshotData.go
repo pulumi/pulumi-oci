@@ -89,14 +89,20 @@ type GetTraceSnapshotDataResult struct {
 
 func GetTraceSnapshotDataOutput(ctx *pulumi.Context, args GetTraceSnapshotDataOutputArgs, opts ...pulumi.InvokeOption) GetTraceSnapshotDataResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTraceSnapshotDataResult, error) {
+		ApplyT(func(v interface{}) (GetTraceSnapshotDataResultOutput, error) {
 			args := v.(GetTraceSnapshotDataArgs)
-			r, err := GetTraceSnapshotData(ctx, &args, opts...)
-			var s GetTraceSnapshotDataResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetTraceSnapshotDataResult
+			secret, err := ctx.InvokePackageRaw("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args, &rv, "", opts...)
+			if err != nil {
+				return GetTraceSnapshotDataResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetTraceSnapshotDataResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetTraceSnapshotDataResultOutput), nil
+			}
+			return output, nil
 		}).(GetTraceSnapshotDataResultOutput)
 }
 

@@ -88,14 +88,20 @@ type GetFusionEnvironmentFamilyResult struct {
 
 func GetFusionEnvironmentFamilyOutput(ctx *pulumi.Context, args GetFusionEnvironmentFamilyOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentFamilyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentFamilyResult, error) {
+		ApplyT(func(v interface{}) (GetFusionEnvironmentFamilyResultOutput, error) {
 			args := v.(GetFusionEnvironmentFamilyArgs)
-			r, err := GetFusionEnvironmentFamily(ctx, &args, opts...)
-			var s GetFusionEnvironmentFamilyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFusionEnvironmentFamilyResult
+			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", args, &rv, "", opts...)
+			if err != nil {
+				return GetFusionEnvironmentFamilyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFusionEnvironmentFamilyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFusionEnvironmentFamilyResultOutput), nil
+			}
+			return output, nil
 		}).(GetFusionEnvironmentFamilyResultOutput)
 }
 

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResourceQuotas(args: GetResourceQuotasArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceQuotasResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:UsageProxy/getResourceQuotas:getResourceQuotas", {
         "compartmentId": args.compartmentId,
@@ -92,7 +91,13 @@ export interface GetResourceQuotasResult {
  * ```
  */
 export function getResourceQuotasOutput(args: GetResourceQuotasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceQuotasResult> {
-    return pulumi.output(args).apply((a: any) => getResourceQuotas(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:UsageProxy/getResourceQuotas:getResourceQuotas", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "serviceEntitlement": args.serviceEntitlement,
+        "serviceName": args.serviceName,
+    }, opts);
 }
 
 /**

@@ -69,14 +69,20 @@ type GetDbSystemPatchesResult struct {
 
 func GetDbSystemPatchesOutput(ctx *pulumi.Context, args GetDbSystemPatchesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemPatchesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDbSystemPatchesResult, error) {
+		ApplyT(func(v interface{}) (GetDbSystemPatchesResultOutput, error) {
 			args := v.(GetDbSystemPatchesArgs)
-			r, err := GetDbSystemPatches(ctx, &args, opts...)
-			var s GetDbSystemPatchesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDbSystemPatchesResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getDbSystemPatches:getDbSystemPatches", args, &rv, "", opts...)
+			if err != nil {
+				return GetDbSystemPatchesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDbSystemPatchesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDbSystemPatchesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDbSystemPatchesResultOutput)
 }
 

@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabases(args: GetManagedDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", {
         "compartmentId": args.compartmentId,
@@ -135,7 +134,16 @@ export interface GetManagedDatabasesResult {
  * ```
  */
 export function getManagedDatabasesOutput(args: GetManagedDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabases(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", {
+        "compartmentId": args.compartmentId,
+        "deploymentType": args.deploymentType,
+        "externalExadataInfrastructureId": args.externalExadataInfrastructureId,
+        "filters": args.filters,
+        "id": args.id,
+        "managementOption": args.managementOption,
+        "name": args.name,
+    }, opts);
 }
 
 /**

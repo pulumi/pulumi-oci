@@ -119,14 +119,20 @@ type LookupDomainsSecurityQuestionResult struct {
 
 func LookupDomainsSecurityQuestionOutput(ctx *pulumi.Context, args LookupDomainsSecurityQuestionOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsSecurityQuestionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsSecurityQuestionResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsSecurityQuestionResultOutput, error) {
 			args := v.(LookupDomainsSecurityQuestionArgs)
-			r, err := LookupDomainsSecurityQuestion(ctx, &args, opts...)
-			var s LookupDomainsSecurityQuestionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsSecurityQuestionResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSecurityQuestion:getDomainsSecurityQuestion", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsSecurityQuestionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsSecurityQuestionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsSecurityQuestionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsSecurityQuestionResultOutput)
 }
 

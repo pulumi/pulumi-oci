@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
  */
 export function getCertificateAuthorityVersion(args: GetCertificateAuthorityVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityVersionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", {
         "certificateAuthorityId": args.certificateAuthorityId,
@@ -90,7 +89,11 @@ export interface GetCertificateAuthorityVersionResult {
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
  */
 export function getCertificateAuthorityVersionOutput(args: GetCertificateAuthorityVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityVersionResult> {
-    return pulumi.output(args).apply((a: any) => getCertificateAuthorityVersion(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", {
+        "certificateAuthorityId": args.certificateAuthorityId,
+        "certificateAuthorityVersionNumber": args.certificateAuthorityVersionNumber,
+    }, opts);
 }
 
 /**

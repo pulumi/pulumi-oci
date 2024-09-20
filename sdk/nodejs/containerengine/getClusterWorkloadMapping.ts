@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterWorkloadMapping(args: GetClusterWorkloadMappingArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterWorkloadMappingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", {
         "clusterId": args.clusterId,
@@ -104,7 +103,11 @@ export interface GetClusterWorkloadMappingResult {
  * ```
  */
 export function getClusterWorkloadMappingOutput(args: GetClusterWorkloadMappingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterWorkloadMappingResult> {
-    return pulumi.output(args).apply((a: any) => getClusterWorkloadMapping(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", {
+        "clusterId": args.clusterId,
+        "workloadMappingId": args.workloadMappingId,
+    }, opts);
 }
 
 /**

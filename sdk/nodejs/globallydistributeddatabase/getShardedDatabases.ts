@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getShardedDatabases(args: GetShardedDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetShardedDatabasesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetShardedDatabasesResult {
  * ```
  */
 export function getShardedDatabasesOutput(args: GetShardedDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShardedDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getShardedDatabases(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

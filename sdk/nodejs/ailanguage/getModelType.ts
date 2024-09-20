@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelType(args: GetModelTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetModelTypeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiLanguage/getModelType:getModelType", {
         "modelType": args.modelType,
@@ -73,7 +72,10 @@ export interface GetModelTypeResult {
  * ```
  */
 export function getModelTypeOutput(args: GetModelTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelTypeResult> {
-    return pulumi.output(args).apply((a: any) => getModelType(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiLanguage/getModelType:getModelType", {
+        "modelType": args.modelType,
+    }, opts);
 }
 
 /**

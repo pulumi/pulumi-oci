@@ -75,14 +75,20 @@ type GetRunStatementsResult struct {
 
 func GetRunStatementsOutput(ctx *pulumi.Context, args GetRunStatementsOutputArgs, opts ...pulumi.InvokeOption) GetRunStatementsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRunStatementsResult, error) {
+		ApplyT(func(v interface{}) (GetRunStatementsResultOutput, error) {
 			args := v.(GetRunStatementsArgs)
-			r, err := GetRunStatements(ctx, &args, opts...)
-			var s GetRunStatementsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetRunStatementsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataFlow/getRunStatements:getRunStatements", args, &rv, "", opts...)
+			if err != nil {
+				return GetRunStatementsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetRunStatementsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetRunStatementsResultOutput), nil
+			}
+			return output, nil
 		}).(GetRunStatementsResultOutput)
 }
 

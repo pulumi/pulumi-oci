@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectAnomalyJob(args: GetDetectAnomalyJobArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectAnomalyJobResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob", {
         "detectAnomalyJobId": args.detectAnomalyJobId,
@@ -131,7 +130,10 @@ export interface GetDetectAnomalyJobResult {
  * ```
  */
 export function getDetectAnomalyJobOutput(args: GetDetectAnomalyJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectAnomalyJobResult> {
-    return pulumi.output(args).apply((a: any) => getDetectAnomalyJob(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob", {
+        "detectAnomalyJobId": args.detectAnomalyJobId,
+    }, opts);
 }
 
 /**

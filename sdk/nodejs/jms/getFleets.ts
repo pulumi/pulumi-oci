@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getFleets(args?: GetFleetsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleets:getFleets", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,16 @@ export interface GetFleetsResult {
  * ```
  */
 export function getFleetsOutput(args?: GetFleetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetsResult> {
-    return pulumi.output(args).apply((a: any) => getFleets(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleets:getFleets", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

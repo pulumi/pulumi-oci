@@ -53,7 +53,6 @@ import * as utilities from "../utilities";
  */
 export function getPublicIp(args?: GetPublicIpArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicIpResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPublicIp:getPublicIp", {
         "id": args.id,
@@ -197,7 +196,13 @@ export interface GetPublicIpResult {
  * ```
  */
 export function getPublicIpOutput(args?: GetPublicIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpResult> {
-    return pulumi.output(args).apply((a: any) => getPublicIp(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getPublicIp:getPublicIp", {
+        "id": args.id,
+        "ipAddress": args.ipAddress,
+        "privateIpId": args.privateIpId,
+    }, opts);
 }
 
 /**

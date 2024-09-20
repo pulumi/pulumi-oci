@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpInventorySubnetCidr(args: GetIpInventorySubnetCidrArgs, opts?: pulumi.InvokeOptions): Promise<GetIpInventorySubnetCidrResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", {
         "subnetId": args.subnetId,
@@ -87,7 +86,10 @@ export interface GetIpInventorySubnetCidrResult {
  * ```
  */
 export function getIpInventorySubnetCidrOutput(args: GetIpInventorySubnetCidrOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpInventorySubnetCidrResult> {
-    return pulumi.output(args).apply((a: any) => getIpInventorySubnetCidr(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", {
+        "subnetId": args.subnetId,
+    }, opts);
 }
 
 /**

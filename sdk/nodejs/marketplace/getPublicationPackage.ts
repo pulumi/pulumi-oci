@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPublicationPackage(args: GetPublicationPackageArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicationPackageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getPublicationPackage:getPublicationPackage", {
         "packageVersion": args.packageVersion,
@@ -123,7 +122,11 @@ export interface GetPublicationPackageResult {
  * ```
  */
 export function getPublicationPackageOutput(args: GetPublicationPackageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicationPackageResult> {
-    return pulumi.output(args).apply((a: any) => getPublicationPackage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Marketplace/getPublicationPackage:getPublicationPackage", {
+        "packageVersion": args.packageVersion,
+        "publicationId": args.publicationId,
+    }, opts);
 }
 
 /**

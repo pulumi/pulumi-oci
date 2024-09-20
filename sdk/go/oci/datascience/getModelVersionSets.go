@@ -93,14 +93,20 @@ type GetModelVersionSetsResult struct {
 
 func GetModelVersionSetsOutput(ctx *pulumi.Context, args GetModelVersionSetsOutputArgs, opts ...pulumi.InvokeOption) GetModelVersionSetsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetModelVersionSetsResult, error) {
+		ApplyT(func(v interface{}) (GetModelVersionSetsResultOutput, error) {
 			args := v.(GetModelVersionSetsArgs)
-			r, err := GetModelVersionSets(ctx, &args, opts...)
-			var s GetModelVersionSetsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetModelVersionSetsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataScience/getModelVersionSets:getModelVersionSets", args, &rv, "", opts...)
+			if err != nil {
+				return GetModelVersionSetsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetModelVersionSetsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetModelVersionSetsResultOutput), nil
+			}
+			return output, nil
 		}).(GetModelVersionSetsResultOutput)
 }
 

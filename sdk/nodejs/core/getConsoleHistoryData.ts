@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConsoleHistoryData(args: GetConsoleHistoryDataArgs, opts?: pulumi.InvokeOptions): Promise<GetConsoleHistoryDataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getConsoleHistoryData:getConsoleHistoryData", {
         "consoleHistoryId": args.consoleHistoryId,
@@ -89,7 +88,12 @@ export interface GetConsoleHistoryDataResult {
  * ```
  */
 export function getConsoleHistoryDataOutput(args: GetConsoleHistoryDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConsoleHistoryDataResult> {
-    return pulumi.output(args).apply((a: any) => getConsoleHistoryData(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getConsoleHistoryData:getConsoleHistoryData", {
+        "consoleHistoryId": args.consoleHistoryId,
+        "length": args.length,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**

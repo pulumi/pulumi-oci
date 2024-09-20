@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIngressGateways(args: GetIngressGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetIngressGatewaysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getIngressGateways:getIngressGateways", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,15 @@ export interface GetIngressGatewaysResult {
  * ```
  */
 export function getIngressGatewaysOutput(args: GetIngressGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIngressGatewaysResult> {
-    return pulumi.output(args).apply((a: any) => getIngressGateways(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getIngressGateways:getIngressGateways", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "meshId": args.meshId,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

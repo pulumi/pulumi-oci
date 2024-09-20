@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabasesAsmProperty(args: GetManagedDatabasesAsmPropertyArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesAsmPropertyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", {
         "managedDatabaseId": args.managedDatabaseId,
@@ -79,7 +78,11 @@ export interface GetManagedDatabasesAsmPropertyResult {
  * ```
  */
 export function getManagedDatabasesAsmPropertyOutput(args: GetManagedDatabasesAsmPropertyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesAsmPropertyResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabasesAsmProperty(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", {
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+    }, opts);
 }
 
 /**

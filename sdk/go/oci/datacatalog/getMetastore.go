@@ -89,14 +89,20 @@ type LookupMetastoreResult struct {
 
 func LookupMetastoreOutput(ctx *pulumi.Context, args LookupMetastoreOutputArgs, opts ...pulumi.InvokeOption) LookupMetastoreResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupMetastoreResult, error) {
+		ApplyT(func(v interface{}) (LookupMetastoreResultOutput, error) {
 			args := v.(LookupMetastoreArgs)
-			r, err := LookupMetastore(ctx, &args, opts...)
-			var s LookupMetastoreResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupMetastoreResult
+			secret, err := ctx.InvokePackageRaw("oci:DataCatalog/getMetastore:getMetastore", args, &rv, "", opts...)
+			if err != nil {
+				return LookupMetastoreResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupMetastoreResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupMetastoreResultOutput), nil
+			}
+			return output, nil
 		}).(LookupMetastoreResultOutput)
 }
 

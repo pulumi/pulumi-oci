@@ -69,14 +69,20 @@ type GetBlockchainPlatformPatchesResult struct {
 
 func GetBlockchainPlatformPatchesOutput(ctx *pulumi.Context, args GetBlockchainPlatformPatchesOutputArgs, opts ...pulumi.InvokeOption) GetBlockchainPlatformPatchesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBlockchainPlatformPatchesResult, error) {
+		ApplyT(func(v interface{}) (GetBlockchainPlatformPatchesResultOutput, error) {
 			args := v.(GetBlockchainPlatformPatchesArgs)
-			r, err := GetBlockchainPlatformPatches(ctx, &args, opts...)
-			var s GetBlockchainPlatformPatchesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBlockchainPlatformPatchesResult
+			secret, err := ctx.InvokePackageRaw("oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches", args, &rv, "", opts...)
+			if err != nil {
+				return GetBlockchainPlatformPatchesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBlockchainPlatformPatchesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBlockchainPlatformPatchesResultOutput), nil
+			}
+			return output, nil
 		}).(GetBlockchainPlatformPatchesResultOutput)
 }
 

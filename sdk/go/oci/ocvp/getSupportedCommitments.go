@@ -73,14 +73,20 @@ type GetSupportedCommitmentsResult struct {
 
 func GetSupportedCommitmentsOutput(ctx *pulumi.Context, args GetSupportedCommitmentsOutputArgs, opts ...pulumi.InvokeOption) GetSupportedCommitmentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSupportedCommitmentsResult, error) {
+		ApplyT(func(v interface{}) (GetSupportedCommitmentsResultOutput, error) {
 			args := v.(GetSupportedCommitmentsArgs)
-			r, err := GetSupportedCommitments(ctx, &args, opts...)
-			var s GetSupportedCommitmentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSupportedCommitmentsResult
+			secret, err := ctx.InvokePackageRaw("oci:Ocvp/getSupportedCommitments:getSupportedCommitments", args, &rv, "", opts...)
+			if err != nil {
+				return GetSupportedCommitmentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSupportedCommitmentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSupportedCommitmentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetSupportedCommitmentsResultOutput)
 }
 

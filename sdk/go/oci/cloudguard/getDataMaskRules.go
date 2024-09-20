@@ -102,14 +102,20 @@ type GetDataMaskRulesResult struct {
 
 func GetDataMaskRulesOutput(ctx *pulumi.Context, args GetDataMaskRulesOutputArgs, opts ...pulumi.InvokeOption) GetDataMaskRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDataMaskRulesResult, error) {
+		ApplyT(func(v interface{}) (GetDataMaskRulesResultOutput, error) {
 			args := v.(GetDataMaskRulesArgs)
-			r, err := GetDataMaskRules(ctx, &args, opts...)
-			var s GetDataMaskRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDataMaskRulesResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getDataMaskRules:getDataMaskRules", args, &rv, "", opts...)
+			if err != nil {
+				return GetDataMaskRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDataMaskRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDataMaskRulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDataMaskRulesResultOutput)
 }
 

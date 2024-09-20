@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryJobsResults(args: GetDiscoveryJobsResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobsResultsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", {
         "columnNames": args.columnNames,
@@ -143,7 +142,17 @@ export interface GetDiscoveryJobsResultsResult {
  * ```
  */
 export function getDiscoveryJobsResultsOutput(args: GetDiscoveryJobsResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobsResultsResult> {
-    return pulumi.output(args).apply((a: any) => getDiscoveryJobsResults(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", {
+        "columnNames": args.columnNames,
+        "discoveryJobId": args.discoveryJobId,
+        "discoveryType": args.discoveryType,
+        "filters": args.filters,
+        "isResultApplied": args.isResultApplied,
+        "objects": args.objects,
+        "plannedAction": args.plannedAction,
+        "schemaNames": args.schemaNames,
+    }, opts);
 }
 
 /**

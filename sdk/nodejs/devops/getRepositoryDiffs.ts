@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryDiffs(args: GetRepositoryDiffsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryDiffsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", {
         "baseVersion": args.baseVersion,
@@ -106,7 +105,15 @@ export interface GetRepositoryDiffsResult {
  * ```
  */
 export function getRepositoryDiffsOutput(args: GetRepositoryDiffsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryDiffsResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryDiffs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", {
+        "baseVersion": args.baseVersion,
+        "filters": args.filters,
+        "isComparisonFromMergeBase": args.isComparisonFromMergeBase,
+        "repositoryId": args.repositoryId,
+        "targetRepositoryId": args.targetRepositoryId,
+        "targetVersion": args.targetVersion,
+    }, opts);
 }
 
 /**

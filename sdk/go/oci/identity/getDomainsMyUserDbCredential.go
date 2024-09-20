@@ -123,14 +123,20 @@ type LookupDomainsMyUserDbCredentialResult struct {
 
 func LookupDomainsMyUserDbCredentialOutput(ctx *pulumi.Context, args LookupDomainsMyUserDbCredentialOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsMyUserDbCredentialResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsMyUserDbCredentialResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsMyUserDbCredentialResultOutput, error) {
 			args := v.(LookupDomainsMyUserDbCredentialArgs)
-			r, err := LookupDomainsMyUserDbCredential(ctx, &args, opts...)
-			var s LookupDomainsMyUserDbCredentialResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsMyUserDbCredentialResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyUserDbCredential:getDomainsMyUserDbCredential", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsMyUserDbCredentialResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsMyUserDbCredentialResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsMyUserDbCredentialResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsMyUserDbCredentialResultOutput)
 }
 

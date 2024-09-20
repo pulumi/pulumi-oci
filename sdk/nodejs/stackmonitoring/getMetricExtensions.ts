@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMetricExtensions(args: GetMetricExtensionsArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricExtensionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", {
         "compartmentId": args.compartmentId,
@@ -129,7 +128,16 @@ export interface GetMetricExtensionsResult {
  * ```
  */
 export function getMetricExtensionsOutput(args: GetMetricExtensionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricExtensionsResult> {
-    return pulumi.output(args).apply((a: any) => getMetricExtensions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", {
+        "compartmentId": args.compartmentId,
+        "enabledOnResourceId": args.enabledOnResourceId,
+        "filters": args.filters,
+        "name": args.name,
+        "resourceType": args.resourceType,
+        "state": args.state,
+        "status": args.status,
+    }, opts);
 }
 
 /**

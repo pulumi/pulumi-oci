@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalNonContainerDatabase(args: GetExternalNonContainerDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalNonContainerDatabaseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", {
         "externalNonContainerDatabaseId": args.externalNonContainerDatabaseId,
@@ -143,7 +142,10 @@ export interface GetExternalNonContainerDatabaseResult {
  * ```
  */
 export function getExternalNonContainerDatabaseOutput(args: GetExternalNonContainerDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalNonContainerDatabaseResult> {
-    return pulumi.output(args).apply((a: any) => getExternalNonContainerDatabase(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", {
+        "externalNonContainerDatabaseId": args.externalNonContainerDatabaseId,
+    }, opts);
 }
 
 /**

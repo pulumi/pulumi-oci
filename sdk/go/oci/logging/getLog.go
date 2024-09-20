@@ -94,14 +94,20 @@ type LookupLogResult struct {
 
 func LookupLogOutput(ctx *pulumi.Context, args LookupLogOutputArgs, opts ...pulumi.InvokeOption) LookupLogResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupLogResult, error) {
+		ApplyT(func(v interface{}) (LookupLogResultOutput, error) {
 			args := v.(LookupLogArgs)
-			r, err := LookupLog(ctx, &args, opts...)
-			var s LookupLogResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupLogResult
+			secret, err := ctx.InvokePackageRaw("oci:Logging/getLog:getLog", args, &rv, "", opts...)
+			if err != nil {
+				return LookupLogResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupLogResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupLogResultOutput), nil
+			}
+			return output, nil
 		}).(LookupLogResultOutput)
 }
 

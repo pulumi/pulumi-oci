@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificateAuthority(args: GetCertificateAuthorityArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateAuthority:getCertificateAuthority", {
         "certificateAuthorityId": args.certificateAuthorityId,
@@ -139,7 +138,10 @@ export interface GetCertificateAuthorityResult {
  * ```
  */
 export function getCertificateAuthorityOutput(args: GetCertificateAuthorityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityResult> {
-    return pulumi.output(args).apply((a: any) => getCertificateAuthority(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCertificateAuthority:getCertificateAuthority", {
+        "certificateAuthorityId": args.certificateAuthorityId,
+    }, opts);
 }
 
 /**

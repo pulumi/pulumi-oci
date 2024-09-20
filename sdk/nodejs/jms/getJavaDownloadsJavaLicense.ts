@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJavaDownloadsJavaLicense(args: GetJavaDownloadsJavaLicenseArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaDownloadsJavaLicenseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", {
         "licenseType": args.licenseType,
@@ -76,7 +75,10 @@ export interface GetJavaDownloadsJavaLicenseResult {
  * ```
  */
 export function getJavaDownloadsJavaLicenseOutput(args: GetJavaDownloadsJavaLicenseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaLicenseResult> {
-    return pulumi.output(args).apply((a: any) => getJavaDownloadsJavaLicense(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", {
+        "licenseType": args.licenseType,
+    }, opts);
 }
 
 /**

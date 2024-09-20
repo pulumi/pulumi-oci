@@ -77,14 +77,20 @@ type GetAnnouncementsResult struct {
 
 func GetAnnouncementsOutput(ctx *pulumi.Context, args GetAnnouncementsOutputArgs, opts ...pulumi.InvokeOption) GetAnnouncementsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAnnouncementsResult, error) {
+		ApplyT(func(v interface{}) (GetAnnouncementsResultOutput, error) {
 			args := v.(GetAnnouncementsArgs)
-			r, err := GetAnnouncements(ctx, &args, opts...)
-			var s GetAnnouncementsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAnnouncementsResult
+			secret, err := ctx.InvokePackageRaw("oci:Jms/getAnnouncements:getAnnouncements", args, &rv, "", opts...)
+			if err != nil {
+				return GetAnnouncementsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAnnouncementsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAnnouncementsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAnnouncementsResultOutput)
 }
 

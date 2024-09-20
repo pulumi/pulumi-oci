@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNodePools(args: GetNodePoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetNodePoolsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getNodePools:getNodePools", {
         "clusterId": args.clusterId,
@@ -110,7 +109,14 @@ export interface GetNodePoolsResult {
  * ```
  */
 export function getNodePoolsOutput(args: GetNodePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolsResult> {
-    return pulumi.output(args).apply((a: any) => getNodePools(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getNodePools:getNodePools", {
+        "clusterId": args.clusterId,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+        "states": args.states,
+    }, opts);
 }
 
 /**

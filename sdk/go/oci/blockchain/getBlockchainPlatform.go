@@ -116,14 +116,20 @@ type LookupBlockchainPlatformResult struct {
 
 func LookupBlockchainPlatformOutput(ctx *pulumi.Context, args LookupBlockchainPlatformOutputArgs, opts ...pulumi.InvokeOption) LookupBlockchainPlatformResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBlockchainPlatformResult, error) {
+		ApplyT(func(v interface{}) (LookupBlockchainPlatformResultOutput, error) {
 			args := v.(LookupBlockchainPlatformArgs)
-			r, err := LookupBlockchainPlatform(ctx, &args, opts...)
-			var s LookupBlockchainPlatformResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBlockchainPlatformResult
+			secret, err := ctx.InvokePackageRaw("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBlockchainPlatformResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBlockchainPlatformResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBlockchainPlatformResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBlockchainPlatformResultOutput)
 }
 

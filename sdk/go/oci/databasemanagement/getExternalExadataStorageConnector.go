@@ -99,14 +99,20 @@ type LookupExternalExadataStorageConnectorResult struct {
 
 func LookupExternalExadataStorageConnectorOutput(ctx *pulumi.Context, args LookupExternalExadataStorageConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupExternalExadataStorageConnectorResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupExternalExadataStorageConnectorResult, error) {
+		ApplyT(func(v interface{}) (LookupExternalExadataStorageConnectorResultOutput, error) {
 			args := v.(LookupExternalExadataStorageConnectorArgs)
-			r, err := LookupExternalExadataStorageConnector(ctx, &args, opts...)
-			var s LookupExternalExadataStorageConnectorResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupExternalExadataStorageConnectorResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", args, &rv, "", opts...)
+			if err != nil {
+				return LookupExternalExadataStorageConnectorResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupExternalExadataStorageConnectorResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupExternalExadataStorageConnectorResultOutput), nil
+			}
+			return output, nil
 		}).(LookupExternalExadataStorageConnectorResultOutput)
 }
 

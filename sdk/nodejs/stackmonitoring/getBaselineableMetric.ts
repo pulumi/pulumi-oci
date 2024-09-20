@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBaselineableMetric(args: GetBaselineableMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetBaselineableMetricResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", {
         "baselineableMetricId": args.baselineableMetricId,
@@ -129,7 +128,10 @@ export interface GetBaselineableMetricResult {
  * ```
  */
 export function getBaselineableMetricOutput(args: GetBaselineableMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBaselineableMetricResult> {
-    return pulumi.output(args).apply((a: any) => getBaselineableMetric(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", {
+        "baselineableMetricId": args.baselineableMetricId,
+    }, opts);
 }
 
 /**

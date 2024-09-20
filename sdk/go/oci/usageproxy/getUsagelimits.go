@@ -86,14 +86,20 @@ type GetUsagelimitsResult struct {
 
 func GetUsagelimitsOutput(ctx *pulumi.Context, args GetUsagelimitsOutputArgs, opts ...pulumi.InvokeOption) GetUsagelimitsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetUsagelimitsResult, error) {
+		ApplyT(func(v interface{}) (GetUsagelimitsResultOutput, error) {
 			args := v.(GetUsagelimitsArgs)
-			r, err := GetUsagelimits(ctx, &args, opts...)
-			var s GetUsagelimitsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetUsagelimitsResult
+			secret, err := ctx.InvokePackageRaw("oci:UsageProxy/getUsagelimits:getUsagelimits", args, &rv, "", opts...)
+			if err != nil {
+				return GetUsagelimitsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetUsagelimitsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetUsagelimitsResultOutput), nil
+			}
+			return output, nil
 		}).(GetUsagelimitsResultOutput)
 }
 

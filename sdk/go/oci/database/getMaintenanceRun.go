@@ -124,14 +124,20 @@ type LookupMaintenanceRunResult struct {
 
 func LookupMaintenanceRunOutput(ctx *pulumi.Context, args LookupMaintenanceRunOutputArgs, opts ...pulumi.InvokeOption) LookupMaintenanceRunResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupMaintenanceRunResult, error) {
+		ApplyT(func(v interface{}) (LookupMaintenanceRunResultOutput, error) {
 			args := v.(LookupMaintenanceRunArgs)
-			r, err := LookupMaintenanceRun(ctx, &args, opts...)
-			var s LookupMaintenanceRunResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupMaintenanceRunResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getMaintenanceRun:getMaintenanceRun", args, &rv, "", opts...)
+			if err != nil {
+				return LookupMaintenanceRunResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupMaintenanceRunResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupMaintenanceRunResultOutput), nil
+			}
+			return output, nil
 		}).(LookupMaintenanceRunResultOutput)
 }
 

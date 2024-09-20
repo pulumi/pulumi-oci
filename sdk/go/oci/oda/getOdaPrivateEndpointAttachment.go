@@ -77,14 +77,20 @@ type LookupOdaPrivateEndpointAttachmentResult struct {
 
 func LookupOdaPrivateEndpointAttachmentOutput(ctx *pulumi.Context, args LookupOdaPrivateEndpointAttachmentOutputArgs, opts ...pulumi.InvokeOption) LookupOdaPrivateEndpointAttachmentResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupOdaPrivateEndpointAttachmentResult, error) {
+		ApplyT(func(v interface{}) (LookupOdaPrivateEndpointAttachmentResultOutput, error) {
 			args := v.(LookupOdaPrivateEndpointAttachmentArgs)
-			r, err := LookupOdaPrivateEndpointAttachment(ctx, &args, opts...)
-			var s LookupOdaPrivateEndpointAttachmentResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupOdaPrivateEndpointAttachmentResult
+			secret, err := ctx.InvokePackageRaw("oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment", args, &rv, "", opts...)
+			if err != nil {
+				return LookupOdaPrivateEndpointAttachmentResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupOdaPrivateEndpointAttachmentResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupOdaPrivateEndpointAttachmentResultOutput), nil
+			}
+			return output, nil
 		}).(LookupOdaPrivateEndpointAttachmentResultOutput)
 }
 

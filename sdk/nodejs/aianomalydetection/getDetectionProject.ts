@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectionProject(args: GetDetectionProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionProjectResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", {
         "projectId": args.projectId,
@@ -101,7 +100,10 @@ export interface GetDetectionProjectResult {
  * ```
  */
 export function getDetectionProjectOutput(args: GetDetectionProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionProjectResult> {
-    return pulumi.output(args).apply((a: any) => getDetectionProject(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", {
+        "projectId": args.projectId,
+    }, opts);
 }
 
 /**

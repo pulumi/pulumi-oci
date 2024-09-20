@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualCircuitBandwidthShapes(args: GetVirtualCircuitBandwidthShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitBandwidthShapesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", {
         "filters": args.filters,
@@ -80,7 +79,11 @@ export interface GetVirtualCircuitBandwidthShapesResult {
  * ```
  */
 export function getVirtualCircuitBandwidthShapesOutput(args: GetVirtualCircuitBandwidthShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitBandwidthShapesResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualCircuitBandwidthShapes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", {
+        "filters": args.filters,
+        "providerServiceId": args.providerServiceId,
+    }, opts);
 }
 
 /**

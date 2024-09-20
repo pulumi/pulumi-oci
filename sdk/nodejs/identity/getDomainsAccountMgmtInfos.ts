@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsAccountMgmtInfos(args: GetDomainsAccountMgmtInfosArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAccountMgmtInfosResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsAccountMgmtInfos:getDomainsAccountMgmtInfos", {
         "accountMgmtInfoCount": args.accountMgmtInfoCount,
@@ -142,7 +141,20 @@ export interface GetDomainsAccountMgmtInfosResult {
  * ```
  */
 export function getDomainsAccountMgmtInfosOutput(args: GetDomainsAccountMgmtInfosOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAccountMgmtInfosResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsAccountMgmtInfos(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAccountMgmtInfos:getDomainsAccountMgmtInfos", {
+        "accountMgmtInfoCount": args.accountMgmtInfoCount,
+        "accountMgmtInfoFilter": args.accountMgmtInfoFilter,
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

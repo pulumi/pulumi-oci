@@ -91,14 +91,20 @@ type LookupEkmsPrivateEndpointResult struct {
 
 func LookupEkmsPrivateEndpointOutput(ctx *pulumi.Context, args LookupEkmsPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupEkmsPrivateEndpointResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupEkmsPrivateEndpointResult, error) {
+		ApplyT(func(v interface{}) (LookupEkmsPrivateEndpointResultOutput, error) {
 			args := v.(LookupEkmsPrivateEndpointArgs)
-			r, err := LookupEkmsPrivateEndpoint(ctx, &args, opts...)
-			var s LookupEkmsPrivateEndpointResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupEkmsPrivateEndpointResult
+			secret, err := ctx.InvokePackageRaw("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", args, &rv, "", opts...)
+			if err != nil {
+				return LookupEkmsPrivateEndpointResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupEkmsPrivateEndpointResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupEkmsPrivateEndpointResultOutput), nil
+			}
+			return output, nil
 		}).(LookupEkmsPrivateEndpointResultOutput)
 }
 

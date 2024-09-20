@@ -93,14 +93,20 @@ type LookupCatalogResult struct {
 
 func LookupCatalogOutput(ctx *pulumi.Context, args LookupCatalogOutputArgs, opts ...pulumi.InvokeOption) LookupCatalogResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCatalogResult, error) {
+		ApplyT(func(v interface{}) (LookupCatalogResultOutput, error) {
 			args := v.(LookupCatalogArgs)
-			r, err := LookupCatalog(ctx, &args, opts...)
-			var s LookupCatalogResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupCatalogResult
+			secret, err := ctx.InvokePackageRaw("oci:DataCatalog/getCatalog:getCatalog", args, &rv, "", opts...)
+			if err != nil {
+				return LookupCatalogResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupCatalogResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupCatalogResultOutput), nil
+			}
+			return output, nil
 		}).(LookupCatalogResultOutput)
 }
 

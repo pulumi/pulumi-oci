@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getBootVolumeReplicas(args?: GetBootVolumeReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeReplicasResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", {
         "availabilityDomain": args.availabilityDomain,
@@ -119,7 +118,16 @@ export interface GetBootVolumeReplicasResult {
  * ```
  */
 export function getBootVolumeReplicasOutput(args?: GetBootVolumeReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeReplicasResult> {
-    return pulumi.output(args).apply((a: any) => getBootVolumeReplicas(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "volumeGroupReplicaId": args.volumeGroupReplicaId,
+    }, opts);
 }
 
 /**

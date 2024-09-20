@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterPatches(args: GetVmClusterPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterPatchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterPatches:getVmClusterPatches", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetVmClusterPatchesResult {
  * ```
  */
 export function getVmClusterPatchesOutput(args: GetVmClusterPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterPatchesResult> {
-    return pulumi.output(args).apply((a: any) => getVmClusterPatches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getVmClusterPatches:getVmClusterPatches", {
+        "filters": args.filters,
+        "vmClusterId": args.vmClusterId,
+    }, opts);
 }
 
 /**

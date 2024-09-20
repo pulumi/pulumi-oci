@@ -130,14 +130,20 @@ type LookupDomainsGroupResult struct {
 
 func LookupDomainsGroupOutput(ctx *pulumi.Context, args LookupDomainsGroupOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsGroupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsGroupResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsGroupResultOutput, error) {
 			args := v.(LookupDomainsGroupArgs)
-			r, err := LookupDomainsGroup(ctx, &args, opts...)
-			var s LookupDomainsGroupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsGroupResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsGroup:getDomainsGroup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsGroupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsGroupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsGroupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsGroupResultOutput)
 }
 

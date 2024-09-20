@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecConnectionTunnel(args: GetIpsecConnectionTunnelArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionTunnelResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", {
         "ipsecId": args.ipsecId,
@@ -150,7 +149,11 @@ export interface GetIpsecConnectionTunnelResult {
  * ```
  */
 export function getIpsecConnectionTunnelOutput(args: GetIpsecConnectionTunnelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelResult> {
-    return pulumi.output(args).apply((a: any) => getIpsecConnectionTunnel(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", {
+        "ipsecId": args.ipsecId,
+        "tunnelId": args.tunnelId,
+    }, opts);
 }
 
 /**

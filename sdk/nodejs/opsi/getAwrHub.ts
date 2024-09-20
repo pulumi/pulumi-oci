@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAwrHub(args: GetAwrHubArgs, opts?: pulumi.InvokeOptions): Promise<GetAwrHubResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getAwrHub:getAwrHub", {
         "awrHubId": args.awrHubId,
@@ -117,7 +116,10 @@ export interface GetAwrHubResult {
  * ```
  */
 export function getAwrHubOutput(args: GetAwrHubOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwrHubResult> {
-    return pulumi.output(args).apply((a: any) => getAwrHub(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getAwrHub:getAwrHub", {
+        "awrHubId": args.awrHubId,
+    }, opts);
 }
 
 /**

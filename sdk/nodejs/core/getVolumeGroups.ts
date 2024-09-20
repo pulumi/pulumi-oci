@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeGroups(args: GetVolumeGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeGroups:getVolumeGroups", {
         "availabilityDomain": args.availabilityDomain,
@@ -112,7 +111,14 @@ export interface GetVolumeGroupsResult {
  * ```
  */
 export function getVolumeGroupsOutput(args: GetVolumeGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getVolumeGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVolumeGroups:getVolumeGroups", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEnterpriseManagerBridge(args: GetEnterpriseManagerBridgeArgs, opts?: pulumi.InvokeOptions): Promise<GetEnterpriseManagerBridgeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", {
         "enterpriseManagerBridgeId": args.enterpriseManagerBridgeId,
@@ -117,7 +116,10 @@ export interface GetEnterpriseManagerBridgeResult {
  * ```
  */
 export function getEnterpriseManagerBridgeOutput(args: GetEnterpriseManagerBridgeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnterpriseManagerBridgeResult> {
-    return pulumi.output(args).apply((a: any) => getEnterpriseManagerBridge(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", {
+        "enterpriseManagerBridgeId": args.enterpriseManagerBridgeId,
+    }, opts);
 }
 
 /**

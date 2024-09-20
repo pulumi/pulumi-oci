@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalAsm(args: GetExternalAsmArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsm:getExternalAsm", {
         "externalAsmId": args.externalAsmId,
@@ -139,7 +138,10 @@ export interface GetExternalAsmResult {
  * ```
  */
 export function getExternalAsmOutput(args: GetExternalAsmOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmResult> {
-    return pulumi.output(args).apply((a: any) => getExternalAsm(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsm:getExternalAsm", {
+        "externalAsmId": args.externalAsmId,
+    }, opts);
 }
 
 /**

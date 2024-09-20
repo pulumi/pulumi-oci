@@ -83,14 +83,20 @@ type GetEmailDomainsResult struct {
 
 func GetEmailDomainsOutput(ctx *pulumi.Context, args GetEmailDomainsOutputArgs, opts ...pulumi.InvokeOption) GetEmailDomainsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetEmailDomainsResult, error) {
+		ApplyT(func(v interface{}) (GetEmailDomainsResultOutput, error) {
 			args := v.(GetEmailDomainsArgs)
-			r, err := GetEmailDomains(ctx, &args, opts...)
-			var s GetEmailDomainsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetEmailDomainsResult
+			secret, err := ctx.InvokePackageRaw("oci:Email/getEmailDomains:getEmailDomains", args, &rv, "", opts...)
+			if err != nil {
+				return GetEmailDomainsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetEmailDomainsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetEmailDomainsResultOutput), nil
+			}
+			return output, nil
 		}).(GetEmailDomainsResultOutput)
 }
 

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectAnomalyJobs(args: GetDetectAnomalyJobsArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectAnomalyJobsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", {
         "compartmentId": args.compartmentId,
@@ -129,7 +128,16 @@ export interface GetDetectAnomalyJobsResult {
  * ```
  */
 export function getDetectAnomalyJobsOutput(args: GetDetectAnomalyJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectAnomalyJobsResult> {
-    return pulumi.output(args).apply((a: any) => getDetectAnomalyJobs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", {
+        "compartmentId": args.compartmentId,
+        "detectAnomalyJobId": args.detectAnomalyJobId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "modelId": args.modelId,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

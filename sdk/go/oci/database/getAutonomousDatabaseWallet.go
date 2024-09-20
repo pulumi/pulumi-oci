@@ -60,14 +60,20 @@ type LookupAutonomousDatabaseWalletResult struct {
 
 func LookupAutonomousDatabaseWalletOutput(ctx *pulumi.Context, args LookupAutonomousDatabaseWalletOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseWalletResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAutonomousDatabaseWalletResult, error) {
+		ApplyT(func(v interface{}) (LookupAutonomousDatabaseWalletResultOutput, error) {
 			args := v.(LookupAutonomousDatabaseWalletArgs)
-			r, err := LookupAutonomousDatabaseWallet(ctx, &args, opts...)
-			var s LookupAutonomousDatabaseWalletResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAutonomousDatabaseWalletResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAutonomousDatabaseWalletResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAutonomousDatabaseWalletResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAutonomousDatabaseWalletResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAutonomousDatabaseWalletResultOutput)
 }
 

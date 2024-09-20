@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsAuthenticationFactorSetting(args: GetDomainsAuthenticationFactorSettingArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAuthenticationFactorSettingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", {
         "attributeSets": args.attributeSets,
@@ -255,7 +254,15 @@ export interface GetDomainsAuthenticationFactorSettingResult {
  * ```
  */
 export function getDomainsAuthenticationFactorSettingOutput(args: GetDomainsAuthenticationFactorSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAuthenticationFactorSettingResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsAuthenticationFactorSetting(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authenticationFactorSettingId": args.authenticationFactorSettingId,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

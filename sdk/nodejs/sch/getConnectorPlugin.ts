@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConnectorPlugin(args: GetConnectorPluginArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectorPluginResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Sch/getConnectorPlugin:getConnectorPlugin", {
         "connectorPluginName": args.connectorPluginName,
@@ -97,7 +96,10 @@ export interface GetConnectorPluginResult {
  * ```
  */
 export function getConnectorPluginOutput(args: GetConnectorPluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectorPluginResult> {
-    return pulumi.output(args).apply((a: any) => getConnectorPlugin(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Sch/getConnectorPlugin:getConnectorPlugin", {
+        "connectorPluginName": args.connectorPluginName,
+    }, opts);
 }
 
 /**

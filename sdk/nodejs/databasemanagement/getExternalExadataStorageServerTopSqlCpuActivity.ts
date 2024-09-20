@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalExadataStorageServerTopSqlCpuActivity(args: GetExternalExadataStorageServerTopSqlCpuActivityArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageServerTopSqlCpuActivityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", {
         "externalExadataStorageServerId": args.externalExadataStorageServerId,
@@ -71,7 +70,10 @@ export interface GetExternalExadataStorageServerTopSqlCpuActivityResult {
  * ```
  */
 export function getExternalExadataStorageServerTopSqlCpuActivityOutput(args: GetExternalExadataStorageServerTopSqlCpuActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> {
-    return pulumi.output(args).apply((a: any) => getExternalExadataStorageServerTopSqlCpuActivity(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", {
+        "externalExadataStorageServerId": args.externalExadataStorageServerId,
+    }, opts);
 }
 
 /**

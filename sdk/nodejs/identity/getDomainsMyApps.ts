@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyApps(args: GetDomainsMyAppsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyAppsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyApps:getDomainsMyApps", {
         "authorization": args.authorization,
@@ -135,7 +134,18 @@ export interface GetDomainsMyAppsResult {
  * ```
  */
 export function getDomainsMyAppsOutput(args: GetDomainsMyAppsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyAppsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyApps(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyApps:getDomainsMyApps", {
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myAppCount": args.myAppCount,
+        "myAppFilter": args.myAppFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

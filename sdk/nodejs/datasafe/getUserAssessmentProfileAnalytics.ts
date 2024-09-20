@@ -42,7 +42,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessmentProfileAnalytics(args: GetUserAssessmentProfileAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentProfileAnalyticsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", {
         "accessLevel": args.accessLevel,
@@ -142,7 +141,16 @@ export interface GetUserAssessmentProfileAnalyticsResult {
  * ```
  */
 export function getUserAssessmentProfileAnalyticsOutput(args: GetUserAssessmentProfileAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentProfileAnalyticsResult> {
-    return pulumi.output(args).apply((a: any) => getUserAssessmentProfileAnalytics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "profileName": args.profileName,
+        "targetId": args.targetId,
+        "userAssessmentId": args.userAssessmentId,
+    }, opts);
 }
 
 /**

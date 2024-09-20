@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerInstances(args: GetContainerInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerInstances/getContainerInstances:getContainerInstances", {
         "availabilityDomain": args.availabilityDomain,
@@ -110,7 +109,14 @@ export interface GetContainerInstancesResult {
  * ```
  */
 export function getContainerInstancesOutput(args: GetContainerInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getContainerInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerInstances/getContainerInstances:getContainerInstances", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

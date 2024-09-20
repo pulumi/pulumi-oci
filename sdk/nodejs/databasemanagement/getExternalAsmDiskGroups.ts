@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalAsmDiskGroups(args: GetExternalAsmDiskGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmDiskGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", {
         "externalAsmId": args.externalAsmId,
@@ -82,7 +81,12 @@ export interface GetExternalAsmDiskGroupsResult {
  * ```
  */
 export function getExternalAsmDiskGroupsOutput(args: GetExternalAsmDiskGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmDiskGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getExternalAsmDiskGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", {
+        "externalAsmId": args.externalAsmId,
+        "filters": args.filters,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+    }, opts);
 }
 
 /**

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(args: GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", {
         "executionId": args.executionId,
@@ -111,7 +110,14 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsCompar
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", {
+        "executionId": args.executionId,
+        "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "sqlObjectId": args.sqlObjectId,
+        "sqlTuningAdvisorTaskId": args.sqlTuningAdvisorTaskId,
+    }, opts);
 }
 
 /**

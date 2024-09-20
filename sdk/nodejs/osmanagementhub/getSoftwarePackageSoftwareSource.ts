@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwarePackageSoftwareSource(args: GetSoftwarePackageSoftwareSourceArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwarePackageSoftwareSourceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwarePackageSoftwareSource:getSoftwarePackageSoftwareSource", {
         "archTypes": args.archTypes,
@@ -180,7 +179,21 @@ export interface GetSoftwarePackageSoftwareSourceResult {
  * ```
  */
 export function getSoftwarePackageSoftwareSourceOutput(args: GetSoftwarePackageSoftwareSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwarePackageSoftwareSourceResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwarePackageSoftwareSource(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwarePackageSoftwareSource:getSoftwarePackageSoftwareSource", {
+        "archTypes": args.archTypes,
+        "availabilities": args.availabilities,
+        "availabilityAnywheres": args.availabilityAnywheres,
+        "availabilityAtOcis": args.availabilityAtOcis,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "osFamilies": args.osFamilies,
+        "softwarePackageName": args.softwarePackageName,
+        "softwareSourceTypes": args.softwareSourceTypes,
+        "states": args.states,
+    }, opts);
 }
 
 /**

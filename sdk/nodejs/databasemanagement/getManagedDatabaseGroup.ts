@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseGroup(args: GetManagedDatabaseGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseGroup:getManagedDatabaseGroup", {
         "managedDatabaseGroupId": args.managedDatabaseGroupId,
@@ -107,7 +106,10 @@ export interface GetManagedDatabaseGroupResult {
  * ```
  */
 export function getManagedDatabaseGroupOutput(args: GetManagedDatabaseGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseGroupResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabaseGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseGroup:getManagedDatabaseGroup", {
+        "managedDatabaseGroupId": args.managedDatabaseGroupId,
+    }, opts);
 }
 
 /**

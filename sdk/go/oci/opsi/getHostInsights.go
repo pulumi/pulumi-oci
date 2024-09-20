@@ -103,14 +103,20 @@ type GetHostInsightsResult struct {
 
 func GetHostInsightsOutput(ctx *pulumi.Context, args GetHostInsightsOutputArgs, opts ...pulumi.InvokeOption) GetHostInsightsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetHostInsightsResult, error) {
+		ApplyT(func(v interface{}) (GetHostInsightsResultOutput, error) {
 			args := v.(GetHostInsightsArgs)
-			r, err := GetHostInsights(ctx, &args, opts...)
-			var s GetHostInsightsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetHostInsightsResult
+			secret, err := ctx.InvokePackageRaw("oci:Opsi/getHostInsights:getHostInsights", args, &rv, "", opts...)
+			if err != nil {
+				return GetHostInsightsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetHostInsightsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetHostInsightsResultOutput), nil
+			}
+			return output, nil
 		}).(GetHostInsightsResultOutput)
 }
 

@@ -78,14 +78,20 @@ type GetManagedInstanceEventReportResult struct {
 
 func GetManagedInstanceEventReportOutput(ctx *pulumi.Context, args GetManagedInstanceEventReportOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceEventReportResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceEventReportResult, error) {
+		ApplyT(func(v interface{}) (GetManagedInstanceEventReportResultOutput, error) {
 			args := v.(GetManagedInstanceEventReportArgs)
-			r, err := GetManagedInstanceEventReport(ctx, &args, opts...)
-			var s GetManagedInstanceEventReportResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedInstanceEventReportResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedInstanceEventReportResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedInstanceEventReportResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedInstanceEventReportResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedInstanceEventReportResultOutput)
 }
 

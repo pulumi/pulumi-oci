@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedList(args: GetManagedListArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedListResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getManagedList:getManagedList", {
         "managedListId": args.managedListId,
@@ -125,7 +124,10 @@ export interface GetManagedListResult {
  * ```
  */
 export function getManagedListOutput(args: GetManagedListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedListResult> {
-    return pulumi.output(args).apply((a: any) => getManagedList(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getManagedList:getManagedList", {
+        "managedListId": args.managedListId,
+    }, opts);
 }
 
 /**

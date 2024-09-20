@@ -71,14 +71,20 @@ type LookupCustomTableResult struct {
 
 func LookupCustomTableOutput(ctx *pulumi.Context, args LookupCustomTableOutputArgs, opts ...pulumi.InvokeOption) LookupCustomTableResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCustomTableResult, error) {
+		ApplyT(func(v interface{}) (LookupCustomTableResultOutput, error) {
 			args := v.(LookupCustomTableArgs)
-			r, err := LookupCustomTable(ctx, &args, opts...)
-			var s LookupCustomTableResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupCustomTableResult
+			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getCustomTable:getCustomTable", args, &rv, "", opts...)
+			if err != nil {
+				return LookupCustomTableResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupCustomTableResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupCustomTableResultOutput), nil
+			}
+			return output, nil
 		}).(LookupCustomTableResultOutput)
 }
 

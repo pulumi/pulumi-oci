@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvoices(args: GetInvoicesArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoicesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getInvoices:getInvoices", {
         "arCustomerTransactionId": args.arCustomerTransactionId,
@@ -106,7 +105,15 @@ export interface GetInvoicesResult {
  * ```
  */
 export function getInvoicesOutput(args: GetInvoicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoicesResult> {
-    return pulumi.output(args).apply((a: any) => getInvoices(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OneSubsription/getInvoices:getInvoices", {
+        "arCustomerTransactionId": args.arCustomerTransactionId,
+        "compartmentId": args.compartmentId,
+        "fields": args.fields,
+        "filters": args.filters,
+        "timeFrom": args.timeFrom,
+        "timeTo": args.timeTo,
+    }, opts);
 }
 
 /**

@@ -90,14 +90,20 @@ type GetHttpRedirectsResult struct {
 
 func GetHttpRedirectsOutput(ctx *pulumi.Context, args GetHttpRedirectsOutputArgs, opts ...pulumi.InvokeOption) GetHttpRedirectsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetHttpRedirectsResult, error) {
+		ApplyT(func(v interface{}) (GetHttpRedirectsResultOutput, error) {
 			args := v.(GetHttpRedirectsArgs)
-			r, err := GetHttpRedirects(ctx, &args, opts...)
-			var s GetHttpRedirectsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetHttpRedirectsResult
+			secret, err := ctx.InvokePackageRaw("oci:Waas/getHttpRedirects:getHttpRedirects", args, &rv, "", opts...)
+			if err != nil {
+				return GetHttpRedirectsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetHttpRedirectsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetHttpRedirectsResultOutput), nil
+			}
+			return output, nil
 		}).(GetHttpRedirectsResultOutput)
 }
 

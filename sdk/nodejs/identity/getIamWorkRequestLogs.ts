@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIamWorkRequestLogs(args: GetIamWorkRequestLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetIamWorkRequestLogsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", {
         "filters": args.filters,
@@ -82,7 +81,11 @@ export interface GetIamWorkRequestLogsResult {
  * ```
  */
 export function getIamWorkRequestLogsOutput(args: GetIamWorkRequestLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestLogsResult> {
-    return pulumi.output(args).apply((a: any) => getIamWorkRequestLogs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", {
+        "filters": args.filters,
+        "iamWorkRequestId": args.iamWorkRequestId,
+    }, opts);
 }
 
 /**

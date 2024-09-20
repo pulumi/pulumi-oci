@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstances(args: GetBdsInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstancesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstances:getBdsInstances", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetBdsInstancesResult {
  * ```
  */
 export function getBdsInstancesOutput(args: GetBdsInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstancesResult> {
-    return pulumi.output(args).apply((a: any) => getBdsInstances(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstances:getBdsInstances", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

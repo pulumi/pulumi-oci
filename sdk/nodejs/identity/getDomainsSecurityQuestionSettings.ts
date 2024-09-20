@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsSecurityQuestionSettings(args: GetDomainsSecurityQuestionSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSecurityQuestionSettingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", {
         "attributeSets": args.attributeSets,
@@ -113,7 +112,15 @@ export interface GetDomainsSecurityQuestionSettingsResult {
  * ```
  */
 export function getDomainsSecurityQuestionSettingsOutput(args: GetDomainsSecurityQuestionSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSecurityQuestionSettingsResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsSecurityQuestionSettings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelVersionSets(args: GetModelVersionSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelVersionSetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelVersionSets:getModelVersionSets", {
         "compartmentId": args.compartmentId,
@@ -128,7 +127,16 @@ export interface GetModelVersionSetsResult {
  * ```
  */
 export function getModelVersionSetsOutput(args: GetModelVersionSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelVersionSetsResult> {
-    return pulumi.output(args).apply((a: any) => getModelVersionSets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getModelVersionSets:getModelVersionSets", {
+        "compartmentId": args.compartmentId,
+        "createdBy": args.createdBy,
+        "filters": args.filters,
+        "id": args.id,
+        "name": args.name,
+        "projectId": args.projectId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

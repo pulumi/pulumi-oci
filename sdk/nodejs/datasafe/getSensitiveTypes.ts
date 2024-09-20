@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveTypes(args: GetSensitiveTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveTypesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", {
         "accessLevel": args.accessLevel,
@@ -195,7 +194,23 @@ export interface GetSensitiveTypesResult {
  * ```
  */
 export function getSensitiveTypesOutput(args: GetSensitiveTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveTypesResult> {
-    return pulumi.output(args).apply((a: any) => getSensitiveTypes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "defaultMaskingFormatId": args.defaultMaskingFormatId,
+        "displayName": args.displayName,
+        "entityType": args.entityType,
+        "filters": args.filters,
+        "isCommon": args.isCommon,
+        "parentCategoryId": args.parentCategoryId,
+        "sensitiveTypeId": args.sensitiveTypeId,
+        "sensitiveTypeSource": args.sensitiveTypeSource,
+        "state": args.state,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

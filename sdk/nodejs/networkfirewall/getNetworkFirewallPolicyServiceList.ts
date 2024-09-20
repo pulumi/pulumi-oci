@@ -10,7 +10,6 @@ import * as utilities from "../utilities";
  * Get ServiceList by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyServiceList(args: GetNetworkFirewallPolicyServiceListArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyServiceListResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", {
         "name": args.name,
@@ -61,7 +60,11 @@ export interface GetNetworkFirewallPolicyServiceListResult {
  * Get ServiceList by the given name in the context of network firewall policy.
  */
 export function getNetworkFirewallPolicyServiceListOutput(args: GetNetworkFirewallPolicyServiceListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyServiceListResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyServiceList(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", {
+        "name": args.name,
+        "networkFirewallPolicyId": args.networkFirewallPolicyId,
+    }, opts);
 }
 
 /**

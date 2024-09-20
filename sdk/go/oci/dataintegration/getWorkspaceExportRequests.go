@@ -92,14 +92,20 @@ type GetWorkspaceExportRequestsResult struct {
 
 func GetWorkspaceExportRequestsOutput(ctx *pulumi.Context, args GetWorkspaceExportRequestsOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceExportRequestsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceExportRequestsResult, error) {
+		ApplyT(func(v interface{}) (GetWorkspaceExportRequestsResultOutput, error) {
 			args := v.(GetWorkspaceExportRequestsArgs)
-			r, err := GetWorkspaceExportRequests(ctx, &args, opts...)
-			var s GetWorkspaceExportRequestsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetWorkspaceExportRequestsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceExportRequests:getWorkspaceExportRequests", args, &rv, "", opts...)
+			if err != nil {
+				return GetWorkspaceExportRequestsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetWorkspaceExportRequestsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetWorkspaceExportRequestsResultOutput), nil
+			}
+			return output, nil
 		}).(GetWorkspaceExportRequestsResultOutput)
 }
 

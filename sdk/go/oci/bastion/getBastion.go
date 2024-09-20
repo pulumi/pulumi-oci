@@ -103,14 +103,20 @@ type LookupBastionResult struct {
 
 func LookupBastionOutput(ctx *pulumi.Context, args LookupBastionOutputArgs, opts ...pulumi.InvokeOption) LookupBastionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBastionResult, error) {
+		ApplyT(func(v interface{}) (LookupBastionResultOutput, error) {
 			args := v.(LookupBastionArgs)
-			r, err := LookupBastion(ctx, &args, opts...)
-			var s LookupBastionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBastionResult
+			secret, err := ctx.InvokePackageRaw("oci:Bastion/getBastion:getBastion", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBastionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBastionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBastionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBastionResultOutput)
 }
 

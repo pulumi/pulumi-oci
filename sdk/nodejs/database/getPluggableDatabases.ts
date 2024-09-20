@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getPluggableDatabases(args?: GetPluggableDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetPluggableDatabasesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getPluggableDatabases:getPluggableDatabases", {
         "compartmentId": args.compartmentId,
@@ -108,7 +107,15 @@ export interface GetPluggableDatabasesResult {
  * ```
  */
 export function getPluggableDatabasesOutput(args?: GetPluggableDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPluggableDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getPluggableDatabases(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getPluggableDatabases:getPluggableDatabases", {
+        "compartmentId": args.compartmentId,
+        "databaseId": args.databaseId,
+        "filters": args.filters,
+        "pdbName": args.pdbName,
+        "state": args.state,
+    }, opts);
 }
 
 /**

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBillingSchedule(args: GetBillingScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetBillingScheduleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", {
         "compartmentId": args.compartmentId,
@@ -100,7 +99,14 @@ export interface GetBillingScheduleResult {
  * ```
  */
 export function getBillingScheduleOutput(args: GetBillingScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBillingScheduleResult> {
-    return pulumi.output(args).apply((a: any) => getBillingSchedule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "subscribedServiceId": args.subscribedServiceId,
+        "subscriptionId": args.subscriptionId,
+        "xOneOriginRegion": args.xOneOriginRegion,
+    }, opts);
 }
 
 /**

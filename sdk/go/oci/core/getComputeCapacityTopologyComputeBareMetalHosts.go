@@ -93,14 +93,20 @@ type GetComputeCapacityTopologyComputeBareMetalHostsResult struct {
 
 func GetComputeCapacityTopologyComputeBareMetalHostsOutput(ctx *pulumi.Context, args GetComputeCapacityTopologyComputeBareMetalHostsOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityTopologyComputeBareMetalHostsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetComputeCapacityTopologyComputeBareMetalHostsResult, error) {
+		ApplyT(func(v interface{}) (GetComputeCapacityTopologyComputeBareMetalHostsResultOutput, error) {
 			args := v.(GetComputeCapacityTopologyComputeBareMetalHostsArgs)
-			r, err := GetComputeCapacityTopologyComputeBareMetalHosts(ctx, &args, opts...)
-			var s GetComputeCapacityTopologyComputeBareMetalHostsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetComputeCapacityTopologyComputeBareMetalHostsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", args, &rv, "", opts...)
+			if err != nil {
+				return GetComputeCapacityTopologyComputeBareMetalHostsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetComputeCapacityTopologyComputeBareMetalHostsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetComputeCapacityTopologyComputeBareMetalHostsResultOutput), nil
+			}
+			return output, nil
 		}).(GetComputeCapacityTopologyComputeBareMetalHostsResultOutput)
 }
 

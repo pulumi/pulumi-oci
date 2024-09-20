@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployStage(args: GetDeployStageArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployStageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployStage:getDeployStage", {
         "deployStageId": args.deployStageId,
@@ -347,7 +346,10 @@ export interface GetDeployStageResult {
  * ```
  */
 export function getDeployStageOutput(args: GetDeployStageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployStageResult> {
-    return pulumi.output(args).apply((a: any) => getDeployStage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getDeployStage:getDeployStage", {
+        "deployStageId": args.deployStageId,
+    }, opts);
 }
 
 /**

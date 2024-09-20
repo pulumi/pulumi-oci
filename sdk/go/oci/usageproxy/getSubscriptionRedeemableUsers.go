@@ -73,14 +73,20 @@ type GetSubscriptionRedeemableUsersResult struct {
 
 func GetSubscriptionRedeemableUsersOutput(ctx *pulumi.Context, args GetSubscriptionRedeemableUsersOutputArgs, opts ...pulumi.InvokeOption) GetSubscriptionRedeemableUsersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSubscriptionRedeemableUsersResult, error) {
+		ApplyT(func(v interface{}) (GetSubscriptionRedeemableUsersResultOutput, error) {
 			args := v.(GetSubscriptionRedeemableUsersArgs)
-			r, err := GetSubscriptionRedeemableUsers(ctx, &args, opts...)
-			var s GetSubscriptionRedeemableUsersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSubscriptionRedeemableUsersResult
+			secret, err := ctx.InvokePackageRaw("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args, &rv, "", opts...)
+			if err != nil {
+				return GetSubscriptionRedeemableUsersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSubscriptionRedeemableUsersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSubscriptionRedeemableUsersResultOutput), nil
+			}
+			return output, nil
 		}).(GetSubscriptionRedeemableUsersResultOutput)
 }
 

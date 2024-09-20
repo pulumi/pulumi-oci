@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAddons(args: GetAddonsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddonsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getAddons:getAddons", {
         "clusterId": args.clusterId,
@@ -74,7 +73,11 @@ export interface GetAddonsResult {
  * ```
  */
 export function getAddonsOutput(args: GetAddonsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddonsResult> {
-    return pulumi.output(args).apply((a: any) => getAddons(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getAddons:getAddons", {
+        "clusterId": args.clusterId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

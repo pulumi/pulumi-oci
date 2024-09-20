@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getEmailReturnPaths(args?: GetEmailReturnPathsArgs, opts?: pulumi.InvokeOptions): Promise<GetEmailReturnPathsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getEmailReturnPaths:getEmailReturnPaths", {
         "compartmentId": args.compartmentId,
@@ -118,7 +117,16 @@ export interface GetEmailReturnPathsResult {
  * ```
  */
 export function getEmailReturnPathsOutput(args?: GetEmailReturnPathsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmailReturnPathsResult> {
-    return pulumi.output(args).apply((a: any) => getEmailReturnPaths(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Email/getEmailReturnPaths:getEmailReturnPaths", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "name": args.name,
+        "parentResourceId": args.parentResourceId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

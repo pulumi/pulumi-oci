@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualCircuitAssociatedTunnels(args: GetVirtualCircuitAssociatedTunnelsArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitAssociatedTunnelsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetVirtualCircuitAssociatedTunnelsResult {
  * ```
  */
 export function getVirtualCircuitAssociatedTunnelsOutput(args: GetVirtualCircuitAssociatedTunnelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitAssociatedTunnelsResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualCircuitAssociatedTunnels(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", {
+        "filters": args.filters,
+        "virtualCircuitId": args.virtualCircuitId,
+    }, opts);
 }
 
 /**

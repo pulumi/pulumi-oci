@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTagNamespaces(args: GetTagNamespacesArgs, opts?: pulumi.InvokeOptions): Promise<GetTagNamespacesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagNamespaces:getTagNamespaces", {
         "compartmentId": args.compartmentId,
@@ -96,7 +95,13 @@ export interface GetTagNamespacesResult {
  * ```
  */
 export function getTagNamespacesOutput(args: GetTagNamespacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagNamespacesResult> {
-    return pulumi.output(args).apply((a: any) => getTagNamespaces(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getTagNamespaces:getTagNamespaces", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "includeSubcompartments": args.includeSubcompartments,
+        "state": args.state,
+    }, opts);
 }
 
 /**

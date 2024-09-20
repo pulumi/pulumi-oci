@@ -135,14 +135,20 @@ type LookupDatabaseInsightResult struct {
 
 func LookupDatabaseInsightOutput(ctx *pulumi.Context, args LookupDatabaseInsightOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseInsightResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDatabaseInsightResult, error) {
+		ApplyT(func(v interface{}) (LookupDatabaseInsightResultOutput, error) {
 			args := v.(LookupDatabaseInsightArgs)
-			r, err := LookupDatabaseInsight(ctx, &args, opts...)
-			var s LookupDatabaseInsightResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDatabaseInsightResult
+			secret, err := ctx.InvokePackageRaw("oci:Opsi/getDatabaseInsight:getDatabaseInsight", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDatabaseInsightResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDatabaseInsightResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDatabaseInsightResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDatabaseInsightResultOutput)
 }
 

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaceScheduledTask(args: GetNamespaceScheduledTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceScheduledTaskResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask", {
         "namespace": args.namespace,
@@ -138,7 +137,11 @@ export interface GetNamespaceScheduledTaskResult {
  * ```
  */
 export function getNamespaceScheduledTaskOutput(args: GetNamespaceScheduledTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceScheduledTaskResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaceScheduledTask(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask", {
+        "namespace": args.namespace,
+        "scheduledTaskId": args.scheduledTaskId,
+    }, opts);
 }
 
 /**

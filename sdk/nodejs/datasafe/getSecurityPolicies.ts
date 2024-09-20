@@ -41,7 +41,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityPolicies(args: GetSecurityPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityPolicies:getSecurityPolicies", {
         "accessLevel": args.accessLevel,
@@ -149,7 +148,16 @@ export interface GetSecurityPoliciesResult {
  * ```
  */
 export function getSecurityPoliciesOutput(args: GetSecurityPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicies:getSecurityPolicies", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "securityPolicyId": args.securityPolicyId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

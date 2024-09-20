@@ -57,14 +57,20 @@ type LookupBackendSetResult struct {
 
 func LookupBackendSetOutput(ctx *pulumi.Context, args LookupBackendSetOutputArgs, opts ...pulumi.InvokeOption) LookupBackendSetResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBackendSetResult, error) {
+		ApplyT(func(v interface{}) (LookupBackendSetResultOutput, error) {
 			args := v.(LookupBackendSetArgs)
-			r, err := LookupBackendSet(ctx, &args, opts...)
-			var s LookupBackendSetResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBackendSetResult
+			secret, err := ctx.InvokePackageRaw("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBackendSetResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBackendSetResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBackendSetResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBackendSetResultOutput)
 }
 

@@ -86,14 +86,20 @@ type GetSddcsResult struct {
 
 func GetSddcsOutput(ctx *pulumi.Context, args GetSddcsOutputArgs, opts ...pulumi.InvokeOption) GetSddcsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSddcsResult, error) {
+		ApplyT(func(v interface{}) (GetSddcsResultOutput, error) {
 			args := v.(GetSddcsArgs)
-			r, err := GetSddcs(ctx, &args, opts...)
-			var s GetSddcsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSddcsResult
+			secret, err := ctx.InvokePackageRaw("oci:Ocvp/getSddcs:getSddcs", args, &rv, "", opts...)
+			if err != nil {
+				return GetSddcsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSddcsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSddcsResultOutput), nil
+			}
+			return output, nil
 		}).(GetSddcsResultOutput)
 }
 

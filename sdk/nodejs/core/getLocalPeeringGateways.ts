@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLocalPeeringGateways(args: GetLocalPeeringGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetLocalPeeringGatewaysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", {
         "compartmentId": args.compartmentId,
@@ -90,7 +89,12 @@ export interface GetLocalPeeringGatewaysResult {
  * ```
  */
 export function getLocalPeeringGatewaysOutput(args: GetLocalPeeringGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLocalPeeringGatewaysResult> {
-    return pulumi.output(args).apply((a: any) => getLocalPeeringGateways(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

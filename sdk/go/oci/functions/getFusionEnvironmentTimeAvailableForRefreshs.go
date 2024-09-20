@@ -69,14 +69,20 @@ type GetFusionEnvironmentTimeAvailableForRefreshsResult struct {
 
 func GetFusionEnvironmentTimeAvailableForRefreshsOutput(ctx *pulumi.Context, args GetFusionEnvironmentTimeAvailableForRefreshsOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentTimeAvailableForRefreshsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentTimeAvailableForRefreshsResult, error) {
+		ApplyT(func(v interface{}) (GetFusionEnvironmentTimeAvailableForRefreshsResultOutput, error) {
 			args := v.(GetFusionEnvironmentTimeAvailableForRefreshsArgs)
-			r, err := GetFusionEnvironmentTimeAvailableForRefreshs(ctx, &args, opts...)
-			var s GetFusionEnvironmentTimeAvailableForRefreshsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFusionEnvironmentTimeAvailableForRefreshsResult
+			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", args, &rv, "", opts...)
+			if err != nil {
+				return GetFusionEnvironmentTimeAvailableForRefreshsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFusionEnvironmentTimeAvailableForRefreshsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFusionEnvironmentTimeAvailableForRefreshsResultOutput), nil
+			}
+			return output, nil
 		}).(GetFusionEnvironmentTimeAvailableForRefreshsResultOutput)
 }
 

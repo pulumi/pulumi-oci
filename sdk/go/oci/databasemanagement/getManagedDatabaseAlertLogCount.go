@@ -96,14 +96,20 @@ type GetManagedDatabaseAlertLogCountResult struct {
 
 func GetManagedDatabaseAlertLogCountOutput(ctx *pulumi.Context, args GetManagedDatabaseAlertLogCountOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseAlertLogCountResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseAlertLogCountResult, error) {
+		ApplyT(func(v interface{}) (GetManagedDatabaseAlertLogCountResultOutput, error) {
 			args := v.(GetManagedDatabaseAlertLogCountArgs)
-			r, err := GetManagedDatabaseAlertLogCount(ctx, &args, opts...)
-			var s GetManagedDatabaseAlertLogCountResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagedDatabaseAlertLogCountResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagedDatabaseAlertLogCountResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagedDatabaseAlertLogCountResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagedDatabaseAlertLogCountResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagedDatabaseAlertLogCountResultOutput)
 }
 

@@ -84,14 +84,20 @@ type GetDeploymentTypesResult struct {
 
 func GetDeploymentTypesOutput(ctx *pulumi.Context, args GetDeploymentTypesOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentTypesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDeploymentTypesResult, error) {
+		ApplyT(func(v interface{}) (GetDeploymentTypesResultOutput, error) {
 			args := v.(GetDeploymentTypesArgs)
-			r, err := GetDeploymentTypes(ctx, &args, opts...)
-			var s GetDeploymentTypesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDeploymentTypesResult
+			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getDeploymentTypes:getDeploymentTypes", args, &rv, "", opts...)
+			if err != nil {
+				return GetDeploymentTypesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDeploymentTypesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDeploymentTypesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDeploymentTypesResultOutput)
 }
 

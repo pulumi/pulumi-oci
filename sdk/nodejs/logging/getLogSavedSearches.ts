@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogSavedSearches(args: GetLogSavedSearchesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogSavedSearchesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getLogSavedSearches:getLogSavedSearches", {
         "compartmentId": args.compartmentId,
@@ -96,7 +95,13 @@ export interface GetLogSavedSearchesResult {
  * ```
  */
 export function getLogSavedSearchesOutput(args: GetLogSavedSearchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSavedSearchesResult> {
-    return pulumi.output(args).apply((a: any) => getLogSavedSearches(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Logging/getLogSavedSearches:getLogSavedSearches", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "logSavedSearchId": args.logSavedSearchId,
+        "name": args.name,
+    }, opts);
 }
 
 /**

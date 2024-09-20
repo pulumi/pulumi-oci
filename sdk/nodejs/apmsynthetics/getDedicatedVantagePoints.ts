@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVantagePoints(args: GetDedicatedVantagePointsArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVantagePointsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", {
         "apmDomainId": args.apmDomainId,
@@ -107,7 +106,14 @@ export interface GetDedicatedVantagePointsResult {
  * ```
  */
 export function getDedicatedVantagePointsOutput(args: GetDedicatedVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVantagePointsResult> {
-    return pulumi.output(args).apply((a: any) => getDedicatedVantagePoints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", {
+        "apmDomainId": args.apmDomainId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "name": args.name,
+        "status": args.status,
+    }, opts);
 }
 
 /**

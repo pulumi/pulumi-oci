@@ -80,14 +80,20 @@ type GetCrossConnectGroupsResult struct {
 
 func GetCrossConnectGroupsOutput(ctx *pulumi.Context, args GetCrossConnectGroupsOutputArgs, opts ...pulumi.InvokeOption) GetCrossConnectGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCrossConnectGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetCrossConnectGroupsResultOutput, error) {
 			args := v.(GetCrossConnectGroupsArgs)
-			r, err := GetCrossConnectGroups(ctx, &args, opts...)
-			var s GetCrossConnectGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCrossConnectGroupsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getCrossConnectGroups:getCrossConnectGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetCrossConnectGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCrossConnectGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCrossConnectGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetCrossConnectGroupsResultOutput)
 }
 

@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstancePoolLoadBalancerAttachment(args: GetInstancePoolLoadBalancerAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetInstancePoolLoadBalancerAttachmentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", {
         "instancePoolId": args.instancePoolId,
@@ -96,7 +95,11 @@ export interface GetInstancePoolLoadBalancerAttachmentResult {
  * ```
  */
 export function getInstancePoolLoadBalancerAttachmentOutput(args: GetInstancePoolLoadBalancerAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancePoolLoadBalancerAttachmentResult> {
-    return pulumi.output(args).apply((a: any) => getInstancePoolLoadBalancerAttachment(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", {
+        "instancePoolId": args.instancePoolId,
+        "instancePoolLoadBalancerAttachmentId": args.instancePoolLoadBalancerAttachmentId,
+    }, opts);
 }
 
 /**

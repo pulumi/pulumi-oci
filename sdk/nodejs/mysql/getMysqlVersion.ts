@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlVersion(args: GetMysqlVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlVersionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlVersion:getMysqlVersion", {
         "compartmentId": args.compartmentId,
@@ -78,7 +77,11 @@ export interface GetMysqlVersionResult {
  * ```
  */
 export function getMysqlVersionOutput(args: GetMysqlVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlVersionResult> {
-    return pulumi.output(args).apply((a: any) => getMysqlVersion(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlVersion:getMysqlVersion", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

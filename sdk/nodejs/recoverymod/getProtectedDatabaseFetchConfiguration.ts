@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectedDatabaseFetchConfiguration(args: GetProtectedDatabaseFetchConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectedDatabaseFetchConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", {
         "base64EncodeContent": args.base64EncodeContent,
@@ -82,7 +81,12 @@ export interface GetProtectedDatabaseFetchConfigurationResult {
  * ```
  */
 export function getProtectedDatabaseFetchConfigurationOutput(args: GetProtectedDatabaseFetchConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectedDatabaseFetchConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getProtectedDatabaseFetchConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", {
+        "base64EncodeContent": args.base64EncodeContent,
+        "configurationType": args.configurationType,
+        "protectedDatabaseId": args.protectedDatabaseId,
+    }, opts);
 }
 
 /**

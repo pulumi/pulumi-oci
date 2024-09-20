@@ -82,14 +82,20 @@ type GetAwrHubAwrSnapshotsResult struct {
 
 func GetAwrHubAwrSnapshotsOutput(ctx *pulumi.Context, args GetAwrHubAwrSnapshotsOutputArgs, opts ...pulumi.InvokeOption) GetAwrHubAwrSnapshotsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAwrHubAwrSnapshotsResult, error) {
+		ApplyT(func(v interface{}) (GetAwrHubAwrSnapshotsResultOutput, error) {
 			args := v.(GetAwrHubAwrSnapshotsArgs)
-			r, err := GetAwrHubAwrSnapshots(ctx, &args, opts...)
-			var s GetAwrHubAwrSnapshotsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAwrHubAwrSnapshotsResult
+			secret, err := ctx.InvokePackageRaw("oci:Opsi/getAwrHubAwrSnapshots:getAwrHubAwrSnapshots", args, &rv, "", opts...)
+			if err != nil {
+				return GetAwrHubAwrSnapshotsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAwrHubAwrSnapshotsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAwrHubAwrSnapshotsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAwrHubAwrSnapshotsResultOutput)
 }
 

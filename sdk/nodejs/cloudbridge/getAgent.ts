@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAgent(args: GetAgentArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudBridge/getAgent:getAgent", {
         "agentId": args.agentId,
@@ -142,7 +141,10 @@ export interface GetAgentResult {
  * ```
  */
 export function getAgentOutput(args: GetAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentResult> {
-    return pulumi.output(args).apply((a: any) => getAgent(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudBridge/getAgent:getAgent", {
+        "agentId": args.agentId,
+    }, opts);
 }
 
 /**

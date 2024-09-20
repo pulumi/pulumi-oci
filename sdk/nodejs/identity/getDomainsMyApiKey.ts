@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsMyApiKey(args: GetDomainsMyApiKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyApiKeyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsMyApiKey:getDomainsMyApiKey", {
         "authorization": args.authorization,
@@ -155,7 +154,13 @@ export interface GetDomainsMyApiKeyResult {
  * ```
  */
 export function getDomainsMyApiKeyOutput(args: GetDomainsMyApiKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyApiKeyResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsMyApiKey(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyApiKey:getDomainsMyApiKey", {
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "myApiKeyId": args.myApiKeyId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

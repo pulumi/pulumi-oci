@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsNetworkPerimeters(args: GetDomainsNetworkPerimetersArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsNetworkPerimetersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", {
         "attributeSets": args.attributeSets,
@@ -142,7 +141,20 @@ export interface GetDomainsNetworkPerimetersResult {
  * ```
  */
 export function getDomainsNetworkPerimetersOutput(args: GetDomainsNetworkPerimetersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsNetworkPerimetersResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsNetworkPerimeters(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "networkPerimeterCount": args.networkPerimeterCount,
+        "networkPerimeterFilter": args.networkPerimeterFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

@@ -71,14 +71,20 @@ type GetApiDeploymentSpecificationResult struct {
 
 func GetApiDeploymentSpecificationOutput(ctx *pulumi.Context, args GetApiDeploymentSpecificationOutputArgs, opts ...pulumi.InvokeOption) GetApiDeploymentSpecificationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetApiDeploymentSpecificationResult, error) {
+		ApplyT(func(v interface{}) (GetApiDeploymentSpecificationResultOutput, error) {
 			args := v.(GetApiDeploymentSpecificationArgs)
-			r, err := GetApiDeploymentSpecification(ctx, &args, opts...)
-			var s GetApiDeploymentSpecificationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetApiDeploymentSpecificationResult
+			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args, &rv, "", opts...)
+			if err != nil {
+				return GetApiDeploymentSpecificationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetApiDeploymentSpecificationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetApiDeploymentSpecificationResultOutput), nil
+			}
+			return output, nil
 		}).(GetApiDeploymentSpecificationResultOutput)
 }
 

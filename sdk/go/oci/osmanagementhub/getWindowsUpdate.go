@@ -83,14 +83,20 @@ type GetWindowsUpdateResult struct {
 
 func GetWindowsUpdateOutput(ctx *pulumi.Context, args GetWindowsUpdateOutputArgs, opts ...pulumi.InvokeOption) GetWindowsUpdateResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetWindowsUpdateResult, error) {
+		ApplyT(func(v interface{}) (GetWindowsUpdateResultOutput, error) {
 			args := v.(GetWindowsUpdateArgs)
-			r, err := GetWindowsUpdate(ctx, &args, opts...)
-			var s GetWindowsUpdateResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetWindowsUpdateResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getWindowsUpdate:getWindowsUpdate", args, &rv, "", opts...)
+			if err != nil {
+				return GetWindowsUpdateResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetWindowsUpdateResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetWindowsUpdateResultOutput), nil
+			}
+			return output, nil
 		}).(GetWindowsUpdateResultOutput)
 }
 

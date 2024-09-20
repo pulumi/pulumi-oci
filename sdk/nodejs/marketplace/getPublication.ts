@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPublication(args: GetPublicationArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getPublication:getPublication", {
         "publicationId": args.publicationId,
@@ -125,7 +124,10 @@ export interface GetPublicationResult {
  * ```
  */
 export function getPublicationOutput(args: GetPublicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicationResult> {
-    return pulumi.output(args).apply((a: any) => getPublication(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Marketplace/getPublication:getPublication", {
+        "publicationId": args.publicationId,
+    }, opts);
 }
 
 /**

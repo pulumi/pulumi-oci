@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCustomTables(args: GetCustomTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomTablesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getCustomTables:getCustomTables", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,12 @@ export interface GetCustomTablesResult {
  * ```
  */
 export function getCustomTablesOutput(args: GetCustomTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomTablesResult> {
-    return pulumi.output(args).apply((a: any) => getCustomTables(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getCustomTables:getCustomTables", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "savedReportId": args.savedReportId,
+    }, opts);
 }
 
 /**

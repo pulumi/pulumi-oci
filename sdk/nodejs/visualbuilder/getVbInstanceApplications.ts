@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVbInstanceApplications(args: GetVbInstanceApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetVbInstanceApplicationsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", {
         "idcsOpenId": args.idcsOpenId,
@@ -79,7 +78,11 @@ export interface GetVbInstanceApplicationsResult {
  * ```
  */
 export function getVbInstanceApplicationsOutput(args: GetVbInstanceApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstanceApplicationsResult> {
-    return pulumi.output(args).apply((a: any) => getVbInstanceApplications(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", {
+        "idcsOpenId": args.idcsOpenId,
+        "vbInstanceId": args.vbInstanceId,
+    }, opts);
 }
 
 /**

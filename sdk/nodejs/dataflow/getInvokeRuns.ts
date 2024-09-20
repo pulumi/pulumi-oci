@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvokeRuns(args: GetInvokeRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetInvokeRunsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getInvokeRuns:getInvokeRuns", {
         "applicationId": args.applicationId,
@@ -148,7 +147,18 @@ export interface GetInvokeRunsResult {
  * ```
  */
 export function getInvokeRunsOutput(args: GetInvokeRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvokeRunsResult> {
-    return pulumi.output(args).apply((a: any) => getInvokeRuns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataFlow/getInvokeRuns:getInvokeRuns", {
+        "applicationId": args.applicationId,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "displayNameStartsWith": args.displayNameStartsWith,
+        "filters": args.filters,
+        "ownerPrincipalId": args.ownerPrincipalId,
+        "poolId": args.poolId,
+        "state": args.state,
+        "timeCreatedGreaterThan": args.timeCreatedGreaterThan,
+    }, opts);
 }
 
 /**

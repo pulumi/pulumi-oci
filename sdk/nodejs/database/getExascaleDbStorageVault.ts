@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExascaleDbStorageVault(args: GetExascaleDbStorageVaultArgs, opts?: pulumi.InvokeOptions): Promise<GetExascaleDbStorageVaultResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault", {
         "exascaleDbStorageVaultId": args.exascaleDbStorageVaultId,
@@ -127,7 +126,10 @@ export interface GetExascaleDbStorageVaultResult {
  * ```
  */
 export function getExascaleDbStorageVaultOutput(args: GetExascaleDbStorageVaultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExascaleDbStorageVaultResult> {
-    return pulumi.output(args).apply((a: any) => getExascaleDbStorageVault(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault", {
+        "exascaleDbStorageVaultId": args.exascaleDbStorageVaultId,
+    }, opts);
 }
 
 /**

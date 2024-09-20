@@ -7,7 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getListingResourceVersions(args: GetListingResourceVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetListingResourceVersionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getListingResourceVersions:getListingResourceVersions", {
         "filters": args.filters,
@@ -36,7 +35,11 @@ export interface GetListingResourceVersionsResult {
     readonly listingId: string;
 }
 export function getListingResourceVersionsOutput(args: GetListingResourceVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingResourceVersionsResult> {
-    return pulumi.output(args).apply((a: any) => getListingResourceVersions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getListingResourceVersions:getListingResourceVersions", {
+        "filters": args.filters,
+        "listingId": args.listingId,
+    }, opts);
 }
 
 /**

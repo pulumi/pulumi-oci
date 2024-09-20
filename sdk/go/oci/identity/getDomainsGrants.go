@@ -107,14 +107,20 @@ type GetDomainsGrantsResult struct {
 
 func GetDomainsGrantsOutput(ctx *pulumi.Context, args GetDomainsGrantsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsGrantsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsGrantsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsGrantsResultOutput, error) {
 			args := v.(GetDomainsGrantsArgs)
-			r, err := GetDomainsGrants(ctx, &args, opts...)
-			var s GetDomainsGrantsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsGrantsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsGrants:getDomainsGrants", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsGrantsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsGrantsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsGrantsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsGrantsResultOutput)
 }
 

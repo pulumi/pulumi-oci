@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getScheduledRuns(args: GetScheduledRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetScheduledRunsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getScheduledRuns:getScheduledRuns", {
         "filters": args.filters,
@@ -77,7 +76,11 @@ export interface GetScheduledRunsResult {
  * ```
  */
 export function getScheduledRunsOutput(args: GetScheduledRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduledRunsResult> {
-    return pulumi.output(args).apply((a: any) => getScheduledRuns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getScheduledRuns:getScheduledRuns", {
+        "filters": args.filters,
+        "scheduleId": args.scheduleId,
+    }, opts);
 }
 
 /**

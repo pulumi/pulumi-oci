@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudGuardConfiguration(args: GetCloudGuardConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudGuardConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", {
         "compartmentId": args.compartmentId,
@@ -76,7 +75,10 @@ export interface GetCloudGuardConfigurationResult {
  * ```
  */
 export function getCloudGuardConfigurationOutput(args: GetCloudGuardConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudGuardConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getCloudGuardConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", {
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

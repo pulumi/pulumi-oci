@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSourcePackageGroup(args: GetSoftwareSourcePackageGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourcePackageGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwareSourcePackageGroup:getSoftwareSourcePackageGroup", {
         "packageGroupId": args.packageGroupId,
@@ -105,7 +104,11 @@ export interface GetSoftwareSourcePackageGroupResult {
  * ```
  */
 export function getSoftwareSourcePackageGroupOutput(args: GetSoftwareSourcePackageGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourcePackageGroupResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwareSourcePackageGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwareSourcePackageGroup:getSoftwareSourcePackageGroup", {
+        "packageGroupId": args.packageGroupId,
+        "softwareSourceId": args.softwareSourceId,
+    }, opts);
 }
 
 /**

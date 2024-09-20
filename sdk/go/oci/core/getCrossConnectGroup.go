@@ -85,14 +85,20 @@ type LookupCrossConnectGroupResult struct {
 
 func LookupCrossConnectGroupOutput(ctx *pulumi.Context, args LookupCrossConnectGroupOutputArgs, opts ...pulumi.InvokeOption) LookupCrossConnectGroupResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCrossConnectGroupResult, error) {
+		ApplyT(func(v interface{}) (LookupCrossConnectGroupResultOutput, error) {
 			args := v.(LookupCrossConnectGroupArgs)
-			r, err := LookupCrossConnectGroup(ctx, &args, opts...)
-			var s LookupCrossConnectGroupResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupCrossConnectGroupResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getCrossConnectGroup:getCrossConnectGroup", args, &rv, "", opts...)
+			if err != nil {
+				return LookupCrossConnectGroupResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupCrossConnectGroupResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupCrossConnectGroupResultOutput), nil
+			}
+			return output, nil
 		}).(LookupCrossConnectGroupResultOutput)
 }
 

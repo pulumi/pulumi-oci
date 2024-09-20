@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFilesystemSnapshotPolicies(args: GetFilesystemSnapshotPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetFilesystemSnapshotPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", {
         "availabilityDomain": args.availabilityDomain,
@@ -117,7 +116,15 @@ export interface GetFilesystemSnapshotPoliciesResult {
  * ```
  */
 export function getFilesystemSnapshotPoliciesOutput(args: GetFilesystemSnapshotPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFilesystemSnapshotPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getFilesystemSnapshotPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

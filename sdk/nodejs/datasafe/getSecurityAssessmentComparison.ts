@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityAssessmentComparison(args: GetSecurityAssessmentComparisonArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentComparisonResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", {
         "comparisonSecurityAssessmentId": args.comparisonSecurityAssessmentId,
@@ -91,7 +90,11 @@ export interface GetSecurityAssessmentComparisonResult {
  * ```
  */
 export function getSecurityAssessmentComparisonOutput(args: GetSecurityAssessmentComparisonOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentComparisonResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityAssessmentComparison(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", {
+        "comparisonSecurityAssessmentId": args.comparisonSecurityAssessmentId,
+        "securityAssessmentId": args.securityAssessmentId,
+    }, opts);
 }
 
 /**

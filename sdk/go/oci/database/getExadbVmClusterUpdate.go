@@ -85,14 +85,20 @@ type GetExadbVmClusterUpdateResult struct {
 
 func GetExadbVmClusterUpdateOutput(ctx *pulumi.Context, args GetExadbVmClusterUpdateOutputArgs, opts ...pulumi.InvokeOption) GetExadbVmClusterUpdateResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExadbVmClusterUpdateResult, error) {
+		ApplyT(func(v interface{}) (GetExadbVmClusterUpdateResultOutput, error) {
 			args := v.(GetExadbVmClusterUpdateArgs)
-			r, err := GetExadbVmClusterUpdate(ctx, &args, opts...)
-			var s GetExadbVmClusterUpdateResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExadbVmClusterUpdateResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getExadbVmClusterUpdate:getExadbVmClusterUpdate", args, &rv, "", opts...)
+			if err != nil {
+				return GetExadbVmClusterUpdateResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExadbVmClusterUpdateResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExadbVmClusterUpdateResultOutput), nil
+			}
+			return output, nil
 		}).(GetExadbVmClusterUpdateResultOutput)
 }
 

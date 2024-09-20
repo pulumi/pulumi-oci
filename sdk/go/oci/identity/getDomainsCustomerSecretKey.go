@@ -123,14 +123,20 @@ type LookupDomainsCustomerSecretKeyResult struct {
 
 func LookupDomainsCustomerSecretKeyOutput(ctx *pulumi.Context, args LookupDomainsCustomerSecretKeyOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsCustomerSecretKeyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsCustomerSecretKeyResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsCustomerSecretKeyResultOutput, error) {
 			args := v.(LookupDomainsCustomerSecretKeyArgs)
-			r, err := LookupDomainsCustomerSecretKey(ctx, &args, opts...)
-			var s LookupDomainsCustomerSecretKeyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsCustomerSecretKeyResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsCustomerSecretKey:getDomainsCustomerSecretKey", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsCustomerSecretKeyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsCustomerSecretKeyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsCustomerSecretKeyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsCustomerSecretKeyResultOutput)
 }
 

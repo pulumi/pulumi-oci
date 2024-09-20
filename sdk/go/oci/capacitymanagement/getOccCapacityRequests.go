@@ -93,14 +93,20 @@ type GetOccCapacityRequestsResult struct {
 
 func GetOccCapacityRequestsOutput(ctx *pulumi.Context, args GetOccCapacityRequestsOutputArgs, opts ...pulumi.InvokeOption) GetOccCapacityRequestsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetOccCapacityRequestsResult, error) {
+		ApplyT(func(v interface{}) (GetOccCapacityRequestsResultOutput, error) {
 			args := v.(GetOccCapacityRequestsArgs)
-			r, err := GetOccCapacityRequests(ctx, &args, opts...)
-			var s GetOccCapacityRequestsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetOccCapacityRequestsResult
+			secret, err := ctx.InvokePackageRaw("oci:CapacityManagement/getOccCapacityRequests:getOccCapacityRequests", args, &rv, "", opts...)
+			if err != nil {
+				return GetOccCapacityRequestsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetOccCapacityRequestsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetOccCapacityRequestsResultOutput), nil
+			}
+			return output, nil
 		}).(GetOccCapacityRequestsResultOutput)
 }
 

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabaseRefreshableClones(args: GetAutonomousDatabaseRefreshableClonesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseRefreshableClonesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
@@ -74,7 +73,11 @@ export interface GetAutonomousDatabaseRefreshableClonesResult {
  * ```
  */
 export function getAutonomousDatabaseRefreshableClonesOutput(args: GetAutonomousDatabaseRefreshableClonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseRefreshableClonesResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseRefreshableClones(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", {
+        "autonomousDatabaseId": args.autonomousDatabaseId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -84,14 +84,20 @@ type GetMigrationPlanAvailableShapeResult struct {
 
 func GetMigrationPlanAvailableShapeOutput(ctx *pulumi.Context, args GetMigrationPlanAvailableShapeOutputArgs, opts ...pulumi.InvokeOption) GetMigrationPlanAvailableShapeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMigrationPlanAvailableShapeResult, error) {
+		ApplyT(func(v interface{}) (GetMigrationPlanAvailableShapeResultOutput, error) {
 			args := v.(GetMigrationPlanAvailableShapeArgs)
-			r, err := GetMigrationPlanAvailableShape(ctx, &args, opts...)
-			var s GetMigrationPlanAvailableShapeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMigrationPlanAvailableShapeResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudMigrations/getMigrationPlanAvailableShape:getMigrationPlanAvailableShape", args, &rv, "", opts...)
+			if err != nil {
+				return GetMigrationPlanAvailableShapeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMigrationPlanAvailableShapeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMigrationPlanAvailableShapeResultOutput), nil
+			}
+			return output, nil
 		}).(GetMigrationPlanAvailableShapeResultOutput)
 }
 

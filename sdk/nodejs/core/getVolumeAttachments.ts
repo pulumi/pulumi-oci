@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeAttachments(args: GetVolumeAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeAttachmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeAttachments:getVolumeAttachments", {
         "availabilityDomain": args.availabilityDomain,
@@ -118,7 +117,14 @@ export interface GetVolumeAttachmentsResult {
  * ```
  */
 export function getVolumeAttachmentsOutput(args: GetVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeAttachmentsResult> {
-    return pulumi.output(args).apply((a: any) => getVolumeAttachments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVolumeAttachments:getVolumeAttachments", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "instanceId": args.instanceId,
+        "volumeId": args.volumeId,
+    }, opts);
 }
 
 /**

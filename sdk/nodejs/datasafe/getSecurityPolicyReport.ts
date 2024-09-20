@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityPolicyReport(args: GetSecurityPolicyReportArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyReportResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", {
         "securityPolicyReportId": args.securityPolicyReportId,
@@ -109,7 +108,10 @@ export interface GetSecurityPolicyReportResult {
  * ```
  */
 export function getSecurityPolicyReportOutput(args: GetSecurityPolicyReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityPolicyReport(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", {
+        "securityPolicyReportId": args.securityPolicyReportId,
+    }, opts);
 }
 
 /**

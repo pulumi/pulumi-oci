@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaceIngestTimeRules(args: GetNamespaceIngestTimeRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceIngestTimeRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", {
         "compartmentId": args.compartmentId,
@@ -140,7 +139,17 @@ export interface GetNamespaceIngestTimeRulesResult {
  * ```
  */
 export function getNamespaceIngestTimeRulesOutput(args: GetNamespaceIngestTimeRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceIngestTimeRulesResult> {
-    return pulumi.output(args).apply((a: any) => getNamespaceIngestTimeRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", {
+        "compartmentId": args.compartmentId,
+        "conditionKind": args.conditionKind,
+        "displayName": args.displayName,
+        "fieldName": args.fieldName,
+        "fieldValue": args.fieldValue,
+        "filters": args.filters,
+        "namespace": args.namespace,
+        "state": args.state,
+    }, opts);
 }
 
 /**

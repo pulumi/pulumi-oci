@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsNetworkPerimeter(args: GetDomainsNetworkPerimeterArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsNetworkPerimeterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", {
         "attributeSets": args.attributeSets,
@@ -171,7 +170,15 @@ export interface GetDomainsNetworkPerimeterResult {
  * ```
  */
 export function getDomainsNetworkPerimeterOutput(args: GetDomainsNetworkPerimeterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsNetworkPerimeterResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsNetworkPerimeter(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "idcsEndpoint": args.idcsEndpoint,
+        "networkPerimeterId": args.networkPerimeterId,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+    }, opts);
 }
 
 /**

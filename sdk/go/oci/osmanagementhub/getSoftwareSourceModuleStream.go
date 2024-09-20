@@ -89,14 +89,20 @@ type GetSoftwareSourceModuleStreamResult struct {
 
 func GetSoftwareSourceModuleStreamOutput(ctx *pulumi.Context, args GetSoftwareSourceModuleStreamOutputArgs, opts ...pulumi.InvokeOption) GetSoftwareSourceModuleStreamResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSoftwareSourceModuleStreamResult, error) {
+		ApplyT(func(v interface{}) (GetSoftwareSourceModuleStreamResultOutput, error) {
 			args := v.(GetSoftwareSourceModuleStreamArgs)
-			r, err := GetSoftwareSourceModuleStream(ctx, &args, opts...)
-			var s GetSoftwareSourceModuleStreamResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetSoftwareSourceModuleStreamResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", args, &rv, "", opts...)
+			if err != nil {
+				return GetSoftwareSourceModuleStreamResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetSoftwareSourceModuleStreamResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetSoftwareSourceModuleStreamResultOutput), nil
+			}
+			return output, nil
 		}).(GetSoftwareSourceModuleStreamResultOutput)
 }
 

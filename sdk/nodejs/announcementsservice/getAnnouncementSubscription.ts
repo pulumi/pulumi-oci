@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnnouncementSubscription(args: GetAnnouncementSubscriptionArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnouncementSubscriptionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", {
         "announcementSubscriptionId": args.announcementSubscriptionId,
@@ -127,7 +126,10 @@ export interface GetAnnouncementSubscriptionResult {
  * ```
  */
 export function getAnnouncementSubscriptionOutput(args: GetAnnouncementSubscriptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnouncementSubscriptionResult> {
-    return pulumi.output(args).apply((a: any) => getAnnouncementSubscription(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", {
+        "announcementSubscriptionId": args.announcementSubscriptionId,
+    }, opts);
 }
 
 /**

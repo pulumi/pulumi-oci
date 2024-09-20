@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIamWorkRequests(args: GetIamWorkRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetIamWorkRequestsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIamWorkRequests:getIamWorkRequests", {
         "compartmentId": args.compartmentId,
@@ -91,7 +90,12 @@ export interface GetIamWorkRequestsResult {
  * ```
  */
 export function getIamWorkRequestsOutput(args: GetIamWorkRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestsResult> {
-    return pulumi.output(args).apply((a: any) => getIamWorkRequests(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getIamWorkRequests:getIamWorkRequests", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "resourceIdentifier": args.resourceIdentifier,
+    }, opts);
 }
 
 /**

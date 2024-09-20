@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvokeRun(args: GetInvokeRunArgs, opts?: pulumi.InvokeOptions): Promise<GetInvokeRunResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getInvokeRun:getInvokeRun", {
         "runId": args.runId,
@@ -241,7 +240,10 @@ export interface GetInvokeRunResult {
  * ```
  */
 export function getInvokeRunOutput(args: GetInvokeRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvokeRunResult> {
-    return pulumi.output(args).apply((a: any) => getInvokeRun(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataFlow/getInvokeRun:getInvokeRun", {
+        "runId": args.runId,
+    }, opts);
 }
 
 /**

@@ -42,14 +42,20 @@ type GetShapeResult struct {
 
 func GetShapeOutput(ctx *pulumi.Context, args GetShapeOutputArgs, opts ...pulumi.InvokeOption) GetShapeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetShapeResult, error) {
+		ApplyT(func(v interface{}) (GetShapeResultOutput, error) {
 			args := v.(GetShapeArgs)
-			r, err := GetShape(ctx, &args, opts...)
-			var s GetShapeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetShapeResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getShape:getShape", args, &rv, "", opts...)
+			if err != nil {
+				return GetShapeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetShapeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetShapeResultOutput), nil
+			}
+			return output, nil
 		}).(GetShapeResultOutput)
 }
 

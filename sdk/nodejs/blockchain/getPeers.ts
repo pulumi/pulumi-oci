@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPeers(args: GetPeersArgs, opts?: pulumi.InvokeOptions): Promise<GetPeersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getPeers:getPeers", {
         "blockchainPlatformId": args.blockchainPlatformId,
@@ -82,7 +81,12 @@ export interface GetPeersResult {
  * ```
  */
 export function getPeersOutput(args: GetPeersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPeersResult> {
-    return pulumi.output(args).apply((a: any) => getPeers(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Blockchain/getPeers:getPeers", {
+        "blockchainPlatformId": args.blockchainPlatformId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

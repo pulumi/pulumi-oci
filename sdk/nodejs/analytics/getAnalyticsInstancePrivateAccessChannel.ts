@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnalyticsInstancePrivateAccessChannel(args: GetAnalyticsInstancePrivateAccessChannelArgs, opts?: pulumi.InvokeOptions): Promise<GetAnalyticsInstancePrivateAccessChannelResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", {
         "analyticsInstanceId": args.analyticsInstanceId,
@@ -108,7 +107,11 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
  * ```
  */
 export function getAnalyticsInstancePrivateAccessChannelOutput(args: GetAnalyticsInstancePrivateAccessChannelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstancePrivateAccessChannelResult> {
-    return pulumi.output(args).apply((a: any) => getAnalyticsInstancePrivateAccessChannel(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", {
+        "analyticsInstanceId": args.analyticsInstanceId,
+        "privateAccessChannelKey": args.privateAccessChannelKey,
+    }, opts);
 }
 
 /**

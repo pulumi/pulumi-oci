@@ -67,14 +67,20 @@ type GetExternalExadataStorageServerTopSqlCpuActivityResult struct {
 
 func GetExternalExadataStorageServerTopSqlCpuActivityOutput(ctx *pulumi.Context, args GetExternalExadataStorageServerTopSqlCpuActivityOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServerTopSqlCpuActivityResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalExadataStorageServerTopSqlCpuActivityResult, error) {
+		ApplyT(func(v interface{}) (GetExternalExadataStorageServerTopSqlCpuActivityResultOutput, error) {
 			args := v.(GetExternalExadataStorageServerTopSqlCpuActivityArgs)
-			r, err := GetExternalExadataStorageServerTopSqlCpuActivity(ctx, &args, opts...)
-			var s GetExternalExadataStorageServerTopSqlCpuActivityResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetExternalExadataStorageServerTopSqlCpuActivityResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", args, &rv, "", opts...)
+			if err != nil {
+				return GetExternalExadataStorageServerTopSqlCpuActivityResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetExternalExadataStorageServerTopSqlCpuActivityResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetExternalExadataStorageServerTopSqlCpuActivityResultOutput), nil
+			}
+			return output, nil
 		}).(GetExternalExadataStorageServerTopSqlCpuActivityResultOutput)
 }
 

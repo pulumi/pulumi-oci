@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  */
 export function getOperationsInsightsWarehouses(args?: GetOperationsInsightsWarehousesArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsWarehousesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses", {
         "compartmentId": args.compartmentId,
@@ -109,7 +108,15 @@ export interface GetOperationsInsightsWarehousesResult {
  * ```
  */
 export function getOperationsInsightsWarehousesOutput(args?: GetOperationsInsightsWarehousesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehousesResult> {
-    return pulumi.output(args).apply((a: any) => getOperationsInsightsWarehouses(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "states": args.states,
+    }, opts);
 }
 
 /**

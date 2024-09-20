@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualServiceRouteTable(args: GetVirtualServiceRouteTableArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServiceRouteTableResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", {
         "virtualServiceRouteTableId": args.virtualServiceRouteTableId,
@@ -119,7 +118,10 @@ export interface GetVirtualServiceRouteTableResult {
  * ```
  */
 export function getVirtualServiceRouteTableOutput(args: GetVirtualServiceRouteTableOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServiceRouteTableResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualServiceRouteTable(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", {
+        "virtualServiceRouteTableId": args.virtualServiceRouteTableId,
+    }, opts);
 }
 
 /**

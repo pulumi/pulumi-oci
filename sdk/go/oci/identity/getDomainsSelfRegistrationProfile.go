@@ -167,14 +167,20 @@ type LookupDomainsSelfRegistrationProfileResult struct {
 
 func LookupDomainsSelfRegistrationProfileOutput(ctx *pulumi.Context, args LookupDomainsSelfRegistrationProfileOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsSelfRegistrationProfileResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDomainsSelfRegistrationProfileResult, error) {
+		ApplyT(func(v interface{}) (LookupDomainsSelfRegistrationProfileResultOutput, error) {
 			args := v.(LookupDomainsSelfRegistrationProfileArgs)
-			r, err := LookupDomainsSelfRegistrationProfile(ctx, &args, opts...)
-			var s LookupDomainsSelfRegistrationProfileResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDomainsSelfRegistrationProfileResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDomainsSelfRegistrationProfileResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDomainsSelfRegistrationProfileResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDomainsSelfRegistrationProfileResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDomainsSelfRegistrationProfileResultOutput)
 }
 

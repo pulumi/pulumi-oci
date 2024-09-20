@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabasesTables(args: GetTargetDatabasesTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesTablesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", {
         "filters": args.filters,
@@ -112,7 +111,15 @@ export interface GetTargetDatabasesTablesResult {
  * ```
  */
 export function getTargetDatabasesTablesOutput(args: GetTargetDatabasesTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesTablesResult> {
-    return pulumi.output(args).apply((a: any) => getTargetDatabasesTables(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", {
+        "filters": args.filters,
+        "schemaNameContains": args.schemaNameContains,
+        "schemaNames": args.schemaNames,
+        "tableNameContains": args.tableNameContains,
+        "tableNames": args.tableNames,
+        "targetDatabaseId": args.targetDatabaseId,
+    }, opts);
 }
 
 /**

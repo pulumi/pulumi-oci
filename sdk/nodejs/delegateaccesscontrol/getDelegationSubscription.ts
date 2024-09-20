@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDelegationSubscription(args: GetDelegationSubscriptionArgs, opts?: pulumi.InvokeOptions): Promise<GetDelegationSubscriptionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", {
         "delegationSubscriptionId": args.delegationSubscriptionId,
@@ -113,7 +112,10 @@ export interface GetDelegationSubscriptionResult {
  * ```
  */
 export function getDelegationSubscriptionOutput(args: GetDelegationSubscriptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegationSubscriptionResult> {
-    return pulumi.output(args).apply((a: any) => getDelegationSubscription(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", {
+        "delegationSubscriptionId": args.delegationSubscriptionId,
+    }, opts);
 }
 
 /**

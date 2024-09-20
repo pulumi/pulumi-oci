@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitors(args: GetMonitorsArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getMonitors:getMonitors", {
         "apmDomainId": args.apmDomainId,
@@ -142,7 +141,18 @@ export interface GetMonitorsResult {
  * ```
  */
 export function getMonitorsOutput(args: GetMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitorsResult> {
-    return pulumi.output(args).apply((a: any) => getMonitors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getMonitors:getMonitors", {
+        "apmDomainId": args.apmDomainId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "isMaintenanceWindowActive": args.isMaintenanceWindowActive,
+        "isMaintenanceWindowSet": args.isMaintenanceWindowSet,
+        "monitorType": args.monitorType,
+        "scriptId": args.scriptId,
+        "status": args.status,
+        "vantagePoint": args.vantagePoint,
+    }, opts);
 }
 
 /**

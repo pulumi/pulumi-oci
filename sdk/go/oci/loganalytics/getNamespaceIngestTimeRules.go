@@ -99,14 +99,20 @@ type GetNamespaceIngestTimeRulesResult struct {
 
 func GetNamespaceIngestTimeRulesOutput(ctx *pulumi.Context, args GetNamespaceIngestTimeRulesOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceIngestTimeRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNamespaceIngestTimeRulesResult, error) {
+		ApplyT(func(v interface{}) (GetNamespaceIngestTimeRulesResultOutput, error) {
 			args := v.(GetNamespaceIngestTimeRulesArgs)
-			r, err := GetNamespaceIngestTimeRules(ctx, &args, opts...)
-			var s GetNamespaceIngestTimeRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNamespaceIngestTimeRulesResult
+			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", args, &rv, "", opts...)
+			if err != nil {
+				return GetNamespaceIngestTimeRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNamespaceIngestTimeRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNamespaceIngestTimeRulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetNamespaceIngestTimeRulesResultOutput)
 }
 

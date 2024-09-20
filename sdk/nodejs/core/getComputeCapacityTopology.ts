@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeCapacityTopology(args: GetComputeCapacityTopologyArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityTopologyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", {
         "computeCapacityTopologyId": args.computeCapacityTopologyId,
@@ -103,7 +102,10 @@ export interface GetComputeCapacityTopologyResult {
  * ```
  */
 export function getComputeCapacityTopologyOutput(args: GetComputeCapacityTopologyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologyResult> {
-    return pulumi.output(args).apply((a: any) => getComputeCapacityTopology(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", {
+        "computeCapacityTopologyId": args.computeCapacityTopologyId,
+    }, opts);
 }
 
 /**

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOccCapacityRequest(args: GetOccCapacityRequestArgs, opts?: pulumi.InvokeOptions): Promise<GetOccCapacityRequestResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", {
         "occCapacityRequestId": args.occCapacityRequestId,
@@ -144,7 +143,10 @@ export interface GetOccCapacityRequestResult {
  * ```
  */
 export function getOccCapacityRequestOutput(args: GetOccCapacityRequestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccCapacityRequestResult> {
-    return pulumi.output(args).apply((a: any) => getOccCapacityRequest(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", {
+        "occCapacityRequestId": args.occCapacityRequestId,
+    }, opts);
 }
 
 /**

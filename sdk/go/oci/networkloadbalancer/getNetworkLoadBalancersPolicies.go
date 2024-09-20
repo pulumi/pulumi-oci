@@ -64,14 +64,20 @@ type GetNetworkLoadBalancersPoliciesResult struct {
 
 func GetNetworkLoadBalancersPoliciesOutput(ctx *pulumi.Context, args GetNetworkLoadBalancersPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetNetworkLoadBalancersPoliciesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNetworkLoadBalancersPoliciesResult, error) {
+		ApplyT(func(v interface{}) (GetNetworkLoadBalancersPoliciesResultOutput, error) {
 			args := v.(GetNetworkLoadBalancersPoliciesArgs)
-			r, err := GetNetworkLoadBalancersPolicies(ctx, &args, opts...)
-			var s GetNetworkLoadBalancersPoliciesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNetworkLoadBalancersPoliciesResult
+			secret, err := ctx.InvokePackageRaw("oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies", args, &rv, "", opts...)
+			if err != nil {
+				return GetNetworkLoadBalancersPoliciesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNetworkLoadBalancersPoliciesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNetworkLoadBalancersPoliciesResultOutput), nil
+			}
+			return output, nil
 		}).(GetNetworkLoadBalancersPoliciesResultOutput)
 }
 

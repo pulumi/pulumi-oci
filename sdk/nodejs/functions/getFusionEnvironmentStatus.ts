@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentStatus(args: GetFusionEnvironmentStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentStatusResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", {
         "fusionEnvironmentId": args.fusionEnvironmentId,
@@ -69,7 +68,10 @@ export interface GetFusionEnvironmentStatusResult {
  * ```
  */
 export function getFusionEnvironmentStatusOutput(args: GetFusionEnvironmentStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentStatusResult> {
-    return pulumi.output(args).apply((a: any) => getFusionEnvironmentStatus(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", {
+        "fusionEnvironmentId": args.fusionEnvironmentId,
+    }, opts);
 }
 
 /**

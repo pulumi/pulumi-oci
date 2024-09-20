@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEkmsPrivateEndpoint(args: GetEkmsPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetEkmsPrivateEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", {
         "ekmsPrivateEndpointId": args.ekmsPrivateEndpointId,
@@ -117,7 +116,10 @@ export interface GetEkmsPrivateEndpointResult {
  * ```
  */
 export function getEkmsPrivateEndpointOutput(args: GetEkmsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEkmsPrivateEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getEkmsPrivateEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", {
+        "ekmsPrivateEndpointId": args.ekmsPrivateEndpointId,
+    }, opts);
 }
 
 /**

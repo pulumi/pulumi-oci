@@ -32,7 +32,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetCryptoAnalysisResults(args: GetFleetCryptoAnalysisResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetCryptoAnalysisResultsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", {
         "aggregationMode": args.aggregationMode,
@@ -164,7 +163,20 @@ export interface GetFleetCryptoAnalysisResultsResult {
  * ```
  */
 export function getFleetCryptoAnalysisResultsOutput(args: GetFleetCryptoAnalysisResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetCryptoAnalysisResultsResult> {
-    return pulumi.output(args).apply((a: any) => getFleetCryptoAnalysisResults(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", {
+        "aggregationMode": args.aggregationMode,
+        "filters": args.filters,
+        "findingCount": args.findingCount,
+        "findingCountGreaterThan": args.findingCountGreaterThan,
+        "fleetId": args.fleetId,
+        "hostName": args.hostName,
+        "managedInstanceId": args.managedInstanceId,
+        "nonCompliantFindingCount": args.nonCompliantFindingCount,
+        "nonCompliantFindingCountGreaterThan": args.nonCompliantFindingCountGreaterThan,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

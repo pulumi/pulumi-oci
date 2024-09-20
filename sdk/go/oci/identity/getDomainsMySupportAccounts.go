@@ -97,14 +97,20 @@ type GetDomainsMySupportAccountsResult struct {
 
 func GetDomainsMySupportAccountsOutput(ctx *pulumi.Context, args GetDomainsMySupportAccountsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMySupportAccountsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsMySupportAccountsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsMySupportAccountsResultOutput, error) {
 			args := v.(GetDomainsMySupportAccountsArgs)
-			r, err := GetDomainsMySupportAccounts(ctx, &args, opts...)
-			var s GetDomainsMySupportAccountsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsMySupportAccountsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMySupportAccounts:getDomainsMySupportAccounts", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsMySupportAccountsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsMySupportAccountsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsMySupportAccountsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsMySupportAccountsResultOutput)
 }
 

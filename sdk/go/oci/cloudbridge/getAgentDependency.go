@@ -97,14 +97,20 @@ type LookupAgentDependencyResult struct {
 
 func LookupAgentDependencyOutput(ctx *pulumi.Context, args LookupAgentDependencyOutputArgs, opts ...pulumi.InvokeOption) LookupAgentDependencyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAgentDependencyResult, error) {
+		ApplyT(func(v interface{}) (LookupAgentDependencyResultOutput, error) {
 			args := v.(LookupAgentDependencyArgs)
-			r, err := LookupAgentDependency(ctx, &args, opts...)
-			var s LookupAgentDependencyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAgentDependencyResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getAgentDependency:getAgentDependency", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAgentDependencyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAgentDependencyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAgentDependencyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAgentDependencyResultOutput)
 }
 

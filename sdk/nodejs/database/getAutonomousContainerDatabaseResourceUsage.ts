@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerDatabaseResourceUsage(args: GetAutonomousContainerDatabaseResourceUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabaseResourceUsageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
@@ -111,7 +110,10 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
  * ```
  */
 export function getAutonomousContainerDatabaseResourceUsageOutput(args: GetAutonomousContainerDatabaseResourceUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseResourceUsageResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabaseResourceUsage(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", {
+        "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
+    }, opts);
 }
 
 /**

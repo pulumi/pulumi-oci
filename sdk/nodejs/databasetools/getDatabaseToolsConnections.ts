@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseToolsConnections(args: GetDatabaseToolsConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsConnectionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", {
         "compartmentId": args.compartmentId,
@@ -129,7 +128,16 @@ export interface GetDatabaseToolsConnectionsResult {
  * ```
  */
 export function getDatabaseToolsConnectionsOutput(args: GetDatabaseToolsConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsConnectionsResult> {
-    return pulumi.output(args).apply((a: any) => getDatabaseToolsConnections(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "relatedResourceIdentifier": args.relatedResourceIdentifier,
+        "runtimeSupports": args.runtimeSupports,
+        "state": args.state,
+        "types": args.types,
+    }, opts);
 }
 
 /**

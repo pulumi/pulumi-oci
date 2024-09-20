@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceErrata(args: GetManagedInstanceErrataArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceErrataResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata", {
         "classificationTypes": args.classificationTypes,
@@ -109,7 +108,15 @@ export interface GetManagedInstanceErrataResult {
  * ```
  */
 export function getManagedInstanceErrataOutput(args: GetManagedInstanceErrataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceErrataResult> {
-    return pulumi.output(args).apply((a: any) => getManagedInstanceErrata(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata", {
+        "classificationTypes": args.classificationTypes,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "managedInstanceId": args.managedInstanceId,
+        "nameContains": args.nameContains,
+        "names": args.names,
+    }, opts);
 }
 
 /**

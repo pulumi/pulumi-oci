@@ -109,14 +109,20 @@ type GetLifecycleEnvironmentsResult struct {
 
 func GetLifecycleEnvironmentsOutput(ctx *pulumi.Context, args GetLifecycleEnvironmentsOutputArgs, opts ...pulumi.InvokeOption) GetLifecycleEnvironmentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetLifecycleEnvironmentsResult, error) {
+		ApplyT(func(v interface{}) (GetLifecycleEnvironmentsResultOutput, error) {
 			args := v.(GetLifecycleEnvironmentsArgs)
-			r, err := GetLifecycleEnvironments(ctx, &args, opts...)
-			var s GetLifecycleEnvironmentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetLifecycleEnvironmentsResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments", args, &rv, "", opts...)
+			if err != nil {
+				return GetLifecycleEnvironmentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetLifecycleEnvironmentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetLifecycleEnvironmentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetLifecycleEnvironmentsResultOutput)
 }
 

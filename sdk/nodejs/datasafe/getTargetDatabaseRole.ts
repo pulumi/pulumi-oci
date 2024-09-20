@@ -7,7 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getTargetDatabaseRole(args: GetTargetDatabaseRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabaseRoleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", {
         "authenticationType": args.authenticationType,
@@ -48,7 +47,15 @@ export interface GetTargetDatabaseRoleResult {
     readonly targetDatabaseId: string;
 }
 export function getTargetDatabaseRoleOutput(args: GetTargetDatabaseRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseRoleResult> {
-    return pulumi.output(args).apply((a: any) => getTargetDatabaseRole(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", {
+        "authenticationType": args.authenticationType,
+        "filters": args.filters,
+        "isOracleMaintained": args.isOracleMaintained,
+        "roleNameContains": args.roleNameContains,
+        "roleNames": args.roleNames,
+        "targetDatabaseId": args.targetDatabaseId,
+    }, opts);
 }
 
 /**

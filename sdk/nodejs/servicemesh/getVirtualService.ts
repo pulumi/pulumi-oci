@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualService(args: GetVirtualServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServiceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualService:getVirtualService", {
         "virtualServiceId": args.virtualServiceId,
@@ -123,7 +122,10 @@ export interface GetVirtualServiceResult {
  * ```
  */
 export function getVirtualServiceOutput(args: GetVirtualServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServiceResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualService(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getVirtualService:getVirtualService", {
+        "virtualServiceId": args.virtualServiceId,
+    }, opts);
 }
 
 /**

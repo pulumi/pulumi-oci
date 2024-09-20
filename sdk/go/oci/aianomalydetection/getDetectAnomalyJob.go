@@ -97,14 +97,20 @@ type LookupDetectAnomalyJobResult struct {
 
 func LookupDetectAnomalyJobOutput(ctx *pulumi.Context, args LookupDetectAnomalyJobOutputArgs, opts ...pulumi.InvokeOption) LookupDetectAnomalyJobResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupDetectAnomalyJobResult, error) {
+		ApplyT(func(v interface{}) (LookupDetectAnomalyJobResultOutput, error) {
 			args := v.(LookupDetectAnomalyJobArgs)
-			r, err := LookupDetectAnomalyJob(ctx, &args, opts...)
-			var s LookupDetectAnomalyJobResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupDetectAnomalyJobResult
+			secret, err := ctx.InvokePackageRaw("oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob", args, &rv, "", opts...)
+			if err != nil {
+				return LookupDetectAnomalyJobResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupDetectAnomalyJobResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupDetectAnomalyJobResultOutput), nil
+			}
+			return output, nil
 		}).(LookupDetectAnomalyJobResultOutput)
 }
 

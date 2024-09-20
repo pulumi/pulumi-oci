@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceConsoleConnections(args: GetInstanceConsoleConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceConsoleConnectionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", {
         "compartmentId": args.compartmentId,
@@ -92,7 +91,12 @@ export interface GetInstanceConsoleConnectionsResult {
  * ```
  */
 export function getInstanceConsoleConnectionsOutput(args: GetInstanceConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConsoleConnectionsResult> {
-    return pulumi.output(args).apply((a: any) => getInstanceConsoleConnections(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "instanceId": args.instanceId,
+    }, opts);
 }
 
 /**

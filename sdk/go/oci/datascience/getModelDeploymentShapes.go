@@ -69,14 +69,20 @@ type GetModelDeploymentShapesResult struct {
 
 func GetModelDeploymentShapesOutput(ctx *pulumi.Context, args GetModelDeploymentShapesOutputArgs, opts ...pulumi.InvokeOption) GetModelDeploymentShapesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetModelDeploymentShapesResult, error) {
+		ApplyT(func(v interface{}) (GetModelDeploymentShapesResultOutput, error) {
 			args := v.(GetModelDeploymentShapesArgs)
-			r, err := GetModelDeploymentShapes(ctx, &args, opts...)
-			var s GetModelDeploymentShapesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetModelDeploymentShapesResult
+			secret, err := ctx.InvokePackageRaw("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args, &rv, "", opts...)
+			if err != nil {
+				return GetModelDeploymentShapesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetModelDeploymentShapesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetModelDeploymentShapesResultOutput), nil
+			}
+			return output, nil
 		}).(GetModelDeploymentShapesResultOutput)
 }
 

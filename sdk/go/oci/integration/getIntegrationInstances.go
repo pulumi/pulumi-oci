@@ -80,14 +80,20 @@ type GetIntegrationInstancesResult struct {
 
 func GetIntegrationInstancesOutput(ctx *pulumi.Context, args GetIntegrationInstancesOutputArgs, opts ...pulumi.InvokeOption) GetIntegrationInstancesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetIntegrationInstancesResult, error) {
+		ApplyT(func(v interface{}) (GetIntegrationInstancesResultOutput, error) {
 			args := v.(GetIntegrationInstancesArgs)
-			r, err := GetIntegrationInstances(ctx, &args, opts...)
-			var s GetIntegrationInstancesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetIntegrationInstancesResult
+			secret, err := ctx.InvokePackageRaw("oci:Integration/getIntegrationInstances:getIntegrationInstances", args, &rv, "", opts...)
+			if err != nil {
+				return GetIntegrationInstancesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetIntegrationInstancesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetIntegrationInstancesResultOutput), nil
+			}
+			return output, nil
 		}).(GetIntegrationInstancesResultOutput)
 }
 

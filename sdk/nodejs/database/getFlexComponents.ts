@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFlexComponents(args: GetFlexComponentsArgs, opts?: pulumi.InvokeOptions): Promise<GetFlexComponentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getFlexComponents:getFlexComponents", {
         "compartmentId": args.compartmentId,
@@ -85,7 +84,12 @@ export interface GetFlexComponentsResult {
  * ```
  */
 export function getFlexComponentsOutput(args: GetFlexComponentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFlexComponentsResult> {
-    return pulumi.output(args).apply((a: any) => getFlexComponents(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getFlexComponents:getFlexComponents", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "name": args.name,
+    }, opts);
 }
 
 /**

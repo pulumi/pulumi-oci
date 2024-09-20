@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousVmClusterAcdResourceUsages(args: GetAutonomousVmClusterAcdResourceUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousVmClusterAcdResourceUsagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", {
         "autonomousVmClusterId": args.autonomousVmClusterId,
@@ -82,7 +81,12 @@ export interface GetAutonomousVmClusterAcdResourceUsagesResult {
  * ```
  */
 export function getAutonomousVmClusterAcdResourceUsagesOutput(args: GetAutonomousVmClusterAcdResourceUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousVmClusterAcdResourceUsagesResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousVmClusterAcdResourceUsages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", {
+        "autonomousVmClusterId": args.autonomousVmClusterId,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

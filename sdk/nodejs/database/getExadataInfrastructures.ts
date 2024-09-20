@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
  */
 export function getExadataInfrastructures(args: GetExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructuresResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadataInfrastructures:getExadataInfrastructures", {
         "compartmentId": args.compartmentId,
@@ -75,7 +74,13 @@ export interface GetExadataInfrastructuresResult {
  * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
  */
 export function getExadataInfrastructuresOutput(args: GetExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructuresResult> {
-    return pulumi.output(args).apply((a: any) => getExadataInfrastructures(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExadataInfrastructures:getExadataInfrastructures", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

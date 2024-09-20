@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getVolumeBackupPolicies(args?: GetVolumeBackupPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeBackupPoliciesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", {
         "compartmentId": args.compartmentId,
@@ -84,7 +83,12 @@ export interface GetVolumeBackupPoliciesResult {
  * ```
  */
 export function getVolumeBackupPoliciesOutput(args?: GetVolumeBackupPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeBackupPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getVolumeBackupPolicies(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

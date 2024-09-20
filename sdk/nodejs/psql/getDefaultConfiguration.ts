@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDefaultConfiguration(args: GetDefaultConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetDefaultConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getDefaultConfiguration:getDefaultConfiguration", {
         "defaultConfigurationId": args.defaultConfigurationId,
@@ -111,7 +110,10 @@ export interface GetDefaultConfigurationResult {
  * ```
  */
 export function getDefaultConfigurationOutput(args: GetDefaultConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDefaultConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getDefaultConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Psql/getDefaultConfiguration:getDefaultConfiguration", {
+        "defaultConfigurationId": args.defaultConfigurationId,
+    }, opts);
 }
 
 /**

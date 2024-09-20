@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadbVmCluster(args: GetExadbVmClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetExadbVmClusterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadbVmCluster:getExadbVmCluster", {
         "exadbVmClusterId": args.exadbVmClusterId,
@@ -224,7 +223,10 @@ export interface GetExadbVmClusterResult {
  * ```
  */
 export function getExadbVmClusterOutput(args: GetExadbVmClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadbVmClusterResult> {
-    return pulumi.output(args).apply((a: any) => getExadbVmCluster(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getExadbVmCluster:getExadbVmCluster", {
+        "exadbVmClusterId": args.exadbVmClusterId,
+    }, opts);
 }
 
 /**

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getCertificateAuthorities(args?: GetCertificateAuthoritiesArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthoritiesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", {
         "certificateAuthorityId": args.certificateAuthorityId,
@@ -124,7 +123,16 @@ export interface GetCertificateAuthoritiesResult {
  * ```
  */
 export function getCertificateAuthoritiesOutput(args?: GetCertificateAuthoritiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthoritiesResult> {
-    return pulumi.output(args).apply((a: any) => getCertificateAuthorities(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", {
+        "certificateAuthorityId": args.certificateAuthorityId,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "issuerCertificateAuthorityId": args.issuerCertificateAuthorityId,
+        "name": args.name,
+        "state": args.state,
+    }, opts);
 }
 
 /**

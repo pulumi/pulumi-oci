@@ -39,7 +39,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityAssessmentFindingAnalytics(args: GetSecurityAssessmentFindingAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingAnalyticsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", {
         "accessLevel": args.accessLevel,
@@ -154,7 +153,18 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
  * ```
  */
 export function getSecurityAssessmentFindingAnalyticsOutput(args: GetSecurityAssessmentFindingAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingAnalyticsResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityAssessmentFindingAnalytics(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", {
+        "accessLevel": args.accessLevel,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "filters": args.filters,
+        "findingKey": args.findingKey,
+        "groupBy": args.groupBy,
+        "isTopFinding": args.isTopFinding,
+        "severity": args.severity,
+        "topFindingStatus": args.topFindingStatus,
+    }, opts);
 }
 
 /**

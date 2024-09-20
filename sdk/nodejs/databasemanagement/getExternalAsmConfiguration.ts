@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalAsmConfiguration(args: GetExternalAsmConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", {
         "externalAsmId": args.externalAsmId,
@@ -79,7 +78,11 @@ export interface GetExternalAsmConfigurationResult {
  * ```
  */
 export function getExternalAsmConfigurationOutput(args: GetExternalAsmConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getExternalAsmConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", {
+        "externalAsmId": args.externalAsmId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+    }, opts);
 }
 
 /**

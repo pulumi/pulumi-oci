@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryCommits(args: GetRepositoryCommitsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryCommitsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryCommits:getRepositoryCommits", {
         "authorName": args.authorName,
@@ -136,7 +135,18 @@ export interface GetRepositoryCommitsResult {
  * ```
  */
 export function getRepositoryCommitsOutput(args: GetRepositoryCommitsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryCommitsResult> {
-    return pulumi.output(args).apply((a: any) => getRepositoryCommits(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryCommits:getRepositoryCommits", {
+        "authorName": args.authorName,
+        "commitMessage": args.commitMessage,
+        "excludeRefName": args.excludeRefName,
+        "filePath": args.filePath,
+        "filters": args.filters,
+        "refName": args.refName,
+        "repositoryId": args.repositoryId,
+        "timestampGreaterThanOrEqualTo": args.timestampGreaterThanOrEqualTo,
+        "timestampLessThanOrEqualTo": args.timestampLessThanOrEqualTo,
+    }, opts);
 }
 
 /**

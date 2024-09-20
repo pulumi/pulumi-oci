@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstallationSites(args: GetInstallationSitesArgs, opts?: pulumi.InvokeOptions): Promise<GetInstallationSitesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getInstallationSites:getInstallationSites", {
         "applicationId": args.applicationId,
@@ -165,7 +164,22 @@ export interface GetInstallationSitesResult {
  * ```
  */
 export function getInstallationSitesOutput(args: GetInstallationSitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstallationSitesResult> {
-    return pulumi.output(args).apply((a: any) => getInstallationSites(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getInstallationSites:getInstallationSites", {
+        "applicationId": args.applicationId,
+        "filters": args.filters,
+        "fleetId": args.fleetId,
+        "installationPath": args.installationPath,
+        "jreDistribution": args.jreDistribution,
+        "jreSecurityStatus": args.jreSecurityStatus,
+        "jreVendor": args.jreVendor,
+        "jreVersion": args.jreVersion,
+        "managedInstanceId": args.managedInstanceId,
+        "osFamilies": args.osFamilies,
+        "pathContains": args.pathContains,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

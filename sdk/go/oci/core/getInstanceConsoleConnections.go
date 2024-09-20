@@ -77,14 +77,20 @@ type GetInstanceConsoleConnectionsResult struct {
 
 func GetInstanceConsoleConnectionsOutput(ctx *pulumi.Context, args GetInstanceConsoleConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetInstanceConsoleConnectionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInstanceConsoleConnectionsResult, error) {
+		ApplyT(func(v interface{}) (GetInstanceConsoleConnectionsResultOutput, error) {
 			args := v.(GetInstanceConsoleConnectionsArgs)
-			r, err := GetInstanceConsoleConnections(ctx, &args, opts...)
-			var s GetInstanceConsoleConnectionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInstanceConsoleConnectionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args, &rv, "", opts...)
+			if err != nil {
+				return GetInstanceConsoleConnectionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInstanceConsoleConnectionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInstanceConsoleConnectionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetInstanceConsoleConnectionsResultOutput)
 }
 

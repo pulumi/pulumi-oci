@@ -79,14 +79,20 @@ type GetDedicatedVmHostInstancesResult struct {
 
 func GetDedicatedVmHostInstancesOutput(ctx *pulumi.Context, args GetDedicatedVmHostInstancesOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVmHostInstancesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDedicatedVmHostInstancesResult, error) {
+		ApplyT(func(v interface{}) (GetDedicatedVmHostInstancesResultOutput, error) {
 			args := v.(GetDedicatedVmHostInstancesArgs)
-			r, err := GetDedicatedVmHostInstances(ctx, &args, opts...)
-			var s GetDedicatedVmHostInstancesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDedicatedVmHostInstancesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", args, &rv, "", opts...)
+			if err != nil {
+				return GetDedicatedVmHostInstancesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDedicatedVmHostInstancesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDedicatedVmHostInstancesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDedicatedVmHostInstancesResultOutput)
 }
 

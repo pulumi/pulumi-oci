@@ -79,14 +79,20 @@ type GetDedicatedVmHostInstanceShapesResult struct {
 
 func GetDedicatedVmHostInstanceShapesOutput(ctx *pulumi.Context, args GetDedicatedVmHostInstanceShapesOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVmHostInstanceShapesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDedicatedVmHostInstanceShapesResult, error) {
+		ApplyT(func(v interface{}) (GetDedicatedVmHostInstanceShapesResultOutput, error) {
 			args := v.(GetDedicatedVmHostInstanceShapesArgs)
-			r, err := GetDedicatedVmHostInstanceShapes(ctx, &args, opts...)
-			var s GetDedicatedVmHostInstanceShapesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDedicatedVmHostInstanceShapesResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args, &rv, "", opts...)
+			if err != nil {
+				return GetDedicatedVmHostInstanceShapesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDedicatedVmHostInstanceShapesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDedicatedVmHostInstanceShapesResultOutput), nil
+			}
+			return output, nil
 		}).(GetDedicatedVmHostInstanceShapesResultOutput)
 }
 

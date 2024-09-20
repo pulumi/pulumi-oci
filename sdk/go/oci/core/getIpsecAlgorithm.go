@@ -63,13 +63,19 @@ type GetIpsecAlgorithmResult struct {
 }
 
 func GetIpsecAlgorithmOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIpsecAlgorithmResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIpsecAlgorithmResult, error) {
-		r, err := GetIpsecAlgorithm(ctx, opts...)
-		var s GetIpsecAlgorithmResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIpsecAlgorithmResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetIpsecAlgorithmResult
+		secret, err := ctx.InvokePackageRaw("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", nil, &rv, "", opts...)
+		if err != nil {
+			return GetIpsecAlgorithmResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetIpsecAlgorithmResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetIpsecAlgorithmResultOutput), nil
+		}
+		return output, nil
 	}).(GetIpsecAlgorithmResultOutput)
 }
 

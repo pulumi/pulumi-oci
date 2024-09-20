@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUsagePlans(args: GetUsagePlansArgs, opts?: pulumi.InvokeOptions): Promise<GetUsagePlansResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getUsagePlans:getUsagePlans", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetUsagePlansResult {
  * ```
  */
 export function getUsagePlansOutput(args: GetUsagePlansOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsagePlansResult> {
-    return pulumi.output(args).apply((a: any) => getUsagePlans(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApiGateway/getUsagePlans:getUsagePlans", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

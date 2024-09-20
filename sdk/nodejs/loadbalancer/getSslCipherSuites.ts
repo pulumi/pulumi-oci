@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSslCipherSuites(args: GetSslCipherSuitesArgs, opts?: pulumi.InvokeOptions): Promise<GetSslCipherSuitesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", {
         "filters": args.filters,
@@ -74,7 +73,11 @@ export interface GetSslCipherSuitesResult {
  * ```
  */
 export function getSslCipherSuitesOutput(args: GetSslCipherSuitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSslCipherSuitesResult> {
-    return pulumi.output(args).apply((a: any) => getSslCipherSuites(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", {
+        "filters": args.filters,
+        "loadBalancerId": args.loadBalancerId,
+    }, opts);
 }
 
 /**

@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getQueryQuickPicks(args: GetQueryQuickPicksArgs, opts?: pulumi.InvokeOptions): Promise<GetQueryQuickPicksResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", {
         "apmDomainId": args.apmDomainId,
@@ -76,7 +75,11 @@ export interface GetQueryQuickPicksResult {
  * ```
  */
 export function getQueryQuickPicksOutput(args: GetQueryQuickPicksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueryQuickPicksResult> {
-    return pulumi.output(args).apply((a: any) => getQueryQuickPicks(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", {
+        "apmDomainId": args.apmDomainId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

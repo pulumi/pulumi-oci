@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalExadataInfrastructure(args: GetExternalExadataInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataInfrastructureResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", {
         "externalExadataInfrastructureId": args.externalExadataInfrastructureId,
@@ -144,7 +143,10 @@ export interface GetExternalExadataInfrastructureResult {
  * ```
  */
 export function getExternalExadataInfrastructureOutput(args: GetExternalExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataInfrastructureResult> {
-    return pulumi.output(args).apply((a: any) => getExternalExadataInfrastructure(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", {
+        "externalExadataInfrastructureId": args.externalExadataInfrastructureId,
+    }, opts);
 }
 
 /**

@@ -95,14 +95,20 @@ type LookupExternalAsmInstanceResult struct {
 
 func LookupExternalAsmInstanceOutput(ctx *pulumi.Context, args LookupExternalAsmInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupExternalAsmInstanceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupExternalAsmInstanceResult, error) {
+		ApplyT(func(v interface{}) (LookupExternalAsmInstanceResultOutput, error) {
 			args := v.(LookupExternalAsmInstanceArgs)
-			r, err := LookupExternalAsmInstance(ctx, &args, opts...)
-			var s LookupExternalAsmInstanceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupExternalAsmInstanceResult
+			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", args, &rv, "", opts...)
+			if err != nil {
+				return LookupExternalAsmInstanceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupExternalAsmInstanceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupExternalAsmInstanceResultOutput), nil
+			}
+			return output, nil
 		}).(LookupExternalAsmInstanceResultOutput)
 }
 

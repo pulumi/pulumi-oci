@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousVmCluster(args: GetAutonomousVmClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousVmClusterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", {
         "autonomousVmClusterId": args.autonomousVmClusterId,
@@ -254,7 +253,10 @@ export interface GetAutonomousVmClusterResult {
  * ```
  */
 export function getAutonomousVmClusterOutput(args: GetAutonomousVmClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousVmClusterResult> {
-    return pulumi.output(args).apply((a: any) => getAutonomousVmCluster(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", {
+        "autonomousVmClusterId": args.autonomousVmClusterId,
+    }, opts);
 }
 
 /**

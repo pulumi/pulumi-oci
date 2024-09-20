@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomainsResourceTypeSchemaAttributes(args: GetDomainsResourceTypeSchemaAttributesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsResourceTypeSchemaAttributesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", {
         "attributeSets": args.attributeSets,
@@ -151,7 +150,20 @@ export interface GetDomainsResourceTypeSchemaAttributesResult {
  * ```
  */
 export function getDomainsResourceTypeSchemaAttributesOutput(args: GetDomainsResourceTypeSchemaAttributesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsResourceTypeSchemaAttributesResult> {
-    return pulumi.output(args).apply((a: any) => getDomainsResourceTypeSchemaAttributes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", {
+        "attributeSets": args.attributeSets,
+        "attributes": args.attributes,
+        "authorization": args.authorization,
+        "compartmentId": args.compartmentId,
+        "idcsEndpoint": args.idcsEndpoint,
+        "resourceTypeSchemaAttributeCount": args.resourceTypeSchemaAttributeCount,
+        "resourceTypeSchemaAttributeFilter": args.resourceTypeSchemaAttributeFilter,
+        "resourceTypeSchemaVersion": args.resourceTypeSchemaVersion,
+        "sortBy": args.sortBy,
+        "sortOrder": args.sortOrder,
+        "startIndex": args.startIndex,
+    }, opts);
 }
 
 /**

@@ -107,14 +107,20 @@ type GetContainerImagesResult struct {
 
 func GetContainerImagesOutput(ctx *pulumi.Context, args GetContainerImagesOutputArgs, opts ...pulumi.InvokeOption) GetContainerImagesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetContainerImagesResult, error) {
+		ApplyT(func(v interface{}) (GetContainerImagesResultOutput, error) {
 			args := v.(GetContainerImagesArgs)
-			r, err := GetContainerImages(ctx, &args, opts...)
-			var s GetContainerImagesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetContainerImagesResult
+			secret, err := ctx.InvokePackageRaw("oci:Artifacts/getContainerImages:getContainerImages", args, &rv, "", opts...)
+			if err != nil {
+				return GetContainerImagesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetContainerImagesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetContainerImagesResultOutput), nil
+			}
+			return output, nil
 		}).(GetContainerImagesResultOutput)
 }
 

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  */
 export function getManagementStations(args?: GetManagementStationsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementStationsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagementStations:getManagementStations", {
         "compartmentId": args.compartmentId,
@@ -126,7 +125,17 @@ export interface GetManagementStationsResult {
  * ```
  */
 export function getManagementStationsOutput(args?: GetManagementStationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementStationsResult> {
-    return pulumi.output(args).apply((a: any) => getManagementStations(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagementStations:getManagementStations", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "id": args.id,
+        "managedInstanceId": args.managedInstanceId,
+        "state": args.state,
+    }, opts);
 }
 
 /**

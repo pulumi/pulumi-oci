@@ -105,14 +105,20 @@ type GetDomainsOauth2clientCredentialsResult struct {
 
 func GetDomainsOauth2clientCredentialsOutput(ctx *pulumi.Context, args GetDomainsOauth2clientCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsOauth2clientCredentialsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDomainsOauth2clientCredentialsResult, error) {
+		ApplyT(func(v interface{}) (GetDomainsOauth2clientCredentialsResultOutput, error) {
 			args := v.(GetDomainsOauth2clientCredentialsArgs)
-			r, err := GetDomainsOauth2clientCredentials(ctx, &args, opts...)
-			var s GetDomainsOauth2clientCredentialsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDomainsOauth2clientCredentialsResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsOauth2clientCredentials:getDomainsOauth2clientCredentials", args, &rv, "", opts...)
+			if err != nil {
+				return GetDomainsOauth2clientCredentialsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDomainsOauth2clientCredentialsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDomainsOauth2clientCredentialsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDomainsOauth2clientCredentialsResultOutput)
 }
 

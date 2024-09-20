@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRecommendationStrategy(args: GetRecommendationStrategyArgs, opts?: pulumi.InvokeOptions): Promise<GetRecommendationStrategyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", {
         "compartmentId": args.compartmentId,
@@ -100,7 +99,13 @@ export interface GetRecommendationStrategyResult {
  * ```
  */
 export function getRecommendationStrategyOutput(args: GetRecommendationStrategyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationStrategyResult> {
-    return pulumi.output(args).apply((a: any) => getRecommendationStrategy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", {
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "name": args.name,
+        "recommendationName": args.recommendationName,
+    }, opts);
 }
 
 /**

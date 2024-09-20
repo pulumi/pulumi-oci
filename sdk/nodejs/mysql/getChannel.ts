@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getChannel(args: GetChannelArgs, opts?: pulumi.InvokeOptions): Promise<GetChannelResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getChannel:getChannel", {
         "channelId": args.channelId,
@@ -116,7 +115,10 @@ export interface GetChannelResult {
  * ```
  */
 export function getChannelOutput(args: GetChannelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetChannelResult> {
-    return pulumi.output(args).apply((a: any) => getChannel(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Mysql/getChannel:getChannel", {
+        "channelId": args.channelId,
+    }, opts);
 }
 
 /**

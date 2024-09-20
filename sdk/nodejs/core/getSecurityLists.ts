@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityLists(args: GetSecurityListsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityListsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getSecurityLists:getSecurityLists", {
         "compartmentId": args.compartmentId,
@@ -112,7 +111,14 @@ export interface GetSecurityListsResult {
  * ```
  */
 export function getSecurityListsOutput(args: GetSecurityListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityListsResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityLists(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getSecurityLists:getSecurityLists", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWebAppFirewallPolicies(args: GetWebAppFirewallPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetWebAppFirewallPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", {
         "compartmentId": args.compartmentId,
@@ -106,7 +105,14 @@ export interface GetWebAppFirewallPoliciesResult {
  * ```
  */
 export function getWebAppFirewallPoliciesOutput(args: GetWebAppFirewallPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWebAppFirewallPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getWebAppFirewallPolicies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "id": args.id,
+        "states": args.states,
+    }, opts);
 }
 
 /**

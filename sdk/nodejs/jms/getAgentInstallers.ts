@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  */
 export function getAgentInstallers(args?: GetAgentInstallersArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentInstallersResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getAgentInstallers:getAgentInstallers", {
         "compartmentId": args.compartmentId,
@@ -105,7 +104,15 @@ export interface GetAgentInstallersResult {
  * ```
  */
 export function getAgentInstallersOutput(args?: GetAgentInstallersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentInstallersResult> {
-    return pulumi.output(args).apply((a: any) => getAgentInstallers(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getAgentInstallers:getAgentInstallers", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "fleetId": args.fleetId,
+        "osFamily": args.osFamily,
+        "platformArchitecture": args.platformArchitecture,
+    }, opts);
 }
 
 /**

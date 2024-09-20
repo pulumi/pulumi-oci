@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSuppressions(args: GetSuppressionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSuppressionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getSuppressions:getSuppressions", {
         "compartmentId": args.compartmentId,
@@ -112,7 +111,14 @@ export interface GetSuppressionsResult {
  * ```
  */
 export function getSuppressionsOutput(args: GetSuppressionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSuppressionsResult> {
-    return pulumi.output(args).apply((a: any) => getSuppressions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Email/getSuppressions:getSuppressions", {
+        "compartmentId": args.compartmentId,
+        "emailAddress": args.emailAddress,
+        "filters": args.filters,
+        "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
+        "timeCreatedLessThan": args.timeCreatedLessThan,
+    }, opts);
 }
 
 /**

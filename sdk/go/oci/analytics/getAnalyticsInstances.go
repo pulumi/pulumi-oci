@@ -90,14 +90,20 @@ type GetAnalyticsInstancesResult struct {
 
 func GetAnalyticsInstancesOutput(ctx *pulumi.Context, args GetAnalyticsInstancesOutputArgs, opts ...pulumi.InvokeOption) GetAnalyticsInstancesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAnalyticsInstancesResult, error) {
+		ApplyT(func(v interface{}) (GetAnalyticsInstancesResultOutput, error) {
 			args := v.(GetAnalyticsInstancesArgs)
-			r, err := GetAnalyticsInstances(ctx, &args, opts...)
-			var s GetAnalyticsInstancesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAnalyticsInstancesResult
+			secret, err := ctx.InvokePackageRaw("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", args, &rv, "", opts...)
+			if err != nil {
+				return GetAnalyticsInstancesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAnalyticsInstancesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAnalyticsInstancesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAnalyticsInstancesResultOutput)
 }
 

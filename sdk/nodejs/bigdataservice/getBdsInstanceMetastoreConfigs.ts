@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstanceMetastoreConfigs(args: GetBdsInstanceMetastoreConfigsArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceMetastoreConfigsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", {
         "bdsApiKeyId": args.bdsApiKeyId,
@@ -129,7 +128,16 @@ export interface GetBdsInstanceMetastoreConfigsResult {
  * ```
  */
 export function getBdsInstanceMetastoreConfigsOutput(args: GetBdsInstanceMetastoreConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceMetastoreConfigsResult> {
-    return pulumi.output(args).apply((a: any) => getBdsInstanceMetastoreConfigs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", {
+        "bdsApiKeyId": args.bdsApiKeyId,
+        "bdsInstanceId": args.bdsInstanceId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "metastoreId": args.metastoreId,
+        "metastoreType": args.metastoreType,
+        "state": args.state,
+    }, opts);
 }
 
 /**

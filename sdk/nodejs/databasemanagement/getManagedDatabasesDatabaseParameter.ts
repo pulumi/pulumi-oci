@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabasesDatabaseParameter(args: GetManagedDatabasesDatabaseParameterArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesDatabaseParameterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter", {
         "isAllowedValuesIncluded": args.isAllowedValuesIncluded,
@@ -114,7 +113,13 @@ export interface GetManagedDatabasesDatabaseParameterResult {
  * ```
  */
 export function getManagedDatabasesDatabaseParameterOutput(args: GetManagedDatabasesDatabaseParameterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesDatabaseParameterResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabasesDatabaseParameter(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter", {
+        "isAllowedValuesIncluded": args.isAllowedValuesIncluded,
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "source": args.source,
+    }, opts);
 }
 
 /**

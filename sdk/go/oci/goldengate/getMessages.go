@@ -69,14 +69,20 @@ type GetMessagesResult struct {
 
 func GetMessagesOutput(ctx *pulumi.Context, args GetMessagesOutputArgs, opts ...pulumi.InvokeOption) GetMessagesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMessagesResult, error) {
+		ApplyT(func(v interface{}) (GetMessagesResultOutput, error) {
 			args := v.(GetMessagesArgs)
-			r, err := GetMessages(ctx, &args, opts...)
-			var s GetMessagesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMessagesResult
+			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getMessages:getMessages", args, &rv, "", opts...)
+			if err != nil {
+				return GetMessagesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMessagesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMessagesResultOutput), nil
+			}
+			return output, nil
 		}).(GetMessagesResultOutput)
 }
 

@@ -88,14 +88,20 @@ type GetVirtualDeploymentsResult struct {
 
 func GetVirtualDeploymentsOutput(ctx *pulumi.Context, args GetVirtualDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetVirtualDeploymentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVirtualDeploymentsResult, error) {
+		ApplyT(func(v interface{}) (GetVirtualDeploymentsResultOutput, error) {
 			args := v.(GetVirtualDeploymentsArgs)
-			r, err := GetVirtualDeployments(ctx, &args, opts...)
-			var s GetVirtualDeploymentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVirtualDeploymentsResult
+			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getVirtualDeployments:getVirtualDeployments", args, &rv, "", opts...)
+			if err != nil {
+				return GetVirtualDeploymentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVirtualDeploymentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVirtualDeploymentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetVirtualDeploymentsResultOutput)
 }
 

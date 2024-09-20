@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpv6(args: GetIpv6Args, opts?: pulumi.InvokeOptions): Promise<GetIpv6Result> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpv6:getIpv6", {
         "ipv6id": args.ipv6id,
@@ -108,7 +107,10 @@ export interface GetIpv6Result {
  * ```
  */
 export function getIpv6Output(args: GetIpv6OutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpv6Result> {
-    return pulumi.output(args).apply((a: any) => getIpv6(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getIpv6:getIpv6", {
+        "ipv6id": args.ipv6id,
+    }, opts);
 }
 
 /**

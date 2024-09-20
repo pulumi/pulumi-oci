@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCnvDnsResolverAssociation(args: GetCnvDnsResolverAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetCnvDnsResolverAssociationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", {
         "vcnId": args.vcnId,
@@ -74,7 +73,10 @@ export interface GetCnvDnsResolverAssociationResult {
  * ```
  */
 export function getCnvDnsResolverAssociationOutput(args: GetCnvDnsResolverAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCnvDnsResolverAssociationResult> {
-    return pulumi.output(args).apply((a: any) => getCnvDnsResolverAssociation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", {
+        "vcnId": args.vcnId,
+    }, opts);
 }
 
 /**

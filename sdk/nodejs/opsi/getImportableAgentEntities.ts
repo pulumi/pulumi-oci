@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImportableAgentEntities(args: GetImportableAgentEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetImportableAgentEntitiesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", {
         "compartmentId": args.compartmentId,
@@ -79,7 +78,10 @@ export interface GetImportableAgentEntitiesResult {
  * ```
  */
 export function getImportableAgentEntitiesOutput(args: GetImportableAgentEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImportableAgentEntitiesResult> {
-    return pulumi.output(args).apply((a: any) => getImportableAgentEntities(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", {
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

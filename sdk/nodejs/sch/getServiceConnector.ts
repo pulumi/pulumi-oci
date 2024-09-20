@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceConnector(args: GetServiceConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceConnectorResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Sch/getServiceConnector:getServiceConnector", {
         "serviceConnectorId": args.serviceConnectorId,
@@ -123,7 +122,10 @@ export interface GetServiceConnectorResult {
  * ```
  */
 export function getServiceConnectorOutput(args: GetServiceConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceConnectorResult> {
-    return pulumi.output(args).apply((a: any) => getServiceConnector(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Sch/getServiceConnector:getServiceConnector", {
+        "serviceConnectorId": args.serviceConnectorId,
+    }, opts);
 }
 
 /**

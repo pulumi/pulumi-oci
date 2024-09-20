@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityPolicyReportRoleGrantPaths(args: GetSecurityPolicyReportRoleGrantPathsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyReportRoleGrantPathsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", {
         "filters": args.filters,
@@ -100,7 +99,13 @@ export interface GetSecurityPolicyReportRoleGrantPathsResult {
  * ```
  */
 export function getSecurityPolicyReportRoleGrantPathsOutput(args: GetSecurityPolicyReportRoleGrantPathsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportRoleGrantPathsResult> {
-    return pulumi.output(args).apply((a: any) => getSecurityPolicyReportRoleGrantPaths(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", {
+        "filters": args.filters,
+        "grantedRole": args.grantedRole,
+        "grantee": args.grantee,
+        "securityPolicyReportId": args.securityPolicyReportId,
+    }, opts);
 }
 
 /**

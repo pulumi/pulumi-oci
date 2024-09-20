@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
  */
 export function getAggregatedComputedUsages(args: GetAggregatedComputedUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetAggregatedComputedUsagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", {
         "compartmentId": args.compartmentId,
@@ -88,7 +87,16 @@ export interface GetAggregatedComputedUsagesResult {
  * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
  */
 export function getAggregatedComputedUsagesOutput(args: GetAggregatedComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAggregatedComputedUsagesResult> {
-    return pulumi.output(args).apply((a: any) => getAggregatedComputedUsages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "grouping": args.grouping,
+        "parentProduct": args.parentProduct,
+        "subscriptionId": args.subscriptionId,
+        "timeFrom": args.timeFrom,
+        "timeTo": args.timeTo,
+    }, opts);
 }
 
 /**

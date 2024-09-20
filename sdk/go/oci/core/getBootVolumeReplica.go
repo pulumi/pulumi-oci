@@ -88,14 +88,20 @@ type GetBootVolumeReplicaResult struct {
 
 func GetBootVolumeReplicaOutput(ctx *pulumi.Context, args GetBootVolumeReplicaOutputArgs, opts ...pulumi.InvokeOption) GetBootVolumeReplicaResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBootVolumeReplicaResult, error) {
+		ApplyT(func(v interface{}) (GetBootVolumeReplicaResultOutput, error) {
 			args := v.(GetBootVolumeReplicaArgs)
-			r, err := GetBootVolumeReplica(ctx, &args, opts...)
-			var s GetBootVolumeReplicaResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBootVolumeReplicaResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getBootVolumeReplica:getBootVolumeReplica", args, &rv, "", opts...)
+			if err != nil {
+				return GetBootVolumeReplicaResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBootVolumeReplicaResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBootVolumeReplicaResultOutput), nil
+			}
+			return output, nil
 		}).(GetBootVolumeReplicaResultOutput)
 }
 

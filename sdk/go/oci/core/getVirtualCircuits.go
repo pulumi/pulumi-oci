@@ -80,14 +80,20 @@ type GetVirtualCircuitsResult struct {
 
 func GetVirtualCircuitsOutput(ctx *pulumi.Context, args GetVirtualCircuitsOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetVirtualCircuitsResult, error) {
+		ApplyT(func(v interface{}) (GetVirtualCircuitsResultOutput, error) {
 			args := v.(GetVirtualCircuitsArgs)
-			r, err := GetVirtualCircuits(ctx, &args, opts...)
-			var s GetVirtualCircuitsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetVirtualCircuitsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getVirtualCircuits:getVirtualCircuits", args, &rv, "", opts...)
+			if err != nil {
+				return GetVirtualCircuitsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetVirtualCircuitsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetVirtualCircuitsResultOutput), nil
+			}
+			return output, nil
 		}).(GetVirtualCircuitsResultOutput)
 }
 

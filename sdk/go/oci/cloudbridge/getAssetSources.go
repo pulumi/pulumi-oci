@@ -84,14 +84,20 @@ type GetAssetSourcesResult struct {
 
 func GetAssetSourcesOutput(ctx *pulumi.Context, args GetAssetSourcesOutputArgs, opts ...pulumi.InvokeOption) GetAssetSourcesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAssetSourcesResult, error) {
+		ApplyT(func(v interface{}) (GetAssetSourcesResultOutput, error) {
 			args := v.(GetAssetSourcesArgs)
-			r, err := GetAssetSources(ctx, &args, opts...)
-			var s GetAssetSourcesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAssetSourcesResult
+			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getAssetSources:getAssetSources", args, &rv, "", opts...)
+			if err != nil {
+				return GetAssetSourcesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAssetSourcesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAssetSourcesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAssetSourcesResultOutput)
 }
 

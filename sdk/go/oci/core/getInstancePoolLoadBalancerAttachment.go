@@ -80,14 +80,20 @@ type GetInstancePoolLoadBalancerAttachmentResult struct {
 
 func GetInstancePoolLoadBalancerAttachmentOutput(ctx *pulumi.Context, args GetInstancePoolLoadBalancerAttachmentOutputArgs, opts ...pulumi.InvokeOption) GetInstancePoolLoadBalancerAttachmentResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetInstancePoolLoadBalancerAttachmentResult, error) {
+		ApplyT(func(v interface{}) (GetInstancePoolLoadBalancerAttachmentResultOutput, error) {
 			args := v.(GetInstancePoolLoadBalancerAttachmentArgs)
-			r, err := GetInstancePoolLoadBalancerAttachment(ctx, &args, opts...)
-			var s GetInstancePoolLoadBalancerAttachmentResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetInstancePoolLoadBalancerAttachmentResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", args, &rv, "", opts...)
+			if err != nil {
+				return GetInstancePoolLoadBalancerAttachmentResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetInstancePoolLoadBalancerAttachmentResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetInstancePoolLoadBalancerAttachmentResultOutput), nil
+			}
+			return output, nil
 		}).(GetInstancePoolLoadBalancerAttachmentResultOutput)
 }
 

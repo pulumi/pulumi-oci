@@ -94,14 +94,20 @@ type LookupRrsetResult struct {
 
 func LookupRrsetOutput(ctx *pulumi.Context, args LookupRrsetOutputArgs, opts ...pulumi.InvokeOption) LookupRrsetResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupRrsetResult, error) {
+		ApplyT(func(v interface{}) (LookupRrsetResultOutput, error) {
 			args := v.(LookupRrsetArgs)
-			r, err := LookupRrset(ctx, &args, opts...)
-			var s LookupRrsetResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupRrsetResult
+			secret, err := ctx.InvokePackageRaw("oci:Dns/getRrset:getRrset", args, &rv, "", opts...)
+			if err != nil {
+				return LookupRrsetResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupRrsetResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupRrsetResultOutput), nil
+			}
+			return output, nil
 		}).(LookupRrsetResultOutput)
 }
 

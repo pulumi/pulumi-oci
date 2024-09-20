@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkRequestErrors(args: GetWorkRequestErrorsArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkRequestErrorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", {
         "compartmentId": args.compartmentId,
@@ -82,7 +81,12 @@ export interface GetWorkRequestErrorsResult {
  * ```
  */
 export function getWorkRequestErrorsOutput(args: GetWorkRequestErrorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkRequestErrorsResult> {
-    return pulumi.output(args).apply((a: any) => getWorkRequestErrors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "workRequestId": args.workRequestId,
+    }, opts);
 }
 
 /**

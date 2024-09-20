@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResult(args: GetResultArgs, opts?: pulumi.InvokeOptions): Promise<GetResultResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getResult:getResult", {
         "apmDomainId": args.apmDomainId,
@@ -126,7 +125,15 @@ export interface GetResultResult {
  * ```
  */
 export function getResultOutput(args: GetResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResultResult> {
-    return pulumi.output(args).apply((a: any) => getResult(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getResult:getResult", {
+        "apmDomainId": args.apmDomainId,
+        "executionTime": args.executionTime,
+        "monitorId": args.monitorId,
+        "resultContentType": args.resultContentType,
+        "resultType": args.resultType,
+        "vantagePoint": args.vantagePoint,
+    }, opts);
 }
 
 /**

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAverageCarbonEmission(args: GetAverageCarbonEmissionArgs, opts?: pulumi.InvokeOptions): Promise<GetAverageCarbonEmissionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", {
         "skuPartNumber": args.skuPartNumber,
@@ -72,7 +71,10 @@ export interface GetAverageCarbonEmissionResult {
  * ```
  */
 export function getAverageCarbonEmissionOutput(args: GetAverageCarbonEmissionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAverageCarbonEmissionResult> {
-    return pulumi.output(args).apply((a: any) => getAverageCarbonEmission(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", {
+        "skuPartNumber": args.skuPartNumber,
+    }, opts);
 }
 
 /**

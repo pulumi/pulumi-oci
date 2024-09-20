@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetExportStatus(args: GetFleetExportStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetExportStatusResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetExportStatus:getFleetExportStatus", {
         "fleetId": args.fleetId,
@@ -80,7 +79,10 @@ export interface GetFleetExportStatusResult {
  * ```
  */
 export function getFleetExportStatusOutput(args: GetFleetExportStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetExportStatusResult> {
-    return pulumi.output(args).apply((a: any) => getFleetExportStatus(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Jms/getFleetExportStatus:getFleetExportStatus", {
+        "fleetId": args.fleetId,
+    }, opts);
 }
 
 /**

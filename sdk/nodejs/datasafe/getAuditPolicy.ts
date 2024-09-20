@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditPolicy(args: GetAuditPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditPolicy:getAuditPolicy", {
         "auditPolicyId": args.auditPolicyId,
@@ -133,7 +132,10 @@ export interface GetAuditPolicyResult {
  * ```
  */
 export function getAuditPolicyOutput(args: GetAuditPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getAuditPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditPolicy:getAuditPolicy", {
+        "auditPolicyId": args.auditPolicyId,
+    }, opts);
 }
 
 /**

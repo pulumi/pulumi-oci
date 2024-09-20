@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCommitments(args: GetCommitmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetCommitmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubSubscription/getCommitments:getCommitments", {
         "compartmentId": args.compartmentId,
@@ -98,7 +97,14 @@ export interface GetCommitmentsResult {
  * ```
  */
 export function getCommitmentsOutput(args: GetCommitmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCommitmentsResult> {
-    return pulumi.output(args).apply((a: any) => getCommitments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsubSubscription/getCommitments:getCommitments", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "subscribedServiceId": args.subscribedServiceId,
+        "xOneGatewaySubscriptionId": args.xOneGatewaySubscriptionId,
+        "xOneOriginRegion": args.xOneOriginRegion,
+    }, opts);
 }
 
 /**

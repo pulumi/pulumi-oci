@@ -92,14 +92,20 @@ type GetManagementStationsResult struct {
 
 func GetManagementStationsOutput(ctx *pulumi.Context, args GetManagementStationsOutputArgs, opts ...pulumi.InvokeOption) GetManagementStationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagementStationsResult, error) {
+		ApplyT(func(v interface{}) (GetManagementStationsResultOutput, error) {
 			args := v.(GetManagementStationsArgs)
-			r, err := GetManagementStations(ctx, &args, opts...)
-			var s GetManagementStationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetManagementStationsResult
+			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getManagementStations:getManagementStations", args, &rv, "", opts...)
+			if err != nil {
+				return GetManagementStationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetManagementStationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetManagementStationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetManagementStationsResultOutput)
 }
 

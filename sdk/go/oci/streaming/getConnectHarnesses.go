@@ -83,14 +83,20 @@ type GetConnectHarnessesResult struct {
 
 func GetConnectHarnessesOutput(ctx *pulumi.Context, args GetConnectHarnessesOutputArgs, opts ...pulumi.InvokeOption) GetConnectHarnessesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetConnectHarnessesResult, error) {
+		ApplyT(func(v interface{}) (GetConnectHarnessesResultOutput, error) {
 			args := v.(GetConnectHarnessesArgs)
-			r, err := GetConnectHarnesses(ctx, &args, opts...)
-			var s GetConnectHarnessesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetConnectHarnessesResult
+			secret, err := ctx.InvokePackageRaw("oci:Streaming/getConnectHarnesses:getConnectHarnesses", args, &rv, "", opts...)
+			if err != nil {
+				return GetConnectHarnessesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetConnectHarnessesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetConnectHarnessesResultOutput), nil
+			}
+			return output, nil
 		}).(GetConnectHarnessesResultOutput)
 }
 

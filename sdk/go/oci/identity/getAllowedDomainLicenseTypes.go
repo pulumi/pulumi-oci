@@ -74,14 +74,20 @@ type GetAllowedDomainLicenseTypesResult struct {
 
 func GetAllowedDomainLicenseTypesOutput(ctx *pulumi.Context, args GetAllowedDomainLicenseTypesOutputArgs, opts ...pulumi.InvokeOption) GetAllowedDomainLicenseTypesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAllowedDomainLicenseTypesResult, error) {
+		ApplyT(func(v interface{}) (GetAllowedDomainLicenseTypesResultOutput, error) {
 			args := v.(GetAllowedDomainLicenseTypesArgs)
-			r, err := GetAllowedDomainLicenseTypes(ctx, &args, opts...)
-			var s GetAllowedDomainLicenseTypesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAllowedDomainLicenseTypesResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", args, &rv, "", opts...)
+			if err != nil {
+				return GetAllowedDomainLicenseTypesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAllowedDomainLicenseTypesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAllowedDomainLicenseTypesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAllowedDomainLicenseTypesResultOutput)
 }
 

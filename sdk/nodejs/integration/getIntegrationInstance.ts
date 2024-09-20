@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIntegrationInstance(args: GetIntegrationInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetIntegrationInstanceResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Integration/getIntegrationInstance:getIntegrationInstance", {
         "integrationInstanceId": args.integrationInstanceId,
@@ -167,7 +166,10 @@ export interface GetIntegrationInstanceResult {
  * ```
  */
 export function getIntegrationInstanceOutput(args: GetIntegrationInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIntegrationInstanceResult> {
-    return pulumi.output(args).apply((a: any) => getIntegrationInstance(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Integration/getIntegrationInstance:getIntegrationInstance", {
+        "integrationInstanceId": args.integrationInstanceId,
+    }, opts);
 }
 
 /**

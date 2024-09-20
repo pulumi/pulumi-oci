@@ -85,14 +85,20 @@ type GetCloudExadataInfrastructuresResult struct {
 
 func GetCloudExadataInfrastructuresOutput(ctx *pulumi.Context, args GetCloudExadataInfrastructuresOutputArgs, opts ...pulumi.InvokeOption) GetCloudExadataInfrastructuresResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCloudExadataInfrastructuresResult, error) {
+		ApplyT(func(v interface{}) (GetCloudExadataInfrastructuresResultOutput, error) {
 			args := v.(GetCloudExadataInfrastructuresArgs)
-			r, err := GetCloudExadataInfrastructures(ctx, &args, opts...)
-			var s GetCloudExadataInfrastructuresResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCloudExadataInfrastructuresResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", args, &rv, "", opts...)
+			if err != nil {
+				return GetCloudExadataInfrastructuresResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCloudExadataInfrastructuresResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCloudExadataInfrastructuresResultOutput), nil
+			}
+			return output, nil
 		}).(GetCloudExadataInfrastructuresResultOutput)
 }
 

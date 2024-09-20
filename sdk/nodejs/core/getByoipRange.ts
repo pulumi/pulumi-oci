@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getByoipRange(args: GetByoipRangeArgs, opts?: pulumi.InvokeOptions): Promise<GetByoipRangeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getByoipRange:getByoipRange", {
         "byoipRangeId": args.byoipRangeId,
@@ -126,7 +125,10 @@ export interface GetByoipRangeResult {
  * ```
  */
 export function getByoipRangeOutput(args: GetByoipRangeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipRangeResult> {
-    return pulumi.output(args).apply((a: any) => getByoipRange(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getByoipRange:getByoipRange", {
+        "byoipRangeId": args.byoipRangeId,
+    }, opts);
 }
 
 /**

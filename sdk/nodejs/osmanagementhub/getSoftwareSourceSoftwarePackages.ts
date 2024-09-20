@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSourceSoftwarePackages(args: GetSoftwareSourceSoftwarePackagesArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourceSoftwarePackagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwareSourceSoftwarePackages:getSoftwareSourceSoftwarePackages", {
         "displayName": args.displayName,
@@ -106,7 +105,14 @@ export interface GetSoftwareSourceSoftwarePackagesResult {
  * ```
  */
 export function getSoftwareSourceSoftwarePackagesOutput(args: GetSoftwareSourceSoftwarePackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceSoftwarePackagesResult> {
-    return pulumi.output(args).apply((a: any) => getSoftwareSourceSoftwarePackages(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwareSourceSoftwarePackages:getSoftwareSourceSoftwarePackages", {
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "isLatest": args.isLatest,
+        "softwareSourceId": args.softwareSourceId,
+    }, opts);
 }
 
 /**

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeCapacityTopologies(args: GetComputeCapacityTopologiesArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityTopologiesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", {
         "availabilityDomain": args.availabilityDomain,
@@ -101,7 +100,13 @@ export interface GetComputeCapacityTopologiesResult {
  * ```
  */
 export function getComputeCapacityTopologiesOutput(args: GetComputeCapacityTopologiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologiesResult> {
-    return pulumi.output(args).apply((a: any) => getComputeCapacityTopologies(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

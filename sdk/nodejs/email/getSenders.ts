@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSenders(args: GetSendersArgs, opts?: pulumi.InvokeOptions): Promise<GetSendersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getSenders:getSenders", {
         "compartmentId": args.compartmentId,
@@ -107,7 +106,14 @@ export interface GetSendersResult {
  * ```
  */
 export function getSendersOutput(args: GetSendersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSendersResult> {
-    return pulumi.output(args).apply((a: any) => getSenders(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Email/getSenders:getSenders", {
+        "compartmentId": args.compartmentId,
+        "domain": args.domain,
+        "emailAddress": args.emailAddress,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

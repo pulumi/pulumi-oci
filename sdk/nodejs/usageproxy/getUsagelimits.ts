@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUsagelimits(args: GetUsagelimitsArgs, opts?: pulumi.InvokeOptions): Promise<GetUsagelimitsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:UsageProxy/getUsagelimits:getUsagelimits", {
         "compartmentId": args.compartmentId,
@@ -109,7 +108,15 @@ export interface GetUsagelimitsResult {
  * ```
  */
 export function getUsagelimitsOutput(args: GetUsagelimitsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsagelimitsResult> {
-    return pulumi.output(args).apply((a: any) => getUsagelimits(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:UsageProxy/getUsagelimits:getUsagelimits", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "limitType": args.limitType,
+        "resourceType": args.resourceType,
+        "serviceType": args.serviceType,
+        "subscriptionId": args.subscriptionId,
+    }, opts);
 }
 
 /**

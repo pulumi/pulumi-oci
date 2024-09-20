@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNewsReport(args: GetNewsReportArgs, opts?: pulumi.InvokeOptions): Promise<GetNewsReportResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getNewsReport:getNewsReport", {
         "newsReportId": args.newsReportId,
@@ -135,7 +134,10 @@ export interface GetNewsReportResult {
  * ```
  */
 export function getNewsReportOutput(args: GetNewsReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNewsReportResult> {
-    return pulumi.output(args).apply((a: any) => getNewsReport(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getNewsReport:getNewsReport", {
+        "newsReportId": args.newsReportId,
+    }, opts);
 }
 
 /**

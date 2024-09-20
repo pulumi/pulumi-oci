@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  */
 export function getExports(args?: GetExportsArgs, opts?: pulumi.InvokeOptions): Promise<GetExportsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getExports:getExports", {
         "compartmentId": args.compartmentId,
@@ -119,7 +118,16 @@ export interface GetExportsResult {
  * ```
  */
 export function getExportsOutput(args?: GetExportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExportsResult> {
-    return pulumi.output(args).apply((a: any) => getExports(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getExports:getExports", {
+        "compartmentId": args.compartmentId,
+        "exportSetId": args.exportSetId,
+        "fileSystemId": args.fileSystemId,
+        "filters": args.filters,
+        "id": args.id,
+        "state": args.state,
+    }, opts);
 }
 
 /**

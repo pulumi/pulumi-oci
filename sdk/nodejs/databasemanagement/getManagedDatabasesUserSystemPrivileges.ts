@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabasesUserSystemPrivileges(args: GetManagedDatabasesUserSystemPrivilegesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesUserSystemPrivilegesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", {
         "filters": args.filters,
@@ -101,7 +100,14 @@ export interface GetManagedDatabasesUserSystemPrivilegesResult {
  * ```
  */
 export function getManagedDatabasesUserSystemPrivilegesOutput(args: GetManagedDatabasesUserSystemPrivilegesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesUserSystemPrivilegesResult> {
-    return pulumi.output(args).apply((a: any) => getManagedDatabasesUserSystemPrivileges(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", {
+        "filters": args.filters,
+        "managedDatabaseId": args.managedDatabaseId,
+        "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
+        "userName": args.userName,
+    }, opts);
 }
 
 /**

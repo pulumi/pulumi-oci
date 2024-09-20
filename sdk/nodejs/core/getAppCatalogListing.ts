@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppCatalogListing(args: GetAppCatalogListingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getAppCatalogListing:getAppCatalogListing", {
         "listingId": args.listingId,
@@ -96,7 +95,10 @@ export interface GetAppCatalogListingResult {
  * ```
  */
 export function getAppCatalogListingOutput(args: GetAppCatalogListingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResult> {
-    return pulumi.output(args).apply((a: any) => getAppCatalogListing(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getAppCatalogListing:getAppCatalogListing", {
+        "listingId": args.listingId,
+    }, opts);
 }
 
 /**

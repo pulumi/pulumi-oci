@@ -90,14 +90,20 @@ type GetAddressListsResult struct {
 
 func GetAddressListsOutput(ctx *pulumi.Context, args GetAddressListsOutputArgs, opts ...pulumi.InvokeOption) GetAddressListsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAddressListsResult, error) {
+		ApplyT(func(v interface{}) (GetAddressListsResultOutput, error) {
 			args := v.(GetAddressListsArgs)
-			r, err := GetAddressLists(ctx, &args, opts...)
-			var s GetAddressListsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAddressListsResult
+			secret, err := ctx.InvokePackageRaw("oci:Waas/getAddressLists:getAddressLists", args, &rv, "", opts...)
+			if err != nil {
+				return GetAddressListsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAddressListsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAddressListsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAddressListsResultOutput)
 }
 

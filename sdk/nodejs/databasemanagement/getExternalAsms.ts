@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  */
 export function getExternalAsms(args?: GetExternalAsmsArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsms:getExternalAsms", {
         "compartmentId": args.compartmentId,
@@ -100,7 +99,14 @@ export interface GetExternalAsmsResult {
  * ```
  */
 export function getExternalAsmsOutput(args?: GetExternalAsmsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmsResult> {
-    return pulumi.output(args).apply((a: any) => getExternalAsms(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsms:getExternalAsms", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "externalDbSystemId": args.externalDbSystemId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

@@ -89,14 +89,20 @@ type LookupPrivateApplicationResult struct {
 
 func LookupPrivateApplicationOutput(ctx *pulumi.Context, args LookupPrivateApplicationOutputArgs, opts ...pulumi.InvokeOption) LookupPrivateApplicationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPrivateApplicationResult, error) {
+		ApplyT(func(v interface{}) (LookupPrivateApplicationResultOutput, error) {
 			args := v.(LookupPrivateApplicationArgs)
-			r, err := LookupPrivateApplication(ctx, &args, opts...)
-			var s LookupPrivateApplicationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupPrivateApplicationResult
+			secret, err := ctx.InvokePackageRaw("oci:ServiceCatalog/getPrivateApplication:getPrivateApplication", args, &rv, "", opts...)
+			if err != nil {
+				return LookupPrivateApplicationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupPrivateApplicationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupPrivateApplicationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupPrivateApplicationResultOutput)
 }
 

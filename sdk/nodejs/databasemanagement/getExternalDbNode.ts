@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalDbNode(args: GetExternalDbNodeArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbNodeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", {
         "externalDbNodeId": args.externalDbNodeId,
@@ -133,7 +132,10 @@ export interface GetExternalDbNodeResult {
  * ```
  */
 export function getExternalDbNodeOutput(args: GetExternalDbNodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbNodeResult> {
-    return pulumi.output(args).apply((a: any) => getExternalDbNode(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", {
+        "externalDbNodeId": args.externalDbNodeId,
+    }, opts);
 }
 
 /**

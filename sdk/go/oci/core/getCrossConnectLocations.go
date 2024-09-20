@@ -70,14 +70,20 @@ type GetCrossConnectLocationsResult struct {
 
 func GetCrossConnectLocationsOutput(ctx *pulumi.Context, args GetCrossConnectLocationsOutputArgs, opts ...pulumi.InvokeOption) GetCrossConnectLocationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCrossConnectLocationsResult, error) {
+		ApplyT(func(v interface{}) (GetCrossConnectLocationsResultOutput, error) {
 			args := v.(GetCrossConnectLocationsArgs)
-			r, err := GetCrossConnectLocations(ctx, &args, opts...)
-			var s GetCrossConnectLocationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCrossConnectLocationsResult
+			secret, err := ctx.InvokePackageRaw("oci:Core/getCrossConnectLocations:getCrossConnectLocations", args, &rv, "", opts...)
+			if err != nil {
+				return GetCrossConnectLocationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCrossConnectLocationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCrossConnectLocationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetCrossConnectLocationsResultOutput)
 }
 

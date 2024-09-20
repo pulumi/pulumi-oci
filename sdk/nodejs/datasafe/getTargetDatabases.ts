@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabases(args: GetTargetDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabases:getTargetDatabases", {
         "accessLevel": args.accessLevel,
@@ -153,7 +152,19 @@ export interface GetTargetDatabasesResult {
  * ```
  */
 export function getTargetDatabasesOutput(args: GetTargetDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getTargetDatabases(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabases:getTargetDatabases", {
+        "accessLevel": args.accessLevel,
+        "associatedResourceId": args.associatedResourceId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "databaseType": args.databaseType,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "infrastructureType": args.infrastructureType,
+        "state": args.state,
+        "targetDatabaseId": args.targetDatabaseId,
+    }, opts);
 }
 
 /**

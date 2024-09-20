@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGuardTarget(args: GetGuardTargetArgs, opts?: pulumi.InvokeOptions): Promise<GetGuardTargetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getGuardTarget:getGuardTarget", {
         "targetId": args.targetId,
@@ -135,7 +134,10 @@ export interface GetGuardTargetResult {
  * ```
  */
 export function getGuardTargetOutput(args: GetGuardTargetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGuardTargetResult> {
-    return pulumi.output(args).apply((a: any) => getGuardTarget(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:CloudGuard/getGuardTarget:getGuardTarget", {
+        "targetId": args.targetId,
+    }, opts);
 }
 
 /**

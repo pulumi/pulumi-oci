@@ -88,14 +88,20 @@ type GetMaskingAnalyticsResult struct {
 
 func GetMaskingAnalyticsOutput(ctx *pulumi.Context, args GetMaskingAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetMaskingAnalyticsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMaskingAnalyticsResult, error) {
+		ApplyT(func(v interface{}) (GetMaskingAnalyticsResultOutput, error) {
 			args := v.(GetMaskingAnalyticsArgs)
-			r, err := GetMaskingAnalytics(ctx, &args, opts...)
-			var s GetMaskingAnalyticsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetMaskingAnalyticsResult
+			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics", args, &rv, "", opts...)
+			if err != nil {
+				return GetMaskingAnalyticsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetMaskingAnalyticsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetMaskingAnalyticsResultOutput), nil
+			}
+			return output, nil
 		}).(GetMaskingAnalyticsResultOutput)
 }
 

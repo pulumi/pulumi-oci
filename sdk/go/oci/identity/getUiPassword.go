@@ -72,14 +72,20 @@ type LookupUiPasswordResult struct {
 
 func LookupUiPasswordOutput(ctx *pulumi.Context, args LookupUiPasswordOutputArgs, opts ...pulumi.InvokeOption) LookupUiPasswordResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupUiPasswordResult, error) {
+		ApplyT(func(v interface{}) (LookupUiPasswordResultOutput, error) {
 			args := v.(LookupUiPasswordArgs)
-			r, err := LookupUiPassword(ctx, &args, opts...)
-			var s LookupUiPasswordResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupUiPasswordResult
+			secret, err := ctx.InvokePackageRaw("oci:Identity/getUiPassword:getUiPassword", args, &rv, "", opts...)
+			if err != nil {
+				return LookupUiPasswordResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupUiPasswordResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupUiPasswordResultOutput), nil
+			}
+			return output, nil
 		}).(LookupUiPasswordResultOutput)
 }
 

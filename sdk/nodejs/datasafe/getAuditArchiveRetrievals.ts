@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditArchiveRetrievals(args: GetAuditArchiveRetrievalsArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditArchiveRetrievalsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", {
         "accessLevel": args.accessLevel,
@@ -145,7 +144,18 @@ export interface GetAuditArchiveRetrievalsResult {
  * ```
  */
 export function getAuditArchiveRetrievalsOutput(args: GetAuditArchiveRetrievalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditArchiveRetrievalsResult> {
-    return pulumi.output(args).apply((a: any) => getAuditArchiveRetrievals(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", {
+        "accessLevel": args.accessLevel,
+        "auditArchiveRetrievalId": args.auditArchiveRetrievalId,
+        "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+        "targetId": args.targetId,
+        "timeOfExpiry": args.timeOfExpiry,
+    }, opts);
 }
 
 /**

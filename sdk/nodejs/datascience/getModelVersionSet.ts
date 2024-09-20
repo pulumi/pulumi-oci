@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelVersionSet(args: GetModelVersionSetArgs, opts?: pulumi.InvokeOptions): Promise<GetModelVersionSetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelVersionSet:getModelVersionSet", {
         "modelVersionSetId": args.modelVersionSetId,
@@ -109,7 +108,10 @@ export interface GetModelVersionSetResult {
  * ```
  */
 export function getModelVersionSetOutput(args: GetModelVersionSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelVersionSetResult> {
-    return pulumi.output(args).apply((a: any) => getModelVersionSet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataScience/getModelVersionSet:getModelVersionSet", {
+        "modelVersionSetId": args.modelVersionSetId,
+    }, opts);
 }
 
 /**

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImportableComputeEntities(args: GetImportableComputeEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetImportableComputeEntitiesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", {
         "compartmentId": args.compartmentId,
@@ -86,7 +85,10 @@ export interface GetImportableComputeEntitiesResult {
  * ```
  */
 export function getImportableComputeEntitiesOutput(args: GetImportableComputeEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImportableComputeEntitiesResult> {
-    return pulumi.output(args).apply((a: any) => getImportableComputeEntities(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", {
+        "compartmentId": args.compartmentId,
+    }, opts);
 }
 
 /**

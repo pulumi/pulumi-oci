@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaintenanceRuns(args: GetMaintenanceRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaintenanceRunsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getMaintenanceRuns:getMaintenanceRuns", {
         "availabilityDomain": args.availabilityDomain,
@@ -140,7 +139,17 @@ export interface GetMaintenanceRunsResult {
  * ```
  */
 export function getMaintenanceRunsOutput(args: GetMaintenanceRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceRunsResult> {
-    return pulumi.output(args).apply((a: any) => getMaintenanceRuns(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Database/getMaintenanceRuns:getMaintenanceRuns", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "maintenanceSubtype": args.maintenanceSubtype,
+        "maintenanceType": args.maintenanceType,
+        "state": args.state,
+        "targetResourceId": args.targetResourceId,
+        "targetResourceType": args.targetResourceType,
+    }, opts);
 }
 
 /**

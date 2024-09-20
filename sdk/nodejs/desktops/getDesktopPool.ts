@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDesktopPool(args: GetDesktopPoolArgs, opts?: pulumi.InvokeOptions): Promise<GetDesktopPoolResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Desktops/getDesktopPool:getDesktopPool", {
         "desktopPoolId": args.desktopPoolId,
@@ -163,7 +162,10 @@ export interface GetDesktopPoolResult {
  * ```
  */
 export function getDesktopPoolOutput(args: GetDesktopPoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDesktopPoolResult> {
-    return pulumi.output(args).apply((a: any) => getDesktopPool(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Desktops/getDesktopPool:getDesktopPool", {
+        "desktopPoolId": args.desktopPoolId,
+    }, opts);
 }
 
 /**

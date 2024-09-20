@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOutboundConnector(args: GetOutboundConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetOutboundConnectorResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getOutboundConnector:getOutboundConnector", {
         "outboundConnectorId": args.outboundConnectorId,
@@ -115,7 +114,10 @@ export interface GetOutboundConnectorResult {
  * ```
  */
 export function getOutboundConnectorOutput(args: GetOutboundConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOutboundConnectorResult> {
-    return pulumi.output(args).apply((a: any) => getOutboundConnector(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:FileStorage/getOutboundConnector:getOutboundConnector", {
+        "outboundConnectorId": args.outboundConnectorId,
+    }, opts);
 }
 
 /**

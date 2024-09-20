@@ -69,14 +69,20 @@ type GetAutonomousDatabasePeersResult struct {
 
 func GetAutonomousDatabasePeersOutput(ctx *pulumi.Context, args GetAutonomousDatabasePeersOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabasePeersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabasePeersResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousDatabasePeersResultOutput, error) {
 			args := v.(GetAutonomousDatabasePeersArgs)
-			r, err := GetAutonomousDatabasePeers(ctx, &args, opts...)
-			var s GetAutonomousDatabasePeersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousDatabasePeersResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousDatabasePeersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousDatabasePeersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousDatabasePeersResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousDatabasePeersResultOutput)
 }
 

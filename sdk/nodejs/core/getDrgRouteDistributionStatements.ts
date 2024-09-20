@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgRouteDistributionStatements(args: GetDrgRouteDistributionStatementsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteDistributionStatementsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", {
         "drgRouteDistributionId": args.drgRouteDistributionId,
@@ -74,7 +73,11 @@ export interface GetDrgRouteDistributionStatementsResult {
  * ```
  */
 export function getDrgRouteDistributionStatementsOutput(args: GetDrgRouteDistributionStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteDistributionStatementsResult> {
-    return pulumi.output(args).apply((a: any) => getDrgRouteDistributionStatements(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", {
+        "drgRouteDistributionId": args.drgRouteDistributionId,
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

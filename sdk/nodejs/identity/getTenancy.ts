@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTenancy(args: GetTenancyArgs, opts?: pulumi.InvokeOptions): Promise<GetTenancyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTenancy:getTenancy", {
         "tenancyId": args.tenancyId,
@@ -89,7 +88,10 @@ export interface GetTenancyResult {
  * ```
  */
 export function getTenancyOutput(args: GetTenancyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTenancyResult> {
-    return pulumi.output(args).apply((a: any) => getTenancy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Identity/getTenancy:getTenancy", {
+        "tenancyId": args.tenancyId,
+    }, opts);
 }
 
 /**

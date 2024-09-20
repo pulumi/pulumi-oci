@@ -70,14 +70,20 @@ type GetAutonomousDbPreviewVersionsResult struct {
 
 func GetAutonomousDbPreviewVersionsOutput(ctx *pulumi.Context, args GetAutonomousDbPreviewVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDbPreviewVersionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDbPreviewVersionsResult, error) {
+		ApplyT(func(v interface{}) (GetAutonomousDbPreviewVersionsResultOutput, error) {
 			args := v.(GetAutonomousDbPreviewVersionsArgs)
-			r, err := GetAutonomousDbPreviewVersions(ctx, &args, opts...)
-			var s GetAutonomousDbPreviewVersionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAutonomousDbPreviewVersionsResult
+			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args, &rv, "", opts...)
+			if err != nil {
+				return GetAutonomousDbPreviewVersionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAutonomousDbPreviewVersionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAutonomousDbPreviewVersionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAutonomousDbPreviewVersionsResultOutput)
 }
 

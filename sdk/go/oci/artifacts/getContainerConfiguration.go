@@ -68,14 +68,20 @@ type LookupContainerConfigurationResult struct {
 
 func LookupContainerConfigurationOutput(ctx *pulumi.Context, args LookupContainerConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupContainerConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupContainerConfigurationResult, error) {
+		ApplyT(func(v interface{}) (LookupContainerConfigurationResultOutput, error) {
 			args := v.(LookupContainerConfigurationArgs)
-			r, err := LookupContainerConfiguration(ctx, &args, opts...)
-			var s LookupContainerConfigurationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupContainerConfigurationResult
+			secret, err := ctx.InvokePackageRaw("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args, &rv, "", opts...)
+			if err != nil {
+				return LookupContainerConfigurationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupContainerConfigurationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupContainerConfigurationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupContainerConfigurationResultOutput)
 }
 

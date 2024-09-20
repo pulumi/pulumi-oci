@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeCapacityReservation(args: GetComputeCapacityReservationArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityReservationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeCapacityReservation:getComputeCapacityReservation", {
         "capacityReservationId": args.capacityReservationId,
@@ -115,7 +114,10 @@ export interface GetComputeCapacityReservationResult {
  * ```
  */
 export function getComputeCapacityReservationOutput(args: GetComputeCapacityReservationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityReservationResult> {
-    return pulumi.output(args).apply((a: any) => getComputeCapacityReservation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityReservation:getComputeCapacityReservation", {
+        "capacityReservationId": args.capacityReservationId,
+    }, opts);
 }
 
 /**

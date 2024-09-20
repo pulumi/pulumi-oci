@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDelegatedResourceAccessRequests(args: GetDelegatedResourceAccessRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetDelegatedResourceAccessRequestsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests", {
         "compartmentId": args.compartmentId,
@@ -137,7 +136,17 @@ export interface GetDelegatedResourceAccessRequestsResult {
  * ```
  */
 export function getDelegatedResourceAccessRequestsOutput(args: GetDelegatedResourceAccessRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegatedResourceAccessRequestsResult> {
-    return pulumi.output(args).apply((a: any) => getDelegatedResourceAccessRequests(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests", {
+        "compartmentId": args.compartmentId,
+        "delegationControlId": args.delegationControlId,
+        "filters": args.filters,
+        "requestStatus": args.requestStatus,
+        "resourceId": args.resourceId,
+        "state": args.state,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
+    }, opts);
 }
 
 /**

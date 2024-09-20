@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPreauthrequest(args: GetPreauthrequestArgs, opts?: pulumi.InvokeOptions): Promise<GetPreauthrequestResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getPreauthrequest:getPreauthrequest", {
         "bucket": args.bucket,
@@ -122,7 +121,12 @@ export interface GetPreauthrequestResult {
  * ```
  */
 export function getPreauthrequestOutput(args: GetPreauthrequestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPreauthrequestResult> {
-    return pulumi.output(args).apply((a: any) => getPreauthrequest(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ObjectStorage/getPreauthrequest:getPreauthrequest", {
+        "bucket": args.bucket,
+        "namespace": args.namespace,
+        "parId": args.parId,
+    }, opts);
 }
 
 /**

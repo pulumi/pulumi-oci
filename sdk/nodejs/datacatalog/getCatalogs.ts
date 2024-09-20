@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogs(args: GetCatalogsArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogs:getCatalogs", {
         "compartmentId": args.compartmentId,
@@ -99,7 +98,13 @@ export interface GetCatalogsResult {
  * ```
  */
 export function getCatalogsOutput(args: GetCatalogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogsResult> {
-    return pulumi.output(args).apply((a: any) => getCatalogs(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataCatalog/getCatalogs:getCatalogs", {
+        "compartmentId": args.compartmentId,
+        "displayName": args.displayName,
+        "filters": args.filters,
+        "state": args.state,
+    }, opts);
 }
 
 /**

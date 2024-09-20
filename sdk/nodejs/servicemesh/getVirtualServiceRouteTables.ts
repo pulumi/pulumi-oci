@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualServiceRouteTables(args: GetVirtualServiceRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServiceRouteTablesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualServiceRouteTables:getVirtualServiceRouteTables", {
         "compartmentId": args.compartmentId,
@@ -117,7 +116,15 @@ export interface GetVirtualServiceRouteTablesResult {
  * ```
  */
 export function getVirtualServiceRouteTablesOutput(args: GetVirtualServiceRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServiceRouteTablesResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualServiceRouteTables(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:ServiceMesh/getVirtualServiceRouteTables:getVirtualServiceRouteTables", {
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "id": args.id,
+        "name": args.name,
+        "state": args.state,
+        "virtualServiceId": args.virtualServiceId,
+    }, opts);
 }
 
 /**

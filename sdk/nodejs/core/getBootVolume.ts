@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBootVolume(args: GetBootVolumeArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolume:getBootVolume", {
         "bootVolumeId": args.bootVolumeId,
@@ -153,7 +152,10 @@ export interface GetBootVolumeResult {
  * ```
  */
 export function getBootVolumeOutput(args: GetBootVolumeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeResult> {
-    return pulumi.output(args).apply((a: any) => getBootVolume(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getBootVolume:getBootVolume", {
+        "bootVolumeId": args.bootVolumeId,
+    }, opts);
 }
 
 /**

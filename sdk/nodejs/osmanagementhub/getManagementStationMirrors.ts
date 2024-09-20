@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementStationMirrors(args: GetManagementStationMirrorsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementStationMirrorsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", {
         "displayName": args.displayName,
@@ -101,7 +100,14 @@ export interface GetManagementStationMirrorsResult {
  * ```
  */
 export function getManagementStationMirrorsOutput(args: GetManagementStationMirrorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementStationMirrorsResult> {
-    return pulumi.output(args).apply((a: any) => getManagementStationMirrors(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", {
+        "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
+        "filters": args.filters,
+        "managementStationId": args.managementStationId,
+        "mirrorStates": args.mirrorStates,
+    }, opts);
 }
 
 /**

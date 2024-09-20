@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVnicAttachments(args: GetVnicAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetVnicAttachmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVnicAttachments:getVnicAttachments", {
         "availabilityDomain": args.availabilityDomain,
@@ -114,7 +113,14 @@ export interface GetVnicAttachmentsResult {
  * ```
  */
 export function getVnicAttachmentsOutput(args: GetVnicAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVnicAttachmentsResult> {
-    return pulumi.output(args).apply((a: any) => getVnicAttachments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getVnicAttachments:getVnicAttachments", {
+        "availabilityDomain": args.availabilityDomain,
+        "compartmentId": args.compartmentId,
+        "filters": args.filters,
+        "instanceId": args.instanceId,
+        "vnicId": args.vnicId,
+    }, opts);
 }
 
 /**

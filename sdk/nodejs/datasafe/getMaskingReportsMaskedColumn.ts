@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingReportsMaskedColumn(args: GetMaskingReportsMaskedColumnArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingReportsMaskedColumnResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingReportsMaskedColumn:getMaskingReportsMaskedColumn", {
         "columnNames": args.columnNames,
@@ -137,7 +136,16 @@ export interface GetMaskingReportsMaskedColumnResult {
  * ```
  */
 export function getMaskingReportsMaskedColumnOutput(args: GetMaskingReportsMaskedColumnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingReportsMaskedColumnResult> {
-    return pulumi.output(args).apply((a: any) => getMaskingReportsMaskedColumn(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingReportsMaskedColumn:getMaskingReportsMaskedColumn", {
+        "columnNames": args.columnNames,
+        "maskingColumnGroups": args.maskingColumnGroups,
+        "maskingReportId": args.maskingReportId,
+        "objectTypes": args.objectTypes,
+        "objects": args.objects,
+        "schemaNames": args.schemaNames,
+        "sensitiveTypeId": args.sensitiveTypeId,
+    }, opts);
 }
 
 /**

@@ -79,14 +79,20 @@ type GetBdsInstanceApiKeysResult struct {
 
 func GetBdsInstanceApiKeysOutput(ctx *pulumi.Context, args GetBdsInstanceApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceApiKeysResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceApiKeysResult, error) {
+		ApplyT(func(v interface{}) (GetBdsInstanceApiKeysResultOutput, error) {
 			args := v.(GetBdsInstanceApiKeysArgs)
-			r, err := GetBdsInstanceApiKeys(ctx, &args, opts...)
-			var s GetBdsInstanceApiKeysResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBdsInstanceApiKeysResult
+			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", args, &rv, "", opts...)
+			if err != nil {
+				return GetBdsInstanceApiKeysResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBdsInstanceApiKeysResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBdsInstanceApiKeysResultOutput), nil
+			}
+			return output, nil
 		}).(GetBdsInstanceApiKeysResultOutput)
 }
 

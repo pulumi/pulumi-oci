@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgRouteTableRouteRules(args: GetDrgRouteTableRouteRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteTableRouteRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules", {
         "drgRouteTableId": args.drgRouteTableId,
@@ -85,7 +84,12 @@ export interface GetDrgRouteTableRouteRulesResult {
  * ```
  */
 export function getDrgRouteTableRouteRulesOutput(args: GetDrgRouteTableRouteRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteTableRouteRulesResult> {
-    return pulumi.output(args).apply((a: any) => getDrgRouteTableRouteRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules", {
+        "drgRouteTableId": args.drgRouteTableId,
+        "filters": args.filters,
+        "routeType": args.routeType,
+    }, opts);
 }
 
 /**

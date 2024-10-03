@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -385,9 +390,6 @@ def get_node_pool(node_pool_id: Optional[str] = None,
         ssh_public_key=pulumi.get(__ret__, 'ssh_public_key'),
         state=pulumi.get(__ret__, 'state'),
         subnet_ids=pulumi.get(__ret__, 'subnet_ids'))
-
-
-@_utilities.lift_output_func(get_node_pool)
 def get_node_pool_output(node_pool_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolResult]:
     """
@@ -407,4 +409,33 @@ def get_node_pool_output(node_pool_id: Optional[pulumi.Input[str]] = None,
 
     :param str node_pool_id: The OCID of the node pool.
     """
-    ...
+    __args__ = dict()
+    __args__['nodePoolId'] = node_pool_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getNodePool:getNodePool', __args__, opts=opts, typ=GetNodePoolResult)
+    return __ret__.apply(lambda __response__: GetNodePoolResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        initial_node_labels=pulumi.get(__response__, 'initial_node_labels'),
+        kubernetes_version=pulumi.get(__response__, 'kubernetes_version'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        node_config_details=pulumi.get(__response__, 'node_config_details'),
+        node_eviction_node_pool_settings=pulumi.get(__response__, 'node_eviction_node_pool_settings'),
+        node_image_id=pulumi.get(__response__, 'node_image_id'),
+        node_image_name=pulumi.get(__response__, 'node_image_name'),
+        node_metadata=pulumi.get(__response__, 'node_metadata'),
+        node_pool_cycling_details=pulumi.get(__response__, 'node_pool_cycling_details'),
+        node_pool_id=pulumi.get(__response__, 'node_pool_id'),
+        node_shape=pulumi.get(__response__, 'node_shape'),
+        node_shape_configs=pulumi.get(__response__, 'node_shape_configs'),
+        node_source_details=pulumi.get(__response__, 'node_source_details'),
+        node_sources=pulumi.get(__response__, 'node_sources'),
+        nodes=pulumi.get(__response__, 'nodes'),
+        quantity_per_subnet=pulumi.get(__response__, 'quantity_per_subnet'),
+        ssh_public_key=pulumi.get(__response__, 'ssh_public_key'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_ids=pulumi.get(__response__, 'subnet_ids')))

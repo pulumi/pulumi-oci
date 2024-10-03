@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -194,9 +199,6 @@ def get_subscriptions(buyer_email: Optional[str] = None,
         subscriptions=pulumi.get(__ret__, 'subscriptions'),
         x_one_gateway_subscription_id=pulumi.get(__ret__, 'x_one_gateway_subscription_id'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
-
-
-@_utilities.lift_output_func(get_subscriptions)
 def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
@@ -238,4 +240,25 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
     :param str x_one_gateway_subscription_id: This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is  to help on Gateway to API calls identification.
     :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
     """
-    ...
+    __args__ = dict()
+    __args__['buyerEmail'] = buyer_email
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['isCommitInfoRequired'] = is_commit_info_required
+    __args__['planNumber'] = plan_number
+    __args__['subscriptionId'] = subscription_id
+    __args__['xOneGatewaySubscriptionId'] = x_one_gateway_subscription_id
+    __args__['xOneOriginRegion'] = x_one_origin_region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsubSubscription/getSubscriptions:getSubscriptions', __args__, opts=opts, typ=GetSubscriptionsResult)
+    return __ret__.apply(lambda __response__: GetSubscriptionsResult(
+        buyer_email=pulumi.get(__response__, 'buyer_email'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_commit_info_required=pulumi.get(__response__, 'is_commit_info_required'),
+        plan_number=pulumi.get(__response__, 'plan_number'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        subscriptions=pulumi.get(__response__, 'subscriptions'),
+        x_one_gateway_subscription_id=pulumi.get(__response__, 'x_one_gateway_subscription_id'),
+        x_one_origin_region=pulumi.get(__response__, 'x_one_origin_region')))

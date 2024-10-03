@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -166,9 +171,6 @@ def get_managed_instance_errata(classification_types: Optional[Sequence[str]] = 
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         names=pulumi.get(__ret__, 'names'))
-
-
-@_utilities.lift_output_func(get_managed_instance_errata)
 def get_managed_instance_errata_output(classification_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceErrataFilterArgs', 'GetManagedInstanceErrataFilterArgsDict']]]]] = None,
@@ -201,4 +203,21 @@ def get_managed_instance_errata_output(classification_types: Optional[pulumi.Inp
     :param str name_contains: A filter to return resources that may partially match the erratum name given.
     :param Sequence[str] names: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
     """
-    ...
+    __args__ = dict()
+    __args__['classificationTypes'] = classification_types
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['nameContains'] = name_contains
+    __args__['names'] = names
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata', __args__, opts=opts, typ=GetManagedInstanceErrataResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceErrataResult(
+        classification_types=pulumi.get(__response__, 'classification_types'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_erratum_summary_collections=pulumi.get(__response__, 'managed_instance_erratum_summary_collections'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        names=pulumi.get(__response__, 'names')))

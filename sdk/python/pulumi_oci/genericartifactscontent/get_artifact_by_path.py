@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -215,9 +220,6 @@ def get_artifact_by_path(artifact_path: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_artifact_by_path)
 def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[str]] = None,
                                 repository_id: Optional[pulumi.Input[str]] = None,
                                 version: Optional[pulumi.Input[str]] = None,
@@ -243,4 +245,25 @@ def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[str]] = Non
     :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.repository.oc1..exampleuniqueID`
     :param str version: The generic artifact version.  Example: `1.1.2`
     """
-    ...
+    __args__ = dict()
+    __args__['artifactPath'] = artifact_path
+    __args__['repositoryId'] = repository_id
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath', __args__, opts=opts, typ=GetArtifactByPathResult)
+    return __ret__.apply(lambda __response__: GetArtifactByPathResult(
+        artifact_id=pulumi.get(__response__, 'artifact_id'),
+        artifact_path=pulumi.get(__response__, 'artifact_path'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        content=pulumi.get(__response__, 'content'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        sha256=pulumi.get(__response__, 'sha256'),
+        size_in_bytes=pulumi.get(__response__, 'size_in_bytes'),
+        source=pulumi.get(__response__, 'source'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        version=pulumi.get(__response__, 'version')))

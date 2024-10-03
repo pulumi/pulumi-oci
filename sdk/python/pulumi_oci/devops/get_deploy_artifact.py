@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -263,9 +268,6 @@ def get_deploy_artifact(deploy_artifact_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_deploy_artifact)
 def get_deploy_artifact_output(deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployArtifactResult]:
     """
@@ -285,4 +287,24 @@ def get_deploy_artifact_output(deploy_artifact_id: Optional[pulumi.Input[str]] =
 
     :param str deploy_artifact_id: Unique artifact identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deployArtifactId'] = deploy_artifact_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployArtifact:getDeployArtifact', __args__, opts=opts, typ=GetDeployArtifactResult)
+    return __ret__.apply(lambda __response__: GetDeployArtifactResult(
+        argument_substitution_mode=pulumi.get(__response__, 'argument_substitution_mode'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deploy_artifact_id=pulumi.get(__response__, 'deploy_artifact_id'),
+        deploy_artifact_sources=pulumi.get(__response__, 'deploy_artifact_sources'),
+        deploy_artifact_type=pulumi.get(__response__, 'deploy_artifact_type'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

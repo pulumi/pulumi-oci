@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -316,9 +321,6 @@ def get_resource_action(include_resource_metadata: Optional[bool] = None,
         time_status_begin=pulumi.get(__ret__, 'time_status_begin'),
         time_status_end=pulumi.get(__ret__, 'time_status_end'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_resource_action)
 def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[Optional[bool]]] = None,
                                resource_action_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceActionResult]:
@@ -341,4 +343,29 @@ def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[
     :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.
     :param str resource_action_id: The unique OCID associated with the resource action.
     """
-    ...
+    __args__ = dict()
+    __args__['includeResourceMetadata'] = include_resource_metadata
+    __args__['resourceActionId'] = resource_action_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getResourceAction:getResourceAction', __args__, opts=opts, typ=GetResourceActionResult)
+    return __ret__.apply(lambda __response__: GetResourceActionResult(
+        actions=pulumi.get(__response__, 'actions'),
+        category_id=pulumi.get(__response__, 'category_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_name=pulumi.get(__response__, 'compartment_name'),
+        estimated_cost_saving=pulumi.get(__response__, 'estimated_cost_saving'),
+        extended_metadata=pulumi.get(__response__, 'extended_metadata'),
+        id=pulumi.get(__response__, 'id'),
+        include_resource_metadata=pulumi.get(__response__, 'include_resource_metadata'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        recommendation_id=pulumi.get(__response__, 'recommendation_id'),
+        resource_action_id=pulumi.get(__response__, 'resource_action_id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_status_begin=pulumi.get(__response__, 'time_status_begin'),
+        time_status_end=pulumi.get(__response__, 'time_status_end'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

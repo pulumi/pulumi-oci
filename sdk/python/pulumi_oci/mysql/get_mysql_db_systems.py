@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -227,9 +232,6 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
         is_heat_wave_cluster_attached=pulumi.get(__ret__, 'is_heat_wave_cluster_attached'),
         is_up_to_date=pulumi.get(__ret__, 'is_up_to_date'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_mysql_db_systems)
 def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 configuration_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 database_managements: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -272,4 +274,27 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
     :param bool is_up_to_date: Filter instances if they are using the latest revision of the Configuration they are associated with.
     :param str state: DbSystem Lifecycle State
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['configurationId'] = configuration_id
+    __args__['databaseManagements'] = database_managements
+    __args__['dbSystemId'] = db_system_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isHeatWaveClusterAttached'] = is_heat_wave_cluster_attached
+    __args__['isUpToDate'] = is_up_to_date
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlDbSystems:getMysqlDbSystems', __args__, opts=opts, typ=GetMysqlDbSystemsResult)
+    return __ret__.apply(lambda __response__: GetMysqlDbSystemsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configuration_id=pulumi.get(__response__, 'configuration_id'),
+        database_managements=pulumi.get(__response__, 'database_managements'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        db_systems=pulumi.get(__response__, 'db_systems'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_heat_wave_cluster_attached=pulumi.get(__response__, 'is_heat_wave_cluster_attached'),
+        is_up_to_date=pulumi.get(__response__, 'is_up_to_date'),
+        state=pulumi.get(__response__, 'state')))

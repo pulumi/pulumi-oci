@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -145,9 +150,6 @@ def get_service_gateways(compartment_id: Optional[str] = None,
         service_gateways=pulumi.get(__ret__, 'service_gateways'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_service_gateways)
 def get_service_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceGatewaysFilterArgs', 'GetServiceGatewaysFilterArgsDict']]]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -175,4 +177,17 @@ def get_service_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
     :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['vcnId'] = vcn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getServiceGateways:getServiceGateways', __args__, opts=opts, typ=GetServiceGatewaysResult)
+    return __ret__.apply(lambda __response__: GetServiceGatewaysResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        service_gateways=pulumi.get(__response__, 'service_gateways'),
+        state=pulumi.get(__response__, 'state'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

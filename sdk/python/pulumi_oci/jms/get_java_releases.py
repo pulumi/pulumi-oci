@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -175,9 +180,6 @@ def get_java_releases(family_version: Optional[str] = None,
         license_type=pulumi.get(__ret__, 'license_type'),
         release_type=pulumi.get(__ret__, 'release_type'),
         release_version=pulumi.get(__ret__, 'release_version'))
-
-
-@_utilities.lift_output_func(get_java_releases)
 def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict']]]]] = None,
                              jre_security_status: Optional[pulumi.Input[Optional[str]]] = None,
@@ -210,4 +212,21 @@ def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]
     :param str release_type: Java release type.
     :param str release_version: Unique Java release version identifier
     """
-    ...
+    __args__ = dict()
+    __args__['familyVersion'] = family_version
+    __args__['filters'] = filters
+    __args__['jreSecurityStatus'] = jre_security_status
+    __args__['licenseType'] = license_type
+    __args__['releaseType'] = release_type
+    __args__['releaseVersion'] = release_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaReleases:getJavaReleases', __args__, opts=opts, typ=GetJavaReleasesResult)
+    return __ret__.apply(lambda __response__: GetJavaReleasesResult(
+        family_version=pulumi.get(__response__, 'family_version'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        java_release_collections=pulumi.get(__response__, 'java_release_collections'),
+        jre_security_status=pulumi.get(__response__, 'jre_security_status'),
+        license_type=pulumi.get(__response__, 'license_type'),
+        release_type=pulumi.get(__response__, 'release_type'),
+        release_version=pulumi.get(__response__, 'release_version')))

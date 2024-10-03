@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -190,9 +195,6 @@ def get_backups(backup_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
-
-
-@_utilities.lift_output_func(get_backups)
 def get_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                        compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -231,4 +233,24 @@ def get_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
     :param str time_ended: The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
     :param str time_started: The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
     """
-    ...
+    __args__ = dict()
+    __args__['backupId'] = backup_id
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    __args__['timeEnded'] = time_ended
+    __args__['timeStarted'] = time_started
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Psql/getBackups:getBackups', __args__, opts=opts, typ=GetBackupsResult)
+    return __ret__.apply(lambda __response__: GetBackupsResult(
+        backup_collections=pulumi.get(__response__, 'backup_collections'),
+        backup_id=pulumi.get(__response__, 'backup_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        time_ended=pulumi.get(__response__, 'time_ended'),
+        time_started=pulumi.get(__response__, 'time_started')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -94,9 +99,6 @@ def get_fusion_environment_time_available_for_refresh(fusion_environment_id: Opt
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_time_available_for_refresh)
 def get_fusion_environment_time_available_for_refresh_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshResult]:
     """
@@ -116,4 +118,11 @@ def get_fusion_environment_time_available_for_refresh_output(fusion_environment_
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
     """
-    ...
+    __args__ = dict()
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentTimeAvailableForRefresh:getFusionEnvironmentTimeAvailableForRefresh', __args__, opts=opts, typ=GetFusionEnvironmentTimeAvailableForRefreshResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentTimeAvailableForRefreshResult(
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items')))

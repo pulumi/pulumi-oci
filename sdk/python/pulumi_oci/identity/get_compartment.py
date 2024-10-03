@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -194,9 +199,6 @@ def get_compartment(id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_compartment)
 def get_compartment_output(id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCompartmentResult]:
     """
@@ -223,4 +225,18 @@ def get_compartment_output(id: Optional[pulumi.Input[str]] = None,
 
     :param str id: The OCID of the compartment.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getCompartment:getCompartment', __args__, opts=opts, typ=GetCompartmentResult)
+    return __ret__.apply(lambda __response__: GetCompartmentResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        inactive_state=pulumi.get(__response__, 'inactive_state'),
+        is_accessible=pulumi.get(__response__, 'is_accessible'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_network_firewall_policy_applications(display_name: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
-
-
-@_utilities.lift_output_func(get_network_firewall_policy_applications)
 def get_network_firewall_policy_applications_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationsFilterArgs', 'GetNetworkFirewallPolicyApplicationsFilterArgsDict']]]]] = None,
                                                     network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_network_firewall_policy_applications_output(display_name: Optional[pulum
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyApplications:getNetworkFirewallPolicyApplications', __args__, opts=opts, typ=GetNetworkFirewallPolicyApplicationsResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyApplicationsResult(
+        application_summary_collections=pulumi.get(__response__, 'application_summary_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id')))

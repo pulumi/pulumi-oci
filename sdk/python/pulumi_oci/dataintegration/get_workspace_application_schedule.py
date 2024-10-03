@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -285,9 +290,6 @@ def get_workspace_application_schedule(application_key: Optional[str] = None,
         schedule_key=pulumi.get(__ret__, 'schedule_key'),
         timezone=pulumi.get(__ret__, 'timezone'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_application_schedule)
 def get_workspace_application_schedule_output(application_key: Optional[pulumi.Input[str]] = None,
                                               schedule_key: Optional[pulumi.Input[str]] = None,
                                               workspace_id: Optional[pulumi.Input[str]] = None,
@@ -313,4 +315,28 @@ def get_workspace_application_schedule_output(application_key: Optional[pulumi.I
     :param str schedule_key: Schedule Key
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationKey'] = application_key
+    __args__['scheduleKey'] = schedule_key
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceApplicationSchedule:getWorkspaceApplicationSchedule', __args__, opts=opts, typ=GetWorkspaceApplicationScheduleResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceApplicationScheduleResult(
+        application_key=pulumi.get(__response__, 'application_key'),
+        description=pulumi.get(__response__, 'description'),
+        frequency_details=pulumi.get(__response__, 'frequency_details'),
+        id=pulumi.get(__response__, 'id'),
+        identifier=pulumi.get(__response__, 'identifier'),
+        is_daylight_adjustment_enabled=pulumi.get(__response__, 'is_daylight_adjustment_enabled'),
+        key=pulumi.get(__response__, 'key'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        model_type=pulumi.get(__response__, 'model_type'),
+        model_version=pulumi.get(__response__, 'model_version'),
+        name=pulumi.get(__response__, 'name'),
+        object_status=pulumi.get(__response__, 'object_status'),
+        object_version=pulumi.get(__response__, 'object_version'),
+        parent_reves=pulumi.get(__response__, 'parent_reves'),
+        registry_metadatas=pulumi.get(__response__, 'registry_metadatas'),
+        schedule_key=pulumi.get(__response__, 'schedule_key'),
+        timezone=pulumi.get(__response__, 'timezone'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

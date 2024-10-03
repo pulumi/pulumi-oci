@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -190,9 +195,6 @@ def get_software_packages(architecture: Optional[str] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         software_package_collections=pulumi.get(__ret__, 'software_package_collections'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_software_packages)
 def get_software_packages_output(architecture: Optional[pulumi.Input[Optional[str]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -229,4 +231,23 @@ def get_software_packages_output(architecture: Optional[pulumi.Input[Optional[st
     :param str os_family: A filter to return only resources that match the given operating system family.
     :param str version: A filter to return software packages that match the given version.
     """
-    ...
+    __args__ = dict()
+    __args__['architecture'] = architecture
+    __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
+    __args__['filters'] = filters
+    __args__['isLatest'] = is_latest
+    __args__['osFamily'] = os_family
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwarePackages:getSoftwarePackages', __args__, opts=opts, typ=GetSoftwarePackagesResult)
+    return __ret__.apply(lambda __response__: GetSoftwarePackagesResult(
+        architecture=pulumi.get(__response__, 'architecture'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_latest=pulumi.get(__response__, 'is_latest'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        software_package_collections=pulumi.get(__response__, 'software_package_collections'),
+        version=pulumi.get(__response__, 'version')))

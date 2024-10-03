@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -211,9 +216,6 @@ def get_cross_connect_group(cross_connect_group_id: Optional[str] = None,
         oci_physical_device_name=pulumi.get(__ret__, 'oci_physical_device_name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_cross_connect_group)
 def get_cross_connect_group_output(cross_connect_group_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectGroupResult]:
     """
@@ -233,4 +235,20 @@ def get_cross_connect_group_output(cross_connect_group_id: Optional[pulumi.Input
 
     :param str cross_connect_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
     """
-    ...
+    __args__ = dict()
+    __args__['crossConnectGroupId'] = cross_connect_group_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getCrossConnectGroup:getCrossConnectGroup', __args__, opts=opts, typ=GetCrossConnectGroupResult)
+    return __ret__.apply(lambda __response__: GetCrossConnectGroupResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cross_connect_group_id=pulumi.get(__response__, 'cross_connect_group_id'),
+        customer_reference_name=pulumi.get(__response__, 'customer_reference_name'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        macsec_properties=pulumi.get(__response__, 'macsec_properties'),
+        oci_logical_device_name=pulumi.get(__response__, 'oci_logical_device_name'),
+        oci_physical_device_name=pulumi.get(__response__, 'oci_physical_device_name'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

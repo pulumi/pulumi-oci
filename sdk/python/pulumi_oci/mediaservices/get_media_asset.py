@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -390,9 +395,6 @@ def get_media_asset(media_asset_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_media_asset)
 def get_media_asset_output(media_asset_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaAssetResult]:
     """
@@ -412,4 +414,34 @@ def get_media_asset_output(media_asset_id: Optional[pulumi.Input[str]] = None,
 
     :param str media_asset_id: Unique MediaAsset identifier
     """
-    ...
+    __args__ = dict()
+    __args__['mediaAssetId'] = media_asset_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaAsset:getMediaAsset', __args__, opts=opts, typ=GetMediaAssetResult)
+    return __ret__.apply(lambda __response__: GetMediaAssetResult(
+        bucket=pulumi.get(__response__, 'bucket'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        locks=pulumi.get(__response__, 'locks'),
+        master_media_asset_id=pulumi.get(__response__, 'master_media_asset_id'),
+        media_asset_id=pulumi.get(__response__, 'media_asset_id'),
+        media_asset_tags=pulumi.get(__response__, 'media_asset_tags'),
+        media_workflow_job_id=pulumi.get(__response__, 'media_workflow_job_id'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object=pulumi.get(__response__, 'object'),
+        object_etag=pulumi.get(__response__, 'object_etag'),
+        parent_media_asset_id=pulumi.get(__response__, 'parent_media_asset_id'),
+        segment_range_end_index=pulumi.get(__response__, 'segment_range_end_index'),
+        segment_range_start_index=pulumi.get(__response__, 'segment_range_start_index'),
+        source_media_workflow_id=pulumi.get(__response__, 'source_media_workflow_id'),
+        source_media_workflow_version=pulumi.get(__response__, 'source_media_workflow_version'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

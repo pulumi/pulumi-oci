@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -630,9 +635,6 @@ def get_domains_social_identity_provider(authorization: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'))
-
-
-@_utilities.lift_output_func(get_domains_social_identity_provider)
 def get_domains_social_identity_provider_output(authorization: Optional[pulumi.Input[Optional[str]]] = None,
                                                 idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                                 resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
@@ -661,4 +663,55 @@ def get_domains_social_identity_provider_output(authorization: Optional[pulumi.I
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     :param str social_identity_provider_id: ID of the resource
     """
-    ...
+    __args__ = dict()
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    __args__['socialIdentityProviderId'] = social_identity_provider_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsSocialIdentityProvider:getDomainsSocialIdentityProvider', __args__, opts=opts, typ=GetDomainsSocialIdentityProviderResult)
+    return __ret__.apply(lambda __response__: GetDomainsSocialIdentityProviderResult(
+        access_token_url=pulumi.get(__response__, 'access_token_url'),
+        account_linking_enabled=pulumi.get(__response__, 'account_linking_enabled'),
+        admin_scopes=pulumi.get(__response__, 'admin_scopes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        authz_url=pulumi.get(__response__, 'authz_url'),
+        auto_redirect_enabled=pulumi.get(__response__, 'auto_redirect_enabled'),
+        client_credential_in_payload=pulumi.get(__response__, 'client_credential_in_payload'),
+        clock_skew_in_seconds=pulumi.get(__response__, 'clock_skew_in_seconds'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        consumer_key=pulumi.get(__response__, 'consumer_key'),
+        consumer_secret=pulumi.get(__response__, 'consumer_secret'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        description=pulumi.get(__response__, 'description'),
+        discovery_url=pulumi.get(__response__, 'discovery_url'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        enabled=pulumi.get(__response__, 'enabled'),
+        icon_url=pulumi.get(__response__, 'icon_url'),
+        id=pulumi.get(__response__, 'id'),
+        id_attribute=pulumi.get(__response__, 'id_attribute'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        jit_prov_assigned_groups=pulumi.get(__response__, 'jit_prov_assigned_groups'),
+        jit_prov_group_static_list_enabled=pulumi.get(__response__, 'jit_prov_group_static_list_enabled'),
+        metas=pulumi.get(__response__, 'metas'),
+        name=pulumi.get(__response__, 'name'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        profile_url=pulumi.get(__response__, 'profile_url'),
+        redirect_url=pulumi.get(__response__, 'redirect_url'),
+        refresh_token_url=pulumi.get(__response__, 'refresh_token_url'),
+        registration_enabled=pulumi.get(__response__, 'registration_enabled'),
+        relay_idp_param_mappings=pulumi.get(__response__, 'relay_idp_param_mappings'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        scopes=pulumi.get(__response__, 'scopes'),
+        service_provider_name=pulumi.get(__response__, 'service_provider_name'),
+        show_on_login=pulumi.get(__response__, 'show_on_login'),
+        social_identity_provider_id=pulumi.get(__response__, 'social_identity_provider_id'),
+        social_jit_provisioning_enabled=pulumi.get(__response__, 'social_jit_provisioning_enabled'),
+        status=pulumi.get(__response__, 'status'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid')))

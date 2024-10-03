@@ -4,28 +4,135 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'DataAssetDataSourceDetailsArgs',
+    'DataAssetDataSourceDetailsArgsDict',
     'DataAssetDataSourceDetailsVersionSpecificDetailsArgs',
+    'DataAssetDataSourceDetailsVersionSpecificDetailsArgsDict',
     'DetectAnomalyJobInputDetailsArgs',
+    'DetectAnomalyJobInputDetailsArgsDict',
     'DetectAnomalyJobInputDetailsDataArgs',
+    'DetectAnomalyJobInputDetailsDataArgsDict',
     'DetectAnomalyJobInputDetailsObjectLocationArgs',
+    'DetectAnomalyJobInputDetailsObjectLocationArgsDict',
     'DetectAnomalyJobOutputDetailsArgs',
+    'DetectAnomalyJobOutputDetailsArgsDict',
     'ModelModelTrainingDetailsArgs',
+    'ModelModelTrainingDetailsArgsDict',
     'ModelModelTrainingResultArgs',
+    'ModelModelTrainingResultArgsDict',
     'ModelModelTrainingResultRowReductionDetailArgs',
+    'ModelModelTrainingResultRowReductionDetailArgsDict',
     'ModelModelTrainingResultSignalDetailArgs',
+    'ModelModelTrainingResultSignalDetailArgsDict',
     'GetAiPrivateEndpointsFilterArgs',
+    'GetAiPrivateEndpointsFilterArgsDict',
     'GetDetectAnomalyJobsFilterArgs',
+    'GetDetectAnomalyJobsFilterArgsDict',
     'GetDetectionDataAssetsFilterArgs',
+    'GetDetectionDataAssetsFilterArgsDict',
     'GetDetectionModelsFilterArgs',
+    'GetDetectionModelsFilterArgsDict',
     'GetDetectionProjectsFilterArgs',
+    'GetDetectionProjectsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class DataAssetDataSourceDetailsArgsDict(TypedDict):
+        data_source_type: pulumi.Input[str]
+        """
+        Data source type where actually data asset is being stored
+        """
+        atp_password_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        atp db password Secret Id
+        """
+        atp_user_name: NotRequired[pulumi.Input[str]]
+        """
+        atp db user name
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        Object storage bucket name
+        """
+        cwallet_file_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the secret containing the containers certificates of ATP wallet
+        """
+        database_name: NotRequired[pulumi.Input[str]]
+        """
+        atp database name
+        """
+        ewallet_file_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the secret containing the PDB'S certificates of ATP wallet
+        """
+        key_store_file_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the secret containing Keystore.jks file of the ATP wallet
+        """
+        measurement_name: NotRequired[pulumi.Input[str]]
+        """
+        Measurement name for influx
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        Object storage namespace
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        File name
+        """
+        ojdbc_file_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the secret that contains jdbc properties file of ATP wallet
+        """
+        password_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        Password Secret Id for the influx connection
+        """
+        table_name: NotRequired[pulumi.Input[str]]
+        """
+        atp database table name
+        """
+        tnsnames_file_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the secret that contains the tnsnames file of ATP wallet
+        """
+        truststore_file_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the secret containing truststore.jks file of the ATP wallet
+        """
+        url: NotRequired[pulumi.Input[str]]
+        """
+        public IP address and port to influx DB
+        """
+        user_name: NotRequired[pulumi.Input[str]]
+        """
+        Username for connection to Influx
+        """
+        version_specific_details: NotRequired[pulumi.Input['DataAssetDataSourceDetailsVersionSpecificDetailsArgsDict']]
+        """
+        Possible data sources
+        """
+        wallet_password_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        wallet password Secret ID in String format
+        """
+elif False:
+    DataAssetDataSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DataAssetDataSourceDetailsArgs:
@@ -353,6 +460,31 @@ class DataAssetDataSourceDetailsArgs:
         pulumi.set(self, "wallet_password_secret_id", value)
 
 
+if not MYPY:
+    class DataAssetDataSourceDetailsVersionSpecificDetailsArgsDict(TypedDict):
+        influx_version: pulumi.Input[str]
+        """
+        Data source type where actually data asset is being stored
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        Bucket Name for influx connection
+        """
+        database_name: NotRequired[pulumi.Input[str]]
+        """
+        DB Name for influx connection
+        """
+        organization_name: NotRequired[pulumi.Input[str]]
+        """
+        Org name for the influx db
+        """
+        retention_policy_name: NotRequired[pulumi.Input[str]]
+        """
+        retention policy is how long the bucket would last
+        """
+elif False:
+    DataAssetDataSourceDetailsVersionSpecificDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
     def __init__(__self__, *,
@@ -438,6 +570,33 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
     def retention_policy_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "retention_policy_name", value)
 
+
+if not MYPY:
+    class DetectAnomalyJobInputDetailsArgsDict(TypedDict):
+        input_type: pulumi.Input[str]
+        """
+        Type of request. This parameter is automatically populated by classes generated by the SDK. For raw curl requests, you must provide this field.
+        """
+        content: NotRequired[pulumi.Input[str]]
+        content_type: NotRequired[pulumi.Input[str]]
+        datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsDataArgsDict']]]]
+        """
+        Array containing data.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        Inline input details.
+        """
+        object_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsObjectLocationArgsDict']]]]
+        """
+        List of ObjectLocations.
+        """
+        signal_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of signal names.
+        """
+elif False:
+    DetectAnomalyJobInputDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DetectAnomalyJobInputDetailsArgs:
@@ -549,6 +708,19 @@ class DetectAnomalyJobInputDetailsArgs:
         pulumi.set(self, "signal_names", value)
 
 
+if not MYPY:
+    class DetectAnomalyJobInputDetailsDataArgsDict(TypedDict):
+        timestamp: NotRequired[pulumi.Input[str]]
+        """
+        Nullable string representing timestamp.
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[float]]]]
+        """
+        Array of double precision values.
+        """
+elif False:
+    DetectAnomalyJobInputDetailsDataArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DetectAnomalyJobInputDetailsDataArgs:
     def __init__(__self__, *,
@@ -587,6 +759,23 @@ class DetectAnomalyJobInputDetailsDataArgs:
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class DetectAnomalyJobInputDetailsObjectLocationArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        Object Storage bucket name.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        Object Storage namespace name.
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        Object Storage object name.
+        """
+elif False:
+    DetectAnomalyJobInputDetailsObjectLocationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DetectAnomalyJobInputDetailsObjectLocationArgs:
@@ -642,6 +831,28 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
     def object(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "object", value)
 
+
+if not MYPY:
+    class DetectAnomalyJobOutputDetailsArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        Object Storage bucket name.
+        """
+        namespace: pulumi.Input[str]
+        """
+        Object Storage namespace.
+        """
+        output_type: pulumi.Input[str]
+        """
+        The type of output location. Allowed values are:
+        * `OBJECT_STORAGE`: Object store output location.
+        """
+        prefix: NotRequired[pulumi.Input[str]]
+        """
+        Object Storage folder name.
+        """
+elif False:
+    DetectAnomalyJobOutputDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DetectAnomalyJobOutputDetailsArgs:
@@ -712,6 +923,31 @@ class DetectAnomalyJobOutputDetailsArgs:
     def prefix(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "prefix", value)
 
+
+if not MYPY:
+    class ModelModelTrainingDetailsArgsDict(TypedDict):
+        data_asset_ids: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
+        """
+        algorithm_hint: NotRequired[pulumi.Input[str]]
+        """
+        User can choose specific algorithm for training.
+        """
+        target_fap: NotRequired[pulumi.Input[float]]
+        """
+        A target model accuracy metric user provides as their requirement
+        """
+        training_fraction: NotRequired[pulumi.Input[float]]
+        """
+        Fraction of total data that is used for training the model. The remaining is used for validation of the model.
+        """
+        window_size: NotRequired[pulumi.Input[int]]
+        """
+        This value would determine the window size of the training algorithm.
+        """
+elif False:
+    ModelModelTrainingDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelModelTrainingDetailsArgs:
@@ -798,6 +1034,42 @@ class ModelModelTrainingDetailsArgs:
     def window_size(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "window_size", value)
 
+
+if not MYPY:
+    class ModelModelTrainingResultArgsDict(TypedDict):
+        fap: NotRequired[pulumi.Input[float]]
+        """
+        Accuracy metric for a signal.
+        """
+        is_training_goal_achieved: NotRequired[pulumi.Input[bool]]
+        """
+        A boolean value to indicate if train goal/targetFap is achieved for trained model
+        """
+        mae: NotRequired[pulumi.Input[float]]
+        max_inference_sync_rows: NotRequired[pulumi.Input[int]]
+        multivariate_fap: NotRequired[pulumi.Input[float]]
+        """
+        The model accuracy metric on timestamp level.
+        """
+        rmse: NotRequired[pulumi.Input[float]]
+        row_reduction_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultRowReductionDetailArgsDict']]]]
+        """
+        Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
+        """
+        signal_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultSignalDetailArgsDict']]]]
+        """
+        The list of signal details.
+        """
+        warning: NotRequired[pulumi.Input[str]]
+        """
+        A warning message to explain the reason when targetFap cannot be achieved for trained model
+        """
+        window_size: NotRequired[pulumi.Input[int]]
+        """
+        Window size defined during training or deduced by the algorithm.
+        """
+elif False:
+    ModelModelTrainingResultArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelModelTrainingResultArgs:
@@ -954,6 +1226,25 @@ class ModelModelTrainingResultArgs:
         pulumi.set(self, "window_size", value)
 
 
+if not MYPY:
+    class ModelModelTrainingResultRowReductionDetailArgsDict(TypedDict):
+        is_reduction_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        A boolean value to indicate if row reduction is applied
+        """
+        reduction_method: NotRequired[pulumi.Input[str]]
+        """
+        Method for row reduction:
+        * DELETE_ROW - delete rows with equal intervals
+        * AVERAGE_ROW - average multiple rows to one row
+        """
+        reduction_percentage: NotRequired[pulumi.Input[float]]
+        """
+        A percentage to reduce data size down to on top of original data
+        """
+elif False:
+    ModelModelTrainingResultRowReductionDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelModelTrainingResultRowReductionDetailArgs:
     def __init__(__self__, *,
@@ -1012,6 +1303,50 @@ class ModelModelTrainingResultRowReductionDetailArgs:
     def reduction_percentage(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "reduction_percentage", value)
 
+
+if not MYPY:
+    class ModelModelTrainingResultSignalDetailArgsDict(TypedDict):
+        details: NotRequired[pulumi.Input[str]]
+        """
+        detailed information for a signal.
+        """
+        fap: NotRequired[pulumi.Input[float]]
+        """
+        Accuracy metric for a signal.
+        """
+        is_quantized: NotRequired[pulumi.Input[bool]]
+        """
+        A boolean value to indicate if a signal is quantized or not.
+        """
+        max: NotRequired[pulumi.Input[float]]
+        """
+        Max value within a signal.
+        """
+        min: NotRequired[pulumi.Input[float]]
+        """
+        Min value within a signal.
+        """
+        mvi_ratio: NotRequired[pulumi.Input[float]]
+        """
+        The ratio of missing values in a signal filled/imputed by the IDP algorithm.
+        """
+        signal_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of a signal.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        Status of the signal:
+        * ACCEPTED - the signal is used for training the model
+        * DROPPED - the signal does not meet requirement, and is dropped before training the model.
+        * OTHER - placeholder for other status
+        """
+        std: NotRequired[pulumi.Input[float]]
+        """
+        Standard deviation of values within a signal.
+        """
+elif False:
+    ModelModelTrainingResultSignalDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelModelTrainingResultSignalDetailArgs:
@@ -1170,6 +1505,14 @@ class ModelModelTrainingResultSignalDetailArgs:
         pulumi.set(self, "std", value)
 
 
+if not MYPY:
+    class GetAiPrivateEndpointsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAiPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetAiPrivateEndpointsFilterArgs:
     def __init__(__self__, *,
@@ -1208,6 +1551,14 @@ class GetAiPrivateEndpointsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDetectAnomalyJobsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDetectAnomalyJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDetectAnomalyJobsFilterArgs:
@@ -1248,6 +1599,14 @@ class GetDetectAnomalyJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDetectionDataAssetsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDetectionDataAssetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDetectionDataAssetsFilterArgs:
     def __init__(__self__, *,
@@ -1287,6 +1646,14 @@ class GetDetectionDataAssetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDetectionModelsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDetectionModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDetectionModelsFilterArgs:
     def __init__(__self__, *,
@@ -1325,6 +1692,14 @@ class GetDetectionModelsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDetectionProjectsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDetectionProjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDetectionProjectsFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -155,9 +160,6 @@ def get_bastions(bastion_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_bastions)
 def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None,
                         bastion_lifecycle_state: Optional[pulumi.Input[Optional[str]]] = None,
                         compartment_id: Optional[pulumi.Input[str]] = None,
@@ -187,4 +189,19 @@ def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None
     :param str compartment_id: The unique identifier (OCID) of the compartment in which to list resources.
     :param str name: A filter to return only resources that match the entire name given.
     """
-    ...
+    __args__ = dict()
+    __args__['bastionId'] = bastion_id
+    __args__['bastionLifecycleState'] = bastion_lifecycle_state
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Bastion/getBastions:getBastions', __args__, opts=opts, typ=GetBastionsResult)
+    return __ret__.apply(lambda __response__: GetBastionsResult(
+        bastion_id=pulumi.get(__response__, 'bastion_id'),
+        bastion_lifecycle_state=pulumi.get(__response__, 'bastion_lifecycle_state'),
+        bastions=pulumi.get(__response__, 'bastions'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name')))

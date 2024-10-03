@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -237,9 +242,6 @@ def get_compute_capacity_reservation(capacity_reservation_id: Optional[str] = No
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         used_instance_count=pulumi.get(__ret__, 'used_instance_count'))
-
-
-@_utilities.lift_output_func(get_compute_capacity_reservation)
 def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationResult]:
     """
@@ -259,4 +261,22 @@ def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pu
 
     :param str capacity_reservation_id: The OCID of the compute capacity reservation.
     """
-    ...
+    __args__ = dict()
+    __args__['capacityReservationId'] = capacity_reservation_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeCapacityReservation:getComputeCapacityReservation', __args__, opts=opts, typ=GetComputeCapacityReservationResult)
+    return __ret__.apply(lambda __response__: GetComputeCapacityReservationResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        instance_reservation_configs=pulumi.get(__response__, 'instance_reservation_configs'),
+        is_default_reservation=pulumi.get(__response__, 'is_default_reservation'),
+        reserved_instance_count=pulumi.get(__response__, 'reserved_instance_count'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        used_instance_count=pulumi.get(__response__, 'used_instance_count')))

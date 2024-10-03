@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -111,9 +116,6 @@ def get_iam_work_request_errors(filters: Optional[Sequence[Union['GetIamWorkRequ
         iam_work_request_errors=pulumi.get(__ret__, 'iam_work_request_errors'),
         iam_work_request_id=pulumi.get(__ret__, 'iam_work_request_id'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_iam_work_request_errors)
 def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIamWorkRequestErrorsFilterArgs', 'GetIamWorkRequestErrorsFilterArgsDict']]]]] = None,
                                        iam_work_request_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestErrorsResult]:
@@ -138,4 +140,13 @@ def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[S
 
     :param str iam_work_request_id: The OCID of the IAM work request.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['iamWorkRequestId'] = iam_work_request_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors', __args__, opts=opts, typ=GetIamWorkRequestErrorsResult)
+    return __ret__.apply(lambda __response__: GetIamWorkRequestErrorsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        iam_work_request_errors=pulumi.get(__response__, 'iam_work_request_errors'),
+        iam_work_request_id=pulumi.get(__response__, 'iam_work_request_id'),
+        id=pulumi.get(__response__, 'id')))

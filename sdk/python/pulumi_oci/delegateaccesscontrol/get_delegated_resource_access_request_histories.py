@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_delegated_resource_access_request_histories(delegated_resource_access_re
         delegated_resource_access_request_id=pulumi.get(__ret__, 'delegated_resource_access_request_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_delegated_resource_access_request_histories)
 def get_delegated_resource_access_request_histories_output(delegated_resource_access_request_id: Optional[pulumi.Input[str]] = None,
                                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDelegatedResourceAccessRequestHistoriesFilterArgs', 'GetDelegatedResourceAccessRequestHistoriesFilterArgsDict']]]]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestHistoriesResult]:
@@ -130,4 +132,13 @@ def get_delegated_resource_access_request_histories_output(delegated_resource_ac
 
     :param str delegated_resource_access_request_id: Unique Delegated Resource Access Request identifier
     """
-    ...
+    __args__ = dict()
+    __args__['delegatedResourceAccessRequestId'] = delegated_resource_access_request_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories', __args__, opts=opts, typ=GetDelegatedResourceAccessRequestHistoriesResult)
+    return __ret__.apply(lambda __response__: GetDelegatedResourceAccessRequestHistoriesResult(
+        delegated_resource_access_request_history_collections=pulumi.get(__response__, 'delegated_resource_access_request_history_collections'),
+        delegated_resource_access_request_id=pulumi.get(__response__, 'delegated_resource_access_request_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

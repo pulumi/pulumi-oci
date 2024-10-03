@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -302,9 +307,6 @@ def get_news_report(news_report_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_news_report)
 def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNewsReportResult]:
     """
@@ -324,4 +326,27 @@ def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
 
     :param str news_report_id: Unique news report identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['newsReportId'] = news_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getNewsReport:getNewsReport', __args__, opts=opts, typ=GetNewsReportResult)
+    return __ret__.apply(lambda __response__: GetNewsReportResult(
+        are_child_compartments_included=pulumi.get(__response__, 'are_child_compartments_included'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        content_types=pulumi.get(__response__, 'content_types'),
+        day_of_week=pulumi.get(__response__, 'day_of_week'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locale=pulumi.get(__response__, 'locale'),
+        name=pulumi.get(__response__, 'name'),
+        news_frequency=pulumi.get(__response__, 'news_frequency'),
+        news_report_id=pulumi.get(__response__, 'news_report_id'),
+        ons_topic_id=pulumi.get(__response__, 'ons_topic_id'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -192,9 +197,6 @@ def get_channels(channel_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_channels)
 def get_channels_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None,
                         compartment_id: Optional[pulumi.Input[str]] = None,
                         db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -230,4 +232,23 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None
     :param bool is_enabled: If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
     :param str state: The LifecycleState of the Channel.
     """
-    ...
+    __args__ = dict()
+    __args__['channelId'] = channel_id
+    __args__['compartmentId'] = compartment_id
+    __args__['dbSystemId'] = db_system_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isEnabled'] = is_enabled
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getChannels:getChannels', __args__, opts=opts, typ=GetChannelsResult)
+    return __ret__.apply(lambda __response__: GetChannelsResult(
+        channel_id=pulumi.get(__response__, 'channel_id'),
+        channels=pulumi.get(__response__, 'channels'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        state=pulumi.get(__response__, 'state')))

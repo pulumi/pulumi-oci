@@ -4,18 +4,43 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ConfigDimensionArgs',
+    'ConfigDimensionArgsDict',
     'ConfigInUseByArgs',
+    'ConfigInUseByArgsDict',
     'ConfigMetricArgs',
+    'ConfigMetricArgsDict',
     'ConfigRuleArgs',
+    'ConfigRuleArgsDict',
     'GetConfigsFilterArgs',
+    'GetConfigsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ConfigDimensionArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the dimension.
+        """
+        value_source: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The source to populate the dimension. This must not be specified.
+        """
+elif False:
+    ConfigDimensionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConfigDimensionArgs:
@@ -55,6 +80,27 @@ class ConfigDimensionArgs:
     def value_source(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value_source", value)
 
+
+if not MYPY:
+    class ConfigInUseByArgsDict(TypedDict):
+        config_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of configuration item.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name by which a configuration entity is displayed to the end user.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        """
+        options_group: NotRequired[pulumi.Input[str]]
+        """
+        A string that specifies the group that an OPTIONS item belongs to.
+        """
+elif False:
+    ConfigInUseByArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConfigInUseByArgs:
@@ -127,6 +173,27 @@ class ConfigInUseByArgs:
         pulumi.set(self, "options_group", value)
 
 
+if not MYPY:
+    class ConfigMetricArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A description of the metric.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the metric. This must be a known metric name.
+        """
+        unit: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The unit of the metric.
+        """
+        value_source: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This must not be set.
+        """
+elif False:
+    ConfigMetricArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConfigMetricArgs:
     def __init__(__self__, *,
@@ -197,6 +264,43 @@ class ConfigMetricArgs:
     def value_source(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value_source", value)
 
+
+if not MYPY:
+    class ConfigRuleArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name by which a configuration entity is displayed to the end user.
+        """
+        filter_text: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The string that defines the Span Filter expression.
+        """
+        is_apply_to_error_spans: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
+        """
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
+        """
+        priority: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
+        """
+        satisfied_response_time: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
+        """
+        tolerating_response_time: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ConfigRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConfigRuleArgs:
@@ -324,6 +428,17 @@ class ConfigRuleArgs:
     def tolerating_response_time(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "tolerating_response_time", value)
 
+
+if not MYPY:
+    class GetConfigsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the metric. This must be a known metric name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetConfigsFilterArgs:

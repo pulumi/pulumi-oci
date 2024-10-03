@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_on_premise_vantage_points(apm_domain_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         on_premise_vantage_point_collections=pulumi.get(__ret__, 'on_premise_vantage_point_collections'))
-
-
-@_utilities.lift_output_func(get_on_premise_vantage_points)
 def get_on_premise_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnPremiseVantagePointsFilterArgs', 'GetOnPremiseVantagePointsFilterArgsDict']]]]] = None,
@@ -170,4 +172,17 @@ def get_on_premise_vantage_points_output(apm_domain_id: Optional[pulumi.Input[st
     :param str display_name: A filter to return only the resources that match the entire display name.
     :param str name: A filter to return only the resources that match the entire name.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getOnPremiseVantagePoints:getOnPremiseVantagePoints', __args__, opts=opts, typ=GetOnPremiseVantagePointsResult)
+    return __ret__.apply(lambda __response__: GetOnPremiseVantagePointsResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        on_premise_vantage_point_collections=pulumi.get(__response__, 'on_premise_vantage_point_collections')))

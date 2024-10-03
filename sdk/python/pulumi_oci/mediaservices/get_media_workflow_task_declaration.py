@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -142,9 +147,6 @@ def get_media_workflow_task_declaration(compartment_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_media_workflow_task_declaration)
 def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                is_current: Optional[pulumi.Input[Optional[bool]]] = None,
                                                name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -173,4 +175,17 @@ def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.I
     :param str name: A filter to return only the resources with their system defined, unique name matching the given name.
     :param int version: A filter to select MediaWorkflowTaskDeclaration by version.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['isCurrent'] = is_current
+    __args__['name'] = name
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration', __args__, opts=opts, typ=GetMediaWorkflowTaskDeclarationResult)
+    return __ret__.apply(lambda __response__: GetMediaWorkflowTaskDeclarationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_current=pulumi.get(__response__, 'is_current'),
+        items=pulumi.get(__response__, 'items'),
+        name=pulumi.get(__response__, 'name'),
+        version=pulumi.get(__response__, 'version')))

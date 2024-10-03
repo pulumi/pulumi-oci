@@ -4,18 +4,47 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'VbInstanceAlternateCustomEndpointArgs',
+    'VbInstanceAlternateCustomEndpointArgsDict',
     'VbInstanceAttachmentArgs',
+    'VbInstanceAttachmentArgsDict',
     'VbInstanceCustomEndpointArgs',
+    'VbInstanceCustomEndpointArgsDict',
     'VbInstanceIdcsInfoArgs',
+    'VbInstanceIdcsInfoArgsDict',
     'GetVbInstancesFilterArgs',
+    'GetVbInstancesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class VbInstanceAlternateCustomEndpointArgsDict(TypedDict):
+        hostname: pulumi.Input[str]
+        """
+        (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
+        """
+        certificate_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
+        """
+        certificate_secret_version: NotRequired[pulumi.Input[int]]
+        """
+        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        """
+elif False:
+    VbInstanceAlternateCustomEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VbInstanceAlternateCustomEndpointArgs:
@@ -70,6 +99,34 @@ class VbInstanceAlternateCustomEndpointArgs:
     def certificate_secret_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "certificate_secret_version", value)
 
+
+if not MYPY:
+    class VbInstanceAttachmentArgsDict(TypedDict):
+        is_implicit: NotRequired[pulumi.Input[bool]]
+        """
+        * If role == `PARENT`, the attached instance was created by this service instance
+        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        """
+        target_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        """
+        target_instance_url: NotRequired[pulumi.Input[str]]
+        """
+        The dataplane instance URL of the attached instance
+        """
+        target_role: NotRequired[pulumi.Input[str]]
+        """
+        The role of the target attachment. 
+        * `PARENT` - The target instance is the parent of this attachment.
+        * `CHILD` - The target instance is the child of this attachment.
+        """
+        target_service_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the target instance, such as "FUSION".
+        """
+elif False:
+    VbInstanceAttachmentArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VbInstanceAttachmentArgs:
@@ -164,6 +221,23 @@ class VbInstanceAttachmentArgs:
         pulumi.set(self, "target_service_type", value)
 
 
+if not MYPY:
+    class VbInstanceCustomEndpointArgsDict(TypedDict):
+        hostname: pulumi.Input[str]
+        """
+        (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
+        """
+        certificate_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
+        """
+        certificate_secret_version: NotRequired[pulumi.Input[int]]
+        """
+        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        """
+elif False:
+    VbInstanceCustomEndpointArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VbInstanceCustomEndpointArgs:
     def __init__(__self__, *,
@@ -217,6 +291,31 @@ class VbInstanceCustomEndpointArgs:
     def certificate_secret_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "certificate_secret_version", value)
 
+
+if not MYPY:
+    class VbInstanceIdcsInfoArgsDict(TypedDict):
+        idcs_app_display_name: NotRequired[pulumi.Input[str]]
+        """
+        The IDCS application display name associated with the instance
+        """
+        idcs_app_id: NotRequired[pulumi.Input[str]]
+        """
+        The IDCS application ID associated with the instance
+        """
+        idcs_app_location_url: NotRequired[pulumi.Input[str]]
+        """
+        URL for the location of the IDCS Application (used by IDCS APIs)
+        """
+        idcs_app_name: NotRequired[pulumi.Input[str]]
+        """
+        The IDCS application name associated with the instance
+        """
+        instance_primary_audience_url: NotRequired[pulumi.Input[str]]
+        """
+        The URL used as the primary audience for visual builder flows in this instance type: string
+        """
+elif False:
+    VbInstanceIdcsInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VbInstanceIdcsInfoArgs:
@@ -304,6 +403,14 @@ class VbInstanceIdcsInfoArgs:
     def instance_primary_audience_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "instance_primary_audience_url", value)
 
+
+if not MYPY:
+    class GetVbInstancesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVbInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetVbInstancesFilterArgs:

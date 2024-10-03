@@ -4,15 +4,32 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetPrivateEndpointsFilterArgs',
+    'GetPrivateEndpointsFilterArgsDict',
     'GetStacksFilterArgs',
+    'GetStacksFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetPrivateEndpointsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPrivateEndpointsFilterArgs:
@@ -52,6 +69,14 @@ class GetPrivateEndpointsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetStacksFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetStacksFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetStacksFilterArgs:

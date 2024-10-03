@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -241,9 +246,6 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
         locations=pulumi.get(__ret__, 'locations'),
         os_family=pulumi.get(__ret__, 'os_family'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_lifecycle_environments)
 def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
                                       compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -289,4 +291,29 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
     :param str os_family: A filter to return only resources that match the given operating system family.
     :param str state: A filter to return only the lifecycle environments that match the display name given.
     """
-    ...
+    __args__ = dict()
+    __args__['archType'] = arch_type
+    __args__['compartmentId'] = compartment_id
+    __args__['displayNameContains'] = display_name_contains
+    __args__['displayNames'] = display_names
+    __args__['filters'] = filters
+    __args__['lifecycleEnvironmentId'] = lifecycle_environment_id
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
+    __args__['osFamily'] = os_family
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments', __args__, opts=opts, typ=GetLifecycleEnvironmentsResult)
+    return __ret__.apply(lambda __response__: GetLifecycleEnvironmentsResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        display_names=pulumi.get(__response__, 'display_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_environment_collections=pulumi.get(__response__, 'lifecycle_environment_collections'),
+        lifecycle_environment_id=pulumi.get(__response__, 'lifecycle_environment_id'),
+        location_not_equal_tos=pulumi.get(__response__, 'location_not_equal_tos'),
+        locations=pulumi.get(__response__, 'locations'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        state=pulumi.get(__response__, 'state')))

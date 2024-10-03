@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -371,9 +376,6 @@ def get_profile(profile_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-
-
-@_utilities.lift_output_func(get_profile)
 def get_profile_output(profile_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProfileResult]:
     """
@@ -393,4 +395,33 @@ def get_profile_output(profile_id: Optional[pulumi.Input[str]] = None,
 
     :param str profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
     """
-    ...
+    __args__ = dict()
+    __args__['profileId'] = profile_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getProfile:getProfile', __args__, opts=opts, typ=GetProfileResult)
+    return __ret__.apply(lambda __response__: GetProfileResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_default_profile=pulumi.get(__response__, 'is_default_profile'),
+        is_service_provided_profile=pulumi.get(__response__, 'is_service_provided_profile'),
+        lifecycle_environments=pulumi.get(__response__, 'lifecycle_environments'),
+        lifecycle_stage_id=pulumi.get(__response__, 'lifecycle_stage_id'),
+        lifecycle_stages=pulumi.get(__response__, 'lifecycle_stages'),
+        managed_instance_group_id=pulumi.get(__response__, 'managed_instance_group_id'),
+        managed_instance_groups=pulumi.get(__response__, 'managed_instance_groups'),
+        management_station_id=pulumi.get(__response__, 'management_station_id'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        profile_id=pulumi.get(__response__, 'profile_id'),
+        profile_type=pulumi.get(__response__, 'profile_type'),
+        registration_type=pulumi.get(__response__, 'registration_type'),
+        software_source_ids=pulumi.get(__response__, 'software_source_ids'),
+        software_sources=pulumi.get(__response__, 'software_sources'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vendor_name=pulumi.get(__response__, 'vendor_name')))

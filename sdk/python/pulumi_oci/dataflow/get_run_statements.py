@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -127,9 +132,6 @@ def get_run_statements(filters: Optional[Sequence[Union['GetRunStatementsFilterA
         run_id=pulumi.get(__ret__, 'run_id'),
         state=pulumi.get(__ret__, 'state'),
         statement_collections=pulumi.get(__ret__, 'statement_collections'))
-
-
-@_utilities.lift_output_func(get_run_statements)
 def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRunStatementsFilterArgs', 'GetRunStatementsFilterArgsDict']]]]] = None,
                               run_id: Optional[pulumi.Input[str]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -153,4 +155,15 @@ def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     :param str run_id: The unique ID for the run
     :param str state: The LifecycleState of the statement.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['runId'] = run_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getRunStatements:getRunStatements', __args__, opts=opts, typ=GetRunStatementsResult)
+    return __ret__.apply(lambda __response__: GetRunStatementsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        run_id=pulumi.get(__response__, 'run_id'),
+        state=pulumi.get(__response__, 'state'),
+        statement_collections=pulumi.get(__response__, 'statement_collections')))

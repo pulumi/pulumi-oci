@@ -4,23 +4,51 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetAggregatedComputedUsagesFilterArgs',
+    'GetAggregatedComputedUsagesFilterArgsDict',
     'GetBillingSchedulesFilterArgs',
+    'GetBillingSchedulesFilterArgsDict',
     'GetCommitmentsFilterArgs',
+    'GetCommitmentsFilterArgsDict',
     'GetComputedUsagesFilterArgs',
+    'GetComputedUsagesFilterArgsDict',
     'GetInvoiceLineComputedUsagesFilterArgs',
+    'GetInvoiceLineComputedUsagesFilterArgsDict',
     'GetInvoicesFilterArgs',
+    'GetInvoicesFilterArgsDict',
     'GetOrganizationSubscriptionsFilterArgs',
+    'GetOrganizationSubscriptionsFilterArgsDict',
     'GetRatecardsFilterArgs',
+    'GetRatecardsFilterArgsDict',
     'GetSubscribedServicesFilterArgs',
+    'GetSubscribedServicesFilterArgsDict',
     'GetSubscriptionsFilterArgs',
+    'GetSubscriptionsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetAggregatedComputedUsagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAggregatedComputedUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAggregatedComputedUsagesFilterArgs:
@@ -67,6 +95,17 @@ class GetAggregatedComputedUsagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetBillingSchedulesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetBillingSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetBillingSchedulesFilterArgs:
     def __init__(__self__, *,
@@ -112,6 +151,14 @@ class GetBillingSchedulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetCommitmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCommitmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetCommitmentsFilterArgs:
     def __init__(__self__, *,
@@ -150,6 +197,17 @@ class GetCommitmentsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetComputedUsagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetComputedUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetComputedUsagesFilterArgs:
@@ -196,6 +254,17 @@ class GetComputedUsagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetInvoiceLineComputedUsagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInvoiceLineComputedUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetInvoiceLineComputedUsagesFilterArgs:
     def __init__(__self__, *,
@@ -240,6 +309,17 @@ class GetInvoiceLineComputedUsagesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetInvoicesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Payment Term name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInvoicesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetInvoicesFilterArgs:
@@ -286,6 +366,17 @@ class GetInvoicesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetOrganizationSubscriptionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Currency name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOrganizationSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetOrganizationSubscriptionsFilterArgs:
     def __init__(__self__, *,
@@ -330,6 +421,17 @@ class GetOrganizationSubscriptionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRatecardsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRatecardsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRatecardsFilterArgs:
@@ -376,6 +478,17 @@ class GetRatecardsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSubscribedServicesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Commercial name also called customer name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSubscribedServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSubscribedServicesFilterArgs:
     def __init__(__self__, *,
@@ -420,6 +533,17 @@ class GetSubscribedServicesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSubscriptionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSubscriptionsFilterArgs:

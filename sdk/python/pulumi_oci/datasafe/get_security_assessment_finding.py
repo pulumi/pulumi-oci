@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -186,9 +191,6 @@ def get_security_assessment_finding(access_level: Optional[str] = None,
         severity=pulumi.get(__ret__, 'severity'),
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'))
-
-
-@_utilities.lift_output_func(get_security_assessment_finding)
 def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentFindingFilterArgs', 'GetSecurityAssessmentFindingFilterArgsDict']]]]] = None,
@@ -203,4 +205,29 @@ def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[O
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['findingKey'] = finding_key
+    __args__['isTopFinding'] = is_top_finding
+    __args__['references'] = references
+    __args__['securityAssessmentId'] = security_assessment_id
+    __args__['severity'] = severity
+    __args__['state'] = state
+    __args__['targetId'] = target_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding', __args__, opts=opts, typ=GetSecurityAssessmentFindingResult)
+    return __ret__.apply(lambda __response__: GetSecurityAssessmentFindingResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        finding_key=pulumi.get(__response__, 'finding_key'),
+        findings=pulumi.get(__response__, 'findings'),
+        id=pulumi.get(__response__, 'id'),
+        is_top_finding=pulumi.get(__response__, 'is_top_finding'),
+        references=pulumi.get(__response__, 'references'),
+        security_assessment_id=pulumi.get(__response__, 'security_assessment_id'),
+        severity=pulumi.get(__response__, 'severity'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id')))

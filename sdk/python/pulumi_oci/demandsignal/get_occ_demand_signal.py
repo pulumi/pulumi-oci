@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -234,9 +239,6 @@ def get_occ_demand_signal(occ_demand_signal_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_occ_demand_signal)
 def get_occ_demand_signal_output(occ_demand_signal_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccDemandSignalResult]:
     """
@@ -256,4 +258,22 @@ def get_occ_demand_signal_output(occ_demand_signal_id: Optional[pulumi.Input[str
 
     :param str occ_demand_signal_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OccDemandSignal.
     """
-    ...
+    __args__ = dict()
+    __args__['occDemandSignalId'] = occ_demand_signal_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DemandSignal/getOccDemandSignal:getOccDemandSignal', __args__, opts=opts, typ=GetOccDemandSignalResult)
+    return __ret__.apply(lambda __response__: GetOccDemandSignalResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_active=pulumi.get(__response__, 'is_active'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        occ_demand_signal_id=pulumi.get(__response__, 'occ_demand_signal_id'),
+        occ_demand_signals=pulumi.get(__response__, 'occ_demand_signals'),
+        patch_operations=pulumi.get(__response__, 'patch_operations'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

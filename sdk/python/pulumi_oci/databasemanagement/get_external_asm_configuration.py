@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -108,9 +113,6 @@ def get_external_asm_configuration(external_asm_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         init_parameters=pulumi.get(__ret__, 'init_parameters'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
-
-
-@_utilities.lift_output_func(get_external_asm_configuration)
 def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input[str]] = None,
                                           opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmConfigurationResult]:
@@ -133,4 +135,13 @@ def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
     :param str opc_named_credential_id: The OCID of the Named Credential.
     """
-    ...
+    __args__ = dict()
+    __args__['externalAsmId'] = external_asm_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration', __args__, opts=opts, typ=GetExternalAsmConfigurationResult)
+    return __ret__.apply(lambda __response__: GetExternalAsmConfigurationResult(
+        external_asm_id=pulumi.get(__response__, 'external_asm_id'),
+        id=pulumi.get(__response__, 'id'),
+        init_parameters=pulumi.get(__response__, 'init_parameters'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id')))

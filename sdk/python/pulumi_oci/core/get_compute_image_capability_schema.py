@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -211,9 +216,6 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
         is_merge_enabled=pulumi.get(__ret__, 'is_merge_enabled'),
         schema_data=pulumi.get(__ret__, 'schema_data'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_compute_image_capability_schema)
 def get_compute_image_capability_schema_output(compute_image_capability_schema_id: Optional[pulumi.Input[str]] = None,
                                                is_merge_enabled: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeImageCapabilitySchemaResult]:
@@ -236,4 +238,21 @@ def get_compute_image_capability_schema_output(compute_image_capability_schema_i
     :param str compute_image_capability_schema_id: The id of the compute image capability schema or the image ocid
     :param str is_merge_enabled: Merge the image capability schema with the global image capability schema
     """
-    ...
+    __args__ = dict()
+    __args__['computeImageCapabilitySchemaId'] = compute_image_capability_schema_id
+    __args__['isMergeEnabled'] = is_merge_enabled
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema', __args__, opts=opts, typ=GetComputeImageCapabilitySchemaResult)
+    return __ret__.apply(lambda __response__: GetComputeImageCapabilitySchemaResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_global_image_capability_schema_id=pulumi.get(__response__, 'compute_global_image_capability_schema_id'),
+        compute_global_image_capability_schema_version_name=pulumi.get(__response__, 'compute_global_image_capability_schema_version_name'),
+        compute_image_capability_schema_id=pulumi.get(__response__, 'compute_image_capability_schema_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        is_merge_enabled=pulumi.get(__response__, 'is_merge_enabled'),
+        schema_data=pulumi.get(__response__, 'schema_data'),
+        time_created=pulumi.get(__response__, 'time_created')))

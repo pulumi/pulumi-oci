@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_exadb_vm_clusters(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_exadb_vm_clusters)
 def get_exadb_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  exascale_db_storage_vault_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -193,4 +195,19 @@ def get_exadb_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = N
     :param str exascale_db_storage_vault_id: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
     :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['exascaleDbStorageVaultId'] = exascale_db_storage_vault_id
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadbVmClusters:getExadbVmClusters', __args__, opts=opts, typ=GetExadbVmClustersResult)
+    return __ret__.apply(lambda __response__: GetExadbVmClustersResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exadb_vm_clusters=pulumi.get(__response__, 'exadb_vm_clusters'),
+        exascale_db_storage_vault_id=pulumi.get(__response__, 'exascale_db_storage_vault_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

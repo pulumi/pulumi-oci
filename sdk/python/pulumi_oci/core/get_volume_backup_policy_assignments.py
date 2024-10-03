@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -112,9 +117,6 @@ def get_volume_backup_policy_assignments(asset_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         volume_backup_policy_assignments=pulumi.get(__ret__, 'volume_backup_policy_assignments'))
-
-
-@_utilities.lift_output_func(get_volume_backup_policy_assignments)
 def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[str]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict']]]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeBackupPolicyAssignmentsResult]:
@@ -137,4 +139,13 @@ def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[
 
     :param str asset_id: The OCID of an asset (e.g. a volume).
     """
-    ...
+    __args__ = dict()
+    __args__['assetId'] = asset_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments', __args__, opts=opts, typ=GetVolumeBackupPolicyAssignmentsResult)
+    return __ret__.apply(lambda __response__: GetVolumeBackupPolicyAssignmentsResult(
+        asset_id=pulumi.get(__response__, 'asset_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        volume_backup_policy_assignments=pulumi.get(__response__, 'volume_backup_policy_assignments')))

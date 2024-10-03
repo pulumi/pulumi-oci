@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -181,9 +186,6 @@ def get_rrset(compartment_id: Optional[str] = None,
         view_id=pulumi.get(__ret__, 'view_id'),
         zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'),
         zone_version=pulumi.get(__ret__, 'zone_version'))
-
-
-@_utilities.lift_output_func(get_rrset)
 def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                      domain: Optional[pulumi.Input[str]] = None,
                      rtype: Optional[pulumi.Input[str]] = None,
@@ -224,4 +226,23 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
     :param str zone_name_or_id: The name or OCID of the target zone.
     :param str zone_version: The version of the zone for which data is requested.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['domain'] = domain
+    __args__['rtype'] = rtype
+    __args__['scope'] = scope
+    __args__['viewId'] = view_id
+    __args__['zoneNameOrId'] = zone_name_or_id
+    __args__['zoneVersion'] = zone_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getRrset:getRrset', __args__, opts=opts, typ=GetRrsetResult)
+    return __ret__.apply(lambda __response__: GetRrsetResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        domain=pulumi.get(__response__, 'domain'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        rtype=pulumi.get(__response__, 'rtype'),
+        scope=pulumi.get(__response__, 'scope'),
+        view_id=pulumi.get(__response__, 'view_id'),
+        zone_name_or_id=pulumi.get(__response__, 'zone_name_or_id'),
+        zone_version=pulumi.get(__response__, 'zone_version')))

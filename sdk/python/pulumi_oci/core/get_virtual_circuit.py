@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -447,9 +452,6 @@ def get_virtual_circuit(virtual_circuit_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         type=pulumi.get(__ret__, 'type'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'))
-
-
-@_utilities.lift_output_func(get_virtual_circuit)
 def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitResult]:
     """
@@ -469,4 +471,38 @@ def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[str]] =
 
     :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
     """
-    ...
+    __args__ = dict()
+    __args__['virtualCircuitId'] = virtual_circuit_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVirtualCircuit:getVirtualCircuit', __args__, opts=opts, typ=GetVirtualCircuitResult)
+    return __ret__.apply(lambda __response__: GetVirtualCircuitResult(
+        bandwidth_shape_name=pulumi.get(__response__, 'bandwidth_shape_name'),
+        bgp_admin_state=pulumi.get(__response__, 'bgp_admin_state'),
+        bgp_ipv6session_state=pulumi.get(__response__, 'bgp_ipv6session_state'),
+        bgp_management=pulumi.get(__response__, 'bgp_management'),
+        bgp_session_state=pulumi.get(__response__, 'bgp_session_state'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cross_connect_mappings=pulumi.get(__response__, 'cross_connect_mappings'),
+        customer_asn=pulumi.get(__response__, 'customer_asn'),
+        customer_bgp_asn=pulumi.get(__response__, 'customer_bgp_asn'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gateway_id=pulumi.get(__response__, 'gateway_id'),
+        id=pulumi.get(__response__, 'id'),
+        ip_mtu=pulumi.get(__response__, 'ip_mtu'),
+        is_bfd_enabled=pulumi.get(__response__, 'is_bfd_enabled'),
+        is_transport_mode=pulumi.get(__response__, 'is_transport_mode'),
+        oracle_bgp_asn=pulumi.get(__response__, 'oracle_bgp_asn'),
+        provider_service_id=pulumi.get(__response__, 'provider_service_id'),
+        provider_service_key_name=pulumi.get(__response__, 'provider_service_key_name'),
+        provider_state=pulumi.get(__response__, 'provider_state'),
+        public_prefixes=pulumi.get(__response__, 'public_prefixes'),
+        reference_comment=pulumi.get(__response__, 'reference_comment'),
+        region=pulumi.get(__response__, 'region'),
+        routing_policies=pulumi.get(__response__, 'routing_policies'),
+        service_type=pulumi.get(__response__, 'service_type'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        type=pulumi.get(__response__, 'type'),
+        virtual_circuit_id=pulumi.get(__response__, 'virtual_circuit_id')))

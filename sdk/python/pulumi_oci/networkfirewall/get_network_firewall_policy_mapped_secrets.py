@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -108,9 +113,6 @@ def get_network_firewall_policy_mapped_secrets(display_name: Optional[str] = Non
         id=pulumi.get(__ret__, 'id'),
         mapped_secret_summary_collections=pulumi.get(__ret__, 'mapped_secret_summary_collections'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
-
-
-@_utilities.lift_output_func(get_network_firewall_policy_mapped_secrets)
 def get_network_firewall_policy_mapped_secrets_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                       network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyMappedSecretsResult]:
@@ -133,4 +135,13 @@ def get_network_firewall_policy_mapped_secrets_output(display_name: Optional[pul
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecrets:getNetworkFirewallPolicyMappedSecrets', __args__, opts=opts, typ=GetNetworkFirewallPolicyMappedSecretsResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyMappedSecretsResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        mapped_secret_summary_collections=pulumi.get(__response__, 'mapped_secret_summary_collections'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id')))

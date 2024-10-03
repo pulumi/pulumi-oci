@@ -4,30 +4,79 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'RemediationRecipeDetectConfigurationArgs',
+    'RemediationRecipeDetectConfigurationArgsDict',
     'RemediationRecipeNetworkConfigurationArgs',
+    'RemediationRecipeNetworkConfigurationArgsDict',
     'RemediationRecipeScmConfigurationArgs',
+    'RemediationRecipeScmConfigurationArgsDict',
     'RemediationRecipeVerifyConfigurationArgs',
+    'RemediationRecipeVerifyConfigurationArgsDict',
     'RemediationRunStageArgs',
+    'RemediationRunStageArgsDict',
     'VulnerabilityAuditApplicationDependencyArgs',
+    'VulnerabilityAuditApplicationDependencyArgsDict',
     'VulnerabilityAuditConfigurationArgs',
+    'VulnerabilityAuditConfigurationArgsDict',
     'VulnerabilityAuditSourceArgs',
+    'VulnerabilityAuditSourceArgsDict',
     'VulnerabilityAuditUsageDataArgs',
+    'VulnerabilityAuditUsageDataArgsDict',
     'VulnerabilityAuditVulnerabilityArgs',
+    'VulnerabilityAuditVulnerabilityArgsDict',
     'GetKnowledgebasesFilterArgs',
+    'GetKnowledgebasesFilterArgsDict',
     'GetRemediationRecipesFilterArgs',
+    'GetRemediationRecipesFilterArgsDict',
     'GetRemediationRunApplicationDependencyRecommendationsFilterArgs',
+    'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict',
     'GetRemediationRunStagesFilterArgs',
+    'GetRemediationRunStagesFilterArgsDict',
     'GetRemediationRunsFilterArgs',
+    'GetRemediationRunsFilterArgsDict',
     'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs',
+    'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgsDict',
     'GetVulnerabilityAuditsFilterArgs',
+    'GetVulnerabilityAuditsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class RemediationRecipeDetectConfigurationArgsDict(TypedDict):
+        exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+        """
+        max_permissible_cvss_v2score: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        """
+        max_permissible_cvss_v3score: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        """
+        max_permissible_severity: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+        """
+        upgrade_policy: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+        """
+elif False:
+    RemediationRecipeDetectConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RemediationRecipeDetectConfigurationArgs:
@@ -116,6 +165,19 @@ class RemediationRecipeDetectConfigurationArgs:
         pulumi.set(self, "upgrade_policy", value)
 
 
+if not MYPY:
+    class RemediationRecipeNetworkConfigurationArgsDict(TypedDict):
+        subnet_id: pulumi.Input[str]
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+        """
+elif False:
+    RemediationRecipeNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RemediationRecipeNetworkConfigurationArgs:
     def __init__(__self__, *,
@@ -153,6 +215,47 @@ class RemediationRecipeNetworkConfigurationArgs:
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
+
+if not MYPY:
+    class RemediationRecipeScmConfigurationArgsDict(TypedDict):
+        branch: pulumi.Input[str]
+        """
+        (Updatable) The branch used by ADM to patch vulnerabilities.
+        """
+        is_automerge_enabled: pulumi.Input[bool]
+        """
+        (Updatable) If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+        """
+        scm_type: pulumi.Input[str]
+        """
+        (Updatable) The type of Source Code Management.
+        """
+        build_file_location: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+        """
+        external_scm_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of External Source Code Management.
+        """
+        oci_code_repository_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+        """
+        pat_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
+        """
+        repository_url: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+        """
+        username: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
+        """
+elif False:
+    RemediationRecipeScmConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RemediationRecipeScmConfigurationArgs:
@@ -301,6 +404,51 @@ class RemediationRecipeScmConfigurationArgs:
     def username(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "username", value)
 
+
+if not MYPY:
+    class RemediationRecipeVerifyConfigurationArgsDict(TypedDict):
+        build_service_type: pulumi.Input[str]
+        """
+        (Updatable) The type of Build Service.
+        """
+        additional_parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+        """
+        jenkins_url: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The URL that locates the Jenkins pipeline.
+        """
+        job_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
+        """
+        pat_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        """
+        pipeline_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+        """
+        repository_url: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        """
+        trigger_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+        """
+        username: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The username that will be used to authenticate with Jenkins.
+        """
+        workflow_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
+        """
+elif False:
+    RemediationRecipeVerifyConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RemediationRecipeVerifyConfigurationArgs:
@@ -468,6 +616,31 @@ class RemediationRecipeVerifyConfigurationArgs:
         pulumi.set(self, "workflow_name", value)
 
 
+if not MYPY:
+    class RemediationRunStageArgsDict(TypedDict):
+        summary: NotRequired[pulumi.Input[str]]
+        """
+        Information about the current step within the given stage.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        time_finished: NotRequired[pulumi.Input[str]]
+        """
+        The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        time_started: NotRequired[pulumi.Input[str]]
+        """
+        The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The type of stage.
+        """
+elif False:
+    RemediationRunStageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RemediationRunStageArgs:
     def __init__(__self__, *,
@@ -555,6 +728,27 @@ class RemediationRunStageArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class VulnerabilityAuditApplicationDependencyArgsDict(TypedDict):
+        node_id: pulumi.Input[str]
+        """
+        Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
+        """
+        application_dependency_node_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of application dependencies on which this application dependency depends, each identified by its nodeId.
+        """
+        gav: NotRequired[pulumi.Input[str]]
+        """
+        Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example: org.graalvm.nativeimage:svm:21.1.0. "N/A" for non-maven artifacts.
+        """
+        purl: NotRequired[pulumi.Input[str]]
+        """
+        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        """
+elif False:
+    VulnerabilityAuditApplicationDependencyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VulnerabilityAuditApplicationDependencyArgs:
     def __init__(__self__, *,
@@ -624,6 +818,27 @@ class VulnerabilityAuditApplicationDependencyArgs:
     def purl(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "purl", value)
 
+
+if not MYPY:
+    class VulnerabilityAuditConfigurationArgsDict(TypedDict):
+        exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
+        """
+        max_permissible_cvss_v2score: NotRequired[pulumi.Input[float]]
+        """
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        """
+        max_permissible_cvss_v3score: NotRequired[pulumi.Input[float]]
+        """
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        """
+        max_permissible_severity: NotRequired[pulumi.Input[str]]
+        """
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleSeverity.
+        """
+elif False:
+    VulnerabilityAuditConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VulnerabilityAuditConfigurationArgs:
@@ -696,6 +911,23 @@ class VulnerabilityAuditConfigurationArgs:
         pulumi.set(self, "max_permissible_severity", value)
 
 
+if not MYPY:
+    class VulnerabilityAuditSourceArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Source type of the vulnerability audit.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        Description of the external resource source.
+        """
+        oci_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
+        """
+elif False:
+    VulnerabilityAuditSourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VulnerabilityAuditSourceArgs:
     def __init__(__self__, *,
@@ -749,6 +981,31 @@ class VulnerabilityAuditSourceArgs:
     def oci_resource_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "oci_resource_id", value)
 
+
+if not MYPY:
+    class VulnerabilityAuditUsageDataArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        The Object Storage bucket to read the usage data from.
+        """
+        namespace: pulumi.Input[str]
+        """
+        The Object Storage namespace to read the usage data from.
+        """
+        object: pulumi.Input[str]
+        """
+        The Object Storage object name to read the usage data from.
+        """
+        source_type: pulumi.Input[str]
+        """
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    VulnerabilityAuditUsageDataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VulnerabilityAuditUsageDataArgs:
@@ -824,6 +1081,39 @@ class VulnerabilityAuditUsageDataArgs:
     def source_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "source_type", value)
 
+
+if not MYPY:
+    class VulnerabilityAuditVulnerabilityArgsDict(TypedDict):
+        cvss_v2score: NotRequired[pulumi.Input[float]]
+        """
+        Common Vulnerability Scoring System (CVSS) Version 2.
+        """
+        cvss_v3score: NotRequired[pulumi.Input[float]]
+        """
+        Common Vulnerability Scoring System (CVSS) Version 3.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        Unique vulnerability identifier, e.g. CVE-1999-0067.
+        """
+        is_false_positive: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+        """
+        is_ignored: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates if the vulnerability was ignored according to the audit configuration.
+        """
+        severity: NotRequired[pulumi.Input[str]]
+        """
+        ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
+        """
+        source: NotRequired[pulumi.Input[str]]
+        """
+        vulnerability audit source.
+        """
+elif False:
+    VulnerabilityAuditVulnerabilityArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VulnerabilityAuditVulnerabilityArgs:
@@ -944,6 +1234,14 @@ class VulnerabilityAuditVulnerabilityArgs:
         pulumi.set(self, "source", value)
 
 
+if not MYPY:
+    class GetKnowledgebasesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetKnowledgebasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetKnowledgebasesFilterArgs:
     def __init__(__self__, *,
@@ -982,6 +1280,14 @@ class GetKnowledgebasesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRemediationRecipesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRemediationRecipesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRemediationRecipesFilterArgs:
@@ -1022,6 +1328,14 @@ class GetRemediationRecipesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRemediationRunApplicationDependencyRecommendationsFilterArgs:
     def __init__(__self__, *,
@@ -1060,6 +1374,14 @@ class GetRemediationRunApplicationDependencyRecommendationsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRemediationRunStagesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRemediationRunStagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRemediationRunStagesFilterArgs:
@@ -1100,6 +1422,14 @@ class GetRemediationRunStagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRemediationRunsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRemediationRunsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRemediationRunsFilterArgs:
     def __init__(__self__, *,
@@ -1139,6 +1469,14 @@ class GetRemediationRunsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs:
     def __init__(__self__, *,
@@ -1177,6 +1515,14 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetVulnerabilityAuditsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVulnerabilityAuditsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetVulnerabilityAuditsFilterArgs:

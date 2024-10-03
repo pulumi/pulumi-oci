@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -254,9 +259,6 @@ def get_fusion_environment_scheduled_activity(fusion_environment_id: Optional[st
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_scheduled_start=pulumi.get(__ret__, 'time_scheduled_start'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_scheduled_activity)
 def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                      scheduled_activity_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivityResult]:
@@ -279,4 +281,24 @@ def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Opti
     :param str fusion_environment_id: unique FusionEnvironment identifier
     :param str scheduled_activity_id: Unique ScheduledActivity identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    __args__['scheduledActivityId'] = scheduled_activity_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity', __args__, opts=opts, typ=GetFusionEnvironmentScheduledActivityResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentScheduledActivityResult(
+        actions=pulumi.get(__response__, 'actions'),
+        delay_in_hours=pulumi.get(__response__, 'delay_in_hours'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        run_cycle=pulumi.get(__response__, 'run_cycle'),
+        scheduled_activity_id=pulumi.get(__response__, 'scheduled_activity_id'),
+        service_availability=pulumi.get(__response__, 'service_availability'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_expected_finish=pulumi.get(__response__, 'time_expected_finish'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_scheduled_start=pulumi.get(__response__, 'time_scheduled_start'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -220,9 +225,6 @@ def get_connections(assignable_deployment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         technology_types=pulumi.get(__ret__, 'technology_types'))
-
-
-@_utilities.lift_output_func(get_connections)
 def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optional[str]]] = None,
                            assignable_deployment_type: Optional[pulumi.Input[Optional[str]]] = None,
                            assigned_deployment_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -264,4 +266,27 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
     :param str state: A filter to return only connections having the 'lifecycleState' given.
     :param Sequence[str] technology_types: The array of technology types.
     """
-    ...
+    __args__ = dict()
+    __args__['assignableDeploymentId'] = assignable_deployment_id
+    __args__['assignableDeploymentType'] = assignable_deployment_type
+    __args__['assignedDeploymentId'] = assigned_deployment_id
+    __args__['compartmentId'] = compartment_id
+    __args__['connectionTypes'] = connection_types
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['technologyTypes'] = technology_types
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult)
+    return __ret__.apply(lambda __response__: GetConnectionsResult(
+        assignable_deployment_id=pulumi.get(__response__, 'assignable_deployment_id'),
+        assignable_deployment_type=pulumi.get(__response__, 'assignable_deployment_type'),
+        assigned_deployment_id=pulumi.get(__response__, 'assigned_deployment_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_collections=pulumi.get(__response__, 'connection_collections'),
+        connection_types=pulumi.get(__response__, 'connection_types'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        technology_types=pulumi.get(__response__, 'technology_types')))

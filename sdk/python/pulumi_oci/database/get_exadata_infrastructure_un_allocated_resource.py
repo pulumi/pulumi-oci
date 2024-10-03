@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -173,9 +178,6 @@ def get_exadata_infrastructure_un_allocated_resource(db_servers: Optional[Sequen
         local_storage_in_gbs=pulumi.get(__ret__, 'local_storage_in_gbs'),
         memory_in_gbs=pulumi.get(__ret__, 'memory_in_gbs'),
         ocpus=pulumi.get(__ret__, 'ocpus'))
-
-
-@_utilities.lift_output_func(get_exadata_infrastructure_un_allocated_resource)
 def get_exadata_infrastructure_un_allocated_resource_output(db_servers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInfrastructureUnAllocatedResourceResult]:
@@ -198,4 +200,18 @@ def get_exadata_infrastructure_un_allocated_resource_output(db_servers: Optional
     :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['dbServers'] = db_servers
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource', __args__, opts=opts, typ=GetExadataInfrastructureUnAllocatedResourceResult)
+    return __ret__.apply(lambda __response__: GetExadataInfrastructureUnAllocatedResourceResult(
+        autonomous_vm_clusters=pulumi.get(__response__, 'autonomous_vm_clusters'),
+        db_servers=pulumi.get(__response__, 'db_servers'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        exadata_storage_in_tbs=pulumi.get(__response__, 'exadata_storage_in_tbs'),
+        id=pulumi.get(__response__, 'id'),
+        local_storage_in_gbs=pulumi.get(__response__, 'local_storage_in_gbs'),
+        memory_in_gbs=pulumi.get(__response__, 'memory_in_gbs'),
+        ocpus=pulumi.get(__response__, 'ocpus')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -124,9 +129,6 @@ def get_drg_route_table_route_rules(drg_route_table_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         route_type=pulumi.get(__ret__, 'route_type'))
-
-
-@_utilities.lift_output_func(get_drg_route_table_route_rules)
 def get_drg_route_table_route_rules_output(drg_route_table_id: Optional[pulumi.Input[str]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteTableRouteRulesFilterArgs', 'GetDrgRouteTableRouteRulesFilterArgsDict']]]]] = None,
                                            route_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -150,4 +152,15 @@ def get_drg_route_table_route_rules_output(drg_route_table_id: Optional[pulumi.I
     :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
     :param str route_type: Static routes are specified through the DRG route table API. Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
     """
-    ...
+    __args__ = dict()
+    __args__['drgRouteTableId'] = drg_route_table_id
+    __args__['filters'] = filters
+    __args__['routeType'] = route_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules', __args__, opts=opts, typ=GetDrgRouteTableRouteRulesResult)
+    return __ret__.apply(lambda __response__: GetDrgRouteTableRouteRulesResult(
+        drg_route_rules=pulumi.get(__response__, 'drg_route_rules'),
+        drg_route_table_id=pulumi.get(__response__, 'drg_route_table_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        route_type=pulumi.get(__response__, 'route_type')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -198,9 +203,6 @@ def get_software_source_package_group(package_group_id: Optional[str] = None,
         packages=pulumi.get(__ret__, 'packages'),
         repositories=pulumi.get(__ret__, 'repositories'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
-
-
-@_utilities.lift_output_func(get_software_source_package_group)
 def get_software_source_package_group_output(package_group_id: Optional[pulumi.Input[str]] = None,
                                              software_source_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourcePackageGroupResult]:
@@ -223,4 +225,20 @@ def get_software_source_package_group_output(package_group_id: Optional[pulumi.I
     :param str package_group_id: The unique package group identifier.
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
-    ...
+    __args__ = dict()
+    __args__['packageGroupId'] = package_group_id
+    __args__['softwareSourceId'] = software_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourcePackageGroup:getSoftwareSourcePackageGroup', __args__, opts=opts, typ=GetSoftwareSourcePackageGroupResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourcePackageGroupResult(
+        description=pulumi.get(__response__, 'description'),
+        display_order=pulumi.get(__response__, 'display_order'),
+        group_type=pulumi.get(__response__, 'group_type'),
+        id=pulumi.get(__response__, 'id'),
+        is_default=pulumi.get(__response__, 'is_default'),
+        is_user_visible=pulumi.get(__response__, 'is_user_visible'),
+        name=pulumi.get(__response__, 'name'),
+        package_group_id=pulumi.get(__response__, 'package_group_id'),
+        packages=pulumi.get(__response__, 'packages'),
+        repositories=pulumi.get(__response__, 'repositories'),
+        software_source_id=pulumi.get(__response__, 'software_source_id')))

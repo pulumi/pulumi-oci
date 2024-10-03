@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -254,9 +259,6 @@ def get_log(log_group_id: Optional[str] = None,
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
-
-
-@_utilities.lift_output_func(get_log)
 def get_log_output(log_group_id: Optional[pulumi.Input[str]] = None,
                    log_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogResult]:
@@ -279,4 +281,24 @@ def get_log_output(log_group_id: Optional[pulumi.Input[str]] = None,
     :param str log_group_id: OCID of a log group to work with.
     :param str log_id: OCID of a log to work with.
     """
-    ...
+    __args__ = dict()
+    __args__['logGroupId'] = log_group_id
+    __args__['logId'] = log_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Logging/getLog:getLog', __args__, opts=opts, typ=GetLogResult)
+    return __ret__.apply(lambda __response__: GetLogResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configurations=pulumi.get(__response__, 'configurations'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        log_group_id=pulumi.get(__response__, 'log_group_id'),
+        log_id=pulumi.get(__response__, 'log_id'),
+        log_type=pulumi.get(__response__, 'log_type'),
+        retention_duration=pulumi.get(__response__, 'retention_duration'),
+        state=pulumi.get(__response__, 'state'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_modified=pulumi.get(__response__, 'time_last_modified')))

@@ -4,22 +4,59 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'CatalogLockArgs',
+    'CatalogLockArgsDict',
     'CatalogPrivateEndpointLockArgs',
+    'CatalogPrivateEndpointLockArgsDict',
     'MetastoreLockArgs',
+    'MetastoreLockArgsDict',
     'GetCatalogPrivateEndpointsFilterArgs',
+    'GetCatalogPrivateEndpointsFilterArgsDict',
     'GetCatalogTypesFilterArgs',
+    'GetCatalogTypesFilterArgsDict',
     'GetCatalogsFilterArgs',
+    'GetCatalogsFilterArgsDict',
     'GetConnectionsFilterArgs',
+    'GetConnectionsFilterArgsDict',
     'GetDataAssetsFilterArgs',
+    'GetDataAssetsFilterArgsDict',
     'GetMetastoresFilterArgs',
+    'GetMetastoresFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class CatalogLockArgsDict(TypedDict):
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the lock.
+        """
+elif False:
+    CatalogLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CatalogLockArgs:
@@ -92,6 +129,27 @@ class CatalogLockArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class CatalogPrivateEndpointLockArgsDict(TypedDict):
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the lock.
+        """
+elif False:
+    CatalogPrivateEndpointLockArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CatalogPrivateEndpointLockArgs:
     def __init__(__self__, *,
@@ -162,6 +220,27 @@ class CatalogPrivateEndpointLockArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class MetastoreLockArgsDict(TypedDict):
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the lock.
+        """
+elif False:
+    MetastoreLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MetastoreLockArgs:
@@ -234,6 +313,14 @@ class MetastoreLockArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class GetCatalogPrivateEndpointsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCatalogPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetCatalogPrivateEndpointsFilterArgs:
     def __init__(__self__, *,
@@ -272,6 +359,17 @@ class GetCatalogPrivateEndpointsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetCatalogTypesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Immutable resource name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCatalogTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetCatalogTypesFilterArgs:
@@ -318,6 +416,14 @@ class GetCatalogTypesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetCatalogsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetCatalogsFilterArgs:
     def __init__(__self__, *,
@@ -356,6 +462,14 @@ class GetCatalogsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetConnectionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetConnectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetConnectionsFilterArgs:
@@ -396,6 +510,14 @@ class GetConnectionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDataAssetsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDataAssetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDataAssetsFilterArgs:
     def __init__(__self__, *,
@@ -434,6 +556,14 @@ class GetDataAssetsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMetastoresFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMetastoresFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMetastoresFilterArgs:

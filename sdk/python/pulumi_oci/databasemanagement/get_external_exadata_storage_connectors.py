@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -138,9 +143,6 @@ def get_external_exadata_storage_connectors(compartment_id: Optional[str] = None
         external_exadata_storage_connector_collections=pulumi.get(__ret__, 'external_exadata_storage_connector_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_external_exadata_storage_connectors)
 def get_external_exadata_storage_connectors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                    external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -167,4 +169,17 @@ def get_external_exadata_storage_connectors_output(compartment_id: Optional[pulu
     :param str display_name: The optional single value query filter parameter on the entity display name.
     :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['externalExadataInfrastructureId'] = external_exadata_infrastructure_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageConnectors:getExternalExadataStorageConnectors', __args__, opts=opts, typ=GetExternalExadataStorageConnectorsResult)
+    return __ret__.apply(lambda __response__: GetExternalExadataStorageConnectorsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_exadata_infrastructure_id=pulumi.get(__response__, 'external_exadata_infrastructure_id'),
+        external_exadata_storage_connector_collections=pulumi.get(__response__, 'external_exadata_storage_connector_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

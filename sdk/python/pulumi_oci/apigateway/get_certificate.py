@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -246,9 +251,6 @@ def get_certificate(certificate_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_not_valid_after=pulumi.get(__ret__, 'time_not_valid_after'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_certificate)
 def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateResult]:
     """
@@ -268,4 +270,23 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
 
     :param str certificate_id: The ocid of the certificate.
     """
-    ...
+    __args__ = dict()
+    __args__['certificateId'] = certificate_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApiGateway/getCertificate:getCertificate', __args__, opts=opts, typ=GetCertificateResult)
+    return __ret__.apply(lambda __response__: GetCertificateResult(
+        certificate=pulumi.get(__response__, 'certificate'),
+        certificate_id=pulumi.get(__response__, 'certificate_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        intermediate_certificates=pulumi.get(__response__, 'intermediate_certificates'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        private_key=pulumi.get(__response__, 'private_key'),
+        state=pulumi.get(__response__, 'state'),
+        subject_names=pulumi.get(__response__, 'subject_names'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_not_valid_after=pulumi.get(__response__, 'time_not_valid_after'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

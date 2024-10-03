@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -283,9 +288,6 @@ def get_java_downloads_java_download_report(java_download_report_id: Optional[st
         time_created=pulumi.get(__ret__, 'time_created'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_java_downloads_java_download_report)
 def get_java_downloads_java_download_report_output(java_download_report_id: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadReportResult]:
     """
@@ -305,4 +307,26 @@ def get_java_downloads_java_download_report_output(java_download_report_id: Opti
 
     :param str java_download_report_id: Unique Java download report identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['javaDownloadReportId'] = java_download_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport', __args__, opts=opts, typ=GetJavaDownloadsJavaDownloadReportResult)
+    return __ret__.apply(lambda __response__: GetJavaDownloadsJavaDownloadReportResult(
+        checksum_type=pulumi.get(__response__, 'checksum_type'),
+        checksum_value=pulumi.get(__response__, 'checksum_value'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_bies=pulumi.get(__response__, 'created_bies'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        file_size_in_bytes=pulumi.get(__response__, 'file_size_in_bytes'),
+        format=pulumi.get(__response__, 'format'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        java_download_report_id=pulumi.get(__response__, 'java_download_report_id'),
+        sort_by=pulumi.get(__response__, 'sort_by'),
+        sort_order=pulumi.get(__response__, 'sort_order'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

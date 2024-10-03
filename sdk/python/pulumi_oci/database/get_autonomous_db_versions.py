@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -128,9 +133,6 @@ def get_autonomous_db_versions(compartment_id: Optional[str] = None,
         db_workload=pulumi.get(__ret__, 'db_workload'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_autonomous_db_versions)
 def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       db_workload: Optional[pulumi.Input[Optional[str]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDbVersionsFilterArgs', 'GetAutonomousDbVersionsFilterArgsDict']]]]] = None,
@@ -154,4 +156,15 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[str]
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['dbWorkload'] = db_workload
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDbVersions:getAutonomousDbVersions', __args__, opts=opts, typ=GetAutonomousDbVersionsResult)
+    return __ret__.apply(lambda __response__: GetAutonomousDbVersionsResult(
+        autonomous_db_versions=pulumi.get(__response__, 'autonomous_db_versions'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_workload=pulumi.get(__response__, 'db_workload'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

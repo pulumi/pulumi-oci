@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -432,9 +437,6 @@ def get_report_definition(report_definition_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_report_definition)
 def get_report_definition_output(report_definition_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportDefinitionResult]:
     """
@@ -454,4 +456,37 @@ def get_report_definition_output(report_definition_id: Optional[pulumi.Input[str
 
     :param str report_definition_id: Unique report definition identifier
     """
-    ...
+    __args__ = dict()
+    __args__['reportDefinitionId'] = report_definition_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReportDefinition:getReportDefinition', __args__, opts=opts, typ=GetReportDefinitionResult)
+    return __ret__.apply(lambda __response__: GetReportDefinitionResult(
+        category=pulumi.get(__response__, 'category'),
+        column_filters=pulumi.get(__response__, 'column_filters'),
+        column_infos=pulumi.get(__response__, 'column_infos'),
+        column_sortings=pulumi.get(__response__, 'column_sortings'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compliance_standards=pulumi.get(__response__, 'compliance_standards'),
+        data_source=pulumi.get(__response__, 'data_source'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_order=pulumi.get(__response__, 'display_order'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_seeded=pulumi.get(__response__, 'is_seeded'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        parent_id=pulumi.get(__response__, 'parent_id'),
+        record_time_span=pulumi.get(__response__, 'record_time_span'),
+        report_definition_id=pulumi.get(__response__, 'report_definition_id'),
+        schedule=pulumi.get(__response__, 'schedule'),
+        scheduled_report_compartment_id=pulumi.get(__response__, 'scheduled_report_compartment_id'),
+        scheduled_report_mime_type=pulumi.get(__response__, 'scheduled_report_mime_type'),
+        scheduled_report_name=pulumi.get(__response__, 'scheduled_report_name'),
+        scheduled_report_row_limit=pulumi.get(__response__, 'scheduled_report_row_limit'),
+        scim_filter=pulumi.get(__response__, 'scim_filter'),
+        state=pulumi.get(__response__, 'state'),
+        summaries=pulumi.get(__response__, 'summaries'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

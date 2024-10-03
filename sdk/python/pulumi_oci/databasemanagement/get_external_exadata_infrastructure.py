@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -346,9 +351,6 @@ def get_external_exadata_infrastructure(external_exadata_infrastructure_id: Opti
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_external_exadata_infrastructure)
 def get_external_exadata_infrastructure_output(external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataInfrastructureResult]:
     """
@@ -369,4 +371,31 @@ def get_external_exadata_infrastructure_output(external_exadata_infrastructure_i
 
     :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
     """
-    ...
+    __args__ = dict()
+    __args__['externalExadataInfrastructureId'] = external_exadata_infrastructure_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure', __args__, opts=opts, typ=GetExternalExadataInfrastructureResult)
+    return __ret__.apply(lambda __response__: GetExternalExadataInfrastructureResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_compartments=pulumi.get(__response__, 'database_compartments'),
+        database_systems=pulumi.get(__response__, 'database_systems'),
+        db_system_ids=pulumi.get(__response__, 'db_system_ids'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        discovery_key=pulumi.get(__response__, 'discovery_key'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_exadata_infrastructure_id=pulumi.get(__response__, 'external_exadata_infrastructure_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        internal_id=pulumi.get(__response__, 'internal_id'),
+        license_model=pulumi.get(__response__, 'license_model'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        rack_size=pulumi.get(__response__, 'rack_size'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        storage_grids=pulumi.get(__response__, 'storage_grids'),
+        storage_server_names=pulumi.get(__response__, 'storage_server_names'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version')))

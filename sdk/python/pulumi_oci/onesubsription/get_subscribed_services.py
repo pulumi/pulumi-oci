@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_subscribed_services(compartment_id: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         subscribed_services=pulumi.get(__ret__, 'subscribed_services'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-
-
-@_utilities.lift_output_func(get_subscribed_services)
 def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscribedServicesFilterArgs', 'GetSubscribedServicesFilterArgsDict']]]]] = None,
                                    order_line_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -190,4 +192,19 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] =
     :param str status: This param is used to filter subscribed services based on its status
     :param str subscription_id: Line level Subscription Id
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['orderLineId'] = order_line_id
+    __args__['status'] = status
+    __args__['subscriptionId'] = subscription_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getSubscribedServices:getSubscribedServices', __args__, opts=opts, typ=GetSubscribedServicesResult)
+    return __ret__.apply(lambda __response__: GetSubscribedServicesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        order_line_id=pulumi.get(__response__, 'order_line_id'),
+        status=pulumi.get(__response__, 'status'),
+        subscribed_services=pulumi.get(__response__, 'subscribed_services'),
+        subscription_id=pulumi.get(__response__, 'subscription_id')))

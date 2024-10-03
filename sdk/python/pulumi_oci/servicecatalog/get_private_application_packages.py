@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_private_application_packages(display_name: Optional[str] = None,
         private_application_id=pulumi.get(__ret__, 'private_application_id'),
         private_application_package_collections=pulumi.get(__ret__, 'private_application_package_collections'),
         private_application_package_id=pulumi.get(__ret__, 'private_application_package_id'))
-
-
-@_utilities.lift_output_func(get_private_application_packages)
 def get_private_application_packages_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict']]]]] = None,
                                             package_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -190,4 +192,19 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
     :param str private_application_id: The unique identifier for the private application.
     :param str private_application_package_id: The unique identifier for the private application package.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['packageTypes'] = package_types
+    __args__['privateApplicationId'] = private_application_id
+    __args__['privateApplicationPackageId'] = private_application_package_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages', __args__, opts=opts, typ=GetPrivateApplicationPackagesResult)
+    return __ret__.apply(lambda __response__: GetPrivateApplicationPackagesResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        package_types=pulumi.get(__response__, 'package_types'),
+        private_application_id=pulumi.get(__response__, 'private_application_id'),
+        private_application_package_collections=pulumi.get(__response__, 'private_application_package_collections'),
+        private_application_package_id=pulumi.get(__response__, 'private_application_package_id')))

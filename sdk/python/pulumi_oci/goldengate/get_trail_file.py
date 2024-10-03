@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -141,9 +146,6 @@ def get_trail_file(deployment_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         time_last_fetched=pulumi.get(__ret__, 'time_last_fetched'),
         trail_file_id=pulumi.get(__ret__, 'trail_file_id'))
-
-
-@_utilities.lift_output_func(get_trail_file)
 def get_trail_file_output(deployment_id: Optional[pulumi.Input[str]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                           trail_file_id: Optional[pulumi.Input[str]] = None,
@@ -169,4 +171,16 @@ def get_trail_file_output(deployment_id: Optional[pulumi.Input[str]] = None,
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str trail_file_id: A Trail File identifier
     """
-    ...
+    __args__ = dict()
+    __args__['deploymentId'] = deployment_id
+    __args__['displayName'] = display_name
+    __args__['trailFileId'] = trail_file_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getTrailFile:getTrailFile', __args__, opts=opts, typ=GetTrailFileResult)
+    return __ret__.apply(lambda __response__: GetTrailFileResult(
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        time_last_fetched=pulumi.get(__response__, 'time_last_fetched'),
+        trail_file_id=pulumi.get(__response__, 'trail_file_id')))

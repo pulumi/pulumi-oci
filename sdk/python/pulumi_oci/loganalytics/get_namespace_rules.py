@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -192,9 +197,6 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
         rule_summary_collections=pulumi.get(__ret__, 'rule_summary_collections'),
         state=pulumi.get(__ret__, 'state'),
         target_service=pulumi.get(__ret__, 'target_service'))
-
-
-@_utilities.lift_output_func(get_namespace_rules)
 def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceRulesFilterArgs', 'GetNamespaceRulesFilterArgsDict']]]]] = None,
@@ -230,4 +232,23 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
     :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
     :param str target_service: The target service to use for filtering.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['kind'] = kind
+    __args__['namespace'] = namespace
+    __args__['state'] = state
+    __args__['targetService'] = target_service
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceRules:getNamespaceRules', __args__, opts=opts, typ=GetNamespaceRulesResult)
+    return __ret__.apply(lambda __response__: GetNamespaceRulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        kind=pulumi.get(__response__, 'kind'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        rule_summary_collections=pulumi.get(__response__, 'rule_summary_collections'),
+        state=pulumi.get(__response__, 'state'),
+        target_service=pulumi.get(__response__, 'target_service')))

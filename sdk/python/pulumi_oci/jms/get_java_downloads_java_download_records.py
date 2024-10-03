@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -222,9 +227,6 @@ def get_java_downloads_java_download_records(architecture: Optional[str] = None,
         release_version=pulumi.get(__ret__, 'release_version'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_java_downloads_java_download_records)
 def get_java_downloads_java_download_records_output(architecture: Optional[pulumi.Input[Optional[str]]] = None,
                                                     compartment_id: Optional[pulumi.Input[str]] = None,
                                                     family_version: Optional[pulumi.Input[Optional[str]]] = None,
@@ -268,4 +270,27 @@ def get_java_downloads_java_download_records_output(architecture: Optional[pulum
     :param str time_end: The end of the time period for which reports are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period for which reports are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
-    ...
+    __args__ = dict()
+    __args__['architecture'] = architecture
+    __args__['compartmentId'] = compartment_id
+    __args__['familyVersion'] = family_version
+    __args__['filters'] = filters
+    __args__['osFamily'] = os_family
+    __args__['packageTypeDetail'] = package_type_detail
+    __args__['releaseVersion'] = release_version
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords', __args__, opts=opts, typ=GetJavaDownloadsJavaDownloadRecordsResult)
+    return __ret__.apply(lambda __response__: GetJavaDownloadsJavaDownloadRecordsResult(
+        architecture=pulumi.get(__response__, 'architecture'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        family_version=pulumi.get(__response__, 'family_version'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        java_download_record_collections=pulumi.get(__response__, 'java_download_record_collections'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        package_type_detail=pulumi.get(__response__, 'package_type_detail'),
+        release_version=pulumi.get(__response__, 'release_version'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -171,9 +176,6 @@ def get_association(association_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_association)
 def get_association_output(association_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssociationResult]:
     """
@@ -193,4 +195,17 @@ def get_association_output(association_id: Optional[pulumi.Input[str]] = None,
 
     :param str association_id: The OCID of an association between a certificate-related resource and another Oracle Cloud Infrastructure resource.
     """
-    ...
+    __args__ = dict()
+    __args__['associationId'] = association_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getAssociation:getAssociation', __args__, opts=opts, typ=GetAssociationResult)
+    return __ret__.apply(lambda __response__: GetAssociationResult(
+        associated_resource_id=pulumi.get(__response__, 'associated_resource_id'),
+        association_id=pulumi.get(__response__, 'association_id'),
+        association_type=pulumi.get(__response__, 'association_type'),
+        certificates_resource_id=pulumi.get(__response__, 'certificates_resource_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

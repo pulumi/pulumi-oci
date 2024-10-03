@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -366,9 +371,6 @@ def get_on_premise_vantage_point_worker(apm_domain_id: Optional[str] = None,
         version_details=pulumi.get(__ret__, 'version_details'),
         worker_id=pulumi.get(__ret__, 'worker_id'),
         worker_type=pulumi.get(__ret__, 'worker_type'))
-
-
-@_utilities.lift_output_func(get_on_premise_vantage_point_worker)
 def get_on_premise_vantage_point_worker_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                                on_premise_vantage_point_id: Optional[pulumi.Input[str]] = None,
                                                worker_id: Optional[pulumi.Input[str]] = None,
@@ -394,4 +396,34 @@ def get_on_premise_vantage_point_worker_output(apm_domain_id: Optional[pulumi.In
     :param str on_premise_vantage_point_id: The OCID of the On-premise vantage point.
     :param str worker_id: The OCID of the On-premise vantage point worker.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['onPremiseVantagePointId'] = on_premise_vantage_point_id
+    __args__['workerId'] = worker_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker', __args__, opts=opts, typ=GetOnPremiseVantagePointWorkerResult)
+    return __ret__.apply(lambda __response__: GetOnPremiseVantagePointWorkerResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        configuration_details=pulumi.get(__response__, 'configuration_details'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        geo_info=pulumi.get(__response__, 'geo_info'),
+        id=pulumi.get(__response__, 'id'),
+        identity_infos=pulumi.get(__response__, 'identity_infos'),
+        monitor_lists=pulumi.get(__response__, 'monitor_lists'),
+        name=pulumi.get(__response__, 'name'),
+        on_premise_vantage_point_id=pulumi.get(__response__, 'on_premise_vantage_point_id'),
+        opvp_id=pulumi.get(__response__, 'opvp_id'),
+        opvp_name=pulumi.get(__response__, 'opvp_name'),
+        priority=pulumi.get(__response__, 'priority'),
+        resource_principal_token_public_key=pulumi.get(__response__, 'resource_principal_token_public_key'),
+        runtime_id=pulumi.get(__response__, 'runtime_id'),
+        status=pulumi.get(__response__, 'status'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_sync_up=pulumi.get(__response__, 'time_last_sync_up'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version'),
+        version_details=pulumi.get(__response__, 'version_details'),
+        worker_id=pulumi.get(__response__, 'worker_id'),
+        worker_type=pulumi.get(__response__, 'worker_type')))

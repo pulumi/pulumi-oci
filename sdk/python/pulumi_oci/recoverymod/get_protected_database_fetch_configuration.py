@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -120,9 +125,6 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[b
         content=pulumi.get(__ret__, 'content'),
         id=pulumi.get(__ret__, 'id'),
         protected_database_id=pulumi.get(__ret__, 'protected_database_id'))
-
-
-@_utilities.lift_output_func(get_protected_database_fetch_configuration)
 def get_protected_database_fetch_configuration_output(base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                                                       configuration_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                       protected_database_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_protected_database_fetch_configuration_output(base64_encode_content: Opt
     :param str configuration_type: Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
     :param str protected_database_id: The protected database OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['base64EncodeContent'] = base64_encode_content
+    __args__['configurationType'] = configuration_type
+    __args__['protectedDatabaseId'] = protected_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration', __args__, opts=opts, typ=GetProtectedDatabaseFetchConfigurationResult)
+    return __ret__.apply(lambda __response__: GetProtectedDatabaseFetchConfigurationResult(
+        base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),
+        configuration_type=pulumi.get(__response__, 'configuration_type'),
+        content=pulumi.get(__response__, 'content'),
+        id=pulumi.get(__response__, 'id'),
+        protected_database_id=pulumi.get(__response__, 'protected_database_id')))

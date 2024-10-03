@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -359,9 +364,6 @@ def get_ipsec_connection_tunnel(ipsec_id: Optional[str] = None,
         time_status_updated=pulumi.get(__ret__, 'time_status_updated'),
         tunnel_id=pulumi.get(__ret__, 'tunnel_id'),
         vpn_ip=pulumi.get(__ret__, 'vpn_ip'))
-
-
-@_utilities.lift_output_func(get_ipsec_connection_tunnel)
 def get_ipsec_connection_tunnel_output(ipsec_id: Optional[pulumi.Input[str]] = None,
                                        tunnel_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelResult]:
@@ -384,4 +386,33 @@ def get_ipsec_connection_tunnel_output(ipsec_id: Optional[pulumi.Input[str]] = N
     :param str ipsec_id: The OCID of the IPSec connection.
     :param str tunnel_id: The OCID of the IPSec connection's tunnel.
     """
-    ...
+    __args__ = dict()
+    __args__['ipsecId'] = ipsec_id
+    __args__['tunnelId'] = tunnel_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel', __args__, opts=opts, typ=GetIpsecConnectionTunnelResult)
+    return __ret__.apply(lambda __response__: GetIpsecConnectionTunnelResult(
+        associated_virtual_circuits=pulumi.get(__response__, 'associated_virtual_circuits'),
+        bgp_session_infos=pulumi.get(__response__, 'bgp_session_infos'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cpe_ip=pulumi.get(__response__, 'cpe_ip'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dpd_configs=pulumi.get(__response__, 'dpd_configs'),
+        dpd_mode=pulumi.get(__response__, 'dpd_mode'),
+        dpd_timeout_in_sec=pulumi.get(__response__, 'dpd_timeout_in_sec'),
+        encryption_domain_configs=pulumi.get(__response__, 'encryption_domain_configs'),
+        id=pulumi.get(__response__, 'id'),
+        ike_version=pulumi.get(__response__, 'ike_version'),
+        ipsec_id=pulumi.get(__response__, 'ipsec_id'),
+        nat_translation_enabled=pulumi.get(__response__, 'nat_translation_enabled'),
+        oracle_can_initiate=pulumi.get(__response__, 'oracle_can_initiate'),
+        phase_one_details=pulumi.get(__response__, 'phase_one_details'),
+        phase_two_details=pulumi.get(__response__, 'phase_two_details'),
+        routing=pulumi.get(__response__, 'routing'),
+        shared_secret=pulumi.get(__response__, 'shared_secret'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_status_updated=pulumi.get(__response__, 'time_status_updated'),
+        tunnel_id=pulumi.get(__response__, 'tunnel_id'),
+        vpn_ip=pulumi.get(__response__, 'vpn_ip')))

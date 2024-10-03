@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -138,9 +143,6 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_compute_capacity_reservation_instance_shapes)
 def get_compute_capacity_reservation_instance_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                                             compartment_id: Optional[pulumi.Input[str]] = None,
                                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -167,4 +169,17 @@ def get_compute_capacity_reservation_instance_shapes_output(availability_domain:
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeCapacityReservationInstanceShapes:getComputeCapacityReservationInstanceShapes', __args__, opts=opts, typ=GetComputeCapacityReservationInstanceShapesResult)
+    return __ret__.apply(lambda __response__: GetComputeCapacityReservationInstanceShapesResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_capacity_reservation_instance_shapes=pulumi.get(__response__, 'compute_capacity_reservation_instance_shapes'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_instance_maintenance_events(compartment_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_window_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_window_start_greater_than_or_equal_to'),
         time_window_start_less_than_or_equal_to=pulumi.get(__ret__, 'time_window_start_less_than_or_equal_to'))
-
-
-@_utilities.lift_output_func(get_instance_maintenance_events)
 def get_instance_maintenance_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                            correlation_token: Optional[pulumi.Input[Optional[str]]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict']]]]] = None,
@@ -247,4 +249,25 @@ def get_instance_maintenance_events_output(compartment_id: Optional[pulumi.Input
     :param str time_window_start_greater_than_or_equal_to: Starting range to return the maintenances which are not completed (date-time is in [RFC3339](https://tools.ietf.org/html/rfc3339) format).
     :param str time_window_start_less_than_or_equal_to: Ending range to return the maintenances which are not completed (date-time is in [RFC3339](https://tools.ietf.org/html/rfc3339) format).
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['correlationToken'] = correlation_token
+    __args__['filters'] = filters
+    __args__['instanceAction'] = instance_action
+    __args__['instanceId'] = instance_id
+    __args__['state'] = state
+    __args__['timeWindowStartGreaterThanOrEqualTo'] = time_window_start_greater_than_or_equal_to
+    __args__['timeWindowStartLessThanOrEqualTo'] = time_window_start_less_than_or_equal_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents', __args__, opts=opts, typ=GetInstanceMaintenanceEventsResult)
+    return __ret__.apply(lambda __response__: GetInstanceMaintenanceEventsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        correlation_token=pulumi.get(__response__, 'correlation_token'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        instance_action=pulumi.get(__response__, 'instance_action'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        instance_maintenance_events=pulumi.get(__response__, 'instance_maintenance_events'),
+        state=pulumi.get(__response__, 'state'),
+        time_window_start_greater_than_or_equal_to=pulumi.get(__response__, 'time_window_start_greater_than_or_equal_to'),
+        time_window_start_less_than_or_equal_to=pulumi.get(__response__, 'time_window_start_less_than_or_equal_to')))

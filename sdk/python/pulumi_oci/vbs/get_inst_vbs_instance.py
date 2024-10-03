@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -259,9 +264,6 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vbs_access_url=pulumi.get(__ret__, 'vbs_access_url'),
         vbs_instance_id=pulumi.get(__ret__, 'vbs_instance_id'))
-
-
-@_utilities.lift_output_func(get_inst_vbs_instance)
 def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstVbsInstanceResult]:
     """
@@ -281,4 +283,24 @@ def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[str]] = 
 
     :param str vbs_instance_id: unique VbsInstance identifier
     """
-    ...
+    __args__ = dict()
+    __args__['vbsInstanceId'] = vbs_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Vbs/getInstVbsInstance:getInstVbsInstance', __args__, opts=opts, typ=GetInstVbsInstanceResult)
+    return __ret__.apply(lambda __response__: GetInstVbsInstanceResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_access_token=pulumi.get(__response__, 'idcs_access_token'),
+        is_resource_usage_agreement_granted=pulumi.get(__response__, 'is_resource_usage_agreement_granted'),
+        lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),
+        name=pulumi.get(__response__, 'name'),
+        resource_compartment_id=pulumi.get(__response__, 'resource_compartment_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        vbs_access_url=pulumi.get(__response__, 'vbs_access_url'),
+        vbs_instance_id=pulumi.get(__response__, 'vbs_instance_id')))

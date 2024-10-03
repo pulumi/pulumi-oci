@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -179,9 +184,6 @@ def get_certificates(certificate_id: Optional[str] = None,
         issuer_certificate_authority_id=pulumi.get(__ret__, 'issuer_certificate_authority_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_certificates)
 def get_certificates_output(certificate_id: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]]]] = None,
@@ -215,4 +217,21 @@ def get_certificates_output(certificate_id: Optional[pulumi.Input[Optional[str]]
     :param str name: A filter that returns only resources that match the specified name.
     :param str state: A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['certificateId'] = certificate_id
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['issuerCertificateAuthorityId'] = issuer_certificate_authority_id
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificates:getCertificates', __args__, opts=opts, typ=GetCertificatesResult)
+    return __ret__.apply(lambda __response__: GetCertificatesResult(
+        certificate_collections=pulumi.get(__response__, 'certificate_collections'),
+        certificate_id=pulumi.get(__response__, 'certificate_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        issuer_certificate_authority_id=pulumi.get(__response__, 'issuer_certificate_authority_id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

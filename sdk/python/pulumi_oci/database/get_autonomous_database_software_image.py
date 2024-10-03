@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -233,9 +238,6 @@ def get_autonomous_database_software_image(autonomous_database_software_image_id
         source_cdb_id=pulumi.get(__ret__, 'source_cdb_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_autonomous_database_software_image)
 def get_autonomous_database_software_image_output(autonomous_database_software_image_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseSoftwareImageResult]:
     """
@@ -255,4 +257,22 @@ def get_autonomous_database_software_image_output(autonomous_database_software_i
 
     :param str autonomous_database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousDatabaseSoftwareImageId'] = autonomous_database_software_image_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage', __args__, opts=opts, typ=GetAutonomousDatabaseSoftwareImageResult)
+    return __ret__.apply(lambda __response__: GetAutonomousDatabaseSoftwareImageResult(
+        autonomous_database_software_image_id=pulumi.get(__response__, 'autonomous_database_software_image_id'),
+        autonomous_dsi_one_off_patches=pulumi.get(__response__, 'autonomous_dsi_one_off_patches'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_version=pulumi.get(__response__, 'database_version'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_shape_family=pulumi.get(__response__, 'image_shape_family'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        release_update=pulumi.get(__response__, 'release_update'),
+        source_cdb_id=pulumi.get(__response__, 'source_cdb_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

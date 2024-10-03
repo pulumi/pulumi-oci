@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -205,9 +210,6 @@ def get_managed_instance_group(managed_instance_group_id: Optional[str] = None,
         managed_instances=pulumi.get(__ret__, 'managed_instances'),
         os_family=pulumi.get(__ret__, 'os_family'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_managed_instance_group)
 def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupResult]:
     """
@@ -227,4 +229,20 @@ def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi
 
     :param str managed_instance_group_id: OCID for the managed instance group
     """
-    ...
+    __args__ = dict()
+    __args__['managedInstanceGroupId'] = managed_instance_group_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup', __args__, opts=opts, typ=GetManagedInstanceGroupResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceGroupResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_count=pulumi.get(__response__, 'managed_instance_count'),
+        managed_instance_group_id=pulumi.get(__response__, 'managed_instance_group_id'),
+        managed_instance_ids=pulumi.get(__response__, 'managed_instance_ids'),
+        managed_instances=pulumi.get(__response__, 'managed_instances'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        state=pulumi.get(__response__, 'state')))

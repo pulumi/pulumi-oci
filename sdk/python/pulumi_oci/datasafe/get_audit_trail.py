@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -389,9 +394,6 @@ def get_audit_trail(audit_trail_id: Optional[str] = None,
         trail_location=pulumi.get(__ret__, 'trail_location'),
         trail_source=pulumi.get(__ret__, 'trail_source'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-
-
-@_utilities.lift_output_func(get_audit_trail)
 def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditTrailResult]:
     """
@@ -411,4 +413,34 @@ def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[str]] = None,
 
     :param str audit_trail_id: The OCID of the audit trail.
     """
-    ...
+    __args__ = dict()
+    __args__['auditTrailId'] = audit_trail_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditTrail:getAuditTrail', __args__, opts=opts, typ=GetAuditTrailResult)
+    return __ret__.apply(lambda __response__: GetAuditTrailResult(
+        audit_collection_start_time=pulumi.get(__response__, 'audit_collection_start_time'),
+        audit_profile_id=pulumi.get(__response__, 'audit_profile_id'),
+        audit_trail_id=pulumi.get(__response__, 'audit_trail_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_purge_enabled=pulumi.get(__response__, 'is_auto_purge_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        peer_target_database_key=pulumi.get(__response__, 'peer_target_database_key'),
+        purge_job_details=pulumi.get(__response__, 'purge_job_details'),
+        purge_job_status=pulumi.get(__response__, 'purge_job_status'),
+        purge_job_time=pulumi.get(__response__, 'purge_job_time'),
+        resume_trigger=pulumi.get(__response__, 'resume_trigger'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_collected=pulumi.get(__response__, 'time_last_collected'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        trail_location=pulumi.get(__response__, 'trail_location'),
+        trail_source=pulumi.get(__response__, 'trail_source'),
+        work_request_id=pulumi.get(__response__, 'work_request_id')))

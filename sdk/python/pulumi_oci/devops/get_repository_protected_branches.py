@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_repository_protected_branches(filters: Optional[Sequence[Union['GetRepos
         name=pulumi.get(__ret__, 'name'),
         protected_branch_collections=pulumi.get(__ret__, 'protected_branch_collections'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-
-
-@_utilities.lift_output_func(get_repository_protected_branches)
 def get_repository_protected_branches_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryProtectedBranchesFilterArgs', 'GetRepositoryProtectedBranchesFilterArgsDict']]]]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
                                              repository_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_repository_protected_branches_output(filters: Optional[pulumi.Input[Opti
     :param str name: A filter to return only resources that match the given branch name.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches', __args__, opts=opts, typ=GetRepositoryProtectedBranchesResult)
+    return __ret__.apply(lambda __response__: GetRepositoryProtectedBranchesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        protected_branch_collections=pulumi.get(__response__, 'protected_branch_collections'),
+        repository_id=pulumi.get(__response__, 'repository_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -302,9 +307,6 @@ def get_cluster(cluster_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_cluster)
 def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterResult]:
     """
@@ -324,4 +326,27 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
 
     :param str cluster_id: The OCID of the cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getCluster:getCluster', __args__, opts=opts, typ=GetClusterResult)
+    return __ret__.apply(lambda __response__: GetClusterResult(
+        available_kubernetes_upgrades=pulumi.get(__response__, 'available_kubernetes_upgrades'),
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        cluster_pod_network_options=pulumi.get(__response__, 'cluster_pod_network_options'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        endpoint_configs=pulumi.get(__response__, 'endpoint_configs'),
+        endpoints=pulumi.get(__response__, 'endpoints'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_policy_configs=pulumi.get(__response__, 'image_policy_configs'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        kubernetes_version=pulumi.get(__response__, 'kubernetes_version'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        name=pulumi.get(__response__, 'name'),
+        options=pulumi.get(__response__, 'options'),
+        state=pulumi.get(__response__, 'state'),
+        type=pulumi.get(__response__, 'type'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

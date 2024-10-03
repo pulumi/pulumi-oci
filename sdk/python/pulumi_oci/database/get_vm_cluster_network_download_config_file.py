@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -120,9 +125,6 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         id=pulumi.get(__ret__, 'id'),
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'))
-
-
-@_utilities.lift_output_func(get_vm_cluster_network_download_config_file)
 def get_vm_cluster_network_download_config_file_output(base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                                                        exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                        vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str vm_cluster_network_id: The VM cluster network [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['base64EncodeContent'] = base64_encode_content
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
+    __args__['vmClusterNetworkId'] = vm_cluster_network_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile', __args__, opts=opts, typ=GetVmClusterNetworkDownloadConfigFileResult)
+    return __ret__.apply(lambda __response__: GetVmClusterNetworkDownloadConfigFileResult(
+        base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),
+        content=pulumi.get(__response__, 'content'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        id=pulumi.get(__response__, 'id'),
+        vm_cluster_network_id=pulumi.get(__response__, 'vm_cluster_network_id')))

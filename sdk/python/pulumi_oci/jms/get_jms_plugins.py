@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -238,9 +243,6 @@ def get_jms_plugins(agent_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_last_seen_less_than_or_equal_to=pulumi.get(__ret__, 'time_last_seen_less_than_or_equal_to'),
         time_registered_less_than_or_equal_to=pulumi.get(__ret__, 'time_registered_less_than_or_equal_to'))
-
-
-@_utilities.lift_output_func(get_jms_plugins)
 def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
                            availability_status: Optional[pulumi.Input[Optional[str]]] = None,
                            compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -288,4 +290,30 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = Non
     :param str time_last_seen_less_than_or_equal_to: If present, only plugins with a last seen time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_registered_less_than_or_equal_to: If present, only plugins with a registration time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
-    ...
+    __args__ = dict()
+    __args__['agentId'] = agent_id
+    __args__['availabilityStatus'] = availability_status
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['fleetId'] = fleet_id
+    __args__['hostnameContains'] = hostname_contains
+    __args__['id'] = id
+    __args__['state'] = state
+    __args__['timeLastSeenLessThanOrEqualTo'] = time_last_seen_less_than_or_equal_to
+    __args__['timeRegisteredLessThanOrEqualTo'] = time_registered_less_than_or_equal_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJmsPlugins:getJmsPlugins', __args__, opts=opts, typ=GetJmsPluginsResult)
+    return __ret__.apply(lambda __response__: GetJmsPluginsResult(
+        agent_id=pulumi.get(__response__, 'agent_id'),
+        availability_status=pulumi.get(__response__, 'availability_status'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        hostname_contains=pulumi.get(__response__, 'hostname_contains'),
+        id=pulumi.get(__response__, 'id'),
+        jms_plugin_collections=pulumi.get(__response__, 'jms_plugin_collections'),
+        state=pulumi.get(__response__, 'state'),
+        time_last_seen_less_than_or_equal_to=pulumi.get(__response__, 'time_last_seen_less_than_or_equal_to'),
+        time_registered_less_than_or_equal_to=pulumi.get(__response__, 'time_registered_less_than_or_equal_to')))

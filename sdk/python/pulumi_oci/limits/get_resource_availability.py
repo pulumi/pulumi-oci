@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -205,9 +210,6 @@ def get_resource_availability(availability_domain: Optional[str] = None,
         service_name=pulumi.get(__ret__, 'service_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         used=pulumi.get(__ret__, 'used'))
-
-
-@_utilities.lift_output_func(get_resource_availability)
 def get_resource_availability_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                      compartment_id: Optional[pulumi.Input[str]] = None,
                                      limit_name: Optional[pulumi.Input[str]] = None,
@@ -243,4 +245,23 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
     :param str service_name: The service name of the target quota.
     :param str subscription_id: The OCID of the subscription assigned to tenant
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['limitName'] = limit_name
+    __args__['serviceName'] = service_name
+    __args__['subscriptionId'] = subscription_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Limits/getResourceAvailability:getResourceAvailability', __args__, opts=opts, typ=GetResourceAvailabilityResult)
+    return __ret__.apply(lambda __response__: GetResourceAvailabilityResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        available=pulumi.get(__response__, 'available'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        effective_quota_value=pulumi.get(__response__, 'effective_quota_value'),
+        fractional_availability=pulumi.get(__response__, 'fractional_availability'),
+        fractional_usage=pulumi.get(__response__, 'fractional_usage'),
+        id=pulumi.get(__response__, 'id'),
+        limit_name=pulumi.get(__response__, 'limit_name'),
+        service_name=pulumi.get(__response__, 'service_name'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        used=pulumi.get(__response__, 'used')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -241,9 +246,6 @@ def get_repository_diff(base_version: Optional[str] = None,
         old_path=pulumi.get(__ret__, 'old_path'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         target_version=pulumi.get(__ret__, 'target_version'))
-
-
-@_utilities.lift_output_func(get_repository_diff)
 def get_repository_diff_output(base_version: Optional[pulumi.Input[str]] = None,
                                file_path: Optional[pulumi.Input[str]] = None,
                                is_comparison_from_merge_base: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -275,4 +277,26 @@ def get_repository_diff_output(base_version: Optional[pulumi.Input[str]] = None,
     :param str repository_id: Unique repository identifier.
     :param str target_version: The branch where changes are coming from.
     """
-    ...
+    __args__ = dict()
+    __args__['baseVersion'] = base_version
+    __args__['filePath'] = file_path
+    __args__['isComparisonFromMergeBase'] = is_comparison_from_merge_base
+    __args__['repositoryId'] = repository_id
+    __args__['targetVersion'] = target_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryDiff:getRepositoryDiff', __args__, opts=opts, typ=GetRepositoryDiffResult)
+    return __ret__.apply(lambda __response__: GetRepositoryDiffResult(
+        are_conflicts_in_file=pulumi.get(__response__, 'are_conflicts_in_file'),
+        base_version=pulumi.get(__response__, 'base_version'),
+        changes=pulumi.get(__response__, 'changes'),
+        file_path=pulumi.get(__response__, 'file_path'),
+        id=pulumi.get(__response__, 'id'),
+        is_binary=pulumi.get(__response__, 'is_binary'),
+        is_comparison_from_merge_base=pulumi.get(__response__, 'is_comparison_from_merge_base'),
+        is_large=pulumi.get(__response__, 'is_large'),
+        new_id=pulumi.get(__response__, 'new_id'),
+        new_path=pulumi.get(__response__, 'new_path'),
+        old_id=pulumi.get(__response__, 'old_id'),
+        old_path=pulumi.get(__response__, 'old_path'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        target_version=pulumi.get(__response__, 'target_version')))

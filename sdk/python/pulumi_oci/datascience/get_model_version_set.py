@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -223,9 +228,6 @@ def get_model_version_set(model_version_set_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_model_version_set)
 def get_model_version_set_output(model_version_set_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelVersionSetResult]:
     """
@@ -245,4 +247,21 @@ def get_model_version_set_output(model_version_set_id: Optional[pulumi.Input[str
 
     :param str model_version_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set.
     """
-    ...
+    __args__ = dict()
+    __args__['modelVersionSetId'] = model_version_set_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelVersionSet:getModelVersionSet', __args__, opts=opts, typ=GetModelVersionSetResult)
+    return __ret__.apply(lambda __response__: GetModelVersionSetResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        model_version_set_id=pulumi.get(__response__, 'model_version_set_id'),
+        name=pulumi.get(__response__, 'name'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -185,9 +190,6 @@ def get_vm_cluster_patch(patch_id: Optional[str] = None,
         time_released=pulumi.get(__ret__, 'time_released'),
         version=pulumi.get(__ret__, 'version'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-
-
-@_utilities.lift_output_func(get_vm_cluster_patch)
 def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[str]] = None,
                                 vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchResult]:
@@ -210,4 +212,19 @@ def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[str]] = None,
     :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
     :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['patchId'] = patch_id
+    __args__['vmClusterId'] = vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterPatch:getVmClusterPatch', __args__, opts=opts, typ=GetVmClusterPatchResult)
+    return __ret__.apply(lambda __response__: GetVmClusterPatchResult(
+        available_actions=pulumi.get(__response__, 'available_actions'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        last_action=pulumi.get(__response__, 'last_action'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        patch_id=pulumi.get(__response__, 'patch_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_released=pulumi.get(__response__, 'time_released'),
+        version=pulumi.get(__response__, 'version'),
+        vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id')))

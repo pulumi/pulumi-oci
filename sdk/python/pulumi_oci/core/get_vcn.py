@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -319,9 +324,6 @@ def get_vcn(vcn_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_domain_name=pulumi.get(__ret__, 'vcn_domain_name'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_vcn)
 def get_vcn_output(vcn_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVcnResult]:
     """
@@ -341,4 +343,29 @@ def get_vcn_output(vcn_id: Optional[pulumi.Input[str]] = None,
 
     :param str vcn_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
-    ...
+    __args__ = dict()
+    __args__['vcnId'] = vcn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVcn:getVcn', __args__, opts=opts, typ=GetVcnResult)
+    return __ret__.apply(lambda __response__: GetVcnResult(
+        byoipv6cidr_blocks=pulumi.get(__response__, 'byoipv6cidr_blocks'),
+        byoipv6cidr_details=pulumi.get(__response__, 'byoipv6cidr_details'),
+        cidr_block=pulumi.get(__response__, 'cidr_block'),
+        cidr_blocks=pulumi.get(__response__, 'cidr_blocks'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        default_dhcp_options_id=pulumi.get(__response__, 'default_dhcp_options_id'),
+        default_route_table_id=pulumi.get(__response__, 'default_route_table_id'),
+        default_security_list_id=pulumi.get(__response__, 'default_security_list_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns_label=pulumi.get(__response__, 'dns_label'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ipv6cidr_blocks=pulumi.get(__response__, 'ipv6cidr_blocks'),
+        ipv6private_cidr_blocks=pulumi.get(__response__, 'ipv6private_cidr_blocks'),
+        is_ipv6enabled=pulumi.get(__response__, 'is_ipv6enabled'),
+        is_oracle_gua_allocation_enabled=pulumi.get(__response__, 'is_oracle_gua_allocation_enabled'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vcn_domain_name=pulumi.get(__response__, 'vcn_domain_name'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -224,9 +229,6 @@ def get_autonomous_container_database_resource_usage(autonomous_container_databa
         reclaimable_cpus=pulumi.get(__ret__, 'reclaimable_cpus'),
         reserved_cpus=pulumi.get(__ret__, 'reserved_cpus'),
         used_cpus=pulumi.get(__ret__, 'used_cpus'))
-
-
-@_utilities.lift_output_func(get_autonomous_container_database_resource_usage)
 def get_autonomous_container_database_resource_usage_output(autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseResourceUsageResult]:
     """
@@ -246,4 +248,21 @@ def get_autonomous_container_database_resource_usage_output(autonomous_container
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage', __args__, opts=opts, typ=GetAutonomousContainerDatabaseResourceUsageResult)
+    return __ret__.apply(lambda __response__: GetAutonomousContainerDatabaseResourceUsageResult(
+        autonomous_container_database_id=pulumi.get(__response__, 'autonomous_container_database_id'),
+        autonomous_container_database_vm_usages=pulumi.get(__response__, 'autonomous_container_database_vm_usages'),
+        available_cpus=pulumi.get(__response__, 'available_cpus'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        largest_provisionable_autonomous_database_in_cpus=pulumi.get(__response__, 'largest_provisionable_autonomous_database_in_cpus'),
+        provisionable_cpuses=pulumi.get(__response__, 'provisionable_cpuses'),
+        provisioned_cpus=pulumi.get(__response__, 'provisioned_cpus'),
+        reclaimable_cpus=pulumi.get(__response__, 'reclaimable_cpus'),
+        reserved_cpus=pulumi.get(__response__, 'reserved_cpus'),
+        used_cpus=pulumi.get(__response__, 'used_cpus')))

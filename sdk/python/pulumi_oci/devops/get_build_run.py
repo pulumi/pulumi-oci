@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -289,9 +294,6 @@ def get_build_run(build_run_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_build_run)
 def get_build_run_output(build_run_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildRunResult]:
     """
@@ -311,4 +313,26 @@ def get_build_run_output(build_run_id: Optional[pulumi.Input[str]] = None,
 
     :param str build_run_id: Unique build run identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['buildRunId'] = build_run_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getBuildRun:getBuildRun', __args__, opts=opts, typ=GetBuildRunResult)
+    return __ret__.apply(lambda __response__: GetBuildRunResult(
+        build_outputs=pulumi.get(__response__, 'build_outputs'),
+        build_pipeline_id=pulumi.get(__response__, 'build_pipeline_id'),
+        build_run_arguments=pulumi.get(__response__, 'build_run_arguments'),
+        build_run_id=pulumi.get(__response__, 'build_run_id'),
+        build_run_progresses=pulumi.get(__response__, 'build_run_progresses'),
+        build_run_sources=pulumi.get(__response__, 'build_run_sources'),
+        commit_infos=pulumi.get(__response__, 'commit_infos'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

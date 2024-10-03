@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -104,9 +109,6 @@ def get_cpe_device_shapes(filters: Optional[Sequence[Union['GetCpeDeviceShapesFi
         cpe_device_shapes=pulumi.get(__ret__, 'cpe_device_shapes'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_cpe_device_shapes)
 def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCpeDeviceShapesFilterArgs', 'GetCpeDeviceShapesFilterArgsDict']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpeDeviceShapesResult]:
     """
@@ -135,4 +137,11 @@ def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequenc
     test_cpe_device_shapes = oci.Core.get_cpe_device_shapes()
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getCpeDeviceShapes:getCpeDeviceShapes', __args__, opts=opts, typ=GetCpeDeviceShapesResult)
+    return __ret__.apply(lambda __response__: GetCpeDeviceShapesResult(
+        cpe_device_shapes=pulumi.get(__response__, 'cpe_device_shapes'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

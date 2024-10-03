@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -180,9 +185,6 @@ def get_custom_protection_rules(compartment_id: Optional[str] = None,
         states=pulumi.get(__ret__, 'states'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-
-
-@_utilities.lift_output_func(get_custom_protection_rules)
 def get_custom_protection_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCustomProtectionRulesFilterArgs', 'GetCustomProtectionRulesFilterArgsDict']]]]] = None,
@@ -218,4 +220,23 @@ def get_custom_protection_rules_output(compartment_id: Optional[pulumi.Input[str
     :param str time_created_greater_than_or_equal_to: A filter that matches Custom Protection rules created on or after the specified date-time.
     :param str time_created_less_than: A filter that matches custom protection rules created before the specified date-time.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayNames'] = display_names
+    __args__['filters'] = filters
+    __args__['ids'] = ids
+    __args__['states'] = states
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waas/getCustomProtectionRules:getCustomProtectionRules', __args__, opts=opts, typ=GetCustomProtectionRulesResult)
+    return __ret__.apply(lambda __response__: GetCustomProtectionRulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        custom_protection_rules=pulumi.get(__response__, 'custom_protection_rules'),
+        display_names=pulumi.get(__response__, 'display_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ids=pulumi.get(__response__, 'ids'),
+        states=pulumi.get(__response__, 'states'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -288,9 +293,6 @@ def get_jms_plugin(jms_plugin_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_last_seen=pulumi.get(__ret__, 'time_last_seen'),
         time_registered=pulumi.get(__ret__, 'time_registered'))
-
-
-@_utilities.lift_output_func(get_jms_plugin)
 def get_jms_plugin_output(jms_plugin_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJmsPluginResult]:
     """
@@ -310,4 +312,26 @@ def get_jms_plugin_output(jms_plugin_id: Optional[pulumi.Input[str]] = None,
 
     :param str jms_plugin_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
     """
-    ...
+    __args__ = dict()
+    __args__['jmsPluginId'] = jms_plugin_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJmsPlugin:getJmsPlugin', __args__, opts=opts, typ=GetJmsPluginResult)
+    return __ret__.apply(lambda __response__: GetJmsPluginResult(
+        agent_id=pulumi.get(__response__, 'agent_id'),
+        agent_type=pulumi.get(__response__, 'agent_type'),
+        availability_status=pulumi.get(__response__, 'availability_status'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        jms_plugin_id=pulumi.get(__response__, 'jms_plugin_id'),
+        os_architecture=pulumi.get(__response__, 'os_architecture'),
+        os_distribution=pulumi.get(__response__, 'os_distribution'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        plugin_version=pulumi.get(__response__, 'plugin_version'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_last_seen=pulumi.get(__response__, 'time_last_seen'),
+        time_registered=pulumi.get(__response__, 'time_registered')))

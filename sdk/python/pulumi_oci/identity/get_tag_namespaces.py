@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_tag_namespaces(compartment_id: Optional[str] = None,
         include_subcompartments=pulumi.get(__ret__, 'include_subcompartments'),
         state=pulumi.get(__ret__, 'state'),
         tag_namespaces=pulumi.get(__ret__, 'tag_namespaces'))
-
-
-@_utilities.lift_output_func(get_tag_namespaces)
 def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagNamespacesFilterArgs', 'GetTagNamespacesFilterArgsDict']]]]] = None,
                               include_subcompartments: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -170,4 +172,17 @@ def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None
     :param bool include_subcompartments: An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['includeSubcompartments'] = include_subcompartments
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTagNamespaces:getTagNamespaces', __args__, opts=opts, typ=GetTagNamespacesResult)
+    return __ret__.apply(lambda __response__: GetTagNamespacesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        include_subcompartments=pulumi.get(__response__, 'include_subcompartments'),
+        state=pulumi.get(__response__, 'state'),
+        tag_namespaces=pulumi.get(__response__, 'tag_namespaces')))

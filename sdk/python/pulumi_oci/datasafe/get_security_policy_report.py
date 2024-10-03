@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -223,9 +228,6 @@ def get_security_policy_report(security_policy_report_id: Optional[str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_security_policy_report)
 def get_security_policy_report_output(security_policy_report_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportResult]:
     """
@@ -245,4 +247,21 @@ def get_security_policy_report_output(security_policy_report_id: Optional[pulumi
 
     :param str security_policy_report_id: The OCID of the security policy report resource.
     """
-    ...
+    __args__ = dict()
+    __args__['securityPolicyReportId'] = security_policy_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport', __args__, opts=opts, typ=GetSecurityPolicyReportResult)
+    return __ret__.apply(lambda __response__: GetSecurityPolicyReportResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        security_policy_report_id=pulumi.get(__response__, 'security_policy_report_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

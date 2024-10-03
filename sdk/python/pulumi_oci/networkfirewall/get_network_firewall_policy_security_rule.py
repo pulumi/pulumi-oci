@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -166,9 +171,6 @@ def get_network_firewall_policy_security_rule(name: Optional[str] = None,
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         positions=pulumi.get(__ret__, 'positions'),
         priority_order=pulumi.get(__ret__, 'priority_order'))
-
-
-@_utilities.lift_output_func(get_network_firewall_policy_security_rule)
 def get_network_firewall_policy_security_rule_output(name: Optional[pulumi.Input[str]] = None,
                                                      network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicySecurityRuleResult]:
@@ -181,4 +183,18 @@ def get_network_firewall_policy_security_rule_output(name: Optional[pulumi.Input
     :param str name: Name for the Security rule, must be unique within the policy.
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule', __args__, opts=opts, typ=GetNetworkFirewallPolicySecurityRuleResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallPolicySecurityRuleResult(
+        action=pulumi.get(__response__, 'action'),
+        conditions=pulumi.get(__response__, 'conditions'),
+        id=pulumi.get(__response__, 'id'),
+        inspection=pulumi.get(__response__, 'inspection'),
+        name=pulumi.get(__response__, 'name'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
+        parent_resource_id=pulumi.get(__response__, 'parent_resource_id'),
+        positions=pulumi.get(__response__, 'positions'),
+        priority_order=pulumi.get(__response__, 'priority_order')))

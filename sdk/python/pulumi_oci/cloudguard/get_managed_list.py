@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -275,9 +280,6 @@ def get_managed_list(managed_list_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_managed_list)
 def get_managed_list_output(managed_list_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedListResult]:
     """
@@ -297,4 +299,25 @@ def get_managed_list_output(managed_list_id: Optional[pulumi.Input[str]] = None,
 
     :param str managed_list_id: The managed list OCID to be passed in the request.
     """
-    ...
+    __args__ = dict()
+    __args__['managedListId'] = managed_list_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getManagedList:getManagedList', __args__, opts=opts, typ=GetManagedListResult)
+    return __ret__.apply(lambda __response__: GetManagedListResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        feed_provider=pulumi.get(__response__, 'feed_provider'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_editable=pulumi.get(__response__, 'is_editable'),
+        lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),
+        list_items=pulumi.get(__response__, 'list_items'),
+        list_type=pulumi.get(__response__, 'list_type'),
+        managed_list_id=pulumi.get(__response__, 'managed_list_id'),
+        source_managed_list_id=pulumi.get(__response__, 'source_managed_list_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -175,9 +180,6 @@ def get_delegation_controls(compartment_id: Optional[str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_delegation_controls)
 def get_delegation_controls_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDelegationControlsFilterArgs', 'GetDelegationControlsFilterArgsDict']]]]] = None,
@@ -210,4 +212,21 @@ def get_delegation_controls_output(compartment_id: Optional[pulumi.Input[str]] =
     :param str resource_type: A filter to return only resources that match the given resource type.
     :param str state: A filter to return only Delegation Control resources whose lifecycleState matches the given Delegation Control lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['resourceId'] = resource_id
+    __args__['resourceType'] = resource_type
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegationControls:getDelegationControls', __args__, opts=opts, typ=GetDelegationControlsResult)
+    return __ret__.apply(lambda __response__: GetDelegationControlsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        delegation_control_summary_collections=pulumi.get(__response__, 'delegation_control_summary_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        state=pulumi.get(__response__, 'state')))

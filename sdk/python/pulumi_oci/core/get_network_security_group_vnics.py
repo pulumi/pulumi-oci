@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_network_security_group_vnics(filters: Optional[Sequence[Union['GetNetwor
         id=pulumi.get(__ret__, 'id'),
         network_security_group_id=pulumi.get(__ret__, 'network_security_group_id'),
         network_security_group_vnics=pulumi.get(__ret__, 'network_security_group_vnics'))
-
-
-@_utilities.lift_output_func(get_network_security_group_vnics)
 def get_network_security_group_vnics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupVnicsFilterArgs', 'GetNetworkSecurityGroupVnicsFilterArgsDict']]]]] = None,
                                             network_security_group_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityGroupVnicsResult]:
@@ -130,4 +132,13 @@ def get_network_security_group_vnics_output(filters: Optional[pulumi.Input[Optio
 
     :param str network_security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['networkSecurityGroupId'] = network_security_group_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics', __args__, opts=opts, typ=GetNetworkSecurityGroupVnicsResult)
+    return __ret__.apply(lambda __response__: GetNetworkSecurityGroupVnicsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        network_security_group_id=pulumi.get(__response__, 'network_security_group_id'),
+        network_security_group_vnics=pulumi.get(__response__, 'network_security_group_vnics')))

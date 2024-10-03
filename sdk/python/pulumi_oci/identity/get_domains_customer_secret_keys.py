@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -261,9 +266,6 @@ def get_domains_customer_secret_keys(attribute_sets: Optional[Sequence[str]] = N
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-
-
-@_utilities.lift_output_func(get_domains_customer_secret_keys)
 def get_domains_customer_secret_keys_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                             attributes: Optional[pulumi.Input[Optional[str]]] = None,
                                             authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -307,4 +309,34 @@ def get_domains_customer_secret_keys_output(attribute_sets: Optional[pulumi.Inpu
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     :param int start_index: OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['compartmentId'] = compartment_id
+    __args__['customerSecretKeyCount'] = customer_secret_key_count
+    __args__['customerSecretKeyFilter'] = customer_secret_key_filter
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    __args__['sortBy'] = sort_by
+    __args__['sortOrder'] = sort_order
+    __args__['startIndex'] = start_index
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys', __args__, opts=opts, typ=GetDomainsCustomerSecretKeysResult)
+    return __ret__.apply(lambda __response__: GetDomainsCustomerSecretKeysResult(
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        customer_secret_key_count=pulumi.get(__response__, 'customer_secret_key_count'),
+        customer_secret_key_filter=pulumi.get(__response__, 'customer_secret_key_filter'),
+        customer_secret_keys=pulumi.get(__response__, 'customer_secret_keys'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        items_per_page=pulumi.get(__response__, 'items_per_page'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        sort_by=pulumi.get(__response__, 'sort_by'),
+        sort_order=pulumi.get(__response__, 'sort_order'),
+        start_index=pulumi.get(__response__, 'start_index'),
+        total_results=pulumi.get(__response__, 'total_results')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -151,9 +156,6 @@ def get_ipv6s(filters: Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFi
         ipv6s=pulumi.get(__ret__, 'ipv6s'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-
-
-@_utilities.lift_output_func(get_ipv6s)
 def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFilterArgsDict']]]]] = None,
                      ip_address: Optional[pulumi.Input[Optional[str]]] = None,
                      subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -187,4 +189,17 @@ def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['Get
     :param str subnet_id: The OCID of the subnet.
     :param str vnic_id: The OCID of the VNIC.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['ipAddress'] = ip_address
+    __args__['subnetId'] = subnet_id
+    __args__['vnicId'] = vnic_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpv6s:getIpv6s', __args__, opts=opts, typ=GetIpv6sResult)
+    return __ret__.apply(lambda __response__: GetIpv6sResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        ipv6s=pulumi.get(__response__, 'ipv6s'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        vnic_id=pulumi.get(__response__, 'vnic_id')))

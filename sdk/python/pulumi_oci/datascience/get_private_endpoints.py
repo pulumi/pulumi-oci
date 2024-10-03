@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -178,9 +183,6 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_private_endpoints)
 def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  created_by: Optional[pulumi.Input[Optional[str]]] = None,
                                  data_science_resource_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -213,4 +215,21 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
     :param str display_name: <b>Filter</b> results by its user-friendly name.
     :param str state: The lifecycle state of the private endpoint.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['createdBy'] = created_by
+    __args__['dataScienceResourceType'] = data_science_resource_type
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getPrivateEndpoints:getPrivateEndpoints', __args__, opts=opts, typ=GetPrivateEndpointsResult)
+    return __ret__.apply(lambda __response__: GetPrivateEndpointsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        data_science_private_endpoints=pulumi.get(__response__, 'data_science_private_endpoints'),
+        data_science_resource_type=pulumi.get(__response__, 'data_science_resource_type'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

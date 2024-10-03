@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -136,9 +141,6 @@ def get_repository_file_line(file_path: Optional[str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         revision=pulumi.get(__ret__, 'revision'),
         start_line_number=pulumi.get(__ret__, 'start_line_number'))
-
-
-@_utilities.lift_output_func(get_repository_file_line)
 def get_repository_file_line_output(file_path: Optional[pulumi.Input[str]] = None,
                                     repository_id: Optional[pulumi.Input[str]] = None,
                                     revision: Optional[pulumi.Input[str]] = None,
@@ -167,4 +169,17 @@ def get_repository_file_line_output(file_path: Optional[pulumi.Input[str]] = Non
     :param str revision: Retrieve file lines from specific revision.
     :param int start_line_number: Line number from where to start returning file lines.
     """
-    ...
+    __args__ = dict()
+    __args__['filePath'] = file_path
+    __args__['repositoryId'] = repository_id
+    __args__['revision'] = revision
+    __args__['startLineNumber'] = start_line_number
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryFileLine:getRepositoryFileLine', __args__, opts=opts, typ=GetRepositoryFileLineResult)
+    return __ret__.apply(lambda __response__: GetRepositoryFileLineResult(
+        file_path=pulumi.get(__response__, 'file_path'),
+        id=pulumi.get(__response__, 'id'),
+        lines=pulumi.get(__response__, 'lines'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        revision=pulumi.get(__response__, 'revision'),
+        start_line_number=pulumi.get(__response__, 'start_line_number')))

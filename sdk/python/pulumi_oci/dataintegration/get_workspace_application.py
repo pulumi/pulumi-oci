@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -410,9 +415,6 @@ def get_workspace_application(application_key: Optional[str] = None,
         time_patched=pulumi.get(__ret__, 'time_patched'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_application)
 def get_workspace_application_output(application_key: Optional[pulumi.Input[str]] = None,
                                      workspace_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceApplicationResult]:
@@ -435,4 +437,36 @@ def get_workspace_application_output(application_key: Optional[pulumi.Input[str]
     :param str application_key: The application key.
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationKey'] = application_key
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication', __args__, opts=opts, typ=GetWorkspaceApplicationResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceApplicationResult(
+        application_key=pulumi.get(__response__, 'application_key'),
+        application_version=pulumi.get(__response__, 'application_version'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        dependent_object_metadatas=pulumi.get(__response__, 'dependent_object_metadatas'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        identifier=pulumi.get(__response__, 'identifier'),
+        key=pulumi.get(__response__, 'key'),
+        key_map=pulumi.get(__response__, 'key_map'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        model_type=pulumi.get(__response__, 'model_type'),
+        model_version=pulumi.get(__response__, 'model_version'),
+        name=pulumi.get(__response__, 'name'),
+        object_status=pulumi.get(__response__, 'object_status'),
+        object_version=pulumi.get(__response__, 'object_version'),
+        parent_reves=pulumi.get(__response__, 'parent_reves'),
+        published_object_metadatas=pulumi.get(__response__, 'published_object_metadatas'),
+        registry_metadatas=pulumi.get(__response__, 'registry_metadatas'),
+        source_application_infos=pulumi.get(__response__, 'source_application_infos'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_patched=pulumi.get(__response__, 'time_patched'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

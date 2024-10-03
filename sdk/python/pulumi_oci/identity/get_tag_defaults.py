@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -148,9 +153,6 @@ def get_tag_defaults(compartment_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         tag_defaults=pulumi.get(__ret__, 'tag_defaults'),
         tag_definition_id=pulumi.get(__ret__, 'tag_definition_id'))
-
-
-@_utilities.lift_output_func(get_tag_defaults)
 def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagDefaultsFilterArgs', 'GetTagDefaultsFilterArgsDict']]]]] = None,
                             id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -180,4 +182,18 @@ def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[str]]
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
     :param str tag_definition_id: The OCID of the tag definition.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    __args__['tagDefinitionId'] = tag_definition_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTagDefaults:getTagDefaults', __args__, opts=opts, typ=GetTagDefaultsResult)
+    return __ret__.apply(lambda __response__: GetTagDefaultsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        tag_defaults=pulumi.get(__response__, 'tag_defaults'),
+        tag_definition_id=pulumi.get(__response__, 'tag_definition_id')))

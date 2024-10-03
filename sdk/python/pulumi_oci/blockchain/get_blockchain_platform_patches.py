@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[str] = None
         blockchain_platform_patch_collections=pulumi.get(__ret__, 'blockchain_platform_patch_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_blockchain_platform_patches)
 def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockchainPlatformPatchesResult]:
@@ -130,4 +132,13 @@ def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulu
 
     :param str blockchain_platform_id: Unique service identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['blockchainPlatformId'] = blockchain_platform_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches', __args__, opts=opts, typ=GetBlockchainPlatformPatchesResult)
+    return __ret__.apply(lambda __response__: GetBlockchainPlatformPatchesResult(
+        blockchain_platform_id=pulumi.get(__response__, 'blockchain_platform_id'),
+        blockchain_platform_patch_collections=pulumi.get(__response__, 'blockchain_platform_patch_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

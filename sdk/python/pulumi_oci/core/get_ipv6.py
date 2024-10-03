@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -210,9 +215,6 @@ def get_ipv6(ipv6id: Optional[str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-
-
-@_utilities.lift_output_func(get_ipv6)
 def get_ipv6_output(ipv6id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpv6Result]:
     """
@@ -235,4 +237,20 @@ def get_ipv6_output(ipv6id: Optional[pulumi.Input[str]] = None,
 
     :param str ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
     """
-    ...
+    __args__ = dict()
+    __args__['ipv6id'] = ipv6id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpv6:getIpv6', __args__, opts=opts, typ=GetIpv6Result)
+    return __ret__.apply(lambda __response__: GetIpv6Result(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        ipv6id=pulumi.get(__response__, 'ipv6id'),
+        ipv6subnet_cidr=pulumi.get(__response__, 'ipv6subnet_cidr'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vnic_id=pulumi.get(__response__, 'vnic_id')))

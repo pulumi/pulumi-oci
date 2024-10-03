@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -237,9 +242,6 @@ def get_domains_approval_workflows(approval_workflow_count: Optional[int] = None
         schemas=pulumi.get(__ret__, 'schemas'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-
-
-@_utilities.lift_output_func(get_domains_approval_workflows)
 def get_domains_approval_workflows_output(approval_workflow_count: Optional[pulumi.Input[Optional[int]]] = None,
                                           approval_workflow_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                           attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -281,4 +283,30 @@ def get_domains_approval_workflows_output(approval_workflow_count: Optional[pulu
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     :param int start_index: OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
     """
-    ...
+    __args__ = dict()
+    __args__['approvalWorkflowCount'] = approval_workflow_count
+    __args__['approvalWorkflowFilter'] = approval_workflow_filter
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['compartmentId'] = compartment_id
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    __args__['startIndex'] = start_index
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows', __args__, opts=opts, typ=GetDomainsApprovalWorkflowsResult)
+    return __ret__.apply(lambda __response__: GetDomainsApprovalWorkflowsResult(
+        approval_workflow_count=pulumi.get(__response__, 'approval_workflow_count'),
+        approval_workflow_filter=pulumi.get(__response__, 'approval_workflow_filter'),
+        approval_workflows=pulumi.get(__response__, 'approval_workflows'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        items_per_page=pulumi.get(__response__, 'items_per_page'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        start_index=pulumi.get(__response__, 'start_index'),
+        total_results=pulumi.get(__response__, 'total_results')))

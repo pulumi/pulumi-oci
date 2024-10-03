@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -157,9 +162,6 @@ def get_opsi_configuration_configuration_item(compartment_id: Optional[str] = No
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         opsi_config_type=pulumi.get(__ret__, 'opsi_config_type'))
-
-
-@_utilities.lift_output_func(get_opsi_configuration_configuration_item)
 def get_opsi_configuration_configuration_item_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                      config_item_fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                      config_items_applicable_contexts: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -192,4 +194,19 @@ def get_opsi_configuration_configuration_item_output(compartment_id: Optional[pu
     :param str name: A filter to return only configuration items that match the entire name.
     :param str opsi_config_type: Filter to return configuration items based on configuration type of OPSI configuration.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['configItemFields'] = config_item_fields
+    __args__['configItemsApplicableContexts'] = config_items_applicable_contexts
+    __args__['name'] = name
+    __args__['opsiConfigType'] = opsi_config_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem', __args__, opts=opts, typ=GetOpsiConfigurationConfigurationItemResult)
+    return __ret__.apply(lambda __response__: GetOpsiConfigurationConfigurationItemResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config_item_fields=pulumi.get(__response__, 'config_item_fields'),
+        config_items=pulumi.get(__response__, 'config_items'),
+        config_items_applicable_contexts=pulumi.get(__response__, 'config_items_applicable_contexts'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        opsi_config_type=pulumi.get(__response__, 'opsi_config_type')))

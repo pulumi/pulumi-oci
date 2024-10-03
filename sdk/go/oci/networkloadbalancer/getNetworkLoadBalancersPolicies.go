@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkLoadBalancer.GetNetworkLoadBalancersPolicies(ctx, nil, nil)
+//			_, err := NetworkLoadBalancer.GetNetworkLoadBalancersPolicies(ctx, &networkloadbalancer.GetNetworkLoadBalancersPoliciesArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

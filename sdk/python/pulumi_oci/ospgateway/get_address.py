@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -446,9 +451,6 @@ def get_address(address_id: Optional[str] = None,
         state_inscription=pulumi.get(__ret__, 'state_inscription'),
         street_name=pulumi.get(__ret__, 'street_name'),
         street_number=pulumi.get(__ret__, 'street_number'))
-
-
-@_utilities.lift_output_func(get_address)
 def get_address_output(address_id: Optional[pulumi.Input[str]] = None,
                        compartment_id: Optional[pulumi.Input[str]] = None,
                        osp_home_region: Optional[pulumi.Input[str]] = None,
@@ -474,4 +476,40 @@ def get_address_output(address_id: Optional[pulumi.Input[str]] = None,
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str osp_home_region: The home region's public name of the logged in user.
     """
-    ...
+    __args__ = dict()
+    __args__['addressId'] = address_id
+    __args__['compartmentId'] = compartment_id
+    __args__['ospHomeRegion'] = osp_home_region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getAddress:getAddress', __args__, opts=opts, typ=GetAddressResult)
+    return __ret__.apply(lambda __response__: GetAddressResult(
+        address_id=pulumi.get(__response__, 'address_id'),
+        address_key=pulumi.get(__response__, 'address_key'),
+        city=pulumi.get(__response__, 'city'),
+        company_name=pulumi.get(__response__, 'company_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        contributor_class=pulumi.get(__response__, 'contributor_class'),
+        country=pulumi.get(__response__, 'country'),
+        county=pulumi.get(__response__, 'county'),
+        department_name=pulumi.get(__response__, 'department_name'),
+        email_address=pulumi.get(__response__, 'email_address'),
+        first_name=pulumi.get(__response__, 'first_name'),
+        id=pulumi.get(__response__, 'id'),
+        internal_number=pulumi.get(__response__, 'internal_number'),
+        job_title=pulumi.get(__response__, 'job_title'),
+        last_name=pulumi.get(__response__, 'last_name'),
+        line1=pulumi.get(__response__, 'line1'),
+        line2=pulumi.get(__response__, 'line2'),
+        line3=pulumi.get(__response__, 'line3'),
+        line4=pulumi.get(__response__, 'line4'),
+        middle_name=pulumi.get(__response__, 'middle_name'),
+        municipal_inscription=pulumi.get(__response__, 'municipal_inscription'),
+        osp_home_region=pulumi.get(__response__, 'osp_home_region'),
+        phone_country_code=pulumi.get(__response__, 'phone_country_code'),
+        phone_number=pulumi.get(__response__, 'phone_number'),
+        postal_code=pulumi.get(__response__, 'postal_code'),
+        province=pulumi.get(__response__, 'province'),
+        state=pulumi.get(__response__, 'state'),
+        state_inscription=pulumi.get(__response__, 'state_inscription'),
+        street_name=pulumi.get(__response__, 'street_name'),
+        street_number=pulumi.get(__response__, 'street_number')))

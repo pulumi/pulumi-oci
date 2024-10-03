@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_addon_options(addon_name: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         kubernetes_version=pulumi.get(__ret__, 'kubernetes_version'))
-
-
-@_utilities.lift_output_func(get_addon_options)
 def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict']]]]] = None,
                              kubernetes_version: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] =
     :param str addon_name: The name of the addon.
     :param str kubernetes_version: The kubernetes version to fetch the addons.
     """
-    ...
+    __args__ = dict()
+    __args__['addonName'] = addon_name
+    __args__['filters'] = filters
+    __args__['kubernetesVersion'] = kubernetes_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getAddonOptions:getAddonOptions', __args__, opts=opts, typ=GetAddonOptionsResult)
+    return __ret__.apply(lambda __response__: GetAddonOptionsResult(
+        addon_name=pulumi.get(__response__, 'addon_name'),
+        addon_options=pulumi.get(__response__, 'addon_options'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        kubernetes_version=pulumi.get(__response__, 'kubernetes_version')))

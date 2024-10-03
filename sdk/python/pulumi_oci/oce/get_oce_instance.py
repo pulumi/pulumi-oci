@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -415,9 +420,6 @@ def get_oce_instance(oce_instance_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgrade_schedule=pulumi.get(__ret__, 'upgrade_schedule'),
         waf_primary_domain=pulumi.get(__ret__, 'waf_primary_domain'))
-
-
-@_utilities.lift_output_func(get_oce_instance)
 def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOceInstanceResult]:
     """
@@ -437,4 +439,36 @@ def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[str]] = None,
 
     :param str oce_instance_id: unique OceInstance identifier
     """
-    ...
+    __args__ = dict()
+    __args__['oceInstanceId'] = oce_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Oce/getOceInstance:getOceInstance', __args__, opts=opts, typ=GetOceInstanceResult)
+    return __ret__.apply(lambda __response__: GetOceInstanceResult(
+        add_on_features=pulumi.get(__response__, 'add_on_features'),
+        admin_email=pulumi.get(__response__, 'admin_email'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        dr_region=pulumi.get(__response__, 'dr_region'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        guid=pulumi.get(__response__, 'guid'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_access_token=pulumi.get(__response__, 'idcs_access_token'),
+        idcs_tenancy=pulumi.get(__response__, 'idcs_tenancy'),
+        instance_access_type=pulumi.get(__response__, 'instance_access_type'),
+        instance_license_type=pulumi.get(__response__, 'instance_license_type'),
+        instance_usage_type=pulumi.get(__response__, 'instance_usage_type'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        object_storage_namespace=pulumi.get(__response__, 'object_storage_namespace'),
+        oce_instance_id=pulumi.get(__response__, 'oce_instance_id'),
+        service=pulumi.get(__response__, 'service'),
+        state=pulumi.get(__response__, 'state'),
+        state_message=pulumi.get(__response__, 'state_message'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        tenancy_name=pulumi.get(__response__, 'tenancy_name'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        upgrade_schedule=pulumi.get(__response__, 'upgrade_schedule'),
+        waf_primary_domain=pulumi.get(__response__, 'waf_primary_domain')))

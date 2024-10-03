@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -270,9 +275,6 @@ def get_model(id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         training_datasets=pulumi.get(__ret__, 'training_datasets'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_model)
 def get_model_output(id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelResult]:
     """
@@ -283,4 +285,25 @@ def get_model_output(id: Optional[pulumi.Input[str]] = None,
 
     :param str id: Unique identifier model OCID of a model that is immutable on creation
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:AiLanguage/getModel:getModel', __args__, opts=opts, typ=GetModelResult)
+    return __ret__.apply(lambda __response__: GetModelResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        evaluation_results=pulumi.get(__response__, 'evaluation_results'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        model_details=pulumi.get(__response__, 'model_details'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        test_strategies=pulumi.get(__response__, 'test_strategies'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        training_datasets=pulumi.get(__response__, 'training_datasets'),
+        version=pulumi.get(__response__, 'version')))

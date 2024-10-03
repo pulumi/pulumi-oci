@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -189,9 +194,6 @@ def get_container_repositories(compartment_id: Optional[str] = None,
         is_public=pulumi.get(__ret__, 'is_public'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_container_repositories)
 def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -227,4 +229,23 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]
     :param str repository_id: A filter to return container images only for the specified container repository OCID.
     :param str state: A filter to return only resources that match the given lifecycle state name exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isPublic'] = is_public
+    __args__['repositoryId'] = repository_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerRepositories:getContainerRepositories', __args__, opts=opts, typ=GetContainerRepositoriesResult)
+    return __ret__.apply(lambda __response__: GetContainerRepositoriesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        container_repository_collections=pulumi.get(__response__, 'container_repository_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_public=pulumi.get(__response__, 'is_public'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        state=pulumi.get(__response__, 'state')))

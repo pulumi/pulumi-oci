@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -120,9 +125,6 @@ def get_db_system_connection_detail(db_system_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         instance_endpoints=pulumi.get(__ret__, 'instance_endpoints'),
         primary_db_endpoints=pulumi.get(__ret__, 'primary_db_endpoints'))
-
-
-@_utilities.lift_output_func(get_db_system_connection_detail)
 def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemConnectionDetailResult]:
     """
@@ -142,4 +144,13 @@ def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[s
 
     :param str db_system_id: A unique identifier for the database system.
     """
-    ...
+    __args__ = dict()
+    __args__['dbSystemId'] = db_system_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail', __args__, opts=opts, typ=GetDbSystemConnectionDetailResult)
+    return __ret__.apply(lambda __response__: GetDbSystemConnectionDetailResult(
+        ca_certificate=pulumi.get(__response__, 'ca_certificate'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        id=pulumi.get(__response__, 'id'),
+        instance_endpoints=pulumi.get(__response__, 'instance_endpoints'),
+        primary_db_endpoints=pulumi.get(__response__, 'primary_db_endpoints')))

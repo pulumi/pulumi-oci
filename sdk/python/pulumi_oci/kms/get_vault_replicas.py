@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -112,9 +117,6 @@ def get_vault_replicas(filters: Optional[Sequence[Union['GetVaultReplicasFilterA
         id=pulumi.get(__ret__, 'id'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vault_replicas=pulumi.get(__ret__, 'vault_replicas'))
-
-
-@_utilities.lift_output_func(get_vault_replicas)
 def get_vault_replicas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVaultReplicasFilterArgs', 'GetVaultReplicasFilterArgsDict']]]]] = None,
                               vault_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultReplicasResult]:
@@ -140,4 +142,13 @@ def get_vault_replicas_output(filters: Optional[pulumi.Input[Optional[Sequence[U
 
     :param str vault_id: The OCID of the vault.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['vaultId'] = vault_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getVaultReplicas:getVaultReplicas', __args__, opts=opts, typ=GetVaultReplicasResult)
+    return __ret__.apply(lambda __response__: GetVaultReplicasResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        vault_id=pulumi.get(__response__, 'vault_id'),
+        vault_replicas=pulumi.get(__response__, 'vault_replicas')))

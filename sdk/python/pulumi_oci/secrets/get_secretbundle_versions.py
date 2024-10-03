@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,9 +115,6 @@ def get_secretbundle_versions(filters: Optional[Sequence[Union['GetSecretbundleV
         id=pulumi.get(__ret__, 'id'),
         secret_bundle_versions=pulumi.get(__ret__, 'secret_bundle_versions'),
         secret_id=pulumi.get(__ret__, 'secret_id'))
-
-
-@_utilities.lift_output_func(get_secretbundle_versions)
 def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict']]]]] = None,
                                      secret_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretbundleVersionsResult]:
@@ -133,4 +135,13 @@ def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Seq
 
     :param str secret_id: The OCID of the secret.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['secretId'] = secret_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Secrets/getSecretbundleVersions:getSecretbundleVersions', __args__, opts=opts, typ=GetSecretbundleVersionsResult)
+    return __ret__.apply(lambda __response__: GetSecretbundleVersionsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        secret_bundle_versions=pulumi.get(__response__, 'secret_bundle_versions'),
+        secret_id=pulumi.get(__response__, 'secret_id')))

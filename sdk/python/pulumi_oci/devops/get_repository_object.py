@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -160,9 +165,6 @@ def get_repository_object(file_path: Optional[str] = None,
         sha=pulumi.get(__ret__, 'sha'),
         size_in_bytes=pulumi.get(__ret__, 'size_in_bytes'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_repository_object)
 def get_repository_object_output(file_path: Optional[pulumi.Input[Optional[str]]] = None,
                                  ref_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  repository_id: Optional[pulumi.Input[str]] = None,
@@ -188,4 +190,18 @@ def get_repository_object_output(file_path: Optional[pulumi.Input[Optional[str]]
     :param str ref_name: A filter to return only resources that match the given reference name.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['filePath'] = file_path
+    __args__['refName'] = ref_name
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryObject:getRepositoryObject', __args__, opts=opts, typ=GetRepositoryObjectResult)
+    return __ret__.apply(lambda __response__: GetRepositoryObjectResult(
+        file_path=pulumi.get(__response__, 'file_path'),
+        id=pulumi.get(__response__, 'id'),
+        is_binary=pulumi.get(__response__, 'is_binary'),
+        ref_name=pulumi.get(__response__, 'ref_name'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        sha=pulumi.get(__response__, 'sha'),
+        size_in_bytes=pulumi.get(__response__, 'size_in_bytes'),
+        type=pulumi.get(__response__, 'type')))

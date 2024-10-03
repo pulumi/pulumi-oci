@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -106,9 +111,6 @@ def get_retrieve_password(sddc_id: Optional[str] = None,
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         sddc_password=pulumi.get(__ret__, 'sddc_password'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_retrieve_password)
 def get_retrieve_password_output(sddc_id: Optional[pulumi.Input[str]] = None,
                                  type: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRetrievePasswordResult]:
@@ -129,4 +131,13 @@ def get_retrieve_password_output(sddc_id: Optional[pulumi.Input[str]] = None,
     :param str sddc_id: The [OCID](https://www.terraform.io/Content/General/Concepts/identifiers.htm) of the SDDC.
     :param str type: The SDDC password type.
     """
-    ...
+    __args__ = dict()
+    __args__['sddcId'] = sddc_id
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getRetrievePassword:getRetrievePassword', __args__, opts=opts, typ=GetRetrievePasswordResult)
+    return __ret__.apply(lambda __response__: GetRetrievePasswordResult(
+        id=pulumi.get(__response__, 'id'),
+        sddc_id=pulumi.get(__response__, 'sddc_id'),
+        sddc_password=pulumi.get(__response__, 'sddc_password'),
+        type=pulumi.get(__response__, 'type')))

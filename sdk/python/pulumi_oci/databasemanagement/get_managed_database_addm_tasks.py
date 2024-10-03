@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -139,9 +144,6 @@ def get_managed_database_addm_tasks(filters: Optional[Sequence[Union['GetManaged
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_managed_database_addm_tasks)
 def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseAddmTasksFilterArgs', 'GetManagedDatabaseAddmTasksFilterArgsDict']]]]] = None,
                                            managed_database_id: Optional[pulumi.Input[str]] = None,
                                            time_end: Optional[pulumi.Input[str]] = None,
@@ -169,4 +171,17 @@ def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Option
     :param str time_end: The end of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
     :param str time_start: The beginning of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks', __args__, opts=opts, typ=GetManagedDatabaseAddmTasksResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseAddmTasksResult(
+        addm_tasks_collections=pulumi.get(__response__, 'addm_tasks_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

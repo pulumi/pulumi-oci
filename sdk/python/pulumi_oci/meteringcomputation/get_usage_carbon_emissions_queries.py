@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,9 +115,6 @@ def get_usage_carbon_emissions_queries(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         usage_carbon_emissions_query_collections=pulumi.get(__ret__, 'usage_carbon_emissions_query_collections'))
-
-
-@_utilities.lift_output_func(get_usage_carbon_emissions_queries)
 def get_usage_carbon_emissions_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsageCarbonEmissionsQueriesFilterArgs', 'GetUsageCarbonEmissionsQueriesFilterArgsDict']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsageCarbonEmissionsQueriesResult]:
@@ -133,4 +135,13 @@ def get_usage_carbon_emissions_queries_output(compartment_id: Optional[pulumi.In
 
     :param str compartment_id: The compartment ID in which to list resources.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries', __args__, opts=opts, typ=GetUsageCarbonEmissionsQueriesResult)
+    return __ret__.apply(lambda __response__: GetUsageCarbonEmissionsQueriesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        usage_carbon_emissions_query_collections=pulumi.get(__response__, 'usage_carbon_emissions_query_collections')))

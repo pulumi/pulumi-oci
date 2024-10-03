@@ -4,37 +4,85 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'DrPlanExecutionExecutionOptionsArgs',
+    'DrPlanExecutionExecutionOptionsArgsDict',
     'DrPlanExecutionGroupExecutionArgs',
+    'DrPlanExecutionGroupExecutionArgsDict',
     'DrPlanExecutionGroupExecutionStepExecutionArgs',
+    'DrPlanExecutionGroupExecutionStepExecutionArgsDict',
     'DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs',
+    'DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict',
     'DrPlanExecutionLogLocationArgs',
+    'DrPlanExecutionLogLocationArgsDict',
     'DrPlanPlanGroupArgs',
+    'DrPlanPlanGroupArgsDict',
     'DrPlanPlanGroupStepArgs',
+    'DrPlanPlanGroupStepArgsDict',
     'DrPlanPlanGroupStepUserDefinedStepArgs',
+    'DrPlanPlanGroupStepUserDefinedStepArgsDict',
     'DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs',
+    'DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict',
     'DrProtectionGroupAssociationArgs',
+    'DrProtectionGroupAssociationArgsDict',
     'DrProtectionGroupLogLocationArgs',
+    'DrProtectionGroupLogLocationArgsDict',
     'DrProtectionGroupMemberArgs',
+    'DrProtectionGroupMemberArgsDict',
     'DrProtectionGroupMemberBackendSetMappingArgs',
+    'DrProtectionGroupMemberBackendSetMappingArgsDict',
     'DrProtectionGroupMemberBlockVolumeOperationArgs',
+    'DrProtectionGroupMemberBlockVolumeOperationArgsDict',
     'DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs',
+    'DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict',
     'DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs',
+    'DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict',
     'DrProtectionGroupMemberExportMappingArgs',
+    'DrProtectionGroupMemberExportMappingArgsDict',
     'DrProtectionGroupMemberFileSystemOperationArgs',
+    'DrProtectionGroupMemberFileSystemOperationArgsDict',
     'DrProtectionGroupMemberFileSystemOperationMountDetailsArgs',
+    'DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict',
     'DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs',
+    'DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict',
     'DrProtectionGroupMemberVnicMappingArgs',
+    'DrProtectionGroupMemberVnicMappingArgsDict',
     'GetDrPlanExecutionsFilterArgs',
+    'GetDrPlanExecutionsFilterArgsDict',
     'GetDrPlansFilterArgs',
+    'GetDrPlansFilterArgsDict',
     'GetDrProtectionGroupsFilterArgs',
+    'GetDrProtectionGroupsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class DrPlanExecutionExecutionOptionsArgsDict(TypedDict):
+        plan_execution_type: pulumi.Input[str]
+        """
+        The type of the plan execution.
+        """
+        are_prechecks_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+        """
+        are_warnings_ignored: NotRequired[pulumi.Input[bool]]
+        """
+        A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
+        """
+elif False:
+    DrPlanExecutionExecutionOptionsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrPlanExecutionExecutionOptionsArgs:
@@ -89,6 +137,47 @@ class DrPlanExecutionExecutionOptionsArgs:
     def are_warnings_ignored(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "are_warnings_ignored", value)
 
+
+if not MYPY:
+    class DrPlanExecutionGroupExecutionArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
+        """
+        execution_duration_in_sec: NotRequired[pulumi.Input[int]]
+        """
+        The total duration in seconds taken to complete the step execution.  Example: `35`
+        """
+        group_id: NotRequired[pulumi.Input[str]]
+        """
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        The status of the step execution.
+        """
+        status_details: NotRequired[pulumi.Input[str]]
+        """
+        Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
+        """
+        step_executions: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgsDict']]]]
+        """
+        A list of step executions in the group.
+        """
+        time_ended: NotRequired[pulumi.Input[str]]
+        """
+        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        """
+        time_started: NotRequired[pulumi.Input[str]]
+        """
+        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The group type.  Example: `BUILT_IN`
+        """
+elif False:
+    DrPlanExecutionGroupExecutionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrPlanExecutionGroupExecutionArgs:
@@ -240,6 +329,51 @@ class DrPlanExecutionGroupExecutionArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class DrPlanExecutionGroupExecutionStepExecutionArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
+        """
+        execution_duration_in_sec: NotRequired[pulumi.Input[int]]
+        """
+        The total duration in seconds taken to complete the step execution.  Example: `35`
+        """
+        group_id: NotRequired[pulumi.Input[str]]
+        """
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
+        """
+        log_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict']]]]
+        """
+        The details of an object storage log location for a DR protection group.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        The status of the step execution.
+        """
+        status_details: NotRequired[pulumi.Input[str]]
+        """
+        Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
+        """
+        step_id: NotRequired[pulumi.Input[str]]
+        """
+        The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
+        """
+        time_ended: NotRequired[pulumi.Input[str]]
+        """
+        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        """
+        time_started: NotRequired[pulumi.Input[str]]
+        """
+        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The group type.  Example: `BUILT_IN`
+        """
+elif False:
+    DrPlanExecutionGroupExecutionStepExecutionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrPlanExecutionGroupExecutionStepExecutionArgs:
@@ -408,6 +542,23 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        The bucket name inside the object storage namespace.  Example: `operation_logs`
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+        """
+elif False:
+    DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
     def __init__(__self__, *,
@@ -463,6 +614,23 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
         pulumi.set(self, "object", value)
 
 
+if not MYPY:
+    class DrPlanExecutionLogLocationArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        The bucket name inside the object storage namespace.  Example: `operation_logs`
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+        """
+elif False:
+    DrPlanExecutionLogLocationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrPlanExecutionLogLocationArgs:
     def __init__(__self__, *,
@@ -517,6 +685,35 @@ class DrPlanExecutionLogLocationArgs:
     def object(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "object", value)
 
+
+if not MYPY:
+    class DrPlanPlanGroupArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+        """
+        is_pause_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        """
+        steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgsDict']]]]
+        """
+        The list of steps in the group.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The type of DR plan to be created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    DrPlanPlanGroupArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrPlanPlanGroupArgs:
@@ -612,6 +809,51 @@ class DrPlanPlanGroupArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class DrPlanPlanGroupStepArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
+        """
+        error_mode: NotRequired[pulumi.Input[str]]
+        """
+        The error mode for this step.
+        """
+        group_id: NotRequired[pulumi.Input[str]]
+        """
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+        """
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        A flag indicating whether this step should be enabled for execution.  Example: `true`
+        """
+        member_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
+        """
+        timeout: NotRequired[pulumi.Input[int]]
+        """
+        The timeout in seconds for executing this step.  Example: `600`
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The type of DR plan to be created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        user_defined_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgsDict']]]]
+        """
+        The details for a user-defined step in a DR plan.
+        """
+elif False:
+    DrPlanPlanGroupStepArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrPlanPlanGroupStepArgs:
@@ -772,6 +1014,47 @@ class DrPlanPlanGroupStepArgs:
         pulumi.set(self, "user_defined_steps", value)
 
 
+if not MYPY:
+    class DrPlanPlanGroupStepUserDefinedStepArgsDict(TypedDict):
+        function_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
+        """
+        function_region: NotRequired[pulumi.Input[str]]
+        """
+        The region in which the function is deployed.  Example: `us-ashburn-1`
+        """
+        object_storage_script_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict']]]]
+        """
+        The details of an object storage script location for a user-defined step in a DR plan.
+        """
+        request_body: NotRequired[pulumi.Input[str]]
+        """
+        The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
+        """
+        run_as_user: NotRequired[pulumi.Input[str]]
+        """
+        The userid on the instance to be used for executing the script or command.  Example: `opc`
+        """
+        run_on_instance_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the instance on which this script or command should be executed.
+        """
+        run_on_instance_region: NotRequired[pulumi.Input[str]]
+        """
+        The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
+        """
+        script_command: NotRequired[pulumi.Input[str]]
+        """
+        The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+        """
+        step_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the user-defined step.
+        """
+elif False:
+    DrPlanPlanGroupStepUserDefinedStepArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrPlanPlanGroupStepUserDefinedStepArgs:
     def __init__(__self__, *,
@@ -923,6 +1206,23 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
         pulumi.set(self, "step_type", value)
 
 
+if not MYPY:
+    class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name inside the object storage bucket.  Example: `validate_app_start.sh`
+        """
+elif False:
+    DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
     def __init__(__self__, *,
@@ -978,6 +1278,23 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
         pulumi.set(self, "object", value)
 
 
+if not MYPY:
+    class DrProtectionGroupAssociationArgsDict(TypedDict):
+        role: pulumi.Input[str]
+        """
+        The role of the DR protection group.  Example: `STANDBY`
+        """
+        peer_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+        """
+        peer_region: NotRequired[pulumi.Input[str]]
+        """
+        The region of the peer DR protection group.  Example: `us-ashburn-1`
+        """
+elif False:
+    DrProtectionGroupAssociationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrProtectionGroupAssociationArgs:
     def __init__(__self__, *,
@@ -1032,6 +1349,23 @@ class DrProtectionGroupAssociationArgs:
         pulumi.set(self, "peer_region", value)
 
 
+if not MYPY:
+    class DrProtectionGroupLogLocationArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+        """
+        namespace: pulumi.Input[str]
+        """
+        (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+        """
+elif False:
+    DrProtectionGroupLogLocationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrProtectionGroupLogLocationArgs:
     def __init__(__self__, *,
@@ -1084,6 +1418,99 @@ class DrProtectionGroupLogLocationArgs:
     def object(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "object", value)
 
+
+if not MYPY:
+    class DrProtectionGroupMemberArgsDict(TypedDict):
+        member_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        member_type: pulumi.Input[str]
+        """
+        (Updatable) The type of the member.
+        """
+        autonomous_database_standby_type_for_dr_drills: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+        """
+        backend_set_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgsDict']]]]
+        """
+        (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+        """
+        block_volume_operations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgsDict']]]]
+        """
+        (Updatable) A list of operations performed on block volumes used by the compute instance.
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+        """
+        connection_string_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        """
+        destination_availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+        """
+        destination_capacity_reservation_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
+        """
+        destination_compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
+        """
+        destination_dedicated_vm_host_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
+        """
+        destination_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        """
+        destination_network_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        """
+        export_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgsDict']]]]
+        """
+        (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+        """
+        file_system_operations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgsDict']]]]
+        """
+        (Updatable) A list of operations performed on file systems used by the compute instance.
+        """
+        is_movable: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
+        """
+        is_retain_fault_domain: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
+        """
+        is_start_stop_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        password_vault_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        """
+        vnic_mapping: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]
+        """
+        (Updatable) A list of compute instance VNIC mappings.
+        """
+        vnic_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]
+        """
+        (Updatable) A list of compute instance VNIC mappings.
+        """
+elif False:
+    DrProtectionGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrProtectionGroupMemberArgs:
@@ -1442,6 +1869,23 @@ class DrProtectionGroupMemberArgs:
         pulumi.set(self, "vnic_mappings", value)
 
 
+if not MYPY:
+    class DrProtectionGroupMemberBackendSetMappingArgsDict(TypedDict):
+        destination_backend_set_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
+        """
+        is_backend_set_for_non_movable: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+        """
+        source_backend_set_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
+        """
+elif False:
+    DrProtectionGroupMemberBackendSetMappingArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrProtectionGroupMemberBackendSetMappingArgs:
     def __init__(__self__, *,
@@ -1496,6 +1940,23 @@ class DrProtectionGroupMemberBackendSetMappingArgs:
     def source_backend_set_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_backend_set_name", value)
 
+
+if not MYPY:
+    class DrProtectionGroupMemberBlockVolumeOperationArgsDict(TypedDict):
+        attachment_details: NotRequired[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict']]
+        """
+        (Updatable) The details for creating a block volume attachment.
+        """
+        block_volume_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        mount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict']]
+        """
+        (Updatable) The details for creating a mount for a file system on a block volume.
+        """
+elif False:
+    DrProtectionGroupMemberBlockVolumeOperationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeOperationArgs:
@@ -1552,6 +2013,15 @@ class DrProtectionGroupMemberBlockVolumeOperationArgs:
         pulumi.set(self, "mount_details", value)
 
 
+if not MYPY:
+    class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict(TypedDict):
+        volume_attachment_reference_instance_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+elif False:
+    DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs:
     def __init__(__self__, *,
@@ -1575,6 +2045,15 @@ class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs:
         pulumi.set(self, "volume_attachment_reference_instance_id", value)
 
 
+if not MYPY:
+    class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict(TypedDict):
+        mount_point: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
+        """
+elif False:
+    DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs:
     def __init__(__self__, *,
@@ -1597,6 +2076,19 @@ class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs:
     def mount_point(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "mount_point", value)
 
+
+if not MYPY:
+    class DrProtectionGroupMemberExportMappingArgsDict(TypedDict):
+        destination_mount_target_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+        export_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
+        """
+elif False:
+    DrProtectionGroupMemberExportMappingArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrProtectionGroupMemberExportMappingArgs:
@@ -1636,6 +2128,31 @@ class DrProtectionGroupMemberExportMappingArgs:
     def export_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "export_id", value)
 
+
+if not MYPY:
+    class DrProtectionGroupMemberFileSystemOperationArgsDict(TypedDict):
+        export_path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The export path of the file system.  Example: `/fs-export-path`
+        """
+        mount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict']]
+        """
+        (Updatable) The details for creating a file system mount.
+        """
+        mount_point: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        """
+        mount_target_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+        unmount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict']]
+        """
+        (Updatable) The details for creating a file system unmount.
+        """
+elif False:
+    DrProtectionGroupMemberFileSystemOperationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrProtectionGroupMemberFileSystemOperationArgs:
@@ -1724,6 +2241,15 @@ class DrProtectionGroupMemberFileSystemOperationArgs:
         pulumi.set(self, "unmount_details", value)
 
 
+if not MYPY:
+    class DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict(TypedDict):
+        mount_target_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+elif False:
+    DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs:
     def __init__(__self__, *,
@@ -1747,6 +2273,15 @@ class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs:
         pulumi.set(self, "mount_target_id", value)
 
 
+if not MYPY:
+    class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict(TypedDict):
+        mount_target_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+elif False:
+    DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs:
     def __init__(__self__, *,
@@ -1769,6 +2304,31 @@ class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs:
     def mount_target_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "mount_target_id", value)
 
+
+if not MYPY:
+    class DrProtectionGroupMemberVnicMappingArgsDict(TypedDict):
+        destination_nsg_id_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+        """
+        destination_primary_private_ip_address: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+        """
+        destination_primary_private_ip_hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        """
+        destination_subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
+        """
+        source_vnic_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+        """
+elif False:
+    DrProtectionGroupMemberVnicMappingArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DrProtectionGroupMemberVnicMappingArgs:
@@ -1857,6 +2417,14 @@ class DrProtectionGroupMemberVnicMappingArgs:
         pulumi.set(self, "source_vnic_id", value)
 
 
+if not MYPY:
+    class GetDrPlanExecutionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDrPlanExecutionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDrPlanExecutionsFilterArgs:
     def __init__(__self__, *,
@@ -1896,6 +2464,14 @@ class GetDrPlanExecutionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDrPlansFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDrPlansFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDrPlansFilterArgs:
     def __init__(__self__, *,
@@ -1934,6 +2510,14 @@ class GetDrPlansFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDrProtectionGroupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDrProtectionGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDrProtectionGroupsFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -244,9 +249,6 @@ def get_alarm_suppression(alarm_suppression_id: Optional[str] = None,
         time_suppress_from=pulumi.get(__ret__, 'time_suppress_from'),
         time_suppress_until=pulumi.get(__ret__, 'time_suppress_until'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_alarm_suppression)
 def get_alarm_suppression_output(alarm_suppression_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmSuppressionResult]:
     """
@@ -273,4 +275,22 @@ def get_alarm_suppression_output(alarm_suppression_id: Optional[pulumi.Input[str
 
     :param str alarm_suppression_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
     """
-    ...
+    __args__ = dict()
+    __args__['alarmSuppressionId'] = alarm_suppression_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getAlarmSuppression:getAlarmSuppression', __args__, opts=opts, typ=GetAlarmSuppressionResult)
+    return __ret__.apply(lambda __response__: GetAlarmSuppressionResult(
+        alarm_suppression_id=pulumi.get(__response__, 'alarm_suppression_id'),
+        alarm_suppression_targets=pulumi.get(__response__, 'alarm_suppression_targets'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        dimensions=pulumi.get(__response__, 'dimensions'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_suppress_from=pulumi.get(__response__, 'time_suppress_from'),
+        time_suppress_until=pulumi.get(__response__, 'time_suppress_until'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

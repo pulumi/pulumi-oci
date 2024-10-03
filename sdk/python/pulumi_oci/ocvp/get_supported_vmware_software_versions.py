@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -153,9 +158,6 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         version=pulumi.get(__ret__, 'version'),
         version_to_upgrade=pulumi.get(__ret__, 'version_to_upgrade'))
-
-
-@_utilities.lift_output_func(get_supported_vmware_software_versions)
 def get_supported_vmware_software_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]]]] = None,
                                                   host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -186,4 +188,19 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
     :param str version: A filter to return only resources that match the given VMware software version exactly.
     :param str version_to_upgrade: A filter to return only VMware software versions that the given VMware software version can be upgraded to.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['hostShapeName'] = host_shape_name
+    __args__['version'] = version
+    __args__['versionToUpgrade'] = version_to_upgrade
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions', __args__, opts=opts, typ=GetSupportedVmwareSoftwareVersionsResult)
+    return __ret__.apply(lambda __response__: GetSupportedVmwareSoftwareVersionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        host_shape_name=pulumi.get(__response__, 'host_shape_name'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        version=pulumi.get(__response__, 'version'),
+        version_to_upgrade=pulumi.get(__response__, 'version_to_upgrade')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -163,9 +168,6 @@ def get_boot_volume_attachments(availability_domain: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         instance_id=pulumi.get(__ret__, 'instance_id'))
-
-
-@_utilities.lift_output_func(get_boot_volume_attachments)
 def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Input[str]] = None,
                                        boot_volume_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        compartment_id: Optional[pulumi.Input[str]] = None,
@@ -197,4 +199,19 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str instance_id: The OCID of the instance.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['bootVolumeId'] = boot_volume_id
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['instanceId'] = instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getBootVolumeAttachments:getBootVolumeAttachments', __args__, opts=opts, typ=GetBootVolumeAttachmentsResult)
+    return __ret__.apply(lambda __response__: GetBootVolumeAttachmentsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        boot_volume_attachments=pulumi.get(__response__, 'boot_volume_attachments'),
+        boot_volume_id=pulumi.get(__response__, 'boot_volume_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        instance_id=pulumi.get(__response__, 'instance_id')))

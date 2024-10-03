@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -487,9 +492,6 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         util_nodes=pulumi.get(__ret__, 'util_nodes'),
         worker_nodes=pulumi.get(__ret__, 'worker_nodes'))
-
-
-@_utilities.lift_output_func(get_bds_instance)
 def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceResult]:
     """
@@ -509,4 +511,44 @@ def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
 
     :param str bds_instance_id: The OCID of the cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['bdsInstanceId'] = bds_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstance:getBdsInstance', __args__, opts=opts, typ=GetBdsInstanceResult)
+    return __ret__.apply(lambda __response__: GetBdsInstanceResult(
+        bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
+        bootstrap_script_url=pulumi.get(__response__, 'bootstrap_script_url'),
+        cloud_sql_details=pulumi.get(__response__, 'cloud_sql_details'),
+        cluster_admin_password=pulumi.get(__response__, 'cluster_admin_password'),
+        cluster_details=pulumi.get(__response__, 'cluster_details'),
+        cluster_profile=pulumi.get(__response__, 'cluster_profile'),
+        cluster_public_key=pulumi.get(__response__, 'cluster_public_key'),
+        cluster_version=pulumi.get(__response__, 'cluster_version'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_only_worker_nodes=pulumi.get(__response__, 'compute_only_worker_nodes'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        edge_nodes=pulumi.get(__response__, 'edge_nodes'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ignore_existing_nodes_shapes=pulumi.get(__response__, 'ignore_existing_nodes_shapes'),
+        is_cloud_sql_configured=pulumi.get(__response__, 'is_cloud_sql_configured'),
+        is_force_stop_jobs=pulumi.get(__response__, 'is_force_stop_jobs'),
+        is_high_availability=pulumi.get(__response__, 'is_high_availability'),
+        is_kafka_configured=pulumi.get(__response__, 'is_kafka_configured'),
+        is_secure=pulumi.get(__response__, 'is_secure'),
+        kafka_broker_nodes=pulumi.get(__response__, 'kafka_broker_nodes'),
+        kerberos_realm_name=pulumi.get(__response__, 'kerberos_realm_name'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        master_nodes=pulumi.get(__response__, 'master_nodes'),
+        network_configs=pulumi.get(__response__, 'network_configs'),
+        nodes=pulumi.get(__response__, 'nodes'),
+        number_of_nodes=pulumi.get(__response__, 'number_of_nodes'),
+        number_of_nodes_requiring_maintenance_reboot=pulumi.get(__response__, 'number_of_nodes_requiring_maintenance_reboot'),
+        os_patch_version=pulumi.get(__response__, 'os_patch_version'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        util_nodes=pulumi.get(__response__, 'util_nodes'),
+        worker_nodes=pulumi.get(__response__, 'worker_nodes')))

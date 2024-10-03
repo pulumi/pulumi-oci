@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -171,9 +176,6 @@ def get_connect_harness(connect_harness_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_connect_harness)
 def get_connect_harness_output(connect_harness_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectHarnessResult]:
     """
@@ -193,4 +195,17 @@ def get_connect_harness_output(connect_harness_id: Optional[pulumi.Input[str]] =
 
     :param str connect_harness_id: The OCID of the connect harness.
     """
-    ...
+    __args__ = dict()
+    __args__['connectHarnessId'] = connect_harness_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Streaming/getConnectHarness:getConnectHarness', __args__, opts=opts, typ=GetConnectHarnessResult)
+    return __ret__.apply(lambda __response__: GetConnectHarnessResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connect_harness_id=pulumi.get(__response__, 'connect_harness_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

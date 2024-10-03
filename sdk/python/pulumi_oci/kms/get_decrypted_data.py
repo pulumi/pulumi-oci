@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -148,9 +153,6 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, str]] = None,
         key_id=pulumi.get(__ret__, 'key_id'),
         plaintext=pulumi.get(__ret__, 'plaintext'),
         plaintext_checksum=pulumi.get(__ret__, 'plaintext_checksum'))
-
-
-@_utilities.lift_output_func(get_decrypted_data)
 def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                               ciphertext: Optional[pulumi.Input[str]] = None,
                               crypto_endpoint: Optional[pulumi.Input[str]] = None,
@@ -179,4 +181,18 @@ def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     :param str crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
     :param str key_id: The OCID of the key used to encrypt the ciphertext.
     """
-    ...
+    __args__ = dict()
+    __args__['associatedData'] = associated_data
+    __args__['ciphertext'] = ciphertext
+    __args__['cryptoEndpoint'] = crypto_endpoint
+    __args__['keyId'] = key_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getDecryptedData:getDecryptedData', __args__, opts=opts, typ=GetDecryptedDataResult)
+    return __ret__.apply(lambda __response__: GetDecryptedDataResult(
+        associated_data=pulumi.get(__response__, 'associated_data'),
+        ciphertext=pulumi.get(__response__, 'ciphertext'),
+        crypto_endpoint=pulumi.get(__response__, 'crypto_endpoint'),
+        id=pulumi.get(__response__, 'id'),
+        key_id=pulumi.get(__response__, 'key_id'),
+        plaintext=pulumi.get(__response__, 'plaintext'),
+        plaintext_checksum=pulumi.get(__response__, 'plaintext_checksum')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -153,9 +158,6 @@ def get_fusion_environment_admin_user(fusion_environment_id: Optional[str] = Non
         last_name=pulumi.get(__ret__, 'last_name'),
         password=pulumi.get(__ret__, 'password'),
         username=pulumi.get(__ret__, 'username'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_admin_user)
 def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentAdminUserResult]:
     """
@@ -175,4 +177,16 @@ def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pul
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
     """
-    ...
+    __args__ = dict()
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser', __args__, opts=opts, typ=GetFusionEnvironmentAdminUserResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentAdminUserResult(
+        email_address=pulumi.get(__response__, 'email_address'),
+        first_name=pulumi.get(__response__, 'first_name'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        last_name=pulumi.get(__response__, 'last_name'),
+        password=pulumi.get(__response__, 'password'),
+        username=pulumi.get(__response__, 'username')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -160,9 +165,6 @@ def get_audit_profile_available_audit_volume(audit_profile_id: Optional[str] = N
         month_in_consideration_less_than=pulumi.get(__ret__, 'month_in_consideration_less_than'),
         trail_location=pulumi.get(__ret__, 'trail_location'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-
-
-@_utilities.lift_output_func(get_audit_profile_available_audit_volume)
 def get_audit_profile_available_audit_volume_output(audit_profile_id: Optional[pulumi.Input[str]] = None,
                                                     month_in_consideration_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                     month_in_consideration_less_than: Optional[pulumi.Input[Optional[str]]] = None,
@@ -198,4 +200,19 @@ def get_audit_profile_available_audit_volume_output(audit_profile_id: Optional[p
     :param str trail_location: The audit trail location.
     :param str work_request_id: The OCID of the work request.
     """
-    ...
+    __args__ = dict()
+    __args__['auditProfileId'] = audit_profile_id
+    __args__['monthInConsiderationGreaterThan'] = month_in_consideration_greater_than
+    __args__['monthInConsiderationLessThan'] = month_in_consideration_less_than
+    __args__['trailLocation'] = trail_location
+    __args__['workRequestId'] = work_request_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfileAvailableAuditVolume:getAuditProfileAvailableAuditVolume', __args__, opts=opts, typ=GetAuditProfileAvailableAuditVolumeResult)
+    return __ret__.apply(lambda __response__: GetAuditProfileAvailableAuditVolumeResult(
+        audit_profile_id=pulumi.get(__response__, 'audit_profile_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        month_in_consideration_greater_than=pulumi.get(__response__, 'month_in_consideration_greater_than'),
+        month_in_consideration_less_than=pulumi.get(__response__, 'month_in_consideration_less_than'),
+        trail_location=pulumi.get(__response__, 'trail_location'),
+        work_request_id=pulumi.get(__response__, 'work_request_id')))

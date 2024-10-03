@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -163,9 +168,6 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[str] = None,
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         my_sql_data_collections=pulumi.get(__ret__, 'my_sql_data_collections'),
         start_time=pulumi.get(__ret__, 'start_time'))
-
-
-@_utilities.lift_output_func(get_managed_my_sql_database_sql_data)
 def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[str]] = None,
                                                 filter_column: Optional[pulumi.Input[Optional[str]]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict']]]]] = None,
@@ -209,4 +211,19 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
     :param str managed_my_sql_database_id: The OCID of the Managed MySQL Database.
     :param str start_time: The start time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
     """
-    ...
+    __args__ = dict()
+    __args__['endTime'] = end_time
+    __args__['filterColumn'] = filter_column
+    __args__['filters'] = filters
+    __args__['managedMySqlDatabaseId'] = managed_my_sql_database_id
+    __args__['startTime'] = start_time
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData', __args__, opts=opts, typ=GetManagedMySqlDatabaseSqlDataResult)
+    return __ret__.apply(lambda __response__: GetManagedMySqlDatabaseSqlDataResult(
+        end_time=pulumi.get(__response__, 'end_time'),
+        filter_column=pulumi.get(__response__, 'filter_column'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_my_sql_database_id=pulumi.get(__response__, 'managed_my_sql_database_id'),
+        my_sql_data_collections=pulumi.get(__response__, 'my_sql_data_collections'),
+        start_time=pulumi.get(__response__, 'start_time')))

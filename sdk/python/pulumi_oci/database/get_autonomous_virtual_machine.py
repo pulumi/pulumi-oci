@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -236,9 +241,6 @@ def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[str] 
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         state=pulumi.get(__ret__, 'state'),
         vm_name=pulumi.get(__ret__, 'vm_name'))
-
-
-@_utilities.lift_output_func(get_autonomous_virtual_machine)
 def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVirtualMachineResult]:
     """
@@ -258,4 +260,22 @@ def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optiona
 
     :param str autonomous_virtual_machine_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousVirtualMachineId'] = autonomous_virtual_machine_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousVirtualMachine:getAutonomousVirtualMachine', __args__, opts=opts, typ=GetAutonomousVirtualMachineResult)
+    return __ret__.apply(lambda __response__: GetAutonomousVirtualMachineResult(
+        autonomous_virtual_machine_id=pulumi.get(__response__, 'autonomous_virtual_machine_id'),
+        autonomous_vm_cluster_id=pulumi.get(__response__, 'autonomous_vm_cluster_id'),
+        client_ip_address=pulumi.get(__response__, 'client_ip_address'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
+        db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
+        db_server_display_name=pulumi.get(__response__, 'db_server_display_name'),
+        db_server_id=pulumi.get(__response__, 'db_server_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
+        state=pulumi.get(__response__, 'state'),
+        vm_name=pulumi.get(__response__, 'vm_name')))

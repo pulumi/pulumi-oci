@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -327,9 +332,6 @@ def get_bastion(bastion_id: Optional[str] = None,
         target_vcn_id=pulumi.get(__ret__, 'target_vcn_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_bastion)
 def get_bastion_output(bastion_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBastionResult]:
     """
@@ -349,4 +351,29 @@ def get_bastion_output(bastion_id: Optional[pulumi.Input[str]] = None,
 
     :param str bastion_id: The unique identifier (OCID) of the bastion.
     """
-    ...
+    __args__ = dict()
+    __args__['bastionId'] = bastion_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Bastion/getBastion:getBastion', __args__, opts=opts, typ=GetBastionResult)
+    return __ret__.apply(lambda __response__: GetBastionResult(
+        bastion_id=pulumi.get(__response__, 'bastion_id'),
+        bastion_type=pulumi.get(__response__, 'bastion_type'),
+        client_cidr_block_allow_lists=pulumi.get(__response__, 'client_cidr_block_allow_lists'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        dns_proxy_status=pulumi.get(__response__, 'dns_proxy_status'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        max_session_ttl_in_seconds=pulumi.get(__response__, 'max_session_ttl_in_seconds'),
+        max_sessions_allowed=pulumi.get(__response__, 'max_sessions_allowed'),
+        name=pulumi.get(__response__, 'name'),
+        phone_book_entry=pulumi.get(__response__, 'phone_book_entry'),
+        private_endpoint_ip_address=pulumi.get(__response__, 'private_endpoint_ip_address'),
+        state=pulumi.get(__response__, 'state'),
+        static_jump_host_ip_addresses=pulumi.get(__response__, 'static_jump_host_ip_addresses'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_subnet_id=pulumi.get(__response__, 'target_subnet_id'),
+        target_vcn_id=pulumi.get(__response__, 'target_vcn_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

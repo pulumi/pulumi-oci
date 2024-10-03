@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -238,9 +243,6 @@ def get_reports(access_level: Optional[str] = None,
         time_generated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_generated_greater_than_or_equal_to'),
         time_generated_less_than=pulumi.get(__ret__, 'time_generated_less_than'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_reports)
 def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                        compartment_id: Optional[pulumi.Input[str]] = None,
                        compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -289,4 +291,29 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
            **Example:** 2016-12-19T16:39:57.600Z
     :param str type: An optional filter to return only resources that match the specified type.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['reportDefinitionId'] = report_definition_id
+    __args__['state'] = state
+    __args__['timeGeneratedGreaterThanOrEqualTo'] = time_generated_greater_than_or_equal_to
+    __args__['timeGeneratedLessThan'] = time_generated_less_than
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReports:getReports', __args__, opts=opts, typ=GetReportsResult)
+    return __ret__.apply(lambda __response__: GetReportsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        report_collections=pulumi.get(__response__, 'report_collections'),
+        report_definition_id=pulumi.get(__response__, 'report_definition_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_generated_greater_than_or_equal_to=pulumi.get(__response__, 'time_generated_greater_than_or_equal_to'),
+        time_generated_less_than=pulumi.get(__response__, 'time_generated_less_than'),
+        type=pulumi.get(__response__, 'type')))

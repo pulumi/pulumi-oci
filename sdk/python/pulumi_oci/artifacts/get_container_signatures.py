@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -251,9 +256,6 @@ def get_container_signatures(compartment_id: Optional[str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         repository_name=pulumi.get(__ret__, 'repository_name'),
         signing_algorithm=pulumi.get(__ret__, 'signing_algorithm'))
-
-
-@_utilities.lift_output_func(get_container_signatures)
 def get_container_signatures_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -301,4 +303,31 @@ def get_container_signatures_output(compartment_id: Optional[pulumi.Input[str]] 
     :param str repository_name: A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
     :param str signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['imageDigest'] = image_digest
+    __args__['imageId'] = image_id
+    __args__['kmsKeyId'] = kms_key_id
+    __args__['kmsKeyVersionId'] = kms_key_version_id
+    __args__['repositoryId'] = repository_id
+    __args__['repositoryName'] = repository_name
+    __args__['signingAlgorithm'] = signing_algorithm
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerSignatures:getContainerSignatures', __args__, opts=opts, typ=GetContainerSignaturesResult)
+    return __ret__.apply(lambda __response__: GetContainerSignaturesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        container_image_signature_collections=pulumi.get(__response__, 'container_image_signature_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        image_digest=pulumi.get(__response__, 'image_digest'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        kms_key_version_id=pulumi.get(__response__, 'kms_key_version_id'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        repository_name=pulumi.get(__response__, 'repository_name'),
+        signing_algorithm=pulumi.get(__response__, 'signing_algorithm')))

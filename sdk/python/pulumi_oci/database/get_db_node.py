@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -393,9 +398,6 @@ def get_db_node(db_node_id: Optional[str] = None,
         total_cpu_core_count=pulumi.get(__ret__, 'total_cpu_core_count'),
         vnic2id=pulumi.get(__ret__, 'vnic2id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-
-
-@_utilities.lift_output_func(get_db_node)
 def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeResult]:
     """
@@ -415,4 +417,34 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
 
     :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['dbNodeId'] = db_node_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbNode:getDbNode', __args__, opts=opts, typ=GetDbNodeResult)
+    return __ret__.apply(lambda __response__: GetDbNodeResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        backup_ip_id=pulumi.get(__response__, 'backup_ip_id'),
+        backup_vnic2id=pulumi.get(__response__, 'backup_vnic2id'),
+        backup_vnic_id=pulumi.get(__response__, 'backup_vnic_id'),
+        cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
+        db_node_id=pulumi.get(__response__, 'db_node_id'),
+        db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
+        db_server_id=pulumi.get(__response__, 'db_server_id'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        fault_domain=pulumi.get(__response__, 'fault_domain'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host_ip_id=pulumi.get(__response__, 'host_ip_id'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        maintenance_type=pulumi.get(__response__, 'maintenance_type'),
+        memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
+        software_storage_size_in_gb=pulumi.get(__response__, 'software_storage_size_in_gb'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_maintenance_window_end=pulumi.get(__response__, 'time_maintenance_window_end'),
+        time_maintenance_window_start=pulumi.get(__response__, 'time_maintenance_window_start'),
+        total_cpu_core_count=pulumi.get(__response__, 'total_cpu_core_count'),
+        vnic2id=pulumi.get(__response__, 'vnic2id'),
+        vnic_id=pulumi.get(__response__, 'vnic_id')))

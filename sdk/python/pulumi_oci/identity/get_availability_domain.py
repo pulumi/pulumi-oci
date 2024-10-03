@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -115,9 +120,6 @@ def get_availability_domain(ad_number: Optional[int] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_availability_domain)
 def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[int]]] = None,
                                    compartment_id: Optional[pulumi.Input[str]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -141,4 +143,14 @@ def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[int
     :param str compartment_id: The OCID of the tenancy.
     :param str id: The OCID of the Availability Domain. Required if `ad_number` is not specified.
     """
-    ...
+    __args__ = dict()
+    __args__['adNumber'] = ad_number
+    __args__['compartmentId'] = compartment_id
+    __args__['id'] = id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getAvailabilityDomain:getAvailabilityDomain', __args__, opts=opts, typ=GetAvailabilityDomainResult)
+    return __ret__.apply(lambda __response__: GetAvailabilityDomainResult(
+        ad_number=pulumi.get(__response__, 'ad_number'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -163,9 +168,6 @@ def get_repository_diffs(base_version: Optional[str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         target_repository_id=pulumi.get(__ret__, 'target_repository_id'),
         target_version=pulumi.get(__ret__, 'target_version'))
-
-
-@_utilities.lift_output_func(get_repository_diffs)
 def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryDiffsFilterArgs', 'GetRepositoryDiffsFilterArgsDict']]]]] = None,
                                 is_comparison_from_merge_base: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -198,4 +200,21 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None
     :param str target_repository_id: The target repository identifier
     :param str target_version: The commit or reference name where changes are coming from.
     """
-    ...
+    __args__ = dict()
+    __args__['baseVersion'] = base_version
+    __args__['filters'] = filters
+    __args__['isComparisonFromMergeBase'] = is_comparison_from_merge_base
+    __args__['repositoryId'] = repository_id
+    __args__['targetRepositoryId'] = target_repository_id
+    __args__['targetVersion'] = target_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryDiffs:getRepositoryDiffs', __args__, opts=opts, typ=GetRepositoryDiffsResult)
+    return __ret__.apply(lambda __response__: GetRepositoryDiffsResult(
+        base_version=pulumi.get(__response__, 'base_version'),
+        diff_collections=pulumi.get(__response__, 'diff_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_comparison_from_merge_base=pulumi.get(__response__, 'is_comparison_from_merge_base'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        target_repository_id=pulumi.get(__response__, 'target_repository_id'),
+        target_version=pulumi.get(__response__, 'target_version')))

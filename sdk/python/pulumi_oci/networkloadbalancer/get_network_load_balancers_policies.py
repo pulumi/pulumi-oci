@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -92,9 +97,6 @@ def get_network_load_balancers_policies(filters: Optional[Sequence[Union['GetNet
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         network_load_balancers_policy_collections=pulumi.get(__ret__, 'network_load_balancers_policy_collections'))
-
-
-@_utilities.lift_output_func(get_network_load_balancers_policies)
 def get_network_load_balancers_policies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkLoadBalancersPoliciesFilterArgs', 'GetNetworkLoadBalancersPoliciesFilterArgsDict']]]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancersPoliciesResult]:
     """
@@ -111,4 +113,11 @@ def get_network_load_balancers_policies_output(filters: Optional[pulumi.Input[Op
     test_network_load_balancers_policies = oci.NetworkLoadBalancer.get_network_load_balancers_policies()
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies', __args__, opts=opts, typ=GetNetworkLoadBalancersPoliciesResult)
+    return __ret__.apply(lambda __response__: GetNetworkLoadBalancersPoliciesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        network_load_balancers_policy_collections=pulumi.get(__response__, 'network_load_balancers_policy_collections')))

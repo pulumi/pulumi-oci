@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_internal_occ_availability_catalogs(catalog_state: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         occ_availability_catalog_collections=pulumi.get(__ret__, 'occ_availability_catalog_collections'),
         occ_customer_group_id=pulumi.get(__ret__, 'occ_customer_group_id'))
-
-
-@_utilities.lift_output_func(get_internal_occ_availability_catalogs)
 def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi.Input[Optional[str]]] = None,
                                                   compartment_id: Optional[pulumi.Input[str]] = None,
                                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -220,4 +222,22 @@ def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi
     :param str namespace: The namespace by which we would filter the list.
     :param str occ_customer_group_id: The customer group ocid by which we would filter the list.
     """
-    ...
+    __args__ = dict()
+    __args__['catalogState'] = catalog_state
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['namespace'] = namespace
+    __args__['occCustomerGroupId'] = occ_customer_group_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getInternalOccAvailabilityCatalogs:getInternalOccAvailabilityCatalogs', __args__, opts=opts, typ=GetInternalOccAvailabilityCatalogsResult)
+    return __ret__.apply(lambda __response__: GetInternalOccAvailabilityCatalogsResult(
+        catalog_state=pulumi.get(__response__, 'catalog_state'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        occ_availability_catalog_collections=pulumi.get(__response__, 'occ_availability_catalog_collections'),
+        occ_customer_group_id=pulumi.get(__response__, 'occ_customer_group_id')))

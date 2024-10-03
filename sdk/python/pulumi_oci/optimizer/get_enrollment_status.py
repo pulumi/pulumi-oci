@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -158,9 +163,6 @@ def get_enrollment_status(enrollment_status_id: Optional[str] = None,
         status_reason=pulumi.get(__ret__, 'status_reason'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_enrollment_status)
 def get_enrollment_status_output(enrollment_status_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnrollmentStatusResult]:
     """
@@ -180,4 +182,16 @@ def get_enrollment_status_output(enrollment_status_id: Optional[pulumi.Input[str
 
     :param str enrollment_status_id: The unique OCID associated with the enrollment status.
     """
-    ...
+    __args__ = dict()
+    __args__['enrollmentStatusId'] = enrollment_status_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus', __args__, opts=opts, typ=GetEnrollmentStatusResult)
+    return __ret__.apply(lambda __response__: GetEnrollmentStatusResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        enrollment_status_id=pulumi.get(__response__, 'enrollment_status_id'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        status_reason=pulumi.get(__response__, 'status_reason'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

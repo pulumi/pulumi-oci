@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -401,9 +406,6 @@ def get_scheduled_job(scheduled_job_id: Optional[str] = None,
         time_next_execution=pulumi.get(__ret__, 'time_next_execution'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         work_request_ids=pulumi.get(__ret__, 'work_request_ids'))
-
-
-@_utilities.lift_output_func(get_scheduled_job)
 def get_scheduled_job_output(scheduled_job_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduledJobResult]:
     """
@@ -423,4 +425,34 @@ def get_scheduled_job_output(scheduled_job_id: Optional[pulumi.Input[str]] = Non
 
     :param str scheduled_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
     """
-    ...
+    __args__ = dict()
+    __args__['scheduledJobId'] = scheduled_job_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getScheduledJob:getScheduledJob', __args__, opts=opts, typ=GetScheduledJobResult)
+    return __ret__.apply(lambda __response__: GetScheduledJobResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
+        is_restricted=pulumi.get(__response__, 'is_restricted'),
+        is_subcompartment_included=pulumi.get(__response__, 'is_subcompartment_included'),
+        lifecycle_stage_ids=pulumi.get(__response__, 'lifecycle_stage_ids'),
+        locations=pulumi.get(__response__, 'locations'),
+        managed_compartment_ids=pulumi.get(__response__, 'managed_compartment_ids'),
+        managed_instance_group_ids=pulumi.get(__response__, 'managed_instance_group_ids'),
+        managed_instance_ids=pulumi.get(__response__, 'managed_instance_ids'),
+        operations=pulumi.get(__response__, 'operations'),
+        recurring_rule=pulumi.get(__response__, 'recurring_rule'),
+        retry_intervals=pulumi.get(__response__, 'retry_intervals'),
+        schedule_type=pulumi.get(__response__, 'schedule_type'),
+        scheduled_job_id=pulumi.get(__response__, 'scheduled_job_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_execution=pulumi.get(__response__, 'time_last_execution'),
+        time_next_execution=pulumi.get(__response__, 'time_next_execution'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        work_request_ids=pulumi.get(__response__, 'work_request_ids')))

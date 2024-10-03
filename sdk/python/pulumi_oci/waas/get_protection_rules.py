@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -139,9 +144,6 @@ def get_protection_rules(actions: Optional[Sequence[str]] = None,
         mod_security_rule_ids=pulumi.get(__ret__, 'mod_security_rule_ids'),
         protection_rules=pulumi.get(__ret__, 'protection_rules'),
         waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'))
-
-
-@_utilities.lift_output_func(get_protection_rules)
 def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict']]]]] = None,
                                 mod_security_rule_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -169,4 +171,17 @@ def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence
     :param Sequence[str] mod_security_rule_ids: Filter rules using a list of ModSecurity rule IDs.
     :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
     """
-    ...
+    __args__ = dict()
+    __args__['actions'] = actions
+    __args__['filters'] = filters
+    __args__['modSecurityRuleIds'] = mod_security_rule_ids
+    __args__['waasPolicyId'] = waas_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waas/getProtectionRules:getProtectionRules', __args__, opts=opts, typ=GetProtectionRulesResult)
+    return __ret__.apply(lambda __response__: GetProtectionRulesResult(
+        actions=pulumi.get(__response__, 'actions'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        mod_security_rule_ids=pulumi.get(__response__, 'mod_security_rule_ids'),
+        protection_rules=pulumi.get(__response__, 'protection_rules'),
+        waas_policy_id=pulumi.get(__response__, 'waas_policy_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -288,9 +293,6 @@ def get_baselineable_metric(baselineable_metric_id: Optional[str] = None,
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_updated=pulumi.get(__ret__, 'time_last_updated'))
-
-
-@_utilities.lift_output_func(get_baselineable_metric)
 def get_baselineable_metric_output(baselineable_metric_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBaselineableMetricResult]:
     """
@@ -310,4 +312,26 @@ def get_baselineable_metric_output(baselineable_metric_id: Optional[pulumi.Input
 
     :param str baselineable_metric_id: Identifier for the metric
     """
-    ...
+    __args__ = dict()
+    __args__['baselineableMetricId'] = baselineable_metric_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric', __args__, opts=opts, typ=GetBaselineableMetricResult)
+    return __ret__.apply(lambda __response__: GetBaselineableMetricResult(
+        baselineable_metric_id=pulumi.get(__response__, 'baselineable_metric_id'),
+        column=pulumi.get(__response__, 'column'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_out_of_box=pulumi.get(__response__, 'is_out_of_box'),
+        last_updated_by=pulumi.get(__response__, 'last_updated_by'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        resource_group=pulumi.get(__response__, 'resource_group'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_updated=pulumi.get(__response__, 'time_last_updated')))

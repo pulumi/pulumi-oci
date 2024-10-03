@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -832,9 +837,6 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         vault_id=pulumi.get(__ret__, 'vault_id'),
         version_preference=pulumi.get(__ret__, 'version_preference'),
         vm_failover_reservation=pulumi.get(__ret__, 'vm_failover_reservation'))
-
-
-@_utilities.lift_output_func(get_autonomous_container_database)
 def get_autonomous_container_database_output(autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseResult]:
     """
@@ -854,4 +856,71 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase', __args__, opts=opts, typ=GetAutonomousContainerDatabaseResult)
+    return __ret__.apply(lambda __response__: GetAutonomousContainerDatabaseResult(
+        autonomous_container_database_id=pulumi.get(__response__, 'autonomous_container_database_id'),
+        autonomous_exadata_infrastructure_id=pulumi.get(__response__, 'autonomous_exadata_infrastructure_id'),
+        autonomous_vm_cluster_id=pulumi.get(__response__, 'autonomous_vm_cluster_id'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        available_cpus=pulumi.get(__response__, 'available_cpus'),
+        backup_configs=pulumi.get(__response__, 'backup_configs'),
+        cloud_autonomous_vm_cluster_id=pulumi.get(__response__, 'cloud_autonomous_vm_cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
+        database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
+        db_name=pulumi.get(__response__, 'db_name'),
+        db_split_threshold=pulumi.get(__response__, 'db_split_threshold'),
+        db_unique_name=pulumi.get(__response__, 'db_unique_name'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        distribution_affinity=pulumi.get(__response__, 'distribution_affinity'),
+        dst_file_version=pulumi.get(__response__, 'dst_file_version'),
+        fast_start_fail_over_lag_limit_in_seconds=pulumi.get(__response__, 'fast_start_fail_over_lag_limit_in_seconds'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        infrastructure_type=pulumi.get(__response__, 'infrastructure_type'),
+        is_automatic_failover_enabled=pulumi.get(__response__, 'is_automatic_failover_enabled'),
+        is_dst_file_update_enabled=pulumi.get(__response__, 'is_dst_file_update_enabled'),
+        key_history_entries=pulumi.get(__response__, 'key_history_entries'),
+        key_store_id=pulumi.get(__response__, 'key_store_id'),
+        key_store_wallet_name=pulumi.get(__response__, 'key_store_wallet_name'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        largest_provisionable_autonomous_database_in_cpus=pulumi.get(__response__, 'largest_provisionable_autonomous_database_in_cpus'),
+        last_maintenance_run_id=pulumi.get(__response__, 'last_maintenance_run_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        list_one_off_patches=pulumi.get(__response__, 'list_one_off_patches'),
+        maintenance_window_details=pulumi.get(__response__, 'maintenance_window_details'),
+        maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
+        memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
+        net_services_architecture=pulumi.get(__response__, 'net_services_architecture'),
+        next_maintenance_run_id=pulumi.get(__response__, 'next_maintenance_run_id'),
+        patch_id=pulumi.get(__response__, 'patch_id'),
+        patch_model=pulumi.get(__response__, 'patch_model'),
+        peer_autonomous_container_database_backup_configs=pulumi.get(__response__, 'peer_autonomous_container_database_backup_configs'),
+        peer_autonomous_container_database_compartment_id=pulumi.get(__response__, 'peer_autonomous_container_database_compartment_id'),
+        peer_autonomous_container_database_display_name=pulumi.get(__response__, 'peer_autonomous_container_database_display_name'),
+        peer_autonomous_exadata_infrastructure_id=pulumi.get(__response__, 'peer_autonomous_exadata_infrastructure_id'),
+        peer_autonomous_vm_cluster_id=pulumi.get(__response__, 'peer_autonomous_vm_cluster_id'),
+        peer_cloud_autonomous_vm_cluster_id=pulumi.get(__response__, 'peer_cloud_autonomous_vm_cluster_id'),
+        peer_db_unique_name=pulumi.get(__response__, 'peer_db_unique_name'),
+        protection_mode=pulumi.get(__response__, 'protection_mode'),
+        provisionable_cpuses=pulumi.get(__response__, 'provisionable_cpuses'),
+        provisioned_cpus=pulumi.get(__response__, 'provisioned_cpus'),
+        reclaimable_cpus=pulumi.get(__response__, 'reclaimable_cpus'),
+        reserved_cpus=pulumi.get(__response__, 'reserved_cpus'),
+        role=pulumi.get(__response__, 'role'),
+        rotate_key_trigger=pulumi.get(__response__, 'rotate_key_trigger'),
+        service_level_agreement_type=pulumi.get(__response__, 'service_level_agreement_type'),
+        standby_maintenance_buffer_in_days=pulumi.get(__response__, 'standby_maintenance_buffer_in_days'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_last_backup=pulumi.get(__response__, 'time_of_last_backup'),
+        time_snapshot_standby_revert=pulumi.get(__response__, 'time_snapshot_standby_revert'),
+        total_cpus=pulumi.get(__response__, 'total_cpus'),
+        vault_id=pulumi.get(__response__, 'vault_id'),
+        version_preference=pulumi.get(__response__, 'version_preference'),
+        vm_failover_reservation=pulumi.get(__response__, 'vm_failover_reservation')))

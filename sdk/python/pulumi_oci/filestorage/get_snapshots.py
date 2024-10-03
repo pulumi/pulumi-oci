@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -168,9 +173,6 @@ def get_snapshots(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         snapshots=pulumi.get(__ret__, 'snapshots'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_snapshots)
 def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                          file_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                          filesystem_snapshot_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -209,4 +211,20 @@ def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
     :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
     :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['fileSystemId'] = file_system_id
+    __args__['filesystemSnapshotPolicyId'] = filesystem_snapshot_policy_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getSnapshots:getSnapshots', __args__, opts=opts, typ=GetSnapshotsResult)
+    return __ret__.apply(lambda __response__: GetSnapshotsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        file_system_id=pulumi.get(__response__, 'file_system_id'),
+        filesystem_snapshot_policy_id=pulumi.get(__response__, 'filesystem_snapshot_policy_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        snapshots=pulumi.get(__response__, 'snapshots'),
+        state=pulumi.get(__response__, 'state')))

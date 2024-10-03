@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
-
-
-@_utilities.lift_output_func(get_external_asm_disk_groups)
 def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[str]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalAsmDiskGroupsFilterArgs', 'GetExternalAsmDiskGroupsFilterArgsDict']]]]] = None,
                                         opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -147,4 +149,15 @@ def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[s
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
     :param str opc_named_credential_id: The OCID of the Named Credential.
     """
-    ...
+    __args__ = dict()
+    __args__['externalAsmId'] = external_asm_id
+    __args__['filters'] = filters
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups', __args__, opts=opts, typ=GetExternalAsmDiskGroupsResult)
+    return __ret__.apply(lambda __response__: GetExternalAsmDiskGroupsResult(
+        external_asm_disk_group_collections=pulumi.get(__response__, 'external_asm_disk_group_collections'),
+        external_asm_id=pulumi.get(__response__, 'external_asm_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id')))

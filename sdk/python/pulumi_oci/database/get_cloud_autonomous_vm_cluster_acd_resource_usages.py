@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -122,9 +127,6 @@ def get_cloud_autonomous_vm_cluster_acd_resource_usages(cloud_autonomous_vm_clus
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_cloud_autonomous_vm_cluster_acd_resource_usages)
 def get_cloud_autonomous_vm_cluster_acd_resource_usages_output(cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                                compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]]]] = None,
@@ -149,4 +151,15 @@ def get_cloud_autonomous_vm_cluster_acd_resource_usages_output(cloud_autonomous_
     :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['cloudAutonomousVmClusterId'] = cloud_autonomous_vm_cluster_id
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudAutonomousVmClusterAcdResourceUsages:getCloudAutonomousVmClusterAcdResourceUsages', __args__, opts=opts, typ=GetCloudAutonomousVmClusterAcdResourceUsagesResult)
+    return __ret__.apply(lambda __response__: GetCloudAutonomousVmClusterAcdResourceUsagesResult(
+        autonomous_container_database_resource_usages=pulumi.get(__response__, 'autonomous_container_database_resource_usages'),
+        cloud_autonomous_vm_cluster_id=pulumi.get(__response__, 'cloud_autonomous_vm_cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

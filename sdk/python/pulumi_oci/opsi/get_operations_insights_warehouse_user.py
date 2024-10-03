@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -262,9 +267,6 @@ def get_operations_insights_warehouse_user(operations_insights_warehouse_user_id
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_operations_insights_warehouse_user)
 def get_operations_insights_warehouse_user_output(operations_insights_warehouse_user_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehouseUserResult]:
     """
@@ -284,4 +286,24 @@ def get_operations_insights_warehouse_user_output(operations_insights_warehouse_
 
     :param str operations_insights_warehouse_user_id: Unique Operations Insights Warehouse User identifier
     """
-    ...
+    __args__ = dict()
+    __args__['operationsInsightsWarehouseUserId'] = operations_insights_warehouse_user_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser', __args__, opts=opts, typ=GetOperationsInsightsWarehouseUserResult)
+    return __ret__.apply(lambda __response__: GetOperationsInsightsWarehouseUserResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_password=pulumi.get(__response__, 'connection_password'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_awr_data_access=pulumi.get(__response__, 'is_awr_data_access'),
+        is_em_data_access=pulumi.get(__response__, 'is_em_data_access'),
+        is_opsi_data_access=pulumi.get(__response__, 'is_opsi_data_access'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        operations_insights_warehouse_id=pulumi.get(__response__, 'operations_insights_warehouse_id'),
+        operations_insights_warehouse_user_id=pulumi.get(__response__, 'operations_insights_warehouse_user_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

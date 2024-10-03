@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -162,9 +167,6 @@ def get_vm_clusters(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vm_clusters=pulumi.get(__ret__, 'vm_clusters'))
-
-
-@_utilities.lift_output_func(get_vm_clusters)
 def get_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                            exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -195,4 +197,19 @@ def get_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusters:getVmClusters', __args__, opts=opts, typ=GetVmClustersResult)
+    return __ret__.apply(lambda __response__: GetVmClustersResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        vm_clusters=pulumi.get(__response__, 'vm_clusters')))

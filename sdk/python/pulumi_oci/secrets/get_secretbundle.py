@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -221,9 +226,6 @@ def get_secretbundle(secret_id: Optional[str] = None,
         time_of_expiry=pulumi.get(__ret__, 'time_of_expiry'),
         version_name=pulumi.get(__ret__, 'version_name'),
         version_number=pulumi.get(__ret__, 'version_number'))
-
-
-@_utilities.lift_output_func(get_secretbundle)
 def get_secretbundle_output(secret_id: Optional[pulumi.Input[str]] = None,
                             secret_version_name: Optional[pulumi.Input[Optional[str]]] = None,
                             stage: Optional[pulumi.Input[Optional[str]]] = None,
@@ -253,4 +255,23 @@ def get_secretbundle_output(secret_id: Optional[pulumi.Input[str]] = None,
     :param str stage: The rotation state of the secret version.
     :param str version_number: The version number of the secret.
     """
-    ...
+    __args__ = dict()
+    __args__['secretId'] = secret_id
+    __args__['secretVersionName'] = secret_version_name
+    __args__['stage'] = stage
+    __args__['versionNumber'] = version_number
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Secrets/getSecretbundle:getSecretbundle', __args__, opts=opts, typ=GetSecretbundleResult)
+    return __ret__.apply(lambda __response__: GetSecretbundleResult(
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        secret_bundle_contents=pulumi.get(__response__, 'secret_bundle_contents'),
+        secret_id=pulumi.get(__response__, 'secret_id'),
+        secret_version_name=pulumi.get(__response__, 'secret_version_name'),
+        stage=pulumi.get(__response__, 'stage'),
+        stages=pulumi.get(__response__, 'stages'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion'),
+        time_of_expiry=pulumi.get(__response__, 'time_of_expiry'),
+        version_name=pulumi.get(__response__, 'version_name'),
+        version_number=pulumi.get(__response__, 'version_number')))

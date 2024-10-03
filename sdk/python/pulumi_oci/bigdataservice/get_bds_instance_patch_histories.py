@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -155,9 +160,6 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
         patch_type=pulumi.get(__ret__, 'patch_type'),
         patch_version=pulumi.get(__ret__, 'patch_version'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_bds_instance_patch_histories)
 def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict']]]]] = None,
                                             patch_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -187,4 +189,19 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
     :param str patch_version: The version of the patch
     :param str state: The status of the patch.
     """
-    ...
+    __args__ = dict()
+    __args__['bdsInstanceId'] = bds_instance_id
+    __args__['filters'] = filters
+    __args__['patchType'] = patch_type
+    __args__['patchVersion'] = patch_version
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories', __args__, opts=opts, typ=GetBdsInstancePatchHistoriesResult)
+    return __ret__.apply(lambda __response__: GetBdsInstancePatchHistoriesResult(
+        bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        patch_histories=pulumi.get(__response__, 'patch_histories'),
+        patch_type=pulumi.get(__response__, 'patch_type'),
+        patch_version=pulumi.get(__response__, 'patch_version'),
+        state=pulumi.get(__response__, 'state')))

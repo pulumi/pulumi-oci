@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -300,9 +305,6 @@ def get_sensitive_types(access_level: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-
-
-@_utilities.lift_output_func(get_sensitive_types)
 def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                compartment_id: Optional[pulumi.Input[str]] = None,
                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -363,4 +365,37 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]
            
            **Example:** 2016-12-19T16:39:57.600Z
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['defaultMaskingFormatId'] = default_masking_format_id
+    __args__['displayName'] = display_name
+    __args__['entityType'] = entity_type
+    __args__['filters'] = filters
+    __args__['isCommon'] = is_common
+    __args__['parentCategoryId'] = parent_category_id
+    __args__['sensitiveTypeId'] = sensitive_type_id
+    __args__['sensitiveTypeSource'] = sensitive_type_source
+    __args__['state'] = state
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveTypes:getSensitiveTypes', __args__, opts=opts, typ=GetSensitiveTypesResult)
+    return __ret__.apply(lambda __response__: GetSensitiveTypesResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        default_masking_format_id=pulumi.get(__response__, 'default_masking_format_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        entity_type=pulumi.get(__response__, 'entity_type'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_common=pulumi.get(__response__, 'is_common'),
+        parent_category_id=pulumi.get(__response__, 'parent_category_id'),
+        sensitive_type_collections=pulumi.get(__response__, 'sensitive_type_collections'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id'),
+        sensitive_type_source=pulumi.get(__response__, 'sensitive_type_source'),
+        state=pulumi.get(__response__, 'state'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than')))

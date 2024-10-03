@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -341,9 +346,6 @@ def get_target_asset(target_asset_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         user_specs=pulumi.get(__ret__, 'user_specs'))
-
-
-@_utilities.lift_output_func(get_target_asset)
 def get_target_asset_output(target_asset_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAssetResult]:
     """
@@ -363,4 +365,30 @@ def get_target_asset_output(target_asset_id: Optional[pulumi.Input[str]] = None,
 
     :param str target_asset_id: Unique target asset identifier
     """
-    ...
+    __args__ = dict()
+    __args__['targetAssetId'] = target_asset_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getTargetAsset:getTargetAsset', __args__, opts=opts, typ=GetTargetAssetResult)
+    return __ret__.apply(lambda __response__: GetTargetAssetResult(
+        block_volumes_performance=pulumi.get(__response__, 'block_volumes_performance'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compatibility_messages=pulumi.get(__response__, 'compatibility_messages'),
+        created_resource_id=pulumi.get(__response__, 'created_resource_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        estimated_costs=pulumi.get(__response__, 'estimated_costs'),
+        id=pulumi.get(__response__, 'id'),
+        is_excluded_from_execution=pulumi.get(__response__, 'is_excluded_from_execution'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        migration_assets=pulumi.get(__response__, 'migration_assets'),
+        migration_plan_id=pulumi.get(__response__, 'migration_plan_id'),
+        ms_license=pulumi.get(__response__, 'ms_license'),
+        preferred_shape_type=pulumi.get(__response__, 'preferred_shape_type'),
+        recommended_specs=pulumi.get(__response__, 'recommended_specs'),
+        state=pulumi.get(__response__, 'state'),
+        target_asset_id=pulumi.get(__response__, 'target_asset_id'),
+        test_specs=pulumi.get(__response__, 'test_specs'),
+        time_assessed=pulumi.get(__response__, 'time_assessed'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        user_specs=pulumi.get(__response__, 'user_specs')))

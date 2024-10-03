@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -423,9 +428,6 @@ def get_blockchain_platform(blockchain_platform_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         total_ocpu_capacity=pulumi.get(__ret__, 'total_ocpu_capacity'))
-
-
-@_utilities.lift_output_func(get_blockchain_platform)
 def get_blockchain_platform_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockchainPlatformResult]:
     """
@@ -445,4 +447,37 @@ def get_blockchain_platform_output(blockchain_platform_id: Optional[pulumi.Input
 
     :param str blockchain_platform_id: Unique service identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['blockchainPlatformId'] = blockchain_platform_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform', __args__, opts=opts, typ=GetBlockchainPlatformResult)
+    return __ret__.apply(lambda __response__: GetBlockchainPlatformResult(
+        blockchain_platform_id=pulumi.get(__response__, 'blockchain_platform_id'),
+        ca_cert_archive_text=pulumi.get(__response__, 'ca_cert_archive_text'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        component_details=pulumi.get(__response__, 'component_details'),
+        compute_shape=pulumi.get(__response__, 'compute_shape'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        federated_user_id=pulumi.get(__response__, 'federated_user_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host_ocpu_utilization_infos=pulumi.get(__response__, 'host_ocpu_utilization_infos'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_access_token=pulumi.get(__response__, 'idcs_access_token'),
+        is_byol=pulumi.get(__response__, 'is_byol'),
+        is_multi_ad=pulumi.get(__response__, 'is_multi_ad'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        load_balancer_shape=pulumi.get(__response__, 'load_balancer_shape'),
+        platform_role=pulumi.get(__response__, 'platform_role'),
+        platform_shape_type=pulumi.get(__response__, 'platform_shape_type'),
+        platform_version=pulumi.get(__response__, 'platform_version'),
+        replicas=pulumi.get(__response__, 'replicas'),
+        service_endpoint=pulumi.get(__response__, 'service_endpoint'),
+        service_version=pulumi.get(__response__, 'service_version'),
+        state=pulumi.get(__response__, 'state'),
+        storage_size_in_tbs=pulumi.get(__response__, 'storage_size_in_tbs'),
+        storage_used_in_tbs=pulumi.get(__response__, 'storage_used_in_tbs'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        total_ocpu_capacity=pulumi.get(__response__, 'total_ocpu_capacity')))

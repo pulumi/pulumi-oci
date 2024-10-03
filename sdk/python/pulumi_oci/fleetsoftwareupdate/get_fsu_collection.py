@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -276,9 +281,6 @@ def get_fsu_collection(fsu_collection_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_fsu_collection)
 def get_fsu_collection_output(fsu_collection_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFsuCollectionResult]:
     """
@@ -298,4 +300,25 @@ def get_fsu_collection_output(fsu_collection_id: Optional[pulumi.Input[str]] = N
 
     :param str fsu_collection_id: Unique Exadata Fleet Update Collection identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['fsuCollectionId'] = fsu_collection_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FleetSoftwareUpdate/getFsuCollection:getFsuCollection', __args__, opts=opts, typ=GetFsuCollectionResult)
+    return __ret__.apply(lambda __response__: GetFsuCollectionResult(
+        active_fsu_cycles=pulumi.get(__response__, 'active_fsu_cycles'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        fleet_discoveries=pulumi.get(__response__, 'fleet_discoveries'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        fsu_collection_id=pulumi.get(__response__, 'fsu_collection_id'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        service_type=pulumi.get(__response__, 'service_type'),
+        source_major_version=pulumi.get(__response__, 'source_major_version'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_count=pulumi.get(__response__, 'target_count'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

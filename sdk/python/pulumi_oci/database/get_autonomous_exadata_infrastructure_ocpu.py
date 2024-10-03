@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -120,9 +125,6 @@ def get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure
         consumed_cpu=pulumi.get(__ret__, 'consumed_cpu'),
         id=pulumi.get(__ret__, 'id'),
         total_cpu=pulumi.get(__ret__, 'total_cpu'))
-
-
-@_utilities.lift_output_func(get_autonomous_exadata_infrastructure_ocpu)
 def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureOcpuResult]:
     """
@@ -142,4 +144,13 @@ def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrast
 
     :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousExadataInfrastructureId'] = autonomous_exadata_infrastructure_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu', __args__, opts=opts, typ=GetAutonomousExadataInfrastructureOcpuResult)
+    return __ret__.apply(lambda __response__: GetAutonomousExadataInfrastructureOcpuResult(
+        autonomous_exadata_infrastructure_id=pulumi.get(__response__, 'autonomous_exadata_infrastructure_id'),
+        by_workload_types=pulumi.get(__response__, 'by_workload_types'),
+        consumed_cpu=pulumi.get(__response__, 'consumed_cpu'),
+        id=pulumi.get(__response__, 'id'),
+        total_cpu=pulumi.get(__response__, 'total_cpu')))

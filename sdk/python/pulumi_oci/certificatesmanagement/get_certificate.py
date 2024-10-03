@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -328,9 +333,6 @@ def get_certificate(certificate_id: Optional[str] = None,
         subjects=pulumi.get(__ret__, 'subjects'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'))
-
-
-@_utilities.lift_output_func(get_certificate)
 def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateResult]:
     """
@@ -350,4 +352,29 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
 
     :param str certificate_id: The OCID of the certificate.
     """
-    ...
+    __args__ = dict()
+    __args__['certificateId'] = certificate_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificate:getCertificate', __args__, opts=opts, typ=GetCertificateResult)
+    return __ret__.apply(lambda __response__: GetCertificateResult(
+        certificate_configs=pulumi.get(__response__, 'certificate_configs'),
+        certificate_id=pulumi.get(__response__, 'certificate_id'),
+        certificate_profile_type=pulumi.get(__response__, 'certificate_profile_type'),
+        certificate_revocation_list_details=pulumi.get(__response__, 'certificate_revocation_list_details'),
+        certificate_rules=pulumi.get(__response__, 'certificate_rules'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config_type=pulumi.get(__response__, 'config_type'),
+        current_versions=pulumi.get(__response__, 'current_versions'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        issuer_certificate_authority_id=pulumi.get(__response__, 'issuer_certificate_authority_id'),
+        key_algorithm=pulumi.get(__response__, 'key_algorithm'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        signature_algorithm=pulumi.get(__response__, 'signature_algorithm'),
+        state=pulumi.get(__response__, 'state'),
+        subjects=pulumi.get(__response__, 'subjects'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion')))

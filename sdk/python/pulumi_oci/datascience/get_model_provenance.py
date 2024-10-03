@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -155,9 +160,6 @@ def get_model_provenance(model_id: Optional[str] = None,
         script_dir=pulumi.get(__ret__, 'script_dir'),
         training_id=pulumi.get(__ret__, 'training_id'),
         training_script=pulumi.get(__ret__, 'training_script'))
-
-
-@_utilities.lift_output_func(get_model_provenance)
 def get_model_provenance_output(model_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelProvenanceResult]:
     """
@@ -177,4 +179,16 @@ def get_model_provenance_output(model_id: Optional[pulumi.Input[str]] = None,
 
     :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
     """
-    ...
+    __args__ = dict()
+    __args__['modelId'] = model_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelProvenance:getModelProvenance', __args__, opts=opts, typ=GetModelProvenanceResult)
+    return __ret__.apply(lambda __response__: GetModelProvenanceResult(
+        git_branch=pulumi.get(__response__, 'git_branch'),
+        git_commit=pulumi.get(__response__, 'git_commit'),
+        id=pulumi.get(__response__, 'id'),
+        model_id=pulumi.get(__response__, 'model_id'),
+        repository_url=pulumi.get(__response__, 'repository_url'),
+        script_dir=pulumi.get(__response__, 'script_dir'),
+        training_id=pulumi.get(__response__, 'training_id'),
+        training_script=pulumi.get(__response__, 'training_script')))

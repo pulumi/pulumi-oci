@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -93,9 +98,6 @@ def get_db_system_primary_db_instance(db_system_id: Optional[str] = None,
         db_instance_id=pulumi.get(__ret__, 'db_instance_id'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_db_system_primary_db_instance)
 def get_db_system_primary_db_instance_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemPrimaryDbInstanceResult]:
     """
@@ -115,4 +117,11 @@ def get_db_system_primary_db_instance_output(db_system_id: Optional[pulumi.Input
 
     :param str db_system_id: A unique identifier for the database system.
     """
-    ...
+    __args__ = dict()
+    __args__['dbSystemId'] = db_system_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance', __args__, opts=opts, typ=GetDbSystemPrimaryDbInstanceResult)
+    return __ret__.apply(lambda __response__: GetDbSystemPrimaryDbInstanceResult(
+        db_instance_id=pulumi.get(__response__, 'db_instance_id'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        id=pulumi.get(__response__, 'id')))

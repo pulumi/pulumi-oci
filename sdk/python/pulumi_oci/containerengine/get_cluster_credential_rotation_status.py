@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -119,9 +124,6 @@ def get_cluster_credential_rotation_status(cluster_id: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         status_details=pulumi.get(__ret__, 'status_details'),
         time_auto_completion_scheduled=pulumi.get(__ret__, 'time_auto_completion_scheduled'))
-
-
-@_utilities.lift_output_func(get_cluster_credential_rotation_status)
 def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterCredentialRotationStatusResult]:
     """
@@ -141,4 +143,13 @@ def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.In
 
     :param str cluster_id: The OCID of the cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus', __args__, opts=opts, typ=GetClusterCredentialRotationStatusResult)
+    return __ret__.apply(lambda __response__: GetClusterCredentialRotationStatusResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        id=pulumi.get(__response__, 'id'),
+        status=pulumi.get(__response__, 'status'),
+        status_details=pulumi.get(__response__, 'status_details'),
+        time_auto_completion_scheduled=pulumi.get(__response__, 'time_auto_completion_scheduled')))

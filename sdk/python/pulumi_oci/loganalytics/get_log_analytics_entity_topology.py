@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -139,9 +144,6 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
         metadata_equals=pulumi.get(__ret__, 'metadata_equals'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_log_analytics_entity_topology)
 def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[pulumi.Input[str]] = None,
                                              metadata_equals: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              namespace: Optional[pulumi.Input[str]] = None,
@@ -170,4 +172,17 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
     :param str namespace: The Logging Analytics namespace used for the request.
     :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['logAnalyticsEntityId'] = log_analytics_entity_id
+    __args__['metadataEquals'] = metadata_equals
+    __args__['namespace'] = namespace
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology', __args__, opts=opts, typ=GetLogAnalyticsEntityTopologyResult)
+    return __ret__.apply(lambda __response__: GetLogAnalyticsEntityTopologyResult(
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        log_analytics_entity_id=pulumi.get(__response__, 'log_analytics_entity_id'),
+        metadata_equals=pulumi.get(__response__, 'metadata_equals'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        state=pulumi.get(__response__, 'state')))

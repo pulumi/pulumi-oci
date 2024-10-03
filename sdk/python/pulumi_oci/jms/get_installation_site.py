@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -251,9 +256,6 @@ def get_installation_site(application_id: Optional[str] = None,
         path_contains=pulumi.get(__ret__, 'path_contains'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_installation_site)
 def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  fleet_id: Optional[pulumi.Input[str]] = None,
                                  installation_path: Optional[pulumi.Input[Optional[str]]] = None,
@@ -306,4 +308,33 @@ def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
-    ...
+    __args__ = dict()
+    __args__['applicationId'] = application_id
+    __args__['fleetId'] = fleet_id
+    __args__['installationPath'] = installation_path
+    __args__['jreDistribution'] = jre_distribution
+    __args__['jreSecurityStatus'] = jre_security_status
+    __args__['jreVendor'] = jre_vendor
+    __args__['jreVersion'] = jre_version
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['osFamilies'] = os_families
+    __args__['pathContains'] = path_contains
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getInstallationSite:getInstallationSite', __args__, opts=opts, typ=GetInstallationSiteResult)
+    return __ret__.apply(lambda __response__: GetInstallationSiteResult(
+        application_id=pulumi.get(__response__, 'application_id'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        id=pulumi.get(__response__, 'id'),
+        installation_path=pulumi.get(__response__, 'installation_path'),
+        items=pulumi.get(__response__, 'items'),
+        jre_distribution=pulumi.get(__response__, 'jre_distribution'),
+        jre_security_status=pulumi.get(__response__, 'jre_security_status'),
+        jre_vendor=pulumi.get(__response__, 'jre_vendor'),
+        jre_version=pulumi.get(__response__, 'jre_version'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        os_families=pulumi.get(__response__, 'os_families'),
+        path_contains=pulumi.get(__response__, 'path_contains'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

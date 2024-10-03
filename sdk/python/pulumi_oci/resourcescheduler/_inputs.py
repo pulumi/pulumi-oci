@@ -4,17 +4,43 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ScheduleResourceArgs',
+    'ScheduleResourceArgsDict',
     'ScheduleResourceFilterArgs',
+    'ScheduleResourceFilterArgsDict',
     'ScheduleResourceFilterValueArgs',
+    'ScheduleResourceFilterValueArgsDict',
     'GetSchedulesFilterArgs',
+    'GetSchedulesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ScheduleResourceArgsDict(TypedDict):
+        id: pulumi.Input[str]
+        """
+        (Updatable) This is the resource OCID.
+        """
+        metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) This is additional information that helps to identity the resource for the schedule.
+
+        { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+        """
+elif False:
+    ScheduleResourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ScheduleResourceArgs:
@@ -57,6 +83,27 @@ class ScheduleResourceArgs:
     def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
+
+if not MYPY:
+    class ScheduleResourceFilterArgsDict(TypedDict):
+        attribute: pulumi.Input[str]
+        """
+        (Updatable) This is the resource attribute on which the threshold is defined.
+        """
+        condition: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This is the condition for the filter in comparison to its creation time.
+        """
+        should_include_child_compartments: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) This sets whether to include child compartments.
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgsDict']]]]
+        """
+        (Updatable) This is a collection of resource lifecycle state values.
+        """
+elif False:
+    ScheduleResourceFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ScheduleResourceFilterArgs:
@@ -128,6 +175,23 @@ class ScheduleResourceFilterArgs:
         pulumi.set(self, "values", value)
 
 
+if not MYPY:
+    class ScheduleResourceFilterValueArgsDict(TypedDict):
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This is the namespace of the defined tag.
+        """
+        tag_key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This is the key of the defined tag.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This is the value of the defined tag.
+        """
+elif False:
+    ScheduleResourceFilterValueArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ScheduleResourceFilterValueArgs:
     def __init__(__self__, *,
@@ -182,6 +246,14 @@ class ScheduleResourceFilterValueArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetSchedulesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSchedulesFilterArgs:

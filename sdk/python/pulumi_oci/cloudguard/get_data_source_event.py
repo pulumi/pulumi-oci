@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -114,9 +119,6 @@ def get_data_source_event(data_source_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         region=pulumi.get(__ret__, 'region'))
-
-
-@_utilities.lift_output_func(get_data_source_event)
 def get_data_source_event_output(data_source_id: Optional[pulumi.Input[str]] = None,
                                  region: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSourceEventResult]:
@@ -139,4 +141,13 @@ def get_data_source_event_output(data_source_id: Optional[pulumi.Input[str]] = N
     :param str data_source_id: DataSource OCID
     :param str region: A filter to return only resource their region matches the given region.
     """
-    ...
+    __args__ = dict()
+    __args__['dataSourceId'] = data_source_id
+    __args__['region'] = region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataSourceEvent:getDataSourceEvent', __args__, opts=opts, typ=GetDataSourceEventResult)
+    return __ret__.apply(lambda __response__: GetDataSourceEventResult(
+        data_source_id=pulumi.get(__response__, 'data_source_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        region=pulumi.get(__response__, 'region')))

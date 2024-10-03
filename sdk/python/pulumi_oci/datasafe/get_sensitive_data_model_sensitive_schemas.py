@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -124,9 +129,6 @@ def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[Union[
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         sensitive_schema_collections=pulumi.get(__ret__, 'sensitive_schema_collections'))
-
-
-@_utilities.lift_output_func(get_sensitive_data_model_sensitive_schemas)
 def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelSensitiveSchemasFilterArgs', 'GetSensitiveDataModelSensitiveSchemasFilterArgsDict']]]]] = None,
                                                       schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                       sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
@@ -150,4 +152,15 @@ def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.I
     :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
     :param str sensitive_data_model_id: The OCID of the sensitive data model.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['schemaNames'] = schema_names
+    __args__['sensitiveDataModelId'] = sensitive_data_model_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas', __args__, opts=opts, typ=GetSensitiveDataModelSensitiveSchemasResult)
+    return __ret__.apply(lambda __response__: GetSensitiveDataModelSensitiveSchemasResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        schema_names=pulumi.get(__response__, 'schema_names'),
+        sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_schema_collections=pulumi.get(__response__, 'sensitive_schema_collections')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_repository_mirror_records(filters: Optional[Sequence[Union['GetRepositor
         id=pulumi.get(__ret__, 'id'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         repository_mirror_record_collections=pulumi.get(__ret__, 'repository_mirror_record_collections'))
-
-
-@_utilities.lift_output_func(get_repository_mirror_records)
 def get_repository_mirror_records_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryMirrorRecordsFilterArgs', 'GetRepositoryMirrorRecordsFilterArgsDict']]]]] = None,
                                          repository_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryMirrorRecordsResult]:
@@ -130,4 +132,13 @@ def get_repository_mirror_records_output(filters: Optional[pulumi.Input[Optional
 
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords', __args__, opts=opts, typ=GetRepositoryMirrorRecordsResult)
+    return __ret__.apply(lambda __response__: GetRepositoryMirrorRecordsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        repository_mirror_record_collections=pulumi.get(__response__, 'repository_mirror_record_collections')))

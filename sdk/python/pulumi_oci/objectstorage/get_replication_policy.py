@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -210,9 +215,6 @@ def get_replication_policy(bucket: Optional[str] = None,
         status_message=pulumi.get(__ret__, 'status_message'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_sync=pulumi.get(__ret__, 'time_last_sync'))
-
-
-@_utilities.lift_output_func(get_replication_policy)
 def get_replication_policy_output(bucket: Optional[pulumi.Input[str]] = None,
                                   namespace: Optional[pulumi.Input[str]] = None,
                                   replication_id: Optional[pulumi.Input[str]] = None,
@@ -238,4 +240,22 @@ def get_replication_policy_output(bucket: Optional[pulumi.Input[str]] = None,
     :param str namespace: The Object Storage namespace used for the request.
     :param str replication_id: The ID of the replication policy.
     """
-    ...
+    __args__ = dict()
+    __args__['bucket'] = bucket
+    __args__['namespace'] = namespace
+    __args__['replicationId'] = replication_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getReplicationPolicy:getReplicationPolicy', __args__, opts=opts, typ=GetReplicationPolicyResult)
+    return __ret__.apply(lambda __response__: GetReplicationPolicyResult(
+        bucket=pulumi.get(__response__, 'bucket'),
+        delete_object_in_destination_bucket=pulumi.get(__response__, 'delete_object_in_destination_bucket'),
+        destination_bucket_name=pulumi.get(__response__, 'destination_bucket_name'),
+        destination_region_name=pulumi.get(__response__, 'destination_region_name'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        replication_id=pulumi.get(__response__, 'replication_id'),
+        status=pulumi.get(__response__, 'status'),
+        status_message=pulumi.get(__response__, 'status_message'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_sync=pulumi.get(__response__, 'time_last_sync')))

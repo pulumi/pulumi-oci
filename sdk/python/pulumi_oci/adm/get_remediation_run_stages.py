@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -144,9 +149,6 @@ def get_remediation_run_stages(filters: Optional[Sequence[Union['GetRemediationR
         remediation_run_stage_collections=pulumi.get(__ret__, 'remediation_run_stage_collections'),
         status=pulumi.get(__ret__, 'status'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_remediation_run_stages)
 def get_remediation_run_stages_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemediationRunStagesFilterArgs', 'GetRemediationRunStagesFilterArgsDict']]]]] = None,
                                       remediation_run_id: Optional[pulumi.Input[str]] = None,
                                       status: Optional[pulumi.Input[Optional[str]]] = None,
@@ -173,4 +175,17 @@ def get_remediation_run_stages_output(filters: Optional[pulumi.Input[Optional[Se
     :param str status: A filter to return only Stages that match the specified status.
     :param str type: A filter to return only Stages that match the specified type.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['remediationRunId'] = remediation_run_id
+    __args__['status'] = status
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Adm/getRemediationRunStages:getRemediationRunStages', __args__, opts=opts, typ=GetRemediationRunStagesResult)
+    return __ret__.apply(lambda __response__: GetRemediationRunStagesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        remediation_run_id=pulumi.get(__response__, 'remediation_run_id'),
+        remediation_run_stage_collections=pulumi.get(__response__, 'remediation_run_stage_collections'),
+        status=pulumi.get(__response__, 'status'),
+        type=pulumi.get(__response__, 'type')))

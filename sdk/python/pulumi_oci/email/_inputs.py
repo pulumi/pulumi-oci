@@ -4,18 +4,41 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetDkimsFilterArgs',
+    'GetDkimsFilterArgsDict',
     'GetEmailDomainsFilterArgs',
+    'GetEmailDomainsFilterArgsDict',
     'GetEmailReturnPathsFilterArgs',
+    'GetEmailReturnPathsFilterArgsDict',
     'GetSendersFilterArgs',
+    'GetSendersFilterArgsDict',
     'GetSuppressionsFilterArgs',
+    'GetSuppressionsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetDkimsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to only return resources that match the given name exactly.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDkimsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDkimsFilterArgs:
@@ -62,6 +85,17 @@ class GetDkimsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetEmailDomainsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to only return resources that match the given name exactly.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetEmailDomainsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetEmailDomainsFilterArgs:
     def __init__(__self__, *,
@@ -106,6 +140,17 @@ class GetEmailDomainsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetEmailReturnPathsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to only return resources that match the given name exactly.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetEmailReturnPathsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetEmailReturnPathsFilterArgs:
@@ -152,6 +197,14 @@ class GetEmailReturnPathsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSendersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSendersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSendersFilterArgs:
     def __init__(__self__, *,
@@ -190,6 +243,14 @@ class GetSendersFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSuppressionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSuppressionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSuppressionsFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -389,9 +394,6 @@ def get_instance_maintenance_event(instance_maintenance_event_id: Optional[str] 
         time_hard_due_date=pulumi.get(__ret__, 'time_hard_due_date'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_window_start=pulumi.get(__ret__, 'time_window_start'))
-
-
-@_utilities.lift_output_func(get_instance_maintenance_event)
 def get_instance_maintenance_event_output(instance_maintenance_event_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceMaintenanceEventResult]:
     """
@@ -411,4 +413,34 @@ def get_instance_maintenance_event_output(instance_maintenance_event_id: Optiona
 
     :param str instance_maintenance_event_id: The OCID of the instance maintenance event.
     """
-    ...
+    __args__ = dict()
+    __args__['instanceMaintenanceEventId'] = instance_maintenance_event_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent', __args__, opts=opts, typ=GetInstanceMaintenanceEventResult)
+    return __ret__.apply(lambda __response__: GetInstanceMaintenanceEventResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        alternative_resolution_action=pulumi.get(__response__, 'alternative_resolution_action'),
+        alternative_resolution_actions=pulumi.get(__response__, 'alternative_resolution_actions'),
+        can_delete_local_storage=pulumi.get(__response__, 'can_delete_local_storage'),
+        can_reschedule=pulumi.get(__response__, 'can_reschedule'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        correlation_token=pulumi.get(__response__, 'correlation_token'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        estimated_duration=pulumi.get(__response__, 'estimated_duration'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        instance_action=pulumi.get(__response__, 'instance_action'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        instance_maintenance_event_id=pulumi.get(__response__, 'instance_maintenance_event_id'),
+        maintenance_category=pulumi.get(__response__, 'maintenance_category'),
+        maintenance_reason=pulumi.get(__response__, 'maintenance_reason'),
+        start_window_duration=pulumi.get(__response__, 'start_window_duration'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_hard_due_date=pulumi.get(__response__, 'time_hard_due_date'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        time_window_start=pulumi.get(__response__, 'time_window_start')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[Union[
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         sensitive_object_collections=pulumi.get(__ret__, 'sensitive_object_collections'))
-
-
-@_utilities.lift_output_func(get_sensitive_data_model_sensitive_objects)
 def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict']]]]] = None,
                                                       object_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                       objects: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -190,4 +192,19 @@ def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.I
     :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
     :param str sensitive_data_model_id: The OCID of the sensitive data model.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['objectTypes'] = object_types
+    __args__['objects'] = objects
+    __args__['schemaNames'] = schema_names
+    __args__['sensitiveDataModelId'] = sensitive_data_model_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModelSensitiveObjects:getSensitiveDataModelSensitiveObjects', __args__, opts=opts, typ=GetSensitiveDataModelSensitiveObjectsResult)
+    return __ret__.apply(lambda __response__: GetSensitiveDataModelSensitiveObjectsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        object_types=pulumi.get(__response__, 'object_types'),
+        objects=pulumi.get(__response__, 'objects'),
+        schema_names=pulumi.get(__response__, 'schema_names'),
+        sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_object_collections=pulumi.get(__response__, 'sensitive_object_collections')))

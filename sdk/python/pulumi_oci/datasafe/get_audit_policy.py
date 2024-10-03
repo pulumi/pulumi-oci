@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -309,9 +314,6 @@ def get_audit_policy(audit_policy_id: Optional[str] = None,
         time_last_provisioned=pulumi.get(__ret__, 'time_last_provisioned'),
         time_last_retrieved=pulumi.get(__ret__, 'time_last_retrieved'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_audit_policy)
 def get_audit_policy_output(audit_policy_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditPolicyResult]:
     """
@@ -331,4 +333,28 @@ def get_audit_policy_output(audit_policy_id: Optional[pulumi.Input[str]] = None,
 
     :param str audit_policy_id: Unique audit policy identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['auditPolicyId'] = audit_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditPolicy:getAuditPolicy', __args__, opts=opts, typ=GetAuditPolicyResult)
+    return __ret__.apply(lambda __response__: GetAuditPolicyResult(
+        audit_conditions=pulumi.get(__response__, 'audit_conditions'),
+        audit_policy_id=pulumi.get(__response__, 'audit_policy_id'),
+        audit_specifications=pulumi.get(__response__, 'audit_specifications'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_data_safe_service_account_excluded=pulumi.get(__response__, 'is_data_safe_service_account_excluded'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        provision_trigger=pulumi.get(__response__, 'provision_trigger'),
+        retrieve_from_target_trigger=pulumi.get(__response__, 'retrieve_from_target_trigger'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_provisioned=pulumi.get(__response__, 'time_last_provisioned'),
+        time_last_retrieved=pulumi.get(__response__, 'time_last_retrieved'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

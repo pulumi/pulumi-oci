@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -334,9 +339,6 @@ def get_migration_asset(migration_asset_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_migration_asset)
 def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationAssetResult]:
     """
@@ -356,4 +358,30 @@ def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[str]] =
 
     :param str migration_asset_id: Unique migration asset identifier
     """
-    ...
+    __args__ = dict()
+    __args__['migrationAssetId'] = migration_asset_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getMigrationAsset:getMigrationAsset', __args__, opts=opts, typ=GetMigrationAssetResult)
+    return __ret__.apply(lambda __response__: GetMigrationAssetResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        depended_on_bies=pulumi.get(__response__, 'depended_on_bies'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        inventory_asset_id=pulumi.get(__response__, 'inventory_asset_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        migration_asset_depends_ons=pulumi.get(__response__, 'migration_asset_depends_ons'),
+        migration_asset_id=pulumi.get(__response__, 'migration_asset_id'),
+        migration_id=pulumi.get(__response__, 'migration_id'),
+        notifications=pulumi.get(__response__, 'notifications'),
+        parent_snapshot=pulumi.get(__response__, 'parent_snapshot'),
+        replication_compartment_id=pulumi.get(__response__, 'replication_compartment_id'),
+        replication_schedule_id=pulumi.get(__response__, 'replication_schedule_id'),
+        snap_shot_bucket_name=pulumi.get(__response__, 'snap_shot_bucket_name'),
+        snapshots=pulumi.get(__response__, 'snapshots'),
+        source_asset_id=pulumi.get(__response__, 'source_asset_id'),
+        state=pulumi.get(__response__, 'state'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

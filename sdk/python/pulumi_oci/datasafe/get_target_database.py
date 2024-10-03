@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -299,9 +304,6 @@ def get_target_database(target_database_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         tls_configs=pulumi.get(__ret__, 'tls_configs'))
-
-
-@_utilities.lift_output_func(get_target_database)
 def get_target_database_output(target_database_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabaseResult]:
     """
@@ -321,4 +323,27 @@ def get_target_database_output(target_database_id: Optional[pulumi.Input[str]] =
 
     :param str target_database_id: The OCID of the Data Safe target database.
     """
-    ...
+    __args__ = dict()
+    __args__['targetDatabaseId'] = target_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabase:getTargetDatabase', __args__, opts=opts, typ=GetTargetDatabaseResult)
+    return __ret__.apply(lambda __response__: GetTargetDatabaseResult(
+        associated_resource_ids=pulumi.get(__response__, 'associated_resource_ids'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_options=pulumi.get(__response__, 'connection_options'),
+        credentials=pulumi.get(__response__, 'credentials'),
+        database_details=pulumi.get(__response__, 'database_details'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        peer_target_database_details=pulumi.get(__response__, 'peer_target_database_details'),
+        peer_target_databases=pulumi.get(__response__, 'peer_target_databases'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_database_id=pulumi.get(__response__, 'target_database_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        tls_configs=pulumi.get(__response__, 'tls_configs')))

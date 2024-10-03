@@ -73,7 +73,7 @@ import (
 //						SourceType: pulumi.Any(datasetInitialImportDatasetConfigurationImportMetadataPathSourceType),
 //					},
 //				},
-//				InitialRecordGenerationConfiguration: nil,
+//				InitialRecordGenerationConfiguration: &datalabellingservice.DatasetInitialRecordGenerationConfigurationArgs{},
 //				LabelingInstructions:                 pulumi.Any(datasetLabelingInstructions),
 //			})
 //			if err != nil {

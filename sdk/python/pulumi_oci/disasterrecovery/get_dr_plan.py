@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -263,9 +268,6 @@ def get_dr_plan(dr_plan_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_dr_plan)
 def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrPlanResult]:
     """
@@ -285,4 +287,24 @@ def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[str]] = None,
 
     :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
     """
-    ...
+    __args__ = dict()
+    __args__['drPlanId'] = dr_plan_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrPlan:getDrPlan', __args__, opts=opts, typ=GetDrPlanResult)
+    return __ret__.apply(lambda __response__: GetDrPlanResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dr_plan_id=pulumi.get(__response__, 'dr_plan_id'),
+        dr_protection_group_id=pulumi.get(__response__, 'dr_protection_group_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        life_cycle_details=pulumi.get(__response__, 'life_cycle_details'),
+        peer_dr_protection_group_id=pulumi.get(__response__, 'peer_dr_protection_group_id'),
+        peer_region=pulumi.get(__response__, 'peer_region'),
+        plan_groups=pulumi.get(__response__, 'plan_groups'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

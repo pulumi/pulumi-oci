@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -216,9 +221,6 @@ def get_managed_lists(access_level: Optional[str] = None,
         managed_list_collections=pulumi.get(__ret__, 'managed_list_collections'),
         resource_metadata_only=pulumi.get(__ret__, 'resource_metadata_only'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_managed_lists)
 def get_managed_lists_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -270,4 +272,25 @@ def get_managed_lists_output(access_level: Optional[pulumi.Input[Optional[str]]]
     :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
     :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['listType'] = list_type
+    __args__['resourceMetadataOnly'] = resource_metadata_only
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getManagedLists:getManagedLists', __args__, opts=opts, typ=GetManagedListsResult)
+    return __ret__.apply(lambda __response__: GetManagedListsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        list_type=pulumi.get(__response__, 'list_type'),
+        managed_list_collections=pulumi.get(__response__, 'managed_list_collections'),
+        resource_metadata_only=pulumi.get(__response__, 'resource_metadata_only'),
+        state=pulumi.get(__response__, 'state')))

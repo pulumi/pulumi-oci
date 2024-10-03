@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -113,9 +118,6 @@ def get_api_keys(filters: Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetAp
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         user_id=pulumi.get(__ret__, 'user_id'))
-
-
-@_utilities.lift_output_func(get_api_keys)
 def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetApiKeysFilterArgsDict']]]]] = None,
                         user_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiKeysResult]:
@@ -139,4 +141,13 @@ def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['
 
     :param str user_id: The OCID of the user.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['userId'] = user_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getApiKeys:getApiKeys', __args__, opts=opts, typ=GetApiKeysResult)
+    return __ret__.apply(lambda __response__: GetApiKeysResult(
+        api_keys=pulumi.get(__response__, 'api_keys'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        user_id=pulumi.get(__response__, 'user_id')))

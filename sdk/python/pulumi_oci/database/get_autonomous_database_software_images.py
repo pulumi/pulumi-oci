@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_autonomous_database_software_images(compartment_id: Optional[str] = None
         id=pulumi.get(__ret__, 'id'),
         image_shape_family=pulumi.get(__ret__, 'image_shape_family'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_autonomous_database_software_images)
 def get_autonomous_database_software_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseSoftwareImagesFilterArgs', 'GetAutonomousDatabaseSoftwareImagesFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_autonomous_database_software_images_output(compartment_id: Optional[pulu
     :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['imageShapeFamily'] = image_shape_family
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages', __args__, opts=opts, typ=GetAutonomousDatabaseSoftwareImagesResult)
+    return __ret__.apply(lambda __response__: GetAutonomousDatabaseSoftwareImagesResult(
+        autonomous_database_software_image_collections=pulumi.get(__response__, 'autonomous_database_software_image_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        image_shape_family=pulumi.get(__response__, 'image_shape_family'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_preauthrequests(bucket: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         object_name_prefix=pulumi.get(__ret__, 'object_name_prefix'),
         preauthenticated_requests=pulumi.get(__ret__, 'preauthenticated_requests'))
-
-
-@_utilities.lift_output_func(get_preauthrequests)
 def get_preauthrequests_output(bucket: Optional[pulumi.Input[str]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict']]]]] = None,
                                namespace: Optional[pulumi.Input[str]] = None,
@@ -170,4 +172,17 @@ def get_preauthrequests_output(bucket: Optional[pulumi.Input[str]] = None,
     :param str namespace: The Object Storage namespace used for the request.
     :param str object_name_prefix: User-specified object name prefixes can be used to query and return a list of pre-authenticated requests.
     """
-    ...
+    __args__ = dict()
+    __args__['bucket'] = bucket
+    __args__['filters'] = filters
+    __args__['namespace'] = namespace
+    __args__['objectNamePrefix'] = object_name_prefix
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getPreauthrequests:getPreauthrequests', __args__, opts=opts, typ=GetPreauthrequestsResult)
+    return __ret__.apply(lambda __response__: GetPreauthrequestsResult(
+        bucket=pulumi.get(__response__, 'bucket'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object_name_prefix=pulumi.get(__response__, 'object_name_prefix'),
+        preauthenticated_requests=pulumi.get(__response__, 'preauthenticated_requests')))

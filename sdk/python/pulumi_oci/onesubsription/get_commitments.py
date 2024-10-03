@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -124,9 +129,6 @@ def get_commitments(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         subscribed_service_id=pulumi.get(__ret__, 'subscribed_service_id'))
-
-
-@_utilities.lift_output_func(get_commitments)
 def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]]]] = None,
                            subscribed_service_id: Optional[pulumi.Input[str]] = None,
@@ -150,4 +152,15 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str compartment_id: The OCID of the root compartment.
     :param str subscribed_service_id: This param is used to get the commitments for a particular subscribed service
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['subscribedServiceId'] = subscribed_service_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getCommitments:getCommitments', __args__, opts=opts, typ=GetCommitmentsResult)
+    return __ret__.apply(lambda __response__: GetCommitmentsResult(
+        commitments=pulumi.get(__response__, 'commitments'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        subscribed_service_id=pulumi.get(__response__, 'subscribed_service_id')))

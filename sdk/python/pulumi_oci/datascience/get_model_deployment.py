@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -273,9 +278,6 @@ def get_model_deployment(model_deployment_id: Optional[str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_model_deployment)
 def get_model_deployment_output(model_deployment_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelDeploymentResult]:
     """
@@ -295,4 +297,25 @@ def get_model_deployment_output(model_deployment_id: Optional[pulumi.Input[str]]
 
     :param str model_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
     """
-    ...
+    __args__ = dict()
+    __args__['modelDeploymentId'] = model_deployment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelDeployment:getModelDeployment', __args__, opts=opts, typ=GetModelDeploymentResult)
+    return __ret__.apply(lambda __response__: GetModelDeploymentResult(
+        category_log_details=pulumi.get(__response__, 'category_log_details'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        model_deployment_configuration_details=pulumi.get(__response__, 'model_deployment_configuration_details'),
+        model_deployment_id=pulumi.get(__response__, 'model_deployment_id'),
+        model_deployment_system_datas=pulumi.get(__response__, 'model_deployment_system_datas'),
+        model_deployment_url=pulumi.get(__response__, 'model_deployment_url'),
+        opc_parent_rpt_url=pulumi.get(__response__, 'opc_parent_rpt_url'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_addons(cluster_id: Optional[str] = None,
         cluster_id=pulumi.get(__ret__, 'cluster_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_addons)
 def get_addons_output(cluster_id: Optional[pulumi.Input[str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAddonsFilterArgs', 'GetAddonsFilterArgsDict']]]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonsResult]:
@@ -130,4 +132,13 @@ def get_addons_output(cluster_id: Optional[pulumi.Input[str]] = None,
 
     :param str cluster_id: The OCID of the cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getAddons:getAddons', __args__, opts=opts, typ=GetAddonsResult)
+    return __ret__.apply(lambda __response__: GetAddonsResult(
+        addons=pulumi.get(__response__, 'addons'),
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

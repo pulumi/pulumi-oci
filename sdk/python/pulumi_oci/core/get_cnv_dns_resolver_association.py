@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -107,9 +112,6 @@ def get_cnv_dns_resolver_association(vcn_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_cnv_dns_resolver_association)
 def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCnvDnsResolverAssociationResult]:
     """
@@ -129,4 +131,12 @@ def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[str]] 
 
     :param str vcn_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
-    ...
+    __args__ = dict()
+    __args__['vcnId'] = vcn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation', __args__, opts=opts, typ=GetCnvDnsResolverAssociationResult)
+    return __ret__.apply(lambda __response__: GetCnvDnsResolverAssociationResult(
+        dns_resolver_id=pulumi.get(__response__, 'dns_resolver_id'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

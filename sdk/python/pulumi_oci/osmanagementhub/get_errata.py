@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -232,9 +237,6 @@ def get_errata(advisory_severities: Optional[Sequence[str]] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         time_issue_date_end=pulumi.get(__ret__, 'time_issue_date_end'),
         time_issue_date_start=pulumi.get(__ret__, 'time_issue_date_start'))
-
-
-@_utilities.lift_output_func(get_errata)
 def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                       advisory_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                       classification_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -280,4 +282,29 @@ def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequen
     :param str time_issue_date_end: The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
     :param str time_issue_date_start: The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
     """
-    ...
+    __args__ = dict()
+    __args__['advisorySeverities'] = advisory_severities
+    __args__['advisoryTypes'] = advisory_types
+    __args__['classificationTypes'] = classification_types
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['nameContains'] = name_contains
+    __args__['names'] = names
+    __args__['osFamily'] = os_family
+    __args__['timeIssueDateEnd'] = time_issue_date_end
+    __args__['timeIssueDateStart'] = time_issue_date_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getErrata:getErrata', __args__, opts=opts, typ=GetErrataResult)
+    return __ret__.apply(lambda __response__: GetErrataResult(
+        advisory_severities=pulumi.get(__response__, 'advisory_severities'),
+        advisory_types=pulumi.get(__response__, 'advisory_types'),
+        classification_types=pulumi.get(__response__, 'classification_types'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        erratum_collections=pulumi.get(__response__, 'erratum_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        names=pulumi.get(__response__, 'names'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        time_issue_date_end=pulumi.get(__response__, 'time_issue_date_end'),
+        time_issue_date_start=pulumi.get(__response__, 'time_issue_date_start')))

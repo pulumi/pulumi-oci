@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -311,9 +316,6 @@ def get_security_assessments(access_level: Optional[str] = None,
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         triggered_by=pulumi.get(__ret__, 'triggered_by'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_security_assessments)
 def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                     compartment_id: Optional[pulumi.Input[str]] = None,
                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -388,4 +390,37 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
     :param str triggered_by: A filter to return only security asessments that were created by either user or system.
     :param str type: A filter to return only items that match the specified security assessment type.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isBaseline'] = is_baseline
+    __args__['isScheduleAssessment'] = is_schedule_assessment
+    __args__['scheduleAssessmentId'] = schedule_assessment_id
+    __args__['state'] = state
+    __args__['targetId'] = target_id
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    __args__['triggeredBy'] = triggered_by
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessments:getSecurityAssessments', __args__, opts=opts, typ=GetSecurityAssessmentsResult)
+    return __ret__.apply(lambda __response__: GetSecurityAssessmentsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_baseline=pulumi.get(__response__, 'is_baseline'),
+        is_schedule_assessment=pulumi.get(__response__, 'is_schedule_assessment'),
+        schedule_assessment_id=pulumi.get(__response__, 'schedule_assessment_id'),
+        security_assessments=pulumi.get(__response__, 'security_assessments'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than'),
+        triggered_by=pulumi.get(__response__, 'triggered_by'),
+        type=pulumi.get(__response__, 'type')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -295,9 +300,6 @@ def get_opsi_configuration(config_item_custom_statuses: Optional[Sequence[str]] 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_opsi_configuration)
 def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.Input[Sequence[str]]] = None,
                                   config_item_fields: Optional[pulumi.Input[Sequence[str]]] = None,
                                   config_items_applicable_contexts: Optional[pulumi.Input[Sequence[str]]] = None,
@@ -331,4 +333,30 @@ def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.I
     :param Sequence[str] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
     :param str opsi_configuration_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
     """
-    ...
+    __args__ = dict()
+    __args__['configItemCustomStatuses'] = config_item_custom_statuses
+    __args__['configItemFields'] = config_item_fields
+    __args__['configItemsApplicableContexts'] = config_items_applicable_contexts
+    __args__['opsiConfigFields'] = opsi_config_fields
+    __args__['opsiConfigurationId'] = opsi_configuration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOpsiConfiguration:getOpsiConfiguration', __args__, opts=opts, typ=GetOpsiConfigurationResult)
+    return __ret__.apply(lambda __response__: GetOpsiConfigurationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config_item_custom_statuses=pulumi.get(__response__, 'config_item_custom_statuses'),
+        config_item_fields=pulumi.get(__response__, 'config_item_fields'),
+        config_items=pulumi.get(__response__, 'config_items'),
+        config_items_applicable_contexts=pulumi.get(__response__, 'config_items_applicable_contexts'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        opsi_config_fields=pulumi.get(__response__, 'opsi_config_fields'),
+        opsi_config_type=pulumi.get(__response__, 'opsi_config_type'),
+        opsi_configuration_id=pulumi.get(__response__, 'opsi_configuration_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

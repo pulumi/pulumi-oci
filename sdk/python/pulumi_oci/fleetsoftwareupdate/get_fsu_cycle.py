@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -406,9 +411,6 @@ def get_fsu_cycle(fsu_cycle_id: Optional[str] = None,
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_fsu_cycle)
 def get_fsu_cycle_output(fsu_cycle_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFsuCycleResult]:
     """
@@ -428,4 +430,35 @@ def get_fsu_cycle_output(fsu_cycle_id: Optional[pulumi.Input[str]] = None,
 
     :param str fsu_cycle_id: Unique Exadata Fleet Update Cycle identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['fsuCycleId'] = fsu_cycle_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FleetSoftwareUpdate/getFsuCycle:getFsuCycle', __args__, opts=opts, typ=GetFsuCycleResult)
+    return __ret__.apply(lambda __response__: GetFsuCycleResult(
+        apply_action_schedules=pulumi.get(__response__, 'apply_action_schedules'),
+        batching_strategies=pulumi.get(__response__, 'batching_strategies'),
+        collection_type=pulumi.get(__response__, 'collection_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        diagnostics_collections=pulumi.get(__response__, 'diagnostics_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        executing_fsu_action_id=pulumi.get(__response__, 'executing_fsu_action_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        fsu_collection_id=pulumi.get(__response__, 'fsu_collection_id'),
+        fsu_cycle_id=pulumi.get(__response__, 'fsu_cycle_id'),
+        goal_version_details=pulumi.get(__response__, 'goal_version_details'),
+        id=pulumi.get(__response__, 'id'),
+        is_ignore_missing_patches=pulumi.get(__response__, 'is_ignore_missing_patches'),
+        is_ignore_patches=pulumi.get(__response__, 'is_ignore_patches'),
+        is_keep_placement=pulumi.get(__response__, 'is_keep_placement'),
+        last_completed_action=pulumi.get(__response__, 'last_completed_action'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        max_drain_timeout_in_seconds=pulumi.get(__response__, 'max_drain_timeout_in_seconds'),
+        next_action_to_executes=pulumi.get(__response__, 'next_action_to_executes'),
+        stage_action_schedules=pulumi.get(__response__, 'stage_action_schedules'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

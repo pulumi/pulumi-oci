@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -138,9 +143,6 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[str] = Non
         pdb_conversion_action=pulumi.get(__ret__, 'pdb_conversion_action'),
         pdb_conversion_history_entries=pulumi.get(__ret__, 'pdb_conversion_history_entries'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_database_pdb_conversion_history_entries)
 def get_database_pdb_conversion_history_entries_output(database_id: Optional[pulumi.Input[str]] = None,
                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict']]]]] = None,
                                                        pdb_conversion_action: Optional[pulumi.Input[Optional[str]]] = None,
@@ -167,4 +169,17 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
     :param str pdb_conversion_action: A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
     :param str state: A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['databaseId'] = database_id
+    __args__['filters'] = filters
+    __args__['pdbConversionAction'] = pdb_conversion_action
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries', __args__, opts=opts, typ=GetDatabasePdbConversionHistoryEntriesResult)
+    return __ret__.apply(lambda __response__: GetDatabasePdbConversionHistoryEntriesResult(
+        database_id=pulumi.get(__response__, 'database_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        pdb_conversion_action=pulumi.get(__response__, 'pdb_conversion_action'),
+        pdb_conversion_history_entries=pulumi.get(__response__, 'pdb_conversion_history_entries'),
+        state=pulumi.get(__response__, 'state')))

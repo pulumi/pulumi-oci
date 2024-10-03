@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -124,9 +129,6 @@ def get_discovery_jobs(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_discovery_jobs)
 def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryJobsFilterArgs', 'GetDiscoveryJobsFilterArgsDict']]]]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -150,4 +152,15 @@ def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[str]] = None
     :param str compartment_id: The ID of the compartment in which data is listed.
     :param str name: A filter to return only discovery jobs that match the entire resource name given.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs', __args__, opts=opts, typ=GetDiscoveryJobsResult)
+    return __ret__.apply(lambda __response__: GetDiscoveryJobsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        discovery_job_collections=pulumi.get(__response__, 'discovery_job_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name')))

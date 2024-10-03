@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -468,9 +473,6 @@ def get_maintenance_run(maintenance_run_id: Optional[str] = None,
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_scheduled=pulumi.get(__ret__, 'time_scheduled'),
         time_started=pulumi.get(__ret__, 'time_started'))
-
-
-@_utilities.lift_output_func(get_maintenance_run)
 def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceRunResult]:
     """
@@ -490,4 +492,40 @@ def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[str]] =
 
     :param str maintenance_run_id: The maintenance run OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['maintenanceRunId'] = maintenance_run_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getMaintenanceRun:getMaintenanceRun', __args__, opts=opts, typ=GetMaintenanceRunResult)
+    return __ret__.apply(lambda __response__: GetMaintenanceRunResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        current_custom_action_timeout_in_mins=pulumi.get(__response__, 'current_custom_action_timeout_in_mins'),
+        current_patching_component=pulumi.get(__response__, 'current_patching_component'),
+        custom_action_timeout_in_mins=pulumi.get(__response__, 'custom_action_timeout_in_mins'),
+        database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        estimated_component_patching_start_time=pulumi.get(__response__, 'estimated_component_patching_start_time'),
+        estimated_patching_times=pulumi.get(__response__, 'estimated_patching_times'),
+        id=pulumi.get(__response__, 'id'),
+        is_custom_action_timeout_enabled=pulumi.get(__response__, 'is_custom_action_timeout_enabled'),
+        is_dst_file_update_enabled=pulumi.get(__response__, 'is_dst_file_update_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        maintenance_run_id=pulumi.get(__response__, 'maintenance_run_id'),
+        maintenance_subtype=pulumi.get(__response__, 'maintenance_subtype'),
+        maintenance_type=pulumi.get(__response__, 'maintenance_type'),
+        patch_failure_count=pulumi.get(__response__, 'patch_failure_count'),
+        patch_id=pulumi.get(__response__, 'patch_id'),
+        patch_type=pulumi.get(__response__, 'patch_type'),
+        patching_end_time=pulumi.get(__response__, 'patching_end_time'),
+        patching_mode=pulumi.get(__response__, 'patching_mode'),
+        patching_start_time=pulumi.get(__response__, 'patching_start_time'),
+        patching_status=pulumi.get(__response__, 'patching_status'),
+        peer_maintenance_run_id=pulumi.get(__response__, 'peer_maintenance_run_id'),
+        state=pulumi.get(__response__, 'state'),
+        target_db_server_version=pulumi.get(__response__, 'target_db_server_version'),
+        target_resource_id=pulumi.get(__response__, 'target_resource_id'),
+        target_resource_type=pulumi.get(__response__, 'target_resource_type'),
+        target_storage_server_version=pulumi.get(__response__, 'target_storage_server_version'),
+        time_ended=pulumi.get(__response__, 'time_ended'),
+        time_scheduled=pulumi.get(__response__, 'time_scheduled'),
+        time_started=pulumi.get(__response__, 'time_started')))

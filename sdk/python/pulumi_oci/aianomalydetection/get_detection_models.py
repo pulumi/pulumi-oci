@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_detection_models(compartment_id: Optional[str] = None,
         model_collections=pulumi.get(__ret__, 'model_collections'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_detection_models)
 def get_detection_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDetectionModelsFilterArgs', 'GetDetectionModelsFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_detection_models_output(compartment_id: Optional[pulumi.Input[str]] = No
     :param str project_id: The ID of the project for which to list the objects.
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['projectId'] = project_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:AiAnomalyDetection/getDetectionModels:getDetectionModels', __args__, opts=opts, typ=GetDetectionModelsResult)
+    return __ret__.apply(lambda __response__: GetDetectionModelsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        model_collections=pulumi.get(__response__, 'model_collections'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state')))

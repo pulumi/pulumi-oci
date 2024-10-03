@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -287,9 +292,6 @@ def get_backup_destination(backup_destination_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         type=pulumi.get(__ret__, 'type'),
         vpc_users=pulumi.get(__ret__, 'vpc_users'))
-
-
-@_utilities.lift_output_func(get_backup_destination)
 def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupDestinationResult]:
     """
@@ -309,4 +311,26 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[s
 
     :param str backup_destination_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
     """
-    ...
+    __args__ = dict()
+    __args__['backupDestinationId'] = backup_destination_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getBackupDestination:getBackupDestination', __args__, opts=opts, typ=GetBackupDestinationResult)
+    return __ret__.apply(lambda __response__: GetBackupDestinationResult(
+        associated_databases=pulumi.get(__response__, 'associated_databases'),
+        backup_destination_id=pulumi.get(__response__, 'backup_destination_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_string=pulumi.get(__response__, 'connection_string'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        local_mount_point_path=pulumi.get(__response__, 'local_mount_point_path'),
+        mount_type_details=pulumi.get(__response__, 'mount_type_details'),
+        nfs_mount_type=pulumi.get(__response__, 'nfs_mount_type'),
+        nfs_server_export=pulumi.get(__response__, 'nfs_server_export'),
+        nfs_servers=pulumi.get(__response__, 'nfs_servers'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        type=pulumi.get(__response__, 'type'),
+        vpc_users=pulumi.get(__response__, 'vpc_users')))

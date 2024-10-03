@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_backups(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         shape_family=pulumi.get(__ret__, 'shape_family'))
-
-
-@_utilities.lift_output_func(get_backups)
 def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        database_id: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackupsFilterArgs', 'GetBackupsFilterArgsDict']]]]] = None,
@@ -170,4 +172,17 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
     :param str shape_family: If provided, filters the results to the set of database versions which are supported for the given shape family.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['databaseId'] = database_id
+    __args__['filters'] = filters
+    __args__['shapeFamily'] = shape_family
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getBackups:getBackups', __args__, opts=opts, typ=GetBackupsResult)
+    return __ret__.apply(lambda __response__: GetBackupsResult(
+        backups=pulumi.get(__response__, 'backups'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        shape_family=pulumi.get(__response__, 'shape_family')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -543,9 +548,6 @@ def get_database_insight(database_insight_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_database_insight)
 def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseInsightResult]:
     """
@@ -565,4 +567,46 @@ def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]]
 
     :param str database_insight_id: Unique database insight identifier
     """
-    ...
+    __args__ = dict()
+    __args__['databaseInsightId'] = database_insight_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getDatabaseInsight:getDatabaseInsight', __args__, opts=opts, typ=GetDatabaseInsightResult)
+    return __ret__.apply(lambda __response__: GetDatabaseInsightResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_credential_details=pulumi.get(__response__, 'connection_credential_details'),
+        connection_details=pulumi.get(__response__, 'connection_details'),
+        credential_details=pulumi.get(__response__, 'credential_details'),
+        database_connection_status_details=pulumi.get(__response__, 'database_connection_status_details'),
+        database_display_name=pulumi.get(__response__, 'database_display_name'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        database_insight_id=pulumi.get(__response__, 'database_insight_id'),
+        database_name=pulumi.get(__response__, 'database_name'),
+        database_resource_type=pulumi.get(__response__, 'database_resource_type'),
+        database_type=pulumi.get(__response__, 'database_type'),
+        database_version=pulumi.get(__response__, 'database_version'),
+        dbm_private_endpoint_id=pulumi.get(__response__, 'dbm_private_endpoint_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deployment_type=pulumi.get(__response__, 'deployment_type'),
+        enterprise_manager_bridge_id=pulumi.get(__response__, 'enterprise_manager_bridge_id'),
+        enterprise_manager_entity_display_name=pulumi.get(__response__, 'enterprise_manager_entity_display_name'),
+        enterprise_manager_entity_identifier=pulumi.get(__response__, 'enterprise_manager_entity_identifier'),
+        enterprise_manager_entity_name=pulumi.get(__response__, 'enterprise_manager_entity_name'),
+        enterprise_manager_entity_type=pulumi.get(__response__, 'enterprise_manager_entity_type'),
+        enterprise_manager_identifier=pulumi.get(__response__, 'enterprise_manager_identifier'),
+        entity_source=pulumi.get(__response__, 'entity_source'),
+        exadata_insight_id=pulumi.get(__response__, 'exadata_insight_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_heat_wave_cluster_attached=pulumi.get(__response__, 'is_heat_wave_cluster_attached'),
+        is_highly_available=pulumi.get(__response__, 'is_highly_available'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        opsi_private_endpoint_id=pulumi.get(__response__, 'opsi_private_endpoint_id'),
+        parent_id=pulumi.get(__response__, 'parent_id'),
+        processor_count=pulumi.get(__response__, 'processor_count'),
+        root_id=pulumi.get(__response__, 'root_id'),
+        service_name=pulumi.get(__response__, 'service_name'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

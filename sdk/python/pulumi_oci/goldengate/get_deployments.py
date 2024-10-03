@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -220,9 +225,6 @@ def get_deployments(assignable_connection_id: Optional[str] = None,
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         state=pulumi.get(__ret__, 'state'),
         supported_connection_type=pulumi.get(__ret__, 'supported_connection_type'))
-
-
-@_utilities.lift_output_func(get_deployments)
 def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optional[str]]] = None,
                            assigned_connection_id: Optional[pulumi.Input[Optional[str]]] = None,
                            compartment_id: Optional[pulumi.Input[str]] = None,
@@ -264,4 +266,27 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
     :param str state: A filter to return only the resources that match the 'lifecycleState' given.
     :param str supported_connection_type: The connection type which the deployment must support.
     """
-    ...
+    __args__ = dict()
+    __args__['assignableConnectionId'] = assignable_connection_id
+    __args__['assignedConnectionId'] = assigned_connection_id
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['fqdn'] = fqdn
+    __args__['lifecycleSubState'] = lifecycle_sub_state
+    __args__['state'] = state
+    __args__['supportedConnectionType'] = supported_connection_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeployments:getDeployments', __args__, opts=opts, typ=GetDeploymentsResult)
+    return __ret__.apply(lambda __response__: GetDeploymentsResult(
+        assignable_connection_id=pulumi.get(__response__, 'assignable_connection_id'),
+        assigned_connection_id=pulumi.get(__response__, 'assigned_connection_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        deployment_collections=pulumi.get(__response__, 'deployment_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        fqdn=pulumi.get(__response__, 'fqdn'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
+        state=pulumi.get(__response__, 'state'),
+        supported_connection_type=pulumi.get(__response__, 'supported_connection_type')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -132,9 +137,6 @@ def get_service_catalog_association(service_catalog_association_id: Optional[str
         service_catalog_association_id=pulumi.get(__ret__, 'service_catalog_association_id'),
         service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_service_catalog_association)
 def get_service_catalog_association_output(service_catalog_association_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogAssociationResult]:
     """
@@ -154,4 +156,14 @@ def get_service_catalog_association_output(service_catalog_association_id: Optio
 
     :param str service_catalog_association_id: The unique identifier of the service catalog association.
     """
-    ...
+    __args__ = dict()
+    __args__['serviceCatalogAssociationId'] = service_catalog_association_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation', __args__, opts=opts, typ=GetServiceCatalogAssociationResult)
+    return __ret__.apply(lambda __response__: GetServiceCatalogAssociationResult(
+        entity_id=pulumi.get(__response__, 'entity_id'),
+        entity_type=pulumi.get(__response__, 'entity_type'),
+        id=pulumi.get(__response__, 'id'),
+        service_catalog_association_id=pulumi.get(__response__, 'service_catalog_association_id'),
+        service_catalog_id=pulumi.get(__response__, 'service_catalog_id'),
+        time_created=pulumi.get(__response__, 'time_created')))

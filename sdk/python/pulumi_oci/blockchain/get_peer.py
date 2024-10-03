@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -183,9 +188,6 @@ def get_peer(blockchain_platform_id: Optional[str] = None,
         peer_key=pulumi.get(__ret__, 'peer_key'),
         role=pulumi.get(__ret__, 'role'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_peer)
 def get_peer_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                     peer_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeerResult]:
@@ -208,4 +210,19 @@ def get_peer_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     :param str blockchain_platform_id: Unique service identifier.
     :param str peer_id: Peer identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['blockchainPlatformId'] = blockchain_platform_id
+    __args__['peerId'] = peer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Blockchain/getPeer:getPeer', __args__, opts=opts, typ=GetPeerResult)
+    return __ret__.apply(lambda __response__: GetPeerResult(
+        ad=pulumi.get(__response__, 'ad'),
+        alias=pulumi.get(__response__, 'alias'),
+        blockchain_platform_id=pulumi.get(__response__, 'blockchain_platform_id'),
+        host=pulumi.get(__response__, 'host'),
+        id=pulumi.get(__response__, 'id'),
+        ocpu_allocation_params=pulumi.get(__response__, 'ocpu_allocation_params'),
+        peer_id=pulumi.get(__response__, 'peer_id'),
+        peer_key=pulumi.get(__response__, 'peer_key'),
+        role=pulumi.get(__response__, 'role'),
+        state=pulumi.get(__response__, 'state')))

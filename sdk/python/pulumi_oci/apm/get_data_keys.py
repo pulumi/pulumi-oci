@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -122,9 +127,6 @@ def get_data_keys(apm_domain_id: Optional[str] = None,
         data_keys=pulumi.get(__ret__, 'data_keys'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_data_keys)
 def get_data_keys_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                          data_key_type: Optional[pulumi.Input[Optional[str]]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict']]]]] = None,
@@ -149,4 +151,15 @@ def get_data_keys_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str apm_domain_id: The OCID of the APM domain
     :param str data_key_type: Data key type.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['dataKeyType'] = data_key_type
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Apm/getDataKeys:getDataKeys', __args__, opts=opts, typ=GetDataKeysResult)
+    return __ret__.apply(lambda __response__: GetDataKeysResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        data_key_type=pulumi.get(__response__, 'data_key_type'),
+        data_keys=pulumi.get(__response__, 'data_keys'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -341,9 +346,6 @@ def get_autonomous_vm_cluster_resource_usage(autonomous_vm_cluster_id: Optional[
         total_cpus=pulumi.get(__ret__, 'total_cpus'),
         used_autonomous_data_storage_size_in_tbs=pulumi.get(__ret__, 'used_autonomous_data_storage_size_in_tbs'),
         used_cpus=pulumi.get(__ret__, 'used_cpus'))
-
-
-@_utilities.lift_output_func(get_autonomous_vm_cluster_resource_usage)
 def get_autonomous_vm_cluster_resource_usage_output(autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVmClusterResourceUsageResult]:
     """
@@ -363,4 +365,30 @@ def get_autonomous_vm_cluster_resource_usage_output(autonomous_vm_cluster_id: Op
 
     :param str autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousVmClusterId'] = autonomous_vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousVmClusterResourceUsage:getAutonomousVmClusterResourceUsage', __args__, opts=opts, typ=GetAutonomousVmClusterResourceUsageResult)
+    return __ret__.apply(lambda __response__: GetAutonomousVmClusterResourceUsageResult(
+        autonomous_data_storage_size_in_tbs=pulumi.get(__response__, 'autonomous_data_storage_size_in_tbs'),
+        autonomous_vm_cluster_id=pulumi.get(__response__, 'autonomous_vm_cluster_id'),
+        autonomous_vm_resource_usages=pulumi.get(__response__, 'autonomous_vm_resource_usages'),
+        available_autonomous_data_storage_size_in_tbs=pulumi.get(__response__, 'available_autonomous_data_storage_size_in_tbs'),
+        available_cpus=pulumi.get(__response__, 'available_cpus'),
+        db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exadata_storage_in_tbs=pulumi.get(__response__, 'exadata_storage_in_tbs'),
+        id=pulumi.get(__response__, 'id'),
+        is_local_backup_enabled=pulumi.get(__response__, 'is_local_backup_enabled'),
+        memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
+        memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
+        non_provisionable_autonomous_container_databases=pulumi.get(__response__, 'non_provisionable_autonomous_container_databases'),
+        provisionable_autonomous_container_databases=pulumi.get(__response__, 'provisionable_autonomous_container_databases'),
+        provisioned_autonomous_container_databases=pulumi.get(__response__, 'provisioned_autonomous_container_databases'),
+        provisioned_cpus=pulumi.get(__response__, 'provisioned_cpus'),
+        reclaimable_cpus=pulumi.get(__response__, 'reclaimable_cpus'),
+        reserved_cpus=pulumi.get(__response__, 'reserved_cpus'),
+        total_container_databases=pulumi.get(__response__, 'total_container_databases'),
+        total_cpus=pulumi.get(__response__, 'total_cpus'),
+        used_autonomous_data_storage_size_in_tbs=pulumi.get(__response__, 'used_autonomous_data_storage_size_in_tbs'),
+        used_cpus=pulumi.get(__response__, 'used_cpus')))

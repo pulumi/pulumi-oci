@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -338,9 +343,6 @@ def get_management_station(management_station_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         total_mirrors=pulumi.get(__ret__, 'total_mirrors'))
-
-
-@_utilities.lift_output_func(get_management_station)
 def get_management_station_output(management_station_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementStationResult]:
     """
@@ -360,4 +362,30 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[s
 
     :param str management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
     """
-    ...
+    __args__ = dict()
+    __args__['managementStationId'] = management_station_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagementStation:getManagementStation', __args__, opts=opts, typ=GetManagementStationResult)
+    return __ret__.apply(lambda __response__: GetManagementStationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        healths=pulumi.get(__response__, 'healths'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        management_station_id=pulumi.get(__response__, 'management_station_id'),
+        mirror_capacity=pulumi.get(__response__, 'mirror_capacity'),
+        mirror_sync_statuses=pulumi.get(__response__, 'mirror_sync_statuses'),
+        mirrors=pulumi.get(__response__, 'mirrors'),
+        overall_percentage=pulumi.get(__response__, 'overall_percentage'),
+        overall_state=pulumi.get(__response__, 'overall_state'),
+        profile_id=pulumi.get(__response__, 'profile_id'),
+        proxies=pulumi.get(__response__, 'proxies'),
+        refresh_trigger=pulumi.get(__response__, 'refresh_trigger'),
+        scheduled_job_id=pulumi.get(__response__, 'scheduled_job_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        total_mirrors=pulumi.get(__response__, 'total_mirrors')))

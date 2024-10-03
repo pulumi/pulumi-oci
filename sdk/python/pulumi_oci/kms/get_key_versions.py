@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -130,9 +135,6 @@ def get_key_versions(filters: Optional[Sequence[Union['GetKeyVersionsFilterArgs'
         key_id=pulumi.get(__ret__, 'key_id'),
         key_versions=pulumi.get(__ret__, 'key_versions'),
         management_endpoint=pulumi.get(__ret__, 'management_endpoint'))
-
-
-@_utilities.lift_output_func(get_key_versions)
 def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetKeyVersionsFilterArgs', 'GetKeyVersionsFilterArgsDict']]]]] = None,
                             key_id: Optional[pulumi.Input[str]] = None,
                             management_endpoint: Optional[pulumi.Input[str]] = None,
@@ -162,4 +164,15 @@ def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     :param str key_id: The OCID of the key.
     :param str management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['keyId'] = key_id
+    __args__['managementEndpoint'] = management_endpoint
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getKeyVersions:getKeyVersions', __args__, opts=opts, typ=GetKeyVersionsResult)
+    return __ret__.apply(lambda __response__: GetKeyVersionsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        key_id=pulumi.get(__response__, 'key_id'),
+        key_versions=pulumi.get(__response__, 'key_versions'),
+        management_endpoint=pulumi.get(__response__, 'management_endpoint')))

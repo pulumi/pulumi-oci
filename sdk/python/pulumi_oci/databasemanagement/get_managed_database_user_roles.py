@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -152,9 +157,6 @@ def get_managed_database_user_roles(filters: Optional[Sequence[Union['GetManaged
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         role_collections=pulumi.get(__ret__, 'role_collections'),
         user_name=pulumi.get(__ret__, 'user_name'))
-
-
-@_utilities.lift_output_func(get_managed_database_user_roles)
 def get_managed_database_user_roles_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseUserRolesFilterArgs', 'GetManagedDatabaseUserRolesFilterArgsDict']]]]] = None,
                                            managed_database_id: Optional[pulumi.Input[str]] = None,
                                            name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -184,4 +186,19 @@ def get_managed_database_user_roles_output(filters: Optional[pulumi.Input[Option
     :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str user_name: The name of the user whose details are to be viewed.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['name'] = name
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['userName'] = user_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles', __args__, opts=opts, typ=GetManagedDatabaseUserRolesResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseUserRolesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        name=pulumi.get(__response__, 'name'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        role_collections=pulumi.get(__response__, 'role_collections'),
+        user_name=pulumi.get(__response__, 'user_name')))

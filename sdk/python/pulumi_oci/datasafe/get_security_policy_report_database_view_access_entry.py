@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -354,9 +359,6 @@ def get_security_policy_report_database_view_access_entry(database_view_access_e
         view_name=pulumi.get(__ret__, 'view_name'),
         view_schema=pulumi.get(__ret__, 'view_schema'),
         view_text=pulumi.get(__ret__, 'view_text'))
-
-
-@_utilities.lift_output_func(get_security_policy_report_database_view_access_entry)
 def get_security_policy_report_database_view_access_entry_output(database_view_access_entry_key: Optional[pulumi.Input[str]] = None,
                                                                  security_policy_report_id: Optional[pulumi.Input[str]] = None,
                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseViewAccessEntryResult]:
@@ -379,4 +381,32 @@ def get_security_policy_report_database_view_access_entry_output(database_view_a
     :param str database_view_access_entry_key: The unique key that identifies the view access object. This is a system-generated identifier.
     :param str security_policy_report_id: The OCID of the security policy report resource.
     """
-    ...
+    __args__ = dict()
+    __args__['databaseViewAccessEntryKey'] = database_view_access_entry_key
+    __args__['securityPolicyReportId'] = security_policy_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntry:getSecurityPolicyReportDatabaseViewAccessEntry', __args__, opts=opts, typ=GetSecurityPolicyReportDatabaseViewAccessEntryResult)
+    return __ret__.apply(lambda __response__: GetSecurityPolicyReportDatabaseViewAccessEntryResult(
+        access_type=pulumi.get(__response__, 'access_type'),
+        column_name=pulumi.get(__response__, 'column_name'),
+        database_view_access_entry_key=pulumi.get(__response__, 'database_view_access_entry_key'),
+        grant_from_role=pulumi.get(__response__, 'grant_from_role'),
+        grantee=pulumi.get(__response__, 'grantee'),
+        grantor=pulumi.get(__response__, 'grantor'),
+        id=pulumi.get(__response__, 'id'),
+        is_access_constrained_by_database_vault=pulumi.get(__response__, 'is_access_constrained_by_database_vault'),
+        is_access_constrained_by_real_application_security=pulumi.get(__response__, 'is_access_constrained_by_real_application_security'),
+        is_access_constrained_by_redaction=pulumi.get(__response__, 'is_access_constrained_by_redaction'),
+        is_access_constrained_by_sql_firewall=pulumi.get(__response__, 'is_access_constrained_by_sql_firewall'),
+        is_access_constrained_by_virtual_private_database=pulumi.get(__response__, 'is_access_constrained_by_virtual_private_database'),
+        key=pulumi.get(__response__, 'key'),
+        privilege=pulumi.get(__response__, 'privilege'),
+        privilege_grantable=pulumi.get(__response__, 'privilege_grantable'),
+        privilege_type=pulumi.get(__response__, 'privilege_type'),
+        security_policy_report_id=pulumi.get(__response__, 'security_policy_report_id'),
+        table_name=pulumi.get(__response__, 'table_name'),
+        table_schema=pulumi.get(__response__, 'table_schema'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        view_name=pulumi.get(__response__, 'view_name'),
+        view_schema=pulumi.get(__response__, 'view_schema'),
+        view_text=pulumi.get(__response__, 'view_text')))

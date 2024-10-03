@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_workspace_tasks(fields: Optional[Sequence[str]] = None,
         task_summary_collections=pulumi.get(__ret__, 'task_summary_collections'),
         types=pulumi.get(__ret__, 'types'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_tasks)
 def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceTasksFilterArgs', 'GetWorkspaceTasksFilterArgsDict']]]]] = None,
                                folder_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -247,4 +249,25 @@ def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[s
     :param Sequence[str] types: Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['folderId'] = folder_id
+    __args__['identifiers'] = identifiers
+    __args__['keys'] = keys
+    __args__['name'] = name
+    __args__['types'] = types
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks', __args__, opts=opts, typ=GetWorkspaceTasksResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceTasksResult(
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        folder_id=pulumi.get(__response__, 'folder_id'),
+        id=pulumi.get(__response__, 'id'),
+        identifiers=pulumi.get(__response__, 'identifiers'),
+        keys=pulumi.get(__response__, 'keys'),
+        name=pulumi.get(__response__, 'name'),
+        task_summary_collections=pulumi.get(__response__, 'task_summary_collections'),
+        types=pulumi.get(__response__, 'types'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

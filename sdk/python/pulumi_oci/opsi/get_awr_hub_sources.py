@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_awr_hub_sources(awr_hub_id: Optional[str] = None,
         source_types=pulumi.get(__ret__, 'source_types'),
         states=pulumi.get(__ret__, 'states'),
         statuses=pulumi.get(__ret__, 'statuses'))
-
-
-@_utilities.lift_output_func(get_awr_hub_sources)
 def get_awr_hub_sources_output(awr_hub_id: Optional[pulumi.Input[str]] = None,
                                awr_hub_source_id: Optional[pulumi.Input[Optional[str]]] = None,
                                compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -247,4 +249,25 @@ def get_awr_hub_sources_output(awr_hub_id: Optional[pulumi.Input[str]] = None,
     :param Sequence[str] states: Lifecycle states
     :param Sequence[str] statuses: Resource Status
     """
-    ...
+    __args__ = dict()
+    __args__['awrHubId'] = awr_hub_id
+    __args__['awrHubSourceId'] = awr_hub_source_id
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['sourceTypes'] = source_types
+    __args__['states'] = states
+    __args__['statuses'] = statuses
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getAwrHubSources:getAwrHubSources', __args__, opts=opts, typ=GetAwrHubSourcesResult)
+    return __ret__.apply(lambda __response__: GetAwrHubSourcesResult(
+        awr_hub_id=pulumi.get(__response__, 'awr_hub_id'),
+        awr_hub_source_id=pulumi.get(__response__, 'awr_hub_source_id'),
+        awr_hub_source_summary_collections=pulumi.get(__response__, 'awr_hub_source_summary_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        source_types=pulumi.get(__response__, 'source_types'),
+        states=pulumi.get(__response__, 'states'),
+        statuses=pulumi.get(__response__, 'statuses')))

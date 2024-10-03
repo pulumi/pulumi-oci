@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -111,9 +116,6 @@ def get_db_management_private_endpoint_associated_database(compartment_id: Optio
         db_management_private_endpoint_id=pulumi.get(__ret__, 'db_management_private_endpoint_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-
-
-@_utilities.lift_output_func(get_db_management_private_endpoint_associated_database)
 def get_db_management_private_endpoint_associated_database_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                                   db_management_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabaseResult]:
@@ -136,4 +138,13 @@ def get_db_management_private_endpoint_associated_database_output(compartment_id
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str db_management_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['dbManagementPrivateEndpointId'] = db_management_private_endpoint_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase', __args__, opts=opts, typ=GetDbManagementPrivateEndpointAssociatedDatabaseResult)
+    return __ret__.apply(lambda __response__: GetDbManagementPrivateEndpointAssociatedDatabaseResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_management_private_endpoint_id=pulumi.get(__response__, 'db_management_private_endpoint_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items')))

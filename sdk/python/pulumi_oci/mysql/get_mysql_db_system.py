@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -582,9 +587,6 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_mysql_db_system)
 def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlDbSystemResult]:
     """
@@ -604,4 +606,49 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
 
     :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['dbSystemId'] = db_system_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlDbSystem:getMysqlDbSystem', __args__, opts=opts, typ=GetMysqlDbSystemResult)
+    return __ret__.apply(lambda __response__: GetMysqlDbSystemResult(
+        admin_password=pulumi.get(__response__, 'admin_password'),
+        admin_username=pulumi.get(__response__, 'admin_username'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        backup_policies=pulumi.get(__response__, 'backup_policies'),
+        channels=pulumi.get(__response__, 'channels'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configuration_id=pulumi.get(__response__, 'configuration_id'),
+        crash_recovery=pulumi.get(__response__, 'crash_recovery'),
+        current_placements=pulumi.get(__response__, 'current_placements'),
+        customer_contacts=pulumi.get(__response__, 'customer_contacts'),
+        data_storage_size_in_gb=pulumi.get(__response__, 'data_storage_size_in_gb'),
+        data_storages=pulumi.get(__response__, 'data_storages'),
+        database_management=pulumi.get(__response__, 'database_management'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deletion_policies=pulumi.get(__response__, 'deletion_policies'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        endpoints=pulumi.get(__response__, 'endpoints'),
+        fault_domain=pulumi.get(__response__, 'fault_domain'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        heat_wave_clusters=pulumi.get(__response__, 'heat_wave_clusters'),
+        hostname_label=pulumi.get(__response__, 'hostname_label'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        is_heat_wave_cluster_attached=pulumi.get(__response__, 'is_heat_wave_cluster_attached'),
+        is_highly_available=pulumi.get(__response__, 'is_highly_available'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        maintenances=pulumi.get(__response__, 'maintenances'),
+        mysql_version=pulumi.get(__response__, 'mysql_version'),
+        point_in_time_recovery_details=pulumi.get(__response__, 'point_in_time_recovery_details'),
+        port=pulumi.get(__response__, 'port'),
+        port_x=pulumi.get(__response__, 'port_x'),
+        secure_connections=pulumi.get(__response__, 'secure_connections'),
+        shape_name=pulumi.get(__response__, 'shape_name'),
+        shutdown_type=pulumi.get(__response__, 'shutdown_type'),
+        sources=pulumi.get(__response__, 'sources'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

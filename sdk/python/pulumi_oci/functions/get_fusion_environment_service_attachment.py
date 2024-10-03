@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -237,9 +242,6 @@ def get_fusion_environment_service_attachment(fusion_environment_id: Optional[st
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_service_attachment)
 def get_fusion_environment_service_attachment_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                      service_attachment_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentServiceAttachmentResult]:
@@ -262,4 +264,23 @@ def get_fusion_environment_service_attachment_output(fusion_environment_id: Opti
     :param str fusion_environment_id: unique FusionEnvironment identifier
     :param str service_attachment_id: OCID of the Service Attachment
     """
-    ...
+    __args__ = dict()
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    __args__['serviceAttachmentId'] = service_attachment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment', __args__, opts=opts, typ=GetFusionEnvironmentServiceAttachmentResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentServiceAttachmentResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_sku_based=pulumi.get(__response__, 'is_sku_based'),
+        service_attachment_id=pulumi.get(__response__, 'service_attachment_id'),
+        service_instance_id=pulumi.get(__response__, 'service_instance_id'),
+        service_instance_type=pulumi.get(__response__, 'service_instance_type'),
+        service_url=pulumi.get(__response__, 'service_url'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

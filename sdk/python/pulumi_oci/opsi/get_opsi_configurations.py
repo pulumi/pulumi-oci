@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_opsi_configurations(compartment_id: Optional[str] = None,
         opsi_config_types=pulumi.get(__ret__, 'opsi_config_types'),
         opsi_configurations_collections=pulumi.get(__ret__, 'opsi_configurations_collections'),
         states=pulumi.get(__ret__, 'states'))
-
-
-@_utilities.lift_output_func(get_opsi_configurations)
 def get_opsi_configurations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpsiConfigurationsFilterArgs', 'GetOpsiConfigurationsFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_opsi_configurations_output(compartment_id: Optional[pulumi.Input[str]] =
     :param Sequence[str] opsi_config_types: Filter to return based on configuration type of OPSI configuration.
     :param Sequence[str] states: Filter to return based on Lifecycle state of OPSI configuration.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['opsiConfigTypes'] = opsi_config_types
+    __args__['states'] = states
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOpsiConfigurations:getOpsiConfigurations', __args__, opts=opts, typ=GetOpsiConfigurationsResult)
+    return __ret__.apply(lambda __response__: GetOpsiConfigurationsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        opsi_config_types=pulumi.get(__response__, 'opsi_config_types'),
+        opsi_configurations_collections=pulumi.get(__response__, 'opsi_configurations_collections'),
+        states=pulumi.get(__response__, 'states')))

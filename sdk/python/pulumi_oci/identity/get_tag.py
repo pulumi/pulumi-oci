@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -215,9 +220,6 @@ def get_tag(tag_name: Optional[str] = None,
         tag_namespace_id=pulumi.get(__ret__, 'tag_namespace_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         validators=pulumi.get(__ret__, 'validators'))
-
-
-@_utilities.lift_output_func(get_tag)
 def get_tag_output(tag_name: Optional[pulumi.Input[str]] = None,
                    tag_namespace_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagResult]:
@@ -240,4 +242,21 @@ def get_tag_output(tag_name: Optional[pulumi.Input[str]] = None,
     :param str tag_name: The name of the tag.
     :param str tag_namespace_id: The OCID of the tag namespace.
     """
-    ...
+    __args__ = dict()
+    __args__['tagName'] = tag_name
+    __args__['tagNamespaceId'] = tag_namespace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTag:getTag', __args__, opts=opts, typ=GetTagResult)
+    return __ret__.apply(lambda __response__: GetTagResult(
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_cost_tracking=pulumi.get(__response__, 'is_cost_tracking'),
+        is_retired=pulumi.get(__response__, 'is_retired'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        tag_name=pulumi.get(__response__, 'tag_name'),
+        tag_namespace_id=pulumi.get(__response__, 'tag_namespace_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        validators=pulumi.get(__response__, 'validators')))

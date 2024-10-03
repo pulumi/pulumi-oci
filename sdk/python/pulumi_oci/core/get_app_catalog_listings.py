@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_app_catalog_listings(display_name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         publisher_name=pulumi.get(__ret__, 'publisher_name'),
         publisher_type=pulumi.get(__ret__, 'publisher_type'))
-
-
-@_utilities.lift_output_func(get_app_catalog_listings)
 def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogListingsFilterArgs', 'GetAppCatalogListingsFilterArgsDict']]]]] = None,
                                     publisher_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -170,4 +172,17 @@ def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional
     :param str publisher_name: A filter to return only the publisher that matches the given publisher name exactly.
     :param str publisher_type: A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['publisherName'] = publisher_name
+    __args__['publisherType'] = publisher_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getAppCatalogListings:getAppCatalogListings', __args__, opts=opts, typ=GetAppCatalogListingsResult)
+    return __ret__.apply(lambda __response__: GetAppCatalogListingsResult(
+        app_catalog_listings=pulumi.get(__response__, 'app_catalog_listings'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        publisher_name=pulumi.get(__response__, 'publisher_name'),
+        publisher_type=pulumi.get(__response__, 'publisher_type')))

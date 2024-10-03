@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_indexes(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         table_name_or_id=pulumi.get(__ret__, 'table_name_or_id'))
-
-
-@_utilities.lift_output_func(get_indexes)
 def get_indexes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict']]]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -190,4 +192,19 @@ def get_indexes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     :param str state: Filter list by the lifecycle state of the item.
     :param str table_name_or_id: A table name within the compartment, or a table OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['state'] = state
+    __args__['tableNameOrId'] = table_name_or_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Nosql/getIndexes:getIndexes', __args__, opts=opts, typ=GetIndexesResult)
+    return __ret__.apply(lambda __response__: GetIndexesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        index_collections=pulumi.get(__response__, 'index_collections'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        table_name_or_id=pulumi.get(__response__, 'table_name_or_id')))

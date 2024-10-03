@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -176,9 +181,6 @@ def get_pbf_listing_versions(filters: Optional[Sequence[Union['GetPbfListingVers
         pbf_listing_version_id=pulumi.get(__ret__, 'pbf_listing_version_id'),
         pbf_listing_versions_collections=pulumi.get(__ret__, 'pbf_listing_versions_collections'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_pbf_listing_versions)
 def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict']]]]] = None,
                                     is_current_version: Optional[pulumi.Input[Optional[bool]]] = None,
                                     name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -215,4 +217,21 @@ def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
     :param str pbf_listing_version_id: unique PbfListingVersion identifier
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['isCurrentVersion'] = is_current_version
+    __args__['name'] = name
+    __args__['pbfListingId'] = pbf_listing_id
+    __args__['pbfListingVersionId'] = pbf_listing_version_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getPbfListingVersions:getPbfListingVersions', __args__, opts=opts, typ=GetPbfListingVersionsResult)
+    return __ret__.apply(lambda __response__: GetPbfListingVersionsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_current_version=pulumi.get(__response__, 'is_current_version'),
+        name=pulumi.get(__response__, 'name'),
+        pbf_listing_id=pulumi.get(__response__, 'pbf_listing_id'),
+        pbf_listing_version_id=pulumi.get(__response__, 'pbf_listing_version_id'),
+        pbf_listing_versions_collections=pulumi.get(__response__, 'pbf_listing_versions_collections'),
+        state=pulumi.get(__response__, 'state')))

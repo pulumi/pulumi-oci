@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -144,9 +149,6 @@ def get_rules(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         rules=pulumi.get(__ret__, 'rules'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_rules)
 def get_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict']]]]] = None,
@@ -173,4 +175,17 @@ def get_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str display_name: A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
     :param str state: A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Events/getRules:getRules', __args__, opts=opts, typ=GetRulesResult)
+    return __ret__.apply(lambda __response__: GetRulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        rules=pulumi.get(__response__, 'rules'),
+        state=pulumi.get(__response__, 'state')))

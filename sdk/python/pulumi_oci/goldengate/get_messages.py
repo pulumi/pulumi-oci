@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_messages(deployment_id: Optional[str] = None,
         deployment_messages_collections=pulumi.get(__ret__, 'deployment_messages_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_messages)
 def get_messages_output(deployment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMessagesFilterArgs', 'GetMessagesFilterArgsDict']]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMessagesResult]:
@@ -130,4 +132,13 @@ def get_messages_output(deployment_id: Optional[pulumi.Input[str]] = None,
 
     :param str deployment_id: A unique Deployment identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deploymentId'] = deployment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getMessages:getMessages', __args__, opts=opts, typ=GetMessagesResult)
+    return __ret__.apply(lambda __response__: GetMessagesResult(
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        deployment_messages_collections=pulumi.get(__response__, 'deployment_messages_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,9 +115,6 @@ def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[Union['
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         listing_id=pulumi.get(__ret__, 'listing_id'))
-
-
-@_utilities.lift_output_func(get_app_catalog_listing_resource_versions)
 def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogListingResourceVersionsFilterArgs', 'GetAppCatalogListingResourceVersionsFilterArgsDict']]]]] = None,
                                                      listing_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResourceVersionsResult]:
@@ -133,4 +135,13 @@ def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.In
 
     :param str listing_id: The OCID of the listing.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['listingId'] = listing_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions', __args__, opts=opts, typ=GetAppCatalogListingResourceVersionsResult)
+    return __ret__.apply(lambda __response__: GetAppCatalogListingResourceVersionsResult(
+        app_catalog_listing_resource_versions=pulumi.get(__response__, 'app_catalog_listing_resource_versions'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        listing_id=pulumi.get(__response__, 'listing_id')))

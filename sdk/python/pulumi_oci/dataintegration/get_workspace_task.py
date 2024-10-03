@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -423,9 +428,6 @@ def get_workspace_task(expand_references: Optional[str] = None,
         registry_metadatas=pulumi.get(__ret__, 'registry_metadatas'),
         typed_expressions=pulumi.get(__ret__, 'typed_expressions'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_task)
 def get_workspace_task_output(expand_references: Optional[pulumi.Input[str]] = None,
                               key: Optional[pulumi.Input[str]] = None,
                               workspace_id: Optional[pulumi.Input[str]] = None,
@@ -440,4 +442,39 @@ def get_workspace_task_output(expand_references: Optional[pulumi.Input[str]] = N
     :param str key: The key of the object.
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['expandReferences'] = expand_references
+    __args__['key'] = key
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceTask:getWorkspaceTask', __args__, opts=opts, typ=GetWorkspaceTaskResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceTaskResult(
+        api_call_mode=pulumi.get(__response__, 'api_call_mode'),
+        auth_configs=pulumi.get(__response__, 'auth_configs'),
+        cancel_rest_call_configs=pulumi.get(__response__, 'cancel_rest_call_configs'),
+        config_provider_delegates=pulumi.get(__response__, 'config_provider_delegates'),
+        description=pulumi.get(__response__, 'description'),
+        execute_rest_call_configs=pulumi.get(__response__, 'execute_rest_call_configs'),
+        expand_references=pulumi.get(__response__, 'expand_references'),
+        id=pulumi.get(__response__, 'id'),
+        identifier=pulumi.get(__response__, 'identifier'),
+        input_ports=pulumi.get(__response__, 'input_ports'),
+        is_single_load=pulumi.get(__response__, 'is_single_load'),
+        key=pulumi.get(__response__, 'key'),
+        key_map=pulumi.get(__response__, 'key_map'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        model_type=pulumi.get(__response__, 'model_type'),
+        model_version=pulumi.get(__response__, 'model_version'),
+        name=pulumi.get(__response__, 'name'),
+        object_status=pulumi.get(__response__, 'object_status'),
+        object_version=pulumi.get(__response__, 'object_version'),
+        op_config_values=pulumi.get(__response__, 'op_config_values'),
+        operation=pulumi.get(__response__, 'operation'),
+        output_ports=pulumi.get(__response__, 'output_ports'),
+        parallel_load_limit=pulumi.get(__response__, 'parallel_load_limit'),
+        parameters=pulumi.get(__response__, 'parameters'),
+        parent_reves=pulumi.get(__response__, 'parent_reves'),
+        poll_rest_call_configs=pulumi.get(__response__, 'poll_rest_call_configs'),
+        registry_metadatas=pulumi.get(__response__, 'registry_metadatas'),
+        typed_expressions=pulumi.get(__response__, 'typed_expressions'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

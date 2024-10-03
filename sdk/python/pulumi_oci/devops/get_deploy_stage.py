@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -991,9 +996,6 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         traffic_shift_target=pulumi.get(__ret__, 'traffic_shift_target'),
         values_artifact_ids=pulumi.get(__ret__, 'values_artifact_ids'),
         wait_criterias=pulumi.get(__ret__, 'wait_criterias'))
-
-
-@_utilities.lift_output_func(get_deploy_stage)
 def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployStageResult]:
     """
@@ -1013,4 +1015,80 @@ def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[str]] = None,
 
     :param str deploy_stage_id: Unique stage identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deployStageId'] = deploy_stage_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployStage:getDeployStage', __args__, opts=opts, typ=GetDeployStageResult)
+    return __ret__.apply(lambda __response__: GetDeployStageResult(
+        approval_policies=pulumi.get(__response__, 'approval_policies'),
+        are_hooks_enabled=pulumi.get(__response__, 'are_hooks_enabled'),
+        blue_backend_ips=pulumi.get(__response__, 'blue_backend_ips'),
+        blue_green_strategies=pulumi.get(__response__, 'blue_green_strategies'),
+        canary_strategies=pulumi.get(__response__, 'canary_strategies'),
+        command_spec_deploy_artifact_id=pulumi.get(__response__, 'command_spec_deploy_artifact_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_instance_group_blue_green_deployment_deploy_stage_id=pulumi.get(__response__, 'compute_instance_group_blue_green_deployment_deploy_stage_id'),
+        compute_instance_group_canary_deploy_stage_id=pulumi.get(__response__, 'compute_instance_group_canary_deploy_stage_id'),
+        compute_instance_group_canary_traffic_shift_deploy_stage_id=pulumi.get(__response__, 'compute_instance_group_canary_traffic_shift_deploy_stage_id'),
+        compute_instance_group_deploy_environment_id=pulumi.get(__response__, 'compute_instance_group_deploy_environment_id'),
+        config=pulumi.get(__response__, 'config'),
+        container_configs=pulumi.get(__response__, 'container_configs'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deploy_artifact_id=pulumi.get(__response__, 'deploy_artifact_id'),
+        deploy_artifact_ids=pulumi.get(__response__, 'deploy_artifact_ids'),
+        deploy_environment_id_a=pulumi.get(__response__, 'deploy_environment_id_a'),
+        deploy_environment_id_b=pulumi.get(__response__, 'deploy_environment_id_b'),
+        deploy_pipeline_id=pulumi.get(__response__, 'deploy_pipeline_id'),
+        deploy_stage_id=pulumi.get(__response__, 'deploy_stage_id'),
+        deploy_stage_predecessor_collections=pulumi.get(__response__, 'deploy_stage_predecessor_collections'),
+        deploy_stage_type=pulumi.get(__response__, 'deploy_stage_type'),
+        deployment_spec_deploy_artifact_id=pulumi.get(__response__, 'deployment_spec_deploy_artifact_id'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        docker_image_deploy_artifact_id=pulumi.get(__response__, 'docker_image_deploy_artifact_id'),
+        failure_policies=pulumi.get(__response__, 'failure_policies'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        function_deploy_environment_id=pulumi.get(__response__, 'function_deploy_environment_id'),
+        function_timeout_in_seconds=pulumi.get(__response__, 'function_timeout_in_seconds'),
+        green_backend_ips=pulumi.get(__response__, 'green_backend_ips'),
+        helm_chart_deploy_artifact_id=pulumi.get(__response__, 'helm_chart_deploy_artifact_id'),
+        helm_command_artifact_ids=pulumi.get(__response__, 'helm_command_artifact_ids'),
+        id=pulumi.get(__response__, 'id'),
+        is_async=pulumi.get(__response__, 'is_async'),
+        is_debug_enabled=pulumi.get(__response__, 'is_debug_enabled'),
+        is_force_enabled=pulumi.get(__response__, 'is_force_enabled'),
+        is_uninstall_on_stage_delete=pulumi.get(__response__, 'is_uninstall_on_stage_delete'),
+        is_validation_enabled=pulumi.get(__response__, 'is_validation_enabled'),
+        kubernetes_manifest_deploy_artifact_ids=pulumi.get(__response__, 'kubernetes_manifest_deploy_artifact_ids'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        load_balancer_configs=pulumi.get(__response__, 'load_balancer_configs'),
+        max_history=pulumi.get(__response__, 'max_history'),
+        max_memory_in_mbs=pulumi.get(__response__, 'max_memory_in_mbs'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        oke_blue_green_deploy_stage_id=pulumi.get(__response__, 'oke_blue_green_deploy_stage_id'),
+        oke_canary_deploy_stage_id=pulumi.get(__response__, 'oke_canary_deploy_stage_id'),
+        oke_canary_traffic_shift_deploy_stage_id=pulumi.get(__response__, 'oke_canary_traffic_shift_deploy_stage_id'),
+        oke_cluster_deploy_environment_id=pulumi.get(__response__, 'oke_cluster_deploy_environment_id'),
+        production_load_balancer_configs=pulumi.get(__response__, 'production_load_balancer_configs'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        purpose=pulumi.get(__response__, 'purpose'),
+        release_name=pulumi.get(__response__, 'release_name'),
+        rollback_policies=pulumi.get(__response__, 'rollback_policies'),
+        rollout_policies=pulumi.get(__response__, 'rollout_policies'),
+        set_strings=pulumi.get(__response__, 'set_strings'),
+        set_values=pulumi.get(__response__, 'set_values'),
+        should_cleanup_on_fail=pulumi.get(__response__, 'should_cleanup_on_fail'),
+        should_not_wait=pulumi.get(__response__, 'should_not_wait'),
+        should_reset_values=pulumi.get(__response__, 'should_reset_values'),
+        should_reuse_values=pulumi.get(__response__, 'should_reuse_values'),
+        should_skip_crds=pulumi.get(__response__, 'should_skip_crds'),
+        should_skip_render_subchart_notes=pulumi.get(__response__, 'should_skip_render_subchart_notes'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        test_load_balancer_configs=pulumi.get(__response__, 'test_load_balancer_configs'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        timeout_in_seconds=pulumi.get(__response__, 'timeout_in_seconds'),
+        traffic_shift_target=pulumi.get(__response__, 'traffic_shift_target'),
+        values_artifact_ids=pulumi.get(__response__, 'values_artifact_ids'),
+        wait_criterias=pulumi.get(__response__, 'wait_criterias')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -209,9 +214,6 @@ def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[
         sdm_masking_policy_difference_column_collections=pulumi.get(__ret__, 'sdm_masking_policy_difference_column_collections'),
         sdm_masking_policy_difference_id=pulumi.get(__ret__, 'sdm_masking_policy_difference_id'),
         sync_status=pulumi.get(__ret__, 'sync_status'))
-
-
-@_utilities.lift_output_func(get_sdm_masking_policy_difference_difference_columns)
 def get_sdm_masking_policy_difference_difference_columns_output(column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                                 difference_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict']]]]] = None,
@@ -250,4 +252,25 @@ def get_sdm_masking_policy_difference_difference_columns_output(column_names: Op
     :param str sdm_masking_policy_difference_id: The OCID of the SDM masking policy difference.
     :param str sync_status: A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
     """
-    ...
+    __args__ = dict()
+    __args__['columnNames'] = column_names
+    __args__['differenceType'] = difference_type
+    __args__['filters'] = filters
+    __args__['objects'] = objects
+    __args__['plannedAction'] = planned_action
+    __args__['schemaNames'] = schema_names
+    __args__['sdmMaskingPolicyDifferenceId'] = sdm_masking_policy_difference_id
+    __args__['syncStatus'] = sync_status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns', __args__, opts=opts, typ=GetSdmMaskingPolicyDifferenceDifferenceColumnsResult)
+    return __ret__.apply(lambda __response__: GetSdmMaskingPolicyDifferenceDifferenceColumnsResult(
+        column_names=pulumi.get(__response__, 'column_names'),
+        difference_type=pulumi.get(__response__, 'difference_type'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        objects=pulumi.get(__response__, 'objects'),
+        planned_action=pulumi.get(__response__, 'planned_action'),
+        schema_names=pulumi.get(__response__, 'schema_names'),
+        sdm_masking_policy_difference_column_collections=pulumi.get(__response__, 'sdm_masking_policy_difference_column_collections'),
+        sdm_masking_policy_difference_id=pulumi.get(__response__, 'sdm_masking_policy_difference_id'),
+        sync_status=pulumi.get(__response__, 'sync_status')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -199,9 +204,6 @@ def get_security_policies(access_level: Optional[str] = None,
         security_policy_collections=pulumi.get(__ret__, 'security_policy_collections'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_security_policies)
 def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -250,4 +252,23 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[st
     :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
     :param str state: The current state of the security policy.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['securityPolicyId'] = security_policy_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicies:getSecurityPolicies', __args__, opts=opts, typ=GetSecurityPoliciesResult)
+    return __ret__.apply(lambda __response__: GetSecurityPoliciesResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        security_policy_collections=pulumi.get(__response__, 'security_policy_collections'),
+        security_policy_id=pulumi.get(__response__, 'security_policy_id'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -220,9 +225,6 @@ def get_block_volume_replica(block_volume_replica_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
         volume_group_replica_id=pulumi.get(__ret__, 'volume_group_replica_id'))
-
-
-@_utilities.lift_output_func(get_block_volume_replica)
 def get_block_volume_replica_output(block_volume_replica_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockVolumeReplicaResult]:
     """
@@ -242,4 +244,21 @@ def get_block_volume_replica_output(block_volume_replica_id: Optional[pulumi.Inp
 
     :param str block_volume_replica_id: The OCID of the block volume replica.
     """
-    ...
+    __args__ = dict()
+    __args__['blockVolumeReplicaId'] = block_volume_replica_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getBlockVolumeReplica:getBlockVolumeReplica', __args__, opts=opts, typ=GetBlockVolumeReplicaResult)
+    return __ret__.apply(lambda __response__: GetBlockVolumeReplicaResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        block_volume_id=pulumi.get(__response__, 'block_volume_id'),
+        block_volume_replica_id=pulumi.get(__response__, 'block_volume_replica_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        size_in_gbs=pulumi.get(__response__, 'size_in_gbs'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_synced=pulumi.get(__response__, 'time_last_synced'),
+        volume_group_replica_id=pulumi.get(__response__, 'volume_group_replica_id')))

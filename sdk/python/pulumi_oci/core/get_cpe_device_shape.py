@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -134,9 +139,6 @@ def get_cpe_device_shape(cpe_device_shape_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         parameters=pulumi.get(__ret__, 'parameters'),
         template=pulumi.get(__ret__, 'template'))
-
-
-@_utilities.lift_output_func(get_cpe_device_shape)
 def get_cpe_device_shape_output(cpe_device_shape_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpeDeviceShapeResult]:
     """
@@ -164,4 +166,13 @@ def get_cpe_device_shape_output(cpe_device_shape_id: Optional[pulumi.Input[str]]
 
     :param str cpe_device_shape_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
     """
-    ...
+    __args__ = dict()
+    __args__['cpeDeviceShapeId'] = cpe_device_shape_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getCpeDeviceShape:getCpeDeviceShape', __args__, opts=opts, typ=GetCpeDeviceShapeResult)
+    return __ret__.apply(lambda __response__: GetCpeDeviceShapeResult(
+        cpe_device_infos=pulumi.get(__response__, 'cpe_device_infos'),
+        cpe_device_shape_id=pulumi.get(__response__, 'cpe_device_shape_id'),
+        id=pulumi.get(__response__, 'id'),
+        parameters=pulumi.get(__response__, 'parameters'),
+        template=pulumi.get(__response__, 'template')))

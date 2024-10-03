@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -345,9 +350,6 @@ def get_db_server(db_server_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vm_cluster_ids=pulumi.get(__ret__, 'vm_cluster_ids'))
-
-
-@_utilities.lift_output_func(get_db_server)
 def get_db_server_output(db_server_id: Optional[pulumi.Input[str]] = None,
                          exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbServerResult]:
@@ -370,4 +372,31 @@ def get_db_server_output(db_server_id: Optional[pulumi.Input[str]] = None,
     :param str db_server_id: The DB server [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
     """
-    ...
+    __args__ = dict()
+    __args__['dbServerId'] = db_server_id
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbServer:getDbServer', __args__, opts=opts, typ=GetDbServerResult)
+    return __ret__.apply(lambda __response__: GetDbServerResult(
+        autonomous_virtual_machine_ids=pulumi.get(__response__, 'autonomous_virtual_machine_ids'),
+        autonomous_vm_cluster_ids=pulumi.get(__response__, 'autonomous_vm_cluster_ids'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
+        db_node_ids=pulumi.get(__response__, 'db_node_ids'),
+        db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
+        db_server_id=pulumi.get(__response__, 'db_server_id'),
+        db_server_patching_details=pulumi.get(__response__, 'db_server_patching_details'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        max_cpu_count=pulumi.get(__response__, 'max_cpu_count'),
+        max_db_node_storage_in_gbs=pulumi.get(__response__, 'max_db_node_storage_in_gbs'),
+        max_memory_in_gbs=pulumi.get(__response__, 'max_memory_in_gbs'),
+        memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vm_cluster_ids=pulumi.get(__response__, 'vm_cluster_ids')))

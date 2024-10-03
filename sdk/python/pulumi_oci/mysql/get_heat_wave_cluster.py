@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -185,9 +190,6 @@ def get_heat_wave_cluster(db_system_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_heat_wave_cluster)
 def get_heat_wave_cluster_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHeatWaveClusterResult]:
     """
@@ -207,4 +209,18 @@ def get_heat_wave_cluster_output(db_system_id: Optional[pulumi.Input[str]] = Non
 
     :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['dbSystemId'] = db_system_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getHeatWaveCluster:getHeatWaveCluster', __args__, opts=opts, typ=GetHeatWaveClusterResult)
+    return __ret__.apply(lambda __response__: GetHeatWaveClusterResult(
+        cluster_nodes=pulumi.get(__response__, 'cluster_nodes'),
+        cluster_size=pulumi.get(__response__, 'cluster_size'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_lakehouse_enabled=pulumi.get(__response__, 'is_lakehouse_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        shape_name=pulumi.get(__response__, 'shape_name'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

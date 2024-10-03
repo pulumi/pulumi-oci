@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_exadb_vm_cluster_updates(exadb_vm_cluster_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         update_type=pulumi.get(__ret__, 'update_type'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_exadb_vm_cluster_updates)
 def get_exadb_vm_cluster_updates_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExadbVmClusterUpdatesFilterArgs', 'GetExadbVmClusterUpdatesFilterArgsDict']]]]] = None,
                                         update_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -170,4 +172,17 @@ def get_exadb_vm_cluster_updates_output(exadb_vm_cluster_id: Optional[pulumi.Inp
     :param str update_type: A filter to return only resources that match the given update type exactly.
     :param str version: A filter to return only resources that match the given update version exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['exadbVmClusterId'] = exadb_vm_cluster_id
+    __args__['filters'] = filters
+    __args__['updateType'] = update_type
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadbVmClusterUpdates:getExadbVmClusterUpdates', __args__, opts=opts, typ=GetExadbVmClusterUpdatesResult)
+    return __ret__.apply(lambda __response__: GetExadbVmClusterUpdatesResult(
+        exadb_vm_cluster_id=pulumi.get(__response__, 'exadb_vm_cluster_id'),
+        exadb_vm_cluster_updates=pulumi.get(__response__, 'exadb_vm_cluster_updates'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        update_type=pulumi.get(__response__, 'update_type'),
+        version=pulumi.get(__response__, 'version')))

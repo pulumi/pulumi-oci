@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -237,9 +242,6 @@ def get_network_address_list(network_address_list_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         vcn_addresses=pulumi.get(__ret__, 'vcn_addresses'))
-
-
-@_utilities.lift_output_func(get_network_address_list)
 def get_network_address_list_output(network_address_list_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkAddressListResult]:
     """
@@ -259,4 +261,22 @@ def get_network_address_list_output(network_address_list_id: Optional[pulumi.Inp
 
     :param str network_address_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
     """
-    ...
+    __args__ = dict()
+    __args__['networkAddressListId'] = network_address_list_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waf/getNetworkAddressList:getNetworkAddressList', __args__, opts=opts, typ=GetNetworkAddressListResult)
+    return __ret__.apply(lambda __response__: GetNetworkAddressListResult(
+        addresses=pulumi.get(__response__, 'addresses'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        network_address_list_id=pulumi.get(__response__, 'network_address_list_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        vcn_addresses=pulumi.get(__response__, 'vcn_addresses')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -184,9 +189,6 @@ def get_pbf_listings(filters: Optional[Sequence[Union['GetPbfListingsFilterArgs'
         pbf_listings_collections=pulumi.get(__ret__, 'pbf_listings_collections'),
         state=pulumi.get(__ret__, 'state'),
         triggers=pulumi.get(__ret__, 'triggers'))
-
-
-@_utilities.lift_output_func(get_pbf_listings)
 def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict']]]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
                             name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -223,4 +225,23 @@ def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     :param Sequence[str] triggers: A filter to return only resources that match the service trigger sources of a PBF.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['nameContains'] = name_contains
+    __args__['nameStartsWith'] = name_starts_with
+    __args__['pbfListingId'] = pbf_listing_id
+    __args__['state'] = state
+    __args__['triggers'] = triggers
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getPbfListings:getPbfListings', __args__, opts=opts, typ=GetPbfListingsResult)
+    return __ret__.apply(lambda __response__: GetPbfListingsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        name_starts_with=pulumi.get(__response__, 'name_starts_with'),
+        pbf_listing_id=pulumi.get(__response__, 'pbf_listing_id'),
+        pbf_listings_collections=pulumi.get(__response__, 'pbf_listings_collections'),
+        state=pulumi.get(__response__, 'state'),
+        triggers=pulumi.get(__response__, 'triggers')))

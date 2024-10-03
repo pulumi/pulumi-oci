@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -419,9 +424,6 @@ def get_migration(migration_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         wait_after=pulumi.get(__ret__, 'wait_after'))
-
-
-@_utilities.lift_output_func(get_migration)
 def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationResult]:
     """
@@ -437,4 +439,37 @@ def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
 
     :param str migration_id: The OCID of the migration
     """
-    ...
+    __args__ = dict()
+    __args__['migrationId'] = migration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseMigration/getMigration:getMigration', __args__, opts=opts, typ=GetMigrationResult)
+    return __ret__.apply(lambda __response__: GetMigrationResult(
+        advanced_parameters=pulumi.get(__response__, 'advanced_parameters'),
+        advisor_settings=pulumi.get(__response__, 'advisor_settings'),
+        bulk_include_exclude_data=pulumi.get(__response__, 'bulk_include_exclude_data'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_transfer_medium_details=pulumi.get(__response__, 'data_transfer_medium_details'),
+        database_combination=pulumi.get(__response__, 'database_combination'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exclude_objects=pulumi.get(__response__, 'exclude_objects'),
+        executing_job_id=pulumi.get(__response__, 'executing_job_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        ggs_details=pulumi.get(__response__, 'ggs_details'),
+        hub_details=pulumi.get(__response__, 'hub_details'),
+        id=pulumi.get(__response__, 'id'),
+        include_objects=pulumi.get(__response__, 'include_objects'),
+        initial_load_settings=pulumi.get(__response__, 'initial_load_settings'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        migration_id=pulumi.get(__response__, 'migration_id'),
+        source_container_database_connection_id=pulumi.get(__response__, 'source_container_database_connection_id'),
+        source_database_connection_id=pulumi.get(__response__, 'source_database_connection_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_database_connection_id=pulumi.get(__response__, 'target_database_connection_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_migration=pulumi.get(__response__, 'time_last_migration'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        wait_after=pulumi.get(__response__, 'wait_after')))

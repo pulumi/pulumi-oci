@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -141,9 +146,6 @@ def get_infrastructure_target_version(compartment_id: Optional[str] = None,
         target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
         target_resource_type=pulumi.get(__ret__, 'target_resource_type'),
         target_storage_version_history_entries=pulumi.get(__ret__, 'target_storage_version_history_entries'))
-
-
-@_utilities.lift_output_func(get_infrastructure_target_version)
 def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                              target_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                              target_resource_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -170,4 +172,16 @@ def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Inp
     :param str target_resource_id: The target resource ID.
     :param str target_resource_type: The type of the target resource.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['targetResourceId'] = target_resource_id
+    __args__['targetResourceType'] = target_resource_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion', __args__, opts=opts, typ=GetInfrastructureTargetVersionResult)
+    return __ret__.apply(lambda __response__: GetInfrastructureTargetVersionResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        target_db_version_history_entries=pulumi.get(__response__, 'target_db_version_history_entries'),
+        target_resource_id=pulumi.get(__response__, 'target_resource_id'),
+        target_resource_type=pulumi.get(__response__, 'target_resource_type'),
+        target_storage_version_history_entries=pulumi.get(__response__, 'target_storage_version_history_entries')))

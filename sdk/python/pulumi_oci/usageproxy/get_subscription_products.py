@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -149,9 +154,6 @@ def get_subscription_products(filters: Optional[Sequence[Union['GetSubscriptionP
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         usage_period_key=pulumi.get(__ret__, 'usage_period_key'))
-
-
-@_utilities.lift_output_func(get_subscription_products)
 def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionProductsFilterArgs', 'GetSubscriptionProductsFilterArgsDict']]]]] = None,
                                      producttype: Optional[pulumi.Input[Optional[str]]] = None,
                                      subscription_id: Optional[pulumi.Input[str]] = None,
@@ -181,4 +183,19 @@ def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Seq
     :param str tenancy_id: The OCID of the tenancy.
     :param str usage_period_key: The SPM Identifier for the usage period.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['producttype'] = producttype
+    __args__['subscriptionId'] = subscription_id
+    __args__['tenancyId'] = tenancy_id
+    __args__['usagePeriodKey'] = usage_period_key
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts', __args__, opts=opts, typ=GetSubscriptionProductsResult)
+    return __ret__.apply(lambda __response__: GetSubscriptionProductsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        product_collections=pulumi.get(__response__, 'product_collections'),
+        producttype=pulumi.get(__response__, 'producttype'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        usage_period_key=pulumi.get(__response__, 'usage_period_key')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -236,9 +241,6 @@ def get_vlan(vlan_id: Optional[str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vlan_tag=pulumi.get(__ret__, 'vlan_tag'))
-
-
-@_utilities.lift_output_func(get_vlan)
 def get_vlan_output(vlan_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVlanResult]:
     """
@@ -258,4 +260,22 @@ def get_vlan_output(vlan_id: Optional[pulumi.Input[str]] = None,
 
     :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
     """
-    ...
+    __args__ = dict()
+    __args__['vlanId'] = vlan_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVlan:getVlan', __args__, opts=opts, typ=GetVlanResult)
+    return __ret__.apply(lambda __response__: GetVlanResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        cidr_block=pulumi.get(__response__, 'cidr_block'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        route_table_id=pulumi.get(__response__, 'route_table_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vcn_id=pulumi.get(__response__, 'vcn_id'),
+        vlan_id=pulumi.get(__response__, 'vlan_id'),
+        vlan_tag=pulumi.get(__response__, 'vlan_tag')))

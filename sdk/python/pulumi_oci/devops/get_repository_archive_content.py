@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -108,9 +113,6 @@ def get_repository_archive_content(format: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         ref_name=pulumi.get(__ret__, 'ref_name'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-
-
-@_utilities.lift_output_func(get_repository_archive_content)
 def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional[str]]] = None,
                                           ref_name: Optional[pulumi.Input[Optional[str]]] = None,
                                           repository_id: Optional[pulumi.Input[str]] = None,
@@ -136,4 +138,14 @@ def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional
     :param str ref_name: A filter to return only resources that match the given reference name.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['format'] = format
+    __args__['refName'] = ref_name
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent', __args__, opts=opts, typ=GetRepositoryArchiveContentResult)
+    return __ret__.apply(lambda __response__: GetRepositoryArchiveContentResult(
+        format=pulumi.get(__response__, 'format'),
+        id=pulumi.get(__response__, 'id'),
+        ref_name=pulumi.get(__response__, 'ref_name'),
+        repository_id=pulumi.get(__response__, 'repository_id')))

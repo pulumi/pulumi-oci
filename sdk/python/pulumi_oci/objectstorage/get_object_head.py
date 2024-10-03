@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -184,9 +189,6 @@ def get_object_head(bucket: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         object=pulumi.get(__ret__, 'object'),
         storage_tier=pulumi.get(__ret__, 'storage_tier'))
-
-
-@_utilities.lift_output_func(get_object_head)
 def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
                            namespace: Optional[pulumi.Input[str]] = None,
                            object: Optional[pulumi.Input[str]] = None,
@@ -212,4 +214,20 @@ def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
     :param str namespace: The top-level namespace used for the request.
     :param str object: The name of the object. Avoid entering confidential information. Example: `test/object1.log`
     """
-    ...
+    __args__ = dict()
+    __args__['bucket'] = bucket
+    __args__['namespace'] = namespace
+    __args__['object'] = object
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getObjectHead:getObjectHead', __args__, opts=opts, typ=GetObjectHeadResult)
+    return __ret__.apply(lambda __response__: GetObjectHeadResult(
+        archival_state=pulumi.get(__response__, 'archival_state'),
+        bucket=pulumi.get(__response__, 'bucket'),
+        content_length=pulumi.get(__response__, 'content_length'),
+        content_type=pulumi.get(__response__, 'content_type'),
+        etag=pulumi.get(__response__, 'etag'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object=pulumi.get(__response__, 'object'),
+        storage_tier=pulumi.get(__response__, 'storage_tier')))

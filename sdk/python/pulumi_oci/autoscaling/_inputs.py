@@ -4,23 +4,53 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'AutoScalingConfigurationAutoScalingResourcesArgs',
+    'AutoScalingConfigurationAutoScalingResourcesArgsDict',
     'AutoScalingConfigurationPolicyArgs',
+    'AutoScalingConfigurationPolicyArgsDict',
     'AutoScalingConfigurationPolicyCapacityArgs',
+    'AutoScalingConfigurationPolicyCapacityArgsDict',
     'AutoScalingConfigurationPolicyExecutionScheduleArgs',
+    'AutoScalingConfigurationPolicyExecutionScheduleArgsDict',
     'AutoScalingConfigurationPolicyResourceActionArgs',
+    'AutoScalingConfigurationPolicyResourceActionArgsDict',
     'AutoScalingConfigurationPolicyRuleArgs',
+    'AutoScalingConfigurationPolicyRuleArgsDict',
     'AutoScalingConfigurationPolicyRuleActionArgs',
+    'AutoScalingConfigurationPolicyRuleActionArgsDict',
     'AutoScalingConfigurationPolicyRuleMetricArgs',
+    'AutoScalingConfigurationPolicyRuleMetricArgsDict',
     'AutoScalingConfigurationPolicyRuleMetricThresholdArgs',
+    'AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict',
     'GetAutoScalingConfigurationsFilterArgs',
+    'GetAutoScalingConfigurationsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class AutoScalingConfigurationAutoScalingResourcesArgsDict(TypedDict):
+        id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+        """
+        type: pulumi.Input[str]
+        """
+        The type of resource.
+        """
+elif False:
+    AutoScalingConfigurationAutoScalingResourcesArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AutoScalingConfigurationAutoScalingResourcesArgs:
@@ -58,6 +88,44 @@ class AutoScalingConfigurationAutoScalingResourcesArgs:
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class AutoScalingConfigurationPolicyArgsDict(TypedDict):
+        policy_type: pulumi.Input[str]
+        """
+        The type of autoscaling policy.
+        """
+        capacity: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyCapacityArgsDict']]
+        """
+        The capacity requirements of the autoscaling policy.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        execution_schedule: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyExecutionScheduleArgsDict']]
+        """
+        An execution schedule for an autoscaling policy.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        ID of the condition that is assigned after creation.
+        """
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the autoscaling policy is enabled.
+        """
+        resource_action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgsDict']]
+        """
+        An action that can be executed against a resource.
+        """
+        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgsDict']]]]
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+        """
+elif False:
+    AutoScalingConfigurationPolicyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyArgs:
@@ -205,6 +273,29 @@ class AutoScalingConfigurationPolicyArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class AutoScalingConfigurationPolicyCapacityArgsDict(TypedDict):
+        initial: NotRequired[pulumi.Input[int]]
+        """
+        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+
+        For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
+        """
+        max: NotRequired[pulumi.Input[int]]
+        """
+        For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+
+        For a schedule-based autoscaling policy, this value is not used.
+        """
+        min: NotRequired[pulumi.Input[int]]
+        """
+        For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+
+        For a schedule-based autoscaling policy, this value is not used.
+        """
+elif False:
+    AutoScalingConfigurationPolicyCapacityArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AutoScalingConfigurationPolicyCapacityArgs:
     def __init__(__self__, *,
@@ -271,6 +362,31 @@ class AutoScalingConfigurationPolicyCapacityArgs:
     def min(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "min", value)
 
+
+if not MYPY:
+    class AutoScalingConfigurationPolicyExecutionScheduleArgsDict(TypedDict):
+        expression: pulumi.Input[str]
+        """
+        A cron expression that represents the time at which to execute the autoscaling policy.
+
+        Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+
+        You can use special characters that are supported with the Quartz cron implementation.
+
+        You must specify `0` as the value for seconds.
+
+        Example: `0 15 10 ? * *`
+        """
+        timezone: pulumi.Input[str]
+        """
+        The time zone for the execution schedule.
+        """
+        type: pulumi.Input[str]
+        """
+        The type of execution schedule.
+        """
+elif False:
+    AutoScalingConfigurationPolicyExecutionScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyExecutionScheduleArgs:
@@ -340,6 +456,16 @@ class AutoScalingConfigurationPolicyExecutionScheduleArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class AutoScalingConfigurationPolicyResourceActionArgsDict(TypedDict):
+        action: pulumi.Input[str]
+        action_type: pulumi.Input[str]
+        """
+        The type of resource action.
+        """
+elif False:
+    AutoScalingConfigurationPolicyResourceActionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AutoScalingConfigurationPolicyResourceActionArgs:
     def __init__(__self__, *,
@@ -372,6 +498,24 @@ class AutoScalingConfigurationPolicyResourceActionArgs:
     def action_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "action_type", value)
 
+
+if not MYPY:
+    class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
+        display_name: pulumi.Input[str]
+        action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgsDict']]
+        """
+        The action to take when autoscaling is triggered.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        ID of the condition that is assigned after creation.
+        """
+        metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgsDict']]
+        """
+        Metric and threshold details for triggering an autoscaling action.
+        """
+elif False:
+    AutoScalingConfigurationPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleArgs:
@@ -439,6 +583,19 @@ class AutoScalingConfigurationPolicyRuleArgs:
         pulumi.set(self, "metric", value)
 
 
+if not MYPY:
+    class AutoScalingConfigurationPolicyRuleActionArgsDict(TypedDict):
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The type of action to take.
+        """
+        value: NotRequired[pulumi.Input[int]]
+        """
+        To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
+        """
+elif False:
+    AutoScalingConfigurationPolicyRuleActionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleActionArgs:
     def __init__(__self__, *,
@@ -478,6 +635,13 @@ class AutoScalingConfigurationPolicyRuleActionArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
+        metric_type: NotRequired[pulumi.Input[str]]
+        threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict']]
+elif False:
+    AutoScalingConfigurationPolicyRuleMetricArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricArgs:
     def __init__(__self__, *,
@@ -506,6 +670,20 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
     def threshold(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']]):
         pulumi.set(self, "threshold", value)
 
+
+if not MYPY:
+    class AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict(TypedDict):
+        operator: NotRequired[pulumi.Input[str]]
+        """
+        The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
+        """
+        value: NotRequired[pulumi.Input[int]]
+        """
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
@@ -547,6 +725,14 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
     def value(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetAutoScalingConfigurationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAutoScalingConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAutoScalingConfigurationsFilterArgs:

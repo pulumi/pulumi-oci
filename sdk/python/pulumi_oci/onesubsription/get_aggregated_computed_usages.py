@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -169,9 +174,6 @@ def get_aggregated_computed_usages(compartment_id: Optional[str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'))
-
-
-@_utilities.lift_output_func(get_aggregated_computed_usages)
 def get_aggregated_computed_usages_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAggregatedComputedUsagesFilterArgs', 'GetAggregatedComputedUsagesFilterArgsDict']]]]] = None,
                                           grouping: Optional[pulumi.Input[Optional[str]]] = None,
@@ -193,4 +195,23 @@ def get_aggregated_computed_usages_output(compartment_id: Optional[pulumi.Input[
     :param str time_from: Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
     :param str time_to: Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['grouping'] = grouping
+    __args__['parentProduct'] = parent_product
+    __args__['subscriptionId'] = subscription_id
+    __args__['timeFrom'] = time_from
+    __args__['timeTo'] = time_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages', __args__, opts=opts, typ=GetAggregatedComputedUsagesResult)
+    return __ret__.apply(lambda __response__: GetAggregatedComputedUsagesResult(
+        aggregated_computed_usages=pulumi.get(__response__, 'aggregated_computed_usages'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        grouping=pulumi.get(__response__, 'grouping'),
+        id=pulumi.get(__response__, 'id'),
+        parent_product=pulumi.get(__response__, 'parent_product'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        time_from=pulumi.get(__response__, 'time_from'),
+        time_to=pulumi.get(__response__, 'time_to')))

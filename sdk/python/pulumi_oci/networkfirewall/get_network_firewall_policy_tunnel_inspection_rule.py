@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -199,9 +204,6 @@ def get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_i
         profiles=pulumi.get(__ret__, 'profiles'),
         protocol=pulumi.get(__ret__, 'protocol'),
         tunnel_inspection_rule_name=pulumi.get(__ret__, 'tunnel_inspection_rule_name'))
-
-
-@_utilities.lift_output_func(get_network_firewall_policy_tunnel_inspection_rule)
 def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                               tunnel_inspection_rule_name: Optional[pulumi.Input[str]] = None,
                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRuleResult]:
@@ -224,4 +226,20 @@ def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_p
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
     :param str tunnel_inspection_rule_name: Unique identifier for Tunnel Inspection Rules in the network firewall policy.
     """
-    ...
+    __args__ = dict()
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    __args__['tunnelInspectionRuleName'] = tunnel_inspection_rule_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule', __args__, opts=opts, typ=GetNetworkFirewallPolicyTunnelInspectionRuleResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyTunnelInspectionRuleResult(
+        action=pulumi.get(__response__, 'action'),
+        conditions=pulumi.get(__response__, 'conditions'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
+        parent_resource_id=pulumi.get(__response__, 'parent_resource_id'),
+        positions=pulumi.get(__response__, 'positions'),
+        priority_order=pulumi.get(__response__, 'priority_order'),
+        profiles=pulumi.get(__response__, 'profiles'),
+        protocol=pulumi.get(__response__, 'protocol'),
+        tunnel_inspection_rule_name=pulumi.get(__response__, 'tunnel_inspection_rule_name')))

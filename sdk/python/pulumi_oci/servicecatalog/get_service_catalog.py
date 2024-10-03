@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -171,9 +176,6 @@ def get_service_catalog(service_catalog_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_service_catalog)
 def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogResult]:
     """
@@ -193,4 +195,17 @@ def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[str]] =
 
     :param str service_catalog_id: The unique identifier for the service catalog.
     """
-    ...
+    __args__ = dict()
+    __args__['serviceCatalogId'] = service_catalog_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getServiceCatalog:getServiceCatalog', __args__, opts=opts, typ=GetServiceCatalogResult)
+    return __ret__.apply(lambda __response__: GetServiceCatalogResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        service_catalog_id=pulumi.get(__response__, 'service_catalog_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

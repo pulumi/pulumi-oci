@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -1091,9 +1096,6 @@ def get_connection(connection_id: Optional[str] = None,
         username=pulumi.get(__ret__, 'username'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         wallet=pulumi.get(__ret__, 'wallet'))
-
-
-@_utilities.lift_output_func(get_connection)
 def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionResult]:
     """
@@ -1113,4 +1115,93 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
 
     :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.
     """
-    ...
+    __args__ = dict()
+    __args__['connectionId'] = connection_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getConnection:getConnection', __args__, opts=opts, typ=GetConnectionResult)
+    return __ret__.apply(lambda __response__: GetConnectionResult(
+        access_key_id=pulumi.get(__response__, 'access_key_id'),
+        account_key=pulumi.get(__response__, 'account_key'),
+        account_name=pulumi.get(__response__, 'account_name'),
+        additional_attributes=pulumi.get(__response__, 'additional_attributes'),
+        authentication_mode=pulumi.get(__response__, 'authentication_mode'),
+        authentication_type=pulumi.get(__response__, 'authentication_type'),
+        azure_tenant_id=pulumi.get(__response__, 'azure_tenant_id'),
+        bootstrap_servers=pulumi.get(__response__, 'bootstrap_servers'),
+        client_id=pulumi.get(__response__, 'client_id'),
+        client_secret=pulumi.get(__response__, 'client_secret'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_factory=pulumi.get(__response__, 'connection_factory'),
+        connection_id=pulumi.get(__response__, 'connection_id'),
+        connection_string=pulumi.get(__response__, 'connection_string'),
+        connection_type=pulumi.get(__response__, 'connection_type'),
+        connection_url=pulumi.get(__response__, 'connection_url'),
+        consumer_properties=pulumi.get(__response__, 'consumer_properties'),
+        core_site_xml=pulumi.get(__response__, 'core_site_xml'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        database_name=pulumi.get(__response__, 'database_name'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        endpoint=pulumi.get(__response__, 'endpoint'),
+        fingerprint=pulumi.get(__response__, 'fingerprint'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host=pulumi.get(__response__, 'host'),
+        id=pulumi.get(__response__, 'id'),
+        ingress_ips=pulumi.get(__response__, 'ingress_ips'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        jndi_connection_factory=pulumi.get(__response__, 'jndi_connection_factory'),
+        jndi_initial_context_factory=pulumi.get(__response__, 'jndi_initial_context_factory'),
+        jndi_provider_url=pulumi.get(__response__, 'jndi_provider_url'),
+        jndi_security_credentials=pulumi.get(__response__, 'jndi_security_credentials'),
+        jndi_security_principal=pulumi.get(__response__, 'jndi_security_principal'),
+        key_id=pulumi.get(__response__, 'key_id'),
+        key_store=pulumi.get(__response__, 'key_store'),
+        key_store_password=pulumi.get(__response__, 'key_store_password'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        password=pulumi.get(__response__, 'password'),
+        port=pulumi.get(__response__, 'port'),
+        private_ip=pulumi.get(__response__, 'private_ip'),
+        private_key_file=pulumi.get(__response__, 'private_key_file'),
+        private_key_passphrase=pulumi.get(__response__, 'private_key_passphrase'),
+        producer_properties=pulumi.get(__response__, 'producer_properties'),
+        public_key_fingerprint=pulumi.get(__response__, 'public_key_fingerprint'),
+        redis_cluster_id=pulumi.get(__response__, 'redis_cluster_id'),
+        region=pulumi.get(__response__, 'region'),
+        routing_method=pulumi.get(__response__, 'routing_method'),
+        sas_token=pulumi.get(__response__, 'sas_token'),
+        secret_access_key=pulumi.get(__response__, 'secret_access_key'),
+        security_protocol=pulumi.get(__response__, 'security_protocol'),
+        servers=pulumi.get(__response__, 'servers'),
+        service_account_key_file=pulumi.get(__response__, 'service_account_key_file'),
+        session_mode=pulumi.get(__response__, 'session_mode'),
+        should_use_jndi=pulumi.get(__response__, 'should_use_jndi'),
+        should_validate_server_certificate=pulumi.get(__response__, 'should_validate_server_certificate'),
+        ssl_ca=pulumi.get(__response__, 'ssl_ca'),
+        ssl_cert=pulumi.get(__response__, 'ssl_cert'),
+        ssl_client_keystash=pulumi.get(__response__, 'ssl_client_keystash'),
+        ssl_client_keystoredb=pulumi.get(__response__, 'ssl_client_keystoredb'),
+        ssl_crl=pulumi.get(__response__, 'ssl_crl'),
+        ssl_key=pulumi.get(__response__, 'ssl_key'),
+        ssl_key_password=pulumi.get(__response__, 'ssl_key_password'),
+        ssl_mode=pulumi.get(__response__, 'ssl_mode'),
+        ssl_server_certificate=pulumi.get(__response__, 'ssl_server_certificate'),
+        state=pulumi.get(__response__, 'state'),
+        stream_pool_id=pulumi.get(__response__, 'stream_pool_id'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        technology_type=pulumi.get(__response__, 'technology_type'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        trust_store=pulumi.get(__response__, 'trust_store'),
+        trust_store_password=pulumi.get(__response__, 'trust_store_password'),
+        url=pulumi.get(__response__, 'url'),
+        user_id=pulumi.get(__response__, 'user_id'),
+        username=pulumi.get(__response__, 'username'),
+        vault_id=pulumi.get(__response__, 'vault_id'),
+        wallet=pulumi.get(__response__, 'wallet')))

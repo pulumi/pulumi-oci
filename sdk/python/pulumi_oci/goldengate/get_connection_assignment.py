@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -181,9 +186,6 @@ def get_connection_assignment(connection_assignment_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_connection_assignment)
 def get_connection_assignment_output(connection_assignment_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionAssignmentResult]:
     """
@@ -203,4 +205,18 @@ def get_connection_assignment_output(connection_assignment_id: Optional[pulumi.I
 
     :param str connection_assignment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Connection Assignment.
     """
-    ...
+    __args__ = dict()
+    __args__['connectionAssignmentId'] = connection_assignment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getConnectionAssignment:getConnectionAssignment', __args__, opts=opts, typ=GetConnectionAssignmentResult)
+    return __ret__.apply(lambda __response__: GetConnectionAssignmentResult(
+        alias_name=pulumi.get(__response__, 'alias_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_assignment_id=pulumi.get(__response__, 'connection_assignment_id'),
+        connection_id=pulumi.get(__response__, 'connection_id'),
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -263,9 +268,6 @@ def get_remediation_run(remediation_run_id: Optional[str] = None,
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_remediation_run)
 def get_remediation_run_output(remediation_run_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunResult]:
     """
@@ -285,4 +287,24 @@ def get_remediation_run_output(remediation_run_id: Optional[pulumi.Input[str]] =
 
     :param str remediation_run_id: Unique Remediation Run identifier path parameter.
     """
-    ...
+    __args__ = dict()
+    __args__['remediationRunId'] = remediation_run_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Adm/getRemediationRun:getRemediationRun', __args__, opts=opts, typ=GetRemediationRunResult)
+    return __ret__.apply(lambda __response__: GetRemediationRunResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        current_stage_type=pulumi.get(__response__, 'current_stage_type'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        remediation_recipe_id=pulumi.get(__response__, 'remediation_recipe_id'),
+        remediation_run_id=pulumi.get(__response__, 'remediation_run_id'),
+        remediation_run_source=pulumi.get(__response__, 'remediation_run_source'),
+        stages=pulumi.get(__response__, 'stages'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

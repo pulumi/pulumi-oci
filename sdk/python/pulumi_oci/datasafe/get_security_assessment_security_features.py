@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -309,9 +314,6 @@ def get_security_assessment_security_features(access_level: Optional[str] = None
         targets_with_tablespace_encryption=pulumi.get(__ret__, 'targets_with_tablespace_encryption'),
         targets_with_traditional_audit=pulumi.get(__ret__, 'targets_with_traditional_audit'),
         targets_with_unified_audit=pulumi.get(__ret__, 'targets_with_unified_audit'))
-
-
-@_utilities.lift_output_func(get_security_assessment_security_features)
 def get_security_assessment_security_features_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                                      compartment_id: Optional[pulumi.Input[str]] = None,
                                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -374,4 +376,41 @@ def get_security_assessment_security_features_output(access_level: Optional[pulu
     :param str targets_with_traditional_audit: A filter to return only the targets with the DB security feature - Traditional Audit enabled/disabled.
     :param str targets_with_unified_audit: A filter to return only the targets with the DB security feature - Unified Audit enabled/disabled.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['targetId'] = target_id
+    __args__['targetsWithColumnEncryption'] = targets_with_column_encryption
+    __args__['targetsWithDatabaseVault'] = targets_with_database_vault
+    __args__['targetsWithExternalAuthentication'] = targets_with_external_authentication
+    __args__['targetsWithFineGrainedAudit'] = targets_with_fine_grained_audit
+    __args__['targetsWithGlobalAuthentication'] = targets_with_global_authentication
+    __args__['targetsWithNetworkEncryption'] = targets_with_network_encryption
+    __args__['targetsWithPasswordAuthentication'] = targets_with_password_authentication
+    __args__['targetsWithPrivilegeAnalysis'] = targets_with_privilege_analysis
+    __args__['targetsWithTablespaceEncryption'] = targets_with_tablespace_encryption
+    __args__['targetsWithTraditionalAudit'] = targets_with_traditional_audit
+    __args__['targetsWithUnifiedAudit'] = targets_with_unified_audit
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures', __args__, opts=opts, typ=GetSecurityAssessmentSecurityFeaturesResult)
+    return __ret__.apply(lambda __response__: GetSecurityAssessmentSecurityFeaturesResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        security_feature_collections=pulumi.get(__response__, 'security_feature_collections'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        targets_with_column_encryption=pulumi.get(__response__, 'targets_with_column_encryption'),
+        targets_with_database_vault=pulumi.get(__response__, 'targets_with_database_vault'),
+        targets_with_external_authentication=pulumi.get(__response__, 'targets_with_external_authentication'),
+        targets_with_fine_grained_audit=pulumi.get(__response__, 'targets_with_fine_grained_audit'),
+        targets_with_global_authentication=pulumi.get(__response__, 'targets_with_global_authentication'),
+        targets_with_network_encryption=pulumi.get(__response__, 'targets_with_network_encryption'),
+        targets_with_password_authentication=pulumi.get(__response__, 'targets_with_password_authentication'),
+        targets_with_privilege_analysis=pulumi.get(__response__, 'targets_with_privilege_analysis'),
+        targets_with_tablespace_encryption=pulumi.get(__response__, 'targets_with_tablespace_encryption'),
+        targets_with_traditional_audit=pulumi.get(__response__, 'targets_with_traditional_audit'),
+        targets_with_unified_audit=pulumi.get(__response__, 'targets_with_unified_audit')))

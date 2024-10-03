@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -367,9 +372,6 @@ def get_oda_instance(oda_instance_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         web_app_url=pulumi.get(__ret__, 'web_app_url'))
-
-
-@_utilities.lift_output_func(get_oda_instance)
 def get_oda_instance_output(oda_instance_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaInstanceResult]:
     """
@@ -389,4 +391,32 @@ def get_oda_instance_output(oda_instance_id: Optional[pulumi.Input[str]] = None,
 
     :param str oda_instance_id: Unique Digital Assistant instance identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['odaInstanceId'] = oda_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Oda/getOdaInstance:getOdaInstance', __args__, opts=opts, typ=GetOdaInstanceResult)
+    return __ret__.apply(lambda __response__: GetOdaInstanceResult(
+        attachment_ids=pulumi.get(__response__, 'attachment_ids'),
+        attachment_types=pulumi.get(__response__, 'attachment_types'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connector_url=pulumi.get(__response__, 'connector_url'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        identity_app_console_url=pulumi.get(__response__, 'identity_app_console_url'),
+        identity_app_guid=pulumi.get(__response__, 'identity_app_guid'),
+        identity_domain=pulumi.get(__response__, 'identity_domain'),
+        imported_package_ids=pulumi.get(__response__, 'imported_package_ids'),
+        imported_package_names=pulumi.get(__response__, 'imported_package_names'),
+        is_role_based_access=pulumi.get(__response__, 'is_role_based_access'),
+        lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
+        oda_instance_id=pulumi.get(__response__, 'oda_instance_id'),
+        restricted_operations=pulumi.get(__response__, 'restricted_operations'),
+        shape_name=pulumi.get(__response__, 'shape_name'),
+        state=pulumi.get(__response__, 'state'),
+        state_message=pulumi.get(__response__, 'state_message'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        web_app_url=pulumi.get(__response__, 'web_app_url')))

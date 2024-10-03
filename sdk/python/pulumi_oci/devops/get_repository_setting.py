@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -117,9 +122,6 @@ def get_repository_setting(repository_id: Optional[str] = None,
         merge_checks=pulumi.get(__ret__, 'merge_checks'),
         merge_settings=pulumi.get(__ret__, 'merge_settings'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-
-
-@_utilities.lift_output_func(get_repository_setting)
 def get_repository_setting_output(repository_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositorySettingResult]:
     """
@@ -139,4 +141,13 @@ def get_repository_setting_output(repository_id: Optional[pulumi.Input[str]] = N
 
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositorySetting:getRepositorySetting', __args__, opts=opts, typ=GetRepositorySettingResult)
+    return __ret__.apply(lambda __response__: GetRepositorySettingResult(
+        approval_rules=pulumi.get(__response__, 'approval_rules'),
+        id=pulumi.get(__response__, 'id'),
+        merge_checks=pulumi.get(__response__, 'merge_checks'),
+        merge_settings=pulumi.get(__response__, 'merge_settings'),
+        repository_id=pulumi.get(__response__, 'repository_id')))

@@ -4,18 +4,43 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'AnnouncementSubscriptionFilterGroupsArgs',
+    'AnnouncementSubscriptionFilterGroupsArgsDict',
     'AnnouncementSubscriptionFilterGroupsFilterArgs',
+    'AnnouncementSubscriptionFilterGroupsFilterArgsDict',
     'AnnouncementSubscriptionsFilterGroupFilterArgs',
+    'AnnouncementSubscriptionsFilterGroupFilterArgsDict',
     'GetAnnouncementSubscriptionsFilterArgs',
+    'GetAnnouncementSubscriptionsFilterArgsDict',
     'GetServicesFilterArgs',
+    'GetServicesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class AnnouncementSubscriptionFilterGroupsArgsDict(TypedDict):
+        filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgsDict']]]
+        """
+        A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+        """
+elif False:
+    AnnouncementSubscriptionFilterGroupsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AnnouncementSubscriptionFilterGroupsArgs:
@@ -55,6 +80,19 @@ class AnnouncementSubscriptionFilterGroupsArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class AnnouncementSubscriptionFilterGroupsFilterArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
+        """
+        value: pulumi.Input[str]
+        """
+        The value of the filter.
+        """
+elif False:
+    AnnouncementSubscriptionFilterGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AnnouncementSubscriptionFilterGroupsFilterArgs:
     def __init__(__self__, *,
@@ -92,6 +130,19 @@ class AnnouncementSubscriptionFilterGroupsFilterArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class AnnouncementSubscriptionsFilterGroupFilterArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
+        """
+        value: pulumi.Input[str]
+        """
+        (Updatable) The value of the filter.
+        """
+elif False:
+    AnnouncementSubscriptionsFilterGroupFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AnnouncementSubscriptionsFilterGroupFilterArgs:
     def __init__(__self__, *,
@@ -128,6 +179,17 @@ class AnnouncementSubscriptionsFilterGroupFilterArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetAnnouncementSubscriptionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAnnouncementSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAnnouncementSubscriptionsFilterArgs:
@@ -173,6 +235,14 @@ class GetAnnouncementSubscriptionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetServicesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetServicesFilterArgs:

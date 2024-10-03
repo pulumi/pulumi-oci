@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -223,9 +228,6 @@ def get_generic_artifact(artifact_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_generic_artifact)
 def get_generic_artifact_output(artifact_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGenericArtifactResult]:
     """
@@ -245,4 +247,21 @@ def get_generic_artifact_output(artifact_id: Optional[pulumi.Input[str]] = None,
 
     :param str artifact_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
     """
-    ...
+    __args__ = dict()
+    __args__['artifactId'] = artifact_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getGenericArtifact:getGenericArtifact', __args__, opts=opts, typ=GetGenericArtifactResult)
+    return __ret__.apply(lambda __response__: GetGenericArtifactResult(
+        artifact_id=pulumi.get(__response__, 'artifact_id'),
+        artifact_path=pulumi.get(__response__, 'artifact_path'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        sha256=pulumi.get(__response__, 'sha256'),
+        size_in_bytes=pulumi.get(__response__, 'size_in_bytes'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        version=pulumi.get(__response__, 'version')))

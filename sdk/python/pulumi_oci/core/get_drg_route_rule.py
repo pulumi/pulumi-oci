@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -207,9 +212,6 @@ def get_drg_route_rule(drg_route_table_id: Optional[str] = None,
         remove_import_trigger=pulumi.get(__ret__, 'remove_import_trigger'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_drg_route_rule)
 def get_drg_route_rule_output(drg_route_table_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteRuleResult]:
     """
@@ -229,4 +231,20 @@ def get_drg_route_rule_output(drg_route_table_id: Optional[pulumi.Input[str]] = 
 
     :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
     """
-    ...
+    __args__ = dict()
+    __args__['drgRouteTableId'] = drg_route_table_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgRouteRule:getDrgRouteRule', __args__, opts=opts, typ=GetDrgRouteRuleResult)
+    return __ret__.apply(lambda __response__: GetDrgRouteRuleResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        drg_id=pulumi.get(__response__, 'drg_id'),
+        drg_route_table_id=pulumi.get(__response__, 'drg_route_table_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        import_drg_route_distribution_id=pulumi.get(__response__, 'import_drg_route_distribution_id'),
+        is_ecmp_enabled=pulumi.get(__response__, 'is_ecmp_enabled'),
+        remove_import_trigger=pulumi.get(__response__, 'remove_import_trigger'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

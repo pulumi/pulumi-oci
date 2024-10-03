@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -350,9 +355,6 @@ def get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id: 
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
-
-
-@_utilities.lift_output_func(get_autonomous_exadata_infrastructure)
 def get_autonomous_exadata_infrastructure_output(autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureResult]:
     """
@@ -372,4 +374,31 @@ def get_autonomous_exadata_infrastructure_output(autonomous_exadata_infrastructu
 
     :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousExadataInfrastructureId'] = autonomous_exadata_infrastructure_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure', __args__, opts=opts, typ=GetAutonomousExadataInfrastructureResult)
+    return __ret__.apply(lambda __response__: GetAutonomousExadataInfrastructureResult(
+        autonomous_exadata_infrastructure_id=pulumi.get(__response__, 'autonomous_exadata_infrastructure_id'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        create_async=pulumi.get(__response__, 'create_async'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain=pulumi.get(__response__, 'domain'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        last_maintenance_run_id=pulumi.get(__response__, 'last_maintenance_run_id'),
+        license_model=pulumi.get(__response__, 'license_model'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        maintenance_window_details=pulumi.get(__response__, 'maintenance_window_details'),
+        maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
+        next_maintenance_run_id=pulumi.get(__response__, 'next_maintenance_run_id'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        scan_dns_name=pulumi.get(__response__, 'scan_dns_name'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        zone_id=pulumi.get(__response__, 'zone_id')))

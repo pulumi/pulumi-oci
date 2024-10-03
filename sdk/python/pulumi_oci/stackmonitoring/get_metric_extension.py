@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -338,9 +343,6 @@ def get_metric_extension(metric_extension_id: Optional[str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_metric_extension)
 def get_metric_extension_output(metric_extension_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetricExtensionResult]:
     """
@@ -360,4 +362,30 @@ def get_metric_extension_output(metric_extension_id: Optional[pulumi.Input[str]]
 
     :param str metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
     """
-    ...
+    __args__ = dict()
+    __args__['metricExtensionId'] = metric_extension_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMetricExtension:getMetricExtension', __args__, opts=opts, typ=GetMetricExtensionResult)
+    return __ret__.apply(lambda __response__: GetMetricExtensionResult(
+        collection_method=pulumi.get(__response__, 'collection_method'),
+        collection_recurrences=pulumi.get(__response__, 'collection_recurrences'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        enabled_on_resources=pulumi.get(__response__, 'enabled_on_resources'),
+        enabled_on_resources_count=pulumi.get(__response__, 'enabled_on_resources_count'),
+        id=pulumi.get(__response__, 'id'),
+        last_updated_by=pulumi.get(__response__, 'last_updated_by'),
+        metric_extension_id=pulumi.get(__response__, 'metric_extension_id'),
+        metric_lists=pulumi.get(__response__, 'metric_lists'),
+        name=pulumi.get(__response__, 'name'),
+        publish_trigger=pulumi.get(__response__, 'publish_trigger'),
+        query_properties=pulumi.get(__response__, 'query_properties'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        resource_uri=pulumi.get(__response__, 'resource_uri'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        tenant_id=pulumi.get(__response__, 'tenant_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

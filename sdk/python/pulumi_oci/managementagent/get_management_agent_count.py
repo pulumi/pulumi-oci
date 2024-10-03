@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -143,9 +148,6 @@ def get_management_agent_count(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         install_type=pulumi.get(__ret__, 'install_type'),
         items=pulumi.get(__ret__, 'items'))
-
-
-@_utilities.lift_output_func(get_management_agent_count)
 def get_management_agent_count_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       group_bies: Optional[pulumi.Input[Sequence[str]]] = None,
                                       has_plugins: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -175,4 +177,17 @@ def get_management_agent_count_output(compartment_id: Optional[pulumi.Input[str]
     :param bool has_plugins: When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
     :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['groupBies'] = group_bies
+    __args__['hasPlugins'] = has_plugins
+    __args__['installType'] = install_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount', __args__, opts=opts, typ=GetManagementAgentCountResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentCountResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        group_bies=pulumi.get(__response__, 'group_bies'),
+        has_plugins=pulumi.get(__response__, 'has_plugins'),
+        id=pulumi.get(__response__, 'id'),
+        install_type=pulumi.get(__response__, 'install_type'),
+        items=pulumi.get(__response__, 'items')))

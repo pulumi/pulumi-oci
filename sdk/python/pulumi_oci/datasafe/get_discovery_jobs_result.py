@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -344,9 +349,6 @@ def get_discovery_jobs_result(discovery_job_id: Optional[str] = None,
         schema_name=pulumi.get(__ret__, 'schema_name'),
         sensitive_columnkey=pulumi.get(__ret__, 'sensitive_columnkey'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
-
-
-@_utilities.lift_output_func(get_discovery_jobs_result)
 def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
                                      result_key: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobsResultResult]:
@@ -369,4 +371,31 @@ def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[str
     :param str discovery_job_id: The OCID of the discovery job.
     :param str result_key: The unique key that identifies the discovery result.
     """
-    ...
+    __args__ = dict()
+    __args__['discoveryJobId'] = discovery_job_id
+    __args__['resultKey'] = result_key
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult', __args__, opts=opts, typ=GetDiscoveryJobsResultResult)
+    return __ret__.apply(lambda __response__: GetDiscoveryJobsResultResult(
+        app_defined_child_column_keys=pulumi.get(__response__, 'app_defined_child_column_keys'),
+        app_name=pulumi.get(__response__, 'app_name'),
+        column_name=pulumi.get(__response__, 'column_name'),
+        data_type=pulumi.get(__response__, 'data_type'),
+        db_defined_child_column_keys=pulumi.get(__response__, 'db_defined_child_column_keys'),
+        discovery_job_id=pulumi.get(__response__, 'discovery_job_id'),
+        discovery_type=pulumi.get(__response__, 'discovery_type'),
+        estimated_data_value_count=pulumi.get(__response__, 'estimated_data_value_count'),
+        id=pulumi.get(__response__, 'id'),
+        is_result_applied=pulumi.get(__response__, 'is_result_applied'),
+        key=pulumi.get(__response__, 'key'),
+        modified_attributes=pulumi.get(__response__, 'modified_attributes'),
+        object=pulumi.get(__response__, 'object'),
+        object_type=pulumi.get(__response__, 'object_type'),
+        parent_column_keys=pulumi.get(__response__, 'parent_column_keys'),
+        planned_action=pulumi.get(__response__, 'planned_action'),
+        relation_type=pulumi.get(__response__, 'relation_type'),
+        result_key=pulumi.get(__response__, 'result_key'),
+        sample_data_values=pulumi.get(__response__, 'sample_data_values'),
+        schema_name=pulumi.get(__response__, 'schema_name'),
+        sensitive_columnkey=pulumi.get(__response__, 'sensitive_columnkey'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id')))

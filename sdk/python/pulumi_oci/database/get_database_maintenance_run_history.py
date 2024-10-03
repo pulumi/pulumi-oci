@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -107,9 +112,6 @@ def get_database_maintenance_run_history(maintenance_run_history_id: Optional[st
         id=pulumi.get(__ret__, 'id'),
         maintenance_run_details=pulumi.get(__ret__, 'maintenance_run_details'),
         maintenance_run_history_id=pulumi.get(__ret__, 'maintenance_run_history_id'))
-
-
-@_utilities.lift_output_func(get_database_maintenance_run_history)
 def get_database_maintenance_run_history_output(maintenance_run_history_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseMaintenanceRunHistoryResult]:
     """
@@ -129,4 +131,12 @@ def get_database_maintenance_run_history_output(maintenance_run_history_id: Opti
 
     :param str maintenance_run_history_id: The maintenance run history OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['maintenanceRunHistoryId'] = maintenance_run_history_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory', __args__, opts=opts, typ=GetDatabaseMaintenanceRunHistoryResult)
+    return __ret__.apply(lambda __response__: GetDatabaseMaintenanceRunHistoryResult(
+        db_servers_history_details=pulumi.get(__response__, 'db_servers_history_details'),
+        id=pulumi.get(__response__, 'id'),
+        maintenance_run_details=pulumi.get(__response__, 'maintenance_run_details'),
+        maintenance_run_history_id=pulumi.get(__response__, 'maintenance_run_history_id')))

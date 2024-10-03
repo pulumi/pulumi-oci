@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -146,9 +151,6 @@ def get_access_request_audit_log_report(access_request_id: Optional[str] = None,
         process_tree=pulumi.get(__ret__, 'process_tree'),
         report=pulumi.get(__ret__, 'report'),
         time_of_report_generation=pulumi.get(__ret__, 'time_of_report_generation'))
-
-
-@_utilities.lift_output_func(get_access_request_audit_log_report)
 def get_access_request_audit_log_report_output(access_request_id: Optional[pulumi.Input[str]] = None,
                                                enable_process_tree: Optional[pulumi.Input[Optional[int]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestAuditLogReportResult]:
@@ -171,4 +173,16 @@ def get_access_request_audit_log_report_output(access_request_id: Optional[pulum
     :param str access_request_id: unique AccessRequest identifier
     :param int enable_process_tree: To enable process tree computation in audit report
     """
-    ...
+    __args__ = dict()
+    __args__['accessRequestId'] = access_request_id
+    __args__['enableProcessTree'] = enable_process_tree
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport', __args__, opts=opts, typ=GetAccessRequestAuditLogReportResult)
+    return __ret__.apply(lambda __response__: GetAccessRequestAuditLogReportResult(
+        access_request_id=pulumi.get(__response__, 'access_request_id'),
+        audit_report_status=pulumi.get(__response__, 'audit_report_status'),
+        enable_process_tree=pulumi.get(__response__, 'enable_process_tree'),
+        id=pulumi.get(__response__, 'id'),
+        process_tree=pulumi.get(__response__, 'process_tree'),
+        report=pulumi.get(__response__, 'report'),
+        time_of_report_generation=pulumi.get(__response__, 'time_of_report_generation')))

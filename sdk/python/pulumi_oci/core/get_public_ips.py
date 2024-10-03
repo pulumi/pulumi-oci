@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -203,9 +208,6 @@ def get_public_ips(availability_domain: Optional[str] = None,
         public_ip_pool_id=pulumi.get(__ret__, 'public_ip_pool_id'),
         public_ips=pulumi.get(__ret__, 'public_ips'),
         scope=pulumi.get(__ret__, 'scope'))
-
-
-@_utilities.lift_output_func(get_public_ips)
 def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                           compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublicIpsFilterArgs', 'GetPublicIpsFilterArgsDict']]]]] = None,
@@ -259,4 +261,21 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[st
            * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
            * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['lifetime'] = lifetime
+    __args__['publicIpPoolId'] = public_ip_pool_id
+    __args__['scope'] = scope
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getPublicIps:getPublicIps', __args__, opts=opts, typ=GetPublicIpsResult)
+    return __ret__.apply(lambda __response__: GetPublicIpsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        lifetime=pulumi.get(__response__, 'lifetime'),
+        public_ip_pool_id=pulumi.get(__response__, 'public_ip_pool_id'),
+        public_ips=pulumi.get(__response__, 'public_ips'),
+        scope=pulumi.get(__response__, 'scope')))

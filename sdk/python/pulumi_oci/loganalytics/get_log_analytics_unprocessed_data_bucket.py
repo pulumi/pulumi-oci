@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -135,9 +140,6 @@ def get_log_analytics_unprocessed_data_bucket(namespace: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_log_analytics_unprocessed_data_bucket)
 def get_log_analytics_unprocessed_data_bucket_output(namespace: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsUnprocessedDataBucketResult]:
     """
@@ -157,4 +159,14 @@ def get_log_analytics_unprocessed_data_bucket_output(namespace: Optional[pulumi.
 
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket', __args__, opts=opts, typ=GetLogAnalyticsUnprocessedDataBucketResult)
+    return __ret__.apply(lambda __response__: GetLogAnalyticsUnprocessedDataBucketResult(
+        bucket=pulumi.get(__response__, 'bucket'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

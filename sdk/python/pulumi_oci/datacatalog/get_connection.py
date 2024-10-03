@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -314,9 +319,6 @@ def get_connection(catalog_id: Optional[str] = None,
         type_key=pulumi.get(__ret__, 'type_key'),
         updated_by_id=pulumi.get(__ret__, 'updated_by_id'),
         uri=pulumi.get(__ret__, 'uri'))
-
-
-@_utilities.lift_output_func(get_connection)
 def get_connection_output(catalog_id: Optional[pulumi.Input[str]] = None,
                           connection_key: Optional[pulumi.Input[str]] = None,
                           data_asset_key: Optional[pulumi.Input[str]] = None,
@@ -345,4 +347,31 @@ def get_connection_output(catalog_id: Optional[pulumi.Input[str]] = None,
     :param str data_asset_key: Unique data asset key.
     :param Sequence[str] fields: Specifies the fields to return in a connection response.
     """
-    ...
+    __args__ = dict()
+    __args__['catalogId'] = catalog_id
+    __args__['connectionKey'] = connection_key
+    __args__['dataAssetKey'] = data_asset_key
+    __args__['fields'] = fields
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getConnection:getConnection', __args__, opts=opts, typ=GetConnectionResult)
+    return __ret__.apply(lambda __response__: GetConnectionResult(
+        catalog_id=pulumi.get(__response__, 'catalog_id'),
+        connection_key=pulumi.get(__response__, 'connection_key'),
+        created_by_id=pulumi.get(__response__, 'created_by_id'),
+        data_asset_key=pulumi.get(__response__, 'data_asset_key'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        enc_properties=pulumi.get(__response__, 'enc_properties'),
+        external_key=pulumi.get(__response__, 'external_key'),
+        fields=pulumi.get(__response__, 'fields'),
+        id=pulumi.get(__response__, 'id'),
+        is_default=pulumi.get(__response__, 'is_default'),
+        key=pulumi.get(__response__, 'key'),
+        properties=pulumi.get(__response__, 'properties'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_status_updated=pulumi.get(__response__, 'time_status_updated'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type_key=pulumi.get(__response__, 'type_key'),
+        updated_by_id=pulumi.get(__response__, 'updated_by_id'),
+        uri=pulumi.get(__response__, 'uri')))

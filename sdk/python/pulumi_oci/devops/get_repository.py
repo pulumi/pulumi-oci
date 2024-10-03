@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -394,9 +399,6 @@ def get_repository(fields: Optional[Sequence[str]] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trigger_build_events=pulumi.get(__ret__, 'trigger_build_events'))
-
-
-@_utilities.lift_output_func(get_repository)
 def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                           repository_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryResult]:
@@ -419,4 +421,35 @@ def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]
     :param Sequence[str] fields: Fields parameter can contain multiple flags useful in deciding the API functionality.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['fields'] = fields
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepository:getRepository', __args__, opts=opts, typ=GetRepositoryResult)
+    return __ret__.apply(lambda __response__: GetRepositoryResult(
+        branch_count=pulumi.get(__response__, 'branch_count'),
+        commit_count=pulumi.get(__response__, 'commit_count'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        default_branch=pulumi.get(__response__, 'default_branch'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        fields=pulumi.get(__response__, 'fields'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        http_url=pulumi.get(__response__, 'http_url'),
+        id=pulumi.get(__response__, 'id'),
+        lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),
+        mirror_repository_configs=pulumi.get(__response__, 'mirror_repository_configs'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        parent_repository_id=pulumi.get(__response__, 'parent_repository_id'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        project_name=pulumi.get(__response__, 'project_name'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        repository_type=pulumi.get(__response__, 'repository_type'),
+        size_in_bytes=pulumi.get(__response__, 'size_in_bytes'),
+        ssh_url=pulumi.get(__response__, 'ssh_url'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        trigger_build_events=pulumi.get(__response__, 'trigger_build_events')))

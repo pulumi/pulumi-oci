@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_db_system_compute_performances(db_system_shape: Optional[str] = None,
         db_system_shape=pulumi.get(__ret__, 'db_system_shape'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_db_system_compute_performances)
 def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.Input[Optional[str]]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemComputePerformancesFilterArgs', 'GetDbSystemComputePerformancesFilterArgsDict']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemComputePerformancesResult]:
@@ -130,4 +132,13 @@ def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.I
 
     :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
     """
-    ...
+    __args__ = dict()
+    __args__['dbSystemShape'] = db_system_shape
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances', __args__, opts=opts, typ=GetDbSystemComputePerformancesResult)
+    return __ret__.apply(lambda __response__: GetDbSystemComputePerformancesResult(
+        db_system_compute_performances=pulumi.get(__response__, 'db_system_compute_performances'),
+        db_system_shape=pulumi.get(__response__, 'db_system_shape'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

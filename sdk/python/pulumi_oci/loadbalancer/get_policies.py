@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_policies(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         policies=pulumi.get(__ret__, 'policies'))
-
-
-@_utilities.lift_output_func(get_policies)
 def get_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict']]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPoliciesResult]:
@@ -130,4 +132,13 @@ def get_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer policies to list.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getPolicies:getPolicies', __args__, opts=opts, typ=GetPoliciesResult)
+    return __ret__.apply(lambda __response__: GetPoliciesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        policies=pulumi.get(__response__, 'policies')))

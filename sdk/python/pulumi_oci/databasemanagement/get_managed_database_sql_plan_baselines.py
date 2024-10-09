@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -278,9 +283,6 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[Union['Ge
         sql_handle=pulumi.get(__ret__, 'sql_handle'),
         sql_plan_baseline_collections=pulumi.get(__ret__, 'sql_plan_baseline_collections'),
         sql_text=pulumi.get(__ret__, 'sql_text'))
-
-
-@_utilities.lift_output_func(get_managed_database_sql_plan_baselines)
 def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlPlanBaselinesFilterArgs', 'GetManagedDatabaseSqlPlanBaselinesFilterArgsDict']]]]] = None,
                                                    is_accepted: Optional[pulumi.Input[Optional[bool]]] = None,
                                                    is_adaptive: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -317,4 +319,39 @@ def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Inpu
     :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.
     :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['isAccepted'] = is_accepted
+    __args__['isAdaptive'] = is_adaptive
+    __args__['isAutoPurged'] = is_auto_purged
+    __args__['isEnabled'] = is_enabled
+    __args__['isFixed'] = is_fixed
+    __args__['isNeverExecuted'] = is_never_executed
+    __args__['isReproduced'] = is_reproduced
+    __args__['limit'] = limit
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['origin'] = origin
+    __args__['planName'] = plan_name
+    __args__['sqlHandle'] = sql_handle
+    __args__['sqlText'] = sql_text
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselinesResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseSqlPlanBaselinesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_accepted=pulumi.get(__response__, 'is_accepted'),
+        is_adaptive=pulumi.get(__response__, 'is_adaptive'),
+        is_auto_purged=pulumi.get(__response__, 'is_auto_purged'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        is_fixed=pulumi.get(__response__, 'is_fixed'),
+        is_never_executed=pulumi.get(__response__, 'is_never_executed'),
+        is_reproduced=pulumi.get(__response__, 'is_reproduced'),
+        limit=pulumi.get(__response__, 'limit'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        origin=pulumi.get(__response__, 'origin'),
+        plan_name=pulumi.get(__response__, 'plan_name'),
+        sql_handle=pulumi.get(__response__, 'sql_handle'),
+        sql_plan_baseline_collections=pulumi.get(__response__, 'sql_plan_baseline_collections'),
+        sql_text=pulumi.get(__response__, 'sql_text')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -135,9 +140,6 @@ def get_announcements(filters: Optional[Sequence[Union['GetAnnouncementsFilterAr
         summary_contains=pulumi.get(__ret__, 'summary_contains'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_announcements)
 def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
                              summary_contains: Optional[pulumi.Input[Optional[str]]] = None,
                              time_end: Optional[pulumi.Input[Optional[str]]] = None,
@@ -164,4 +166,17 @@ def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[Un
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['summaryContains'] = summary_contains
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getAnnouncements:getAnnouncements', __args__, opts=opts, typ=GetAnnouncementsResult)
+    return __ret__.apply(lambda __response__: GetAnnouncementsResult(
+        announcement_collections=pulumi.get(__response__, 'announcement_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        summary_contains=pulumi.get(__response__, 'summary_contains'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -200,9 +205,6 @@ def get_keys(algorithm: Optional[str] = None,
         length=pulumi.get(__ret__, 'length'),
         management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
         protection_mode=pulumi.get(__ret__, 'protection_mode'))
-
-
-@_utilities.lift_output_func(get_keys)
 def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
                     compartment_id: Optional[pulumi.Input[str]] = None,
                     curve_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -243,4 +245,23 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
     :param str management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
     :param str protection_mode: A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
     """
-    ...
+    __args__ = dict()
+    __args__['algorithm'] = algorithm
+    __args__['compartmentId'] = compartment_id
+    __args__['curveId'] = curve_id
+    __args__['filters'] = filters
+    __args__['length'] = length
+    __args__['managementEndpoint'] = management_endpoint
+    __args__['protectionMode'] = protection_mode
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getKeys:getKeys', __args__, opts=opts, typ=GetKeysResult)
+    return __ret__.apply(lambda __response__: GetKeysResult(
+        algorithm=pulumi.get(__response__, 'algorithm'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        curve_id=pulumi.get(__response__, 'curve_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        keys=pulumi.get(__response__, 'keys'),
+        length=pulumi.get(__response__, 'length'),
+        management_endpoint=pulumi.get(__response__, 'management_endpoint'),
+        protection_mode=pulumi.get(__response__, 'protection_mode')))

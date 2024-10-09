@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -234,9 +239,6 @@ def get_list_user_grants(depth_level: Optional[int] = None,
         privilege_type=pulumi.get(__ret__, 'privilege_type'),
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'),
         user_key=pulumi.get(__ret__, 'user_key'))
-
-
-@_utilities.lift_output_func(get_list_user_grants)
 def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]]] = None,
                                 depth_level_greater_than_or_equal_to: Optional[pulumi.Input[Optional[int]]] = None,
                                 depth_level_less_than: Optional[pulumi.Input[Optional[int]]] = None,
@@ -284,4 +286,29 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]
     :param str user_assessment_id: The OCID of the user assessment.
     :param str user_key: The unique user key. This is a system-generated identifier. ListUsers gets the user key for a user.
     """
-    ...
+    __args__ = dict()
+    __args__['depthLevel'] = depth_level
+    __args__['depthLevelGreaterThanOrEqualTo'] = depth_level_greater_than_or_equal_to
+    __args__['depthLevelLessThan'] = depth_level_less_than
+    __args__['filters'] = filters
+    __args__['grantKey'] = grant_key
+    __args__['grantName'] = grant_name
+    __args__['privilegeCategory'] = privilege_category
+    __args__['privilegeType'] = privilege_type
+    __args__['userAssessmentId'] = user_assessment_id
+    __args__['userKey'] = user_key
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getListUserGrants:getListUserGrants', __args__, opts=opts, typ=GetListUserGrantsResult)
+    return __ret__.apply(lambda __response__: GetListUserGrantsResult(
+        depth_level=pulumi.get(__response__, 'depth_level'),
+        depth_level_greater_than_or_equal_to=pulumi.get(__response__, 'depth_level_greater_than_or_equal_to'),
+        depth_level_less_than=pulumi.get(__response__, 'depth_level_less_than'),
+        filters=pulumi.get(__response__, 'filters'),
+        grant_key=pulumi.get(__response__, 'grant_key'),
+        grant_name=pulumi.get(__response__, 'grant_name'),
+        grants=pulumi.get(__response__, 'grants'),
+        id=pulumi.get(__response__, 'id'),
+        privilege_category=pulumi.get(__response__, 'privilege_category'),
+        privilege_type=pulumi.get(__response__, 'privilege_type'),
+        user_assessment_id=pulumi.get(__response__, 'user_assessment_id'),
+        user_key=pulumi.get(__response__, 'user_key')))

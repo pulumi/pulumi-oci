@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -380,9 +385,6 @@ def get_security_policy_report_database_table_access_entry(database_table_access
         table_name=pulumi.get(__ret__, 'table_name'),
         table_schema=pulumi.get(__ret__, 'table_schema'),
         target_id=pulumi.get(__ret__, 'target_id'))
-
-
-@_utilities.lift_output_func(get_security_policy_report_database_table_access_entry)
 def get_security_policy_report_database_table_access_entry_output(database_table_access_entry_key: Optional[pulumi.Input[str]] = None,
                                                                   security_policy_report_id: Optional[pulumi.Input[str]] = None,
                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseTableAccessEntryResult]:
@@ -405,4 +407,34 @@ def get_security_policy_report_database_table_access_entry_output(database_table
     :param str database_table_access_entry_key: The unique key that identifies the table access object. This is a system-generated identifier.
     :param str security_policy_report_id: The OCID of the security policy report resource.
     """
-    ...
+    __args__ = dict()
+    __args__['databaseTableAccessEntryKey'] = database_table_access_entry_key
+    __args__['securityPolicyReportId'] = security_policy_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry', __args__, opts=opts, typ=GetSecurityPolicyReportDatabaseTableAccessEntryResult)
+    return __ret__.apply(lambda __response__: GetSecurityPolicyReportDatabaseTableAccessEntryResult(
+        access_through_object=pulumi.get(__response__, 'access_through_object'),
+        access_type=pulumi.get(__response__, 'access_type'),
+        are_all_tables_accessible=pulumi.get(__response__, 'are_all_tables_accessible'),
+        column_name=pulumi.get(__response__, 'column_name'),
+        database_table_access_entry_key=pulumi.get(__response__, 'database_table_access_entry_key'),
+        grant_from_role=pulumi.get(__response__, 'grant_from_role'),
+        grantee=pulumi.get(__response__, 'grantee'),
+        grantor=pulumi.get(__response__, 'grantor'),
+        id=pulumi.get(__response__, 'id'),
+        is_access_constrained_by_database_vault=pulumi.get(__response__, 'is_access_constrained_by_database_vault'),
+        is_access_constrained_by_label_security=pulumi.get(__response__, 'is_access_constrained_by_label_security'),
+        is_access_constrained_by_real_application_security=pulumi.get(__response__, 'is_access_constrained_by_real_application_security'),
+        is_access_constrained_by_redaction=pulumi.get(__response__, 'is_access_constrained_by_redaction'),
+        is_access_constrained_by_sql_firewall=pulumi.get(__response__, 'is_access_constrained_by_sql_firewall'),
+        is_access_constrained_by_view=pulumi.get(__response__, 'is_access_constrained_by_view'),
+        is_access_constrained_by_virtual_private_database=pulumi.get(__response__, 'is_access_constrained_by_virtual_private_database'),
+        is_sensitive=pulumi.get(__response__, 'is_sensitive'),
+        key=pulumi.get(__response__, 'key'),
+        privilege=pulumi.get(__response__, 'privilege'),
+        privilege_grantable=pulumi.get(__response__, 'privilege_grantable'),
+        privilege_type=pulumi.get(__response__, 'privilege_type'),
+        security_policy_report_id=pulumi.get(__response__, 'security_policy_report_id'),
+        table_name=pulumi.get(__response__, 'table_name'),
+        table_schema=pulumi.get(__response__, 'table_schema'),
+        target_id=pulumi.get(__response__, 'target_id')))

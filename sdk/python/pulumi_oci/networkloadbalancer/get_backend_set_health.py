@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -128,13 +133,23 @@ def get_backend_set_health(backend_set_name: Optional[str] = None,
         total_backend_count=pulumi.get(__ret__, 'total_backend_count'),
         unknown_state_backend_names=pulumi.get(__ret__, 'unknown_state_backend_names'),
         warning_state_backend_names=pulumi.get(__ret__, 'warning_state_backend_names'))
-
-
-@_utilities.lift_output_func(get_backend_set_health)
 def get_backend_set_health_output(backend_set_name: Optional[pulumi.Input[str]] = None,
                                   network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetHealthResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['backendSetName'] = backend_set_name
+    __args__['networkLoadBalancerId'] = network_load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth', __args__, opts=opts, typ=GetBackendSetHealthResult)
+    return __ret__.apply(lambda __response__: GetBackendSetHealthResult(
+        backend_set_name=pulumi.get(__response__, 'backend_set_name'),
+        critical_state_backend_names=pulumi.get(__response__, 'critical_state_backend_names'),
+        id=pulumi.get(__response__, 'id'),
+        network_load_balancer_id=pulumi.get(__response__, 'network_load_balancer_id'),
+        status=pulumi.get(__response__, 'status'),
+        total_backend_count=pulumi.get(__response__, 'total_backend_count'),
+        unknown_state_backend_names=pulumi.get(__response__, 'unknown_state_backend_names'),
+        warning_state_backend_names=pulumi.get(__response__, 'warning_state_backend_names')))

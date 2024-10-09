@@ -30,7 +30,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetPeerRegionForRemotePeerings(ctx, nil, nil)
+//			_, err := Core.GetPeerRegionForRemotePeerings(ctx, &core.GetPeerRegionForRemotePeeringsArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -246,9 +251,6 @@ def get_autonomous_container_databases(autonomous_exadata_infrastructure_id: Opt
         infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
         service_level_agreement_type=pulumi.get(__ret__, 'service_level_agreement_type'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_autonomous_container_databases)
 def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
                                               autonomous_vm_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                                               availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
@@ -293,4 +295,29 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
     :param str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousExadataInfrastructureId'] = autonomous_exadata_infrastructure_id
+    __args__['autonomousVmClusterId'] = autonomous_vm_cluster_id
+    __args__['availabilityDomain'] = availability_domain
+    __args__['cloudAutonomousVmClusterId'] = cloud_autonomous_vm_cluster_id
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['infrastructureType'] = infrastructure_type
+    __args__['serviceLevelAgreementType'] = service_level_agreement_type
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases', __args__, opts=opts, typ=GetAutonomousContainerDatabasesResult)
+    return __ret__.apply(lambda __response__: GetAutonomousContainerDatabasesResult(
+        autonomous_container_databases=pulumi.get(__response__, 'autonomous_container_databases'),
+        autonomous_exadata_infrastructure_id=pulumi.get(__response__, 'autonomous_exadata_infrastructure_id'),
+        autonomous_vm_cluster_id=pulumi.get(__response__, 'autonomous_vm_cluster_id'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        cloud_autonomous_vm_cluster_id=pulumi.get(__response__, 'cloud_autonomous_vm_cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        infrastructure_type=pulumi.get(__response__, 'infrastructure_type'),
+        service_level_agreement_type=pulumi.get(__response__, 'service_level_agreement_type'),
+        state=pulumi.get(__response__, 'state')))

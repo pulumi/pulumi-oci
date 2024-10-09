@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -155,9 +160,6 @@ def get_agent_installers(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         os_family=pulumi.get(__ret__, 'os_family'),
         platform_architecture=pulumi.get(__ret__, 'platform_architecture'))
-
-
-@_utilities.lift_output_func(get_agent_installers)
 def get_agent_installers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict']]]]] = None,
                                 fleet_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -187,4 +189,19 @@ def get_agent_installers_output(compartment_id: Optional[pulumi.Input[Optional[s
     :param str os_family: The OS family for the agent installer.
     :param str platform_architecture: The platform architecture for the agent installer.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['fleetId'] = fleet_id
+    __args__['osFamily'] = os_family
+    __args__['platformArchitecture'] = platform_architecture
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getAgentInstallers:getAgentInstallers', __args__, opts=opts, typ=GetAgentInstallersResult)
+    return __ret__.apply(lambda __response__: GetAgentInstallersResult(
+        agent_installer_collections=pulumi.get(__response__, 'agent_installer_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        id=pulumi.get(__response__, 'id'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        platform_architecture=pulumi.get(__response__, 'platform_architecture')))

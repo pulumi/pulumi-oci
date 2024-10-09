@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -237,9 +242,6 @@ def get_outbound_connector(outbound_connector_id: Optional[str] = None,
         password_secret_version=pulumi.get(__ret__, 'password_secret_version'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_outbound_connector)
 def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOutboundConnectorResult]:
     """
@@ -259,4 +261,22 @@ def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[s
 
     :param str outbound_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
     """
-    ...
+    __args__ = dict()
+    __args__['outboundConnectorId'] = outbound_connector_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getOutboundConnector:getOutboundConnector', __args__, opts=opts, typ=GetOutboundConnectorResult)
+    return __ret__.apply(lambda __response__: GetOutboundConnectorResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        bind_distinguished_name=pulumi.get(__response__, 'bind_distinguished_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connector_type=pulumi.get(__response__, 'connector_type'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        endpoints=pulumi.get(__response__, 'endpoints'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        outbound_connector_id=pulumi.get(__response__, 'outbound_connector_id'),
+        password_secret_id=pulumi.get(__response__, 'password_secret_id'),
+        password_secret_version=pulumi.get(__response__, 'password_secret_version'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_service_catalog_associations(entity_id: Optional[str] = None,
         service_catalog_association_collections=pulumi.get(__ret__, 'service_catalog_association_collections'),
         service_catalog_association_id=pulumi.get(__ret__, 'service_catalog_association_id'),
         service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'))
-
-
-@_utilities.lift_output_func(get_service_catalog_associations)
 def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             entity_type: Optional[pulumi.Input[Optional[str]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict']]]]] = None,
@@ -190,4 +192,19 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
     :param str service_catalog_association_id: The unique identifier for the service catalog association.
     :param str service_catalog_id: The unique identifier for the service catalog.
     """
-    ...
+    __args__ = dict()
+    __args__['entityId'] = entity_id
+    __args__['entityType'] = entity_type
+    __args__['filters'] = filters
+    __args__['serviceCatalogAssociationId'] = service_catalog_association_id
+    __args__['serviceCatalogId'] = service_catalog_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations', __args__, opts=opts, typ=GetServiceCatalogAssociationsResult)
+    return __ret__.apply(lambda __response__: GetServiceCatalogAssociationsResult(
+        entity_id=pulumi.get(__response__, 'entity_id'),
+        entity_type=pulumi.get(__response__, 'entity_type'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        service_catalog_association_collections=pulumi.get(__response__, 'service_catalog_association_collections'),
+        service_catalog_association_id=pulumi.get(__response__, 'service_catalog_association_id'),
+        service_catalog_id=pulumi.get(__response__, 'service_catalog_id')))

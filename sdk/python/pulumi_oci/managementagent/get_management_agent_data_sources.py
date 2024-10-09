@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -124,9 +129,6 @@ def get_management_agent_data_sources(filters: Optional[Sequence[Union['GetManag
         id=pulumi.get(__ret__, 'id'),
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_management_agent_data_sources)
 def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict']]]]] = None,
                                              management_agent_id: Optional[pulumi.Input[str]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -150,4 +152,15 @@ def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Opti
     :param str management_agent_id: Unique Management Agent identifier
     :param str name: Unique name of the dataSource.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['managementAgentId'] = management_agent_id
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources', __args__, opts=opts, typ=GetManagementAgentDataSourcesResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentDataSourcesResult(
+        data_sources=pulumi.get(__response__, 'data_sources'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        name=pulumi.get(__response__, 'name')))

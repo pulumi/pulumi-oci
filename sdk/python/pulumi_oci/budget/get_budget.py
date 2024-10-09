@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -367,9 +372,6 @@ def get_budget(budget_id: Optional[str] = None,
         time_spend_computed=pulumi.get(__ret__, 'time_spend_computed'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_budget)
 def get_budget_output(budget_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBudgetResult]:
     """
@@ -389,4 +391,32 @@ def get_budget_output(budget_id: Optional[pulumi.Input[str]] = None,
 
     :param str budget_id: The unique budget OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['budgetId'] = budget_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Budget/getBudget:getBudget', __args__, opts=opts, typ=GetBudgetResult)
+    return __ret__.apply(lambda __response__: GetBudgetResult(
+        actual_spend=pulumi.get(__response__, 'actual_spend'),
+        alert_rule_count=pulumi.get(__response__, 'alert_rule_count'),
+        amount=pulumi.get(__response__, 'amount'),
+        budget_id=pulumi.get(__response__, 'budget_id'),
+        budget_processing_period_start_offset=pulumi.get(__response__, 'budget_processing_period_start_offset'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        end_date=pulumi.get(__response__, 'end_date'),
+        forecasted_spend=pulumi.get(__response__, 'forecasted_spend'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        processing_period_type=pulumi.get(__response__, 'processing_period_type'),
+        reset_period=pulumi.get(__response__, 'reset_period'),
+        start_date=pulumi.get(__response__, 'start_date'),
+        state=pulumi.get(__response__, 'state'),
+        target_compartment_id=pulumi.get(__response__, 'target_compartment_id'),
+        target_type=pulumi.get(__response__, 'target_type'),
+        targets=pulumi.get(__response__, 'targets'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_spend_computed=pulumi.get(__response__, 'time_spend_computed'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version')))

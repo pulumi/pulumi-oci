@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -446,9 +451,6 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[str] = None,
         time_snoozed_until=pulumi.get(__ret__, 'time_snoozed_until'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_deployment_upgrade)
 def get_deployment_upgrade_output(deployment_upgrade_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentUpgradeResult]:
     """
@@ -468,4 +470,38 @@ def get_deployment_upgrade_output(deployment_upgrade_id: Optional[pulumi.Input[s
 
     :param str deployment_upgrade_id: A unique Deployment Upgrade identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deploymentUpgradeId'] = deployment_upgrade_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentUpgrade:getDeploymentUpgrade', __args__, opts=opts, typ=GetDeploymentUpgradeResult)
+    return __ret__.apply(lambda __response__: GetDeploymentUpgradeResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        deployment_upgrade_id=pulumi.get(__response__, 'deployment_upgrade_id'),
+        deployment_upgrade_type=pulumi.get(__response__, 'deployment_upgrade_type'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_cancel_allowed=pulumi.get(__response__, 'is_cancel_allowed'),
+        is_reschedule_allowed=pulumi.get(__response__, 'is_reschedule_allowed'),
+        is_rollback_allowed=pulumi.get(__response__, 'is_rollback_allowed'),
+        is_security_fix=pulumi.get(__response__, 'is_security_fix'),
+        is_snoozed=pulumi.get(__response__, 'is_snoozed'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
+        ogg_version=pulumi.get(__response__, 'ogg_version'),
+        previous_ogg_version=pulumi.get(__response__, 'previous_ogg_version'),
+        release_type=pulumi.get(__response__, 'release_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_ogg_version_supported_until=pulumi.get(__response__, 'time_ogg_version_supported_until'),
+        time_released=pulumi.get(__response__, 'time_released'),
+        time_schedule=pulumi.get(__response__, 'time_schedule'),
+        time_schedule_max=pulumi.get(__response__, 'time_schedule_max'),
+        time_snoozed_until=pulumi.get(__response__, 'time_snoozed_until'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

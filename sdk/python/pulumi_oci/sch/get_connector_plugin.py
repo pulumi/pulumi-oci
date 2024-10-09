@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -184,9 +189,6 @@ def get_connector_plugin(connector_plugin_name: Optional[str] = None,
         schema=pulumi.get(__ret__, 'schema'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_connector_plugin)
 def get_connector_plugin_output(connector_plugin_name: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectorPluginResult]:
     """
@@ -206,4 +208,18 @@ def get_connector_plugin_output(connector_plugin_name: Optional[pulumi.Input[str
 
     :param str connector_plugin_name: The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service.
     """
-    ...
+    __args__ = dict()
+    __args__['connectorPluginName'] = connector_plugin_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Sch/getConnectorPlugin:getConnectorPlugin', __args__, opts=opts, typ=GetConnectorPluginResult)
+    return __ret__.apply(lambda __response__: GetConnectorPluginResult(
+        connector_plugin_name=pulumi.get(__response__, 'connector_plugin_name'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        estimated_throughput=pulumi.get(__response__, 'estimated_throughput'),
+        id=pulumi.get(__response__, 'id'),
+        kind=pulumi.get(__response__, 'kind'),
+        max_retention=pulumi.get(__response__, 'max_retention'),
+        name=pulumi.get(__response__, 'name'),
+        schema=pulumi.get(__response__, 'schema'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

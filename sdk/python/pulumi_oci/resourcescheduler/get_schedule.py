@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_schedule(schedule_id: Optional[str] = None,
         time_next_run=pulumi.get(__ret__, 'time_next_run'),
         time_starts=pulumi.get(__ret__, 'time_starts'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_schedule)
 def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduleResult]:
     """
@@ -337,4 +339,28 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
 
     :param str schedule_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
     """
-    ...
+    __args__ = dict()
+    __args__['scheduleId'] = schedule_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ResourceScheduler/getSchedule:getSchedule', __args__, opts=opts, typ=GetScheduleResult)
+    return __ret__.apply(lambda __response__: GetScheduleResult(
+        action=pulumi.get(__response__, 'action'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        recurrence_details=pulumi.get(__response__, 'recurrence_details'),
+        recurrence_type=pulumi.get(__response__, 'recurrence_type'),
+        resource_filters=pulumi.get(__response__, 'resource_filters'),
+        resources=pulumi.get(__response__, 'resources'),
+        schedule_id=pulumi.get(__response__, 'schedule_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_ends=pulumi.get(__response__, 'time_ends'),
+        time_last_run=pulumi.get(__response__, 'time_last_run'),
+        time_next_run=pulumi.get(__response__, 'time_next_run'),
+        time_starts=pulumi.get(__response__, 'time_starts'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

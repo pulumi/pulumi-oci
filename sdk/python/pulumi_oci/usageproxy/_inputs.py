@@ -4,21 +4,53 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'SubscriptionRedeemableUserItemArgs',
+    'SubscriptionRedeemableUserItemArgsDict',
     'GetResourceQuotasFilterArgs',
+    'GetResourceQuotasFilterArgsDict',
     'GetResourcesFilterArgs',
+    'GetResourcesFilterArgsDict',
     'GetSubscriptionProductsFilterArgs',
+    'GetSubscriptionProductsFilterArgsDict',
     'GetSubscriptionRedeemableUsersFilterArgs',
+    'GetSubscriptionRedeemableUsersFilterArgsDict',
     'GetSubscriptionRedemptionsFilterArgs',
+    'GetSubscriptionRedemptionsFilterArgsDict',
     'GetSubscriptionRewardsFilterArgs',
+    'GetSubscriptionRewardsFilterArgsDict',
     'GetUsagelimitsFilterArgs',
+    'GetUsagelimitsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class SubscriptionRedeemableUserItemArgsDict(TypedDict):
+        email_id: pulumi.Input[str]
+        """
+        The email ID for a user that can redeem rewards.
+        """
+        first_name: NotRequired[pulumi.Input[str]]
+        """
+        The first name of the user that can redeem rewards.
+        """
+        last_name: NotRequired[pulumi.Input[str]]
+        """
+        The last name of the user that can redeem rewards.
+        """
+elif False:
+    SubscriptionRedeemableUserItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SubscriptionRedeemableUserItemArgs:
@@ -74,6 +106,17 @@ class SubscriptionRedeemableUserItemArgs:
         pulumi.set(self, "last_name", value)
 
 
+if not MYPY:
+    class GetResourceQuotasFilterArgsDict(TypedDict):
+        name: str
+        """
+        The resource name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetResourceQuotasFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetResourceQuotasFilterArgs:
     def __init__(__self__, *,
@@ -118,6 +161,17 @@ class GetResourceQuotasFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetResourcesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the resource.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetResourcesFilterArgs:
@@ -164,6 +218,14 @@ class GetResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSubscriptionProductsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSubscriptionProductsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSubscriptionProductsFilterArgs:
     def __init__(__self__, *,
@@ -202,6 +264,14 @@ class GetSubscriptionProductsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSubscriptionRedeemableUsersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSubscriptionRedeemableUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSubscriptionRedeemableUsersFilterArgs:
@@ -242,6 +312,14 @@ class GetSubscriptionRedeemableUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSubscriptionRedemptionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSubscriptionRedemptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSubscriptionRedemptionsFilterArgs:
     def __init__(__self__, *,
@@ -281,6 +359,14 @@ class GetSubscriptionRedemptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSubscriptionRewardsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSubscriptionRewardsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSubscriptionRewardsFilterArgs:
     def __init__(__self__, *,
@@ -319,6 +405,14 @@ class GetSubscriptionRewardsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetUsagelimitsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetUsagelimitsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetUsagelimitsFilterArgs:

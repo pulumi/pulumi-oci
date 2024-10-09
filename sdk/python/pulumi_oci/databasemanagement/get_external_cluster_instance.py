@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -314,9 +319,6 @@ def get_external_cluster_instance(external_cluster_instance_id: Optional[str] = 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_external_cluster_instance)
 def get_external_cluster_instance_output(external_cluster_instance_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClusterInstanceResult]:
     """
@@ -336,4 +338,28 @@ def get_external_cluster_instance_output(external_cluster_instance_id: Optional[
 
     :param str external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
     """
-    ...
+    __args__ = dict()
+    __args__['externalClusterInstanceId'] = external_cluster_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance', __args__, opts=opts, typ=GetExternalClusterInstanceResult)
+    return __ret__.apply(lambda __response__: GetExternalClusterInstanceResult(
+        adr_home_directory=pulumi.get(__response__, 'adr_home_directory'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        component_name=pulumi.get(__response__, 'component_name'),
+        crs_base_directory=pulumi.get(__response__, 'crs_base_directory'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_cluster_id=pulumi.get(__response__, 'external_cluster_id'),
+        external_cluster_instance_id=pulumi.get(__response__, 'external_cluster_instance_id'),
+        external_connector_id=pulumi.get(__response__, 'external_connector_id'),
+        external_db_node_id=pulumi.get(__response__, 'external_db_node_id'),
+        external_db_system_id=pulumi.get(__response__, 'external_db_system_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        node_role=pulumi.get(__response__, 'node_role'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

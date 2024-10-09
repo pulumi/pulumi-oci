@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -293,9 +298,6 @@ def get_cross_connect(cross_connect_id: Optional[str] = None,
         port_speed_shape_name=pulumi.get(__ret__, 'port_speed_shape_name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_cross_connect)
 def get_cross_connect_output(cross_connect_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectResult]:
     """
@@ -315,4 +317,27 @@ def get_cross_connect_output(cross_connect_id: Optional[pulumi.Input[str]] = Non
 
     :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
     """
-    ...
+    __args__ = dict()
+    __args__['crossConnectId'] = cross_connect_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getCrossConnect:getCrossConnect', __args__, opts=opts, typ=GetCrossConnectResult)
+    return __ret__.apply(lambda __response__: GetCrossConnectResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cross_connect_group_id=pulumi.get(__response__, 'cross_connect_group_id'),
+        cross_connect_id=pulumi.get(__response__, 'cross_connect_id'),
+        customer_reference_name=pulumi.get(__response__, 'customer_reference_name'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        far_cross_connect_or_cross_connect_group_id=pulumi.get(__response__, 'far_cross_connect_or_cross_connect_group_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_active=pulumi.get(__response__, 'is_active'),
+        location_name=pulumi.get(__response__, 'location_name'),
+        macsec_properties=pulumi.get(__response__, 'macsec_properties'),
+        near_cross_connect_or_cross_connect_group_id=pulumi.get(__response__, 'near_cross_connect_or_cross_connect_group_id'),
+        oci_logical_device_name=pulumi.get(__response__, 'oci_logical_device_name'),
+        oci_physical_device_name=pulumi.get(__response__, 'oci_physical_device_name'),
+        port_name=pulumi.get(__response__, 'port_name'),
+        port_speed_shape_name=pulumi.get(__response__, 'port_speed_shape_name'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

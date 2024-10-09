@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -125,9 +130,6 @@ def get_compatible_formats_for_sensitive_type(access_level: Optional[str] = None
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         formats_for_sensitive_types=pulumi.get(__ret__, 'formats_for_sensitive_types'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_compatible_formats_for_sensitive_type)
 def get_compatible_formats_for_sensitive_type_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                                      compartment_id: Optional[pulumi.Input[str]] = None,
                                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -156,4 +158,15 @@ def get_compatible_formats_for_sensitive_type_output(access_level: Optional[pulu
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType', __args__, opts=opts, typ=GetCompatibleFormatsForSensitiveTypeResult)
+    return __ret__.apply(lambda __response__: GetCompatibleFormatsForSensitiveTypeResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        formats_for_sensitive_types=pulumi.get(__response__, 'formats_for_sensitive_types'),
+        id=pulumi.get(__response__, 'id')))

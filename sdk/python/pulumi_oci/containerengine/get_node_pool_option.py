@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -147,9 +152,6 @@ def get_node_pool_option(compartment_id: Optional[str] = None,
         node_pool_option_id=pulumi.get(__ret__, 'node_pool_option_id'),
         shapes=pulumi.get(__ret__, 'shapes'),
         sources=pulumi.get(__ret__, 'sources'))
-
-
-@_utilities.lift_output_func(get_node_pool_option)
 def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 node_pool_option_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolOptionResult]:
@@ -172,4 +174,16 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[s
     :param str compartment_id: The OCID of the compartment.
     :param str node_pool_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['nodePoolOptionId'] = node_pool_option_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getNodePoolOption:getNodePoolOption', __args__, opts=opts, typ=GetNodePoolOptionResult)
+    return __ret__.apply(lambda __response__: GetNodePoolOptionResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        images=pulumi.get(__response__, 'images'),
+        kubernetes_versions=pulumi.get(__response__, 'kubernetes_versions'),
+        node_pool_option_id=pulumi.get(__response__, 'node_pool_option_id'),
+        shapes=pulumi.get(__response__, 'shapes'),
+        sources=pulumi.get(__response__, 'sources')))

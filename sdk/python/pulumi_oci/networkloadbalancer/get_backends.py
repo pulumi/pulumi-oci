@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_backends(backend_set_name: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'))
-
-
-@_utilities.lift_output_func(get_backends)
 def get_backends_output(backend_set_name: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackendsFilterArgs', 'GetBackendsFilterArgsDict']]]]] = None,
                         network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_backends_output(backend_set_name: Optional[pulumi.Input[str]] = None,
     :param str backend_set_name: The name of the backend set associated with the backend servers.  Example: `example_backend_set`
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
     """
-    ...
+    __args__ = dict()
+    __args__['backendSetName'] = backend_set_name
+    __args__['filters'] = filters
+    __args__['networkLoadBalancerId'] = network_load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getBackends:getBackends', __args__, opts=opts, typ=GetBackendsResult)
+    return __ret__.apply(lambda __response__: GetBackendsResult(
+        backend_collections=pulumi.get(__response__, 'backend_collections'),
+        backend_set_name=pulumi.get(__response__, 'backend_set_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        network_load_balancer_id=pulumi.get(__response__, 'network_load_balancer_id')))

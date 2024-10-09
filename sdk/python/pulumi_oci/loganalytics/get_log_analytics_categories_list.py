@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -139,9 +144,6 @@ def get_log_analytics_categories_list(category_display_text: Optional[str] = Non
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'))
-
-
-@_utilities.lift_output_func(get_log_analytics_categories_list)
 def get_log_analytics_categories_list_output(category_display_text: Optional[pulumi.Input[Optional[str]]] = None,
                                              category_type: Optional[pulumi.Input[Optional[str]]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -170,4 +172,17 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
     :param str name: A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['categoryDisplayText'] = category_display_text
+    __args__['categoryType'] = category_type
+    __args__['name'] = name
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList', __args__, opts=opts, typ=GetLogAnalyticsCategoriesListResult)
+    return __ret__.apply(lambda __response__: GetLogAnalyticsCategoriesListResult(
+        category_display_text=pulumi.get(__response__, 'category_display_text'),
+        category_type=pulumi.get(__response__, 'category_type'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace')))

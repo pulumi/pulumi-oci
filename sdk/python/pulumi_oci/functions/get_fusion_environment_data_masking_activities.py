@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -127,9 +132,6 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Un
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_data_masking_activities)
 def get_fusion_environment_data_masking_activities_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict']]]]] = None,
                                                           fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                           state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -153,4 +155,15 @@ def get_fusion_environment_data_masking_activities_output(filters: Optional[pulu
     :param str fusion_environment_id: unique FusionEnvironment identifier
     :param str state: A filter that returns all resources that match the specified status
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities', __args__, opts=opts, typ=GetFusionEnvironmentDataMaskingActivitiesResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentDataMaskingActivitiesResult(
+        data_masking_activity_collections=pulumi.get(__response__, 'data_masking_activity_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

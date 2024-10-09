@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_java_downloads_java_download_token(java_download_token_id: Optional[str]
         time_last_used=pulumi.get(__ret__, 'time_last_used'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         value=pulumi.get(__ret__, 'value'))
-
-
-@_utilities.lift_output_func(get_java_downloads_java_download_token)
 def get_java_downloads_java_download_token_output(java_download_token_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadTokenResult]:
     """
@@ -337,4 +339,28 @@ def get_java_downloads_java_download_token_output(java_download_token_id: Option
 
     :param str java_download_token_id: Unique JavaDownloadToken identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['javaDownloadTokenId'] = java_download_token_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken', __args__, opts=opts, typ=GetJavaDownloadsJavaDownloadTokenResult)
+    return __ret__.apply(lambda __response__: GetJavaDownloadsJavaDownloadTokenResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_bies=pulumi.get(__response__, 'created_bies'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_default=pulumi.get(__response__, 'is_default'),
+        java_download_token_id=pulumi.get(__response__, 'java_download_token_id'),
+        java_version=pulumi.get(__response__, 'java_version'),
+        last_updated_bies=pulumi.get(__response__, 'last_updated_bies'),
+        license_types=pulumi.get(__response__, 'license_types'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_expires=pulumi.get(__response__, 'time_expires'),
+        time_last_used=pulumi.get(__response__, 'time_last_used'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        value=pulumi.get(__response__, 'value')))

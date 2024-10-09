@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -393,9 +398,6 @@ def get_sql_endpoint(sql_endpoint_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         warehouse_bucket_uri=pulumi.get(__ret__, 'warehouse_bucket_uri'))
-
-
-@_utilities.lift_output_func(get_sql_endpoint)
 def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlEndpointResult]:
     """
@@ -415,4 +417,34 @@ def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[str]] = None,
 
     :param str sql_endpoint_id: The unique id of the SQL Endpoint.
     """
-    ...
+    __args__ = dict()
+    __args__['sqlEndpointId'] = sql_endpoint_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getSqlEndpoint:getSqlEndpoint', __args__, opts=opts, typ=GetSqlEndpointResult)
+    return __ret__.apply(lambda __response__: GetSqlEndpointResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        driver_shape=pulumi.get(__response__, 'driver_shape'),
+        driver_shape_configs=pulumi.get(__response__, 'driver_shape_configs'),
+        executor_shape=pulumi.get(__response__, 'executor_shape'),
+        executor_shape_configs=pulumi.get(__response__, 'executor_shape_configs'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        jdbc_endpoint_url=pulumi.get(__response__, 'jdbc_endpoint_url'),
+        lake_id=pulumi.get(__response__, 'lake_id'),
+        last_accepted_request_token=pulumi.get(__response__, 'last_accepted_request_token'),
+        max_executor_count=pulumi.get(__response__, 'max_executor_count'),
+        metastore_id=pulumi.get(__response__, 'metastore_id'),
+        min_executor_count=pulumi.get(__response__, 'min_executor_count'),
+        network_configurations=pulumi.get(__response__, 'network_configurations'),
+        spark_advanced_configurations=pulumi.get(__response__, 'spark_advanced_configurations'),
+        sql_endpoint_id=pulumi.get(__response__, 'sql_endpoint_id'),
+        sql_endpoint_version=pulumi.get(__response__, 'sql_endpoint_version'),
+        state=pulumi.get(__response__, 'state'),
+        state_message=pulumi.get(__response__, 'state_message'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        warehouse_bucket_uri=pulumi.get(__response__, 'warehouse_bucket_uri')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
         metadata_ref=pulumi.get(__ret__, 'metadata_ref'),
         state=pulumi.get(__ret__, 'state'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_media_asset_distribution_channel_attachment)
 def get_media_asset_distribution_channel_attachment_output(distribution_channel_id: Optional[pulumi.Input[str]] = None,
                                                            is_lock_override: Optional[pulumi.Input[Optional[bool]]] = None,
                                                            locks: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaAssetDistributionChannelAttachmentLockArgs', 'GetMediaAssetDistributionChannelAttachmentLockArgsDict']]]]] = None,
@@ -200,4 +202,21 @@ def get_media_asset_distribution_channel_attachment_output(distribution_channel_
     :param Sequence[Union['GetMediaAssetDistributionChannelAttachmentLockArgs', 'GetMediaAssetDistributionChannelAttachmentLockArgsDict']] locks: Locks associated with this resource.
     :param str media_asset_id: Unique MediaAsset identifier
     """
-    ...
+    __args__ = dict()
+    __args__['distributionChannelId'] = distribution_channel_id
+    __args__['isLockOverride'] = is_lock_override
+    __args__['locks'] = locks
+    __args__['mediaAssetId'] = media_asset_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment', __args__, opts=opts, typ=GetMediaAssetDistributionChannelAttachmentResult)
+    return __ret__.apply(lambda __response__: GetMediaAssetDistributionChannelAttachmentResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        distribution_channel_id=pulumi.get(__response__, 'distribution_channel_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        locks=pulumi.get(__response__, 'locks'),
+        media_asset_id=pulumi.get(__response__, 'media_asset_id'),
+        media_workflow_job_id=pulumi.get(__response__, 'media_workflow_job_id'),
+        metadata_ref=pulumi.get(__response__, 'metadata_ref'),
+        state=pulumi.get(__response__, 'state'),
+        version=pulumi.get(__response__, 'version')))

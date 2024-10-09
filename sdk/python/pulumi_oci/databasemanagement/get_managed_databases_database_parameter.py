@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -191,9 +196,6 @@ def get_managed_databases_database_parameter(is_allowed_values_included: Optiona
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
         source=pulumi.get(__ret__, 'source'))
-
-
-@_utilities.lift_output_func(get_managed_databases_database_parameter)
 def get_managed_databases_database_parameter_output(is_allowed_values_included: Optional[pulumi.Input[Optional[bool]]] = None,
                                                     managed_database_id: Optional[pulumi.Input[str]] = None,
                                                     name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -222,4 +224,21 @@ def get_managed_databases_database_parameter_output(is_allowed_values_included: 
     :param str name: A filter to return all parameters that have the text given in their names.
     :param str source: The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
     """
-    ...
+    __args__ = dict()
+    __args__['isAllowedValuesIncluded'] = is_allowed_values_included
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['name'] = name
+    __args__['source'] = source
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter', __args__, opts=opts, typ=GetManagedDatabasesDatabaseParameterResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabasesDatabaseParameterResult(
+        database_name=pulumi.get(__response__, 'database_name'),
+        database_sub_type=pulumi.get(__response__, 'database_sub_type'),
+        database_type=pulumi.get(__response__, 'database_type'),
+        database_version=pulumi.get(__response__, 'database_version'),
+        id=pulumi.get(__response__, 'id'),
+        is_allowed_values_included=pulumi.get(__response__, 'is_allowed_values_included'),
+        items=pulumi.get(__response__, 'items'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        name=pulumi.get(__response__, 'name'),
+        source=pulumi.get(__response__, 'source')))

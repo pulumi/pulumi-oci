@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -445,9 +450,6 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
         profiles=pulumi.get(__ret__, 'profiles'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         statuses=pulumi.get(__ret__, 'statuses'))
-
-
-@_utilities.lift_output_func(get_managed_instances)
 def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  arch_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -534,4 +536,57 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
     :param Sequence[str] statuses: A filter to return only managed instances whose status matches the status provided.
     """
-    ...
+    __args__ = dict()
+    __args__['advisoryNames'] = advisory_names
+    __args__['archTypes'] = arch_types
+    __args__['compartmentId'] = compartment_id
+    __args__['displayNameContains'] = display_name_contains
+    __args__['displayNames'] = display_names
+    __args__['filters'] = filters
+    __args__['group'] = group
+    __args__['groupNotEqualTo'] = group_not_equal_to
+    __args__['isAttachedToGroupOrLifecycleStage'] = is_attached_to_group_or_lifecycle_stage
+    __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
+    __args__['isManagementStation'] = is_management_station
+    __args__['isProfileAttached'] = is_profile_attached
+    __args__['lifecycleEnvironment'] = lifecycle_environment
+    __args__['lifecycleEnvironmentNotEqualTo'] = lifecycle_environment_not_equal_to
+    __args__['lifecycleStage'] = lifecycle_stage
+    __args__['lifecycleStageNotEqualTo'] = lifecycle_stage_not_equal_to
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['osFamilies'] = os_families
+    __args__['profileNotEqualTos'] = profile_not_equal_tos
+    __args__['profiles'] = profiles
+    __args__['softwareSourceId'] = software_source_id
+    __args__['statuses'] = statuses
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstances:getManagedInstances', __args__, opts=opts, typ=GetManagedInstancesResult)
+    return __ret__.apply(lambda __response__: GetManagedInstancesResult(
+        advisory_names=pulumi.get(__response__, 'advisory_names'),
+        arch_types=pulumi.get(__response__, 'arch_types'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        display_names=pulumi.get(__response__, 'display_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        group=pulumi.get(__response__, 'group'),
+        group_not_equal_to=pulumi.get(__response__, 'group_not_equal_to'),
+        id=pulumi.get(__response__, 'id'),
+        is_attached_to_group_or_lifecycle_stage=pulumi.get(__response__, 'is_attached_to_group_or_lifecycle_stage'),
+        is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
+        is_management_station=pulumi.get(__response__, 'is_management_station'),
+        is_profile_attached=pulumi.get(__response__, 'is_profile_attached'),
+        lifecycle_environment=pulumi.get(__response__, 'lifecycle_environment'),
+        lifecycle_environment_not_equal_to=pulumi.get(__response__, 'lifecycle_environment_not_equal_to'),
+        lifecycle_stage=pulumi.get(__response__, 'lifecycle_stage'),
+        lifecycle_stage_not_equal_to=pulumi.get(__response__, 'lifecycle_stage_not_equal_to'),
+        location_not_equal_tos=pulumi.get(__response__, 'location_not_equal_tos'),
+        locations=pulumi.get(__response__, 'locations'),
+        managed_instance_collections=pulumi.get(__response__, 'managed_instance_collections'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        os_families=pulumi.get(__response__, 'os_families'),
+        profile_not_equal_tos=pulumi.get(__response__, 'profile_not_equal_tos'),
+        profiles=pulumi.get(__response__, 'profiles'),
+        software_source_id=pulumi.get(__response__, 'software_source_id'),
+        statuses=pulumi.get(__response__, 'statuses')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -224,9 +229,6 @@ def get_fast_connect_provider_service(provider_service_id: Optional[str] = None,
         required_total_cross_connects=pulumi.get(__ret__, 'required_total_cross_connects'),
         supported_virtual_circuit_types=pulumi.get(__ret__, 'supported_virtual_circuit_types'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_fast_connect_provider_service)
 def get_fast_connect_provider_service_output(provider_service_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastConnectProviderServiceResult]:
     """
@@ -247,4 +249,21 @@ def get_fast_connect_provider_service_output(provider_service_id: Optional[pulum
 
     :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
     """
-    ...
+    __args__ = dict()
+    __args__['providerServiceId'] = provider_service_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getFastConnectProviderService:getFastConnectProviderService', __args__, opts=opts, typ=GetFastConnectProviderServiceResult)
+    return __ret__.apply(lambda __response__: GetFastConnectProviderServiceResult(
+        bandwith_shape_management=pulumi.get(__response__, 'bandwith_shape_management'),
+        customer_asn_management=pulumi.get(__response__, 'customer_asn_management'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        private_peering_bgp_management=pulumi.get(__response__, 'private_peering_bgp_management'),
+        provider_name=pulumi.get(__response__, 'provider_name'),
+        provider_service_id=pulumi.get(__response__, 'provider_service_id'),
+        provider_service_key_management=pulumi.get(__response__, 'provider_service_key_management'),
+        provider_service_name=pulumi.get(__response__, 'provider_service_name'),
+        public_peering_bgp_management=pulumi.get(__response__, 'public_peering_bgp_management'),
+        required_total_cross_connects=pulumi.get(__response__, 'required_total_cross_connects'),
+        supported_virtual_circuit_types=pulumi.get(__response__, 'supported_virtual_circuit_types'),
+        type=pulumi.get(__response__, 'type')))

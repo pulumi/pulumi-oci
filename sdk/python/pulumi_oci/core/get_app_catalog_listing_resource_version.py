@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -188,9 +193,6 @@ def get_app_catalog_listing_resource_version(listing_id: Optional[str] = None,
         listing_resource_version=pulumi.get(__ret__, 'listing_resource_version'),
         resource_version=pulumi.get(__ret__, 'resource_version'),
         time_published=pulumi.get(__ret__, 'time_published'))
-
-
-@_utilities.lift_output_func(get_app_catalog_listing_resource_version)
 def get_app_catalog_listing_resource_version_output(listing_id: Optional[pulumi.Input[str]] = None,
                                                     resource_version: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResourceVersionResult]:
@@ -213,4 +215,19 @@ def get_app_catalog_listing_resource_version_output(listing_id: Optional[pulumi.
     :param str listing_id: The OCID of the listing.
     :param str resource_version: Listing Resource Version.
     """
-    ...
+    __args__ = dict()
+    __args__['listingId'] = listing_id
+    __args__['resourceVersion'] = resource_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion', __args__, opts=opts, typ=GetAppCatalogListingResourceVersionResult)
+    return __ret__.apply(lambda __response__: GetAppCatalogListingResourceVersionResult(
+        accessible_ports=pulumi.get(__response__, 'accessible_ports'),
+        allowed_actions=pulumi.get(__response__, 'allowed_actions'),
+        available_regions=pulumi.get(__response__, 'available_regions'),
+        compatible_shapes=pulumi.get(__response__, 'compatible_shapes'),
+        id=pulumi.get(__response__, 'id'),
+        listing_id=pulumi.get(__response__, 'listing_id'),
+        listing_resource_id=pulumi.get(__response__, 'listing_resource_id'),
+        listing_resource_version=pulumi.get(__response__, 'listing_resource_version'),
+        resource_version=pulumi.get(__response__, 'resource_version'),
+        time_published=pulumi.get(__response__, 'time_published')))

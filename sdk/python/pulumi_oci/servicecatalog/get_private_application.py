@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -244,9 +249,6 @@ def get_private_application(private_application_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_private_application)
 def get_private_application_output(private_application_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationResult]:
     """
@@ -266,4 +268,23 @@ def get_private_application_output(private_application_id: Optional[pulumi.Input
 
     :param str private_application_id: The unique identifier for the private application.
     """
-    ...
+    __args__ = dict()
+    __args__['privateApplicationId'] = private_application_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getPrivateApplication:getPrivateApplication', __args__, opts=opts, typ=GetPrivateApplicationResult)
+    return __ret__.apply(lambda __response__: GetPrivateApplicationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        logo_file_base64encoded=pulumi.get(__response__, 'logo_file_base64encoded'),
+        logos=pulumi.get(__response__, 'logos'),
+        long_description=pulumi.get(__response__, 'long_description'),
+        package_details=pulumi.get(__response__, 'package_details'),
+        package_type=pulumi.get(__response__, 'package_type'),
+        private_application_id=pulumi.get(__response__, 'private_application_id'),
+        short_description=pulumi.get(__response__, 'short_description'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

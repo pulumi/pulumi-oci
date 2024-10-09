@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -121,9 +126,6 @@ def get_managed_database_optimizer_statistics_advisor_execution_script(execution
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         script=pulumi.get(__ret__, 'script'),
         task_name=pulumi.get(__ret__, 'task_name'))
-
-
-@_utilities.lift_output_func(get_managed_database_optimizer_statistics_advisor_execution_script)
 def get_managed_database_optimizer_statistics_advisor_execution_script_output(execution_name: Optional[pulumi.Input[str]] = None,
                                                                               managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                               task_name: Optional[pulumi.Input[str]] = None,
@@ -149,4 +151,15 @@ def get_managed_database_optimizer_statistics_advisor_execution_script_output(ex
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str task_name: The name of the optimizer statistics collection execution task.
     """
-    ...
+    __args__ = dict()
+    __args__['executionName'] = execution_name
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['taskName'] = task_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult(
+        execution_name=pulumi.get(__response__, 'execution_name'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        script=pulumi.get(__response__, 'script'),
+        task_name=pulumi.get(__response__, 'task_name')))

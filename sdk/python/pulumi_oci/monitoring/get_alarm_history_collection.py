@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -160,9 +165,6 @@ def get_alarm_history_collection(alarm_historytype: Optional[str] = None,
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
         timestamp_greater_than_or_equal_to=pulumi.get(__ret__, 'timestamp_greater_than_or_equal_to'),
         timestamp_less_than=pulumi.get(__ret__, 'timestamp_less_than'))
-
-
-@_utilities.lift_output_func(get_alarm_history_collection)
 def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input[Optional[str]]] = None,
                                         alarm_id: Optional[pulumi.Input[str]] = None,
                                         timestamp_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
@@ -199,4 +201,18 @@ def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input
     :param str timestamp_greater_than_or_equal_to: A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
     :param str timestamp_less_than: A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
     """
-    ...
+    __args__ = dict()
+    __args__['alarmHistorytype'] = alarm_historytype
+    __args__['alarmId'] = alarm_id
+    __args__['timestampGreaterThanOrEqualTo'] = timestamp_greater_than_or_equal_to
+    __args__['timestampLessThan'] = timestamp_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection', __args__, opts=opts, typ=GetAlarmHistoryCollectionResult)
+    return __ret__.apply(lambda __response__: GetAlarmHistoryCollectionResult(
+        alarm_historytype=pulumi.get(__response__, 'alarm_historytype'),
+        alarm_id=pulumi.get(__response__, 'alarm_id'),
+        entries=pulumi.get(__response__, 'entries'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        timestamp_greater_than_or_equal_to=pulumi.get(__response__, 'timestamp_greater_than_or_equal_to'),
+        timestamp_less_than=pulumi.get(__response__, 'timestamp_less_than')))

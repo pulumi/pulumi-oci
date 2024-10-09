@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -176,9 +181,6 @@ def get_bds_instance_get_os_patch(bds_instance_id: Optional[str] = None,
         patch_type=pulumi.get(__ret__, 'patch_type'),
         release_date=pulumi.get(__ret__, 'release_date'),
         target_packages=pulumi.get(__ret__, 'target_packages'))
-
-
-@_utilities.lift_output_func(get_bds_instance_get_os_patch)
 def get_bds_instance_get_os_patch_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict']]]]] = None,
                                          os_patch_version: Optional[pulumi.Input[str]] = None,
@@ -202,4 +204,19 @@ def get_bds_instance_get_os_patch_output(bds_instance_id: Optional[pulumi.Input[
     :param str bds_instance_id: The OCID of the cluster.
     :param str os_patch_version: The version of the OS patch.
     """
-    ...
+    __args__ = dict()
+    __args__['bdsInstanceId'] = bds_instance_id
+    __args__['filters'] = filters
+    __args__['osPatchVersion'] = os_patch_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstanceGetOsPatch:getBdsInstanceGetOsPatch', __args__, opts=opts, typ=GetBdsInstanceGetOsPatchResult)
+    return __ret__.apply(lambda __response__: GetBdsInstanceGetOsPatchResult(
+        bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        min_bds_version=pulumi.get(__response__, 'min_bds_version'),
+        min_compatible_odh_version_map=pulumi.get(__response__, 'min_compatible_odh_version_map'),
+        os_patch_version=pulumi.get(__response__, 'os_patch_version'),
+        patch_type=pulumi.get(__response__, 'patch_type'),
+        release_date=pulumi.get(__response__, 'release_date'),
+        target_packages=pulumi.get(__response__, 'target_packages')))

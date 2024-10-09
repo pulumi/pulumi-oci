@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -128,9 +133,6 @@ def get_managed_database_sql_tuning_set(managed_database_id: Optional[str] = Non
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         owner=pulumi.get(__ret__, 'owner'))
-
-
-@_utilities.lift_output_func(get_managed_database_sql_tuning_set)
 def get_managed_database_sql_tuning_set_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                                name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                owner: Optional[pulumi.Input[Optional[str]]] = None,
@@ -156,4 +158,15 @@ def get_managed_database_sql_tuning_set_output(managed_database_id: Optional[pul
     :param str name_contains: Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
     :param str owner: The owner of the SQL tuning set.
     """
-    ...
+    __args__ = dict()
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['nameContains'] = name_contains
+    __args__['owner'] = owner
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningSetResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningSetResult(
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        owner=pulumi.get(__response__, 'owner')))

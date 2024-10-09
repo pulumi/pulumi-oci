@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -296,9 +301,6 @@ def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_dr_protection_group)
 def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrProtectionGroupResult]:
     """
@@ -318,4 +320,27 @@ def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input
 
     :param str dr_protection_group_id: The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
     """
-    ...
+    __args__ = dict()
+    __args__['drProtectionGroupId'] = dr_protection_group_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup', __args__, opts=opts, typ=GetDrProtectionGroupResult)
+    return __ret__.apply(lambda __response__: GetDrProtectionGroupResult(
+        associations=pulumi.get(__response__, 'associations'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        disassociate_trigger=pulumi.get(__response__, 'disassociate_trigger'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dr_protection_group_id=pulumi.get(__response__, 'dr_protection_group_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        life_cycle_details=pulumi.get(__response__, 'life_cycle_details'),
+        lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
+        log_locations=pulumi.get(__response__, 'log_locations'),
+        members=pulumi.get(__response__, 'members'),
+        peer_id=pulumi.get(__response__, 'peer_id'),
+        peer_region=pulumi.get(__response__, 'peer_region'),
+        role=pulumi.get(__response__, 'role'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

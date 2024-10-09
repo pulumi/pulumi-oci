@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -214,9 +219,6 @@ def get_configs(apm_domain_id: Optional[str] = None,
         freeform_tag_exists=pulumi.get(__ret__, 'freeform_tag_exists'),
         id=pulumi.get(__ret__, 'id'),
         options_group=pulumi.get(__ret__, 'options_group'))
-
-
-@_utilities.lift_output_func(get_configs)
 def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        config_type: Optional[pulumi.Input[Optional[str]]] = None,
                        defined_tag_equals: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -258,4 +260,27 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param Sequence[str] freeform_tag_exists: A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
     :param str options_group: A filter to return OPTIONS resources that match the given group.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['configType'] = config_type
+    __args__['definedTagEquals'] = defined_tag_equals
+    __args__['definedTagExists'] = defined_tag_exists
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['freeformTagEquals'] = freeform_tag_equals
+    __args__['freeformTagExists'] = freeform_tag_exists
+    __args__['optionsGroup'] = options_group
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmConfig/getConfigs:getConfigs', __args__, opts=opts, typ=GetConfigsResult)
+    return __ret__.apply(lambda __response__: GetConfigsResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        config_collections=pulumi.get(__response__, 'config_collections'),
+        config_type=pulumi.get(__response__, 'config_type'),
+        defined_tag_equals=pulumi.get(__response__, 'defined_tag_equals'),
+        defined_tag_exists=pulumi.get(__response__, 'defined_tag_exists'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        freeform_tag_equals=pulumi.get(__response__, 'freeform_tag_equals'),
+        freeform_tag_exists=pulumi.get(__response__, 'freeform_tag_exists'),
+        id=pulumi.get(__response__, 'id'),
+        options_group=pulumi.get(__response__, 'options_group')))

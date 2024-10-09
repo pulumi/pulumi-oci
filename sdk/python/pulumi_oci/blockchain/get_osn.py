@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -144,9 +149,6 @@ def get_osn(blockchain_platform_id: Optional[str] = None,
         osn_id=pulumi.get(__ret__, 'osn_id'),
         osn_key=pulumi.get(__ret__, 'osn_key'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_osn)
 def get_osn_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                    osn_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOsnResult]:
@@ -169,4 +171,16 @@ def get_osn_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     :param str blockchain_platform_id: Unique service identifier.
     :param str osn_id: OSN identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['blockchainPlatformId'] = blockchain_platform_id
+    __args__['osnId'] = osn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Blockchain/getOsn:getOsn', __args__, opts=opts, typ=GetOsnResult)
+    return __ret__.apply(lambda __response__: GetOsnResult(
+        ad=pulumi.get(__response__, 'ad'),
+        blockchain_platform_id=pulumi.get(__response__, 'blockchain_platform_id'),
+        id=pulumi.get(__response__, 'id'),
+        ocpu_allocation_params=pulumi.get(__response__, 'ocpu_allocation_params'),
+        osn_id=pulumi.get(__response__, 'osn_id'),
+        osn_key=pulumi.get(__response__, 'osn_key'),
+        state=pulumi.get(__response__, 'state')))

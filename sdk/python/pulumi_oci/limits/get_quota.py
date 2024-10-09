@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -208,9 +213,6 @@ def get_quota(quota_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         statements=pulumi.get(__ret__, 'statements'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_quota)
 def get_quota_output(quota_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQuotaResult]:
     """
@@ -230,4 +232,20 @@ def get_quota_output(quota_id: Optional[pulumi.Input[str]] = None,
 
     :param str quota_id: The OCID of the quota.
     """
-    ...
+    __args__ = dict()
+    __args__['quotaId'] = quota_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Limits/getQuota:getQuota', __args__, opts=opts, typ=GetQuotaResult)
+    return __ret__.apply(lambda __response__: GetQuotaResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        locks=pulumi.get(__response__, 'locks'),
+        name=pulumi.get(__response__, 'name'),
+        quota_id=pulumi.get(__response__, 'quota_id'),
+        state=pulumi.get(__response__, 'state'),
+        statements=pulumi.get(__response__, 'statements'),
+        time_created=pulumi.get(__response__, 'time_created')))

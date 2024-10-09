@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -189,9 +194,6 @@ def get_instance_configuration(instance_configuration_id: Optional[str] = None,
         instance_id=pulumi.get(__ret__, 'instance_id'),
         source=pulumi.get(__ret__, 'source'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_instance_configuration)
 def get_instance_configuration_output(instance_configuration_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceConfigurationResult]:
     """
@@ -211,4 +213,19 @@ def get_instance_configuration_output(instance_configuration_id: Optional[pulumi
 
     :param str instance_configuration_id: The OCID of the instance configuration.
     """
-    ...
+    __args__ = dict()
+    __args__['instanceConfigurationId'] = instance_configuration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceConfiguration:getInstanceConfiguration', __args__, opts=opts, typ=GetInstanceConfigurationResult)
+    return __ret__.apply(lambda __response__: GetInstanceConfigurationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        deferred_fields=pulumi.get(__response__, 'deferred_fields'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        instance_configuration_id=pulumi.get(__response__, 'instance_configuration_id'),
+        instance_details=pulumi.get(__response__, 'instance_details'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        source=pulumi.get(__response__, 'source'),
+        time_created=pulumi.get(__response__, 'time_created')))

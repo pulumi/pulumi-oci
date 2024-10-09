@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -355,9 +360,6 @@ def get_external_pluggable_database(external_pluggable_database_id: Optional[str
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'))
-
-
-@_utilities.lift_output_func(get_external_pluggable_database)
 def get_external_pluggable_database_output(external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalPluggableDatabaseResult]:
     """
@@ -378,4 +380,31 @@ def get_external_pluggable_database_output(external_pluggable_database_id: Optio
 
     :param str external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['externalPluggableDatabaseId'] = external_pluggable_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase', __args__, opts=opts, typ=GetExternalPluggableDatabaseResult)
+    return __ret__.apply(lambda __response__: GetExternalPluggableDatabaseResult(
+        character_set=pulumi.get(__response__, 'character_set'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_configuration=pulumi.get(__response__, 'database_configuration'),
+        database_edition=pulumi.get(__response__, 'database_edition'),
+        database_management_configs=pulumi.get(__response__, 'database_management_configs'),
+        database_version=pulumi.get(__response__, 'database_version'),
+        db_id=pulumi.get(__response__, 'db_id'),
+        db_packs=pulumi.get(__response__, 'db_packs'),
+        db_unique_name=pulumi.get(__response__, 'db_unique_name'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_container_database_id=pulumi.get(__response__, 'external_container_database_id'),
+        external_pluggable_database_id=pulumi.get(__response__, 'external_pluggable_database_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        ncharacter_set=pulumi.get(__response__, 'ncharacter_set'),
+        operations_insights_configs=pulumi.get(__response__, 'operations_insights_configs'),
+        source_id=pulumi.get(__response__, 'source_id'),
+        stack_monitoring_configs=pulumi.get(__response__, 'stack_monitoring_configs'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_zone=pulumi.get(__response__, 'time_zone')))

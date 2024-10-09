@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -146,9 +151,6 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
         security_policy_deployment_id=pulumi.get(__ret__, 'security_policy_deployment_id'),
         security_policy_entry_id=pulumi.get(__ret__, 'security_policy_entry_id'),
         security_policy_entry_state_collections=pulumi.get(__ret__, 'security_policy_entry_state_collections'))
-
-
-@_utilities.lift_output_func(get_security_policy_deployment_security_policy_entry_states)
 def get_security_policy_deployment_security_policy_entry_states_output(deployment_status: Optional[pulumi.Input[Optional[str]]] = None,
                                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict']]]]] = None,
                                                                        security_policy_deployment_id: Optional[pulumi.Input[str]] = None,
@@ -177,4 +179,17 @@ def get_security_policy_deployment_security_policy_entry_states_output(deploymen
     :param str security_policy_deployment_id: The OCID of the security policy deployment resource.
     :param str security_policy_entry_id: An optional filter to return only resources that match the specified security policy entry OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['deploymentStatus'] = deployment_status
+    __args__['filters'] = filters
+    __args__['securityPolicyDeploymentId'] = security_policy_deployment_id
+    __args__['securityPolicyEntryId'] = security_policy_entry_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryStates:getSecurityPolicyDeploymentSecurityPolicyEntryStates', __args__, opts=opts, typ=GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult)
+    return __ret__.apply(lambda __response__: GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult(
+        deployment_status=pulumi.get(__response__, 'deployment_status'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        security_policy_deployment_id=pulumi.get(__response__, 'security_policy_deployment_id'),
+        security_policy_entry_id=pulumi.get(__response__, 'security_policy_entry_id'),
+        security_policy_entry_state_collections=pulumi.get(__response__, 'security_policy_entry_state_collections')))

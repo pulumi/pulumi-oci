@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -173,9 +178,6 @@ def get_summarize_resource_inventory(compartment_id: Optional[str] = None,
         managed_instance_count=pulumi.get(__ret__, 'managed_instance_count'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_summarize_resource_inventory)
 def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                             time_start: Optional[pulumi.Input[Optional[str]]] = None,
@@ -201,4 +203,19 @@ def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Inpu
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory', __args__, opts=opts, typ=GetSummarizeResourceInventoryResult)
+    return __ret__.apply(lambda __response__: GetSummarizeResourceInventoryResult(
+        active_fleet_count=pulumi.get(__response__, 'active_fleet_count'),
+        application_count=pulumi.get(__response__, 'application_count'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        installation_count=pulumi.get(__response__, 'installation_count'),
+        jre_count=pulumi.get(__response__, 'jre_count'),
+        managed_instance_count=pulumi.get(__response__, 'managed_instance_count'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

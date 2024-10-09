@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -159,9 +164,6 @@ def get_ca_bundles(ca_bundle_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_ca_bundles)
 def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[str]]] = None,
                           compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCaBundlesFilterArgs', 'GetCaBundlesFilterArgsDict']]]]] = None,
@@ -192,4 +194,19 @@ def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[str]]] = 
     :param str name: A filter that returns only resources that match the specified name.
     :param str state: A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['caBundleId'] = ca_bundle_id
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCaBundles:getCaBundles', __args__, opts=opts, typ=GetCaBundlesResult)
+    return __ret__.apply(lambda __response__: GetCaBundlesResult(
+        ca_bundle_collections=pulumi.get(__response__, 'ca_bundle_collections'),
+        ca_bundle_id=pulumi.get(__response__, 'ca_bundle_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

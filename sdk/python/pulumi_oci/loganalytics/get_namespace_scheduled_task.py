@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -293,9 +298,6 @@ def get_namespace_scheduled_task(namespace: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-
-
-@_utilities.lift_output_func(get_namespace_scheduled_task)
 def get_namespace_scheduled_task_output(namespace: Optional[pulumi.Input[str]] = None,
                                         scheduled_task_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceScheduledTaskResult]:
@@ -318,4 +320,27 @@ def get_namespace_scheduled_task_output(namespace: Optional[pulumi.Input[str]] =
     :param str namespace: The Logging Analytics namespace used for the request.
     :param str scheduled_task_id: Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
     """
-    ...
+    __args__ = dict()
+    __args__['namespace'] = namespace
+    __args__['scheduledTaskId'] = scheduled_task_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask', __args__, opts=opts, typ=GetNamespaceScheduledTaskResult)
+    return __ret__.apply(lambda __response__: GetNamespaceScheduledTaskResult(
+        actions=pulumi.get(__response__, 'actions'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        kind=pulumi.get(__response__, 'kind'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        num_occurrences=pulumi.get(__response__, 'num_occurrences'),
+        saved_search_id=pulumi.get(__response__, 'saved_search_id'),
+        scheduled_task_id=pulumi.get(__response__, 'scheduled_task_id'),
+        schedules=pulumi.get(__response__, 'schedules'),
+        state=pulumi.get(__response__, 'state'),
+        task_status=pulumi.get(__response__, 'task_status'),
+        task_type=pulumi.get(__response__, 'task_type'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        work_request_id=pulumi.get(__response__, 'work_request_id')))

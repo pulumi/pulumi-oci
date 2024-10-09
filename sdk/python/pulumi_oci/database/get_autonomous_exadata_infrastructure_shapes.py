@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[s
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_autonomous_exadata_infrastructure_shapes)
 def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Optional[pulumi.Input[str]] = None,
                                                         compartment_id: Optional[pulumi.Input[str]] = None,
                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict']]]]] = None,
@@ -147,4 +149,15 @@ def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Opt
     :param str availability_domain: The name of the Availability Domain.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes', __args__, opts=opts, typ=GetAutonomousExadataInfrastructureShapesResult)
+    return __ret__.apply(lambda __response__: GetAutonomousExadataInfrastructureShapesResult(
+        autonomous_exadata_infrastructure_shapes=pulumi.get(__response__, 'autonomous_exadata_infrastructure_shapes'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

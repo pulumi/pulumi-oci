@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -266,9 +271,6 @@ def get_byoip_range(byoip_range_id: Optional[str] = None,
         time_validated=pulumi.get(__ret__, 'time_validated'),
         time_withdrawn=pulumi.get(__ret__, 'time_withdrawn'),
         validation_token=pulumi.get(__ret__, 'validation_token'))
-
-
-@_utilities.lift_output_func(get_byoip_range)
 def get_byoip_range_output(byoip_range_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetByoipRangeResult]:
     """
@@ -288,4 +290,24 @@ def get_byoip_range_output(byoip_range_id: Optional[pulumi.Input[str]] = None,
 
     :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
     """
-    ...
+    __args__ = dict()
+    __args__['byoipRangeId'] = byoip_range_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getByoipRange:getByoipRange', __args__, opts=opts, typ=GetByoipRangeResult)
+    return __ret__.apply(lambda __response__: GetByoipRangeResult(
+        byoip_range_id=pulumi.get(__response__, 'byoip_range_id'),
+        byoip_range_vcn_ipv6allocations=pulumi.get(__response__, 'byoip_range_vcn_ipv6allocations'),
+        cidr_block=pulumi.get(__response__, 'cidr_block'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ipv6cidr_block=pulumi.get(__response__, 'ipv6cidr_block'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        time_advertised=pulumi.get(__response__, 'time_advertised'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_validated=pulumi.get(__response__, 'time_validated'),
+        time_withdrawn=pulumi.get(__response__, 'time_withdrawn'),
+        validation_token=pulumi.get(__response__, 'validation_token')))

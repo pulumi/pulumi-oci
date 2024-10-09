@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -223,9 +228,6 @@ def get_migration(migration_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_migration)
 def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationResult]:
     """
@@ -245,4 +247,21 @@ def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
 
     :param str migration_id: Unique migration identifier
     """
-    ...
+    __args__ = dict()
+    __args__['migrationId'] = migration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getMigration:getMigration', __args__, opts=opts, typ=GetMigrationResult)
+    return __ret__.apply(lambda __response__: GetMigrationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_completed=pulumi.get(__response__, 'is_completed'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        migration_id=pulumi.get(__response__, 'migration_id'),
+        replication_schedule_id=pulumi.get(__response__, 'replication_schedule_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -153,9 +158,6 @@ def get_health(load_balancer_id: Optional[str] = None,
         total_backend_set_count=pulumi.get(__ret__, 'total_backend_set_count'),
         unknown_state_backend_set_names=pulumi.get(__ret__, 'unknown_state_backend_set_names'),
         warning_state_backend_set_names=pulumi.get(__ret__, 'warning_state_backend_set_names'))
-
-
-@_utilities.lift_output_func(get_health)
 def get_health_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHealthResult]:
     """
@@ -175,4 +177,15 @@ def get_health_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to return health status for.
     """
-    ...
+    __args__ = dict()
+    __args__['loadBalancerId'] = load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getHealth:getHealth', __args__, opts=opts, typ=GetHealthResult)
+    return __ret__.apply(lambda __response__: GetHealthResult(
+        critical_state_backend_set_names=pulumi.get(__response__, 'critical_state_backend_set_names'),
+        id=pulumi.get(__response__, 'id'),
+        load_balancer_id=pulumi.get(__response__, 'load_balancer_id'),
+        status=pulumi.get(__response__, 'status'),
+        total_backend_set_count=pulumi.get(__response__, 'total_backend_set_count'),
+        unknown_state_backend_set_names=pulumi.get(__response__, 'unknown_state_backend_set_names'),
+        warning_state_backend_set_names=pulumi.get(__response__, 'warning_state_backend_set_names')))

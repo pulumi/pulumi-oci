@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -354,9 +359,6 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
         url=pulumi.get(__ret__, 'url'),
         user_name=pulumi.get(__ret__, 'user_name'),
         user_passwords=pulumi.get(__ret__, 'user_passwords'))
-
-
-@_utilities.lift_output_func(get_database_tools_connection)
 def get_database_tools_connection_output(database_tools_connection_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsConnectionResult]:
     """
@@ -376,4 +378,31 @@ def get_database_tools_connection_output(database_tools_connection_id: Optional[
 
     :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
     """
-    ...
+    __args__ = dict()
+    __args__['databaseToolsConnectionId'] = database_tools_connection_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection', __args__, opts=opts, typ=GetDatabaseToolsConnectionResult)
+    return __ret__.apply(lambda __response__: GetDatabaseToolsConnectionResult(
+        advanced_properties=pulumi.get(__response__, 'advanced_properties'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_string=pulumi.get(__response__, 'connection_string'),
+        database_tools_connection_id=pulumi.get(__response__, 'database_tools_connection_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        key_stores=pulumi.get(__response__, 'key_stores'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
+        private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
+        proxy_clients=pulumi.get(__response__, 'proxy_clients'),
+        related_resources=pulumi.get(__response__, 'related_resources'),
+        runtime_support=pulumi.get(__response__, 'runtime_support'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        url=pulumi.get(__response__, 'url'),
+        user_name=pulumi.get(__response__, 'user_name'),
+        user_passwords=pulumi.get(__response__, 'user_passwords')))

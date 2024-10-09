@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -192,9 +197,6 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         role=pulumi.get(__ret__, 'role'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_dr_protection_groups)
 def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     dr_protection_group_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -230,4 +232,23 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
     :param str role: The DR protection group Role.
     :param str state: A filter to return only DR protection groups that match the given lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['drProtectionGroupId'] = dr_protection_group_id
+    __args__['filters'] = filters
+    __args__['lifecycleSubState'] = lifecycle_sub_state
+    __args__['role'] = role
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups', __args__, opts=opts, typ=GetDrProtectionGroupsResult)
+    return __ret__.apply(lambda __response__: GetDrProtectionGroupsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dr_protection_group_collections=pulumi.get(__response__, 'dr_protection_group_collections'),
+        dr_protection_group_id=pulumi.get(__response__, 'dr_protection_group_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
+        role=pulumi.get(__response__, 'role'),
+        state=pulumi.get(__response__, 'state')))

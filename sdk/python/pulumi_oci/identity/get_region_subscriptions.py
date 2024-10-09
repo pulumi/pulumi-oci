@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_region_subscriptions(filters: Optional[Sequence[Union['GetRegionSubscrip
         id=pulumi.get(__ret__, 'id'),
         region_subscriptions=pulumi.get(__ret__, 'region_subscriptions'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
-
-
-@_utilities.lift_output_func(get_region_subscriptions)
 def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRegionSubscriptionsFilterArgs', 'GetRegionSubscriptionsFilterArgsDict']]]]] = None,
                                     tenancy_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRegionSubscriptionsResult]:
@@ -130,4 +132,13 @@ def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequ
 
     :param str tenancy_id: The OCID of the tenancy.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['tenancyId'] = tenancy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getRegionSubscriptions:getRegionSubscriptions', __args__, opts=opts, typ=GetRegionSubscriptionsResult)
+    return __ret__.apply(lambda __response__: GetRegionSubscriptionsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        region_subscriptions=pulumi.get(__response__, 'region_subscriptions'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id')))

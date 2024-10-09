@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -155,9 +160,6 @@ def get_target_databases_schemas(filters: Optional[Sequence[Union['GetTargetData
         schema_names=pulumi.get(__ret__, 'schema_names'),
         schemas=pulumi.get(__ret__, 'schemas'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-
-
-@_utilities.lift_output_func(get_target_databases_schemas)
 def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict']]]]] = None,
                                         is_oracle_maintained: Optional[pulumi.Input[Optional[bool]]] = None,
                                         schema_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -187,4 +189,19 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
     :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
     :param str target_database_id: The OCID of the Data Safe target database.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['isOracleMaintained'] = is_oracle_maintained
+    __args__['schemaNameContains'] = schema_name_contains
+    __args__['schemaNames'] = schema_names
+    __args__['targetDatabaseId'] = target_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas', __args__, opts=opts, typ=GetTargetDatabasesSchemasResult)
+    return __ret__.apply(lambda __response__: GetTargetDatabasesSchemasResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_oracle_maintained=pulumi.get(__response__, 'is_oracle_maintained'),
+        schema_name_contains=pulumi.get(__response__, 'schema_name_contains'),
+        schema_names=pulumi.get(__response__, 'schema_names'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        target_database_id=pulumi.get(__response__, 'target_database_id')))

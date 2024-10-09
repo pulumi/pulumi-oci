@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -233,9 +238,6 @@ def get_metric_data(compartment_id: Optional[str] = None,
         resolution=pulumi.get(__ret__, 'resolution'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         start_time=pulumi.get(__ret__, 'start_time'))
-
-
-@_utilities.lift_output_func(get_metric_data)
 def get_metric_data_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                            end_time: Optional[pulumi.Input[Optional[str]]] = None,
@@ -293,4 +295,27 @@ def get_metric_data_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
     :param str start_time: The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2023-02-01T01:02:29.600Z`
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['endTime'] = end_time
+    __args__['filters'] = filters
+    __args__['namespace'] = namespace
+    __args__['query'] = query
+    __args__['resolution'] = resolution
+    __args__['resourceGroup'] = resource_group
+    __args__['startTime'] = start_time
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getMetricData:getMetricData', __args__, opts=opts, typ=GetMetricDataResult)
+    return __ret__.apply(lambda __response__: GetMetricDataResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        end_time=pulumi.get(__response__, 'end_time'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        metric_datas=pulumi.get(__response__, 'metric_datas'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        query=pulumi.get(__response__, 'query'),
+        resolution=pulumi.get(__response__, 'resolution'),
+        resource_group=pulumi.get(__response__, 'resource_group'),
+        start_time=pulumi.get(__response__, 'start_time')))

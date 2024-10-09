@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -122,9 +127,6 @@ def get_supported_skus(compartment_id: Optional[str] = None,
         host_shape_name=pulumi.get(__ret__, 'host_shape_name'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-
-
-@_utilities.lift_output_func(get_supported_skus)
 def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedSkusFilterArgs', 'GetSupportedSkusFilterArgsDict']]]]] = None,
                               host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -149,4 +151,15 @@ def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str host_shape_name: A filter to return only resources that match or support the given ESXi host shape.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['hostShapeName'] = host_shape_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSupportedSkus:getSupportedSkus', __args__, opts=opts, typ=GetSupportedSkusResult)
+    return __ret__.apply(lambda __response__: GetSupportedSkusResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        host_shape_name=pulumi.get(__response__, 'host_shape_name'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items')))

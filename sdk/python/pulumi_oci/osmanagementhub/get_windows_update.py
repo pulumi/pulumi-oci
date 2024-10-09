@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -197,9 +202,6 @@ def get_windows_update(windows_update_id: Optional[str] = None,
         update_id=pulumi.get(__ret__, 'update_id'),
         update_type=pulumi.get(__ret__, 'update_type'),
         windows_update_id=pulumi.get(__ret__, 'windows_update_id'))
-
-
-@_utilities.lift_output_func(get_windows_update)
 def get_windows_update_output(windows_update_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWindowsUpdateResult]:
     """
@@ -219,4 +221,19 @@ def get_windows_update_output(windows_update_id: Optional[pulumi.Input[str]] = N
 
     :param str windows_update_id: The unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
     """
-    ...
+    __args__ = dict()
+    __args__['windowsUpdateId'] = windows_update_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getWindowsUpdate:getWindowsUpdate', __args__, opts=opts, typ=GetWindowsUpdateResult)
+    return __ret__.apply(lambda __response__: GetWindowsUpdateResult(
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        installable=pulumi.get(__response__, 'installable'),
+        installation_requirements=pulumi.get(__response__, 'installation_requirements'),
+        is_reboot_required_for_installation=pulumi.get(__response__, 'is_reboot_required_for_installation'),
+        kb_article_ids=pulumi.get(__response__, 'kb_article_ids'),
+        name=pulumi.get(__response__, 'name'),
+        size_in_bytes=pulumi.get(__response__, 'size_in_bytes'),
+        update_id=pulumi.get(__response__, 'update_id'),
+        update_type=pulumi.get(__response__, 'update_type'),
+        windows_update_id=pulumi.get(__response__, 'windows_update_id')))

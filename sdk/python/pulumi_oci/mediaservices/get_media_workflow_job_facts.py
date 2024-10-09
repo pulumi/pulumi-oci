@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -145,9 +150,6 @@ def get_media_workflow_job_facts(filters: Optional[Sequence[Union['GetMediaWorkf
         media_workflow_job_fact_collections=pulumi.get(__ret__, 'media_workflow_job_fact_collections'),
         media_workflow_job_id=pulumi.get(__ret__, 'media_workflow_job_id'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_media_workflow_job_facts)
 def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict']]]]] = None,
                                         key: Optional[pulumi.Input[Optional[str]]] = None,
                                         media_workflow_job_id: Optional[pulumi.Input[str]] = None,
@@ -175,4 +177,17 @@ def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[
     :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
     :param str type: Types of details to include.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['key'] = key
+    __args__['mediaWorkflowJobId'] = media_workflow_job_id
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts', __args__, opts=opts, typ=GetMediaWorkflowJobFactsResult)
+    return __ret__.apply(lambda __response__: GetMediaWorkflowJobFactsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        key=pulumi.get(__response__, 'key'),
+        media_workflow_job_fact_collections=pulumi.get(__response__, 'media_workflow_job_fact_collections'),
+        media_workflow_job_id=pulumi.get(__response__, 'media_workflow_job_id'),
+        type=pulumi.get(__response__, 'type')))

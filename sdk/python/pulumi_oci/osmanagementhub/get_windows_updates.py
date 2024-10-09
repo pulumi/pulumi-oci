@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -152,9 +157,6 @@ def get_windows_updates(classification_types: Optional[Sequence[str]] = None,
         id=pulumi.get(__ret__, 'id'),
         names=pulumi.get(__ret__, 'names'),
         windows_update_collections=pulumi.get(__ret__, 'windows_update_collections'))
-
-
-@_utilities.lift_output_func(get_windows_updates)
 def get_windows_updates_output(classification_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                compartment_id: Optional[pulumi.Input[str]] = None,
                                display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -184,4 +186,19 @@ def get_windows_updates_output(classification_types: Optional[pulumi.Input[Optio
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] names: A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
     """
-    ...
+    __args__ = dict()
+    __args__['classificationTypes'] = classification_types
+    __args__['compartmentId'] = compartment_id
+    __args__['displayNameContains'] = display_name_contains
+    __args__['filters'] = filters
+    __args__['names'] = names
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getWindowsUpdates:getWindowsUpdates', __args__, opts=opts, typ=GetWindowsUpdatesResult)
+    return __ret__.apply(lambda __response__: GetWindowsUpdatesResult(
+        classification_types=pulumi.get(__response__, 'classification_types'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        names=pulumi.get(__response__, 'names'),
+        windows_update_collections=pulumi.get(__response__, 'windows_update_collections')))

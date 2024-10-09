@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -169,9 +174,6 @@ def get_management_agent_plugins(agent_id: Optional[str] = None,
         management_agent_plugins=pulumi.get(__ret__, 'management_agent_plugins'),
         platform_types=pulumi.get(__ret__, 'platform_types'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_management_agent_plugins)
 def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id: Optional[pulumi.Input[str]] = None,
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -204,4 +206,21 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
     :param Sequence[str] platform_types: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
     :param str state: Filter to return only Management Agents in the particular lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['agentId'] = agent_id
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['platformTypes'] = platform_types
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins', __args__, opts=opts, typ=GetManagementAgentPluginsResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentPluginsResult(
+        agent_id=pulumi.get(__response__, 'agent_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        management_agent_plugins=pulumi.get(__response__, 'management_agent_plugins'),
+        platform_types=pulumi.get(__response__, 'platform_types'),
+        state=pulumi.get(__response__, 'state')))

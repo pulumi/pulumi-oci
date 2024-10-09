@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -125,9 +130,6 @@ def get_managed_database_user_data_access_container(managed_database_id: Optiona
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
         user_name=pulumi.get(__ret__, 'user_name'))
-
-
-@_utilities.lift_output_func(get_managed_database_user_data_access_container)
 def get_managed_database_user_data_access_container_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                                            name: Optional[pulumi.Input[Optional[str]]] = None,
                                                            user_name: Optional[pulumi.Input[str]] = None,
@@ -153,4 +155,15 @@ def get_managed_database_user_data_access_container_output(managed_database_id: 
     :param str name: A filter to return only resources that match the entire name.
     :param str user_name: The name of the user whose details are to be viewed.
     """
-    ...
+    __args__ = dict()
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['name'] = name
+    __args__['userName'] = user_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer', __args__, opts=opts, typ=GetManagedDatabaseUserDataAccessContainerResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseUserDataAccessContainerResult(
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        name=pulumi.get(__response__, 'name'),
+        user_name=pulumi.get(__response__, 'user_name')))

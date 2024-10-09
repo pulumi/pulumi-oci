@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -370,9 +375,6 @@ def get_volume(volume_id: Optional[str] = None,
         volume_group_id=pulumi.get(__ret__, 'volume_group_id'),
         volume_id=pulumi.get(__ret__, 'volume_id'),
         vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'))
-
-
-@_utilities.lift_output_func(get_volume)
 def get_volume_output(volume_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeResult]:
     """
@@ -392,4 +394,33 @@ def get_volume_output(volume_id: Optional[pulumi.Input[str]] = None,
 
     :param str volume_id: The OCID of the volume.
     """
-    ...
+    __args__ = dict()
+    __args__['volumeId'] = volume_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVolume:getVolume', __args__, opts=opts, typ=GetVolumeResult)
+    return __ret__.apply(lambda __response__: GetVolumeResult(
+        auto_tuned_vpus_per_gb=pulumi.get(__response__, 'auto_tuned_vpus_per_gb'),
+        autotune_policies=pulumi.get(__response__, 'autotune_policies'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        backup_policy_id=pulumi.get(__response__, 'backup_policy_id'),
+        block_volume_replicas=pulumi.get(__response__, 'block_volume_replicas'),
+        block_volume_replicas_deletion=pulumi.get(__response__, 'block_volume_replicas_deletion'),
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_tune_enabled=pulumi.get(__response__, 'is_auto_tune_enabled'),
+        is_hydrated=pulumi.get(__response__, 'is_hydrated'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        size_in_gbs=pulumi.get(__response__, 'size_in_gbs'),
+        size_in_mbs=pulumi.get(__response__, 'size_in_mbs'),
+        source_details=pulumi.get(__response__, 'source_details'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        volume_backup_id=pulumi.get(__response__, 'volume_backup_id'),
+        volume_group_id=pulumi.get(__response__, 'volume_group_id'),
+        volume_id=pulumi.get(__response__, 'volume_id'),
+        vpus_per_gb=pulumi.get(__response__, 'vpus_per_gb')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -313,9 +318,6 @@ def get_image(image_id: Optional[str] = None,
         size_in_mbs=pulumi.get(__ret__, 'size_in_mbs'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_image)
 def get_image_output(image_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImageResult]:
     """
@@ -335,4 +337,28 @@ def get_image_output(image_id: Optional[pulumi.Input[str]] = None,
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
     """
-    ...
+    __args__ = dict()
+    __args__['imageId'] = image_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getImage:getImage', __args__, opts=opts, typ=GetImageResult)
+    return __ret__.apply(lambda __response__: GetImageResult(
+        agent_features=pulumi.get(__response__, 'agent_features'),
+        base_image_id=pulumi.get(__response__, 'base_image_id'),
+        billable_size_in_gbs=pulumi.get(__response__, 'billable_size_in_gbs'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        create_image_allowed=pulumi.get(__response__, 'create_image_allowed'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        image_source_details=pulumi.get(__response__, 'image_source_details'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        launch_mode=pulumi.get(__response__, 'launch_mode'),
+        launch_options=pulumi.get(__response__, 'launch_options'),
+        listing_type=pulumi.get(__response__, 'listing_type'),
+        operating_system=pulumi.get(__response__, 'operating_system'),
+        operating_system_version=pulumi.get(__response__, 'operating_system_version'),
+        size_in_mbs=pulumi.get(__response__, 'size_in_mbs'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

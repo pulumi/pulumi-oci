@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -258,9 +263,6 @@ def get_workspace_folder(folder_key: Optional[str] = None,
         parent_reves=pulumi.get(__ret__, 'parent_reves'),
         registry_metadatas=pulumi.get(__ret__, 'registry_metadatas'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_folder)
 def get_workspace_folder_output(folder_key: Optional[pulumi.Input[str]] = None,
                                 workspace_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceFolderResult]:
@@ -283,4 +285,25 @@ def get_workspace_folder_output(folder_key: Optional[pulumi.Input[str]] = None,
     :param str folder_key: The folder key.
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['folderKey'] = folder_key
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder', __args__, opts=opts, typ=GetWorkspaceFolderResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceFolderResult(
+        category_name=pulumi.get(__response__, 'category_name'),
+        description=pulumi.get(__response__, 'description'),
+        folder_key=pulumi.get(__response__, 'folder_key'),
+        id=pulumi.get(__response__, 'id'),
+        identifier=pulumi.get(__response__, 'identifier'),
+        key=pulumi.get(__response__, 'key'),
+        key_map=pulumi.get(__response__, 'key_map'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        model_type=pulumi.get(__response__, 'model_type'),
+        model_version=pulumi.get(__response__, 'model_version'),
+        name=pulumi.get(__response__, 'name'),
+        object_status=pulumi.get(__response__, 'object_status'),
+        object_version=pulumi.get(__response__, 'object_version'),
+        parent_reves=pulumi.get(__response__, 'parent_reves'),
+        registry_metadatas=pulumi.get(__response__, 'registry_metadatas'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

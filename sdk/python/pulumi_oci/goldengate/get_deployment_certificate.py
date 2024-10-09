@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -351,9 +356,6 @@ def get_deployment_certificate(certificate_key: Optional[str] = None,
         time_valid_from=pulumi.get(__ret__, 'time_valid_from'),
         time_valid_to=pulumi.get(__ret__, 'time_valid_to'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_deployment_certificate)
 def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[str]] = None,
                                       deployment_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentCertificateResult]:
@@ -376,4 +378,32 @@ def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[str
     :param str certificate_key: A unique certificate identifier.
     :param str deployment_id: A unique Deployment identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['certificateKey'] = certificate_key
+    __args__['deploymentId'] = deployment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate', __args__, opts=opts, typ=GetDeploymentCertificateResult)
+    return __ret__.apply(lambda __response__: GetDeploymentCertificateResult(
+        authority_key_id=pulumi.get(__response__, 'authority_key_id'),
+        certificate_content=pulumi.get(__response__, 'certificate_content'),
+        certificate_key=pulumi.get(__response__, 'certificate_key'),
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_ca=pulumi.get(__response__, 'is_ca'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        is_self_signed=pulumi.get(__response__, 'is_self_signed'),
+        issuer=pulumi.get(__response__, 'issuer'),
+        key=pulumi.get(__response__, 'key'),
+        md5hash=pulumi.get(__response__, 'md5hash'),
+        public_key=pulumi.get(__response__, 'public_key'),
+        public_key_algorithm=pulumi.get(__response__, 'public_key_algorithm'),
+        public_key_size=pulumi.get(__response__, 'public_key_size'),
+        serial=pulumi.get(__response__, 'serial'),
+        sha1hash=pulumi.get(__response__, 'sha1hash'),
+        state=pulumi.get(__response__, 'state'),
+        subject=pulumi.get(__response__, 'subject'),
+        subject_key_id=pulumi.get(__response__, 'subject_key_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_valid_from=pulumi.get(__response__, 'time_valid_from'),
+        time_valid_to=pulumi.get(__response__, 'time_valid_to'),
+        version=pulumi.get(__response__, 'version')))

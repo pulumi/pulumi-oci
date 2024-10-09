@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_user_assessment_user_access_analytics(filters: Optional[Sequence[Union['
         id=pulumi.get(__ret__, 'id'),
         user_access_analytics_collections=pulumi.get(__ret__, 'user_access_analytics_collections'),
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
-
-
-@_utilities.lift_output_func(get_user_assessment_user_access_analytics)
 def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUserAssessmentUserAccessAnalyticsFilterArgs', 'GetUserAssessmentUserAccessAnalyticsFilterArgsDict']]]]] = None,
                                                      user_assessment_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentUserAccessAnalyticsResult]:
@@ -130,4 +132,13 @@ def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.In
 
     :param str user_assessment_id: The OCID of the user assessment.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['userAssessmentId'] = user_assessment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getUserAssessmentUserAccessAnalytics:getUserAssessmentUserAccessAnalytics', __args__, opts=opts, typ=GetUserAssessmentUserAccessAnalyticsResult)
+    return __ret__.apply(lambda __response__: GetUserAssessmentUserAccessAnalyticsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        user_access_analytics_collections=pulumi.get(__response__, 'user_access_analytics_collections'),
+        user_assessment_id=pulumi.get(__response__, 'user_assessment_id')))

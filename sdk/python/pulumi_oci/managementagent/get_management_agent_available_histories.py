@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -138,9 +143,6 @@ def get_management_agent_available_histories(filters: Optional[Sequence[Union['G
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         time_availability_status_ended_greater_than=pulumi.get(__ret__, 'time_availability_status_ended_greater_than'),
         time_availability_status_started_less_than=pulumi.get(__ret__, 'time_availability_status_started_less_than'))
-
-
-@_utilities.lift_output_func(get_management_agent_available_histories)
 def get_management_agent_available_histories_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict']]]]] = None,
                                                     management_agent_id: Optional[pulumi.Input[str]] = None,
                                                     time_availability_status_ended_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
@@ -167,4 +169,17 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
     :param str time_availability_status_ended_greater_than: Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
     :param str time_availability_status_started_less_than: Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['managementAgentId'] = management_agent_id
+    __args__['timeAvailabilityStatusEndedGreaterThan'] = time_availability_status_ended_greater_than
+    __args__['timeAvailabilityStatusStartedLessThan'] = time_availability_status_started_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories', __args__, opts=opts, typ=GetManagementAgentAvailableHistoriesResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentAvailableHistoriesResult(
+        availability_histories=pulumi.get(__response__, 'availability_histories'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        time_availability_status_ended_greater_than=pulumi.get(__response__, 'time_availability_status_ended_greater_than'),
+        time_availability_status_started_less_than=pulumi.get(__response__, 'time_availability_status_started_less_than')))

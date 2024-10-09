@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -215,9 +220,6 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_bds_instance_metastore_config)
 def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                              metastore_config_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceMetastoreConfigResult]:
@@ -240,4 +242,22 @@ def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.In
     :param str bds_instance_id: The OCID of the cluster.
     :param str metastore_config_id: The metastore configuration ID
     """
-    ...
+    __args__ = dict()
+    __args__['bdsInstanceId'] = bds_instance_id
+    __args__['metastoreConfigId'] = metastore_config_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig', __args__, opts=opts, typ=GetBdsInstanceMetastoreConfigResult)
+    return __ret__.apply(lambda __response__: GetBdsInstanceMetastoreConfigResult(
+        activate_trigger=pulumi.get(__response__, 'activate_trigger'),
+        bds_api_key_id=pulumi.get(__response__, 'bds_api_key_id'),
+        bds_api_key_passphrase=pulumi.get(__response__, 'bds_api_key_passphrase'),
+        bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
+        cluster_admin_password=pulumi.get(__response__, 'cluster_admin_password'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        metastore_config_id=pulumi.get(__response__, 'metastore_config_id'),
+        metastore_id=pulumi.get(__response__, 'metastore_id'),
+        metastore_type=pulumi.get(__response__, 'metastore_type'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

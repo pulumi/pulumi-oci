@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -354,9 +359,6 @@ def get_replica(replica_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_replica)
 def get_replica_output(replica_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicaResult]:
     """
@@ -376,4 +378,31 @@ def get_replica_output(replica_id: Optional[pulumi.Input[str]] = None,
 
     :param str replica_id: The Replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['replicaId'] = replica_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getReplica:getReplica', __args__, opts=opts, typ=GetReplicaResult)
+    return __ret__.apply(lambda __response__: GetReplicaResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configuration_id=pulumi.get(__response__, 'configuration_id'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        fault_domain=pulumi.get(__response__, 'fault_domain'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        is_delete_protected=pulumi.get(__response__, 'is_delete_protected'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        mysql_version=pulumi.get(__response__, 'mysql_version'),
+        port=pulumi.get(__response__, 'port'),
+        port_x=pulumi.get(__response__, 'port_x'),
+        replica_id=pulumi.get(__response__, 'replica_id'),
+        replica_overrides=pulumi.get(__response__, 'replica_overrides'),
+        secure_connections=pulumi.get(__response__, 'secure_connections'),
+        shape_name=pulumi.get(__response__, 'shape_name'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

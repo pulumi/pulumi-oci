@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -186,9 +191,6 @@ def get_unified_agent_configurations(compartment_id: Optional[str] = None,
         log_id=pulumi.get(__ret__, 'log_id'),
         state=pulumi.get(__ret__, 'state'),
         unified_agent_configuration_collections=pulumi.get(__ret__, 'unified_agent_configuration_collections'))
-
-
-@_utilities.lift_output_func(get_unified_agent_configurations)
 def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict']]]]] = None,
@@ -224,4 +226,23 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
     :param str log_id: Custom log OCID to list resources with the log as destination.
     :param str state: Lifecycle state of the log object
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['groupId'] = group_id
+    __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
+    __args__['logId'] = log_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations', __args__, opts=opts, typ=GetUnifiedAgentConfigurationsResult)
+    return __ret__.apply(lambda __response__: GetUnifiedAgentConfigurationsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__response__, 'is_compartment_id_in_subtree'),
+        log_id=pulumi.get(__response__, 'log_id'),
+        state=pulumi.get(__response__, 'state'),
+        unified_agent_configuration_collections=pulumi.get(__response__, 'unified_agent_configuration_collections')))

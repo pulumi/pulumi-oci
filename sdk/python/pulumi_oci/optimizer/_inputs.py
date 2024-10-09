@@ -4,30 +4,63 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ProfileLevelsConfigurationArgs',
+    'ProfileLevelsConfigurationArgsDict',
     'ProfileLevelsConfigurationItemArgs',
+    'ProfileLevelsConfigurationItemArgsDict',
     'ProfileTargetCompartmentsArgs',
+    'ProfileTargetCompartmentsArgsDict',
     'ProfileTargetTagsArgs',
+    'ProfileTargetTagsArgsDict',
     'ProfileTargetTagsItemArgs',
+    'ProfileTargetTagsItemArgsDict',
     'RecommendationResourceCountArgs',
+    'RecommendationResourceCountArgsDict',
     'RecommendationSupportedLevelArgs',
+    'RecommendationSupportedLevelArgsDict',
     'RecommendationSupportedLevelItemArgs',
+    'RecommendationSupportedLevelItemArgsDict',
     'ResourceActionActionArgs',
+    'ResourceActionActionArgsDict',
     'GetCategoriesFilterArgs',
+    'GetCategoriesFilterArgsDict',
     'GetEnrollmentStatusesFilterArgs',
+    'GetEnrollmentStatusesFilterArgsDict',
     'GetHistoriesFilterArgs',
+    'GetHistoriesFilterArgsDict',
     'GetProfileLevelsFilterArgs',
+    'GetProfileLevelsFilterArgsDict',
     'GetProfilesFilterArgs',
+    'GetProfilesFilterArgsDict',
     'GetRecommendationStrategiesFilterArgs',
+    'GetRecommendationStrategiesFilterArgsDict',
     'GetRecommendationsFilterArgs',
+    'GetRecommendationsFilterArgsDict',
     'GetResourceActionsFilterArgs',
+    'GetResourceActionsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ProfileLevelsConfigurationArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgsDict']]]]
+        """
+        (Updatable) The array of configuration levels.
+        """
+elif False:
+    ProfileLevelsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProfileLevelsConfigurationArgs:
@@ -51,6 +84,19 @@ class ProfileLevelsConfigurationArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class ProfileLevelsConfigurationItemArgsDict(TypedDict):
+        level: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The pre-defined profile level.
+        """
+        recommendation_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The unique OCID of the recommendation.
+        """
+elif False:
+    ProfileLevelsConfigurationItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProfileLevelsConfigurationItemArgs:
@@ -91,6 +137,15 @@ class ProfileLevelsConfigurationItemArgs:
         pulumi.set(self, "recommendation_id", value)
 
 
+if not MYPY:
+    class ProfileTargetCompartmentsArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
+        """
+elif False:
+    ProfileTargetCompartmentsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProfileTargetCompartmentsArgs:
     def __init__(__self__, *,
@@ -113,6 +168,15 @@ class ProfileTargetCompartmentsArgs:
         pulumi.set(self, "items", value)
 
 
+if not MYPY:
+    class ProfileTargetTagsArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgsDict']]]
+        """
+        (Updatable) The list of tags specified in the current profile override.
+        """
+elif False:
+    ProfileTargetTagsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProfileTargetTagsArgs:
     def __init__(__self__, *,
@@ -134,6 +198,35 @@ class ProfileTargetTagsArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class ProfileTargetTagsItemArgsDict(TypedDict):
+        tag_definition_name: pulumi.Input[str]
+        """
+        (Updatable) The name you use to refer to the tag, also known as the tag key.
+        """
+        tag_namespace_name: pulumi.Input[str]
+        """
+        (Updatable) The name of the tag namespace.
+        """
+        tag_value_type: pulumi.Input[str]
+        """
+        (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+
+        When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+
+        When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
+        """
+        tag_values: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ProfileTargetTagsItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProfileTargetTagsItemArgs:
@@ -219,6 +312,19 @@ class ProfileTargetTagsItemArgs:
         pulumi.set(self, "tag_values", value)
 
 
+if not MYPY:
+    class RecommendationResourceCountArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[int]]
+        """
+        The count of resources.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The status of the recommendation.
+        """
+elif False:
+    RecommendationResourceCountArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecommendationResourceCountArgs:
     def __init__(__self__, *,
@@ -258,6 +364,15 @@ class RecommendationResourceCountArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class RecommendationSupportedLevelArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgsDict']]]]
+        """
+        The list of supported levels.
+        """
+elif False:
+    RecommendationSupportedLevelArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecommendationSupportedLevelArgs:
     def __init__(__self__, *,
@@ -281,6 +396,15 @@ class RecommendationSupportedLevelArgs:
         pulumi.set(self, "items", value)
 
 
+if not MYPY:
+    class RecommendationSupportedLevelItemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the profile level.
+        """
+elif False:
+    RecommendationSupportedLevelItemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecommendationSupportedLevelItemArgs:
     def __init__(__self__, *,
@@ -303,6 +427,23 @@ class RecommendationSupportedLevelItemArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ResourceActionActionArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        Text describing the recommended action.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The status of the resource action.
+        """
+        url: NotRequired[pulumi.Input[str]]
+        """
+        The URL path to documentation that explains how to perform the action.
+        """
+elif False:
+    ResourceActionActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ResourceActionActionArgs:
@@ -359,6 +500,17 @@ class ResourceActionActionArgs:
         pulumi.set(self, "url", value)
 
 
+if not MYPY:
+    class GetCategoriesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional. A filter that returns results that match the name specified.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCategoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetCategoriesFilterArgs:
     def __init__(__self__, *,
@@ -404,6 +556,14 @@ class GetCategoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetEnrollmentStatusesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetEnrollmentStatusesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetEnrollmentStatusesFilterArgs:
     def __init__(__self__, *,
@@ -442,6 +602,17 @@ class GetEnrollmentStatusesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetHistoriesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional. A filter that returns results that match the name specified.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetHistoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetHistoriesFilterArgs:
@@ -488,6 +659,17 @@ class GetHistoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetProfileLevelsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional. A filter that returns results that match the name specified.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProfileLevelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetProfileLevelsFilterArgs:
     def __init__(__self__, *,
@@ -532,6 +714,17 @@ class GetProfileLevelsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetProfilesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional. A filter that returns results that match the name specified.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProfilesFilterArgs:
@@ -578,6 +771,17 @@ class GetProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRecommendationStrategiesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional. A filter that returns results that match the name specified.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRecommendationStrategiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRecommendationStrategiesFilterArgs:
     def __init__(__self__, *,
@@ -623,6 +827,17 @@ class GetRecommendationStrategiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRecommendationsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional. A filter that returns results that match the name specified.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRecommendationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRecommendationsFilterArgs:
     def __init__(__self__, *,
@@ -667,6 +882,17 @@ class GetRecommendationsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetResourceActionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional. A filter that returns results that match the name specified.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetResourceActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetResourceActionsFilterArgs:

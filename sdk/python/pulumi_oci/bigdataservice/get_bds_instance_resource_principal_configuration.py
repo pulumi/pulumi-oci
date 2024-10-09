@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -208,9 +213,6 @@ def get_bds_instance_resource_principal_configuration(bds_instance_id: Optional[
         time_token_expiry=pulumi.get(__ret__, 'time_token_expiry'),
         time_token_refreshed=pulumi.get(__ret__, 'time_token_refreshed'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_bds_instance_resource_principal_configuration)
 def get_bds_instance_resource_principal_configuration_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                                              resource_principal_configuration_id: Optional[pulumi.Input[str]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceResourcePrincipalConfigurationResult]:
@@ -233,4 +235,21 @@ def get_bds_instance_resource_principal_configuration_output(bds_instance_id: Op
     :param str bds_instance_id: The OCID of the cluster.
     :param str resource_principal_configuration_id: Unique Oracle-assigned identifier of the ResourcePrincipalConfiguration.
     """
-    ...
+    __args__ = dict()
+    __args__['bdsInstanceId'] = bds_instance_id
+    __args__['resourcePrincipalConfigurationId'] = resource_principal_configuration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration', __args__, opts=opts, typ=GetBdsInstanceResourcePrincipalConfigurationResult)
+    return __ret__.apply(lambda __response__: GetBdsInstanceResourcePrincipalConfigurationResult(
+        bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
+        cluster_admin_password=pulumi.get(__response__, 'cluster_admin_password'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        force_refresh_resource_principal_trigger=pulumi.get(__response__, 'force_refresh_resource_principal_trigger'),
+        id=pulumi.get(__response__, 'id'),
+        resource_principal_configuration_id=pulumi.get(__response__, 'resource_principal_configuration_id'),
+        session_token_life_span_duration_in_hours=pulumi.get(__response__, 'session_token_life_span_duration_in_hours'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_token_expiry=pulumi.get(__response__, 'time_token_expiry'),
+        time_token_refreshed=pulumi.get(__response__, 'time_token_refreshed'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

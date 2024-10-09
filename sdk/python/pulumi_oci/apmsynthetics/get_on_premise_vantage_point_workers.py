@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -186,9 +191,6 @@ def get_on_premise_vantage_point_workers(apm_domain_id: Optional[str] = None,
         on_premise_vantage_point_id=pulumi.get(__ret__, 'on_premise_vantage_point_id'),
         status=pulumi.get(__ret__, 'status'),
         worker_collections=pulumi.get(__ret__, 'worker_collections'))
-
-
-@_utilities.lift_output_func(get_on_premise_vantage_point_workers)
 def get_on_premise_vantage_point_workers_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                                 capability: Optional[pulumi.Input[Optional[str]]] = None,
                                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -224,4 +226,23 @@ def get_on_premise_vantage_point_workers_output(apm_domain_id: Optional[pulumi.I
     :param str on_premise_vantage_point_id: The OCID of the On-premise vantage point.
     :param str status: A filter to return only On-premise VP workers that match the status given.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['capability'] = capability
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['onPremiseVantagePointId'] = on_premise_vantage_point_id
+    __args__['status'] = status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers', __args__, opts=opts, typ=GetOnPremiseVantagePointWorkersResult)
+    return __ret__.apply(lambda __response__: GetOnPremiseVantagePointWorkersResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        capability=pulumi.get(__response__, 'capability'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        on_premise_vantage_point_id=pulumi.get(__response__, 'on_premise_vantage_point_id'),
+        status=pulumi.get(__response__, 'status'),
+        worker_collections=pulumi.get(__response__, 'worker_collections')))

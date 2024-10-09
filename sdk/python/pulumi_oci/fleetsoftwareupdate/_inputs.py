@@ -4,25 +4,57 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'FsuCollectionActiveFsuCycleArgs',
+    'FsuCollectionActiveFsuCycleArgsDict',
     'FsuCollectionFleetDiscoveryArgs',
+    'FsuCollectionFleetDiscoveryArgsDict',
     'FsuCollectionFleetDiscoveryFilterArgs',
+    'FsuCollectionFleetDiscoveryFilterArgsDict',
     'FsuCollectionFleetDiscoveryFilterTagArgs',
+    'FsuCollectionFleetDiscoveryFilterTagArgsDict',
     'FsuCycleApplyActionScheduleArgs',
+    'FsuCycleApplyActionScheduleArgsDict',
     'FsuCycleBatchingStrategyArgs',
+    'FsuCycleBatchingStrategyArgsDict',
     'FsuCycleDiagnosticsCollectionArgs',
+    'FsuCycleDiagnosticsCollectionArgsDict',
     'FsuCycleGoalVersionDetailsArgs',
+    'FsuCycleGoalVersionDetailsArgsDict',
     'FsuCycleNextActionToExecuteArgs',
+    'FsuCycleNextActionToExecuteArgsDict',
     'FsuCycleStageActionScheduleArgs',
+    'FsuCycleStageActionScheduleArgsDict',
     'GetFsuCollectionsFilterArgs',
+    'GetFsuCollectionsFilterArgsDict',
     'GetFsuCyclesFilterArgs',
+    'GetFsuCyclesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class FsuCollectionActiveFsuCycleArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Exadata Fleet Update Collection Identifier.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        OCID identifier for the Exadata Fleet Update Collection.
+        """
+elif False:
+    FsuCollectionActiveFsuCycleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FsuCollectionActiveFsuCycleArgs:
@@ -62,6 +94,31 @@ class FsuCollectionActiveFsuCycleArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class FsuCollectionFleetDiscoveryArgsDict(TypedDict):
+        strategy: pulumi.Input[str]
+        """
+        Possible fleet discovery strategies.
+        """
+        filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgsDict']]]]
+        """
+        Filters to perform the target discovery.
+        """
+        fsu_discovery_id: NotRequired[pulumi.Input[str]]
+        """
+        OCIDs of Fleet Software Update Discovery.
+        """
+        query: NotRequired[pulumi.Input[str]]
+        """
+        Oracle Cloud Infrastructure Search Service query string.
+        """
+        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+        """
+elif False:
+    FsuCollectionFleetDiscoveryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FsuCollectionFleetDiscoveryArgs:
@@ -148,6 +205,43 @@ class FsuCollectionFleetDiscoveryArgs:
     def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "targets", value)
 
+
+if not MYPY:
+    class FsuCollectionFleetDiscoveryFilterArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of filters supported for Database targets discovery.
+        """
+        entity_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of resource to match in the discovery.
+        """
+        identifiers: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Related resource Ids to include in the discovery.  All must match the specified entityType.
+        """
+        mode: NotRequired[pulumi.Input[str]]
+        """
+        INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+        """
+        names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of Database unique names to include in the discovery.
+        """
+        operator: NotRequired[pulumi.Input[str]]
+        """
+        Type of join for each element in this filter.
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgsDict']]]]
+        """
+        Freeform tags to include in the discovery.
+        """
+        versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of Versions strings to include in the discovery.
+        """
+elif False:
+    FsuCollectionFleetDiscoveryFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FsuCollectionFleetDiscoveryFilterArgs:
@@ -283,6 +377,23 @@ class FsuCollectionFleetDiscoveryFilterArgs:
         pulumi.set(self, "versions", value)
 
 
+if not MYPY:
+    class FsuCollectionFleetDiscoveryFilterTagArgsDict(TypedDict):
+        key: pulumi.Input[str]
+        """
+        Freeform tag key.
+        """
+        value: pulumi.Input[str]
+        """
+        Freeform tag value.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        Defined tag namespace.
+        """
+elif False:
+    FsuCollectionFleetDiscoveryFilterTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FsuCollectionFleetDiscoveryFilterTagArgs:
     def __init__(__self__, *,
@@ -336,6 +447,19 @@ class FsuCollectionFleetDiscoveryFilterTagArgs:
         pulumi.set(self, "namespace", value)
 
 
+if not MYPY:
+    class FsuCycleApplyActionScheduleArgsDict(TypedDict):
+        time_to_start: pulumi.Input[str]
+        """
+        The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of scheduling strategy to use for Fleet Patching Update Action execution.
+        """
+elif False:
+    FsuCycleApplyActionScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FsuCycleApplyActionScheduleArgs:
     def __init__(__self__, *,
@@ -372,6 +496,27 @@ class FsuCycleApplyActionScheduleArgs:
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class FsuCycleBatchingStrategyArgsDict(TypedDict):
+        is_force_rolling: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) True to force rolling patching.
+        """
+        is_wait_for_batch_resume: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) True to wait for customer to resume the Apply Action once the first half is done. False to automatically patch the second half.
+        """
+        percentage: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Percentage of availability in the service during the Patch operation.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Supported batching strategies.
+        """
+elif False:
+    FsuCycleBatchingStrategyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FsuCycleBatchingStrategyArgs:
@@ -444,6 +589,15 @@ class FsuCycleBatchingStrategyArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class FsuCycleDiagnosticsCollectionArgsDict(TypedDict):
+        log_collection_mode: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Enable incident logs and trace collection.  Allow Oracle to collect incident logs and traces to enable fault diagnosis and issue resolution according to the selected mode.
+        """
+elif False:
+    FsuCycleDiagnosticsCollectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FsuCycleDiagnosticsCollectionArgs:
     def __init__(__self__, *,
@@ -466,6 +620,31 @@ class FsuCycleDiagnosticsCollectionArgs:
     def log_collection_mode(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "log_collection_mode", value)
 
+
+if not MYPY:
+    class FsuCycleGoalVersionDetailsArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of goal target version specified
+        """
+        home_policy: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+        """
+        new_home_prefix: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+        """
+        software_image_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Target database software image OCID.
+        """
+        version: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+        """
+elif False:
+    FsuCycleGoalVersionDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FsuCycleGoalVersionDetailsArgs:
@@ -553,6 +732,23 @@ class FsuCycleGoalVersionDetailsArgs:
         pulumi.set(self, "version", value)
 
 
+if not MYPY:
+    class FsuCycleNextActionToExecuteArgsDict(TypedDict):
+        time_to_start: NotRequired[pulumi.Input[str]]
+        """
+        The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Type of Exadata Fleet Update Cycle. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    FsuCycleNextActionToExecuteArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FsuCycleNextActionToExecuteArgs:
     def __init__(__self__, *,
@@ -600,6 +796,19 @@ class FsuCycleNextActionToExecuteArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class FsuCycleStageActionScheduleArgsDict(TypedDict):
+        time_to_start: pulumi.Input[str]
+        """
+        The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of scheduling strategy to use for Fleet Patching Update Action execution.
+        """
+elif False:
+    FsuCycleStageActionScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FsuCycleStageActionScheduleArgs:
     def __init__(__self__, *,
@@ -636,6 +845,14 @@ class FsuCycleStageActionScheduleArgs:
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class GetFsuCollectionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFsuCollectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFsuCollectionsFilterArgs:
@@ -675,6 +892,14 @@ class GetFsuCollectionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetFsuCyclesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFsuCyclesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFsuCyclesFilterArgs:

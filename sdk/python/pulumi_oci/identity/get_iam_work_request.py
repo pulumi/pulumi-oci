@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -189,9 +194,6 @@ def get_iam_work_request(iam_work_request_id: Optional[str] = None,
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'))
-
-
-@_utilities.lift_output_func(get_iam_work_request)
 def get_iam_work_request_output(iam_work_request_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestResult]:
     """
@@ -215,4 +217,18 @@ def get_iam_work_request_output(iam_work_request_id: Optional[pulumi.Input[str]]
 
     :param str iam_work_request_id: The OCID of the IAM work request.
     """
-    ...
+    __args__ = dict()
+    __args__['iamWorkRequestId'] = iam_work_request_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getIamWorkRequest:getIamWorkRequest', __args__, opts=opts, typ=GetIamWorkRequestResult)
+    return __ret__.apply(lambda __response__: GetIamWorkRequestResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        iam_work_request_id=pulumi.get(__response__, 'iam_work_request_id'),
+        id=pulumi.get(__response__, 'id'),
+        operation_type=pulumi.get(__response__, 'operation_type'),
+        percent_complete=pulumi.get(__response__, 'percent_complete'),
+        resources=pulumi.get(__response__, 'resources'),
+        status=pulumi.get(__response__, 'status'),
+        time_accepted=pulumi.get(__response__, 'time_accepted'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_started=pulumi.get(__response__, 'time_started')))

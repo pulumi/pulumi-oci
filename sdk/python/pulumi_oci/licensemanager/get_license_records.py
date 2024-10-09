@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,9 +115,6 @@ def get_license_records(filters: Optional[Sequence[Union['GetLicenseRecordsFilte
         id=pulumi.get(__ret__, 'id'),
         license_record_collections=pulumi.get(__ret__, 'license_record_collections'),
         product_license_id=pulumi.get(__ret__, 'product_license_id'))
-
-
-@_utilities.lift_output_func(get_license_records)
 def get_license_records_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLicenseRecordsFilterArgs', 'GetLicenseRecordsFilterArgsDict']]]]] = None,
                                product_license_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLicenseRecordsResult]:
@@ -133,4 +135,13 @@ def get_license_records_output(filters: Optional[pulumi.Input[Optional[Sequence[
 
     :param str product_license_id: Unique product license identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['productLicenseId'] = product_license_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getLicenseRecords:getLicenseRecords', __args__, opts=opts, typ=GetLicenseRecordsResult)
+    return __ret__.apply(lambda __response__: GetLicenseRecordsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        license_record_collections=pulumi.get(__response__, 'license_record_collections'),
+        product_license_id=pulumi.get(__response__, 'product_license_id')))

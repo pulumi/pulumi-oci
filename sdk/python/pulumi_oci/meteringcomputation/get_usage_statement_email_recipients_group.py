@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -138,9 +143,6 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[str] = N
         recipients_lists=pulumi.get(__ret__, 'recipients_lists'),
         state=pulumi.get(__ret__, 'state'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-
-
-@_utilities.lift_output_func(get_usage_statement_email_recipients_group)
 def get_usage_statement_email_recipients_group_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                       email_recipients_group_id: Optional[pulumi.Input[str]] = None,
                                                       subscription_id: Optional[pulumi.Input[str]] = None,
@@ -166,4 +168,16 @@ def get_usage_statement_email_recipients_group_output(compartment_id: Optional[p
     :param str email_recipients_group_id: The email recipient group OCID.
     :param str subscription_id: The UsageStatement Subscription unique OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['emailRecipientsGroupId'] = email_recipients_group_id
+    __args__['subscriptionId'] = subscription_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getUsageStatementEmailRecipientsGroup:getUsageStatementEmailRecipientsGroup', __args__, opts=opts, typ=GetUsageStatementEmailRecipientsGroupResult)
+    return __ret__.apply(lambda __response__: GetUsageStatementEmailRecipientsGroupResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        email_recipients_group_id=pulumi.get(__response__, 'email_recipients_group_id'),
+        id=pulumi.get(__response__, 'id'),
+        recipients_lists=pulumi.get(__response__, 'recipients_lists'),
+        state=pulumi.get(__response__, 'state'),
+        subscription_id=pulumi.get(__response__, 'subscription_id')))

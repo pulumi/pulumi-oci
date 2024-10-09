@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -393,9 +398,6 @@ def get_desktop_pool(desktop_pool_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_start_scheduled=pulumi.get(__ret__, 'time_start_scheduled'),
         time_stop_scheduled=pulumi.get(__ret__, 'time_stop_scheduled'))
-
-
-@_utilities.lift_output_func(get_desktop_pool)
 def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDesktopPoolResult]:
     """
@@ -415,4 +417,34 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
 
     :param str desktop_pool_id: The OCID of the desktop pool.
     """
-    ...
+    __args__ = dict()
+    __args__['desktopPoolId'] = desktop_pool_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Desktops/getDesktopPool:getDesktopPool', __args__, opts=opts, typ=GetDesktopPoolResult)
+    return __ret__.apply(lambda __response__: GetDesktopPoolResult(
+        active_desktops=pulumi.get(__response__, 'active_desktops'),
+        are_privileged_users=pulumi.get(__response__, 'are_privileged_users'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        availability_policies=pulumi.get(__response__, 'availability_policies'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        contact_details=pulumi.get(__response__, 'contact_details'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        desktop_pool_id=pulumi.get(__response__, 'desktop_pool_id'),
+        device_policies=pulumi.get(__response__, 'device_policies'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        images=pulumi.get(__response__, 'images'),
+        is_storage_enabled=pulumi.get(__response__, 'is_storage_enabled'),
+        maximum_size=pulumi.get(__response__, 'maximum_size'),
+        network_configurations=pulumi.get(__response__, 'network_configurations'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        shape_name=pulumi.get(__response__, 'shape_name'),
+        standby_size=pulumi.get(__response__, 'standby_size'),
+        state=pulumi.get(__response__, 'state'),
+        storage_backup_policy_id=pulumi.get(__response__, 'storage_backup_policy_id'),
+        storage_size_in_gbs=pulumi.get(__response__, 'storage_size_in_gbs'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_start_scheduled=pulumi.get(__response__, 'time_start_scheduled'),
+        time_stop_scheduled=pulumi.get(__response__, 'time_stop_scheduled')))

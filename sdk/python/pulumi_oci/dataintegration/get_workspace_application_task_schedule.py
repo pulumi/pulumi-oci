@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -445,9 +450,6 @@ def get_workspace_application_task_schedule(application_key: Optional[str] = Non
         start_time_millis=pulumi.get(__ret__, 'start_time_millis'),
         task_schedule_key=pulumi.get(__ret__, 'task_schedule_key'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_application_task_schedule)
 def get_workspace_application_task_schedule_output(application_key: Optional[pulumi.Input[str]] = None,
                                                    task_schedule_key: Optional[pulumi.Input[str]] = None,
                                                    workspace_id: Optional[pulumi.Input[str]] = None,
@@ -473,4 +475,41 @@ def get_workspace_application_task_schedule_output(application_key: Optional[pul
     :param str task_schedule_key: TaskSchedule Key
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationKey'] = application_key
+    __args__['taskScheduleKey'] = task_schedule_key
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule', __args__, opts=opts, typ=GetWorkspaceApplicationTaskScheduleResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceApplicationTaskScheduleResult(
+        application_key=pulumi.get(__response__, 'application_key'),
+        auth_mode=pulumi.get(__response__, 'auth_mode'),
+        config_provider_delegate=pulumi.get(__response__, 'config_provider_delegate'),
+        description=pulumi.get(__response__, 'description'),
+        end_time_millis=pulumi.get(__response__, 'end_time_millis'),
+        expected_duration=pulumi.get(__response__, 'expected_duration'),
+        expected_duration_unit=pulumi.get(__response__, 'expected_duration_unit'),
+        id=pulumi.get(__response__, 'id'),
+        identifier=pulumi.get(__response__, 'identifier'),
+        is_backfill_enabled=pulumi.get(__response__, 'is_backfill_enabled'),
+        is_concurrent_allowed=pulumi.get(__response__, 'is_concurrent_allowed'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        key=pulumi.get(__response__, 'key'),
+        last_run_details=pulumi.get(__response__, 'last_run_details'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        model_type=pulumi.get(__response__, 'model_type'),
+        model_version=pulumi.get(__response__, 'model_version'),
+        name=pulumi.get(__response__, 'name'),
+        next_run_time_millis=pulumi.get(__response__, 'next_run_time_millis'),
+        number_of_retries=pulumi.get(__response__, 'number_of_retries'),
+        object_status=pulumi.get(__response__, 'object_status'),
+        object_version=pulumi.get(__response__, 'object_version'),
+        parent_reves=pulumi.get(__response__, 'parent_reves'),
+        registry_metadatas=pulumi.get(__response__, 'registry_metadatas'),
+        retry_attempts=pulumi.get(__response__, 'retry_attempts'),
+        retry_delay=pulumi.get(__response__, 'retry_delay'),
+        retry_delay_unit=pulumi.get(__response__, 'retry_delay_unit'),
+        schedule_reves=pulumi.get(__response__, 'schedule_reves'),
+        start_time_millis=pulumi.get(__response__, 'start_time_millis'),
+        task_schedule_key=pulumi.get(__response__, 'task_schedule_key'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

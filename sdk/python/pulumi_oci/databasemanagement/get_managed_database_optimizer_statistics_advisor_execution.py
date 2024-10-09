@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -220,9 +225,6 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
         task_name=pulumi.get(__ret__, 'task_name'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_managed_database_optimizer_statistics_advisor_execution)
 def get_managed_database_optimizer_statistics_advisor_execution_output(execution_name: Optional[pulumi.Input[str]] = None,
                                                                        managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                        task_name: Optional[pulumi.Input[str]] = None,
@@ -249,4 +251,22 @@ def get_managed_database_optimizer_statistics_advisor_execution_output(execution
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str task_name: The name of the optimizer statistics collection execution task.
     """
-    ...
+    __args__ = dict()
+    __args__['executionName'] = execution_name
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['taskName'] = task_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult(
+        databases=pulumi.get(__response__, 'databases'),
+        error_message=pulumi.get(__response__, 'error_message'),
+        execution_name=pulumi.get(__response__, 'execution_name'),
+        findings=pulumi.get(__response__, 'findings'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        reports=pulumi.get(__response__, 'reports'),
+        status=pulumi.get(__response__, 'status'),
+        status_message=pulumi.get(__response__, 'status_message'),
+        task_name=pulumi.get(__response__, 'task_name'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

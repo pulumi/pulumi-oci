@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -151,9 +156,6 @@ def get_address_rule(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         osp_home_region=pulumi.get(__ret__, 'osp_home_region'),
         taxes=pulumi.get(__ret__, 'taxes'))
-
-
-@_utilities.lift_output_func(get_address_rule)
 def get_address_rule_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             country_code: Optional[pulumi.Input[str]] = None,
                             osp_home_region: Optional[pulumi.Input[str]] = None,
@@ -179,4 +181,17 @@ def get_address_rule_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str country_code: Country code for the address rule in ISO-3166-1 2-letter format.
     :param str osp_home_region: The home region's public name of the logged in user.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['countryCode'] = country_code
+    __args__['ospHomeRegion'] = osp_home_region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getAddressRule:getAddressRule', __args__, opts=opts, typ=GetAddressRuleResult)
+    return __ret__.apply(lambda __response__: GetAddressRuleResult(
+        addresses=pulumi.get(__response__, 'addresses'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        contacts=pulumi.get(__response__, 'contacts'),
+        country_code=pulumi.get(__response__, 'country_code'),
+        id=pulumi.get(__response__, 'id'),
+        osp_home_region=pulumi.get(__response__, 'osp_home_region'),
+        taxes=pulumi.get(__response__, 'taxes')))

@@ -4,61 +4,133 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'MigrationPlanMigrationPlanStatArgs',
+    'MigrationPlanMigrationPlanStatArgsDict',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostArgs',
+    'MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs',
+    'MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgsDict',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs',
+    'MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgsDict',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs',
+    'MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgsDict',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs',
+    'MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgsDict',
     'MigrationPlanStrategyArgs',
+    'MigrationPlanStrategyArgsDict',
     'MigrationPlanTargetEnvironmentArgs',
+    'MigrationPlanTargetEnvironmentArgsDict',
     'TargetAssetCompatibilityMessageArgs',
+    'TargetAssetCompatibilityMessageArgsDict',
     'TargetAssetEstimatedCostArgs',
+    'TargetAssetEstimatedCostArgsDict',
     'TargetAssetEstimatedCostComputeArgs',
+    'TargetAssetEstimatedCostComputeArgsDict',
     'TargetAssetEstimatedCostOsImageArgs',
+    'TargetAssetEstimatedCostOsImageArgsDict',
     'TargetAssetEstimatedCostStorageArgs',
+    'TargetAssetEstimatedCostStorageArgsDict',
     'TargetAssetEstimatedCostStorageVolumeArgs',
+    'TargetAssetEstimatedCostStorageVolumeArgsDict',
     'TargetAssetMigrationAssetArgs',
+    'TargetAssetMigrationAssetArgsDict',
     'TargetAssetRecommendedSpecArgs',
+    'TargetAssetRecommendedSpecArgsDict',
     'TargetAssetRecommendedSpecAgentConfigArgs',
+    'TargetAssetRecommendedSpecAgentConfigArgsDict',
     'TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs',
+    'TargetAssetRecommendedSpecAgentConfigPluginsConfigArgsDict',
     'TargetAssetRecommendedSpecCreateVnicDetailArgs',
+    'TargetAssetRecommendedSpecCreateVnicDetailArgsDict',
     'TargetAssetRecommendedSpecInstanceOptionArgs',
+    'TargetAssetRecommendedSpecInstanceOptionArgsDict',
     'TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs',
+    'TargetAssetRecommendedSpecPreemptibleInstanceConfigArgsDict',
     'TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs',
+    'TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgsDict',
     'TargetAssetRecommendedSpecShapeConfigArgs',
+    'TargetAssetRecommendedSpecShapeConfigArgsDict',
     'TargetAssetRecommendedSpecSourceDetailArgs',
+    'TargetAssetRecommendedSpecSourceDetailArgsDict',
     'TargetAssetTestSpecArgs',
+    'TargetAssetTestSpecArgsDict',
     'TargetAssetTestSpecAgentConfigArgs',
+    'TargetAssetTestSpecAgentConfigArgsDict',
     'TargetAssetTestSpecAgentConfigPluginsConfigArgs',
+    'TargetAssetTestSpecAgentConfigPluginsConfigArgsDict',
     'TargetAssetTestSpecCreateVnicDetailArgs',
+    'TargetAssetTestSpecCreateVnicDetailArgsDict',
     'TargetAssetTestSpecInstanceOptionArgs',
+    'TargetAssetTestSpecInstanceOptionArgsDict',
     'TargetAssetTestSpecPreemptibleInstanceConfigArgs',
+    'TargetAssetTestSpecPreemptibleInstanceConfigArgsDict',
     'TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs',
+    'TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgsDict',
     'TargetAssetTestSpecShapeConfigArgs',
+    'TargetAssetTestSpecShapeConfigArgsDict',
     'TargetAssetTestSpecSourceDetailArgs',
+    'TargetAssetTestSpecSourceDetailArgsDict',
     'TargetAssetUserSpecArgs',
+    'TargetAssetUserSpecArgsDict',
     'TargetAssetUserSpecAgentConfigArgs',
+    'TargetAssetUserSpecAgentConfigArgsDict',
     'TargetAssetUserSpecAgentConfigPluginsConfigArgs',
+    'TargetAssetUserSpecAgentConfigPluginsConfigArgsDict',
     'TargetAssetUserSpecCreateVnicDetailsArgs',
+    'TargetAssetUserSpecCreateVnicDetailsArgsDict',
     'TargetAssetUserSpecInstanceOptionsArgs',
+    'TargetAssetUserSpecInstanceOptionsArgsDict',
     'TargetAssetUserSpecPreemptibleInstanceConfigArgs',
+    'TargetAssetUserSpecPreemptibleInstanceConfigArgsDict',
     'TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs',
+    'TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgsDict',
     'TargetAssetUserSpecShapeConfigArgs',
+    'TargetAssetUserSpecShapeConfigArgsDict',
     'TargetAssetUserSpecSourceDetailsArgs',
+    'TargetAssetUserSpecSourceDetailsArgsDict',
     'GetMigrationAssetsFilterArgs',
+    'GetMigrationAssetsFilterArgsDict',
     'GetMigrationPlanAvailableShapesFilterArgs',
+    'GetMigrationPlanAvailableShapesFilterArgsDict',
     'GetMigrationPlansFilterArgs',
+    'GetMigrationPlansFilterArgsDict',
     'GetMigrationsFilterArgs',
+    'GetMigrationsFilterArgsDict',
     'GetReplicationSchedulesFilterArgs',
+    'GetReplicationSchedulesFilterArgsDict',
     'GetTargetAssetsFilterArgs',
+    'GetTargetAssetsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class MigrationPlanMigrationPlanStatArgsDict(TypedDict):
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time when the migration plan was updated. An RFC3339 formatted datetime string.
+        """
+        total_estimated_costs: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict']]]]
+        """
+        Cost estimation description
+        """
+        vm_count: NotRequired[pulumi.Input[int]]
+        """
+        The total count of VMs in migration
+        """
+elif False:
+    MigrationPlanMigrationPlanStatArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationPlanMigrationPlanStatArgs:
@@ -114,6 +186,39 @@ class MigrationPlanMigrationPlanStatArgs:
     def vm_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "vm_count", value)
 
+
+if not MYPY:
+    class MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict(TypedDict):
+        computes: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgsDict']]]]
+        """
+        Cost estimation for compute
+        """
+        currency_code: NotRequired[pulumi.Input[str]]
+        """
+        Currency code in the ISO format.
+        """
+        os_images: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgsDict']]]]
+        """
+        Cost estimation for the OS image.
+        """
+        storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgsDict']]]]
+        """
+        Cost estimation for storage
+        """
+        subscription_id: NotRequired[pulumi.Input[str]]
+        """
+        Subscription ID
+        """
+        total_estimation_per_month: NotRequired[pulumi.Input[float]]
+        """
+        Total estimation per month
+        """
+        total_estimation_per_month_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Total estimation per month by subscription.
+        """
+elif False:
+    MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationPlanMigrationPlanStatTotalEstimatedCostArgs:
@@ -233,6 +338,55 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostArgs:
     def total_estimation_per_month_by_subscription(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "total_estimation_per_month_by_subscription", value)
 
+
+if not MYPY:
+    class MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgsDict(TypedDict):
+        gpu_count: NotRequired[pulumi.Input[float]]
+        """
+        Total number of GPU
+        """
+        gpu_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        GPU per hour
+        """
+        gpu_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        GPU per hour by subscription
+        """
+        memory_amount_gb: NotRequired[pulumi.Input[float]]
+        """
+        Total usage of memory
+        """
+        memory_gb_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte per hour
+        """
+        memory_gb_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte per hour by subscription
+        """
+        ocpu_count: NotRequired[pulumi.Input[float]]
+        """
+        Total number of OCPUs
+        """
+        ocpu_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        OCPU per hour
+        """
+        ocpu_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        OCPU per hour by subscription
+        """
+        total_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        Total price per hour
+        """
+        total_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Total price per hour by subscription
+        """
+elif False:
+    MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs:
@@ -417,6 +571,19 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs:
         pulumi.set(self, "total_per_hour_by_subscription", value)
 
 
+if not MYPY:
+    class MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgsDict(TypedDict):
+        total_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        Total price per hour
+        """
+        total_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Total price per hour by subscription
+        """
+elif False:
+    MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs:
     def __init__(__self__, *,
@@ -455,6 +622,23 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs:
     def total_per_hour_by_subscription(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "total_per_hour_by_subscription", value)
 
+
+if not MYPY:
+    class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgsDict(TypedDict):
+        total_gb_per_month: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity per month.
+        """
+        total_gb_per_month_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity per month by subscription
+        """
+        volumes: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgsDict']]]]
+        """
+        Volume estimation
+        """
+elif False:
+    MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs:
@@ -510,6 +694,27 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs:
     def volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs']]]]):
         pulumi.set(self, "volumes", value)
 
+
+if not MYPY:
+    class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgsDict(TypedDict):
+        capacity_gb: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        Volume description
+        """
+        total_gb_per_month: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity per month.
+        """
+        total_gb_per_month_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity per month by subscription
+        """
+elif False:
+    MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs:
@@ -581,6 +786,35 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs:
     def total_gb_per_month_by_subscription(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "total_gb_per_month_by_subscription", value)
 
+
+if not MYPY:
+    class MigrationPlanStrategyArgsDict(TypedDict):
+        resource_type: pulumi.Input[str]
+        """
+        (Updatable) The type of resource.
+        """
+        strategy_type: pulumi.Input[str]
+        """
+        (Updatable) The type of strategy used for migration.
+        """
+        adjustment_multiplier: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The real resource usage is multiplied to this number before making any recommendation.
+        """
+        metric_time_window: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The current state of the migration plan.
+        """
+        metric_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The current state of the migration plan.
+        """
+        percentile: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Percentile value
+        """
+elif False:
+    MigrationPlanStrategyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationPlanStrategyArgs:
@@ -682,6 +916,51 @@ class MigrationPlanStrategyArgs:
     def percentile(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "percentile", value)
 
+
+if not MYPY:
+    class MigrationPlanTargetEnvironmentArgsDict(TypedDict):
+        subnet: pulumi.Input[str]
+        """
+        (Updatable) OCID of the VM configuration subnet.
+        """
+        target_environment_type: pulumi.Input[str]
+        """
+        (Updatable) The type of target environment.
+        """
+        vcn: pulumi.Input[str]
+        """
+        (Updatable) OCID of the VM configuration VCN.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Availability Domain of the VM configuration.
+        """
+        dedicated_vm_host: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the dedicated VM configuration host.
+        """
+        fault_domain: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Fault domain of the VM configuration.
+        """
+        ms_license: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Microsoft license for the VM configuration.
+        """
+        preferred_shape_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Preferred VM shape type provided by the customer.
+        """
+        target_compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Target compartment identifier
+        """
+elif False:
+    MigrationPlanTargetEnvironmentArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationPlanTargetEnvironmentArgs:
@@ -839,6 +1118,23 @@ class MigrationPlanTargetEnvironmentArgs:
         pulumi.set(self, "target_compartment_id", value)
 
 
+if not MYPY:
+    class TargetAssetCompatibilityMessageArgsDict(TypedDict):
+        message: NotRequired[pulumi.Input[str]]
+        """
+        Detailed description of the compatibility issue.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+        severity: NotRequired[pulumi.Input[str]]
+        """
+        Severity level of the compatibility issue.
+        """
+elif False:
+    TargetAssetCompatibilityMessageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetCompatibilityMessageArgs:
     def __init__(__self__, *,
@@ -893,6 +1189,39 @@ class TargetAssetCompatibilityMessageArgs:
     def severity(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "severity", value)
 
+
+if not MYPY:
+    class TargetAssetEstimatedCostArgsDict(TypedDict):
+        computes: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostComputeArgsDict']]]]
+        """
+        Cost estimation for compute
+        """
+        currency_code: NotRequired[pulumi.Input[str]]
+        """
+        Currency code in the ISO format.
+        """
+        os_images: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostOsImageArgsDict']]]]
+        """
+        Cost estimation for the OS image.
+        """
+        storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageArgsDict']]]]
+        """
+        Cost estimation for storage
+        """
+        subscription_id: NotRequired[pulumi.Input[str]]
+        """
+        Subscription ID
+        """
+        total_estimation_per_month: NotRequired[pulumi.Input[float]]
+        """
+        Total estimation per month
+        """
+        total_estimation_per_month_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Total estimation per month by subscription.
+        """
+elif False:
+    TargetAssetEstimatedCostArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetEstimatedCostArgs:
@@ -1012,6 +1341,55 @@ class TargetAssetEstimatedCostArgs:
     def total_estimation_per_month_by_subscription(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "total_estimation_per_month_by_subscription", value)
 
+
+if not MYPY:
+    class TargetAssetEstimatedCostComputeArgsDict(TypedDict):
+        gpu_count: NotRequired[pulumi.Input[float]]
+        """
+        Total number of GPU
+        """
+        gpu_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        GPU per hour
+        """
+        gpu_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        GPU per hour by subscription
+        """
+        memory_amount_gb: NotRequired[pulumi.Input[float]]
+        """
+        Total usage of memory
+        """
+        memory_gb_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte per hour
+        """
+        memory_gb_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte per hour by subscription
+        """
+        ocpu_count: NotRequired[pulumi.Input[float]]
+        """
+        Total number of OCPUs
+        """
+        ocpu_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        OCPU per hour
+        """
+        ocpu_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        OCPU per hour by subscription
+        """
+        total_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        Total price per hour
+        """
+        total_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Total price per hour by subscription
+        """
+elif False:
+    TargetAssetEstimatedCostComputeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetEstimatedCostComputeArgs:
@@ -1196,6 +1574,19 @@ class TargetAssetEstimatedCostComputeArgs:
         pulumi.set(self, "total_per_hour_by_subscription", value)
 
 
+if not MYPY:
+    class TargetAssetEstimatedCostOsImageArgsDict(TypedDict):
+        total_per_hour: NotRequired[pulumi.Input[float]]
+        """
+        Total price per hour
+        """
+        total_per_hour_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Total price per hour by subscription
+        """
+elif False:
+    TargetAssetEstimatedCostOsImageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetEstimatedCostOsImageArgs:
     def __init__(__self__, *,
@@ -1234,6 +1625,23 @@ class TargetAssetEstimatedCostOsImageArgs:
     def total_per_hour_by_subscription(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "total_per_hour_by_subscription", value)
 
+
+if not MYPY:
+    class TargetAssetEstimatedCostStorageArgsDict(TypedDict):
+        total_gb_per_month: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity per month.
+        """
+        total_gb_per_month_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity per month by subscription
+        """
+        volumes: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageVolumeArgsDict']]]]
+        """
+        Volume estimation
+        """
+elif False:
+    TargetAssetEstimatedCostStorageArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetEstimatedCostStorageArgs:
@@ -1289,6 +1697,27 @@ class TargetAssetEstimatedCostStorageArgs:
     def volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageVolumeArgs']]]]):
         pulumi.set(self, "volumes", value)
 
+
+if not MYPY:
+    class TargetAssetEstimatedCostStorageVolumeArgsDict(TypedDict):
+        capacity_gb: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        Volume description
+        """
+        total_gb_per_month: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity per month.
+        """
+        total_gb_per_month_by_subscription: NotRequired[pulumi.Input[float]]
+        """
+        Gigabyte storage capacity per month by subscription
+        """
+elif False:
+    TargetAssetEstimatedCostStorageVolumeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetEstimatedCostStorageVolumeArgs:
@@ -1360,6 +1789,95 @@ class TargetAssetEstimatedCostStorageVolumeArgs:
     def total_gb_per_month_by_subscription(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "total_gb_per_month_by_subscription", value)
 
+
+if not MYPY:
+    class TargetAssetMigrationAssetArgsDict(TypedDict):
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the compartment.
+        """
+        depended_on_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of migration assets that depend on the asset.
+        """
+        depends_ons: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of migration assets that depends on the asset.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
+        """
+        lifecycle_details: NotRequired[pulumi.Input[str]]
+        """
+        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
+        """
+        migration_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the associated migration.
+        """
+        notifications: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of notifications
+        """
+        parent_snapshot: NotRequired[pulumi.Input[str]]
+        """
+        The parent snapshot of the migration asset to be used by the replication task.
+        """
+        replication_compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        Replication compartment identifier
+        """
+        replication_schedule_id: NotRequired[pulumi.Input[str]]
+        """
+        Replication schedule identifier
+        """
+        snap_shot_bucket_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of snapshot bucket
+        """
+        snapshots: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
+        """
+        source_asset_data: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
+        """
+        source_asset_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID that is referenced to an asset for an inventory.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the target asset.
+        """
+        tenancy_id: NotRequired[pulumi.Input[str]]
+        """
+        Tenancy identifier
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time when the target asset was created. An RFC3339 formatted datetime string.
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time when the target asset was updated. An RFC3339 formatted datetime string.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of target asset.
+        """
+elif False:
+    TargetAssetMigrationAssetArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetMigrationAssetArgs:
@@ -1704,6 +2222,83 @@ class TargetAssetMigrationAssetArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class TargetAssetRecommendedSpecArgsDict(TypedDict):
+        agent_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigArgsDict']]]]
+        """
+        Configuration options for the Oracle Cloud Agent software running on the instance.
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        capacity_reservation_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the compartment.
+        """
+        create_vnic_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecCreateVnicDetailArgsDict']]]]
+        """
+        Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        """
+        dedicated_vm_host_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the dedicated VM host.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        fault_domain: NotRequired[pulumi.Input[str]]
+        """
+        A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        """
+        hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        """
+        instance_options: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecInstanceOptionArgsDict']]]]
+        """
+        Optional mutable instance options
+        """
+        ipxe_script: NotRequired[pulumi.Input[str]]
+        """
+        This is an advanced option.
+        """
+        is_pv_encryption_in_transit_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+        """
+        preemptible_instance_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigArgsDict']]]]
+        """
+        Configuration options for preemptible instances.
+        """
+        shape: NotRequired[pulumi.Input[str]]
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        """
+        shape_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecShapeConfigArgsDict']]]]
+        """
+        The shape configuration requested for the instance.
+        """
+        source_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecSourceDetailArgsDict']]]]
+        """
+        (Updatable)
+        """
+elif False:
+    TargetAssetRecommendedSpecArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetRecommendedSpecArgs:
     def __init__(__self__, *,
@@ -1999,6 +2594,27 @@ class TargetAssetRecommendedSpecArgs:
         pulumi.set(self, "source_details", value)
 
 
+if not MYPY:
+    class TargetAssetRecommendedSpecAgentConfigArgsDict(TypedDict):
+        are_all_plugins_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+        """
+        is_management_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+        """
+        is_monitoring_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+        """
+        plugins_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigPluginsConfigArgsDict']]]]
+        """
+        The configuration of plugins associated with this instance.
+        """
+elif False:
+    TargetAssetRecommendedSpecAgentConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetRecommendedSpecAgentConfigArgs:
     def __init__(__self__, *,
@@ -2070,6 +2686,19 @@ class TargetAssetRecommendedSpecAgentConfigArgs:
         pulumi.set(self, "plugins_configs", value)
 
 
+if not MYPY:
+    class TargetAssetRecommendedSpecAgentConfigPluginsConfigArgsDict(TypedDict):
+        desired_state: NotRequired[pulumi.Input[str]]
+        """
+        Whether the plugin should be enabled or disabled.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+elif False:
+    TargetAssetRecommendedSpecAgentConfigPluginsConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs:
     def __init__(__self__, *,
@@ -2108,6 +2737,55 @@ class TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class TargetAssetRecommendedSpecCreateVnicDetailArgsDict(TypedDict):
+        assign_private_dns_record: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+        """
+        assign_public_ip: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        """
+        hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        """
+        private_ip: NotRequired[pulumi.Input[str]]
+        """
+        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+        """
+        skip_source_dest_check: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+        """
+        vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+        """
+elif False:
+    TargetAssetRecommendedSpecCreateVnicDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetRecommendedSpecCreateVnicDetailArgs:
@@ -2292,6 +2970,15 @@ class TargetAssetRecommendedSpecCreateVnicDetailArgs:
         pulumi.set(self, "vlan_id", value)
 
 
+if not MYPY:
+    class TargetAssetRecommendedSpecInstanceOptionArgsDict(TypedDict):
+        are_legacy_imds_endpoints_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+        """
+elif False:
+    TargetAssetRecommendedSpecInstanceOptionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetRecommendedSpecInstanceOptionArgs:
     def __init__(__self__, *,
@@ -2315,6 +3002,15 @@ class TargetAssetRecommendedSpecInstanceOptionArgs:
         pulumi.set(self, "are_legacy_imds_endpoints_disabled", value)
 
 
+if not MYPY:
+    class TargetAssetRecommendedSpecPreemptibleInstanceConfigArgsDict(TypedDict):
+        preemption_actions: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgsDict']]]]
+        """
+        The action to run when the preemptible instance is interrupted for eviction.
+        """
+elif False:
+    TargetAssetRecommendedSpecPreemptibleInstanceConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs:
     def __init__(__self__, *,
@@ -2337,6 +3033,19 @@ class TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs:
     def preemption_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs']]]]):
         pulumi.set(self, "preemption_actions", value)
 
+
+if not MYPY:
+    class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgsDict(TypedDict):
+        preserve_boot_volume: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of target asset.
+        """
+elif False:
+    TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs:
@@ -2376,6 +3085,23 @@ class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class TargetAssetRecommendedSpecShapeConfigArgsDict(TypedDict):
+        baseline_ocpu_utilization: NotRequired[pulumi.Input[str]]
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        """
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        The total amount of memory in gigabytes that is available to the instance.
+        """
+        ocpus: NotRequired[pulumi.Input[float]]
+        """
+        The total number of OCPUs available to the instance.
+        """
+elif False:
+    TargetAssetRecommendedSpecShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetRecommendedSpecShapeConfigArgs:
@@ -2431,6 +3157,35 @@ class TargetAssetRecommendedSpecShapeConfigArgs:
     def ocpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus", value)
 
+
+if not MYPY:
+    class TargetAssetRecommendedSpecSourceDetailArgsDict(TypedDict):
+        boot_volume_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the boot volume used to boot the instance.
+        """
+        boot_volume_size_in_gbs: NotRequired[pulumi.Input[str]]
+        """
+        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        """
+        boot_volume_vpus_per_gb: NotRequired[pulumi.Input[str]]
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        """
+        image_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the image used to boot the instance.
+        """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the key management key to assign as the master encryption key for the boot volume.
+        """
+        source_type: NotRequired[pulumi.Input[str]]
+        """
+        The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        """
+elif False:
+    TargetAssetRecommendedSpecSourceDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetRecommendedSpecSourceDetailArgs:
@@ -2534,6 +3289,83 @@ class TargetAssetRecommendedSpecSourceDetailArgs:
     def source_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_type", value)
 
+
+if not MYPY:
+    class TargetAssetTestSpecArgsDict(TypedDict):
+        agent_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigArgsDict']]]]
+        """
+        Configuration options for the Oracle Cloud Agent software running on the instance.
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        capacity_reservation_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the compartment.
+        """
+        create_vnic_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecCreateVnicDetailArgsDict']]]]
+        """
+        Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        """
+        dedicated_vm_host_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the dedicated VM host.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        fault_domain: NotRequired[pulumi.Input[str]]
+        """
+        A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        """
+        hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        """
+        instance_options: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecInstanceOptionArgsDict']]]]
+        """
+        Optional mutable instance options
+        """
+        ipxe_script: NotRequired[pulumi.Input[str]]
+        """
+        This is an advanced option.
+        """
+        is_pv_encryption_in_transit_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+        """
+        preemptible_instance_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigArgsDict']]]]
+        """
+        Configuration options for preemptible instances.
+        """
+        shape: NotRequired[pulumi.Input[str]]
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        """
+        shape_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecShapeConfigArgsDict']]]]
+        """
+        The shape configuration requested for the instance.
+        """
+        source_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecSourceDetailArgsDict']]]]
+        """
+        (Updatable)
+        """
+elif False:
+    TargetAssetTestSpecArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetTestSpecArgs:
@@ -2830,6 +3662,27 @@ class TargetAssetTestSpecArgs:
         pulumi.set(self, "source_details", value)
 
 
+if not MYPY:
+    class TargetAssetTestSpecAgentConfigArgsDict(TypedDict):
+        are_all_plugins_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+        """
+        is_management_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+        """
+        is_monitoring_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+        """
+        plugins_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigPluginsConfigArgsDict']]]]
+        """
+        The configuration of plugins associated with this instance.
+        """
+elif False:
+    TargetAssetTestSpecAgentConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetTestSpecAgentConfigArgs:
     def __init__(__self__, *,
@@ -2901,6 +3754,19 @@ class TargetAssetTestSpecAgentConfigArgs:
         pulumi.set(self, "plugins_configs", value)
 
 
+if not MYPY:
+    class TargetAssetTestSpecAgentConfigPluginsConfigArgsDict(TypedDict):
+        desired_state: NotRequired[pulumi.Input[str]]
+        """
+        Whether the plugin should be enabled or disabled.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+elif False:
+    TargetAssetTestSpecAgentConfigPluginsConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetTestSpecAgentConfigPluginsConfigArgs:
     def __init__(__self__, *,
@@ -2939,6 +3805,55 @@ class TargetAssetTestSpecAgentConfigPluginsConfigArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class TargetAssetTestSpecCreateVnicDetailArgsDict(TypedDict):
+        assign_private_dns_record: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+        """
+        assign_public_ip: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        """
+        hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        """
+        private_ip: NotRequired[pulumi.Input[str]]
+        """
+        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+        """
+        skip_source_dest_check: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+        """
+        vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+        """
+elif False:
+    TargetAssetTestSpecCreateVnicDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetTestSpecCreateVnicDetailArgs:
@@ -3123,6 +4038,15 @@ class TargetAssetTestSpecCreateVnicDetailArgs:
         pulumi.set(self, "vlan_id", value)
 
 
+if not MYPY:
+    class TargetAssetTestSpecInstanceOptionArgsDict(TypedDict):
+        are_legacy_imds_endpoints_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+        """
+elif False:
+    TargetAssetTestSpecInstanceOptionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetTestSpecInstanceOptionArgs:
     def __init__(__self__, *,
@@ -3146,6 +4070,15 @@ class TargetAssetTestSpecInstanceOptionArgs:
         pulumi.set(self, "are_legacy_imds_endpoints_disabled", value)
 
 
+if not MYPY:
+    class TargetAssetTestSpecPreemptibleInstanceConfigArgsDict(TypedDict):
+        preemption_actions: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgsDict']]]]
+        """
+        The action to run when the preemptible instance is interrupted for eviction.
+        """
+elif False:
+    TargetAssetTestSpecPreemptibleInstanceConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetTestSpecPreemptibleInstanceConfigArgs:
     def __init__(__self__, *,
@@ -3168,6 +4101,19 @@ class TargetAssetTestSpecPreemptibleInstanceConfigArgs:
     def preemption_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs']]]]):
         pulumi.set(self, "preemption_actions", value)
 
+
+if not MYPY:
+    class TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgsDict(TypedDict):
+        preserve_boot_volume: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of target asset.
+        """
+elif False:
+    TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs:
@@ -3207,6 +4153,23 @@ class TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class TargetAssetTestSpecShapeConfigArgsDict(TypedDict):
+        baseline_ocpu_utilization: NotRequired[pulumi.Input[str]]
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        """
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        The total amount of memory in gigabytes that is available to the instance.
+        """
+        ocpus: NotRequired[pulumi.Input[float]]
+        """
+        The total number of OCPUs available to the instance.
+        """
+elif False:
+    TargetAssetTestSpecShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetTestSpecShapeConfigArgs:
@@ -3262,6 +4225,35 @@ class TargetAssetTestSpecShapeConfigArgs:
     def ocpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus", value)
 
+
+if not MYPY:
+    class TargetAssetTestSpecSourceDetailArgsDict(TypedDict):
+        boot_volume_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the boot volume used to boot the instance.
+        """
+        boot_volume_size_in_gbs: NotRequired[pulumi.Input[str]]
+        """
+        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        """
+        boot_volume_vpus_per_gb: NotRequired[pulumi.Input[str]]
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        """
+        image_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the image used to boot the instance.
+        """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the key management key to assign as the master encryption key for the boot volume.
+        """
+        source_type: NotRequired[pulumi.Input[str]]
+        """
+        The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        """
+elif False:
+    TargetAssetTestSpecSourceDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetTestSpecSourceDetailArgs:
@@ -3365,6 +4357,107 @@ class TargetAssetTestSpecSourceDetailArgs:
     def source_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_type", value)
 
+
+if not MYPY:
+    class TargetAssetUserSpecArgsDict(TypedDict):
+        agent_config: NotRequired[pulumi.Input['TargetAssetUserSpecAgentConfigArgsDict']]
+        """
+        (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        capacity_reservation_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the compartment.
+        """
+        create_vnic_details: NotRequired[pulumi.Input['TargetAssetUserSpecCreateVnicDetailsArgsDict']]
+        """
+        (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        """
+        dedicated_vm_host_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the dedicated VM host.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        fault_domain: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        """
+        hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        """
+        instance_options: NotRequired[pulumi.Input['TargetAssetUserSpecInstanceOptionsArgsDict']]
+        """
+        (Updatable) Optional mutable instance options
+        """
+        ipxe_script: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This is an advanced option.
+
+        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+
+        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+
+        By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+
+        If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+
+        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+
+        For more information about iPXE, see http://ipxe.org.
+        """
+        is_pv_encryption_in_transit_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+        """
+        preemptible_instance_config: NotRequired[pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigArgsDict']]
+        """
+        (Updatable) Configuration options for preemptible instances.
+        """
+        shape: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        """
+        shape_config: NotRequired[pulumi.Input['TargetAssetUserSpecShapeConfigArgsDict']]
+        """
+        (Updatable) The shape configuration requested for the instance.
+
+        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        """
+        source_details: NotRequired[pulumi.Input['TargetAssetUserSpecSourceDetailsArgsDict']]
+        """
+        (Updatable)
+        """
+elif False:
+    TargetAssetUserSpecArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetUserSpecArgs:
@@ -3709,6 +4802,41 @@ class TargetAssetUserSpecArgs:
         pulumi.set(self, "source_details", value)
 
 
+if not MYPY:
+    class TargetAssetUserSpecAgentConfigArgsDict(TypedDict):
+        are_all_plugins_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+        is_management_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+
+        These are the management plugins: OS Management Service Agent and Compute instance run command.
+
+        The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+        * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+        * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+        """
+        is_monitoring_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+
+        These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+        * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+        """
+        plugins_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetAssetUserSpecAgentConfigPluginsConfigArgsDict']]]]
+        """
+        (Updatable) The configuration of plugins associated with this instance.
+        """
+elif False:
+    TargetAssetUserSpecAgentConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetUserSpecAgentConfigArgs:
     def __init__(__self__, *,
@@ -3808,6 +4936,21 @@ class TargetAssetUserSpecAgentConfigArgs:
         pulumi.set(self, "plugins_configs", value)
 
 
+if not MYPY:
+    class TargetAssetUserSpecAgentConfigPluginsConfigArgsDict(TypedDict):
+        desired_state: pulumi.Input[str]
+        """
+        (Updatable) Whether the plugin should be enabled or disabled.
+
+        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+elif False:
+    TargetAssetUserSpecAgentConfigPluginsConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetUserSpecAgentConfigPluginsConfigArgs:
     def __init__(__self__, *,
@@ -3848,6 +4991,87 @@ class TargetAssetUserSpecAgentConfigPluginsConfigArgs:
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class TargetAssetUserSpecCreateVnicDetailsArgsDict(TypedDict):
+        assign_private_dns_record: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+
+        If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
+        """
+        assign_public_ip: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+
+        **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+
+        **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+
+        Example: `false`
+
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        """
+        hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+
+        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+
+        When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
+
+        Example: `bminstance-1`
+
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+        """
+        private_ip: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+
+        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `10.0.3.3`
+        """
+        skip_source_dest_check: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `true`
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
+        """
+        vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
+        """
+elif False:
+    TargetAssetUserSpecCreateVnicDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetUserSpecCreateVnicDetailsArgs:
@@ -4096,6 +5320,15 @@ class TargetAssetUserSpecCreateVnicDetailsArgs:
         pulumi.set(self, "vlan_id", value)
 
 
+if not MYPY:
+    class TargetAssetUserSpecInstanceOptionsArgsDict(TypedDict):
+        are_legacy_imds_endpoints_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+        """
+elif False:
+    TargetAssetUserSpecInstanceOptionsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetUserSpecInstanceOptionsArgs:
     def __init__(__self__, *,
@@ -4119,6 +5352,15 @@ class TargetAssetUserSpecInstanceOptionsArgs:
         pulumi.set(self, "are_legacy_imds_endpoints_disabled", value)
 
 
+if not MYPY:
+    class TargetAssetUserSpecPreemptibleInstanceConfigArgsDict(TypedDict):
+        preemption_action: pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgsDict']
+        """
+        (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+        """
+elif False:
+    TargetAssetUserSpecPreemptibleInstanceConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TargetAssetUserSpecPreemptibleInstanceConfigArgs:
     def __init__(__self__, *,
@@ -4140,6 +5382,19 @@ class TargetAssetUserSpecPreemptibleInstanceConfigArgs:
     def preemption_action(self, value: pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs']):
         pulumi.set(self, "preemption_action", value)
 
+
+if not MYPY:
+    class TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of action to run when the instance is interrupted for eviction.
+        """
+        preserve_boot_volume: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+        """
+elif False:
+    TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs:
@@ -4178,6 +5433,28 @@ class TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs:
     def preserve_boot_volume(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "preserve_boot_volume", value)
 
+
+if not MYPY:
+    class TargetAssetUserSpecShapeConfigArgsDict(TypedDict):
+        baseline_ocpu_utilization: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The total amount of memory in gigabytes that is available to the instance.
+        """
+        ocpus: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The total number of OCPUs available to the instance.
+        """
+elif False:
+    TargetAssetUserSpecShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetUserSpecShapeConfigArgs:
@@ -4243,6 +5520,41 @@ class TargetAssetUserSpecShapeConfigArgs:
     def ocpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus", value)
 
+
+if not MYPY:
+    class TargetAssetUserSpecSourceDetailsArgsDict(TypedDict):
+        source_type: pulumi.Input[str]
+        """
+        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        boot_volume_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the boot volume used to boot the instance.
+        """
+        boot_volume_size_in_gbs: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        """
+        boot_volume_vpus_per_gb: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
+        """
+        image_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the image used to boot the instance.
+        """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
+        """
+elif False:
+    TargetAssetUserSpecSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TargetAssetUserSpecSourceDetailsArgs:
@@ -4358,6 +5670,14 @@ class TargetAssetUserSpecSourceDetailsArgs:
         pulumi.set(self, "kms_key_id", value)
 
 
+if not MYPY:
+    class GetMigrationAssetsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMigrationAssetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMigrationAssetsFilterArgs:
     def __init__(__self__, *,
@@ -4396,6 +5716,14 @@ class GetMigrationAssetsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMigrationPlanAvailableShapesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMigrationPlanAvailableShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMigrationPlanAvailableShapesFilterArgs:
@@ -4436,6 +5764,14 @@ class GetMigrationPlanAvailableShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMigrationPlansFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMigrationPlansFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMigrationPlansFilterArgs:
     def __init__(__self__, *,
@@ -4474,6 +5810,14 @@ class GetMigrationPlansFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMigrationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMigrationsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMigrationsFilterArgs:
@@ -4514,6 +5858,14 @@ class GetMigrationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetReplicationSchedulesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetReplicationSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetReplicationSchedulesFilterArgs:
     def __init__(__self__, *,
@@ -4552,6 +5904,17 @@ class GetReplicationSchedulesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetTargetAssetsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetTargetAssetsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetTargetAssetsFilterArgs:

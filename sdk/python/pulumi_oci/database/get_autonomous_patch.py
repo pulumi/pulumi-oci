@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -210,9 +215,6 @@ def get_autonomous_patch(autonomous_patch_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'),
         year=pulumi.get(__ret__, 'year'))
-
-
-@_utilities.lift_output_func(get_autonomous_patch)
 def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousPatchResult]:
     """
@@ -232,4 +234,20 @@ def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[str]]
 
     :param str autonomous_patch_id: The autonomous patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousPatchId'] = autonomous_patch_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousPatch:getAutonomousPatch', __args__, opts=opts, typ=GetAutonomousPatchResult)
+    return __ret__.apply(lambda __response__: GetAutonomousPatchResult(
+        autonomous_patch_id=pulumi.get(__response__, 'autonomous_patch_id'),
+        autonomous_patch_type=pulumi.get(__response__, 'autonomous_patch_type'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        patch_model=pulumi.get(__response__, 'patch_model'),
+        quarter=pulumi.get(__response__, 'quarter'),
+        state=pulumi.get(__response__, 'state'),
+        time_released=pulumi.get(__response__, 'time_released'),
+        type=pulumi.get(__response__, 'type'),
+        version=pulumi.get(__response__, 'version'),
+        year=pulumi.get(__response__, 'year')))

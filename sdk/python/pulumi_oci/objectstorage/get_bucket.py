@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -358,9 +363,6 @@ def get_bucket(name: Optional[str] = None,
         storage_tier=pulumi.get(__ret__, 'storage_tier'),
         time_created=pulumi.get(__ret__, 'time_created'),
         versioning=pulumi.get(__ret__, 'versioning'))
-
-
-@_utilities.lift_output_func(get_bucket)
 def get_bucket_output(name: Optional[pulumi.Input[str]] = None,
                       namespace: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBucketResult]:
@@ -383,4 +385,32 @@ def get_bucket_output(name: Optional[pulumi.Input[str]] = None,
     :param str name: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
     :param str namespace: The Object Storage namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getBucket:getBucket', __args__, opts=opts, typ=GetBucketResult)
+    return __ret__.apply(lambda __response__: GetBucketResult(
+        access_type=pulumi.get(__response__, 'access_type'),
+        approximate_count=pulumi.get(__response__, 'approximate_count'),
+        approximate_size=pulumi.get(__response__, 'approximate_size'),
+        auto_tiering=pulumi.get(__response__, 'auto_tiering'),
+        bucket_id=pulumi.get(__response__, 'bucket_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        etag=pulumi.get(__response__, 'etag'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_read_only=pulumi.get(__response__, 'is_read_only'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object_events_enabled=pulumi.get(__response__, 'object_events_enabled'),
+        object_lifecycle_policy_etag=pulumi.get(__response__, 'object_lifecycle_policy_etag'),
+        replication_enabled=pulumi.get(__response__, 'replication_enabled'),
+        retention_rules=pulumi.get(__response__, 'retention_rules'),
+        storage_tier=pulumi.get(__response__, 'storage_tier'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        versioning=pulumi.get(__response__, 'versioning')))

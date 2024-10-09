@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -149,9 +154,6 @@ def get_compute_global_image_capability_schemas_version(compute_global_image_cap
         name=pulumi.get(__ret__, 'name'),
         schema_data=pulumi.get(__ret__, 'schema_data'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_compute_global_image_capability_schemas_version)
 def get_compute_global_image_capability_schemas_version_output(compute_global_image_capability_schema_id: Optional[pulumi.Input[str]] = None,
                                                                compute_global_image_capability_schema_version_name: Optional[pulumi.Input[str]] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasVersionResult]:
@@ -174,4 +176,16 @@ def get_compute_global_image_capability_schemas_version_output(compute_global_im
     :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
     :param str compute_global_image_capability_schema_version_name: The name of the compute global image capability schema version
     """
-    ...
+    __args__ = dict()
+    __args__['computeGlobalImageCapabilitySchemaId'] = compute_global_image_capability_schema_id
+    __args__['computeGlobalImageCapabilitySchemaVersionName'] = compute_global_image_capability_schema_version_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion', __args__, opts=opts, typ=GetComputeGlobalImageCapabilitySchemasVersionResult)
+    return __ret__.apply(lambda __response__: GetComputeGlobalImageCapabilitySchemasVersionResult(
+        compute_global_image_capability_schema_id=pulumi.get(__response__, 'compute_global_image_capability_schema_id'),
+        compute_global_image_capability_schema_version_name=pulumi.get(__response__, 'compute_global_image_capability_schema_version_name'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        schema_data=pulumi.get(__response__, 'schema_data'),
+        time_created=pulumi.get(__response__, 'time_created')))

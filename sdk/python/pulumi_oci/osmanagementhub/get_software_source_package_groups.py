@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -170,9 +175,6 @@ def get_software_source_package_groups(compartment_id: Optional[str] = None,
         name_contains=pulumi.get(__ret__, 'name_contains'),
         package_group_collections=pulumi.get(__ret__, 'package_group_collections'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
-
-
-@_utilities.lift_output_func(get_software_source_package_groups)
 def get_software_source_package_groups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourcePackageGroupsFilterArgs', 'GetSoftwareSourcePackageGroupsFilterArgsDict']]]]] = None,
                                               group_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -206,4 +208,21 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
     :param str name_contains: A filter to return resources that may partially match the name given.
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['groupTypes'] = group_types
+    __args__['name'] = name
+    __args__['nameContains'] = name_contains
+    __args__['softwareSourceId'] = software_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups', __args__, opts=opts, typ=GetSoftwareSourcePackageGroupsResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourcePackageGroupsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        group_types=pulumi.get(__response__, 'group_types'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        package_group_collections=pulumi.get(__response__, 'package_group_collections'),
+        software_source_id=pulumi.get(__response__, 'software_source_id')))

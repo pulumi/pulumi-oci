@@ -4,16 +4,34 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetCommitmentsFilterArgs',
+    'GetCommitmentsFilterArgsDict',
     'GetRatecardsFilterArgs',
+    'GetRatecardsFilterArgsDict',
     'GetSubscriptionsFilterArgs',
+    'GetSubscriptionsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetCommitmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCommitmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetCommitmentsFilterArgs:
@@ -53,6 +71,17 @@ class GetCommitmentsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRatecardsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRatecardsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRatecardsFilterArgs:
@@ -98,6 +127,17 @@ class GetRatecardsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSubscriptionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSubscriptionsFilterArgs:

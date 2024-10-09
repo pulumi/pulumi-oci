@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -909,9 +914,6 @@ def get_sddc(sddc_id: Optional[str] = None,
         vsphere_upgrade_objects=pulumi.get(__ret__, 'vsphere_upgrade_objects'),
         vsphere_vlan_id=pulumi.get(__ret__, 'vsphere_vlan_id'),
         workload_network_cidr=pulumi.get(__ret__, 'workload_network_cidr'))
-
-
-@_utilities.lift_output_func(get_sddc)
 def get_sddc_output(sddc_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSddcResult]:
     """
@@ -931,4 +933,72 @@ def get_sddc_output(sddc_id: Optional[pulumi.Input[str]] = None,
 
     :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
     """
-    ...
+    __args__ = dict()
+    __args__['sddcId'] = sddc_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSddc:getSddc', __args__, opts=opts, typ=GetSddcResult)
+    return __ret__.apply(lambda __response__: GetSddcResult(
+        actual_esxi_hosts_count=pulumi.get(__response__, 'actual_esxi_hosts_count'),
+        capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
+        clusters_count=pulumi.get(__response__, 'clusters_count'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_availability_domain=pulumi.get(__response__, 'compute_availability_domain'),
+        datastores=pulumi.get(__response__, 'datastores'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        esxi_hosts_count=pulumi.get(__response__, 'esxi_hosts_count'),
+        esxi_software_version=pulumi.get(__response__, 'esxi_software_version'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hcx_action=pulumi.get(__response__, 'hcx_action'),
+        hcx_fqdn=pulumi.get(__response__, 'hcx_fqdn'),
+        hcx_initial_password=pulumi.get(__response__, 'hcx_initial_password'),
+        hcx_mode=pulumi.get(__response__, 'hcx_mode'),
+        hcx_on_prem_key=pulumi.get(__response__, 'hcx_on_prem_key'),
+        hcx_on_prem_licenses=pulumi.get(__response__, 'hcx_on_prem_licenses'),
+        hcx_private_ip_id=pulumi.get(__response__, 'hcx_private_ip_id'),
+        hcx_vlan_id=pulumi.get(__response__, 'hcx_vlan_id'),
+        id=pulumi.get(__response__, 'id'),
+        initial_configurations=pulumi.get(__response__, 'initial_configurations'),
+        initial_host_ocpu_count=pulumi.get(__response__, 'initial_host_ocpu_count'),
+        initial_host_shape_name=pulumi.get(__response__, 'initial_host_shape_name'),
+        initial_sku=pulumi.get(__response__, 'initial_sku'),
+        instance_display_name_prefix=pulumi.get(__response__, 'instance_display_name_prefix'),
+        is_hcx_enabled=pulumi.get(__response__, 'is_hcx_enabled'),
+        is_hcx_enterprise_enabled=pulumi.get(__response__, 'is_hcx_enterprise_enabled'),
+        is_hcx_pending_downgrade=pulumi.get(__response__, 'is_hcx_pending_downgrade'),
+        is_shielded_instance_enabled=pulumi.get(__response__, 'is_shielded_instance_enabled'),
+        is_single_host_sddc=pulumi.get(__response__, 'is_single_host_sddc'),
+        nsx_edge_uplink1vlan_id=pulumi.get(__response__, 'nsx_edge_uplink1vlan_id'),
+        nsx_edge_uplink2vlan_id=pulumi.get(__response__, 'nsx_edge_uplink2vlan_id'),
+        nsx_edge_uplink_ip_id=pulumi.get(__response__, 'nsx_edge_uplink_ip_id'),
+        nsx_edge_vtep_vlan_id=pulumi.get(__response__, 'nsx_edge_vtep_vlan_id'),
+        nsx_manager_fqdn=pulumi.get(__response__, 'nsx_manager_fqdn'),
+        nsx_manager_initial_password=pulumi.get(__response__, 'nsx_manager_initial_password'),
+        nsx_manager_private_ip_id=pulumi.get(__response__, 'nsx_manager_private_ip_id'),
+        nsx_manager_username=pulumi.get(__response__, 'nsx_manager_username'),
+        nsx_overlay_segment_name=pulumi.get(__response__, 'nsx_overlay_segment_name'),
+        nsx_vtep_vlan_id=pulumi.get(__response__, 'nsx_vtep_vlan_id'),
+        provisioning_subnet_id=pulumi.get(__response__, 'provisioning_subnet_id'),
+        provisioning_vlan_id=pulumi.get(__response__, 'provisioning_vlan_id'),
+        refresh_hcx_license_status=pulumi.get(__response__, 'refresh_hcx_license_status'),
+        replication_vlan_id=pulumi.get(__response__, 'replication_vlan_id'),
+        reserving_hcx_on_premise_license_keys=pulumi.get(__response__, 'reserving_hcx_on_premise_license_keys'),
+        sddc_id=pulumi.get(__response__, 'sddc_id'),
+        ssh_authorized_keys=pulumi.get(__response__, 'ssh_authorized_keys'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_hcx_billing_cycle_end=pulumi.get(__response__, 'time_hcx_billing_cycle_end'),
+        time_hcx_license_status_updated=pulumi.get(__response__, 'time_hcx_license_status_updated'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        upgrade_licenses=pulumi.get(__response__, 'upgrade_licenses'),
+        vcenter_fqdn=pulumi.get(__response__, 'vcenter_fqdn'),
+        vcenter_initial_password=pulumi.get(__response__, 'vcenter_initial_password'),
+        vcenter_private_ip_id=pulumi.get(__response__, 'vcenter_private_ip_id'),
+        vcenter_username=pulumi.get(__response__, 'vcenter_username'),
+        vmotion_vlan_id=pulumi.get(__response__, 'vmotion_vlan_id'),
+        vmware_software_version=pulumi.get(__response__, 'vmware_software_version'),
+        vsan_vlan_id=pulumi.get(__response__, 'vsan_vlan_id'),
+        vsphere_upgrade_guide=pulumi.get(__response__, 'vsphere_upgrade_guide'),
+        vsphere_upgrade_objects=pulumi.get(__response__, 'vsphere_upgrade_objects'),
+        vsphere_vlan_id=pulumi.get(__response__, 'vsphere_vlan_id'),
+        workload_network_cidr=pulumi.get(__response__, 'workload_network_cidr')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -165,9 +170,6 @@ def get_access_policies(compartment_id: Optional[str] = None,
         mesh_id=pulumi.get(__ret__, 'mesh_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_access_policies)
 def get_access_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessPoliciesFilterArgs', 'GetAccessPoliciesFilterArgsDict']]]]] = None,
                                id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -200,4 +202,20 @@ def get_access_policies_output(compartment_id: Optional[pulumi.Input[str]] = Non
     :param str name: A filter to return only resources that match the entire name given.
     :param str state: A filter to return only resources that match the life cycle state given.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['meshId'] = mesh_id
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceMesh/getAccessPolicies:getAccessPolicies', __args__, opts=opts, typ=GetAccessPoliciesResult)
+    return __ret__.apply(lambda __response__: GetAccessPoliciesResult(
+        access_policy_collections=pulumi.get(__response__, 'access_policy_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        mesh_id=pulumi.get(__response__, 'mesh_id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

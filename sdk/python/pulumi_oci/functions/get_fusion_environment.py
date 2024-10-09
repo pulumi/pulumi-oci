@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -442,9 +447,6 @@ def get_fusion_environment(fusion_environment_id: Optional[str] = None,
         time_upcoming_maintenance=pulumi.get(__ret__, 'time_upcoming_maintenance'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_fusion_environment)
 def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentResult]:
     """
@@ -464,4 +466,38 @@ def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[s
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
     """
-    ...
+    __args__ = dict()
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironment:getFusionEnvironment', __args__, opts=opts, typ=GetFusionEnvironmentResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentResult(
+        additional_language_packs=pulumi.get(__response__, 'additional_language_packs'),
+        applied_patch_bundles=pulumi.get(__response__, 'applied_patch_bundles'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        create_fusion_environment_admin_user_details=pulumi.get(__response__, 'create_fusion_environment_admin_user_details'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns_prefix=pulumi.get(__response__, 'dns_prefix'),
+        domain_id=pulumi.get(__response__, 'domain_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        fusion_environment_family_id=pulumi.get(__response__, 'fusion_environment_family_id'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        fusion_environment_type=pulumi.get(__response__, 'fusion_environment_type'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_domain_url=pulumi.get(__response__, 'idcs_domain_url'),
+        is_break_glass_enabled=pulumi.get(__response__, 'is_break_glass_enabled'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        kms_key_infos=pulumi.get(__response__, 'kms_key_infos'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        lockbox_id=pulumi.get(__response__, 'lockbox_id'),
+        maintenance_policies=pulumi.get(__response__, 'maintenance_policies'),
+        public_url=pulumi.get(__response__, 'public_url'),
+        refreshes=pulumi.get(__response__, 'refreshes'),
+        rules=pulumi.get(__response__, 'rules'),
+        state=pulumi.get(__response__, 'state'),
+        subscription_ids=pulumi.get(__response__, 'subscription_ids'),
+        system_name=pulumi.get(__response__, 'system_name'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_upcoming_maintenance=pulumi.get(__response__, 'time_upcoming_maintenance'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version')))

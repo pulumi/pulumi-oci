@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -159,9 +164,6 @@ def get_repository_mirror_record(mirror_record_type: Optional[str] = None,
         time_enqueued=pulumi.get(__ret__, 'time_enqueued'),
         time_started=pulumi.get(__ret__, 'time_started'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-
-
-@_utilities.lift_output_func(get_repository_mirror_record)
 def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Input[str]] = None,
                                         repository_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryMirrorRecordResult]:
@@ -184,4 +186,17 @@ def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Inpu
     :param str mirror_record_type: The field of mirror record type. Only one mirror record type can be provided: current - The current mirror record. lastSuccessful - The last successful mirror record.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['mirrorRecordType'] = mirror_record_type
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord', __args__, opts=opts, typ=GetRepositoryMirrorRecordResult)
+    return __ret__.apply(lambda __response__: GetRepositoryMirrorRecordResult(
+        id=pulumi.get(__response__, 'id'),
+        mirror_record_type=pulumi.get(__response__, 'mirror_record_type'),
+        mirror_status=pulumi.get(__response__, 'mirror_status'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        time_ended=pulumi.get(__response__, 'time_ended'),
+        time_enqueued=pulumi.get(__response__, 'time_enqueued'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        work_request_id=pulumi.get(__response__, 'work_request_id')))

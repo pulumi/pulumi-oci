@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -119,9 +124,6 @@ def get_ssl_cipher_suite(load_balancer_id: Optional[str] = None,
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_ssl_cipher_suite)
 def get_ssl_cipher_suite_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
                                 name: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSslCipherSuiteResult]:
@@ -146,4 +148,14 @@ def get_ssl_cipher_suite_output(load_balancer_id: Optional[pulumi.Input[str]] = 
            
            example: `example_cipher_suite`
     """
-    ...
+    __args__ = dict()
+    __args__['loadBalancerId'] = load_balancer_id
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite', __args__, opts=opts, typ=GetSslCipherSuiteResult)
+    return __ret__.apply(lambda __response__: GetSslCipherSuiteResult(
+        ciphers=pulumi.get(__response__, 'ciphers'),
+        id=pulumi.get(__response__, 'id'),
+        load_balancer_id=pulumi.get(__response__, 'load_balancer_id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,22 +4,55 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'DedicatedAiClusterCapacityArgs',
+    'DedicatedAiClusterCapacityArgsDict',
     'EndpointContentModerationConfigArgs',
+    'EndpointContentModerationConfigArgsDict',
     'ModelFineTuneDetailsArgs',
+    'ModelFineTuneDetailsArgsDict',
     'ModelFineTuneDetailsTrainingConfigArgs',
+    'ModelFineTuneDetailsTrainingConfigArgsDict',
     'ModelFineTuneDetailsTrainingDatasetArgs',
+    'ModelFineTuneDetailsTrainingDatasetArgsDict',
     'ModelModelMetricArgs',
+    'ModelModelMetricArgsDict',
     'GetDedicatedAiClustersFilterArgs',
+    'GetDedicatedAiClustersFilterArgsDict',
     'GetEndpointsFilterArgs',
+    'GetEndpointsFilterArgsDict',
     'GetModelsFilterArgs',
+    'GetModelsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class DedicatedAiClusterCapacityArgsDict(TypedDict):
+        capacity_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the dedicated AI cluster capacity.
+        """
+        total_endpoint_capacity: NotRequired[pulumi.Input[int]]
+        """
+        The total number of endpoints that can be hosted on this dedicated AI cluster.
+        """
+        used_endpoint_capacity: NotRequired[pulumi.Input[int]]
+        """
+        The number of endpoints hosted on this dedicated AI cluster.
+        """
+elif False:
+    DedicatedAiClusterCapacityArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DedicatedAiClusterCapacityArgs:
@@ -76,6 +109,15 @@ class DedicatedAiClusterCapacityArgs:
         pulumi.set(self, "used_endpoint_capacity", value)
 
 
+if not MYPY:
+    class EndpointContentModerationConfigArgsDict(TypedDict):
+        is_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Whether to enable the content moderation feature.
+        """
+elif False:
+    EndpointContentModerationConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class EndpointContentModerationConfigArgs:
     def __init__(__self__, *,
@@ -97,6 +139,25 @@ class EndpointContentModerationConfigArgs:
     def is_enabled(self, value: pulumi.Input[bool]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class ModelFineTuneDetailsArgsDict(TypedDict):
+        dedicated_ai_cluster_id: pulumi.Input[str]
+        """
+        The OCID of the dedicated AI cluster this fine-tuning runs on.
+        """
+        training_dataset: pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgsDict']
+        """
+        The dataset used to fine-tune the model. 
+
+        Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
+        """
+        training_config: NotRequired[pulumi.Input['ModelFineTuneDetailsTrainingConfigArgsDict']]
+        """
+        The fine-tuning method and hyperparameters used for fine-tuning a custom model.
+        """
+elif False:
+    ModelFineTuneDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelFineTuneDetailsArgs:
@@ -154,6 +215,57 @@ class ModelFineTuneDetailsArgs:
     def training_config(self, value: Optional[pulumi.Input['ModelFineTuneDetailsTrainingConfigArgs']]):
         pulumi.set(self, "training_config", value)
 
+
+if not MYPY:
+    class ModelFineTuneDetailsTrainingConfigArgsDict(TypedDict):
+        training_config_type: pulumi.Input[str]
+        """
+        The fine-tuning method for training a custom model.
+        """
+        early_stopping_patience: NotRequired[pulumi.Input[int]]
+        """
+        Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
+        """
+        early_stopping_threshold: NotRequired[pulumi.Input[float]]
+        """
+        How much the loss must improve to prevent early stopping.
+        """
+        learning_rate: NotRequired[pulumi.Input[float]]
+        """
+        The initial learning rate to be used during training
+        """
+        log_model_metrics_interval_in_steps: NotRequired[pulumi.Input[int]]
+        """
+        Determines how frequently to log model metrics. 
+
+        Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
+        """
+        lora_alpha: NotRequired[pulumi.Input[int]]
+        """
+        This parameter represents the scaling factor for the weight matrices in LoRA.
+        """
+        lora_dropout: NotRequired[pulumi.Input[float]]
+        """
+        This parameter indicates the dropout probability for LoRA layers.
+        """
+        lora_r: NotRequired[pulumi.Input[int]]
+        """
+        This parameter represents the LoRA rank of the update matrices.
+        """
+        num_of_last_layers: NotRequired[pulumi.Input[int]]
+        """
+        The number of last layers to be fine-tuned.
+        """
+        total_training_epochs: NotRequired[pulumi.Input[int]]
+        """
+        The maximum number of training epochs to run for.
+        """
+        training_batch_size: NotRequired[pulumi.Input[int]]
+        """
+        The batch size used during training.
+        """
+elif False:
+    ModelFineTuneDetailsTrainingConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelFineTuneDetailsTrainingConfigArgs:
@@ -341,6 +453,27 @@ class ModelFineTuneDetailsTrainingConfigArgs:
         pulumi.set(self, "training_batch_size", value)
 
 
+if not MYPY:
+    class ModelFineTuneDetailsTrainingDatasetArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        The Object Storage bucket name.
+        """
+        dataset_type: pulumi.Input[str]
+        """
+        The type of the data asset.
+        """
+        namespace: pulumi.Input[str]
+        """
+        The Object Storage namespace.
+        """
+        object: pulumi.Input[str]
+        """
+        The Object Storage object name.
+        """
+elif False:
+    ModelFineTuneDetailsTrainingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelFineTuneDetailsTrainingDatasetArgs:
     def __init__(__self__, *,
@@ -408,6 +541,23 @@ class ModelFineTuneDetailsTrainingDatasetArgs:
         pulumi.set(self, "object", value)
 
 
+if not MYPY:
+    class ModelModelMetricArgsDict(TypedDict):
+        final_accuracy: NotRequired[pulumi.Input[float]]
+        """
+        Fine-tuned model accuracy.
+        """
+        final_loss: NotRequired[pulumi.Input[float]]
+        """
+        Fine-tuned model loss.
+        """
+        model_metrics_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the model metrics. Each type of model can expect a different set of model metrics.
+        """
+elif False:
+    ModelModelMetricArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelModelMetricArgs:
     def __init__(__self__, *,
@@ -463,6 +613,14 @@ class ModelModelMetricArgs:
         pulumi.set(self, "model_metrics_type", value)
 
 
+if not MYPY:
+    class GetDedicatedAiClustersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDedicatedAiClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDedicatedAiClustersFilterArgs:
     def __init__(__self__, *,
@@ -502,6 +660,14 @@ class GetDedicatedAiClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetEndpointsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetEndpointsFilterArgs:
     def __init__(__self__, *,
@@ -540,6 +706,14 @@ class GetEndpointsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetModelsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetModelsFilterArgs:

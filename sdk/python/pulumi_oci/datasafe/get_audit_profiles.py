@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -268,9 +273,6 @@ def get_audit_profiles(access_level: Optional[str] = None,
         is_paid_usage_enabled=pulumi.get(__ret__, 'is_paid_usage_enabled'),
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'))
-
-
-@_utilities.lift_output_func(get_audit_profiles)
 def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                               audit_collected_volume_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                               audit_profile_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -332,4 +334,31 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[str]]
     :param str state: A optional filter to return only resources that match the specified lifecycle state.
     :param str target_id: A filter to return only items related to a specific target OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['auditCollectedVolumeGreaterThanOrEqualTo'] = audit_collected_volume_greater_than_or_equal_to
+    __args__['auditProfileId'] = audit_profile_id
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isOverrideGlobalRetentionSetting'] = is_override_global_retention_setting
+    __args__['isPaidUsageEnabled'] = is_paid_usage_enabled
+    __args__['state'] = state
+    __args__['targetId'] = target_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfiles:getAuditProfiles', __args__, opts=opts, typ=GetAuditProfilesResult)
+    return __ret__.apply(lambda __response__: GetAuditProfilesResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        audit_collected_volume_greater_than_or_equal_to=pulumi.get(__response__, 'audit_collected_volume_greater_than_or_equal_to'),
+        audit_profile_collections=pulumi.get(__response__, 'audit_profile_collections'),
+        audit_profile_id=pulumi.get(__response__, 'audit_profile_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_override_global_retention_setting=pulumi.get(__response__, 'is_override_global_retention_setting'),
+        is_paid_usage_enabled=pulumi.get(__response__, 'is_paid_usage_enabled'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id')))

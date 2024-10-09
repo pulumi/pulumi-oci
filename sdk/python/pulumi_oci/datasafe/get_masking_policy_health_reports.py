@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -220,9 +225,6 @@ def get_masking_policy_health_reports(access_level: Optional[str] = None,
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'))
-
-
-@_utilities.lift_output_func(get_masking_policy_health_reports)
 def get_masking_policy_health_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                              compartment_id: Optional[pulumi.Input[str]] = None,
                                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -264,4 +266,27 @@ def get_masking_policy_health_reports_output(access_level: Optional[pulumi.Input
     :param str state: A filter to return only the resources that match the specified lifecycle states.
     :param str target_id: A filter to return only items related to a specific target OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['maskingPolicyHealthReportId'] = masking_policy_health_report_id
+    __args__['maskingPolicyId'] = masking_policy_id
+    __args__['state'] = state
+    __args__['targetId'] = target_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports', __args__, opts=opts, typ=GetMaskingPolicyHealthReportsResult)
+    return __ret__.apply(lambda __response__: GetMaskingPolicyHealthReportsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        masking_policy_health_report_collections=pulumi.get(__response__, 'masking_policy_health_report_collections'),
+        masking_policy_health_report_id=pulumi.get(__response__, 'masking_policy_health_report_id'),
+        masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -179,9 +184,6 @@ def get_result(apm_domain_id: Optional[str] = None,
         result_data_sets=pulumi.get(__ret__, 'result_data_sets'),
         result_type=pulumi.get(__ret__, 'result_type'),
         vantage_point=pulumi.get(__ret__, 'vantage_point'))
-
-
-@_utilities.lift_output_func(get_result)
 def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       execution_time: Optional[pulumi.Input[str]] = None,
                       monitor_id: Optional[pulumi.Input[str]] = None,
@@ -216,4 +218,21 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str result_type: The result type: har, screenshot, log, or network.
     :param str vantage_point: The vantagePoint name.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['executionTime'] = execution_time
+    __args__['monitorId'] = monitor_id
+    __args__['resultContentType'] = result_content_type
+    __args__['resultType'] = result_type
+    __args__['vantagePoint'] = vantage_point
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getResult:getResult', __args__, opts=opts, typ=GetResultResult)
+    return __ret__.apply(lambda __response__: GetResultResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        execution_time=pulumi.get(__response__, 'execution_time'),
+        id=pulumi.get(__response__, 'id'),
+        monitor_id=pulumi.get(__response__, 'monitor_id'),
+        result_content_type=pulumi.get(__response__, 'result_content_type'),
+        result_data_sets=pulumi.get(__response__, 'result_data_sets'),
+        result_type=pulumi.get(__response__, 'result_type'),
+        vantage_point=pulumi.get(__response__, 'vantage_point')))

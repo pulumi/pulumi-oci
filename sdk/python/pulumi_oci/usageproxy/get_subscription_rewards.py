@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -127,9 +132,6 @@ def get_subscription_rewards(filters: Optional[Sequence[Union['GetSubscriptionRe
         reward_collections=pulumi.get(__ret__, 'reward_collections'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
-
-
-@_utilities.lift_output_func(get_subscription_rewards)
 def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionRewardsFilterArgs', 'GetSubscriptionRewardsFilterArgsDict']]]]] = None,
                                     subscription_id: Optional[pulumi.Input[str]] = None,
                                     tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -153,4 +155,15 @@ def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequ
     :param str subscription_id: The subscription ID for which rewards information is requested for.
     :param str tenancy_id: The OCID of the tenancy.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['subscriptionId'] = subscription_id
+    __args__['tenancyId'] = tenancy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards', __args__, opts=opts, typ=GetSubscriptionRewardsResult)
+    return __ret__.apply(lambda __response__: GetSubscriptionRewardsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        reward_collections=pulumi.get(__response__, 'reward_collections'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id')))

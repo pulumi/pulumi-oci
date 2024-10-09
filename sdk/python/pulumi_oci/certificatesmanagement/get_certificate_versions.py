@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -128,9 +133,6 @@ def get_certificate_versions(certificate_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         version_number=pulumi.get(__ret__, 'version_number'))
-
-
-@_utilities.lift_output_func(get_certificate_versions)
 def get_certificate_versions_output(certificate_id: Optional[pulumi.Input[str]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificateVersionsFilterArgs', 'GetCertificateVersionsFilterArgsDict']]]]] = None,
                                     version_number: Optional[pulumi.Input[Optional[str]]] = None,
@@ -155,4 +157,15 @@ def get_certificate_versions_output(certificate_id: Optional[pulumi.Input[str]] 
     :param str certificate_id: The OCID of the certificate.
     :param str version_number: A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
     """
-    ...
+    __args__ = dict()
+    __args__['certificateId'] = certificate_id
+    __args__['filters'] = filters
+    __args__['versionNumber'] = version_number
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificateVersions:getCertificateVersions', __args__, opts=opts, typ=GetCertificateVersionsResult)
+    return __ret__.apply(lambda __response__: GetCertificateVersionsResult(
+        certificate_id=pulumi.get(__response__, 'certificate_id'),
+        certificate_version_collections=pulumi.get(__response__, 'certificate_version_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        version_number=pulumi.get(__response__, 'version_number')))

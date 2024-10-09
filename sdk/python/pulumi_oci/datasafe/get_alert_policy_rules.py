@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -108,9 +113,6 @@ def get_alert_policy_rules(alert_policy_id: Optional[str] = None,
         alert_policy_rule_collections=pulumi.get(__ret__, 'alert_policy_rule_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_alert_policy_rules)
 def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlertPolicyRulesFilterArgs', 'GetAlertPolicyRulesFilterArgsDict']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertPolicyRulesResult]:
@@ -132,4 +134,13 @@ def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[str]] =
 
     :param str alert_policy_id: The OCID of the alert policy.
     """
-    ...
+    __args__ = dict()
+    __args__['alertPolicyId'] = alert_policy_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAlertPolicyRules:getAlertPolicyRules', __args__, opts=opts, typ=GetAlertPolicyRulesResult)
+    return __ret__.apply(lambda __response__: GetAlertPolicyRulesResult(
+        alert_policy_id=pulumi.get(__response__, 'alert_policy_id'),
+        alert_policy_rule_collections=pulumi.get(__response__, 'alert_policy_rule_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

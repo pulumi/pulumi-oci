@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -163,9 +168,6 @@ def get_drg_route_tables(display_name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         import_drg_route_distribution_id=pulumi.get(__ret__, 'import_drg_route_distribution_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_drg_route_tables)
 def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 drg_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteTablesFilterArgs', 'GetDrgRouteTablesFilterArgsDict']]]]] = None,
@@ -197,4 +199,19 @@ def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str
     :param str import_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution.
     :param str state: A filter that only returns matches for the specified lifecycle state. The value is case insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['drgId'] = drg_id
+    __args__['filters'] = filters
+    __args__['importDrgRouteDistributionId'] = import_drg_route_distribution_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgRouteTables:getDrgRouteTables', __args__, opts=opts, typ=GetDrgRouteTablesResult)
+    return __ret__.apply(lambda __response__: GetDrgRouteTablesResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        drg_id=pulumi.get(__response__, 'drg_id'),
+        drg_route_tables=pulumi.get(__response__, 'drg_route_tables'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        import_drg_route_distribution_id=pulumi.get(__response__, 'import_drg_route_distribution_id'),
+        state=pulumi.get(__response__, 'state')))

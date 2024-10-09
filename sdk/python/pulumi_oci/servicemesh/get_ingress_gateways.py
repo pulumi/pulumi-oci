@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -165,9 +170,6 @@ def get_ingress_gateways(compartment_id: Optional[str] = None,
         mesh_id=pulumi.get(__ret__, 'mesh_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_ingress_gateways)
 def get_ingress_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIngressGatewaysFilterArgs', 'GetIngressGatewaysFilterArgsDict']]]]] = None,
                                 id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -200,4 +202,20 @@ def get_ingress_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
     :param str name: A filter to return only resources that match the entire name given.
     :param str state: A filter to return only resources that match the life cycle state given.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['meshId'] = mesh_id
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceMesh/getIngressGateways:getIngressGateways', __args__, opts=opts, typ=GetIngressGatewaysResult)
+    return __ret__.apply(lambda __response__: GetIngressGatewaysResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ingress_gateway_collections=pulumi.get(__response__, 'ingress_gateway_collections'),
+        mesh_id=pulumi.get(__response__, 'mesh_id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -108,9 +113,6 @@ def get_byoip_allocated_ranges(byoip_range_id: Optional[str] = None,
         byoip_range_id=pulumi.get(__ret__, 'byoip_range_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_byoip_allocated_ranges)
 def get_byoip_allocated_ranges_output(byoip_range_id: Optional[pulumi.Input[str]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetByoipAllocatedRangesFilterArgs', 'GetByoipAllocatedRangesFilterArgsDict']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetByoipAllocatedRangesResult]:
@@ -132,4 +134,13 @@ def get_byoip_allocated_ranges_output(byoip_range_id: Optional[pulumi.Input[str]
 
     :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
     """
-    ...
+    __args__ = dict()
+    __args__['byoipRangeId'] = byoip_range_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges', __args__, opts=opts, typ=GetByoipAllocatedRangesResult)
+    return __ret__.apply(lambda __response__: GetByoipAllocatedRangesResult(
+        byoip_allocated_range_collections=pulumi.get(__response__, 'byoip_allocated_range_collections'),
+        byoip_range_id=pulumi.get(__response__, 'byoip_range_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

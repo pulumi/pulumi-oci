@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -1662,9 +1667,6 @@ def get_domains_app(app_id: Optional[str] = None,
         urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps'),
         urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps'),
         user_roles=pulumi.get(__ret__, 'user_roles'))
-
-
-@_utilities.lift_output_func(get_domains_app)
 def get_domains_app_output(app_id: Optional[pulumi.Input[str]] = None,
                            attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                            attributes: Optional[pulumi.Input[Optional[str]]] = None,
@@ -1699,4 +1701,136 @@ def get_domains_app_output(app_id: Optional[pulumi.Input[str]] = None,
     :param str idcs_endpoint: The basic endpoint for the identity domain
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['appId'] = app_id
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsApp:getDomainsApp', __args__, opts=opts, typ=GetDomainsAppResult)
+    return __ret__.apply(lambda __response__: GetDomainsAppResult(
+        access_token_expiry=pulumi.get(__response__, 'access_token_expiry'),
+        accounts=pulumi.get(__response__, 'accounts'),
+        active=pulumi.get(__response__, 'active'),
+        admin_roles=pulumi.get(__response__, 'admin_roles'),
+        alias_apps=pulumi.get(__response__, 'alias_apps'),
+        all_url_schemes_allowed=pulumi.get(__response__, 'all_url_schemes_allowed'),
+        allow_access_control=pulumi.get(__response__, 'allow_access_control'),
+        allow_offline=pulumi.get(__response__, 'allow_offline'),
+        allowed_grants=pulumi.get(__response__, 'allowed_grants'),
+        allowed_operations=pulumi.get(__response__, 'allowed_operations'),
+        allowed_scopes=pulumi.get(__response__, 'allowed_scopes'),
+        allowed_tags=pulumi.get(__response__, 'allowed_tags'),
+        app_icon=pulumi.get(__response__, 'app_icon'),
+        app_id=pulumi.get(__response__, 'app_id'),
+        app_signon_policies=pulumi.get(__response__, 'app_signon_policies'),
+        app_thumbnail=pulumi.get(__response__, 'app_thumbnail'),
+        apps_network_perimeters=pulumi.get(__response__, 'apps_network_perimeters'),
+        as_opc_services=pulumi.get(__response__, 'as_opc_services'),
+        attr_rendering_metadatas=pulumi.get(__response__, 'attr_rendering_metadatas'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        audience=pulumi.get(__response__, 'audience'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        based_on_templates=pulumi.get(__response__, 'based_on_templates'),
+        bypass_consent=pulumi.get(__response__, 'bypass_consent'),
+        callback_service_url=pulumi.get(__response__, 'callback_service_url'),
+        certificates=pulumi.get(__response__, 'certificates'),
+        client_ip_checking=pulumi.get(__response__, 'client_ip_checking'),
+        client_secret=pulumi.get(__response__, 'client_secret'),
+        client_type=pulumi.get(__response__, 'client_type'),
+        cloud_control_properties=pulumi.get(__response__, 'cloud_control_properties'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        contact_email_address=pulumi.get(__response__, 'contact_email_address'),
+        delegated_service_names=pulumi.get(__response__, 'delegated_service_names'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        description=pulumi.get(__response__, 'description'),
+        disable_kmsi_token_authentication=pulumi.get(__response__, 'disable_kmsi_token_authentication'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        editable_attributes=pulumi.get(__response__, 'editable_attributes'),
+        error_page_url=pulumi.get(__response__, 'error_page_url'),
+        granted_app_roles=pulumi.get(__response__, 'granted_app_roles'),
+        grants=pulumi.get(__response__, 'grants'),
+        hashed_client_secret=pulumi.get(__response__, 'hashed_client_secret'),
+        home_page_url=pulumi.get(__response__, 'home_page_url'),
+        icon=pulumi.get(__response__, 'icon'),
+        id=pulumi.get(__response__, 'id'),
+        id_token_enc_algo=pulumi.get(__response__, 'id_token_enc_algo'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        identity_providers=pulumi.get(__response__, 'identity_providers'),
+        idp_policies=pulumi.get(__response__, 'idp_policies'),
+        infrastructure=pulumi.get(__response__, 'infrastructure'),
+        is_alias_app=pulumi.get(__response__, 'is_alias_app'),
+        is_database_service=pulumi.get(__response__, 'is_database_service'),
+        is_enterprise_app=pulumi.get(__response__, 'is_enterprise_app'),
+        is_form_fill=pulumi.get(__response__, 'is_form_fill'),
+        is_kerberos_realm=pulumi.get(__response__, 'is_kerberos_realm'),
+        is_login_target=pulumi.get(__response__, 'is_login_target'),
+        is_managed_app=pulumi.get(__response__, 'is_managed_app'),
+        is_mobile_target=pulumi.get(__response__, 'is_mobile_target'),
+        is_multicloud_service_app=pulumi.get(__response__, 'is_multicloud_service_app'),
+        is_oauth_client=pulumi.get(__response__, 'is_oauth_client'),
+        is_oauth_resource=pulumi.get(__response__, 'is_oauth_resource'),
+        is_obligation_capable=pulumi.get(__response__, 'is_obligation_capable'),
+        is_opc_service=pulumi.get(__response__, 'is_opc_service'),
+        is_radius_app=pulumi.get(__response__, 'is_radius_app'),
+        is_saml_service_provider=pulumi.get(__response__, 'is_saml_service_provider'),
+        is_unmanaged_app=pulumi.get(__response__, 'is_unmanaged_app'),
+        is_web_tier_policy=pulumi.get(__response__, 'is_web_tier_policy'),
+        landing_page_url=pulumi.get(__response__, 'landing_page_url'),
+        linking_callback_url=pulumi.get(__response__, 'linking_callback_url'),
+        login_mechanism=pulumi.get(__response__, 'login_mechanism'),
+        login_page_url=pulumi.get(__response__, 'login_page_url'),
+        logout_page_url=pulumi.get(__response__, 'logout_page_url'),
+        logout_uri=pulumi.get(__response__, 'logout_uri'),
+        metas=pulumi.get(__response__, 'metas'),
+        meter_as_opc_service=pulumi.get(__response__, 'meter_as_opc_service'),
+        migrated=pulumi.get(__response__, 'migrated'),
+        name=pulumi.get(__response__, 'name'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        post_logout_redirect_uris=pulumi.get(__response__, 'post_logout_redirect_uris'),
+        privacy_policy_url=pulumi.get(__response__, 'privacy_policy_url'),
+        product_logo_url=pulumi.get(__response__, 'product_logo_url'),
+        product_name=pulumi.get(__response__, 'product_name'),
+        protectable_secondary_audiences=pulumi.get(__response__, 'protectable_secondary_audiences'),
+        radius_policies=pulumi.get(__response__, 'radius_policies'),
+        ready_to_upgrade=pulumi.get(__response__, 'ready_to_upgrade'),
+        redirect_uris=pulumi.get(__response__, 'redirect_uris'),
+        refresh_token_expiry=pulumi.get(__response__, 'refresh_token_expiry'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        saml_service_providers=pulumi.get(__response__, 'saml_service_providers'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        scopes=pulumi.get(__response__, 'scopes'),
+        secondary_audiences=pulumi.get(__response__, 'secondary_audiences'),
+        service_params=pulumi.get(__response__, 'service_params'),
+        service_type_urn=pulumi.get(__response__, 'service_type_urn'),
+        service_type_version=pulumi.get(__response__, 'service_type_version'),
+        show_in_my_apps=pulumi.get(__response__, 'show_in_my_apps'),
+        signon_policies=pulumi.get(__response__, 'signon_policies'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        terms_of_service_url=pulumi.get(__response__, 'terms_of_service_url'),
+        terms_of_uses=pulumi.get(__response__, 'terms_of_uses'),
+        trust_policies=pulumi.get(__response__, 'trust_policies'),
+        trust_scope=pulumi.get(__response__, 'trust_scope'),
+        urnietfparamsscimschemasoracleidcsextension_oci_tags=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextension_oci_tags'),
+        urnietfparamsscimschemasoracleidcsextensiondbcs_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensiondbcs_apps'),
+        urnietfparamsscimschemasoracleidcsextensionenterprise_app_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionenterprise_app_apps'),
+        urnietfparamsscimschemasoracleidcsextensionform_fill_app_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionform_fill_app_apps'),
+        urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_templates=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_templates'),
+        urnietfparamsscimschemasoracleidcsextensionkerberos_realm_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionkerberos_realm_apps'),
+        urnietfparamsscimschemasoracleidcsextensionmanagedapp_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionmanagedapp_apps'),
+        urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_apps'),
+        urnietfparamsscimschemasoracleidcsextensionopc_service_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionopc_service_apps'),
+        urnietfparamsscimschemasoracleidcsextensionradius_app_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionradius_app_apps'),
+        urnietfparamsscimschemasoracleidcsextensionrequestable_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionrequestable_apps'),
+        urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps'),
+        urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps'),
+        user_roles=pulumi.get(__response__, 'user_roles')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -262,9 +267,6 @@ def get_database_insights(compartment_id: Optional[str] = None,
         opsi_private_endpoint_id=pulumi.get(__ret__, 'opsi_private_endpoint_id'),
         states=pulumi.get(__ret__, 'states'),
         statuses=pulumi.get(__ret__, 'statuses'))
-
-
-@_utilities.lift_output_func(get_database_insights)
 def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                  database_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -316,4 +318,32 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
     :param Sequence[str] states: Lifecycle states
     :param Sequence[str] statuses: Resource Status
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['databaseIds'] = database_ids
+    __args__['databaseTypes'] = database_types
+    __args__['enterpriseManagerBridgeId'] = enterprise_manager_bridge_id
+    __args__['exadataInsightId'] = exadata_insight_id
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['opsiPrivateEndpointId'] = opsi_private_endpoint_id
+    __args__['states'] = states
+    __args__['statuses'] = statuses
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getDatabaseInsights:getDatabaseInsights', __args__, opts=opts, typ=GetDatabaseInsightsResult)
+    return __ret__.apply(lambda __response__: GetDatabaseInsightsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        database_ids=pulumi.get(__response__, 'database_ids'),
+        database_insights_collections=pulumi.get(__response__, 'database_insights_collections'),
+        database_types=pulumi.get(__response__, 'database_types'),
+        enterprise_manager_bridge_id=pulumi.get(__response__, 'enterprise_manager_bridge_id'),
+        exadata_insight_id=pulumi.get(__response__, 'exadata_insight_id'),
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        opsi_private_endpoint_id=pulumi.get(__response__, 'opsi_private_endpoint_id'),
+        states=pulumi.get(__response__, 'states'),
+        statuses=pulumi.get(__response__, 'statuses')))

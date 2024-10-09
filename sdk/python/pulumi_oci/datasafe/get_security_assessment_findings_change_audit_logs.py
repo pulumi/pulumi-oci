@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -252,9 +257,6 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
         time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'),
         time_valid_until_greater_than_or_equal_to=pulumi.get(__ret__, 'time_valid_until_greater_than_or_equal_to'),
         time_valid_until_less_than=pulumi.get(__ret__, 'time_valid_until_less_than'))
-
-
-@_utilities.lift_output_func(get_security_assessment_findings_change_audit_logs)
 def get_security_assessment_findings_change_audit_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict']]]]] = None,
                                                               finding_key: Optional[pulumi.Input[Optional[str]]] = None,
                                                               finding_title: Optional[pulumi.Input[Optional[str]]] = None,
@@ -306,4 +308,31 @@ def get_security_assessment_findings_change_audit_logs_output(filters: Optional[
            
            **Example:** 2016-12-19T00:00:00.000Z
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['findingKey'] = finding_key
+    __args__['findingTitle'] = finding_title
+    __args__['isRiskDeferred'] = is_risk_deferred
+    __args__['modifiedBy'] = modified_by
+    __args__['securityAssessmentId'] = security_assessment_id
+    __args__['severity'] = severity
+    __args__['timeUpdatedGreaterThanOrEqualTo'] = time_updated_greater_than_or_equal_to
+    __args__['timeUpdatedLessThan'] = time_updated_less_than
+    __args__['timeValidUntilGreaterThanOrEqualTo'] = time_valid_until_greater_than_or_equal_to
+    __args__['timeValidUntilLessThan'] = time_valid_until_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs', __args__, opts=opts, typ=GetSecurityAssessmentFindingsChangeAuditLogsResult)
+    return __ret__.apply(lambda __response__: GetSecurityAssessmentFindingsChangeAuditLogsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        finding_key=pulumi.get(__response__, 'finding_key'),
+        finding_title=pulumi.get(__response__, 'finding_title'),
+        findings_change_audit_log_collections=pulumi.get(__response__, 'findings_change_audit_log_collections'),
+        id=pulumi.get(__response__, 'id'),
+        is_risk_deferred=pulumi.get(__response__, 'is_risk_deferred'),
+        modified_by=pulumi.get(__response__, 'modified_by'),
+        security_assessment_id=pulumi.get(__response__, 'security_assessment_id'),
+        severity=pulumi.get(__response__, 'severity'),
+        time_updated_greater_than_or_equal_to=pulumi.get(__response__, 'time_updated_greater_than_or_equal_to'),
+        time_updated_less_than=pulumi.get(__response__, 'time_updated_less_than'),
+        time_valid_until_greater_than_or_equal_to=pulumi.get(__response__, 'time_valid_until_greater_than_or_equal_to'),
+        time_valid_until_less_than=pulumi.get(__response__, 'time_valid_until_less_than')))

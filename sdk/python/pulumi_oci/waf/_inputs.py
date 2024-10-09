@@ -4,41 +4,130 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'AppFirewallPolicyActionArgs',
+    'AppFirewallPolicyActionArgsDict',
     'AppFirewallPolicyActionBodyArgs',
+    'AppFirewallPolicyActionBodyArgsDict',
     'AppFirewallPolicyActionHeaderArgs',
+    'AppFirewallPolicyActionHeaderArgsDict',
     'AppFirewallPolicyRequestAccessControlArgs',
+    'AppFirewallPolicyRequestAccessControlArgsDict',
     'AppFirewallPolicyRequestAccessControlRuleArgs',
+    'AppFirewallPolicyRequestAccessControlRuleArgsDict',
     'AppFirewallPolicyRequestProtectionArgs',
+    'AppFirewallPolicyRequestProtectionArgsDict',
     'AppFirewallPolicyRequestProtectionRuleArgs',
+    'AppFirewallPolicyRequestProtectionRuleArgsDict',
     'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs',
+    'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgsDict',
     'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs',
+    'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict',
     'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs',
+    'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgsDict',
     'AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs',
+    'AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgsDict',
     'AppFirewallPolicyRequestRateLimitingArgs',
+    'AppFirewallPolicyRequestRateLimitingArgsDict',
     'AppFirewallPolicyRequestRateLimitingRuleArgs',
+    'AppFirewallPolicyRequestRateLimitingRuleArgsDict',
     'AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs',
+    'AppFirewallPolicyRequestRateLimitingRuleConfigurationArgsDict',
     'AppFirewallPolicyResponseAccessControlArgs',
+    'AppFirewallPolicyResponseAccessControlArgsDict',
     'AppFirewallPolicyResponseAccessControlRuleArgs',
+    'AppFirewallPolicyResponseAccessControlRuleArgsDict',
     'AppFirewallPolicyResponseProtectionArgs',
+    'AppFirewallPolicyResponseProtectionArgsDict',
     'AppFirewallPolicyResponseProtectionRuleArgs',
+    'AppFirewallPolicyResponseProtectionRuleArgsDict',
     'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs',
+    'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgsDict',
     'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs',
+    'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict',
     'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs',
+    'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgsDict',
     'AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs',
+    'AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgsDict',
     'NetworkAddressListVcnAddressArgs',
+    'NetworkAddressListVcnAddressArgsDict',
     'GetFirewallsFilterArgs',
+    'GetFirewallsFilterArgsDict',
     'GetNetworkAddressListsFilterArgs',
+    'GetNetworkAddressListsFilterArgsDict',
     'GetProtectionCapabilitiesFilterArgs',
+    'GetProtectionCapabilitiesFilterArgsDict',
     'GetProtectionCapabilityGroupTagsFilterArgs',
+    'GetProtectionCapabilityGroupTagsFilterArgsDict',
     'GetWebAppFirewallPoliciesFilterArgs',
+    'GetWebAppFirewallPoliciesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class AppFirewallPolicyActionArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) Action name. Can be used to reference the action.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) 
+        * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+        * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+        * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
+        """
+        body: NotRequired[pulumi.Input['AppFirewallPolicyActionBodyArgsDict']]
+        """
+        (Updatable) Type of returned HTTP response body.
+        """
+        code: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Response code.
+
+        The following response codes are valid values for this property:
+        * 2xx
+
+        200 OK 201 Created 202 Accepted 206 Partial Content
+        * 3xx
+
+        300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+        * 4xx
+
+        400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+        * 5xx
+
+        500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+
+        Example: `200`
+        """
+        headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgsDict']]]]
+        """
+        (Updatable) Adds headers defined in this array for HTTP response.
+
+        Hop-by-hop headers are not allowed to be set:
+        * Connection
+        * Keep-Alive
+        * Proxy-Authenticate
+        * Proxy-Authorization
+        * TE
+        * Trailer
+        * Transfer-Encoding
+        * Upgrade
+        """
+elif False:
+    AppFirewallPolicyActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyActionArgs:
@@ -183,6 +272,20 @@ class AppFirewallPolicyActionArgs:
         pulumi.set(self, "headers", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyActionBodyArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of HttpResponseBody.
+        """
+        template: NotRequired[pulumi.Input[str]]
+        text: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Static response body text.
+        """
+elif False:
+    AppFirewallPolicyActionBodyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyActionBodyArgs:
     def __init__(__self__, *,
@@ -233,6 +336,19 @@ class AppFirewallPolicyActionBodyArgs:
         pulumi.set(self, "text", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyActionHeaderArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the header field.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The value of the header field.
+        """
+elif False:
+    AppFirewallPolicyActionHeaderArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyActionHeaderArgs:
     def __init__(__self__, *,
@@ -271,6 +387,21 @@ class AppFirewallPolicyActionHeaderArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyRequestAccessControlArgsDict(TypedDict):
+        default_action_name: pulumi.Input[str]
+        """
+        (Updatable) References an default Action to take if no AccessControlRule was matched. Allowed action types:
+        * **ALLOW** continues execution of other modules and their rules.
+        * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+        """
+        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgsDict']]]]
+        """
+        (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+        """
+elif False:
+    AppFirewallPolicyRequestAccessControlArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyRequestAccessControlArgs:
@@ -313,6 +444,32 @@ class AppFirewallPolicyRequestAccessControlArgs:
     def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyRequestAccessControlRuleArgsDict(TypedDict):
+        action_name: pulumi.Input[str]
+        """
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Rule name. Must be unique within the module.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of WebAppFirewallPolicyRule.
+        """
+        condition: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) An expression that determines whether or not the rule action should be executed.
+        """
+        condition_language: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The language used to parse condition from field `condition`. Available languages:
+        * **JMESPATH** an extended JMESPath language syntax.
+        """
+elif False:
+    AppFirewallPolicyRequestAccessControlRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyRequestAccessControlRuleArgs:
@@ -400,6 +557,32 @@ class AppFirewallPolicyRequestAccessControlRuleArgs:
         pulumi.set(self, "condition_language", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyRequestProtectionArgsDict(TypedDict):
+        body_inspection_size_limit_exceeded_action_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+
+        If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+
+        Allowed action types:
+        * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+        """
+        body_inspection_size_limit_in_bytes: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+
+        Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+
+        For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
+        """
+        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgsDict']]]]
+        """
+        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
+        """
+elif False:
+    AppFirewallPolicyRequestProtectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionArgs:
     def __init__(__self__, *,
@@ -472,6 +655,44 @@ class AppFirewallPolicyRequestProtectionArgs:
     def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyRequestProtectionRuleArgsDict(TypedDict):
+        action_name: pulumi.Input[str]
+        """
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Rule name. Must be unique within the module.
+        """
+        protection_capabilities: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgsDict']]]
+        """
+        (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of WebAppFirewallPolicyRule.
+        """
+        condition: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) An expression that determines whether or not the rule action should be executed.
+        """
+        condition_language: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The language used to parse condition from field `condition`. Available languages:
+        * **JMESPATH** an extended JMESPath language syntax.
+        """
+        is_body_inspection_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+        """
+        protection_capability_settings: NotRequired[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgsDict']]
+        """
+        (Updatable) Settings for protection capabilities
+        """
+elif False:
+    AppFirewallPolicyRequestProtectionRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionRuleArgs:
@@ -606,6 +827,35 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
         pulumi.set(self, "protection_capability_settings", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgsDict(TypedDict):
+        key: pulumi.Input[str]
+        """
+        (Updatable) Unique key of referenced protection capability.
+        """
+        version: pulumi.Input[int]
+        """
+        (Updatable) Version of referenced protection capability.
+        """
+        action_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        """
+        collaborative_action_threshold: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        """
+        collaborative_weights: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict']]]]
+        """
+        (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
+        """
+        exclusions: NotRequired[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgsDict']]
+        """
+        (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
+        """
+elif False:
+    AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs:
     def __init__(__self__, *,
@@ -707,6 +957,19 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs:
         pulumi.set(self, "exclusions", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict(TypedDict):
+        key: pulumi.Input[str]
+        """
+        (Updatable) Unique key of collaborative capability for which weight will be overridden.
+        """
+        weight: pulumi.Input[int]
+        """
+        (Updatable) The value of weight to set.
+        """
+elif False:
+    AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs:
     def __init__(__self__, *,
@@ -743,6 +1006,19 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWei
     def weight(self, value: pulumi.Input[int]):
         pulumi.set(self, "weight", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgsDict(TypedDict):
+        args: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
+        """
+        request_cookies: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
+        """
+elif False:
+    AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs:
@@ -782,6 +1058,35 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs:
     def request_cookies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "request_cookies", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgsDict(TypedDict):
+        allowed_http_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
+        """
+        max_http_request_header_length: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
+        """
+        max_http_request_headers: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
+        """
+        max_number_of_arguments: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
+        """
+        max_single_argument_length: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
+        """
+        max_total_argument_length: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
+        """
+elif False:
+    AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs:
@@ -886,6 +1191,15 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs:
         pulumi.set(self, "max_total_argument_length", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyRequestRateLimitingArgsDict(TypedDict):
+        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgsDict']]]]
+        """
+        (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
+        """
+elif False:
+    AppFirewallPolicyRequestRateLimitingArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyRequestRateLimitingArgs:
     def __init__(__self__, *,
@@ -908,6 +1222,36 @@ class AppFirewallPolicyRequestRateLimitingArgs:
     def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyRequestRateLimitingRuleArgsDict(TypedDict):
+        action_name: pulumi.Input[str]
+        """
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
+        """
+        configurations: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleConfigurationArgsDict']]]
+        """
+        (Updatable) Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Rule name. Must be unique within the module.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of WebAppFirewallPolicyRule.
+        """
+        condition: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) An expression that determines whether or not the rule action should be executed.
+        """
+        condition_language: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The language used to parse condition from field `condition`. Available languages:
+        * **JMESPATH** an extended JMESPath language syntax.
+        """
+elif False:
+    AppFirewallPolicyRequestRateLimitingRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyRequestRateLimitingRuleArgs:
@@ -1010,6 +1354,23 @@ class AppFirewallPolicyRequestRateLimitingRuleArgs:
         pulumi.set(self, "condition_language", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgsDict(TypedDict):
+        period_in_seconds: pulumi.Input[int]
+        """
+        (Updatable) Evaluation period in seconds.
+        """
+        requests_limit: pulumi.Input[int]
+        """
+        (Updatable) Requests allowed per evaluation period.
+        """
+        action_duration_in_seconds: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
+        """
+elif False:
+    AppFirewallPolicyRequestRateLimitingRuleConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs:
     def __init__(__self__, *,
@@ -1063,6 +1424,15 @@ class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs:
         pulumi.set(self, "action_duration_in_seconds", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyResponseAccessControlArgsDict(TypedDict):
+        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgsDict']]]]
+        """
+        (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+        """
+elif False:
+    AppFirewallPolicyResponseAccessControlArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyResponseAccessControlArgs:
     def __init__(__self__, *,
@@ -1085,6 +1455,32 @@ class AppFirewallPolicyResponseAccessControlArgs:
     def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyResponseAccessControlRuleArgsDict(TypedDict):
+        action_name: pulumi.Input[str]
+        """
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Rule name. Must be unique within the module.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of WebAppFirewallPolicyRule.
+        """
+        condition: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) An expression that determines whether or not the rule action should be executed.
+        """
+        condition_language: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The language used to parse condition from field `condition`. Available languages:
+        * **JMESPATH** an extended JMESPath language syntax.
+        """
+elif False:
+    AppFirewallPolicyResponseAccessControlRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyResponseAccessControlRuleArgs:
@@ -1172,6 +1568,15 @@ class AppFirewallPolicyResponseAccessControlRuleArgs:
         pulumi.set(self, "condition_language", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyResponseProtectionArgsDict(TypedDict):
+        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgsDict']]]]
+        """
+        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        """
+elif False:
+    AppFirewallPolicyResponseProtectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionArgs:
     def __init__(__self__, *,
@@ -1194,6 +1599,44 @@ class AppFirewallPolicyResponseProtectionArgs:
     def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyResponseProtectionRuleArgsDict(TypedDict):
+        action_name: pulumi.Input[str]
+        """
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Rule name. Must be unique within the module.
+        """
+        protection_capabilities: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgsDict']]]
+        """
+        (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of WebAppFirewallPolicyRule.
+        """
+        condition: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) An expression that determines whether or not the rule action should be executed.
+        """
+        condition_language: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The language used to parse condition from field `condition`. Available languages:
+        * **JMESPATH** an extended JMESPath language syntax.
+        """
+        is_body_inspection_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+        """
+        protection_capability_settings: NotRequired[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgsDict']]
+        """
+        (Updatable) Settings for protection capabilities
+        """
+elif False:
+    AppFirewallPolicyResponseProtectionRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionRuleArgs:
@@ -1328,6 +1771,35 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
         pulumi.set(self, "protection_capability_settings", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgsDict(TypedDict):
+        key: pulumi.Input[str]
+        """
+        (Updatable) Unique key of referenced protection capability.
+        """
+        version: pulumi.Input[int]
+        """
+        (Updatable) Version of referenced protection capability.
+        """
+        action_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        """
+        collaborative_action_threshold: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
+        """
+        collaborative_weights: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict']]]]
+        """
+        (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
+        """
+        exclusions: NotRequired[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgsDict']]
+        """
+        (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
+        """
+elif False:
+    AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs:
     def __init__(__self__, *,
@@ -1429,6 +1901,19 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs:
         pulumi.set(self, "exclusions", value)
 
 
+if not MYPY:
+    class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict(TypedDict):
+        key: pulumi.Input[str]
+        """
+        (Updatable) Unique key of collaborative capability for which weight will be overridden.
+        """
+        weight: pulumi.Input[int]
+        """
+        (Updatable) The value of weight to set.
+        """
+elif False:
+    AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs:
     def __init__(__self__, *,
@@ -1465,6 +1950,19 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWe
     def weight(self, value: pulumi.Input[int]):
         pulumi.set(self, "weight", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgsDict(TypedDict):
+        args: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
+        """
+        request_cookies: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
+        """
+elif False:
+    AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs:
@@ -1504,6 +2002,35 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs:
     def request_cookies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "request_cookies", value)
 
+
+if not MYPY:
+    class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgsDict(TypedDict):
+        allowed_http_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
+        """
+        max_http_request_header_length: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
+        """
+        max_http_request_headers: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
+        """
+        max_number_of_arguments: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
+        """
+        max_single_argument_length: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
+        """
+        max_total_argument_length: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
+        """
+elif False:
+    AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs:
@@ -1608,6 +2135,23 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs:
         pulumi.set(self, "max_total_argument_length", value)
 
 
+if not MYPY:
+    class NetworkAddressListVcnAddressArgsDict(TypedDict):
+        addresses: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A private IP address or CIDR IP address range.
+        """
+        vcn_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    NetworkAddressListVcnAddressArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkAddressListVcnAddressArgs:
     def __init__(__self__, *,
@@ -1655,6 +2199,14 @@ class NetworkAddressListVcnAddressArgs:
         pulumi.set(self, "vcn_id", value)
 
 
+if not MYPY:
+    class GetFirewallsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFirewallsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFirewallsFilterArgs:
     def __init__(__self__, *,
@@ -1693,6 +2245,14 @@ class GetFirewallsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetNetworkAddressListsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNetworkAddressListsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNetworkAddressListsFilterArgs:
@@ -1733,6 +2293,14 @@ class GetNetworkAddressListsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetProtectionCapabilitiesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProtectionCapabilitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetProtectionCapabilitiesFilterArgs:
     def __init__(__self__, *,
@@ -1771,6 +2339,17 @@ class GetProtectionCapabilitiesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetProtectionCapabilityGroupTagsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProtectionCapabilityGroupTagsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProtectionCapabilityGroupTagsFilterArgs:
@@ -1816,6 +2395,17 @@ class GetProtectionCapabilityGroupTagsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetWebAppFirewallPoliciesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Rule name. Must be unique within the module.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetWebAppFirewallPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetWebAppFirewallPoliciesFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -149,9 +154,6 @@ def get_subscription_redemptions(filters: Optional[Sequence[Union['GetSubscripti
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_redeemed_greater_than_or_equal_to=pulumi.get(__ret__, 'time_redeemed_greater_than_or_equal_to'),
         time_redeemed_less_than=pulumi.get(__ret__, 'time_redeemed_less_than'))
-
-
-@_utilities.lift_output_func(get_subscription_redemptions)
 def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict']]]]] = None,
                                         subscription_id: Optional[pulumi.Input[str]] = None,
                                         tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -181,4 +183,19 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
     :param str time_redeemed_greater_than_or_equal_to: The starting redeemed date filter for the redemption history.
     :param str time_redeemed_less_than: The ending redeemed date filter for the redemption history.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['subscriptionId'] = subscription_id
+    __args__['tenancyId'] = tenancy_id
+    __args__['timeRedeemedGreaterThanOrEqualTo'] = time_redeemed_greater_than_or_equal_to
+    __args__['timeRedeemedLessThan'] = time_redeemed_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions', __args__, opts=opts, typ=GetSubscriptionRedemptionsResult)
+    return __ret__.apply(lambda __response__: GetSubscriptionRedemptionsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        redemption_collections=pulumi.get(__response__, 'redemption_collections'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        time_redeemed_greater_than_or_equal_to=pulumi.get(__response__, 'time_redeemed_greater_than_or_equal_to'),
+        time_redeemed_less_than=pulumi.get(__response__, 'time_redeemed_less_than')))

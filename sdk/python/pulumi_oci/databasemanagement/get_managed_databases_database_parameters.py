@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -166,9 +171,6 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[Union['
         name=pulumi.get(__ret__, 'name'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         source=pulumi.get(__ret__, 'source'))
-
-
-@_utilities.lift_output_func(get_managed_databases_database_parameters)
 def get_managed_databases_database_parameters_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabasesDatabaseParametersFilterArgs', 'GetManagedDatabasesDatabaseParametersFilterArgsDict']]]]] = None,
                                                      is_allowed_values_included: Optional[pulumi.Input[Optional[bool]]] = None,
                                                      managed_database_id: Optional[pulumi.Input[str]] = None,
@@ -201,4 +203,21 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
     :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str source: The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['isAllowedValuesIncluded'] = is_allowed_values_included
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['name'] = name
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['source'] = source
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters', __args__, opts=opts, typ=GetManagedDatabasesDatabaseParametersResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabasesDatabaseParametersResult(
+        database_parameters_collections=pulumi.get(__response__, 'database_parameters_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_allowed_values_included=pulumi.get(__response__, 'is_allowed_values_included'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        name=pulumi.get(__response__, 'name'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        source=pulumi.get(__response__, 'source')))

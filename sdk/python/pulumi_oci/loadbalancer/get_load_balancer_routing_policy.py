@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -141,9 +146,6 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[str] = None,
         routing_policy_name=pulumi.get(__ret__, 'routing_policy_name'),
         rules=pulumi.get(__ret__, 'rules'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_load_balancer_routing_policy)
 def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
                                             routing_policy_name: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLoadBalancerRoutingPolicyResult]:
@@ -166,4 +168,16 @@ def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.In
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
     :param str routing_policy_name: The name of the routing policy to retrieve.  Example: `example_routing_policy`
     """
-    ...
+    __args__ = dict()
+    __args__['loadBalancerId'] = load_balancer_id
+    __args__['routingPolicyName'] = routing_policy_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getLoadBalancerRoutingPolicy:getLoadBalancerRoutingPolicy', __args__, opts=opts, typ=GetLoadBalancerRoutingPolicyResult)
+    return __ret__.apply(lambda __response__: GetLoadBalancerRoutingPolicyResult(
+        condition_language_version=pulumi.get(__response__, 'condition_language_version'),
+        id=pulumi.get(__response__, 'id'),
+        load_balancer_id=pulumi.get(__response__, 'load_balancer_id'),
+        name=pulumi.get(__response__, 'name'),
+        routing_policy_name=pulumi.get(__response__, 'routing_policy_name'),
+        rules=pulumi.get(__response__, 'rules'),
+        state=pulumi.get(__response__, 'state')))

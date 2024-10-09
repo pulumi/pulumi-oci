@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -318,9 +323,6 @@ def get_agent(agent_id: Optional[str] = None,
         time_expire_agent_key_in_ms=pulumi.get(__ret__, 'time_expire_agent_key_in_ms'),
         time_last_sync_received=pulumi.get(__ret__, 'time_last_sync_received'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_agent)
 def get_agent_output(agent_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentResult]:
     """
@@ -340,4 +342,28 @@ def get_agent_output(agent_id: Optional[pulumi.Input[str]] = None,
 
     :param str agent_id: Unique Agent identifier path parameter.
     """
-    ...
+    __args__ = dict()
+    __args__['agentId'] = agent_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAgent:getAgent', __args__, opts=opts, typ=GetAgentResult)
+    return __ret__.apply(lambda __response__: GetAgentResult(
+        agent_id=pulumi.get(__response__, 'agent_id'),
+        agent_pub_key=pulumi.get(__response__, 'agent_pub_key'),
+        agent_type=pulumi.get(__response__, 'agent_type'),
+        agent_version=pulumi.get(__response__, 'agent_version'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        environment_id=pulumi.get(__response__, 'environment_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        heart_beat_status=pulumi.get(__response__, 'heart_beat_status'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        os_version=pulumi.get(__response__, 'os_version'),
+        plugin_lists=pulumi.get(__response__, 'plugin_lists'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_expire_agent_key_in_ms=pulumi.get(__response__, 'time_expire_agent_key_in_ms'),
+        time_last_sync_received=pulumi.get(__response__, 'time_last_sync_received'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

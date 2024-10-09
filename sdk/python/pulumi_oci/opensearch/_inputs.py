@@ -4,15 +4,32 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetOpensearchClustersFilterArgs',
+    'GetOpensearchClustersFilterArgsDict',
     'GetOpensearchVersionsFilterArgs',
+    'GetOpensearchVersionsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetOpensearchClustersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOpensearchClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetOpensearchClustersFilterArgs:
@@ -52,6 +69,14 @@ class GetOpensearchClustersFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetOpensearchVersionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOpensearchVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetOpensearchVersionsFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -289,9 +294,6 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_private_endpoint)
 def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
@@ -311,4 +313,26 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]]
 
     :param str private_endpoint_id: The unique ID for a private endpoint.
     """
-    ...
+    __args__ = dict()
+    __args__['privateEndpointId'] = private_endpoint_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getPrivateEndpoint:getPrivateEndpoint', __args__, opts=opts, typ=GetPrivateEndpointResult)
+    return __ret__.apply(lambda __response__: GetPrivateEndpointResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns_zones=pulumi.get(__response__, 'dns_zones'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        max_host_count=pulumi.get(__response__, 'max_host_count'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        owner_principal_id=pulumi.get(__response__, 'owner_principal_id'),
+        owner_user_name=pulumi.get(__response__, 'owner_user_name'),
+        private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
+        scan_details=pulumi.get(__response__, 'scan_details'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

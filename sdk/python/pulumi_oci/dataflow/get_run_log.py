@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -132,9 +137,6 @@ def get_run_log(base64_encode_content: Optional[bool] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         run_id=pulumi.get(__ret__, 'run_id'))
-
-
-@_utilities.lift_output_func(get_run_log)
 def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                        name: Optional[pulumi.Input[str]] = None,
                        run_id: Optional[pulumi.Input[str]] = None,
@@ -158,4 +160,16 @@ def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[boo
     :param str name: The name of the log. Avoid entering confidential information.
     :param str run_id: The unique ID for the run
     """
-    ...
+    __args__ = dict()
+    __args__['base64EncodeContent'] = base64_encode_content
+    __args__['name'] = name
+    __args__['runId'] = run_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getRunLog:getRunLog', __args__, opts=opts, typ=GetRunLogResult)
+    return __ret__.apply(lambda __response__: GetRunLogResult(
+        base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),
+        content=pulumi.get(__response__, 'content'),
+        content_type=pulumi.get(__response__, 'content_type'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        run_id=pulumi.get(__response__, 'run_id')))

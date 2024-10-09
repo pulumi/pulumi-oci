@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -121,9 +126,6 @@ def get_cluster_option(cluster_option_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         kubernetes_versions=pulumi.get(__ret__, 'kubernetes_versions'))
-
-
-@_utilities.lift_output_func(get_cluster_option)
 def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[str]] = None,
                               compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterOptionResult]:
@@ -146,4 +148,14 @@ def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[str]] = N
     :param str cluster_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
     :param str compartment_id: The OCID of the compartment.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterOptionId'] = cluster_option_id
+    __args__['compartmentId'] = compartment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterOption:getClusterOption', __args__, opts=opts, typ=GetClusterOptionResult)
+    return __ret__.apply(lambda __response__: GetClusterOptionResult(
+        cluster_option_id=pulumi.get(__response__, 'cluster_option_id'),
+        cluster_pod_network_options=pulumi.get(__response__, 'cluster_pod_network_options'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        kubernetes_versions=pulumi.get(__response__, 'kubernetes_versions')))

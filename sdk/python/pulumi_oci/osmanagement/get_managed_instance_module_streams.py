@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -195,9 +200,6 @@ def get_managed_instance_module_streams(compartment_id: Optional[str] = None,
         module_stream_on_managed_instances=pulumi.get(__ret__, 'module_stream_on_managed_instances'),
         stream_name=pulumi.get(__ret__, 'stream_name'),
         stream_status=pulumi.get(__ret__, 'stream_status'))
-
-
-@_utilities.lift_output_func(get_managed_instance_module_streams)
 def get_managed_instance_module_streams_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceModuleStreamsFilterArgs', 'GetManagedInstanceModuleStreamsFilterArgsDict']]]]] = None,
                                                managed_instance_id: Optional[pulumi.Input[str]] = None,
@@ -256,4 +258,21 @@ def get_managed_instance_module_streams_output(compartment_id: Optional[pulumi.I
            
            A stream with the "ACTIVE" status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['moduleName'] = module_name
+    __args__['streamName'] = stream_name
+    __args__['streamStatus'] = stream_status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams', __args__, opts=opts, typ=GetManagedInstanceModuleStreamsResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceModuleStreamsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        module_name=pulumi.get(__response__, 'module_name'),
+        module_stream_on_managed_instances=pulumi.get(__response__, 'module_stream_on_managed_instances'),
+        stream_name=pulumi.get(__response__, 'stream_name'),
+        stream_status=pulumi.get(__response__, 'stream_status')))

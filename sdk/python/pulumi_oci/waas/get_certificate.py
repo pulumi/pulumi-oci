@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -322,9 +327,6 @@ def get_certificate(certificate_id: Optional[str] = None,
         time_not_valid_after=pulumi.get(__ret__, 'time_not_valid_after'),
         time_not_valid_before=pulumi.get(__ret__, 'time_not_valid_before'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_certificate)
 def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateResult]:
     """
@@ -344,4 +346,29 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
 
     :param str certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
     """
-    ...
+    __args__ = dict()
+    __args__['certificateId'] = certificate_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waas/getCertificate:getCertificate', __args__, opts=opts, typ=GetCertificateResult)
+    return __ret__.apply(lambda __response__: GetCertificateResult(
+        certificate_data=pulumi.get(__response__, 'certificate_data'),
+        certificate_id=pulumi.get(__response__, 'certificate_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        extensions=pulumi.get(__response__, 'extensions'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_trust_verification_disabled=pulumi.get(__response__, 'is_trust_verification_disabled'),
+        issued_by=pulumi.get(__response__, 'issued_by'),
+        issuer_names=pulumi.get(__response__, 'issuer_names'),
+        private_key_data=pulumi.get(__response__, 'private_key_data'),
+        public_key_infos=pulumi.get(__response__, 'public_key_infos'),
+        serial_number=pulumi.get(__response__, 'serial_number'),
+        signature_algorithm=pulumi.get(__response__, 'signature_algorithm'),
+        state=pulumi.get(__response__, 'state'),
+        subject_names=pulumi.get(__response__, 'subject_names'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_not_valid_after=pulumi.get(__response__, 'time_not_valid_after'),
+        time_not_valid_before=pulumi.get(__response__, 'time_not_valid_before'),
+        version=pulumi.get(__response__, 'version')))

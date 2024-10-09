@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -144,9 +149,6 @@ def get_managed_instances(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         managed_instances=pulumi.get(__ret__, 'managed_instances'),
         os_family=pulumi.get(__ret__, 'os_family'))
-
-
-@_utilities.lift_output_func(get_managed_instances)
 def get_managed_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstancesFilterArgs', 'GetManagedInstancesFilterArgsDict']]]]] = None,
@@ -173,4 +175,17 @@ def get_managed_instances_output(compartment_id: Optional[pulumi.Input[str]] = N
     :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
     :param str os_family: The OS family for which to list resources.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['osFamily'] = os_family
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstances:getManagedInstances', __args__, opts=opts, typ=GetManagedInstancesResult)
+    return __ret__.apply(lambda __response__: GetManagedInstancesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instances=pulumi.get(__response__, 'managed_instances'),
+        os_family=pulumi.get(__response__, 'os_family')))

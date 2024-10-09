@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_publications(compartment_id: Optional[str] = None,
         operating_systems=pulumi.get(__ret__, 'operating_systems'),
         publication_id=pulumi.get(__ret__, 'publication_id'),
         publications=pulumi.get(__ret__, 'publications'))
-
-
-@_utilities.lift_output_func(get_publications)
 def get_publications_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict']]]]] = None,
                             listing_type: Optional[pulumi.Input[str]] = None,
@@ -207,4 +209,21 @@ def get_publications_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param Sequence[str] operating_systems: The operating system of the listing.
     :param str publication_id: The unique identifier for the publication.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['listingType'] = listing_type
+    __args__['names'] = names
+    __args__['operatingSystems'] = operating_systems
+    __args__['publicationId'] = publication_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getPublications:getPublications', __args__, opts=opts, typ=GetPublicationsResult)
+    return __ret__.apply(lambda __response__: GetPublicationsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        listing_type=pulumi.get(__response__, 'listing_type'),
+        names=pulumi.get(__response__, 'names'),
+        operating_systems=pulumi.get(__response__, 'operating_systems'),
+        publication_id=pulumi.get(__response__, 'publication_id'),
+        publications=pulumi.get(__response__, 'publications')))

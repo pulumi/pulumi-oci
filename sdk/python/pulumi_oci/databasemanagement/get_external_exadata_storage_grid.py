@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -289,9 +294,6 @@ def get_external_exadata_storage_grid(external_exadata_storage_grid_id: Optional
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_external_exadata_storage_grid)
 def get_external_exadata_storage_grid_output(external_exadata_storage_grid_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageGridResult]:
     """
@@ -311,4 +313,26 @@ def get_external_exadata_storage_grid_output(external_exadata_storage_grid_id: O
 
     :param str external_exadata_storage_grid_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
     """
-    ...
+    __args__ = dict()
+    __args__['externalExadataStorageGridId'] = external_exadata_storage_grid_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid', __args__, opts=opts, typ=GetExternalExadataStorageGridResult)
+    return __ret__.apply(lambda __response__: GetExternalExadataStorageGridResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        external_exadata_storage_grid_id=pulumi.get(__response__, 'external_exadata_storage_grid_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        internal_id=pulumi.get(__response__, 'internal_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        server_count=pulumi.get(__response__, 'server_count'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        storage_servers=pulumi.get(__response__, 'storage_servers'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version')))

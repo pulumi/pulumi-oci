@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -251,9 +256,6 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
         non_compliant_finding_count_greater_than=pulumi.get(__ret__, 'non_compliant_finding_count_greater_than'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_fleet_crypto_analysis_results)
 def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.Input[Optional[str]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetCryptoAnalysisResultsFilterArgs', 'GetFleetCryptoAnalysisResultsFilterArgsDict']]]]] = None,
                                              finding_count: Optional[pulumi.Input[Optional[int]]] = None,
@@ -301,4 +303,31 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
-    ...
+    __args__ = dict()
+    __args__['aggregationMode'] = aggregation_mode
+    __args__['filters'] = filters
+    __args__['findingCount'] = finding_count
+    __args__['findingCountGreaterThan'] = finding_count_greater_than
+    __args__['fleetId'] = fleet_id
+    __args__['hostName'] = host_name
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['nonCompliantFindingCount'] = non_compliant_finding_count
+    __args__['nonCompliantFindingCountGreaterThan'] = non_compliant_finding_count_greater_than
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults', __args__, opts=opts, typ=GetFleetCryptoAnalysisResultsResult)
+    return __ret__.apply(lambda __response__: GetFleetCryptoAnalysisResultsResult(
+        aggregation_mode=pulumi.get(__response__, 'aggregation_mode'),
+        crypto_analysis_result_collections=pulumi.get(__response__, 'crypto_analysis_result_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        finding_count=pulumi.get(__response__, 'finding_count'),
+        finding_count_greater_than=pulumi.get(__response__, 'finding_count_greater_than'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        non_compliant_finding_count=pulumi.get(__response__, 'non_compliant_finding_count'),
+        non_compliant_finding_count_greater_than=pulumi.get(__response__, 'non_compliant_finding_count_greater_than'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

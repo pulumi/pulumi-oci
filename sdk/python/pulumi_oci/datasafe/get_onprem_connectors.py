@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -183,9 +188,6 @@ def get_onprem_connectors(access_level: Optional[str] = None,
         on_prem_connector_id=pulumi.get(__ret__, 'on_prem_connector_id'),
         on_prem_connector_lifecycle_state=pulumi.get(__ret__, 'on_prem_connector_lifecycle_state'),
         on_prem_connectors=pulumi.get(__ret__, 'on_prem_connectors'))
-
-
-@_utilities.lift_output_func(get_onprem_connectors)
 def get_onprem_connectors_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -221,4 +223,23 @@ def get_onprem_connectors_output(access_level: Optional[pulumi.Input[Optional[st
     :param str on_prem_connector_id: A filter to return only the on-premises connector that matches the specified id.
     :param str on_prem_connector_lifecycle_state: A filter to return only on-premises connector resources that match the specified lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['onPremConnectorId'] = on_prem_connector_id
+    __args__['onPremConnectorLifecycleState'] = on_prem_connector_lifecycle_state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getOnpremConnectors:getOnpremConnectors', __args__, opts=opts, typ=GetOnpremConnectorsResult)
+    return __ret__.apply(lambda __response__: GetOnpremConnectorsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        on_prem_connector_id=pulumi.get(__response__, 'on_prem_connector_id'),
+        on_prem_connector_lifecycle_state=pulumi.get(__response__, 'on_prem_connector_lifecycle_state'),
+        on_prem_connectors=pulumi.get(__response__, 'on_prem_connectors')))

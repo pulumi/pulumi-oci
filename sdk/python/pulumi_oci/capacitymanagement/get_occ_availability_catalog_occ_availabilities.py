@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -175,9 +180,6 @@ def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_hando
         resource_name=pulumi.get(__ret__, 'resource_name'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
-
-
-@_utilities.lift_output_func(get_occ_availability_catalog_occ_availabilities)
 def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacity_handover: Optional[pulumi.Input[Optional[str]]] = None,
                                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict']]]]] = None,
                                                            occ_availability_catalog_id: Optional[pulumi.Input[str]] = None,
@@ -210,4 +212,21 @@ def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacit
     :param str resource_type: Resource type using which the capacity constraints of an availability catalog can be filtered.
     :param str workload_type: Workload type using the resources in an availability catalog can be filtered.
     """
-    ...
+    __args__ = dict()
+    __args__['dateExpectedCapacityHandover'] = date_expected_capacity_handover
+    __args__['filters'] = filters
+    __args__['occAvailabilityCatalogId'] = occ_availability_catalog_id
+    __args__['resourceName'] = resource_name
+    __args__['resourceType'] = resource_type
+    __args__['workloadType'] = workload_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccAvailabilityCatalogOccAvailabilities:getOccAvailabilityCatalogOccAvailabilities', __args__, opts=opts, typ=GetOccAvailabilityCatalogOccAvailabilitiesResult)
+    return __ret__.apply(lambda __response__: GetOccAvailabilityCatalogOccAvailabilitiesResult(
+        date_expected_capacity_handover=pulumi.get(__response__, 'date_expected_capacity_handover'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        occ_availability_catalog_id=pulumi.get(__response__, 'occ_availability_catalog_id'),
+        occ_availability_collections=pulumi.get(__response__, 'occ_availability_collections'),
+        resource_name=pulumi.get(__response__, 'resource_name'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        workload_type=pulumi.get(__response__, 'workload_type')))

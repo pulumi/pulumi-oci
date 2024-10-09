@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -294,9 +299,6 @@ def get_media_assets(bucket: Optional[str] = None,
         source_media_workflow_version=pulumi.get(__ret__, 'source_media_workflow_version'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_media_assets)
 def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -350,4 +352,35 @@ def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[str]]] = None
     :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
     :param str type: Filter MediaAsset by the asset type.
     """
-    ...
+    __args__ = dict()
+    __args__['bucket'] = bucket
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['distributionChannelId'] = distribution_channel_id
+    __args__['filters'] = filters
+    __args__['masterMediaAssetId'] = master_media_asset_id
+    __args__['mediaWorkflowJobId'] = media_workflow_job_id
+    __args__['object'] = object
+    __args__['parentMediaAssetId'] = parent_media_asset_id
+    __args__['sourceMediaWorkflowId'] = source_media_workflow_id
+    __args__['sourceMediaWorkflowVersion'] = source_media_workflow_version
+    __args__['state'] = state
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaAssets:getMediaAssets', __args__, opts=opts, typ=GetMediaAssetsResult)
+    return __ret__.apply(lambda __response__: GetMediaAssetsResult(
+        bucket=pulumi.get(__response__, 'bucket'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        distribution_channel_id=pulumi.get(__response__, 'distribution_channel_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        master_media_asset_id=pulumi.get(__response__, 'master_media_asset_id'),
+        media_asset_collections=pulumi.get(__response__, 'media_asset_collections'),
+        media_workflow_job_id=pulumi.get(__response__, 'media_workflow_job_id'),
+        object=pulumi.get(__response__, 'object'),
+        parent_media_asset_id=pulumi.get(__response__, 'parent_media_asset_id'),
+        source_media_workflow_id=pulumi.get(__response__, 'source_media_workflow_id'),
+        source_media_workflow_version=pulumi.get(__response__, 'source_media_workflow_version'),
+        state=pulumi.get(__response__, 'state'),
+        type=pulumi.get(__response__, 'type')))

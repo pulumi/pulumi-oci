@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -210,9 +215,6 @@ def get_masking_policy_health_report(masking_policy_health_report_id: Optional[s
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_masking_policy_health_report)
 def get_masking_policy_health_report_output(masking_policy_health_report_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPolicyHealthReportResult]:
     """
@@ -232,4 +234,20 @@ def get_masking_policy_health_report_output(masking_policy_health_report_id: Opt
 
     :param str masking_policy_health_report_id: The OCID of the masking health report.
     """
-    ...
+    __args__ = dict()
+    __args__['maskingPolicyHealthReportId'] = masking_policy_health_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPolicyHealthReport:getMaskingPolicyHealthReport', __args__, opts=opts, typ=GetMaskingPolicyHealthReportResult)
+    return __ret__.apply(lambda __response__: GetMaskingPolicyHealthReportResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        masking_policy_health_report_id=pulumi.get(__response__, 'masking_policy_health_report_id'),
+        masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

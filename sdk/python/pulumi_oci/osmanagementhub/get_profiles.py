@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -292,9 +297,6 @@ def get_profiles(arch_type: Optional[str] = None,
         registration_types=pulumi.get(__ret__, 'registration_types'),
         state=pulumi.get(__ret__, 'state'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-
-
-@_utilities.lift_output_func(get_profiles)
 def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
                         compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                         display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -349,4 +351,35 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
     :param str state: A filter to return only registration profiles in the given state.
     :param str vendor_name: A filter to return only resources that match the given vendor name.
     """
-    ...
+    __args__ = dict()
+    __args__['archType'] = arch_type
+    __args__['compartmentId'] = compartment_id
+    __args__['displayNameContains'] = display_name_contains
+    __args__['displayNames'] = display_names
+    __args__['filters'] = filters
+    __args__['isDefaultProfile'] = is_default_profile
+    __args__['isServiceProvidedProfile'] = is_service_provided_profile
+    __args__['osFamily'] = os_family
+    __args__['profileId'] = profile_id
+    __args__['profileTypes'] = profile_types
+    __args__['registrationTypes'] = registration_types
+    __args__['state'] = state
+    __args__['vendorName'] = vendor_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getProfiles:getProfiles', __args__, opts=opts, typ=GetProfilesResult)
+    return __ret__.apply(lambda __response__: GetProfilesResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        display_names=pulumi.get(__response__, 'display_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_default_profile=pulumi.get(__response__, 'is_default_profile'),
+        is_service_provided_profile=pulumi.get(__response__, 'is_service_provided_profile'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        profile_collections=pulumi.get(__response__, 'profile_collections'),
+        profile_id=pulumi.get(__response__, 'profile_id'),
+        profile_types=pulumi.get(__response__, 'profile_types'),
+        registration_types=pulumi.get(__response__, 'registration_types'),
+        state=pulumi.get(__response__, 'state'),
+        vendor_name=pulumi.get(__response__, 'vendor_name')))

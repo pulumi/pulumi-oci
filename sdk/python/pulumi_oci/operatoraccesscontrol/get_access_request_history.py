@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -94,9 +99,6 @@ def get_access_request_history(access_request_id: Optional[str] = None,
         access_request_id=pulumi.get(__ret__, 'access_request_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-
-
-@_utilities.lift_output_func(get_access_request_history)
 def get_access_request_history_output(access_request_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestHistoryResult]:
     """
@@ -116,4 +118,11 @@ def get_access_request_history_output(access_request_id: Optional[pulumi.Input[s
 
     :param str access_request_id: unique AccessRequest identifier
     """
-    ...
+    __args__ = dict()
+    __args__['accessRequestId'] = access_request_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory', __args__, opts=opts, typ=GetAccessRequestHistoryResult)
+    return __ret__.apply(lambda __response__: GetAccessRequestHistoryResult(
+        access_request_id=pulumi.get(__response__, 'access_request_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items')))

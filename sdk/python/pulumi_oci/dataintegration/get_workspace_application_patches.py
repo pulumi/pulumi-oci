@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -169,9 +174,6 @@ def get_workspace_application_patches(application_key: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         patch_summary_collections=pulumi.get(__ret__, 'patch_summary_collections'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_application_patches)
 def get_workspace_application_patches_output(application_key: Optional[pulumi.Input[str]] = None,
                                              fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceApplicationPatchesFilterArgs', 'GetWorkspaceApplicationPatchesFilterArgsDict']]]]] = None,
@@ -204,4 +206,21 @@ def get_workspace_application_patches_output(application_key: Optional[pulumi.In
     :param str name: Used to filter by the name of the object.
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationKey'] = application_key
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['identifiers'] = identifiers
+    __args__['name'] = name
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches', __args__, opts=opts, typ=GetWorkspaceApplicationPatchesResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceApplicationPatchesResult(
+        application_key=pulumi.get(__response__, 'application_key'),
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        identifiers=pulumi.get(__response__, 'identifiers'),
+        name=pulumi.get(__response__, 'name'),
+        patch_summary_collections=pulumi.get(__response__, 'patch_summary_collections'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

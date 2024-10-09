@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthor
         ref_name=pulumi.get(__ret__, 'ref_name'),
         repository_author_collections=pulumi.get(__ret__, 'repository_author_collections'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-
-
-@_utilities.lift_output_func(get_repository_authors)
 def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict']]]]] = None,
                                   ref_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   repository_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequen
     :param str ref_name: A filter to return only resources that match the given reference name.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['refName'] = ref_name
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryAuthors:getRepositoryAuthors', __args__, opts=opts, typ=GetRepositoryAuthorsResult)
+    return __ret__.apply(lambda __response__: GetRepositoryAuthorsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ref_name=pulumi.get(__response__, 'ref_name'),
+        repository_author_collections=pulumi.get(__response__, 'repository_author_collections'),
+        repository_id=pulumi.get(__response__, 'repository_id')))

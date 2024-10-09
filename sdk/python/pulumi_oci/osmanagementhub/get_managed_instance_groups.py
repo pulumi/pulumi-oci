@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -268,9 +273,6 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_managed_instance_groups)
 def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
                                        compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -321,4 +323,33 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
     :param str state: A filter to return only managed instance groups that are in the specified state.
     """
-    ...
+    __args__ = dict()
+    __args__['archType'] = arch_type
+    __args__['compartmentId'] = compartment_id
+    __args__['displayNameContains'] = display_name_contains
+    __args__['displayNames'] = display_names
+    __args__['filters'] = filters
+    __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
+    __args__['managedInstanceGroupId'] = managed_instance_group_id
+    __args__['osFamily'] = os_family
+    __args__['softwareSourceId'] = software_source_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups', __args__, opts=opts, typ=GetManagedInstanceGroupsResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceGroupsResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        display_names=pulumi.get(__response__, 'display_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
+        location_not_equal_tos=pulumi.get(__response__, 'location_not_equal_tos'),
+        locations=pulumi.get(__response__, 'locations'),
+        managed_instance_group_collections=pulumi.get(__response__, 'managed_instance_group_collections'),
+        managed_instance_group_id=pulumi.get(__response__, 'managed_instance_group_id'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        software_source_id=pulumi.get(__response__, 'software_source_id'),
+        state=pulumi.get(__response__, 'state')))

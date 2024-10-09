@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_container_image(image_id: Optional[str] = None,
         time_last_pulled=pulumi.get(__ret__, 'time_last_pulled'),
         version=pulumi.get(__ret__, 'version'),
         versions=pulumi.get(__ret__, 'versions'))
-
-
-@_utilities.lift_output_func(get_container_image)
 def get_container_image_output(image_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerImageResult]:
     """
@@ -337,4 +339,28 @@ def get_container_image_output(image_id: Optional[pulumi.Input[str]] = None,
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
     """
-    ...
+    __args__ = dict()
+    __args__['imageId'] = image_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerImage:getContainerImage', __args__, opts=opts, typ=GetContainerImageResult)
+    return __ret__.apply(lambda __response__: GetContainerImageResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        digest=pulumi.get(__response__, 'digest'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        layers=pulumi.get(__response__, 'layers'),
+        layers_size_in_bytes=pulumi.get(__response__, 'layers_size_in_bytes'),
+        manifest_size_in_bytes=pulumi.get(__response__, 'manifest_size_in_bytes'),
+        pull_count=pulumi.get(__response__, 'pull_count'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        repository_name=pulumi.get(__response__, 'repository_name'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_pulled=pulumi.get(__response__, 'time_last_pulled'),
+        version=pulumi.get(__response__, 'version'),
+        versions=pulumi.get(__response__, 'versions')))

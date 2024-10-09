@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -215,9 +220,6 @@ def get_certificate_authority_version(certificate_authority_id: Optional[str] = 
         validities=pulumi.get(__ret__, 'validities'),
         version_name=pulumi.get(__ret__, 'version_name'),
         version_number=pulumi.get(__ret__, 'version_number'))
-
-
-@_utilities.lift_output_func(get_certificate_authority_version)
 def get_certificate_authority_version_output(certificate_authority_id: Optional[pulumi.Input[str]] = None,
                                              certificate_authority_version_number: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthorityVersionResult]:
@@ -230,4 +232,22 @@ def get_certificate_authority_version_output(certificate_authority_id: Optional[
 
     :param str certificate_authority_id: The OCID of the certificate authority (CA).
     """
-    ...
+    __args__ = dict()
+    __args__['certificateAuthorityId'] = certificate_authority_id
+    __args__['certificateAuthorityVersionNumber'] = certificate_authority_version_number
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion', __args__, opts=opts, typ=GetCertificateAuthorityVersionResult)
+    return __ret__.apply(lambda __response__: GetCertificateAuthorityVersionResult(
+        certificate_authority_id=pulumi.get(__response__, 'certificate_authority_id'),
+        certificate_authority_version_number=pulumi.get(__response__, 'certificate_authority_version_number'),
+        id=pulumi.get(__response__, 'id'),
+        issuer_ca_version_number=pulumi.get(__response__, 'issuer_ca_version_number'),
+        revocation_statuses=pulumi.get(__response__, 'revocation_statuses'),
+        serial_number=pulumi.get(__response__, 'serial_number'),
+        stages=pulumi.get(__response__, 'stages'),
+        subject_alternative_names=pulumi.get(__response__, 'subject_alternative_names'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion'),
+        validities=pulumi.get(__response__, 'validities'),
+        version_name=pulumi.get(__response__, 'version_name'),
+        version_number=pulumi.get(__response__, 'version_number')))

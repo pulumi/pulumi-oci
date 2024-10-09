@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -183,9 +188,6 @@ def get_addon(addon_name: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_addon)
 def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
                      cluster_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonResult]:
@@ -208,4 +210,19 @@ def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
     :param str addon_name: The name of the addon.
     :param str cluster_id: The OCID of the cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['addonName'] = addon_name
+    __args__['clusterId'] = cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getAddon:getAddon', __args__, opts=opts, typ=GetAddonResult)
+    return __ret__.apply(lambda __response__: GetAddonResult(
+        addon_errors=pulumi.get(__response__, 'addon_errors'),
+        addon_name=pulumi.get(__response__, 'addon_name'),
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        configurations=pulumi.get(__response__, 'configurations'),
+        current_installed_version=pulumi.get(__response__, 'current_installed_version'),
+        id=pulumi.get(__response__, 'id'),
+        remove_addon_resources_on_delete=pulumi.get(__response__, 'remove_addon_resources_on_delete'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        version=pulumi.get(__response__, 'version')))

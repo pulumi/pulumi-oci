@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -148,9 +153,6 @@ def get_tsig_keys(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         tsig_keys=pulumi.get(__ret__, 'tsig_keys'))
-
-
-@_utilities.lift_output_func(get_tsig_keys)
 def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict']]]]] = None,
                          id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -180,4 +182,18 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str name: The name of a resource.
     :param str state: The state of a resource.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getTsigKeys:getTsigKeys', __args__, opts=opts, typ=GetTsigKeysResult)
+    return __ret__.apply(lambda __response__: GetTsigKeysResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        tsig_keys=pulumi.get(__response__, 'tsig_keys')))

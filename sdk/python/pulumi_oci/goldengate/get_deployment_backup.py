@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -364,9 +369,6 @@ def get_deployment_backup(deployment_backup_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_backup=pulumi.get(__ret__, 'time_of_backup'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_deployment_backup)
 def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentBackupResult]:
     """
@@ -386,4 +388,32 @@ def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[str
 
     :param str deployment_backup_id: A unique DeploymentBackup identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deploymentBackupId'] = deployment_backup_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentBackup:getDeploymentBackup', __args__, opts=opts, typ=GetDeploymentBackupResult)
+    return __ret__.apply(lambda __response__: GetDeploymentBackupResult(
+        backup_type=pulumi.get(__response__, 'backup_type'),
+        bucket=pulumi.get(__response__, 'bucket'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deployment_backup_id=pulumi.get(__response__, 'deployment_backup_id'),
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        deployment_type=pulumi.get(__response__, 'deployment_type'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_automatic=pulumi.get(__response__, 'is_automatic'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object=pulumi.get(__response__, 'object'),
+        ogg_version=pulumi.get(__response__, 'ogg_version'),
+        size_in_bytes=pulumi.get(__response__, 'size_in_bytes'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_backup_finished=pulumi.get(__response__, 'time_backup_finished'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_backup=pulumi.get(__response__, 'time_of_backup'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

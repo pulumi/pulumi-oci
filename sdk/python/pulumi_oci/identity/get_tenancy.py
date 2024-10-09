@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -158,9 +163,6 @@ def get_tenancy(tenancy_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         upi_idcs_compatibility_layer_endpoint=pulumi.get(__ret__, 'upi_idcs_compatibility_layer_endpoint'))
-
-
-@_utilities.lift_output_func(get_tenancy)
 def get_tenancy_output(tenancy_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTenancyResult]:
     """
@@ -180,4 +182,16 @@ def get_tenancy_output(tenancy_id: Optional[pulumi.Input[str]] = None,
 
     :param str tenancy_id: The OCID of the tenancy.
     """
-    ...
+    __args__ = dict()
+    __args__['tenancyId'] = tenancy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTenancy:getTenancy', __args__, opts=opts, typ=GetTenancyResult)
+    return __ret__.apply(lambda __response__: GetTenancyResult(
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        home_region_key=pulumi.get(__response__, 'home_region_key'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        upi_idcs_compatibility_layer_endpoint=pulumi.get(__response__, 'upi_idcs_compatibility_layer_endpoint')))

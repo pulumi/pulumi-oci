@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_listeners(filters: Optional[Sequence[Union['GetListenersFilterArgs', 'Ge
         id=pulumi.get(__ret__, 'id'),
         listener_collections=pulumi.get(__ret__, 'listener_collections'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'))
-
-
-@_utilities.lift_output_func(get_listeners)
 def get_listeners_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict']]]]] = None,
                          network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenersResult]:
@@ -130,4 +132,13 @@ def get_listeners_output(filters: Optional[pulumi.Input[Optional[Sequence[Union[
 
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['networkLoadBalancerId'] = network_load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getListeners:getListeners', __args__, opts=opts, typ=GetListenersResult)
+    return __ret__.apply(lambda __response__: GetListenersResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        listener_collections=pulumi.get(__response__, 'listener_collections'),
+        network_load_balancer_id=pulumi.get(__response__, 'network_load_balancer_id')))

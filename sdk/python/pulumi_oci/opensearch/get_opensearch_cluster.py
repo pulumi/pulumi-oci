@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -596,9 +601,6 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
         total_storage_gb=pulumi.get(__ret__, 'total_storage_gb'),
         vcn_compartment_id=pulumi.get(__ret__, 'vcn_compartment_id'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_opensearch_cluster)
 def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchClusterResult]:
     """
@@ -627,4 +629,49 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[s
 
     :param str opensearch_cluster_id: unique OpensearchCluster identifier
     """
-    ...
+    __args__ = dict()
+    __args__['opensearchClusterId'] = opensearch_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opensearch/getOpensearchCluster:getOpensearchCluster', __args__, opts=opts, typ=GetOpensearchClusterResult)
+    return __ret__.apply(lambda __response__: GetOpensearchClusterResult(
+        availability_domains=pulumi.get(__response__, 'availability_domains'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_node_count=pulumi.get(__response__, 'data_node_count'),
+        data_node_host_bare_metal_shape=pulumi.get(__response__, 'data_node_host_bare_metal_shape'),
+        data_node_host_memory_gb=pulumi.get(__response__, 'data_node_host_memory_gb'),
+        data_node_host_ocpu_count=pulumi.get(__response__, 'data_node_host_ocpu_count'),
+        data_node_host_type=pulumi.get(__response__, 'data_node_host_type'),
+        data_node_storage_gb=pulumi.get(__response__, 'data_node_storage_gb'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        fqdn=pulumi.get(__response__, 'fqdn'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        master_node_count=pulumi.get(__response__, 'master_node_count'),
+        master_node_host_bare_metal_shape=pulumi.get(__response__, 'master_node_host_bare_metal_shape'),
+        master_node_host_memory_gb=pulumi.get(__response__, 'master_node_host_memory_gb'),
+        master_node_host_ocpu_count=pulumi.get(__response__, 'master_node_host_ocpu_count'),
+        master_node_host_type=pulumi.get(__response__, 'master_node_host_type'),
+        opendashboard_fqdn=pulumi.get(__response__, 'opendashboard_fqdn'),
+        opendashboard_node_count=pulumi.get(__response__, 'opendashboard_node_count'),
+        opendashboard_node_host_memory_gb=pulumi.get(__response__, 'opendashboard_node_host_memory_gb'),
+        opendashboard_node_host_ocpu_count=pulumi.get(__response__, 'opendashboard_node_host_ocpu_count'),
+        opendashboard_private_ip=pulumi.get(__response__, 'opendashboard_private_ip'),
+        opensearch_cluster_id=pulumi.get(__response__, 'opensearch_cluster_id'),
+        opensearch_fqdn=pulumi.get(__response__, 'opensearch_fqdn'),
+        opensearch_private_ip=pulumi.get(__response__, 'opensearch_private_ip'),
+        security_master_user_name=pulumi.get(__response__, 'security_master_user_name'),
+        security_master_user_password_hash=pulumi.get(__response__, 'security_master_user_password_hash'),
+        security_mode=pulumi.get(__response__, 'security_mode'),
+        software_version=pulumi.get(__response__, 'software_version'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_compartment_id=pulumi.get(__response__, 'subnet_compartment_id'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_deleted=pulumi.get(__response__, 'time_deleted'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        total_storage_gb=pulumi.get(__response__, 'total_storage_gb'),
+        vcn_compartment_id=pulumi.get(__response__, 'vcn_compartment_id'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

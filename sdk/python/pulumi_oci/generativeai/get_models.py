@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -179,9 +184,6 @@ def get_models(capabilities: Optional[Sequence[str]] = None,
         model_collections=pulumi.get(__ret__, 'model_collections'),
         state=pulumi.get(__ret__, 'state'),
         vendor=pulumi.get(__ret__, 'vendor'))
-
-
-@_utilities.lift_output_func(get_models)
 def get_models_output(capabilities: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                       compartment_id: Optional[pulumi.Input[str]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -217,4 +219,22 @@ def get_models_output(capabilities: Optional[pulumi.Input[Optional[Sequence[str]
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     :param str vendor: A filter to return only resources that match the entire vendor given.
     """
-    ...
+    __args__ = dict()
+    __args__['capabilities'] = capabilities
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    __args__['vendor'] = vendor
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getModels:getModels', __args__, opts=opts, typ=GetModelsResult)
+    return __ret__.apply(lambda __response__: GetModelsResult(
+        capabilities=pulumi.get(__response__, 'capabilities'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        model_collections=pulumi.get(__response__, 'model_collections'),
+        state=pulumi.get(__response__, 'state'),
+        vendor=pulumi.get(__response__, 'vendor')))

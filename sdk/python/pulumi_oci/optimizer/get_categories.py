@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -198,9 +203,6 @@ def get_categories(child_tenancy_ids: Optional[Sequence[str]] = None,
         include_organization=pulumi.get(__ret__, 'include_organization'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_categories)
 def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                           compartment_id: Optional[pulumi.Input[str]] = None,
                           compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
@@ -248,4 +250,23 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str state: A filter that returns results that match the lifecycle state specified.
     """
-    ...
+    __args__ = dict()
+    __args__['childTenancyIds'] = child_tenancy_ids
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['includeOrganization'] = include_organization
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getCategories:getCategories', __args__, opts=opts, typ=GetCategoriesResult)
+    return __ret__.apply(lambda __response__: GetCategoriesResult(
+        category_collections=pulumi.get(__response__, 'category_collections'),
+        child_tenancy_ids=pulumi.get(__response__, 'child_tenancy_ids'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        include_organization=pulumi.get(__response__, 'include_organization'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

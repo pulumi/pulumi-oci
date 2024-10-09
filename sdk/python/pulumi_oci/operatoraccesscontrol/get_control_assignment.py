@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -467,9 +472,6 @@ def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         unassigner_id=pulumi.get(__ret__, 'unassigner_id'),
         validate_assignment_trigger=pulumi.get(__ret__, 'validate_assignment_trigger'))
-
-
-@_utilities.lift_output_func(get_control_assignment)
 def get_control_assignment_output(operator_control_assignment_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlAssignmentResult]:
     """
@@ -489,4 +491,40 @@ def get_control_assignment_output(operator_control_assignment_id: Optional[pulum
 
     :param str operator_control_assignment_id: unique OperatorControl identifier
     """
-    ...
+    __args__ = dict()
+    __args__['operatorControlAssignmentId'] = operator_control_assignment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getControlAssignment:getControlAssignment', __args__, opts=opts, typ=GetControlAssignmentResult)
+    return __ret__.apply(lambda __response__: GetControlAssignmentResult(
+        assigner_id=pulumi.get(__response__, 'assigner_id'),
+        comment=pulumi.get(__response__, 'comment'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        detachment_description=pulumi.get(__response__, 'detachment_description'),
+        error_code=pulumi.get(__response__, 'error_code'),
+        error_message=pulumi.get(__response__, 'error_message'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_approve_during_maintenance=pulumi.get(__response__, 'is_auto_approve_during_maintenance'),
+        is_default_assignment=pulumi.get(__response__, 'is_default_assignment'),
+        is_enforced_always=pulumi.get(__response__, 'is_enforced_always'),
+        is_hypervisor_log_forwarded=pulumi.get(__response__, 'is_hypervisor_log_forwarded'),
+        is_log_forwarded=pulumi.get(__response__, 'is_log_forwarded'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        op_control_name=pulumi.get(__response__, 'op_control_name'),
+        operator_control_assignment_id=pulumi.get(__response__, 'operator_control_assignment_id'),
+        operator_control_id=pulumi.get(__response__, 'operator_control_id'),
+        remote_syslog_server_address=pulumi.get(__response__, 'remote_syslog_server_address'),
+        remote_syslog_server_ca_cert=pulumi.get(__response__, 'remote_syslog_server_ca_cert'),
+        remote_syslog_server_port=pulumi.get(__response__, 'remote_syslog_server_port'),
+        resource_compartment_id=pulumi.get(__response__, 'resource_compartment_id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        resource_name=pulumi.get(__response__, 'resource_name'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        state=pulumi.get(__response__, 'state'),
+        time_assignment_from=pulumi.get(__response__, 'time_assignment_from'),
+        time_assignment_to=pulumi.get(__response__, 'time_assignment_to'),
+        time_of_assignment=pulumi.get(__response__, 'time_of_assignment'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion'),
+        unassigner_id=pulumi.get(__response__, 'unassigner_id'),
+        validate_assignment_trigger=pulumi.get(__response__, 'validate_assignment_trigger')))

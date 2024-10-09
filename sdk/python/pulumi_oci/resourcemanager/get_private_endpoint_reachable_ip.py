@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -107,9 +112,6 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[str] = None,
         ip_address=pulumi.get(__ret__, 'ip_address'),
         private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
         private_ip=pulumi.get(__ret__, 'private_ip'))
-
-
-@_utilities.lift_output_func(get_private_endpoint_reachable_ip)
 def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                              private_ip: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointReachableIpResult]:
@@ -132,4 +134,13 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
     :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     :param str private_ip: The IP address of the resource in the private subnet.
     """
-    ...
+    __args__ = dict()
+    __args__['privateEndpointId'] = private_endpoint_id
+    __args__['privateIp'] = private_ip
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp', __args__, opts=opts, typ=GetPrivateEndpointReachableIpResult)
+    return __ret__.apply(lambda __response__: GetPrivateEndpointReachableIpResult(
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
+        private_ip=pulumi.get(__response__, 'private_ip')))

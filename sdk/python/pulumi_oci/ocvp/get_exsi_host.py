@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -476,9 +481,6 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgraded_replacement_esxi_host_id=pulumi.get(__ret__, 'upgraded_replacement_esxi_host_id'),
         vmware_software_version=pulumi.get(__ret__, 'vmware_software_version'))
-
-
-@_utilities.lift_output_func(get_exsi_host)
 def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExsiHostResult]:
     """
@@ -498,4 +500,40 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[str]] = None,
 
     :param str esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
     """
-    ...
+    __args__ = dict()
+    __args__['esxiHostId'] = esxi_host_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getExsiHost:getExsiHost', __args__, opts=opts, typ=GetExsiHostResult)
+    return __ret__.apply(lambda __response__: GetExsiHostResult(
+        billing_contract_end_date=pulumi.get(__response__, 'billing_contract_end_date'),
+        billing_donor_host_id=pulumi.get(__response__, 'billing_donor_host_id'),
+        capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_availability_domain=pulumi.get(__response__, 'compute_availability_domain'),
+        compute_instance_id=pulumi.get(__response__, 'compute_instance_id'),
+        current_commitment=pulumi.get(__response__, 'current_commitment'),
+        current_sku=pulumi.get(__response__, 'current_sku'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        esxi_host_id=pulumi.get(__response__, 'esxi_host_id'),
+        esxi_software_version=pulumi.get(__response__, 'esxi_software_version'),
+        failed_esxi_host_id=pulumi.get(__response__, 'failed_esxi_host_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        grace_period_end_date=pulumi.get(__response__, 'grace_period_end_date'),
+        host_ocpu_count=pulumi.get(__response__, 'host_ocpu_count'),
+        host_shape_name=pulumi.get(__response__, 'host_shape_name'),
+        id=pulumi.get(__response__, 'id'),
+        is_billing_continuation_in_progress=pulumi.get(__response__, 'is_billing_continuation_in_progress'),
+        is_billing_swapping_in_progress=pulumi.get(__response__, 'is_billing_swapping_in_progress'),
+        next_commitment=pulumi.get(__response__, 'next_commitment'),
+        next_sku=pulumi.get(__response__, 'next_sku'),
+        non_upgraded_esxi_host_id=pulumi.get(__response__, 'non_upgraded_esxi_host_id'),
+        replacement_esxi_host_id=pulumi.get(__response__, 'replacement_esxi_host_id'),
+        sddc_id=pulumi.get(__response__, 'sddc_id'),
+        state=pulumi.get(__response__, 'state'),
+        swap_billing_host_id=pulumi.get(__response__, 'swap_billing_host_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        upgraded_replacement_esxi_host_id=pulumi.get(__response__, 'upgraded_replacement_esxi_host_id'),
+        vmware_software_version=pulumi.get(__response__, 'vmware_software_version')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -220,9 +225,6 @@ def get_audit_archive_retrievals(access_level: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_of_expiry=pulumi.get(__ret__, 'time_of_expiry'))
-
-
-@_utilities.lift_output_func(get_audit_archive_retrievals)
 def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                         audit_archive_retrieval_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id: Optional[pulumi.Input[str]] = None,
@@ -264,4 +266,27 @@ def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Opti
     :param str target_id: The OCID of the target associated with the archive retrieval.
     :param str time_of_expiry: The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['auditArchiveRetrievalId'] = audit_archive_retrieval_id
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['targetId'] = target_id
+    __args__['timeOfExpiry'] = time_of_expiry
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals', __args__, opts=opts, typ=GetAuditArchiveRetrievalsResult)
+    return __ret__.apply(lambda __response__: GetAuditArchiveRetrievalsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        audit_archive_retrieval_collections=pulumi.get(__response__, 'audit_archive_retrieval_collections'),
+        audit_archive_retrieval_id=pulumi.get(__response__, 'audit_archive_retrieval_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_of_expiry=pulumi.get(__response__, 'time_of_expiry')))

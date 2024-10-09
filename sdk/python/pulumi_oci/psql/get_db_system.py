@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -434,9 +439,6 @@ def get_db_system(db_system_id: Optional[str] = None,
         system_type=pulumi.get(__ret__, 'system_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_db_system)
 def get_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
                          excluded_fields: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemResult]:
@@ -459,4 +461,39 @@ def get_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
     :param str db_system_id: A unique identifier for the database system.
     :param str excluded_fields: A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
     """
-    ...
+    __args__ = dict()
+    __args__['dbSystemId'] = db_system_id
+    __args__['excludedFields'] = excluded_fields
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystem:getDbSystem', __args__, opts=opts, typ=GetDbSystemResult)
+    return __ret__.apply(lambda __response__: GetDbSystemResult(
+        admin_username=pulumi.get(__response__, 'admin_username'),
+        apply_config=pulumi.get(__response__, 'apply_config'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config_id=pulumi.get(__response__, 'config_id'),
+        credentials=pulumi.get(__response__, 'credentials'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        excluded_fields=pulumi.get(__response__, 'excluded_fields'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        instance_count=pulumi.get(__response__, 'instance_count'),
+        instance_memory_size_in_gbs=pulumi.get(__response__, 'instance_memory_size_in_gbs'),
+        instance_ocpu_count=pulumi.get(__response__, 'instance_ocpu_count'),
+        instances=pulumi.get(__response__, 'instances'),
+        instances_details=pulumi.get(__response__, 'instances_details'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        management_policies=pulumi.get(__response__, 'management_policies'),
+        network_details=pulumi.get(__response__, 'network_details'),
+        patch_operations=pulumi.get(__response__, 'patch_operations'),
+        shape=pulumi.get(__response__, 'shape'),
+        sources=pulumi.get(__response__, 'sources'),
+        state=pulumi.get(__response__, 'state'),
+        storage_details=pulumi.get(__response__, 'storage_details'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        system_type=pulumi.get(__response__, 'system_type'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

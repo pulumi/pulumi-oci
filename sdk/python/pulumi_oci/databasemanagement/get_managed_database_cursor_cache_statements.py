@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -150,9 +155,6 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[Unio
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         sql_text=pulumi.get(__ret__, 'sql_text'))
-
-
-@_utilities.lift_output_func(get_managed_database_cursor_cache_statements)
 def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseCursorCacheStatementsFilterArgs', 'GetManagedDatabaseCursorCacheStatementsFilterArgsDict']]]]] = None,
                                                         limit: Optional[pulumi.Input[Optional[int]]] = None,
                                                         managed_database_id: Optional[pulumi.Input[str]] = None,
@@ -180,4 +182,19 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
     :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['limit'] = limit
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['sqlText'] = sql_text
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements', __args__, opts=opts, typ=GetManagedDatabaseCursorCacheStatementsResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseCursorCacheStatementsResult(
+        cursor_cache_statement_collections=pulumi.get(__response__, 'cursor_cache_statement_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        limit=pulumi.get(__response__, 'limit'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        sql_text=pulumi.get(__response__, 'sql_text')))

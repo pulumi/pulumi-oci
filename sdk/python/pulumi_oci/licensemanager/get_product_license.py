@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -341,9 +346,6 @@ def get_product_license(product_license_id: Optional[str] = None,
         total_license_record_count=pulumi.get(__ret__, 'total_license_record_count'),
         total_license_units_consumed=pulumi.get(__ret__, 'total_license_units_consumed'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-
-
-@_utilities.lift_output_func(get_product_license)
 def get_product_license_output(product_license_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProductLicenseResult]:
     """
@@ -363,4 +365,30 @@ def get_product_license_output(product_license_id: Optional[pulumi.Input[str]] =
 
     :param str product_license_id: Unique product license identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['productLicenseId'] = product_license_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getProductLicense:getProductLicense', __args__, opts=opts, typ=GetProductLicenseResult)
+    return __ret__.apply(lambda __response__: GetProductLicenseResult(
+        active_license_record_count=pulumi.get(__response__, 'active_license_record_count'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        images=pulumi.get(__response__, 'images'),
+        is_over_subscribed=pulumi.get(__response__, 'is_over_subscribed'),
+        is_unlimited=pulumi.get(__response__, 'is_unlimited'),
+        is_vendor_oracle=pulumi.get(__response__, 'is_vendor_oracle'),
+        license_unit=pulumi.get(__response__, 'license_unit'),
+        product_license_id=pulumi.get(__response__, 'product_license_id'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        status_description=pulumi.get(__response__, 'status_description'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        total_active_license_unit_count=pulumi.get(__response__, 'total_active_license_unit_count'),
+        total_license_record_count=pulumi.get(__response__, 'total_license_record_count'),
+        total_license_units_consumed=pulumi.get(__response__, 'total_license_units_consumed'),
+        vendor_name=pulumi.get(__response__, 'vendor_name')))

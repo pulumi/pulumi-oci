@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_db_home_patches(db_home_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         patches=pulumi.get(__ret__, 'patches'))
-
-
-@_utilities.lift_output_func(get_db_home_patches)
 def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[str]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict']]]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomePatchesResult]:
@@ -130,4 +132,13 @@ def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[str]] = None,
 
     :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['dbHomeId'] = db_home_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbHomePatches:getDbHomePatches', __args__, opts=opts, typ=GetDbHomePatchesResult)
+    return __ret__.apply(lambda __response__: GetDbHomePatchesResult(
+        db_home_id=pulumi.get(__response__, 'db_home_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        patches=pulumi.get(__response__, 'patches')))

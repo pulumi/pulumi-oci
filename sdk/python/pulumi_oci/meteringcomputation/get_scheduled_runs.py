@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,9 +115,6 @@ def get_scheduled_runs(filters: Optional[Sequence[Union['GetScheduledRunsFilterA
         id=pulumi.get(__ret__, 'id'),
         schedule_id=pulumi.get(__ret__, 'schedule_id'),
         scheduled_run_collections=pulumi.get(__ret__, 'scheduled_run_collections'))
-
-
-@_utilities.lift_output_func(get_scheduled_runs)
 def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScheduledRunsFilterArgs', 'GetScheduledRunsFilterArgsDict']]]]] = None,
                               schedule_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduledRunsResult]:
@@ -133,4 +135,13 @@ def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[U
 
     :param str schedule_id: The unique ID of a schedule.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['scheduleId'] = schedule_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getScheduledRuns:getScheduledRuns', __args__, opts=opts, typ=GetScheduledRunsResult)
+    return __ret__.apply(lambda __response__: GetScheduledRunsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        schedule_id=pulumi.get(__response__, 'schedule_id'),
+        scheduled_run_collections=pulumi.get(__response__, 'scheduled_run_collections')))

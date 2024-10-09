@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -249,9 +254,6 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_target_alert_policy_association)
 def get_target_alert_policy_association_output(target_alert_policy_association_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationResult]:
     """
@@ -271,4 +273,23 @@ def get_target_alert_policy_association_output(target_alert_policy_association_i
 
     :param str target_alert_policy_association_id: The OCID of the target-alert policy association.
     """
-    ...
+    __args__ = dict()
+    __args__['targetAlertPolicyAssociationId'] = target_alert_policy_association_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation', __args__, opts=opts, typ=GetTargetAlertPolicyAssociationResult)
+    return __ret__.apply(lambda __response__: GetTargetAlertPolicyAssociationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        policy_id=pulumi.get(__response__, 'policy_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_alert_policy_association_id=pulumi.get(__response__, 'target_alert_policy_association_id'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

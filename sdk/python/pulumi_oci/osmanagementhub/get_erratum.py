@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -280,9 +285,6 @@ def get_erratum(compartment_id: Optional[str] = None,
         synopsis=pulumi.get(__ret__, 'synopsis'),
         time_issued=pulumi.get(__ret__, 'time_issued'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_erratum)
 def get_erratum_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        name: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetErratumResult]:
@@ -305,4 +307,26 @@ def get_erratum_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
     :param str name: The erratum name (such as ELSA-2023-34678).
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getErratum:getErratum', __args__, opts=opts, typ=GetErratumResult)
+    return __ret__.apply(lambda __response__: GetErratumResult(
+        advisory_severity=pulumi.get(__response__, 'advisory_severity'),
+        advisory_type=pulumi.get(__response__, 'advisory_type'),
+        classification_type=pulumi.get(__response__, 'classification_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        description=pulumi.get(__response__, 'description'),
+        from_=pulumi.get(__response__, 'from_'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        os_families=pulumi.get(__response__, 'os_families'),
+        packages=pulumi.get(__response__, 'packages'),
+        references=pulumi.get(__response__, 'references'),
+        related_cves=pulumi.get(__response__, 'related_cves'),
+        repositories=pulumi.get(__response__, 'repositories'),
+        solution=pulumi.get(__response__, 'solution'),
+        synopsis=pulumi.get(__response__, 'synopsis'),
+        time_issued=pulumi.get(__response__, 'time_issued'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

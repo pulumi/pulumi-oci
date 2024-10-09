@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -157,9 +162,6 @@ def get_profile_levels(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         profile_level_collections=pulumi.get(__ret__, 'profile_level_collections'),
         recommendation_name=pulumi.get(__ret__, 'recommendation_name'))
-
-
-@_utilities.lift_output_func(get_profile_levels)
 def get_profile_levels_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProfileLevelsFilterArgs', 'GetProfileLevelsFilterArgsDict']]]]] = None,
@@ -191,4 +193,19 @@ def get_profile_levels_output(compartment_id: Optional[pulumi.Input[str]] = None
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['recommendationName'] = recommendation_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getProfileLevels:getProfileLevels', __args__, opts=opts, typ=GetProfileLevelsResult)
+    return __ret__.apply(lambda __response__: GetProfileLevelsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        profile_level_collections=pulumi.get(__response__, 'profile_level_collections'),
+        recommendation_name=pulumi.get(__response__, 'recommendation_name')))

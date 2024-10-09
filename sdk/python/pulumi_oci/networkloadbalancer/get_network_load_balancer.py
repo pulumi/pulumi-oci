@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -329,9 +334,6 @@ def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_network_load_balancer)
 def get_network_load_balancer_output(network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancerResult]:
     """
@@ -351,4 +353,30 @@ def get_network_load_balancer_output(network_load_balancer_id: Optional[pulumi.I
 
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
     """
-    ...
+    __args__ = dict()
+    __args__['networkLoadBalancerId'] = network_load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer', __args__, opts=opts, typ=GetNetworkLoadBalancerResult)
+    return __ret__.apply(lambda __response__: GetNetworkLoadBalancerResult(
+        assigned_ipv6=pulumi.get(__response__, 'assigned_ipv6'),
+        assigned_private_ipv4=pulumi.get(__response__, 'assigned_private_ipv4'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ip_addresses=pulumi.get(__response__, 'ip_addresses'),
+        is_preserve_source_destination=pulumi.get(__response__, 'is_preserve_source_destination'),
+        is_private=pulumi.get(__response__, 'is_private'),
+        is_symmetric_hash_enabled=pulumi.get(__response__, 'is_symmetric_hash_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        network_load_balancer_id=pulumi.get(__response__, 'network_load_balancer_id'),
+        network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
+        nlb_ip_version=pulumi.get(__response__, 'nlb_ip_version'),
+        reserved_ips=pulumi.get(__response__, 'reserved_ips'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        subnet_ipv6cidr=pulumi.get(__response__, 'subnet_ipv6cidr'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

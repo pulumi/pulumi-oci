@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -387,9 +392,6 @@ def get_trace(apm_domain_id: Optional[str] = None,
         trace_key=pulumi.get(__ret__, 'trace_key'),
         trace_namespace=pulumi.get(__ret__, 'trace_namespace'),
         trace_status=pulumi.get(__ret__, 'trace_status'))
-
-
-@_utilities.lift_output_func(get_trace)
 def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                      time_trace_started_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                      time_trace_started_less_than: Optional[pulumi.Input[Optional[str]]] = None,
@@ -421,4 +423,37 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     :param str trace_namespace: Name space from which the trace details need to be retrieved.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['timeTraceStartedGreaterThanOrEqualTo'] = time_trace_started_greater_than_or_equal_to
+    __args__['timeTraceStartedLessThan'] = time_trace_started_less_than
+    __args__['traceKey'] = trace_key
+    __args__['traceNamespace'] = trace_namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmTraces/getTrace:getTrace', __args__, opts=opts, typ=GetTraceResult)
+    return __ret__.apply(lambda __response__: GetTraceResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        error_span_count=pulumi.get(__response__, 'error_span_count'),
+        id=pulumi.get(__response__, 'id'),
+        is_fault=pulumi.get(__response__, 'is_fault'),
+        key=pulumi.get(__response__, 'key'),
+        root_span_duration_in_ms=pulumi.get(__response__, 'root_span_duration_in_ms'),
+        root_span_operation_name=pulumi.get(__response__, 'root_span_operation_name'),
+        root_span_service_name=pulumi.get(__response__, 'root_span_service_name'),
+        service_summaries=pulumi.get(__response__, 'service_summaries'),
+        source_name=pulumi.get(__response__, 'source_name'),
+        span_count=pulumi.get(__response__, 'span_count'),
+        span_summaries=pulumi.get(__response__, 'span_summaries'),
+        spans=pulumi.get(__response__, 'spans'),
+        time_earliest_span_started=pulumi.get(__response__, 'time_earliest_span_started'),
+        time_latest_span_ended=pulumi.get(__response__, 'time_latest_span_ended'),
+        time_root_span_ended=pulumi.get(__response__, 'time_root_span_ended'),
+        time_root_span_started=pulumi.get(__response__, 'time_root_span_started'),
+        time_trace_started_greater_than_or_equal_to=pulumi.get(__response__, 'time_trace_started_greater_than_or_equal_to'),
+        time_trace_started_less_than=pulumi.get(__response__, 'time_trace_started_less_than'),
+        trace_duration_in_ms=pulumi.get(__response__, 'trace_duration_in_ms'),
+        trace_error_code=pulumi.get(__response__, 'trace_error_code'),
+        trace_error_type=pulumi.get(__response__, 'trace_error_type'),
+        trace_key=pulumi.get(__response__, 'trace_key'),
+        trace_namespace=pulumi.get(__response__, 'trace_namespace'),
+        trace_status=pulumi.get(__response__, 'trace_status')))

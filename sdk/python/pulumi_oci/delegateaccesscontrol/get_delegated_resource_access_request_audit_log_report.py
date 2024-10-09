@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -146,9 +151,6 @@ def get_delegated_resource_access_request_audit_log_report(delegated_resource_ac
         process_tree=pulumi.get(__ret__, 'process_tree'),
         report=pulumi.get(__ret__, 'report'),
         time_report_generated=pulumi.get(__ret__, 'time_report_generated'))
-
-
-@_utilities.lift_output_func(get_delegated_resource_access_request_audit_log_report)
 def get_delegated_resource_access_request_audit_log_report_output(delegated_resource_access_request_id: Optional[pulumi.Input[str]] = None,
                                                                   is_process_tree_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestAuditLogReportResult]:
@@ -171,4 +173,16 @@ def get_delegated_resource_access_request_audit_log_report_output(delegated_reso
     :param str delegated_resource_access_request_id: Unique Delegated Resource Access Request identifier
     :param bool is_process_tree_enabled: Set to true to enable process tree computation in audit report
     """
-    ...
+    __args__ = dict()
+    __args__['delegatedResourceAccessRequestId'] = delegated_resource_access_request_id
+    __args__['isProcessTreeEnabled'] = is_process_tree_enabled
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport', __args__, opts=opts, typ=GetDelegatedResourceAccessRequestAuditLogReportResult)
+    return __ret__.apply(lambda __response__: GetDelegatedResourceAccessRequestAuditLogReportResult(
+        audit_report_status=pulumi.get(__response__, 'audit_report_status'),
+        delegated_resource_access_request_id=pulumi.get(__response__, 'delegated_resource_access_request_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_process_tree_enabled=pulumi.get(__response__, 'is_process_tree_enabled'),
+        process_tree=pulumi.get(__response__, 'process_tree'),
+        report=pulumi.get(__response__, 'report'),
+        time_report_generated=pulumi.get(__response__, 'time_report_generated')))

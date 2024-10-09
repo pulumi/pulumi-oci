@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -159,9 +164,6 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
         license_type=pulumi.get(__ret__, 'license_type'),
         search_by_user=pulumi.get(__ret__, 'search_by_user'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_java_downloads_java_license_acceptance_records)
 def get_java_downloads_java_license_acceptance_records_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict']]]]] = None,
                                                               id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -194,4 +196,20 @@ def get_java_downloads_java_license_acceptance_records_output(compartment_id: Op
     :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
     :param str status: The status of license acceptance.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['licenseType'] = license_type
+    __args__['searchByUser'] = search_by_user
+    __args__['status'] = status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords', __args__, opts=opts, typ=GetJavaDownloadsJavaLicenseAcceptanceRecordsResult)
+    return __ret__.apply(lambda __response__: GetJavaDownloadsJavaLicenseAcceptanceRecordsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        java_license_acceptance_record_collections=pulumi.get(__response__, 'java_license_acceptance_record_collections'),
+        license_type=pulumi.get(__response__, 'license_type'),
+        search_by_user=pulumi.get(__response__, 'search_by_user'),
+        status=pulumi.get(__response__, 'status')))

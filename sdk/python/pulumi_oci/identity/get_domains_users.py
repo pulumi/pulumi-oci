@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -261,9 +266,6 @@ def get_domains_users(attribute_sets: Optional[Sequence[str]] = None,
         user_count=pulumi.get(__ret__, 'user_count'),
         user_filter=pulumi.get(__ret__, 'user_filter'),
         users=pulumi.get(__ret__, 'users'))
-
-
-@_utilities.lift_output_func(get_domains_users)
 def get_domains_users_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                              attributes: Optional[pulumi.Input[Optional[str]]] = None,
                              authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -307,4 +309,34 @@ def get_domains_users_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     :param int user_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
     :param str user_filter: OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['compartmentId'] = compartment_id
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    __args__['sortBy'] = sort_by
+    __args__['sortOrder'] = sort_order
+    __args__['startIndex'] = start_index
+    __args__['userCount'] = user_count
+    __args__['userFilter'] = user_filter
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsUsers:getDomainsUsers', __args__, opts=opts, typ=GetDomainsUsersResult)
+    return __ret__.apply(lambda __response__: GetDomainsUsersResult(
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        items_per_page=pulumi.get(__response__, 'items_per_page'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        sort_by=pulumi.get(__response__, 'sort_by'),
+        sort_order=pulumi.get(__response__, 'sort_order'),
+        start_index=pulumi.get(__response__, 'start_index'),
+        total_results=pulumi.get(__response__, 'total_results'),
+        user_count=pulumi.get(__response__, 'user_count'),
+        user_filter=pulumi.get(__response__, 'user_filter'),
+        users=pulumi.get(__response__, 'users')))

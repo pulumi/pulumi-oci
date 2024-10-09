@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -175,9 +180,6 @@ def get_service_providers(compartment_id: Optional[str] = None,
         service_provider_type=pulumi.get(__ret__, 'service_provider_type'),
         state=pulumi.get(__ret__, 'state'),
         supported_resource_type=pulumi.get(__ret__, 'supported_resource_type'))
-
-
-@_utilities.lift_output_func(get_service_providers)
 def get_service_providers_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceProvidersFilterArgs', 'GetServiceProvidersFilterArgsDict']]]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -210,4 +212,21 @@ def get_service_providers_output(compartment_id: Optional[pulumi.Input[str]] = N
     :param str state: A filter to return only Service Provider resources whose lifecycleState matches the given Service Provider lifecycle state.
     :param str supported_resource_type: A filter to return only Service Provider resources whose supported resource type matches the given resource type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['serviceProviderType'] = service_provider_type
+    __args__['state'] = state
+    __args__['supportedResourceType'] = supported_resource_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getServiceProviders:getServiceProviders', __args__, opts=opts, typ=GetServiceProvidersResult)
+    return __ret__.apply(lambda __response__: GetServiceProvidersResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        service_provider_summary_collections=pulumi.get(__response__, 'service_provider_summary_collections'),
+        service_provider_type=pulumi.get(__response__, 'service_provider_type'),
+        state=pulumi.get(__response__, 'state'),
+        supported_resource_type=pulumi.get(__response__, 'supported_resource_type')))

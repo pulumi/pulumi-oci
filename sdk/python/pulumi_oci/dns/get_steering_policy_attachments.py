@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -238,9 +243,6 @@ def get_steering_policy_attachments(compartment_id: Optional[str] = None,
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
-
-
-@_utilities.lift_output_func(get_steering_policy_attachments)
 def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                            domain: Optional[pulumi.Input[Optional[str]]] = None,
@@ -288,4 +290,30 @@ def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input
     :param str time_created_less_than: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
     :param str zone_id: Search by zone OCID. Will match any resource whose zone ID matches the provided value.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['domain'] = domain
+    __args__['domainContains'] = domain_contains
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    __args__['steeringPolicyId'] = steering_policy_id
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    __args__['zoneId'] = zone_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments', __args__, opts=opts, typ=GetSteeringPolicyAttachmentsResult)
+    return __ret__.apply(lambda __response__: GetSteeringPolicyAttachmentsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain=pulumi.get(__response__, 'domain'),
+        domain_contains=pulumi.get(__response__, 'domain_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        steering_policy_attachments=pulumi.get(__response__, 'steering_policy_attachments'),
+        steering_policy_id=pulumi.get(__response__, 'steering_policy_id'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than'),
+        zone_id=pulumi.get(__response__, 'zone_id')))

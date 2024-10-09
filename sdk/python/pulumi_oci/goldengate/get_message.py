@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -94,9 +99,6 @@ def get_message(deployment_id: Optional[str] = None,
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-
-
-@_utilities.lift_output_func(get_message)
 def get_message_output(deployment_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMessageResult]:
     """
@@ -116,4 +118,11 @@ def get_message_output(deployment_id: Optional[pulumi.Input[str]] = None,
 
     :param str deployment_id: A unique Deployment identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deploymentId'] = deployment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getMessage:getMessage', __args__, opts=opts, typ=GetMessageResult)
+    return __ret__.apply(lambda __response__: GetMessageResult(
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -582,9 +587,6 @@ def get_sharded_database(metadata: Optional[str] = None,
         time_zone=pulumi.get(__ret__, 'time_zone'),
         upload_signed_certificate_and_generate_wallet_trigger=pulumi.get(__ret__, 'upload_signed_certificate_and_generate_wallet_trigger'),
         validate_network_trigger=pulumi.get(__ret__, 'validate_network_trigger'))
-
-
-@_utilities.lift_output_func(get_sharded_database)
 def get_sharded_database_output(metadata: Optional[pulumi.Input[Optional[str]]] = None,
                                 sharded_database_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShardedDatabaseResult]:
@@ -607,4 +609,52 @@ def get_sharded_database_output(metadata: Optional[pulumi.Input[Optional[str]]] 
     :param str metadata: Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
     :param str sharded_database_id: Sharded Database identifier
     """
-    ...
+    __args__ = dict()
+    __args__['metadata'] = metadata
+    __args__['shardedDatabaseId'] = sharded_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GloballyDistributedDatabase/getShardedDatabase:getShardedDatabase', __args__, opts=opts, typ=GetShardedDatabaseResult)
+    return __ret__.apply(lambda __response__: GetShardedDatabaseResult(
+        catalog_details=pulumi.get(__response__, 'catalog_details'),
+        character_set=pulumi.get(__response__, 'character_set'),
+        chunks=pulumi.get(__response__, 'chunks'),
+        cluster_certificate_common_name=pulumi.get(__response__, 'cluster_certificate_common_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configure_gsms_trigger=pulumi.get(__response__, 'configure_gsms_trigger'),
+        configure_sharding_trigger=pulumi.get(__response__, 'configure_sharding_trigger'),
+        connection_strings=pulumi.get(__response__, 'connection_strings'),
+        db_deployment_type=pulumi.get(__response__, 'db_deployment_type'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        db_workload=pulumi.get(__response__, 'db_workload'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        download_gsm_certificate_signing_request_trigger=pulumi.get(__response__, 'download_gsm_certificate_signing_request_trigger'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        generate_gsm_certificate_signing_request_trigger=pulumi.get(__response__, 'generate_gsm_certificate_signing_request_trigger'),
+        generate_wallet_trigger=pulumi.get(__response__, 'generate_wallet_trigger'),
+        get_connection_string_trigger=pulumi.get(__response__, 'get_connection_string_trigger'),
+        gsms=pulumi.get(__response__, 'gsms'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_state=pulumi.get(__response__, 'lifecycle_state'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        listener_port=pulumi.get(__response__, 'listener_port'),
+        listener_port_tls=pulumi.get(__response__, 'listener_port_tls'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        ncharacter_set=pulumi.get(__response__, 'ncharacter_set'),
+        ons_port_local=pulumi.get(__response__, 'ons_port_local'),
+        ons_port_remote=pulumi.get(__response__, 'ons_port_remote'),
+        patch_operations=pulumi.get(__response__, 'patch_operations'),
+        prefix=pulumi.get(__response__, 'prefix'),
+        private_endpoint=pulumi.get(__response__, 'private_endpoint'),
+        shard_details=pulumi.get(__response__, 'shard_details'),
+        sharded_database_id=pulumi.get(__response__, 'sharded_database_id'),
+        sharding_method=pulumi.get(__response__, 'sharding_method'),
+        start_database_trigger=pulumi.get(__response__, 'start_database_trigger'),
+        state=pulumi.get(__response__, 'state'),
+        stop_database_trigger=pulumi.get(__response__, 'stop_database_trigger'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        time_zone=pulumi.get(__response__, 'time_zone'),
+        upload_signed_certificate_and_generate_wallet_trigger=pulumi.get(__response__, 'upload_signed_certificate_and_generate_wallet_trigger'),
+        validate_network_trigger=pulumi.get(__response__, 'validate_network_trigger')))

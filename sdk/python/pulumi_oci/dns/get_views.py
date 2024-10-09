@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -167,9 +172,6 @@ def get_views(compartment_id: Optional[str] = None,
         scope=pulumi.get(__ret__, 'scope'),
         state=pulumi.get(__ret__, 'state'),
         views=pulumi.get(__ret__, 'views'))
-
-
-@_utilities.lift_output_func(get_views)
 def get_views_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetViewsFilterArgs', 'GetViewsFilterArgsDict']]]]] = None,
@@ -207,4 +209,20 @@ def get_views_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str scope: Value must be `PRIVATE` when listing private views.
     :param str state: The state of a resource.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['scope'] = scope
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getViews:getViews', __args__, opts=opts, typ=GetViewsResult)
+    return __ret__.apply(lambda __response__: GetViewsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        scope=pulumi.get(__response__, 'scope'),
+        state=pulumi.get(__response__, 'state'),
+        views=pulumi.get(__response__, 'views')))

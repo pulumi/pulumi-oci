@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -339,9 +344,6 @@ def get_domain(domain_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         type=pulumi.get(__ret__, 'type'),
         url=pulumi.get(__ret__, 'url'))
-
-
-@_utilities.lift_output_func(get_domain)
 def get_domain_output(domain_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainResult]:
     """
@@ -364,4 +366,31 @@ def get_domain_output(domain_id: Optional[pulumi.Input[str]] = None,
 
     :param str domain_id: The OCID of the domain
     """
-    ...
+    __args__ = dict()
+    __args__['domainId'] = domain_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomain:getDomain', __args__, opts=opts, typ=GetDomainResult)
+    return __ret__.apply(lambda __response__: GetDomainResult(
+        admin_email=pulumi.get(__response__, 'admin_email'),
+        admin_first_name=pulumi.get(__response__, 'admin_first_name'),
+        admin_last_name=pulumi.get(__response__, 'admin_last_name'),
+        admin_user_name=pulumi.get(__response__, 'admin_user_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain_id=pulumi.get(__response__, 'domain_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        home_region=pulumi.get(__response__, 'home_region'),
+        home_region_url=pulumi.get(__response__, 'home_region_url'),
+        id=pulumi.get(__response__, 'id'),
+        is_hidden_on_login=pulumi.get(__response__, 'is_hidden_on_login'),
+        is_notification_bypassed=pulumi.get(__response__, 'is_notification_bypassed'),
+        is_primary_email_required=pulumi.get(__response__, 'is_primary_email_required'),
+        license_type=pulumi.get(__response__, 'license_type'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        replica_regions=pulumi.get(__response__, 'replica_regions'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        type=pulumi.get(__response__, 'type'),
+        url=pulumi.get(__response__, 'url')))

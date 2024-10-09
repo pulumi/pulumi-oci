@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -108,9 +113,6 @@ def get_container_instance_shape(availability_domain: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-
-
-@_utilities.lift_output_func(get_container_instance_shape)
 def get_container_instance_shape_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerInstanceShapeResult]:
@@ -133,4 +135,13 @@ def get_container_instance_shape_output(availability_domain: Optional[pulumi.Inp
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str compartment_id: The ID of the compartment in which to list resources.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape', __args__, opts=opts, typ=GetContainerInstanceShapeResult)
+    return __ret__.apply(lambda __response__: GetContainerInstanceShapeResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items')))

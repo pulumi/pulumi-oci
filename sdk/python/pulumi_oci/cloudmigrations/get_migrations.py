@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_migrations(compartment_id: Optional[str] = None,
         migration_collections=pulumi.get(__ret__, 'migration_collections'),
         migration_id=pulumi.get(__ret__, 'migration_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_migrations)
 def get_migrations_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMigrationsFilterArgs', 'GetMigrationsFilterArgsDict']]]]] = None,
@@ -190,4 +192,19 @@ def get_migrations_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     :param str migration_id: Unique migration identifier
     :param str state: A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['migrationId'] = migration_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getMigrations:getMigrations', __args__, opts=opts, typ=GetMigrationsResult)
+    return __ret__.apply(lambda __response__: GetMigrationsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        migration_collections=pulumi.get(__response__, 'migration_collections'),
+        migration_id=pulumi.get(__response__, 'migration_id'),
+        state=pulumi.get(__response__, 'state')))

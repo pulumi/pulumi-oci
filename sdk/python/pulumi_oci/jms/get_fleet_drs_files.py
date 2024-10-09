@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_fleet_drs_files(filters: Optional[Sequence[Union['GetFleetDrsFilesFilter
         filters=pulumi.get(__ret__, 'filters'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_fleet_drs_files)
 def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetDrsFilesFilterArgs', 'GetFleetDrsFilesFilterArgsDict']]]]] = None,
                                fleet_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetDrsFilesResult]:
@@ -130,4 +132,13 @@ def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['fleetId'] = fleet_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetDrsFiles:getFleetDrsFiles', __args__, opts=opts, typ=GetFleetDrsFilesResult)
+    return __ret__.apply(lambda __response__: GetFleetDrsFilesResult(
+        drs_file_collections=pulumi.get(__response__, 'drs_file_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        id=pulumi.get(__response__, 'id')))

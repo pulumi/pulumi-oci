@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -193,9 +198,6 @@ def get_java_downloads_java_download_tokens(compartment_id: Optional[str] = None
         search_by_user=pulumi.get(__ret__, 'search_by_user'),
         state=pulumi.get(__ret__, 'state'),
         value=pulumi.get(__ret__, 'value'))
-
-
-@_utilities.lift_output_func(get_java_downloads_java_download_tokens)
 def get_java_downloads_java_download_tokens_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                    family_version: Optional[pulumi.Input[Optional[str]]] = None,
@@ -234,4 +236,24 @@ def get_java_downloads_java_download_tokens_output(compartment_id: Optional[pulu
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     :param str value: Unique JavaDownloadToken value.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['familyVersion'] = family_version
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['searchByUser'] = search_by_user
+    __args__['state'] = state
+    __args__['value'] = value
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaDownloadTokens:getJavaDownloadsJavaDownloadTokens', __args__, opts=opts, typ=GetJavaDownloadsJavaDownloadTokensResult)
+    return __ret__.apply(lambda __response__: GetJavaDownloadsJavaDownloadTokensResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        family_version=pulumi.get(__response__, 'family_version'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        java_download_token_collections=pulumi.get(__response__, 'java_download_token_collections'),
+        search_by_user=pulumi.get(__response__, 'search_by_user'),
+        state=pulumi.get(__response__, 'state'),
+        value=pulumi.get(__response__, 'value')))

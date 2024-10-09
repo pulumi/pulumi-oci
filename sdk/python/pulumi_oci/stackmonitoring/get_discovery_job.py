@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -260,9 +265,6 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         user_id=pulumi.get(__ret__, 'user_id'))
-
-
-@_utilities.lift_output_func(get_discovery_job)
 def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobResult]:
     """
@@ -282,4 +284,24 @@ def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = Non
 
     :param str discovery_job_id: The Discovery Job ID
     """
-    ...
+    __args__ = dict()
+    __args__['discoveryJobId'] = discovery_job_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getDiscoveryJob:getDiscoveryJob', __args__, opts=opts, typ=GetDiscoveryJobResult)
+    return __ret__.apply(lambda __response__: GetDiscoveryJobResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        discovery_client=pulumi.get(__response__, 'discovery_client'),
+        discovery_details=pulumi.get(__response__, 'discovery_details'),
+        discovery_job_id=pulumi.get(__response__, 'discovery_job_id'),
+        discovery_type=pulumi.get(__response__, 'discovery_type'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        should_propagate_tags_to_discovered_resources=pulumi.get(__response__, 'should_propagate_tags_to_discovered_resources'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        status_message=pulumi.get(__response__, 'status_message'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        tenant_id=pulumi.get(__response__, 'tenant_id'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        user_id=pulumi.get(__response__, 'user_id')))

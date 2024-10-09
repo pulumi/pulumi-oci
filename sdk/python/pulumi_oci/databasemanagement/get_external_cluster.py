@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -341,9 +346,6 @@ def get_external_cluster(external_cluster_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'),
         vip_configurations=pulumi.get(__ret__, 'vip_configurations'))
-
-
-@_utilities.lift_output_func(get_external_cluster)
 def get_external_cluster_output(external_cluster_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClusterResult]:
     """
@@ -363,4 +365,30 @@ def get_external_cluster_output(external_cluster_id: Optional[pulumi.Input[str]]
 
     :param str external_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['externalClusterId'] = external_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalCluster:getExternalCluster', __args__, opts=opts, typ=GetExternalClusterResult)
+    return __ret__.apply(lambda __response__: GetExternalClusterResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        component_name=pulumi.get(__response__, 'component_name'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_cluster_id=pulumi.get(__response__, 'external_cluster_id'),
+        external_connector_id=pulumi.get(__response__, 'external_connector_id'),
+        external_db_system_id=pulumi.get(__response__, 'external_db_system_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        grid_home=pulumi.get(__response__, 'grid_home'),
+        id=pulumi.get(__response__, 'id'),
+        is_flex_cluster=pulumi.get(__response__, 'is_flex_cluster'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        network_configurations=pulumi.get(__response__, 'network_configurations'),
+        ocr_file_location=pulumi.get(__response__, 'ocr_file_location'),
+        scan_configurations=pulumi.get(__response__, 'scan_configurations'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version'),
+        vip_configurations=pulumi.get(__response__, 'vip_configurations')))

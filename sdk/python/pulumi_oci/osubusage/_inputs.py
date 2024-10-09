@@ -4,15 +4,35 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetCommitmentAggregatedsFilterArgs',
+    'GetCommitmentAggregatedsFilterArgsDict',
     'GetComputedUsagesFilterArgs',
+    'GetComputedUsagesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetCommitmentAggregatedsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCommitmentAggregatedsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetCommitmentAggregatedsFilterArgs:
@@ -58,6 +78,17 @@ class GetCommitmentAggregatedsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetComputedUsagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Product name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetComputedUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetComputedUsagesFilterArgs:

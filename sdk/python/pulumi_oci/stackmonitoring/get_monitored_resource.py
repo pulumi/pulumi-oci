@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -397,9 +402,6 @@ def get_monitored_resource(monitored_resource_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_monitored_resource)
 def get_monitored_resource_output(monitored_resource_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceResult]:
     """
@@ -419,4 +421,35 @@ def get_monitored_resource_output(monitored_resource_id: Optional[pulumi.Input[s
 
     :param str monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
     """
-    ...
+    __args__ = dict()
+    __args__['monitoredResourceId'] = monitored_resource_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResource:getMonitoredResource', __args__, opts=opts, typ=GetMonitoredResourceResult)
+    return __ret__.apply(lambda __response__: GetMonitoredResourceResult(
+        additional_aliases=pulumi.get(__response__, 'additional_aliases'),
+        additional_credentials=pulumi.get(__response__, 'additional_credentials'),
+        aliases=pulumi.get(__response__, 'aliases'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        credentials=pulumi.get(__response__, 'credentials'),
+        database_connection_details=pulumi.get(__response__, 'database_connection_details'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_id=pulumi.get(__response__, 'external_id'),
+        external_resource_id=pulumi.get(__response__, 'external_resource_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        id=pulumi.get(__response__, 'id'),
+        license=pulumi.get(__response__, 'license'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        monitored_resource_id=pulumi.get(__response__, 'monitored_resource_id'),
+        name=pulumi.get(__response__, 'name'),
+        properties=pulumi.get(__response__, 'properties'),
+        resource_category=pulumi.get(__response__, 'resource_category'),
+        resource_time_zone=pulumi.get(__response__, 'resource_time_zone'),
+        source_type=pulumi.get(__response__, 'source_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        tenant_id=pulumi.get(__response__, 'tenant_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

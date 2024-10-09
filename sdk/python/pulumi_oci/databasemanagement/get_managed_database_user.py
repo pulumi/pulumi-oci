@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -420,9 +425,6 @@ def get_managed_database_user(managed_database_id: Optional[str] = None,
         time_locked=pulumi.get(__ret__, 'time_locked'),
         time_password_changed=pulumi.get(__ret__, 'time_password_changed'),
         user_name=pulumi.get(__ret__, 'user_name'))
-
-
-@_utilities.lift_output_func(get_managed_database_user)
 def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                      opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      user_name: Optional[pulumi.Input[str]] = None,
@@ -448,4 +450,38 @@ def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[
     :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str user_name: The name of the user whose details are to be viewed.
     """
-    ...
+    __args__ = dict()
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['userName'] = user_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseUser:getManagedDatabaseUser', __args__, opts=opts, typ=GetManagedDatabaseUserResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseUserResult(
+        all_shared=pulumi.get(__response__, 'all_shared'),
+        authentication=pulumi.get(__response__, 'authentication'),
+        common=pulumi.get(__response__, 'common'),
+        consumer_group=pulumi.get(__response__, 'consumer_group'),
+        default_collation=pulumi.get(__response__, 'default_collation'),
+        default_tablespace=pulumi.get(__response__, 'default_tablespace'),
+        editions_enabled=pulumi.get(__response__, 'editions_enabled'),
+        external_name=pulumi.get(__response__, 'external_name'),
+        external_shared=pulumi.get(__response__, 'external_shared'),
+        id=pulumi.get(__response__, 'id'),
+        implicit=pulumi.get(__response__, 'implicit'),
+        inherited=pulumi.get(__response__, 'inherited'),
+        local_temp_tablespace=pulumi.get(__response__, 'local_temp_tablespace'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        name=pulumi.get(__response__, 'name'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        oracle_maintained=pulumi.get(__response__, 'oracle_maintained'),
+        password_versions=pulumi.get(__response__, 'password_versions'),
+        profile=pulumi.get(__response__, 'profile'),
+        proxy_connect=pulumi.get(__response__, 'proxy_connect'),
+        status=pulumi.get(__response__, 'status'),
+        temp_tablespace=pulumi.get(__response__, 'temp_tablespace'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_expiring=pulumi.get(__response__, 'time_expiring'),
+        time_last_login=pulumi.get(__response__, 'time_last_login'),
+        time_locked=pulumi.get(__response__, 'time_locked'),
+        time_password_changed=pulumi.get(__response__, 'time_password_changed'),
+        user_name=pulumi.get(__response__, 'user_name')))

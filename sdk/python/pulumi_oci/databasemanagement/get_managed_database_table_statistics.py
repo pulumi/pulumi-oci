@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -108,9 +113,6 @@ def get_managed_database_table_statistics(filters: Optional[Sequence[Union['GetM
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         table_statistics_collections=pulumi.get(__ret__, 'table_statistics_collections'))
-
-
-@_utilities.lift_output_func(get_managed_database_table_statistics)
 def get_managed_database_table_statistics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseTableStatisticsFilterArgs', 'GetManagedDatabaseTableStatisticsFilterArgsDict']]]]] = None,
                                                  managed_database_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseTableStatisticsResult]:
@@ -132,4 +134,13 @@ def get_managed_database_table_statistics_output(filters: Optional[pulumi.Input[
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['managedDatabaseId'] = managed_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics', __args__, opts=opts, typ=GetManagedDatabaseTableStatisticsResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseTableStatisticsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        table_statistics_collections=pulumi.get(__response__, 'table_statistics_collections')))

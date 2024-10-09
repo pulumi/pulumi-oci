@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_replicas(compartment_id: Optional[str] = None,
         replica_id=pulumi.get(__ret__, 'replica_id'),
         replicas=pulumi.get(__ret__, 'replicas'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_replicas)
 def get_replicas_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         configuration_id: Optional[pulumi.Input[Optional[str]]] = None,
                         db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -247,4 +249,25 @@ def get_replicas_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str replica_id: The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str state: The LifecycleState of the read replica.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['configurationId'] = configuration_id
+    __args__['dbSystemId'] = db_system_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isUpToDate'] = is_up_to_date
+    __args__['replicaId'] = replica_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getReplicas:getReplicas', __args__, opts=opts, typ=GetReplicasResult)
+    return __ret__.apply(lambda __response__: GetReplicasResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configuration_id=pulumi.get(__response__, 'configuration_id'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_up_to_date=pulumi.get(__response__, 'is_up_to_date'),
+        replica_id=pulumi.get(__response__, 'replica_id'),
+        replicas=pulumi.get(__response__, 'replicas'),
+        state=pulumi.get(__response__, 'state')))

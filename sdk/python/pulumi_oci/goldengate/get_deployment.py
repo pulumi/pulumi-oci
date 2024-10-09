@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -611,9 +616,6 @@ def get_deployment(deployment_id: Optional[str] = None,
         time_ogg_version_supported_until=pulumi.get(__ret__, 'time_ogg_version_supported_until'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         time_upgrade_required=pulumi.get(__ret__, 'time_upgrade_required'))
-
-
-@_utilities.lift_output_func(get_deployment)
 def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentResult]:
     """
@@ -633,4 +635,51 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
 
     :param str deployment_id: A unique Deployment identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deploymentId'] = deployment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult)
+    return __ret__.apply(lambda __response__: GetDeploymentResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deployment_backup_id=pulumi.get(__response__, 'deployment_backup_id'),
+        deployment_diagnostic_datas=pulumi.get(__response__, 'deployment_diagnostic_datas'),
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        deployment_type=pulumi.get(__response__, 'deployment_type'),
+        deployment_url=pulumi.get(__response__, 'deployment_url'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        fqdn=pulumi.get(__response__, 'fqdn'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ingress_ips=pulumi.get(__response__, 'ingress_ips'),
+        is_auto_scaling_enabled=pulumi.get(__response__, 'is_auto_scaling_enabled'),
+        is_healthy=pulumi.get(__response__, 'is_healthy'),
+        is_latest_version=pulumi.get(__response__, 'is_latest_version'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        is_public=pulumi.get(__response__, 'is_public'),
+        is_storage_utilization_limit_exceeded=pulumi.get(__response__, 'is_storage_utilization_limit_exceeded'),
+        license_model=pulumi.get(__response__, 'license_model'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
+        load_balancer_id=pulumi.get(__response__, 'load_balancer_id'),
+        load_balancer_subnet_id=pulumi.get(__response__, 'load_balancer_subnet_id'),
+        locks=pulumi.get(__response__, 'locks'),
+        maintenance_configurations=pulumi.get(__response__, 'maintenance_configurations'),
+        maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
+        next_maintenance_action_type=pulumi.get(__response__, 'next_maintenance_action_type'),
+        next_maintenance_description=pulumi.get(__response__, 'next_maintenance_description'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        ogg_datas=pulumi.get(__response__, 'ogg_datas'),
+        private_ip_address=pulumi.get(__response__, 'private_ip_address'),
+        public_ip_address=pulumi.get(__response__, 'public_ip_address'),
+        state=pulumi.get(__response__, 'state'),
+        storage_utilization_in_bytes=pulumi.get(__response__, 'storage_utilization_in_bytes'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_next_maintenance=pulumi.get(__response__, 'time_of_next_maintenance'),
+        time_ogg_version_supported_until=pulumi.get(__response__, 'time_ogg_version_supported_until'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        time_upgrade_required=pulumi.get(__response__, 'time_upgrade_required')))

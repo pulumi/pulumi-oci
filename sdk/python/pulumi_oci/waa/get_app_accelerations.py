@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -165,9 +170,6 @@ def get_app_accelerations(compartment_id: Optional[str] = None,
         states=pulumi.get(__ret__, 'states'),
         web_app_acceleration_collections=pulumi.get(__ret__, 'web_app_acceleration_collections'),
         web_app_acceleration_policy_id=pulumi.get(__ret__, 'web_app_acceleration_policy_id'))
-
-
-@_utilities.lift_output_func(get_app_accelerations)
 def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppAccelerationsFilterArgs', 'GetAppAccelerationsFilterArgsDict']]]]] = None,
@@ -200,4 +202,20 @@ def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[str]] = N
     :param Sequence[str] states: A filter to return only resources that match the given lifecycleState.
     :param str web_app_acceleration_policy_id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['states'] = states
+    __args__['webAppAccelerationPolicyId'] = web_app_acceleration_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waa/getAppAccelerations:getAppAccelerations', __args__, opts=opts, typ=GetAppAccelerationsResult)
+    return __ret__.apply(lambda __response__: GetAppAccelerationsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        states=pulumi.get(__response__, 'states'),
+        web_app_acceleration_collections=pulumi.get(__response__, 'web_app_acceleration_collections'),
+        web_app_acceleration_policy_id=pulumi.get(__response__, 'web_app_acceleration_policy_id')))

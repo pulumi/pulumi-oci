@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -277,9 +282,6 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_resource_actions)
 def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                 compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
@@ -342,4 +344,33 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
     :param str state: A filter that returns results that match the lifecycle state specified.
     :param str status: A filter that returns recommendations that match the status specified.
     """
-    ...
+    __args__ = dict()
+    __args__['childTenancyIds'] = child_tenancy_ids
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['includeOrganization'] = include_organization
+    __args__['includeResourceMetadata'] = include_resource_metadata
+    __args__['name'] = name
+    __args__['recommendationId'] = recommendation_id
+    __args__['recommendationName'] = recommendation_name
+    __args__['resourceType'] = resource_type
+    __args__['state'] = state
+    __args__['status'] = status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getResourceActions:getResourceActions', __args__, opts=opts, typ=GetResourceActionsResult)
+    return __ret__.apply(lambda __response__: GetResourceActionsResult(
+        child_tenancy_ids=pulumi.get(__response__, 'child_tenancy_ids'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        include_organization=pulumi.get(__response__, 'include_organization'),
+        include_resource_metadata=pulumi.get(__response__, 'include_resource_metadata'),
+        name=pulumi.get(__response__, 'name'),
+        recommendation_id=pulumi.get(__response__, 'recommendation_id'),
+        recommendation_name=pulumi.get(__response__, 'recommendation_name'),
+        resource_action_collections=pulumi.get(__response__, 'resource_action_collections'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status')))

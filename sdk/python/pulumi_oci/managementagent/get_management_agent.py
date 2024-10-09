@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -436,9 +441,6 @@ def get_management_agent(management_agent_id: Optional[str] = None,
         time_last_heartbeat=pulumi.get(__ret__, 'time_last_heartbeat'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_management_agent)
 def get_management_agent_output(management_agent_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentResult]:
     """
@@ -458,4 +460,38 @@ def get_management_agent_output(management_agent_id: Optional[pulumi.Input[str]]
 
     :param str management_agent_id: Unique Management Agent identifier
     """
-    ...
+    __args__ = dict()
+    __args__['managementAgentId'] = management_agent_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgent:getManagementAgent', __args__, opts=opts, typ=GetManagementAgentResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentResult(
+        availability_status=pulumi.get(__response__, 'availability_status'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_source_lists=pulumi.get(__response__, 'data_source_lists'),
+        data_source_summary_lists=pulumi.get(__response__, 'data_source_summary_lists'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deploy_plugins_ids=pulumi.get(__response__, 'deploy_plugins_ids'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host=pulumi.get(__response__, 'host'),
+        host_id=pulumi.get(__response__, 'host_id'),
+        id=pulumi.get(__response__, 'id'),
+        install_key_id=pulumi.get(__response__, 'install_key_id'),
+        install_path=pulumi.get(__response__, 'install_path'),
+        install_type=pulumi.get(__response__, 'install_type'),
+        is_agent_auto_upgradable=pulumi.get(__response__, 'is_agent_auto_upgradable'),
+        is_customer_deployed=pulumi.get(__response__, 'is_customer_deployed'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        managed_agent_id=pulumi.get(__response__, 'managed_agent_id'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        management_agent_properties=pulumi.get(__response__, 'management_agent_properties'),
+        platform_name=pulumi.get(__response__, 'platform_name'),
+        platform_type=pulumi.get(__response__, 'platform_type'),
+        platform_version=pulumi.get(__response__, 'platform_version'),
+        plugin_lists=pulumi.get(__response__, 'plugin_lists'),
+        resource_artifact_version=pulumi.get(__response__, 'resource_artifact_version'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_heartbeat=pulumi.get(__response__, 'time_last_heartbeat'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version')))

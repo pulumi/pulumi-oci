@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -626,9 +631,6 @@ def get_instance(instance_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_maintenance_reboot_due=pulumi.get(__ret__, 'time_maintenance_reboot_due'),
         update_operation_constraint=pulumi.get(__ret__, 'update_operation_constraint'))
-
-
-@_utilities.lift_output_func(get_instance)
 def get_instance_output(instance_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceResult]:
     """
@@ -651,4 +653,53 @@ def get_instance_output(instance_id: Optional[pulumi.Input[str]] = None,
 
     :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
     """
-    ...
+    __args__ = dict()
+    __args__['instanceId'] = instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstance:getInstance', __args__, opts=opts, typ=GetInstanceResult)
+    return __ret__.apply(lambda __response__: GetInstanceResult(
+        agent_configs=pulumi.get(__response__, 'agent_configs'),
+        async_=pulumi.get(__response__, 'async_'),
+        availability_configs=pulumi.get(__response__, 'availability_configs'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        boot_volume_id=pulumi.get(__response__, 'boot_volume_id'),
+        capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_cluster_id=pulumi.get(__response__, 'compute_cluster_id'),
+        create_vnic_details=pulumi.get(__response__, 'create_vnic_details'),
+        dedicated_vm_host_id=pulumi.get(__response__, 'dedicated_vm_host_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        extended_metadata=pulumi.get(__response__, 'extended_metadata'),
+        fault_domain=pulumi.get(__response__, 'fault_domain'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hostname_label=pulumi.get(__response__, 'hostname_label'),
+        id=pulumi.get(__response__, 'id'),
+        image=pulumi.get(__response__, 'image'),
+        instance_configuration_id=pulumi.get(__response__, 'instance_configuration_id'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        instance_options=pulumi.get(__response__, 'instance_options'),
+        ipxe_script=pulumi.get(__response__, 'ipxe_script'),
+        is_cross_numa_node=pulumi.get(__response__, 'is_cross_numa_node'),
+        is_pv_encryption_in_transit_enabled=pulumi.get(__response__, 'is_pv_encryption_in_transit_enabled'),
+        launch_mode=pulumi.get(__response__, 'launch_mode'),
+        launch_options=pulumi.get(__response__, 'launch_options'),
+        launch_volume_attachments=pulumi.get(__response__, 'launch_volume_attachments'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        platform_configs=pulumi.get(__response__, 'platform_configs'),
+        preemptible_instance_configs=pulumi.get(__response__, 'preemptible_instance_configs'),
+        preserve_boot_volume=pulumi.get(__response__, 'preserve_boot_volume'),
+        preserve_data_volumes_created_at_launch=pulumi.get(__response__, 'preserve_data_volumes_created_at_launch'),
+        private_ip=pulumi.get(__response__, 'private_ip'),
+        public_ip=pulumi.get(__response__, 'public_ip'),
+        region=pulumi.get(__response__, 'region'),
+        shape=pulumi.get(__response__, 'shape'),
+        shape_configs=pulumi.get(__response__, 'shape_configs'),
+        source_details=pulumi.get(__response__, 'source_details'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_maintenance_reboot_due=pulumi.get(__response__, 'time_maintenance_reboot_due'),
+        update_operation_constraint=pulumi.get(__response__, 'update_operation_constraint')))

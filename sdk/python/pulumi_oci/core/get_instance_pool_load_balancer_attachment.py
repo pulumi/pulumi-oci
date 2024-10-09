@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -162,9 +167,6 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[str] =
         port=pulumi.get(__ret__, 'port'),
         state=pulumi.get(__ret__, 'state'),
         vnic_selection=pulumi.get(__ret__, 'vnic_selection'))
-
-
-@_utilities.lift_output_func(get_instance_pool_load_balancer_attachment)
 def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional[pulumi.Input[str]] = None,
                                                       instance_pool_load_balancer_attachment_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolLoadBalancerAttachmentResult]:
@@ -187,4 +189,17 @@ def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional
     :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
     :param str instance_pool_load_balancer_attachment_id: The OCID of the load balancer attachment.
     """
-    ...
+    __args__ = dict()
+    __args__['instancePoolId'] = instance_pool_id
+    __args__['instancePoolLoadBalancerAttachmentId'] = instance_pool_load_balancer_attachment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment', __args__, opts=opts, typ=GetInstancePoolLoadBalancerAttachmentResult)
+    return __ret__.apply(lambda __response__: GetInstancePoolLoadBalancerAttachmentResult(
+        backend_set_name=pulumi.get(__response__, 'backend_set_name'),
+        id=pulumi.get(__response__, 'id'),
+        instance_pool_id=pulumi.get(__response__, 'instance_pool_id'),
+        instance_pool_load_balancer_attachment_id=pulumi.get(__response__, 'instance_pool_load_balancer_attachment_id'),
+        load_balancer_id=pulumi.get(__response__, 'load_balancer_id'),
+        port=pulumi.get(__response__, 'port'),
+        state=pulumi.get(__response__, 'state'),
+        vnic_selection=pulumi.get(__response__, 'vnic_selection')))

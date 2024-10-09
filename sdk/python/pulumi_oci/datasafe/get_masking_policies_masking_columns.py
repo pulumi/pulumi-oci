@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -334,9 +339,6 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         time_updated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_updated_greater_than_or_equal_to'),
         time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'))
-
-
-@_utilities.lift_output_func(get_masking_policies_masking_columns)
 def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                 data_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict']]]]] = None,
@@ -403,4 +405,41 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
     :param str time_updated_greater_than_or_equal_to: Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     :param str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     """
-    ...
+    __args__ = dict()
+    __args__['columnNames'] = column_names
+    __args__['dataTypes'] = data_types
+    __args__['filters'] = filters
+    __args__['isMaskingEnabled'] = is_masking_enabled
+    __args__['isSeedRequired'] = is_seed_required
+    __args__['maskingColumnGroups'] = masking_column_groups
+    __args__['maskingColumnLifecycleState'] = masking_column_lifecycle_state
+    __args__['maskingPolicyId'] = masking_policy_id
+    __args__['objectTypes'] = object_types
+    __args__['objects'] = objects
+    __args__['schemaNames'] = schema_names
+    __args__['sensitiveTypeId'] = sensitive_type_id
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    __args__['timeUpdatedGreaterThanOrEqualTo'] = time_updated_greater_than_or_equal_to
+    __args__['timeUpdatedLessThan'] = time_updated_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns', __args__, opts=opts, typ=GetMaskingPoliciesMaskingColumnsResult)
+    return __ret__.apply(lambda __response__: GetMaskingPoliciesMaskingColumnsResult(
+        column_names=pulumi.get(__response__, 'column_names'),
+        data_types=pulumi.get(__response__, 'data_types'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_masking_enabled=pulumi.get(__response__, 'is_masking_enabled'),
+        is_seed_required=pulumi.get(__response__, 'is_seed_required'),
+        masking_column_collections=pulumi.get(__response__, 'masking_column_collections'),
+        masking_column_groups=pulumi.get(__response__, 'masking_column_groups'),
+        masking_column_lifecycle_state=pulumi.get(__response__, 'masking_column_lifecycle_state'),
+        masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
+        object_types=pulumi.get(__response__, 'object_types'),
+        objects=pulumi.get(__response__, 'objects'),
+        schema_names=pulumi.get(__response__, 'schema_names'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than'),
+        time_updated_greater_than_or_equal_to=pulumi.get(__response__, 'time_updated_greater_than_or_equal_to'),
+        time_updated_less_than=pulumi.get(__response__, 'time_updated_less_than')))

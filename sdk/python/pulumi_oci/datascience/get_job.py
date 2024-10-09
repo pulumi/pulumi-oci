@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -346,9 +351,6 @@ def get_job(job_id: Optional[str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_job)
 def get_job_output(job_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobResult]:
     """
@@ -368,4 +370,32 @@ def get_job_output(job_id: Optional[pulumi.Input[str]] = None,
 
     :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
     """
-    ...
+    __args__ = dict()
+    __args__['jobId'] = job_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getJob:getJob', __args__, opts=opts, typ=GetJobResult)
+    return __ret__.apply(lambda __response__: GetJobResult(
+        artifact_content_disposition=pulumi.get(__response__, 'artifact_content_disposition'),
+        artifact_content_length=pulumi.get(__response__, 'artifact_content_length'),
+        artifact_content_md5=pulumi.get(__response__, 'artifact_content_md5'),
+        artifact_last_modified=pulumi.get(__response__, 'artifact_last_modified'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        delete_related_job_runs=pulumi.get(__response__, 'delete_related_job_runs'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        empty_artifact=pulumi.get(__response__, 'empty_artifact'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        job_artifact=pulumi.get(__response__, 'job_artifact'),
+        job_configuration_details=pulumi.get(__response__, 'job_configuration_details'),
+        job_environment_configuration_details=pulumi.get(__response__, 'job_environment_configuration_details'),
+        job_id=pulumi.get(__response__, 'job_id'),
+        job_infrastructure_configuration_details=pulumi.get(__response__, 'job_infrastructure_configuration_details'),
+        job_log_configuration_details=pulumi.get(__response__, 'job_log_configuration_details'),
+        job_storage_mount_configuration_details_lists=pulumi.get(__response__, 'job_storage_mount_configuration_details_lists'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

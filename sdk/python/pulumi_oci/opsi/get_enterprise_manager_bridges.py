@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -163,9 +168,6 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         states=pulumi.get(__ret__, 'states'))
-
-
-@_utilities.lift_output_func(get_enterprise_manager_bridges)
 def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -199,4 +201,20 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
     :param str id: Unique Enterprise Manager bridge identifier
     :param Sequence[str] states: Lifecycle states
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['states'] = states
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges', __args__, opts=opts, typ=GetEnterpriseManagerBridgesResult)
+    return __ret__.apply(lambda __response__: GetEnterpriseManagerBridgesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        enterprise_manager_bridge_collections=pulumi.get(__response__, 'enterprise_manager_bridge_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        states=pulumi.get(__response__, 'states')))

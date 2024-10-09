@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -262,9 +267,6 @@ def get_ping_monitor(monitor_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         vantage_point_names=pulumi.get(__ret__, 'vantage_point_names'))
-
-
-@_utilities.lift_output_func(get_ping_monitor)
 def get_ping_monitor_output(monitor_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPingMonitorResult]:
     """
@@ -284,4 +286,24 @@ def get_ping_monitor_output(monitor_id: Optional[pulumi.Input[str]] = None,
 
     :param str monitor_id: The OCID of a monitor.
     """
-    ...
+    __args__ = dict()
+    __args__['monitorId'] = monitor_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:HealthChecks/getPingMonitor:getPingMonitor', __args__, opts=opts, typ=GetPingMonitorResult)
+    return __ret__.apply(lambda __response__: GetPingMonitorResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        home_region=pulumi.get(__response__, 'home_region'),
+        id=pulumi.get(__response__, 'id'),
+        interval_in_seconds=pulumi.get(__response__, 'interval_in_seconds'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        monitor_id=pulumi.get(__response__, 'monitor_id'),
+        port=pulumi.get(__response__, 'port'),
+        protocol=pulumi.get(__response__, 'protocol'),
+        results_url=pulumi.get(__response__, 'results_url'),
+        targets=pulumi.get(__response__, 'targets'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        timeout_in_seconds=pulumi.get(__response__, 'timeout_in_seconds'),
+        vantage_point_names=pulumi.get(__response__, 'vantage_point_names')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -432,9 +437,6 @@ def get_external_listener(external_listener_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trace_directory=pulumi.get(__ret__, 'trace_directory'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_external_listener)
 def get_external_listener_output(external_listener_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalListenerResult]:
     """
@@ -454,4 +456,37 @@ def get_external_listener_output(external_listener_id: Optional[pulumi.Input[str
 
     :param str external_listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
     """
-    ...
+    __args__ = dict()
+    __args__['externalListenerId'] = external_listener_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalListener:getExternalListener', __args__, opts=opts, typ=GetExternalListenerResult)
+    return __ret__.apply(lambda __response__: GetExternalListenerResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        adr_home_directory=pulumi.get(__response__, 'adr_home_directory'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        component_name=pulumi.get(__response__, 'component_name'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        endpoints=pulumi.get(__response__, 'endpoints'),
+        external_connector_id=pulumi.get(__response__, 'external_connector_id'),
+        external_db_home_id=pulumi.get(__response__, 'external_db_home_id'),
+        external_db_node_id=pulumi.get(__response__, 'external_db_node_id'),
+        external_db_system_id=pulumi.get(__response__, 'external_db_system_id'),
+        external_listener_id=pulumi.get(__response__, 'external_listener_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        listener_alias=pulumi.get(__response__, 'listener_alias'),
+        listener_ora_location=pulumi.get(__response__, 'listener_ora_location'),
+        listener_type=pulumi.get(__response__, 'listener_type'),
+        log_directory=pulumi.get(__response__, 'log_directory'),
+        oracle_home=pulumi.get(__response__, 'oracle_home'),
+        serviced_asms=pulumi.get(__response__, 'serviced_asms'),
+        serviced_databases=pulumi.get(__response__, 'serviced_databases'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        trace_directory=pulumi.get(__response__, 'trace_directory'),
+        version=pulumi.get(__response__, 'version')))

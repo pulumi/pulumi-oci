@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -185,9 +190,6 @@ def get_suppression(suppression_id: Optional[str] = None,
         suppression_id=pulumi.get(__ret__, 'suppression_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_suppressed=pulumi.get(__ret__, 'time_last_suppressed'))
-
-
-@_utilities.lift_output_func(get_suppression)
 def get_suppression_output(suppression_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSuppressionResult]:
     """
@@ -208,4 +210,18 @@ def get_suppression_output(suppression_id: Optional[pulumi.Input[str]] = None,
 
     :param str suppression_id: The unique OCID of the suppression.
     """
-    ...
+    __args__ = dict()
+    __args__['suppressionId'] = suppression_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Email/getSuppression:getSuppression', __args__, opts=opts, typ=GetSuppressionResult)
+    return __ret__.apply(lambda __response__: GetSuppressionResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        email_address=pulumi.get(__response__, 'email_address'),
+        error_detail=pulumi.get(__response__, 'error_detail'),
+        error_source=pulumi.get(__response__, 'error_source'),
+        id=pulumi.get(__response__, 'id'),
+        message_id=pulumi.get(__response__, 'message_id'),
+        reason=pulumi.get(__response__, 'reason'),
+        suppression_id=pulumi.get(__response__, 'suppression_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_suppressed=pulumi.get(__response__, 'time_last_suppressed')))

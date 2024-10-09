@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -126,9 +131,6 @@ def get_managed_database_addm_task(managed_database_id: Optional[str] = None,
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_managed_database_addm_task)
 def get_managed_database_addm_task_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                           time_end: Optional[pulumi.Input[str]] = None,
                                           time_start: Optional[pulumi.Input[str]] = None,
@@ -155,4 +157,15 @@ def get_managed_database_addm_task_output(managed_database_id: Optional[pulumi.I
     :param str time_end: The end of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
     :param str time_start: The beginning of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
     """
-    ...
+    __args__ = dict()
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask', __args__, opts=opts, typ=GetManagedDatabaseAddmTaskResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseAddmTaskResult(
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -176,9 +181,6 @@ def get_network_security_groups(compartment_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'))
-
-
-@_utilities.lift_output_func(get_network_security_groups)
 def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict']]]]] = None,
@@ -212,4 +214,21 @@ def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Opt
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['vcnId'] = vcn_id
+    __args__['vlanId'] = vlan_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups', __args__, opts=opts, typ=GetNetworkSecurityGroupsResult)
+    return __ret__.apply(lambda __response__: GetNetworkSecurityGroupsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        network_security_groups=pulumi.get(__response__, 'network_security_groups'),
+        state=pulumi.get(__response__, 'state'),
+        vcn_id=pulumi.get(__response__, 'vcn_id'),
+        vlan_id=pulumi.get(__response__, 'vlan_id')))

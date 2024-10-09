@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -302,9 +307,6 @@ def get_connection(connection_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         tls_verify_configs=pulumi.get(__ret__, 'tls_verify_configs'),
         username=pulumi.get(__ret__, 'username'))
-
-
-@_utilities.lift_output_func(get_connection)
 def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionResult]:
     """
@@ -324,4 +326,27 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
 
     :param str connection_id: Unique connection identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['connectionId'] = connection_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getConnection:getConnection', __args__, opts=opts, typ=GetConnectionResult)
+    return __ret__.apply(lambda __response__: GetConnectionResult(
+        access_token=pulumi.get(__response__, 'access_token'),
+        app_password=pulumi.get(__response__, 'app_password'),
+        base_url=pulumi.get(__response__, 'base_url'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_id=pulumi.get(__response__, 'connection_id'),
+        connection_type=pulumi.get(__response__, 'connection_type'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        last_connection_validation_results=pulumi.get(__response__, 'last_connection_validation_results'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        tls_verify_configs=pulumi.get(__response__, 'tls_verify_configs'),
+        username=pulumi.get(__response__, 'username')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -165,9 +170,6 @@ def get_service_environment(compartment_id: Optional[str] = None,
         service_environment_id=pulumi.get(__ret__, 'service_environment_id'),
         status=pulumi.get(__ret__, 'status'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-
-
-@_utilities.lift_output_func(get_service_environment)
 def get_service_environment_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    service_environment_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceEnvironmentResult]:
@@ -192,4 +194,17 @@ def get_service_environment_output(compartment_id: Optional[pulumi.Input[str]] =
            
            **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['serviceEnvironmentId'] = service_environment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment', __args__, opts=opts, typ=GetServiceEnvironmentResult)
+    return __ret__.apply(lambda __response__: GetServiceEnvironmentResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        console_url=pulumi.get(__response__, 'console_url'),
+        id=pulumi.get(__response__, 'id'),
+        service_definitions=pulumi.get(__response__, 'service_definitions'),
+        service_environment_endpoints=pulumi.get(__response__, 'service_environment_endpoints'),
+        service_environment_id=pulumi.get(__response__, 'service_environment_id'),
+        status=pulumi.get(__response__, 'status'),
+        subscription_id=pulumi.get(__response__, 'subscription_id')))

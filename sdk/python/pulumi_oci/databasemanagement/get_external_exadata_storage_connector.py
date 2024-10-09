@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -309,9 +314,6 @@ def get_external_exadata_storage_connector(external_exadata_storage_connector_id
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_external_exadata_storage_connector)
 def get_external_exadata_storage_connector_output(external_exadata_storage_connector_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageConnectorResult]:
     """
@@ -331,4 +333,28 @@ def get_external_exadata_storage_connector_output(external_exadata_storage_conne
 
     :param str external_exadata_storage_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector to the Exadata storage server.
     """
-    ...
+    __args__ = dict()
+    __args__['externalExadataStorageConnectorId'] = external_exadata_storage_connector_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector', __args__, opts=opts, typ=GetExternalExadataStorageConnectorResult)
+    return __ret__.apply(lambda __response__: GetExternalExadataStorageConnectorResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        agent_id=pulumi.get(__response__, 'agent_id'),
+        connection_uri=pulumi.get(__response__, 'connection_uri'),
+        connector_name=pulumi.get(__response__, 'connector_name'),
+        credential_infos=pulumi.get(__response__, 'credential_infos'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        external_exadata_storage_connector_id=pulumi.get(__response__, 'external_exadata_storage_connector_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        internal_id=pulumi.get(__response__, 'internal_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        storage_server_id=pulumi.get(__response__, 'storage_server_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version')))

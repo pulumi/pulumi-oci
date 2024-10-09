@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -146,9 +151,6 @@ def get_ip_inventory_subnet(subnet_id: Optional[str] = None,
         last_updated_timestamp=pulumi.get(__ret__, 'last_updated_timestamp'),
         message=pulumi.get(__ret__, 'message'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'))
-
-
-@_utilities.lift_output_func(get_ip_inventory_subnet)
 def get_ip_inventory_subnet_output(subnet_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpInventorySubnetResult]:
     """
@@ -168,4 +170,15 @@ def get_ip_inventory_subnet_output(subnet_id: Optional[pulumi.Input[str]] = None
 
     :param str subnet_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
     """
-    ...
+    __args__ = dict()
+    __args__['subnetId'] = subnet_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpInventorySubnet:getIpInventorySubnet', __args__, opts=opts, typ=GetIpInventorySubnetResult)
+    return __ret__.apply(lambda __response__: GetIpInventorySubnetResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        ip_inventory_subnet_count=pulumi.get(__response__, 'ip_inventory_subnet_count'),
+        ip_inventory_subnet_resource_summaries=pulumi.get(__response__, 'ip_inventory_subnet_resource_summaries'),
+        last_updated_timestamp=pulumi.get(__response__, 'last_updated_timestamp'),
+        message=pulumi.get(__response__, 'message'),
+        subnet_id=pulumi.get(__response__, 'subnet_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_function(function_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         trace_configs=pulumi.get(__ret__, 'trace_configs'))
-
-
-@_utilities.lift_output_func(get_function)
 def get_function_output(function_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFunctionResult]:
     """
@@ -337,4 +339,28 @@ def get_function_output(function_id: Optional[pulumi.Input[str]] = None,
 
     :param str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
     """
-    ...
+    __args__ = dict()
+    __args__['functionId'] = function_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFunction:getFunction', __args__, opts=opts, typ=GetFunctionResult)
+    return __ret__.apply(lambda __response__: GetFunctionResult(
+        application_id=pulumi.get(__response__, 'application_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config=pulumi.get(__response__, 'config'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        function_id=pulumi.get(__response__, 'function_id'),
+        id=pulumi.get(__response__, 'id'),
+        image=pulumi.get(__response__, 'image'),
+        image_digest=pulumi.get(__response__, 'image_digest'),
+        invoke_endpoint=pulumi.get(__response__, 'invoke_endpoint'),
+        memory_in_mbs=pulumi.get(__response__, 'memory_in_mbs'),
+        provisioned_concurrency_configs=pulumi.get(__response__, 'provisioned_concurrency_configs'),
+        shape=pulumi.get(__response__, 'shape'),
+        source_details=pulumi.get(__response__, 'source_details'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        timeout_in_seconds=pulumi.get(__response__, 'timeout_in_seconds'),
+        trace_configs=pulumi.get(__response__, 'trace_configs')))

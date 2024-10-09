@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -174,9 +179,6 @@ def get_app_catalog_listing(listing_id: Optional[str] = None,
         publisher_name=pulumi.get(__ret__, 'publisher_name'),
         summary=pulumi.get(__ret__, 'summary'),
         time_published=pulumi.get(__ret__, 'time_published'))
-
-
-@_utilities.lift_output_func(get_app_catalog_listing)
 def get_app_catalog_listing_output(listing_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResult]:
     """
@@ -196,4 +198,17 @@ def get_app_catalog_listing_output(listing_id: Optional[pulumi.Input[str]] = Non
 
     :param str listing_id: The OCID of the listing.
     """
-    ...
+    __args__ = dict()
+    __args__['listingId'] = listing_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getAppCatalogListing:getAppCatalogListing', __args__, opts=opts, typ=GetAppCatalogListingResult)
+    return __ret__.apply(lambda __response__: GetAppCatalogListingResult(
+        contact_url=pulumi.get(__response__, 'contact_url'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        listing_id=pulumi.get(__response__, 'listing_id'),
+        publisher_logo_url=pulumi.get(__response__, 'publisher_logo_url'),
+        publisher_name=pulumi.get(__response__, 'publisher_name'),
+        summary=pulumi.get(__response__, 'summary'),
+        time_published=pulumi.get(__response__, 'time_published')))

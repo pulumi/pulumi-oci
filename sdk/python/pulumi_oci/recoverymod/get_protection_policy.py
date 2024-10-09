@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -249,9 +254,6 @@ def get_protection_policy(protection_policy_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_protection_policy)
 def get_protection_policy_output(protection_policy_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionPolicyResult]:
     """
@@ -271,4 +273,23 @@ def get_protection_policy_output(protection_policy_id: Optional[pulumi.Input[str
 
     :param str protection_policy_id: The protection policy OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['protectionPolicyId'] = protection_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:RecoveryMod/getProtectionPolicy:getProtectionPolicy', __args__, opts=opts, typ=GetProtectionPolicyResult)
+    return __ret__.apply(lambda __response__: GetProtectionPolicyResult(
+        backup_retention_period_in_days=pulumi.get(__response__, 'backup_retention_period_in_days'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_predefined_policy=pulumi.get(__response__, 'is_predefined_policy'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        must_enforce_cloud_locality=pulumi.get(__response__, 'must_enforce_cloud_locality'),
+        policy_locked_date_time=pulumi.get(__response__, 'policy_locked_date_time'),
+        protection_policy_id=pulumi.get(__response__, 'protection_policy_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

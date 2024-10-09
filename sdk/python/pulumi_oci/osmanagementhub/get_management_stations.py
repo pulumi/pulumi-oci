@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -179,9 +184,6 @@ def get_management_stations(compartment_id: Optional[str] = None,
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         management_station_collections=pulumi.get(__ret__, 'management_station_collections'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_management_stations)
 def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -217,4 +219,22 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
     :param str state: A filter that returns information for management stations in the specified state.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagementStations:getManagementStations', __args__, opts=opts, typ=GetManagementStationsResult)
+    return __ret__.apply(lambda __response__: GetManagementStationsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        management_station_collections=pulumi.get(__response__, 'management_station_collections'),
+        state=pulumi.get(__response__, 'state')))

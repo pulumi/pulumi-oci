@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -189,9 +194,6 @@ def get_data_safe_private_endpoints(access_level: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_data_safe_private_endpoints)
 def get_data_safe_private_endpoints_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                            compartment_id: Optional[pulumi.Input[str]] = None,
                                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -227,4 +229,23 @@ def get_data_safe_private_endpoints_output(access_level: Optional[pulumi.Input[O
     :param str state: A filter to return only resources that match the specified lifecycle state.
     :param str vcn_id: A filter to return only resources that match the specified VCN OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['vcnId'] = vcn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints', __args__, opts=opts, typ=GetDataSafePrivateEndpointsResult)
+    return __ret__.apply(lambda __response__: GetDataSafePrivateEndpointsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        data_safe_private_endpoints=pulumi.get(__response__, 'data_safe_private_endpoints'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -272,9 +277,6 @@ def get_oneoff_patch(oneoff_patch_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_expiration=pulumi.get(__ret__, 'time_of_expiration'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_oneoff_patch)
 def get_oneoff_patch_output(oneoff_patch_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOneoffPatchResult]:
     """
@@ -294,4 +296,25 @@ def get_oneoff_patch_output(oneoff_patch_id: Optional[pulumi.Input[str]] = None,
 
     :param str oneoff_patch_id: The one-off patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['oneoffPatchId'] = oneoff_patch_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getOneoffPatch:getOneoffPatch', __args__, opts=opts, typ=GetOneoffPatchResult)
+    return __ret__.apply(lambda __response__: GetOneoffPatchResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        download_oneoff_patch_trigger=pulumi.get(__response__, 'download_oneoff_patch_trigger'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        one_off_patches=pulumi.get(__response__, 'one_off_patches'),
+        oneoff_patch_id=pulumi.get(__response__, 'oneoff_patch_id'),
+        release_update=pulumi.get(__response__, 'release_update'),
+        sha256sum=pulumi.get(__response__, 'sha256sum'),
+        size_in_kbs=pulumi.get(__response__, 'size_in_kbs'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_expiration=pulumi.get(__response__, 'time_of_expiration'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

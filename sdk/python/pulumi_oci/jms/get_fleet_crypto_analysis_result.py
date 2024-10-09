@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -318,9 +323,6 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
         time_started=pulumi.get(__ret__, 'time_started'),
         total_event_count=pulumi.get(__ret__, 'total_event_count'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-
-
-@_utilities.lift_output_func(get_fleet_crypto_analysis_result)
 def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[pulumi.Input[str]] = None,
                                             fleet_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultResult]:
@@ -343,4 +345,29 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
     :param str crypto_analysis_result_id: The OCID of the analysis result.
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     """
-    ...
+    __args__ = dict()
+    __args__['cryptoAnalysisResultId'] = crypto_analysis_result_id
+    __args__['fleetId'] = fleet_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult', __args__, opts=opts, typ=GetFleetCryptoAnalysisResultResult)
+    return __ret__.apply(lambda __response__: GetFleetCryptoAnalysisResultResult(
+        aggregation_mode=pulumi.get(__response__, 'aggregation_mode'),
+        bucket=pulumi.get(__response__, 'bucket'),
+        crypto_analysis_result_id=pulumi.get(__response__, 'crypto_analysis_result_id'),
+        crypto_roadmap_version=pulumi.get(__response__, 'crypto_roadmap_version'),
+        finding_count=pulumi.get(__response__, 'finding_count'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        non_compliant_finding_count=pulumi.get(__response__, 'non_compliant_finding_count'),
+        object=pulumi.get(__response__, 'object'),
+        summarized_event_count=pulumi.get(__response__, 'summarized_event_count'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_first_event=pulumi.get(__response__, 'time_first_event'),
+        time_last_event=pulumi.get(__response__, 'time_last_event'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        total_event_count=pulumi.get(__response__, 'total_event_count'),
+        work_request_id=pulumi.get(__response__, 'work_request_id')))

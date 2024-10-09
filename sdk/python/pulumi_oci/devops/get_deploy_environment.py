@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -289,9 +294,6 @@ def get_deploy_environment(deploy_environment_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_deploy_environment)
 def get_deploy_environment_output(deploy_environment_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployEnvironmentResult]:
     """
@@ -311,4 +313,26 @@ def get_deploy_environment_output(deploy_environment_id: Optional[pulumi.Input[s
 
     :param str deploy_environment_id: Unique environment identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deployEnvironmentId'] = deploy_environment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployEnvironment:getDeployEnvironment', __args__, opts=opts, typ=GetDeployEnvironmentResult)
+    return __ret__.apply(lambda __response__: GetDeployEnvironmentResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_instance_group_selectors=pulumi.get(__response__, 'compute_instance_group_selectors'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deploy_environment_id=pulumi.get(__response__, 'deploy_environment_id'),
+        deploy_environment_type=pulumi.get(__response__, 'deploy_environment_type'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        function_id=pulumi.get(__response__, 'function_id'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        network_channels=pulumi.get(__response__, 'network_channels'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[st
         drg_route_distribution_statements=pulumi.get(__ret__, 'drg_route_distribution_statements'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_drg_route_distribution_statements)
 def get_drg_route_distribution_statements_output(drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict']]]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteDistributionStatementsResult]:
@@ -130,4 +132,13 @@ def get_drg_route_distribution_statements_output(drg_route_distribution_id: Opti
 
     :param str drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
     """
-    ...
+    __args__ = dict()
+    __args__['drgRouteDistributionId'] = drg_route_distribution_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements', __args__, opts=opts, typ=GetDrgRouteDistributionStatementsResult)
+    return __ret__.apply(lambda __response__: GetDrgRouteDistributionStatementsResult(
+        drg_route_distribution_id=pulumi.get(__response__, 'drg_route_distribution_id'),
+        drg_route_distribution_statements=pulumi.get(__response__, 'drg_route_distribution_statements'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

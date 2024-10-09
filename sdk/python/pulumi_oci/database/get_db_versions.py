@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_db_versions(compartment_id: Optional[str] = None,
         is_database_software_image_supported=pulumi.get(__ret__, 'is_database_software_image_supported'),
         is_upgrade_supported=pulumi.get(__ret__, 'is_upgrade_supported'),
         storage_management=pulumi.get(__ret__, 'storage_management'))
-
-
-@_utilities.lift_output_func(get_db_versions)
 def get_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                            db_system_shape: Optional[pulumi.Input[Optional[str]]] = None,
@@ -222,4 +224,23 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
            * ASM specifies Oracle Automatic Storage Management
            * LVM specifies logical volume manager, sometimes called logical disk manager.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['dbSystemId'] = db_system_id
+    __args__['dbSystemShape'] = db_system_shape
+    __args__['filters'] = filters
+    __args__['isDatabaseSoftwareImageSupported'] = is_database_software_image_supported
+    __args__['isUpgradeSupported'] = is_upgrade_supported
+    __args__['storageManagement'] = storage_management
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbVersions:getDbVersions', __args__, opts=opts, typ=GetDbVersionsResult)
+    return __ret__.apply(lambda __response__: GetDbVersionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        db_system_shape=pulumi.get(__response__, 'db_system_shape'),
+        db_versions=pulumi.get(__response__, 'db_versions'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_database_software_image_supported=pulumi.get(__response__, 'is_database_software_image_supported'),
+        is_upgrade_supported=pulumi.get(__response__, 'is_upgrade_supported'),
+        storage_management=pulumi.get(__response__, 'storage_management')))

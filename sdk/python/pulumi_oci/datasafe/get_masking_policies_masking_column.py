@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -290,9 +295,6 @@ def get_masking_policies_masking_column(masking_column_key: Optional[str] = None
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_masking_policies_masking_column)
 def get_masking_policies_masking_column_output(masking_column_key: Optional[pulumi.Input[str]] = None,
                                                masking_policy_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnResult]:
@@ -315,4 +317,27 @@ def get_masking_policies_masking_column_output(masking_column_key: Optional[pulu
     :param str masking_column_key: The unique key that identifies the masking column. It's numeric and unique within a masking policy.
     :param str masking_policy_id: The OCID of the masking policy.
     """
-    ...
+    __args__ = dict()
+    __args__['maskingColumnKey'] = masking_column_key
+    __args__['maskingPolicyId'] = masking_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn', __args__, opts=opts, typ=GetMaskingPoliciesMaskingColumnResult)
+    return __ret__.apply(lambda __response__: GetMaskingPoliciesMaskingColumnResult(
+        child_columns=pulumi.get(__response__, 'child_columns'),
+        column_name=pulumi.get(__response__, 'column_name'),
+        data_type=pulumi.get(__response__, 'data_type'),
+        id=pulumi.get(__response__, 'id'),
+        is_masking_enabled=pulumi.get(__response__, 'is_masking_enabled'),
+        key=pulumi.get(__response__, 'key'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        masking_column_group=pulumi.get(__response__, 'masking_column_group'),
+        masking_column_key=pulumi.get(__response__, 'masking_column_key'),
+        masking_formats=pulumi.get(__response__, 'masking_formats'),
+        masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
+        object=pulumi.get(__response__, 'object'),
+        object_type=pulumi.get(__response__, 'object_type'),
+        schema_name=pulumi.get(__response__, 'schema_name'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

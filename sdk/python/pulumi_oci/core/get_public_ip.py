@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -289,9 +294,6 @@ def get_public_ip(id: Optional[str] = None,
         scope=pulumi.get(__ret__, 'scope'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_public_ip)
 def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
                          ip_address: Optional[pulumi.Input[Optional[str]]] = None,
                          private_ip_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -342,4 +344,25 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     :param str ip_address: Gets the public IP based on the public IP address (for example, 129.146.2.1).
     :param str private_ip_id: Gets the public IP assigned to the specified private IP. You must specify the OCID of the private IP. If no public IP is assigned, a 404 is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    __args__['ipAddress'] = ip_address
+    __args__['privateIpId'] = private_ip_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getPublicIp:getPublicIp', __args__, opts=opts, typ=GetPublicIpResult)
+    return __ret__.apply(lambda __response__: GetPublicIpResult(
+        assigned_entity_id=pulumi.get(__response__, 'assigned_entity_id'),
+        assigned_entity_type=pulumi.get(__response__, 'assigned_entity_type'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        lifetime=pulumi.get(__response__, 'lifetime'),
+        private_ip_id=pulumi.get(__response__, 'private_ip_id'),
+        public_ip_pool_id=pulumi.get(__response__, 'public_ip_pool_id'),
+        scope=pulumi.get(__response__, 'scope'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

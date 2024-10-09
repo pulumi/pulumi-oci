@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_fleet_diagnoses(filters: Optional[Sequence[Union['GetFleetDiagnosesFilte
         fleet_diagnosis_collections=pulumi.get(__ret__, 'fleet_diagnosis_collections'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_fleet_diagnoses)
 def get_fleet_diagnoses_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict']]]]] = None,
                                fleet_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetDiagnosesResult]:
@@ -130,4 +132,13 @@ def get_fleet_diagnoses_output(filters: Optional[pulumi.Input[Optional[Sequence[
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['fleetId'] = fleet_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetDiagnoses:getFleetDiagnoses', __args__, opts=opts, typ=GetFleetDiagnosesResult)
+    return __ret__.apply(lambda __response__: GetFleetDiagnosesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        fleet_diagnosis_collections=pulumi.get(__response__, 'fleet_diagnosis_collections'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        id=pulumi.get(__response__, 'id')))

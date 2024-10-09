@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -260,9 +265,6 @@ def get_stream_cdn_config(stream_cdn_config_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_stream_cdn_config)
 def get_stream_cdn_config_output(stream_cdn_config_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamCdnConfigResult]:
     """
@@ -282,4 +284,24 @@ def get_stream_cdn_config_output(stream_cdn_config_id: Optional[pulumi.Input[str
 
     :param str stream_cdn_config_id: Unique StreamCdnConfig identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['streamCdnConfigId'] = stream_cdn_config_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig', __args__, opts=opts, typ=GetStreamCdnConfigResult)
+    return __ret__.apply(lambda __response__: GetStreamCdnConfigResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configs=pulumi.get(__response__, 'configs'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        distribution_channel_id=pulumi.get(__response__, 'distribution_channel_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),
+        locks=pulumi.get(__response__, 'locks'),
+        state=pulumi.get(__response__, 'state'),
+        stream_cdn_config_id=pulumi.get(__response__, 'stream_cdn_config_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

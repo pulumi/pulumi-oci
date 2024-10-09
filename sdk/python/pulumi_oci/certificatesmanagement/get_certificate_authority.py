@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_certificate_authority(certificate_authority_id: Optional[str] = None,
         subjects=pulumi.get(__ret__, 'subjects'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'))
-
-
-@_utilities.lift_output_func(get_certificate_authority)
 def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthorityResult]:
     """
@@ -337,4 +339,28 @@ def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.I
 
     :param str certificate_authority_id: The OCID of the certificate authority (CA).
     """
-    ...
+    __args__ = dict()
+    __args__['certificateAuthorityId'] = certificate_authority_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificateAuthority:getCertificateAuthority', __args__, opts=opts, typ=GetCertificateAuthorityResult)
+    return __ret__.apply(lambda __response__: GetCertificateAuthorityResult(
+        certificate_authority_configs=pulumi.get(__response__, 'certificate_authority_configs'),
+        certificate_authority_id=pulumi.get(__response__, 'certificate_authority_id'),
+        certificate_authority_rules=pulumi.get(__response__, 'certificate_authority_rules'),
+        certificate_revocation_list_details=pulumi.get(__response__, 'certificate_revocation_list_details'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config_type=pulumi.get(__response__, 'config_type'),
+        current_versions=pulumi.get(__response__, 'current_versions'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        issuer_certificate_authority_id=pulumi.get(__response__, 'issuer_certificate_authority_id'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        signing_algorithm=pulumi.get(__response__, 'signing_algorithm'),
+        state=pulumi.get(__response__, 'state'),
+        subjects=pulumi.get(__response__, 'subjects'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion')))

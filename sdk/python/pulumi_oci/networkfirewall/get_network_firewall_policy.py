@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -210,9 +215,6 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[str] = None
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_network_firewall_policy)
 def get_network_firewall_policy_output(network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyResult]:
     """
@@ -232,4 +234,20 @@ def get_network_firewall_policy_output(network_firewall_policy_id: Optional[pulu
 
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
-    ...
+    __args__ = dict()
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicy:getNetworkFirewallPolicy', __args__, opts=opts, typ=GetNetworkFirewallPolicyResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyResult(
+        attached_network_firewall_count=pulumi.get(__response__, 'attached_network_firewall_count'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

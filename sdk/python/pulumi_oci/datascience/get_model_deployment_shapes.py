@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_model_deployment_shapes(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         model_deployment_shapes=pulumi.get(__ret__, 'model_deployment_shapes'))
-
-
-@_utilities.lift_output_func(get_model_deployment_shapes)
 def get_model_deployment_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelDeploymentShapesFilterArgs', 'GetModelDeploymentShapesFilterArgsDict']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelDeploymentShapesResult]:
@@ -130,4 +132,13 @@ def get_model_deployment_shapes_output(compartment_id: Optional[pulumi.Input[str
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes', __args__, opts=opts, typ=GetModelDeploymentShapesResult)
+    return __ret__.apply(lambda __response__: GetModelDeploymentShapesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        model_deployment_shapes=pulumi.get(__response__, 'model_deployment_shapes')))

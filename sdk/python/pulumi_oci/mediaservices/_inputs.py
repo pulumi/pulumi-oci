@@ -4,36 +4,91 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'MediaAssetLockArgs',
+    'MediaAssetLockArgsDict',
     'MediaAssetMediaAssetTagArgs',
+    'MediaAssetMediaAssetTagArgsDict',
     'MediaAssetMetadataArgs',
+    'MediaAssetMetadataArgsDict',
     'MediaWorkflowConfigurationLockArgs',
+    'MediaWorkflowConfigurationLockArgsDict',
     'MediaWorkflowJobLockArgs',
+    'MediaWorkflowJobLockArgsDict',
     'MediaWorkflowJobOutputArgs',
+    'MediaWorkflowJobOutputArgsDict',
     'MediaWorkflowJobTaskLifecycleStateArgs',
+    'MediaWorkflowJobTaskLifecycleStateArgsDict',
     'MediaWorkflowLockArgs',
+    'MediaWorkflowLockArgsDict',
     'MediaWorkflowTaskArgs',
+    'MediaWorkflowTaskArgsDict',
     'StreamCdnConfigConfigArgs',
+    'StreamCdnConfigConfigArgsDict',
     'StreamCdnConfigLockArgs',
+    'StreamCdnConfigLockArgsDict',
     'StreamDistributionChannelLockArgs',
+    'StreamDistributionChannelLockArgsDict',
     'StreamPackagingConfigEncryptionArgs',
+    'StreamPackagingConfigEncryptionArgsDict',
     'StreamPackagingConfigLockArgs',
+    'StreamPackagingConfigLockArgsDict',
     'GetMediaAssetDistributionChannelAttachmentLockArgs',
+    'GetMediaAssetDistributionChannelAttachmentLockArgsDict',
     'GetMediaAssetsFilterArgs',
+    'GetMediaAssetsFilterArgsDict',
     'GetMediaWorkflowConfigurationsFilterArgs',
+    'GetMediaWorkflowConfigurationsFilterArgsDict',
     'GetMediaWorkflowJobFactsFilterArgs',
+    'GetMediaWorkflowJobFactsFilterArgsDict',
     'GetMediaWorkflowJobsFilterArgs',
+    'GetMediaWorkflowJobsFilterArgsDict',
     'GetMediaWorkflowsFilterArgs',
+    'GetMediaWorkflowsFilterArgsDict',
     'GetStreamCdnConfigsFilterArgs',
+    'GetStreamCdnConfigsFilterArgsDict',
     'GetStreamDistributionChannelsFilterArgs',
+    'GetStreamDistributionChannelsFilterArgsDict',
     'GetStreamPackagingConfigsFilterArgs',
+    'GetStreamPackagingConfigsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class MediaAssetLockArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    MediaAssetLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MediaAssetLockArgs:
@@ -120,6 +175,19 @@ class MediaAssetLockArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class MediaAssetMediaAssetTagArgsDict(TypedDict):
+        value: pulumi.Input[str]
+        """
+        (Updatable) Tag of the MediaAsset.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Type of the tag.
+        """
+elif False:
+    MediaAssetMediaAssetTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MediaAssetMediaAssetTagArgs:
     def __init__(__self__, *,
@@ -158,6 +226,15 @@ class MediaAssetMediaAssetTagArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class MediaAssetMetadataArgsDict(TypedDict):
+        metadata: pulumi.Input[str]
+        """
+        (Updatable) JSON string containing the technial metadata for the media asset.
+        """
+elif False:
+    MediaAssetMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MediaAssetMetadataArgs:
     def __init__(__self__, *,
@@ -179,6 +256,31 @@ class MediaAssetMetadataArgs:
     def metadata(self, value: pulumi.Input[str]):
         pulumi.set(self, "metadata", value)
 
+
+if not MYPY:
+    class MediaWorkflowConfigurationLockArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    MediaWorkflowConfigurationLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MediaWorkflowConfigurationLockArgs:
@@ -265,6 +367,31 @@ class MediaWorkflowConfigurationLockArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class MediaWorkflowJobLockArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    MediaWorkflowJobLockArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MediaWorkflowJobLockArgs:
     def __init__(__self__, *,
@@ -349,6 +476,31 @@ class MediaWorkflowJobLockArgs:
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
 
+
+if not MYPY:
+    class MediaWorkflowJobOutputArgsDict(TypedDict):
+        asset_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of job output.
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        The bucket name of the job output.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The ID associated with the job output.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The namespace name of the job output.
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name of the job output.
+        """
+elif False:
+    MediaWorkflowJobOutputArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MediaWorkflowJobOutputArgs:
@@ -437,6 +589,23 @@ class MediaWorkflowJobOutputArgs:
         pulumi.set(self, "object", value)
 
 
+if not MYPY:
+    class MediaWorkflowJobTaskLifecycleStateArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        Unique key within a MediaWorkflowJob for the task.
+        """
+        lifecycle_details: NotRequired[pulumi.Input[str]]
+        """
+        The lifecycle details of MediaWorkflowJob task.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the MediaWorkflowJob task.
+        """
+elif False:
+    MediaWorkflowJobTaskLifecycleStateArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MediaWorkflowJobTaskLifecycleStateArgs:
     def __init__(__self__, *,
@@ -491,6 +660,31 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
 
+
+if not MYPY:
+    class MediaWorkflowLockArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    MediaWorkflowLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MediaWorkflowLockArgs:
@@ -576,6 +770,43 @@ class MediaWorkflowLockArgs:
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
 
+
+if not MYPY:
+    class MediaWorkflowTaskArgsDict(TypedDict):
+        key: pulumi.Input[str]
+        """
+        (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
+        """
+        parameters: pulumi.Input[str]
+        """
+        (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        """
+        version: pulumi.Input[str]
+        """
+        (Updatable) The version of the MediaWorkflowTaskDeclaration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        enable_parameter_reference: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
+        """
+        enable_when_referenced_parameter_equals: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
+        """
+        prerequisites: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
+        """
+elif False:
+    MediaWorkflowTaskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MediaWorkflowTaskArgs:
@@ -699,6 +930,59 @@ class MediaWorkflowTaskArgs:
     def prerequisites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "prerequisites", value)
 
+
+if not MYPY:
+    class StreamCdnConfigConfigArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The name of the CDN configuration type.
+        """
+        edge_hostname: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
+        """
+        edge_path_prefix: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The path to prepend when building CDN URLs.
+        """
+        edge_token_key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The encryption key to use for edge token authentication.
+        """
+        edge_token_salt: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Salt to use when encrypting authentication token.
+        """
+        is_edge_token_auth: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether token authentication should be used at the CDN edge.
+        """
+        origin_auth_secret_key_a: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The shared secret key A, two for errorless key rotation.
+        """
+        origin_auth_secret_key_b: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The shared secret key B, two for errorless key rotation.
+        """
+        origin_auth_secret_key_nonce_a: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
+        """
+        origin_auth_secret_key_nonce_b: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
+        """
+        origin_auth_sign_encryption: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of encryption used to compute the signature.
+        """
+        origin_auth_sign_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of data used to compute the signature.
+        """
+elif False:
+    StreamCdnConfigConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class StreamCdnConfigConfigArgs:
@@ -898,6 +1182,35 @@ class StreamCdnConfigConfigArgs:
         pulumi.set(self, "origin_auth_sign_type", value)
 
 
+if not MYPY:
+    class StreamCdnConfigLockArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        The compartment ID of the lock.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    StreamCdnConfigLockArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class StreamCdnConfigLockArgs:
     def __init__(__self__, *,
@@ -990,6 +1303,35 @@ class StreamCdnConfigLockArgs:
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
 
+
+if not MYPY:
+    class StreamDistributionChannelLockArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    StreamDistributionChannelLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class StreamDistributionChannelLockArgs:
@@ -1084,6 +1426,19 @@ class StreamDistributionChannelLockArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class StreamPackagingConfigEncryptionArgsDict(TypedDict):
+        algorithm: pulumi.Input[str]
+        """
+        The encryption algorithm for the stream packaging configuration.
+        """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
+        """
+elif False:
+    StreamPackagingConfigEncryptionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class StreamPackagingConfigEncryptionArgs:
     def __init__(__self__, *,
@@ -1121,6 +1476,31 @@ class StreamPackagingConfigEncryptionArgs:
     def kms_key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kms_key_id", value)
 
+
+if not MYPY:
+    class StreamPackagingConfigLockArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        The compartment ID of the lock.
+        """
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    StreamPackagingConfigLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class StreamPackagingConfigLockArgs:
@@ -1207,6 +1587,31 @@ class StreamPackagingConfigLockArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class GetMediaAssetDistributionChannelAttachmentLockArgsDict(TypedDict):
+        compartment_id: str
+        """
+        The compartment ID of the lock.
+        """
+        message: str
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: str
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: str
+        """
+        When the lock was created.
+        """
+        type: str
+        """
+        Type of the lock.
+        """
+elif False:
+    GetMediaAssetDistributionChannelAttachmentLockArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMediaAssetDistributionChannelAttachmentLockArgs:
     def __init__(__self__, *,
@@ -1289,6 +1694,14 @@ class GetMediaAssetDistributionChannelAttachmentLockArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class GetMediaAssetsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMediaAssetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMediaAssetsFilterArgs:
     def __init__(__self__, *,
@@ -1328,6 +1741,14 @@ class GetMediaAssetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMediaWorkflowConfigurationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMediaWorkflowConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMediaWorkflowConfigurationsFilterArgs:
     def __init__(__self__, *,
@@ -1366,6 +1787,17 @@ class GetMediaWorkflowConfigurationsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMediaWorkflowJobFactsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique name. It is read-only and generated for the fact.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMediaWorkflowJobFactsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMediaWorkflowJobFactsFilterArgs:
@@ -1412,6 +1844,14 @@ class GetMediaWorkflowJobFactsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMediaWorkflowJobsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMediaWorkflowJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMediaWorkflowJobsFilterArgs:
     def __init__(__self__, *,
@@ -1450,6 +1890,14 @@ class GetMediaWorkflowJobsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMediaWorkflowsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMediaWorkflowsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMediaWorkflowsFilterArgs:
@@ -1490,6 +1938,14 @@ class GetMediaWorkflowsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetStreamCdnConfigsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetStreamCdnConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetStreamCdnConfigsFilterArgs:
     def __init__(__self__, *,
@@ -1529,6 +1985,14 @@ class GetStreamCdnConfigsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetStreamDistributionChannelsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetStreamDistributionChannelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetStreamDistributionChannelsFilterArgs:
     def __init__(__self__, *,
@@ -1567,6 +2031,14 @@ class GetStreamDistributionChannelsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetStreamPackagingConfigsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetStreamPackagingConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetStreamPackagingConfigsFilterArgs:

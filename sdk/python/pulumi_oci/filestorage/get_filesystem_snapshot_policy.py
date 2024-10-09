@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -198,9 +203,6 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] 
         schedules=pulumi.get(__ret__, 'schedules'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_filesystem_snapshot_policy)
 def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFilesystemSnapshotPolicyResult]:
     """
@@ -220,4 +222,19 @@ def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optiona
 
     :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
     """
-    ...
+    __args__ = dict()
+    __args__['filesystemSnapshotPolicyId'] = filesystem_snapshot_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy', __args__, opts=opts, typ=GetFilesystemSnapshotPolicyResult)
+    return __ret__.apply(lambda __response__: GetFilesystemSnapshotPolicyResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filesystem_snapshot_policy_id=pulumi.get(__response__, 'filesystem_snapshot_policy_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        policy_prefix=pulumi.get(__response__, 'policy_prefix'),
+        schedules=pulumi.get(__response__, 'schedules'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

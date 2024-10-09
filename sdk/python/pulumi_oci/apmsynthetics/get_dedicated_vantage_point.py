@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -225,9 +230,6 @@ def get_dedicated_vantage_point(apm_domain_id: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_dedicated_vantage_point)
 def get_dedicated_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                        dedicated_vantage_point_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVantagePointResult]:
@@ -250,4 +252,22 @@ def get_dedicated_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str dedicated_vantage_point_id: The OCID of the dedicated vantage point.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['dedicatedVantagePointId'] = dedicated_vantage_point_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint', __args__, opts=opts, typ=GetDedicatedVantagePointResult)
+    return __ret__.apply(lambda __response__: GetDedicatedVantagePointResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        dedicated_vantage_point_id=pulumi.get(__response__, 'dedicated_vantage_point_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dvp_stack_details=pulumi.get(__response__, 'dvp_stack_details'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        monitor_status_count_maps=pulumi.get(__response__, 'monitor_status_count_maps'),
+        name=pulumi.get(__response__, 'name'),
+        region=pulumi.get(__response__, 'region'),
+        status=pulumi.get(__response__, 'status'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

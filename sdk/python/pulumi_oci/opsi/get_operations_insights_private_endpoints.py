@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[str] = No
         opsi_private_endpoint_id=pulumi.get(__ret__, 'opsi_private_endpoint_id'),
         states=pulumi.get(__ret__, 'states'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_operations_insights_private_endpoints)
 def get_operations_insights_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -247,4 +249,25 @@ def get_operations_insights_private_endpoints_output(compartment_id: Optional[pu
     :param Sequence[str] states: Lifecycle states
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isUsedForRacDbs'] = is_used_for_rac_dbs
+    __args__['opsiPrivateEndpointId'] = opsi_private_endpoint_id
+    __args__['states'] = states
+    __args__['vcnId'] = vcn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints', __args__, opts=opts, typ=GetOperationsInsightsPrivateEndpointsResult)
+    return __ret__.apply(lambda __response__: GetOperationsInsightsPrivateEndpointsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_used_for_rac_dbs=pulumi.get(__response__, 'is_used_for_rac_dbs'),
+        operations_insights_private_endpoint_collections=pulumi.get(__response__, 'operations_insights_private_endpoint_collections'),
+        opsi_private_endpoint_id=pulumi.get(__response__, 'opsi_private_endpoint_id'),
+        states=pulumi.get(__response__, 'states'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

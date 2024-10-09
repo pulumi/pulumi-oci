@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -122,9 +127,6 @@ def get_top_utilized_resources(compartment_id: Optional[str] = None,
         is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
         items=pulumi.get(__ret__, 'items'),
         resource_unit_type=pulumi.get(__ret__, 'resource_unit_type'))
-
-
-@_utilities.lift_output_func(get_top_utilized_resources)
 def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                       resource_unit_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -150,4 +152,15 @@ def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[str]
     :param bool is_compartment_id_in_subtree: Indicates if the given compartment is the root compartment.
     :param str resource_unit_type: A filter to return only resources whose unit matches the given resource unit.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
+    __args__['resourceUnitType'] = resource_unit_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources', __args__, opts=opts, typ=GetTopUtilizedResourcesResult)
+    return __ret__.apply(lambda __response__: GetTopUtilizedResourcesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__response__, 'is_compartment_id_in_subtree'),
+        items=pulumi.get(__response__, 'items'),
+        resource_unit_type=pulumi.get(__response__, 'resource_unit_type')))

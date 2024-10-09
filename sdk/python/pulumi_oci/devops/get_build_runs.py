@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_build_runs(build_pipeline_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_build_runs)
 def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[str]]] = None,
                           compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -220,4 +222,22 @@ def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[str]
     :param str project_id: unique project identifier
     :param str state: A filter to return only build runs that matches the given lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['buildPipelineId'] = build_pipeline_id
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['projectId'] = project_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getBuildRuns:getBuildRuns', __args__, opts=opts, typ=GetBuildRunsResult)
+    return __ret__.apply(lambda __response__: GetBuildRunsResult(
+        build_pipeline_id=pulumi.get(__response__, 'build_pipeline_id'),
+        build_run_summary_collections=pulumi.get(__response__, 'build_run_summary_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state')))

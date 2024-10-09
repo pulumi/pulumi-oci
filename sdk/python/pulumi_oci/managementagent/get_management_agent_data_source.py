@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -323,9 +328,6 @@ def get_management_agent_data_source(data_source_key: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         url=pulumi.get(__ret__, 'url'))
-
-
-@_utilities.lift_output_func(get_management_agent_data_source)
 def get_management_agent_data_source_output(data_source_key: Optional[pulumi.Input[str]] = None,
                                             management_agent_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentDataSourceResult]:
@@ -348,4 +350,30 @@ def get_management_agent_data_source_output(data_source_key: Optional[pulumi.Inp
     :param str data_source_key: Data source type and name identifier.
     :param str management_agent_id: Unique Management Agent identifier
     """
-    ...
+    __args__ = dict()
+    __args__['dataSourceKey'] = data_source_key
+    __args__['managementAgentId'] = management_agent_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource', __args__, opts=opts, typ=GetManagementAgentDataSourceResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentDataSourceResult(
+        allow_metrics=pulumi.get(__response__, 'allow_metrics'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_timeout=pulumi.get(__response__, 'connection_timeout'),
+        data_source_key=pulumi.get(__response__, 'data_source_key'),
+        id=pulumi.get(__response__, 'id'),
+        is_daemon_set=pulumi.get(__response__, 'is_daemon_set'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        metric_dimensions=pulumi.get(__response__, 'metric_dimensions'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        proxy_url=pulumi.get(__response__, 'proxy_url'),
+        read_data_limit=pulumi.get(__response__, 'read_data_limit'),
+        read_data_limit_in_kilobytes=pulumi.get(__response__, 'read_data_limit_in_kilobytes'),
+        read_timeout=pulumi.get(__response__, 'read_timeout'),
+        resource_group=pulumi.get(__response__, 'resource_group'),
+        schedule_mins=pulumi.get(__response__, 'schedule_mins'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        url=pulumi.get(__response__, 'url')))

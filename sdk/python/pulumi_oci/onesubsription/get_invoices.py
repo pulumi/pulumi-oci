@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -163,9 +168,6 @@ def get_invoices(ar_customer_transaction_id: Optional[str] = None,
         invoices=pulumi.get(__ret__, 'invoices'),
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'))
-
-
-@_utilities.lift_output_func(get_invoices)
 def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[str]] = None,
                         compartment_id: Optional[pulumi.Input[str]] = None,
                         fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -198,4 +200,21 @@ def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[str]] 
     :param str time_from: Initial date to filter Invoice data in SPM.
     :param str time_to: Final date to filter Invoice data in SPM.
     """
-    ...
+    __args__ = dict()
+    __args__['arCustomerTransactionId'] = ar_customer_transaction_id
+    __args__['compartmentId'] = compartment_id
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['timeFrom'] = time_from
+    __args__['timeTo'] = time_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getInvoices:getInvoices', __args__, opts=opts, typ=GetInvoicesResult)
+    return __ret__.apply(lambda __response__: GetInvoicesResult(
+        ar_customer_transaction_id=pulumi.get(__response__, 'ar_customer_transaction_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        invoices=pulumi.get(__response__, 'invoices'),
+        time_from=pulumi.get(__response__, 'time_from'),
+        time_to=pulumi.get(__response__, 'time_to')))

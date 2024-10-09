@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -144,9 +149,6 @@ def get_clusters(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         states=pulumi.get(__ret__, 'states'))
-
-
-@_utilities.lift_output_func(get_clusters)
 def get_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetClustersFilterArgs', 'GetClustersFilterArgsDict']]]]] = None,
                         name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -173,4 +175,17 @@ def get_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str name: The name to filter on.
     :param Sequence[str] states: A cluster lifecycle state to filter on. Can have multiple parameters of this name.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['states'] = states
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusters:getClusters', __args__, opts=opts, typ=GetClustersResult)
+    return __ret__.apply(lambda __response__: GetClustersResult(
+        clusters=pulumi.get(__response__, 'clusters'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        states=pulumi.get(__response__, 'states')))

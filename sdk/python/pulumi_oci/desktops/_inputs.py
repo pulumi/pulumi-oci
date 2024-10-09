@@ -4,23 +4,53 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'DesktopPoolAvailabilityPolicyArgs',
+    'DesktopPoolAvailabilityPolicyArgsDict',
     'DesktopPoolAvailabilityPolicyStartScheduleArgs',
+    'DesktopPoolAvailabilityPolicyStartScheduleArgsDict',
     'DesktopPoolAvailabilityPolicyStopScheduleArgs',
+    'DesktopPoolAvailabilityPolicyStopScheduleArgsDict',
     'DesktopPoolDevicePolicyArgs',
+    'DesktopPoolDevicePolicyArgsDict',
     'DesktopPoolImageArgs',
+    'DesktopPoolImageArgsDict',
     'DesktopPoolNetworkConfigurationArgs',
+    'DesktopPoolNetworkConfigurationArgsDict',
     'GetDesktopPoolDesktopsFilterArgs',
+    'GetDesktopPoolDesktopsFilterArgsDict',
     'GetDesktopPoolVolumesFilterArgs',
+    'GetDesktopPoolVolumesFilterArgsDict',
     'GetDesktopPoolsFilterArgs',
+    'GetDesktopPoolsFilterArgsDict',
     'GetDesktopsFilterArgs',
+    'GetDesktopsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class DesktopPoolAvailabilityPolicyArgsDict(TypedDict):
+        start_schedule: pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgsDict']
+        """
+        (Updatable) Provides the schedule information for a desktop.
+        """
+        stop_schedule: pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgsDict']
+        """
+        (Updatable) Provides the schedule information for a desktop.
+        """
+elif False:
+    DesktopPoolAvailabilityPolicyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DesktopPoolAvailabilityPolicyArgs:
@@ -59,6 +89,19 @@ class DesktopPoolAvailabilityPolicyArgs:
         pulumi.set(self, "stop_schedule", value)
 
 
+if not MYPY:
+    class DesktopPoolAvailabilityPolicyStartScheduleArgsDict(TypedDict):
+        cron_expression: pulumi.Input[str]
+        """
+        (Updatable) A cron expression describing the desktop's schedule.
+        """
+        timezone: pulumi.Input[str]
+        """
+        (Updatable) The timezone of the desktop's schedule.
+        """
+elif False:
+    DesktopPoolAvailabilityPolicyStartScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DesktopPoolAvailabilityPolicyStartScheduleArgs:
     def __init__(__self__, *,
@@ -96,6 +139,19 @@ class DesktopPoolAvailabilityPolicyStartScheduleArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class DesktopPoolAvailabilityPolicyStopScheduleArgsDict(TypedDict):
+        cron_expression: pulumi.Input[str]
+        """
+        (Updatable) A cron expression describing the desktop's schedule.
+        """
+        timezone: pulumi.Input[str]
+        """
+        (Updatable) The timezone of the desktop's schedule.
+        """
+elif False:
+    DesktopPoolAvailabilityPolicyStopScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DesktopPoolAvailabilityPolicyStopScheduleArgs:
     def __init__(__self__, *,
@@ -132,6 +188,39 @@ class DesktopPoolAvailabilityPolicyStopScheduleArgs:
     def timezone(self, value: pulumi.Input[str]):
         pulumi.set(self, "timezone", value)
 
+
+if not MYPY:
+    class DesktopPoolDevicePolicyArgsDict(TypedDict):
+        audio_mode: pulumi.Input[str]
+        """
+        (Updatable) The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
+        """
+        cdm_mode: pulumi.Input[str]
+        """
+        (Updatable) The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
+        """
+        clipboard_mode: pulumi.Input[str]
+        """
+        (Updatable) The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The clipboard can be used to transfer data to the desktop only.  FROMDESKTOP: The clipboard can be used to transfer data from the desktop only. FULL: The clipboard can be used to transfer data to and from the desktop.
+        """
+        is_display_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Indicates whether the display is enabled.
+        """
+        is_keyboard_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Indicates whether the keyboard is enabled.
+        """
+        is_pointer_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Indicates whether the pointer is enabled.
+        """
+        is_printing_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Indicates whether printing is enabled.
+        """
+elif False:
+    DesktopPoolDevicePolicyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DesktopPoolDevicePolicyArgs:
@@ -245,6 +334,19 @@ class DesktopPoolDevicePolicyArgs:
         pulumi.set(self, "is_printing_enabled", value)
 
 
+if not MYPY:
+    class DesktopPoolImageArgsDict(TypedDict):
+        image_id: pulumi.Input[str]
+        """
+        The OCID of the desktop image.
+        """
+        image_name: pulumi.Input[str]
+        """
+        The name of the desktop image.
+        """
+elif False:
+    DesktopPoolImageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DesktopPoolImageArgs:
     def __init__(__self__, *,
@@ -282,6 +384,19 @@ class DesktopPoolImageArgs:
         pulumi.set(self, "image_name", value)
 
 
+if not MYPY:
+    class DesktopPoolNetworkConfigurationArgsDict(TypedDict):
+        subnet_id: pulumi.Input[str]
+        """
+        The OCID of the subnet to use for the desktop pool.
+        """
+        vcn_id: pulumi.Input[str]
+        """
+        The OCID of the VCN used by the desktop pool.
+        """
+elif False:
+    DesktopPoolNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DesktopPoolNetworkConfigurationArgs:
     def __init__(__self__, *,
@@ -318,6 +433,14 @@ class DesktopPoolNetworkConfigurationArgs:
     def vcn_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "vcn_id", value)
 
+
+if not MYPY:
+    class GetDesktopPoolDesktopsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDesktopPoolDesktopsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDesktopPoolDesktopsFilterArgs:
@@ -357,6 +480,17 @@ class GetDesktopPoolDesktopsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDesktopPoolVolumesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the desktop pool volume.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDesktopPoolVolumesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDesktopPoolVolumesFilterArgs:
@@ -403,6 +537,14 @@ class GetDesktopPoolVolumesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDesktopPoolsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDesktopPoolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDesktopPoolsFilterArgs:
     def __init__(__self__, *,
@@ -441,6 +583,14 @@ class GetDesktopPoolsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDesktopsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDesktopsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDesktopsFilterArgs:

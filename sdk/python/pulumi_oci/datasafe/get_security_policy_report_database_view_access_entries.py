@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -142,9 +147,6 @@ def get_security_policy_report_database_view_access_entries(filters: Optional[Se
         scim_query=pulumi.get(__ret__, 'scim_query'),
         security_policy_report_id=pulumi.get(__ret__, 'security_policy_report_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-
-
-@_utilities.lift_output_func(get_security_policy_report_database_view_access_entries)
 def get_security_policy_report_database_view_access_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict']]]]] = None,
                                                                    scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                                                                    security_policy_report_id: Optional[pulumi.Input[str]] = None,
@@ -175,4 +177,17 @@ def get_security_policy_report_database_view_access_entries_output(filters: Opti
     :param str security_policy_report_id: The OCID of the security policy report resource.
     :param str target_id: A filter to return only items related to a specific target OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['scimQuery'] = scim_query
+    __args__['securityPolicyReportId'] = security_policy_report_id
+    __args__['targetId'] = target_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries', __args__, opts=opts, typ=GetSecurityPolicyReportDatabaseViewAccessEntriesResult)
+    return __ret__.apply(lambda __response__: GetSecurityPolicyReportDatabaseViewAccessEntriesResult(
+        database_view_access_entry_collections=pulumi.get(__response__, 'database_view_access_entry_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        scim_query=pulumi.get(__response__, 'scim_query'),
+        security_policy_report_id=pulumi.get(__response__, 'security_policy_report_id'),
+        target_id=pulumi.get(__response__, 'target_id')))

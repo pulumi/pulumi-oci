@@ -4,30 +4,83 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ModelEvaluationResultArgs',
+    'ModelEvaluationResultArgsDict',
     'ModelEvaluationResultClassMetricArgs',
+    'ModelEvaluationResultClassMetricArgsDict',
     'ModelEvaluationResultEntityMetricArgs',
+    'ModelEvaluationResultEntityMetricArgsDict',
     'ModelEvaluationResultMetricArgs',
+    'ModelEvaluationResultMetricArgsDict',
     'ModelModelDetailsArgs',
+    'ModelModelDetailsArgsDict',
     'ModelModelDetailsClassificationModeArgs',
+    'ModelModelDetailsClassificationModeArgsDict',
     'ModelTestStrategyArgs',
+    'ModelTestStrategyArgsDict',
     'ModelTestStrategyTestingDatasetArgs',
+    'ModelTestStrategyTestingDatasetArgsDict',
     'ModelTestStrategyTestingDatasetLocationDetailsArgs',
+    'ModelTestStrategyTestingDatasetLocationDetailsArgsDict',
     'ModelTestStrategyValidationDatasetArgs',
+    'ModelTestStrategyValidationDatasetArgsDict',
     'ModelTestStrategyValidationDatasetLocationDetailsArgs',
+    'ModelTestStrategyValidationDatasetLocationDetailsArgsDict',
     'ModelTrainingDatasetArgs',
+    'ModelTrainingDatasetArgsDict',
     'ModelTrainingDatasetLocationDetailsArgs',
+    'ModelTrainingDatasetLocationDetailsArgsDict',
     'GetEndpointsFilterArgs',
+    'GetEndpointsFilterArgsDict',
     'GetModelEvaluationResultsFilterArgs',
+    'GetModelEvaluationResultsFilterArgsDict',
     'GetModelsFilterArgs',
+    'GetModelsFilterArgsDict',
     'GetProjectsFilterArgs',
+    'GetProjectsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ModelEvaluationResultArgsDict(TypedDict):
+        class_metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgsDict']]]]
+        """
+        List of text classification metrics
+        """
+        confusion_matrix: NotRequired[pulumi.Input[str]]
+        """
+        class level confusion matrix
+        """
+        entity_metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgsDict']]]]
+        """
+        List of entity metrics
+        """
+        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        labels
+        """
+        metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgsDict']]]]
+        """
+        Model level named entity recognition metrics
+        """
+        model_type: NotRequired[pulumi.Input[str]]
+        """
+        Model type
+        """
+elif False:
+    ModelEvaluationResultArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelEvaluationResultArgs:
@@ -132,6 +185,31 @@ class ModelEvaluationResultArgs:
         pulumi.set(self, "model_type", value)
 
 
+if not MYPY:
+    class ModelEvaluationResultClassMetricArgsDict(TypedDict):
+        f1: NotRequired[pulumi.Input[float]]
+        """
+        F1-score, is a measure of a model’s accuracy on a dataset
+        """
+        label: NotRequired[pulumi.Input[str]]
+        """
+        Entity label
+        """
+        precision: NotRequired[pulumi.Input[float]]
+        """
+        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+        """
+        recall: NotRequired[pulumi.Input[float]]
+        """
+        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+        """
+        support: NotRequired[pulumi.Input[float]]
+        """
+        number of samples in the test set
+        """
+elif False:
+    ModelEvaluationResultClassMetricArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelEvaluationResultClassMetricArgs:
     def __init__(__self__, *,
@@ -219,6 +297,27 @@ class ModelEvaluationResultClassMetricArgs:
         pulumi.set(self, "support", value)
 
 
+if not MYPY:
+    class ModelEvaluationResultEntityMetricArgsDict(TypedDict):
+        f1: NotRequired[pulumi.Input[float]]
+        """
+        F1-score, is a measure of a model’s accuracy on a dataset
+        """
+        label: NotRequired[pulumi.Input[str]]
+        """
+        Entity label
+        """
+        precision: NotRequired[pulumi.Input[float]]
+        """
+        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+        """
+        recall: NotRequired[pulumi.Input[float]]
+        """
+        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+        """
+elif False:
+    ModelEvaluationResultEntityMetricArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelEvaluationResultEntityMetricArgs:
     def __init__(__self__, *,
@@ -289,6 +388,51 @@ class ModelEvaluationResultEntityMetricArgs:
     def recall(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "recall", value)
 
+
+if not MYPY:
+    class ModelEvaluationResultMetricArgsDict(TypedDict):
+        accuracy: NotRequired[pulumi.Input[float]]
+        """
+        The fraction of the labels that were correctly recognised .
+        """
+        macro_f1: NotRequired[pulumi.Input[float]]
+        """
+        F1-score, is a measure of a model’s accuracy on a dataset
+        """
+        macro_precision: NotRequired[pulumi.Input[float]]
+        """
+        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+        """
+        macro_recall: NotRequired[pulumi.Input[float]]
+        """
+        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+        """
+        micro_f1: NotRequired[pulumi.Input[float]]
+        """
+        F1-score, is a measure of a model’s accuracy on a dataset
+        """
+        micro_precision: NotRequired[pulumi.Input[float]]
+        """
+        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+        """
+        micro_recall: NotRequired[pulumi.Input[float]]
+        """
+        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+        """
+        weighted_f1: NotRequired[pulumi.Input[float]]
+        """
+        F1-score, is a measure of a model’s accuracy on a dataset
+        """
+        weighted_precision: NotRequired[pulumi.Input[float]]
+        """
+        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+        """
+        weighted_recall: NotRequired[pulumi.Input[float]]
+        """
+        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+        """
+elif False:
+    ModelEvaluationResultMetricArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelEvaluationResultMetricArgs:
@@ -457,6 +601,27 @@ class ModelEvaluationResultMetricArgs:
         pulumi.set(self, "weighted_recall", value)
 
 
+if not MYPY:
+    class ModelModelDetailsArgsDict(TypedDict):
+        model_type: pulumi.Input[str]
+        """
+        Model type
+        """
+        classification_mode: NotRequired[pulumi.Input['ModelModelDetailsClassificationModeArgsDict']]
+        """
+        possible text classification modes
+        """
+        language_code: NotRequired[pulumi.Input[str]]
+        """
+        supported language default value is en
+        """
+        version: NotRequired[pulumi.Input[str]]
+        """
+        Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        """
+elif False:
+    ModelModelDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelModelDetailsArgs:
     def __init__(__self__, *,
@@ -527,6 +692,19 @@ class ModelModelDetailsArgs:
         pulumi.set(self, "version", value)
 
 
+if not MYPY:
+    class ModelModelDetailsClassificationModeArgsDict(TypedDict):
+        classification_mode: pulumi.Input[str]
+        """
+        classification Modes
+        """
+        version: NotRequired[pulumi.Input[str]]
+        """
+        Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+        """
+elif False:
+    ModelModelDetailsClassificationModeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelModelDetailsClassificationModeArgs:
     def __init__(__self__, *,
@@ -564,6 +742,23 @@ class ModelModelDetailsClassificationModeArgs:
     def version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "version", value)
 
+
+if not MYPY:
+    class ModelTestStrategyArgsDict(TypedDict):
+        strategy_type: pulumi.Input[str]
+        """
+        This information will define the test strategy different datasets for test and validation(optional) dataset.
+        """
+        testing_dataset: pulumi.Input['ModelTestStrategyTestingDatasetArgsDict']
+        """
+        Possible data set type
+        """
+        validation_dataset: NotRequired[pulumi.Input['ModelTestStrategyValidationDatasetArgsDict']]
+        """
+        Possible data set type
+        """
+elif False:
+    ModelTestStrategyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelTestStrategyArgs:
@@ -618,6 +813,23 @@ class ModelTestStrategyArgs:
         pulumi.set(self, "validation_dataset", value)
 
 
+if not MYPY:
+    class ModelTestStrategyTestingDatasetArgsDict(TypedDict):
+        dataset_type: pulumi.Input[str]
+        """
+        Possible data sets
+        """
+        dataset_id: NotRequired[pulumi.Input[str]]
+        """
+        Data Science Labelling Service OCID
+        """
+        location_details: NotRequired[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgsDict']]
+        """
+        Possible object storage location types
+        """
+elif False:
+    ModelTestStrategyTestingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelTestStrategyTestingDatasetArgs:
     def __init__(__self__, *,
@@ -671,6 +883,27 @@ class ModelTestStrategyTestingDatasetArgs:
     def location_details(self, value: Optional[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgs']]):
         pulumi.set(self, "location_details", value)
 
+
+if not MYPY:
+    class ModelTestStrategyTestingDatasetLocationDetailsArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        Object storage bucket name
+        """
+        location_type: pulumi.Input[str]
+        """
+        Possible object storage location types
+        """
+        namespace: pulumi.Input[str]
+        """
+        Object storage namespace
+        """
+        object_names: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        Array of files which need to be processed in the bucket
+        """
+elif False:
+    ModelTestStrategyTestingDatasetLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelTestStrategyTestingDatasetLocationDetailsArgs:
@@ -739,6 +972,23 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
         pulumi.set(self, "object_names", value)
 
 
+if not MYPY:
+    class ModelTestStrategyValidationDatasetArgsDict(TypedDict):
+        dataset_type: pulumi.Input[str]
+        """
+        Possible data sets
+        """
+        dataset_id: NotRequired[pulumi.Input[str]]
+        """
+        Data Science Labelling Service OCID
+        """
+        location_details: NotRequired[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgsDict']]
+        """
+        Possible object storage location types
+        """
+elif False:
+    ModelTestStrategyValidationDatasetArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelTestStrategyValidationDatasetArgs:
     def __init__(__self__, *,
@@ -792,6 +1042,27 @@ class ModelTestStrategyValidationDatasetArgs:
     def location_details(self, value: Optional[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgs']]):
         pulumi.set(self, "location_details", value)
 
+
+if not MYPY:
+    class ModelTestStrategyValidationDatasetLocationDetailsArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        Object storage bucket name
+        """
+        location_type: pulumi.Input[str]
+        """
+        Possible object storage location types
+        """
+        namespace: pulumi.Input[str]
+        """
+        Object storage namespace
+        """
+        object_names: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        Array of files which need to be processed in the bucket
+        """
+elif False:
+    ModelTestStrategyValidationDatasetLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelTestStrategyValidationDatasetLocationDetailsArgs:
@@ -860,6 +1131,23 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
         pulumi.set(self, "object_names", value)
 
 
+if not MYPY:
+    class ModelTrainingDatasetArgsDict(TypedDict):
+        dataset_type: pulumi.Input[str]
+        """
+        Possible data sets
+        """
+        dataset_id: NotRequired[pulumi.Input[str]]
+        """
+        Data Science Labelling Service OCID
+        """
+        location_details: NotRequired[pulumi.Input['ModelTrainingDatasetLocationDetailsArgsDict']]
+        """
+        Possible object storage location types
+        """
+elif False:
+    ModelTrainingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelTrainingDatasetArgs:
     def __init__(__self__, *,
@@ -913,6 +1201,31 @@ class ModelTrainingDatasetArgs:
     def location_details(self, value: Optional[pulumi.Input['ModelTrainingDatasetLocationDetailsArgs']]):
         pulumi.set(self, "location_details", value)
 
+
+if not MYPY:
+    class ModelTrainingDatasetLocationDetailsArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        Object storage bucket name
+        """
+        location_type: pulumi.Input[str]
+        """
+        Possible object storage location types
+        """
+        namespace: pulumi.Input[str]
+        """
+        Object storage namespace
+        """
+        object_names: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        Array of files which need to be processed in the bucket
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ModelTrainingDatasetLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelTrainingDatasetLocationDetailsArgs:
@@ -989,6 +1302,14 @@ class ModelTrainingDatasetLocationDetailsArgs:
         pulumi.set(self, "object_names", value)
 
 
+if not MYPY:
+    class GetEndpointsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetEndpointsFilterArgs:
     def __init__(__self__, *,
@@ -1027,6 +1348,14 @@ class GetEndpointsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetModelEvaluationResultsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetModelEvaluationResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetModelEvaluationResultsFilterArgs:
@@ -1067,6 +1396,14 @@ class GetModelEvaluationResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetModelsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetModelsFilterArgs:
     def __init__(__self__, *,
@@ -1105,6 +1442,14 @@ class GetModelsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetProjectsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProjectsFilterArgs:
